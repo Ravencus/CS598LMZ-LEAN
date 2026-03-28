@@ -11,8 +11,9 @@ venv/
 # Docker
 .docker/
 
-# Runtime generated data
-workspace/traces/
+# Runtime generated data (keep hand-crafted traces)
+workspace/traces/*
+!workspace/traces/complex_subset_sum_proving_trace.md
 workspace/digests/
 workspace/.opencode/db/
 
