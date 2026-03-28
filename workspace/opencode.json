@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/gpt-5-nano",
+  "small_model": "opencode/gpt-5-nano",
+  "mcp": {
+    "lean-checker": {
+      "type": "local",
+      "command": ["/home/lean/venv/bin/python", "/home/lean/mcp_server/lean_checker_server.py"]
+    }
+  }
+}

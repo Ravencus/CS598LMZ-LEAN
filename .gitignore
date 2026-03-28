@@ -1,0 +1,31 @@
+CLAUDE.md
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+
+# Docker
+.docker/
+
+# Runtime generated data
+workspace/traces/
+workspace/digests/
+workspace/.opencode/db/
+
+# Personal notes
+PROJECT_NOTES.md
+
+# Proposal
+CS598LMZ_project_proposal.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Devcontainer
+.devcontainer/
+.devcontainer.bak.*
