@@ -1,0 +1,6042 @@
+[
+  {
+    "source": "Bertrand假设的证明",
+    "target": "从二项式系数到Kummer定理"
+  },
+  {
+    "source": "Bertrand假设的证明",
+    "target": "对素数连乘积的粗糙上界估计"
+  },
+  {
+    "source": "Bertrand假设的证明",
+    "target": "分段估计"
+  },
+  {
+    "source": "Bertrand假设的证明",
+    "target": "Erdos关于pi函数的估计"
+  },
+  {
+    "source": "Bertrand假设的证明",
+    "target": "从二项式系数到Kummer定理"
+  },
+  {
+    "source": "Bertrand假设的证明",
+    "target": "Erdos关于pi函数的估计"
+  },
+  {
+    "source": "Bertrand假设的证明",
+    "target": "Erdos关于pi函数的估计"
+  },
+  {
+    "source": "Bertrand假设的证明",
+    "target": "Erdos关于pi函数的估计"
+  },
+  {
+    "source": "Bezout恒等式",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "把集合问题转换为函数问题"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "证明函数项级数几乎处处绝对收敛"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "函数列几乎处处有界与Borel-Cantelli lemma的应用"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "把集合问题转换为函数问题"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "随机变量期望收敛导出几乎处处收敛的一个条件"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "Borel-Cantelli lemma证明某种版本下的强大数定律"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "加强收敛性质的条件与手段"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "Etemadi关于强大数定律的证明"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "单位区间内10进制小数中含有无数个7的小数的Lebesgue测度为1"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "Khintchine定理"
+  },
+  {
+    "source": "Borel-Cantelli lemma及其应用",
+    "target": "Khintchine定理"
+  },
+  {
+    "source": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+    "target": "样本期望的渐近展开系数"
+  },
+  {
+    "source": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "C(X)在一致范数下紧子集的充要条件",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "C(X)在一致范数下紧子集的充要条件",
+    "target": "从几个问题理解一致连续函数的特性"
+  },
+  {
+    "source": "C(X)在一致范数下紧子集的充要条件",
+    "target": "利用紧性把局部性质转换为全局性质"
+  },
+  {
+    "source": "C(X)在一致范数下紧子集的充要条件",
+    "target": "函数列的微分一致有界那么极限函数保持连续性"
+  },
+  {
+    "source": "C(X)在一致范数下紧子集的充要条件",
+    "target": "利用紧性与一致连续性证明一个一致收敛"
+  },
+  {
+    "source": "C(X)在一致范数下紧子集的充要条件",
+    "target": "Dini定理"
+  },
+  {
+    "source": "CMO不等式中的积分估计",
+    "target": "逐项估计"
+  },
+  {
+    "source": "CMO不等式中的积分估计",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "CMO不等式中的积分估计",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "Cantor series表示的数是否是有理数的判断",
+    "target": "证明e是无理数"
+  },
+  {
+    "source": "Cantor series表示的数是否是有理数的判断",
+    "target": "证明e的有理次方是无理数"
+  },
+  {
+    "source": "Cantor series表示的数是否是有理数的判断",
+    "target": "证明e是无理数"
+  },
+  {
+    "source": "Cantor series表示的数是否是有理数的判断",
+    "target": "证明e的有理次方是无理数"
+  },
+  {
+    "source": "Cantor集以及它的性质",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "Cantor集以及它的性质",
+    "target": "分段估计"
+  },
+  {
+    "source": "Cantor集以及它的性质",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "Carleman不等式",
+    "target": "逐项估计"
+  },
+  {
+    "source": "Carleman不等式",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "Carleman不等式",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "Carleman不等式",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "Carleman不等式",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "Cauchy-Davenport及其证明",
+    "target": "组合零点定理"
+  },
+  {
+    "source": "Cauchy-Davenport及其证明",
+    "target": "有限交换群上的函数构成的Hilbert空间的结构"
+  },
+  {
+    "source": "Cauchy-Davenport及其证明",
+    "target": "把集合问题转换为函数问题"
+  },
+  {
+    "source": "Cesaro-Stolz定理",
+    "target": "Silverman–Toeplitz定理"
+  },
+  {
+    "source": "Cesaro-Stolz定理",
+    "target": "一个递推序列的渐近问题"
+  },
+  {
+    "source": "Cesaro-Stolz定理",
+    "target": "通过倒数制造差分关系"
+  },
+  {
+    "source": "Cesaro-Stolz定理",
+    "target": "Riesz-Fischer定理"
+  },
+  {
+    "source": "Cesaro-Stolz定理",
+    "target": "Silverman–Toeplitz定理"
+  },
+  {
+    "source": "Dirichlet's hyperbola trick",
+    "target": "对算术函数平均值的渐近"
+  },
+  {
+    "source": "Dirichlet's hyperbola trick",
+    "target": "divisor函数的倒数加权和的估计"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "分段估计"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "什么样的条件可以从Cesaro可和得到通常意义下的可和"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "圆周上的函数的傅里叶展开"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "Stone-Weierstrass定理"
+  },
+  {
+    "source": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "Dyadic分解",
+    "target": "分段估计"
+  },
+  {
+    "source": "Dyadic分解",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "Dyadic分解",
+    "target": "分段估计"
+  },
+  {
+    "source": "Dyadic分解",
+    "target": "整函数零点组成的级数收敛性与增长阶之间的关系"
+  },
+  {
+    "source": "Dyadic分解",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "Dyadic分解",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "EGZ定理的证明",
+    "target": "Cauchy-Davenport及其证明"
+  },
+  {
+    "source": "EGZ定理的证明",
+    "target": "Cauchy-Davenport及其证明"
+  },
+  {
+    "source": "EGZ定理的证明",
+    "target": "组合零点定理"
+  },
+  {
+    "source": "Erdos关于pi函数的估计",
+    "target": "Bertrand假设的证明"
+  },
+  {
+    "source": "Erdos关于pi函数的估计",
+    "target": "Bertrand假设的证明"
+  },
+  {
+    "source": "Erdos关于pi函数的估计",
+    "target": "Bertrand假设的证明"
+  },
+  {
+    "source": "Erdos关于pi函数的估计",
+    "target": "Bertrand假设的证明"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "加强收敛性质的条件与手段"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "通过子列的收敛性验证单调增加的函数列的收敛性"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "加强收敛性质的条件与手段"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "Etemadi关于强大数定律的证明",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "Euler-Maclaurin求和公式在和的估计当中的应用",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "Euler-Maclaurin求和公式在和的估计当中的应用",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "Euler-Maclaurin求和公式在和的估计当中的应用",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "Euler-Maclaurin求和公式在和的估计当中的应用",
+    "target": "证明正弦函数在整数上取值的序列的极限是不存在的"
+  },
+  {
+    "source": "Euler-Maclaurin求和公式在和的估计当中的应用",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "Euler-Maclaurin求和公式在和的估计当中的应用",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "GLn的稠密性",
+    "target": "矩阵赋范数空间当中一些典型集合的拓扑性质"
+  },
+  {
+    "source": "Gamma函数在1处的渐近行为",
+    "target": "证明Gamma函数在右半平面上全纯"
+  },
+  {
+    "source": "Gamma函数的反射公式",
+    "target": "为何三角恒等式可以推广到复平面"
+  },
+  {
+    "source": "Gamma函数的反射公式",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "Glivenko-Cantelli定理",
+    "target": "Etemadi关于强大数定律的证明"
+  },
+  {
+    "source": "Groups, as men, will be known by their actions",
+    "target": "轨道稳定子引理与群的置换表示"
+  },
+  {
+    "source": "Groups, as men, will be known by their actions",
+    "target": "第一同构定理"
+  },
+  {
+    "source": "Groups, as men, will be known by their actions",
+    "target": "证明有限群存在一个满足特定Index条件的正规子群"
+  },
+  {
+    "source": "Groups, as men, will be known by their actions",
+    "target": "Sylow定理的特例：柯西定理"
+  },
+  {
+    "source": "HMMT竞赛的一个组合求和问题",
+    "target": "线性丢番图方程非负整数解的个数"
+  },
+  {
+    "source": "HMMT竞赛的一个组合求和问题",
+    "target": "线性丢番图方程非负整数解的个数"
+  },
+  {
+    "source": "Hermite-Hadamard不等式与函数凸性",
+    "target": "g_{x,y}(s)的图像.gif"
+  },
+  {
+    "source": "Hermite-Hadamard不等式与函数凸性",
+    "target": "连续的归纳法"
+  },
+  {
+    "source": "Hermite-Hadamard不等式与函数凸性",
+    "target": "图像闭区间上的凸函数几何性质的一个命题"
+  },
+  {
+    "source": "Hilbert空间当中的基的四个等价命题",
+    "target": "关于一个含参数积分极限的两个策略的方法"
+  },
+  {
+    "source": "Hilbert空间当中的基的四个等价命题",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "Hoeffding不等式估计给定置信水平下需要的样本数量",
+    "target": "有限测度下各个收敛之间的关系"
+  },
+  {
+    "source": "IMC上的一个渐近分析的问题",
+    "target": "逐项估计"
+  },
+  {
+    "source": "IMC上的一个渐近分析的问题",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "IMC上的一个渐近分析的问题",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "IMC上的一个渐近分析的问题",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "IMC上的一个渐近分析的问题",
+    "target": "连续分部求和法的基本用法"
+  },
+  {
+    "source": "IMO 1988年压轴数论题",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "IMO级别的一个计数问题",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "IMO级别的一个计数问题",
+    "target": "线性丢番图方程非负整数解的个数"
+  },
+  {
+    "source": "IMO级别的一个计数问题",
+    "target": "HMMT竞赛的一个组合求和问题"
+  },
+  {
+    "source": "IMO级别的一个计数问题",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "Khintchine不等式",
+    "target": "Sidon集的伪随机特性"
+  },
+  {
+    "source": "Khintchine定理",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "Khintchine定理",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "Khintchine定理",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "Khintchine定理",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "Kronecker's lemma",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "Kronecker's lemma",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "Kronecker定理，Dirichlet定理及其应用",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "Kronecker定理，Dirichlet定理及其应用",
+    "target": "利用连续函数的identity theorem证明函数方程"
+  },
+  {
+    "source": "Kronecker定理，Dirichlet定理及其应用",
+    "target": "周期函数的和还是周期函数吗？"
+  },
+  {
+    "source": "Kronecker定理，Dirichlet定理及其应用",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "Kronecker定理，Dirichlet定理及其应用",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "Kronecker定理，Dirichlet定理及其应用",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "Kronecker定理，Dirichlet定理及其应用",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "Kummer判别：对多种比值判别变形的统一",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "Kummer判别：对多种比值判别变形的统一",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "Kummer判别：对多种比值判别变形的统一",
+    "target": "逐项估计"
+  },
+  {
+    "source": "Kummer判别：对多种比值判别变形的统一",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "Kummer判别：对多种比值判别变形的统一",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "Ky Fan不等式",
+    "target": "有限交换群上的函数构成的Hilbert空间的结构"
+  },
+  {
+    "source": "Ky Fan不等式",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "Ky Fan不等式",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "Ky Fan不等式",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "Ky Fan不等式",
+    "target": "在Hilbert空间当中建立坐标系从而简化问题"
+  },
+  {
+    "source": "Ky Fan不等式",
+    "target": "根据模与内积的信息得到积分不等式"
+  },
+  {
+    "source": "Ky Fan不等式",
+    "target": "傅里叶变换与傅里叶展开"
+  },
+  {
+    "source": "Lebesgue微分定理",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "Lebesgue微分定理",
+    "target": "对Hardy-Littlewood Maximal函数的估计"
+  },
+  {
+    "source": "Lebesgue微分定理",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "Lebesgue测度的连续性",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "Leibniz收敛判断",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "Leibniz收敛判断",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "Leibniz收敛判断",
+    "target": "利用生成函数求和"
+  },
+  {
+    "source": "Liouville数",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "Liouville数",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "Lipschitz连续+一个积分条件证明集合是紧的",
+    "target": "非欧氏空间当中有界闭未必紧"
+  },
+  {
+    "source": "Littlewood三原理",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "Littlewood三原理",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "Mordell方程的一些简单特例",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "Mordell方程的一些简单特例",
+    "target": "哪些square-free的整数会使得二次数环是UFD，ED?"
+  },
+  {
+    "source": "Mordell方程的一些简单特例",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "Mordell方程的一些简单特例",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "Mordell方程的一些简单特例",
+    "target": "高斯整数的性质"
+  },
+  {
+    "source": "Niven关于pi的无理性的证明",
+    "target": "证明e的有理次方是无理数"
+  },
+  {
+    "source": "Niven关于pi的无理性的证明",
+    "target": "证明e的有理次方是无理数"
+  },
+  {
+    "source": "Niven关于pi的无理性的证明",
+    "target": "证明e的有理次方是无理数"
+  },
+  {
+    "source": "Niven关于pi的无理性的证明",
+    "target": "证明e的有理次方是无理数"
+  },
+  {
+    "source": "Possion求和公式",
+    "target": "由possion公式导出的一个函数方程"
+  },
+  {
+    "source": "Power mean及其性质",
+    "target": "逐项估计"
+  },
+  {
+    "source": "Power mean及其性质",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分1：用牛顿迭代法求算术平方根",
+    "target": "k"
+  },
+  {
+    "source": "Re0微积分1：用牛顿迭代法求算术平方根",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "Re0微积分1：用牛顿迭代法求算术平方根",
+    "target": "函数列的根序列的稳定性"
+  },
+  {
+    "source": "Re0微积分1：用牛顿迭代法求算术平方根",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "Re0微积分1：用牛顿迭代法求算术平方根",
+    "target": "关于黄金比例数的迭代序列"
+  },
+  {
+    "source": "Re0微积分1：用牛顿迭代法求算术平方根",
+    "target": "由素数定理得到p_n的渐近表达"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "关于黄金比例数的迭代序列"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "逐项估计"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "逐项估计"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "制造telescoping sum求和或求乘积"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "Re0微积分2：自然底数e及其快速计算",
+    "target": "分段估计"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "Re0微积分2：自然底数e及其快速计算"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "逐项估计"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "Re0微积分2：自然底数e及其快速计算"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "关于序列极限的公开问题"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "逐项估计"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "Re0微积分2：自然底数e及其快速计算"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分3：广义平均值的极限",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分大纲",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "Re0微积分大纲",
+    "target": "Re0微积分2：自然底数e及其快速计算"
+  },
+  {
+    "source": "Riemann - Lebesgue lemma的证明",
+    "target": "可积函数的傅里叶变换是连续的"
+  },
+  {
+    "source": "Riemann - Lebesgue lemma的证明",
+    "target": "紧支光滑函数在Lp空间当中稠密"
+  },
+  {
+    "source": "Riemann-Lebesgue引理的一个特殊情况",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "Riemann-Lebesgue引理的一个特殊情况",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "Riemann-Lebesgue引理的一个特殊情况",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "Riemann-Lebesgue引理的一个特殊情况",
+    "target": "基于分部积分法的积分的估计"
+  },
+  {
+    "source": "Riemann-Lebesgue引理的一个特殊情况",
+    "target": "Hilbert空间当中的基的四个等价命题"
+  },
+  {
+    "source": "Riemann-Lebesgue引理的一个特殊情况",
+    "target": "由一个级数收敛证明另一个有关级数的收敛问题"
+  },
+  {
+    "source": "Riemann-Stieltjes积分",
+    "target": "黎曼积分的定义以及黎曼可积的判别"
+  },
+  {
+    "source": "Riemann-Stieltjes积分",
+    "target": "逐项估计"
+  },
+  {
+    "source": "Riemann-Stieltjes积分",
+    "target": "黎曼积分的定义以及黎曼可积的判别"
+  },
+  {
+    "source": "Riesz-Fischer定理",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "Riesz-Fischer定理",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "Riesz-Fischer定理",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "Riesz-Fischer定理",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "Riesz-Fischer定理",
+    "target": "证明函数项级数几乎处处绝对收敛"
+  },
+  {
+    "source": "Riesz-Fischer定理",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "Sam Loyd 的14-15谜题",
+    "target": "乘法投影"
+  },
+  {
+    "source": "Sidon集的伪随机特性",
+    "target": "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+  },
+  {
+    "source": "Sidon集的尺寸大小问题",
+    "target": "i"
+  },
+  {
+    "source": "Sidon集的尺寸大小问题",
+    "target": "j"
+  },
+  {
+    "source": "Silverman–Toeplitz定理",
+    "target": "关于一个组合数有关的加权平均的极限问题"
+  },
+  {
+    "source": "Silverman–Toeplitz定理",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "Silverman–Toeplitz定理",
+    "target": "分段估计"
+  },
+  {
+    "source": "Steinhaus定理及其推广",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "Steinhaus定理及其推广",
+    "target": "把集合问题转换为函数问题"
+  },
+  {
+    "source": "Steinhaus定理及其推广",
+    "target": "函数卷积的基本性质"
+  },
+  {
+    "source": "Steinhaus定理及其推广",
+    "target": "函数卷积的基本性质"
+  },
+  {
+    "source": "Steinhaus定理及其推广",
+    "target": "Lebesgue微分定理"
+  },
+  {
+    "source": "Sylow定理的特例：柯西定理",
+    "target": "轨道稳定子引理与群的置换表示"
+  },
+  {
+    "source": "Visser 不等式",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "Visser 不等式",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "Weierstrass逼近定理的概率途径证明",
+    "target": "几乎处处不相等但是同分布的随机变量"
+  },
+  {
+    "source": "Weierstrass逼近定理的概率途径证明",
+    "target": "Borel-Cantelli lemma证明某种版本下的强大数定律"
+  },
+  {
+    "source": "Weierstrass逼近定理的概率途径证明",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "Weierstrass逼近定理的概率途径证明",
+    "target": "分段估计"
+  },
+  {
+    "source": "Weierstrass逼近定理的概率途径证明",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "Weierstrass逼近定理的概率途径证明",
+    "target": "函数傅里叶展开的Dini判别及其应用"
+  },
+  {
+    "source": "Weinstein-Aronszajn恒等式",
+    "target": "矩阵交换次序特征多项式不变"
+  },
+  {
+    "source": "Weinstein-Aronszajn恒等式",
+    "target": "identity theorem的策略在线性代数中的运用"
+  },
+  {
+    "source": "Weinstein-Aronszajn恒等式",
+    "target": "GLn的稠密性"
+  },
+  {
+    "source": "Weinstein-Aronszajn恒等式",
+    "target": "identity theorem"
+  },
+  {
+    "source": "Wielandt's proof of Sylow theorem",
+    "target": "Sylow定理的特例：柯西定理"
+  },
+  {
+    "source": "Wielandt's proof of Sylow theorem",
+    "target": "Groups, as men, will be known by their actions"
+  },
+  {
+    "source": "Wielandt's proof of Sylow theorem",
+    "target": "轨道稳定子引理与群的置换表示"
+  },
+  {
+    "source": "Wintner mean value theorem",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "Wintner mean value theorem",
+    "target": "Kronecker's lemma"
+  },
+  {
+    "source": "Wintner mean value theorem",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "Wintner mean value theorem",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "Wintner mean value theorem",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "行列式的雅可比公式"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "实分析的复办法"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "Steinhaus定理及其推广"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "调和函数极值原理"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "关于一个含参数积分极限的两个策略的方法"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "Littlewood三原理"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "紧支光滑函数在Lp空间当中稠密"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "通过逼近的方法证明函数是下凸的"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "证明某种积分表示的函数是整函数"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "证明Gamma函数在右半平面上全纯"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "利用连续函数的identity theorem证明函数方程"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "积分的伸缩公式"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "identity theorem"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "an epsilon of room",
+    "target": "函数p范数与无穷范数之间的关系"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "Weierstrass逼近定理的概率途径证明"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "随机变量期望收敛导出几乎处处收敛的一个条件"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "Lebesgue微分定理"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "函数在任何可测集合上积分为0意味着函数几乎处处为0"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "n维球体的体积"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "Cantor集以及它的性质"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "an epsilon of room证明集合为0测度的策略",
+    "target": "黎曼可积的Lebesgue判别"
+  },
+  {
+    "source": "approximation to the identity",
+    "target": "积分的伸缩公式"
+  },
+  {
+    "source": "approximation to the identity",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "approximation to the identity",
+    "target": "逼近单位元在局部上的收敛性的一个典型例子"
+  },
+  {
+    "source": "approximation to the identity",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "approximation to the identity",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "approximation to the identity",
+    "target": "Lebesgue微分定理"
+  },
+  {
+    "source": "approximation to the identity",
+    "target": "Dyadic分解"
+  },
+  {
+    "source": "divisor函数的倒数加权和的估计",
+    "target": "Dirichlet's hyperbola trick"
+  },
+  {
+    "source": "divisor函数的倒数加权和的估计",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "divisor函数的倒数加权和的估计",
+    "target": "自然数的r次幂的部分和估计"
+  },
+  {
+    "source": "divisor函数的倒数加权和的估计",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "exp(A)的行列式",
+    "target": "identity theorem的策略在线性代数中的运用"
+  },
+  {
+    "source": "exp(A)的行列式",
+    "target": "identity theorem"
+  },
+  {
+    "source": "exp(A)的行列式",
+    "target": "identity theorem的策略在线性代数中的运用"
+  },
+  {
+    "source": "exp(A)的行列式",
+    "target": "identity theorem"
+  },
+  {
+    "source": "exp(A)的行列式",
+    "target": "可对角化矩阵在复矩阵空间当中稠密"
+  },
+  {
+    "source": "exp(A)的行列式",
+    "target": "identity theorem"
+  },
+  {
+    "source": "identity theorem",
+    "target": "函数的图与连续性"
+  },
+  {
+    "source": "identity theorem",
+    "target": "利用连续函数的identity theorem证明函数方程"
+  },
+  {
+    "source": "identity theorem",
+    "target": "柯西的反向归纳法"
+  },
+  {
+    "source": "identity theorem",
+    "target": "柯西函数方程"
+  },
+  {
+    "source": "identity theorem",
+    "target": "identity theorem的策略在线性代数中的运用"
+  },
+  {
+    "source": "identity theorem",
+    "target": "为何三角恒等式可以推广到复平面"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "identity theorem"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "可对角化矩阵在复矩阵空间当中稠密"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "GLn的稠密性"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "矩阵赋范数空间当中一些典型集合的拓扑性质"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "矩阵赋范数空间当中一些典型集合的拓扑性质"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "矩阵赋范数空间当中一些典型集合的拓扑性质"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "用分析的思路证明Cayley-Hamilton定理"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "矩阵交换次序特征多项式不变"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "Weinstein-Aronszajn恒等式"
+  },
+  {
+    "source": "identity theorem的策略在线性代数中的运用",
+    "target": "exp(A)的行列式"
+  },
+  {
+    "source": "layer-cake 表示",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "layer-cake 表示",
+    "target": "函数p范数与无穷范数之间的关系"
+  },
+  {
+    "source": "layer-cake 表示",
+    "target": "对Hardy-Littlewood Maximal函数的估计"
+  },
+  {
+    "source": "layer-cake 表示",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "natural density不存在的例子",
+    "target": "前$N$个自然数当中，square-free的自然数的占比是多少"
+  },
+  {
+    "source": "n个均匀分布随机变量的最大分布的期望",
+    "target": "用概率计算含参数积分的极限"
+  },
+  {
+    "source": "n个均匀分布随机变量的最大分布的期望",
+    "target": "用概率计算含参数积分的极限"
+  },
+  {
+    "source": "n个连续的阶乘之积有多少个因子",
+    "target": "从二项式系数到Kummer定理"
+  },
+  {
+    "source": "n个连续的阶乘之积有多少个因子",
+    "target": "逐项估计"
+  },
+  {
+    "source": "n个连续的阶乘之积有多少个因子",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "n个连续的阶乘之积有多少个因子",
+    "target": "素数倒数和的估计"
+  },
+  {
+    "source": "n维球体的体积",
+    "target": "为何圆的周长与直径的比例是常数"
+  },
+  {
+    "source": "n维球体的体积",
+    "target": "Fubini定理的一个应用，极坐标变换下的积分"
+  },
+  {
+    "source": "xy与x2+y2+1的比值如果是整数，那么这个整数一定是3",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "一个与eta函数有关的交错级数的和",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "一个交错的双重级数的级数的收敛性判别",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "一个交错的双重级数的级数的收敛性判别",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "一个交错的双重级数的级数的收敛性判别",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "一个抽象的和的估计问题",
+    "target": "逐项估计"
+  },
+  {
+    "source": "一个抽象的和的估计问题",
+    "target": "两个非负不增序列互相竞争从而使得级数发散"
+  },
+  {
+    "source": "一个正定矩阵加一个反对称矩阵之后的行列式不会比原来小",
+    "target": "正定矩阵加上半正定矩阵其行列式至少不会变得更小"
+  },
+  {
+    "source": "一个正定矩阵加一个反对称矩阵之后的行列式不会比原来小",
+    "target": "正定矩阵加上半正定矩阵其行列式至少不会变得更小"
+  },
+  {
+    "source": "一个竞赛中的和的渐近展开问题",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "一个竞赛中的和的渐近展开问题",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "一个递推序列的渐近问题",
+    "target": "制造关于上下极限的不等式组"
+  },
+  {
+    "source": "一个递推序列的渐近问题",
+    "target": "关于序列极限的公开问题"
+  },
+  {
+    "source": "一个递推序列的渐近问题",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "一个递推序列的渐近问题",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "一个递推序列的渐近问题",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "一个递推序列的渐近问题",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "一个集合被严格单调函数映射后的测度大小对比",
+    "target": "layer-cake 表示"
+  },
+  {
+    "source": "一些基本的积分不等式",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "一类可拓展为全纯函数的实函数的傅里叶变换的平移公式",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "一类可拓展为全纯函数的实函数的傅里叶变换的平移公式",
+    "target": "实分析的复办法"
+  },
+  {
+    "source": "一类可拓展为全纯函数的实函数的傅里叶变换的平移公式",
+    "target": "实分析的复办法"
+  },
+  {
+    "source": "一类给出端点信息的中值定理构造思路",
+    "target": "隐函数定理"
+  },
+  {
+    "source": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+    "target": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0"
+  },
+  {
+    "source": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+    "target": "函数p范数与无穷范数之间的关系"
+  },
+  {
+    "source": "一致收敛保持黎曼可积性",
+    "target": "黎曼可积的Lebesgue判别"
+  },
+  {
+    "source": "一致收敛保持黎曼可积性",
+    "target": "多项式函数列随着次数增大零点越来越靠近无穷远"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "实分析的复办法"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "除了一个根以外其余全部根都在单位圆盘内部的多项式"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "1"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "2"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "1"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "2"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "1"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "2"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "1"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "2"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "除了一个根以外其余全部根都在单位圆盘内部的多项式"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "1"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "2"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "1"
+  },
+  {
+    "source": "三角多项式的零点个数问题",
+    "target": "2"
+  },
+  {
+    "source": "不包含0的n个整数的集合能包含多大的sum-free子集",
+    "target": "EGZ定理的证明"
+  },
+  {
+    "source": "不包含0的n个整数的集合能包含多大的sum-free子集",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "不包含0的n个整数的集合能包含多大的sum-free子集",
+    "target": "收敛的连乘积的上界估计与糖水不等式"
+  },
+  {
+    "source": "不包含0的n个整数的集合能包含多大的sum-free子集",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "不存在适合某个多项式的奇异矩阵",
+    "target": "Bezout恒等式"
+  },
+  {
+    "source": "不适用于逐项估计求和的极限的例子",
+    "target": "逐项估计"
+  },
+  {
+    "source": "不适用于逐项估计求和的极限的例子",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "不适用于逐项估计求和的极限的例子",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "与无穷范数有关的一个含参数积分的极限",
+    "target": "逐项估计"
+  },
+  {
+    "source": "与无穷范数有关的一个含参数积分的极限",
+    "target": "函数p范数与无穷范数之间的关系"
+  },
+  {
+    "source": "与莫比乌斯变换保圆性有关的问题",
+    "target": "求分式形式函数的值域"
+  },
+  {
+    "source": "两个非负不增序列互相竞争从而使得级数发散",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "两个非负不增序列互相竞争从而使得级数发散",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "两个非负不增序列互相竞争从而使得级数发散",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "两个非负不增序列互相竞争从而使得级数发散",
+    "target": "素数倒数和的估计"
+  },
+  {
+    "source": "两个非负不增序列互相竞争从而使得级数发散",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "两个非负不增序列互相竞争从而使得级数发散",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "两个非负不增序列互相竞争从而使得级数发散",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "两种不同路径解决含参数和的估计问题",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "两种不同路径解决含参数和的估计问题",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "两种不同路径解决含参数和的估计问题",
+    "target": "自然数的r次幂的部分和估计"
+  },
+  {
+    "source": "为什么不会有单变量整系数多项式其值皆为素数",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "为何三角恒等式可以推广到复平面",
+    "target": "identity theorem"
+  },
+  {
+    "source": "为何三角恒等式可以推广到复平面",
+    "target": "identity theorem"
+  },
+  {
+    "source": "为何三角恒等式可以推广到复平面",
+    "target": "证明Gamma函数在右半平面上全纯"
+  },
+  {
+    "source": "为何圆的周长与直径的比例是常数",
+    "target": "积分的伸缩公式"
+  },
+  {
+    "source": "为何圆的周长与直径的比例是常数",
+    "target": "n维球体的体积"
+  },
+  {
+    "source": "乘法投影",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "乘法投影",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "乘法投影",
+    "target": "Mordell方程的一些简单特例"
+  },
+  {
+    "source": "乘法投影",
+    "target": "不存在适合某个多项式的奇异矩阵"
+  },
+  {
+    "source": "乘法投影",
+    "target": "不存在适合某个多项式的奇异矩阵"
+  },
+  {
+    "source": "二次矩阵方程与交换子有关的问题",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "从一个光滑函数部分和的渐近问题开始",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "从一个光滑函数部分和的渐近问题开始",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "从一个光滑函数部分和的渐近问题开始",
+    "target": "一个竞赛中的和的渐近展开问题"
+  },
+  {
+    "source": "从一个具体的矩阵的特征值的分布开始",
+    "target": "关于由行列式定义出来的矩阵多项式"
+  },
+  {
+    "source": "从一个求极限问题引入Weyl判别",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "从一个求极限问题引入Weyl判别",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "从一个求极限问题引入Weyl判别",
+    "target": "分段估计"
+  },
+  {
+    "source": "从一个求极限问题引入Weyl判别",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "从一个求极限问题引入Weyl判别",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "从二项式系数到Kummer定理",
+    "target": "把积分或求和对象视为一个计数函数并展开"
+  },
+  {
+    "source": "从几个极限问题去理解Landau符号",
+    "target": "逐项估计"
+  },
+  {
+    "source": "从几个极限问题去理解Landau符号",
+    "target": "把函数转换为基本初等函数的复合"
+  },
+  {
+    "source": "从几个极限问题去理解Landau符号",
+    "target": "求一个分子带log分母为阶乘的含参数和的渐近展开"
+  },
+  {
+    "source": "从几个极限问题去理解Landau符号",
+    "target": "对含参数方程根的估计"
+  },
+  {
+    "source": "从几个极限问题去理解Landau符号",
+    "target": "对算术函数平均值的渐近"
+  },
+  {
+    "source": "从几个问题理解一致连续函数的特性",
+    "target": "利用紧性把局部性质转换为全局性质"
+  },
+  {
+    "source": "从几个问题理解一致连续函数的特性",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "从几个问题理解一致连续函数的特性",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "从线性算子的角度理解一个序列迭代的极限问题",
+    "target": "数列极限问题 从经典分析到算子代数"
+  },
+  {
+    "source": "从线性算子的角度理解一个序列迭代的极限问题",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "代数学基本定理",
+    "target": "Rouche定理与卷绕数"
+  },
+  {
+    "source": "体现积分估计相较于和的估计优势的一个问题",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "体现积分估计相较于和的估计优势的例子2",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "使得某个含参数函数收敛的集合是零测度的",
+    "target": "证明正弦函数在整数上取值的序列的极限是不存在的"
+  },
+  {
+    "source": "使得某个含参数函数收敛的集合是零测度的",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "使得某个含参数函数收敛的集合是零测度的",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "使得某个含参数函数收敛的集合是零测度的",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "使用Dyadic分解估计调和数的下界",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "使用Dyadic分解估计调和数的下界",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "使用Dyadic分解估计调和数的下界",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "使用Dyadic分解估计调和数的下界",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "使用Dyadic分解估计调和数的下界",
+    "target": "分段估计"
+  },
+  {
+    "source": "使用Dyadic分解估计调和数的下界",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "依测度收敛的基本运算规律",
+    "target": "分段估计"
+  },
+  {
+    "source": "依测度收敛的基本运算规律",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "依测度收敛的基本运算规律",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "依测度收敛的基本运算规律",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "依测度收敛的基本运算规律",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "依测度收敛的基本运算规律",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "借用坐标变换计算重积分",
+    "target": "借用坐标变换计算重积分"
+  },
+  {
+    "source": "借用坐标变换计算重积分",
+    "target": "隐函数定理"
+  },
+  {
+    "source": "偶数凸多边形顶点上的数字",
+    "target": "组合零点定理"
+  },
+  {
+    "source": "偶数凸多边形顶点上的数字",
+    "target": "组合零点定理"
+  },
+  {
+    "source": "傅里叶变换与傅里叶展开",
+    "target": "满足特定条件的两个集合尺寸的比例"
+  },
+  {
+    "source": "傅里叶变换与傅里叶展开",
+    "target": "利用连续函数的identity theorem证明函数方程"
+  },
+  {
+    "source": "傅里叶变换与傅里叶展开",
+    "target": "Steinhaus定理及其推广"
+  },
+  {
+    "source": "傅里叶变换与傅里叶展开",
+    "target": "Ky Fan不等式"
+  },
+  {
+    "source": "傅里叶逆变换公式",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "傅里叶逆变换公式",
+    "target": "实分析的复办法"
+  },
+  {
+    "source": "傅里叶逆变换公式",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "全纯函数序列L2也可以保持全纯性",
+    "target": "利用紧性把局部性质转换为全局性质"
+  },
+  {
+    "source": "全纯函数序列L2也可以保持全纯性",
+    "target": "从几个问题理解一致连续函数的特性"
+  },
+  {
+    "source": "全纯函数根的积分表达",
+    "target": "Rouche定理与卷绕数"
+  },
+  {
+    "source": "全纯函数根的积分表达",
+    "target": "math/隐函数定理"
+  },
+  {
+    "source": "关于log的一个积分",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "关于log的一个积分",
+    "target": "zeta函数整数值的积分表示"
+  },
+  {
+    "source": "关于pi的有理逼近的公开问题",
+    "target": "证明正弦函数在整数上取值的序列的极限是不存在的"
+  },
+  {
+    "source": "关于pi的有理逼近的公开问题",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "关于一个含参数积分极限的两个策略的方法",
+    "target": "Stone-Weierstrass定理"
+  },
+  {
+    "source": "关于一个含参数积分极限的两个策略的方法",
+    "target": "分段估计"
+  },
+  {
+    "source": "关于一个组合数有关的加权平均的极限问题",
+    "target": "Silverman–Toeplitz定理"
+  },
+  {
+    "source": "关于一个组合数有关的加权平均的极限问题",
+    "target": "Silverman–Toeplitz定理"
+  },
+  {
+    "source": "关于一个组合数有关的加权平均的极限问题",
+    "target": "自然数的r次幂的部分和估计"
+  },
+  {
+    "source": "关于一个组合数有关的加权平均的极限问题",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "关于可测函数定义的讨论",
+    "target": "Cantor-Lebesgue函数"
+  },
+  {
+    "source": "关于可测函数定义的讨论",
+    "target": "Cantor-Lebesgue函数"
+  },
+  {
+    "source": "关于可测函数定义的讨论",
+    "target": "Cantor-Lebesgue函数"
+  },
+  {
+    "source": "关于含参数积分估计的玩具模型",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "关于含参数积分估计的玩具模型",
+    "target": "基于分部积分法的积分的估计"
+  },
+  {
+    "source": "关于含参数积分估计的玩具模型",
+    "target": "分段估计"
+  },
+  {
+    "source": "关于含参数积分估计的玩具模型",
+    "target": "逼近单位元在局部上的收敛性的一个典型例子"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "All, 1"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "k"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "关于序列极限的公开问题",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "关于由行列式定义出来的矩阵多项式",
+    "target": "行列式给出的多项式在圆周上的估计"
+  },
+  {
+    "source": "关于由行列式定义出来的矩阵多项式",
+    "target": "矩阵与算子的迹"
+  },
+  {
+    "source": "关于连续函数的直觉",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "关于连续函数的直觉",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "关于连续函数的直觉",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "关于连续函数的直觉",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "关于连续函数的直觉",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "关于连续函数的直觉",
+    "target": "Cantor-Lebesgue函数"
+  },
+  {
+    "source": "关于黄金比例数的迭代序列",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "凸函数在闭区间上的最大值一定落在端点上",
+    "target": "调和函数极值原理"
+  },
+  {
+    "source": "函数与序列的上下极限",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "函数与序列的上下极限",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "函数与序列的上下极限",
+    "target": "证明正弦函数在整数上取值的序列的极限是不存在的"
+  },
+  {
+    "source": "函数与序列的上下极限",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "函数与序列的上下极限",
+    "target": "黎曼积分的定义以及黎曼可积的判别"
+  },
+  {
+    "source": "函数与序列的上下极限",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "函数傅里叶展开的Dini判别及其应用",
+    "target": "圆周上的函数的傅里叶展开"
+  },
+  {
+    "source": "函数傅里叶展开的Dini判别及其应用",
+    "target": "逐项估计"
+  },
+  {
+    "source": "函数傅里叶展开的Dini判别及其应用",
+    "target": "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+  },
+  {
+    "source": "函数傅里叶展开的Dini判别及其应用",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "函数傅里叶展开的Dini判别及其应用",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "函数傅里叶展开的Dini判别及其应用",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "函数傅里叶展开的Dini判别及其应用",
+    "target": "把数论问题转换为单位圆周群T上来讨论的好处"
+  },
+  {
+    "source": "函数凸性",
+    "target": "Convex_polygon_illustration1.svg"
+  },
+  {
+    "source": "函数凸性",
+    "target": "Convex_polygon_illustration2.svg"
+  },
+  {
+    "source": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+    "target": "打字机函数列（type writer sequence）"
+  },
+  {
+    "source": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+    "target": "Riesz-Fischer定理"
+  },
+  {
+    "source": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+    "target": "随机变量期望收敛导出几乎处处收敛的一个条件"
+  },
+  {
+    "source": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+    "target": "随机变量期望收敛导出几乎处处收敛的一个条件"
+  },
+  {
+    "source": "函数列一致收敛并不保持微分性质",
+    "target": "连续可微的一致收敛序列也不足以保证极限函数的可微性"
+  },
+  {
+    "source": "函数列一致收敛并不保持微分性质",
+    "target": "双重极限换序"
+  },
+  {
+    "source": "函数列几乎处处有界与Borel-Cantelli lemma的应用",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "函数列几乎处处有界与Borel-Cantelli lemma的应用",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "函数列几乎处处有界与Borel-Cantelli lemma的应用",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "函数列的微分一致有界那么极限函数保持连续性",
+    "target": "C(X)在一致范数下紧子集的充要条件"
+  },
+  {
+    "source": "函数卷积的基本性质",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "函数卷积的基本性质",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "函数在含参数的长度固定的区间上积分的估计",
+    "target": "基于分部积分法的积分的估计"
+  },
+  {
+    "source": "函数沿着梯度方向下降的定量问题",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "函数沿着梯度方向下降的定量问题",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "函数沿着梯度方向下降的定量问题",
+    "target": "函数卷积的基本性质"
+  },
+  {
+    "source": "函数沿着梯度方向下降的定量问题",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "函数的图与连续性",
+    "target": "度量空间中用序列描述拓扑性质"
+  },
+  {
+    "source": "函数的图与连续性",
+    "target": "度量空间中用序列描述拓扑性质"
+  },
+  {
+    "source": "函数的图与连续性",
+    "target": "度量空间中用序列描述拓扑性质"
+  },
+  {
+    "source": "函数的图与连续性",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "函数积分的单调性",
+    "target": "积分的伸缩公式"
+  },
+  {
+    "source": "函数积分的单调性",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Re0微积分2：自然底数e及其快速计算"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "证明e是无理数"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Re0微积分2：自然底数e及其快速计算"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "带根号的三项迭代序列极限的存在性问题"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "从几个极限问题去理解Landau符号"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Leibniz收敛判断"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "函数项级数的Lipschitz性质导出的关于级数的收敛性"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "逼近单位元在局部上的收敛性的一个典型例子"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "证明一个由变上限含参数积分给出的函数列一致收敛"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "度量空间上的不动点定理"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "逐项估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "分段估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "基于分部积分法的积分的估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "逐项估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "凸函数在闭区间上的最大值一定落在端点上"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "部分积的上界估计与Gautschi不等式"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "部分积的上界估计与Gautschi不等式"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "从几个极限问题去理解Landau符号"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "逐项估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "逐项估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "两种不同路径解决含参数和的估计问题"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "利用基于Taylor展开的逐项估计判断级数收敛的例子1"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "逐项估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "IMC上的一个渐近分析的问题"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "不适用于逐项估计求和的极限的例子"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "分段估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Wintner mean value theorem"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Silverman–Toeplitz定理"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "分段估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "求一个分子带log分母为阶乘的含参数和的渐近展开"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "对含参数方程根的估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "证明一个具有部分周期性的含参数积分的非负性"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "一个竞赛中的和的渐近展开问题"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "对离散的和做积分估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "CMO不等式中的积分估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "正实数序列与自己前n项和的p次方的比值组成的级数收敛"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "两种不同路径解决含参数和的估计问题"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "体现积分估计相较于和的估计优势的例子2"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "逐项估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Hermite-Hadamard不等式与函数凸性"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "对一个含参数的和的估计以及控制收敛定理"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "自然数的r次幂的部分和估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "对Dirichlet判别的一个调整"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "对Dirichlet判别的一个调整"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "对Dirichlet判别的一个调整"
+  },
+  {
+    "source": "分析学基本方法目录1",
+    "target": "一个交错的双重级数的级数的收敛性判别"
+  },
+  {
+    "source": "分段估计",
+    "target": "证明一个由变上限含参数积分给出的函数列一致收敛"
+  },
+  {
+    "source": "分段估计",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "分段估计",
+    "target": "Silverman–Toeplitz定理"
+  },
+  {
+    "source": "分段估计",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "分段估计",
+    "target": "体现积分估计相较于和的估计优势的一个问题"
+  },
+  {
+    "source": "分段估计",
+    "target": "黎曼可积的Lebesgue判别"
+  },
+  {
+    "source": "分段估计",
+    "target": "Weierstrass逼近定理的概率途径证明"
+  },
+  {
+    "source": "分段估计",
+    "target": "样本期望的渐近展开系数"
+  },
+  {
+    "source": "分段估计",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "分段估计",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "分段估计",
+    "target": "函数p范数与无穷范数之间的关系"
+  },
+  {
+    "source": "分段估计",
+    "target": "由一个级数收敛证明另一个有关级数的收敛问题"
+  },
+  {
+    "source": "分段估计",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "分段估计",
+    "target": "弱大数定律"
+  },
+  {
+    "source": "分段估计",
+    "target": "逐项估计"
+  },
+  {
+    "source": "分段估计",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "分段估计",
+    "target": "Dirichlet's hyperbola trick"
+  },
+  {
+    "source": "分段估计",
+    "target": "对算术函数平均值的渐近"
+  },
+  {
+    "source": "分段估计",
+    "target": "求一个分子带log分母为阶乘的含参数和的渐近展开"
+  },
+  {
+    "source": "分段估计",
+    "target": "对含参数方程根的估计"
+  },
+  {
+    "source": "分段估计",
+    "target": "关于含参数积分估计的玩具模型"
+  },
+  {
+    "source": "分段估计",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "分段估计",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "分段估计",
+    "target": "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+  },
+  {
+    "source": "分段估计",
+    "target": "关于一个含参数积分极限的两个策略的方法"
+  },
+  {
+    "source": "分段估计",
+    "target": "类似于傅里叶系数的一个积分估计"
+  },
+  {
+    "source": "分段估计",
+    "target": "由Euler-Maclaurin求和估计得到Stirling逼近结果"
+  },
+  {
+    "source": "分段估计",
+    "target": "证明一个具有部分周期性的含参数积分的非负性"
+  },
+  {
+    "source": "分段估计",
+    "target": "Dyadic分解"
+  },
+  {
+    "source": "分段连续可微函数在端点取值为0的开区间上积分的上界估计",
+    "target": "基于分部积分法的积分的估计"
+  },
+  {
+    "source": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+    "target": "对Dirichlet判别的一个调整"
+  },
+  {
+    "source": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "分部积分与Cauchy-Schwarz不等式的结合",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "初值为0函数列二阶导数一致有界证明存在一致收敛子列",
+    "target": "函数列的微分一致有界那么极限函数保持连续性"
+  },
+  {
+    "source": "初值为0函数列二阶导数一致有界证明存在一致收敛子列",
+    "target": "参见的四种与连续有关的概念的区别"
+  },
+  {
+    "source": "判断一个类交错级数的收敛性",
+    "target": "逐项估计"
+  },
+  {
+    "source": "判断一个类交错级数的收敛性",
+    "target": "从几个极限问题去理解Landau符号"
+  },
+  {
+    "source": "判断一个类交错级数的收敛性",
+    "target": "Leibniz收敛判断"
+  },
+  {
+    "source": "判断一个类交错级数的收敛性",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "判断一个类交错级数的收敛性",
+    "target": "一个与eta函数有关的交错级数的和"
+  },
+  {
+    "source": "判断一个类交错级数的收敛性",
+    "target": "一个与eta函数有关的交错级数的和"
+  },
+  {
+    "source": "判断一个类交错级数的收敛性",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "判断剧烈震荡的序列部分和的有界性问题",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "判断序列在区间内稠密的几个命题",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "判断序列在区间内稠密的几个命题",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "判断序列在区间内稠密的几个命题",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "判断序列在区间内稠密的几个命题",
+    "target": "模1均匀分布序列对序列差分的要求"
+  },
+  {
+    "source": "判断整系数多项式是否可约的方法",
+    "target": "在任意F_p上可约但在Z上不可约的一类整系数多项式"
+  },
+  {
+    "source": "判断整系数多项式是否可约的方法",
+    "target": "多项式可约性的Eisenstein判别法"
+  },
+  {
+    "source": "判断整系数多项式是否可约的方法",
+    "target": "多项式可约性的Eisenstein判别法"
+  },
+  {
+    "source": "利用Dirichlet卷积法解决几个数论中求和问题",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "利用Stolz定理确定递归序列的渐近系数",
+    "target": "k"
+  },
+  {
+    "source": "利用Stolz定理确定递归序列的渐近系数",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "利用Stolz定理确定递归序列的渐近系数",
+    "target": "一个递推序列的渐近问题"
+  },
+  {
+    "source": "利用Stolz定理确定递归序列的渐近系数",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "利用Stolz定理确定递归序列的渐近系数",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "利用Stolz定理确定递归序列的渐近系数2",
+    "target": "利用Stolz定理确定递归序列的渐近系数"
+  },
+  {
+    "source": "利用Stolz定理确定递归序列的渐近系数2",
+    "target": "利用Stolz定理确定递归序列的渐近系数"
+  },
+  {
+    "source": "利用Stolz定理确定递归序列的渐近系数2",
+    "target": "利用Stolz定理确定递归序列的渐近系数"
+  },
+  {
+    "source": "利用交换和与积分次序算涉及整数格点数目的一个积分",
+    "target": "把积分或求和对象视为一个计数函数并展开"
+  },
+  {
+    "source": "利用交换和与积分次序算涉及整数格点数目的一个积分",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "利用因式分解求解丢番图方程",
+    "target": "通过制造平方差来因式分解"
+  },
+  {
+    "source": "利用因式分解求解丢番图方程",
+    "target": "通过制造平方差来因式分解"
+  },
+  {
+    "source": "利用因式分解求解丢番图方程",
+    "target": "毕达哥拉斯数"
+  },
+  {
+    "source": "利用因式分解求解丢番图方程",
+    "target": "毕达哥拉斯数"
+  },
+  {
+    "source": "利用因式分解求解丢番图方程",
+    "target": "把一个立方数表达为两个相邻整数的乘积"
+  },
+  {
+    "source": "利用因式分解求解丢番图方程",
+    "target": "Mordell方程的一些简单特例"
+  },
+  {
+    "source": "利用因式分解求解丢番图方程",
+    "target": "Mordell方程的一些简单特例"
+  },
+  {
+    "source": "利用因式分解求解丢番图方程",
+    "target": "模4余3的素数无法被表达为两个有理数的平方和"
+  },
+  {
+    "source": "利用基于Taylor展开的逐项估计判断级数收敛的例子1",
+    "target": "逐项估计"
+  },
+  {
+    "source": "利用基于Taylor展开的逐项估计判断级数收敛的例子1",
+    "target": "把函数转换为基本初等函数的复合"
+  },
+  {
+    "source": "利用基于Taylor展开的逐项估计判断级数收敛的例子1",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "利用基于Taylor展开的逐项估计判断级数收敛的例子1",
+    "target": "自然数的r次幂的部分和估计"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "和的估计的一个典型案例"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "一个竞赛中的和的渐近展开问题"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "不适用于逐项估计求和的极限的例子"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "利用相似的渐近判断积分收敛与发散性"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "素数倒数和的估计"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "n个连续的阶乘之积有多少个因子"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "制造telescoping sum求和或求乘积"
+  },
+  {
+    "source": "利用已知的渐近结果求渐近展开的技巧",
+    "target": "自然数的r次幂的部分和估计"
+  },
+  {
+    "source": "利用序列项的组合结构来判断级数的收敛与发散性质",
+    "target": "Sidon集的尺寸大小问题"
+  },
+  {
+    "source": "利用欧拉公式连接pi与e",
+    "target": "利用欧拉公式计算exp(x)与三角函数乘积的不定积分或积分"
+  },
+  {
+    "source": "利用欧拉公式连接pi与e",
+    "target": "Niven关于pi的无理性的证明"
+  },
+  {
+    "source": "利用生成函数求和",
+    "target": "有关于zeta函数的一个求和问题"
+  },
+  {
+    "source": "利用生成函数求和",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "利用留数定理算有理函数的傅里叶变换",
+    "target": "利用留数计算实积分"
+  },
+  {
+    "source": "利用留数计算实积分",
+    "target": "利用留数定理算有理函数的傅里叶变换"
+  },
+  {
+    "source": "利用算子或者矩阵的迹的不变性",
+    "target": "矩阵与算子的迹"
+  },
+  {
+    "source": "利用紧性与一致连续性证明一个一致收敛",
+    "target": "从几个问题理解一致连续函数的特性"
+  },
+  {
+    "source": "利用紧性与一致连续性证明一个一致收敛",
+    "target": "C(X)在一致范数下紧子集的充要条件"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "C(X)在一致范数下紧子集的充要条件"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "C(X)在一致范数下紧子集的充要条件"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "从几个问题理解一致连续函数的特性"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "从几个问题理解一致连续函数的特性"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "从几个问题理解一致连续函数的特性"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "C(X)在一致范数下紧子集的充要条件"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "从几个问题理解一致连续函数的特性"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "从几个问题理解一致连续函数的特性"
+  },
+  {
+    "source": "利用紧性把局部性质转换为全局性质",
+    "target": "全纯函数序列L2也可以保持全纯性"
+  },
+  {
+    "source": "利用行列式的不变性简化问题",
+    "target": "Weinstein-Aronszajn恒等式"
+  },
+  {
+    "source": "利用行列式的不变性简化问题",
+    "target": "Weinstein-Aronszajn恒等式"
+  },
+  {
+    "source": "利用行列式的不变性简化问题",
+    "target": "正定矩阵加上半正定矩阵其行列式至少不会变得更小"
+  },
+  {
+    "source": "利用行列式的不变性简化问题",
+    "target": "Weinstein-Aronszajn恒等式"
+  },
+  {
+    "source": "利用行列式的不变性简化问题",
+    "target": "一个正定矩阵加一个反对称矩阵之后的行列式不会比原来小"
+  },
+  {
+    "source": "利用行列式的不变性简化问题",
+    "target": "Weinstein-Aronszajn恒等式"
+  },
+  {
+    "source": "利用连续函数的identity theorem证明函数方程",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "利用连续函数的identity theorem证明函数方程",
+    "target": "周期函数的和还是周期函数吗？"
+  },
+  {
+    "source": "利用连续函数的identity theorem证明函数方程",
+    "target": "傅里叶变换与傅里叶展开"
+  },
+  {
+    "source": "利用连续函数的identity theorem证明函数方程",
+    "target": "圆周上的函数的傅里叶展开"
+  },
+  {
+    "source": "利用随机选取的集合的和集大小的期望证明某种尺寸的合集的存在性",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "利用随机选取的集合的和集大小的期望证明某种尺寸的合集的存在性",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "制造telescoping sum求和或求乘积",
+    "target": "全纯函数沿着两条同伦的连续曲线积分结果一致"
+  },
+  {
+    "source": "制造关于上下极限的不等式组",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "制造关于上下极限的不等式组",
+    "target": "利用Stolz定理确定递归序列的渐近系数"
+  },
+  {
+    "source": "制造关于上下极限的不等式组",
+    "target": "利用Stolz定理确定递归序列的渐近系数2"
+  },
+  {
+    "source": "制造关于上下极限的不等式组",
+    "target": "关于序列极限的公开问题"
+  },
+  {
+    "source": "制造关于上下极限的不等式组",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "制造关于上下极限的不等式组",
+    "target": "一个递推序列的渐近问题"
+  },
+  {
+    "source": "制造关于上下极限的不等式组",
+    "target": "带根号的三项迭代序列极限的存在性问题"
+  },
+  {
+    "source": "制造关于上下极限的不等式组",
+    "target": "递推序列确定渐近系数但Stolz失灵的情况"
+  },
+  {
+    "source": "前2n个正整数当中选n+1个必有两个数互素",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "前N个正整数当中模q余a的数的概率的渐近",
+    "target": "逐项估计"
+  },
+  {
+    "source": "前N个正整数当中模q余a的数的概率的渐近",
+    "target": "逐项估计"
+  },
+  {
+    "source": "加强收敛性质的条件与手段",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "加强收敛性质的条件与手段",
+    "target": "Borel-Cantelli lemma证明某种版本下的强大数定律"
+  },
+  {
+    "source": "加强收敛性质的条件与手段",
+    "target": "随机变量期望收敛导出几乎处处收敛的一个条件"
+  },
+  {
+    "source": "加强收敛性质的条件与手段",
+    "target": "Etemadi关于强大数定律的证明"
+  },
+  {
+    "source": "加强收敛性质的条件与手段",
+    "target": "分段估计"
+  },
+  {
+    "source": "加强收敛性质的条件与手段",
+    "target": "Weierstrass逼近定理的概率途径证明"
+  },
+  {
+    "source": "加强收敛性质的条件与手段",
+    "target": "分段估计"
+  },
+  {
+    "source": "加强收敛性质的条件与手段",
+    "target": "证明一个由变上限含参数积分给出的函数列一致收敛"
+  },
+  {
+    "source": "半正定核及其判断方法",
+    "target": "和的绝对值平均上比差的绝对值更大"
+  },
+  {
+    "source": "单位区间内10进制小数中含有无数个7的小数的Lebesgue测度为1",
+    "target": "对自变量进行二进制展开求积分"
+  },
+  {
+    "source": "单位区间内10进制小数中含有无数个7的小数的Lebesgue测度为1",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "单调无界的正序列其差分比自身的值的和也无界",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "单调无界的正序列其差分比自身的值的和也无界",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "单调无界的正序列其差分比自身的值的和也无界",
+    "target": "正实数序列与自己前n项和的p次方的比值组成的级数收敛"
+  },
+  {
+    "source": "单调有界函数几乎处处连续",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "双重计数",
+    "target": "轨道稳定子引理与群的置换表示"
+  },
+  {
+    "source": "发散实数列映射后的序列还是发散的吗",
+    "target": "单调无界的正序列其差分比自身的值的和也无界"
+  },
+  {
+    "source": "可对角化矩阵在复矩阵空间当中稠密",
+    "target": "把矩阵转换为标准型从而简化问题"
+  },
+  {
+    "source": "可对角化矩阵在复矩阵空间当中稠密",
+    "target": "矩阵赋范数空间当中一些典型集合的拓扑性质"
+  },
+  {
+    "source": "可测集合线性变换后的测度",
+    "target": "第一同构定理"
+  },
+  {
+    "source": "可测集合线性变换后的测度",
+    "target": "积分的伸缩公式"
+  },
+  {
+    "source": "可测集合线性变换后的测度",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "可测集合线性变换后的测度",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "可测集合线性变换后的测度",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "可积函数傅里叶逆变换几乎处处成立",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "可积函数傅里叶逆变换几乎处处成立",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "可积函数傅里叶逆变换几乎处处成立",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "可积函数傅里叶逆变换几乎处处成立",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "可积函数傅里叶逆变换几乎处处成立",
+    "target": "紧支光滑函数在Lp空间当中稠密"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "Hermite-Hadamard不等式与函数凸性"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "通过图像猜测或校验答案"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "k"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "2"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "k"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "1"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "k"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "2"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "k"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "1"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "k"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "1"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "k"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "2"
+  },
+  {
+    "source": "含参数一元函数的不等式",
+    "target": "Hermite-Hadamard不等式与函数凸性"
+  },
+  {
+    "source": "周期函数的和还是周期函数吗？",
+    "target": "Niven关于pi的无理性的证明"
+  },
+  {
+    "source": "周期函数的和还是周期函数吗？",
+    "target": "利用连续函数的identity theorem证明函数方程"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "全纯函数与解析函数的等价性"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "identity theorem"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "揭露全纯以及亚纯函数信息的Liouville原则"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "把积分或求和对象视为一个计数函数并展开"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "把积分转换为与Dirichlet eta函数有关的级数"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "关于log的一个积分"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "通过重整来证明表达式的非负性"
+  },
+  {
+    "source": "和与积分换序",
+    "target": "通过重整来证明表达式的非负性"
+  },
+  {
+    "source": "和的估计的一个典型案例",
+    "target": "从几个极限问题去理解Landau符号"
+  },
+  {
+    "source": "和的估计的一个典型案例",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "和的估计的一个典型案例",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "和的估计的一个典型案例",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "和的估计的一个典型案例",
+    "target": "逐项估计"
+  },
+  {
+    "source": "和的估计的一个典型案例",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "和的估计的一个典型案例",
+    "target": "逐项估计"
+  },
+  {
+    "source": "和的估计的一个典型案例",
+    "target": "从一个光滑函数部分和的渐近问题开始"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "一个竞赛中的和的渐近展开问题"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "体现积分估计相较于和的估计优势的一个问题"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "体现积分估计相较于和的估计优势的例子2"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "逐项估计"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "单调有界函数几乎处处连续"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "黎曼积分的定义以及黎曼可积的判别"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "对离散的和做积分估计"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "CMO不等式中的积分估计"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "正实数序列与自己前n项和的p次方的比值组成的级数收敛"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "两种不同路径解决含参数和的估计问题"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "逐项估计"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "Hermite-Hadamard不等式与函数凸性"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "对一个含参数的和的估计以及控制收敛定理"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "收敛的连乘积的上界估计与糖水不等式"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "部分积的上界估计与Gautschi不等式"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "逐项估计"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "自然数的r次幂的部分和估计"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "从一个光滑函数部分和的渐近问题开始"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "一个竞赛中的和的渐近展开问题"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "Etemadi关于强大数定律的证明"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "证明一个部分和被一个参数控制起来"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "由Euler-Maclaurin求和估计得到Stirling逼近结果"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "对部分和渐近展开的常数项做估计"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "自然数的r次幂的部分和估计"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "连续分部求和法的基本用法"
+  },
+  {
+    "source": "和的积分估计",
+    "target": "连续分部求和法的基本用法"
+  },
+  {
+    "source": "和的绝对值平均上比差的绝对值更大",
+    "target": "Kantorovich不等式"
+  },
+  {
+    "source": "和的绝对值平均上比差的绝对值更大",
+    "target": "推广韦东奕的那个不等式"
+  },
+  {
+    "source": "图像闭区间上的凸函数几何性质的一个命题",
+    "target": "凸函数在闭区间上的最大值一定落在端点上"
+  },
+  {
+    "source": "图像闭区间上的凸函数几何性质的一个命题",
+    "target": "Hermite-Hadamard不等式与函数凸性"
+  },
+  {
+    "source": "圆周上函数模长最大值与展开系数之间的关系",
+    "target": "函数傅里叶展开的Dini判别及其应用"
+  },
+  {
+    "source": "圆周上函数模长最大值与展开系数之间的关系",
+    "target": "Rouche定理与卷绕数"
+  },
+  {
+    "source": "圆周上函数模长最大值与展开系数之间的关系",
+    "target": "Visser 不等式"
+  },
+  {
+    "source": "圆周上的函数的傅里叶展开",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "圆周上的函数的傅里叶展开",
+    "target": "连续函数其傅里叶级数并不逐点收敛的例子"
+  },
+  {
+    "source": "圆周上的函数的傅里叶展开",
+    "target": "函数傅里叶展开的Dini判别及其应用"
+  },
+  {
+    "source": "在Hilbert空间当中建立坐标系从而简化问题",
+    "target": "已知函数与幂函数的内积估计函数L2范数下界"
+  },
+  {
+    "source": "在Hilbert空间当中建立坐标系从而简化问题",
+    "target": "已知函数与幂函数的内积估计函数L2范数下界"
+  },
+  {
+    "source": "在Hilbert空间当中建立坐标系从而简化问题",
+    "target": "圆周上函数模长最大值与展开系数之间的关系"
+  },
+  {
+    "source": "在Hilbert空间当中建立坐标系从而简化问题",
+    "target": "圆周上函数模长最大值与展开系数之间的关系"
+  },
+  {
+    "source": "在Hilbert空间当中建立坐标系从而简化问题",
+    "target": "圆周上函数模长最大值与展开系数之间的关系"
+  },
+  {
+    "source": "在Hilbert空间当中建立坐标系从而简化问题",
+    "target": "行列式给出的多项式在圆周上的估计"
+  },
+  {
+    "source": "在Hilbert空间当中建立坐标系从而简化问题",
+    "target": "根据模与内积的信息得到积分不等式"
+  },
+  {
+    "source": "在一个有界的范围内，任选一定数目的非负整数其中四个两两相加相等",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "Leibniz收敛判断"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "对Dirichlet判别的一个调整"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "Euler-Maclaurin求和公式在和的估计当中的应用"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "已知序列模1均匀分布，那么加上log(n)对分布影响不大"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "一个交错的双重级数的级数的收敛性判别"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "已知序列的增长信息，以及算术平均值的信息，控制其p次幂的和"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "给正项级数条件正负号以后级数收敛意味着什么"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "两个非负不增序列互相竞争从而使得级数发散"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "素数倒数和的估计"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "Wintner mean value theorem"
+  },
+  {
+    "source": "基于分部求和法的和的估计",
+    "target": "Kronecker's lemma"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "函数在含参数的长度固定的区间上积分的估计"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "与Fresnel函数有关的积分的收敛性判断"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "关于含参数积分估计的玩具模型"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "分段连续可微函数在端点取值为0的开区间上积分的上界估计"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "Riemann-Lebesgue引理的一个特殊情况"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "Riemann-Lebesgue引理的一个特殊情况"
+  },
+  {
+    "source": "基于分部积分法的积分的估计",
+    "target": "对一类形如函数乘上模长为1的含参数复指数的定积分的估计"
+  },
+  {
+    "source": "复三角多项式在Lp空间中的稠密性",
+    "target": "紧支光滑函数在Lp空间当中稠密"
+  },
+  {
+    "source": "复三角多项式在Lp空间中的稠密性",
+    "target": "Stone-Weierstrass定理"
+  },
+  {
+    "source": "复三角多项式在Lp空间中的稠密性",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "复三角多项式在Lp空间中的稠密性",
+    "target": "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+  },
+  {
+    "source": "多项式不可约的Perron判别法",
+    "target": "多项式可约性的Eisenstein判别法"
+  },
+  {
+    "source": "多项式不可约的Perron判别法",
+    "target": "Rouche定理与卷绕数"
+  },
+  {
+    "source": "多项式不可约的Perron判别法",
+    "target": "1"
+  },
+  {
+    "source": "多项式不可约的Perron判别法",
+    "target": "i"
+  },
+  {
+    "source": "多项式不可约的Perron判别法",
+    "target": "除了一个根以外其余全部根都在单位圆盘内部的多项式"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "从二项式系数到Kummer定理"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "多项式不可约的Perron判别法"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "多项式可约性的Eisenstein判别法",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "多项式约束下的代数求值问题",
+    "target": "通过相似标准型简化线性代数问题"
+  },
+  {
+    "source": "如何估计一些常数",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "如何估计一些常数",
+    "target": "通过迭代提高估计精度：Bootsrap argument"
+  },
+  {
+    "source": "如果序列是无穷小，那么什么条件能使得其n乘以其差分是无穷小",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "如果序列是无穷小，那么什么条件能使得其n乘以其差分是无穷小",
+    "target": "Erdos关于pi函数的估计"
+  },
+  {
+    "source": "如果序列是无穷小，那么什么条件能使得其n乘以其差分是无穷小",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "存在一个连续函数使离散采样差分的极限不存在",
+    "target": "收敛的连乘积的上界估计与糖水不等式"
+  },
+  {
+    "source": "存在一个连续函数使离散采样差分的极限不存在",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "存在一个连续函数使离散采样差分的极限不存在",
+    "target": "有限测度下各个收敛之间的关系"
+  },
+  {
+    "source": "存在一个连续函数使离散采样差分的极限不存在",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "定义在超立方体上的对称函数的最大值",
+    "target": "逐项估计"
+  },
+  {
+    "source": "定义在超立方体上的对称函数的最大值",
+    "target": "凸函数在闭区间上的最大值一定落在端点上"
+  },
+  {
+    "source": "实分析的复办法",
+    "target": "利用留数计算实积分"
+  },
+  {
+    "source": "实分析的复办法",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "实分析的复办法",
+    "target": "证明某种积分表示的函数是整函数"
+  },
+  {
+    "source": "实分析的复办法",
+    "target": "一类可拓展为全纯函数的实函数的傅里叶变换的平移公式"
+  },
+  {
+    "source": "实分析的复办法",
+    "target": "傅里叶逆变换公式"
+  },
+  {
+    "source": "实分析的复办法",
+    "target": "傅里叶逆变换公式"
+  },
+  {
+    "source": "实分析的复办法",
+    "target": "Possion求和公式"
+  },
+  {
+    "source": "实数的标准度量空间上的弱收敛的命题",
+    "target": "度量空间上弱收敛的等价命题：portmanteau定理"
+  },
+  {
+    "source": "实数的标准度量空间上的弱收敛的命题",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "实数的标准度量空间上的弱收敛的命题",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "实数的标准度量空间上的弱收敛的命题",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "实数的标准度量空间上的弱收敛的命题",
+    "target": "逐项估计"
+  },
+  {
+    "source": "实数被一列超越数逼近的定量问题",
+    "target": "证明正弦函数在整数上取值的序列的极限是不存在的"
+  },
+  {
+    "source": "实数被一列超越数逼近的定量问题",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "对Dirichlet判别的一个调整",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "对Dirichlet判别的一个调整",
+    "target": "制造telescoping sum求和或求乘积"
+  },
+  {
+    "source": "对Dirichlet判别的一个调整",
+    "target": "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+  },
+  {
+    "source": "对Hardy-Littlewood Maximal函数的估计",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "对L(1,mu)的部分和的估计",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "对L(1,mu)的部分和的估计",
+    "target": "素数定理的一些等价命题"
+  },
+  {
+    "source": "对一个含参数的和的估计以及控制收敛定理",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "对一个含参数的和的估计以及控制收敛定理",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "对一个含参数的和的估计以及控制收敛定理",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "对一个含参数的和的估计以及控制收敛定理",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "对一个含参数的和的估计以及控制收敛定理",
+    "target": "由Euler-Maclaurin求和估计得到Stirling逼近结果"
+  },
+  {
+    "source": "对一个含参数的和的估计以及控制收敛定理",
+    "target": "逐项估计"
+  },
+  {
+    "source": "对一个含参数的和的估计以及控制收敛定理",
+    "target": "分段估计"
+  },
+  {
+    "source": "对一类形如函数乘上模长为1的含参数复指数的定积分的估计",
+    "target": "基于分部积分法的积分的估计"
+  },
+  {
+    "source": "对一类形如函数乘上模长为1的含参数复指数的定积分的估计",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "对含参数方程根的估计",
+    "target": "zeros of cosx-sx.gif"
+  },
+  {
+    "source": "对含参数方程根的估计",
+    "target": "全纯函数根的积分表达"
+  },
+  {
+    "source": "对含参数方程根的估计",
+    "target": "制造telescoping sum求和或求乘积"
+  },
+  {
+    "source": "对含参数方程根的估计",
+    "target": "math/隐函数定理"
+  },
+  {
+    "source": "对含参数方程根的估计",
+    "target": "abs@sin(x_k).gif"
+  },
+  {
+    "source": "对含参数方程根的估计",
+    "target": "abs@sin(x_k) k bounded .gif"
+  },
+  {
+    "source": "对含参数方程根的估计",
+    "target": "函数的图与连续性"
+  },
+  {
+    "source": "对含参数方程根的估计",
+    "target": "math/隐函数定理"
+  },
+  {
+    "source": "对离散的和做积分估计",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "对算术函数平均值的渐近",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "对算术函数平均值的渐近",
+    "target": "Dirichlet's hyperbola trick"
+  },
+  {
+    "source": "对算术函数平均值的渐近",
+    "target": "Dirichlet's hyperbola trick"
+  },
+  {
+    "source": "对算术函数平均值的渐近",
+    "target": "Accumulate函数的作用"
+  },
+  {
+    "source": "对算术函数平均值的渐近",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "对算术函数平均值的渐近",
+    "target": "模4余3的素数无法被表达为两个有理数的平方和"
+  },
+  {
+    "source": "对素数连乘积的粗糙上界估计",
+    "target": "Bertrand假设的证明"
+  },
+  {
+    "source": "对素数连乘积的粗糙上界估计",
+    "target": "Bertrand假设的证明"
+  },
+  {
+    "source": "对自变量进行二进制展开求积分",
+    "target": "用概率计算含参数积分的极限"
+  },
+  {
+    "source": "对自变量进行二进制展开求积分",
+    "target": "用概率计算含参数积分的极限"
+  },
+  {
+    "source": "对自变量进行二进制展开求积分",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "对自变量进行二进制展开求积分",
+    "target": "单位区间内10进制小数中含有无数个7的小数的Lebesgue测度为1"
+  },
+  {
+    "source": "对误差的分析从而改进分段估计",
+    "target": "分段估计"
+  },
+  {
+    "source": "对误差的分析从而改进分段估计",
+    "target": "逐项估计"
+  },
+  {
+    "source": "对误差的分析从而改进分段估计",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "对误差的分析从而改进分段估计",
+    "target": "体现积分估计相较于和的估计优势的一个问题"
+  },
+  {
+    "source": "对部分和渐近展开的常数项做估计",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "对部分和渐近展开的常数项做估计",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "对部分和渐近展开的常数项做估计",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "对部分和渐近展开的常数项做估计",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "寻找L1范数最小的n阶首1多项式",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "已知函数与幂函数的内积估计函数L2范数下界",
+    "target": "在Hilbert空间当中建立坐标系从而简化问题"
+  },
+  {
+    "source": "已知单调非负随机变量期望的渐近，求随机变量本身的渐近",
+    "target": "通过子列的收敛性验证单调增加的函数列的收敛性"
+  },
+  {
+    "source": "已知单调非负随机变量期望的渐近，求随机变量本身的渐近",
+    "target": "通过子列的收敛性验证单调增加的函数列的收敛性"
+  },
+  {
+    "source": "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "已知序列的增长信息，以及算术平均值的信息，控制其p次幂的和",
+    "target": "分段估计"
+  },
+  {
+    "source": "已知序列的增长信息，以及算术平均值的信息，控制其p次幂的和",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "已知序列的增长信息，以及算术平均值的信息，控制其p次幂的和",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "已知序列的增长信息，以及算术平均值的信息，控制其p次幂的和",
+    "target": "从几个极限问题去理解Landau符号"
+  },
+  {
+    "source": "巴塞尔问题",
+    "target": "算两次"
+  },
+  {
+    "source": "巴塞尔问题",
+    "target": "算两次"
+  },
+  {
+    "source": "巴塞尔问题",
+    "target": "Abel-Plana求和公式"
+  },
+  {
+    "source": "带min的泛函的优化问题",
+    "target": "layer-cake 表示"
+  },
+  {
+    "source": "带min的泛函的优化问题",
+    "target": "layer-cake 表示"
+  },
+  {
+    "source": "带根号的三项迭代序列极限的存在性问题",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "幂级数的收敛圆盘与收敛半径",
+    "target": "Abscissa of convergence"
+  },
+  {
+    "source": "幂级数的收敛圆盘与收敛半径",
+    "target": "逐项估计"
+  },
+  {
+    "source": "幂级数的收敛圆盘与收敛半径",
+    "target": "逐项估计"
+  },
+  {
+    "source": "幂级数的收敛圆盘与收敛半径",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "幂级数的收敛圆盘与收敛半径",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "幂级数的收敛圆盘与收敛半径",
+    "target": "on the uniform but not absolute convergence of pwoer series.pdf"
+  },
+  {
+    "source": "广义的Riemann - Lebesgue lemma",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "广义的Riemann - Lebesgue lemma",
+    "target": "积分的伸缩公式"
+  },
+  {
+    "source": "广义的Riemann - Lebesgue lemma",
+    "target": "分段估计"
+  },
+  {
+    "source": "广义的Riemann - Lebesgue lemma",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "非负序列差分的约束条件导致序列收敛"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "关于序列极限的公开问题"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "Riesz-Fischer定理"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "一个递推序列的渐近问题"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "通过倒数制造差分关系"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "数列上极限的不等式"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "对部分和渐近展开的常数项做估计"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "如果序列是无穷小，那么什么条件能使得其n乘以其差分是无穷小"
+  },
+  {
+    "source": "序列差分的估计蕴含着序列本身的估计",
+    "target": "Kummer判别：对多种比值判别变形的统一"
+  },
+  {
+    "source": "度量空间上的不动点定理",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "度量空间上的不动点定理",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "度量空间中用序列描述拓扑性质",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "度量空间中用序列描述拓扑性质",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "必然发散的序列",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "把一个立方数表达为两个相邻整数的乘积",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "把一个立方数表达为两个相邻整数的乘积",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "把一个立方数表达为两个相邻整数的乘积",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "把函数转换为基本初等函数的复合",
+    "target": "利用基于Taylor展开的逐项估计判断级数收敛的例子1"
+  },
+  {
+    "source": "把数论问题转换为单位圆周群T上来讨论的好处",
+    "target": "第一同构定理"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "Wintner mean value theorem"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "Wintner mean value theorem"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "对L(1,mu)的部分和的估计"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "前$N$个自然数当中，square-free的自然数的占比是多少"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "欧拉函数倒数和的估计"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "利用Dirichlet卷积法解决几个数论中求和问题"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "素数倒数和的估计"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "正方形区域当中有多少个互素的整数格点"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "正方形区域当中有多少个互素的整数格点"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "简化一个数论求和"
+  },
+  {
+    "source": "把条件函数展开为新的和或积分然后换序",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "把条件函数按傅里叶展开",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "把条件函数按傅里叶展开",
+    "target": "从线性算子的角度理解一个序列迭代的极限问题"
+  },
+  {
+    "source": "把条件函数按傅里叶展开",
+    "target": "IMO级别的一个计数问题"
+  },
+  {
+    "source": "把条件函数按傅里叶展开",
+    "target": "Visser 不等式"
+  },
+  {
+    "source": "把矩阵转换为标准型从而简化问题",
+    "target": "矩阵与算子的迹"
+  },
+  {
+    "source": "把积分或求和对象视为一个计数函数并展开",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "把积分或求和对象视为一个计数函数并展开",
+    "target": "利用交换和与积分次序算涉及整数格点数目的一个积分"
+  },
+  {
+    "source": "把积分或求和对象视为一个计数函数并展开",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "把积分或求和对象视为一个计数函数并展开",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "把积分或求和对象视为一个计数函数并展开",
+    "target": "identity theorem"
+  },
+  {
+    "source": "把积分或求和对象视为一个计数函数并展开",
+    "target": "从二项式系数到Kummer定理"
+  },
+  {
+    "source": "把积分或求和对象视为一个计数函数并展开",
+    "target": "覆盖连续2n个整数的两个序列绝对误差之和"
+  },
+  {
+    "source": "把积分转换为与Dirichlet eta函数有关的级数",
+    "target": "将积分转换为级数"
+  },
+  {
+    "source": "把积分转换为与Dirichlet eta函数有关的级数",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "把集合的概率测度转换为随机变量的例子",
+    "target": "把集合问题转换为函数问题"
+  },
+  {
+    "source": "把集合的概率测度转换为随机变量的例子",
+    "target": "Kantorovich不等式"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "函数卷积的基本性质"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "Steinhaus定理及其推广"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "满足特定条件的两个集合尺寸的比例"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "傅里叶变换与傅里叶展开"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "Cauchy-Davenport及其证明"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "把集合的概率测度转换为随机变量的例子"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "利用交换和与积分次序算涉及整数格点数目的一个积分"
+  },
+  {
+    "source": "把集合问题转换为函数问题",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "推广Wilson定理",
+    "target": "证明费马小定理"
+  },
+  {
+    "source": "推广Wilson定理",
+    "target": "证明费马小定理"
+  },
+  {
+    "source": "推广Wilson定理",
+    "target": "证明费马小定理"
+  },
+  {
+    "source": "推广Wilson定理",
+    "target": "欧拉totient函数当n大于2的时候必然是偶数"
+  },
+  {
+    "source": "揭露全纯以及亚纯函数信息的Liouville原则",
+    "target": "证明整函数是一个幂函数"
+  },
+  {
+    "source": "揭露全纯以及亚纯函数信息的Liouville原则",
+    "target": "通过亚纯函数在圆环上的估计来估计极点的阶"
+  },
+  {
+    "source": "揭露全纯以及亚纯函数信息的Liouville原则",
+    "target": "证明一个整函数是多项式"
+  },
+  {
+    "source": "揭露全纯以及亚纯函数信息的Liouville原则",
+    "target": "通过估计幂级数展开系数证明整函数为0"
+  },
+  {
+    "source": "揭露全纯以及亚纯函数信息的Liouville原则",
+    "target": "实部有界的整函数是常数"
+  },
+  {
+    "source": "收敛的连乘积的上界估计与糖水不等式",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "收敛的连乘积的上界估计与糖水不等式",
+    "target": "逐项估计"
+  },
+  {
+    "source": "收敛的连乘积的上界估计与糖水不等式",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "收敛的连乘积的上界估计与糖水不等式",
+    "target": "部分积的上界估计与Gautschi不等式"
+  },
+  {
+    "source": "数列上极限的不等式",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "数列上极限的不等式",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "数列上极限的不等式",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "数列极限问题 从经典分析到算子代数",
+    "target": "Silverman–Toeplitz定理"
+  },
+  {
+    "source": "整函数零点组成的级数收敛性与增长阶之间的关系",
+    "target": "为何三角恒等式可以推广到复平面"
+  },
+  {
+    "source": "整函数零点组成的级数收敛性与增长阶之间的关系",
+    "target": "Dyadic分解"
+  },
+  {
+    "source": "整数格点与一个带取整函数的和的极限问题",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "整数格点与一个带取整函数的和的极限问题",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "整数格点与一个带取整函数的和的极限问题",
+    "target": "分组求和"
+  },
+  {
+    "source": "整数格点与一个带取整函数的和的极限问题",
+    "target": "线性丢番图方程非负整数解的个数"
+  },
+  {
+    "source": "整数格点与一个带取整函数的和的极限问题",
+    "target": "线性丢番图方程非负整数解的个数"
+  },
+  {
+    "source": "整系数多项式在n个不同整数处取值为1或-1",
+    "target": "1"
+  },
+  {
+    "source": "整系数多项式在n个不同整数处取值为1或-1",
+    "target": "高斯整数的性质"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "Khintchine定理"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "Khintchine定理"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "2, \n    1"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "含参数一元函数的不等式"
+  },
+  {
+    "source": "无理测度的定义以及基本的命题",
+    "target": "Liouville数"
+  },
+  {
+    "source": "无穷递降法",
+    "target": "柯西的反向归纳法"
+  },
+  {
+    "source": "无穷递降法",
+    "target": "若k不是平方数，那么根号k不是一个有理数"
+  },
+  {
+    "source": "无穷递降法",
+    "target": "模4余3的素数无法被表达为两个有理数的平方和"
+  },
+  {
+    "source": "无穷递降法",
+    "target": "费马大定理n=4的证明"
+  },
+  {
+    "source": "无穷递降法",
+    "target": "IMO 1988年压轴数论题"
+  },
+  {
+    "source": "无穷递降法",
+    "target": "xy与x2+y2+1的比值如果是整数，那么这个整数一定是3"
+  },
+  {
+    "source": "日本数学竞赛当中覆盖圆盘的问题",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "映射像与原像的势的不等式",
+    "target": "不存在这样的连续函数"
+  },
+  {
+    "source": "是否存在某个2的幂的十进制数重排以后依旧是2的幂",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "有关于zeta函数的一个求和问题",
+    "target": "Wallis公式,正弦函数Hadamard分解互相之间的关系"
+  },
+  {
+    "source": "有理数都可以表达为无限循环小数或有限小数",
+    "target": "证明费马小定理"
+  },
+  {
+    "source": "有限交换群上的函数构成的Hilbert空间的结构",
+    "target": "圆周上的函数的傅里叶展开"
+  },
+  {
+    "source": "有限交换群上的函数构成的Hilbert空间的结构",
+    "target": "Symmetric Reduction"
+  },
+  {
+    "source": "有限交换群上的函数构成的Hilbert空间的结构",
+    "target": "把条件函数按傅里叶展开"
+  },
+  {
+    "source": "有限交换群上的函数构成的Hilbert空间的结构",
+    "target": "把数论问题转换为单位圆周群T上来讨论的好处"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "函数p范数与无穷范数之间的关系"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "Riesz-Fischer定理"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "加强收敛性质的条件与手段"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "有限测度下各个收敛之间的关系",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "有限测度空间上依测度收敛的等价命题",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "有限测度空间上依测度收敛的等价命题",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "有限维多项式空间上线性泛函的表示问题",
+    "target": "第一同构定理"
+  },
+  {
+    "source": "有限集合当中的序列必然存在一个常数子列",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "构造快速收敛的有理逼近以证明数的无理性",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "构造快速收敛的有理逼近以证明数的无理性",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "构造快速收敛的有理逼近以证明数的无理性",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "构造快速收敛的有理逼近以证明数的无理性",
+    "target": "证明e是无理数"
+  },
+  {
+    "source": "构造快速收敛的有理逼近以证明数的无理性",
+    "target": "证明e的平方是无理数"
+  },
+  {
+    "source": "构造快速收敛的有理逼近以证明数的无理性",
+    "target": "证明e的有理次方是无理数"
+  },
+  {
+    "source": "柯西凝聚判别法",
+    "target": "分段估计"
+  },
+  {
+    "source": "柯西凝聚判别法",
+    "target": "layer-cake 表示"
+  },
+  {
+    "source": "柯西凝聚判别法",
+    "target": "使用Dyadic分解估计调和数的下界"
+  },
+  {
+    "source": "柯西凝聚判别法",
+    "target": "Carleman不等式"
+  },
+  {
+    "source": "柯西凝聚判别法",
+    "target": "逐项估计"
+  },
+  {
+    "source": "柯西凝聚判别法",
+    "target": "Carleman不等式"
+  },
+  {
+    "source": "柯西函数方程",
+    "target": "identity theorem"
+  },
+  {
+    "source": "柯西函数方程",
+    "target": "Steinhaus定理及其推广"
+  },
+  {
+    "source": "柯西函数方程",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "逐项估计"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "证明正弦函数在整数上取值的序列的极限是不存在的"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "单调无界的正序列其差分比自身的值的和也无界"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "证明正弦函数在整数上取值的序列的极限是不存在的"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "度量空间上的不动点定理"
+  },
+  {
+    "source": "柯西收敛判别",
+    "target": "Riesz-Fischer定理"
+  },
+  {
+    "source": "柯西的反向归纳法",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "柯西的反向归纳法",
+    "target": "函数凸性"
+  },
+  {
+    "source": "柯西的反向归纳法",
+    "target": "identity theorem"
+  },
+  {
+    "source": "柯西的反向归纳法",
+    "target": "identity theorem"
+  },
+  {
+    "source": "柯西的反向归纳法",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "柯西积分公式",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "柯西积分公式",
+    "target": "逐项估计"
+  },
+  {
+    "source": "柯西积分公式",
+    "target": "逐项估计"
+  },
+  {
+    "source": "样本期望的渐近展开系数",
+    "target": "用概率计算含参数积分的极限"
+  },
+  {
+    "source": "样本期望的渐近展开系数",
+    "target": "用概率计算含参数积分的极限"
+  },
+  {
+    "source": "样本期望的渐近展开系数",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "根据模与内积的信息得到积分不等式",
+    "target": "已知函数与幂函数的内积估计函数L2范数下界"
+  },
+  {
+    "source": "模1均匀分布与Weyl判别",
+    "target": "Stone-Weierstrass定理"
+  },
+  {
+    "source": "模1均匀分布与Weyl判别",
+    "target": "Stone-Weierstrass定理"
+  },
+  {
+    "source": "模1均匀分布与Weyl判别",
+    "target": "复三角多项式在Lp空间中的稠密性"
+  },
+  {
+    "source": "模1均匀分布与Weyl判别",
+    "target": "黎曼积分的定义以及黎曼可积的判别"
+  },
+  {
+    "source": "模1均匀分布与Weyl判别",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "模1均匀分布序列对序列差分的要求",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "模1均匀分布序列对序列差分的要求",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "模4余3的素数无法被表达为两个有理数的平方和",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "模4余3的素数无法被表达为两个有理数的平方和",
+    "target": "高斯整数的性质"
+  },
+  {
+    "source": "模4余3的素数无法被表达为两个有理数的平方和",
+    "target": "高斯整数的性质"
+  },
+  {
+    "source": "模4余3的素数无法被表达为两个有理数的平方和",
+    "target": "对算术函数平均值的渐近"
+  },
+  {
+    "source": "模长总和为1的n个复数中，至少能合成一个模长多大的复数",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "模长总和为1的n个复数中，至少能合成一个模长多大的复数",
+    "target": "1"
+  },
+  {
+    "source": "次指数衰减函数卷积的渐近行为分析",
+    "target": "分段估计"
+  },
+  {
+    "source": "次指数衰减函数卷积的渐近行为分析",
+    "target": "two_bumps.gif"
+  },
+  {
+    "source": "欧拉totient与mobius函数的Dirichlet卷积关系",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "欧拉函数倒数和的估计",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "欧拉函数倒数和的估计",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "正定矩阵加上半正定矩阵其行列式至少不会变得更小",
+    "target": "Weinstein-Aronszajn恒等式"
+  },
+  {
+    "source": "正实数序列与自己前n项和的p次方的比值组成的级数收敛",
+    "target": "单调无界的正序列其差分比自身的值的和也无界"
+  },
+  {
+    "source": "正实数序列与自己前n项和的p次方的比值组成的级数收敛",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "正方形区域当中有多少个互素的整数格点",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "毕达哥拉斯数",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "毕达哥拉斯数",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "毕达哥拉斯数",
+    "target": "高斯整数的性质"
+  },
+  {
+    "source": "毕达哥拉斯数",
+    "target": "Bezout恒等式"
+  },
+  {
+    "source": "求一个分子带log分母为阶乘的含参数和的渐近展开",
+    "target": "Cesaro-Stolz定理"
+  },
+  {
+    "source": "求分式形式函数的值域",
+    "target": "与莫比乌斯变换保圆性有关的问题"
+  },
+  {
+    "source": "渐近密度为p的整数子集上黎曼和的极限",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "满足特定条件的两个集合尺寸的比例",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "满足特定条件的两个集合尺寸的比例",
+    "target": "Riemann - Lebesgue lemma的证明"
+  },
+  {
+    "source": "满足特定条件的整系数多项式有整数解问题",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "满足这种函数极限性质的函数是几乎处处为0的",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "满足这种函数极限性质的函数是几乎处处为0的",
+    "target": "黎曼可积的Lebesgue判别"
+  },
+  {
+    "source": "用分析的思路证明Cayley-Hamilton定理",
+    "target": "利用连续函数的identity theorem证明函数方程"
+  },
+  {
+    "source": "用分析的思路证明Cayley-Hamilton定理",
+    "target": "可对角化矩阵在复矩阵空间当中稠密"
+  },
+  {
+    "source": "用分析的思路证明Cayley-Hamilton定理",
+    "target": "关于由行列式定义出来的矩阵多项式"
+  },
+  {
+    "source": "用分段估计解决几个序列的极限问题",
+    "target": "逐项估计"
+  },
+  {
+    "source": "用分段估计解决几个序列的极限问题",
+    "target": "逐项估计"
+  },
+  {
+    "source": "用分段估计解决几个序列的极限问题",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "用分段估计解决几个序列的极限问题",
+    "target": "一个竞赛中的和的渐近展开问题"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "给正项级数条件正负号以后级数收敛意味着什么"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "Riesz-Fischer定理"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "Riesz-Fischer定理"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "函数列几乎处处有界与Borel-Cantelli lemma的应用"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "通过子列的收敛性验证单调增加的函数列的收敛性"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "已知单调非负随机变量期望的渐近，求随机变量本身的渐近"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "Etemadi关于强大数定律的证明"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "有限测度下各个收敛之间的关系"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "依测度收敛的基本运算规律"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "Riesz-Fischer定理"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "Etemadi关于强大数定律的证明"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "函数的图与连续性"
+  },
+  {
+    "source": "用子列来提升收敛或发散性质",
+    "target": "度量空间中用序列描述拓扑性质"
+  },
+  {
+    "source": "用概率计算含参数积分的极限",
+    "target": "Weierstrass逼近定理的概率途径证明"
+  },
+  {
+    "source": "用概率计算含参数积分的极限",
+    "target": "n个均匀分布随机变量的最大分布的期望"
+  },
+  {
+    "source": "用概率计算含参数积分的极限",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "用概率计算含参数积分的极限",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "用概率计算含参数积分的极限",
+    "target": "zeta函数整数值的积分表示"
+  },
+  {
+    "source": "用概率计算含参数积分的极限",
+    "target": "有限测度空间上依测度收敛的等价命题"
+  },
+  {
+    "source": "由Euler-Maclaurin求和估计得到Stirling逼近结果",
+    "target": "Wallis公式,正弦函数Hadamard分解互相之间的关系"
+  },
+  {
+    "source": "由possion公式导出的一个函数方程",
+    "target": "Possion求和公式"
+  },
+  {
+    "source": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "target": "Riemann-Lebesgue引理的一个特殊情况"
+  },
+  {
+    "source": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "target": "一个抽象的和的估计问题"
+  },
+  {
+    "source": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "target": "一个抽象的和的估计问题"
+  },
+  {
+    "source": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "target": "Carleman不等式"
+  },
+  {
+    "source": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "target": "两个非负不增序列互相竞争从而使得级数发散"
+  },
+  {
+    "source": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "target": "两个非负不增序列互相竞争从而使得级数发散"
+  },
+  {
+    "source": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "target": "两个非负不增序列互相竞争从而使得级数发散"
+  },
+  {
+    "source": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "由多项式构成的行列式",
+    "target": "有限维多项式空间上线性泛函的表示问题"
+  },
+  {
+    "source": "由多项式构成的行列式",
+    "target": "第一同构定理"
+  },
+  {
+    "source": "矩阵与算子的迹",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "矩阵与算子的迹",
+    "target": "矩阵与有限维线性空间上的线性映射的关系"
+  },
+  {
+    "source": "矩阵交换次序特征多项式不变",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "矩阵交换次序特征多项式不变",
+    "target": "用分析的思路证明Cayley-Hamilton定理"
+  },
+  {
+    "source": "矩阵交换次序特征多项式不变",
+    "target": "GLn的稠密性"
+  },
+  {
+    "source": "矩阵交换次序特征多项式不变",
+    "target": "用分析的思路证明Cayley-Hamilton定理"
+  },
+  {
+    "source": "矩阵交换次序特征多项式不变",
+    "target": "identity theorem"
+  },
+  {
+    "source": "矩阵幂的秩会下降到一个固定的非负整数",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "矩阵幂的秩会下降到一个固定的非负整数",
+    "target": "有限集合当中的序列必然存在一个常数子列"
+  },
+  {
+    "source": "矩阵赋范数空间当中一些典型集合的拓扑性质",
+    "target": "可对角化矩阵在复矩阵空间当中稠密"
+  },
+  {
+    "source": "矩阵赋范数空间当中一些典型集合的拓扑性质",
+    "target": "GLn的稠密性"
+  },
+  {
+    "source": "矩阵赋范数空间当中一些典型集合的拓扑性质",
+    "target": "identity theorem"
+  },
+  {
+    "source": "研究函数形状但是没有后二阶导数信息怎么办",
+    "target": "逐项估计"
+  },
+  {
+    "source": "研究函数形状但是没有后二阶导数信息怎么办",
+    "target": "函数凸性"
+  },
+  {
+    "source": "研究函数形状但是没有后二阶导数信息怎么办",
+    "target": "函数凸性"
+  },
+  {
+    "source": "研究函数形状但是没有后二阶导数信息怎么办",
+    "target": "函数凸性"
+  },
+  {
+    "source": "离散Wirtinger不等式",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "离散Wirtinger不等式",
+    "target": "Ky Fan不等式"
+  },
+  {
+    "source": "离散Wirtinger不等式",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "离散Wirtinger不等式",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "积分的严格单调性",
+    "target": "测度论的基础概念"
+  },
+  {
+    "source": "积分的伸缩公式",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "积分的伸缩公式",
+    "target": "可测集合线性变换后的测度"
+  },
+  {
+    "source": "简化一个数论求和",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "算两次",
+    "target": "制造telescoping sum求和或求乘积"
+  },
+  {
+    "source": "算两次",
+    "target": "Faulhaber公式"
+  },
+  {
+    "source": "算两次",
+    "target": "素数倒数和的估计"
+  },
+  {
+    "source": "算两次",
+    "target": "divisor函数的倒数加权和的估计"
+  },
+  {
+    "source": "类似于傅里叶系数的一个积分估计",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "类似于傅里叶系数的一个积分估计",
+    "target": "基于分部积分法的积分的估计"
+  },
+  {
+    "source": "类似于傅里叶系数的一个积分估计",
+    "target": "关于一个含参数积分极限的两个策略的方法"
+  },
+  {
+    "source": "素数倒数和的估计",
+    "target": "连续分部求和法的基本用法"
+  },
+  {
+    "source": "素数倒数和的估计",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "素数倒数和的估计",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "素数倒数和的估计",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "素数倒数和的估计",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "素数倒数和的估计",
+    "target": "把条件函数展开为新的和或积分然后换序"
+  },
+  {
+    "source": "素数倒数和的估计",
+    "target": "Bertrand假设的证明"
+  },
+  {
+    "source": "素数定理的一些等价命题",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "素数定理的一些等价命题",
+    "target": "Wintner mean value theorem"
+  },
+  {
+    "source": "素数定理的一些等价命题",
+    "target": "Wintner mean value theorem"
+  },
+  {
+    "source": "素数定理的一些等价命题",
+    "target": "Dirichlet's hyperbola trick"
+  },
+  {
+    "source": "素数定理的一些等价命题",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "素数定理的一些等价命题",
+    "target": "对算术函数平均值的渐近"
+  },
+  {
+    "source": "素数定理的一些等价命题",
+    "target": "黎曼zeta函数的零点分布"
+  },
+  {
+    "source": "紧支光滑函数在Lp空间当中稠密",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "紧支光滑函数在Lp空间当中稠密",
+    "target": "函数卷积的基本性质"
+  },
+  {
+    "source": "累次积分的计算技巧",
+    "target": "借用坐标变换计算重积分"
+  },
+  {
+    "source": "级数收敛与求和对象的收敛速度",
+    "target": "Leibniz收敛判断"
+  },
+  {
+    "source": "级数收敛与求和对象的收敛速度",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "线性丢番图方程非负整数解的个数",
+    "target": "整数格点与一个带取整函数的和的极限问题"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "EGZ定理的证明"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "偶数凸多边形顶点上的数字"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "至少需要多少个面能包含立方体的顶点"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "至少需要多少个面能包含立方体的顶点"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "Cauchy-Davenport及其证明"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "偶数凸多边形顶点上的数字"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "至少需要多少个面能包含立方体的顶点"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "Cauchy-Davenport及其证明"
+  },
+  {
+    "source": "组合零点定理",
+    "target": "EGZ定理的证明"
+  },
+  {
+    "source": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+    "target": "已知序列模1均匀分布，那么加上log(n)对分布影响不大"
+  },
+  {
+    "source": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+    "target": "逐项估计"
+  },
+  {
+    "source": "给正项级数条件正负号以后级数收敛意味着什么",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "给正项级数条件正负号以后级数收敛意味着什么",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "给正项级数条件正负号以后级数收敛意味着什么",
+    "target": "数列上极限的不等式"
+  },
+  {
+    "source": "给正项级数条件正负号以后级数收敛意味着什么",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "给正项级数条件正负号以后级数收敛意味着什么",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "给正项级数条件正负号以后级数收敛意味着什么",
+    "target": "基于分部求和法的和的估计"
+  },
+  {
+    "source": "给正项级数条件正负号以后级数收敛意味着什么",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "给正项级数条件正负号以后级数收敛意味着什么",
+    "target": "Accumulate函数的作用"
+  },
+  {
+    "source": "群中满足特定关系的元素是否可以交换",
+    "target": "Bezout恒等式"
+  },
+  {
+    "source": "至少需要多少个面能包含立方体的顶点",
+    "target": "组合零点定理"
+  },
+  {
+    "source": "若k不是平方数，那么根号k不是一个有理数",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "若k不是平方数，那么根号k不是一个有理数",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "若k不是平方数，那么根号k不是一个有理数",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "行列式给出的多项式在圆周上的估计",
+    "target": "关于由行列式定义出来的矩阵多项式"
+  },
+  {
+    "source": "行列式给出的多项式在圆周上的估计",
+    "target": "通过亚纯函数在圆环上的估计来估计极点的阶"
+  },
+  {
+    "source": "行列式给出的多项式在圆周上的估计",
+    "target": "圆周上函数模长最大值与展开系数之间的关系"
+  },
+  {
+    "source": "行列式给出的多项式在圆周上的估计",
+    "target": "函数傅里叶展开的Dini判别及其应用"
+  },
+  {
+    "source": "被求和对象的值U形分布时和的估计",
+    "target": "利用已知的渐近结果求渐近展开的技巧"
+  },
+  {
+    "source": "覆盖连续2n个整数的两个序列绝对误差之和",
+    "target": "i"
+  },
+  {
+    "source": "覆盖连续2n个整数的两个序列绝对误差之和",
+    "target": "i"
+  },
+  {
+    "source": "覆盖连续2n个整数的两个序列绝对误差之和",
+    "target": "i"
+  },
+  {
+    "source": "覆盖连续2n个整数的两个序列绝对误差之和",
+    "target": "i"
+  },
+  {
+    "source": "证明Gamma函数在右半平面上全纯",
+    "target": "证明某种积分表示的函数是整函数"
+  },
+  {
+    "source": "证明Gamma函数在右半平面上全纯",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "证明e是无理数",
+    "target": "构造快速收敛的有理逼近以证明数的无理性"
+  },
+  {
+    "source": "证明e是无理数",
+    "target": "构造快速收敛的有理逼近以证明数的无理性"
+  },
+  {
+    "source": "证明e是无理数",
+    "target": "构造快速收敛的有理逼近以证明数的无理性"
+  },
+  {
+    "source": "证明e是无理数",
+    "target": "Cantor series表示的数是否是有理数的判断"
+  },
+  {
+    "source": "证明e的平方是无理数",
+    "target": "证明e是无理数"
+  },
+  {
+    "source": "证明e的平方是无理数",
+    "target": "构造快速收敛的有理逼近以证明数的无理性"
+  },
+  {
+    "source": "证明e的平方是无理数",
+    "target": "从二项式系数到Kummer定理"
+  },
+  {
+    "source": "证明e的平方是无理数",
+    "target": "从二项式系数到Kummer定理"
+  },
+  {
+    "source": "证明e的有理次方是无理数",
+    "target": "证明e是无理数"
+  },
+  {
+    "source": "证明e的有理次方是无理数",
+    "target": "证明e的平方是无理数"
+  },
+  {
+    "source": "证明e的有理次方是无理数",
+    "target": "构造快速收敛的有理逼近以证明数的无理性"
+  },
+  {
+    "source": "证明e的有理次方是无理数",
+    "target": "证明e的平方是无理数"
+  },
+  {
+    "source": "证明e的有理次方是无理数",
+    "target": "构造快速收敛的有理逼近以证明数的无理性"
+  },
+  {
+    "source": "证明一个由变上限含参数积分给出的函数列一致收敛",
+    "target": "分段估计"
+  },
+  {
+    "source": "证明一个部分和被一个参数控制起来",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "证明函数项级数几乎处处绝对收敛",
+    "target": "Fubini-Tonelli定理的例子与反例"
+  },
+  {
+    "source": "证明函数项级数几乎处处绝对收敛",
+    "target": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0"
+  },
+  {
+    "source": "证明存在一个单位球当中m个向量的交错和下界至少为根号m",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "证明整函数在复平面上有无限多个零点",
+    "target": "多项式函数列随着次数增大零点越来越靠近无穷远"
+  },
+  {
+    "source": "证明有限群存在一个满足特定Index条件的正规子群",
+    "target": "第一同构定理"
+  },
+  {
+    "source": "证明某种积分表示的函数是整函数",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "证明某种积分表示的函数是整函数",
+    "target": "证明Gamma函数在右半平面上全纯"
+  },
+  {
+    "source": "证明某种积分表示的函数是整函数",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "证明正弦函数在整数上取值的序列的极限是不存在的",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "证明正弦函数在整数上取值的序列的极限是不存在的",
+    "target": "模1均匀分布与Weyl判别"
+  },
+  {
+    "source": "证明正弦函数在整数上取值的序列的极限是不存在的",
+    "target": "柯西收敛判别"
+  },
+  {
+    "source": "证明正弦函数在整数上取值的序列的极限是不存在的",
+    "target": "柯敛判别"
+  },
+  {
+    "source": "证明正弦函数在整数上取值的序列的极限是不存在的",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "证明正弦函数在整数上取值的序列的极限是不存在的",
+    "target": "判断序列在区间内稠密的几个命题"
+  },
+  {
+    "source": "证明满足这种密度条件的集合其测度为1",
+    "target": "Lebesgue微分定理"
+  },
+  {
+    "source": "证明调和数不是整数",
+    "target": "Bertrand假设的证明"
+  },
+  {
+    "source": "证明调和数不是整数",
+    "target": "从二项式系数到Kummer定理"
+  },
+  {
+    "source": "证明费马小定理",
+    "target": "推广Wilson定理"
+  },
+  {
+    "source": "证明黎曼可积的黎曼判别",
+    "target": "黎曼积分的定义以及黎曼可积的判别"
+  },
+  {
+    "source": "证明黎曼可积的黎曼判别",
+    "target": "分段估计"
+  },
+  {
+    "source": "调和函数极值原理",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "调和函数极值原理",
+    "target": "an epsilon of room"
+  },
+  {
+    "source": "费马大定理n=4的证明",
+    "target": "毕达哥拉斯数"
+  },
+  {
+    "source": "轨道稳定子引理与群的置换表示",
+    "target": "项链着色问题.webp"
+  },
+  {
+    "source": "轨道稳定子引理与群的置换表示",
+    "target": "为何平面正多边形的对称群为Dihedral group"
+  },
+  {
+    "source": "轨道稳定子引理与群的置换表示",
+    "target": "第一同构定理"
+  },
+  {
+    "source": "轨道稳定子引理与群的置换表示",
+    "target": "第一同构定理"
+  },
+  {
+    "source": "边界消失的H1空间上连续线性泛函上界形成的积分不等式",
+    "target": "Wirtinger不等式"
+  },
+  {
+    "source": "连续分部求和法的基本用法",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "连续分部求和法的基本用法",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "C(X)在一致范数下紧子集的充要条件"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "函数列一致收敛并不保持微分性质"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "通过逼近的方法证明函数是下凸的"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "Abel inversion及其应用"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "跳跃间断点的连续逼近.gif"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "C(X)在一致范数下紧子集的充要条件"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "函数列一致收敛并不保持微分性质"
+  },
+  {
+    "source": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "target": "C(X)在一致范数下紧子集的充要条件"
+  },
+  {
+    "source": "连续的归纳法",
+    "target": "带绝对值的微分不等式"
+  },
+  {
+    "source": "连续的归纳法",
+    "target": "Hermite-Hadamard不等式与函数凸性"
+  },
+  {
+    "source": "选手答题的组合问题",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "逐项估计",
+    "target": "定义在超立方体上的对称函数的最大值"
+  },
+  {
+    "source": "逐项估计",
+    "target": "Re0微积分2：自然底数e及其快速计算"
+  },
+  {
+    "source": "逐项估计",
+    "target": "部分积的上界估计与Gautschi不等式"
+  },
+  {
+    "source": "逐项估计",
+    "target": "估计一个根式的和"
+  },
+  {
+    "source": "逐项估计",
+    "target": "n个连续的阶乘之积有多少个因子"
+  },
+  {
+    "source": "逐项估计",
+    "target": "从几个极限问题去理解Landau符号"
+  },
+  {
+    "source": "逐项估计",
+    "target": "和的估计的一个典型案例"
+  },
+  {
+    "source": "逐项估计",
+    "target": "收敛的连乘积的上界估计与糖水不等式"
+  },
+  {
+    "source": "逐项估计",
+    "target": "对一个含参数的和的估计以及控制收敛定理"
+  },
+  {
+    "source": "逐项估计",
+    "target": "对一个含参数的和的估计以及控制收敛定理2"
+  },
+  {
+    "source": "逐项估计",
+    "target": "与无穷范数有关的一个含参数积分的极限"
+  },
+  {
+    "source": "逐项估计",
+    "target": "Power mean及其性质"
+  },
+  {
+    "source": "逐项估计",
+    "target": "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+  },
+  {
+    "source": "逐项估计",
+    "target": "证明函数项级数几乎处处绝对收敛"
+  },
+  {
+    "source": "逐项估计",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "逐项估计",
+    "target": "分段估计"
+  },
+  {
+    "source": "逐项估计",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "逐项估计",
+    "target": "用分段估计解决几个序列的极限问题"
+  },
+  {
+    "source": "逐项估计",
+    "target": "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+  },
+  {
+    "source": "逐项估计",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "逐项估计",
+    "target": "对一个含参数的和的估计以及控制收敛定理"
+  },
+  {
+    "source": "逐项估计",
+    "target": "从几个极限问题去理解Landau符号"
+  },
+  {
+    "source": "逐项估计",
+    "target": "从几个极限问题去理解Landau符号"
+  },
+  {
+    "source": "逐项估计",
+    "target": "对误差的分析从而改进分段估计"
+  },
+  {
+    "source": "逐项估计",
+    "target": "利用基于Taylor展开的逐项估计判断级数收敛的例子1"
+  },
+  {
+    "source": "逐项估计",
+    "target": "收敛的连乘积的上界估计与糖水不等式"
+  },
+  {
+    "source": "逐项估计",
+    "target": "对一个含参数的和的估计以及控制收敛定理"
+  },
+  {
+    "source": "逐项估计",
+    "target": "对一个含参数的和的估计以及控制收敛定理2"
+  },
+  {
+    "source": "逐项估计",
+    "target": "判断一个类交错级数的收敛性"
+  },
+  {
+    "source": "逐项估计",
+    "target": "两种不同路径解决含参数和的估计问题"
+  },
+  {
+    "source": "逐项估计",
+    "target": "不适用于逐项估计求和的极限的例子"
+  },
+  {
+    "source": "逐项估计",
+    "target": "逼近单位元在局部上的收敛性的一个典型例子"
+  },
+  {
+    "source": "逐项估计",
+    "target": "制造telescoping sum求和或求乘积"
+  },
+  {
+    "source": "逐项估计",
+    "target": "Re0微积分2：自然底数e及其快速计算"
+  },
+  {
+    "source": "逐项估计",
+    "target": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列"
+  },
+  {
+    "source": "逐项估计",
+    "target": "对含参数方程根的估计"
+  },
+  {
+    "source": "逐项估计",
+    "target": "分段估计"
+  },
+  {
+    "source": "逐项估计",
+    "target": "IMC上的一个渐近分析的问题"
+  },
+  {
+    "source": "逐项估计",
+    "target": "黎曼积分与黎曼和的误差"
+  },
+  {
+    "source": "逐项估计",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "逐项估计",
+    "target": "柯西积分公式"
+  },
+  {
+    "source": "逐项估计",
+    "target": "Riemann-Stieltjes积分"
+  },
+  {
+    "source": "递推序列确定渐近系数但Stolz失灵的情况",
+    "target": "利用Stolz定理确定递归序列的渐近系数"
+  },
+  {
+    "source": "递推序列确定渐近系数但Stolz失灵的情况",
+    "target": "利用Stolz定理确定递归序列的渐近系数2"
+  },
+  {
+    "source": "递推序列确定渐近系数但Stolz失灵的情况",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "通过pi的无理测度证明级数收敛性"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "通过pi的无理测度证明级数收敛性"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "通过pi的无理测度证明级数收敛性"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "通过pi的无理测度证明级数收敛性"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "通过pi的无理测度证明级数收敛性"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "通过pi的无理测度证明级数收敛性"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "实数被一列超越数逼近的定量问题"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "证明正弦函数在整数上取值的序列的极限是不存在的"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "函数与序列的上下极限"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛2",
+    "target": "实数被一列超越数逼近的定量问题"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛性",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "通过pi的无理测度证明级数收敛性",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "通过估计幂级数展开系数证明整函数为0",
+    "target": "揭露全纯以及亚纯函数信息的Liouville原则"
+  },
+  {
+    "source": "通过倒数制造差分关系",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "通过制造平方差来因式分解",
+    "target": "多项式不可约的Perron判别法"
+  },
+  {
+    "source": "通过制造平方差来因式分解",
+    "target": "判断整系数多项式是否可约的方法"
+  },
+  {
+    "source": "通过制造平方差来因式分解",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "通过制造平方差来因式分解",
+    "target": "利用因式分解求解丢番图方程"
+  },
+  {
+    "source": "通过子列的收敛性验证单调增加的函数列的收敛性",
+    "target": "把集合问题转换为函数问题"
+  },
+  {
+    "source": "通过子列的收敛性验证单调增加的函数列的收敛性",
+    "target": "加强收敛性质的条件与手段"
+  },
+  {
+    "source": "通过子列的收敛性验证单调增加的函数列的收敛性",
+    "target": "用子列来提升收敛或发散性质"
+  },
+  {
+    "source": "通过求期望证明具有某种性质的结构的存在性",
+    "target": "积分的严格单调性"
+  },
+  {
+    "source": "通过求期望证明具有某种性质的结构的存在性",
+    "target": "证明存在一个单位球当中m个向量的交错和下界至少为根号m"
+  },
+  {
+    "source": "通过求期望证明具有某种性质的结构的存在性",
+    "target": "满足某种约束条件的n个实数存在某种重排使得重排以后和小于0"
+  },
+  {
+    "source": "通过求期望证明具有某种性质的结构的存在性",
+    "target": "鸽笼原理"
+  },
+  {
+    "source": "通过求期望证明具有某种性质的结构的存在性",
+    "target": "模长总和为1的n个复数中，至少能合成一个模长多大的复数"
+  },
+  {
+    "source": "通过求期望证明具有某种性质的结构的存在性",
+    "target": "选手答题的组合问题"
+  },
+  {
+    "source": "通过求期望证明具有某种性质的结构的存在性",
+    "target": "利用随机选取的集合的和集大小的期望证明某种尺寸的合集的存在性"
+  },
+  {
+    "source": "通过求期望证明具有某种性质的结构的存在性",
+    "target": "不包含0的n个整数的集合能包含多大的sum-free子集"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "函数卷积的基本性质"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "积分的严格单调性"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "函数卷积的基本性质"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "通过逼近的方法证明函数是下凸的"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "紧支光滑函数在Lp空间当中稠密"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "实数的标准度量空间上的弱收敛的命题"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "连续可微的一致收敛序列也不足以保证极限函数的可微性"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "可积函数傅里叶逆变换几乎处处成立"
+  },
+  {
+    "source": "通过添加参数让目标更光滑化",
+    "target": "函数沿着梯度方向下降的定量问题"
+  },
+  {
+    "source": "通过迭代提高估计精度：Bootsrap argument",
+    "target": "Re0微积分1：用牛顿迭代法求算术平方根"
+  },
+  {
+    "source": "通过迭代提高估计精度：Bootsrap argument",
+    "target": "如何估计一些常数"
+  },
+  {
+    "source": "通过迭代提高估计精度：Bootsrap argument",
+    "target": "递推序列确定渐近系数但Stolz失灵的情况"
+  },
+  {
+    "source": "通过迭代提高估计精度：Bootsrap argument",
+    "target": "对含参数方程根的估计"
+  },
+  {
+    "source": "通过逼近的方法证明函数是下凸的",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "通过逼近的方法证明函数是下凸的",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "通过重整来证明表达式的非负性",
+    "target": "和与积分换序"
+  },
+  {
+    "source": "通过重整来证明表达式的非负性",
+    "target": "Stirling渐近公式及不等式"
+  },
+  {
+    "source": "通过重整来证明表达式的非负性",
+    "target": "和的绝对值平均上比差的绝对值更大"
+  },
+  {
+    "source": "逼近单位元在局部上的收敛性的一个典型例子",
+    "target": "逐项估计"
+  },
+  {
+    "source": "逼近单位元在局部上的收敛性的一个典型例子",
+    "target": "分段估计"
+  },
+  {
+    "source": "逼近单位元在局部上的收敛性的一个典型例子",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "逼近单位元在局部上的收敛性的一个典型例子",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "逼近单位元在局部上的收敛性的一个典型例子",
+    "target": "approximation to the identity"
+  },
+  {
+    "source": "部分积的上界估计与Gautschi不等式",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "部分积的上界估计与Gautschi不等式",
+    "target": "逐项估计"
+  },
+  {
+    "source": "部分积的上界估计与Gautschi不等式",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "部分积的上界估计与Gautschi不等式",
+    "target": "对部分和渐近展开的常数项做估计"
+  },
+  {
+    "source": "部分积的上界估计与Gautschi不等式",
+    "target": "逐项估计"
+  },
+  {
+    "source": "部分积的上界估计与Gautschi不等式",
+    "target": "逐项估计"
+  },
+  {
+    "source": "部分积的上界估计与Gautschi不等式",
+    "target": "Wallis公式,正弦函数Hadamard分解互相之间的关系"
+  },
+  {
+    "source": "除了一个根以外其余全部根都在单位圆盘内部的多项式",
+    "target": "多项式可约性的Eisenstein判别法"
+  },
+  {
+    "source": "除了一个根以外其余全部根都在单位圆盘内部的多项式",
+    "target": "多项式不可约的Perron判别法"
+  },
+  {
+    "source": "随机变量期望收敛导出几乎处处收敛的一个条件",
+    "target": "加强收敛性质的条件与手段"
+  },
+  {
+    "source": "随机变量期望收敛导出几乎处处收敛的一个条件",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "随机变量期望收敛导出几乎处处收敛的一个条件",
+    "target": "逐项估计"
+  },
+  {
+    "source": "随机变量期望收敛导出几乎处处收敛的一个条件",
+    "target": "Borel-Cantelli lemma及其应用"
+  },
+  {
+    "source": "非欧氏空间当中有界闭未必紧",
+    "target": "参见的四种与连续有关的概念的区别"
+  },
+  {
+    "source": "非负函数广义黎曼积分收敛意味着什么",
+    "target": "级数收敛与求和对象的收敛速度"
+  },
+  {
+    "source": "非负函数广义黎曼积分收敛意味着什么",
+    "target": "通过添加参数让目标更光滑化"
+  },
+  {
+    "source": "非负函数广义黎曼积分收敛意味着什么",
+    "target": "级数收敛与求和对象的收敛速度"
+  },
+  {
+    "source": "非负函数广义黎曼积分收敛意味着什么",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "非负函数广义黎曼积分收敛意味着什么",
+    "target": "Erdos关于pi函数的估计"
+  },
+  {
+    "source": "非负函数广义黎曼积分收敛意味着什么",
+    "target": "级数收敛与求和对象的收敛速度"
+  },
+  {
+    "source": "非负函数广义黎曼积分收敛意味着什么",
+    "target": "柯西凝聚判别法"
+  },
+  {
+    "source": "非负序列差分的约束条件导致序列收敛",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "高德纳箭头的增长速度问题",
+    "target": "序列差分的估计蕴含着序列本身的估计"
+  },
+  {
+    "source": "高斯整数的性质",
+    "target": "整系数多项式环并非PID"
+  },
+  {
+    "source": "高斯整数的性质",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "高斯整数的性质",
+    "target": "无穷递降法"
+  },
+  {
+    "source": "高斯整数的性质",
+    "target": "Bezout恒等式"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "通过求期望证明具有某种性质的结构的存在性"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "Kronecker定理，Dirichlet定理及其应用"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "日本数学竞赛当中覆盖圆盘的问题"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "前2n个正整数当中选n+1个必有两个数互素"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "在一个有界的范围内，任选一定数目的非负整数其中四个两两相加相等"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "有限集合当中的序列必然存在一个常数子列"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "为什么不会有单变量整系数多项式其值皆为素数"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "natural density不存在的例子"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "矩阵幂的秩会下降到一个固定的非负整数"
+  },
+  {
+    "source": "鸽笼原理",
+    "target": "满足特定条件的整系数多项式有整数解问题"
+  },
+  {
+    "source": "黎曼可积的Lebesgue判别",
+    "target": "黎曼积分的定义以及黎曼可积的判别"
+  },
+  {
+    "source": "黎曼可积的Lebesgue判别",
+    "target": "an epsilon of room证明集合为0测度的策略"
+  },
+  {
+    "source": "黎曼可积的Lebesgue判别",
+    "target": "无理测度的定义以及基本的命题"
+  },
+  {
+    "source": "黎曼可积的Lebesgue判别",
+    "target": "分段估计"
+  },
+  {
+    "source": "黎曼积分与黎曼和的误差",
+    "target": "逐项估计"
+  },
+  {
+    "source": "黎曼积分与黎曼和的误差",
+    "target": "逐项估计"
+  },
+  {
+    "source": "黎曼积分与黎曼和的误差",
+    "target": "和的积分估计"
+  },
+  {
+    "source": "黎曼积分与黎曼和的误差",
+    "target": "广义的Riemann - Lebesgue lemma"
+  },
+  {
+    "source": "黎曼积分的定义以及黎曼可积的判别",
+    "target": "证明黎曼可积的黎曼判别"
+  },
+  {
+    "source": "黎曼积分的定义以及黎曼可积的判别",
+    "target": "黎曼可积的Lebesgue判别"
+  }
+]

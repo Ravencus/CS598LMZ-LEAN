@@ -1,0 +1,115 @@
+{
+  "note_title": "分部求和的想法",
+  "classification": "technique",
+  "summary_en": "This note explains the idea of discrete summation by parts for estimating sums of the form \\(\\sum a_n b_n\\), especially when the partial sums of \\(b_n\\) are controllable and the differences of \\(a_n\\) are simple. It illustrates how this viewpoint underlies convergence tests such as Leibniz, Dirichlet, and Abel-type arguments, and shows several applications and variants.",
+  "problems": [
+    {
+      "id": "分部求和-1",
+      "statement_en": "Find a closed-form expression for \\(\\sum_{k=1}^{n} k2^k\\).",
+      "statement_zh": "求\\(\\sum_{k=1}^{n}k2^k\\)的和的封闭表达式。",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "discrete mathematics",
+      "key_techniques": [
+        "discrete summation by parts",
+        "changing the order of summation"
+      ],
+      "prerequisites": [
+        "finite sums",
+        "geometric series",
+        "double-sum reindexing"
+      ]
+    },
+    {
+      "id": "分部求和-2",
+      "statement_en": "Determine whether \\(\\sum_{n\\geq } \\frac{\\sin(\\sqrt{n})}{n}\\) converges.",
+      "statement_zh": "我们需要判断\\(\\sum_{n\\geq }\\frac{\\sin(\\sqrt{n})}{n}\\)是否收敛。",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "summation by parts",
+        "estimating partial sums",
+        "Euler-Maclaurin summation"
+      ],
+      "prerequisites": [
+        "series convergence",
+        "oscillatory sums",
+        "Euler-Maclaurin formula"
+      ]
+    },
+    {
+      "id": "分部求和-3",
+      "statement_en": "Given that \\(\\sum_{n\\leq N} e(kx_n)=o_k(N)\\), determine whether \\(\\sum_{n\\leq N} e(kx_n+k\\log(n))=o_k(N)\\) also holds, in the context of Weyl's criterion.",
+      "statement_zh": "当中我们已知\\(\\sum_{n\\leq N}e(kx_n)=o_k(N)\\)我们需要判断是否\\(\\sum_{n\\leq N}e(kx_n+k\\log(n))=o_k(N)\\)基于Weyl判别。",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "analytic number theory",
+      "key_techniques": [
+        "summation by parts",
+        "Weyl criterion",
+        "difference estimate using |e^{ix}-e^{iy}|\\le |x-y|"
+      ],
+      "prerequisites": [
+        "uniform distribution mod 1",
+        "exponential sums",
+        "basic logarithmic estimates"
+      ]
+    },
+    {
+      "id": "分部求和-4",
+      "statement_en": "Prove the convergence of the double series \\(\\sum_{n\\geq 1}\\sum_{k\\geq 1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n^2+k^2}\\).",
+      "statement_zh": "这个问题中我们需要证明\\(\\sum_{n\\geq 1}\\sum_{k\\geq 1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n^2+k^2}\\)的收敛性。",
+      "type": "example",
+      "difficulty": "hard",
+      "domain": "real analysis",
+      "key_techniques": [
+        "summation by parts",
+        "reduction of a double series",
+        "integral comparison estimate"
+      ],
+      "prerequisites": [
+        "double series",
+        "asymptotic comparison",
+        "convergence tests"
+      ]
+    },
+    {
+      "id": "分部求和-5",
+      "statement_en": "Estimate \\(S_n:=\\sum_{k\\leq n} x_k^p=o(n^p)\\) under the assumptions that \\(x_k=o(k)\\) and that the partial sums \\(A_n:=\\sum_{k\\leq n} x_k\\) satisfy \\(A_n<C\\).",
+      "statement_zh": "其中为了完成估计任务：\\(S_n:=\\sum_{k\\leq n}x_k^p=o(n^p)\\)已知信息\\(x_k = o(k)\\)暗示我们可以进行分段估计，但是单纯的分段估计只能得到\\(o(n^{p+1})\\)的估计，达不到目标精度。不过问题当中还包含序列部分和\\(A_n:=\\sum_{k\\leq n}x_k\\),并且已知\\(A_n<C\\)的信息。",
+      "type": "example",
+      "difficulty": "hard",
+      "domain": "real analysis",
+      "key_techniques": [
+        "majorization before estimation",
+        "summation by parts",
+        "using information on partial sums"
+      ],
+      "prerequisites": [
+        "asymptotic notation",
+        "power sums",
+        "partial sums"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "discrete summation by parts",
+    "estimating sums via partial sums of one factor and differences of the other",
+    "changing the order of summation",
+    "Dirichlet and Abel type convergence arguments",
+    "Leibniz alternating-series reasoning",
+    "Euler-Maclaurin summation for finer partial-sum estimates",
+    "majorize first, then apply summation by parts"
+  ],
+  "connections_mentioned": [
+    "Leibniz convergence criterion",
+    "Dirichlet test",
+    "Abel-Dirichlet convergence test",
+    "Euler-Maclaurin summation formula",
+    "Weyl criterion",
+    "uniform distribution mod 1",
+    "double series convergence",
+    "asymptotic estimation of partial sums"
+  ]
+}

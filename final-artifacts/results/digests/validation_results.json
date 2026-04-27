@@ -1,0 +1,12 @@
+{
+  "step_recall": 0.7142857142857143,
+  "matched_count": 5,
+  "gold_count": 7,
+  "boundary_concrete": 16,
+  "boundary_uncertain": 0,
+  "boundary_vague": 2,
+  "total_atoms": 18,
+  "hub_recall": 0.3333333333333333,
+  "hub_matched": 1,
+  "hub_total": 3
+}

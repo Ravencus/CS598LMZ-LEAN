@@ -1,0 +1,107 @@
+{
+  "note_title": "广义调和级数部分和的渐近展开",
+  "classification": "theory",
+  "summary_en": "This note studies asymptotic expansions of partial sums of generalized harmonic series using the Euler-Maclaurin summation formula, with applications to tail estimates and polynomial sum formulas. It connects these expansions to the Basel problem, the Riemann zeta function, analytic continuation, Bernoulli numbers, and Faulhaber's formula.",
+  "problems": [
+    {
+      "id": "ghs-1",
+      "statement_en": "Compute the limit\n$$\\lim_{N \\to \\infty} N\\sum_{n>N} \\frac{1}{n^2}.$$",
+      "statement_zh": "求极限:\n$$\\lim_{N \\to \\infty} N\\sum_{n>N} \\frac{1}{n^2}$$",
+      "type": "exercise",
+      "difficulty": "easy",
+      "domain": "calculus",
+      "key_techniques": ["tail asymptotics", "Stolz-Cesaro theorem"],
+      "prerequisites": ["series convergence", "limits"]
+    },
+    {
+      "id": "ghs-2",
+      "statement_en": "Let\n$$S(N):=\\zeta(2)-\\sum_{n\\leq N}\\frac{1}{n^2}.$$ Find an asymptotic expansion of $S(N)$ up to the coefficient of $\\frac{1}{N}$.",
+      "statement_zh": "求$$S(N):=\\zeta(2)-\\sum_{n\\leq N}\\frac{1}{n^2}$$的精确到$\\frac{1}{N}$系数的渐近展开。",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "Basel problem"],
+      "prerequisites": ["Riemann zeta function", "asymptotic expansion"]
+    },
+    {
+      "id": "ghs-3",
+      "statement_en": "General asymptotic result for generalized harmonic numbers: if $r>0$ and $r\\neq 1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).$$\nIf $r=1$, then\n$$\\sum_{k=1}^n k^{-1}=\\gamma+\\log(n) + \\frac{1}{2} n^{-1}-\\frac{1}{12} n^{-2}+O\\left(n^{-4}\\right).$$",
+      "statement_zh": "如果$r>0,r \\neq 1$的时候，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right)$$\n如果$r=1$的时候,$$\\sum_{k=1}^n k^{-1}=\\gamma+\\log(n) + \\frac{1}{2} n^{-1}-\\frac{1}{12} n^{-2}+O\\left(n^{-4}\\right)$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "Bernoulli numbers"],
+      "prerequisites": ["generalized harmonic series", "Riemann zeta function", "Euler-Mascheroni constant"]
+    },
+    {
+      "id": "ghs-4",
+      "statement_en": "If $r>1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).$$",
+      "statement_zh": "如果$r>1$，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right)$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "tail transformation"],
+      "prerequisites": ["convergent series", "Riemann zeta function"]
+    },
+    {
+      "id": "ghs-5",
+      "statement_en": "If $r>1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n),$$\nwhere the remainder satisfies\n$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$",
+      "statement_zh": "如果$r>1$，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n)$$\n其中余项$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["remainder estimation", "Bernoulli polynomial bounds"],
+      "prerequisites": ["Euler-Maclaurin summation", "Bernoulli polynomials"]
+    },
+    {
+      "id": "ghs-6",
+      "statement_en": "If $0<r<1$, then\n$$\\sum_{k=1}^n k^{-r}=\\frac{1}{1-r} n^{1-r}+\\zeta(r)+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n),$$\nwhere\n$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$",
+      "statement_zh": "如果$0<r<1$，\n$$\\sum_{k=1}^n k^{-r}=\\frac{1}{1-r} n^{1-r}+\\zeta(r)+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n)$$\n其中余项$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}$$",
+      "type": "theorem",
+      "difficulty": "hard",
+      "domain": "analytic number theory",
+      "key_techniques": ["analytic continuation of zeta function", "Euler-Maclaurin summation"],
+      "prerequisites": ["Riemann zeta function", "complex analysis", "analytic continuation"]
+    },
+    {
+      "id": "ghs-7",
+      "statement_en": "Find the asymptotic expansion of\n$$\\sum_{k\\leq n}\\sqrt{k},$$\nin particular its constant term. The note gives\n$$\\sum_{k\\leq n}\\sqrt{k}=\\frac{2}{3}n^{3/2}+\\frac{1}{2}n^{1/2}+\\zeta(-1/2)+\\frac{1}{24}n^{-1/2}+O(n^{-5/2}).$$",
+      "statement_zh": "求$$\\sum_{k\\leq n}\\sqrt{k}$$的渐近展开，特别是需要得到其常数项的渐近系数。\n\n那么根据上面的公式，此时相当于$r=-1/2$于是我们可以直接得到答案:\n\n$$\\sum_{k\\leq n}\\sqrt{k}=\\frac{2}{3}n^{3/2}+\\frac{1}{2}n^{1/2}+\\zeta(-1/2)+\\frac{1}{24}n^{-1/2}+O(n^{-5/2})$$",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "zeta regularized constant term"],
+      "prerequisites": ["power sums", "Riemann zeta function", "asymptotic expansion"]
+    },
+    {
+      "id": "ghs-8",
+      "statement_en": "If $r<0$ and $|r|$ is a positive integer, then the sum is given by the Faulhaber formula:\n$$\\sum_{k\\leq n} k^{|r|} = \\frac{1}{|r|+1} \\cdot \\sum_{j=0}^{|r|}\\binom{|r|+1}{j}B_j n^{|r|+1-j}\n= \\frac{1}{1-r}n^{-r+1}+\\frac{1}{2}n^{-r}-\\frac{r}{12}n^{-r-1}+\\cdots+B_{|r|}n.$$",
+      "statement_zh": "这个时候当然就是著名的Faulhaber公式了，因为此时$-r \\in \\mathbb{Z}^{+}$,求和式子$\\sum_{k\\leq n}k^{-r}$的求和式子可以直接表达为关于n的多项式:\n\n$$\\begin{aligned}\\sum_{k\\leq n} k^{|r|} &= \\frac{1}{|r|+1} \\cdot \\sum_{j=0}^{|r|}\\binom{|r|+1}{j}B_{j} n^{|r|+1-j} \\\\ &= \\frac{1}{1-r}n^{-r+1}+\\frac{1}{2}n^{-r}-\\frac{r}{12}n^{-r-1}+\\cdots+B_{|r|}n\\end{aligned}$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "number theory",
+      "key_techniques": ["Faulhaber formula", "Bernoulli numbers"],
+      "prerequisites": ["power sums", "polynomials", "Bernoulli numbers"]
+    }
+  ],
+  "key_techniques_discussed": [
+    "Euler-Maclaurin summation",
+    "Stolz-Cesaro theorem",
+    "asymptotic expansion of partial sums",
+    "tail-to-full-sum transformation",
+    "analytic continuation of the Riemann zeta function",
+    "Bernoulli numbers and Bernoulli polynomials",
+    "remainder bounds in Euler-Maclaurin",
+    "Faulhaber formula"
+  ],
+  "connections_mentioned": [
+    "Basel problem",
+    "generalized harmonic numbers",
+    "Riemann zeta function",
+    "Euler-Mascheroni constant",
+    "analytic continuation",
+    "power sums",
+    "partial summation",
+    "number theory"
+  ]
+}

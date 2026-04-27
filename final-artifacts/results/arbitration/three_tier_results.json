@@ -1,0 +1,72 @@
+[
+  {
+    "problem": "integral_max_cos",
+    "tier1": {
+      "correct": true,
+      "claims": 12,
+      "errors": 0
+    },
+    "tier3": {
+      "correct": true,
+      "claims": 7,
+      "errors": 0,
+      "caught": 0
+    }
+  },
+  {
+    "problem": "series_basel",
+    "tier1": {
+      "correct": true,
+      "claims": 4,
+      "errors": 0
+    },
+    "tier3": {
+      "correct": true,
+      "claims": 5,
+      "errors": 0,
+      "caught": 0
+    }
+  },
+  {
+    "problem": "integral_gaussian",
+    "tier1": {
+      "correct": true,
+      "claims": 14,
+      "errors": 3
+    },
+    "tier3": {
+      "correct": true,
+      "claims": 4,
+      "errors": 0,
+      "caught": 0
+    }
+  },
+  {
+    "problem": "inequality_pi",
+    "tier1": {
+      "correct": true,
+      "claims": 6,
+      "errors": 1
+    },
+    "tier3": {
+      "correct": true,
+      "claims": 7,
+      "errors": 1,
+      "caught": 1
+    }
+  },
+  {
+    "problem": "series_alternating",
+    "tier1": {
+      "correct": true,
+      "claims": 5,
+      "errors": 1
+    },
+    "tier3": {
+      "correct": true,
+      "claims": 6,
+      "errors": 1,
+      "caught": 1
+    }
+  }
+]

@@ -1,0 +1,79 @@
+\documentclass[sigconf]{acmart}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape\color{gray},
+  breaklines=true,
+  frame=single,
+  numbers=none,
+  xleftmargin=2pt,
+  xrightmargin=2pt,
+}
+
+\setcopyright{none}
+\acmConference{}{}{}
+\acmBooktitle{}
+\acmDOI{}
+\acmISBN{}
+\settopmatter{printacmref=false, printfolios=true}
+\fancyfoot{}
+
+\begin{document}
+
+\title{Structured AI Theorem Proving with Human-Learnable Knowledge Extraction}
+
+\author{Zihan Zheng}
+\affiliation{%
+  \institution{University of Illinois Urbana-Champaign}
+  \country{USA}}
+\email{zihanz23@illinois.edu}
+
+\author{Author Two}
+\affiliation{%
+  \institution{University of Illinois Urbana-Champaign}
+  \country{USA}}
+\email{author2@illinois.edu}
+
+\author{Author Three}
+\affiliation{%
+  \institution{University of Illinois Urbana-Champaign}
+  \country{USA}}
+\email{author3@illinois.edu}
+
+\author{Author Four}
+\affiliation{%
+  \institution{University of Illinois Urbana-Champaign}
+  \country{USA}}
+\email{author4@illinois.edu}
+
+\begin{abstract}
+As AI systems increasingly generate formal proofs and complex code artifacts, a critical gap emerges: the proof is verified, but human understanding lags behind. A verified theorem tells us \emph{what} is true, not \emph{why} it is true, \emph{when} the technique applies, or \emph{what} we should learn from it. We present a two-system architecture for Lean~4 theorem proving that addresses this gap. System~1 is a structured prover that separates high-level mathematical strategy from low-level mechanization through a plan--implement--replan loop with proof skeletons. System~2 is a digest agent that extracts transferable, human-learnable knowledge from proving traces via reinterpretation, scope expansion, progressive construction, and strategy templates. We evaluate against a curated dataset derived from a 455-node, 1596-edge mathematical knowledge graph with human-authored reasoning. Preliminary results on a complex subset sum case study show that 100\% of proving errors are mechanization (wrong API names, syntax), not mathematical strategy, validating the separation. The digest agent recovers 100\% of ground-truth strategy connections versus 50\% for a baseline summarizer.
+\end{abstract}
+
+\maketitle
+
+\section{Problem}
+\input{sections/problem}
+
+\section{Solution}
+\input{sections/solution}
+
+\section{Evaluation Setup}
+\input{sections/evaluation}
+
+\section{Result Analysis}
+\input{sections/results}
+
+\section{Future Plan}
+\input{sections/future}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

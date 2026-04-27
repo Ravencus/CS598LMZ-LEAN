@@ -1,0 +1,155 @@
+{
+  "note_title": "Dirichlet核并非逼近单位元；Fejer核是一个逼近单位元",
+  "classification": "theory",
+  "summary_en": "This note studies the role of the Dirichlet and Fejer kernels in Fourier series on the circle. It shows that the Dirichlet kernel is not an approximate identity because its \(L^1\)-norm grows like \(\log N\), while the Fejer kernel is an approximate identity and yields a basic uniqueness consequence for Fourier coefficients.",
+  "problems": [
+    {
+      "id": "dirichlet-fejer-1",
+      "statement_en": "Definition of the Dirichlet kernel: \n\\[\nD_N(x):=\\sum_{|n|\\leq N}e^{inx}=\\frac{\\sin\\left[\\left(N+\\frac{1}{2}\\right)x\\right]}{\\sin(x/2)}.\n\\]",
+      "statement_zh": "Dirichlet核：\\(D_N(x):=\\sum_{|n|\\leq N}e^{inx}=\\frac{\\sin\\left[\\left(N+\\frac{1}{2}\\right)x\\right]}{\\sin(x/2)}\\)。",
+      "type": "definition",
+      "difficulty": "easy",
+      "domain": "harmonic analysis",
+      "key_techniques": [
+        "Fourier series kernel representation"
+      ],
+      "prerequisites": [
+        "Fourier coefficients",
+        "trigonometric series"
+      ]
+    },
+    {
+      "id": "dirichlet-fejer-2",
+      "statement_en": "For a \(2\\pi\)-periodic function \(f\\) on \\([ -\\pi,\\pi ]\\), the \(N\)-th partial Fourier sum satisfies\n\\[\nS_N(f)(x)=\\sum_{|n|\\le N}\\widehat f(n)e^{inx}=\\frac1{2\\pi}\\int_{-\\pi}^{\\pi} f(y)D_N(x-y)\\,dy=f*D_N(x).\n\\]",
+      "statement_zh": "对于定义在\\([-\\pi,\\pi]\\)上的周期为\\(2\\pi\\)的函数，傅里叶级数的部分和满足 \\(S_N(f)=f*D_N\\)。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "harmonic analysis",
+      "key_techniques": [
+        "exchange of sum and integral",
+        "convolution representation of Fourier partial sums"
+      ],
+      "prerequisites": [
+        "Fourier series",
+        "convolution on the circle"
+      ]
+    },
+    {
+      "id": "dirichlet-fejer-3",
+      "statement_en": "The Dirichlet kernel is not an approximate identity. Although\n\\[\n\\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi}D_N(x)\\,dx=1,\n\\]\nits \(L^1\)-norm is not uniformly bounded; in fact,\n\\[\n\\int_0^{\\pi}\\frac{|\\sin((N+\\tfrac12)x)|}{x}\\,dx=\\frac{2}{\\pi}\\log N+O(1),\n\\]\nso \(\\|D_N\\|_{L^1}\\) grows like \(\\log N\\).",
+      "statement_zh": "Dirichlet核并非逼近单位元。虽然 \\(\\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi}D_N(x)\\,dx=1\\)，但是其绝对值积分不一致有界，并且相关下界积分满足 \\(\\int_0^{\\pi}\\frac{|\\sin((N+1/2)x)|}{x}dx=\\frac{2}{\\pi}\\log N+O(1)\\)。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "harmonic analysis",
+      "key_techniques": [
+        "lower bound for the \(L^1\)-norm",
+        "change of variables",
+        "period decomposition of integrals",
+        "harmonic number asymptotics"
+      ],
+      "prerequisites": [
+        "approximation to the identity",
+        "Dirichlet kernel",
+        "asymptotic estimates"
+      ]
+    },
+    {
+      "id": "dirichlet-fejer-4",
+      "statement_en": "For \(k>0\),\n\\[\n\\int_{0}^{\\pi} \\frac{\\sin s}{k\\pi+s}\\,ds=\\frac{2}{\\pi k}+O\\left(\\frac{1}{k^2}\\right).\n\\]",
+      "statement_zh": "关键渐近估计：当 \\(k>0\\) 时，\\(\\int_{0}^{\\pi} \\frac{\\sin(s)}{k\\pi+s}\\,ds=\\frac{2}{\\pi k}+O\\left(\\frac{1}{k^2}\\right)\\)。",
+      "type": "lemma",
+      "difficulty": "medium",
+      "domain": "harmonic analysis",
+      "key_techniques": [
+        "local asymptotic expansion inside an integral",
+        "termwise estimation"
+      ],
+      "prerequisites": [
+        "big-O notation",
+        "integration estimates"
+      ]
+    },
+    {
+      "id": "dirichlet-fejer-5",
+      "statement_en": "Definition of the Cesaro means of Fourier partial sums:\n\\[\n\\sigma_N(f):=\\frac{S_0(f)+\\cdots+S_{N-1}(f)}{N}.\n\\]",
+      "statement_zh": "Cesaro和定义为 \\(\\sigma_N(f):=\\frac{S_0(f)+\\cdots+S_{N-1}(f)}{N}\\)。",
+      "type": "definition",
+      "difficulty": "easy",
+      "domain": "harmonic analysis",
+      "key_techniques": [
+        "Cesaro summation"
+      ],
+      "prerequisites": [
+        "sequence limits",
+        "Fourier partial sums"
+      ]
+    },
+    {
+      "id": "dirichlet-fejer-6",
+      "statement_en": "Example: let \(a_n:=(-1)^n\). Its partial sums are\n\\[\nS_n:=\\begin{cases}1,& n\\text{ even},\\\\0,& n\\text{ odd},\\end{cases}\n\\]\nso \(S_n\) does not converge. However, its Cesaro means\n\\[\n\\sigma_N:=\\frac{S_0+\\cdots+S_{N-1}}{N}=\\frac{\\lfloor N/2+1\\rfloor}{N}\n\\]\nconverge to \(1/2\).",
+      "statement_zh": "例子2.1：\\(a_n:=(-1)^n\\)，其部分和 \\(S_n\\) 不收敛，但 \\(\\sigma_N:=\\frac{S_0+\\cdots+S_{N-1}}{N}=\\frac{\\lfloor\\frac{N}{2}+1\\rfloor}{N}\\) 的极限为 \\(\\frac{1}{2}\\)。",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "analysis",
+      "key_techniques": [
+        "Cesaro summability",
+        "arithmetic averaging of partial sums"
+      ],
+      "prerequisites": [
+        "sequence convergence",
+        "Cesaro means"
+      ]
+    },
+    {
+      "id": "dirichlet-fejer-7",
+      "statement_en": "Define the Fejer kernel by\n\\[\nF_N:=\\frac{D_0+\\cdots+D_{N-1}}{N}.\n\\]\nThen\n\\[\nF_N(x)=\\frac1N\\frac{\\sin^2(Nx/2)}{\\sin^2(x/2)},\n\\]\nand \\(F_N\\) is an approximate identity in \(L^1([ -\\pi,\\pi ])\\).",
+      "statement_zh": "定理2.2：\\(F_N(x):=\\frac{1}{N}\\frac{\\sin^2(Nx/2)}{\\sin^2(x/2)}\\)，并且这是一个 \\(L^1([ -\\pi,\\pi ])\\) 上的逼近单位元。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "harmonic analysis",
+      "key_techniques": [
+        "Cesaro averaging of kernels",
+        "closed-form trigonometric identity",
+        "positivity of the kernel",
+        "tail estimate away from zero"
+      ],
+      "prerequisites": [
+        "Dirichlet kernel",
+        "approximation to the identity",
+        "convolution on the circle"
+      ]
+    },
+    {
+      "id": "dirichlet-fejer-8",
+      "statement_en": "If \(f\\in L^1(\\mathbb T)\) and its Fourier coefficients satisfy\n\\[\n\\widehat f(n)=0,\\quad \\forall n\\in\\mathbb Z,\n\\]\nthen \(f=0\) at every point where \(f\) is continuous.",
+      "statement_zh": "推论2.3：如果函数 \\(f\\) 是单位圆周 \\(\\mathbb{T}\\) 上的可积函数，并且其傅里叶系数满足 \\(\\widehat{f}(n)=0,\\forall n\\in \\mathbb{Z}\\)，那么在 \\(f\\) 的任意连续点处都取值为0。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "harmonic analysis",
+      "key_techniques": [
+        "Fejer kernel approximation",
+        "uniqueness from vanishing Fourier coefficients"
+      ],
+      "prerequisites": [
+        "Fourier coefficients",
+        "Fejer kernel",
+        "continuity points of \(L^1\) functions on the circle"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "convolution representation of Fourier partial sums",
+    "approximation to the identity",
+    "Cesaro summation",
+    "period decomposition for oscillatory integral estimates",
+    "harmonic-number asymptotics",
+    "positivity and tail control for kernel estimates"
+  ],
+  "connections_mentioned": [
+    "Fourier series on the circle",
+    "harmonic analysis",
+    "approximation to the identity",
+    "Cesaro summability",
+    "uniqueness of Fourier coefficients"
+  ]
+}

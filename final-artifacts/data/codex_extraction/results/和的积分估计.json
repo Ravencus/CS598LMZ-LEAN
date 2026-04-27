@@ -1,0 +1,210 @@
+{
+  "note_title": "和的积分估计",
+  "classification": "technique",
+  "summary_en": "This note surveys techniques for estimating discrete sums by continuous integrals, ranging from simple monotonicity-based bounds and the integral test to convexity refinements, Euler-Maclaurin summation, and continuous partial summation. It emphasizes when these methods work, when they fail, and how they are used in asymptotic analysis.",
+  "problems": [
+    {
+      "id": "sum-int-1",
+      "statement_en": "For \(f\\in C^2([0,1])\), estimate the error between the integral and the uniform Riemann sum:\n\\[\nR_n:=\\int_0^1 f(t)\\,dt-\\frac1n\\sum_{k=0}^{n-1}f(k/n),\n\\]\nand in the simple case obtain\n\\[\n\\frac1n\\sum_{k=0}^{n-1}f(k/n)=\\int_0^1 f(t)\\,dt-\\frac{f(1)-f(0)}{2n}+O(1/n^2).\n\\]",
+      "statement_zh": "估计黎曼积分与均匀划分的黎曼和之间的绝对误差\n\\[\nR_n:=\\int_0^1f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1}f(k/n),\n\\]\n并且当 \(f\\in C^2([0,1])\) 的时候有\n\\[\n\\frac1n\\sum_{k=0}^{n-1}f(k/n) = \\int_0^1f(t)\\,\\mathrm{d}t - \\frac{f(1)-f(0)}{2n}+O\\left(1/n^2\\right).\n\\]",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "Riemann sum error estimation"],
+      "prerequisites": ["Riemann integral", "Taylor expansion", "smooth functions"]
+    },
+    {
+      "id": "sum-int-2",
+      "statement_en": "Estimate\n\\[\n\\sum_{k=3}^n n^{1/\\log_2 k}\n\\]\nby comparing it with the integral\n\\[\n\\int_3^n n^{1/\\log_2 x}\\,dx,\n\\]\nusing\n\\[\n\\sum_{k=3}^n n^{1/\\log_2 k}=\\int_3^n n^{1/\\log_2 x}\\,dx+O\\bigl(n^{1/\\log_2 3}+n^{1/\\log_2 n}\\bigr)=\\int_3^n n^{1/\\log_2 x}\\,dx+o(n).\n\\]",
+      "statement_zh": "估计目标的和与积分没有任何一个直接是能简单估计出来的\n\\[\n\\begin{aligned}\n\\sum_{k=3}^n n^{\\frac{1}{\\log_2 k}}&=\\int_{3}^n n^{\\frac{1}{\\log_2x}}\\,dx+O(n^{\\frac{1}{\\log_23}}+n^{\\frac{1}{\\log_2n}})\\\\\n&=\\int_{3}^n n^{\\frac{1}{\\log_2x}}\\,dx+o(n)\n\\end{aligned}\n\\]\n并通过变量替换去估计积分。",
+      "type": "example",
+      "difficulty": "hard",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["integral approximation of sums", "change of variables"],
+      "prerequisites": ["asymptotic notation", "integral substitution"]
+    },
+    {
+      "id": "sum-int-3",
+      "statement_en": "Compare the sum and the integral\n\\[\n\\frac{1}{\\sqrt{n}}\\sum_{k=0}^n e^{-k^2/n}\n\\quad\\text{and}\\quad\n\\int_0^n e^{-x^2/n}\\,dx,\n\\]\nnoting that the latter can be transformed into\n\\[\n\\sqrt{n}\\int_0^{\\sqrt n} e^{-y^2}\\,dy.\n\\]",
+      "statement_zh": "估计和\n\\[\n\\frac{1}{\\sqrt{n}}\\sum_{k=0}^n e^{-k^2/n}\n\\]\n与积分\n\\[\n\\int_{0}^n e^{-x^2/n}\\,dx\n\\]\n有什么区别？后者可以通过积分换元变成\n\\[\n\\sqrt{n}\\int_{0}^{\\sqrt{n}}e^{-y^2}\\,dy.\n\\]",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["integral approximation of sums", "Gaussian integral substitution"],
+      "prerequisites": ["change of variables", "exponential integrals"]
+    },
+    {
+      "id": "sum-int-4",
+      "statement_en": "If \(f:[x,y]\\to\\mathbb{R}\) is monotone, then the integer sum can be estimated by the integral in the quantitative form\n\\[\n\\sum_{n\\in\\mathbb{Z}:y\\le n\\le x}f(n)=\\int_y^x f(t)\\,dt+O\\bigl(|f(x)|+|f(y)|\\bigr).\n\\]",
+      "statement_zh": "如果函数 \(f:[x,y]\\to\\mathbb{R}\) 是单调函数那么求和可以被积分估计(量化版本的):\n\\[\n\\sum_{n\\in{\\mathbb{Z}}:y\\leq n\\leq x}f(n)=\\int_{y}^{x}f(t)\\,dt+O(|f(x)|+|f(y)|).\n\\]",
+      "type": "theorem",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": ["monotonicity", "integral comparison"],
+      "prerequisites": ["Riemann integral", "monotone functions"]
+    },
+    {
+      "id": "sum-int-5",
+      "statement_en": "Show that\n\\[\n\\sum_{1\\le n\\le x}\\log n = x\\log x - x + O(\\log(x+2)).\n\\]",
+      "statement_zh": "\\[\n\\sum_{1\\leq n\\le x}\\log(n)=x\\log(x)-x+O(\\log(x+2)).\n\\]",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["simple integral estimate", "integration of \\(\\log x\\)"],
+      "prerequisites": ["logarithms", "integral comparison"]
+    },
+    {
+      "id": "sum-int-6",
+      "statement_en": "Counterexample: if \(f(t)=|\\cos(2\\pi t)|\), then blindly applying the simple integral estimate without monotonicity would incorrectly suggest an \(O(1)\) bound, while the sum over an interval is actually only bounded by \(O(x-y)\).",
+      "statement_zh": "如果函数不是单调的而是震荡的，那么这个估计是不成立的。例子：\(f(t):=|\\cos(2\\pi t)|\)，如果无视“简单积分估计”对单调性的要求，直接根据上面的结果去强行做估计就会得出 \(O(1)\) 这样的错误的估计，而正确只能得到 \(O(x-y)\) 量级。",
+      "type": "counterexample",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": ["counterexample via oscillation", "failure of monotone integral comparison"],
+      "prerequisites": ["periodic functions", "integral comparison"]
+    },
+    {
+      "id": "sum-int-7",
+      "statement_en": "Estimate the upper bound of\n\\[\n\\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k)\n\\]\nunder the assumption \(0=x_0<x_1<\\cdots<x_n<1\), and deduce\n\\[\n\\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k)<\\frac12.\n\\]",
+      "statement_zh": "给出\n\\[\n\\sum_{k=1}^{n}(x_{k}-x_{k-1})(1-x_k)\n\\]\n的上界估计，其中假设 \(0=x_0<x_1<...<x_n<1\)。利用 \(f(x)=1-x\) 的单调性与非负性得到\n\\[\n\\sum_{k=1}^{n}(x_{k}-x_{k-1})(1-x_k)<\\int_{0}^{x_n}(1-x)\\,dx<\\frac12.\n\\]",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": ["simple integral estimate", "monotonicity"],
+      "prerequisites": ["basic inequalities", "definite integrals"]
+    },
+    {
+      "id": "sum-int-8",
+      "statement_en": "Estimate\n\\[\n\\sum_{i=1}^n (y_i-y_{i-1})\\frac{1}{\\sqrt{1-y_{i-1}^2}}\n\\]\nfor \(0=y_1<\\cdots<y_n=1\), and show that\n\\[\n\\sum_{i=1}^n (y_i-y_{i-1})\\frac{1}{\\sqrt{1-y_{i-1}^2}}<\\int_0^1\\frac{1}{\\sqrt{1-x^2}}\\,dx=\\frac\\pi2.\n\\]",
+      "statement_zh": "估计\n\\[\n\\sum_{i=1}^n (y_i-y_{i-1})\\frac{1}{\\sqrt{1-y_{i-1}^2}}\n\\]\n其中 \(0=y_1<\\cdots<y_n=1\)，并利用 \(f(x)=\\frac{1}{\\sqrt{1-x^2}}\) 的单调性得到\n\\[\n\\sum_{i=1}^n (y_i-y_{i-1})\\frac{1}{\\sqrt{1-y_{i-1}^2}}<\\int_{0}^{1}\\frac{1}{\\sqrt{1-x^2}}\\,dx=\\frac{\\pi}{2}.\n\\]",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["simple integral estimate", "monotonicity", "trigonometric integral"],
+      "prerequisites": ["monotone functions", "integral of \\((1-x^2)^{-1/2}\\)"]
+    },
+    {
+      "id": "sum-int-9",
+      "statement_en": "Let \(a_n>0\), let \(S_n\) be the partial sums of \(a_n\), and let \(p>1\). Estimate\n\\[\nT_N=\\sum_{n\\le N}\\frac{a_n}{S_n^p}\n\\]\nand prove that \(T_N\) is bounded, hence the series converges.",
+      "statement_zh": "设 \(a_n>0\)，\(S_n\) 是 \(a_k\) 的前 \(n\) 项和，\(p>1\)。估计部分和\n\\[\nT_N=\\sum_{n\\leq N}\\frac{a_n}{S_n^p}\n\\]\n的上界，证明 \(T_N\) 是一个有界序列，从而对应级数收敛。",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["sum-to-integral comparison", "partial sums substitution"],
+      "prerequisites": ["series convergence", "positive sequences"]
+    },
+    {
+      "id": "sum-int-10",
+      "statement_en": "Estimate\n\\[\nS_n:=\\sum_{i\\le n}\\frac{1}{n+\\sqrt{i}}\n\\]\nwith precision \(o(n^{-1/2})\), obtaining\n\\[\nS_n=1-\\frac{2}{3}\\frac{1}{\\sqrt n}+o\\left(\\frac{1}{\\sqrt n}\\right).\n\\]",
+      "statement_zh": "目标是得到\n\\[\nS_n:=\\sum_{i\\leq n}\\frac{1}{n+\\sqrt{i}}\n\\]\n的精度为 \(o\\left(\\frac{1}{\\sqrt{n}}\\right)\) 的估计，最后由简单积分估计得到\n\\[\nS_n=1-\\frac{2}{3}\\frac{1}{\\sqrt{n}}+o\\left(\\frac{1}{\\sqrt{n}}\\right).\n\\]",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["simple integral estimate", "Taylor expansion"],
+      "prerequisites": ["asymptotic notation", "monotone functions", "Taylor expansion"]
+    },
+    {
+      "id": "sum-int-11",
+      "statement_en": "Integral test for series: if \(f:[M,\\infty)\\to\\mathbb{R}\) is integrable, monotone decreasing to \(0\), then\n\\[\n\\sum_{n\\ge M}f(n)\n\\]\nconverges if and only if\n\\[\n\\int_M^{\\infty}f(t)\\,dt\n\\]\nconverges.",
+      "statement_zh": "级数收敛的积分判别法：如果被求和函数 \(f:[M,+\\infty)\\to\\mathbb{R}\) 可积，并且函数单调减少到0，并且积分\n\\[\n\\int_{M}^{\\infty}f(t)\\,dt\n\\]\n收敛，那么级数\n\\[\n\\sum_{n\\geq M}f(n)\n\\]\n也是收敛的，反之亦然。",
+      "type": "theorem",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": ["integral test", "monotonicity"],
+      "prerequisites": ["improper integrals", "series convergence"]
+    },
+    {
+      "id": "sum-int-12",
+      "statement_en": "If \(f\) is convex on \([a,b]\), then for any \(x_1<x_2\) in \([a,b]\),\n\\[\n\\frac{f(x_1)+f(x_2)}{2}\\ge \\frac{1}{x_2-x_1}\\int_{x_1}^{x_2}f(x)\\,dx.\n\\]\nConsequently, when \(x_k=k\),\n\\[\n\\sum_{k=1}^n f(k)\\ge \\frac{f(1)+f(n)}{2}+\\int_1^n f(x)\\,dx.\n\\]",
+      "statement_zh": "利用函数凸性的简单积分估计：对于在区间 \([a,b]\) 上凸的函数，对任意 \(x_1,x_2\\in[a,b]\) 且 \(x_1<x_2\) 都有\n\\[\n\\frac{f(x_1)+f(x_2)}{2}\\geq \\frac{1}{x_2-x_1}\\int_{x_1}^{x_2} f(x)\\,dx.\n\\]\n因此当 \(x_k=k\) 时有\n\\[\n\\sum_{k=1}^n f(k)\\geq \\frac{f(1)+f(n)}{2}+\\int_{1}^{n}f(x)\\,dx.\n\\]",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["convexity", "Hermite-Hadamard inequality", "integral comparison"],
+      "prerequisites": ["convex functions", "definite integrals"]
+    },
+    {
+      "id": "sum-int-13",
+      "statement_en": "Use convexity to improve the lower bound for the harmonic sum\n\\[\nH_n:=\\sum_{k=1}^n \\frac1k,\n\\]\nobtaining\n\\[\nH_n\\ge \\frac{n+1}{2n}+\\log n,\n\\]\nwhich improves the monotonicity-based bound \(H_n\\ge \\frac1n+\\log n\).",
+      "statement_zh": "估计\n\\[\nH_n:=\\sum_{k=1}^n \\frac{1}{k}\n\\]\n的下界。直接利用 \(f(x)=1/x\) 的单调性得到\n\\[\nH_n\\geq \\frac{1}{n}+\\log(n),\n\\]\n若注意到它是单调减少的凸函数，则得到更好的下界\n\\[\nH_n\\geq \\frac{n+1}{2n}+\\log(n).\n\\]",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": ["convexity-based integral estimate", "harmonic sum estimate"],
+      "prerequisites": ["harmonic numbers", "convex functions", "logarithm integral"]
+    },
+    {
+      "id": "sum-int-14",
+      "statement_en": "Show the Stirling-type asymptotic expansion\n\\[\n\\sum_{k\\le n}\\log k=n\\log n-n+\\frac12\\log n+\\log(\\sqrt{2\\pi})+O(1/n).\n\\]",
+      "statement_zh": "证明\n\\[\nS_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n).\n\\]",
+      "type": "example",
+      "difficulty": "hard",
+      "domain": "asymptotic analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "Stirling asymptotics"],
+      "prerequisites": ["Bernoulli polynomials", "asymptotic expansion", "logarithms"]
+    },
+    {
+      "id": "sum-int-15",
+      "statement_en": "For \(r>0\), \(r\\ne 1\), derive the asymptotic expansion\n\\[\n\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r}n^{1-r}+\\frac12 n^{-r}-\\frac{r}{12}n^{-r-1}+O(n^{-r-3}).\n\\]",
+      "statement_zh": "证明如果 \(r>0,r\\neq 1\) 那么\n\\[\n\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).\n\\]",
+      "type": "example",
+      "difficulty": "hard",
+      "domain": "analytic number theory",
+      "key_techniques": ["Euler-Maclaurin summation", "zeta function"],
+      "prerequisites": ["Bernoulli numbers", "asymptotic expansion", "Riemann zeta function"]
+    },
+    {
+      "id": "sum-int-16",
+      "statement_en": "Euler-Maclaurin summation formula: for integers \(m\\le n\),\n\\[\n\\sum_{k=m}^{n}f(k)=\\int_m^n f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\bigl(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\bigr)+\\frac{(-1)^{p+1}}{p!}\\int_m^n B_p(\\{t\\})f^{(p)}(t)dt,\n\\]\nand more generally\n\\[\n\\sum_{y<k\\le x}f(k)=\\int_y^x f(t)dt+\\sum_{k=1}^{p}\\frac{(-1)^k}{k}\\left(B_k(\\{x\\})f^{(k-1)}(x)-B_k(\\{y\\})f^{(k-1)}(y)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_y^x B_p(\\{t\\})f^{(p)}(t)dt.\n\\]",
+      "statement_zh": "Euler-Maclaurin求和估计：\n\\[\n\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt,\n\\]\n以及更一般的形式\n\\[\n\\sum_{y<k\\leq x}f(k)=\\int_{y}^{x}f(t)dt+\\sum_{k=1}^{p}\\frac{(-1)^k}{k}\\left(B_k(\\{x\\})f^{(k-1)}(x)-B_k(\\{y\\})f^{(k-1)}(y)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{y}^{x}B_{p}(\\{t\\})f^{(p)}(t)dt.\n\\]",
+      "type": "theorem",
+      "difficulty": "hard",
+      "domain": "real analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "Bernoulli polynomials"],
+      "prerequisites": ["higher derivatives", "Bernoulli numbers", "integration by parts"]
+    },
+    {
+      "id": "sum-int-17",
+      "statement_en": "Bound Bernoulli polynomials on one period by\n\\[\n|B_p(\\{t\\})|\\le \\frac{2p!}{(2\\pi)^p}\\zeta(p),\n\\]\nin particular\n\\[\n|B_1(\\{t\\})|\\le \\frac12,\\qquad |B_2(\\{t\\})|\\le \\frac16.\n\\]",
+      "statement_zh": "一个周期内Bernoulli多项式的估计：\n\\[\n|B_{p}(\\{t\\})|\\leq \\frac{2p!}{(2\\pi)^p}\\zeta(p)\n\\]\n并且常用的有\n\\[\n|B_{1}(\\{t\\})|\\leq 1/2,\\quad |B_{2}(\\{t\\})|\\leq 1/6.\n\\]",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["Bernoulli polynomial bounds", "Fourier estimates"],
+      "prerequisites": ["Bernoulli polynomials", "Riemann zeta function"]
+    },
+    {
+      "id": "sum-int-18",
+      "statement_en": "Continuous partial summation: if\n\\[\nS(x):=\\sum_{y<n\\le x}g(n)f(n),\\qquad A(x):=\\sum_{n\\le x}g(n),\n\\]\nwith \(f\) continuously differentiable, then\n\\[\nS(x)=A(x)f(x)-A(y)f(y)-\\int_y^x A(t)f'(t)dt.\n\\]",
+      "statement_zh": "连续版本的分部求和：若\n\\[\nS(x):=\\sum_{y<n\\leq x}g(n)f(n),\\qquad A(x):=\\sum_{n\\leq x}g(n),\n\\]\n其中 \(f:[y,x]\\to\\mathbb{C}\) 连续可微，则有\n\\[\nS(x)=\\sum_{y<n\\leq x}g(n)f(n)=A(x)f(x)-A(y)f(y)-\\int_{y}^{x}A(t)f'(t)dt.\n\\]",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "analytic number theory",
+      "key_techniques": ["partial summation", "Abel summation"],
+      "prerequisites": ["summation by parts", "differentiation", "integrals"]
+    }
+  ],
+  "key_techniques_discussed": [
+    "simple integral estimation for sums via monotonicity",
+    "Riemann sum versus integral error estimation",
+    "integral test for series",
+    "convexity-based refinement using the Hermite-Hadamard inequality",
+    "Euler-Maclaurin summation",
+    "bounding Bernoulli polynomials",
+    "continuous partial summation (Abel summation)",
+    "change of variables in integrals for asymptotic estimation",
+    "using integrals to approximate parameter-dependent sums"
+  ],
+  "connections_mentioned": [
+    "Riemann integration and Riemann sums",
+    "asymptotic expansion of sums",
+    "Stirling's formula",
+    "partial sums of power functions",
+    "harmonic numbers",
+    "Riemann zeta function",
+    "Bernoulli numbers and polynomials",
+    "analytic continuation",
+    "arithmetic functions in number theory",
+    "probability tail integrals and expectation"
+  ]
+}

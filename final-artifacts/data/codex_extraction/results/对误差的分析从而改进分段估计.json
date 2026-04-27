@@ -1,0 +1,41 @@
+{
+  "note_title": "求极限: \\(\\lim_{n\\to\\infty}\\frac{n+n^{1/2}+\\cdots+n^{1/n}}{n}\\)",
+  "classification": "problem",
+  "summary_en": "This note studies the asymptotic behavior of \\(S_n=\\sum_{k\\le n} n^{1/k}\\) in order to evaluate \\(\\lim_{n\\to\\infty} \\frac{S_n}{n}\\). It presents three methods: segmented sum estimates, termwise Taylor expansion, and comparison with an integral, all leading to \\(S_n=2n+o(n)\\) and hence the limit \\(2\\).",
+  "problems": [
+    {
+      "id": "limit-n-root-sum-1",
+      "statement_en": "Find the limit: \\[\\lim_{n\\to\\infty}\\frac{n+n^{1/2}+\\cdots+n^{1/n}}{n}.\\]",
+      "statement_zh": "求极限:$$\\lim_{n\\to\\infty}\\frac{n+n^{1/2}+...+n^{1/n}}{n}$$",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "segmented estimation of sums",
+        "Taylor expansion with remainder",
+        "integral comparison for sums",
+        "change of variables in parameter-dependent integrals"
+      ],
+      "prerequisites": [
+        "asymptotic notation",
+        "harmonic numbers",
+        "Taylor expansion",
+        "integral estimation",
+        "monotonicity of sequences"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "segmented estimation of sums",
+    "termwise Taylor expansion with Lagrange remainder",
+    "integral comparison for monotone sums",
+    "change of variables in parameter-dependent integrals",
+    "asymptotic expansion of \\(n^{1/k}=e^{\\log n/k}\\)"
+  ],
+  "connections_mentioned": [
+    "sum-to-integral conversion",
+    "harmonic number asymptotics",
+    "error control in asymptotic estimates",
+    "a harder related sum \\(n+\\sum_{k=3}^n n^{1/\\log_2 k}\\)"
+  ]
+}

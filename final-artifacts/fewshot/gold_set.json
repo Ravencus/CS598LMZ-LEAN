@@ -1,0 +1,60 @@
+{
+  "problem": "Complex Subset Sum: Given n complex numbers with sum of norms = 1, prove there exists a subset S with |sum_S z_k| >= 1/6.",
+  "source_trace": "workspace/traces/complex_subset_sum_reasoning.md",
+  "gold_atoms": [
+    {
+      "step": "Geometric reinterpretation",
+      "trigger": "Problem involves complex numbers but the constraint and objective only depend on norms and sums — suggests geometric viewpoint",
+      "action": "Recast complex numbers as 2D vectors; the problem becomes: from unit-total-length vectors, find a subset whose vector sum has large norm",
+      "outcome": "Problem is now purely geometric, enabling directional/projection arguments",
+      "boundary": "Fails when the problem genuinely needs complex-analytic structure (e.g., roots of unity arguments, analytic continuation). In this case geometry suffices."
+    },
+    {
+      "step": "Small case analysis to diagnose structure",
+      "trigger": "Extremal/optimization problem where the difficulty is unclear",
+      "action": "Test n=1, n=2 to identify what makes the problem hard",
+      "outcome": "Reveals that cancellation between vectors is the core obstacle — full sum can be small, need to select a subset avoiding cancellation",
+      "boundary": "Small cases guide intuition but don't prove the general case. Fails when behavior changes qualitatively at larger n."
+    },
+    {
+      "step": "Factor the constant to find proof architecture",
+      "trigger": "Target constant (1/6) factors suggestively as (1/3)(1/2)",
+      "action": "Interpret each factor as a separate loss: 1/3 from pigeonhole on 3 sectors, 1/2 from projection onto bisector",
+      "outcome": "Two-stage proof plan: (1) select a good sector, (2) bound the projection within that sector",
+      "boundary": "Heuristic — fails when the constant is not cleanly factorable or when factors don't correspond to independent losses. Also only gives 1/6, not the optimal 1/4 or 1/pi."
+    },
+    {
+      "step": "Sector pigeonhole argument",
+      "trigger": "Need to select a subset of vectors that don't cancel; vectors span all directions",
+      "action": "Partition the plane into k equal sectors. By pigeonhole, some sector contains vectors with total norm >= 1/k. Take those vectors as the subset.",
+      "outcome": "A subset is selected where all vectors point roughly the same direction (within angle 2pi/k)",
+      "boundary": "The bound from just pigeonhole is 1/k, and projection within the sector loses a factor of cos(pi/k). Optimizing k gives k=4 (quadrants) with bound 1/4. Does NOT give the optimal 1/pi — for that, need the continuous averaging method."
+    },
+    {
+      "step": "Projection onto bisector to get scalar bound",
+      "trigger": "Have a subset of vectors all within angle 2pi/k of each other; need a lower bound on |sum|",
+      "action": "Project all vectors onto the sector bisector. Since all angles are within pi/k of the bisector, each projection retains at least cos(pi/k) of its norm.",
+      "outcome": "The real part along the bisector is >= cos(pi/k) * (total norm in sector), giving the final bound",
+      "boundary": "Projection is lossy — you throw away the component perpendicular to the bisector. For k=3 the loss is cos(pi/3)=1/2, giving 1/6. For k=4 it's cos(pi/4)=sqrt(2)/2, giving 1/4."
+    },
+    {
+      "step": "Continuous averaging argument (optimal bound)",
+      "trigger": "Discrete sector methods give sub-optimal constants; want the best possible bound",
+      "action": "Instead of k fixed sectors, average over ALL directions alpha in [0, 2pi). For each alpha, take the subset S_alpha = {k : Re(z_k e^{-i*alpha}) >= 0}. The average over alpha of the real part of sum_{S_alpha} equals (1/pi) sum |z_k|.",
+      "outcome": "By averaging argument, there exists alpha_0 achieving at least the average, giving bound 1/pi",
+      "boundary": "Requires computing integral of max(cos(u), 0) over [0, 2pi] = 2. This is a pure computation — should be delegated to CAS. The averaging method needs a continuous symmetry group (rotations); fails for discrete/combinatorial settings without continuous symmetry."
+    },
+    {
+      "step": "Compute the key integral",
+      "trigger": "Averaging argument produces an integral that determines the constant",
+      "action": "DELEGATE TO CAS: compute integral_0^{2pi} max(cos(u), 0) du = 2",
+      "outcome": "Constant 1/pi confirmed after normalization by 2pi",
+      "boundary": "Pure computation — no mathematical insight, just mechanics. Risk of error if done in tokens."
+    }
+  ],
+  "expected_hub_connections": [
+    "pigeonhole principle / sector decomposition",
+    "averaging argument / rotation averaging",
+    "projection / inner product bounds"
+  ]
+}

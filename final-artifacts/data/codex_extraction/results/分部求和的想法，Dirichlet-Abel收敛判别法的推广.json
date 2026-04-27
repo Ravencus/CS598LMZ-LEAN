@@ -1,0 +1,93 @@
+{
+  "note_title": "对Dirichlet判别的扩展",
+  "classification": "example_collection",
+  "summary_en": "This note derives an Abel/partial summation identity for series of the form \\(\\sum a_n b_n\\) and uses it to extend Dirichlet's test under weaker hypotheses. It also presents several examples showing how growth estimates for partial sums imply convergence or divergence.",
+  "problems": [
+    {
+      "id": "dirichlet-ext-1",
+      "statement_en": "Extension 1 of Dirichlet's test: keep the condition that \\(|B_N|<\\infty\\) for every positive integer \\(N\\), but replace the assumption that \\(a_n\\) decreases monotonically to \\(0\\) by the weaker assumption that \\(a_n\\) has bounded variation and converges to \\(0\\). Then the series \\(\\sum a_n b_n\\) converges.",
+      "statement_zh": "原本的判别当中，依旧保持\\(\\left|B_N\\right|<\\infty\\)对任意的正整数\\(N\\)成立,但是把\\(a_n\\)单调收敛到0替换为，\\(a_n\\)有界变差收敛到0。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["partial summation", "Dirichlet test", "bounded variation sequences"],
+      "prerequisites": ["series convergence", "partial summation", "bounded variation"]
+    },
+    {
+      "id": "dirichlet-ext-2",
+      "statement_en": "If \\(|a_n-a_{n+1}| = O(1/n^{M+1})\\), then to make \\(\\sum_{n=1}^{N-1} B_n(a_n-a_{n+1})\\) absolutely convergent it suffices to assume \\(B_n = O(n^{M-\\varepsilon_0})\\). Hence the original series \\(\\sum a_n b_n\\) converges.",
+      "statement_zh": "如果\\(|a_n - a_{n+1}| = O\\left(\\frac{1}{n^{M+1}}\\right)\\)这个时候其实不需要给到\\(\\left|B_N\\right|<\\infty\\)如此强的条件的，想要\\(\\sum_{n=1}^{N-1}B_n(a_n-a_{n+1})\\)绝对收敛实际上只需要\\(B_n =O(n^{M-\\varepsilon_0})\\)因此原来的级数一定是收敛的。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["partial summation", "growth estimates for partial sums", "absolute convergence test"],
+      "prerequisites": ["Big-O notation", "series convergence", "partial summation"]
+    },
+    {
+      "id": "dirichlet-ext-3",
+      "statement_en": "If \\(a_n\\) is monotone, \\(|a_n-a_{n+1}| \\gg 1/n^{M+1}\\), \\(B_n \\gg n^M\\), and the limit of \\(B_n a_n\\) exists, then since \\(B_n|a_n-a_{n+1}| \\gg 1/n\\), the original series \\(\\sum a_n b_n\\) diverges.",
+      "statement_zh": "如果我们知道\\(a_n\\)是单调的，并且\\(|a_n - a_{n+1}| \\gg \\frac{1}{n^{M+1}},B_n\\gg n^{M}\\)同时假设\\(B_na_n\\)的极限是存在的，那么由于\\(B_n|a_{n}-a_{n+1}|\\gg \\frac{1}{n}\\)因此原来的级数一定是发散的。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["partial summation", "comparison with harmonic series", "divergence criterion"],
+      "prerequisites": ["asymptotic lower bounds", "harmonic series divergence", "partial summation"]
+    },
+    {
+      "id": "dirichlet-ext-4",
+      "statement_en": "Assume \\(\\sum_{j=1}^{n} a_j = o(\\sqrt{n})\\). Prove that \\(\\sum_j \\frac{a_j}{j}\\) converges.",
+      "statement_zh": "假设\\(\\sum_{j = 1}^{n} a_j = o\\left(\\sqrt{n}\\right)\\),证明：\\(\\sum_{j} \\frac{a_j}{j}\\) 收敛。",
+      "type": "exercise",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": ["partial summation", "Dirichlet-type convergence criterion", "partial sum growth estimate"],
+      "prerequisites": ["series convergence", "little-o notation", "partial summation"]
+    },
+    {
+      "id": "dirichlet-ext-5",
+      "statement_en": "Show that the series \\(\\sum_{n\\ge 1}\\frac{\\sin(\\sqrt{n})}{n}\\) converges.",
+      "statement_zh": "\\(\\sum_{n\\geq 1}\\frac{\\sin(\\sqrt{n})}{n}\\)收敛。",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["Euler-Maclaurin summation formula", "partial sum estimate", "Dirichlet-type test"],
+      "prerequisites": ["Euler-Maclaurin formula", "series convergence", "oscillatory sums"]
+    },
+    {
+      "id": "dirichlet-ext-6",
+      "statement_en": "Show that the series \\(\\sum_{n\\ge 1}\\frac{|\\sin n|}{n}\\) diverges.",
+      "statement_zh": "\\(\\sum_{n\\geq 1} \\frac{|\\sin(n)|}{n}\\)发散。",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["uniform distribution mod 1", "Weyl criterion", "partial summation divergence test"],
+      "prerequisites": ["uniform distribution modulo 1", "asymptotic density", "harmonic series divergence"]
+    },
+    {
+      "id": "dirichlet-ext-7",
+      "statement_en": "Show that the series \\(\\sum_{n\\ge 1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n}\\) converges.",
+      "statement_zh": "\\(\\sum_{n\\geq1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n}\\)收敛。",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["block decomposition", "partial sum estimate", "Dirichlet-type test"],
+      "prerequisites": ["floor function", "series convergence", "partial summation"]
+    }
+  ],
+  "key_techniques_discussed": [
+    "partial summation (Abel summation)",
+    "extension of Dirichlet's test",
+    "bounded variation in sequences",
+    "growth estimates for partial sums",
+    "Euler-Maclaurin summation formula",
+    "uniform distribution modulo 1",
+    "block decomposition over intervals \\([k^2,(k+1)^2-1]\\)"
+  ],
+  "connections_mentioned": [
+    "classical Dirichlet test",
+    "a variant of Dirichlet's test",
+    "Weyl criterion",
+    "conditional versus absolute convergence",
+    "oscillatory series"
+  ]
+}

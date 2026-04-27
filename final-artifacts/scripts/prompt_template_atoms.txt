@@ -1,0 +1,69 @@
+You are a mathematical knowledge extraction agent. Your task is to decompose a proof or solution trace into **knowledge atoms** — the minimal transferable units of mathematical knowledge.
+
+## What is a Knowledge Atom?
+
+A knowledge atom is a 4-tuple capturing one teachable step in a solution:
+
+| Field | Description |
+|-------|-------------|
+| **trigger** | What pattern in the problem or proof state signals that this technique applies? What "shape" should a learner recognize? |
+| **action** | What do you do? State the technique at a level where a human would recognize it across problems — not too concrete (restating the proof), not too abstract ("use algebra"). |
+| **outcome** | What does this step achieve? What changes in the proof state? |
+| **boundary** | When does this technique FAIL despite matching the trigger? What's the alternative when it fails? This is critical — a technique without a known boundary is not fully understood. If you cannot characterize the boundary with confidence, write "BOUNDARY UNCERTAIN: [your best guess]". |
+
+Two uses of a technique in different proofs are the **same atom** if they share the same trigger and boundary.
+
+## Few-Shot Examples
+
+{fewshot_examples}
+
+## Your Task
+
+Given the following proof/solution trace, produce:
+
+1. **Step decomposition**: Break the solution into atomic steps. Each step should be ONE mathematical action, not a sequence.
+
+2. **Knowledge atoms**: For each step, output the 4-tuple (trigger, action, outcome, boundary) in JSON format.
+
+3. **Irreducible knowledge set**: After all atoms, list the minimal set of atoms needed to solve this problem. If a completely different proof approach exists, note what alternative irreducible set it would require.
+
+## Output Format
+
+```json
+{{
+  "steps": [
+    {{
+      "step_number": 1,
+      "description": "Brief description of what happens in this step",
+      "atom": {{
+        "trigger": "...",
+        "action": "...",
+        "outcome": "...",
+        "boundary": "..."
+      }}
+    }}
+  ],
+  "irreducible_knowledge_set": [
+    "atom_1_summary",
+    "atom_2_summary"
+  ],
+  "alternative_approaches": [
+    {{
+      "approach": "name of alternative",
+      "different_atoms_needed": ["atom that differs"]
+    }}
+  ]
+}}
+```
+
+## Rules
+
+1. Be SPECIFIC. "Apply an inequality" is not an atom. "Apply Cauchy-Schwarz to decouple the entangled sum" is.
+2. Boundaries must name what FAILS and what to use INSTEAD. "May not always work" is not a boundary.
+3. If the trace contains failed attempts or backtracking, extract atoms from both the successful path AND the failures (failed attempts reveal boundaries).
+4. Triggers should be recognizable in NEW problems, not just this one.
+5. Computational steps (evaluating integrals, simplifying algebra) should be flagged as "DELEGATE TO CAS" in the action field.
+
+## Trace to Analyze
+
+{trace}

@@ -1,0 +1,28 @@
+[
+  {
+    "tier": 1,
+    "problem_id": "integral_max_cos",
+    "model": null,
+    "final_answer": "",
+    "final_answer_correct": true,
+    "computational_claims_total": 10,
+    "computational_errors": 0,
+    "errors_caught": 0,
+    "errors_corrected": 0,
+    "token_count": 274,
+    "latency_seconds": 19.105141639709473
+  },
+  {
+    "tier": 3,
+    "problem_id": "integral_max_cos",
+    "model": null,
+    "final_answer": "",
+    "final_answer_correct": true,
+    "computational_claims_total": 7,
+    "computational_errors": 0,
+    "errors_caught": 0,
+    "errors_corrected": 0,
+    "token_count": 326,
+    "latency_seconds": 14.514853239059448
+  }
+]

@@ -1,0 +1,7 @@
+\paragraph{Full-scale evaluation.} Run the prover and digest agent on many problems from the curated dataset across multiple models (Opus 4.6, GPT 5.4, smaller models via OpenCode). This will provide the replanning data and error breakdowns currently missing from our single-problem preliminary results, and test whether the strategy/mechanization separation holds across difficulty levels.
+
+\paragraph{Dataset curation completion.} Finish extracting individual problems from the 455-note vault, formalizing each as a Lean~4 theorem statement, and rebuilding edges at the problem level. This unlocks the full evaluation pipeline.
+
+\paragraph{CAS integration.} Add Mathematica/sympy as a verification oracle for sorry'd computational lemmas. In our case study, all three sorry's were mathematically trivial but mechanically hard to formalize (e.g., $\int_0^{2\pi} \max(\cos u, 0)\,du = 2$ is one line in Mathematica). A CAS bridge reduces the gap between ``mathematically correct'' and ``Lean-verified.''
+
+\paragraph{Digest agent improvement.} Use evaluation results to refine the digest prompts and core functions, particularly for precision---ensuring the agent does not claim spurious connections.

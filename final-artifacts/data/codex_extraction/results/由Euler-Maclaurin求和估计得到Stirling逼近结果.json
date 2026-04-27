@@ -1,0 +1,142 @@
+{
+  "note_title": "估计\\(S_n=\\sum_{k=1}^{n}\\log k\\)",
+  "classification": "problem",
+  "summary_en": "This note studies the asymptotic estimation of \\(S_n=\\sum_{k=1}^n \\log k\\) using the Euler-Maclaurin formula, then determines the constant term via the Wallis product to recover Stirling's formula. It also discusses sharper remainder inequalities related to \\(\\log(n!)\\).",
+  "problems": [
+    {
+      "id": "Sn-1",
+      "statement_en": "Estimate \\(S_n=\\sum_{k=1}^{n}\\log(k)\\).",
+      "statement_zh": "估计$$ S_n=\\sum_{k = 1 }^{n} \\log(k)$$",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "asymptotic analysis",
+      "key_techniques": [
+        "Euler-Maclaurin summation",
+        "asymptotic expansion"
+      ],
+      "prerequisites": [
+        "improper integrals",
+        "Taylor asymptotics",
+        "logarithm properties"
+      ]
+    },
+    {
+      "id": "Sn-2",
+      "statement_en": "Euler-Maclaurin formula: for a smooth function \\(f:[m,n]\\to\\mathbb{C}\\),\n\\[\n\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt.\n\\]",
+      "statement_zh": "这个公式主要是对关于光滑函数$f:[m,n]\\to\\mathbb{C}$的离散求和的一种积分估计。$$\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "Euler-Maclaurin summation",
+        "Bernoulli polynomials"
+      ],
+      "prerequisites": [
+        "smooth functions",
+        "Bernoulli numbers",
+        "repeated differentiation"
+      ]
+    },
+    {
+      "id": "Sn-3",
+      "statement_en": "For \\(p\\ge 2\\), the Bernoulli polynomial remainder kernel satisfies\n\\[\n|B_p(\\{t\\})|\\le \\frac{2p!}{(2\\pi)^p}\\zeta(p).\n\\]\nIn particular, \\(|B_1(\\{t\\})|\\le 1/2\\) and \\(|B_2(\\{t\\})|\\le 1/6\\).",
+      "statement_zh": "这种多项式$p\\geq2$的情况下，在$0,1]$上的估计为: $$|B_{p}(\\{t\\})|\\leq\\frac{2p!}{(2\\pi)^p}\\zeta(p)$$最常见的$B_1(x)=x-1/2,B_2(x)=x^2-x+1/6$.并且$|B_{1}(\\{t\\})|\\leq1/2,|B_{2}(\\{t\\})|\\leq1/6$.",
+      "type": "lemma",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "Bernoulli polynomial bounds",
+        "remainder estimation"
+      ],
+      "prerequisites": [
+        "Bernoulli polynomials",
+        "Riemann zeta function"
+      ]
+    },
+    {
+      "id": "Sn-4",
+      "statement_en": "Wallis product:\n\\[\n\\frac{\\pi}{2}=\\prod_{n\\geq1}\\frac{2n}{2n-1}\\frac{2n}{2n+1}=\\lim_{n\\to+\\infty}\\frac{1}{2n+1}\\cdot\\frac{2^{4n}(n!)^4}{[(2n)!]^2}.\n\\]",
+      "statement_zh": "Wallis product,1656\n>  $$\\frac{\\pi}{2}=\\prod_{n\\geq1}\\frac{2n}{2n-1}\\frac{2n}{2n+1}=\\lim_{n\\to+\\infty}\\frac{1}{2n+1}\\cdot\\frac{2^{4n}(n!)^4}{[(2n)!]^2}$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "classical analysis",
+      "key_techniques": [
+        "Wallis product",
+        "infinite products"
+      ],
+      "prerequisites": [
+        "limits",
+        "factorials",
+        "infinite products"
+      ]
+    },
+    {
+      "id": "Sn-5",
+      "statement_en": "Hadamard product for the sine function:\n\\[\n\\sin(\\pi z)=\\pi z\\prod_{n\\geq1}\\left(1-\\frac{z^2}{n^2}\\right).\n\\]",
+      "statement_zh": "具体公式是:$$\\sin(\\pi z)=\\pi z\\prod_{n\\geq1}\\left(1-\\frac{z^2}{n^2}\\right)$$",
+      "type": "theorem",
+      "difficulty": "hard",
+      "domain": "complex analysis",
+      "key_techniques": [
+        "Hadamard factorization",
+        "entire functions"
+      ],
+      "prerequisites": [
+        "entire functions",
+        "infinite products",
+        "sine function zeros"
+      ]
+    },
+    {
+      "id": "Sn-6",
+      "statement_en": "For\n\\[\nr_n=S_n-\\left(n\\log n-n+\\frac{1}{2}\\log n+\\log(\\sqrt{2\\pi})\\right),\n\\]\nprove the remainder inequality\n\\[\n0<r_n<\\frac{1}{12n}.\n\\]",
+      "statement_zh": "我们现在证明\n> [!note] 余项的不等式关系\n> $$0<r_n<\\frac{1}{12n}$$",
+      "type": "theorem",
+      "difficulty": "hard",
+      "domain": "asymptotic analysis",
+      "key_techniques": [
+        "Euler-Maclaurin remainder analysis",
+        "sign analysis of series terms",
+        "Padé approximation"
+      ],
+      "prerequisites": [
+        "Stirling-type asymptotics",
+        "Bernoulli polynomials",
+        "logarithmic inequalities"
+      ]
+    },
+    {
+      "id": "Sn-7",
+      "statement_en": "Sharper inequality due to Robbins (1955):\n\\[\n\\frac{1}{12n+1}<r_n<\\frac{1}{12n}.\n\\]",
+      "statement_zh": "> [!note] 更精确的不等式，Robbins，1955\n> $$\\frac{1}{12n+1}<r_n<\\frac{1}{12n}$$",
+      "type": "theorem",
+      "difficulty": "hard",
+      "domain": "asymptotic analysis",
+      "key_techniques": [
+        "sharp remainder bounds",
+        "Stirling-type inequalities"
+      ],
+      "prerequisites": [
+        "Stirling formula",
+        "remainder estimation"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "Euler-Maclaurin summation",
+    "Bernoulli polynomial remainder bounds",
+    "asymptotic expansion of logarithmic sums",
+    "Wallis product",
+    "Hadamard factorization of \\(\\sin(\\pi z)\\)",
+    "Padé approximation for logarithmic inequalities",
+    "sharp remainder estimates for Stirling's formula"
+  ],
+  "connections_mentioned": [
+    "Stirling's formula",
+    "asymptotics of \\(n!\\)",
+    "Bernoulli numbers and Bernoulli polynomials",
+    "Riemann zeta function",
+    "Wallis formula",
+    "Hadamard product of the sine function"
+  ]
+}

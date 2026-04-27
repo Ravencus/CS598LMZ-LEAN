@@ -1,0 +1,44 @@
+{
+  "note_title": "命题1：一维的广义的Riemann-Lebesgue引理",
+  "classification": "theory",
+  "summary_en": "This note states and proves a one-dimensional generalized Riemann-Lebesgue lemma for bounded measurable periodic functions against \(L^1([a,b])\) functions. The proof emphasizes a general \(L^1\)-approximation strategy, reducing the limit computation to smooth approximants and then using periodic decomposition and Riemann sums.",
+  "problems": [
+    {
+      "id": "prop1-1",
+      "statement_en": "Let \(f \\in L^{1}([a,b])\), and let \(g\) be a measurable bounded periodic function with period \(T\). Then\n\\[\n\\lim_{n\\to +\\infty}\\int_{[a,b]} f(x)g(nx)\\,dx = \\left(\\frac{1}{T}\\int_{[0,T)} g(x)\\,dx\\right)\\left(\\int_{[a,b]} f(x)\\,dx\\right).\n\\]",
+      "statement_zh": "设 \(f \\in L^{1}([a,b])\)，并且 \(g\) 是周期为 \(T\) 的可测有界周期函数，那么\n\\[\n\\lim_{n\\to +\\infty}\\int_{[a,b]} f(x)g(nx)\\,dx = \\left(\\frac{1}{T}\\int_{[0,T)}g(x)\\,dx\\right)\\left(\\int_{[a,b]}f(x)\\,dx\\right).\n\\]",
+      "type": "theorem",
+      "difficulty": "hard",
+      "domain": "real analysis",
+      "key_techniques": [
+        "L^1 approximation by smooth functions",
+        "decomposition into periodic intervals",
+        "change of variables",
+        "Riemann-sum approximation"
+      ],
+      "prerequisites": [
+        "Lebesgue integration",
+        "L^1 convergence",
+        "periodic functions",
+        "Riemann sums",
+        "smooth approximation of integrable functions"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "Approximate an \(L^1\) function by simpler functions and transfer the limit via an \u03b5-estimate",
+    "Approximation by smooth functions \(f_\\varepsilon \\in C^{\\infty}([a,b])\)",
+    "Scaling/change of variables in integrals",
+    "Partitioning the stretched interval into full periods plus a remainder",
+    "Estimating the leftover interval contribution as \(o(1)\)",
+    "Using differentiability to replace \(f_\\varepsilon((a+kT+s)/n)\) by \(f_\\varepsilon((a+kT)/n)\)",
+    "Using Riemann sums to recover \\(\\int_{[a,b]} f_\\varepsilon(x)\\,dx\\)"
+  ],
+  "connections_mentioned": [
+    "classical Riemann-Lebesgue lemma",
+    "integral scaling formula",
+    "piecewise/countable partition estimates",
+    "error between Riemann sums and the Riemann integral",
+    "equality of Riemann and Lebesgue integrals on closed intervals"
+  ]
+}

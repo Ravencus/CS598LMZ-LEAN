@@ -1,0 +1,62 @@
+{
+  "note_title": "数列极限的平均与卷积型极限",
+  "classification": "problem",
+  "summary_en": "This note studies how limits behave under arithmetic averaging and a convolution-type average of two convergent sequences. It proves a Cesaro-type result and then extends the idea to show that \\(\\frac{x_1y_n+\\cdots+x_ny_1}{n}\\to AB\\) when \\(x_n\\to A\\) and \\(y_n\\to B\\).",
+  "problems": [
+    {
+      "id": "数列极限平均-1",
+      "statement_en": "Given \\(x_n \\to A\\), find \\(\\lim_{n\\to\\infty} \\frac{x_n+x_{n-1}+\\cdots+x_1}{n}\\).",
+      "statement_zh": "已知\\(x_n \\to A\\),求\\(\\lim_{n \\rightarrow \\infty} \\frac{x_n + x_{n-1} + ...+x_1}{n}\\)。",
+      "type": "exercise",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "Cesaro mean of a convergent sequence",
+        "termwise estimation",
+        "splitting the sum into finitely many initial terms and a tail",
+        "epsilon argument"
+      ],
+      "prerequisites": [
+        "definition of sequence limit",
+        "triangle inequality",
+        "arithmetic mean of a sequence"
+      ]
+    },
+    {
+      "id": "数列极限平均-2",
+      "statement_en": "Assume \\(x_n\\to A\\) and \\(y_n\\to B\\). Prove that \\(\\frac{x_1y_n+\\cdots+x_ny_1}{n}\\to AB\\).",
+      "statement_zh": "假设\\(x_n\\to A,y_n \\to B\\)证明\\(\\frac{x_1y_n+\\cdots +x_ny_1}{n}\\to AB\\)。",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "triangle inequality for product differences",
+        "termwise estimation",
+        "splitting the sum into initial segment and tail",
+        "reduction to Cesaro averages",
+        "asymptotic comparison with \\(\\sum_{k\\le n} x_k y_k\\)"
+      ],
+      "prerequisites": [
+        "definition of sequence limit",
+        "boundedness of convergent sequences",
+        "Cesaro mean theorem",
+        "little-o notation"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "Cesaro averaging",
+    "termwise estimation",
+    "splitting sums into finite and tail parts",
+    "epsilon-based tail control",
+    "triangle inequality decomposition for products",
+    "asymptotic expansion via comparison with a simpler sum"
+  ],
+  "connections_mentioned": [
+    "Cesaro theorem",
+    "harmonic numbers",
+    "asymptotic expansion",
+    "Riemann sums",
+    "little-o estimates"
+  ]
+}

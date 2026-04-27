@@ -1,0 +1,242 @@
+[
+  {
+    "title": "逐项估计",
+    "file": "/workspace/math-notes/笔记共享vault/math/逐项估计.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/逐项估计_task.md",
+    "char_count": 20124
+  },
+  {
+    "title": "和的积分估计",
+    "file": "/workspace/math-notes/笔记共享vault/math/和的积分估计.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/和的积分估计_task.md",
+    "char_count": 11560
+  },
+  {
+    "title": "分段估计",
+    "file": "/workspace/math-notes/笔记共享vault/math/分段估计.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/分段估计_task.md",
+    "char_count": 13527
+  },
+  {
+    "title": "对误差的分析从而改进分段估计",
+    "file": "/workspace/math-notes/笔记共享vault/math/对误差的分析从而改进分段估计.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/对误差的分析从而改进分段估计_task.md",
+    "char_count": 4793
+  },
+  {
+    "title": "对一个含参数的和的估计以及控制收敛定理",
+    "file": "/workspace/math-notes/笔记共享vault/math/对一个含参数的和的估计以及控制收敛定理.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/对一个含参数的和的估计以及控制收敛定理_task.md",
+    "char_count": 7265
+  },
+  {
+    "title": "分析学基本方法目录1",
+    "file": "/workspace/math-notes/笔记共享vault/math/分析学基本方法目录1.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/分析学基本方法目录1_task.md",
+    "char_count": 26528
+  },
+  {
+    "title": "柯西凝聚判别法",
+    "file": "/workspace/math-notes/笔记共享vault/math/柯西凝聚判别法.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/柯西凝聚判别法_task.md",
+    "char_count": 5739
+  },
+  {
+    "title": "approximation to the identity",
+    "file": "/workspace/math-notes/笔记共享vault/math/approximation to the identity.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/approximation to the identity_task.md",
+    "char_count": 11924
+  },
+  {
+    "title": "黎曼积分与黎曼和的误差",
+    "file": "/workspace/math-notes/笔记共享vault/math/黎曼积分与黎曼和的误差.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/黎曼积分与黎曼和的误差_task.md",
+    "char_count": 3209
+  },
+  {
+    "title": "利用已知的渐近结果求渐近展开的技巧",
+    "file": "/workspace/math-notes/笔记共享vault/math/利用已知的渐近结果求渐近展开的技巧.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/利用已知的渐近结果求渐近展开的技巧_task.md",
+    "char_count": 3707
+  },
+  {
+    "title": "用分段估计解决几个序列的极限问题",
+    "file": "/workspace/math-notes/笔记共享vault/math/用分段估计解决几个序列的极限问题.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/用分段估计解决几个序列的极限问题_task.md",
+    "char_count": 4111
+  },
+  {
+    "title": "柯西收敛判别",
+    "file": "/workspace/math-notes/笔记共享vault/math/柯西收敛判别.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/柯西收敛判别_task.md",
+    "char_count": 9302
+  },
+  {
+    "title": "Stirling渐近公式及不等式",
+    "file": "/workspace/math-notes/笔记共享vault/math/Stirling渐近公式及不等式.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/Stirling渐近公式及不等式_task.md",
+    "char_count": 3864
+  },
+  {
+    "title": "Re0微积分2：自然底数e及其快速计算",
+    "file": "/workspace/math-notes/笔记共享vault/math/Re0微积分2：自然底数e及其快速计算.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/Re0微积分2：自然底数e及其快速计算_task.md",
+    "char_count": 7162
+  },
+  {
+    "title": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "file": "/workspace/math-notes/笔记共享vault/math/Dirichlet核不是逼近单位，Fejer核是逼近单位元.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/Dirichlet核不是逼近单位，Fejer核是逼近单位元_task.md",
+    "char_count": 6260
+  },
+  {
+    "title": "部分积的上界估计与Gautschi不等式",
+    "file": "/workspace/math-notes/笔记共享vault/math/部分积的上界估计与Gautschi不等式.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/部分积的上界估计与Gautschi不等式_task.md",
+    "char_count": 4271
+  },
+  {
+    "title": "收敛的连乘积的上界估计与糖水不等式",
+    "file": "/workspace/math-notes/笔记共享vault/math/收敛的连乘积的上界估计与糖水不等式.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/收敛的连乘积的上界估计与糖水不等式_task.md",
+    "char_count": 1754
+  },
+  {
+    "title": "对含参数方程根的估计",
+    "file": "/workspace/math-notes/笔记共享vault/math/对含参数方程根的估计.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/对含参数方程根的估计_task.md",
+    "char_count": 12959
+  },
+  {
+    "title": "两种不同路径解决含参数和的估计问题",
+    "file": "/workspace/math-notes/笔记共享vault/math/两种不同路径解决含参数和的估计问题.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/两种不同路径解决含参数和的估计问题_task.md",
+    "char_count": 1625
+  },
+  {
+    "title": "逼近单位元在局部上的收敛性的一个典型例子",
+    "file": "/workspace/math-notes/笔记共享vault/math/逼近单位元在局部上的收敛性的一个典型例子.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/逼近单位元在局部上的收敛性的一个典型例子_task.md",
+    "char_count": 3524
+  },
+  {
+    "title": "由Euler-Maclaurin求和估计得到Stirling逼近结果",
+    "file": "/workspace/math-notes/笔记共享vault/math/由Euler-Maclaurin求和估计得到Stirling逼近结果.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/由Euler-Maclaurin求和估计得到Stirling逼近结果_task.md",
+    "char_count": 3633
+  },
+  {
+    "title": "不适用于逐项估计求和的极限的例子",
+    "file": "/workspace/math-notes/笔记共享vault/math/不适用于逐项估计求和的极限的例子.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/不适用于逐项估计求和的极限的例子_task.md",
+    "char_count": 1548
+  },
+  {
+    "title": "体现积分估计相较于和的估计优势的一个问题",
+    "file": "/workspace/math-notes/笔记共享vault/math/体现积分估计相较于和的估计优势的一个问题.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/体现积分估计相较于和的估计优势的一个问题_task.md",
+    "char_count": 2105
+  },
+  {
+    "title": "和的估计的一个典型案例",
+    "file": "/workspace/math-notes/笔记共享vault/math/和的估计的一个典型案例.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/和的估计的一个典型案例_task.md",
+    "char_count": 2703
+  },
+  {
+    "title": "CMO不等式中的积分估计",
+    "file": "/workspace/math-notes/笔记共享vault/math/CMO不等式中的积分估计.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/CMO不等式中的积分估计_task.md",
+    "char_count": 967
+  },
+  {
+    "title": "IMC上的一个渐近分析的问题",
+    "file": "/workspace/math-notes/笔记共享vault/math/IMC上的一个渐近分析的问题.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/IMC上的一个渐近分析的问题_task.md",
+    "char_count": 2626
+  },
+  {
+    "title": "使用Dyadic分解估计调和数的下界",
+    "file": "/workspace/math-notes/笔记共享vault/math/使用Dyadic分解估计调和数的下界.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/使用Dyadic分解估计调和数的下界_task.md",
+    "char_count": 1503
+  },
+  {
+    "title": "判断一个类交错级数的收敛性",
+    "file": "/workspace/math-notes/笔记共享vault/math/判断一个类交错级数的收敛性.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/判断一个类交错级数的收敛性_task.md",
+    "char_count": 2124
+  },
+  {
+    "title": "Kummer判别：对多种比值判别变形的统一",
+    "file": "/workspace/math-notes/笔记共享vault/math/Kummer判别：对多种比值判别变形的统一.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/Kummer判别：对多种比值判别变形的统一_task.md",
+    "char_count": 6466
+  },
+  {
+    "title": "从一个求极限问题引入Weyl判别",
+    "file": "/workspace/math-notes/笔记共享vault/math/从一个求极限问题引入Weyl判别.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/从一个求极限问题引入Weyl判别_task.md",
+    "char_count": 2996
+  },
+  {
+    "title": "基于分部求和法的和的估计",
+    "file": "/workspace/math-notes/笔记共享vault/math/基于分部求和法的和的估计.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/基于分部求和法的和的估计_task.md",
+    "char_count": 7369
+  },
+  {
+    "title": "和与积分换序",
+    "file": "/workspace/math-notes/笔记共享vault/math/和与积分换序.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/和与积分换序_task.md",
+    "char_count": 9447
+  },
+  {
+    "title": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+    "file": "/workspace/math-notes/笔记共享vault/math/分部求和的想法，Dirichlet-Abel收敛判别法的推广.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/分部求和的想法，Dirichlet-Abel收敛判别法的推广_task.md",
+    "char_count": 2596
+  },
+  {
+    "title": "Power mean及其性质",
+    "file": "/workspace/math-notes/笔记共享vault/math/Power mean及其性质.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/Power mean及其性质_task.md",
+    "char_count": 2645
+  },
+  {
+    "title": "广义的Riemann - Lebesgue lemma",
+    "file": "/workspace/math-notes/笔记共享vault/math/广义的Riemann - Lebesgue lemma.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/广义的Riemann - Lebesgue lemma_task.md",
+    "char_count": 3075
+  },
+  {
+    "title": "自然数的r次幂的部分和估计",
+    "file": "/workspace/math-notes/笔记共享vault/math/自然数的r次幂的部分和估计.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/自然数的r次幂的部分和估计_task.md",
+    "char_count": 4650
+  },
+  {
+    "title": "从几个极限问题去理解Landau符号",
+    "file": "/workspace/math-notes/笔记共享vault/math/从几个极限问题去理解Landau符号.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/从几个极限问题去理解Landau符号_task.md",
+    "char_count": 8633
+  },
+  {
+    "title": "Bertrand假设的证明",
+    "file": "/workspace/math-notes/笔记共享vault/math/Bertrand假设的证明.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/Bertrand假设的证明_task.md",
+    "char_count": 8139
+  },
+  {
+    "title": "黎曼积分的定义以及黎曼可积的判别",
+    "file": "/workspace/math-notes/笔记共享vault/math/黎曼积分的定义以及黎曼可积的判别.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/黎曼积分的定义以及黎曼可积的判别_task.md",
+    "char_count": 4882
+  },
+  {
+    "title": "Silverman–Toeplitz定理",
+    "file": "/workspace/math-notes/笔记共享vault/math/Silverman–Toeplitz定理.md",
+    "task_file": "/workspace/final-artifacts/data/codex_extraction/Silverman–Toeplitz定理_task.md",
+    "char_count": 4388
+  }
+]

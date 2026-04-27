@@ -1,0 +1,11 @@
+The classification of finite simple groups took 50 years, 500 papers, and 15,000 pages. The ``simplified'' GLS project, begun in 1981, has published 9 of 12 planned volumes and is still ongoing. The proof exists; the understanding lags decades behind. Now imagine an AI system produces a Lean-verified proof of a significant conjecture---the compiler says \checkmark, but what has humanity actually learned? This concern extends beyond mathematics: an AI-generated 10,000-line GPU kernel that runs 5$\times$ faster gives us a faster kernel, but the engineer who reads it cannot extract the principles that would make them better at writing kernels.
+
+We identify two core problems with current LLM-based theorem proving systems:
+
+\paragraph{Verified $\neq$ Understanding.}
+Current systems optimize for one metric---does the proof compile?---and discard everything else. The proving process (what was tried, what failed, what the exploration revealed) is thrown away. Only the final artifact survives. A student reading an AI-generated Lean proof learns less than one who struggled through it. A researcher who receives an AI proof of their conjecture knows it is true but may not gain the insight needed for the next one.
+
+\paragraph{Mechanization $\neq$ Reasoning.}
+Current provers use a single model for everything: choosing the proof strategy, finding the right Mathlib lemma name, and fixing syntax errors. These are fundamentally different tasks. In our case study, 100\% of failed proving iterations were mechanization errors---wrong API names, predicate form mismatches, tactic scope issues---while the mathematical strategy was correct from the first attempt. A powerful reasoning model should not spend its capacity on whether Mathlib calls a lemma \texttt{Complex.norm\_eq\_abs} or \texttt{Complex.abs\_re\_le\_norm}; that is a retrieval problem, not a reasoning problem.
+
+Our objective is to design a system whose proving process produces not only verified proofs but \emph{human-learnable} knowledge: what to avoid, why certain choices were made, what strategies transfer, and what the proof reveals about the structure of the problem.

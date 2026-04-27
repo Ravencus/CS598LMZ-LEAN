@@ -1,0 +1,51 @@
+{
+  "notes_processed": 37,
+  "total_problems": 212,
+  "avg_problems_per_note": 5.7,
+  "category_balance": {
+    "example_collection": 3,
+    "problem": 16,
+    "theory": 12,
+    "technique": 6
+  },
+  "problem_types": {
+    "definition": 16,
+    "theorem": 68,
+    "example": 75,
+    "exercise": 36,
+    "lemma": 14,
+    "counterexample": 3
+  },
+  "difficulties": {
+    "easy": 51,
+    "medium": 116,
+    "hard": 45
+  },
+  "domain_diversity": 18,
+  "domains": {
+    "real analysis": 130,
+    "asymptotic analysis": 26,
+    "harmonic analysis": 13,
+    "number theory": 9,
+    "inequalities": 8,
+    "analytic number theory": 8,
+    "algebra": 3,
+    "special functions": 3,
+    "complex analysis": 2,
+    "measure theory": 2,
+    "numerical analysis": 1,
+    "abstract algebra": 1,
+    "discrete mathematics": 1,
+    "calculus": 1,
+    "ergodic theory": 1
+  },
+  "tier_coverage": {
+    "unknown": 33,
+    "hub": 3,
+    "medium": 1
+  },
+  "tag_diversity": 1,
+  "top_tags": {
+    "tool_idea": 2
+  }
+}

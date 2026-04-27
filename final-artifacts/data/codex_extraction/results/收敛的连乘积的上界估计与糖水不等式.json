@@ -1,0 +1,61 @@
+{
+  "note_title": "证明乘积\\(\\prod_{n\\leq N} a_n<2\\)（其中 \\(a_n=\\frac{4+3^n}{2+3^n}\\)）",
+  "classification": "problem",
+  "summary_en": "This note studies the inequality \\(\\prod_{n\\leq N} a_n<2\\) for \\(a_n=\\frac{4+3^n}{2+3^n}\\). It presents two solution approaches: a multiplicative bound via the 'mixture inequality' style comparison, and a logarithmic reduction followed by termwise Taylor-based estimates.",
+  "problems": [
+    {
+      "id": "prod-an-lt-2-1",
+      "statement_en": "Let \\(a_n=\\frac{4+3^n}{2+3^n}\\). Prove that \\(\\prod_{n\\leq N} a_n<2\\) for every positive integer \\(N\\).",
+      "statement_zh": "设 \\(a_n=\\frac{4+3^n}{2+3^n}\\)，证明 \\(\\prod_{n\\leq N}a_n<2\\) 对任意正整数 \\(N\\) 成立。",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["telescoping product bound", "fraction comparison via simultaneous subtraction", "logarithmic transformation"],
+      "prerequisites": ["infinite products", "inequalities for fractions", "geometric series"]
+    },
+    {
+      "id": "prod-an-lt-2-2",
+      "statement_en": "If \\(0<\\frac{b}{a}\\leq 1\\) and \\(x>0\\), then \\(\\frac{b+x}{a+x}\\geq \\frac{b}{a}\\); otherwise the inequality is reversed. Moreover, if \\(0\\leq x<\\min\\{a,b\\}\\), then \\(\\frac{b}{a}\\geq \\frac{b-x}{a-x}\\).",
+      "statement_zh": "如果 \\(0<\\frac{b}{a}\\leq 1\\)，并且 \\(x>0\\)，那么 \\(\\frac{b+x}{a+x}\\geq \\frac{b}{a}\\)，否则不等式相反。此外，如果可以保证 \\(0\\leq x<\\min\\{a,b\\}\\)，那么还有不等式 \\(\\frac{b}{a}\\geq \\frac{b-x}{a-x}\\)。",
+      "type": "lemma",
+      "difficulty": "easy",
+      "domain": "algebra",
+      "key_techniques": ["fraction monotonicity", "mixture inequality"],
+      "prerequisites": ["basic inequality manipulation"]
+    },
+    {
+      "id": "prod-an-lt-2-3",
+      "statement_en": "Equivalent form of Problem 1: prove that the series \\(\\sum_{n\\geq1}\\log\\left(1+\\frac{2}{2+3^n}\\right)<\\log 2\\).",
+      "statement_zh": "问题1的等价问题：证明级数 \\(\\sum_{n\\geq1}\\log\\left(1+\\frac{2}{2+3^n}\\right)<\\log(2)\\)。",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["taking logarithms", "series estimation", "termwise comparison"],
+      "prerequisites": ["properties of logarithms", "convergence of series"]
+    },
+    {
+      "id": "prod-an-lt-2-4",
+      "statement_en": "For \\(f(x)=\\log\\left(1+\\frac{x}{1+x}\\right)\\), conjecture (and verify) that \\(f(x)<x\\) for all \\(x>0\\).",
+      "statement_zh": "猜想1：设 \\(f(x)=\\log\\left(1+\\frac{x}{1+x}\\right)\\)，则 \\(f(x)<x\\) 对任意 \\(x>0\\) 成立。",
+      "type": "lemma",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": ["logarithm inequality \\(\\log(1+u)<u\\)", "function comparison"],
+      "prerequisites": ["elementary logarithmic inequalities"]
+    }
+  ],
+  "key_techniques_discussed": [
+    "mixture inequality style fraction comparison",
+    "telescoping product construction",
+    "logarithmic transformation of products into sums",
+    "Taylor expansion for termwise estimation",
+    "separating initial terms to improve tail estimates"
+  ],
+  "connections_mentioned": [
+    "integral estimates for sums",
+    "termwise estimation",
+    "error analysis in piecewise estimation",
+    "upper bounds for partial products",
+    "Gautschi inequality"
+  ]
+}

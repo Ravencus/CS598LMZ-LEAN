@@ -1,0 +1,80 @@
+{
+  "total_claims": 8,
+  "verified_correct": 3,
+  "verified_incorrect": 0,
+  "could_not_verify": 5,
+  "claims": [
+    {
+      "raw_text": "1/6 = (1/3)(1/2) ",
+      "type": "equality",
+      "verified": true,
+      "correct": true,
+      "computed": "1/6",
+      "expected": "1/6",
+      "error": null
+    },
+    {
+      "raw_text": "/3) = 1/2.",
+      "type": "equality",
+      "verified": false,
+      "correct": false,
+      "computed": null,
+      "expected": null,
+      "error": "Could not parse expression"
+    },
+    {
+      "raw_text": "** (1/3)(1/2) = 1/6.",
+      "type": "equality",
+      "verified": false,
+      "correct": false,
+      "computed": null,
+      "expected": null,
+      "error": "Could not parse expression"
+    },
+    {
+      "raw_text": "/2)/2 = 0 (",
+      "type": "equality",
+      "verified": false,
+      "correct": false,
+      "computed": null,
+      "expected": null,
+      "error": "Could not parse expression"
+    },
+    {
+      "raw_text": "/3)/3 = 1/6",
+      "type": "equality",
+      "verified": false,
+      "correct": false,
+      "computed": null,
+      "expected": null,
+      "error": "Could not parse expression"
+    },
+    {
+      "raw_text": " 2 = **1/",
+      "type": "equality",
+      "verified": false,
+      "correct": false,
+      "computed": null,
+      "expected": null,
+      "error": "Could not parse expression"
+    },
+    {
+      "raw_text": " 1/4 = 0.250 ",
+      "type": "equality",
+      "verified": true,
+      "correct": true,
+      "computed": "1/4",
+      "expected": "0.250000000000000",
+      "error": null
+    },
+    {
+      "raw_text": " 1/6 = (1/3)(1/2) ",
+      "type": "equality",
+      "verified": true,
+      "correct": true,
+      "computed": "1/6",
+      "expected": "1/6",
+      "error": null
+    }
+  ]
+}

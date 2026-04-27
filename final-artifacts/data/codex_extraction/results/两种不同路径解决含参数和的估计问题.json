@@ -1,0 +1,37 @@
+{
+  "note_title": "求极限：\\(\\lim_{n\\to \\infty}\\sqrt{n}\\left(1-\\sum_{i\\leq n}\\frac{1}{n+\\sqrt{i}}\\right)\\)",
+  "classification": "problem",
+  "summary_en": "This note studies the asymptotic evaluation of a limit involving a finite sum with terms \\(1/(n+\\sqrt{i})\\). It presents two solution methods: estimating the sum by an integral and performing termwise Taylor expansion combined with the asymptotics of \\(\\sum_{i\\le n}\\sqrt{i}\\).",
+  "problems": [
+    {
+      "id": "limit-sum-1",
+      "statement_en": "Compute the limit \\(\\lim_{n\\to \\infty}\\sqrt{n}\\left(1-\\sum_{i\\leq n}\\frac{1}{n+\\sqrt{i}}\\right)\\).",
+      "statement_zh": "求极限$$\\lim_{n\\to \\infty}\\sqrt{n}\\left(1-\\sum_{i\\leq n}\\frac{1}{n+\\sqrt{i}}\\right)$$",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "integral estimation of sums",
+        "Taylor expansion",
+        "asymptotics of power sums"
+      ],
+      "prerequisites": [
+        "asymptotic notation",
+        "Taylor expansion",
+        "integral comparison for sums",
+        "partial sums of \\(i^{1/2}\\)"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "integral estimation of sums",
+    "simple integral comparison for monotone decreasing functions",
+    "termwise Taylor expansion",
+    "asymptotic expansion of partial sums of fractional powers"
+  ],
+  "connections_mentioned": [
+    "sum-integral estimates",
+    "asymptotics of \\(\\sum_{i\\le n} i^r\\) for \\(0<r<1\\)",
+    "limit computation via asymptotic expansion"
+  ]
+}

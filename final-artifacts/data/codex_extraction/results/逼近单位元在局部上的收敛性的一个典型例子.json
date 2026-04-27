@@ -1,0 +1,62 @@
+{
+  "note_title": "浙江大学考研数学分析",
+  "classification": "problem",
+  "summary_en": "This note studies the limit of a parameter-dependent singular integral with kernel \\(\\frac{h}{h^2+x^2}\\) for a Riemann integrable function continuous at 0. It presents two proof strategies, via decomposition and piecewise estimation, and via substitution plus the dominated convergence theorem, then connects the result to approximation to the identity.",
+  "problems": [
+    {
+      "id": "zju-math-analysis-1",
+      "statement_en": "Let \\(f\\) be Riemann integrable on \\([0,1]\\) and continuous at \\(x=0\\). Prove that\n\\[\n\\lim_{h\\to 0^{+}}\\int_{0}^{1}\\frac{h}{h^2+x^2}f(x)\\,dx=\\frac{\\pi}{2}f(0).\n\\]",
+      "statement_zh": "f是[0,1]上黎曼可积的函数,并且在x=0处连续，证明\n\\[\\lim_{h\\to 0^{+}}\\int_{0}^{1}\\frac{h}{h^2+x^2}f(x)\\,dx=\\frac{\\pi}{2}f(0)\\]",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "piecewise estimation",
+        "rewrite the constant term as a comparable integral",
+        "change of variables",
+        "dominated convergence theorem",
+        "approximation to the identity"
+      ],
+      "prerequisites": [
+        "Riemann integrability",
+        "continuity at a point",
+        "improper/parameter-dependent integrals",
+        "dominated convergence theorem",
+        "arctangent antiderivative"
+      ]
+    },
+    {
+      "id": "zju-math-analysis-2",
+      "statement_en": "Let \\(f \\in L^1(\\mathbb{R})\\) and suppose \\(f\\) is continuous at \\(x=x_0\\). If \\(\\{K_{\\lambda}(x):\\lambda>0\\}\\) is an approximation to the identity, then\n\\[\n\\int_{\\mathbb{R}}K_{\\lambda}(x)f(x-x_0)\\,dx:=K_{\\lambda}*f(x_0)\\to f(x_0).\n\\]",
+      "statement_zh": "f \\in L^1(\\mathbb{R}),并且在x=x_0处连续,如果\\{K_{\\lambda}(x):\\lambda>0\\}是一个逼近单位元，那么\n\\[\\int_{\\mathbb{R}}K_{\\lambda}(x)f(x-x_0)\\,dx:=K_{\\lambda}*f(x_0)\\to f(x_0)\\]",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "approximation to the identity",
+        "convolution",
+        "pointwise convergence at continuity points"
+      ],
+      "prerequisites": [
+        "L^1 functions",
+        "continuity",
+        "convolution",
+        "approximation to the identity"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "piecewise estimation",
+    "estimating differences of integrals by rewriting terms into integral form",
+    "change of variables",
+    "dominated convergence theorem",
+    "approximation to the identity",
+    "convolution with an approximate identity"
+  ],
+  "connections_mentioned": [
+    "approximation to the identity",
+    "pointwise convergence of convolutions",
+    "real analysis",
+    "parameter-dependent integrals"
+  ]
+}

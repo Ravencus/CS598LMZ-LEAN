@@ -1,0 +1,75 @@
+{
+  "note_title": "求极限：\\(\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\)",
+  "classification": "problem",
+  "summary_en": "This note studies the limit of the Cesaro average \\(\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\). After ruling out direct summation and integral-estimate approaches, it identifies uniform distribution mod \\(1\\) and Weyl-type equidistribution as the key method, leading to the candidate limit \\(\\frac{2}{\\pi}\\).",
+  "problems": [
+    {
+      "id": "cosn2-1",
+      "statement_en": "Evaluate the limit\n\\[\n\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\to \\ ?\n\\]",
+      "statement_zh": "求极限\n\\[\n\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\to \\text{ ? }\n\\]",
+      "type": "exercise",
+      "difficulty": "hard",
+      "domain": "real analysis",
+      "key_techniques": [
+        "equidistribution modulo 1",
+        "Weyl criterion",
+        "Van der Corput difference theorem"
+      ],
+      "prerequisites": [
+        "uniform distribution modulo 1",
+        "periodic functions",
+        "Cesaro averages"
+      ]
+    },
+    {
+      "id": "cosn2-2",
+      "statement_en": "If \\((s_n)\\) is equidistributed on the closed interval \\([a,b]\\), then for every continuous function \\(f\\),\n\\[\n\\frac{1}{N}\\sum_{n=1}^{N} f(s_n) \\to \\frac{1}{b-a}\\int_a^b f(x)\\,dx.\n\\]",
+      "statement_zh": "如果\\(s_n\\)在闭区间\\([a,b]\\)上**均匀分布(equidistributed)**，那么\n\\[\n\\frac{1}{N}\\sum_{n=1}^{N}f(s_n)\\to\n    \\frac{1}{b-a}\\int_{a}^{b}f(x)dx\n\\]\n此结果对任意连续函数\\(f\\)成立。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "ergodic theory",
+      "key_techniques": [
+        "Weyl criterion",
+        "equidistribution"
+      ],
+      "prerequisites": [
+        "continuous functions",
+        "Riemann integration",
+        "uniform distribution"
+      ]
+    },
+    {
+      "id": "cosn2-3",
+      "statement_en": "Consider\n\\[\n\\frac{1}{N}\\sum_{n=1}^{N}\\{\\pi n\\}.\n\\]\nUsing that \\(\\{\\pi n\\}\\) is equidistributed on \\([0,1]\\), this average converges to\n\\[\n\\int_0^1 x\\,dx = \\frac{1}{2}.\n\\]",
+      "statement_zh": "在求关于\\(\\frac{1}{N}\\sum_{n=1}^{N}\\{\\pi n\\}\\)的例子当中我们用到过这个工具,函数\\(f(x)=x\\)，\\(s_n=\\{\\pi n\\}\\)在\\([0,1]\\)当中均匀分布，所以极限收敛到\\(\\int_0^1xdx =\\frac{1}{2}\\)。",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "number theory",
+      "key_techniques": [
+        "equidistribution modulo 1",
+        "Weyl criterion"
+      ],
+      "prerequisites": [
+        "fractional part",
+        "uniform distribution modulo 1"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "equidistribution modulo 1",
+    "Weyl criterion",
+    "Van der Corput difference theorem",
+    "Euler-Maclaurin summation",
+    "integral approximation of sums",
+    "piecewise estimation",
+    "Kronecker's lemma"
+  ],
+  "connections_mentioned": [
+    "real analysis",
+    "ergodic theory",
+    "Diophantine approximation",
+    "oscillatory sums",
+    "periodic functions",
+    "Cesaro averages"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "note_title": "底乘以高",
+  "classification": "technique",
+  "summary_en": "This note explains a very coarse but useful estimation principle: bounding an integral or sum by \"base times height\". It then motivates improving such estimates by partitioning the domain and pairing larger sets with smaller bounds, connecting this idea to the rearrangement inequality and divide-and-conquer estimation.",
+  "problems": [
+    {
+      "id": "底乘高-1",
+      "statement_en": "Example 1: A metaphor. Let two sets of numbers be \\(\\mathrm{B}:=\\{1,2,3\\}\\) and \\(\\mathrm{H}:=\\{4,5,6\\}\\). We need to choose an ordering of these two sets, producing sequences \\(b_1,b_2,b_3\\) and \\(h_1,h_2,h_3\\), such that \\(b_1h_1+b_2h_2+b_3h_3\\) is minimized.",
+      "statement_zh": "现在有两组数\\(\\text{B}:=\\{1,2,3\\},\\text{H}:=\\{4,5,6\\}\\),我们现在需要给\\(A,B\\)这两个集合一个排序，使得形成一个序列\\(b_1,b_2,b_3\\)以及\\(h_1,h_2,h_3\\)使得$$b_1h_1+b_2h_2+b_3h_3$$最小。",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "inequalities",
+      "key_techniques": [
+        "rearrangement inequality",
+        "opposite-order pairing"
+      ],
+      "prerequisites": [
+        "finite sums",
+        "ordering of real numbers",
+        "basic inequality reasoning"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "base-times-height estimate for integrals",
+    "base-times-height estimate for finite sums",
+    "partitioning the domain for sharper estimates",
+    "divide-and-conquer estimation",
+    "using counting measure to view sums as integrals",
+    "opposite-order pairing via the rearrangement inequality"
+  ],
+  "connections_mentioned": [
+    "measure theory",
+    "integration on finite-measure sets",
+    "counting measure",
+    "normed vector spaces",
+    "rearrangement inequality",
+    "error estimation"
+  ]
+}

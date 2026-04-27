@@ -1,0 +1,191 @@
+{
+  "note_title": "关于黎曼积分的一些基本概念和命题与可积性判别",
+  "classification": "theory",
+  "summary_en": "This note introduces the definition of Riemann sums and Riemann integrability on closed intervals and higher-dimensional rectangles. It also presents several integrability criteria, including the Cauchy criterion, a squeezing criterion, the Riemann oscillation criterion, and the Darboux criterion.",
+  "problems": [
+    {
+      "id": "黎曼积分-1",
+      "statement_en": "For a real-valued function \(f\) on \([a,b]\), let \(P: a=x_0<x_1<\\cdots <x_n=b\) be a partition of \([a,b]\), let \(|I_i|=x_i-x_{i-1}\) be the length of the \(i\)-th subinterval, and let \(\u03be_i^*\\in [x_{i-1},x_i]\) be an arbitrary point. Writing \(\u03be:=\\{\u03be_1^*,\\ldots,\\u03be_n^*\\}\), \((P,\u03be)\) is called a tagged partition of \([a,b]\). The Riemann sum of \(f\) with respect to \((P,\u03be)\) is defined by \(S_f(P,\u03be):=\\sum_{i=1}^{n} f(\u03be_i^*)|I_i|\).",
+      "statement_zh": "对于$[a,b]$上的实值函数$f$而言，点列$P$ $$a=x_0<x_1<\\cdots <x_n=b$$称之为$[a,b]$的一个划分(partition)，记$|I_i|=x_i-x_{i-1}$为第$i$个子区间的长度，$\\xi_i^{*}\\in [x_{i-1},x_i]$是当中任意的一点,记所有固定的这样的每个区间的代表元的集合为$\\xi:=\\{\\xi_1^{*},...,\\xi_n^{*}\\}$。此时我们称$(P,\\xi)$是闭区间$[a,b]$上的一个带标志点的划分（tagged partition）。那么函数$f$在区间$[a,b]$上关于带标志点的划分$(P,\\xi)$的黎曼和定义为:$$S_f(P,\\xi):=\\sum_{i=}^{n} f(\\xi_i^{*})|I_i|$$",
+      "type": "definition",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "tagged partitions",
+        "Riemann sums"
+      ],
+      "prerequisites": [
+        "partitions of intervals",
+        "bounded real-valued functions"
+      ]
+    },
+    {
+      "id": "黎曼积分-2",
+      "statement_en": "Let \(\u03bb(P)\) denote the length of the largest subinterval in the partition. A function \(f\) is called Riemann integrable on \([a,b]\) if for every \(\u03b5>0\), there exists \(\u03b4_\\varepsilon>0\) such that for every tagged partition \((P,\u03be)\) with \(\u03bb(P)<\u03b4_\\varepsilon\), one has \(|I-S_f(P,\u03be)|<\u03b5\). The limit is denoted by \(\u222b_a^b f(x)\\,dx:=\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)\).",
+      "statement_zh": "定义这种划分对应的最大的一个区间的长度，记为$\\lambda(P)$,那么黎曼积分就被定义为: 对任意的$\\varepsilon>0$，都存在一个$\\delta_{\\varepsilon}$使得任意$\\lambda(P)<\\delta_{\\varepsilon}$的带标志点的划分$(P,\\xi)$都有$$|I-S_f(P,\\xi)|<\\varepsilon$$此时函数$f$被称之为区间$I$上的黎曼可积函数，其黎曼和的极限就称之为函数在闭区间$[a,b]$上的黎曼积分。用符号表示为$$\\int_{a}^{b}f(x)\\,dx:=\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)$$",
+      "type": "definition",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "epsilon-delta definition",
+        "Riemann integrability"
+      ],
+      "prerequisites": [
+        "limits",
+        "Riemann sums"
+      ]
+    },
+    {
+      "id": "黎曼积分-3",
+      "statement_en": "Let \(a=(a_1,\\cdots,a_n)\) and \(b=(b_1,\\cdots,b_n)\) be vectors in \(\u211d^n\). Define \(I_{a,b}:=\\{x=(x_1,\\cdots,x_n)\\in \\mathbb{R}^n:a_i\\le x_i\\le b_i\\}\), and its volume by \(|I|=\\prod_{i=1}^n(b_i-a_i)\). If \(I_{a,b}=\\bigcup_{k=1}^m I_k\) is a finite partition into pairwise disjoint subrectangles and \(\u03be_k\\in \\mathbb{R}^n\) is chosen in each \(I_k\), then \((P,\u03be)\) is a tagged partition and the Riemann sum is \(S_f(P,\u03be):=\\sum_{k=1}^m f(\u03be_k)|I_k|\).",
+      "statement_zh": "令$a:=(a_1,\\cdots,a_n),b:=(b_1,\\cdots,b_n)$是$\\mathbb{R}^n$当中的两个向量，定义$$I_{a,b}:=\\{x=(x_1,\\cdots,x_n)\\in \\mathbb{R}^n:a_i\\leq x_i\\leq b_i\\}$$为一个超长方体。$$|I|=\\prod_{i=1}^n(b_i-a_i)$$称之为长方体$I$的体积。$P$称之为$I_{a,b}$的一个划分，如果我们可以把$I$表示为一系列有限个更小的互相不相交的子超立方体的并，即$$I_{a,b}=\\bigcup_{k=1}^mI_k$$如果我们在每个$I_k$当中选取一个点$\\xi_k\\in \\mathbb{R}^n$，并且令$\\xi:=\\{\\xi_1,\\cdots,\\xi_k\\}$，那么我们称$(P,\\xi)$为$I_{a,b}$上带标志点的划分。现在考虑$I_{a,b}\\to \\mathbb{R}$上定义的有界函数$f(x)$，我们把和$$S_f(P,\\xi):=\\sum_{k=1}^m f(\\xi_k)|I_k|$$称之为函数$f$在区间$I_{a,b}$上的按照带标志点的划分$(P,\\xi)$的黎曼和。",
+      "type": "definition",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "higher-dimensional Riemann sums",
+        "partitions of rectangles"
+      ],
+      "prerequisites": [
+        "Euclidean space",
+        "volume of rectangles",
+        "Riemann sums"
+      ]
+    },
+    {
+      "id": "黎曼积分-4",
+      "statement_en": "Using the diameter \(d(E):=\\sup_{x,y\\in E}\\|x-y\\|\), define the mesh of a partition by \(\u03bb(P):=\\max\\{d(I_k):k=1,\\cdots,m\\}\). Then the Riemann integral over \(I_{a,b}\) is defined by \(\u222b_{I_{a,b}}f(x)\\,dx:=\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)\), or equivalently: for every \(\u03b5>0\), there exists \(\u03b4_\\varepsilon>0\) such that for every tagged partition \((P,\u03be)\) with \(\u03bb(P)<\u03b4_\\varepsilon\), one has \(|I-S_f(P,\u03be)|<\u03b5\).",
+      "statement_zh": "这里我们借用$\\mathbb{R}^n$当中某个集合的直径的说法，$$d(E):=\\sup_{x,y\\in E}||x-y||$$那么$\\lambda(P)$可以被定义为$$\\lambda(P):=\\max\\{d(I_k),k=1,\\cdots,m\\}$$于是我们可以定义$I_{a,b}$上的黎曼可积：$$\\int_{I_{a,b}}f(x)\\,dx:=\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)$$或者用$\\varepsilon-\\delta$的的语言来表述就是: 对任意的$\\varepsilon>0$，都存在一个$\\delta_{\\varepsilon}$使得任意$\\lambda(P)<\\delta_{\\varepsilon}$的带标志点的划分$(P,\\xi)$都有$$|I-S_f(P,\\xi)|<\\varepsilon$$此时$I$就称之为函数在超长方体$I_{a,b}\\subset \\mathbb{R}^n$上的黎曼积分。",
+      "type": "definition",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "mesh via diameter",
+        "higher-dimensional Riemann integrability"
+      ],
+      "prerequisites": [
+        "diameter of sets",
+        "Riemann sums in \\(\\mathbb{R}^n\\)"
+      ]
+    },
+    {
+      "id": "黎曼积分-5",
+      "statement_en": "For a bounded function \(f\) on \(I_{a,b}\), if the limit \(\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)\) exists, then \(f\) is called Riemann integrable on \(I_{a,b}\).",
+      "statement_zh": "对于$I_{a,b}$上的黎曼可积的有界函数$f$,如果极限$$\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)$$是存在的，那么就称之为$I_{a,b}$上的黎曼可积函数。",
+      "type": "definition",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "existence of limit",
+        "Riemann integrability"
+      ],
+      "prerequisites": [
+        "Riemann sums",
+        "limits"
+      ]
+    },
+    {
+      "id": "黎曼积分-6",
+      "statement_en": "For a non-rectangular bounded domain \(E\\subset \\mathbb{R}^n\) with \(d(E)<\\infty\), one may choose a rectangle \(I_{a,b}\\supset E\), extend the setting to \(I_{a,b}\), and consider the Riemann sums and integral of the function \(f(x)1_E(x)\).",
+      "statement_zh": "当然，对于非长方体的定义域$E\\subset \\mathbb{R}^n$，我们可以稍加变通，只要$d(E)<\\infty$即一个有界的集合，那么我们就可以考虑一个长方体$E\\subset I_{a,b}$,然后我们考虑$f$定义在$I_{a,b}$上，然后考虑新的函数$$f(x)1_{E}(x)$$的黎曼和，以及黎曼积分。",
+      "type": "definition",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "indicator functions",
+        "reduction to rectangular domains"
+      ],
+      "prerequisites": [
+        "bounded sets",
+        "indicator functions",
+        "Riemann integration in higher dimensions"
+      ]
+    },
+    {
+      "id": "黎曼积分-7",
+      "statement_en": "The function \(f:[a,b]\\to \\mathbb{R}\) is Riemann integrable if and only if for every \(\u03b5>0\), there exists \(\u03b4_\\varepsilon>0\) such that for any tagged partitions \((P',\u03be')\) and \((P'',\u03be'')\) satisfying \(\u03bb(P'),\u03bb(P'')<\u03b4_\\varepsilon\), one has \(|S_f(P',\u03be')-S_f(P'',\u03be'')|<\u03b5\).",
+      "statement_zh": "定理2.1.1:黎曼可积的柯西判别：函数$f:[a,b]\\to \\mathbb{R}$是黎曼可积的，当且仅当对任意$\\varepsilon>0$,存在一个$\\delta_{\\varepsilon}>0$使得任意满足$\\lambda(P'),\\lambda(P'')<\\delta_{\\varepsilon}$的划分$(P',\\xi'),(P'',\\xi'')$都有$$|S_f(P',\\xi')-S_f(P'',\\xi'')|<\\varepsilon$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "Cauchy criterion",
+        "Riemann sums"
+      ],
+      "prerequisites": [
+        "Cauchy criterion for limits",
+        "Riemann integrability"
+      ]
+    },
+    {
+      "id": "黎曼积分-8",
+      "statement_en": "The function \(f:[a,b]\\to \\mathbb{R}\) is Riemann integrable if and only if for every \(\u03b5>0\) there exist two Riemann integrable functions \(\u03b1_\\varepsilon,\u03b2_\\varepsilon\) such that \(\u03b1_\\varepsilon\\le f\\le \\beta_\\varepsilon\) and \(\\left|\\int_a^b \\alpha_\\varepsilon(x)-\\beta_\\varepsilon\\,dx\\right|<\\varepsilon\).",
+      "statement_zh": "定理2.1.2：黎曼可积的夹逼定理：函数$f:[a,b]\\to \\mathbb{R}$黎曼可积，当且仅当对任意的$\\varepsilon>0$存在两个黎曼可积函数$\\alpha_{\\varepsilon},\\beta_{\\varepsilon}$满足$$\\alpha_{\\varepsilon}\\leq f\\leq \\beta_{\\varepsilon}$$并且$$\\left|\\int_a^b \\alpha_{\\varepsilon}(x)-\\beta_{\\varepsilon}\\,dx\\right|<\\varepsilon$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "squeeze theorem for integrability",
+        "comparison by integrable bounds"
+      ],
+      "prerequisites": [
+        "Riemann integrability",
+        "Cauchy criterion",
+        "order properties of integrals"
+      ]
+    },
+    {
+      "id": "黎曼积分-9",
+      "statement_en": "A bounded function \(f\) on the closed interval \([a,b]\) is Riemann integrable if and only if for every \(\u03b5>0\) there exists \(\u03b4_\\varepsilon>0\) such that for every partition with \(\u03bb(P)<\u03b4_\\varepsilon\), one has \(\\sum_{i=1}^n \\omega_f([x_{i-1},x_i])(x_i-x_{i-1})<\\varepsilon\), where \(\u03c9_f(E)\) is the oscillation of \(f\) on \(E\).",
+      "statement_zh": "定理2.2.3:黎曼判别：一个有界函数$f$在闭区间$[a,b]$上黎曼可积，当且仅当对任意的$\\varepsilon>0$存在一个$\\delta_{\\varepsilon}>0$使得对任意的满足$\\lambda(P)<\\delta_{\\varepsilon}$都有$$\\sum_{i=1}^n \\omega_f([x_{i-1},x_i])(x_i-x_{i-1})<\\varepsilon$$ 这里$\\omega_f(E)$称之为函数在集合$E$上的振幅(oscillation)。",
+      "type": "theorem",
+      "difficulty": "hard",
+      "domain": "real analysis",
+      "key_techniques": [
+        "oscillation criterion",
+        "Riemann criterion"
+      ],
+      "prerequisites": [
+        "bounded functions",
+        "oscillation of a function",
+        "Riemann integrability"
+      ]
+    },
+    {
+      "id": "黎曼积分-10",
+      "statement_en": "A function \(f\) on the rectangle \(I_{a,b}\\subset \\mathbb{R}^n\) is Riemann integrable if and only if for every \(\u03b5>0\) there exists a partition \(P_\\varepsilon\) such that a certain Darboux-type sum condition holds. (The statement is truncated in the note.)",
+      "statement_zh": "函数黎曼可积的达布等价条件：长方体$I_{a,b}\\subset \\mathbb{R}^n$上的函数$f$黎曼可积，等价于，对任意的$\\varepsilon>0$存在划分$P_{\\varepsilon}$从而使得$$\\sum_{k",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "Darboux criterion",
+        "upper and lower sums"
+      ],
+      "prerequisites": [
+        "Riemann integrability",
+        "partitions of rectangles",
+        "Darboux sums"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "tagged partitions",
+    "Riemann sums",
+    "epsilon-delta definition of Riemann integrability",
+    "higher-dimensional rectangle partitions",
+    "Cauchy criterion for integrability",
+    "squeeze criterion for integrability",
+    "oscillation criterion (Riemann criterion)",
+    "Darboux criterion",
+    "indicator-function reduction for bounded non-rectangular domains"
+  ],
+  "connections_mentioned": [
+    "real analysis",
+    "calculus",
+    "integration on \\(\\mathbb{R}^n\\)",
+    "oscillation of functions",
+    "Darboux sums",
+    "indicator functions on subsets"
+  ]
+}

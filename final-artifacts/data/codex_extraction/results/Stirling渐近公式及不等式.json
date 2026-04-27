@@ -1,0 +1,82 @@
+{
+  "note_title": "Stirling Formula via Euler-Maclaurin and Wallis Product",
+  "classification": "theory",
+  "summary_en": "This note derives the asymptotic expansion of \\(S_n=\\sum_{k\\le n}\\log k=\\log(n!)\\) using the Euler-Maclaurin formula, and then determines the constant term via the Wallis product. It also discusses an error term inequality related to Stirling's formula.",
+  "problems": [
+    {
+      "id": "stirling-1",
+      "statement_en": "Prove that\n\\[\nS_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n).\n\\]",
+      "statement_zh": "证明$$S_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n)$$",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "Wallis product", "asymptotic expansion"],
+      "prerequisites": ["asymptotic notation", "integration", "logarithms", "factorials"]
+    },
+    {
+      "id": "stirling-2",
+      "statement_en": "For a smooth function \\(f:[m,n]\\to\\mathbb{C}\\),\n\\[\n\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt.\n\\]",
+      "statement_zh": "$$\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["Euler-Maclaurin summation", "Bernoulli polynomials"],
+      "prerequisites": ["smooth functions", "higher derivatives", "Bernoulli numbers"]
+    },
+    {
+      "id": "stirling-3",
+      "statement_en": "For \\(p\\ge 2\\), the Bernoulli polynomial satisfies\n\\[\n|B_p(\\{t\\})|\\le \\frac{2p!}{(2\\pi)^p}\\zeta(p).\n\\]",
+      "statement_zh": "$$|B_{p}(\\{t\\})|\\leq\\frac{2p!}{(2\\pi)^p}\\zeta(p)$$",
+      "type": "lemma",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["Bernoulli polynomial estimates", "remainder control"],
+      "prerequisites": ["Bernoulli polynomials", "Riemann zeta function"]
+    },
+    {
+      "id": "stirling-4",
+      "statement_en": "Wallis product:\n\\[\n\\frac{\\pi}{2}= \\prod_{n \\geq 1} \\frac{2 n}{2 n-1}\\frac{2 n}{2 n+1}= \\lim_{n \\to +\\infty}\\frac{1}{2 n+1} \\cdot \\frac{2^{4 n}(n !)^4}{[(2 n)!]^2}.\n\\]",
+      "statement_zh": "$$\\frac{\\pi}{2}= \\prod_{n \\geq 1} \\frac{2 n}{2 n-1}\\frac{2 n}{2 n+1}= \\lim_{n \\to +\\infty}\\frac{1}{2 n+1} \\cdot \\frac{2^{4 n}(n !)^4}{(2 n)!]^2}$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["Wallis product", "infinite products", "constant identification in asymptotics"],
+      "prerequisites": ["limits", "factorials", "infinite products"]
+    },
+    {
+      "id": "stirling-5",
+      "statement_en": "Let\n\\[\nr_n = S_n-(n\\log(n)-n+\\tfrac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi}))=\\frac{1}{12n}+R(n).\n\\]\nThen\n\\[\n0<r_n<\\frac{1}{12n}.\n\\]",
+      "statement_zh": "令$$r_n = S_n-(n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi}))=\\frac{1}{12n}+R(n)$$那么$$0<r_n <\\frac{1}{12n}$$",
+      "type": "theorem",
+      "difficulty": "hard",
+      "domain": "real analysis",
+      "key_techniques": ["Euler-Maclaurin remainder analysis", "sign analysis of integrals", "Padé approximation"],
+      "prerequisites": ["Stirling's formula", "Bernoulli polynomials", "integral estimates"]
+    },
+    {
+      "id": "stirling-6",
+      "statement_en": "A sharper bound due to Robbins (1955) is\n\\[\n\\frac{1}{12n+1}<r_n<\\frac{1}{12n}.\n\\]",
+      "statement_zh": "$$\\frac{1}{12n+1}<r_n<\\frac{1}{12n}$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": ["sharp Stirling bounds", "error term refinement"],
+      "prerequisites": ["Stirling's formula", "inequalities"]
+    }
+  ],
+  "key_techniques_discussed": [
+    "Euler-Maclaurin summation",
+    "asymptotic expansion of sums",
+    "Bernoulli polynomial remainder estimates",
+    "Wallis product",
+    "Padé approximation for logarithms",
+    "error term extraction and sharpening in Stirling's formula"
+  ],
+  "connections_mentioned": [
+    "Stirling's formula",
+    "asymptotics of \\(n!\\)",
+    "Bernoulli numbers and Bernoulli polynomials",
+    "Hadamard product for \\(\\sin(\\pi z)\\)",
+    "Robbins' bounds for factorials"
+  ]
+}

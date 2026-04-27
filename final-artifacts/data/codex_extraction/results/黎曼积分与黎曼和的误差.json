@@ -1,0 +1,41 @@
+{
+  "note_title": "问题0",
+  "classification": "problem",
+  "summary_en": "This note studies the asymptotic error of the left-endpoint Riemann sum for a \(C^2([0,1])\) function and computes \(\lim_{n\\to\\infty} nR_n\). It also discusses sharper asymptotic expansions using piecewise Taylor expansion and the Euler-Maclaurin summation formula.",
+  "problems": [
+    {
+      "id": "problem0-1",
+      "statement_en": "Let \(f\\in C^2([0,1])\), and define\n\\[\nR_n:=\\int_0^1 f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1} f(k/n).\n\\]\nFind\n\\[\n\\lim_{n\\to\\infty} nR_n.\n\\]",
+      "statement_zh": "$f\\in C^2([0,1])$，令$$R_n:=\\int_0^1f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1}f(k/n)$$求$$\\lim_{n\\to \\infty}nR_n$$",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "Riemann sum error expansion",
+        "Taylor expansion on subintervals",
+        "Euler-Maclaurin summation"
+      ],
+      "prerequisites": [
+        "Riemann integrals",
+        "Taylor's theorem",
+        "continuity and differentiability on closed intervals",
+        "asymptotic notation"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "Piecewise estimation of the Riemann-sum error",
+    "Taylor expansion for smooth functions",
+    "Asymptotic expansion of left-endpoint Riemann sums",
+    "Bound via total variation",
+    "Euler-Maclaurin summation formula",
+    "Generalized Riemann-Lebesgue lemma"
+  ],
+  "connections_mentioned": [
+    "total variation",
+    "Euler-Maclaurin formula",
+    "Riemann sum approximation",
+    "generalized Riemann-Lebesgue lemma",
+    "asymptotic quadrature error"
+  ]
+}

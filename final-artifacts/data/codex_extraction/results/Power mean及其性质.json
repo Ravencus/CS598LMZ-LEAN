@@ -1,0 +1,124 @@
+{
+  "note_title": "Power Mean",
+  "classification": "example_collection",
+  "summary_en": "This note introduces the weighted power mean, states its monotonicity and limit properties, and then gives inequality examples motivated by HM-AM and AM-GM. It emphasizes how different means can be used to estimate sums and convert between additive and multiplicative structures.",
+  "problems": [
+    {
+      "id": "power-mean-1",
+      "statement_en": "Definition: For nonnegative real numbers \(x_1,\\dots,x_n\), positive real weights \(w_1,\\dots,w_n\), and nonzero real \(p\), define\n\\[\nM_p(x_1,\\dots,x_n; w_1\\cdots w_n)=\\left(\\frac{\\sum_{i=1}^n w_i x_i^p}{\\sum_{i=1}^n w_i}\\right)^{1/p}.\n\\]\nIn particular, if \(w_1=\\cdots=w_n=1\), then\n\\[\nM_p(x_1,\\dots,x_n)=\\left(\\frac{\\sum_{i=1}^n x_i^p}{n}\\right)^{1/p}.\n\\]",
+      "statement_zh": "对于非负实数\(x_1,...,x_n\)，以及正实数\(w_1,...,w_n\),以及非零实数p:\n\\[\nM_{p}(x_{1},\\dots ,x_{n};w_1 \\cdots w_n)=\\left({\\frac {\\sum _{i=1}^{n}w_{i}x_{i}^{p}}{\\sum _{i=1}^{n}w_{i}}}\\right)^{{1}/{p}}\n\\]\n特别的，如果权重都为1，\(w_1 = w_2 =...=w_n = 1\)那么\n\\[\nM_{p}(x_{1},\\dots ,x_{n})=\\left({\\frac {\\sum _{i=1}^{n}x_{i}^{p}}{n}}\\right)^{{1}/{p}}\n\\]",
+      "type": "definition",
+      "difficulty": "easy",
+      "domain": "inequalities",
+      "key_techniques": [
+        "weighted power mean"
+      ],
+      "prerequisites": [
+        "weighted averages",
+        "real powers"
+      ]
+    },
+    {
+      "id": "power-mean-2",
+      "statement_en": "Property 1 (order relation): Under the same weights, if \(p<q\), then\n\\[\nM_p(x_1,\\dots,x_n; w_1\\cdots w_n) \\le M_q(x_1,\\dots,x_n; w_1\\cdots w_n).\n\\]",
+      "statement_zh": "在相同的权重系数下，如果\(p<q\)那么:\n\\[\nM_{p}(x_{1},\\dots ,x_{n};w_1 \\cdots w_n) \\leq  M_{q}(x_{1},\\dots ,x_{n};w_1 \\cdots w_n)\n\\]",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "inequalities",
+      "key_techniques": [
+        "power mean inequality",
+        "monotonicity of means"
+      ],
+      "prerequisites": [
+        "weighted power mean",
+        "inequalities"
+      ]
+    },
+    {
+      "id": "power-mean-3",
+      "statement_en": "Property 2 (limit properties):\n1. \\(\\lim_{p\\to +\\infty} M_p(x_1,\\dots,x_n; w_1\\cdots w_n)=\\max\\{x_1,\\dots,x_n\\}\\).\n2. \\(\\lim_{p\\to -\\infty} M_p(x_1,\\dots,x_n; w_1\\cdots w_n)=\\min\\{x_1,\\dots,x_n\\}\\).\n3. \\(\\lim_{p\\to 0} M_p(x_1,\\dots,x_n; w_1\\cdots w_n)=\\prod_{i=1}^n x_i^{\\frac{w_i}{\\sum_{j=1}^n w_j}}=M_0(x_1,\\dots,x_n; w_1\\cdots w_n)\\).",
+      "statement_zh": "性质2：极限性质\n1. \\(\\lim_{p \\rightarrow +\\infty} M_{p}(x_1,...,x_n;w_1 \\cdots w_n) = \\max\\{x_1,...,x_n\\}\\)\n2. \\(\\lim_{p \\rightarrow -\\infty} M_{p}(x_1,...,x_n;w_1 \\cdots w_n) = \\min\\{x_1,...,x_n\\}\\)\n3. \\(\\lim _{p\\to 0}M_{p}(x_{1},\\dots ,x_{n};w_1 \\cdots w_n)=\\prod _{i=1}^{n}x_{i}^{\\frac{w_{i}}{\\sum _{j=1}^{n}w_{j}}}=M_{0}(x_{1},\\dots ,x_{n};w_1 \\cdots w_n)\\)",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "inequalities",
+      "key_techniques": [
+        "limits of power means",
+        "geometric mean as \(p\\to 0\)"
+      ],
+      "prerequisites": [
+        "weighted power mean",
+        "limits",
+        "maximum and minimum"
+      ]
+    },
+    {
+      "id": "power-mean-4",
+      "statement_en": "Assume \(x>1\). Prove that\n\\[\n\\frac{1}{x-1}+\\frac{1}{x}+\\frac{1}{x+1}>\\frac{3}{x}.\n\\]",
+      "statement_zh": "假设\(x>1\)那么:\n\\[\n\\frac{1}{x- 1} + \\frac{1}{x} +\\frac{1}{x+1} > \\frac{3}{x}\n\\]",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "inequalities",
+      "key_techniques": [
+        "HM-AM inequality",
+        "reciprocal sum estimation"
+      ],
+      "prerequisites": [
+        "harmonic mean",
+        "arithmetic mean",
+        "basic inequalities"
+      ]
+    },
+    {
+      "id": "power-mean-5",
+      "statement_en": "Assume \(x,y,z\) are positive real numbers. Prove that\n\\[\n\\frac{x}{y+z}+\\frac{y}{x+z}+\\frac{z}{x+y}\\ge \\frac{3}{2}.\n\\]",
+      "statement_zh": "假设\(x,y,z\)都是正实数,证明:\n\\[\n\\frac{x}{y+z} + \\frac{y}{x+z} +\\frac{z}{x+y} \\geq \\frac{3}{2}\n\\]",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "inequalities",
+      "key_techniques": [
+        "HM-AM inequality",
+        "adding 1 to reveal common numerator structure"
+      ],
+      "prerequisites": [
+        "harmonic mean",
+        "arithmetic mean",
+        "fraction manipulation"
+      ]
+    },
+    {
+      "id": "power-mean-6",
+      "statement_en": "For any real numbers \(a,b,c\), prove that\n\\[\n(a+b+c)^2\\ge 3(ab+bc+ac).\n\\]",
+      "statement_zh": "对于任意实数a,b,c有:\n\\[\n(a+b+c)^2\\geq 3(ab +bc+ac)\n\\]",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "algebra",
+      "key_techniques": [
+        "AM-GM inequality",
+        "rewriting quadratic expressions"
+      ],
+      "prerequisites": [
+        "arithmetic mean",
+        "geometric mean",
+        "expansion of squares"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "power mean inequality",
+    "monotonicity of generalized means",
+    "limit transition from power means to max, min, and geometric mean",
+    "HM-AM inequality",
+    "AM-GM inequality",
+    "transforming reciprocal sums via harmonic mean",
+    "converting between additive and multiplicative structures"
+  ],
+  "connections_mentioned": [
+    "weighted means",
+    "maximum and minimum as limiting means",
+    "arithmetic mean",
+    "geometric mean",
+    "harmonic mean",
+    "Newton's method for square roots",
+    "inequality proof strategies"
+  ]
+}

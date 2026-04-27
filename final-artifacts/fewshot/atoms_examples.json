@@ -1,0 +1,46 @@
+[
+  {
+    "problem": "Complex Subset Sum (Quadrant Method): Given n complex numbers with sum of norms = 1, prove there exists a subset S with |sum_{k in S} z_k| >= 1/4.",
+    "step": 1,
+    "step_description": "Project complex numbers onto real and imaginary axes",
+    "atom": {
+      "trigger": "Need to bound |sum of vectors| from below in 2D; vectors have constrained total norm",
+      "action": "Decompose into coordinate projections: split by sign of Re(z_k) and Im(z_k) to get four non-negative partial sums",
+      "outcome": "Four real quantities a, b, c, d >= 0 with a+b+c+d >= 1, so max(a,b,c,d) >= 1/4. The subset achieving the max gives the bound.",
+      "boundary": "Only works in 2D (complex plane) because we use 4 quadrants. For higher dimensions, need O(2^d) orthants — exponential. For better constants in 2D, use the averaging method (projecting onto all directions, not just axes). FAILS when you need a constant better than 1/4."
+    }
+  },
+  {
+    "problem": "Complex Subset Sum (Averaging Method): Prove the optimal bound |sum_{k in S} z_k| >= 1/pi.",
+    "step": 1,
+    "step_description": "Reduce subset selection to a continuous optimization over projection directions",
+    "atom": {
+      "trigger": "Discrete optimization over subsets is hard; the objective involves norms of sums which depend on direction",
+      "action": "Instead of searching over 2^n subsets, parameterize by a direction alpha in [0, 2pi). For each alpha, define S_alpha = {k : Re(z_k * e^{-i*alpha}) >= 0}. Average over all alpha.",
+      "outcome": "The average value of sum_{S_alpha} Re(z_k * e^{-i*alpha}) over alpha equals (1/pi) * sum ||z_k||. So there exists some alpha_0 achieving at least the average.",
+      "boundary": "Requires integration over the full circle — needs the integral of max(cos(u), 0) over [0, 2pi] = 2. FAILS if the objects being summed don't live in a space with a natural rotation group (e.g., discrete structures without continuous symmetry). Alternative for discrete settings: probabilistic method with random signs."
+    }
+  },
+  {
+    "problem": "Complex Subset Sum (Averaging Method)",
+    "step": 2,
+    "step_description": "Evaluate the key integral to get the constant",
+    "atom": {
+      "trigger": "The averaging argument produces an integral that determines the final constant; need to compute it exactly",
+      "action": "Compute integral_0^{2pi} max(cos(u), 0) du by splitting into [0, pi/2] U [3pi/2, 2pi] where cos >= 0",
+      "outcome": "The integral equals 2, giving the constant 1/pi after normalization",
+      "boundary": "This is a pure computation — should be delegated to a CAS rather than done in tokens. The integral is standard but easy to get wrong when handling the max function. FAILS: this step cannot fail if computed correctly; the risk is computational error."
+    }
+  },
+  {
+    "problem": "Borel-Cantelli Lemma Application",
+    "step": 1,
+    "step_description": "Convert an 'infinitely often' event into a series convergence question",
+    "atom": {
+      "trigger": "Need to show that a certain event happens only finitely many times a.s., or equivalently that the set of outcomes where it happens infinitely often has measure zero",
+      "action": "Apply Borel-Cantelli Lemma (first part): if sum P(A_n) < infinity, then P(A_n i.o.) = 0. Reduce the problem to showing the sum of probabilities converges.",
+      "outcome": "The almost-sure finiteness question becomes a concrete series convergence question — a purely analytic problem",
+      "boundary": "Only gives the 'easy direction' (convergence => a.s. finitely many). For the converse (divergence => a.s. infinitely many), need the SECOND Borel-Cantelli lemma, which requires independence. FAILS when events are not independent and you need the i.o. conclusion — need more sophisticated tools (e.g., Kochen-Stone)."
+    }
+  }
+]

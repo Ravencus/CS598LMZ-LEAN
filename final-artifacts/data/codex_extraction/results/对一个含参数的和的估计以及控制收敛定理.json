@@ -1,0 +1,92 @@
+{
+  "note_title": "关于 \\(S_n=\\sum_{k=1}^n (k/n)^n\\) 的估计与极限",
+  "classification": "problem",
+  "summary_en": "This note studies the finite sum \\(S_n=\\sum_{k=1}^n (k/n)^n\\), proving a Putnam-style inequality and computing its limit as \\(n\\to\\infty\\). It discusses several methods, including termwise estimation, integral bounds, convexity, Euler-Maclaurin summation, and dominated convergence.",
+  "problems": [
+    {
+      "id": "Sn-1",
+      "statement_en": "Prove that for every positive integer \\(n\\),\n\\[\n\\frac{3n+1}{2n+2}\\leq \\sum_{k=1}^n \\left(\\frac{k}{n}\\right)^n<2.\n\\]",
+      "statement_zh": "证明对任意的正整数都有不等式$$\\frac{3n+1}{2n+2}\\leq \\sum_{k=1}^n \\left(\\frac{k}{n}\\right)^n<2$$",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "integral estimation",
+        "convexity",
+        "Euler-Maclaurin summation"
+      ],
+      "prerequisites": [
+        "Riemann sums and integrals",
+        "convex functions",
+        "basic exponential/logarithmic inequalities"
+      ]
+    },
+    {
+      "id": "Sn-2",
+      "statement_en": "Compute the limit\n\\[\n\\lim_{n\\to\\infty} S_n,\\qquad S_n:=\\sum_{k=1}^n \\left(\\frac{k}{n}\\right)^n.\n\\]",
+      "statement_zh": "求极限$$\\lim_{n\\to \\infty}S_n$$其中$$S_n:=\\sum_{k=1}^n \\left(\\frac{k}{n}\\right)^n$$",
+      "type": "exercise",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "dominated convergence theorem",
+        "Taylor expansion",
+        "partitioned estimation"
+      ],
+      "prerequisites": [
+        "counting measure",
+        "dominated convergence theorem",
+        "Taylor expansion"
+      ]
+    },
+    {
+      "id": "Sn-3",
+      "statement_en": "Let \\(n>1\\) be a positive integer. For \\(k=1,\\dots,n-1\\), prove that\n\\[\n(1+k)^n(n-2k-1)+k^n(n+2k+1)\\ge 0.\n\\]",
+      "statement_zh": "\\(n>1\\)为正整数，当\\(k=1,\\cdots ,n-1\\)的时候，下面不等式成立\n$$(1+k)^n(n-2k-1)+k^n(n+2k+1)\\geq 0$$",
+      "type": "lemma",
+      "difficulty": "medium",
+      "domain": "inequalities",
+      "key_techniques": [
+        "monotonicity argument",
+        "termwise positivity"
+      ],
+      "prerequisites": [
+        "monotone functions",
+        "algebraic inequalities"
+      ]
+    },
+    {
+      "id": "Sn-4",
+      "statement_en": "For \\(a\\in\\mathbb{R}\\), prove that\n\\[\n\\lim_{n\\to\\infty} \\sum_{k=1}^n \\left(\\frac{a+k}{n}\\right)^n=\\frac{e^{a+1}}{e-1}.\n\\]",
+      "statement_zh": "令\\(a\\in \\mathbb{R}\\)，$$\\lim_{n\\to \\infty} \\sum_{k=1}^n \\left(\\frac{a+k}{n}\\right)^n=\\frac{e^{a+1}}{e-1}$$",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "asymptotic analysis",
+        "dominated convergence theorem"
+      ],
+      "prerequisites": [
+        "exponential asymptotics",
+        "series convergence",
+        "dominated convergence theorem"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "termwise estimation",
+    "Taylor expansion",
+    "integral estimation",
+    "convexity-based sum-integral bounds",
+    "Euler-Maclaurin summation",
+    "dominated convergence theorem",
+    "partitioned estimation"
+  ],
+  "connections_mentioned": [
+    "Putnam Mathematical Competition",
+    "Stirling approximation",
+    "sum-integral comparison",
+    "discrete measure spaces",
+    "asymptotic expansion of finite sums"
+  ]
+}

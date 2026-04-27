@@ -1,0 +1,164 @@
+{
+  "note_title": "序列的柯西收敛判别",
+  "classification": "theory",
+  "summary_en": "This note presents the Cauchy convergence criterion for real sequences, proves it using the nested interval theorem and completeness ideas, and discusses how to use the criterion to prove divergence. It also extends the notion to metric spaces and gives several illustrative divergence examples.",
+  "problems": [
+    {
+      "id": "cauchy-seq-1",
+      "statement_en": "The real sequence \\(x_n\\) converges to a real number \\(x\\) if and only if for every \\(\\varepsilon>0\\), there exists a positive integer \\(N_{\\varepsilon}\\) such that for all \\(n,m>N_{\\varepsilon}\\), \\(|x_n-x_m|<\\varepsilon\\).",
+      "statement_zh": "实数列\\(x_n\\)收敛到实数\\(x\\)，当且仅当对于任意\\(\\varepsilon>0\\)存在正整数\\(N_{\\varepsilon}\\)使得任意\\(n,m>N_{\\varepsilon}\\)都成立\\(|x_n-x_m|<\\varepsilon\\)。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "Cauchy convergence criterion",
+        "triangle inequality",
+        "completeness of the real numbers"
+      ],
+      "prerequisites": [
+        "sequence convergence",
+        "epsilon definition of limit",
+        "triangle inequality"
+      ]
+    },
+    {
+      "id": "cauchy-seq-2",
+      "statement_en": "For a nested decreasing sequence of closed intervals in \\(\\mathbb{R}\\), the intersection is nonempty.",
+      "statement_zh": "实数\\(\\mathbb{R}\\)当中的一列下降的闭区间套的交集非空。",
+      "type": "theorem",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "nested interval theorem",
+        "order completeness"
+      ],
+      "prerequisites": [
+        "closed intervals",
+        "real number completeness"
+      ]
+    },
+    {
+      "id": "cauchy-seq-3",
+      "statement_en": "Let \\((a_n)\\) be a sequence in a metric space \\((X,d)\\). If for every \\(\\varepsilon>0\\) there exists a positive integer \\(N_{\\varepsilon}\\) such that for all \\(m,n>N_{\\varepsilon}\\), \\(d(a_m,a_n)<\\varepsilon\\), then \\((a_n)\\) is called a Cauchy sequence in that metric space. In a complete metric space, every Cauchy sequence converges, and the limit is unique.",
+      "statement_zh": "令\\((a_n)\\)是度量空间\\((X,d)\\)当中的序列，如果序列满足：对任意的\\(\\varepsilon>0\\)都存在正整数\\(N_{\\varepsilon}\\)使得对任意\\(m,n>N_{\\varepsilon}\\)都有\\(d(a_m,a_n)<\\varepsilon\\)，那么就称这是该度量空间当中的一个柯西列。完备度量空间当中的柯西列都收敛，且极限唯一。",
+      "type": "definition",
+      "difficulty": "easy",
+      "domain": "metric space theory",
+      "key_techniques": [
+        "Cauchy sequence in metric spaces",
+        "metric space completeness"
+      ],
+      "prerequisites": [
+        "metric spaces",
+        "sequence convergence",
+        "completeness"
+      ]
+    },
+    {
+      "id": "cauchy-seq-4",
+      "statement_en": "Use subsequences together with the Cauchy criterion to prove that a sequence does not converge: (1) find a subsequence that does not satisfy the Cauchy criterion; (2) find two convergent subsequences \\(a_n,b_n\\) such that \\(|b_n-a_n|>\\varepsilon_0\\), especially two subsequences converging to different limits.",
+      "statement_zh": "一个基于子列并结合柯西收敛判别来证明序列并非收敛的技巧：1. 找到一个并不满足柯西收敛判别的子列。2. 找到两个收敛的子列\\(a_n,b_n\\)使得\\(|b_n-a_n|>\\varepsilon_0\\)。这里面的一种特殊的做法是，找到两个收敛到不同结果的子列。",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "subsequence method",
+        "Cauchy criterion for divergence",
+        "separation of subsequential limits"
+      ],
+      "prerequisites": [
+        "subsequences",
+        "sequence convergence",
+        "Cauchy criterion"
+      ]
+    },
+    {
+      "id": "cauchy-seq-5",
+      "statement_en": "Define the harmonic sequence \\(H_n:=\\sum_{k\\le n}\\frac{1}{k}\\). Prove that this sequence diverges.",
+      "statement_zh": "定义调和数列\\(H_n:=\\sum_{k\\leq n}\\frac{1}{k}\\)现在我们来证明这个序列是发散的。",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "subsequence acceleration",
+        "Cauchy criterion for divergence",
+        "termwise estimation"
+      ],
+      "prerequisites": [
+        "harmonic series",
+        "subsequences",
+        "partial sums"
+      ]
+    },
+    {
+      "id": "cauchy-seq-6",
+      "statement_en": "The sequence \\(x_n:=(-1)^n\\) diverges.",
+      "statement_zh": "序列\\(x_n:=(-1)^n\\)发散。",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "distinct convergent subsequences",
+        "Cauchy criterion for divergence"
+      ],
+      "prerequisites": [
+        "subsequences",
+        "sequence convergence"
+      ]
+    },
+    {
+      "id": "cauchy-seq-7",
+      "statement_en": "The sequence \\(x_n:=\\sin(n)\\) has no limit.",
+      "statement_zh": "序列\\(x_n:=\\sin(n)\\)的极限不存在。",
+      "type": "example",
+      "difficulty": "hard",
+      "domain": "real analysis",
+      "key_techniques": [
+        "constructing separated subsequences",
+        "range estimates for sine",
+        "Cauchy criterion for divergence"
+      ],
+      "prerequisites": [
+        "trigonometric functions",
+        "subsequences",
+        "sequence convergence"
+      ]
+    },
+    {
+      "id": "cauchy-seq-8",
+      "statement_en": "If \\((a_n)\\) is a Cauchy sequence, then for every fixed positive integer \\(p\\), \\(|a_{n+p}-a_n|\\to 0\\).",
+      "statement_zh": "如果序列\\((a_n)\\)是柯西列，那么对于任意固定的正整数\\(p\\)都有\\(|a_{n+p}-a_n|\\to 0\\)。",
+      "type": "theorem",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "necessary condition for Cauchy sequences",
+        "direct epsilon argument"
+      ],
+      "prerequisites": [
+        "Cauchy sequences",
+        "sequence limits"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "Cauchy convergence criterion",
+    "nested interval theorem",
+    "construction via tail infimum and supremum",
+    "triangle inequality",
+    "subsequence method for proving divergence",
+    "finding two subsequences separated by a positive lower bound",
+    "subsequence acceleration",
+    "termwise estimation",
+    "metric space completeness"
+  ],
+  "connections_mentioned": [
+    "completeness of the real numbers",
+    "nested closed intervals",
+    "limsup and liminf of sequences",
+    "subsequences and subsequential limits",
+    "complete metric spaces",
+    "harmonic sequence divergence",
+    "nonconvergence of \\(\\sin n\\)"
+  ]
+}

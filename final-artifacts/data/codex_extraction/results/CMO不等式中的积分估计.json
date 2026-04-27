@@ -1,0 +1,38 @@
+{
+  "note_title": "问题1,1996 CMO Q5/2024某省高考模拟题 p17",
+  "classification": "problem",
+  "summary_en": "This note studies a double-sided inequality for a weighted sum involving square roots of partial sums. The left inequality is proved by a termwise AM-GM estimate, and the right inequality is obtained by introducing partial sums and comparing the resulting sum with an integral of a monotone function.",
+  "problems": [
+    {
+      "id": "问题1-1",
+      "statement_en": "Given \(x_0=0\) and \(x_1,\\cdots,x_n>0\) satisfying \(x_0+x_1+\\cdots+x_n=1\), prove that\n\\[\n1\\leq \\sum_{i=1}^n \\frac{x_i}{\\sqrt{1+x_0+\\cdots +x_{i-1}}\\sqrt{x_i+\\cdots+x_n}}<\\frac{\\pi}{2}.\n\\]",
+      "statement_zh": "已知\\(x_0=0\\)以及\\(x_1,\\cdots,x_n>0\\)且满足\\(x_0+x_1+\\cdots+x_n=1\\)证明:\n\\[\n1\\leq \\sum_{i=1}^n \\frac{x_i}{\\sqrt{1+x_0+\\cdots +x_{i-1}}\\sqrt{x_i+\\cdots+x_n}}<\\frac{\\pi}{2}\n\\]",
+      "type": "exercise",
+      "difficulty": "hard",
+      "domain": "inequalities",
+      "key_techniques": [
+        "termwise estimation",
+        "AM-GM inequality",
+        "partial sum substitution",
+        "sum-to-integral comparison"
+      ],
+      "prerequisites": [
+        "arithmetic mean-geometric mean inequality",
+        "partial sums",
+        "monotonicity of functions",
+        "basic definite integrals"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "termwise estimation",
+    "AM-GM inequality",
+    "rewriting with partial sums",
+    "integral estimation of sums using monotonicity"
+  ],
+  "connections_mentioned": [
+    "power mean and its properties",
+    "integral bounds for sums",
+    "calculus-based inequality proofs"
+  ]
+}

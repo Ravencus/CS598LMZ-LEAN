@@ -1,0 +1,9040 @@
+[
+  {
+    "title": "Abel inversion及其应用",
+    "filename": "Abel inversion及其应用.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 3288,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "Bertrand假设的证明",
+    "filename": "Bertrand假设的证明.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "从二项式系数到Kummer定理",
+      "对素数连乘积的粗糙上界估计",
+      "分段估计",
+      "Erdos关于pi函数的估计",
+      "从二项式系数到Kummer定理",
+      "Erdos关于pi函数的估计",
+      "Erdos关于pi函数的估计",
+      "Erdos关于pi函数的估计"
+    ],
+    "section_count": 2,
+    "heading_count": 7,
+    "char_count": 8139,
+    "in_degree": 8,
+    "out_degree": 8,
+    "tier": "medium"
+  },
+  {
+    "title": "Bezout恒等式",
+    "filename": "Bezout恒等式.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "数论"
+    ],
+    "outgoing_links": [
+      "无穷递降法"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 887,
+    "in_degree": 4,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "Borel-Cantelli lemma及其应用",
+    "filename": "Borel-Cantelli lemma及其应用.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "测度论的基础概念",
+      "测度论的基础概念",
+      "把集合问题转换为函数问题",
+      "证明函数项级数几乎处处绝对收敛",
+      "函数列几乎处处有界与Borel-Cantelli lemma的应用",
+      "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+      "an epsilon of room",
+      "把集合问题转换为函数问题",
+      "有限测度空间上依测度收敛的等价命题",
+      "随机变量期望收敛导出几乎处处收敛的一个条件",
+      "Borel-Cantelli lemma证明某种版本下的强大数定律",
+      "加强收敛性质的条件与手段",
+      "Etemadi关于强大数定律的证明",
+      "单位区间内10进制小数中含有无数个7的小数的Lebesgue测度为1",
+      "Khintchine定理",
+      "Khintchine定理"
+    ],
+    "section_count": 3,
+    "heading_count": 10,
+    "char_count": 10672,
+    "in_degree": 22,
+    "out_degree": 16,
+    "tier": "hub"
+  },
+  {
+    "title": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+    "filename": "Borel-Cantelli lemma证明某种版本下的强大数定律.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "Borel-Cantelli lemma及其应用",
+      "有限测度空间上依测度收敛的等价命题",
+      "Borel-Cantelli lemma及其应用",
+      "样本期望的渐近展开系数",
+      "Borel-Cantelli lemma及其应用"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 5469,
+    "in_degree": 3,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "C(X)在一致范数下紧子集的充要条件",
+    "filename": "C(X)在一致范数下紧子集的充要条件.md",
+    "tags": [
+      "math",
+      "拓扑",
+      "泛函分析"
+    ],
+    "outgoing_links": [
+      "柯西收敛判别",
+      "从几个问题理解一致连续函数的特性",
+      "利用紧性把局部性质转换为全局性质",
+      "函数列的微分一致有界那么极限函数保持连续性",
+      "利用紧性与一致连续性证明一个一致收敛",
+      "Dini定理"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 13268,
+    "in_degree": 8,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "CMO不等式中的积分估计",
+    "filename": "CMO不等式中的积分估计.md",
+    "tags": [
+      "math",
+      "高考",
+      "中学数学竞赛",
+      "大学数学竞赛",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "Power mean及其性质",
+      "和的积分估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 967,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "Cantor series表示的数是否是有理数的判断",
+    "filename": "Cantor series表示的数是否是有理数的判断.md",
+    "tags": [
+      "math",
+      "数论",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "证明e是无理数",
+      "证明e的有理次方是无理数",
+      "证明e是无理数",
+      "证明e的有理次方是无理数"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1711,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "Cantor-Lebesgue函数",
+    "filename": "Cantor-Lebesgue函数.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1855,
+    "in_degree": 4,
+    "out_degree": 0,
+    "tier": "medium"
+  },
+  {
+    "title": "Cantor集以及它的性质",
+    "filename": "Cantor集以及它的性质.md",
+    "tags": [
+      "math",
+      "实分析",
+      "拓扑"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "分段估计",
+      "an epsilon of room证明集合为0测度的策略"
+    ],
+    "section_count": 3,
+    "heading_count": 7,
+    "char_count": 3367,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "Carleman不等式",
+    "filename": "Carleman不等式.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "Power mean及其性质",
+      "Power mean及其性质",
+      "Stirling渐近公式及不等式",
+      "Power mean及其性质"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 2908,
+    "in_degree": 3,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "Cauchy-Davenport及其证明",
+    "filename": "Cauchy-Davenport及其证明.md",
+    "tags": [
+      "math",
+      "组合学",
+      "数论"
+    ],
+    "outgoing_links": [
+      "组合零点定理",
+      "有限交换群上的函数构成的Hilbert空间的结构",
+      "把集合问题转换为函数问题"
+    ],
+    "section_count": 2,
+    "heading_count": 9,
+    "char_count": 4934,
+    "in_degree": 5,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "Cesaro-Stolz定理",
+    "filename": "Cesaro-Stolz定理.md",
+    "tags": [
+      "math"
+    ],
+    "outgoing_links": [
+      "Silverman–Toeplitz定理",
+      "一个递推序列的渐近问题",
+      "通过倒数制造差分关系",
+      "Riesz-Fischer定理",
+      "Silverman–Toeplitz定理"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 1258,
+    "in_degree": 9,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "Dini定理",
+    "filename": "Dini定理.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 3432,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "Dirichlet's hyperbola trick",
+    "filename": "Dirichlet's hyperbola trick.md",
+    "tags": [
+      "tool_idea",
+      "math"
+    ],
+    "outgoing_links": [
+      "对算术函数平均值的渐近",
+      "divisor函数的倒数加权和的估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2948,
+    "in_degree": 5,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+    "filename": "Dirichlet核不是逼近单位，Fejer核是逼近单位元.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "approximation to the identity",
+      "approximation to the identity",
+      "分段估计",
+      "用分段估计解决几个序列的极限问题",
+      "什么样的条件可以从Cesaro可和得到通常意义下的可和",
+      "圆周上的函数的傅里叶展开",
+      "approximation to the identity",
+      "Stone-Weierstrass定理",
+      "模1均匀分布与Weyl判别"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 6260,
+    "in_degree": 7,
+    "out_degree": 9,
+    "tier": "medium"
+  },
+  {
+    "title": "Dyadic分解",
+    "filename": "Dyadic分解.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "分段估计",
+      "柯西凝聚判别法",
+      "分段估计",
+      "整函数零点组成的级数收敛性与增长阶之间的关系",
+      "对误差的分析从而改进分段估计",
+      "approximation to the identity"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2043,
+    "in_degree": 3,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "EGZ定理的证明",
+    "filename": "EGZ定理的证明.md",
+    "tags": [
+      "math",
+      "组合学",
+      "数论"
+    ],
+    "outgoing_links": [
+      "Cauchy-Davenport及其证明",
+      "Cauchy-Davenport及其证明",
+      "组合零点定理"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 6786,
+    "in_degree": 3,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "Erdos关于pi函数的估计",
+    "filename": "Erdos关于pi函数的估计.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "Bertrand假设的证明",
+      "Bertrand假设的证明",
+      "Bertrand假设的证明",
+      "Bertrand假设的证明"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3501,
+    "in_degree": 6,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "Etemadi关于强大数定律的证明",
+    "filename": "Etemadi关于强大数定律的证明.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "用子列来提升收敛或发散性质",
+      "Borel-Cantelli lemma及其应用",
+      "和的积分估计",
+      "加强收敛性质的条件与手段",
+      "用子列来提升收敛或发散性质",
+      "通过子列的收敛性验证单调增加的函数列的收敛性",
+      "加强收敛性质的条件与手段",
+      "和与积分换序",
+      "Fubini-Tonelli定理的例子与反例"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 5665,
+    "in_degree": 6,
+    "out_degree": 9,
+    "tier": "medium"
+  },
+  {
+    "title": "Euler-Maclaurin求和公式在和的估计当中的应用",
+    "filename": "Euler-Maclaurin求和公式在和的估计当中的应用.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "基于分部求和法的和的估计",
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "模1均匀分布与Weyl判别",
+      "和的积分估计"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 1777,
+    "in_degree": 1,
+    "out_degree": 6,
+    "tier": "leaf"
+  },
+  {
+    "title": "Faulhaber公式",
+    "filename": "Faulhaber公式.md",
+    "tags": [
+      "math",
+      "组合学"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 460,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "Fubini-Tonelli定理的例子与反例",
+    "filename": "Fubini-Tonelli定理的例子与反例.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 5317,
+    "in_degree": 9,
+    "out_degree": 0,
+    "tier": "medium"
+  },
+  {
+    "title": "GLn的稠密性",
+    "filename": "GLn的稠密性.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "矩阵赋范数空间当中一些典型集合的拓扑性质"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 797,
+    "in_degree": 4,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "Gamma函数在1处的渐近行为",
+    "filename": "Gamma函数在1处的渐近行为.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "证明Gamma函数在右半平面上全纯"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 995,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "Gamma函数的反射公式",
+    "filename": "Gamma函数的反射公式.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "为何三角恒等式可以推广到复平面",
+      "和与积分换序"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1014,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "Glivenko-Cantelli定理",
+    "filename": "Glivenko-Cantelli定理.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "Etemadi关于强大数定律的证明"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 4828,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "Groups, as men, will be known by their actions",
+    "filename": "Groups, as men, will be known by their actions.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "轨道稳定子引理与群的置换表示",
+      "第一同构定理",
+      "证明有限群存在一个满足特定Index条件的正规子群",
+      "Sylow定理的特例：柯西定理"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 1886,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "HMMT竞赛的一个组合求和问题",
+    "filename": "HMMT竞赛的一个组合求和问题.md",
+    "tags": [
+      "math",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "线性丢番图方程非负整数解的个数",
+      "线性丢番图方程非负整数解的个数"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1727,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "Hermite-Hadamard不等式与函数凸性",
+    "filename": "Hermite-Hadamard不等式与函数凸性.md",
+    "tags": [
+      "math",
+      "convex_analysis"
+    ],
+    "outgoing_links": [
+      "g_{x,y}(s)的图像.gif",
+      "连续的归纳法",
+      "图像闭区间上的凸函数几何性质的一个命题"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 6312,
+    "in_degree": 6,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "Hilbert空间当中的基的四个等价命题",
+    "filename": "Hilbert空间当中的基的四个等价命题.md",
+    "tags": [
+      "math",
+      "泛函分析"
+    ],
+    "outgoing_links": [
+      "关于一个含参数积分极限的两个策略的方法",
+      "Fubini-Tonelli定理的例子与反例"
+    ],
+    "section_count": 2,
+    "heading_count": 7,
+    "char_count": 6180,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "Hoeffding不等式估计给定置信水平下需要的样本数量",
+    "filename": "Hoeffding不等式估计给定置信水平下需要的样本数量.md",
+    "tags": [
+      "math",
+      "概率论",
+      "统计学"
+    ],
+    "outgoing_links": [
+      "有限测度下各个收敛之间的关系"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1938,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "IMC上的一个渐近分析的问题",
+    "filename": "IMC上的一个渐近分析的问题.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "黎曼积分与黎曼和的误差",
+      "和的积分估计",
+      "和的积分估计",
+      "连续分部求和法的基本用法"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 2626,
+    "in_degree": 2,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "IMO 1988年压轴数论题",
+    "filename": "IMO 1988年压轴数论题.md",
+    "tags": [
+      "数论",
+      "math",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "无穷递降法"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1896,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "IMO级别的一个计数问题",
+    "filename": "IMO级别的一个计数问题.md",
+    "tags": [
+      "math",
+      "中学数学竞赛",
+      "组合学"
+    ],
+    "outgoing_links": [
+      "把条件函数按傅里叶展开",
+      "线性丢番图方程非负整数解的个数",
+      "HMMT竞赛的一个组合求和问题",
+      "把条件函数按傅里叶展开"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 2335,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "Kantorovich不等式",
+    "filename": "Kantorovich不等式.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 3,
+    "heading_count": 9,
+    "char_count": 4595,
+    "in_degree": 2,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "Khintchine不等式",
+    "filename": "Khintchine不等式.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "Sidon集的伪随机特性"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 6301,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "Khintchine定理",
+    "filename": "Khintchine定理.md",
+    "tags": [
+      "math",
+      "数论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "无理测度的定义以及基本的命题",
+      "Borel-Cantelli lemma及其应用",
+      "无理测度的定义以及基本的命题",
+      "无理测度的定义以及基本的命题"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1918,
+    "in_degree": 4,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "Kronecker's lemma",
+    "filename": "Kronecker's lemma.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "基于分部求和法的和的估计",
+      "用分段估计解决几个序列的极限问题"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2228,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "Kronecker定理，Dirichlet定理及其应用",
+    "filename": "Kronecker定理，Dirichlet定理及其应用.md",
+    "tags": [
+      "math",
+      "数论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "模1均匀分布与Weyl判别",
+      "利用连续函数的identity theorem证明函数方程",
+      "周期函数的和还是周期函数吗？",
+      "模1均匀分布与Weyl判别",
+      "无理测度的定义以及基本的命题",
+      "鸽笼原理",
+      "鸽笼原理"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 5994,
+    "in_degree": 11,
+    "out_degree": 7,
+    "tier": "hub"
+  },
+  {
+    "title": "Kummer判别：对多种比值判别变形的统一",
+    "filename": "Kummer判别：对多种比值判别变形的统一.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "柯西凝聚判别法",
+      "和的积分估计",
+      "逐项估计",
+      "序列差分的估计蕴含着序列本身的估计",
+      "函数与序列的上下极限"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 6466,
+    "in_degree": 1,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "Ky Fan不等式",
+    "filename": "Ky Fan不等式.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "中学数学竞赛",
+      "大学数学竞赛",
+      "考研"
+    ],
+    "outgoing_links": [
+      "有限交换群上的函数构成的Hilbert空间的结构",
+      "Wirtinger不等式",
+      "Wirtinger不等式",
+      "Wirtinger不等式",
+      "在Hilbert空间当中建立坐标系从而简化问题",
+      "根据模与内积的信息得到积分不等式",
+      "傅里叶变换与傅里叶展开"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 4018,
+    "in_degree": 2,
+    "out_degree": 7,
+    "tier": "leaf"
+  },
+  {
+    "title": "Lebesgue微分定理",
+    "filename": "Lebesgue微分定理.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "对Hardy-Littlewood Maximal函数的估计",
+      "an epsilon of room证明集合为0测度的策略"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 6106,
+    "in_degree": 4,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "Lebesgue测度的连续性",
+    "filename": "Lebesgue测度的连续性.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "测度论的基础概念"
+    ],
+    "section_count": 1,
+    "heading_count": 2,
+    "char_count": 1602,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "Leibniz收敛判断",
+    "filename": "Leibniz收敛判断.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "利用生成函数求和"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 1886,
+    "in_degree": 4,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "Liouville数",
+    "filename": "Liouville数.md",
+    "tags": [
+      "math",
+      "数论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "无理测度的定义以及基本的命题",
+      "无理测度的定义以及基本的命题"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1682,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "Lipschitz连续+一个积分条件证明集合是紧的",
+    "filename": "Lipschitz连续+一个积分条件证明集合是紧的.md",
+    "tags": [
+      "math",
+      "拓扑",
+      "泛函分析"
+    ],
+    "outgoing_links": [
+      "非欧氏空间当中有界闭未必紧"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 921,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "Littlewood三原理",
+    "filename": "Littlewood三原理.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "测度论的基础概念",
+      "an epsilon of room"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 6594,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "Lobachevsky积分公式",
+    "filename": "Lobachevsky积分公式.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 2719,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "Mordell方程的一些简单特例",
+    "filename": "Mordell方程的一些简单特例.md",
+    "tags": [
+      "math",
+      "数论",
+      "代数基础",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "利用因式分解求解丢番图方程",
+      "哪些square-free的整数会使得二次数环是UFD，ED?",
+      "利用因式分解求解丢番图方程",
+      "利用因式分解求解丢番图方程",
+      "高斯整数的性质"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 4416,
+    "in_degree": 3,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "Niven关于pi的无理性的证明",
+    "filename": "Niven关于pi的无理性的证明.md",
+    "tags": [
+      "math",
+      "数论",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "证明e的有理次方是无理数",
+      "证明e的有理次方是无理数",
+      "证明e的有理次方是无理数",
+      "证明e的有理次方是无理数"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2218,
+    "in_degree": 2,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "Possion求和公式",
+    "filename": "Possion求和公式.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "由possion公式导出的一个函数方程"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 460,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "Power mean及其性质",
+    "filename": "Power mean及其性质.md",
+    "tags": [
+      "math",
+      "微积分",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "Re0微积分1：用牛顿迭代法求算术平方根"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 2645,
+    "in_degree": 10,
+    "out_degree": 2,
+    "tier": "hub"
+  },
+  {
+    "title": "Ramanujan笔记当中的一个取整函数恒等式",
+    "filename": "Ramanujan笔记当中的一个取整函数恒等式.md",
+    "tags": [
+      "math",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1447,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "Re0微积分1：用牛顿迭代法求算术平方根",
+    "filename": "Re0微积分1：用牛顿迭代法求算术平方根.md",
+    "tags": [
+      "math",
+      "微积分",
+      "数值分析",
+      "re0微积分"
+    ],
+    "outgoing_links": [
+      "k",
+      "Power mean及其性质",
+      "函数列的根序列的稳定性",
+      "用分段估计解决几个序列的极限问题",
+      "关于黄金比例数的迭代序列",
+      "由素数定理得到p_n的渐近表达"
+    ],
+    "section_count": 3,
+    "heading_count": 7,
+    "char_count": 7312,
+    "in_degree": 16,
+    "out_degree": 6,
+    "tier": "hub"
+  },
+  {
+    "title": "Re0微积分2：自然底数e及其快速计算",
+    "filename": "Re0微积分2：自然底数e及其快速计算.md",
+    "tags": [
+      "math",
+      "微积分",
+      "re0微积分"
+    ],
+    "outgoing_links": [
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "关于黄金比例数的迭代序列",
+      "逐项估计",
+      "逐项估计",
+      "制造telescoping sum求和或求乘积",
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "an epsilon of room",
+      "分段估计"
+    ],
+    "section_count": 2,
+    "heading_count": 6,
+    "char_count": 7162,
+    "in_degree": 8,
+    "out_degree": 9,
+    "tier": "medium"
+  },
+  {
+    "title": "Re0微积分3：广义平均值的极限",
+    "filename": "Re0微积分3：广义平均值的极限.md",
+    "tags": [
+      "math",
+      "re0微积分"
+    ],
+    "outgoing_links": [
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "Re0微积分2：自然底数e及其快速计算",
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "逐项估计",
+      "Re0微积分2：自然底数e及其快速计算",
+      "关于序列极限的公开问题",
+      "逐项估计",
+      "Re0微积分2：自然底数e及其快速计算",
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "Re0微积分1：用牛顿迭代法求算术平方根"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 3952,
+    "in_degree": 0,
+    "out_degree": 10,
+    "tier": "isolated"
+  },
+  {
+    "title": "Re0微积分大纲",
+    "filename": "Re0微积分大纲.md",
+    "tags": [
+      "math",
+      "re0微积分"
+    ],
+    "outgoing_links": [
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "Re0微积分2：自然底数e及其快速计算"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 222,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "Riemann - Lebesgue lemma的证明",
+    "filename": "Riemann - Lebesgue lemma的证明.md",
+    "tags": [
+      "math",
+      "实分析",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "可积函数的傅里叶变换是连续的",
+      "紧支光滑函数在Lp空间当中稠密"
+    ],
+    "section_count": 3,
+    "heading_count": 10,
+    "char_count": 14246,
+    "in_degree": 10,
+    "out_degree": 2,
+    "tier": "hub"
+  },
+  {
+    "title": "Riemann-Lebesgue引理的一个特殊情况",
+    "filename": "Riemann-Lebesgue引理的一个特殊情况.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [
+      "Riemann - Lebesgue lemma的证明",
+      "广义的Riemann - Lebesgue lemma",
+      "广义的Riemann - Lebesgue lemma",
+      "基于分部积分法的积分的估计",
+      "Hilbert空间当中的基的四个等价命题",
+      "由一个级数收敛证明另一个有关级数的收敛问题"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3716,
+    "in_degree": 3,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "Riemann-Stieltjes积分",
+    "filename": "Riemann-Stieltjes积分.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "黎曼积分的定义以及黎曼可积的判别",
+      "逐项估计",
+      "黎曼积分的定义以及黎曼可积的判别"
+    ],
+    "section_count": 4,
+    "heading_count": 7,
+    "char_count": 4663,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "Riesz-Fischer定理",
+    "filename": "Riesz-Fischer定理.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "用子列来提升收敛或发散性质",
+      "序列差分的估计蕴含着序列本身的估计",
+      "序列差分的估计蕴含着序列本身的估计",
+      "序列差分的估计蕴含着序列本身的估计",
+      "证明函数项级数几乎处处绝对收敛",
+      "柯西收敛判别"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 2910,
+    "in_degree": 8,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "Rolle定理在无界区间上的推广",
+    "filename": "Rolle定理在无界区间上的推广.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 2,
+    "char_count": 2564,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "Rouche定理与卷绕数",
+    "filename": "Rouche定理与卷绕数.md",
+    "tags": [
+      "math",
+      "复分析",
+      "拓扑"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2362,
+    "in_degree": 4,
+    "out_degree": 0,
+    "tier": "medium"
+  },
+  {
+    "title": "Sam Loyd 的14-15谜题",
+    "filename": "Sam Loyd 的14-15谜题.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "乘法投影"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2156,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "Sidon集的伪随机特性",
+    "filename": "Sidon集的伪随机特性.md",
+    "tags": [
+      "math",
+      "组合学",
+      "调和分析",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 4556,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "Sidon集的尺寸大小问题",
+    "filename": "Sidon集的尺寸大小问题.md",
+    "tags": [
+      "math",
+      "组合学",
+      "数论"
+    ],
+    "outgoing_links": [
+      "i",
+      "j"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 4236,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "Silverman–Toeplitz定理",
+    "filename": "Silverman–Toeplitz定理.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "关于一个组合数有关的加权平均的极限问题",
+      "利用已知的渐近结果求渐近展开的技巧",
+      "分段估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 4388,
+    "in_degree": 7,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "Smith Determinant",
+    "filename": "Smith Determinant.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "数论"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 2211,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "Steinhaus定理及其推广",
+    "filename": "Steinhaus定理及其推广.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "把集合问题转换为函数问题",
+      "函数卷积的基本性质",
+      "函数卷积的基本性质",
+      "Lebesgue微分定理"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 3169,
+    "in_degree": 4,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "Stirling渐近公式及不等式",
+    "filename": "Stirling渐近公式及不等式.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 3864,
+    "in_degree": 9,
+    "out_degree": 0,
+    "tier": "medium"
+  },
+  {
+    "title": "Sylow定理的特例：柯西定理",
+    "filename": "Sylow定理的特例：柯西定理.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "轨道稳定子引理与群的置换表示"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 1613,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "Visser 不等式",
+    "filename": "Visser 不等式.md",
+    "tags": [
+      "math",
+      "复分析",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "把条件函数按傅里叶展开",
+      "把条件函数按傅里叶展开"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 577,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "Wallis公式,正弦函数Hadamard分解互相之间的关系",
+    "filename": "Wallis公式,正弦函数Hadamard分解互相之间的关系.md",
+    "tags": [
+      "math",
+      "复分析",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 2864,
+    "in_degree": 3,
+    "out_degree": 0,
+    "tier": "medium"
+  },
+  {
+    "title": "Weierstrass逼近定理的概率途径证明",
+    "filename": "Weierstrass逼近定理的概率途径证明.md",
+    "tags": [
+      "math",
+      "概率论",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "几乎处处不相等但是同分布的随机变量",
+      "Borel-Cantelli lemma证明某种版本下的强大数定律",
+      "有限测度空间上依测度收敛的等价命题",
+      "分段估计",
+      "approximation to the identity",
+      "函数傅里叶展开的Dini判别及其应用"
+    ],
+    "section_count": 3,
+    "heading_count": 14,
+    "char_count": 13517,
+    "in_degree": 4,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "Weinstein-Aronszajn恒等式",
+    "filename": "Weinstein-Aronszajn恒等式.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "矩阵交换次序特征多项式不变",
+      "identity theorem的策略在线性代数中的运用",
+      "GLn的稠密性",
+      "identity theorem"
+    ],
+    "section_count": 1,
+    "heading_count": 2,
+    "char_count": 965,
+    "in_degree": 6,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "Wielandt's proof of Sylow theorem",
+    "filename": "Wielandt's proof of Sylow theorem.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "Sylow定理的特例：柯西定理",
+      "Groups, as men, will be known by their actions",
+      "轨道稳定子引理与群的置换表示"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2027,
+    "in_degree": 0,
+    "out_degree": 3,
+    "tier": "isolated"
+  },
+  {
+    "title": "Wintner mean value theorem",
+    "filename": "Wintner mean value theorem.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序",
+      "Kronecker's lemma",
+      "基于分部求和法的和的估计",
+      "用分段估计解决几个序列的极限问题",
+      "基于分部求和法的和的估计"
+    ],
+    "section_count": 3,
+    "heading_count": 4,
+    "char_count": 8341,
+    "in_degree": 6,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "Wirtinger不等式",
+    "filename": "Wirtinger不等式.md",
+    "tags": [
+      "math",
+      "实分析",
+      "调和分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2865,
+    "in_degree": 10,
+    "out_degree": 0,
+    "tier": "hub"
+  },
+  {
+    "title": "an epsilon of room",
+    "filename": "an epsilon of room.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "行列式的雅可比公式",
+      "实分析的复办法",
+      "用分段估计解决几个序列的极限问题",
+      "Steinhaus定理及其推广",
+      "模1均匀分布与Weyl判别",
+      "调和函数极值原理",
+      "关于一个含参数积分极限的两个策略的方法",
+      "Littlewood三原理",
+      "Riemann - Lebesgue lemma的证明",
+      "Riemann - Lebesgue lemma的证明",
+      "Riemann - Lebesgue lemma的证明",
+      "紧支光滑函数在Lp空间当中稠密",
+      "广义的Riemann - Lebesgue lemma",
+      "通过逼近的方法证明函数是下凸的",
+      "证明某种积分表示的函数是整函数",
+      "证明Gamma函数在右半平面上全纯",
+      "利用连续函数的identity theorem证明函数方程",
+      "积分的伸缩公式",
+      "identity theorem",
+      "an epsilon of room证明集合为0测度的策略",
+      "无理测度的定义以及基本的命题",
+      "函数p范数与无穷范数之间的关系"
+    ],
+    "section_count": 4,
+    "heading_count": 7,
+    "char_count": 5653,
+    "in_degree": 26,
+    "out_degree": 22,
+    "tier": "hub"
+  },
+  {
+    "title": "an epsilon of room证明集合为0测度的策略",
+    "filename": "an epsilon of room证明集合为0测度的策略.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "Weierstrass逼近定理的概率途径证明",
+      "随机变量期望收敛导出几乎处处收敛的一个条件",
+      "Lebesgue微分定理",
+      "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+      "n维球体的体积",
+      "Cantor集以及它的性质",
+      "无理测度的定义以及基本的命题",
+      "Borel-Cantelli lemma及其应用",
+      "黎曼可积的Lebesgue判别"
+    ],
+    "section_count": 3,
+    "heading_count": 8,
+    "char_count": 6327,
+    "in_degree": 12,
+    "out_degree": 10,
+    "tier": "hub"
+  },
+  {
+    "title": "approximation to the identity",
+    "filename": "approximation to the identity.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "积分的伸缩公式",
+      "Fubini-Tonelli定理的例子与反例",
+      "逼近单位元在局部上的收敛性的一个典型例子",
+      "Riemann - Lebesgue lemma的证明",
+      "通过添加参数让目标更光滑化",
+      "Lebesgue微分定理",
+      "Dyadic分解"
+    ],
+    "section_count": 3,
+    "heading_count": 9,
+    "char_count": 11924,
+    "in_degree": 17,
+    "out_degree": 7,
+    "tier": "hub"
+  },
+  {
+    "title": "divisor函数的倒数加权和的估计",
+    "filename": "divisor函数的倒数加权和的估计.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "Dirichlet's hyperbola trick",
+      "把条件函数展开为新的和或积分然后换序",
+      "自然数的r次幂的部分和估计",
+      "和的积分估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3055,
+    "in_degree": 2,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "exp(A)的行列式",
+    "filename": "exp(A)的行列式.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "identity theorem的策略在线性代数中的运用",
+      "identity theorem",
+      "identity theorem的策略在线性代数中的运用",
+      "identity theorem",
+      "可对角化矩阵在复矩阵空间当中稠密",
+      "identity theorem"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2011,
+    "in_degree": 1,
+    "out_degree": 6,
+    "tier": "leaf"
+  },
+  {
+    "title": "f(x)=f(y)类型方程解集不同分支之间的交点问题",
+    "filename": "f(x)=f(y)类型方程解集不同分支之间的交点问题.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3641,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "identity theorem",
+    "filename": "identity theorem.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "函数的图与连续性",
+      "利用连续函数的identity theorem证明函数方程",
+      "柯西的反向归纳法",
+      "柯西函数方程",
+      "identity theorem的策略在线性代数中的运用",
+      "为何三角恒等式可以推广到复平面"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 5009,
+    "in_degree": 15,
+    "out_degree": 6,
+    "tier": "hub"
+  },
+  {
+    "title": "identity theorem的策略在线性代数中的运用",
+    "filename": "identity theorem的策略在线性代数中的运用.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "identity theorem",
+      "可对角化矩阵在复矩阵空间当中稠密",
+      "GLn的稠密性",
+      "矩阵赋范数空间当中一些典型集合的拓扑性质",
+      "矩阵赋范数空间当中一些典型集合的拓扑性质",
+      "矩阵赋范数空间当中一些典型集合的拓扑性质",
+      "用分析的思路证明Cayley-Hamilton定理",
+      "矩阵交换次序特征多项式不变",
+      "Weinstein-Aronszajn恒等式",
+      "exp(A)的行列式"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 3298,
+    "in_degree": 4,
+    "out_degree": 10,
+    "tier": "medium"
+  },
+  {
+    "title": "layer-cake 表示",
+    "filename": "layer-cake 表示.md",
+    "tags": [
+      "math",
+      "概率论",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "Fubini-Tonelli定理的例子与反例",
+      "函数p范数与无穷范数之间的关系",
+      "对Hardy-Littlewood Maximal函数的估计",
+      "柯西凝聚判别法"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 4665,
+    "in_degree": 4,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "natural density不存在的例子",
+    "filename": "natural density不存在的例子.md",
+    "tags": [
+      "math",
+      "实分析",
+      "数论"
+    ],
+    "outgoing_links": [
+      "前$N$个自然数当中，square-free的自然数的占比是多少"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2882,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "n个均匀分布随机变量的最大分布的期望",
+    "filename": "n个均匀分布随机变量的最大分布的期望.md",
+    "tags": [
+      "math",
+      "概率论",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "用概率计算含参数积分的极限",
+      "用概率计算含参数积分的极限"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1362,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "n个连续的阶乘之积有多少个因子",
+    "filename": "n个连续的阶乘之积有多少个因子.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "从二项式系数到Kummer定理",
+      "逐项估计",
+      "利用已知的渐近结果求渐近展开的技巧",
+      "素数倒数和的估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3216,
+    "in_degree": 2,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "n维球体的体积",
+    "filename": "n维球体的体积.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "为何圆的周长与直径的比例是常数",
+      "Fubini定理的一个应用，极坐标变换下的积分"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 3739,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "xy与x2+y2+1的比值如果是整数，那么这个整数一定是3",
+    "filename": "xy与x2+y2+1的比值如果是整数，那么这个整数一定是3.md",
+    "tags": [
+      "math",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "无穷递降法"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1580,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "zeta函数整数值的积分表示",
+    "filename": "zeta函数整数值的积分表示.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1104,
+    "in_degree": 2,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "一个nested radical的高精度的上界估计",
+    "filename": "一个nested radical的高精度的上界估计.md",
+    "tags": [
+      "math",
+      "数值分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 3112,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "一个与eta函数有关的交错级数的和",
+    "filename": "一个与eta函数有关的交错级数的和.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "和的积分估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3537,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "一个交错的双重级数的级数的收敛性判别",
+    "filename": "一个交错的双重级数的级数的收敛性判别.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "基于分部求和法的和的估计",
+      "和的积分估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2090,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "一个抽象的和的估计问题",
+    "filename": "一个抽象的和的估计问题.md",
+    "tags": [
+      "math",
+      "考研",
+      "大学数学竞赛",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "两个非负不增序列互相竞争从而使得级数发散"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3511,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "一个数学分析问题背后的代数本质",
+    "filename": "一个数学分析问题背后的代数本质.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "微积分",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 9025,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "一个正定矩阵加一个反对称矩阵之后的行列式不会比原来小",
+    "filename": "一个正定矩阵加一个反对称矩阵之后的行列式不会比原来小.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "考研"
+    ],
+    "outgoing_links": [
+      "正定矩阵加上半正定矩阵其行列式至少不会变得更小",
+      "正定矩阵加上半正定矩阵其行列式至少不会变得更小"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2085,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "一个竞赛中的和的渐近展开问题",
+    "filename": "一个竞赛中的和的渐近展开问题.md",
+    "tags": [
+      "math",
+      "大学数学竞赛",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "黎曼积分与黎曼和的误差",
+      "和的积分估计"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 1653,
+    "in_degree": 6,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "一个递推序列的渐近问题",
+    "filename": "一个递推序列的渐近问题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [
+      "制造关于上下极限的不等式组",
+      "关于序列极限的公开问题",
+      "序列差分的估计蕴含着序列本身的估计",
+      "Cesaro-Stolz定理",
+      "函数与序列的上下极限",
+      "序列差分的估计蕴含着序列本身的估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2565,
+    "in_degree": 4,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "一个集合被严格单调函数映射后的测度大小对比",
+    "filename": "一个集合被严格单调函数映射后的测度大小对比.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "layer-cake 表示"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 4043,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "一些基本的积分不等式",
+    "filename": "一些基本的积分不等式.md",
+    "tags": [
+      "math",
+      "实分析",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "Power mean及其性质"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 795,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "一类可拓展为全纯函数的实函数的傅里叶变换的平移公式",
+    "filename": "一类可拓展为全纯函数的实函数的傅里叶变换的平移公式.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "Riemann - Lebesgue lemma的证明",
+      "实分析的复办法",
+      "实分析的复办法"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2027,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "一类有理齐次多元多项式是否可约的问题",
+    "filename": "一类有理齐次多元多项式是否可约的问题.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 6392,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "一类极限问题的数论本质",
+    "filename": "一类极限问题的数论本质.md",
+    "tags": [
+      "math",
+      "微积分",
+      "数论",
+      "大学数学竞赛",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 6709,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "一类给出端点信息的中值定理构造思路",
+    "filename": "一类给出端点信息的中值定理构造思路.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "隐函数定理"
+    ],
+    "section_count": 5,
+    "heading_count": 5,
+    "char_count": 16637,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+    "filename": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Borel-Cantelli lemma及其应用",
+      "Borel-Cantelli lemma及其应用",
+      "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+      "函数p范数与无穷范数之间的关系"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 5374,
+    "in_degree": 0,
+    "out_degree": 4,
+    "tier": "isolated"
+  },
+  {
+    "title": "一致收敛保持黎曼可积性",
+    "filename": "一致收敛保持黎曼可积性.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [
+      "黎曼可积的Lebesgue判别",
+      "多项式函数列随着次数增大零点越来越靠近无穷远"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3614,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "三角多项式的零点个数问题",
+    "filename": "三角多项式的零点个数问题.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "实分析的复办法",
+      "除了一个根以外其余全部根都在单位圆盘内部的多项式",
+      "1",
+      "2",
+      "1",
+      "2",
+      "1",
+      "2",
+      "1",
+      "2",
+      "除了一个根以外其余全部根都在单位圆盘内部的多项式",
+      "1",
+      "2",
+      "1",
+      "2"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 11825,
+    "in_degree": 0,
+    "out_degree": 15,
+    "tier": "isolated"
+  },
+  {
+    "title": "不包含0的n个整数的集合能包含多大的sum-free子集",
+    "filename": "不包含0的n个整数的集合能包含多大的sum-free子集.md",
+    "tags": [
+      "math",
+      "组合学",
+      "概率论",
+      "数论"
+    ],
+    "outgoing_links": [
+      "EGZ定理的证明",
+      "通过求期望证明具有某种性质的结构的存在性",
+      "收敛的连乘积的上界估计与糖水不等式",
+      "通过求期望证明具有某种性质的结构的存在性"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 3442,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "不存在适合某个多项式的奇异矩阵",
+    "filename": "不存在适合某个多项式的奇异矩阵.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "考研"
+    ],
+    "outgoing_links": [
+      "Bezout恒等式"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 2379,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "不适用于逐项估计求和的极限的例子",
+    "filename": "不适用于逐项估计求和的极限的例子.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "和的积分估计",
+      "利用已知的渐近结果求渐近展开的技巧"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1548,
+    "in_degree": 3,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "与Fresnel函数有关的积分的收敛性判断",
+    "filename": "与Fresnel函数有关的积分的收敛性判断.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1294,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "与无穷范数有关的一个含参数积分的极限",
+    "filename": "与无穷范数有关的一个含参数积分的极限.md",
+    "tags": [
+      "math",
+      "考研",
+      "大学数学竞赛",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "函数p范数与无穷范数之间的关系"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 957,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "与莫比乌斯变换保圆性有关的问题",
+    "filename": "与莫比乌斯变换保圆性有关的问题.md",
+    "tags": [
+      "math",
+      "高考",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "求分式形式函数的值域"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 4288,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "两个非负不增序列互相竞争从而使得级数发散",
+    "filename": "两个非负不增序列互相竞争从而使得级数发散.md",
+    "tags": [
+      "math",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "柯西凝聚判别法",
+      "柯西凝聚判别法",
+      "函数与序列的上下极限",
+      "素数倒数和的估计",
+      "基于分部求和法的和的估计",
+      "基于分部求和法的和的估计",
+      "柯西凝聚判别法"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 7761,
+    "in_degree": 5,
+    "out_degree": 7,
+    "tier": "medium"
+  },
+  {
+    "title": "两种不同路径解决含参数和的估计问题",
+    "filename": "两种不同路径解决含参数和的估计问题.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "和的积分估计",
+      "自然数的r次幂的部分和估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1625,
+    "in_degree": 4,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "为什么不会有单变量整系数多项式其值皆为素数",
+    "filename": "为什么不会有单变量整系数多项式其值皆为素数.md",
+    "tags": [
+      "math",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "鸽笼原理"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 567,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "为何三角恒等式可以推广到复平面",
+    "filename": "为何三角恒等式可以推广到复平面.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "identity theorem",
+      "identity theorem",
+      "证明Gamma函数在右半平面上全纯"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 2122,
+    "in_degree": 3,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "为何圆的周长与直径的比例是常数",
+    "filename": "为何圆的周长与直径的比例是常数.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "积分的伸缩公式",
+      "n维球体的体积"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 3478,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "乘法投影",
+    "filename": "乘法投影.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "判断整系数多项式是否可约的方法",
+      "利用因式分解求解丢番图方程",
+      "Mordell方程的一些简单特例",
+      "不存在适合某个多项式的奇异矩阵",
+      "不存在适合某个多项式的奇异矩阵"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 4589,
+    "in_degree": 1,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "二次矩阵方程与交换子有关的问题",
+    "filename": "二次矩阵方程与交换子有关的问题.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "数论",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "利用因式分解求解丢番图方程"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 3338,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "什么样的函数作用在半正定矩阵上能保持半正定性",
+    "filename": "什么样的函数作用在半正定矩阵上能保持半正定性.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 5210,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "什么样的条件可以从Cesaro可和得到通常意义下的可和",
+    "filename": "什么样的条件可以从Cesaro可和得到通常意义下的可和.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 941,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "从一个光滑函数部分和的渐近问题开始",
+    "filename": "从一个光滑函数部分和的渐近问题开始.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "和的积分估计",
+      "一个竞赛中的和的渐近展开问题"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 2668,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "从一个具体的矩阵的特征值的分布开始",
+    "filename": "从一个具体的矩阵的特征值的分布开始.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "考研"
+    ],
+    "outgoing_links": [
+      "关于由行列式定义出来的矩阵多项式"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 2089,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "从一个求极限问题引入Weyl判别",
+    "filename": "从一个求极限问题引入Weyl判别.md",
+    "tags": [
+      "math",
+      "实分析",
+      "遍历理论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "和的积分估计",
+      "分段估计",
+      "模1均匀分布与Weyl判别",
+      "模1均匀分布与Weyl判别"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2996,
+    "in_degree": 0,
+    "out_degree": 5,
+    "tier": "isolated"
+  },
+  {
+    "title": "从二项式系数到Kummer定理",
+    "filename": "从二项式系数到Kummer定理.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "把积分或求和对象视为一个计数函数并展开"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 4882,
+    "in_degree": 8,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "从几个极限问题去理解Landau符号",
+    "filename": "从几个极限问题去理解Landau符号.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "把函数转换为基本初等函数的复合",
+      "求一个分子带log分母为阶乘的含参数和的渐近展开",
+      "对含参数方程根的估计",
+      "对算术函数平均值的渐近"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 8633,
+    "in_degree": 8,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "从几个问题理解一致连续函数的特性",
+    "filename": "从几个问题理解一致连续函数的特性.md",
+    "tags": [
+      "math",
+      "实分析",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "利用紧性把局部性质转换为全局性质",
+      "柯西凝聚判别法",
+      "柯西凝聚判别法"
+    ],
+    "section_count": 6,
+    "heading_count": 13,
+    "char_count": 16469,
+    "in_degree": 8,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "从线性算子的角度理解一个序列迭代的极限问题",
+    "filename": "从线性算子的角度理解一个序列迭代的极限问题.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "数列极限问题 从经典分析到算子代数",
+      "把条件函数按傅里叶展开"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 8538,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "代数学基本定理",
+    "filename": "代数学基本定理.md",
+    "tags": [
+      "math",
+      "复分析",
+      "拓扑"
+    ],
+    "outgoing_links": [
+      "Rouche定理与卷绕数"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1882,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "估计一个根式的和",
+    "filename": "估计一个根式的和.md",
+    "tags": [
+      "math",
+      "实分析",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 745,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "体现函数凸性的一个二重积分不等式",
+    "filename": "体现函数凸性的一个二重积分不等式.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 4019,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "体现积分估计相较于和的估计优势的一个问题",
+    "filename": "体现积分估计相较于和的估计优势的一个问题.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "和的积分估计"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2105,
+    "in_degree": 3,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "体现积分估计相较于和的估计优势的例子2",
+    "filename": "体现积分估计相较于和的估计优势的例子2.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "和的积分估计"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 599,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "使得某个含参数函数收敛的集合是零测度的",
+    "filename": "使得某个含参数函数收敛的集合是零测度的.md",
+    "tags": [
+      "math",
+      "实分析",
+      "数论"
+    ],
+    "outgoing_links": [
+      "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "广义的Riemann - Lebesgue lemma",
+      "Kronecker定理，Dirichlet定理及其应用",
+      "广义的Riemann - Lebesgue lemma"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 2670,
+    "in_degree": 0,
+    "out_degree": 4,
+    "tier": "isolated"
+  },
+  {
+    "title": "使用Dyadic分解估计调和数的下界",
+    "filename": "使用Dyadic分解估计调和数的下界.md",
+    "tags": [
+      "math"
+    ],
+    "outgoing_links": [
+      "柯西凝聚判别法",
+      "柯西凝聚判别法",
+      "柯西凝聚判别法",
+      "和的积分估计",
+      "分段估计",
+      "和的积分估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1503,
+    "in_degree": 1,
+    "out_degree": 6,
+    "tier": "leaf"
+  },
+  {
+    "title": "依测度收敛的基本运算规律",
+    "filename": "依测度收敛的基本运算规律.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "分段估计",
+      "用子列来提升收敛或发散性质",
+      "有限测度空间上依测度收敛的等价命题",
+      "有限测度空间上依测度收敛的等价命题",
+      "有限测度空间上依测度收敛的等价命题",
+      "有限测度空间上依测度收敛的等价命题"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 2724,
+    "in_degree": 1,
+    "out_degree": 6,
+    "tier": "leaf"
+  },
+  {
+    "title": "借用坐标变换计算重积分",
+    "filename": "借用坐标变换计算重积分.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "借用坐标变换计算重积分",
+      "隐函数定理"
+    ],
+    "section_count": 3,
+    "heading_count": 7,
+    "char_count": 16887,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "偶数凸多边形顶点上的数字",
+    "filename": "偶数凸多边形顶点上的数字.md",
+    "tags": [
+      "math",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "组合零点定理",
+      "组合零点定理"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 972,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "傅里叶变换与傅里叶展开",
+    "filename": "傅里叶变换与傅里叶展开.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "满足特定条件的两个集合尺寸的比例",
+      "利用连续函数的identity theorem证明函数方程",
+      "Steinhaus定理及其推广",
+      "Ky Fan不等式"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1191,
+    "in_degree": 3,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "傅里叶逆变换公式",
+    "filename": "傅里叶逆变换公式.md",
+    "tags": [],
+    "outgoing_links": [
+      "an epsilon of room",
+      "实分析的复办法",
+      "和与积分换序"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 2592,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "全纯函数与解析函数的等价性",
+    "filename": "全纯函数与解析函数的等价性.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1172,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "全纯函数序列L2也可以保持全纯性",
+    "filename": "全纯函数序列L2也可以保持全纯性.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "利用紧性把局部性质转换为全局性质",
+      "从几个问题理解一致连续函数的特性"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 3403,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "全纯函数根的积分表达",
+    "filename": "全纯函数根的积分表达.md",
+    "tags": [
+      "math",
+      "复分析",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "Rouche定理与卷绕数",
+      "math/隐函数定理"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 3922,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "全纯函数沿着两条同伦的连续曲线积分结果一致",
+    "filename": "全纯函数沿着两条同伦的连续曲线积分结果一致.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 3830,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "关于Hermitian矩阵迹的不等式",
+    "filename": "关于Hermitian矩阵迹的不等式.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2647,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "关于log的一个常用估计",
+    "filename": "关于log的一个常用估计.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 345,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "关于log的一个积分",
+    "filename": "关于log的一个积分.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "和与积分换序",
+      "zeta函数整数值的积分表示"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2055,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "关于pi的有理逼近的公开问题",
+    "filename": "关于pi的有理逼近的公开问题.md",
+    "tags": [
+      "数论",
+      "math",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "无理测度的定义以及基本的命题"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 1561,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "关于一个含参数积分极限的两个策略的方法",
+    "filename": "关于一个含参数积分极限的两个策略的方法.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Stone-Weierstrass定理",
+      "分段估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 4331,
+    "in_degree": 4,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "关于一个组合数有关的加权平均的极限问题",
+    "filename": "关于一个组合数有关的加权平均的极限问题.md",
+    "tags": [
+      "math",
+      "大学数学竞赛",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "Silverman–Toeplitz定理",
+      "Silverman–Toeplitz定理",
+      "自然数的r次幂的部分和估计",
+      "对误差的分析从而改进分段估计"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 1985,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "关于可测函数定义的讨论",
+    "filename": "关于可测函数定义的讨论.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "Cantor-Lebesgue函数",
+      "Cantor-Lebesgue函数",
+      "Cantor-Lebesgue函数"
+    ],
+    "section_count": 3,
+    "heading_count": 7,
+    "char_count": 6161,
+    "in_degree": 0,
+    "out_degree": 3,
+    "tier": "isolated"
+  },
+  {
+    "title": "关于含参数积分估计的玩具模型",
+    "filename": "关于含参数积分估计的玩具模型.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "Fubini-Tonelli定理的例子与反例",
+      "基于分部积分法的积分的估计",
+      "分段估计",
+      "逼近单位元在局部上的收敛性的一个典型例子"
+    ],
+    "section_count": 2,
+    "heading_count": 12,
+    "char_count": 7467,
+    "in_degree": 2,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "关于序列极限的公开问题",
+    "filename": "关于序列极限的公开问题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "All, 1",
+      "k",
+      "Cesaro-Stolz定理",
+      "函数与序列的上下极限",
+      "序列差分的估计蕴含着序列本身的估计",
+      "函数与序列的上下极限",
+      "函数与序列的上下极限",
+      "序列差分的估计蕴含着序列本身的估计",
+      "Cesaro-Stolz定理",
+      "Cesaro-Stolz定理"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 11092,
+    "in_degree": 4,
+    "out_degree": 10,
+    "tier": "medium"
+  },
+  {
+    "title": "关于由行列式定义出来的矩阵多项式",
+    "filename": "关于由行列式定义出来的矩阵多项式.md",
+    "tags": [
+      "math",
+      "复分析",
+      "调和分析",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "行列式给出的多项式在圆周上的估计",
+      "矩阵与算子的迹"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 2589,
+    "in_degree": 3,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "关于连续函数的直觉",
+    "filename": "关于连续函数的直觉.md",
+    "tags": [
+      "math",
+      "intuition"
+    ],
+    "outgoing_links": [
+      "函数与序列的上下极限",
+      "函数与序列的上下极限",
+      "函数与序列的上下极限",
+      "函数与序列的上下极限",
+      "函数与序列的上下极限",
+      "Cantor-Lebesgue函数"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 8487,
+    "in_degree": 0,
+    "out_degree": 6,
+    "tier": "isolated"
+  },
+  {
+    "title": "关于黄金比例数的迭代序列",
+    "filename": "关于黄金比例数的迭代序列.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "Re0微积分1：用牛顿迭代法求算术平方根"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1018,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "内积是不依赖坐标系的",
+    "filename": "内积是不依赖坐标系的.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 736,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "几乎处处不相等但是同分布的随机变量",
+    "filename": "几乎处处不相等但是同分布的随机变量.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 818,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "凸函数在闭区间上的最大值一定落在端点上",
+    "filename": "凸函数在闭区间上的最大值一定落在端点上.md",
+    "tags": [
+      "math",
+      "实分析",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "调和函数极值原理"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1259,
+    "in_degree": 3,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "函数p范数与无穷范数之间的关系",
+    "filename": "函数p范数与无穷范数之间的关系.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 3047,
+    "in_degree": 6,
+    "out_degree": 0,
+    "tier": "medium"
+  },
+  {
+    "title": "函数与函数微分比值的极限",
+    "filename": "函数与函数微分比值的极限.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1067,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "函数与序列的上下极限",
+    "filename": "函数与序列的上下极限.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "柯西收敛判别",
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "无理测度的定义以及基本的命题",
+      "黎曼积分的定义以及黎曼可积的判别",
+      "Re0微积分1：用牛顿迭代法求算术平方根"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 16064,
+    "in_degree": 24,
+    "out_degree": 6,
+    "tier": "hub"
+  },
+  {
+    "title": "函数与微分的差被常数控制那么此函数的增长幅度上限有什么限制？",
+    "filename": "函数与微分的差被常数控制那么此函数的增长幅度上限有什么限制？.md",
+    "tags": [
+      "math",
+      "微分方程",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1019,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "函数傅里叶展开的Dini判别及其应用",
+    "filename": "函数傅里叶展开的Dini判别及其应用.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "圆周上的函数的傅里叶展开",
+      "逐项估计",
+      "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+      "approximation to the identity",
+      "广义的Riemann - Lebesgue lemma",
+      "广义的Riemann - Lebesgue lemma",
+      "把数论问题转换为单位圆周群T上来讨论的好处"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1640,
+    "in_degree": 4,
+    "out_degree": 7,
+    "tier": "medium"
+  },
+  {
+    "title": "函数凸性",
+    "filename": "函数凸性.md",
+    "tags": [
+      "math"
+    ],
+    "outgoing_links": [
+      "Convex_polygon_illustration1.svg",
+      "Convex_polygon_illustration2.svg"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 3755,
+    "in_degree": 4,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+    "filename": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "Borel-Cantelli lemma及其应用",
+      "打字机函数列（type writer sequence）",
+      "Riesz-Fischer定理",
+      "随机变量期望收敛导出几乎处处收敛的一个条件",
+      "随机变量期望收敛导出几乎处处收敛的一个条件"
+    ],
+    "section_count": 2,
+    "heading_count": 8,
+    "char_count": 6051,
+    "in_degree": 3,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "函数列一致收敛并不保持微分性质",
+    "filename": "函数列一致收敛并不保持微分性质.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+      "双重极限换序"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 3395,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "函数列几乎处处有界与Borel-Cantelli lemma的应用",
+    "filename": "函数列几乎处处有界与Borel-Cantelli lemma的应用.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "Borel-Cantelli lemma及其应用",
+      "测度论的基础概念",
+      "用子列来提升收敛或发散性质"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1731,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "函数列的微分一致有界那么极限函数保持连续性",
+    "filename": "函数列的微分一致有界那么极限函数保持连续性.md",
+    "tags": [
+      "math",
+      "实分析",
+      "拓扑",
+      "考研"
+    ],
+    "outgoing_links": [
+      "C(X)在一致范数下紧子集的充要条件"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 576,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "函数列的根序列的稳定性",
+    "filename": "函数列的根序列的稳定性.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 7,
+    "char_count": 3663,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "函数卷积的基本性质",
+    "filename": "函数卷积的基本性质.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "Riemann - Lebesgue lemma的证明",
+      "an epsilon of room"
+    ],
+    "section_count": 2,
+    "heading_count": 8,
+    "char_count": 3622,
+    "in_degree": 7,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+    "filename": "函数在任何可测集合上积分为0意味着函数几乎处处为0.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "an epsilon of room证明集合为0测度的策略",
+      "an epsilon of room证明集合为0测度的策略",
+      "an epsilon of room证明集合为0测度的策略",
+      "an epsilon of room证明集合为0测度的策略"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1596,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "函数在含参数的长度固定的区间上积分的估计",
+    "filename": "函数在含参数的长度固定的区间上积分的估计.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "基于分部积分法的积分的估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1063,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "函数在无数个区间上被控制是否意味着反常积分收敛",
+    "filename": "函数在无数个区间上被控制是否意味着反常积分收敛.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1496,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "函数沿着梯度方向下降的定量问题",
+    "filename": "函数沿着梯度方向下降的定量问题.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "通过添加参数让目标更光滑化",
+      "通过添加参数让目标更光滑化",
+      "函数卷积的基本性质",
+      "通过添加参数让目标更光滑化"
+    ],
+    "section_count": 2,
+    "heading_count": 6,
+    "char_count": 7661,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "函数的图与连续性",
+    "filename": "函数的图与连续性.md",
+    "tags": [
+      "math",
+      "考研",
+      "拓扑"
+    ],
+    "outgoing_links": [
+      "度量空间中用序列描述拓扑性质",
+      "度量空间中用序列描述拓扑性质",
+      "度量空间中用序列描述拓扑性质",
+      "用子列来提升收敛或发散性质"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1263,
+    "in_degree": 3,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "函数积分的单调性",
+    "filename": "函数积分的单调性.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "积分的伸缩公式",
+      "an epsilon of room证明集合为0测度的策略"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2108,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "函数项级数的Lipschitz性质导出的关于级数的收敛性",
+    "filename": "函数项级数的Lipschitz性质导出的关于级数的收敛性.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1796,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "分析学基本方法目录1",
+    "filename": "分析学基本方法目录1.md",
+    "tags": [
+      "math",
+      "info"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "an epsilon of room",
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "Re0微积分2：自然底数e及其快速计算",
+      "an epsilon of room",
+      "证明e是无理数",
+      "Re0微积分2：自然底数e及其快速计算",
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "函数与序列的上下极限",
+      "带根号的三项迭代序列极限的存在性问题",
+      "从几个极限问题去理解Landau符号",
+      "Leibniz收敛判断",
+      "函数项级数的Lipschitz性质导出的关于级数的收敛性",
+      "逼近单位元在局部上的收敛性的一个典型例子",
+      "证明一个由变上限含参数积分给出的函数列一致收敛",
+      "度量空间上的不动点定理",
+      "逐项估计",
+      "分段估计",
+      "和的积分估计",
+      "基于分部求和法的和的估计",
+      "基于分部积分法的积分的估计",
+      "逐项估计",
+      "凸函数在闭区间上的最大值一定落在端点上",
+      "部分积的上界估计与Gautschi不等式",
+      "部分积的上界估计与Gautschi不等式",
+      "从几个极限问题去理解Landau符号",
+      "逐项估计",
+      "逐项估计",
+      "两种不同路径解决含参数和的估计问题",
+      "利用基于Taylor展开的逐项估计判断级数收敛的例子1",
+      "逐项估计",
+      "IMC上的一个渐近分析的问题",
+      "黎曼积分与黎曼和的误差",
+      "不适用于逐项估计求和的极限的例子",
+      "分段估计",
+      "用分段估计解决几个序列的极限问题",
+      "Wintner mean value theorem",
+      "Silverman–Toeplitz定理",
+      "分段估计",
+      "对误差的分析从而改进分段估计",
+      "求一个分子带log分母为阶乘的含参数和的渐近展开",
+      "对含参数方程根的估计",
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+      "证明一个具有部分周期性的含参数积分的非负性",
+      "黎曼积分与黎曼和的误差",
+      "一个竞赛中的和的渐近展开问题",
+      "利用已知的渐近结果求渐近展开的技巧",
+      "和的积分估计",
+      "对离散的和做积分估计",
+      "CMO不等式中的积分估计",
+      "正实数序列与自己前n项和的p次方的比值组成的级数收敛",
+      "两种不同路径解决含参数和的估计问题",
+      "体现积分估计相较于和的估计优势的例子2",
+      "逐项估计",
+      "Hermite-Hadamard不等式与函数凸性",
+      "对一个含参数的和的估计以及控制收敛定理",
+      "Stirling渐近公式及不等式",
+      "自然数的r次幂的部分和估计",
+      "基于分部求和法的和的估计",
+      "基于分部求和法的和的估计",
+      "对Dirichlet判别的一个调整",
+      "对Dirichlet判别的一个调整",
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "对Dirichlet判别的一个调整",
+      "一个交错的双重级数的级数的收敛性判别"
+    ],
+    "section_count": 2,
+    "heading_count": 7,
+    "char_count": 26528,
+    "in_degree": 0,
+    "out_degree": 66,
+    "tier": "isolated"
+  },
+  {
+    "title": "分段估计",
+    "filename": "分段估计.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "证明一个由变上限含参数积分给出的函数列一致收敛",
+      "用分段估计解决几个序列的极限问题",
+      "Silverman–Toeplitz定理",
+      "对误差的分析从而改进分段估计",
+      "体现积分估计相较于和的估计优势的一个问题",
+      "黎曼可积的Lebesgue判别",
+      "Weierstrass逼近定理的概率途径证明",
+      "样本期望的渐近展开系数",
+      "approximation to the identity",
+      "approximation to the identity",
+      "函数p范数与无穷范数之间的关系",
+      "由一个级数收敛证明另一个有关级数的收敛问题",
+      "利用已知的渐近结果求渐近展开的技巧",
+      "弱大数定律",
+      "逐项估计",
+      "对误差的分析从而改进分段估计",
+      "Dirichlet's hyperbola trick",
+      "对算术函数平均值的渐近",
+      "求一个分子带log分母为阶乘的含参数和的渐近展开",
+      "对含参数方程根的估计",
+      "关于含参数积分估计的玩具模型",
+      "基于分部求和法的和的估计",
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+      "关于一个含参数积分极限的两个策略的方法",
+      "类似于傅里叶系数的一个积分估计",
+      "由Euler-Maclaurin求和估计得到Stirling逼近结果",
+      "证明一个具有部分周期性的含参数积分的非负性",
+      "Dyadic分解"
+    ],
+    "section_count": 2,
+    "heading_count": 7,
+    "char_count": 13527,
+    "in_degree": 30,
+    "out_degree": 29,
+    "tier": "hub"
+  },
+  {
+    "title": "分段连续可微函数在端点取值为0的开区间上积分的上界估计",
+    "filename": "分段连续可微函数在端点取值为0的开区间上积分的上界估计.md",
+    "tags": [
+      "math",
+      "实分析",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "基于分部积分法的积分的估计"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 1523,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+    "filename": "分部求和的想法，Dirichlet-Abel收敛判别法的推广.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "对Dirichlet判别的一个调整",
+      "模1均匀分布与Weyl判别"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 2596,
+    "in_degree": 11,
+    "out_degree": 2,
+    "tier": "hub"
+  },
+  {
+    "title": "分部积分与Cauchy-Schwarz不等式的结合",
+    "filename": "分部积分与Cauchy-Schwarz不等式的结合.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "Wirtinger不等式"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 3599,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "初值为0函数列二阶导数一致有界证明存在一致收敛子列",
+    "filename": "初值为0函数列二阶导数一致有界证明存在一致收敛子列.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛",
+      "考研"
+    ],
+    "outgoing_links": [
+      "函数列的微分一致有界那么极限函数保持连续性",
+      "参见的四种与连续有关的概念的区别"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 724,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "判断一个类交错级数的收敛性",
+    "filename": "判断一个类交错级数的收敛性.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "从几个极限问题去理解Landau符号",
+      "Leibniz收敛判断",
+      "和的积分估计",
+      "一个与eta函数有关的交错级数的和",
+      "一个与eta函数有关的交错级数的和",
+      "和的积分估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2124,
+    "in_degree": 1,
+    "out_degree": 7,
+    "tier": "leaf"
+  },
+  {
+    "title": "判断剧烈震荡的序列部分和的有界性问题",
+    "filename": "判断剧烈震荡的序列部分和的有界性问题.md",
+    "tags": [
+      "math",
+      "数论",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "模1均匀分布与Weyl判别"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 6044,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "判断序列在区间内稠密的几个命题",
+    "filename": "判断序列在区间内稠密的几个命题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "数论"
+    ],
+    "outgoing_links": [
+      "Kronecker定理，Dirichlet定理及其应用",
+      "模1均匀分布与Weyl判别",
+      "函数与序列的上下极限",
+      "模1均匀分布序列对序列差分的要求"
+    ],
+    "section_count": 2,
+    "heading_count": 6,
+    "char_count": 6341,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "判断整系数多项式是否可约的方法",
+    "filename": "判断整系数多项式是否可约的方法.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "在任意F_p上可约但在Z上不可约的一类整系数多项式",
+      "多项式可约性的Eisenstein判别法",
+      "多项式可约性的Eisenstein判别法"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 11557,
+    "in_degree": 10,
+    "out_degree": 3,
+    "tier": "hub"
+  },
+  {
+    "title": "利用Dirichlet卷积法解决几个数论中求和问题",
+    "filename": "利用Dirichlet卷积法解决几个数论中求和问题.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "和与积分换序"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1818,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用Stolz定理确定递归序列的渐近系数",
+    "filename": "利用Stolz定理确定递归序列的渐近系数.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛",
+      "考研"
+    ],
+    "outgoing_links": [
+      "k",
+      "Cesaro-Stolz定理",
+      "一个递推序列的渐近问题",
+      "Cesaro-Stolz定理",
+      "函数与序列的上下极限"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 4302,
+    "in_degree": 5,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "利用Stolz定理确定递归序列的渐近系数2",
+    "filename": "利用Stolz定理确定递归序列的渐近系数2.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "利用Stolz定理确定递归序列的渐近系数",
+      "利用Stolz定理确定递归序列的渐近系数",
+      "利用Stolz定理确定递归序列的渐近系数"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 1948,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用交换和与积分次序算涉及整数格点数目的一个积分",
+    "filename": "利用交换和与积分次序算涉及整数格点数目的一个积分.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "把积分或求和对象视为一个计数函数并展开",
+      "Fubini-Tonelli定理的例子与反例"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1522,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用因式分解求解丢番图方程",
+    "filename": "利用因式分解求解丢番图方程.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "通过制造平方差来因式分解",
+      "通过制造平方差来因式分解",
+      "毕达哥拉斯数",
+      "毕达哥拉斯数",
+      "把一个立方数表达为两个相邻整数的乘积",
+      "Mordell方程的一些简单特例",
+      "Mordell方程的一些简单特例",
+      "模4余3的素数无法被表达为两个有理数的平方和"
+    ],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 3597,
+    "in_degree": 12,
+    "out_degree": 8,
+    "tier": "hub"
+  },
+  {
+    "title": "利用基于Taylor展开的逐项估计判断级数收敛的例子1",
+    "filename": "利用基于Taylor展开的逐项估计判断级数收敛的例子1.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "把函数转换为基本初等函数的复合",
+      "Stirling渐近公式及不等式",
+      "自然数的r次幂的部分和估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1322,
+    "in_degree": 3,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "利用对称性简化积分",
+    "filename": "利用对称性简化积分.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 2,
+    "char_count": 5069,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "利用已知的渐近结果求渐近展开的技巧",
+    "filename": "利用已知的渐近结果求渐近展开的技巧.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "和的估计的一个典型案例",
+      "一个竞赛中的和的渐近展开问题",
+      "不适用于逐项估计求和的极限的例子",
+      "用分段估计解决几个序列的极限问题",
+      "利用相似的渐近判断积分收敛与发散性",
+      "素数倒数和的估计",
+      "n个连续的阶乘之积有多少个因子",
+      "制造telescoping sum求和或求乘积",
+      "自然数的r次幂的部分和估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 3707,
+    "in_degree": 11,
+    "out_degree": 9,
+    "tier": "hub"
+  },
+  {
+    "title": "利用序列项的组合结构来判断级数的收敛与发散性质",
+    "filename": "利用序列项的组合结构来判断级数的收敛与发散性质.md",
+    "tags": [
+      "math",
+      "中学数学竞赛",
+      "大学数学竞赛",
+      "组合学",
+      "数论"
+    ],
+    "outgoing_links": [
+      "Sidon集的尺寸大小问题"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 6954,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "利用欧拉公式计算exp(x)与三角函数乘积的不定积分或积分",
+    "filename": "利用欧拉公式计算exp(x)与三角函数乘积的不定积分或积分.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2787,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用欧拉公式连接pi与e",
+    "filename": "利用欧拉公式连接pi与e.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "利用欧拉公式计算exp(x)与三角函数乘积的不定积分或积分",
+      "Niven关于pi的无理性的证明"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 97,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "利用生成函数求和",
+    "filename": "利用生成函数求和.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "有关于zeta函数的一个求和问题",
+      "把条件函数按傅里叶展开"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 930,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用留数定理算有理函数的傅里叶变换",
+    "filename": "利用留数定理算有理函数的傅里叶变换.md",
+    "tags": [
+      "math",
+      "复分析",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "利用留数计算实积分"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1240,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用留数计算实积分",
+    "filename": "利用留数计算实积分.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "利用留数定理算有理函数的傅里叶变换"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 340,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用相似的渐近判断积分收敛与发散性",
+    "filename": "利用相似的渐近判断积分收敛与发散性.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 697,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用算子或者矩阵的迹的不变性",
+    "filename": "利用算子或者矩阵的迹的不变性.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "矩阵与算子的迹"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 473,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "利用紧性与一致连续性证明一个一致收敛",
+    "filename": "利用紧性与一致连续性证明一个一致收敛.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "从几个问题理解一致连续函数的特性",
+      "C(X)在一致范数下紧子集的充要条件"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3110,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "利用紧性把局部性质转换为全局性质",
+    "filename": "利用紧性把局部性质转换为全局性质.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "C(X)在一致范数下紧子集的充要条件",
+      "C(X)在一致范数下紧子集的充要条件",
+      "从几个问题理解一致连续函数的特性",
+      "从几个问题理解一致连续函数的特性",
+      "从几个问题理解一致连续函数的特性",
+      "C(X)在一致范数下紧子集的充要条件",
+      "从几个问题理解一致连续函数的特性",
+      "从几个问题理解一致连续函数的特性",
+      "全纯函数序列L2也可以保持全纯性"
+    ],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 5373,
+    "in_degree": 3,
+    "out_degree": 9,
+    "tier": "medium"
+  },
+  {
+    "title": "利用行列式的不变性简化问题",
+    "filename": "利用行列式的不变性简化问题.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Weinstein-Aronszajn恒等式",
+      "Weinstein-Aronszajn恒等式",
+      "正定矩阵加上半正定矩阵其行列式至少不会变得更小",
+      "Weinstein-Aronszajn恒等式",
+      "一个正定矩阵加一个反对称矩阵之后的行列式不会比原来小",
+      "Weinstein-Aronszajn恒等式"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 771,
+    "in_degree": 0,
+    "out_degree": 6,
+    "tier": "isolated"
+  },
+  {
+    "title": "利用连续函数的identity theorem证明函数方程",
+    "filename": "利用连续函数的identity theorem证明函数方程.md",
+    "tags": [
+      "math",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Kronecker定理，Dirichlet定理及其应用",
+      "周期函数的和还是周期函数吗？",
+      "傅里叶变换与傅里叶展开",
+      "圆周上的函数的傅里叶展开"
+    ],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 2406,
+    "in_degree": 6,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "利用随机选取的集合的和集大小的期望证明某种尺寸的合集的存在性",
+    "filename": "利用随机选取的集合的和集大小的期望证明某种尺寸的合集的存在性.md",
+    "tags": [
+      "math",
+      "组合学",
+      "概率论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "通过求期望证明具有某种性质的结构的存在性",
+      "通过求期望证明具有某种性质的结构的存在性"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2124,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "制造telescoping sum求和或求乘积",
+    "filename": "制造telescoping sum求和或求乘积.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "全纯函数沿着两条同伦的连续曲线积分结果一致"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 4305,
+    "in_degree": 6,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "制造关于上下极限的不等式组",
+    "filename": "制造关于上下极限的不等式组.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Cesaro-Stolz定理",
+      "利用Stolz定理确定递归序列的渐近系数",
+      "利用Stolz定理确定递归序列的渐近系数2",
+      "关于序列极限的公开问题",
+      "序列差分的估计蕴含着序列本身的估计",
+      "一个递推序列的渐近问题",
+      "带根号的三项迭代序列极限的存在性问题",
+      "递推序列确定渐近系数但Stolz失灵的情况"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2511,
+    "in_degree": 1,
+    "out_degree": 8,
+    "tier": "leaf"
+  },
+  {
+    "title": "前$N$个自然数当中，square-free的自然数的占比是多少",
+    "filename": "前$N$个自然数当中，square-free的自然数的占比是多少.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2312,
+    "in_degree": 2,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "前2n个正整数当中选n+1个必有两个数互素",
+    "filename": "前2n个正整数当中选n+1个必有两个数互素.md",
+    "tags": [
+      "math",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "鸽笼原理"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 1625,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "前N个正整数当中模q余a的数的概率的渐近",
+    "filename": "前N个正整数当中模q余a的数的概率的渐近.md",
+    "tags": [
+      "math",
+      "概率论",
+      "数论"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "逐项估计"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 4502,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "加强收敛性质的条件与手段",
+    "filename": "加强收敛性质的条件与手段.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Borel-Cantelli lemma及其应用",
+      "Borel-Cantelli lemma证明某种版本下的强大数定律",
+      "随机变量期望收敛导出几乎处处收敛的一个条件",
+      "Etemadi关于强大数定律的证明",
+      "分段估计",
+      "Weierstrass逼近定理的概率途径证明",
+      "分段估计",
+      "证明一个由变上限含参数积分给出的函数列一致收敛"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2266,
+    "in_degree": 6,
+    "out_degree": 8,
+    "tier": "medium"
+  },
+  {
+    "title": "半正定核及其判断方法",
+    "filename": "半正定核及其判断方法.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "和的绝对值平均上比差的绝对值更大"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3465,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "单位区间内10进制小数中含有无数个7的小数的Lebesgue测度为1",
+    "filename": "单位区间内10进制小数中含有无数个7的小数的Lebesgue测度为1.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "对自变量进行二进制展开求积分",
+      "Borel-Cantelli lemma及其应用"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1573,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "单调无界的正序列其差分比自身的值的和也无界",
+    "filename": "单调无界的正序列其差分比自身的值的和也无界.md",
+    "tags": [
+      "math",
+      "微积分",
+      "高考",
+      "考研"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "柯西收敛判别",
+      "正实数序列与自己前n项和的p次方的比值组成的级数收敛"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2085,
+    "in_degree": 3,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "单调有界函数几乎处处连续",
+    "filename": "单调有界函数几乎处处连续.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "an epsilon of room证明集合为0测度的策略"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 964,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "双重极限换序",
+    "filename": "双重极限换序.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 7236,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "双重计数",
+    "filename": "双重计数.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "轨道稳定子引理与群的置换表示"
+    ],
+    "section_count": 0,
+    "heading_count": 1,
+    "char_count": 989,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "发散实数列映射后的序列还是发散的吗",
+    "filename": "发散实数列映射后的序列还是发散的吗.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "单调无界的正序列其差分比自身的值的和也无界"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 967,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "可对角化矩阵在复矩阵空间当中稠密",
+    "filename": "可对角化矩阵在复矩阵空间当中稠密.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "拓扑"
+    ],
+    "outgoing_links": [
+      "把矩阵转换为标准型从而简化问题",
+      "矩阵赋范数空间当中一些典型集合的拓扑性质"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1629,
+    "in_degree": 4,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "可测集合线性变换后的测度",
+    "filename": "可测集合线性变换后的测度.md",
+    "tags": [
+      "math",
+      "实分析",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "第一同构定理",
+      "积分的伸缩公式",
+      "测度论的基础概念",
+      "测度论的基础概念",
+      "测度论的基础概念"
+    ],
+    "section_count": 3,
+    "heading_count": 11,
+    "char_count": 10398,
+    "in_degree": 1,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "可积函数傅里叶逆变换几乎处处成立",
+    "filename": "可积函数傅里叶逆变换几乎处处成立.md",
+    "tags": [
+      "math",
+      "实分析",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "approximation to the identity",
+      "通过添加参数让目标更光滑化",
+      "an epsilon of room",
+      "approximation to the identity",
+      "紧支光滑函数在Lp空间当中稠密"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2466,
+    "in_degree": 1,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "可积函数的傅里叶变换是连续的",
+    "filename": "可积函数的傅里叶变换是连续的.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 569,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "含参数一元函数的不等式",
+    "filename": "含参数一元函数的不等式.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "Power mean及其性质",
+      "Power mean及其性质",
+      "Hermite-Hadamard不等式与函数凸性",
+      "通过图像猜测或校验答案",
+      "k",
+      "2",
+      "k",
+      "1",
+      "k",
+      "2",
+      "k",
+      "1",
+      "k",
+      "1",
+      "k",
+      "2",
+      "Hermite-Hadamard不等式与函数凸性"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 6084,
+    "in_degree": 1,
+    "out_degree": 17,
+    "tier": "leaf"
+  },
+  {
+    "title": "周期函数的和还是周期函数吗？",
+    "filename": "周期函数的和还是周期函数吗？.md",
+    "tags": [
+      "math",
+      "微积分",
+      "中学数学竞赛",
+      "实分析",
+      "数论"
+    ],
+    "outgoing_links": [
+      "Niven关于pi的无理性的证明",
+      "利用连续函数的identity theorem证明函数方程"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2267,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "周期性+渐近性质确定函数全局信息",
+    "filename": "周期性+渐近性质确定函数全局信息.md",
+    "tags": [
+      "math",
+      "实分析",
+      "复分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2459,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "和与积分换序",
+    "filename": "和与积分换序.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "全纯函数与解析函数的等价性",
+      "identity theorem",
+      "揭露全纯以及亚纯函数信息的Liouville原则",
+      "把条件函数展开为新的和或积分然后换序",
+      "把积分或求和对象视为一个计数函数并展开",
+      "把积分转换为与Dirichlet eta函数有关的级数",
+      "Fubini-Tonelli定理的例子与反例",
+      "关于log的一个积分",
+      "通过重整来证明表达式的非负性",
+      "通过重整来证明表达式的非负性"
+    ],
+    "section_count": 5,
+    "heading_count": 6,
+    "char_count": 9447,
+    "in_degree": 12,
+    "out_degree": 10,
+    "tier": "hub"
+  },
+  {
+    "title": "和的估计的一个典型案例",
+    "filename": "和的估计的一个典型案例.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "从几个极限问题去理解Landau符号",
+      "黎曼积分与黎曼和的误差",
+      "黎曼积分与黎曼和的误差",
+      "利用已知的渐近结果求渐近展开的技巧",
+      "逐项估计",
+      "和的积分估计",
+      "逐项估计",
+      "从一个光滑函数部分和的渐近问题开始"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2703,
+    "in_degree": 2,
+    "out_degree": 8,
+    "tier": "leaf"
+  },
+  {
+    "title": "和的积分估计",
+    "filename": "和的积分估计.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "黎曼积分与黎曼和的误差",
+      "一个竞赛中的和的渐近展开问题",
+      "利用已知的渐近结果求渐近展开的技巧",
+      "体现积分估计相较于和的估计优势的一个问题",
+      "体现积分估计相较于和的估计优势的例子2",
+      "逐项估计",
+      "单调有界函数几乎处处连续",
+      "黎曼积分的定义以及黎曼可积的判别",
+      "对离散的和做积分估计",
+      "CMO不等式中的积分估计",
+      "正实数序列与自己前n项和的p次方的比值组成的级数收敛",
+      "两种不同路径解决含参数和的估计问题",
+      "逐项估计",
+      "Hermite-Hadamard不等式与函数凸性",
+      "对一个含参数的和的估计以及控制收敛定理",
+      "收敛的连乘积的上界估计与糖水不等式",
+      "部分积的上界估计与Gautschi不等式",
+      "逐项估计",
+      "Stirling渐近公式及不等式",
+      "自然数的r次幂的部分和估计",
+      "从一个光滑函数部分和的渐近问题开始",
+      "一个竞赛中的和的渐近展开问题",
+      "Etemadi关于强大数定律的证明",
+      "证明一个部分和被一个参数控制起来",
+      "黎曼积分与黎曼和的误差",
+      "由Euler-Maclaurin求和估计得到Stirling逼近结果",
+      "对部分和渐近展开的常数项做估计",
+      "自然数的r次幂的部分和估计",
+      "连续分部求和法的基本用法",
+      "连续分部求和法的基本用法"
+    ],
+    "section_count": 3,
+    "heading_count": 10,
+    "char_count": 11560,
+    "in_degree": 48,
+    "out_degree": 30,
+    "tier": "hub"
+  },
+  {
+    "title": "和的绝对值平均上比差的绝对值更大",
+    "filename": "和的绝对值平均上比差的绝对值更大.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "Kantorovich不等式",
+      "推广韦东奕的那个不等式"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 4461,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "图像闭区间上的凸函数几何性质的一个命题",
+    "filename": "图像闭区间上的凸函数几何性质的一个命题.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "凸函数在闭区间上的最大值一定落在端点上",
+      "Hermite-Hadamard不等式与函数凸性"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1603,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "圆周上函数模长最大值与展开系数之间的关系",
+    "filename": "圆周上函数模长最大值与展开系数之间的关系.md",
+    "tags": [
+      "math",
+      "复分析",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "函数傅里叶展开的Dini判别及其应用",
+      "Rouche定理与卷绕数",
+      "Visser 不等式"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 3615,
+    "in_degree": 4,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "圆周上的函数的傅里叶展开",
+    "filename": "圆周上的函数的傅里叶展开.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "Riemann - Lebesgue lemma的证明",
+      "连续函数其傅里叶级数并不逐点收敛的例子",
+      "函数傅里叶展开的Dini判别及其应用"
+    ],
+    "section_count": 2,
+    "heading_count": 9,
+    "char_count": 5768,
+    "in_degree": 4,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "在Hilbert空间当中建立坐标系从而简化问题",
+    "filename": "在Hilbert空间当中建立坐标系从而简化问题.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "已知函数与幂函数的内积估计函数L2范数下界",
+      "已知函数与幂函数的内积估计函数L2范数下界",
+      "圆周上函数模长最大值与展开系数之间的关系",
+      "圆周上函数模长最大值与展开系数之间的关系",
+      "圆周上函数模长最大值与展开系数之间的关系",
+      "行列式给出的多项式在圆周上的估计",
+      "根据模与内积的信息得到积分不等式"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1767,
+    "in_degree": 2,
+    "out_degree": 7,
+    "tier": "leaf"
+  },
+  {
+    "title": "在一个有界的范围内，任选一定数目的非负整数其中四个两两相加相等",
+    "filename": "在一个有界的范围内，任选一定数目的非负整数其中四个两两相加相等.md",
+    "tags": [
+      "math",
+      "组合学",
+      "中学数学竞赛",
+      "高考"
+    ],
+    "outgoing_links": [
+      "鸽笼原理"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 1918,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "在任意F_p上可约但在Z上不可约的一类整系数多项式",
+    "filename": "在任意F_p上可约但在Z上不可约的一类整系数多项式.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 749,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "基于Taylor展开的方法求分式的极限",
+    "filename": "基于Taylor展开的方法求分式的极限.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 5710,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "基于分部求和法的和的估计",
+    "filename": "基于分部求和法的和的估计.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "和与积分换序",
+      "Leibniz收敛判断",
+      "对Dirichlet判别的一个调整",
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "Euler-Maclaurin求和公式在和的估计当中的应用",
+      "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+      "一个交错的双重级数的级数的收敛性判别",
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "已知序列的增长信息，以及算术平均值的信息，控制其p次幂的和",
+      "给正项级数条件正负号以后级数收敛意味着什么",
+      "两个非负不增序列互相竞争从而使得级数发散",
+      "素数倒数和的估计",
+      "Wintner mean value theorem",
+      "Kronecker's lemma"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 7369,
+    "in_degree": 20,
+    "out_degree": 14,
+    "tier": "hub"
+  },
+  {
+    "title": "基于分部积分法的积分的估计",
+    "filename": "基于分部积分法的积分的估计.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "基于分部求和法的和的估计",
+      "函数在含参数的长度固定的区间上积分的估计",
+      "与Fresnel函数有关的积分的收敛性判断",
+      "关于含参数积分估计的玩具模型",
+      "Wirtinger不等式",
+      "分段连续可微函数在端点取值为0的开区间上积分的上界估计",
+      "Riemann-Lebesgue引理的一个特殊情况",
+      "Riemann-Lebesgue引理的一个特殊情况",
+      "对一类形如函数乘上模长为1的含参数复指数的定积分的估计"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2649,
+    "in_degree": 7,
+    "out_degree": 9,
+    "tier": "medium"
+  },
+  {
+    "title": "复三角多项式在Lp空间中的稠密性",
+    "filename": "复三角多项式在Lp空间中的稠密性.md",
+    "tags": [
+      "math",
+      "实分析",
+      "泛函分析"
+    ],
+    "outgoing_links": [
+      "紧支光滑函数在Lp空间当中稠密",
+      "Stone-Weierstrass定理",
+      "模1均匀分布与Weyl判别",
+      "Dirichlet核不是逼近单位，Fejer核是逼近单位元"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2332,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "多项式不可约的Perron判别法",
+    "filename": "多项式不可约的Perron判别法.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "大学数学竞赛",
+      "中学数学竞赛",
+      "考研"
+    ],
+    "outgoing_links": [
+      "多项式可约性的Eisenstein判别法",
+      "Rouche定理与卷绕数",
+      "1",
+      "i",
+      "除了一个根以外其余全部根都在单位圆盘内部的多项式"
+    ],
+    "section_count": 1,
+    "heading_count": 6,
+    "char_count": 5598,
+    "in_degree": 3,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "多项式函数列随着次数增大零点越来越靠近无穷远",
+    "filename": "多项式函数列随着次数增大零点越来越靠近无穷远.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 1732,
+    "in_degree": 2,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "多项式可约性的Eisenstein判别法",
+    "filename": "多项式可约性的Eisenstein判别法.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "大学数学竞赛",
+      "考研",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "判断整系数多项式是否可约的方法",
+      "判断整系数多项式是否可约的方法",
+      "从二项式系数到Kummer定理",
+      "多项式不可约的Perron判别法",
+      "判断整系数多项式是否可约的方法",
+      "判断整系数多项式是否可约的方法",
+      "判断整系数多项式是否可约的方法",
+      "判断整系数多项式是否可约的方法",
+      "判断整系数多项式是否可约的方法",
+      "判断整系数多项式是否可约的方法"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 9534,
+    "in_degree": 4,
+    "out_degree": 10,
+    "tier": "medium"
+  },
+  {
+    "title": "多项式约束下的代数求值问题",
+    "filename": "多项式约束下的代数求值问题.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "通过相似标准型简化线性代数问题"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 9345,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "如何估计一些常数",
+    "filename": "如何估计一些常数.md",
+    "tags": [
+      "math",
+      "微积分",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "通过迭代提高估计精度：Bootsrap argument"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1546,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "如果序列是无穷小，那么什么条件能使得其n乘以其差分是无穷小",
+    "filename": "如果序列是无穷小，那么什么条件能使得其n乘以其差分是无穷小.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "柯西凝聚判别法",
+      "Erdos关于pi函数的估计",
+      "序列差分的估计蕴含着序列本身的估计"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 2807,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "子列一致收敛但是函数列不一致收敛的例子",
+    "filename": "子列一致收敛但是函数列不一致收敛的例子.md",
+    "tags": [
+      "math",
+      "实分析",
+      "wolfram"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 709,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "存在一个连续函数使离散采样差分的极限不存在",
+    "filename": "存在一个连续函数使离散采样差分的极限不存在.md",
+    "tags": [
+      "math",
+      "泛函分析"
+    ],
+    "outgoing_links": [
+      "收敛的连乘积的上界估计与糖水不等式",
+      "黎曼积分与黎曼和的误差",
+      "有限测度下各个收敛之间的关系",
+      "把条件函数按傅里叶展开"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 10958,
+    "in_degree": 0,
+    "out_degree": 4,
+    "tier": "isolated"
+  },
+  {
+    "title": "存在无穷多个局部极大值或者极小值的函数",
+    "filename": "存在无穷多个局部极大值或者极小值的函数.md",
+    "tags": [
+      "math",
+      "实分析",
+      "拓扑"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 870,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "定义在超立方体上的对称函数的最大值",
+    "filename": "定义在超立方体上的对称函数的最大值.md",
+    "tags": [
+      "math",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "凸函数在闭区间上的最大值一定落在端点上"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 4285,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "实分析的复办法",
+    "filename": "实分析的复办法.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "利用留数计算实积分",
+      "an epsilon of room",
+      "证明某种积分表示的函数是整函数",
+      "一类可拓展为全纯函数的实函数的傅里叶变换的平移公式",
+      "傅里叶逆变换公式",
+      "傅里叶逆变换公式",
+      "Possion求和公式"
+    ],
+    "section_count": 3,
+    "heading_count": 10,
+    "char_count": 5985,
+    "in_degree": 5,
+    "out_degree": 7,
+    "tier": "medium"
+  },
+  {
+    "title": "实数的标准度量空间上的弱收敛的命题",
+    "filename": "实数的标准度量空间上的弱收敛的命题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "度量空间上弱收敛的等价命题：portmanteau定理",
+      "an epsilon of room",
+      "通过添加参数让目标更光滑化",
+      "approximation to the identity",
+      "逐项估计"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 4374,
+    "in_degree": 1,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "实数被一列超越数逼近的定量问题",
+    "filename": "实数被一列超越数逼近的定量问题.md",
+    "tags": [
+      "math",
+      "数论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "无理测度的定义以及基本的命题"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2349,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "实部有界的整函数是常数",
+    "filename": "实部有界的整函数是常数.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 1440,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "对Dirichlet判别的一个调整",
+    "filename": "对Dirichlet判别的一个调整.md",
+    "tags": [
+      "math",
+      "实分析",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "基于分部求和法的和的估计",
+      "制造telescoping sum求和或求乘积",
+      "分部求和的想法，Dirichlet-Abel收敛判别法的推广"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 4812,
+    "in_degree": 5,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "对Hardy-Littlewood Maximal函数的估计",
+    "filename": "对Hardy-Littlewood Maximal函数的估计.md",
+    "tags": [
+      "math",
+      "实分析",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "an epsilon of room"
+    ],
+    "section_count": 1,
+    "heading_count": 2,
+    "char_count": 3232,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "对L(1,mu)的部分和的估计",
+    "filename": "对L(1,mu)的部分和的估计.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序",
+      "素数定理的一些等价命题"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1394,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "对一个含参数的和的估计以及控制收敛定理",
+    "filename": "对一个含参数的和的估计以及控制收敛定理.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "对误差的分析从而改进分段估计",
+      "和的积分估计",
+      "和的积分估计",
+      "和的积分估计",
+      "由Euler-Maclaurin求和估计得到Stirling逼近结果",
+      "逐项估计",
+      "分段估计"
+    ],
+    "section_count": 2,
+    "heading_count": 9,
+    "char_count": 7265,
+    "in_degree": 5,
+    "out_degree": 7,
+    "tier": "medium"
+  },
+  {
+    "title": "对一个含参数的和的估计以及控制收敛定理2",
+    "filename": "对一个含参数的和的估计以及控制收敛定理2.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1714,
+    "in_degree": 2,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "对一类形如函数乘上模长为1的含参数复指数的定积分的估计",
+    "filename": "对一类形如函数乘上模长为1的含参数复指数的定积分的估计.md",
+    "tags": [
+      "math",
+      "复分析",
+      "微积分",
+      "实分析",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "基于分部积分法的积分的估计",
+      "Wirtinger不等式"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2745,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "对含参数方程根的估计",
+    "filename": "对含参数方程根的估计.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "zeros of cosx-sx.gif",
+      "全纯函数根的积分表达",
+      "制造telescoping sum求和或求乘积",
+      "math/隐函数定理",
+      "abs@sin(x_k).gif",
+      "abs@sin(x_k) k bounded .gif",
+      "函数的图与连续性",
+      "math/隐函数定理"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 12959,
+    "in_degree": 5,
+    "out_degree": 8,
+    "tier": "medium"
+  },
+  {
+    "title": "对数化技巧及其推广",
+    "filename": "对数化技巧及其推广.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1393,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "对离散的和做积分估计",
+    "filename": "对离散的和做积分估计.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "和的积分估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 423,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "对算术函数平均值的渐近",
+    "filename": "对算术函数平均值的渐近.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序",
+      "Dirichlet's hyperbola trick",
+      "Dirichlet's hyperbola trick",
+      "Accumulate函数的作用",
+      "把条件函数展开为新的和或积分然后换序",
+      "模4余3的素数无法被表达为两个有理数的平方和"
+    ],
+    "section_count": 4,
+    "heading_count": 10,
+    "char_count": 5950,
+    "in_degree": 5,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "对素数连乘积的粗糙上界估计",
+    "filename": "对素数连乘积的粗糙上界估计.md",
+    "tags": [
+      "math",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Bertrand假设的证明",
+      "Bertrand假设的证明"
+    ],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 2541,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "对自变量进行二进制展开求积分",
+    "filename": "对自变量进行二进制展开求积分.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "用概率计算含参数积分的极限",
+      "用概率计算含参数积分的极限",
+      "和与积分换序",
+      "单位区间内10进制小数中含有无数个7的小数的Lebesgue测度为1"
+    ],
+    "section_count": 1,
+    "heading_count": 6,
+    "char_count": 6166,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "对误差的分析从而改进分段估计",
+    "filename": "对误差的分析从而改进分段估计.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "分段估计",
+      "逐项估计",
+      "和的积分估计",
+      "体现积分估计相较于和的估计优势的一个问题"
+    ],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 4793,
+    "in_degree": 9,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "对部分和渐近展开的常数项做估计",
+    "filename": "对部分和渐近展开的常数项做估计.md",
+    "tags": [
+      "math",
+      "微积分",
+      "高考"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "和的积分估计",
+      "和的积分估计",
+      "序列差分的估计蕴含着序列本身的估计"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 3891,
+    "in_degree": 3,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "对闭区间上连续可微函数最大值的控制",
+    "filename": "对闭区间上连续可微函数最大值的控制.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 481,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "寻找L1范数最小的n阶首1多项式",
+    "filename": "寻找L1范数最小的n阶首1多项式.md",
+    "tags": [
+      "math",
+      "实分析",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "Stirling渐近公式及不等式"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 5448,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "已知函数与幂函数的内积估计函数L2范数下界",
+    "filename": "已知函数与幂函数的内积估计函数L2范数下界.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "在Hilbert空间当中建立坐标系从而简化问题"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 5109,
+    "in_degree": 3,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "已知单调非负随机变量期望的渐近，求随机变量本身的渐近",
+    "filename": "已知单调非负随机变量期望的渐近，求随机变量本身的渐近.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "通过子列的收敛性验证单调增加的函数列的收敛性",
+      "通过子列的收敛性验证单调增加的函数列的收敛性"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1037,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+    "filename": "已知序列模1均匀分布，那么加上log(n)对分布影响不大.md",
+    "tags": [
+      "math",
+      "数论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "模1均匀分布与Weyl判别",
+      "基于分部求和法的和的估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1384,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "已知序列的增长信息，以及算术平均值的信息，控制其p次幂的和",
+    "filename": "已知序列的增长信息，以及算术平均值的信息，控制其p次幂的和.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "分段估计",
+      "基于分部求和法的和的估计",
+      "基于分部求和法的和的估计",
+      "从几个极限问题去理解Landau符号"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1657,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "巴塞尔问题",
+    "filename": "巴塞尔问题.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "微积分",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "算两次",
+      "算两次",
+      "Abel-Plana求和公式"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 2636,
+    "in_degree": 0,
+    "out_degree": 3,
+    "tier": "isolated"
+  },
+  {
+    "title": "带min的泛函的优化问题",
+    "filename": "带min的泛函的优化问题.md",
+    "tags": [
+      "math",
+      "凸优化",
+      "泛函分析",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "layer-cake 表示",
+      "layer-cake 表示"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 6740,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "带根号的三项迭代序列极限的存在性问题",
+    "filename": "带根号的三项迭代序列极限的存在性问题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "函数与序列的上下极限"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1309,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "带绝对值的微分不等式",
+    "filename": "带绝对值的微分不等式.md",
+    "tags": [
+      "math",
+      "微分方程",
+      "拓扑"
+    ],
+    "outgoing_links": [],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 4243,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "幂级数的收敛圆盘与收敛半径",
+    "filename": "幂级数的收敛圆盘与收敛半径.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "Abscissa of convergence",
+      "逐项估计",
+      "逐项估计",
+      "函数与序列的上下极限",
+      "函数与序列的上下极限",
+      "on the uniform but not absolute convergence of pwoer series.pdf"
+    ],
+    "section_count": 2,
+    "heading_count": 8,
+    "char_count": 5162,
+    "in_degree": 0,
+    "out_degree": 6,
+    "tier": "isolated"
+  },
+  {
+    "title": "广义的Riemann - Lebesgue lemma",
+    "filename": "广义的Riemann - Lebesgue lemma.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "Riemann - Lebesgue lemma的证明",
+      "积分的伸缩公式",
+      "分段估计",
+      "黎曼积分与黎曼和的误差"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3075,
+    "in_degree": 9,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "序列差分的估计蕴含着序列本身的估计",
+    "filename": "序列差分的估计蕴含着序列本身的估计.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "非负序列差分的约束条件导致序列收敛",
+      "关于序列极限的公开问题",
+      "Cesaro-Stolz定理",
+      "Riesz-Fischer定理",
+      "一个递推序列的渐近问题",
+      "通过倒数制造差分关系",
+      "数列上极限的不等式",
+      "对部分和渐近展开的常数项做估计",
+      "如果序列是无穷小，那么什么条件能使得其n乘以其差分是无穷小",
+      "Kummer判别：对多种比值判别变形的统一"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 4569,
+    "in_degree": 15,
+    "out_degree": 10,
+    "tier": "hub"
+  },
+  {
+    "title": "度量空间上的不动点定理",
+    "filename": "度量空间上的不动点定理.md",
+    "tags": [
+      "math",
+      "泛函分析",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "柯西收敛判别",
+      "柯西收敛判别"
+    ],
+    "section_count": 1,
+    "heading_count": 7,
+    "char_count": 5618,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "度量空间中用序列描述拓扑性质",
+    "filename": "度量空间中用序列描述拓扑性质.md",
+    "tags": [
+      "math",
+      "拓扑"
+    ],
+    "outgoing_links": [
+      "鸽笼原理",
+      "用子列来提升收敛或发散性质"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 6067,
+    "in_degree": 4,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "弱大数定律",
+    "filename": "弱大数定律.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2910,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "必然发散的序列",
+    "filename": "必然发散的序列.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "函数与序列的上下极限"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 865,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "打字机函数列（type writer sequence）",
+    "filename": "打字机函数列（type writer sequence）.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1199,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "把一个立方数表达为两个相邻整数的乘积",
+    "filename": "把一个立方数表达为两个相邻整数的乘积.md",
+    "tags": [
+      "math",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "利用因式分解求解丢番图方程",
+      "利用因式分解求解丢番图方程",
+      "利用因式分解求解丢番图方程"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 723,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "把二元优化降为一元优化：由全局隐函数视角看约束最值问题",
+    "filename": "把二元优化降为一元优化：由全局隐函数视角看约束最值问题.md",
+    "tags": [
+      "math",
+      "高考",
+      "中学数学竞赛",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 4437,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "把函数转换为基本初等函数的复合",
+    "filename": "把函数转换为基本初等函数的复合.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "利用基于Taylor展开的逐项估计判断级数收敛的例子1"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 338,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "把数论问题转换为单位圆周群T上来讨论的好处",
+    "filename": "把数论问题转换为单位圆周群T上来讨论的好处.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "数论",
+      "代数基础",
+      "拓扑"
+    ],
+    "outgoing_links": [
+      "第一同构定理"
+    ],
+    "section_count": 1,
+    "heading_count": 5,
+    "char_count": 4938,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "把条件函数展开为新的和或积分然后换序",
+    "filename": "把条件函数展开为新的和或积分然后换序.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Wintner mean value theorem",
+      "Wintner mean value theorem",
+      "对L(1,mu)的部分和的估计",
+      "前$N$个自然数当中，square-free的自然数的占比是多少",
+      "欧拉函数倒数和的估计",
+      "利用Dirichlet卷积法解决几个数论中求和问题",
+      "素数倒数和的估计",
+      "正方形区域当中有多少个互素的整数格点",
+      "正方形区域当中有多少个互素的整数格点",
+      "简化一个数论求和",
+      "把条件函数按傅里叶展开"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 5141,
+    "in_degree": 15,
+    "out_degree": 11,
+    "tier": "hub"
+  },
+  {
+    "title": "把条件函数按傅里叶展开",
+    "filename": "把条件函数按傅里叶展开.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序",
+      "从线性算子的角度理解一个序列迭代的极限问题",
+      "IMO级别的一个计数问题",
+      "Visser 不等式"
+    ],
+    "section_count": 1,
+    "heading_count": 2,
+    "char_count": 4823,
+    "in_degree": 9,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "把矩阵转换为标准型从而简化问题",
+    "filename": "把矩阵转换为标准型从而简化问题.md",
+    "tags": [
+      "tool_idea",
+      "math"
+    ],
+    "outgoing_links": [
+      "矩阵与算子的迹"
+    ],
+    "section_count": 4,
+    "heading_count": 5,
+    "char_count": 549,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "把积分或求和对象视为一个计数函数并展开",
+    "filename": "把积分或求和对象视为一个计数函数并展开.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序",
+      "利用交换和与积分次序算涉及整数格点数目的一个积分",
+      "Fubini-Tonelli定理的例子与反例",
+      "和的积分估计",
+      "identity theorem",
+      "从二项式系数到Kummer定理",
+      "覆盖连续2n个整数的两个序列绝对误差之和"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 4408,
+    "in_degree": 3,
+    "out_degree": 7,
+    "tier": "medium"
+  },
+  {
+    "title": "把积分转换为与Dirichlet eta函数有关的级数",
+    "filename": "把积分转换为与Dirichlet eta函数有关的级数.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "将积分转换为级数",
+      "和与积分换序"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1704,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "把集合的概率测度转换为随机变量的例子",
+    "filename": "把集合的概率测度转换为随机变量的例子.md",
+    "tags": [
+      "math",
+      "概率论",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "把集合问题转换为函数问题",
+      "Kantorovich不等式"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1804,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "把集合问题转换为函数问题",
+    "filename": "把集合问题转换为函数问题.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "函数卷积的基本性质",
+      "Steinhaus定理及其推广",
+      "满足特定条件的两个集合尺寸的比例",
+      "傅里叶变换与傅里叶展开",
+      "Borel-Cantelli lemma及其应用",
+      "Borel-Cantelli lemma及其应用",
+      "Cauchy-Davenport及其证明",
+      "把集合的概率测度转换为随机变量的例子",
+      "利用交换和与积分次序算涉及整数格点数目的一个积分",
+      "和与积分换序"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 3376,
+    "in_degree": 6,
+    "out_degree": 10,
+    "tier": "medium"
+  },
+  {
+    "title": "推广Wilson定理",
+    "filename": "推广Wilson定理.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "证明费马小定理",
+      "证明费马小定理",
+      "证明费马小定理",
+      "欧拉totient函数当n大于2的时候必然是偶数"
+    ],
+    "section_count": 7,
+    "heading_count": 10,
+    "char_count": 6926,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "揭露全纯以及亚纯函数信息的Liouville原则",
+    "filename": "揭露全纯以及亚纯函数信息的Liouville原则.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "证明整函数是一个幂函数",
+      "通过亚纯函数在圆环上的估计来估计极点的阶",
+      "证明一个整函数是多项式",
+      "通过估计幂级数展开系数证明整函数为0",
+      "实部有界的整函数是常数"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 4986,
+    "in_degree": 2,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "收敛的连乘积的上界估计与糖水不等式",
+    "filename": "收敛的连乘积的上界估计与糖水不等式.md",
+    "tags": [
+      "math",
+      "微积分",
+      "高考"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "逐项估计",
+      "对误差的分析从而改进分段估计",
+      "部分积的上界估计与Gautschi不等式"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1754,
+    "in_degree": 5,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "数列上极限的不等式",
+    "filename": "数列上极限的不等式.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "函数与序列的上下极限",
+      "函数与序列的上下极限",
+      "序列差分的估计蕴含着序列本身的估计"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 3355,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "数列极限问题 从经典分析到算子代数",
+    "filename": "数列极限问题 从经典分析到算子代数.md",
+    "tags": [
+      "math",
+      "大学数学竞赛",
+      "考研",
+      "泛函分析",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "Silverman–Toeplitz定理"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 4712,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "整函数零点组成的级数收敛性与增长阶之间的关系",
+    "filename": "整函数零点组成的级数收敛性与增长阶之间的关系.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "为何三角恒等式可以推广到复平面",
+      "Dyadic分解"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1622,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "整数格点与一个带取整函数的和的极限问题",
+    "filename": "整数格点与一个带取整函数的和的极限问题.md",
+    "tags": [
+      "math",
+      "微积分",
+      "组合学",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "黎曼积分与黎曼和的误差",
+      "利用已知的渐近结果求渐近展开的技巧",
+      "分组求和",
+      "线性丢番图方程非负整数解的个数",
+      "线性丢番图方程非负整数解的个数"
+    ],
+    "section_count": 4,
+    "heading_count": 8,
+    "char_count": 6441,
+    "in_degree": 1,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "整系数多项式在n个不同整数处取值为1或-1",
+    "filename": "整系数多项式在n个不同整数处取值为1或-1.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "大学数学竞赛",
+      "考研",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "1",
+      "高斯整数的性质"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 4383,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "整系数多项式环并非PID",
+    "filename": "整系数多项式环并非PID.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 701,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "无理测度的定义以及基本的命题",
+    "filename": "无理测度的定义以及基本的命题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "数论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "Kronecker定理，Dirichlet定理及其应用",
+      "Kronecker定理，Dirichlet定理及其应用",
+      "an epsilon of room",
+      "Borel-Cantelli lemma及其应用",
+      "函数与序列的上下极限",
+      "Khintchine定理",
+      "Khintchine定理",
+      "2, \n    1",
+      "含参数一元函数的不等式",
+      "Liouville数"
+    ],
+    "section_count": 2,
+    "heading_count": 8,
+    "char_count": 14269,
+    "in_degree": 16,
+    "out_degree": 10,
+    "tier": "hub"
+  },
+  {
+    "title": "无穷递降法",
+    "filename": "无穷递降法.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "柯西的反向归纳法",
+      "若k不是平方数，那么根号k不是一个有理数",
+      "模4余3的素数无法被表达为两个有理数的平方和",
+      "费马大定理n=4的证明",
+      "IMO 1988年压轴数论题",
+      "xy与x2+y2+1的比值如果是整数，那么这个整数一定是3"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2685,
+    "in_degree": 10,
+    "out_degree": 6,
+    "tier": "hub"
+  },
+  {
+    "title": "日本数学竞赛当中覆盖圆盘的问题",
+    "filename": "日本数学竞赛当中覆盖圆盘的问题.md",
+    "tags": [
+      "math",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "鸽笼原理"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 414,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "映射像与原像的势的不等式",
+    "filename": "映射像与原像的势的不等式.md",
+    "tags": [
+      "math",
+      "集合论"
+    ],
+    "outgoing_links": [
+      "不存在这样的连续函数"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 411,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "是否存在某个2的幂的十进制数重排以后依旧是2的幂",
+    "filename": "是否存在某个2的幂的十进制数重排以后依旧是2的幂.md",
+    "tags": [
+      "math",
+      "中学数学竞赛",
+      "数论",
+      "组合学"
+    ],
+    "outgoing_links": [
+      "Kronecker定理，Dirichlet定理及其应用"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2832,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "普特南竞赛 2021 A5",
+    "filename": "普特南竞赛 2021 A5.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "sage",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 4,
+    "heading_count": 7,
+    "char_count": 3281,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "有关于zeta函数的一个求和问题",
+    "filename": "有关于zeta函数的一个求和问题.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Wallis公式,正弦函数Hadamard分解互相之间的关系"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 1602,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "有理数都可以表达为无限循环小数或有限小数",
+    "filename": "有理数都可以表达为无限循环小数或有限小数.md",
+    "tags": [
+      "math",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "证明费马小定理"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1066,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "有限交换群上的函数构成的Hilbert空间的结构",
+    "filename": "有限交换群上的函数构成的Hilbert空间的结构.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "圆周上的函数的傅里叶展开",
+      "Symmetric Reduction",
+      "把条件函数按傅里叶展开",
+      "把数论问题转换为单位圆周群T上来讨论的好处"
+    ],
+    "section_count": 2,
+    "heading_count": 6,
+    "char_count": 8275,
+    "in_degree": 2,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "有限测度下各个收敛之间的关系",
+    "filename": "有限测度下各个收敛之间的关系.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "函数p范数与无穷范数之间的关系",
+      "用子列来提升收敛或发散性质",
+      "有限测度空间上依测度收敛的等价命题",
+      "Riesz-Fischer定理",
+      "有限测度空间上依测度收敛的等价命题",
+      "加强收敛性质的条件与手段",
+      "Borel-Cantelli lemma及其应用",
+      "Borel-Cantelli lemma及其应用",
+      "测度论的基础概念"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 5305,
+    "in_degree": 3,
+    "out_degree": 9,
+    "tier": "medium"
+  },
+  {
+    "title": "有限测度空间上依测度收敛的等价命题",
+    "filename": "有限测度空间上依测度收敛的等价命题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "Borel-Cantelli lemma及其应用",
+      "Borel-Cantelli lemma及其应用"
+    ],
+    "section_count": 2,
+    "heading_count": 8,
+    "char_count": 3118,
+    "in_degree": 13,
+    "out_degree": 2,
+    "tier": "hub"
+  },
+  {
+    "title": "有限维多项式空间上线性泛函的表示问题",
+    "filename": "有限维多项式空间上线性泛函的表示问题.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "考研"
+    ],
+    "outgoing_links": [
+      "第一同构定理"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2032,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "有限集合当中的序列必然存在一个常数子列",
+    "filename": "有限集合当中的序列必然存在一个常数子列.md",
+    "tags": [
+      "math",
+      "实分析",
+      "组合学"
+    ],
+    "outgoing_links": [
+      "鸽笼原理"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 310,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "构造快速收敛的有理逼近以证明数的无理性",
+    "filename": "构造快速收敛的有理逼近以证明数的无理性.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Kronecker定理，Dirichlet定理及其应用",
+      "无理测度的定义以及基本的命题",
+      "无理测度的定义以及基本的命题",
+      "证明e是无理数",
+      "证明e的平方是无理数",
+      "证明e的有理次方是无理数"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 2058,
+    "in_degree": 6,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "柯西凝聚判别法",
+    "filename": "柯西凝聚判别法.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "分段估计",
+      "layer-cake 表示",
+      "使用Dyadic分解估计调和数的下界",
+      "Carleman不等式",
+      "逐项估计",
+      "Carleman不等式"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 5739,
+    "in_degree": 17,
+    "out_degree": 6,
+    "tier": "hub"
+  },
+  {
+    "title": "柯西函数方程",
+    "filename": "柯西函数方程.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "identity theorem",
+      "Steinhaus定理及其推广",
+      "测度论的基础概念"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 4034,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "柯西收敛判别",
+    "filename": "柯西收敛判别.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "函数与序列的上下极限",
+      "用子列来提升收敛或发散性质",
+      "和的积分估计",
+      "用子列来提升收敛或发散性质",
+      "逐项估计",
+      "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "单调无界的正序列其差分比自身的值的和也无界",
+      "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "度量空间上的不动点定理",
+      "Riesz-Fischer定理"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 9302,
+    "in_degree": 9,
+    "out_degree": 10,
+    "tier": "medium"
+  },
+  {
+    "title": "柯西的反向归纳法",
+    "filename": "柯西的反向归纳法.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Power mean及其性质",
+      "函数凸性",
+      "identity theorem",
+      "identity theorem",
+      "无穷递降法"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 6252,
+    "in_degree": 2,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "柯西积分公式",
+    "filename": "柯西积分公式.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "逐项估计",
+      "逐项估计"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 2899,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "样本期望的渐近展开系数",
+    "filename": "样本期望的渐近展开系数.md",
+    "tags": [
+      "math",
+      "实分析",
+      "概率论",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "用概率计算含参数积分的极限",
+      "用概率计算含参数积分的极限",
+      "an epsilon of room证明集合为0测度的策略"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 6522,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "根据模与内积的信息得到积分不等式",
+    "filename": "根据模与内积的信息得到积分不等式.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛",
+      "考研"
+    ],
+    "outgoing_links": [
+      "已知函数与幂函数的内积估计函数L2范数下界"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1166,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "模1均匀分布与Weyl判别",
+    "filename": "模1均匀分布与Weyl判别.md",
+    "tags": [
+      "math",
+      "数论",
+      "实分析",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "Stone-Weierstrass定理",
+      "Stone-Weierstrass定理",
+      "复三角多项式在Lp空间中的稠密性",
+      "黎曼积分的定义以及黎曼可积的判别",
+      "Kronecker定理，Dirichlet定理及其应用"
+    ],
+    "section_count": 2,
+    "heading_count": 11,
+    "char_count": 13064,
+    "in_degree": 16,
+    "out_degree": 5,
+    "tier": "hub"
+  },
+  {
+    "title": "模1均匀分布序列对序列差分的要求",
+    "filename": "模1均匀分布序列对序列差分的要求.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "用分段估计解决几个序列的极限问题",
+      "模1均匀分布与Weyl判别"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2477,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "模4余3的素数无法被表达为两个有理数的平方和",
+    "filename": "模4余3的素数无法被表达为两个有理数的平方和.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "无穷递降法",
+      "高斯整数的性质",
+      "高斯整数的性质",
+      "对算术函数平均值的渐近"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 2974,
+    "in_degree": 3,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "模长总和为1的n个复数中，至少能合成一个模长多大的复数",
+    "filename": "模长总和为1的n个复数中，至少能合成一个模长多大的复数.md",
+    "tags": [
+      "math",
+      "组合学",
+      "概率论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "通过求期望证明具有某种性质的结构的存在性",
+      "1"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 5280,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "次指数衰减函数卷积的渐近行为分析",
+    "filename": "次指数衰减函数卷积的渐近行为分析.md",
+    "tags": [
+      "math",
+      "大学数学竞赛",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "分段估计",
+      "two_bumps.gif"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 7652,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "欧拉totient与mobius函数的Dirichlet卷积关系",
+    "filename": "欧拉totient与mobius函数的Dirichlet卷积关系.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 1086,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "欧拉totient函数当n大于2的时候必然是偶数",
+    "filename": "欧拉totient函数当n大于2的时候必然是偶数.md",
+    "tags": [
+      "math",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 280,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "欧拉函数倒数和的估计",
+    "filename": "欧拉函数倒数和的估计.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序",
+      "把条件函数展开为新的和或积分然后换序"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1677,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "正定矩阵加上半正定矩阵其行列式至少不会变得更小",
+    "filename": "正定矩阵加上半正定矩阵其行列式至少不会变得更小.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "Weinstein-Aronszajn恒等式"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 688,
+    "in_degree": 3,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "正实数序列与自己前n项和的p次方的比值组成的级数收敛",
+    "filename": "正实数序列与自己前n项和的p次方的比值组成的级数收敛.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "单调无界的正序列其差分比自身的值的和也无界",
+      "和的积分估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 725,
+    "in_degree": 3,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "正方形区域当中有多少个互素的整数格点",
+    "filename": "正方形区域当中有多少个互素的整数格点.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2134,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "毕达哥拉斯数",
+    "filename": "毕达哥拉斯数.md",
+    "tags": [
+      "代数基础",
+      "math",
+      "数论",
+      "中学数学竞赛",
+      "初中数学"
+    ],
+    "outgoing_links": [
+      "利用因式分解求解丢番图方程",
+      "利用因式分解求解丢番图方程",
+      "高斯整数的性质",
+      "Bezout恒等式"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1693,
+    "in_degree": 3,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "求一个分子带log分母为阶乘的含参数和的渐近展开",
+    "filename": "求一个分子带log分母为阶乘的含参数和的渐近展开.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "Cesaro-Stolz定理"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 9837,
+    "in_degree": 3,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "求分式形式函数的值域",
+    "filename": "求分式形式函数的值域.md",
+    "tags": [
+      "math",
+      "高考"
+    ],
+    "outgoing_links": [
+      "与莫比乌斯变换保圆性有关的问题"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2784,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "测度论的基础概念",
+    "filename": "测度论的基础概念.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 4,
+    "heading_count": 10,
+    "char_count": 12037,
+    "in_degree": 11,
+    "out_degree": 0,
+    "tier": "hub"
+  },
+  {
+    "title": "涉及两个平面向量变量的优化问题",
+    "filename": "涉及两个平面向量变量的优化问题.md",
+    "tags": [
+      "math",
+      "高考"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 5697,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "渐近密度为p的整数子集上黎曼和的极限",
+    "filename": "渐近密度为p的整数子集上黎曼和的极限.md",
+    "tags": [
+      "math",
+      "大学数学竞赛",
+      "实分析",
+      "数论"
+    ],
+    "outgoing_links": [
+      "模1均匀分布与Weyl判别"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 4034,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "满足某种约束条件的n个实数存在某种重排使得重排以后和小于0",
+    "filename": "满足某种约束条件的n个实数存在某种重排使得重排以后和小于0.md",
+    "tags": [
+      "math",
+      "概率论",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1007,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "满足特定条件的两个集合尺寸的比例",
+    "filename": "满足特定条件的两个集合尺寸的比例.md",
+    "tags": [
+      "math",
+      "组合学",
+      "调和分析",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Borel-Cantelli lemma及其应用",
+      "Riemann - Lebesgue lemma的证明"
+    ],
+    "section_count": 1,
+    "heading_count": 2,
+    "char_count": 2141,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "满足特定条件的整系数多项式有整数解问题",
+    "filename": "满足特定条件的整系数多项式有整数解问题.md",
+    "tags": [
+      "math",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "鸽笼原理"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1930,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "满足这种函数极限性质的函数是几乎处处为0的",
+    "filename": "满足这种函数极限性质的函数是几乎处处为0的.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [
+      "an epsilon of room证明集合为0测度的策略",
+      "黎曼可积的Lebesgue判别"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1955,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "用f'的L2范数控制f(x)f'(x)的L1范数",
+    "filename": "用f'的L2范数控制f(x)f'(x)的L1范数.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1437,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "用分析的思路证明Cayley-Hamilton定理",
+    "filename": "用分析的思路证明Cayley-Hamilton定理.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "利用连续函数的identity theorem证明函数方程",
+      "可对角化矩阵在复矩阵空间当中稠密",
+      "关于由行列式定义出来的矩阵多项式"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 1501,
+    "in_degree": 3,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "用分段估计解决几个序列的极限问题",
+    "filename": "用分段估计解决几个序列的极限问题.md",
+    "tags": [
+      "math",
+      "实分析",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "逐项估计",
+      "an epsilon of room",
+      "一个竞赛中的和的渐近展开问题"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 4111,
+    "in_degree": 10,
+    "out_degree": 4,
+    "tier": "hub"
+  },
+  {
+    "title": "用子列来提升收敛或发散性质",
+    "filename": "用子列来提升收敛或发散性质.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "柯西收敛判别",
+      "给正项级数条件正负号以后级数收敛意味着什么",
+      "柯西凝聚判别法",
+      "柯西凝聚判别法",
+      "Riesz-Fischer定理",
+      "Riesz-Fischer定理",
+      "函数列几乎处处有界与Borel-Cantelli lemma的应用",
+      "通过子列的收敛性验证单调增加的函数列的收敛性",
+      "已知单调非负随机变量期望的渐近，求随机变量本身的渐近",
+      "Etemadi关于强大数定律的证明",
+      "有限测度下各个收敛之间的关系",
+      "依测度收敛的基本运算规律",
+      "Riesz-Fischer定理",
+      "Etemadi关于强大数定律的证明",
+      "有限测度空间上依测度收敛的等价命题",
+      "函数的图与连续性",
+      "度量空间中用序列描述拓扑性质"
+    ],
+    "section_count": 3,
+    "heading_count": 11,
+    "char_count": 5910,
+    "in_degree": 12,
+    "out_degree": 17,
+    "tier": "hub"
+  },
+  {
+    "title": "用概率计算含参数积分的极限",
+    "filename": "用概率计算含参数积分的极限.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Weierstrass逼近定理的概率途径证明",
+      "n个均匀分布随机变量的最大分布的期望",
+      "有限测度空间上依测度收敛的等价命题",
+      "有限测度空间上依测度收敛的等价命题",
+      "zeta函数整数值的积分表示",
+      "有限测度空间上依测度收敛的等价命题"
+    ],
+    "section_count": 4,
+    "heading_count": 10,
+    "char_count": 6339,
+    "in_degree": 6,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "由Euler-Maclaurin求和估计得到Stirling逼近结果",
+    "filename": "由Euler-Maclaurin求和估计得到Stirling逼近结果.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Wallis公式,正弦函数Hadamard分解互相之间的关系"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 3633,
+    "in_degree": 3,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "由possion公式导出的一个函数方程",
+    "filename": "由possion公式导出的一个函数方程.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "Possion求和公式"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1005,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "由一个级数收敛证明另一个有关级数的收敛问题",
+    "filename": "由一个级数收敛证明另一个有关级数的收敛问题.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Riemann-Lebesgue引理的一个特殊情况",
+      "一个抽象的和的估计问题",
+      "一个抽象的和的估计问题",
+      "Carleman不等式",
+      "两个非负不增序列互相竞争从而使得级数发散",
+      "两个非负不增序列互相竞争从而使得级数发散",
+      "两个非负不增序列互相竞争从而使得级数发散",
+      "利用已知的渐近结果求渐近展开的技巧"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 5545,
+    "in_degree": 2,
+    "out_degree": 8,
+    "tier": "leaf"
+  },
+  {
+    "title": "由函数在圆盘上的上界控制梯度模的上界",
+    "filename": "由函数在圆盘上的上界控制梯度模的上界.md",
+    "tags": [
+      "math",
+      "微积分",
+      "PDE"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3325,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "由多项式构成的行列式",
+    "filename": "由多项式构成的行列式.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "考研"
+    ],
+    "outgoing_links": [
+      "有限维多项式空间上线性泛函的表示问题",
+      "第一同构定理"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2095,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "由素数定理得到p_n的渐近表达",
+    "filename": "由素数定理得到p_n的渐近表达.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 547,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "矩阵与有限维线性空间上的线性映射的关系",
+    "filename": "矩阵与有限维线性空间上的线性映射的关系.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 3015,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "矩阵与算子的迹",
+    "filename": "矩阵与算子的迹.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "和与积分换序",
+      "矩阵与有限维线性空间上的线性映射的关系"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1816,
+    "in_degree": 3,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "矩阵交换次序特征多项式不变",
+    "filename": "矩阵交换次序特征多项式不变.md",
+    "tags": [
+      "math",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "用分析的思路证明Cayley-Hamilton定理",
+      "GLn的稠密性",
+      "用分析的思路证明Cayley-Hamilton定理",
+      "identity theorem"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 1785,
+    "in_degree": 2,
+    "out_degree": 5,
+    "tier": "leaf"
+  },
+  {
+    "title": "矩阵幂的秩会下降到一个固定的非负整数",
+    "filename": "矩阵幂的秩会下降到一个固定的非负整数.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "组合学",
+      "考研"
+    ],
+    "outgoing_links": [
+      "鸽笼原理",
+      "有限集合当中的序列必然存在一个常数子列"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 784,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "矩阵赋范数空间当中一些典型集合的拓扑性质",
+    "filename": "矩阵赋范数空间当中一些典型集合的拓扑性质.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "矩阵分析"
+    ],
+    "outgoing_links": [
+      "可对角化矩阵在复矩阵空间当中稠密",
+      "GLn的稠密性",
+      "identity theorem"
+    ],
+    "section_count": 2,
+    "heading_count": 6,
+    "char_count": 7361,
+    "in_degree": 5,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "研究函数形状但是没有后二阶导数信息怎么办",
+    "filename": "研究函数形状但是没有后二阶导数信息怎么办.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "函数凸性",
+      "函数凸性",
+      "函数凸性"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 4454,
+    "in_degree": 0,
+    "out_degree": 4,
+    "tier": "isolated"
+  },
+  {
+    "title": "离散Wirtinger不等式",
+    "filename": "离散Wirtinger不等式.md",
+    "tags": [
+      "math",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "Wirtinger不等式",
+      "Ky Fan不等式",
+      "Wirtinger不等式",
+      "Wirtinger不等式"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 3460,
+    "in_degree": 0,
+    "out_degree": 4,
+    "tier": "isolated"
+  },
+  {
+    "title": "积分的严格单调性",
+    "filename": "积分的严格单调性.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "测度论的基础概念"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 589,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "积分的伸缩公式",
+    "filename": "积分的伸缩公式.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "可测集合线性变换后的测度"
+    ],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 5446,
+    "in_degree": 6,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "第一同构定理",
+    "filename": "第一同构定理.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [],
+    "section_count": 3,
+    "heading_count": 4,
+    "char_count": 4431,
+    "in_degree": 8,
+    "out_degree": 0,
+    "tier": "medium"
+  },
+  {
+    "title": "简化一个数论求和",
+    "filename": "简化一个数论求和.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "把条件函数展开为新的和或积分然后换序"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 994,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "算两次",
+    "filename": "算两次.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "制造telescoping sum求和或求乘积",
+      "Faulhaber公式",
+      "素数倒数和的估计",
+      "divisor函数的倒数加权和的估计"
+    ],
+    "section_count": 3,
+    "heading_count": 10,
+    "char_count": 5967,
+    "in_degree": 2,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "类似于傅里叶系数的一个积分估计",
+    "filename": "类似于傅里叶系数的一个积分估计.md",
+    "tags": [
+      "math",
+      "微积分",
+      "考研",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "广义的Riemann - Lebesgue lemma",
+      "基于分部积分法的积分的估计",
+      "关于一个含参数积分极限的两个策略的方法"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2238,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "素数倒数和的估计",
+    "filename": "素数倒数和的估计.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "连续分部求和法的基本用法",
+      "和的积分估计",
+      "利用已知的渐近结果求渐近展开的技巧",
+      "Stirling渐近公式及不等式",
+      "把条件函数展开为新的和或积分然后换序",
+      "把条件函数展开为新的和或积分然后换序",
+      "Bertrand假设的证明"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 4641,
+    "in_degree": 6,
+    "out_degree": 7,
+    "tier": "medium"
+  },
+  {
+    "title": "素数定理的一些等价命题",
+    "filename": "素数定理的一些等价命题.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "基于分部求和法的和的估计",
+      "Wintner mean value theorem",
+      "Wintner mean value theorem",
+      "Dirichlet's hyperbola trick",
+      "Stirling渐近公式及不等式",
+      "对算术函数平均值的渐近",
+      "黎曼zeta函数的零点分布"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 6873,
+    "in_degree": 1,
+    "out_degree": 7,
+    "tier": "leaf"
+  },
+  {
+    "title": "紧支光滑函数在Lp空间当中稠密",
+    "filename": "紧支光滑函数在Lp空间当中稠密.md",
+    "tags": [
+      "math",
+      "实分析",
+      "调和分析"
+    ],
+    "outgoing_links": [
+      "通过添加参数让目标更光滑化",
+      "函数卷积的基本性质"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1816,
+    "in_degree": 5,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "累次积分的计算技巧",
+    "filename": "累次积分的计算技巧.md",
+    "tags": [
+      "math",
+      "考研",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "借用坐标变换计算重积分"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 2328,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "级数收敛与求和对象的收敛速度",
+    "filename": "级数收敛与求和对象的收敛速度.md",
+    "tags": [
+      "实分析",
+      "math"
+    ],
+    "outgoing_links": [
+      "Leibniz收敛判断",
+      "柯西凝聚判别法"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 3282,
+    "in_degree": 3,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "线性丢番图方程非负整数解的个数",
+    "filename": "线性丢番图方程非负整数解的个数.md",
+    "tags": [
+      "math",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "整数格点与一个带取整函数的和的极限问题"
+    ],
+    "section_count": 5,
+    "heading_count": 5,
+    "char_count": 4787,
+    "in_degree": 5,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "组合零点定理",
+    "filename": "组合零点定理.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "EGZ定理的证明",
+      "偶数凸多边形顶点上的数字",
+      "至少需要多少个面能包含立方体的顶点",
+      "至少需要多少个面能包含立方体的顶点",
+      "Cauchy-Davenport及其证明",
+      "偶数凸多边形顶点上的数字",
+      "至少需要多少个面能包含立方体的顶点",
+      "Cauchy-Davenport及其证明",
+      "EGZ定理的证明"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2906,
+    "in_degree": 5,
+    "out_degree": 9,
+    "tier": "medium"
+  },
+  {
+    "title": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+    "filename": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "模1均匀分布与Weyl判别",
+      "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+      "基于分部求和法的和的估计",
+      "逐项估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1706,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "给正项级数条件正负号以后级数收敛意味着什么",
+    "filename": "给正项级数条件正负号以后级数收敛意味着什么.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "用子列来提升收敛或发散性质",
+      "和的积分估计",
+      "数列上极限的不等式",
+      "函数与序列的上下极限",
+      "基于分部求和法的和的估计",
+      "基于分部求和法的和的估计",
+      "柯西收敛判别",
+      "Accumulate函数的作用"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 6427,
+    "in_degree": 2,
+    "out_degree": 8,
+    "tier": "leaf"
+  },
+  {
+    "title": "群中满足特定关系的元素是否可以交换",
+    "filename": "群中满足特定关系的元素是否可以交换.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "Bezout恒等式"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1530,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "自然数的r次幂的部分和估计",
+    "filename": "自然数的r次幂的部分和估计.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [],
+    "section_count": 5,
+    "heading_count": 8,
+    "char_count": 4650,
+    "in_degree": 8,
+    "out_degree": 0,
+    "tier": "medium"
+  },
+  {
+    "title": "至少需要多少个面能包含立方体的顶点",
+    "filename": "至少需要多少个面能包含立方体的顶点.md",
+    "tags": [
+      "math",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "组合零点定理"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1960,
+    "in_degree": 3,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "若k不是平方数，那么根号k不是一个有理数",
+    "filename": "若k不是平方数，那么根号k不是一个有理数.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "数论"
+    ],
+    "outgoing_links": [
+      "无穷递降法",
+      "无穷递降法",
+      "无穷递降法"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 1850,
+    "in_degree": 1,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "行列式的雅可比公式",
+    "filename": "行列式的雅可比公式.md",
+    "tags": [
+      "math",
+      "线性代数",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 897,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "行列式给出的多项式在圆周上的估计",
+    "filename": "行列式给出的多项式在圆周上的估计.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "大学数学竞赛",
+      "线性代数"
+    ],
+    "outgoing_links": [
+      "关于由行列式定义出来的矩阵多项式",
+      "通过亚纯函数在圆环上的估计来估计极点的阶",
+      "圆周上函数模长最大值与展开系数之间的关系",
+      "函数傅里叶展开的Dini判别及其应用"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 795,
+    "in_degree": 2,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "被求和对象的值U形分布时和的估计",
+    "filename": "被求和对象的值U形分布时和的估计.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "利用已知的渐近结果求渐近展开的技巧"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 7005,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "覆盖连续2n个整数的两个序列绝对误差之和",
+    "filename": "覆盖连续2n个整数的两个序列绝对误差之和.md",
+    "tags": [
+      "math",
+      "组合学",
+      "大学数学竞赛",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "i",
+      "i",
+      "i",
+      "i"
+    ],
+    "section_count": 3,
+    "heading_count": 5,
+    "char_count": 4695,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "证明Gamma函数在右半平面上全纯",
+    "filename": "证明Gamma函数在右半平面上全纯.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "证明某种积分表示的函数是整函数",
+      "an epsilon of room"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1320,
+    "in_degree": 4,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "证明e是无理数",
+    "filename": "证明e是无理数.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "构造快速收敛的有理逼近以证明数的无理性",
+      "构造快速收敛的有理逼近以证明数的无理性",
+      "构造快速收敛的有理逼近以证明数的无理性",
+      "Cantor series表示的数是否是有理数的判断"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1407,
+    "in_degree": 6,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "证明e的平方是无理数",
+    "filename": "证明e的平方是无理数.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "证明e是无理数",
+      "构造快速收敛的有理逼近以证明数的无理性",
+      "从二项式系数到Kummer定理",
+      "从二项式系数到Kummer定理"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 4251,
+    "in_degree": 3,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "证明e的有理次方是无理数",
+    "filename": "证明e的有理次方是无理数.md",
+    "tags": [
+      "math",
+      "数论"
+    ],
+    "outgoing_links": [
+      "证明e是无理数",
+      "证明e的平方是无理数",
+      "构造快速收敛的有理逼近以证明数的无理性",
+      "证明e的平方是无理数",
+      "构造快速收敛的有理逼近以证明数的无理性"
+    ],
+    "section_count": 1,
+    "heading_count": 2,
+    "char_count": 4660,
+    "in_degree": 7,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "证明一个具有部分周期性的含参数积分的非负性",
+    "filename": "证明一个具有部分周期性的含参数积分的非负性.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1054,
+    "in_degree": 2,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "证明一个整函数是多项式",
+    "filename": "证明一个整函数是多项式.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 780,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "证明一个由变上限含参数积分给出的函数列一致收敛",
+    "filename": "证明一个由变上限含参数积分给出的函数列一致收敛.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [
+      "分段估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1866,
+    "in_degree": 3,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "证明一个部分和被一个参数控制起来",
+    "filename": "证明一个部分和被一个参数控制起来.md",
+    "tags": [
+      "math",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "和的积分估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 622,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "证明函数项级数几乎处处绝对收敛",
+    "filename": "证明函数项级数几乎处处绝对收敛.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "Fubini-Tonelli定理的例子与反例",
+      "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1194,
+    "in_degree": 3,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "证明存在一个单位球当中m个向量的交错和下界至少为根号m",
+    "filename": "证明存在一个单位球当中m个向量的交错和下界至少为根号m.md",
+    "tags": [
+      "math",
+      "概率论",
+      "线性代数",
+      "组合学",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "通过求期望证明具有某种性质的结构的存在性"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1521,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "证明整函数在复平面上有无限多个零点",
+    "filename": "证明整函数在复平面上有无限多个零点.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "多项式函数列随着次数增大零点越来越靠近无穷远"
+    ],
+    "section_count": 3,
+    "heading_count": 4,
+    "char_count": 3938,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "证明整函数是一个幂函数",
+    "filename": "证明整函数是一个幂函数.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 734,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "证明有限群存在一个满足特定Index条件的正规子群",
+    "filename": "证明有限群存在一个满足特定Index条件的正规子群.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "第一同构定理"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 971,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "证明某种积分表示的函数是整函数",
+    "filename": "证明某种积分表示的函数是整函数.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "证明Gamma函数在右半平面上全纯",
+      "an epsilon of room"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2045,
+    "in_degree": 3,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "证明正弦函数在整数上取值的序列的极限是不存在的",
+    "filename": "证明正弦函数在整数上取值的序列的极限是不存在的.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研",
+      "数论"
+    ],
+    "outgoing_links": [
+      "Kronecker定理，Dirichlet定理及其应用",
+      "模1均匀分布与Weyl判别",
+      "柯西收敛判别",
+      "柯敛判别",
+      "Kronecker定理，Dirichlet定理及其应用",
+      "判断序列在区间内稠密的几个命题"
+    ],
+    "section_count": 3,
+    "heading_count": 7,
+    "char_count": 4590,
+    "in_degree": 8,
+    "out_degree": 6,
+    "tier": "medium"
+  },
+  {
+    "title": "证明满足这种密度条件的集合其测度为1",
+    "filename": "证明满足这种密度条件的集合其测度为1.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "Lebesgue微分定理"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 726,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "证明调和数不是整数",
+    "filename": "证明调和数不是整数.md",
+    "tags": [
+      "math",
+      "数论",
+      "中学数学竞赛"
+    ],
+    "outgoing_links": [
+      "Bertrand假设的证明",
+      "从二项式系数到Kummer定理"
+    ],
+    "section_count": 5,
+    "heading_count": 9,
+    "char_count": 5270,
+    "in_degree": 0,
+    "out_degree": 2,
+    "tier": "isolated"
+  },
+  {
+    "title": "证明费马小定理",
+    "filename": "证明费马小定理.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "数论"
+    ],
+    "outgoing_links": [
+      "推广Wilson定理"
+    ],
+    "section_count": 3,
+    "heading_count": 4,
+    "char_count": 5087,
+    "in_degree": 4,
+    "out_degree": 1,
+    "tier": "medium"
+  },
+  {
+    "title": "证明黎曼可积的黎曼判别",
+    "filename": "证明黎曼可积的黎曼判别.md",
+    "tags": [
+      "math",
+      "微积分",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "黎曼积分的定义以及黎曼可积的判别",
+      "分段估计"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 4352,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "调和函数极值原理",
+    "filename": "调和函数极值原理.md",
+    "tags": [
+      "math",
+      "调和分析",
+      "PDE"
+    ],
+    "outgoing_links": [
+      "an epsilon of room",
+      "an epsilon of room"
+    ],
+    "section_count": 2,
+    "heading_count": 3,
+    "char_count": 3263,
+    "in_degree": 2,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "费马大定理n=4的证明",
+    "filename": "费马大定理n=4的证明.md",
+    "tags": [
+      "math",
+      "数论",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "毕达哥拉斯数"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1152,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "轨道稳定子引理与群的置换表示",
+    "filename": "轨道稳定子引理与群的置换表示.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "组合学"
+    ],
+    "outgoing_links": [
+      "项链着色问题.webp",
+      "为何平面正多边形的对称群为Dihedral group",
+      "第一同构定理",
+      "第一同构定理"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 9604,
+    "in_degree": 4,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "边界消失的H1空间上连续线性泛函上界形成的积分不等式",
+    "filename": "边界消失的H1空间上连续线性泛函上界形成的积分不等式.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛",
+      "考研",
+      "泛函分析"
+    ],
+    "outgoing_links": [
+      "Wirtinger不等式"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 8191,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "连续分部求和法的基本用法",
+    "filename": "连续分部求和法的基本用法.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "和的积分估计"
+    ],
+    "section_count": 4,
+    "heading_count": 6,
+    "char_count": 4049,
+    "in_degree": 4,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+    "filename": "连续可微的一致收敛序列也不足以保证极限函数的可微性.md",
+    "tags": [
+      "math",
+      "实分析",
+      "拓扑"
+    ],
+    "outgoing_links": [
+      "C(X)在一致范数下紧子集的充要条件",
+      "函数列一致收敛并不保持微分性质",
+      "通过添加参数让目标更光滑化",
+      "通过逼近的方法证明函数是下凸的",
+      "Abel inversion及其应用",
+      "跳跃间断点的连续逼近.gif",
+      "C(X)在一致范数下紧子集的充要条件",
+      "函数列一致收敛并不保持微分性质",
+      "C(X)在一致范数下紧子集的充要条件"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 6712,
+    "in_degree": 2,
+    "out_degree": 9,
+    "tier": "leaf"
+  },
+  {
+    "title": "连续的归纳法",
+    "filename": "连续的归纳法.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "带绝对值的微分不等式",
+      "Hermite-Hadamard不等式与函数凸性"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 1316,
+    "in_degree": 1,
+    "out_degree": 2,
+    "tier": "leaf"
+  },
+  {
+    "title": "选手答题的组合问题",
+    "filename": "选手答题的组合问题.md",
+    "tags": [
+      "组合学",
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "通过求期望证明具有某种性质的结构的存在性"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 1240,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "逐项估计",
+    "filename": "逐项估计.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "定义在超立方体上的对称函数的最大值",
+      "Re0微积分2：自然底数e及其快速计算",
+      "部分积的上界估计与Gautschi不等式",
+      "估计一个根式的和",
+      "n个连续的阶乘之积有多少个因子",
+      "从几个极限问题去理解Landau符号",
+      "和的估计的一个典型案例",
+      "收敛的连乘积的上界估计与糖水不等式",
+      "对一个含参数的和的估计以及控制收敛定理",
+      "对一个含参数的和的估计以及控制收敛定理2",
+      "与无穷范数有关的一个含参数积分的极限",
+      "Power mean及其性质",
+      "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+      "证明函数项级数几乎处处绝对收敛",
+      "和与积分换序",
+      "分段估计",
+      "对误差的分析从而改进分段估计",
+      "用分段估计解决几个序列的极限问题",
+      "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+      "Stirling渐近公式及不等式",
+      "对一个含参数的和的估计以及控制收敛定理",
+      "从几个极限问题去理解Landau符号",
+      "从几个极限问题去理解Landau符号",
+      "对误差的分析从而改进分段估计",
+      "利用基于Taylor展开的逐项估计判断级数收敛的例子1",
+      "收敛的连乘积的上界估计与糖水不等式",
+      "对一个含参数的和的估计以及控制收敛定理",
+      "对一个含参数的和的估计以及控制收敛定理2",
+      "判断一个类交错级数的收敛性",
+      "两种不同路径解决含参数和的估计问题",
+      "不适用于逐项估计求和的极限的例子",
+      "逼近单位元在局部上的收敛性的一个典型例子",
+      "制造telescoping sum求和或求乘积",
+      "Re0微积分2：自然底数e及其快速计算",
+      "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+      "对含参数方程根的估计",
+      "分段估计",
+      "IMC上的一个渐近分析的问题",
+      "黎曼积分与黎曼和的误差",
+      "approximation to the identity",
+      "柯西积分公式",
+      "Riemann-Stieltjes积分"
+    ],
+    "section_count": 4,
+    "heading_count": 17,
+    "char_count": 20124,
+    "in_degree": 54,
+    "out_degree": 42,
+    "tier": "hub"
+  },
+  {
+    "title": "递推序列确定渐近系数但Stolz失灵的情况",
+    "filename": "递推序列确定渐近系数但Stolz失灵的情况.md",
+    "tags": [
+      "math",
+      "考研",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "利用Stolz定理确定递归序列的渐近系数",
+      "利用Stolz定理确定递归序列的渐近系数2",
+      "Re0微积分1：用牛顿迭代法求算术平方根"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 2719,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "通过pi的无理测度证明级数收敛2",
+    "filename": "通过pi的无理测度证明级数收敛2.md",
+    "tags": [
+      "math",
+      "数论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "通过pi的无理测度证明级数收敛性",
+      "通过pi的无理测度证明级数收敛性",
+      "通过pi的无理测度证明级数收敛性",
+      "通过pi的无理测度证明级数收敛性",
+      "通过pi的无理测度证明级数收敛性",
+      "通过pi的无理测度证明级数收敛性",
+      "实数被一列超越数逼近的定量问题",
+      "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "函数与序列的上下极限",
+      "实数被一列超越数逼近的定量问题"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 7504,
+    "in_degree": 0,
+    "out_degree": 10,
+    "tier": "isolated"
+  },
+  {
+    "title": "通过pi的无理测度证明级数收敛性",
+    "filename": "通过pi的无理测度证明级数收敛性.md",
+    "tags": [
+      "math",
+      "数论",
+      "丢番图逼近"
+    ],
+    "outgoing_links": [
+      "无理测度的定义以及基本的命题",
+      "无理测度的定义以及基本的命题"
+    ],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 8342,
+    "in_degree": 6,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "通过亚纯函数在圆环上的估计来估计极点的阶",
+    "filename": "通过亚纯函数在圆环上的估计来估计极点的阶.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 1836,
+    "in_degree": 2,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "通过估计幂级数展开系数证明整函数为0",
+    "filename": "通过估计幂级数展开系数证明整函数为0.md",
+    "tags": [
+      "math",
+      "复分析"
+    ],
+    "outgoing_links": [
+      "揭露全纯以及亚纯函数信息的Liouville原则"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 883,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "通过倒数制造差分关系",
+    "filename": "通过倒数制造差分关系.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "序列差分的估计蕴含着序列本身的估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2232,
+    "in_degree": 2,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "通过制造平方差来因式分解",
+    "filename": "通过制造平方差来因式分解.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "多项式不可约的Perron判别法",
+      "判断整系数多项式是否可约的方法",
+      "利用因式分解求解丢番图方程",
+      "利用因式分解求解丢番图方程"
+    ],
+    "section_count": 2,
+    "heading_count": 4,
+    "char_count": 4193,
+    "in_degree": 2,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "通过子列的收敛性验证单调增加的函数列的收敛性",
+    "filename": "通过子列的收敛性验证单调增加的函数列的收敛性.md",
+    "tags": [
+      "math",
+      "概率论"
+    ],
+    "outgoing_links": [
+      "把集合问题转换为函数问题",
+      "加强收敛性质的条件与手段",
+      "用子列来提升收敛或发散性质"
+    ],
+    "section_count": 2,
+    "heading_count": 5,
+    "char_count": 3830,
+    "in_degree": 4,
+    "out_degree": 3,
+    "tier": "medium"
+  },
+  {
+    "title": "通过求期望证明具有某种性质的结构的存在性",
+    "filename": "通过求期望证明具有某种性质的结构的存在性.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "积分的严格单调性",
+      "证明存在一个单位球当中m个向量的交错和下界至少为根号m",
+      "满足某种约束条件的n个实数存在某种重排使得重排以后和小于0",
+      "鸽笼原理",
+      "模长总和为1的n个复数中，至少能合成一个模长多大的复数",
+      "选手答题的组合问题",
+      "利用随机选取的集合的和集大小的期望证明某种尺寸的合集的存在性",
+      "不包含0的n个整数的集合能包含多大的sum-free子集"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 3250,
+    "in_degree": 9,
+    "out_degree": 8,
+    "tier": "medium"
+  },
+  {
+    "title": "通过添加参数让目标更光滑化",
+    "filename": "通过添加参数让目标更光滑化.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "approximation to the identity",
+      "approximation to the identity",
+      "函数卷积的基本性质",
+      "积分的严格单调性",
+      "函数卷积的基本性质",
+      "通过逼近的方法证明函数是下凸的",
+      "紧支光滑函数在Lp空间当中稠密",
+      "实数的标准度量空间上的弱收敛的命题",
+      "连续可微的一致收敛序列也不足以保证极限函数的可微性",
+      "可积函数傅里叶逆变换几乎处处成立",
+      "函数沿着梯度方向下降的定量问题"
+    ],
+    "section_count": 1,
+    "heading_count": 2,
+    "char_count": 3133,
+    "in_degree": 11,
+    "out_degree": 11,
+    "tier": "hub"
+  },
+  {
+    "title": "通过迭代提高估计精度：Bootsrap argument",
+    "filename": "通过迭代提高估计精度：Bootsrap argument.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "Re0微积分1：用牛顿迭代法求算术平方根",
+      "如何估计一些常数",
+      "递推序列确定渐近系数但Stolz失灵的情况",
+      "对含参数方程根的估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 830,
+    "in_degree": 1,
+    "out_degree": 4,
+    "tier": "leaf"
+  },
+  {
+    "title": "通过逼近的方法证明函数是下凸的",
+    "filename": "通过逼近的方法证明函数是下凸的.md",
+    "tags": [
+      "math",
+      "实分析",
+      "大学数学竞赛"
+    ],
+    "outgoing_links": [
+      "通过添加参数让目标更光滑化",
+      "通过添加参数让目标更光滑化"
+    ],
+    "section_count": 1,
+    "heading_count": 3,
+    "char_count": 2546,
+    "in_degree": 3,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "通过重整来证明表达式的非负性",
+    "filename": "通过重整来证明表达式的非负性.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "和与积分换序",
+      "Stirling渐近公式及不等式",
+      "和的绝对值平均上比差的绝对值更大"
+    ],
+    "section_count": 4,
+    "heading_count": 4,
+    "char_count": 3401,
+    "in_degree": 2,
+    "out_degree": 3,
+    "tier": "leaf"
+  },
+  {
+    "title": "通过阶来排除不可能的多项式",
+    "filename": "通过阶来排除不可能的多项式.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 918,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "逼近单位元在局部上的收敛性的一个典型例子",
+    "filename": "逼近单位元在局部上的收敛性的一个典型例子.md",
+    "tags": [
+      "math",
+      "大学数学竞赛",
+      "考研",
+      "微积分",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "分段估计",
+      "approximation to the identity",
+      "approximation to the identity",
+      "approximation to the identity"
+    ],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 3524,
+    "in_degree": 4,
+    "out_degree": 5,
+    "tier": "medium"
+  },
+  {
+    "title": "部分积的上界估计与Gautschi不等式",
+    "filename": "部分积的上界估计与Gautschi不等式.md",
+    "tags": [
+      "math",
+      "微积分",
+      "大学数学竞赛",
+      "中学数学竞赛",
+      "考研"
+    ],
+    "outgoing_links": [
+      "和的积分估计",
+      "逐项估计",
+      "和的积分估计",
+      "对部分和渐近展开的常数项做估计",
+      "逐项估计",
+      "逐项估计",
+      "Wallis公式,正弦函数Hadamard分解互相之间的关系"
+    ],
+    "section_count": 2,
+    "heading_count": 7,
+    "char_count": 4271,
+    "in_degree": 5,
+    "out_degree": 7,
+    "tier": "medium"
+  },
+  {
+    "title": "除了一个根以外其余全部根都在单位圆盘内部的多项式",
+    "filename": "除了一个根以外其余全部根都在单位圆盘内部的多项式.md",
+    "tags": [
+      "math",
+      "代数基础"
+    ],
+    "outgoing_links": [
+      "多项式可约性的Eisenstein判别法",
+      "多项式不可约的Perron判别法"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2629,
+    "in_degree": 3,
+    "out_degree": 2,
+    "tier": "medium"
+  },
+  {
+    "title": "随机变量期望收敛导出几乎处处收敛的一个条件",
+    "filename": "随机变量期望收敛导出几乎处处收敛的一个条件.md",
+    "tags": [
+      "math",
+      "概率论",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "加强收敛性质的条件与手段",
+      "Borel-Cantelli lemma及其应用",
+      "逐项估计",
+      "Borel-Cantelli lemma及其应用"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 2604,
+    "in_degree": 5,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "隐函数定理",
+    "filename": "隐函数定理.md",
+    "tags": [
+      "math",
+      "微积分",
+      "微分几何"
+    ],
+    "outgoing_links": [],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 6639,
+    "in_degree": 2,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "非欧氏空间当中有界闭未必紧",
+    "filename": "非欧氏空间当中有界闭未必紧.md",
+    "tags": [
+      "math",
+      "拓扑"
+    ],
+    "outgoing_links": [
+      "参见的四种与连续有关的概念的区别"
+    ],
+    "section_count": 1,
+    "heading_count": 1,
+    "char_count": 2100,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "非负函数广义黎曼积分收敛意味着什么",
+    "filename": "非负函数广义黎曼积分收敛意味着什么.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "级数收敛与求和对象的收敛速度",
+      "通过添加参数让目标更光滑化",
+      "级数收敛与求和对象的收敛速度",
+      "柯西凝聚判别法",
+      "Erdos关于pi函数的估计",
+      "级数收敛与求和对象的收敛速度",
+      "柯西凝聚判别法"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 6891,
+    "in_degree": 0,
+    "out_degree": 7,
+    "tier": "isolated"
+  },
+  {
+    "title": "非负序列差分的约束条件导致序列收敛",
+    "filename": "非负序列差分的约束条件导致序列收敛.md",
+    "tags": [
+      "math",
+      "实分析",
+      "考研"
+    ],
+    "outgoing_links": [
+      "序列差分的估计蕴含着序列本身的估计"
+    ],
+    "section_count": 0,
+    "heading_count": 0,
+    "char_count": 833,
+    "in_degree": 1,
+    "out_degree": 1,
+    "tier": "leaf"
+  },
+  {
+    "title": "高德纳箭头的增长速度问题",
+    "filename": "高德纳箭头的增长速度问题.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "序列差分的估计蕴含着序列本身的估计"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 5780,
+    "in_degree": 0,
+    "out_degree": 1,
+    "tier": "isolated"
+  },
+  {
+    "title": "高斯整数的性质",
+    "filename": "高斯整数的性质.md",
+    "tags": [
+      "math",
+      "代数基础",
+      "数论"
+    ],
+    "outgoing_links": [
+      "整系数多项式环并非PID",
+      "无穷递降法",
+      "无穷递降法",
+      "Bezout恒等式"
+    ],
+    "section_count": 3,
+    "heading_count": 6,
+    "char_count": 12580,
+    "in_degree": 5,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "高考中的极值点偏移类问题",
+    "filename": "高考中的极值点偏移类问题.md",
+    "tags": [
+      "math",
+      "高考"
+    ],
+    "outgoing_links": [],
+    "section_count": 3,
+    "heading_count": 3,
+    "char_count": 5679,
+    "in_degree": 0,
+    "out_degree": 0,
+    "tier": "isolated"
+  },
+  {
+    "title": "鸽笼原理",
+    "filename": "鸽笼原理.md",
+    "tags": [
+      "math",
+      "tool_idea"
+    ],
+    "outgoing_links": [
+      "通过求期望证明具有某种性质的结构的存在性",
+      "通过求期望证明具有某种性质的结构的存在性",
+      "Kronecker定理，Dirichlet定理及其应用",
+      "日本数学竞赛当中覆盖圆盘的问题",
+      "前2n个正整数当中选n+1个必有两个数互素",
+      "在一个有界的范围内，任选一定数目的非负整数其中四个两两相加相等",
+      "有限集合当中的序列必然存在一个常数子列",
+      "为什么不会有单变量整系数多项式其值皆为素数",
+      "natural density不存在的例子",
+      "矩阵幂的秩会下降到一个固定的非负整数",
+      "满足特定条件的整系数多项式有整数解问题"
+    ],
+    "section_count": 4,
+    "heading_count": 6,
+    "char_count": 5733,
+    "in_degree": 11,
+    "out_degree": 11,
+    "tier": "hub"
+  },
+  {
+    "title": "黎曼zeta函数的零点分布",
+    "filename": "黎曼zeta函数的零点分布.md",
+    "tags": [
+      "math",
+      "复分析",
+      "数论"
+    ],
+    "outgoing_links": [],
+    "section_count": 1,
+    "heading_count": 4,
+    "char_count": 1745,
+    "in_degree": 1,
+    "out_degree": 0,
+    "tier": "leaf"
+  },
+  {
+    "title": "黎曼可积的Lebesgue判别",
+    "filename": "黎曼可积的Lebesgue判别.md",
+    "tags": [
+      "math",
+      "实分析"
+    ],
+    "outgoing_links": [
+      "黎曼积分的定义以及黎曼可积的判别",
+      "an epsilon of room证明集合为0测度的策略",
+      "无理测度的定义以及基本的命题",
+      "分段估计"
+    ],
+    "section_count": 0,
+    "heading_count": 2,
+    "char_count": 2882,
+    "in_degree": 5,
+    "out_degree": 4,
+    "tier": "medium"
+  },
+  {
+    "title": "黎曼积分与黎曼和的误差",
+    "filename": "黎曼积分与黎曼和的误差.md",
+    "tags": [
+      "math",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "逐项估计",
+      "逐项估计",
+      "和的积分估计",
+      "广义的Riemann - Lebesgue lemma"
+    ],
+    "section_count": 2,
+    "heading_count": 2,
+    "char_count": 3209,
+    "in_degree": 12,
+    "out_degree": 4,
+    "tier": "hub"
+  },
+  {
+    "title": "黎曼积分的定义以及黎曼可积的判别",
+    "filename": "黎曼积分的定义以及黎曼可积的判别.md",
+    "tags": [
+      "math",
+      "实分析",
+      "微积分"
+    ],
+    "outgoing_links": [
+      "证明黎曼可积的黎曼判别",
+      "黎曼可积的Lebesgue判别"
+    ],
+    "section_count": 2,
+    "heading_count": 6,
+    "char_count": 4882,
+    "in_degree": 7,
+    "out_degree": 2,
+    "tier": "medium"
+  }
+]

@@ -1,0 +1,83 @@
+Our preliminary results are from a single case study---the complex subset sum problem: given $n$ complex numbers with $\sum\|z_k\| = 1$, prove there exists a subset $S$ with $\|\sum_{k\in S} z_k\| \geq c$. We formalized two proofs in Lean~4: the quadrant method ($c = 1/4$, fully verified) and the averaging method ($c = 1/\pi$, optimal bound, algebraic structure verified with 3 sorry's in the analytic core).
+
+Figure~\ref{fig:skeleton} shows the proof skeleton for the averaging method. Phase~1 produces three sorry'd subgoals---a pure computation, a standard analysis result, and integration plumbing---while the main theorem is fully proved from them. The sorry's mark exactly where the math ends and the mechanization begins. The skeleton is also far more readable than the full $\sim$300-line proof.
+
+\begin{figure}[h]
+\begin{lstlisting}
+-- Phase 1: Skeleton (sorry'd subgoals, compiles)
+
+lemma integral_max_cos :          -- sorry: computation
+  integral (0)..(2*pi),
+    max (cos u) 0 = 2 := by sorry
+
+lemma exists_ge_avg              -- sorry: library gap
+  (h : integral f = C) :
+  exists x, f x >= C/(b-a) := by sorry
+
+lemma averaging_argument         -- sorry: plumbing
+  (h : sum ||z_k|| = 1) :
+  exists alpha, sum_{S_alpha}
+    Re(z_k * exp(-i*alpha)) >= 1/pi
+  := by sorry
+
+-- Phase 2: Main theorem (no sorry)
+
+theorem complex_subset_sum_pi
+  (h : sum ||z_k|| = 1) :
+  exists S, ||sum_{S} z_k|| >= 1/pi := by
+  obtain <alpha_0, h_alpha> :=
+    averaging_argument h
+  exact <S_{alpha_0},
+    le_trans h_alpha (norm_ge_proj ...)>
+\end{lstlisting}
+\caption{Proof skeleton for the $1/\pi$ bound. Sorry'd subgoals (Phase~1) validate the decomposition; the main theorem (Phase~2) is fully proved from them.}
+\label{fig:skeleton}
+\end{figure}
+
+\subsection{Prover Results}
+
+Table~\ref{tab:prover} summarizes the structured agent's performance. Across both proofs, the mathematical strategy was correct from the first attempt and never revised. All 36 checker calls were mechanization work.
+
+\begin{table}[h]
+  \caption{Prover results on complex subset sum (structured Opus 4.6).}
+  \label{tab:prover}
+  \small
+  \begin{tabular}{lcccc}
+    \toprule
+    Proof & Calls & Math err. & Mech. err. & Revisions \\
+    \midrule
+    Quadrant ($1/4$) & 9 & 0 & 9 & 0 \\
+    API search & 11 & --- & --- & --- \\
+    Averaging ($1/\pi$) & 16 & 0 & 16 & 0 \\
+    \midrule
+    \textbf{Total} & \textbf{36} & \textbf{0} & \textbf{36} & \textbf{0} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The error breakdown: $\sim$11 wrong Mathlib API names, $\sim$4 predicate form mismatches ($\geq 0$ vs.\ $0 \leq$), $\sim$8 tactic/expression rewrites, 11 API search calls (\texttt{exact?}, \texttt{\#check}), and 2 successful compilations. This validates the strategy/mechanization separation: a cheap model with Lean API knowledge could have handled all 34 non-final calls, reducing powerful-model usage by $\sim$95\%.
+
+For the free agent baseline (same Opus 4.6 model, no structured workflow), the attempt failed after 25 minutes consuming 1M context tokens without producing a verified proof, underscoring the value of the structured plan--implement--replan loop.
+
+\subsection{Knowledge Extraction Results}
+
+The complex subset sum problem has two ground-truth hub connections in our knowledge graph: the probabilistic method (averaging argument) and the pigeonhole principle (quadrant/sector argument). Table~\ref{tab:digest} shows preliminary hub-recovery recall.
+
+\begin{table}[h]
+  \caption{Hub-recovery recall on complex subset sum (2 ground-truth hubs).}
+  \label{tab:digest}
+  \begin{tabular}{lcc}
+    \toprule
+    Agent type & Hubs recovered & Recall \\
+    \midrule
+    Prompt-based summary & 1/2 & 50\% \\
+    Digest agent & 2/2 & 100\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The prompt-based baseline identified the pigeonhole connection but missed the probabilistic method. Our digest agent, through scope expansion (``can we beat $1/6$?'') and strategy templates, recovered both. This suggests the four core functions surface deeper structural connections that naive summarization misses.
+
+\subsection{Limitations}
+
+We identified a \textbf{data leakage concern}: Opus 4.6 recalled the optimal bound $1/\pi$ from training data rather than deriving it. The correct proof skeleton may reflect memorization, not reasoning. Even in this best case---memorized strategy---the agent still required 36 calls of mechanization overhead. With a smaller model or a novel problem, strategy errors would compound on top. Full-scale evaluation with diverse problems and models is needed to disentangle recall from reasoning.

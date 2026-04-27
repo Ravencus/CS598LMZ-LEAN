@@ -1,0 +1,75 @@
+{
+  "note_title": "分析学核心思想",
+  "classification": "theory",
+  "summary_en": "This note introduces a core guiding idea in analysis: understanding difficult objects through approximation, framed as \"give yourself an epsilon of room.\" It explains how epsilon-based reasoning underlies basic facts about real numbers and motivates the definition and use of limits, especially for sequences.",
+  "problems": [
+    {
+      "id": "analysis-core-1",
+      "statement_en": "Example 0.1: Prove that\n$$x=0 \\iff |x|<\\varepsilon,\\ \\forall \\varepsilon>0.$$ In particular, explain why $$\\forall \\varepsilon>0,\\ |x|<\\varepsilon \\implies x=0.$$",
+      "statement_zh": "例子0.1：$$x=0\\iff |x|<\\varepsilon,\\forall \\varepsilon>0$$我们主要看右边的部分，为何$|x|<\\varepsilon,\\forall \\varepsilon\\implies x=0$。",
+      "type": "example",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "epsilon argument",
+        "intersection of shrinking intervals"
+      ],
+      "prerequisites": [
+        "absolute value",
+        "real line intervals",
+        "quantifiers over all epsilon"
+      ]
+    },
+    {
+      "id": "analysis-core-2",
+      "statement_en": "Proposition 0.2: Establish the following epsilon characterizations:\n1. $$\\forall \\varepsilon>0,\\ x<a+\\varepsilon \\implies x\\le a.$$\n2. $$b>0\\ \\text{and}\\ (\\forall \\varepsilon>0,\\ x<a+b\\varepsilon) \\implies x\\le a.$$\n3. $$\\forall \\varepsilon>0,\\ x>a-\\varepsilon \\implies x\\ge a.$$\n4. $$b>0\\ \\text{and}\\ (\\forall \\varepsilon>0,\\ x>a-b\\varepsilon) \\implies x\\ge a.$$\n5. $$\\forall \\varepsilon>0,\\ |x-a|<\\varepsilon \\implies x=a.$$\n6. $$b>0\\ \\text{and}\\ (\\forall \\varepsilon>0,\\ |x-a|<b\\varepsilon) \\implies x=a.$$",
+      "statement_zh": "命题0.2：1. $$\\forall \\varepsilon>0,x<a+\\varepsilon\\implies x\\leq a$$ 2. $$b>0\\text{ and }(\\forall \\varepsilon>0,x<a+b\\varepsilon)\\implies x\\leq a$$ 3. $$\\forall \\varepsilon>0,x>a-\\varepsilon\\implies x\\geq a$$ 4. $$b>0\\text{ and }(\\forall \\varepsilon>0,x>a-b\\varepsilon)\\implies x\\geq a$$ 5. $$\\forall \\varepsilon>0,|x-a|<\\varepsilon\\implies x= a$$ 6. $$b>0\\text{ and }(\\forall \\varepsilon>0,|x-a|<b\\varepsilon)\\implies x= a$$",
+      "type": "lemma",
+      "difficulty": "easy",
+      "domain": "real analysis",
+      "key_techniques": [
+        "proof by contradiction",
+        "epsilon characterization of order and equality"
+      ],
+      "prerequisites": [
+        "order properties of real numbers",
+        "absolute value",
+        "quantifiers"
+      ]
+    },
+    {
+      "id": "analysis-core-3",
+      "statement_en": "Example 1.1.1: Define\n$$a_n:=\\sum_{k=0}^{n}\\frac{1}{k!}.$$Study whether this sequence grows beyond every positive real number or instead stays below and converges to a positive real number; assuming the limit is $e$, explain how the limit definition allows one to approximate $e$ within any prescribed absolute error $\\varepsilon$ by choosing a suitable partial sum $a_n$.",
+      "statement_zh": "例子1.1.1：定义序列$$a_n:=\\sum_{k=0}^{n}\\frac{1}{k!}$$讨论这个序列是会永无止境地增长到比任何一个具体的正实数更大，还是说会永远小于但无限接近于某个正实数；假设这个正实数为$e$，说明如何利用极限定义通过合适的$a_n$对$e$作绝对误差小于给定$\\varepsilon$的估计。",
+      "type": "example",
+      "difficulty": "medium",
+      "domain": "real analysis",
+      "key_techniques": [
+        "sequence limits",
+        "approximating an infinite object by finite partial sums",
+        "epsilon-N argument"
+      ],
+      "prerequisites": [
+        "sequences and series",
+        "factorials",
+        "definition of limit"
+      ]
+    }
+  ],
+  "key_techniques_discussed": [
+    "give yourself an epsilon of room",
+    "approximation by simpler or finite objects",
+    "epsilon-based characterization of equality and inequalities",
+    "using sequence limits to estimate constants",
+    "transferring statements from approximants to the target object"
+  ],
+  "connections_mentioned": [
+    "calculus",
+    "construction of the real numbers",
+    "limits of sequences and functions",
+    "curve length via polygonal approximation",
+    "rational approximation of irrational numbers",
+    "the constant e",
+    "Euler's formula"
+  ]
+}
