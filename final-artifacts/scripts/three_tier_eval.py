@@ -50,6 +50,31 @@ PROBLEMS = [
         "answer": "ln(2)",
         "verification": {"claim_type": "series", "expr_str": "(-1)**(n+1)/n", "var_str": "n", "lower_str": "1", "upper_str": "oo", "expected_str": "log(2)"},
     },
+    # --- Harder problems (added to expose computational errors) ---
+    {
+        "id": "integral_sinc_squared",
+        "statement": "Evaluate: ∫₀^∞ (sin(x)/x)² dx. Give the exact closed-form value. Show every step of your derivation.",
+        "answer": "π/2",
+        "verification": {"claim_type": "integral", "integrand_str": "(sin(x)/x)**2", "var_str": "x", "lower_str": "0", "upper_str": "oo", "expected_str": "pi/2"},
+    },
+    {
+        "id": "series_cubic_reciprocal",
+        "statement": "Evaluate: ∑(n=1 to ∞) 1/(n(n+1)(n+2)). Use partial fraction decomposition. Show all intermediate steps and verify your partial fraction coefficients.",
+        "answer": "1/4",
+        "verification": {"claim_type": "series", "expr_str": "1/(n*(n+1)*(n+2))", "var_str": "n", "lower_str": "1", "upper_str": "oo", "expected_str": "1/4"},
+    },
+    {
+        "id": "integral_quartic_reciprocal",
+        "statement": "Evaluate: ∫₀^∞ 1/(1+x⁴) dx. Express as a closed form involving π and radicals. Show every integration step.",
+        "answer": "π√2/4",
+        "verification": {"claim_type": "integral", "integrand_str": "1/(1+x**4)", "var_str": "x", "lower_str": "0", "upper_str": "oo", "expected_str": "sqrt(2)*pi/4"},
+    },
+    {
+        "id": "sum_partial_fractions",
+        "statement": "Compute the exact value: ∑(k=1 to 100) 1/((k+1)(k+2)). Use partial fractions, compute the telescoping sum, and simplify to a single fraction. Show every cancellation.",
+        "answer": "25/51",
+        "verification": {"claim_type": "series", "expr_str": "1/((n+1)*(n+2))", "var_str": "n", "lower_str": "1", "upper_str": "100", "expected_str": "Rational(25,51)"},
+    },
 ]
 
 
@@ -63,9 +88,10 @@ class TierResult:
     final_answer_correct: bool = False
     computational_claims_total: int = 0
     computational_errors: int = 0
-    errors_caught: int = 0        # Tier 3 only
-    errors_corrected: int = 0     # Tier 3 only
-    corrected_output: str = ""    # Tier 3 only
+    errors_caught: int = 0        # Tier 3/4
+    errors_corrected: int = 0     # Tier 3/4
+    corrected_output: str = ""    # Tier 3/4
+    objectives_detected: int = 0  # Tier 4 only
     token_count: int = 0
     latency_seconds: float = 0.0
 
@@ -215,7 +241,7 @@ def run_tier(tier: int, problem: dict, model: str) -> TierResult:
         # Extract declared objectives and verify proactively
         from reasoning_arbitrator import extract_objectives
         objectives = extract_objectives(output)
-        result.errors_caught = len(objectives)  # repurpose: count of objectives detected
+        result.objectives_detected = len(objectives)
 
         # Also run full arbitration on the output
         report = arbitrate(output)

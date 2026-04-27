@@ -1,0 +1,200 @@
+[
+  {
+    "problem": "inequality_pi",
+    "tier": 1,
+    "tier_name": "T1-CoT",
+    "correct": true,
+    "claims": 4,
+    "errors": 0,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "inequality_pi",
+    "tier": 3,
+    "tier_name": "T3-Arbitrate",
+    "correct": true,
+    "claims": 4,
+    "errors": 0,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "inequality_pi",
+    "tier": 4,
+    "tier_name": "T3b-Objective",
+    "correct": true,
+    "claims": 4,
+    "errors": 2,
+    "caught": 0,
+    "corrected": 2,
+    "objectives": 1
+  },
+  {
+    "problem": "series_alternating",
+    "tier": 1,
+    "tier_name": "T1-CoT",
+    "correct": true,
+    "claims": 6,
+    "errors": 1,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "series_alternating",
+    "tier": 3,
+    "tier_name": "T3-Arbitrate",
+    "correct": true,
+    "claims": 7,
+    "errors": 2,
+    "caught": 2,
+    "corrected": 2,
+    "objectives": 0
+  },
+  {
+    "problem": "series_alternating",
+    "tier": 4,
+    "tier_name": "T3b-Objective",
+    "correct": true,
+    "claims": 3,
+    "errors": 1,
+    "caught": 0,
+    "corrected": 1,
+    "objectives": 2
+  },
+  {
+    "problem": "integral_sinc_squared",
+    "tier": 1,
+    "tier_name": "T1-CoT",
+    "correct": true,
+    "claims": 11,
+    "errors": 1,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "integral_sinc_squared",
+    "tier": 3,
+    "tier_name": "T3-Arbitrate",
+    "correct": true,
+    "claims": 7,
+    "errors": 0,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "integral_sinc_squared",
+    "tier": 4,
+    "tier_name": "T3b-Objective",
+    "correct": true,
+    "claims": 21,
+    "errors": 10,
+    "caught": 0,
+    "corrected": 10,
+    "objectives": 5
+  },
+  {
+    "problem": "series_cubic_reciprocal",
+    "tier": 1,
+    "tier_name": "T1-CoT",
+    "correct": true,
+    "claims": 19,
+    "errors": 0,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "series_cubic_reciprocal",
+    "tier": 3,
+    "tier_name": "T3-Arbitrate",
+    "correct": true,
+    "claims": 30,
+    "errors": 1,
+    "caught": 1,
+    "corrected": 1,
+    "objectives": 0
+  },
+  {
+    "problem": "series_cubic_reciprocal",
+    "tier": 4,
+    "tier_name": "T3b-Objective",
+    "correct": true,
+    "claims": 29,
+    "errors": 17,
+    "caught": 0,
+    "corrected": 17,
+    "objectives": 2
+  },
+  {
+    "problem": "integral_quartic_reciprocal",
+    "tier": 1,
+    "tier_name": "T1-CoT",
+    "correct": true,
+    "claims": 38,
+    "errors": 11,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "integral_quartic_reciprocal",
+    "tier": 3,
+    "tier_name": "T3-Arbitrate",
+    "correct": true,
+    "claims": 22,
+    "errors": 0,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "integral_quartic_reciprocal",
+    "tier": 4,
+    "tier_name": "T3b-Objective",
+    "correct": true,
+    "claims": 37,
+    "errors": 19,
+    "caught": 0,
+    "corrected": 19,
+    "objectives": 1
+  },
+  {
+    "problem": "sum_partial_fractions",
+    "tier": 1,
+    "tier_name": "T1-CoT",
+    "correct": true,
+    "claims": 8,
+    "errors": 0,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 0
+  },
+  {
+    "problem": "sum_partial_fractions",
+    "tier": 3,
+    "tier_name": "T3-Arbitrate",
+    "correct": true,
+    "claims": 17,
+    "errors": 9,
+    "caught": 9,
+    "corrected": 9,
+    "objectives": 0
+  },
+  {
+    "problem": "sum_partial_fractions",
+    "tier": 4,
+    "tier_name": "T3b-Objective",
+    "correct": true,
+    "claims": 10,
+    "errors": 0,
+    "caught": 0,
+    "corrected": 0,
+    "objectives": 3
+  }
+]
