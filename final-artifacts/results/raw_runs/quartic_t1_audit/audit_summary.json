@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "elapsed_s": 112.4,
+  "input_chars": 5263,
+  "llm_response_chars": 11112,
+  "total_claims_parsed": 46,
+  "total_verified_correct": 27,
+  "total_verified_incorrect": 19,
+  "total_unverifiable": 0,
+  "total_schema_errors": 0
+}

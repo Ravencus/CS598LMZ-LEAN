@@ -1,0 +1,381 @@
+[
+  {
+    "raw_text": "x^4+1=(x^2+\\sqrt2\\,x+1)(x^2-\\sqrt2\\,x+1).",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "x**4 + 1",
+      "rhs_str": "(x**2 + sqrt(2)*x + 1)*(x**2 - sqrt(2)*x + 1)"
+    }
+  },
+  {
+    "raw_text": "\\frac1{x^4+1}\n=\\frac1{(x^2+\\sqrt2 x+1)(x^2-\\sqrt2 x+1)}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1/(x**4 + 1)",
+      "rhs_str": "1/((x**2 + sqrt(2)*x + 1)*(x**2 - sqrt(2)*x + 1))"
+    }
+  },
+  {
+    "raw_text": "\\frac1{x^4+1}\n=\\frac{Ax+B}{x^2+\\sqrt2 x+1}+\\frac{Cx+D}{x^2-\\sqrt2 x+1}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1/(x**4 + 1)",
+      "rhs_str": "(A*x + B)/(x**2 + sqrt(2)*x + 1) + (C*x + D)/(x**2 - sqrt(2)*x + 1)"
+    }
+  },
+  {
+    "raw_text": "1=(Ax+B)(x^2-\\sqrt2 x+1)+(Cx+D)(x^2+\\sqrt2 x+1).",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1",
+      "rhs_str": "(A*x + B)*(x**2 - sqrt(2)*x + 1) + (C*x + D)*(x**2 + sqrt(2)*x + 1)"
+    }
+  },
+  {
+    "raw_text": "(Ax+B)(x^2-\\sqrt2 x+1)\n=Ax^3-A\\sqrt2\\,x^2+Ax+Bx^2-B\\sqrt2\\,x+B,",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "(A*x + B)*(x**2 - sqrt(2)*x + 1)",
+      "rhs_str": "A*x**3 - A*sqrt(2)*x**2 + A*x + B*x**2 - B*sqrt(2)*x + B"
+    }
+  },
+  {
+    "raw_text": "(Cx+D)(x^2+\\sqrt2 x+1)\n=Cx^3+C\\sqrt2\\,x^2+Cx+Dx^2+D\\sqrt2\\,x+D.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "(C*x + D)*(x**2 + sqrt(2)*x + 1)",
+      "rhs_str": "C*x**3 + C*sqrt(2)*x**2 + C*x + D*x**2 + D*sqrt(2)*x + D"
+    }
+  },
+  {
+    "raw_text": "1=(A+C)x^3+(-A\\sqrt2+B+C\\sqrt2+D)x^2+(A-B\\sqrt2+C+D\\sqrt2)x+(B+D).",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1",
+      "rhs_str": "(A + C)*x**3 + (-A*sqrt(2) + B + C*sqrt(2) + D)*x**2 + (A - B*sqrt(2) + C + D*sqrt(2))*x + (B + D)"
+    }
+  },
+  {
+    "raw_text": "1=0x^3+0x^2+0x+1.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1",
+      "rhs_str": "0*x**3 + 0*x**2 + 0*x + 1"
+    }
+  },
+  {
+    "raw_text": "A+C=0,",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "A + C",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "-A\\sqrt2+B+C\\sqrt2+D=0,",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "-A*sqrt(2) + B + C*sqrt(2) + D",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "A-B\\sqrt2+C+D\\sqrt2=0,",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "A - B*sqrt(2) + C + D*sqrt(2)",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "B+D=1.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "B + D",
+      "rhs_str": "1"
+    }
+  },
+  {
+    "raw_text": "C=-A.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "C",
+      "rhs_str": "-A"
+    }
+  },
+  {
+    "raw_text": "D=1-B.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "D",
+      "rhs_str": "1 - B"
+    }
+  },
+  {
+    "raw_text": "-A\\sqrt2+B-A\\sqrt2+D=0",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "-A*sqrt(2) + B - A*sqrt(2) + D",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "B+D-2A\\sqrt2=0.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "B + D - 2*A*sqrt(2)",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "1-2A\\sqrt2=0",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1 - 2*A*sqrt(2)",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "A=\\frac{1}{2\\sqrt2}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "A",
+      "rhs_str": "1/(2*sqrt(2))"
+    }
+  },
+  {
+    "raw_text": "C=-\\frac{1}{2\\sqrt2}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "C",
+      "rhs_str": "-1/(2*sqrt(2))"
+    }
+  },
+  {
+    "raw_text": "-B\\sqrt2+D\\sqrt2=0",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "-B*sqrt(2) + D*sqrt(2)",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "D=B.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "D",
+      "rhs_str": "B"
+    }
+  },
+  {
+    "raw_text": "2B=1,\\qquad B=\\frac12,\\qquad D=\\frac12.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "2*B",
+      "rhs_str": "1"
+    }
+  },
+  {
+    "raw_text": "2B=1,\\qquad B=\\frac12,\\qquad D=\\frac12.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "B",
+      "rhs_str": "1/2"
+    }
+  },
+  {
+    "raw_text": "2B=1,\\qquad B=\\frac12,\\qquad D=\\frac12.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "D",
+      "rhs_str": "1/2"
+    }
+  },
+  {
+    "raw_text": "\\frac1{x^4+1}\n=\\frac{\\frac{x}{2\\sqrt2}+\\frac12}{x^2+\\sqrt2 x+1}\n+\\frac{-\\frac{x}{2\\sqrt2}+\\frac12}{x^2-\\sqrt2 x+1}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1/(x**4 + 1)",
+      "rhs_str": "(x/(2*sqrt(2)) + 1/2)/(x**2 + sqrt(2)*x + 1) + (-x/(2*sqrt(2)) + 1/2)/(x**2 - sqrt(2)*x + 1)"
+    }
+  },
+  {
+    "raw_text": "\\frac1{x^4+1}\n=\\frac{1}{2}\\cdot\\frac{\\frac{x}{\\sqrt2}+1}{x^2+\\sqrt2 x+1}\n+\\frac{1}{2}\\cdot\\frac{-\\frac{x}{\\sqrt2}+1}{x^2-\\sqrt2 x+1}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1/(x**4 + 1)",
+      "rhs_str": "Rational(1,2)*((x/sqrt(2)) + 1)/(x**2 + sqrt(2)*x + 1) + Rational(1,2)*((-x/sqrt(2)) + 1)/(x**2 - sqrt(2)*x + 1)"
+    }
+  },
+  {
+    "raw_text": "\\frac{d}{dx}(x^2+\\sqrt2 x+1)=2x+\\sqrt2,",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "diff(x**2 + sqrt(2)*x + 1, x)",
+      "rhs_str": "2*x + sqrt(2)"
+    }
+  },
+  {
+    "raw_text": "\\frac{d}{dx}(x^2-\\sqrt2 x+1)=2x-\\sqrt2.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "diff(x**2 - sqrt(2)*x + 1, x)",
+      "rhs_str": "2*x - sqrt(2)"
+    }
+  },
+  {
+    "raw_text": "\\frac{\\frac{x}{2\\sqrt2}+\\frac12}{x^2+\\sqrt2 x+1}\n=\n\\frac{1}{4\\sqrt2}\\frac{2x+\\sqrt2}{x^2+\\sqrt2 x+1}\n+\\frac14\\frac{1}{x^2+\\sqrt2 x+1}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "(x/(2*sqrt(2)) + 1/2)/(x**2 + sqrt(2)*x + 1)",
+      "rhs_str": "(1/(4*sqrt(2)))*(2*x + sqrt(2))/(x**2 + sqrt(2)*x + 1) + Rational(1,4)/(x**2 + sqrt(2)*x + 1)"
+    }
+  },
+  {
+    "raw_text": "\\frac{1}{4\\sqrt2}(2x+\\sqrt2)+\\frac14\n=\\frac{x}{2\\sqrt2}+\\frac14+\\frac14\n=\\frac{x}{2\\sqrt2}+\\frac12.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "(1/(4*sqrt(2)))*(2*x + sqrt(2)) + 1/4",
+      "rhs_str": "x/(2*sqrt(2)) + 1/2"
+    }
+  },
+  {
+    "raw_text": "\\frac{-\\frac{x}{2\\sqrt2}+\\frac12}{x^2-\\sqrt2 x+1}\n=\n-\\frac{1}{4\\sqrt2}\\frac{2x-\\sqrt2}{x^2-\\sqrt2 x+1}\n+\\frac14\\frac{1}{x^2-\\sqrt2 x+1}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "(-x/(2*sqrt(2)) + 1/2)/(x**2 - sqrt(2)*x + 1)",
+      "rhs_str": "-(1/(4*sqrt(2)))*(2*x - sqrt(2))/(x**2 - sqrt(2)*x + 1) + Rational(1,4)/(x**2 - sqrt(2)*x + 1)"
+    }
+  },
+  {
+    "raw_text": "-\\frac{1}{4\\sqrt2}(2x-\\sqrt2)+\\frac14\n=-\\frac{x}{2\\sqrt2}+\\frac14+\\frac14\n=-\\frac{x}{2\\sqrt2}+\\frac12.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "-(1/(4*sqrt(2)))*(2*x - sqrt(2)) + 1/4",
+      "rhs_str": "-x/(2*sqrt(2)) + 1/2"
+    }
+  },
+  {
+    "raw_text": "\\frac1{x^4+1}\n=\n\\frac{1}{4\\sqrt2}\\frac{2x+\\sqrt2}{x^2+\\sqrt2 x+1}\n-\\frac{1}{4\\sqrt2}\\frac{2x-\\sqrt2}{x^2-\\sqrt2 x+1}\n+\\frac14\\frac1{x^2+\\sqrt2 x+1}\n+\\frac14\\frac1{x^2-\\sqrt2 x+1}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "1/(x**4 + 1)",
+      "rhs_str": "(1/(4*sqrt(2)))*(2*x + sqrt(2))/(x**2 + sqrt(2)*x + 1) - (1/(4*sqrt(2)))*(2*x - sqrt(2))/(x**2 - sqrt(2)*x + 1) + Rational(1,4)/(x**2 + sqrt(2)*x + 1) + Rational(1,4)/(x**2 - sqrt(2)*x + 1)"
+    }
+  },
+  {
+    "raw_text": "x^2+\\sqrt2 x+1=\\left(x+\\frac{\\sqrt2}{2}\\right)^2+\\frac12,",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "x**2 + sqrt(2)*x + 1",
+      "rhs_str": "(x + sqrt(2)/2)**2 + 1/2"
+    }
+  },
+  {
+    "raw_text": "x^2-\\sqrt2 x+1=\\left(x-\\frac{\\sqrt2}{2}\\right)^2+\\frac12.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "x**2 - sqrt(2)*x + 1",
+      "rhs_str": "(x - sqrt(2)/2)**2 + 1/2"
+    }
+  },
+  {
+    "raw_text": "\\frac{x^2+\\sqrt2 x+1}{x^2-\\sqrt2 x+1}\\to 1,",
+    "claim_type": "limit",
+    "sympy_kwargs": {
+      "expr_str": "(x**2 + sqrt(2)*x + 1)/(x**2 - sqrt(2)*x + 1)",
+      "var_str": "x",
+      "point_str": "oo",
+      "expected_str": "1"
+    }
+  },
+  {
+    "raw_text": "\\ln\\!\\left(\\frac{x^2+\\sqrt2 x+1}{x^2-\\sqrt2 x+1}\\right)\\to \\ln 1=0.",
+    "claim_type": "limit",
+    "sympy_kwargs": {
+      "expr_str": "log((x**2 + sqrt(2)*x + 1)/(x**2 - sqrt(2)*x + 1))",
+      "var_str": "x",
+      "point_str": "oo",
+      "expected_str": "0"
+    }
+  },
+  {
+    "raw_text": "\\arctan(\\sqrt2 x+1)\\to \\frac{\\pi}{2},\\qquad\n\\arctan(\\sqrt2 x-1)\\to \\frac{\\pi}{2}.",
+    "claim_type": "limit",
+    "sympy_kwargs": {
+      "expr_str": "atan(sqrt(2)*x + 1)",
+      "var_str": "x",
+      "point_str": "oo",
+      "expected_str": "pi/2"
+    }
+  },
+  {
+    "raw_text": "\\arctan(\\sqrt2 x+1)\\to \\frac{\\pi}{2},\\qquad\n\\arctan(\\sqrt2 x-1)\\to \\frac{\\pi}{2}.",
+    "claim_type": "limit",
+    "sympy_kwargs": {
+      "expr_str": "atan(sqrt(2)*x - 1)",
+      "var_str": "x",
+      "point_str": "oo",
+      "expected_str": "pi/2"
+    }
+  },
+  {
+    "raw_text": "\\lim_{x\\to\\infty}F(x)\n=\n0+\\frac{\\sqrt2}{4}\\left(\\frac{\\pi}{2}+\\frac{\\pi}{2}\\right)\n=\\frac{\\sqrt2}{4}\\pi.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "0 + (sqrt(2)/4)*(pi/2 + pi/2)",
+      "rhs_str": "(sqrt(2)/4)*pi"
+    }
+  },
+  {
+    "raw_text": "\\ln\\left(\\frac{0^2+\\sqrt2\\cdot0+1}{0^2-\\sqrt2\\cdot0+1}\\right)=\\ln(1)=0.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "log((0**2 + sqrt(2)*0 + 1)/(0**2 - sqrt(2)*0 + 1))",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "\\arctan(1)=\\frac{\\pi}{4},\\qquad \\arctan(-1)=-\\frac{\\pi}{4}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "atan(1)",
+      "rhs_str": "pi/4"
+    }
+  },
+  {
+    "raw_text": "\\arctan(1)=\\frac{\\pi}{4},\\qquad \\arctan(-1)=-\\frac{\\pi}{4}.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "atan(-1)",
+      "rhs_str": "-pi/4"
+    }
+  },
+  {
+    "raw_text": "F(0)=0+\\frac{\\sqrt2}{4}\\left(\\frac{\\pi}{4}-\\frac{\\pi}{4}\\right)=0.",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "0 + (sqrt(2)/4)*(pi/4 - pi/4)",
+      "rhs_str": "0"
+    }
+  },
+  {
+    "raw_text": "\\frac{\\pi\\sqrt2}{4}=\\frac{\\pi}{2\\sqrt2},",
+    "claim_type": "equality",
+    "sympy_kwargs": {
+      "lhs_str": "pi*sqrt(2)/4",
+      "rhs_str": "pi/(2*sqrt(2))"
+    }
+  },
+  {
+    "raw_text": "\\boxed{\\int_0^\\infty \\frac{1}{1+x^4}\\,dx=\\frac{\\pi}{2\\sqrt2}}.",
+    "claim_type": "integral",
+    "sympy_kwargs": {
+      "integrand_str": "1/(1 + x**4)",
+      "var_str": "x",
+      "lower_str": "0",
+      "upper_str": "oo",
+      "expected_str": "pi/(2*sqrt(2))"
+    }
+  }
+]

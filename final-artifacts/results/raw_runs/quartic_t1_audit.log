@@ -1,0 +1,142 @@
+Input: /tmp/t1_quartic_output.txt (5263 chars)
+Prompt: 6552 chars (truncated input to 6000)
+Calling LLM for claim extraction...
+LLM call returned in 112.4s
+Raw LLM response: 11112 chars
+Parsed 46 claims from LLM response
+
+Verifying each claim with sympy...
+
+=== AUDIT SUMMARY ===
+{
+  "status": "ok",
+  "elapsed_s": 112.4,
+  "input_chars": 5263,
+  "llm_response_chars": 11112,
+  "total_claims_parsed": 46,
+  "total_verified_correct": 27,
+  "total_verified_incorrect": 19,
+  "total_unverifiable": 0,
+  "total_schema_errors": 0
+}
+
+=== INCORRECT CLAIMS (real CoT errors) ===
+
+[3] \frac1{x^4+1}
+=\frac{Ax+B}{x^2+\sqrt2 x+1}+\frac{Cx+D}{x^2-\sqrt2 x+1}.
+    TYPE: equality
+    KWARGS: {'lhs_str': '1/(x**4 + 1)', 'rhs_str': '(A*x + B)/(x**2 + sqrt(2)*x + 1) + (C*x + D)/(x**2 - sqrt(2)*x + 1)'}
+    COMPUTED: 1/(x**4 + 1)
+    EXPECTED: (A*x + B)/(x**2 + sqrt(2)*x + 1) + (C*x + D)/(x**2 - sqrt(2)*x + 1)
+
+[4] 1=(Ax+B)(x^2-\sqrt2 x+1)+(Cx+D)(x^2+\sqrt2 x+1).
+    TYPE: equality
+    KWARGS: {'lhs_str': '1', 'rhs_str': '(A*x + B)*(x**2 - sqrt(2)*x + 1) + (C*x + D)*(x**2 + sqrt(2)*x + 1)'}
+    COMPUTED: 1
+    EXPECTED: (A*x + B)*(x**2 - sqrt(2)*x + 1) + (C*x + D)*(x**2 + sqrt(2)*x + 1)
+
+[7] 1=(A+C)x^3+(-A\sqrt2+B+C\sqrt2+D)x^2+(A-B\sqrt2+C+D\sqrt2)x+(B+D).
+    TYPE: equality
+    KWARGS: {'lhs_str': '1', 'rhs_str': '(A + C)*x**3 + (-A*sqrt(2) + B + C*sqrt(2) + D)*x**2 + (A - B*sqrt(2) + C + D*sqrt(2))*x + (B + D)'}
+    COMPUTED: 1
+    EXPECTED: B + D + x**3*(A + C) + x**2*(-sqrt(2)*A + B + sqrt(2)*C + D) + x*(A - sqrt(2)*B + C + sqrt(2)*D)
+
+[9] A+C=0,
+    TYPE: equality
+    KWARGS: {'lhs_str': 'A + C', 'rhs_str': '0'}
+    COMPUTED: A + C
+    EXPECTED: 0
+
+[10] -A\sqrt2+B+C\sqrt2+D=0,
+    TYPE: equality
+    KWARGS: {'lhs_str': '-A*sqrt(2) + B + C*sqrt(2) + D', 'rhs_str': '0'}
+    COMPUTED: -sqrt(2)*A + B + sqrt(2)*C + D
+    EXPECTED: 0
+
+[11] A-B\sqrt2+C+D\sqrt2=0,
+    TYPE: equality
+    KWARGS: {'lhs_str': 'A - B*sqrt(2) + C + D*sqrt(2)', 'rhs_str': '0'}
+    COMPUTED: A - sqrt(2)*B + C + sqrt(2)*D
+    EXPECTED: 0
+
+[12] B+D=1.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'B + D', 'rhs_str': '1'}
+    COMPUTED: B + D
+    EXPECTED: 1
+
+[13] C=-A.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'C', 'rhs_str': '-A'}
+    COMPUTED: C
+    EXPECTED: -A
+
+[14] D=1-B.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'D', 'rhs_str': '1 - B'}
+    COMPUTED: D
+    EXPECTED: 1 - B
+
+[15] -A\sqrt2+B-A\sqrt2+D=0
+    TYPE: equality
+    KWARGS: {'lhs_str': '-A*sqrt(2) + B - A*sqrt(2) + D', 'rhs_str': '0'}
+    COMPUTED: -2*sqrt(2)*A + B + D
+    EXPECTED: 0
+
+[16] B+D-2A\sqrt2=0.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'B + D - 2*A*sqrt(2)', 'rhs_str': '0'}
+    COMPUTED: -2*sqrt(2)*A + B + D
+    EXPECTED: 0
+
+[17] 1-2A\sqrt2=0
+    TYPE: equality
+    KWARGS: {'lhs_str': '1 - 2*A*sqrt(2)', 'rhs_str': '0'}
+    COMPUTED: -2*sqrt(2)*A + 1
+    EXPECTED: 0
+
+[18] A=\frac{1}{2\sqrt2}.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'A', 'rhs_str': '1/(2*sqrt(2))'}
+    COMPUTED: A
+    EXPECTED: sqrt(2)/4
+
+[19] C=-\frac{1}{2\sqrt2}.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'C', 'rhs_str': '-1/(2*sqrt(2))'}
+    COMPUTED: C
+    EXPECTED: -sqrt(2)/4
+
+[20] -B\sqrt2+D\sqrt2=0
+    TYPE: equality
+    KWARGS: {'lhs_str': '-B*sqrt(2) + D*sqrt(2)', 'rhs_str': '0'}
+    COMPUTED: sqrt(2)*(-B + D)
+    EXPECTED: 0
+
+[21] D=B.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'D', 'rhs_str': 'B'}
+    COMPUTED: D
+    EXPECTED: B
+
+[22] 2B=1,\qquad B=\frac12,\qquad D=\frac12.
+    TYPE: equality
+    KWARGS: {'lhs_str': '2*B', 'rhs_str': '1'}
+    COMPUTED: 2*B
+    EXPECTED: 1
+
+[23] 2B=1,\qquad B=\frac12,\qquad D=\frac12.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'B', 'rhs_str': '1/2'}
+    COMPUTED: B
+    EXPECTED: 1/2
+
+[24] 2B=1,\qquad B=\frac12,\qquad D=\frac12.
+    TYPE: equality
+    KWARGS: {'lhs_str': 'D', 'rhs_str': '1/2'}
+    COMPUTED: D
+    EXPECTED: 1/2
+
+=== UNVERIFIABLE CLAIMS (extraction or sympy issues) ===
+
+All output saved to: /workspace/final-artifacts/results/raw_runs/quartic_t1_audit
