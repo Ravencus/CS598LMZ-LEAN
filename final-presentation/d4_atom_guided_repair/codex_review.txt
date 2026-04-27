@@ -1,0 +1,64 @@
+**Experimental Design**
+
+- Screening on the same 8-10 problems you later evaluate creates selection bias. You are conditioning on “baseline fails” using the same model and then measuring improvement on that filtered set. Split this into `screen set` and `eval set`, or at minimum pre-register the candidate pool and report all screened outcomes.
+- `5-of-5 vs 1-of-5 is meaningful` is too strong. With `N=5`, one idiosyncratic problem can dominate the result. Frame this strictly as feasibility/pilot, not evidence for the transfer claim.
+- The current design confounds `graph structure` with `content similarity`. If 1-hop neighbors are just more topically similar than random nodes, improvement does not support “graph retrieval” specifically. Add a stronger control: same-topic / same-degree / same-length non-neighbors.
+- `Hub` is not a clean ablation if hubs are globally more generic, better written, or denser in useful cues. It tests “strong hints help,” not the proposed mechanism.
+
+**Leakage / N-hop**
+
+- Distance-based leakage is not enough. A 1-hop neighbor can contain near-solution paraphrases, shared constants, or an isomorphic proof pattern. “Not the same node” does not mean “no answer leakage.”
+- Answer scrubbing via regex is weak. It only catches exact constants/strings, not paraphrases, transformed expressions, or intermediate values that uniquely identify the solution.
+- N-hop is the wrong primary framing if the real causal variable is semantic overlap of atoms with the target technique. Measure overlap directly. Use hop as a retrieval heuristic, not as the leakage argument.
+- Add a manual leakage audit on the final 5 problems: inspect retrieved atoms and label `safe / suspicious / leaking`. Without this, positive results are easy to over-interpret.
+
+**Scale / Interpretability**
+
+- One run per condition is too noisy. If you only have 20 runs total, any conclusion will be unstable to decoding randomness and judge noise. Reduce conditions or problems and buy replication.
+- Better pilot: `3 problems x 3 conditions x 3 seeds = 27 runs`. Drop either `Hub` or `Random`, depending on the claim you want to test.
+- If you keep `N=5`, report per-problem trajectories, not just aggregate counts. Otherwise one easy retrieval win can masquerade as a general effect.
+
+**Time Estimates**
+
+- Phase 1 is optimistic. Installing `vLLM`, matching CUDA, downloading weights, and getting stable serving can easily consume the full session.
+- Phase 2 is also optimistic unless atom extraction is already robust. Batch extraction plus validation for 40 notes is not a 45-minute task if prompts need tuning.
+- Phase 6 scoring is underestimated if Codex judging needs prompt iteration or disagreement handling.
+- The only realistic 6-hour plan is to reuse as much existing infrastructure as possible and cut optional engineering entirely.
+
+**Model Choice**
+
+- `Qwen2.5-Math-7B` is a questionable fit for a retrieval-transfer claim if the task is “use provided hints to repair/solve.” A math-specialized model may fail for reasons unrelated to missing knowledge atoms, or may already know too much.
+- Prefer a model that is decent at instruction following and context use, but not too strong on parametric math recall. The key is controllable responsiveness to external context, not raw math benchmark performance.
+- If you keep Qwen, justify it empirically with a tiny calibration: show it changes behavior meaningfully when given clean worked hints on 2-3 held-out examples.
+
+**Missing Simpler Controls**
+
+- Add `oracle atom` control: a manually selected relevant atom for each problem. This tells you whether the bottleneck is retrieval quality or the underlying atom idea.
+- Add `length-matched irrelevant text` control. This isolates “extra context helps” better than random nodes, because random nodes may differ in style, density, and difficulty.
+- Add `shuffled atoms` or `boundary-only atoms` control if you want to know whether the useful signal is in the `action` field specifically.
+- Add a human sanity check on the 5 selected prompts before running the full matrix.
+
+**Silent Failure Modes**
+
+- Improvement may come from direct hinting, not transferable knowledge. If atoms name the exact technique, you may only be measuring prompt steering.
+- Codex-as-judge can silently inflate signal if it rewards approximate reasoning unevenly across conditions. Use exact-answer checks whenever possible; reserve judge calls for edge cases.
+- “Trace correctness” via mention of the action is weak. The model can parrot the technique name without using it correctly.
+- Screening for baseline failures can select problems that are brittle to prompt wording. Then any context injection helps, and you misread that as atom transfer.
+- If retrieval returns low-quality atoms for some problems and excellent ones for others, aggregate counts hide the retrieval variance. Log atom quality per run.
+
+**What To Drop / Simplify**
+
+- Drop `Hub` for the first pilot. It adds complexity and interpretive ambiguity.
+- Drop multi-problem breadth before you drop replication. Fewer problems with repeated seeds is more informative than 5 single-shot problems.
+- Skip custom vLLM setup if not already working. Use the simplest inference path available and spend time on controls and leakage auditing.
+- Narrow the claim: test `relevant retrieved atoms vs matched irrelevant context`, not full `graph-structured retrieval` yet. That is the simpler, cleaner experiment for 6 hours.
+
+**Recommended Minimal Pilot**
+
+- `3 problems`, preselected from a fixed candidate pool.
+- `3 conditions`: baseline, matched irrelevant context, 1-hop retrieved atoms.
+- `3 seeds` each.
+- Manual leakage audit on all retrieved atoms.
+- Exact-answer scoring first, judge only for ambiguous cases.
+
+That version is much more likely to produce interpretable evidence within the time budget.
