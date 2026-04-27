@@ -124,8 +124,8 @@ def run(codex_response: str, output_dir: str):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--codex-response',
-        default='/workspace/final-presentation/d1_arbitration_case/monotonicity_experiment/codex_response_mvt.txt')
+        default='/workspace/final-presentation/d1_arbitration_case/artifacts/mvt_experiment/codex_response.txt')
     parser.add_argument('--output-dir',
-        default='/workspace/final-presentation/d1_arbitration_case/monotonicity_experiment')
+        default='/workspace/final-presentation/d1_arbitration_case/artifacts/mvt_experiment')
     args = parser.parse_args()
     run(args.codex_response, args.output_dir)

@@ -58,20 +58,20 @@ Counterexample: $a = -1.5707, b = -0.0001$. LHS $= 6{,}367$, RHS $= 50{,}000{,}0
 ## What's saved
 
 ```
-final-presentation/d1_arbitration_case/monotonicity_experiment/
-├── prompt_mvt.txt                      # The prompt sent to Codex
-├── codex_response_mvt.txt              # Raw Codex output (6.9KB JSON)
-├── cases_mvt_parsed.json               # 96 parsed cases
-├── verifications_mvt.json              # Per-case verification results
-├── summary_mvt.json                    # Aggregate stats
-└── run_mvt.log                         # Full execution log
+final-presentation/d1_arbitration_case/artifacts/mvt_experiment/
+├── prompt.txt                      # The prompt sent to Codex
+├── codex_response.txt              # Raw Codex output (6.9KB JSON)
+├── cases_parsed.json               # 96 parsed cases
+├── verifications.json              # Per-case verification results
+├── summary.json                    # Aggregate stats
+└── run.log                         # Full execution log
 ```
 
 ## Reproducibility
 
 ```bash
 # Re-run the experiment from scratch:
-codex exec -o codex_response_mvt.txt "$(cat prompt_mvt.txt)"
+codex exec -o codex_response.txt "$(cat prompt.txt)"
 python3 final-artifacts/scripts/run_mvt_experiment.py
 ```
 

@@ -24,6 +24,7 @@ $$\frac{\sin b - \sin a}{b - a} < \cos\frac{a+b}{2} \quad \text{for } 0 < a < b 
 final-presentation/d1_arbitration_case/
 ├── CASE.md                       # Full case background + plan
 ├── DEMO.md                       # This file: results
+├── MVT_DEMO.md                   # The companion 100-case experiment
 ├── outputs/
 │   ├── prompt_v1.txt             # Today's Codex prompt #1 (open-ended)
 │   ├── codex_response_v1.txt     # Today's Codex response #1 (CORRECT)
@@ -31,13 +32,18 @@ final-presentation/d1_arbitration_case/
 │   ├── codex_response_v2.txt     # Today's Codex response #2 (CORRECT, with counterexample)
 │   └── wrong_claim_input.txt     # Reconstructed wrong claim (from original screenshots)
 └── artifacts/
-    ├── extraction_raw_response.txt  # LLM extractor output
-    ├── extracted_claims.json        # Parsed claims (2 inequalities found)
-    ├── verifications.json           # Per-claim verification results
-    ├── annotated_output.txt         # Original text + arbitrator flags
-    ├── summary.json                 # Run statistics
-    ├── pipeline_run.log             # Full execution log
-    └── failure_region.png           # Heatmap visualization
+    ├── case_study_pipeline/         # this case study (one wrong claim)
+    │   ├── extraction_raw_response.txt
+    │   ├── extracted_claims.json
+    │   ├── verifications.json
+    │   ├── annotated_output.txt
+    │   ├── summary.json
+    │   ├── pipeline_run.log
+    │   └── failure_region.png
+    ├── mvt_experiment/              # see MVT_DEMO.md (4/96 caught)
+    └── monotonicity_baseline/       # negative-result baseline (0/200)
+        ├── safe/
+        └── hard/
 ```
 
 ## Pipeline trace (real run, 2026-04-27)
@@ -91,7 +97,7 @@ Free variables detected (`a`, `b` plus trig functions) → routed to `verify_par
 
 Each counterexample has $a + b > \pi$ — exactly where the cosine flips sign and the claimed strict inequality reverses.
 
-### Step 3 — Annotated output (`artifacts/annotated_output.txt`)
+### Step 3 — Annotated output (`artifacts/case_study_pipeline/annotated_output.txt`)
 
 The arbitrator inserts a counterexample flag directly after each false claim:
 
@@ -101,9 +107,9 @@ The arbitrator inserts a counterexample flag directly after each false claim:
  LHS=-0.460667, RHS=-0.539482, gap=0.078815]
 ```
 
-## Visualization (`artifacts/failure_region.png`)
+## Visualization (`artifacts/case_study_pipeline/failure_region.png`)
 
-![failure region](artifacts/failure_region.png)
+![failure region](artifacts/case_study_pipeline/failure_region.png)
 
 - **Left panel:** signed gap LHS − RHS. Blue region ($a + b < \pi$): claim holds. Red region ($a + b > \pi$): claim fails.
 - **Right panel:** binary failure map. Yellow dots: actual counterexamples sympy found. Green line: $a + b = \pi$ (theoretical boundary).

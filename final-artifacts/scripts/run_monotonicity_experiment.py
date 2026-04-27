@@ -199,8 +199,8 @@ def run_experiment(codex_response_path: str, output_dir: str):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--codex-response',
-        default='/workspace/final-presentation/d1_arbitration_case/monotonicity_experiment/codex_response.txt')
+        default='/workspace/final-presentation/d1_arbitration_case/artifacts/monotonicity_baseline/safe/codex_response.txt')
     parser.add_argument('--output-dir',
-        default='/workspace/final-presentation/d1_arbitration_case/monotonicity_experiment')
+        default='/workspace/final-presentation/d1_arbitration_case/artifacts/monotonicity_baseline/safe')
     args = parser.parse_args()
     run_experiment(args.codex_response, args.output_dir)
