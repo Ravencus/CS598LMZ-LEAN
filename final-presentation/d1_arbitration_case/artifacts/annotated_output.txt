@@ -1,0 +1,29 @@
+[Reconstructed from GPT5.4 thinking-mode output, original screenshot:
+/workspace/math-notes/笔记共享vault/图片_math/gpt 5.4 test 12.png]
+
+For 0 < a < b < pi, consider the trigonometric inequality
+
+    (sin b - sin a) / (b - a) < cos((a + b)/2)
+[ARBITRATOR FLAG: claim is FALSE. Counterexample at a=1.1826, b=3.0986: LHS=-0.460667, RHS=-0.539482, gap=0.078815]
+.
+
+This inequality looks like a candidate for the mean value theorem,
+since by MVT there exists xi in (a, b) such that
+
+    cos(xi) = (sin b - sin a) / (b - a).
+
+So the claim reduces to whether cos(xi) < cos((a+b)/2). Since cos x is
+decreasing on (0, pi), this would follow if xi > (a+b)/2.
+
+So the inequality
+
+    (sin b - sin a) / (b - a) < cos((a+b)/2)
+[ARBITRATOR FLAG: claim is FALSE. Counterexample at a=1.1826, b=3.0986: LHS=-0.460667, RHS=-0.539482, gap=0.078815]
+
+
+holds for all 0 < a < b < pi.
+
+The mean value theorem gives the existence of xi in (a, b) with
+cos(xi) = (sin b - sin a)/(b - a), and the inequality follows because
+the midpoint argument shows xi must lie in the right half of (a, b),
+hence xi > (a+b)/2.

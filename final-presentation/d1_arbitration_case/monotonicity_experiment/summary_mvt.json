@@ -1,0 +1,13 @@
+{
+  "total": 96,
+  "parse_failed": 0,
+  "holds_everywhere": 92,
+  "has_counterexample": 4,
+  "failure_rate_pct": 4.2,
+  "op_distribution": {
+    ">": 45,
+    "<": 46,
+    ">=": 2,
+    "<=": 3
+  }
+}

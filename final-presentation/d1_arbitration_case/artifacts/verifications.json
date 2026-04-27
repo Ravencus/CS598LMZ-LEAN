@@ -1,0 +1,122 @@
+[
+  {
+    "idx": 0,
+    "raw_text": "(sin b - sin a) / (b - a) < cos((a + b)/2)",
+    "claim_type": "inequality",
+    "sympy_kwargs": {
+      "lhs_str": "(sin(b) - sin(a)) / (b - a)",
+      "op": "<",
+      "rhs_str": "cos((a + b)/2)"
+    },
+    "method": "parameterized",
+    "holds_everywhere": false,
+    "samples_tested": 168,
+    "counterexamples": [
+      {
+        "point": {
+          "a": 1.182615,
+          "b": 3.098621
+        },
+        "lhs": -0.460667,
+        "rhs": -0.539482,
+        "gap": 0.078815
+      },
+      {
+        "point": {
+          "a": 1.367028,
+          "b": 3.116655
+        },
+        "lhs": -0.545474,
+        "rhs": -0.621805,
+        "gap": 0.076331
+      },
+      {
+        "point": {
+          "a": 0.835723,
+          "b": 3.043819
+        },
+        "lhs": -0.291728,
+        "rhs": -0.360659,
+        "gap": 0.068931
+      },
+      {
+        "point": {
+          "a": 0.996687,
+          "b": 2.992716
+        },
+        "lhs": -0.346362,
+        "rhs": -0.411323,
+        "gap": 0.064961
+      },
+      {
+        "point": {
+          "a": 0.933071,
+          "b": 2.980027
+        },
+        "lhs": -0.313924,
+        "rhs": -0.376257,
+        "gap": 0.062333
+      }
+    ]
+  },
+  {
+    "idx": 1,
+    "raw_text": "(sin b - sin a) / (b - a) < cos((a+b)/2)",
+    "claim_type": "inequality",
+    "sympy_kwargs": {
+      "lhs_str": "(sin(b) - sin(a)) / (b - a)",
+      "op": "<",
+      "rhs_str": "cos((a + b)/2)"
+    },
+    "method": "parameterized",
+    "holds_everywhere": false,
+    "samples_tested": 168,
+    "counterexamples": [
+      {
+        "point": {
+          "a": 1.182615,
+          "b": 3.098621
+        },
+        "lhs": -0.460667,
+        "rhs": -0.539482,
+        "gap": 0.078815
+      },
+      {
+        "point": {
+          "a": 1.367028,
+          "b": 3.116655
+        },
+        "lhs": -0.545474,
+        "rhs": -0.621805,
+        "gap": 0.076331
+      },
+      {
+        "point": {
+          "a": 0.835723,
+          "b": 3.043819
+        },
+        "lhs": -0.291728,
+        "rhs": -0.360659,
+        "gap": 0.068931
+      },
+      {
+        "point": {
+          "a": 0.996687,
+          "b": 2.992716
+        },
+        "lhs": -0.346362,
+        "rhs": -0.411323,
+        "gap": 0.064961
+      },
+      {
+        "point": {
+          "a": 0.933071,
+          "b": 2.980027
+        },
+        "lhs": -0.313924,
+        "rhs": -0.376257,
+        "gap": 0.062333
+      }
+    ]
+  }
+]

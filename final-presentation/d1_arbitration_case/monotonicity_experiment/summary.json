@@ -1,0 +1,30 @@
+{
+  "total_cases": 100,
+  "parse_failed": 0,
+  "holds_everywhere": 100,
+  "has_counterexample": 0,
+  "failure_rate": 0.0,
+  "total_by_family": {
+    "polynomial": 16,
+    "exp": 9,
+    "inv_trig+exp": 2,
+    "exp+log": 1,
+    "exp+sqrt": 2,
+    "exp+rational": 1,
+    "log": 11,
+    "log+sqrt": 1,
+    "inv_trig+log": 2,
+    "trig+log": 4,
+    "sqrt": 8,
+    "sqrt+rational": 1,
+    "inv_trig+sqrt": 2,
+    "inv_trig": 10,
+    "trig": 13,
+    "trig+exp": 1,
+    "trig+rational": 2,
+    "rational": 12,
+    "log+rational": 1,
+    "inv_trig+rational": 1
+  },
+  "failure_by_family": {}
+}

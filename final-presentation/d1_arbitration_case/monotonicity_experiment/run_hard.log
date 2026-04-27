@@ -1,0 +1,12 @@
+<lambdifygenerated-167>:2: RuntimeWarning: overflow encountered in exp
+  return x*exp(x**2)
+<lambdifygenerated-167>:2: RuntimeWarning: overflow encountered in scalar multiply
+  return x*exp(x**2)
+<lambdifygenerated-168>:2: RuntimeWarning: overflow encountered in exp
+  return 2*x**2*exp(x**2) + exp(x**2)
+Verifying 100 HARD cases...
+
+Total: 100, Parse fail: 0, Verified monotonic: 100, COUNTEREXAMPLES: 0
+Failure rate: 0.0%
+
+Saved to /workspace/final-presentation/d1_arbitration_case/monotonicity_experiment

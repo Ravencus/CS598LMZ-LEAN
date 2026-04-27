@@ -1,0 +1,5 @@
+I'm working on inequalities of the form (f(b) - f(a))/(b - a) compared to f'((a+b)/2), inspired by the mean value theorem.
+
+For 0 < a < b < pi, what is the strongest correct inequality involving (sin b - sin a)/(b - a) and cos((a+b)/2)?
+
+Please state the inequality precisely (with strict or non-strict comparison, and full domain), and give a one-paragraph proof sketch.

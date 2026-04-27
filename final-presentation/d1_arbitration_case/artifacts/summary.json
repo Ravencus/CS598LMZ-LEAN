@@ -1,0 +1,10 @@
+{
+  "input_chars": 848,
+  "claims_extracted": 2,
+  "extraction_time_s": 12.1,
+  "parameterized_inequalities_tested": 2,
+  "inequalities_with_counterexamples": 2,
+  "numeric_claims_verified": 0,
+  "numeric_claims_correct": 0,
+  "numeric_claims_incorrect": 0
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "raw_text": "(sin b - sin a) / (b - a) < cos((a + b)/2)",
+    "claim_type": "inequality",
+    "sympy_kwargs": {
+      "lhs_str": "(sin(b) - sin(a)) / (b - a)",
+      "op": "<",
+      "rhs_str": "cos((a + b)/2)"
+    }
+  },
+  {
+    "raw_text": "(sin b - sin a) / (b - a) < cos((a+b)/2)",
+    "claim_type": "inequality",
+    "sympy_kwargs": {
+      "lhs_str": "(sin(b) - sin(a)) / (b - a)",
+      "op": "<",
+      "rhs_str": "cos((a + b)/2)"
+    }
+  }
+]

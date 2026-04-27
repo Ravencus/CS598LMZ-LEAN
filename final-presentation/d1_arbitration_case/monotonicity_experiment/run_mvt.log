@@ -1,0 +1,42 @@
+Codex response: 6916 chars
+Parsed 96 cases
+
+Operator distribution: {'>': 45, '<': 46, '>=': 2, '<=': 3}
+
+Verifying 96 MVT inequalities...
+  25/96
+  50/96
+  75/96
+
+============================================================
+=== EXPERIMENT SUMMARY (MVT-form inequalities) ===
+============================================================
+Total cases:      96
+Parse failures:   0
+Verified holds:   92
+Counterexamples:  4
+Failure rate:     4.2%
+
+Operator distribution: {'>': 45, '<': 46, '>=': 2, '<=': 3}
+
+=== FAILURES (with counterexamples) ===
+
+[52] (f(b)-f(a))/(b-a) < cos((a+b)/2), on (0, pi)
+     f = sin(x)
+     counterexample: a=0.975015, b=3.141493
+     LHS = -0.382007, g(a,b) = -0.468381, gap = 0.086374
+
+[53] (f(b)-f(a))/(b-a) > (cos(a)+cos(b))/2, on (0, pi)
+     f = sin(x)
+     counterexample: a=1.083339, b=3.141493
+     LHS = -0.429233, g(a,b) = -0.265809, gap = -0.163423
+
+[62] (f(b)-f(a))/(b-a) < 1/cos((a+b)/2)**2, on (-pi/2, 0)
+     f = tan(x)
+     counterexample: a=-1.570696, b=-1.516538
+     LHS = 184303.273966, g(a,b) = 1354.041891, gap = 182949.232075
+
+[63] (f(b)-f(a))/(b-a) > (1/cos(a)**2 + 1/cos(b)**2)/2, on (-pi/2, 0)
+     f = tan(x)
+     counterexample: a=-1.570696, b=-0.0001
+     LHS = 6367.008311, g(a,b) = 50000000.666616, gap = -49993633.658305

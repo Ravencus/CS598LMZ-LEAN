@@ -1,0 +1,22 @@
+Generate 100 distinct examples (f, c, d) such that
+
+  for all a, b in (c, d) with a > b, we have (f(a) - f(b)) / (a - b) > 0.
+
+In other words, f must be strictly increasing on the open interval (c, d).
+
+CONSTRAINTS (very important):
+- Tool calling is FORBIDDEN. Do not call any tools.
+- Programming tools, code execution, plotting, computer algebra systems are FORBIDDEN.
+- Internet search is FORBIDDEN.
+- All reasoning must be done purely in tokens — no external verification.
+- Do not repeat near-identical examples; aim for diversity.
+- Mix function families: polynomials, exponentials, logarithms, trig and inverse trig,
+  rationals, compositions, sums, products. Use both bounded and unbounded intervals.
+
+Output format: a single JSON array of 100 objects, each of the form
+
+  {"f": "<expression in variable x, using sympy syntax: ** for power, * for mult, sqrt(...), exp(...), log(...), sin(...), cos(...), tan(...), asin(...), acos(...), atan(...), pi for π, oo for infinity, -oo for -infinity>",
+   "c": "<lower bound>",
+   "d": "<upper bound>"}
+
+Output ONLY the JSON array, no surrounding prose.

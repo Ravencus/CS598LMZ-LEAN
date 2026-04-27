@@ -1,0 +1,27 @@
+Generate 100 distinct examples (f, c, d) such that
+
+  f is strictly increasing on the open interval (c, d).
+
+Requirements:
+- Avoid trivial cases like f(x) = x or f(x) = x^3. Aim for SUBTLE examples
+  where monotonicity isn't immediately obvious from a one-line argument.
+- Heavy emphasis on compositions and sums where monotonicity depends on
+  delicate cancellation or sign analysis.
+- Include cases where (c, d) is chosen aggressively close to the boundary
+  of where monotonicity holds.
+- Include cases involving sin, cos, tan at intervals close to where they
+  change behavior.
+- Include cases involving products like x*sin(x), x*log(x), x/log(x).
+- Include rational functions with non-obvious sign changes.
+
+CONSTRAINTS:
+- Tool calling FORBIDDEN. No code execution. No CAS. No internet search.
+- All reasoning must be in tokens.
+- Push yourself: aim for examples a human grader would find non-trivial
+  to verify. Do NOT play it safe.
+
+Output: a JSON array of 100 objects of form
+  {"f": "<sympy expression>", "c": "<lower>", "d": "<upper>"}
+
+Use sympy syntax: ** not ^, sin/cos/tan/asin/acos/atan/exp/log/sqrt, pi, oo, -oo.
+Output ONLY the JSON array.

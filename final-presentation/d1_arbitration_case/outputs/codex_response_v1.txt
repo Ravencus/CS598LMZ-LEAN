@@ -1,0 +1,29 @@
+The sharp comparison is piecewise:
+
+\[
+\frac{\sin b-\sin a}{b-a}
+\begin{cases}
+< \cos\!\left(\frac{a+b}{2}\right), & 0<a<b<\pi,\ a+b<\pi,\\[4pt]
+= \cos\!\left(\frac{a+b}{2}\right)=0, & 0<a<b<\pi,\ a+b=\pi,\\[4pt]
+> \cos\!\left(\frac{a+b}{2}\right), & 0<a<b<\pi,\ a+b>\pi.
+\end{cases}
+\]
+
+Equivalently, for all \(0<a<b<\pi\),
+\[
+\left|\frac{\sin b-\sin a}{b-a}\right|
+\le \left|\cos\!\left(\frac{a+b}{2}\right)\right|,
+\]
+with equality if and only if \(a+b=\pi\).
+
+Proof sketch: write
+\[
+\sin b-\sin a
+=2\cos\!\left(\frac{a+b}{2}\right)\sin\!\left(\frac{b-a}{2}\right),
+\]
+so if \(h=\frac{b-a}{2}>0\), then
+\[
+\frac{\sin b-\sin a}{b-a}
+=\cos\!\left(\frac{a+b}{2}\right)\frac{\sin h}{h}.
+\]
+Now \(0<h<\frac{\pi}{2}\), hence \(0<\frac{\sin h}{h}<1\). Therefore the quotient is obtained from \(\cos\!\bigl(\frac{a+b}{2}\bigr)\) by multiplying by a factor strictly between \(0\) and \(1\): it has the same sign, smaller absolute value, and equals it only when \(\cos\!\bigl(\frac{a+b}{2}\bigr)=0\), i.e. \(a+b=\pi\). This gives exactly the three cases above.

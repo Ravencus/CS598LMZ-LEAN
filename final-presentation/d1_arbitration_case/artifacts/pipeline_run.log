@@ -1,0 +1,39 @@
+Input: 848 chars
+
+=== Step 1: Extract claims ===
+Calling LLM extractor (Codex)...
+Extraction took 12.1s
+Extracted 2 claims
+  [0] inequality  : (sin b - sin a) / (b - a) < cos((a + b)/2)
+  [1] inequality  : (sin b - sin a) / (b - a) < cos((a+b)/2)
+
+=== Step 2: Verify claims ===
+
+[0] Parameterized inequality detected: (sin b - sin a) / (b - a) < cos((a + b)/2)
+    *** COUNTEREXAMPLES FOUND ***
+    point={'a': 1.182615, 'b': 3.098621}, lhs=-0.460667, rhs=-0.539482, gap=0.078815
+    point={'a': 1.367028, 'b': 3.116655}, lhs=-0.545474, rhs=-0.621805, gap=0.076331
+    point={'a': 0.835723, 'b': 3.043819}, lhs=-0.291728, rhs=-0.360659, gap=0.068931
+
+[1] Parameterized inequality detected: (sin b - sin a) / (b - a) < cos((a+b)/2)
+    *** COUNTEREXAMPLES FOUND ***
+    point={'a': 1.182615, 'b': 3.098621}, lhs=-0.460667, rhs=-0.539482, gap=0.078815
+    point={'a': 1.367028, 'b': 3.116655}, lhs=-0.545474, rhs=-0.621805, gap=0.076331
+    point={'a': 0.835723, 'b': 3.043819}, lhs=-0.291728, rhs=-0.360659, gap=0.068931
+
+=== Step 3: Build annotated output ===
+Annotated output: 1082 chars
+
+=== SUMMARY ===
+{
+  "input_chars": 848,
+  "claims_extracted": 2,
+  "extraction_time_s": 12.1,
+  "parameterized_inequalities_tested": 2,
+  "inequalities_with_counterexamples": 2,
+  "numeric_claims_verified": 0,
+  "numeric_claims_correct": 0,
+  "numeric_claims_incorrect": 0
+}
+
+All outputs saved to /workspace/final-presentation/d1_arbitration_case/artifacts

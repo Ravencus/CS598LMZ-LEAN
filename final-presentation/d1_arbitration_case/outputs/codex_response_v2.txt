@@ -1,0 +1,52 @@
+The claim is **not correct for all** `0<a<b<pi`.
+
+Use the identity
+\[
+\sin b-\sin a = 2\cos\frac{a+b}{2}\sin\frac{b-a}{2}.
+\]
+Let
+\[
+m=\frac{a+b}{2},\qquad h=\frac{b-a}{2}>0.
+\]
+Then
+\[
+\frac{\sin b-\sin a}{b-a}
+=\frac{2\cos m\,\sin h}{2h}
+=\cos m\cdot \frac{\sin h}{h}.
+\]
+
+So the proposed inequality becomes
+\[
+\cos m\cdot \frac{\sin h}{h}<\cos m.
+\]
+
+Now `0<h<pi/2`, so
+\[
+0<\frac{\sin h}{h}<1.
+\]
+
+From here:
+
+- If `m<pi/2`, then `\cos m>0`, so multiplying by a number in `(0,1)` makes it smaller:
+  \[
+  \cos m\cdot \frac{\sin h}{h}<\cos m.
+  \]
+  So the inequality is true.
+
+- If `m=\pi/2`, then `\cos m=0`, and both sides are `0`. So it is **not** strict.
+
+- If `m>\pi/2`, then `\cos m<0`, and multiplying by a number in `(0,1)` makes it larger:
+  \[
+  \cos m\cdot \frac{\sin h}{h}>\cos m.
+  \]
+  So the inequality is false.
+
+Therefore the correct statement is:
+
+\[
+\frac{\sin b-\sin a}{b-a}<\cos\frac{a+b}{2}
+\quad\text{iff}\quad
+a+b<\pi.
+\]
+
+A counterexample is any `a,b` with `a+b>\pi`, for instance `a=2\pi/3`, `b=5\pi/6`. Then the claimed inequality reverses.

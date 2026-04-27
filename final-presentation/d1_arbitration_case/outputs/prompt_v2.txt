@@ -1,0 +1,7 @@
+Consider the inequality
+
+  (sin(b) - sin(a)) / (b - a)  <  cos((a+b)/2)
+
+claimed to hold for all 0 < a < b < pi.
+
+Verify this inequality. If it's correct, give a clean proof. If you have any doubts, just give a quick justification.

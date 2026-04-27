@@ -86,7 +86,7 @@ def _call_codex(prompt: str) -> str | None:
 
         result = subprocess.run(
             ["codex", "exec", "-o", output_file, prompt],
-            capture_output=True, text=True, timeout=120
+            capture_output=True, text=True, timeout=300
         )
 
         if result.returncode == 0:

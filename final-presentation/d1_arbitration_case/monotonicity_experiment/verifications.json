@@ -1,0 +1,2002 @@
+[
+  {
+    "idx": 0,
+    "case": {
+      "f": "x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 1,
+    "case": {
+      "f": "x**3",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**3",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 2,
+    "case": {
+      "f": "x**3 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**3 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 3,
+    "case": {
+      "f": "x**5 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**5 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 4,
+    "case": {
+      "f": "x**7 + x**3 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**7 + x**3 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 5,
+    "case": {
+      "f": "x**2",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**2",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 6,
+    "case": {
+      "f": "x**2 + x",
+      "c": "-1/2",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**2 + x",
+      "c": -0.5,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 7,
+    "case": {
+      "f": "x**2 - 4*x",
+      "c": "2",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**2 - 4*x",
+      "c": 2.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 8,
+    "case": {
+      "f": "x**2 + 4*x",
+      "c": "-2",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**2 + 4*x",
+      "c": -2.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 9,
+    "case": {
+      "f": "x**3 + x**2 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**3 + x**2 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 10,
+    "case": {
+      "f": "x**3 - x**2 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**3 - x**2 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 11,
+    "case": {
+      "f": "x**3 + 2*x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**3 + 2*x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 12,
+    "case": {
+      "f": "x**5 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**5 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 13,
+    "case": {
+      "f": "x**5 + x**3 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**5 + x**3 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 14,
+    "case": {
+      "f": "x**7 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**7 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 15,
+    "case": {
+      "f": "x**9 + x**3 + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "polynomial",
+    "result": {
+      "f_str": "x**9 + x**3 + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 16,
+    "case": {
+      "f": "exp(x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "exp(x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 17,
+    "case": {
+      "f": "exp(2*x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "exp(2*x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 18,
+    "case": {
+      "f": "exp(x) + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "exp(x) + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 19,
+    "case": {
+      "f": "exp(x) + x**3",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "exp(x) + x**3",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 20,
+    "case": {
+      "f": "exp(x) + atan(x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "inv_trig+exp",
+    "result": {
+      "f_str": "exp(x) + atan(x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 21,
+    "case": {
+      "f": "exp(x) + log(x)",
+      "c": "1",
+      "d": "oo"
+    },
+    "family": "exp+log",
+    "result": {
+      "f_str": "exp(x) + log(x)",
+      "c": 1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 22,
+    "case": {
+      "f": "exp(x) + sqrt(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "exp+sqrt",
+    "result": {
+      "f_str": "exp(x) + sqrt(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 23,
+    "case": {
+      "f": "x*exp(x)",
+      "c": "-1",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "x*exp(x)",
+      "c": -1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 24,
+    "case": {
+      "f": "exp(x) - exp(-x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "exp(x) - exp(-x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 25,
+    "case": {
+      "f": "exp(3*x) + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "exp(3*x) + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 26,
+    "case": {
+      "f": "exp(x) + 2*x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "exp(x) + 2*x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 27,
+    "case": {
+      "f": "exp(x/2) + x",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "exp+rational",
+    "result": {
+      "f_str": "exp(x/2) + x",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 28,
+    "case": {
+      "f": "log(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "log(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 29,
+    "case": {
+      "f": "log(x) + x",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "log(x) + x",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 30,
+    "case": {
+      "f": "log(x) + x**2",
+      "c": "1",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "log(x) + x**2",
+      "c": 1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 31,
+    "case": {
+      "f": "log(x) + sqrt(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "log+sqrt",
+    "result": {
+      "f_str": "log(x) + sqrt(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 32,
+    "case": {
+      "f": "log(x) + atan(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "inv_trig+log",
+    "result": {
+      "f_str": "log(x) + atan(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 33,
+    "case": {
+      "f": "x + log(x**2 + 1)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "x + log(x**2 + 1)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 34,
+    "case": {
+      "f": "log(x + 2)",
+      "c": "-2",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "log(x + 2)",
+      "c": -2.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 35,
+    "case": {
+      "f": "log(3*x + 1)",
+      "c": "-1/3",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "log(3*x + 1)",
+      "c": -0.3333333333333333,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 36,
+    "case": {
+      "f": "log(x) + x**3",
+      "c": "1",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "log(x) + x**3",
+      "c": 1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 37,
+    "case": {
+      "f": "log(x) + sin(x)",
+      "c": "0",
+      "d": "pi/2"
+    },
+    "family": "trig+log",
+    "result": {
+      "f_str": "log(x) + sin(x)",
+      "c": 0.0,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 38,
+    "case": {
+      "f": "log(x) - cos(x)",
+      "c": "0",
+      "d": "pi"
+    },
+    "family": "trig+log",
+    "result": {
+      "f_str": "log(x) - cos(x)",
+      "c": 0.0,
+      "d": 3.141592653589793,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 39,
+    "case": {
+      "f": "sqrt(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "sqrt",
+    "result": {
+      "f_str": "sqrt(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 40,
+    "case": {
+      "f": "sqrt(x) + x",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "sqrt",
+    "result": {
+      "f_str": "sqrt(x) + x",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 41,
+    "case": {
+      "f": "x/sqrt(x + 1)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "sqrt+rational",
+    "result": {
+      "f_str": "x/sqrt(x + 1)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 42,
+    "case": {
+      "f": "sqrt(x + 1)",
+      "c": "-1",
+      "d": "oo"
+    },
+    "family": "sqrt",
+    "result": {
+      "f_str": "sqrt(x + 1)",
+      "c": -1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 43,
+    "case": {
+      "f": "sqrt(2*x + 3)",
+      "c": "-3/2",
+      "d": "oo"
+    },
+    "family": "sqrt",
+    "result": {
+      "f_str": "sqrt(2*x + 3)",
+      "c": -1.5,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 44,
+    "case": {
+      "f": "sqrt(x) + atan(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "inv_trig+sqrt",
+    "result": {
+      "f_str": "sqrt(x) + atan(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 45,
+    "case": {
+      "f": "sqrt(x) + x**2",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "sqrt",
+    "result": {
+      "f_str": "sqrt(x) + x**2",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 46,
+    "case": {
+      "f": "x*sqrt(x + 1)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "sqrt",
+    "result": {
+      "f_str": "x*sqrt(x + 1)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 47,
+    "case": {
+      "f": "asin(x)",
+      "c": "-1",
+      "d": "1"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "asin(x)",
+      "c": -1.0,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 48,
+    "case": {
+      "f": "-acos(x)",
+      "c": "-1",
+      "d": "1"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "-acos(x)",
+      "c": -1.0,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 49,
+    "case": {
+      "f": "atan(x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "atan(x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 50,
+    "case": {
+      "f": "x + atan(x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "x + atan(x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 51,
+    "case": {
+      "f": "atan(x) + x**3",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "atan(x) + x**3",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 52,
+    "case": {
+      "f": "atan(x) + sqrt(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "inv_trig+sqrt",
+    "result": {
+      "f_str": "atan(x) + sqrt(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 53,
+    "case": {
+      "f": "asin(x) + x",
+      "c": "-1",
+      "d": "1"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "asin(x) + x",
+      "c": -1.0,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 54,
+    "case": {
+      "f": "-acos(x) + x",
+      "c": "-1",
+      "d": "1"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "-acos(x) + x",
+      "c": -1.0,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 55,
+    "case": {
+      "f": "asin(x) + atan(x)",
+      "c": "-1",
+      "d": "1"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "asin(x) + atan(x)",
+      "c": -1.0,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 56,
+    "case": {
+      "f": "tan(x)",
+      "c": "-pi/2",
+      "d": "pi/2"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "tan(x)",
+      "c": -1.5707963267948966,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 57,
+    "case": {
+      "f": "x + tan(x)",
+      "c": "-pi/2",
+      "d": "pi/2"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "x + tan(x)",
+      "c": -1.5707963267948966,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 58,
+    "case": {
+      "f": "sin(x)",
+      "c": "-pi/2",
+      "d": "pi/2"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "sin(x)",
+      "c": -1.5707963267948966,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 59,
+    "case": {
+      "f": "x + sin(x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "x + sin(x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 60,
+    "case": {
+      "f": "x - cos(x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "x - cos(x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 61,
+    "case": {
+      "f": "sin(x) + x/10",
+      "c": "-pi/3",
+      "d": "pi/3"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "sin(x) + x/10",
+      "c": -1.0471975511965979,
+      "d": 1.0471975511965979,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 62,
+    "case": {
+      "f": "sin(x) + x",
+      "c": "-pi/2",
+      "d": "pi/2"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "sin(x) + x",
+      "c": -1.5707963267948966,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 63,
+    "case": {
+      "f": "-cos(x)",
+      "c": "0",
+      "d": "pi"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "-cos(x)",
+      "c": 0.0,
+      "d": 3.141592653589793,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 64,
+    "case": {
+      "f": "tan(x) + x**3",
+      "c": "0",
+      "d": "pi/2"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "tan(x) + x**3",
+      "c": 0.0,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 65,
+    "case": {
+      "f": "sin(x) + exp(x)",
+      "c": "-1",
+      "d": "oo"
+    },
+    "family": "trig+exp",
+    "result": {
+      "f_str": "sin(x) + exp(x)",
+      "c": -1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 66,
+    "case": {
+      "f": "x - sin(x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "x - sin(x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 67,
+    "case": {
+      "f": "x + cos(x)",
+      "c": "0",
+      "d": "pi"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "x + cos(x)",
+      "c": 0.0,
+      "d": 3.141592653589793,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 68,
+    "case": {
+      "f": "2*x + sin(x)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "2*x + sin(x)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 69,
+    "case": {
+      "f": "x + sin(2*x)",
+      "c": "-pi/6",
+      "d": "pi/6"
+    },
+    "family": "trig",
+    "result": {
+      "f_str": "x + sin(2*x)",
+      "c": -0.5235987755982989,
+      "d": 0.5235987755982989,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 70,
+    "case": {
+      "f": "-log(cos(x))",
+      "c": "0",
+      "d": "pi/2"
+    },
+    "family": "trig+log",
+    "result": {
+      "f_str": "-log(cos(x))",
+      "c": 0.0,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 71,
+    "case": {
+      "f": "log(tan(x))",
+      "c": "0",
+      "d": "pi/2"
+    },
+    "family": "trig+log",
+    "result": {
+      "f_str": "log(tan(x))",
+      "c": 0.0,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 72,
+    "case": {
+      "f": "sin(x)/(1 + cos(x))",
+      "c": "0",
+      "d": "pi"
+    },
+    "family": "trig+rational",
+    "result": {
+      "f_str": "sin(x)/(1 + cos(x))",
+      "c": 0.0,
+      "d": 3.141592653589793,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 73,
+    "case": {
+      "f": "1/(1 - sin(x))",
+      "c": "-pi/2",
+      "d": "pi/2"
+    },
+    "family": "trig+rational",
+    "result": {
+      "f_str": "1/(1 - sin(x))",
+      "c": -1.5707963267948966,
+      "d": 1.5707963267948966,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 74,
+    "case": {
+      "f": "1/(1 - x)",
+      "c": "-oo",
+      "d": "1"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "1/(1 - x)",
+      "c": -Infinity,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 75,
+    "case": {
+      "f": "x/(1 - x)",
+      "c": "-oo",
+      "d": "1"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x/(1 - x)",
+      "c": -Infinity,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 76,
+    "case": {
+      "f": "x/(x + 1)",
+      "c": "-1",
+      "d": "oo"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x/(x + 1)",
+      "c": -1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 77,
+    "case": {
+      "f": "-1/x",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "-1/x",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 78,
+    "case": {
+      "f": "-1/x",
+      "c": "-oo",
+      "d": "0"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "-1/x",
+      "c": -Infinity,
+      "d": 0.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 79,
+    "case": {
+      "f": "x - 1/x",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x - 1/x",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 80,
+    "case": {
+      "f": "x + 1/(x + 2)",
+      "c": "-1",
+      "d": "oo"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x + 1/(x + 2)",
+      "c": -1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 81,
+    "case": {
+      "f": "x - 1/(x + 2)",
+      "c": "-2",
+      "d": "oo"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x - 1/(x + 2)",
+      "c": -2.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 82,
+    "case": {
+      "f": "log(x/(1 - x))",
+      "c": "0",
+      "d": "1"
+    },
+    "family": "log+rational",
+    "result": {
+      "f_str": "log(x/(1 - x))",
+      "c": 0.0,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 83,
+    "case": {
+      "f": "x/(1 + x**2)",
+      "c": "-1",
+      "d": "1"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x/(1 + x**2)",
+      "c": -1.0,
+      "d": 1.0,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 84,
+    "case": {
+      "f": "atan(x) + x/(1 + x**2)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "inv_trig+rational",
+    "result": {
+      "f_str": "atan(x) + x/(1 + x**2)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 85,
+    "case": {
+      "f": "x + x/(1 + x**2)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x + x/(1 + x**2)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 86,
+    "case": {
+      "f": "x**3/(1 + x**2)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x**3/(1 + x**2)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 87,
+    "case": {
+      "f": "x + x**3/(1 + x**2)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "rational",
+    "result": {
+      "f_str": "x + x**3/(1 + x**2)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 88,
+    "case": {
+      "f": "exp(x)*(x + 2)",
+      "c": "-3",
+      "d": "oo"
+    },
+    "family": "exp",
+    "result": {
+      "f_str": "exp(x)*(x + 2)",
+      "c": -3.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 89,
+    "case": {
+      "f": "exp(x)*sqrt(x + 1)",
+      "c": "-1",
+      "d": "oo"
+    },
+    "family": "exp+sqrt",
+    "result": {
+      "f_str": "exp(x)*sqrt(x + 1)",
+      "c": -1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 90,
+    "case": {
+      "f": "(x + 1)*log(x + 1)",
+      "c": "exp(-1) - 1",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "(x + 1)*log(x + 1)",
+      "c": -0.6321205588285577,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 91,
+    "case": {
+      "f": "x*log(x + 1)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "x*log(x + 1)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 92,
+    "case": {
+      "f": "(x + 1)*atan(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "(x + 1)*atan(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 93,
+    "case": {
+      "f": "x*atan(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "inv_trig",
+    "result": {
+      "f_str": "x*atan(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 94,
+    "case": {
+      "f": "x*log(x)",
+      "c": "exp(-1)",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "x*log(x)",
+      "c": 0.36787944117144233,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 95,
+    "case": {
+      "f": "x + x*log(x)",
+      "c": "exp(-2)",
+      "d": "oo"
+    },
+    "family": "log",
+    "result": {
+      "f_str": "x + x*log(x)",
+      "c": 0.1353352832366127,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 96,
+    "case": {
+      "f": "x*sqrt(x)",
+      "c": "0",
+      "d": "oo"
+    },
+    "family": "sqrt",
+    "result": {
+      "f_str": "x*sqrt(x)",
+      "c": 0.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 97,
+    "case": {
+      "f": "(x + 1)*sqrt(x + 1)",
+      "c": "-1",
+      "d": "oo"
+    },
+    "family": "sqrt",
+    "result": {
+      "f_str": "(x + 1)*sqrt(x + 1)",
+      "c": -1.0,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 98,
+    "case": {
+      "f": "exp(atan(x))",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "inv_trig+exp",
+    "result": {
+      "f_str": "exp(atan(x))",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  },
+  {
+    "idx": 99,
+    "case": {
+      "f": "log(atan(x) + pi/2)",
+      "c": "-oo",
+      "d": "oo"
+    },
+    "family": "inv_trig+log",
+    "result": {
+      "f_str": "log(atan(x) + pi/2)",
+      "c": -Infinity,
+      "d": Infinity,
+      "valid_input": true,
+      "holds_everywhere": true,
+      "samples_tested": 259,
+      "counterexamples": [],
+      "parse_error": null,
+      "eval_error": null
+    }
+  }
+]
