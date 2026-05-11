@@ -6,9 +6,37 @@ The report PDF is the separately submitted deliverable; this repository contains
 
 ---
 
-## 0. Quickstart with Docker (recommended)
+## Reproducibility artifact
 
-The fastest path to reproduce the report. One pull, one run, no host-side setup of Lean, codex, claude, or Python deps.
+The canonical reproducibility artifact for this paper is the Docker image:
+
+```
+ghcr.io/ravencus/cs598lmz-lean:eval-latest
+```
+
+The exact build that has been smoke-tested end-to-end is pinned at digest:
+
+```
+sha256:30b77af7943640859afef9ac42a58835788798e586c952ea69fd0da49797bd52
+```
+
+To pin to that exact build instead of following the moving `eval-latest` tag, use the digest in your `docker pull` and `docker run`. The matching Dockerfile is `Dockerfile.eval` in this repo; the entrypoint that dispatches the four modes is `scripts/reproduce.sh`.
+
+The image bundles Lean 4.29.0-rc8 with a precompiled Mathlib, OpenCode 1.14.46 (pinned to the version that produced the shipped traces), the `codex` and `claude` CLIs, and every Python dependency the eval scripts need. Pulling and running the image is the only path we have verified end-to-end; the manual host install in §2 below is provided as an alternative, but is not the path we tested.
+
+What the image reproduces, in order of guarantee strength:
+
+| Mode | What it reproduces | Bit-for-bit? | Verified end-to-end |
+|------|--------------------|--------------|---------------------|
+| `light` | Re-aggregates the 300 shipped per-cell `outcome.json` files into `aggregate.json`; regenerates every figure (`figure-curation`, `figure-harness`, `dataset-overview`, `outcome-breakdown`) and every table (`main-pass-rate`, `capability-decomposition`, `runtime`, `partial-opus`, `hub-recall`) | Yes — derived from frozen inputs | ✓ |
+| `smoke` | Re-runs one cell (gpt-5.5, lean_only, problem `example-127`) against the live OpenAI gateway. Confirms codex + opencode + MCP server + Lean compiler + outcome writeback all wire up. | No — per-cell outcomes are stochastic (decoding temperature); aggregate-level matches are the report's claim | ✓ |
+| `full` | Re-runs the entire 5 model × 2 condition × 30 problem matrix plus both trace-compare passes and both hub-recall conditions. Aggregate pass rates should match the report within model-decoding noise. | No — same nondeterminism story, averaged over 300 cells | Wiring verified via `smoke`; the 300-cell run is not exercised by the maintainers because it costs ~$80-150 each time |
+
+The 300-cell run logs that `light` aggregates over are committed in `final-report/data/eval_overnight_opencode/`; the figures and tables it produces match those in the submitted PDF.
+
+---
+
+## 0. Quickstart with Docker
 
 ```bash
 git clone https://github.com/Ravencus/CS598LMZ-LEAN.git
@@ -21,9 +49,7 @@ docker run --rm -v "$(pwd):/workspace" \
   ghcr.io/ravencus/cs598lmz-lean:eval-latest light
 ```
 
-Outputs land in `final-report/report-artifacts/figures/` and `tables/` on the host (the bind-mounted repo).
-
-The image supports four sub-commands:
+Outputs land in `final-report/report-artifacts/figures/` and `tables/` on the host (the bind-mounted repo). The image entrypoint dispatches five sub-commands:
 
 | Command | What it does | API calls | Wall-time | Cost |
 |---------|--------------|-----------|-----------|------|
@@ -72,7 +98,7 @@ Note: `smoke` and `full` rewrite `workspace/opencode.json` inside the bind-mount
 
 Building the image from source (instead of pulling) is `docker build -f Dockerfile.eval -t ghcr.io/ravencus/cs598lmz-lean:eval-latest .` and takes ~3 minutes on top of the ~10 GB base image.
 
-The rest of this README documents manual host setup for users who want to run the scripts directly without Docker. If the quickstart above works for you, the rest is optional reading.
+Everything below §0 is reference material: repository layout, dataset schema, the manual host setup we did not test, the per-script reproduction recipes inside the image, and the architecture summary. **If you only want to verify the report's numbers, §0 is sufficient.**
 
 ---
 
