@@ -37,22 +37,25 @@ The report PDF is the separately submitted deliverable; this repository contains
 
 ## 2. Prerequisites
 
-- **Docker** (the harness runs inside a precompiled Lean+Mathlib image).
-- **Python 3.11+** on host, with `matplotlib`, `numpy`, `scipy`, `pandas` (for figure generation only).
-- **API keys** (whichever models you intend to run):
-  - OpenAI (Codex CLI / `gpt-5.5`, `gpt-5.4-mini`) — required to reproduce headline results.
-  - DeepSeek API (`deepseek-v4-pro`, `deepseek-v4-flash`) — optional.
-  - Anthropic API (`claude-opus-4-7`) — optional.
+The eval scripts shell out to local CLI tools and the local Lean toolchain. Everything runs on the host (or inside the devcontainer at `.devcontainer/`, which bind-mounts the repo to `/workspace`); the `ghcr.io/ravencus/cs598lmz-lean:latest` Docker image is used only for interactive proving sessions (§6), not for the headline eval.
 
-Place keys in plain text at the repo root:
+**Host requirements:**
 
-```bash
-echo "$OPENAI_KEY"     > .openai_api      # gitignored
-echo "$DEEPSEEK_KEY"   > .deepseek_api    # gitignored
-echo "$ANTHROPIC_KEY"  > .opus_api        # gitignored
-```
+- **Python 3.11+** with `matplotlib`, `numpy`, `scipy`, `pandas`.
+- **Lean 4 toolchain via `elan`** (matches `docker/lean-toolchain` — Lean 4.29.0-rc8). Inside `docker/`, run `lake exe cache get` once to download precompiled Mathlib (~5 GB, ~10 min on broadband).
+- **`codex` CLI**, authenticated via ChatGPT subscription (OAuth). Required for `gpt-5.5` and `gpt-5.4-mini`. See <https://github.com/openai/codex>.
+- **`claude` CLI** (Claude Code), required for `claude-opus-4-7` and for the DeepSeek models (the harness redirects `claude --print` at DeepSeek's Anthropic-compat endpoint). See <https://github.com/anthropics/claude-code>.
+- **API keys** as plain text files at the repo root:
+  ```bash
+  echo "$DEEPSEEK_KEY"   > .deepseek_api    # gitignored
+  echo "$ANTHROPIC_KEY"  > .opus_api        # gitignored
+  ```
+  (`codex` handles OAuth itself; no key file needed for OpenAI.)
 
-The `.gitignore` keeps these files local; never commit them.
+**Path assumption:** several scripts (notably `unified_harness.py` and `overnight_runner.py`) hard-code `/workspace/...` as the repo root. Use one of:
+  - The devcontainer at `.devcontainer/devcontainer.json` (auto bind-mounts the repo to `/workspace`).
+  - A symlink: `sudo ln -s "$(pwd)" /workspace` from the repo root.
+  - Or edit `REPO_ROOT` in those two files.
 
 ---
 
@@ -84,108 +87,88 @@ final-report/data/manifest_faithful_100.json
 
 ---
 
-## 4. Building the container
+## 4. Reproducing the report
 
-The harness runs inside a Docker image with Lean 4.29.0-rc8, a precompiled Mathlib, OpenCode v1.3.3, and the Python MCP server.
+All commands run from the repo root, with the prerequisites in §2 installed, the `/workspace` path mapped, and the eval data already present under `final-report/data/`. To rerun any experiment from scratch, delete the matching `outcome.json` files first so the runner recomputes them.
 
-```bash
-# Option A (recommended): pull the prebuilt image
-docker pull ghcr.io/ravencus/cs598lmz-lean:latest
-
-# Option B: build from source (~30 min; needs ~10 GB disk for Mathlib oleans)
-docker build -t ghcr.io/ravencus/cs598lmz-lean:latest .
-```
-
-The image entry point reads `/workspace` as the mounted repo root.
-
----
-
-## 5. Reproducing the report
-
-All commands below assume you start from the repo root with the container image available locally.
-
-### 5.1 Main proving evaluation (Table `main-pass-rate`)
+### 4.1 Main proving evaluation (Table `main-pass-rate`)
 
 5 models × 2 conditions × 30 problems = 300 cells. Wall-clock: roughly 8 hours with default parallelism.
 
 ```bash
-docker run --rm \
-  -v $(pwd):/workspace \
-  -v $(pwd)/.openai_api:/root/.openai_api:ro \
-  -v $(pwd)/.deepseek_api:/root/.deepseek_api:ro \
-  -v $(pwd)/.opus_api:/root/.opus_api:ro \
-  ghcr.io/ravencus/cs598lmz-lean:latest \
-  python3 /workspace/final-report/scripts/overnight_runner.py \
-    --n-problems 30 --seed 42
+python3 final-report/scripts/overnight_runner.py --n-problems 30 --seed 42
 ```
 
-Outputs land in `final-report/data/eval_overnight_opencode/<model>/<condition>/<pid>/outcome.json`. Aggregate them:
+Per-cell outputs land in `final-report/data/eval_overnight_opencode/<model>/<condition>/<pid>/`:
+- `outcome.json` — verdict + metadata.
+- `final.lean` — the produced proof.
+- `stream.jsonl` — full OpenCode trace.
+- `stderr.log`, `prompt.txt`, `final_text.txt` — supporting artifacts.
+
+Aggregate them:
 
 ```bash
-docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
-  python3 /workspace/final-report/scripts/aggregate_opencode.py
+python3 final-report/scripts/aggregate_opencode.py
 ```
 
-This produces `final-report/data/eval_overnight_opencode/aggregate.json`, which is the source of every cell in `tables/main-pass-rate.tex`, `tables/runtime.tex`, and Figure `outcome-breakdown`.
+This produces `final-report/data/eval_overnight_opencode/aggregate.json`, the source of every cell in `main-pass-rate`, `runtime`, and the `outcome-breakdown` figure.
 
-### 5.2 Capability decomposition (Table `capability-decomposition`)
+### 4.2 Capability decomposition (Table `capability-decomposition`)
 
-For each vendor pair, an LLM judge reads disagreement traces and assigns one of `different_plan`, `same_plan_search_diff`, `same_plan_lean_impl_diff`.
+For each vendor pair, an LLM judge reads disagreement traces (from §4.1's `stream.jsonl`) and assigns one of `different_plan`, `same_plan_search_diff`, `same_plan_lean_impl_diff`.
 
 ```bash
-docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
-  python3 /workspace/final-report/scripts/trace_compare.py \
-    --pair gpt-5.5,gpt-5.4-mini
-
-docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
-  python3 /workspace/final-report/scripts/trace_compare.py \
-    --pair deepseek-v4-pro,deepseek-v4-flash
+python3 final-report/scripts/trace_compare.py --pair gpt-5.5,gpt-5.4-mini
+python3 final-report/scripts/trace_compare.py --pair deepseek-v4-pro,deepseek-v4-flash
 ```
 
-### 5.3 Check-call budget ablation (Table `kprobe`)
+### 4.3 Check-call budget ablation (Table `kprobe`)
 
-Reruns every failing `gpt-5.5` and `gpt-5.4-mini` cell with the MCP call budget doubled from 10 to 20, preserving passing cells.
+Reruns every failing `gpt-5.5` and `gpt-5.4-mini` cell with the MCP call budget doubled from 10 to 20, preserving passing cells. The shell wrapper handles seeding and re-aggregation.
 
 ```bash
 bash final-report/scripts/run_kprobe.sh
 ```
 
-Aggregate via `kprobe_compare.py`.
+Outputs land in `final-report/data/eval_kprobe_K20/`.
 
-### 5.4 Hub-strategy classification (Table `hub-recall`)
+### 4.4 Hub-strategy classification (Table `hub-recall`)
 
 `gpt-5.5` classifies each problem against the 22-hub catalog. Two conditions: `signature-only` (30 problems) and `proof-conditioned` (18 problems for which some model produced a passing Lean proof).
 
 ```bash
 # Signature-only over the 30-problem stratified sample
-docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
-  python3 /workspace/final-report/scripts/hub_recall_runner.py \
-    --manifest /workspace/final-report/data/manifest_faithful_100.json \
-    --prompt-mode direct
+python3 final-report/scripts/hub_recall_runner.py \
+  --manifest final-report/data/manifest_faithful_100.json \
+  --prompt-mode direct
 
 # Proof-conditioned over the 18-problem provable subset
-docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
-  python3 /workspace/final-report/scripts/hub_recall_runner.py \
-    --manifest /workspace/final-report/data/manifest_faithful_proof.json \
-    --prompt-mode proof
+python3 final-report/scripts/hub_recall_runner.py \
+  --manifest final-report/data/manifest_faithful_proof.json \
+  --prompt-mode proof
 ```
 
-### 5.5 Figures
+### 4.5 Figures
 
-All run on the host (no Docker needed) and read the JSON outputs above. Each script writes its output to a local `final-report/report-artifacts/figures/` directory it auto-creates (the directory is gitignored; the files are for inspection or external use).
+Run on the host. They read the JSON outputs above and write PDF/PNG to a `final-report/report-artifacts/figures/` directory each script auto-creates (gitignored; the files are for inspection or external use). Note: `dataset_overview_figure.py` and `eval_figures.py` currently hard-code `ROOT = Path('/home/raven/Desktop/lean')`; edit that line if your repo lives elsewhere.
 
 ```bash
-pip install matplotlib numpy scipy pandas
-python final-report/scripts/architecture_figures.py     # figure-curation.pdf
-python final-report/scripts/dataset_overview_figure.py  # dataset-overview.pdf
-python final-report/scripts/eval_figures.py             # outcome-breakdown.pdf
+python3 final-report/scripts/architecture_figures.py     # figure-curation.pdf
+python3 final-report/scripts/dataset_overview_figure.py  # dataset-overview.pdf
+python3 final-report/scripts/eval_figures.py             # outcome-breakdown.pdf
 ```
 
 ---
 
-## 6. Running the prover interactively
+## 5. Running the prover interactively
 
-The same harness is usable as an interactive proving session, useful for development and sanity checks.
+For interactive development and one-off proof attempts (not used for the eval), the prebuilt Docker image bundles Lean 4 + Mathlib + OpenCode in a single environment.
+
+```bash
+docker pull ghcr.io/ravencus/cs598lmz-lean:latest
+# Or build from source (~30 min, ~10 GB):
+docker build -t ghcr.io/ravencus/cs598lmz-lean:latest .
+```
 
 ```bash
 docker run -it \
@@ -210,7 +193,7 @@ The exported trace is the input format consumed by the System 2 prototype in `sc
 
 ---
 
-## 7. Architecture summary
+## 6. Architecture summary
 
 **System 1 — proving harness** (`workspace/`, `mcp_server/`, `docker/`):
 - OpenCode agent configured by two `SKILL.md` files: a workflow skill (explore-plan-prove-revise) and a tools skill (sympy / Mathematica).
@@ -226,7 +209,7 @@ Detailed diagrams are reproduced by running the figure scripts in §5.5; they al
 
 ---
 
-## 8. License / citation
+## 7. License / citation
 
 This is course work for CS598LMZ (Spring 2026) at UIUC. The report PDF and source LaTeX are the primary citable artifact:
 
