@@ -95,13 +95,14 @@ All commands run from the repo root, with the prerequisites in §2 installed, th
 
 ### 4.1 Main proving evaluation (Table `main-pass-rate`)
 
-5 models × 2 conditions × 30 problems = 300 cells. Wall-clock: roughly 8 hours with default parallelism. The runner defaults to the 30-problem stratified-sample manifest at `final-report/data/eval_snapshots/20260510_083526_partial/manifest.json`, so no flags are required to reproduce the headline numbers.
+5 models × 2 conditions × 30 problems = 300 cells. Wall-clock: roughly 8 hours with default parallelism. The runner defaults to the 30-problem stratified-sample manifest at `final-report/data/eval_snapshots/20260510_083526_partial/manifest.json`. The model set defaults to the four cost-comparable models only, so to reproduce the full report (which includes `claude-opus-4-7`) pass `--models` explicitly:
 
 ```bash
-python3 final-report/scripts/opencode_runner.py
+python3 final-report/scripts/opencode_runner.py \
+  --models deepseek-v4-flash deepseek-v4-pro gpt-5.4-mini gpt-5.5 claude-opus-4-7
 ```
 
-(The runner additionally accepts `--models`, `--conditions`, `--budget`, `--wall`, `--parallel`, `--limit`, `--eval-dir`; defaults are the production settings.)
+To run only the four-model subset (240 cells, ~5 hours), omit `--models`. The runner additionally accepts `--manifest`, `--conditions`, `--budget`, `--wall`, `--parallel`, `--limit`, `--eval-dir`; defaults match the production settings.
 
 Per-cell outputs land in `final-report/data/eval_overnight_opencode/<model>/<condition>/<pid>/`:
 - `outcome.json` — verdict + metadata.
@@ -143,7 +144,7 @@ Reruns every failing `gpt-5.5` and `gpt-5.4-mini` cell with the MCP call budget 
 bash final-report/scripts/run_kprobe.sh
 ```
 
-Outputs land in `final-report/data/eval_kprobe_K20/`. **Note:** `run_kprobe.sh` hard-codes `REPO=/home/raven/Desktop/lean` at the top. Edit that line to your clone path before running, or wrap the invocation with `REPO=$(pwd) bash -c '...'`.
+Outputs land in `final-report/data/eval_kprobe_K20/`. **Note:** `run_kprobe.sh` sets `REPO=/home/raven/Desktop/lean` unconditionally at the top of the script (not `${REPO:-...}`), so an environment-variable override has no effect. Edit that line in `run_kprobe.sh` to your clone path before running.
 
 ### 4.4 Hub-strategy classification (Table `hub-recall`)
 
@@ -229,7 +230,7 @@ The exported trace is the input format consumed by the System 2 prototype in `sc
 - Given a problem and a 22-hub catalog, the classifier returns the subset of hubs the problem instantiates.
 - Macro F1 over 30 problems is the headline number. The proof-conditioned variant additionally feeds the type-checked Lean proof.
 
-Detailed diagrams are reproduced by running the figure scripts in §5.5; they also appear in the submitted PDF.
+Detailed diagrams are reproduced by running the figure scripts in §4.5; they also appear in the submitted PDF.
 
 ---
 
