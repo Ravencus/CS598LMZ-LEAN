@@ -1,0 +1,65 @@
+# Eval image: extends the interactive proving image with the CLIs and Python
+# deps needed to reproduce §4 of the report.
+#
+# Build:
+#   docker build -f Dockerfile.eval -t ghcr.io/ravencus/cs598lmz-lean:eval-latest .
+#
+# Run (light, no API calls):
+#   docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:eval-latest light
+#
+# Run (full eval, requires auth):
+#   docker run --rm -it -v $(pwd):/workspace \
+#       -v "${HOME}/.codex:/home/lean/.codex" \
+#       -v "${HOME}/.claude:/home/lean/.claude" \
+#       ghcr.io/ravencus/cs598lmz-lean:eval-latest full
+#
+# Interactive shell:
+#   docker run --rm -it -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:eval-latest bash
+FROM ghcr.io/ravencus/cs598lmz-lean:latest
+
+USER root
+
+# --- Node 22 (required by codex CLI and claude CLI) ---
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        curl ca-certificates gnupg \
+    && mkdir -p /etc/apt/keyrings \
+    && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
+        | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" \
+        > /etc/apt/sources.list.d/nodesource.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends nodejs \
+    && rm -rf /var/lib/apt/lists/* \
+    && node -v && npm -v
+
+# --- codex CLI (OpenAI gpt-5.5 / gpt-5.4-mini) and claude CLI (Anthropic + DeepSeek compat) ---
+RUN npm install -g \
+        @openai/codex \
+        @anthropic-ai/claude-code \
+    && codex --version \
+    && claude --version
+
+# --- Eval Python deps ---
+RUN /home/lean/venv/bin/pip install --no-cache-dir \
+        sympy \
+        matplotlib \
+        numpy \
+        scipy \
+        pandas \
+        requests
+
+# --- Entrypoint wrapper (light / full / bash) ---
+COPY scripts/reproduce.sh /usr/local/bin/reproduce
+RUN chmod +x /usr/local/bin/reproduce
+
+# --- Preserve the Mathlib cache so the eval can call `lake env lean` ---
+# unified_harness.py invokes `lake env lean` with cwd=/workspace/docker.
+# The grader's bind-mounted /workspace/docker has lakefile.lean and lean-toolchain
+# but not .lake/. The wrapper symlinks /workspace/docker/.lake → /home/lean/lean-project/.lake
+# at first run so Mathlib does not get re-downloaded.
+
+USER lean
+WORKDIR /workspace
+
+ENTRYPOINT ["/usr/local/bin/reproduce"]
+CMD ["light"]

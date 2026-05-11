@@ -32,7 +32,7 @@ matplotlib.rcParams['figure.dpi'] = 200
 matplotlib.rcParams['pdf.fonttype'] = 42
 matplotlib.rcParams['ps.fonttype'] = 42
 
-ROOT = Path('/home/raven/Desktop/lean')
+ROOT = Path(__file__).resolve().parents[2]
 EVAL = ROOT / 'final-report' / 'data' / 'eval_overnight_opencode'
 FIG = ROOT / 'final-report' / 'report-artifacts' / 'figures'
 TAB = ROOT / 'final-report' / 'report-artifacts' / 'tables'
@@ -323,8 +323,9 @@ def table_runtime_cost():
             if cell is None:
                 continue
             w = cell['wall_seconds']
+            cond_tt = cond.replace('_', '\\_')
             lines.append(
-                f"    {MODEL_DISPLAY[model]} & \\texttt{{{cond.replace('_', '\\_')}}} "
+                f"    {MODEL_DISPLAY[model]} & \\texttt{{{cond_tt}}} "
                 f"& {w.get('median', 0):.1f} & {w.get('p90', 0):.1f} & {w.get('max', 0):.1f} "
                 f"& {cell['cost_mean_per_cell_usd']:.4f} \\\\"
             )
@@ -425,8 +426,9 @@ def table_runtime():
             if cell is None:
                 continue
             w = cell['wall_seconds']
+            cond_tt = cond.replace('_', '\\_')
             lines.append(
-                f"    {MODEL_DISPLAY[model]} & \\texttt{{{cond.replace('_', '\\_')}}} "
+                f"    {MODEL_DISPLAY[model]} & \\texttt{{{cond_tt}}} "
                 f"& {w.get('median', 0):.0f} & {w.get('p90', 0):.0f} & {w.get('max', 0):.0f} \\\\"
             )
     lines += [r'    \bottomrule', r'  \end{tabular}', r'\end{table}']

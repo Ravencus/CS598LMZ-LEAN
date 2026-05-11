@@ -16,7 +16,7 @@ import numpy as np
 matplotlib.rcParams['font.family'] = ['DejaVu Sans', 'sans-serif']
 matplotlib.rcParams['figure.dpi'] = 200
 
-ROOT = Path('/home/raven/Desktop/lean')
+ROOT = Path(__file__).resolve().parents[2]
 DATASET = ROOT / 'final-presentation' / 'd2_curation_v2' / 'data' / 'dataset_v2'
 NODES_DIR = DATASET / 'nodes'
 EDGES_FILE = DATASET / 'edges.json'
