@@ -37,7 +37,7 @@ The report PDF is the separately submitted deliverable; this repository contains
 
 ## 2. Prerequisites
 
-The eval scripts shell out to local CLI tools and the local Lean toolchain. Everything runs on the host (or inside the devcontainer at `.devcontainer/`, which bind-mounts the repo to `/workspace`); the `ghcr.io/ravencus/cs598lmz-lean:latest` Docker image is used only for interactive proving sessions (§6), not for the headline eval.
+The eval scripts shell out to local CLI tools and the local Lean toolchain. Everything runs on the host (or inside the devcontainer at `.devcontainer/`, which bind-mounts the repo to `/workspace`); the `ghcr.io/ravencus/cs598lmz-lean:latest` Docker image is used only for interactive proving sessions (§5), not for the headline eval.
 
 **Host requirements:**
 
@@ -156,12 +156,15 @@ Outputs land in `final-report/data/eval_kprobe_K20/`. **Note:** `run_kprobe.sh` 
 python3 final-report/scripts/hub_recall_runner.py --prompt-mode direct
 
 # Proof-conditioned over the 18-problem provable subset
+# (Use --eval-dir to keep its outputs separate from the signature-only run —
+# both runs would otherwise write under the same hub_recall/<model>/ path.)
 python3 final-report/scripts/hub_recall_runner.py \
   --manifest final-report/data/manifest_faithful_proof.json \
-  --prompt-mode proof
+  --prompt-mode proof \
+  --eval-dir final-report/data/eval_overnight_opencode/hub_recall_proof
 ```
 
-Outputs land in `final-report/data/eval_overnight_opencode/hub_recall/<model>/`. The signature-only run produces `aggregate.json` with macro/micro precision, recall, F1.
+Signature-only outputs land in `final-report/data/eval_overnight_opencode/hub_recall/<model>/`; proof-conditioned outputs in `.../hub_recall_proof/<model>/`. Each run produces an `aggregate.json` with macro/micro precision, recall, F1. `eval_figures.py` in §4.5 reads both paths.
 
 ### 4.5 Figures
 
@@ -221,7 +224,7 @@ The exported trace is the input format consumed by the System 2 prototype in `sc
 ## 6. Architecture summary
 
 **System 1 — proving harness** (`workspace/`, `mcp_server/`, `docker/`):
-- OpenCode agent configured by two `SKILL.md` files: a workflow skill (explore-plan-prove-revise) and a tools skill (sympy / Mathematica).
+- OpenCode agent configured by `workspace/.opencode/skills/lean-prover/SKILL.md` (the workflow skill: explore-plan-prove-revise). In the `with_sympy` condition, the harness additionally prepends a sympy-tools block to the system prompt at run time, conceptually a second skill though not a separate file on disk.
 - The agent emits a Lean file plus zero or more sympy verifier scripts.
 - Two checker backends consume the artifacts: Lean+Mathlib for deductive structure, a tool runtime for symbolic / numeric sub-claims.
 - $K = 3$ attempts per problem with diagnostics fed back as trace context.
