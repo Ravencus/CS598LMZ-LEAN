@@ -5,6 +5,7 @@ CLAUDE.md
 .opus_api
 .deepseek_api
 .openai_api
+.opencode_api
 *.api_key
 
 # Python

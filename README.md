@@ -64,24 +64,26 @@ The eval scripts shell out to local CLI tools and the local Lean toolchain. Ever
 The **curated relational dataset** is included in this repo at:
 
 ```
-final-presentation/d2_curation_v2/data/dataset_v2/
-├── nodes/                              # 461 node JSON files
-│   ├── <problem-slug>.json             #   439 problem nodes
-│   └── <hub-slug>.json                 #   22 strategy hub nodes
-├── edges.json                          # 7,415 edges (problem-problem and problem-hub)
-└── formalizations/                     # 233 Lean 4 theorem signatures
+final-presentation/d2_curation_v2/data/
+├── dataset_v2/
+│   ├── nodes/                          # 461 node JSON files
+│   │   ├── <problem-slug>.json         #   439 problem nodes
+│   │   └── <hub-slug>.json             #   22 strategy hub nodes
+│   ├── edges.json                      # 7,415 edges (problem-problem and problem-hub)
+│   └── manifest.json                   # dataset version metadata
+└── formalizations/                     # 440 problem-slug subdirectories of formalization attempts
     └── <problem-slug>/
         ├── formalization.lean          #   Lean signature with `sorry` body
         └── audit.json                  #   FAITHFUL / MISMATCH / VACUOUS / UNCERTAIN verdict
 ```
 
-The **148-statement `FAITHFUL` pool** (the evaluation set used throughout §3.2 of the report) is the subset of `formalizations/` whose `audit.json` is `FAITHFUL`. The fixed manifest used by all runners is:
+Of the 440 formalization attempts, 233 produce a Lean signature that compiles. Of those 233, **148 are labeled `FAITHFUL`** by the audit judge and form the proving-evaluation pool used in §3.2 of the report. The fixed 30-problem stratified sample drawn from that pool (the actual set every cell in §4.1 was run on) is at:
 
 ```
-final-report/data/manifest_faithful_100.json
+final-report/data/eval_snapshots/20260510_083526_partial/manifest.json
 ```
 
-(Schema: `n_problems`, `source`, `problems[]`. Each problem carries `problem_id`, `statement_en`, `verified_signature`, `difficulty`, `problem_type`, `domain`, `ground_truth_hubs`.)
+A 100-problem manifest is also kept at `final-report/data/manifest_faithful_100.json` for one-off experimentation, and an 18-problem proof-conditioned manifest at `final-report/data/manifest_faithful_proof.json` for §4.4. All three follow the same schema: `n_problems`, `source`, `problems[]`. Each problem carries `problem_id`, `statement_en`, `verified_signature`, `difficulty`, `problem_type`, `domain`, `ground_truth_hubs` (the `manifest_faithful_proof.json` problems additionally carry `final_proof` and `proof_source`).
 
 **What is NOT in the repo:** the source Obsidian vault (455 markdown notes, ~160 MB) from which the dataset is derived. The vault is private personal study material. The pipeline that produces `dataset_v2/` from the vault is documented in §2.1 of the report and the scripts live in `final-presentation/d2_curation_v2/scripts/`; they are reproducible only if you have the source vault.
 
@@ -93,11 +95,13 @@ All commands run from the repo root, with the prerequisites in §2 installed, th
 
 ### 4.1 Main proving evaluation (Table `main-pass-rate`)
 
-5 models × 2 conditions × 30 problems = 300 cells. Wall-clock: roughly 8 hours with default parallelism.
+5 models × 2 conditions × 30 problems = 300 cells. Wall-clock: roughly 8 hours with default parallelism. The runner defaults to the 30-problem stratified-sample manifest at `final-report/data/eval_snapshots/20260510_083526_partial/manifest.json`, so no flags are required to reproduce the headline numbers.
 
 ```bash
-python3 final-report/scripts/overnight_runner.py --n-problems 30 --seed 42
+python3 final-report/scripts/opencode_runner.py
 ```
+
+(The runner additionally accepts `--models`, `--conditions`, `--budget`, `--wall`, `--parallel`, `--limit`, `--eval-dir`; defaults are the production settings.)
 
 Per-cell outputs land in `final-report/data/eval_overnight_opencode/<model>/<condition>/<pid>/`:
 - `outcome.json` — verdict + metadata.
@@ -113,14 +117,23 @@ python3 final-report/scripts/aggregate_opencode.py
 
 This produces `final-report/data/eval_overnight_opencode/aggregate.json`, the source of every cell in `main-pass-rate`, `runtime`, and the `outcome-breakdown` figure.
 
+Note: there is also an older `overnight_runner.py` in the same directory which writes to `final-report/data/eval_overnight/` (a separate "Arm A" pipeline). It is not the runner that produced the report's headline numbers; use `opencode_runner.py` for reproduction.
+
 ### 4.2 Capability decomposition (Table `capability-decomposition`)
 
-For each vendor pair, an LLM judge reads disagreement traces (from §4.1's `stream.jsonl`) and assigns one of `different_plan`, `same_plan_search_diff`, `same_plan_lean_impl_diff`.
+For each within-vendor pair (gpt-5.5 vs gpt-5.4-mini, deepseek-v4-pro vs deepseek-v4-flash), an LLM judge reads disagreement traces (from §4.1's `stream.jsonl`) and assigns one of `different_plan`, `same_plan_search_diff`, `same_plan_lean_impl_diff`. Both pairs are iterated in a single invocation:
 
 ```bash
-python3 final-report/scripts/trace_compare.py --pair gpt-5.5,gpt-5.4-mini
-python3 final-report/scripts/trace_compare.py --pair deepseek-v4-pro,deepseek-v4-flash
+python3 final-report/scripts/trace_compare.py
 ```
+
+Outputs land in `final-report/data/eval_overnight_opencode/trace_compare/`. For the additional cross-vendor `gpt-5.5` vs `claude-opus-4-7` comparison (reported alongside the vendor pairs):
+
+```bash
+python3 final-report/scripts/trace_compare_55_vs_opus.py
+```
+
+This writes to `final-report/data/eval_overnight_opencode/trace_compare_55_vs_opus/`.
 
 ### 4.3 Check-call budget ablation (Table `kprobe`)
 
@@ -130,17 +143,16 @@ Reruns every failing `gpt-5.5` and `gpt-5.4-mini` cell with the MCP call budget 
 bash final-report/scripts/run_kprobe.sh
 ```
 
-Outputs land in `final-report/data/eval_kprobe_K20/`.
+Outputs land in `final-report/data/eval_kprobe_K20/`. **Note:** `run_kprobe.sh` hard-codes `REPO=/home/raven/Desktop/lean` at the top. Edit that line to your clone path before running, or wrap the invocation with `REPO=$(pwd) bash -c '...'`.
 
 ### 4.4 Hub-strategy classification (Table `hub-recall`)
 
-`gpt-5.5` classifies each problem against the 22-hub catalog. Two conditions: `signature-only` (30 problems) and `proof-conditioned` (18 problems for which some model produced a passing Lean proof).
+`gpt-5.5` classifies each problem against the 22-hub catalog. Two conditions: `signature-only` (the same 30 stratified problems as §4.1) and `proof-conditioned` (the 18 problems for which some model produced a passing Lean proof).
 
 ```bash
 # Signature-only over the 30-problem stratified sample
-python3 final-report/scripts/hub_recall_runner.py \
-  --manifest final-report/data/manifest_faithful_100.json \
-  --prompt-mode direct
+# (defaults to eval_snapshots/20260510_083526_partial/manifest.json — same 30 as §4.1)
+python3 final-report/scripts/hub_recall_runner.py --prompt-mode direct
 
 # Proof-conditioned over the 18-problem provable subset
 python3 final-report/scripts/hub_recall_runner.py \
@@ -148,9 +160,13 @@ python3 final-report/scripts/hub_recall_runner.py \
   --prompt-mode proof
 ```
 
+Outputs land in `final-report/data/eval_overnight_opencode/hub_recall/<model>/`. The signature-only run produces `aggregate.json` with macro/micro precision, recall, F1.
+
 ### 4.5 Figures
 
 Run on the host. They read the JSON outputs above and write PDF/PNG to a `final-report/report-artifacts/figures/` directory each script auto-creates (gitignored; the files are for inspection or external use). Note: `dataset_overview_figure.py` and `eval_figures.py` currently hard-code `ROOT = Path('/home/raven/Desktop/lean')`; edit that line if your repo lives elsewhere.
+
+`architecture_figures.py` and `dataset_overview_figure.py` are self-contained. `eval_figures.py` requires four upstream aggregates: the main `aggregate.json` from §4.1, both `trace_compare*/aggregate.json` from §4.2, and the hub-recall aggregate from §4.4. These are already shipped in `final-report/data/`, so running the figure script directly on a fresh clone works. If you have rerun the eval from scratch, run §4.1 → §4.2 → §4.4 first, then:
 
 ```bash
 python3 final-report/scripts/architecture_figures.py     # figure-curation.pdf
@@ -170,9 +186,17 @@ docker pull ghcr.io/ravencus/cs598lmz-lean:latest
 docker build -t ghcr.io/ravencus/cs598lmz-lean:latest .
 ```
 
+OpenCode inside the container uses its own API key (separate from the codex CLI's OAuth-based auth in §2). Sign up at <https://opencode.ai> and store the key locally:
+
+```bash
+echo "$OPENCODE_KEY" > .opencode_api    # gitignored
+```
+
+Then start the container:
+
 ```bash
 docker run -it \
-  -e OPENAI_API_KEY="$(cat .openai_api)" \
+  -e OPENCODE_API_KEY="$(cat .opencode_api)" \
   -v $(pwd)/workspace:/home/lean/workspace \
   ghcr.io/ravencus/cs598lmz-lean:latest
 
