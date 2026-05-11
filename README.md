@@ -170,7 +170,7 @@ Signature-only outputs land in `final-report/data/eval_overnight_opencode/hub_re
 
 Run on the host. They read the JSON outputs above and write PDF/PNG to a `final-report/report-artifacts/figures/` directory each script auto-creates (gitignored; the files are for inspection or external use). Note: `dataset_overview_figure.py` and `eval_figures.py` currently hard-code `ROOT = Path('/home/raven/Desktop/lean')`; edit that line if your repo lives elsewhere.
 
-`architecture_figures.py` and `dataset_overview_figure.py` are self-contained. `eval_figures.py` requires four upstream aggregates: the main `aggregate.json` from §4.1, both `trace_compare*/aggregate.json` from §4.2, and the hub-recall aggregate from §4.4. These are already shipped in `final-report/data/`, so running the figure script directly on a fresh clone works. If you have rerun the eval from scratch, run §4.1 → §4.2 → §4.4 first, then:
+`architecture_figures.py` and `dataset_overview_figure.py` are self-contained. `eval_figures.py` requires five upstream aggregates: the main `aggregate.json` from §4.1, both `trace_compare/aggregate.json` and `trace_compare_55_vs_opus/aggregate.json` from §4.2, and both the signature-only (`hub_recall/<model>/aggregate.json`) and proof-conditioned (`hub_recall_proof/<model>/aggregate.json`) aggregates from §4.4. These are already shipped in `final-report/data/`, so running the figure script directly on a fresh clone works. If you have rerun the eval from scratch, run §4.1 → §4.2 → §4.4 first, then:
 
 ```bash
 python3 final-report/scripts/architecture_figures.py     # figure-curation.pdf
