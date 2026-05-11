@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "skipped": true,
+  "reason": "signature_deviation",
+  "splice_action": "deviation",
+  "deviation_detail": "model header differs from canonical (modulo whitespace).\nCanonical: theorem riemannIntegrable_iff_exists_intervalIntegrable_bounds {a b : ℝ} {f : ℝ → ℝ} : IntervalIntegrable f volume a b ↔ ∀ ε > 0, ∃ α β : ℝ → ℝ, IntervalIntegrable α volume a b ∧ IntervalIntegrable β volume a b ∧ (∀ x ∈ Set.Icc a b, α x ≤ f x) ∧ (∀ x ∈ Set.Icc a b, f x ≤ β x) ∧ |∫ x in a..b, (α x - \nModel:    theorem is not provable with this exact signature. -- -- Counterexample: take `a = 1`, `b = 0`, and `f x = 1 / x`. -- Then the right-hand side is true for every `ε > 0` by choosing `α = β = 0`, -- because `Set.Icc 1 0 = ∅`, so the order hypotheses are vacuous and -- `|∫ x in 1..0, (0 - 0)| = 0 < ε`.",
+  "errors_only": []
+}

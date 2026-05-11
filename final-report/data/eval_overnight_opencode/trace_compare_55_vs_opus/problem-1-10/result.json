@@ -1,0 +1,11 @@
+{
+  "problem_id": "problem-1-10",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "lean_impl",
+  "evidence": "Both traces reduce the zero set integral to an a.e. statement for `ENNReal.ofReal (f x)` using the `lintegral_eq_zero_iff` lemma family, then convert `ENNReal.ofReal (f x) = 0` plus `hf_nonneg` into `f x = 0`. Trace A initially tried the wrong `ae_eq_zero` route and had several type/proof-shape fail",
+  "wall_seconds": 6.51
+}

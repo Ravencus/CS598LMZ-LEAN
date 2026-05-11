@@ -1,0 +1,23 @@
+{
+  "id": "lemma-2",
+  "type": "problem",
+  "source_note": "Etemadi关于强大数定律的证明",
+  "english_source_note": "Etemadi's Proof of the Strong Law of Large Numbers",
+  "callout_id": "Etemadi关于强大数定律的证明#7",
+  "english_title": "Lemma 2",
+  "statement_en": "$$\\sum_{k\\geq 1} V(Y_k)/k^2\\leq 4E(|X_1|)<\\infty.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "variance estimate",
+    "summability argument",
+    "truncation"
+  ],
+  "prerequisites": [
+    "variance",
+    "expectation and integrability",
+    "series convergence"
+  ],
+  "callout_body": "$$\\sum_{k\\geq 1} V(Y_k)/k^2\\leq 4E(|X_1|)<\\infty$$"
+}

@@ -1,0 +1,25 @@
+I’ll use the Lean checker sparingly: first to identify the relevant Mathlib lemmas for limsup null sets and almost-everywhere convergence, then submit a near-complete proof.
+I found a previous formalization of the same theorem in the repository. I’m verifying it directly against the current checker before returning it.
+The current Mathlib semantics make the stated hypothesis too weak: `Summable` for `ℝ≥0∞`-valued series does not imply the tsum is finite. The Borel-Cantelli lemmas require `∑' n, μ (...) ≠ ∞`, which is exactly where the earlier proof fails.
+No valid Lean proof exists for the exact signature.
+
+The issue is that `μ {...}` has type `ℝ≥0∞`, and in Mathlib:
+
+```lean
+example : Summable (fun n : ℕ => (⊤ : ENNReal)) := by
+  exact ENNReal.summable
+```
+
+So the hypothesis
+
+```lean
+Summable (fun n => μ {...})
+```
+
+does not mean the measure series is finite. The Borel-Cantelli lemma requires:
+
+```lean
+(∑' n, μ {...}) ≠ ⊤
+```
+
+With the current signature, the theorem is false. For example, take `α = Unit`, `μ = Measure.dirac ()`, `fSeq n x = 1`, and `f x = 0`; the hypothesis holds trivially, but the limsup set has measure `1`, not `0`.

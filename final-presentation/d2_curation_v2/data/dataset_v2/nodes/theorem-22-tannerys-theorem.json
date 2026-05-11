@@ -1,0 +1,21 @@
+{
+  "id": "theorem-22-tannerys-theorem",
+  "type": "problem",
+  "source_note": "对含参数方程根的估计",
+  "english_source_note": "Estimates for Roots of Parameterized Equations",
+  "callout_id": "对含参数方程根的估计#6",
+  "english_title": "Theorem 2.2: Tannery's Theorem",
+  "statement_en": "Let \\\\(\\\\{a_{s,k}\\\\}_{s\\\\in S}\\\\) be a family of sequences such that:\n1. For every positive integer \\(k\\\\ge 1\\), \\(a_{s,k}\\\to a_k\\).\n2. There exists a nonnegative sequence \\(M_k\\), independent of \\(s\\), such that for every \\(k\\), \\( |a_{s,k}|\\\\le M_k \\), and\n\\\\[\n\\\\sum_{k\\\\ge 1} M_k<\\\\infty.\n\\\\]\nThen\n\\\\[\n\\\\sum_{k\\\\ge 1} a_{s,k}\\\to \\\\sum_{k\\\\ge 1} a_k.\n\\\\]",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "uniform domination of series terms",
+    "interchange of limit and summation"
+  ],
+  "prerequisites": [
+    "convergence of infinite series",
+    "dominated convergence ideas"
+  ],
+  "callout_body": "$\\{a_{s,k}\\}_{s\\in S}$是一族序列，满足：\n1. 对任意正整数$k\\geq 1$都有$a_{s,k}\\to a_k$。\n2. 存在一个与$s$无关的非负序列$M_k$使得对任意的$k$都有$|a_{s,k}|\\leq M_k$并且$\\sum_{k\\geq 1}M_k<\\infty$\n\n那么$$\\sum_{k\\geq 1} a_{s,k}\\to \\sum_{k\\geq 1}a_k$$"
+}

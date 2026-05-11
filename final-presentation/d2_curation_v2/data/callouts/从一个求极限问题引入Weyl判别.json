@@ -1,0 +1,25 @@
+{
+  "note_title": "从一个求极限问题引入Weyl判别",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "从一个求极限问题引入Weyl判别#1",
+      "type": "question",
+      "title": "问题",
+      "body": "求极限\n$$\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\to \\text{ ? }$$",
+      "position_char": 51,
+      "position_line": 8
+    },
+    {
+      "id": "从一个求极限问题引入Weyl判别#2",
+      "type": "note",
+      "title": "Weyl判别",
+      "body": "如果$s_n$在闭区间$[a,b]$上**均匀分布(equidistributed)**，那么$$\\frac{1}{N}\\sum_{n=1}^{N}f(s_n)\\to\n\\frac{1}{b-a}\\int_{a}^{b}f(x)dx$$此结果对任意连续函数$f$成立。",
+      "position_char": 2208,
+      "position_line": 38
+    }
+  ]
+}

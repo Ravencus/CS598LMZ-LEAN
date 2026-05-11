@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0230e5bc9448.lean",
+      "line": 15,
+      "column": 25,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0230e5bc9448.lean",
+      "line": 15,
+      "column": 27,
+      "severity": "warning",
+      "message": "unused variable `g`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0230e5bc9448.lean",
+      "line": 18,
+      "column": 31,
+      "severity": "warning",
+      "message": "unused variable `α`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0230e5bc9448.lean",
+      "line": 18,
+      "column": 50,
+      "severity": "warning",
+      "message": "unused variable `g`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0230e5bc9448.lean",
+      "line": 24,
+      "column": 10,
+      "severity": "error",
+      "message": "Function expected at\n  Integrable\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  f\n\nHint: The identifier `Integrable` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0230e5bc9448.lean",
+      "line": 24,
+      "column": 10,
+      "severity": "error",
+      "message": "Function expected at\n  Integrable\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  f\n\nHint: The identifier `Integrable` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ]
+}

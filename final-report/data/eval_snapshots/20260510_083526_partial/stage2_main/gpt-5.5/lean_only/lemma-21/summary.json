@@ -1,0 +1,58 @@
+{
+  "problem_id": "lemma-21",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 105.5,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 17.21,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown constant `Complex.norm_exp_mul_I_sub_one_le`"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 64.44,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown constant `Complex.norm_exp_mul_I_sub_exp_mul_I_le`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 16.86,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown constant `Complex.dist_exp_mul_I_le`"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Let me explore what Mathlib provides for density of sequences and irrational rotations.
+Let me first test the Lean environment and see what theorems are available.

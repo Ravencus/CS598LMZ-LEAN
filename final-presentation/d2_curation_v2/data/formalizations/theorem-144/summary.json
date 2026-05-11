@@ -1,0 +1,30 @@
+{
+  "problem_id": "theorem-144",
+  "english_title": "Theorem 1.4.4",
+  "statement_en": "Let $\\alpha$ be an irrational number. A positive integer $q$ is a best approximation to $\\alpha$ if and only if $q$ is the denominator of some convergent in the continued fraction expansion of $\\alpha$.",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Function expected at\n  |α - ↑p' / ↑q'|\nbut this term has type\n  ℝ\n\nNote: Expected a function because this term is being applied to the argument\n  constant"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Function expected at\n  |α - ↑p' / ↑q'|\nbut this term has type\n  ℝ\n\nNote: Expected a function because this term is being applied to the argument\n  constant"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Function expected at\n  |α - ↑p' / ↑q'|\nbut this term has type\n  ℝ\n\nNote: Expected a function because this term is being applied to the argument\n  constant"
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef IsBestApproximation (α : ℝ) (q : ℕ) : Prop :=\n  0 < q ∧\n    ∃ p : ℤ,\n      ∀ q' : ℕ, 0 < q' → q' ≤ q →\n        ∀ p' : ℤ,\n          abs (α - (p : ℝ) / (q : ℝ)) ≤ abs (α - (p' : ℝ) / (q' : ℝ))\n\nconstant IsDenominatorOfSomeConvergent : ℝ → ℕ → Prop\n\ntheorem irrational_bestApproximation_iff_denominator_of_convergent\n    {α : ℝ} (hα : Irrational α) {q : ℕ} (hq : 0 < q) :\n    IsBestApproximation α q ↔ IsDenominatorOfSomeConvergent α q := by\n  sorry"
+}

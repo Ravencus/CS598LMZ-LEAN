@@ -1,0 +1,52 @@
+I'll work on this theorem about Diophantine approximation. The key idea is Dirichlet's approximation theorem - for irrational α, we can find q such that ||qα|| < ε.
+
+Let me first explore what's available in Mathlib for this.
+Let me think about this carefully. The theorem is Dirichlet's approximation theorem applied to irrationals. The key fact: for irrational α and any ε > 0, there exist q > 0 and p ∈ ℤ with |qα - p| < ε.
+
+In Mathlib, this is likely `Irrational.exists_int_sq_lt_*` or similar. Let me search.
+Let me search for the key Mathlib lemma about Dirichlet approximation.
+Found it. Let me look at `WellApproximable.lean`:
+Excellent! Found it. There's `Real.exists_rat_abs_sub_le_and_den_le`. Let me check it:
+Let me see `exists_int_int_abs_mul_sub_le` - that's exactly what we want:
+This is *exactly* what we need. Strategy: choose n such that 1/(n+1) < ε, apply the lemma, get j and k with 0 < k ≤ n and |k*ξ - j| ≤ 1/(n+1) < ε. Then q := k.toNat.
+
+We need `(q : ℕ) → ℝ` coercion from `k : ℤ`. Since `0 < k`, `k.toNat` works.
+
+Let me write the proof. We also need to handle that the hypothesis is `hα : Irrational α` but the Dirichlet theorem works for any real, so we don't even need irrationality. 
+Almost there. The issue is on line 16 - `Int.toNat_of_nonneg` returns `k.toNat = k`, not the coercion form. Also, line 14 - the `0 < k.toNat` proof is messy. Let me simplify.
+Proof compiles with only an unused-variable warning (expected since Dirichlet's theorem doesn't need irrationality).
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  -- Choose n large enough so 1/(n+1) < ε
+  obtain ⟨n, hn⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have : (0 : ℝ) < n := lt_of_le_of_lt (one_div_pos.mpr hε).le hn
+    exact_mod_cast this
+  -- Apply Dirichlet's approximation theorem
+  obtain ⟨j, k, hk_pos, hk_le, h⟩ := Real.exists_int_int_abs_mul_sub_le α hn_pos
+  refine ⟨k.toNat, ?_, j, ?_⟩
+  · -- 0 < k.toNat since 0 < k
+    rw [Int.lt_toNat] at *
+    omega
+  · have hkn : ((k.toNat : ℤ) : ℝ) = (k : ℝ) := by
+      norm_cast
+      exact Int.toNat_of_nonneg hk_pos.le
+    have hcast : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by
+      have := hkn
+      push_cast at this
+      exact this
+    rw [hcast]
+    have h1 : (1 : ℝ) / (n + 1) < ε := by
+      have hn1 : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+      rw [div_lt_iff₀ hn1]
+      have : 1 / ε < (n : ℝ) + 1 := by linarith
+      rw [div_lt_iff₀ hε] at this
+      linarith
+    linarith [h]
+```

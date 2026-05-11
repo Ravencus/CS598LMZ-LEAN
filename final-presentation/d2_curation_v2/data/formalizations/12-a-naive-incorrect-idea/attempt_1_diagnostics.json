@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c3dfcc5a915c.lean",
+      "line": 4,
+      "column": 2,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Decidable (∃ k, 1 ≤ k ∧ n = 2 ^ k)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c3dfcc5a915c.lean",
+      "line": 6,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c3dfcc5a915c.lean",
+      "line": 12,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c3dfcc5a915c.lean",
+      "line": 4,
+      "column": 2,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Decidable (∃ k, 1 ≤ k ∧ n = 2 ^ k)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-123",
+  "english_title": "Proposition 1.2.3",
+  "statement_en": "For $N\\geq 2$, the following identity always holds: $$1+\\frac{1}{1!}+\\cdots+\\frac{1}{N!}+\\frac{1}{NN!}=3-\\frac{1}{1\\cdot 2\\cdot 2!}-\\cdots \\frac{1}{(N-1)NN!}$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem factorial_sum_identity (N : ℕ) (hN : 2 ≤ N) :\n    Finset.sum (Finset.range (N + 1)) (fun k => (1 : ℚ) / (k.factorial : ℚ)) +\n        (1 : ℚ) / (((N * N.factorial : ℕ) : ℕ) : ℚ) =\n      (3 : ℚ) -\n        Finset.sum (Finset.Icc 1 (N - 1))\n          (fun k => (1 : ℚ) / (((k * (k + 1) * (k + 1).factorial : ℕ) : ℕ) : ℚ)) := by\n  sorry"
+}

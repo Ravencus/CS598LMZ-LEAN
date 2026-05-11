@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-112",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 68.3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 21.32,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Application type mismatch: The argument\n  hn\nhas type\n  2 ≤ n\nbut is expected to have type\n  2 ≤ n + 1\nin the application\n  Finset.sum_Icc_succ_top hn\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 18.1,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "unsolved goals\ncase step\nN : ℕ\nhN : 2 ≤ N\nn : ℕ\nhn : 2 ≤ n\nih : ∑ n ∈ Finset.Icc 2 n, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑n\nhnsucc : 2 ≤ n + 1\nhnq : ↑n ≠ 0\nhsnq : ↑(n + 1) ≠ 0\nhn1q : ↑(n + 1 - 1) = ↑n\n⊢ 1 "
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 21.47,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "unsolved goals\ncase step\nN : ℕ\nhN : 2 ≤ N\nn : ℕ\nhn : 2 ≤ n\nih : ∑ n ∈ Finset.Icc 2 n, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑n\nhnsucc : 2 ≤ n + 1\nhnq : ↑n ≠ 0\nhsnq : ↑(n + 1) ≠ 0\nhn1q : ↑(n + 1 - 1) = ↑n\n⊢ 1 "
+    }
+  ]
+}

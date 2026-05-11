@@ -1,0 +1,55 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 341.67,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "Tactic `simp` failed with a nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information",
+  "total_cost_usd": 0.0,
+  "total_tokens": 1744064,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0b30d6de89.lean",
+      "line": 22,
+      "column": 48,
+      "severity": "error",
+      "message": "Tactic `simp` failed with a nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0b30d6de89.lean",
+      "line": 23,
+      "column": 47,
+      "severity": "error",
+      "message": "unsolved goals\nι : Type u_1\ninst✝¹ : Fintype ι\ninst✝ : DecidableEq ι\nA B : Matrix ι ι ℂ\nm : ℕ\nih : A * (B * A) ^ m = (A * B) ^ m * A\nhBAA : A * (B * A) = A * B * A\n⊢ (A * B) ^ m * (A * (B * A)) = (A * B) ^ m * (A * B) * A"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0b30d6de89.lean",
+      "line": 68,
+      "column": 48,
+      "severity": "error",
+      "message": "Tactic `simp` failed with a nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0b30d6de89.lean",
+      "line": 69,
+      "column": 47,
+      "severity": "error",
+      "message": "unsolved goals\nι : Type u_1\ninst✝¹ : Fintype ι\ninst✝ : DecidableEq ι\nA B : Matrix ι ι ℂ\nm : ℕ\nih : B * (A * B) ^ m = (B * A) ^ m * B\nhBAB : B * (A * B) = B * A * B\n⊢ (B * A) ^ m * (B * (A * B)) = (B * A) ^ m * (B * A) * B\n"
+    }
+  ]
+}

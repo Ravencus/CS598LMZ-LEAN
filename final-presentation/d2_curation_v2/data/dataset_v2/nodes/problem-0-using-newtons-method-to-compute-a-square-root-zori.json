@@ -1,0 +1,25 @@
+{
+  "id": "problem-0-using-newtons-method-to-compute-a-square-root-zori",
+  "type": "problem",
+  "source_note": "Re0微积分1：用牛顿迭代法求算术平方根",
+  "english_source_note": "Re0 Calculus 1: Arithmetic Square Roots by Newton Iteration",
+  "callout_id": "Re0微积分1:用牛顿迭代法求算术平方根#1",
+  "english_title": "Problem 0: Using Newton's Method to Compute a Square Root, Zorich Mathematical Analysis Exercise 3.2.7",
+  "statement_en": "Assume $a>0$ and define the sequence $$x_{n+1}:=\\frac{1}{2}\\left(x_n+\\frac{a}{x_n}\\right).$$ 1. Prove that under the condition $x_1>0$, we have $x_n\\to \\sqrt{a}$. 2. Estimate the absolute error $e_n:=x_n-\\sqrt{a}$ and give an upper bound for $|e_n|$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "monotone convergence",
+    "fixed-point analysis",
+    "Newton iteration",
+    "error recurrence estimation"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "monotone bounded sequences",
+    "algebraic manipulation",
+    "square root properties"
+  ],
+  "callout_body": "假设$a>0$，定义序列:$$x_{n+1}:=\\frac{1}{2}\\left(x_n+\\frac{a}{x_n}\\right)$$\n1. 证明在$x_1> 0$的条件下$x_n\\to \\sqrt{a}$。\n2. 估计绝对误差$e_n:=x_n-\\sqrt{a}$,给出$|e_n|$的上界估计。"
+}

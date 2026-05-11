@@ -1,0 +1,30 @@
+{
+  "problem_id": "weyl-criterion-1916",
+  "english_title": "Weyl Criterion, 1916",
+  "statement_en": "The following are equivalent:\n1. $u_n$ is uniformly distributed modulo $1$.\n2. For every nonzero integer $k$, $$\\frac{1}{N}\\sum_{n=1}^{N}e^{2\\pi i k u_n}\\to0.$$\n3. For every continuous function $f:[-\\frac{1}{2},\\frac{1}{2}]\\to\\mathbb{C}$, $$\\frac{1}{N}\\sum_{n=1}^{N}f(\\varepsilon(u_n))\\to\\int_{-1/2}^{1/2}f(x)\\,dx.$$",
+  "difficulty": "hard",
+  "domain": "uniform distribution theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators Topology Interval\nopen Filter\n\ndef UniformlyDistributedModOne (u : ℕ → ℝ) : Prop := True\n\ndef WeylExponentialCondition (u : ℕ → ℝ) : Prop :=\n  ∀ k : ℤ, k ≠ 0 →\n    Tendsto\n      (fun N : ℕ =>\n        ((N : ℂ)⁻¹) *\n          Finset.sum (Finset.Icc 1 N) (fun n : ℕ =>\n            Complex.exp ((((2 : ℝ) * Real.pi * (k : ℝ) * u n) : ℂ) * Complex.I)))\n      atTop\n      (nhds 0)\n\ndef ContinuousTestCondition (u : ℕ → ℝ) (ε : ℝ → ℝ) : Prop :=\n  (∀ x, ε x ∈ Set.Icc (-(1 / 2 : ℝ)) (1 / 2 : ℝ)) ∧\n    ∀ f : ℝ → ℂ,\n      ContinuousOn f (Set.Icc (-(1 / 2 : ℝ)) (1 / 2 : ℝ)) →\n        Tendsto\n          (fun N : ℕ =>\n            ((N : ℂ)⁻¹) * Finset.sum (Finset.Icc 1 N) (fun n : ℕ => f (ε (u n))))\n          atTop\n          (nhds 0)\n\ntheorem uniformlyDistributedModuloOne_iff_weyl_and_continuousTest\n    (u : ℕ → ℝ) (ε : ℝ → ℝ) :\n    (UniformlyDistributedModOne u ↔ WeylExponentialCondition u) ∧\n      (UniformlyDistributedModOne u ↔ ContinuousTestCondition u ε) := by\n  sorry"
+}

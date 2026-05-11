@@ -1,0 +1,23 @@
+{
+  "id": "problem-21",
+  "type": "problem",
+  "source_note": "实分析的复办法",
+  "english_source_note": "Complex Methods in Real Analysis",
+  "callout_id": "实分析的复办法#6",
+  "english_title": "Problem 2.1",
+  "statement_en": "Suppose $f\\in L^1(\\mathbb{R})$ is a real function whose Fourier transform satisfies the same rapid decay condition as above, namely $$\\widehat{f}(\\xi)\\lesssim_{b,f}e^{-2\\pi a|\\xi|}.$$ Must it follow that $f$ extends to a holomorphic function on the strip $S_a$ in the complex plane?",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "Fourier inversion",
+    "Paley-Wiener type reasoning",
+    "analytic continuation from Fourier decay"
+  ],
+  "prerequisites": [
+    "Fourier transform",
+    "holomorphic extension to strips",
+    "inverse Fourier transform"
+  ],
+  "callout_body": "如果我有一个实函数$f\\in L^1(\\mathbb{R})$，其傅里叶变换$\\widehat{f}$满足和上面一样的快速衰减的条件$$\\widehat{f}(\\xi)\\lesssim_{b,f}e^{-2\\pi a|\\xi|}$$是不是说这个函数一定可以拓展为复平面上的带状区域$S_a$上的一个全纯函数了？"
+}

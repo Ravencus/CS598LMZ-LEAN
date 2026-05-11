@@ -1,0 +1,23 @@
+{
+  "id": "proposition-231-2",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#10",
+  "english_title": "Proposition 2.3.1",
+  "statement_en": "Let $x_n$ be a bounded sequence with limit superior $U$ and limit inferior $L$. Let $f:I\\to \\mathbb{R}$ be continuous, where $I$ is an open interval containing the closed interval $[L,U]$. Then:\n1. If $f$ is nondecreasing on $I$, then $$\\limsup_{n\\to \\infty} f(x_n)=f(U),\\qquad \\liminf_{n\\to \\infty} f(x_n)=f(L).$$\n2. If $f$ is nonincreasing on $I$, then $$\\limsup_{n\\to \\infty} f(x_n)=f(L),\\qquad \\liminf_{n\\to \\infty} f(x_n)=f(U).$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "continuous monotone transformation of subsequential limits",
+    "map extrema of cluster points through monotone functions"
+  ],
+  "prerequisites": [
+    "continuous functions",
+    "monotone functions",
+    "limit superior and limit inferior",
+    "bounded sequences"
+  ],
+  "callout_body": "$x_n$是一个有界序列，假设其上下极限分别为$U,L$。此时考虑一个连续函数$f:I\\to \\mathbb{R}$，其中$I$是一个包含闭区间$[L,U]$的**开区间**于是：\n1. 如果函数$f$在$I$上是单调不减的，那么$$\\limsup_{n\\to \\infty} f(x_n)=f(U),\\liminf_{n\\to \\infty} f(x_n)=f(L)$$\n2. 如果函数$f$在$I$上是单调不增的，那么$$\\limsup_{n\\to \\infty} f(x_n)=f(L),\\liminf_{n\\to \\infty} f(x_n)=f(U)$$"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "example-318",
+  "type": "problem",
+  "source_note": "和与积分换序",
+  "english_source_note": "Interchanging Sums and Integrals",
+  "callout_id": "和与积分换序#10",
+  "english_title": "Example 3.1.8",
+  "statement_en": "Compute the parameter-dependent integral \\[I(a) := \\int_0^1 \\frac{\\cos(ax)}{\\sqrt{1-x^2}}\\,dx.\\]",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "special functions",
+  "key_techniques": [
+    "power series expansion of cosine",
+    "moments involving \\(1/\\sqrt{1-x^2}\\)",
+    "interchange of summation and integration",
+    "Bessel function identification"
+  ],
+  "prerequisites": [
+    "Taylor series for cosine",
+    "Gamma function",
+    "Wallis-type integrals",
+    "basic Bessel function familiarity"
+  ],
+  "callout_body": "计算含参数积分（第一类零阶贝塞尔函数的积分表示）：$$I(a) := \\int_0^1 \\frac{\\cos(ax)}{\\sqrt{1-x^2}}\\,dx$$"
+}

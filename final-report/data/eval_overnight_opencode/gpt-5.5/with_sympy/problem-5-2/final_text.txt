@@ -1,0 +1,14 @@
+I’ll first check available analytic identity/zero lemmas rather than guessing names, then try to reduce the statement to a Mathlib theorem if one exists.
+This is not a local-accumulation identity theorem situation: the zeros are at `log n` and only accumulate at infinity. I’m checking whether Mathlib already has a finite-order entire-function zero-density theorem; otherwise this theorem is far beyond what can be mechanized from basic library lemmas in a short proof.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem entire_zero_of_growth_and_log_nat_zeros
+    {ρ : ℝ} (hρ : 0 < ρ) {f : ℂ → ℂ}
+    (hentire : Differentiable ℂ f)
+    (hgrowth : ∃ C : ℝ, 0 ≤ C ∧ ∀ z : ℂ, ‖f z‖ ≤ C * Real.exp (Real.rpow ‖z‖ ρ))
+    (hzero : ∀ n : ℕ, 3 < n → f (Complex.ofReal (Real.log (n : ℝ))) = 0) :
+    f = 0 := by
+  apply?
+```

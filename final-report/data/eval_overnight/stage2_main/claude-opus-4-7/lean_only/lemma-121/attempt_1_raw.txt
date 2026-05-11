@@ -1,0 +1,20 @@
+Looking at this theorem carefully, I need to consider whether it's actually true.
+
+The theorem claims that polynomials in $z$ are uniformly dense in $C(\mathbb{T}, \mathbb{C})$. However, this is **false** as a mathematical statement. Consider $f(z) = \bar{z}$ on the unit circle. For any polynomial $P(z) = \sum_k a_k z^k$:
+
+The Fourier coefficient at index $-1$ of $P(e^{i\theta}) - e^{-i\theta}$ is $0 - 1 = -1$, since $P$ has no negative-index terms. But if $\|P - \bar{z}\|_\infty < \varepsilon$, then $|\widehat{(P-\bar{z})}(-1)| \leq \varepsilon$, forcing $\varepsilon \geq 1$.
+
+The classical Stone-Weierstrass theorem on $\mathbb{T}$ requires the algebra to be **self-adjoint** (closed under conjugation), which polynomials in $z$ alone are not — Laurent polynomials (or $\{z, \bar{z}\}$) are needed. The disk algebra (closure of polynomials on $\overline{\mathbb{D}}$) is a proper subspace of $C(\mathbb{T})$.
+
+Since the theorem as stated is mathematically false, no valid Lean proof exists. I must use `sorry`:
+
+```lean
+import Mathlib
+
+abbrev Torus : Type := { z : ℂ // ‖z‖ = (1 : ℝ) }
+
+theorem unitCircle_polynomial_uniform_approximation
+    (f : Torus → ℂ) (hf : Continuous f) :
+    ∀ ε : ℝ, ε > 0 → ∃ P : Polynomial ℂ, ∀ z : Torus, ‖f z - P.eval z.1‖ < ε := by
+  sorry
+```

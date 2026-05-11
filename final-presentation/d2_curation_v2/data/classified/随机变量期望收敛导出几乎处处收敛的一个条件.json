@@ -1,0 +1,123 @@
+{
+  "note_title": "随机变量期望收敛导出几乎处处收敛的一个条件",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "随机变量期望收敛导出几乎处处收敛的一个条件#1",
+      "type": "note",
+      "title": "命题0",
+      "body": "$X_n$是概率空间上的一列随机变量，假设$E(X_n)\\to C$，并且这一列随机变量的方差收敛$\\sum_{n\\geq 1}V(X_n)< \\infty$，那么$$X_n\\xrightarrow{a.s.} C$$",
+      "position_char": 39,
+      "position_line": 6,
+      "classification_result": {
+        "id": "随机变量期望收敛导出几乎处处收敛的一个条件#1",
+        "classification": "problem",
+        "english_title": "Proposition 0",
+        "if_problem": {
+          "statement_en": "Let $X_n$ be a sequence of random variables on a probability space. Assume $E(X_n) \\to C$ and that the sum of the variances satisfies $\\sum_{n\\geq 1} V(X_n) < \\infty$. Then $$X_n \\xrightarrow{a.s.} C.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "variance summability",
+            "almost sure convergence criterion",
+            "centering by expectations"
+          ],
+          "prerequisites": [
+            "random variables and expectation",
+            "variance",
+            "almost sure convergence",
+            "basic measure-theoretic probability"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "随机变量期望收敛导出几乎处处收敛的一个条件#2",
+      "type": "example",
+      "title": "反例1",
+      "body": "考虑随机变量$X_n \\sim \\mathcal{N}(\\frac{1}{\\sqrt{n}},\\frac{1}{n^2})$,那么显然均值是收敛到$C=0$的，并且方差的和是收敛的，不过此时$E(X_n)^2 = \\frac{1}{n}$，这个和可并不收敛。",
+      "position_char": 926,
+      "position_line": 16,
+      "classification_result": {
+        "id": "随机变量期望收敛导出几乎处处收敛的一个条件#2",
+        "classification": "problem",
+        "english_title": "Counterexample 1",
+        "if_problem": {
+          "statement_en": "Consider random variables $X_n \\sim \\mathcal{N}(\\frac{1}{\\sqrt{n}}, \\frac{1}{n^2})$. Then clearly the means converge to $C=0$, and the series of variances converges. However, in this case $E(X_n)^2 = \\frac{1}{n}$, and this series does not converge.",
+          "problem_type": "counterexample",
+          "difficulty": "easy",
+          "domain": "probability theory",
+          "key_techniques": [
+            "constructing Gaussian counterexamples",
+            "checking summability of variances",
+            "comparing mean-square related series"
+          ],
+          "prerequisites": [
+            "normal distribution",
+            "expectation and variance",
+            "series convergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "随机变量期望收敛导出几乎处处收敛的一个条件#3",
+      "type": "tip",
+      "title": "想法2.1:间接证明几乎处处收敛的想法",
+      "body": "假设我们需要证明$f_n \\xrightarrow{a.e.} f$,如果我们已经知道$g_n \\xrightarrow{a.e.} f$,以及$|f_n-g_n| \\xrightarrow{a.e.} 0$,那么我们就能立刻得到结果。换言之，如果我们知道别的对象也几乎处处收敛到目标函数$f$，比如这里的$g_n$，那么我们可以转而去想办法先证明$|f_n-g_n|$几乎处处收敛到0.",
+      "position_char": 1172,
+      "position_line": 23,
+      "classification_result": {
+        "id": "随机变量期望收敛导出几乎处处收敛的一个条件#3",
+        "classification": "strategy_template",
+        "english_title": "Idea 2.1: An Indirect Approach to Proving Almost Everywhere Convergence",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Indirect proof via comparison with a known convergent sequence",
+          "summary_en": "To prove $f_n \\xrightarrow{a.e.} f$, it is enough to find another sequence $g_n$ such that $g_n \\xrightarrow{a.e.} f$ and $|f_n-g_n| \\xrightarrow{a.e.} 0$. Then the target convergence follows immediately.",
+          "applicability": "Use this when direct proof of almost everywhere convergence for $f_n$ is difficult, but one can compare $f_n$ to an auxiliary sequence $g_n$ already known to converge almost everywhere to the same limit."
+        }
+      }
+    },
+    {
+      "id": "随机变量期望收敛导出几乎处处收敛的一个条件#4",
+      "type": "note",
+      "title": "命题2.2",
+      "body": "$f_n$是测度空间$(X,\\mathcal{F},\\mu)$上的一列可测函数列，记$E_{\\mu}(f_n)=\\int_X f_n\\,d\\mu$，$V_{\\mu}(f_n)=\\int_X (f_n-E_{\\mu}f_n)^2\\,d\\mu$那么如果$$E_{\\mu}(f_n)\\to C$$并且$$\\sum_{n\\geq 1}V_{\\mu}(f_n)<\\infty$$那么$f_n\\to C$在$X$上几乎处处成立。",
+      "position_char": 1877,
+      "position_line": 34,
+      "classification_result": {
+        "id": "随机变量期望收敛导出几乎处处收敛的一个条件#4",
+        "classification": "problem",
+        "english_title": "Proposition 2.2",
+        "if_problem": {
+          "statement_en": "Let $f_n$ be a sequence of measurable functions on a measure space $(X, \\mathcal{F}, \\mu)$. Write $E_{\\mu}(f_n)=\\int_X f_n\\,d\\mu$ and $V_{\\mu}(f_n)=\\int_X (f_n-E_{\\mu}f_n)^2\\,d\\mu$. If $$E_{\\mu}(f_n) \\to C$$ and $$\\sum_{n\\geq 1} V_{\\mu}(f_n) < \\infty,$$ then $f_n \\to C$ almost everywhere on $X$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "variance summability",
+            "almost everywhere convergence criterion",
+            "measure-theoretic reformulation of probabilistic arguments"
+          ],
+          "prerequisites": [
+            "measurable functions",
+            "integration on measure spaces",
+            "almost everywhere convergence",
+            "variance in $L^2$"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"随机变量期望收敛导出几乎处处收敛的一个条件#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 0\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $X_n$ be a sequence of random variables on a probability space. Assume $E(X_n) \\\\to C$ and that the sum of the variances satisfies $\\\\sum_{n\\\\geq 1} V(X_n) < \\\\infty$. Then $$X_n \\\\xrightarrow{a.s.} C.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"variance summability\",\n        \"almost sure convergence criterion\",\n        \"centering by expectations\"\n      ],\n      \"prerequisites\": [\n        \"random variables and expectation\",\n        \"variance\",\n        \"almost sure convergence\",\n        \"basic measure-theoretic probability\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"随机变量期望收敛导出几乎处处收敛的一个条件#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Counterexample 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Consider random variables $X_n \\\\sim \\\\mathcal{N}(\\\\frac{1}{\\\\sqrt{n}}, \\\\frac{1}{n^2})$. Then clearly the means converge to $C=0$, and the series of variances converges. However, in this case $E(X_n)^2 = \\\\frac{1}{n}$, and this series does not converge.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"constructing Gaussian counterexamples\",\n        \"checking summability of variances\",\n        \"comparing mean-square related series\"\n      ],\n      \"prerequisites\": [\n        \"normal distribution\",\n        \"expectation and variance\",\n        \"series convergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"随机变量期望收敛导出几乎处处收敛的一个条件#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 2.1: An Indirect Approach to Proving Almost Everywhere Convergence\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Indirect proof via comparison with a known convergent sequence\",\n      \"summary_en\": \"To prove $f_n \\\\xrightarrow{a.e.} f$, it is enough to find another sequence $g_n$ such that $g_n \\\\xrightarrow{a.e.} f$ and $|f_n-g_n| \\\\xrightarrow{a.e.} 0$. Then the target convergence follows immediately.\",\n      \"applicability\": \"Use this when direct proof of almost everywhere convergence for $f_n$ is difficult, but one can compare $f_n$ to an auxiliary sequence $g_n$ already known to converge almost everywhere to the same limit.\"\n    }\n  },\n  {\n    \"id\": \"随机变量期望收敛导出几乎处处收敛的一个条件#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f_n$ be a sequence of measurable functions on a measure space $(X, \\\\mathcal{F}, \\\\mu)$. Write $E_{\\\\mu}(f_n)=\\\\int_X f_n\\\\,d\\\\mu$ and $V_{\\\\mu}(f_n)=\\\\int_X (f_n-E_{\\\\mu}f_n)^2\\\\,d\\\\mu$. If $$E_{\\\\mu}(f_n) \\\\to C$$ and $$\\\\sum_{n\\\\geq 1} V_{\\\\mu}(f_n) < \\\\infty,$$ then $f_n \\\\to C$ almost everywhere on $X$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"variance summability\",\n        \"almost everywhere convergence criterion\",\n        \"measure-theoretic reformulation of probabilistic arguments\"\n      ],\n      \"prerequisites\": [\n        \"measurable functions\",\n        \"integration on measure spaces\",\n        \"almost everywhere convergence\",\n        \"variance in $L^2$\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

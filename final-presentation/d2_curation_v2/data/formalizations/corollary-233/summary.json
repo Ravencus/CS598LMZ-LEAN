@@ -1,0 +1,18 @@
+{
+  "problem_id": "corollary-233",
+  "english_title": "Corollary 2.3.3",
+  "statement_en": "If the sequence $x_n$ is nonnegative, then $$\\limsup_{n\\to \\infty}x_n^2=\\left(\\limsup_{n\\to \\infty}x_n\\right)^2.$$ Likewise for the limit inferior, $$\\liminf_{n\\to \\infty}x_n^2=\\left(\\liminf_{n\\to \\infty}x_n\\right)^2.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem nonnegative_sq_limsup_liminf\n    (x : ℕ → ℝ) (hx : ∀ n : ℕ, 0 ≤ x n) :\n    sInf (Set.range (fun N : ℕ => sSup (Set.range (fun n : ℕ => (x (n + N)) ^ 2)))) =\n      (sInf (Set.range (fun N : ℕ => sSup (Set.range (fun n : ℕ => x (n + N)))))) ^ 2\n    ∧\n    sSup (Set.range (fun N : ℕ => sInf (Set.range (fun n : ℕ => (x (n + N)) ^ 2)))) =\n      (sSup (Set.range (fun N : ℕ => sInf (Set.range (fun n : ℕ => x (n + N)))))) ^ 2 := by\n  sorry"
+}

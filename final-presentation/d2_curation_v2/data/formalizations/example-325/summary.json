@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-325",
+  "english_title": "Example 3.2.5",
+  "statement_en": "Compute\n$$I_n:=n\\int_0^1 \\log\\left(1+\\frac{e^x}{n}\\right)\\,dx.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\ndef I_n (n : ℕ) : ℝ :=\n  (n : ℝ) * ∫ x in (0 : ℝ)..1, Real.log (1 + Real.exp x / (n : ℝ))\n\ntheorem I_n_def (n : ℕ) :\n    I_n n = (n : ℝ) * ∫ x in (0 : ℝ)..1, Real.log (1 + Real.exp x / (n : ℝ)) := by\n  sorry"
+}

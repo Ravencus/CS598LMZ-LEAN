@@ -1,0 +1,108 @@
+{
+  "note_title": "无理测度的定义以及基本的命题",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room",
+    "函数与序列的上下极限",
+    "Borel-Cantelli lemma及其应用",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "无理测度的定义以及基本的命题#1",
+      "type": "note",
+      "title": "psi可逼近的数",
+      "body": "令$\\psi:\\mathbb{N}\\to \\mathbb{R}^{+}$为一个正值函数，一个实数$\\alpha$称之为$\\psi-$可逼近的，如果存在无穷多组$p,q$其中$q>0,p,q$互素的整数满足不等式$$0<\\left|\\alpha-\\frac{p}{q}\\right|<\\frac{\\psi(q)}{q}$$或者引入\"实数与最近的整数的距离\"的概念，该定义还可以叙述为:$$||q\\alpha||<\\psi(q)$$对无穷多个自然数$q$成立,其中$||x||:=\\min\\{|x-n|:n\\in \\mathbb{Z}\\}$。",
+      "position_char": 599,
+      "position_line": 19
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#2",
+      "type": "note",
+      "title": "无理测度的定义",
+      "body": "$\\alpha$是一个实数，定义集合$R$为正实数$s$的集合，其中$s$为使得不等式$$0<\\left|\\alpha-\\frac{p}{q}\\right|<\\frac{1}{q^{s}}$$存在**无穷多组**整数解$(p,q)$($q>0$并且互素)的正实数。那么$$\\mu(\\alpha):=\\sup_{s>0} R$$称之为实数$\\alpha$的无理测度。如果按照$||\\cdot||$的语言表述，也就是说$$\\mu(\\alpha):=\\sup_{s>0}\\{s:q^{s-1}||q\\alpha||<1,\\text{for infinitely many }q \\in \\mathbb{N}\\}$$",
+      "position_char": 1530,
+      "position_line": 30
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#3",
+      "type": "note",
+      "title": "命题1.1",
+      "body": "任何有理数的无理测度都是1。",
+      "position_char": 3028,
+      "position_line": 37
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#4",
+      "type": "note",
+      "title": "命题1.2",
+      "body": "无理数的无理测度至少是2。",
+      "position_char": 3871,
+      "position_line": 50
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#5",
+      "type": "note",
+      "title": "命题1.3.1",
+      "body": "无理测度(Irrational measure)严格大于2的实数是Lebesgue零测度的。",
+      "position_char": 4173,
+      "position_line": 59
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#6",
+      "type": "note",
+      "title": "badly approximable的数",
+      "body": "实数$\\alpha$被称之为badly approximable如果存在一个正实数$C(\\alpha)$使得任意有理数$\\frac{p}{q}$都有$$\\left|\\alpha-\\frac{p}{q}\\right|\\geq \\frac{C(\\alpha)}{q^2}$$",
+      "position_char": 6493,
+      "position_line": 88
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#7",
+      "type": "note",
+      "title": "命题1.4.1",
+      "body": "所有Badly approximable的实数，形成的集合是Lebesgue零测度的，即$$m(\\mathbf{Bad})=0$$",
+      "position_char": 7730,
+      "position_line": 93
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#8",
+      "type": "note",
+      "title": "定理1.4.2",
+      "body": "设实无理数$\\alpha$写成连分数为$[a_0;a_1,a_2,\\cdots]$是badly approximable的数，当且仅当存在正实数$C$使得$$a_n\\leq C,\\forall n \\in \\mathbb{N}$$",
+      "position_char": 9499,
+      "position_line": 114
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#9",
+      "type": "note",
+      "title": "定义1.4.3:最佳逼近的定义",
+      "body": "令$\\alpha\\in \\mathbb{R}$。正整数$q$称之为$\\alpha$的最佳逼近如果$$\\forall q'\\in \\mathbb{N},q'<q\\implies ||q'\\alpha||>||q\\alpha||$$",
+      "position_char": 9675,
+      "position_line": 119
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#10",
+      "type": "note",
+      "title": "定理1.4.4",
+      "body": "令$\\alpha$是一个无理数，正整数$q$为$\\alpha$的最佳逼近，当且仅当$q$是$\\alpha$对应的的连分数展开的某个收敛分数（convergent）的分母。",
+      "position_char": 10921,
+      "position_line": 155
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#11",
+      "type": "note",
+      "title": "定理3.1:Liouville定理（1844）",
+      "body": "如果$\\alpha$是一个d次代数数($d\\geq 2$)，那么存在一个常数$C(\\alpha)>0$使得不等式$$\\left|\\alpha-\\frac{p}{q}\\right|>\\frac{C(\\alpha)}{q^d}$$对任意正整数$q$以及任意整数$p$成立。",
+      "position_char": 12647,
+      "position_line": 181
+    },
+    {
+      "id": "无理测度的定义以及基本的命题#12",
+      "type": "note",
+      "title": "Thue–Siegel–Roth定理，1955",
+      "body": "所有代数无理数的无理测度都是2。",
+      "position_char": 14164,
+      "position_line": 206
+    }
+  ]
+}

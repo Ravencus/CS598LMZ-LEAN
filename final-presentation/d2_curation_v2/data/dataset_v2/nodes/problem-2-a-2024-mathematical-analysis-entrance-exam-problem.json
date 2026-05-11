@@ -1,0 +1,23 @@
+{
+  "id": "problem-2-a-2024-mathematical-analysis-entrance-exam-problem",
+  "type": "problem",
+  "source_note": "满足这种函数极限性质的函数是几乎处处为0的",
+  "english_source_note": "Such a Limit Property Forces a Function to Vanish a.e.",
+  "callout_id": "满足这种函数极限性质的函数是几乎处处为0的#2",
+  "english_title": "Problem 2: A 2024 Mathematical Analysis Entrance Exam Problem",
+  "statement_en": "Let $f:[a,b]\\to \\mathbb{R}$ satisfy that for every $x_0 \\in [a,b]$, one has $\\lim_{x\\to x_0} f(x)=0$. Then $f$ is Riemann integrable on $[a,b]$ and its integral is $0$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "deducing almost everywhere vanishing from local limit behavior",
+    "Riemann integrability criterion",
+    "comparison of upper and lower sums"
+  ],
+  "prerequisites": [
+    "definition of limit of a function",
+    "Riemann integrability",
+    "almost everywhere"
+  ],
+  "callout_body": "函数$f:[a,b]\\to \\mathbb{R}$满足对任意$\\forall x_0 \\in [a,b]$都有$\\lim_{x\\to x_0}f(x)=0$，那么函数在区间$[a,b]$上Riemann可积并且积分为0。"
+}

@@ -1,208 +1,238 @@
-# Lean 4 Theorem Proving System
+# Structured AI Theorem Proving with Human-Learnable Knowledge Extraction
 
-Two-system architecture for interactive Lean 4 theorem proving with trace-based analysis.
+CS598LMZ final project (Group 12). Codebase for the paper *Structured AI Theorem Proving with Human-Learnable Knowledge Extraction*, which contributes (1) a relational graduate-level math dataset with strategy hubs and audit-passing Lean 4 formalizations, and (2) an agentic Lean proving harness that composes a Lean compiler with a tool runtime (sympy / Mathematica) and exposes the proving sub-tasks (planning, formalization, retrieval, computation) as separately observable artifacts.
 
-## Architecture
+The report PDF is the separately submitted deliverable; this repository contains only the code, dataset, and run logs needed to reproduce its results.
+
+---
+
+## 1. Repository layout
 
 ```
-┌──────────────── Docker Container ─────────────────┐
-│                                                     │
-│  Toolchain (baked into image):                     │
-│    Lean 4.29.0-rc8 + Mathlib (precompiled)         │
-│    OpenCode v1.3.3                                  │
-│    Python 3.11 + MCP server runtime                │
-│                                                     │
-│  Workspace (mounted from host):                    │
-│    User ←→ [OpenCode + Skills]                     │
-│                 │ (MCP/stdio)                       │
-│                 v                                   │
-│           [MCP Server] → [Lean 4] → diagnostics   │
-│                                                     │
-│    [Digest Script] ← traces from OpenCode          │
-│           │                                         │
-│           v                                         │
-│    digests/ (proof schemas + failure lessons)       │
-└─────────────────────────────────────────────────────┘
+.
+├── Dockerfile                          # Container: Lean 4.29 + Mathlib + OpenCode + Python MCP
+├── docker/                             # Lake project (lakefile.lean, lean-toolchain, scratch)
+├── mcp_server/                         # Lean checker exposed over MCP
+│   └── lean_checker_server.py
+├── workspace/                          # Mounted into the container at /home/lean/workspace
+│   ├── .opencode/skills/lean-prover/   #   SKILL.md: explore-plan-prove-revise workflow
+│   ├── opencode.json                   #   OpenCode model + MCP config
+│   ├── problems/                       #   Hand-curated problems used during dev
+│   ├── proofs/                         #   Human-written reference proofs
+│   └── traces/                         #   Hand-crafted proving traces (kept in repo)
+├── scripts/
+│   ├── digest.py                       # Trace-to-lesson distillation prototype (System 2 v0)
+│   ├── prompt_template.txt
+│   ├── graph_analysis.py               # Graph statistics on the relational dataset
+│   └── digest_agent_diagram.py         # Diagram generation for the report
+├── final-presentation/
+│   └── d2_curation_v2/data/dataset_v2/ # Curated relational dataset (see §3)
+├── final-report/
+│   ├── scripts/                        # Eval runners, aggregators, figure generators
+│   └── data/                           # All eval run logs and aggregate results (61 MB)
+└── README.md                           # this file
 ```
 
-**System 1 (Prover):** OpenCode coding agent with a Lean MCP tool. Takes a math problem, iteratively writes and checks Lean 4 proofs. A skill encodes a structured workflow: explore, plan, search lemmas, prove step-by-step.
+---
 
-**System 2 (Digest):** Analyzes proving session traces and extracts structured lessons — proof schemas (what worked) and failure lessons (what didn't and why).
+## 2. Prerequisites
 
-## Components
+- **Docker** (the harness runs inside a precompiled Lean+Mathlib image).
+- **Python 3.11+** on host, with `matplotlib`, `numpy`, `scipy`, `pandas` (for figure generation only).
+- **API keys** (whichever models you intend to run):
+  - OpenAI (Codex CLI / `gpt-5.5`, `gpt-5.4-mini`) — required to reproduce headline results.
+  - DeepSeek API (`deepseek-v4-pro`, `deepseek-v4-flash`) — optional.
+  - Anthropic API (`claude-opus-4-7`) — optional.
 
-### Lean MCP Server (`mcp_server/lean_checker_server.py`)
-
-Exposes one tool: `check_lean_proof(code: str)`. Writes code to a scratch file in a Mathlib-enabled Lake project, runs `lake env lean`, returns structured diagnostics (line, column, severity, message).
-
-### Proving Skill (`workspace/.opencode/skills/lean-prover/SKILL.md`)
-
-Instructions for the proving agent, auto-loaded by OpenCode via progressive disclosure. Encodes a structured workflow rather than blind tactic guessing.
-
-### Digest Script (`scripts/digest.py`)
-
-Reads an exported OpenCode session trace (JSON), sends it to an LLM with a structured prompt, outputs a markdown digest.
-
-## Quick Start
+Place keys in plain text at the repo root:
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/Ravencus/CS598LMZ-LEAN.git
-cd CS598LMZ-LEAN
+echo "$OPENAI_KEY"     > .openai_api      # gitignored
+echo "$DEEPSEEK_KEY"   > .deepseek_api    # gitignored
+echo "$ANTHROPIC_KEY"  > .opus_api        # gitignored
+```
 
-# 2. Pull the pre-built image (includes Lean 4, Mathlib, OpenCode, MCP server)
+The `.gitignore` keeps these files local; never commit them.
+
+---
+
+## 3. Dataset
+
+The **curated relational dataset** is included in this repo at:
+
+```
+final-presentation/d2_curation_v2/data/dataset_v2/
+├── nodes/                              # 461 node JSON files
+│   ├── <problem-slug>.json             #   439 problem nodes
+│   └── <hub-slug>.json                 #   22 strategy hub nodes
+├── edges.json                          # 7,415 edges (problem-problem and problem-hub)
+└── formalizations/                     # 233 Lean 4 theorem signatures
+    └── <problem-slug>/
+        ├── formalization.lean          #   Lean signature with `sorry` body
+        └── audit.json                  #   FAITHFUL / MISMATCH / VACUOUS / UNCERTAIN verdict
+```
+
+The **148-statement `FAITHFUL` pool** (the evaluation set used throughout §3.2 of the report) is the subset of `formalizations/` whose `audit.json` is `FAITHFUL`. The fixed manifest used by all runners is:
+
+```
+final-report/data/manifest_faithful_100.json
+```
+
+(Schema: `n_problems`, `source`, `problems[]`. Each problem carries `problem_id`, `statement_en`, `verified_signature`, `difficulty`, `problem_type`, `domain`, `ground_truth_hubs`.)
+
+**What is NOT in the repo:** the source Obsidian vault (455 markdown notes, ~160 MB) from which the dataset is derived. The vault is private personal study material. The pipeline that produces `dataset_v2/` from the vault is documented in §2.1 of the report and the scripts live in `final-presentation/d2_curation_v2/scripts/`; they are reproducible only if you have the source vault.
+
+---
+
+## 4. Building the container
+
+The harness runs inside a Docker image with Lean 4.29.0-rc8, a precompiled Mathlib, OpenCode v1.3.3, and the Python MCP server.
+
+```bash
+# Option A (recommended): pull the prebuilt image
 docker pull ghcr.io/ravencus/cs598lmz-lean:latest
 
-# 3. Run interactively (mounts workspace for persistence)
-docker run -it \
-  -e OPENCODE_API_KEY=<your-opencode-zen-key> \
-  -v $(pwd)/workspace:/home/lean/workspace \
-  ghcr.io/ravencus/cs598lmz-lean:latest
-
-# 4. Inside the container, start OpenCode
-opencode
+# Option B: build from source (~30 min; needs ~10 GB disk for Mathlib oleans)
+docker build -t ghcr.io/ravencus/cs598lmz-lean:latest .
 ```
 
-To get an OpenCode API key: sign up at https://opencode.ai and go to settings.
+The image entry point reads `/workspace` as the mounted repo root.
 
-## Setup
+---
 
-### Option A: Pull pre-built image (recommended)
+## 5. Reproducing the report
 
-```bash
-docker pull ghcr.io/ravencus/cs598lmz-lean:latest
-```
+All commands below assume you start from the repo root with the container image available locally.
 
-### Option B: Build from source
+### 5.1 Main proving evaluation (Table `main-pass-rate`)
 
-```bash
-docker build -t cs598lmz-lean .
-```
-
-### Run interactively
-
-```bash
-docker run -it \
-  -e OPENCODE_API_KEY=<key> \
-  -v $(pwd)/workspace:/home/lean/workspace \
-  ghcr.io/ravencus/cs598lmz-lean:latest
-```
-
-Inside the container:
-```bash
-opencode
-```
-
-### Run a single proving task
+5 models × 2 conditions × 30 problems = 300 cells. Wall-clock: roughly 8 hours with default parallelism.
 
 ```bash
 docker run --rm \
-  -e OPENCODE_API_KEY=<key> \
-  -v $(pwd)/workspace:/home/lean/workspace \
-  ghcr.io/ravencus/cs598lmz-lean:latest -c \
-  'opencode run -m opencode/gpt-5-nano "Prove in Lean 4: ∀ n : Nat, n + 0 = n"'
+  -v $(pwd):/workspace \
+  -v $(pwd)/.openai_api:/root/.openai_api:ro \
+  -v $(pwd)/.deepseek_api:/root/.deepseek_api:ro \
+  -v $(pwd)/.opus_api:/root/.opus_api:ro \
+  ghcr.io/ravencus/cs598lmz-lean:latest \
+  python3 /workspace/final-report/scripts/overnight_runner.py \
+    --n-problems 30 --seed 42
 ```
 
-### Export a session trace
+Outputs land in `final-report/data/eval_overnight_opencode/<model>/<condition>/<pid>/outcome.json`. Aggregate them:
 
 ```bash
-# Inside the container after a session:
-opencode session list
-opencode export <session-id>
+docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
+  python3 /workspace/final-report/scripts/aggregate_opencode.py
 ```
 
-## Problems and Proofs
+This produces `final-report/data/eval_overnight_opencode/aggregate.json`, which is the source of every cell in `tables/main-pass-rate.tex`, `tables/runtime.tex`, and Figure `outcome-breakdown`.
 
-Problems are theorem statements (with `sorry`) in `workspace/problems/`. Proofs are in `workspace/proofs/`.
+### 5.2 Capability decomposition (Table `capability-decomposition`)
 
-| # | Problem | Proof | Status |
-|---|---------|-------|--------|
-| 01 | `∀ n : Nat, n + 0 = n` | — | Statement only |
-| 02 | `∃ S, ‖∑_S z‖ ≥ 1/6` (complex subset sum) | `02a` quadrant method (1/4 bound) | **Complete** (0 sorry) |
-| 03 | `∃ S, ‖∑_S z‖ ≥ 1/π` (optimal bound) | `02b` averaging method | Structure complete (3 sorry in analytic core) |
+For each vendor pair, an LLM judge reads disagreement traces and assigns one of `different_plan`, `same_plan_search_diff`, `same_plan_lean_impl_diff`.
 
-Problem 02–03: Given n complex numbers with ∑|zₖ| = 1, prove a subset sums to large norm. The quadrant proof decomposes into Re/Im positive/negative parts. The averaging proof integrates over all directions — algebraic structure is verified, integration lemmas are sorry'd.
+```bash
+docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
+  python3 /workspace/final-report/scripts/trace_compare.py \
+    --pair gpt-5.5,gpt-5.4-mini
 
-Hand-crafted traces in `workspace/traces/`:
-- `complex_subset_sum_proving_trace.md` — Lean formalization trace (attempts, errors, revisions)
-- `complex_subset_sum_reasoning.md` — mathematical reasoning trace (exploration strategies, bound landscape, human problem-solving patterns)
+docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
+  python3 /workspace/final-report/scripts/trace_compare.py \
+    --pair deepseek-v4-pro,deepseek-v4-flash
+```
 
-## Next Steps
+### 5.3 Check-call budget ablation (Table `kprobe`)
 
-### 1. Test OpenCode + SKILL.md integration
+Reruns every failing `gpt-5.5` and `gpt-5.4-mini` cell with the MCP call budget doubled from 10 to 20, preserving passing cells.
 
-Verify that SKILL.md loads and guides the proving workflow inside the Docker container. Run on the problems in `workspace/problems/` (especially 02/03, the complex subset sum). Try with different models on OpenCode Zen.
+```bash
+bash final-report/scripts/run_kprobe.sh
+```
+
+Aggregate via `kprobe_compare.py`.
+
+### 5.4 Hub-strategy classification (Table `hub-recall`)
+
+`gpt-5.5` classifies each problem against the 22-hub catalog. Two conditions: `signature-only` (30 problems) and `proof-conditioned` (18 problems for which some model produced a passing Lean proof).
+
+```bash
+# Signature-only over the 30-problem stratified sample
+docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
+  python3 /workspace/final-report/scripts/hub_recall_runner.py \
+    --manifest /workspace/final-report/data/manifest_faithful_100.json \
+    --prompt-mode direct
+
+# Proof-conditioned over the 18-problem provable subset
+docker run --rm -v $(pwd):/workspace ghcr.io/ravencus/cs598lmz-lean:latest \
+  python3 /workspace/final-report/scripts/hub_recall_runner.py \
+    --manifest /workspace/final-report/data/manifest_faithful_proof.json \
+    --prompt-mode proof
+```
+
+### 5.5 Figures
+
+All run on the host (no Docker needed) and read the JSON outputs above. Each script writes its output to a local `final-report/report-artifacts/figures/` directory it auto-creates (the directory is gitignored; the files are for inspection or external use).
+
+```bash
+pip install matplotlib numpy scipy pandas
+python final-report/scripts/architecture_figures.py     # figure-curation.pdf
+python final-report/scripts/dataset_overview_figure.py  # dataset-overview.pdf
+python final-report/scripts/eval_figures.py             # outcome-breakdown.pdf
+```
+
+---
+
+## 6. Running the prover interactively
+
+The same harness is usable as an interactive proving session, useful for development and sanity checks.
 
 ```bash
 docker run -it \
-  -e OPENCODE_API_KEY=<key> \
+  -e OPENAI_API_KEY="$(cat .openai_api)" \
   -v $(pwd)/workspace:/home/lean/workspace \
   ghcr.io/ravencus/cs598lmz-lean:latest
-# Inside: opencode
-# Then ask it to prove problem 02 or 03
+
+# Inside the container:
+opencode                                    # starts the agent with SKILL.md loaded
+# or run a single problem:
+opencode run -m gpt-5.5 "Prove in Lean 4: ∀ n : Nat, n + 0 = n"
 ```
 
-After the session, export the trace:
+After a session, export the trace:
+
 ```bash
 opencode session list
-opencode export <session-id>
+opencode export <session-id>  > workspace/traces/my-session.json
 ```
 
-This produces a real automated trace to compare against our hand-crafted ones.
+The exported trace is the input format consumed by the System 2 prototype in `scripts/digest.py`.
 
-### 2. Lesson agent: extract lessons from traces
+---
 
-The hand-crafted traces (`workspace/traces/`) were produced using Claude Code on the complex subset sum problem. The lesson agent should extract structured lessons from these traces. Two types of content to extract:
+## 7. Architecture summary
 
-**Error classification:** Separate mechanization errors from mathematical errors.
-- *Mechanization*: wrong Mathlib API names, predicate form mismatches (`≥ 0` vs `0 ≤`), missing `.symm`, decidability issues — fixable by knowing Lean/Mathlib conventions.
-- *Mathematical*: wrong proof strategy, dead-end approach, missing insight — requires actual mathematical reasoning.
+**System 1 — proving harness** (`workspace/`, `mcp_server/`, `docker/`):
+- OpenCode agent configured by two `SKILL.md` files: a workflow skill (explore-plan-prove-revise) and a tools skill (sympy / Mathematica).
+- The agent emits a Lean file plus zero or more sympy verifier scripts.
+- Two checker backends consume the artifacts: Lean+Mathlib for deductive structure, a tool runtime for symbolic / numeric sub-claims.
+- $K = 3$ attempts per problem with diagnostics fed back as trace context.
 
-**Abstract lessons:** High-level strategies that transfer across problems, not surface-level summaries tied to one proof. For example, "decompose by coordinate signs" is a bad lesson (specific to 2D, misses the underlying principle). "Project onto a direction and bound the projection" is a better lesson (generalizes to higher dimensions and other problems).
+**System 2 — relational evaluation** (`final-report/scripts/hub_recall_runner.py`):
+- Given a problem and a 22-hub catalog, the classifier returns the subset of hubs the problem instantiates.
+- Macro F1 over 30 problems is the headline number. The proof-conditioned variant additionally feeds the type-checked Lean proof.
 
-Design prompts for `scripts/digest.py` that produce these two outputs from a trace. Test on the hand-crafted traces first, then on real OpenCode traces from step 1.
+Detailed diagrams are reproduced by running the figure scripts in §5.5; they also appear in the submitted PDF.
 
-### 3. Use distilled lessons to enhance OpenCode proving
+---
 
-Take the lessons extracted in step 2 and feed them back to the OpenCode proving agent. Two approaches:
+## 8. License / citation
 
-- **Via digests folder:** Place lesson files in `workspace/digests/`. The SKILL.md instructs the agent to check this folder before proving. The agent reads relevant lessons and avoids known dead-ends.
-- **Via SKILL.md updates:** Incorporate general-purpose strategies (start from simple cases, probe the bound, classify errors) directly into the proving skill.
-
-Test whether the OpenCode agent (with small models) performs better with distilled lessons than without. Compare: number of iterations, types of errors, whether known dead-ends are avoided.
-
-### 4. (Future) Retrieval tools via MCP
-
-Integrate retrieval systems as additional MCP tools for the proving agent:
-
-- **Premise retrieval (LeanDojo/ReProver):** Given a proof state, find relevant Mathlib lemmas. Addresses the mechanization bottleneck — our proving trace shows that finding the right API name (`Complex.abs_re_le_norm` etc.) was the dominant cost.
-- **Lesson retrieval:** Given a problem or proof state, retrieve relevant distilled lessons from the digests folder. Addresses the strategy bottleneck — avoid known dead-ends, apply proven strategies.
-
-Both are retrieval problems that reduce proving iterations. One handles "what Lean tactic/lemma to use" (mechanization), the other handles "what proof strategy to try" (mathematics).
-
-## File Structure
+This is course work for CS598LMZ (Spring 2026) at UIUC. The report PDF and source LaTeX are the primary citable artifact:
 
 ```
-├── Dockerfile                          # Toolchain image (Lean, Mathlib, OpenCode, Python)
-├── README.md
-├── docker/
-│   ├── lakefile.lean                   # Lake project config (Mathlib dependency)
-│   └── lean-toolchain                  # Pins Lean version
-├── mcp_server/
-│   ├── lean_checker_server.py          # Lean checker MCP server
-│   └── requirements.txt
-├── scripts/
-│   ├── digest.py                       # Trace analysis script
-│   └── prompt_template.txt             # LLM prompt for lesson extraction
-│
-└── workspace/                          # Mounted into container at /home/lean/workspace
-    ├── opencode.json                   # OpenCode model + MCP config
-    ├── .opencode/
-    │   └── skills/
-    │       └── lean-prover/
-    │           └── SKILL.md            # Proving workflow skill
-    ├── problems/                       # Theorem statements (sorry)
-    ├── proofs/                         # Completed or partial proofs
-    ├── traces/                         # Proving traces
-    └── digests/                        # Digest output (gitignored)
+Zihan Zheng. Structured AI Theorem Proving with Human-Learnable Knowledge Extraction.
+CS598LMZ final report, University of Illinois Urbana-Champaign, 2026.
 ```
+
+The source vault that seeds the dataset is private and not redistributed.

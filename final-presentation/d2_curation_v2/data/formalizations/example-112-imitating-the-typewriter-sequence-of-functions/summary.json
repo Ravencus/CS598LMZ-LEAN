@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-112-imitating-the-typewriter-sequence-of-functions",
+  "english_title": "Example 1.1.2: Imitating the Typewriter Sequence of Functions",
+  "statement_en": "Construct a sequence $(a_n)$ by starting from $0$ and moving each time with step size $1/2^k$; whenever the sequence reaches $1$ it turns back toward $0$, and whenever it reaches $0$ it turns back toward $1$, with the step size halved at each turn. Then for $n\\in[2^k,2^{k+1}-1]$ one has $|a_{n+1}-a_n|=1/2^k$, and at turning points the jump size is $1/2^{k+1}$. Hence $a_{n+1}-a_n\\to 0$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem bouncingSequence_exists :\n    ∃ a : ℕ → ℝ,\n      a 0 = 0 ∧\n      (∀ k n : ℕ, 2 ^ k ≤ n → n ≤ 2 ^ (k + 1) - 1 →\n        |a (n + 1) - a n| = (1 : ℝ) / (2 : ℝ) ^ k) ∧\n      (∀ k : ℕ,\n        |a (2 ^ (k + 1)) - a (2 ^ (k + 1) - 1)| = (1 : ℝ) / (2 : ℝ) ^ (k + 1)) ∧\n      Filter.Tendsto (fun n : ℕ => a (n + 1) - a n) Filter.atTop (nhds 0) := by\n  sorry"
+}

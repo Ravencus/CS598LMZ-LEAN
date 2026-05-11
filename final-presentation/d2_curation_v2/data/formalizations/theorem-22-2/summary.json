@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-22-2",
+  "english_title": "Theorem 2.2",
+  "statement_en": "$$F_N(x):=\\frac{1}{N}\\frac{\\sin^2(Nx/2)}{\\sin^2(x/2)}$$ and this is an approximate identity in $L^1([-\\pi,\\pi])$.",
+  "difficulty": "medium",
+  "domain": "Fourier analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen MeasureTheory Real Filter\n\ndef fejerKernel (N : ℕ) (x : ℝ) : ℝ :=\n  ((1 : ℝ) / N) * (Real.sin (N * x / 2)) ^ 2 / (Real.sin (x / 2)) ^ 2\n\ndef IsApproximateIdentityOnPi (K : ℕ → ℝ → ℝ) : Prop :=\n  (∀ N, IntegrableOn (K N) (Set.Icc (-Real.pi) Real.pi)) ∧\n  (∀ N x, 0 ≤ K N x) ∧\n  Tendsto\n    (fun N : ℕ => ∫ x in Set.Icc (-Real.pi) Real.pi, K N x)\n    atTop\n    (nhds (2 * Real.pi)) ∧\n  ∀ δ : ℝ, 0 < δ →\n    Tendsto\n      (fun N : ℕ => ∫ x in {x ∈ Set.Icc (-Real.pi) Real.pi | δ ≤ |x|}, K N x)\n      atTop\n      (nhds 0)\n\ntheorem fejerKernel_approximateIdentity_L1 :\n    IsApproximateIdentityOnPi fejerKernel := by\n  sorry"
+}

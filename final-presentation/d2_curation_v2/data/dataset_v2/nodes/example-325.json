@@ -1,0 +1,23 @@
+{
+  "id": "example-325",
+  "type": "problem",
+  "source_note": "逐项估计",
+  "english_source_note": "Term-by-Term Estimates",
+  "callout_id": "逐项估计#13",
+  "english_title": "Example 3.2.5",
+  "statement_en": "Compute\n$$I_n:=n\\int_0^1 \\log\\left(1+\\frac{e^x}{n}\\right)\\,dx.$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Taylor expansion",
+    "asymptotic evaluation",
+    "termwise estimation"
+  ],
+  "prerequisites": [
+    "basic integration",
+    "Taylor expansion",
+    "logarithmic function properties"
+  ],
+  "callout_body": "计算$$I_n:=n\\int_0^1 \\log\\left(1+\\frac{e^x}{n}\\right)\\,dx$$"
+}

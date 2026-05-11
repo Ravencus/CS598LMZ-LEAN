@@ -1,0 +1,4 @@
+["piecewise-estimates-hub", "expand-conditions-into-sums-or-integrals-and-swap-order-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- piecewise-estimates-hub: The proof splits the summation indices according to whether the fractional part of `x` plus `k/n` crosses an integer.
+- expand-conditions-into-sums-or-integrals-and-swap-order-hub: Each floor term is naturally rewritten as `⌊x⌋` plus an indicator/counting term for the crossing condition, reducing the sum to counting eligible `k`.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The key identity comes from expressing the same quantity in two forms, using integer and fractional parts to match the left-hand sum with `⌊n x⌋`.

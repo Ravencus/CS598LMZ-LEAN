@@ -1,0 +1,7 @@
+I'll prove the Riemann-Lebesgue lemma for Fourier coefficients. Let me start by verifying the signature compiles, then work through the proof.
+Good, signature compiles. Let me search for existing Mathlib lemmas about Fourier/Riemann-Lebesgue.
+Found `Mathlib/Analysis/Fourier/RiemannLebesgueLemma.lean`. Let me read it.
+Found it — `Mathlib/Analysis/Fourier/RiemannLebesgueLemma.lean` has `Real.tendsto_integral_exp_smul_cocompact`. Let me explore the API to understand how to adapt it.
+The `#check` command doesn't work here. Let me look at the AddCircle Fourier lemmas and try a direct proof approach.
+Let me search for relevant filter lemmas and see if there's a more direct path.
+Let me try to write the proof directly. I'll use `Real.tendsto_integral_exp_smul_cocompact` and adapt it.

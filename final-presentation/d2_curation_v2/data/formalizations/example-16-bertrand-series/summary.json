@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-16-bertrand-series",
+  "english_title": "Example 1.6: Bertrand Series",
+  "statement_en": "The positive-term series\n$$\\sum_{n\\geq 2}\\frac{1}{n^{\\alpha}\\log(n)^{\\beta}}$$ is called a Bertrand series. Its convergence behavior is as follows:\n1. If $\\alpha>1$, it converges for every $\\beta$.\n2. If $\\alpha<1$, it diverges for every $\\beta$.\n3. If $\\alpha=1$, it converges if and only if $\\beta>1$.\n\nHere the focus is on the third case. Consider\n$$\\sum_{n\\geq 2} \\frac{1}{n\\log(n)^{\\beta}}.$$ For $\\beta\\leq 0$ it is clearly divergent. For $\\beta>0$,\n$$\\begin{aligned}\\frac{a_n}{a_{n+1}}&=\\frac{",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def bertrandTerm (β : ℝ) (n : ℕ) : ℝ :=\n  if 2 ≤ n then 1 / ((n : ℝ) * Real.rpow (Real.log (n : ℝ)) β) else 0\n\ntheorem bertrand_series_alpha_eq_one_summable_iff (β : ℝ) :\n    Summable (bertrandTerm β) ↔ 1 < β := by\n  sorry"
+}

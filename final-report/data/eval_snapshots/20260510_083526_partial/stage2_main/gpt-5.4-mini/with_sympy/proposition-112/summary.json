@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-112",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 297.3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 153.54,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 8,
+      "first_error": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 86.72,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 49.45,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "linarith failed to find a contradiction\ncase h1.h\nN : ℕ\nhN : 2 ≤ N\nhtel : ∀ (m : ℕ), ∑ k ∈ Finset.range m, (1 / ↑(k + 1) - 1 / ↑(k + 2)) = 1 - 1 / ↑(m + 1)\nk : ℕ\nhk1 : ↑(k + 1) ≠ 0\nhk2 : ↑(k + 2) ≠ 0\n"
+    }
+  ]
+}

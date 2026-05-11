@@ -1,0 +1,4 @@
+I’m checking whether this statement is actually provable in the available Mathlib, then I’ll try the smallest Lean proof path that can compile.
+I’m looking for any existing digest or nearby proof pattern before spending checker calls.
+I’m doing a quick numeric sanity check to see whether the target statement is even plausible before I burn proof attempts.
+I haven’t found a local proof pattern that looks close enough, so I’m checking whether Mathlib already contains a relevant theorem name.

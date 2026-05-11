@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-122-monotone-convergence-theorem-beppo-levi-theorem",
+  "english_title": "Lemma 1.2.2: Monotone Convergence Theorem (Beppo-Levi Theorem)",
+  "statement_en": "Let \\((\\Sigma, \\mathcal{F}, \\mu)\\) be a measure space, and let \\(\\{f_n\\}_{n=1}^{\\infty}\\) be a sequence of nonnegative measurable functions on \\(X \\in \\Sigma\\) that is pointwise nondecreasing. Then the pointwise supremum\n\\[\n\\sup_{n\\geq 1} f_n : x \\mapsto \\sup_{n\\geq 1} f_n(x)\n\\]\nis measurable, and\n\\[\n\\sup_{n\\geq 1} \\int_X f_n\\, d\\mu = \\int_X \\sup_{n\\geq 1} f_n\\, d\\mu.\n\\]",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped ENNReal BigOperators\n\nopen MeasureTheory\n\ntheorem monotone_convergence_measurable_lintegral\n    {α : Type*} [MeasurableSpace α] (μ : Measure α)\n    (f : ℕ → α → ℝ≥0∞)\n    (hf_meas : ∀ n, Measurable (f n))\n    (hf_mono : Monotone f) :\n    Measurable (fun x => ⨆ n, f n x) ∧\n      (⨆ n, ∫⁻ x, f n x ∂μ) = ∫⁻ x, ⨆ n, f n x ∂μ := by\n  sorry"
+}

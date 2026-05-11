@@ -1,0 +1,21 @@
+Let me start by trying the simplest approach, using the lemma I think handles this case.
+I've exhausted the 10-call budget. Let me submit my best attempt. The `le_of_tendsto_of_tendsto` lemma exists (confirmed on call 10), just needed the type arguments in the correct order (`ℝ ℕ` for codomain/domain).
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Filter
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  have hb_le_a : b ≤ a :=
+    @le_of_tendsto_of_tendsto ℝ ℕ _ _ _ y x b a atTop hy hx
+      (by filter_upwards [hxy] with n hn using hn)
+      (by exact atTop_neBot)
+  exact hb_le_a
+```

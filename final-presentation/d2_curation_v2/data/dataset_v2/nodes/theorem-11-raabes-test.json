@@ -1,0 +1,23 @@
+{
+  "id": "theorem-11-raabes-test",
+  "type": "problem",
+  "source_note": "Kummer判别：对多种比值判别变形的统一",
+  "english_source_note": "Kummer's Test: A Unified View of Ratio-Type Tests",
+  "callout_id": "Kummer判别:对多种比值判别变形的统一#2",
+  "english_title": "Theorem 1.1: Raabe's Test",
+  "statement_en": "For a positive-term series $\\sum_n a_n$, define\n$$R_n := n\\left(\\frac{a_n}{a_{n+1}} - 1\\right).$$ If $R_n$ has a limit $L$, then:\n1. If $L>1$, the series converges.\n2. If $L<1$, the series diverges.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Raabe's test",
+    "ratio asymptotics",
+    "positive series convergence tests"
+  ],
+  "prerequisites": [
+    "infinite series",
+    "limits of sequences",
+    "ratio test"
+  ],
+  "callout_body": "对于正项级数$\\sum_n a_n$定义$$R_n:= n\\left(\\frac{a_n}{a_{n+1}}-1\\right)$$如果$R_n$极限存在并且为$L$，那么\n1. 如果$L>1$那么级数收敛。\n2. 如果$L<1$那么级数发散。"
+}

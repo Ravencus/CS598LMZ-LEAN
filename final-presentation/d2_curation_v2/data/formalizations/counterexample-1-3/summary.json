@@ -1,0 +1,30 @@
+{
+  "problem_id": "counterexample-1-3",
+  "english_title": "Counterexample 1",
+  "statement_en": "Assume the previous equivalence were true without requiring the measure space to be finite. On $(\\mathbb{R}, \\text{Lebesgue measure})$, consider $f_n(x) := (x+1/n)^2$. Then $f_n(x) \\to x^2$ for every $x$, so every subsequence and every further subsequence also converges pointwise to $x^2$. However, $f_n$ does not converge to $x^2$ in Lebesgue measure, because for sufficiently small $\\varepsilon$, $$\\{x \\in \\mathbb{R} : (x+1/n)^2 - x^2 \\geq \\varepsilon\\} = [\\tfrac{n\\varepsilon}{2} - \\tfrac{n}{2},",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\nnoncomputable def counterexampleFn (n : ℕ) (x : ℝ) : ℝ :=\n  (x + 1 / ((n : ℝ) + 1)) ^ 2\n\ntheorem pointwiseButNotInMeasure_counterexample :\n    (∀ x : ℝ,\n      Filter.Tendsto (fun n : ℕ => counterexampleFn n x) Filter.atTop (Filter.nhds (x ^ 2))) ∧\n    (∀ φ : ℕ → ℕ, StrictMono φ →\n      ∀ x : ℝ,\n        Filter.Tendsto (fun n : ℕ => counterexampleFn (φ n) x) Filter.atTop (Filter.nhds (x ^ 2))) ∧\n    (∃ ε : ℝ, 0 < ε ∧\n      ∀ n : ℕ,\n        volume {x : ℝ | ε ≤ abs (counterexampleFn n x - x ^ 2)} = (∞ : ℝ≥0∞)) ∧\n    ¬ (∀ ε : ℝ, 0 < ε →\n      Filter.Tendsto\n        (fun n : ℕ => volume {x : ℝ | ε ≤ abs (counterexampleFn n x - x ^ 2)})\n        Filter.atTop\n        (Filter.nhds (0 : ℝ≥0∞))) := by\n  sorry"
+}

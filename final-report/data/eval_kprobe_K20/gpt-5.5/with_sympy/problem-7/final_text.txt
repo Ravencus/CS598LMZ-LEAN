@@ -1,0 +1,33 @@
+I’ll first identify the strongest existing Mathlib convergence lemmas for alternating/Dirichlet-type series so the proof can rely on library infrastructure rather than rebuilding summation by parts.
+There are prior formalization attempts for this exact theorem in the repository. I’ll inspect them and adapt only a valid no-axiom/no-sorry proof if one exists.
+The exact theorem appears to be mathematically mismatched with Mathlib’s `Summable`: for arbitrary index types it is unconditional summability, not just ordered partial-sum convergence. I’ll verify this against Mathlib before deciding whether a no-sorry proof is possible.
+No valid `FINAL_PROOF` exists for the requested signature as stated. The theorem is false in Mathlib: `Summable` is unconditional summability, so at `z = 1` it would imply summability of the harmonic series.
+
+This Lean counterexample compiles:
+
+```lean
+import Mathlib
+
+theorem not_floorSqrtAlternatingHarmonic_powerSeries_converges_on_unitCircle :
+    ¬ (∀ z : ℂ,
+      ‖z‖ = 1 →
+        Summable
+          (fun n : ℕ =>
+            (((-1 : ℂ) ^ (Int.toNat ⌊Real.sqrt (((n + 1 : ℕ) : ℝ))⌋)) / (((n + 1 : ℕ) : ℂ))) *
+              z ^ (n + 1))) := by
+  intro h
+  have hs : Summable
+          (fun n : ℕ =>
+            (((-1 : ℂ) ^ (Int.toNat ⌊Real.sqrt (((n + 1 : ℕ) : ℝ))⌋)) / (((n + 1 : ℕ) : ℂ))) *
+              (1 : ℂ) ^ (n + 1)) := h 1 (by simp)
+  have hs_norm : Summable (fun n : ℕ => ‖(((-1 : ℂ) ^ (Int.toNat ⌊Real.sqrt (((n + 1 : ℕ) : ℝ))⌋)) / (((n + 1 : ℕ) : ℂ))) *
+              (1 : ℂ) ^ (n + 1)‖) := Summable.norm hs
+  have hs_harm : Summable (fun n : ℕ => (1 : ℝ) / (n + 1)) := by
+    simpa using hs_norm.congr (fun n => by
+      rw [norm_mul, norm_div]
+      simp
+      simpa using Complex.norm_natCast (n + 1))
+  have hnot : ¬ Summable (fun n : ℕ => (1 : ℝ) / (n + 1)) := by
+    exact_mod_cast mt (_root_.summable_nat_add_iff 1).1 Real.not_summable_one_div_natCast
+  exact hnot hs_harm
+```

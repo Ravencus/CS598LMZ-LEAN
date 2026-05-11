@@ -1,0 +1,22 @@
+{
+  "id": "thue-siegel-roth-theorem-1955",
+  "type": "problem",
+  "source_note": "无理测度的定义以及基本的命题",
+  "english_source_note": "Irrationality Measure: Definition and Basics",
+  "callout_id": "无理测度的定义以及基本的命题#12",
+  "english_title": "Thue-Siegel-Roth Theorem (1955)",
+  "statement_en": "Every algebraic irrational number has irrationality measure 2.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "Roth's theorem",
+    "combining upper and lower bounds for irrationality measure"
+  ],
+  "prerequisites": [
+    "algebraic irrational numbers",
+    "irrationality measure",
+    "Liouville's theorem"
+  ],
+  "callout_body": "所有代数无理数的无理测度都是2。"
+}

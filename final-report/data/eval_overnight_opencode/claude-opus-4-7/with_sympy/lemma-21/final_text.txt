@@ -1,0 +1,138 @@
+I'll work on this proof step by step. Let me start by exploring the structure and finding relevant Mathlib lemmas.
+So `Complex.norm_exp_sub_one_le` exists with parameter `x` and hypothesis `hx`. Let me check its signature.
+I need to see the actual signature. Let me look it up via info.
+Compiles but no info shown. Let me try a direct approach. I know there's `Complex.norm_exp_sub_one_le` with hypothesis `hx : ‖x‖ ≤ 1`, OR possibly an unconditional version. Let me try.
+Both failed. The lemma must have a different form. Let me think differently. The key inequality `‖exp(iθ) - 1‖ ≤ |θ|` for real θ is the standard one. Let me search.
+Let me think. The standard proof: `exp(iθ) - 1 = i ∫₀^θ exp(it) dt`, so `‖exp(iθ) - 1‖ ≤ ∫₀^|θ| 1 dt = |θ|`. In Mathlib, there's likely `Complex.norm_exp_int_mul_I_sub_one_le` or similar. Actually, let me try the more general approach using `abs_exp_sub_one_le` or `Complex.exp_sub_one`.
+
+Key insight: `|e^(iθ) - 1| = 2|sin(θ/2)| ≤ |θ|`. Let me use this.
+I have 4 calls left. Let me try a more direct approach: bounding via the derivative. The function `f(t) = exp(it·2π·x) - 1` has derivative bounded by `2π|x|` and `f(0)=0`, so by MVT/integral bound `‖f(1)‖ ≤ 2π|x|`. But this is intricate.
+
+Actually, the simplest: `Complex.norm_exp_ofReal_mul_I_sub_one_le_abs` or maybe just compute. Let me try the approach: `‖e^{iθ} - 1‖² = 2 - 2cos(θ) ≤ θ²` since `1 - cos(θ) ≤ θ²/2`.
+Progress. The two issues:
+1. `sq_abs` not applicable — use `Complex.sq_norm` or compute directly via `Complex.normSq_eq_norm_sq`.
+2. `one_sub_sq_div_two_lt_cos` needs a different signature.
+
+Let me check what's available. Maybe `Real.cos_lt_one_of_ne_zero` or use `Real.abs_sin_lt_abs_of_pos`. Actually I want: `2 - 2 cos θ ≤ θ²` which is equivalent to `1 - cos θ ≤ θ²/2`. There's `Real.add_one_le_exp` etc. Let me just prove it: `1 - cos θ = 2 sin²(θ/2) ≤ 2 (θ/2)² = θ²/2`.
+
+I have 3 calls left. Let me be careful.
+`Complex.sq_abs` doesn't exist (renamed to `Complex.sq_norm` perhaps). Also `simp` doesn't close `(Complex.cos ↑θ).re = Real.cos θ`. Let me use the right lemmas: `Complex.cos_ofReal_re`, `Complex.sin_ofReal_re`. I have 2 calls left. Let me make this work cleanly.
+Excellent! The `hre`/`him` worked (just warnings). Only sorries remaining are in `hhalf` and `hsin_le`. The compilation succeeds except for sorry. I have 1 call left. Let me use the cleaner identity: `Real.cos_eq_one_sub_two_sin_sq_half` may exist, or I can derive `2 - 2 cos θ = 4 sin²(θ/2)` from `Real.cos_two_mul`.
+
+`Real.cos_two_mul : cos (2*x) = 2 cos² x - 1`. So `cos θ = cos(2·(θ/2)) = 2 cos²(θ/2) - 1 = 1 - 2 sin²(θ/2)` using Pythagoras.
+
+For `sin² y ≤ y²`: `Real.abs_sin_le_abs` — let me check if that's a thing. Actually `Real.sin_le` requires non-negativity. The clean one is `Real.abs_sin_lt_abs_of_pos` or `|sin x| ≤ |x|` which is `Real.abs_sin_le`... I'll just use `Real.sin_sq_le_sq` if exists, or compute via |sin x| ≤ |x|.
+
+Actually, simpler approach: just use `Real.cos_le_one` and `Real.one_sub_sq_div_two_le_cos`... let me try a more robust tactic. Use `Real.cos_lt_one_of_ne_zero` is too narrow. The cleanest: 
+
+Hmm, let me think. Actually the easiest: `Real.cos_le_one` gives `cos θ ≤ 1`, but we need `2 - 2 cos θ ≤ θ²`. This is equivalent to `cos θ ≥ 1 - θ²/2`.
+
+There's `Real.cos_quadratic_upper_bound`? Or use the Taylor result. Actually, in Mathlib there is `Real.cos_lt_one_sub_sq_div_two`... no. Let me just use `nlinarith` with `Real.sin_le` and `Real.abs_sin_le` etc.
+
+Let me be safe and use sympy for the inequality `2 - 2*cos(θ) ≤ θ²`. Wait, no — that's not a definite integral. Let me just try harder with last call.
+
+Idea: For any `y`, `|sin y| ≤ |y|`. This is `Real.abs_sin_le_abs`. Actually it's likely just called `Real.sin_le` for `y ≥ 0` and the absolute value version. Let me use it via `Real.abs_sin_lt_abs_of_pos` which states `0 < x → |sin x| < |x|` — combined with sin 0 = 0 case.
+
+Actually I should use the well-known: `Real.cos_eq_one_sub_two_sin_sq` or derive directly. Let me try one final attempt with multiple fallback tactics:
+Budget exhausted. Two issues remain:
+1. The `rw [← h1]` rewrote inside `h2` too eagerly. I should just write the value directly.
+2. `Real.abs_sin_lt_abs_of_pos` doesn't exist. The correct name might be `Real.abs_sin_lt_abs` or `Real.sin_lt`. 
+
+Let me fix these manually for the final attempt. For `hhalf`: just use `have h4 : Real.cos θ = 2 * Real.cos (θ/2)^2 - 1 := by have := Real.cos_two_mul (θ/2); linarith [show (2 : ℝ) * (θ/2) = θ from by ring]` — actually `linarith` can't substitute. Use `nlinarith` or rewrite via `show`.
+
+Better: `have h4 : Real.cos θ = 2 * Real.cos (θ/2)^2 - 1 := by rw [show θ = 2 * (θ/2) from by ring]; exact Real.cos_two_mul _`.
+
+For `|sin y| ≤ |y|`: there's `Real.abs_sin_lt_abs_of_pos`... wait, the correct lemma in Mathlib is `Real.sin_lt` (for 0 < x: sin x < x) and `Real.neg_lt_sin` or `Real.sin_pos_of_pos_of_lt_pi`. The lemma `|sin x| ≤ |x|` is `Real.abs_sin_le_abs` — actually I think it's just provable via `Real.sin_le` and case analysis, or by `Real.abs_sin_lt_abs_of_pos` doesn't exist. There's `Real.sin_lt` : `0 < x → Real.sin x < x` and combined with `Real.neg_one_le_sin` etc.
+
+Hmm let me use `Real.abs_sin_lt`. Actually one approach: use the fact that the function `f(t) = t - sin t` is increasing for t ≥ 0 since derivative is `1 - cos t ≥ 0`. But that requires Mathlib API.
+
+Simplest: `Real.sin_le_self_iff` or similar... Let me just use that `Real.sin x ≤ x` for `x ≥ 0` and `-x ≤ sin x` for `x ≥ 0`. The lemma `Real.sin_le` states `0 ≤ x → Real.sin x ≤ x`. The lemma for negatives can be derived. Combined: `|sin y| ≤ |y|`.
+
+Let me write final attempt without checking:
+
+```lean
+have hsin_abs : |Real.sin (θ/2)| ≤ |θ/2| := by
+  rcases le_or_lt 0 (θ/2) with h | h
+  · rw [abs_of_nonneg h]
+    rcases le_or_lt (θ/2) 1 with h2 | h2
+    · sorry  -- need |sin y| ≤ y for 0 ≤ y
+    · sorry
+  · sorry
+```
+
+This is getting hairy. Let me just submit what I have with a careful final version. Since budget is used, I'll write the best version I can craft, fixing the two known bugs:
+
+```lean
+FINAL_PROOF:
+```
+
+Let me write the final proof carefully, fixing both issues:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Complex Real
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  set θ : ℝ := 2 * Real.pi * x with hθ_def
+  have habs : |θ| = 2 * Real.pi * |x| := by
+    rw [hθ_def, abs_mul, abs_mul, abs_of_pos (by norm_num : (2:ℝ) > 0),
+        abs_of_pos Real.pi_pos]
+  show ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x|
+  rw [← habs]
+  have hexp : Complex.exp ((θ : ℂ) * Complex.I) = Complex.cos θ + Complex.sin θ * Complex.I := by
+    rw [Complex.exp_mul_I]
+  have hre : (Complex.exp ((θ : ℂ) * Complex.I) - 1).re = Real.cos θ - 1 := by
+    rw [hexp]
+    simp [Complex.sub_re, Complex.add_re, Complex.mul_re, Complex.I_re, Complex.I_im,
+          Complex.one_re, Complex.cos_ofReal_re, Complex.sin_ofReal_re,
+          Complex.sin_ofReal_im]
+  have him : (Complex.exp ((θ : ℂ) * Complex.I) - 1).im = Real.sin θ := by
+    rw [hexp]
+    simp [Complex.sub_im, Complex.add_im, Complex.mul_im, Complex.I_re, Complex.I_im,
+          Complex.one_im, Complex.sin_ofReal_re, Complex.sin_ofReal_im,
+          Complex.cos_ofReal_im]
+  have hnorm_sq : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖ ^ 2
+      = (Real.cos θ - 1) ^ 2 + (Real.sin θ) ^ 2 := by
+    rw [Complex.sq_norm, Complex.normSq_apply, hre, him]; ring
+  have hsc : Real.sin θ ^ 2 + Real.cos θ ^ 2 = 1 := Real.sin_sq_add_cos_sq θ
+  have h2cos : (Real.cos θ - 1) ^ 2 + (Real.sin θ) ^ 2 = 2 - 2 * Real.cos θ := by
+    nlinarith [hsc]
+  -- cos θ = 1 - 2 sin²(θ/2)
+  have hhalf : Real.cos θ = 1 - 2 * Real.sin (θ/2) ^ 2 := by
+    have h4 : Real.cos θ = 2 * Real.cos (θ/2)^2 - 1 := by
+      conv_lhs => rw [show θ = 2 * (θ/2) from by ring]
+      exact Real.cos_two_mul _
+    have h3 := Real.sin_sq_add_cos_sq (θ/2)
+    linarith
+  -- |sin y| ≤ |y| via Real.sin_le and case analysis
+  have hsin_abs : |Real.sin (θ/2)| ≤ |θ/2| := by
+    rcases le_or_lt 0 (θ/2) with h | h
+    · rw [abs_of_nonneg h]
+      have h1 : Real.sin (θ/2) ≤ θ/2 := Real.sin_le h
+      have h2 : -(θ/2) ≤ Real.sin (θ/2) := by
+        have : -1 ≤ Real.sin (θ/2) := Real.neg_one_le_sin _
+        linarith
+      exact abs_le.mpr ⟨h2, h1⟩
+    · rw [abs_of_neg h]
+      have hpos : 0 ≤ -(θ/2) := by linarith
+      have h1 : Real.sin (-(θ/2)) ≤ -(θ/2) := Real.sin_le hpos
+      have h2 : -(-(θ/2)) ≤ Real.sin (-(θ/2)) := by
+        have : -1 ≤ Real.sin (-(θ/2)) := Real.neg_one_le_sin _
+        linarith
+      rw [Real.sin_neg] at h1 h2
+      have habs2 : |Real.sin (θ/2)| ≤ -(θ/2) := abs_le.mpr ⟨by linarith, by linarith⟩
+      exact habs2
+  have hsin_le : Real.sin (θ/2) ^ 2 ≤ (θ/2) ^ 2 := by
+    have := sq_le_sq' (neg_abs_le (Real.sin (θ/2))) (le_abs_self (Real.sin (θ/2)))
+    nlinarith [hsin_abs, abs_nonneg (Real.sin (θ/2)), abs_nonneg (θ/2),
+               sq_abs (Real.sin (θ/2)), sq_abs (θ/2)]
+  have key : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖ ^ 2 ≤ θ ^ 2 := by
+    rw [hnorm_sq, h2cos, hhalf]
+    nlinarith [hsin_le]
+  have hθsq : θ^2 = |θ|^2 := (sq_abs θ).symm
+  rw [hθsq] at key
+  exact (abs_le_of_sq_le_sq' key (abs_nonneg _)).2
+```

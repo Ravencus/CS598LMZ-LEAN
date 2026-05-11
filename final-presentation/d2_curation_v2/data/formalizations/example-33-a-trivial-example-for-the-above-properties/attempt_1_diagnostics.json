@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a5fed2a4df3a.lean",
+      "line": 5,
+      "column": 18,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  Filter.map Real.sin Filter.atTop\nhas type\n  Filter ℝ\nbut is expected to have type\n  ?m.17 → ?m.16\nin the application\n  Filter.liminf (Filter.map Real.sin Filter.atTop)\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a5fed2a4df3a.lean",
+      "line": 5,
+      "column": 18,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  Filter.map Real.sin Filter.atTop\nhas type\n  Filter ℝ\nbut is expected to have type\n  ?m.17 → ?m.16\nin the application\n  Filter.liminf (Filter.map Real.sin Filter.atTop)\n"
+    }
+  ]
+}

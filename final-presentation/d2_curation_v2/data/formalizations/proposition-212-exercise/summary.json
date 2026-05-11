@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-212-exercise",
+  "english_title": "Proposition 2.1.2 (Exercise)",
+  "statement_en": "For sufficiently large $n$, suppose two real sequences satisfy $$x_n\\geq y_n$$ and both limits exist. Then necessarily $$\\lim_{n\\to \\infty} x_n \\geq \\lim_{n\\to \\infty} y_n.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem lim_ge_of_eventually_ge\n    {x y : ℕ → ℝ} {a b : ℝ}\n    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)\n    (hx : Filter.Tendsto x Filter.atTop (nhds a))\n    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :\n    a ≥ b := by\n  sorry"
+}

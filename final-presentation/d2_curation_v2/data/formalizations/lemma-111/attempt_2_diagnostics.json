@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_e6f3f5254e91.lean",
+      "line": 7,
+      "column": 22,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  Invertible P\nhas type\n  Type u_1\nof sort `Type (u_1 + 1)` but is expected to have type\n  Prop\nof sort `Type` in the application\n  And (Invertible P)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_e6f3f5254e91.lean",
+      "line": 12,
+      "column": 9,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  Invertible A\nhas type\n  Type u_1\nof sort `Type (u_1 + 1)` but is expected to have type\n  Prop\nof sort `Type` in the application\n  Or (Invertible A)\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_e6f3f5254e91.lean",
+      "line": 7,
+      "column": 22,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  Invertible P\nhas type\n  Type u_1\nof sort `Type (u_1 + 1)` but is expected to have type\n  Prop\nof sort `Type` in the application\n  And (Invertible P)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_e6f3f5254e91.lean",
+      "line": 12,
+      "column": 9,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  Invertible A\nhas type\n  Type u_1\nof sort `Type (u_1 + 1)` but is expected to have type\n  Prop\nof sort `Type` in the application\n  Or (Invertible A)\n"
+    }
+  ]
+}

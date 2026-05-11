@@ -1,0 +1,65 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 7,
+  "first_error": "Unknown constant `Real.integral_cos`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 65,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `Real.integral_cos`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 69,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `Real.integral_cos`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 76,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  Continuous.intervalIntegrable hcont\n has type\n  ∀ (a b : ℝ), IntervalIntegrable (fun u => max (Real.cos u) 0) ?m.1095 a b\nbut is expected to have type\n  IntervalIntegrable (fun u => max (Real.cos u) 0) MeasureTheory.volume 0 (2 * Real.pi)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 78,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  Continuous.intervalIntegrable hcont\n has type\n  ∀ (a b : ℝ), IntervalIntegrable (fun u => max (Real.cos u) 0) ?m.1127 a b\nbut is expected to have type\n  IntervalIntegrable (fun u => max (Real.cos u) 0) MeasureTheory.volume (Real.pi / 2) (2 * Real.pi)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 84,
+      "column": 72,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h01\nhas type\n  0 ≤ Real.pi / 2\nbut is expected to have type\n  IntervalIntegrable f MeasureTheory.volume (2 * Real.pi) ?m.1196\nin the application\n  intervalIntegral.integral_add_adjacent_intervals hint02 h01"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 90,
+      "column": 74,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h12\nhas type\n  Real.pi / 2 ≤ 3 * Real.pi / 2\nbut is expected to have type\n  IntervalIntegrable f MeasureTheory.volume (2 * Real.pi) ?m.1285\nin the application\n  intervalIntegral.integral_add_adjacent_intervals hintmid2 h12"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 108,
+      "column": 10,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0\nin the target expression\n  ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    1 + (0 + 1)\n\nh01 : 0 ≤ Real.pi / 2\nh12 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh23 : 3 * Real.pi / 2 ≤ 2 * Real.pi\nh02 : Real.pi / 2 ≤ 2 * Real.pi\nh0 : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nhmid : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = 0\nh3 :\n  ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 = ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u\nhcos0 : ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u = 1\nhcos2 : ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u = 1\nf : ℝ → ℝ := fun u => max (Real.cos u) 0\nhcont : Continuous f\nhint02 : IntervalIntegrable f MeasureTheory.volume 0 (2 * Real.pi)\nhintmid2 : IntervalIntegrable f MeasureTheory.volume (Real.pi / 2) (2 * Real.pi)\nhsplit1 :\n  ∫ (u : ℝ) in 0..2 * Real.pi, f u = ∫ (u : ℝ) in 0..Real.pi / 2, f u + ∫ (u : ℝ) in Real.pi / 2..2 * Real.pi, f u\nhsplit2 :\n  ∫ (u : ℝ) in Real.pi / 2..2 * Real.pi, f u =\n    ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, f u + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, f u\nhsplit2' :\n  ∫ (u : ℝ) in Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n      max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\n⊢ ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    1 + (0 + 1)\n"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Application type mismatch: The argument\n  hfg'\nhas type\n  ∀ᵐ (x : Ω) ∂μ, 0 ≤ f x - g x\nbut is expected to have type\n  0 ≤ fun a => f a - g a\nin the application\n  integral_nonneg hfg'\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_8afc1ccb2b.lean",
+      "line": 15,
+      "column": 26,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hfg'\nhas type\n  ∀ᵐ (x : Ω) ∂μ, 0 ≤ f x - g x\nbut is expected to have type\n  0 ≤ fun a => f a - g a\nin the application\n  integral_nonneg hfg'\n"
+    }
+  ]
+}

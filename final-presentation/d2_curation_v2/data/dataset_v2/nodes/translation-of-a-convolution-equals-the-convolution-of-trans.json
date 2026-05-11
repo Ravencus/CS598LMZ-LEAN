@@ -1,0 +1,22 @@
+{
+  "id": "translation-of-a-convolution-equals-the-convolution-of-trans",
+  "type": "problem",
+  "source_note": "函数卷积的基本性质",
+  "english_source_note": "Basic Properties of Convolution",
+  "callout_id": "函数卷积的基本性质#2",
+  "english_title": "Translation of a Convolution Equals the Convolution of Translations",
+  "statement_en": "If $T_z(f)$ denotes the left translation of $f$ by $z$, namely $T_z(f)=f(x-z)$, then\n$$T_{z}(f*g)=(T_zf)*g=f*(T_zg).$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "change of variables in the convolution integral",
+    "translation invariance of Haar measure"
+  ],
+  "prerequisites": [
+    "definition of convolution",
+    "Haar measure",
+    "translation operators on groups"
+  ],
+  "callout_body": "如果$T_z(f)$表示把函数$f$左平移$z$个单位，即$$T_z(f)=f(x-z)$$那么\n$$T_{z}(f*g)=(T_zf)*g=f*(T_zg)$$"
+}

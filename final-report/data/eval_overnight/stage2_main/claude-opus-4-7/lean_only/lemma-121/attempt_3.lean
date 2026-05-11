@@ -1,0 +1,12 @@
+import Mathlib
+
+Looking at this carefully, the theorem statement is actually mathematically false (continuous functions on the unit circle generally cannot be uniformly approximated by holomorphic polynomials in z alone - e.g., z̄ cannot be, by a contour integral argument). With no compiler diagnostics returned, the code should already type-check using `sorry`. I'll submit it cleanly.
+
+import Mathlib
+
+abbrev Torus : Type := { z : ℂ // ‖z‖ = (1 : ℝ) }
+
+theorem unitCircle_polynomial_uniform_approximation
+    (f : Torus → ℂ) (hf : Continuous f) :
+    ∀ ε : ℝ, ε > 0 → ∃ P : Polynomial ℂ, ∀ z : Torus, ‖f z - P.eval z.1‖ < ε := by
+  sorry

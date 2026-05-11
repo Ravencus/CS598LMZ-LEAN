@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-211-in-a-finite-measure-space-almost-everywhere-",
+  "english_title": "Proposition 2.1.1: In a Finite Measure Space, Almost Everywhere Convergence Implies Convergence in Measure",
+  "statement_en": "If $\\mu(X)<\\infty$, then $$f_n\\xrightarrow{a.e.}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter Topology\n\ndef AEConvergesTo {α : Type*} [MeasurableSpace α] (μ : Measure α)\n    (f : ℕ → α → ℝ) (g : α → ℝ) : Prop :=\n  ∀ᵐ x ∂μ, Tendsto (fun n : ℕ => f n x) atTop (nhds (g x))\n\ndef ConvergesInMeasure {α : Type*} [MeasurableSpace α] (μ : Measure α)\n    (f : ℕ → α → ℝ) (g : α → ℝ) : Prop :=\n  ∀ ε : ℝ, ε > 0 →\n    Tendsto (fun n : ℕ => μ ({x : α | ε ≤ dist (f n x) (g x)} : Set α)) atTop\n      (nhds (0 : ℝ≥0∞))\n\ntheorem ae_convergence_implies_convergence_in_measure_of_finite_measure\n    {α : Type*} [MeasurableSpace α] (μ : Measure α)\n    (hμ : μ Set.univ < (∞ : ℝ≥0∞)) {f : ℕ → α → ℝ} {g : α → ℝ}\n    (hfg : AEConvergesTo μ f g) :\n    ConvergesInMeasure μ f g := by\n  sorry"
+}

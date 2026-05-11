@@ -1,0 +1,24 @@
+{
+  "id": "problem-3-2",
+  "type": "problem",
+  "source_note": "揭露全纯以及亚纯函数信息的Liouville原则",
+  "english_source_note": "Liouville Principles for Holomorphic and Meromorphic Functions",
+  "callout_id": "揭露全纯以及亚纯函数信息的Liouville原则#3",
+  "english_title": "Problem 3",
+  "statement_en": "Let \\(f(z)\\) be entire and satisfy $$\\\\int_{0}^{2\\\\pi} |f(re^{i \\\theta})|\\\\, d\\\theta < r^{1/2},\\\\quad \\\\forall r>0.$$ Prove that \\(f\\\\equiv 0\\).",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "Cauchy integral formula for coefficients",
+    "integral estimate on circles",
+    "coefficient decay implying vanishing"
+  ],
+  "prerequisites": [
+    "entire functions",
+    "Taylor series",
+    "Cauchy coefficient formula",
+    "basic integral estimates"
+  ],
+  "callout_body": "整函数$f(z)$满足不等式,$$\\int_{0}^{2\\pi}\n|f(re^{i \\theta})| d\\theta < r^{1/2},\\forall r >0$$ 证明函数为0."
+}

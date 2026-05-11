@@ -1,0 +1,23 @@
+{
+  "id": "problem-3",
+  "type": "problem",
+  "source_note": "n个连续的阶乘之积有多少个因子",
+  "english_source_note": "How Many Divisors in a Product of n Consecutive Factorials",
+  "callout_id": "n个连续的阶乘之积有多少个因子#5",
+  "english_title": "Problem 3",
+  "statement_en": "Give an asymptotic expansion for $\\sum_{p\\leq n}\\log(p-1)$ with error term of precision $o(n)$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "comparison with Chebyshev theta function",
+    "prime-sum asymptotics",
+    "use of the prime number theorem"
+  ],
+  "prerequisites": [
+    "prime number theorem",
+    "Chebyshev theta function",
+    "asymptotic notation"
+  ],
+  "callout_body": "给出$\\sum_{p\\leq n}\\log(p-1)$的精度在$o(n)$的渐近展开结果。"
+}

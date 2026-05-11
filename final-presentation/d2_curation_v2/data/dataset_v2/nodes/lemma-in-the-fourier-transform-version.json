@@ -1,0 +1,23 @@
+{
+  "id": "lemma-in-the-fourier-transform-version",
+  "type": "problem",
+  "source_note": "Riemann - Lebesgue lemma的证明",
+  "english_source_note": "Proof of the Riemann-Lebesgue Lemma",
+  "callout_id": "Riemann - Lebesgue lemma的证明#1",
+  "english_title": "Lemma in the Fourier Transform Version",
+  "statement_en": "If $f \\in L^1(\\mathbb{R}^n)$, and its Fourier transform is defined by $$\\hat{f}(\\xi) = \\int_{\\mathbb{R}^n}f(x)e^{-2\\pi i x \\cdot \\xi } \\, dx,$$ then $$|\\hat{f}(\\xi)|\\to 0 \\text{ as } |\\xi| \\to \\infty.$$ Since the Fourier transform of an integrable function is continuous, this is essentially the statement that $$f \\in L^1(\\mathbb{R}^n) \\implies \\hat{f} \\in C_0(\\mathbb{R}^n).$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "approximation by translated functions",
+    "continuity of translations in $L^1$",
+    "Fourier transform estimates"
+  ],
+  "prerequisites": [
+    "$L^1(\\mathbb{R}^n)$ functions",
+    "Fourier transform",
+    "continuity of the Fourier transform of integrable functions"
+  ],
+  "callout_body": "如果$f \\in L^1(\\mathbb{R}^n)$,其傅里叶变换:\n$$\\hat{f}(\\xi) = \\int_{\\mathbb{R}^n}f(x)e^{-2\\pi i x \\cdot \\xi } dx$$那么$$|\\hat{f}(\\xi)|\\to 0 \\text{ as } |\\xi| \\to \\infty$$\n因为[[可积函数的傅里叶变换是连续的]]，那么这个命题实际上就是证明$$f \\in L^1(\\mathbb{R}^n) \\implies \\hat{f} \\in C_0(\\mathbb{R}^n)$$"
+}

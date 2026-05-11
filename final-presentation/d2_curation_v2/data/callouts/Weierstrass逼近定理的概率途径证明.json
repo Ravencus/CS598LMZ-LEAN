@@ -1,0 +1,130 @@
+{
+  "note_title": "Weierstrass逼近定理的概率途径证明",
+  "is_hub": false,
+  "in_subset_via": [
+    "分段估计",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#1",
+      "type": "note",
+      "title": "weierstrass逼近定理",
+      "body": "$f\\in C([0,1]\\to \\mathbb{R})$可以被同样定义在$[0,1]$上的实系数多项式一致逼近。",
+      "position_char": 40,
+      "position_line": 7
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#2",
+      "type": "note",
+      "title": "pushforward测度",
+      "body": "设$(X,\\mathcal{A},\\mu)$是一个测度空间,$T:X\\to Y$是一个从$X$到集合$Y$的可测函数($\\mu$可测)。对于$Y$上的一个sigma代数$\\mathcal{B}$定义pushforward测度$T_{*}\\mu$为$Y$上的一个测度，满足任意$B\\in \\mathcal{B}$都有$$T_{*}\\mu(B):=\\mu(T^{-1}(B))$$其中$T^{-1}(B)$是集合$B$在$T$下的原像，因此这种测度也称之为像测度。",
+      "position_char": 1381,
+      "position_line": 36
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#3",
+      "type": "example",
+      "title": "例子1",
+      "body": "考虑概率空间$(\\{0,1\\},\\mathcal{P}(\\{0,1\\}),P_0)$，其中sigma代数是$\\{0,1\\}$的幂集，概率测度定义为$P_0(\\{0\\})=1-p,P_0(\\{1\\})=p$.在此基础上考虑一个符合Bernoulli(p)的随机变量$$Y_1(\\omega):=\\begin{cases}0& \\omega =0\\\\ 1&\\omega =1\\end{cases}$$也就是说，这是一个恒等映射。于是可以定义出pushforward测度，$$P_{Y_1}(\\{0\\})=P(Y_1=0)=P(\\{0\\})=1-p$$\n以及$$P_{Y_1}(\\{1\\})=P(Y_1=1)=P(\\{1\\})=p$$",
+      "position_char": 2008,
+      "position_line": 48
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#4",
+      "type": "example",
+      "title": "例子2",
+      "body": "考虑概率空间$([0,1],\\mathcal{B}([0,1]),m)$其中sigma代数是在闭区间上定义的Borel sigma代数，概率测度此时设定为实数的Lebesgue测度$m$.在此基础上考虑一个符合Bernoulli(p)的随机变量$$Y_2(\\omega):=\\begin{cases}0& 1\\geq \\omega >p\\\\ 1& p\\geq \\omega \\geq 0 \\end{cases}$$此时pushforward测度为$$P_{Y_2}(\\{0\\})=m((p,1])=1-p$$以及$$P_{Y_2}(\\{1\\})=m([0,p])=p$$",
+      "position_char": 2345,
+      "position_line": 52
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#5",
+      "type": "example",
+      "title": "例子3",
+      "body": "在例子2的基础上考虑$$Y_3(\\omega):=\\begin{cases}0& \\omega \\in [p,1]-\\{\\frac{1+p}{2}\\}\\\\ 1& \\omega \\in [0,p) \\cup \\{\\frac{1+p}{2}\\}\\end{cases}$$此时pushforward测度为$$P_{Y_2}(\\{0\\})=m([p,1]-\\{\\frac{1+p}{2}\\})=1-p$$以及$$P_{Y_2}(\\{1\\})=m([0,p) \\cup \\{\\frac{1+p}{2}\\})=p$$",
+      "position_char": 2832,
+      "position_line": 61
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#6",
+      "type": "note",
+      "title": "随机变量的独立性",
+      "body": "当我们说两个此空间上的随机变量$X,Y$互相独立的时候指的$\\forall B_1,B_2 \\in \\mathcal{B}(\\mathbb{R})$都有$\\mathcal{F}$当中的两个元素$X^{-1}(B_1),Y^{-1}(B_2)$的独立。也就是说$$P(X^{-1}(B_1)\\cap Y^{-1}(B_2))=P(X^{-1}(B_1))P(Y^{-1}(B_2))$$",
+      "position_char": 3680,
+      "position_line": 80
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#7",
+      "type": "note",
+      "title": "两个随机变量的联合概率分布",
+      "body": "如果我们从更为广义角度来理解随机变量，把$$Z(\\omega)=(X(\\omega),Y(\\omega))$$这种随机向量也当成随机变量来看待，那么按照由随机变量定义出来的pushforward测度的定义，我们可以定义一种由$Z:\\Omega\\to\\mathbb{R}\\times \\mathbb{R}$给出来的pushforward测度$P_Z:=Z_{*}P$.\n此时定义值域上的product sigma代数为$\\mathcal{B}(\\mathbb{R}) \\otimes \\mathcal{B}(\\mathbb{R})$那么其中任意元素$B_1\\times B_2$的$P_Z$测度被定义为$$P_Z(B_1\\times B_2)=P((X,Y)\\in B_1\\times B_2)=P(X\\in B_1 \\cap Y\\in B_2 )$$",
+      "position_char": 3895,
+      "position_line": 83
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#8",
+      "type": "question",
+      "title": "问题",
+      "body": "考虑概率空间$(\\Omega,\\mathcal{F},P)$上的n个满足bernoulli(p)分布的独立同分布的随机变量$X_1,...,X_n$，考虑其“平均值”$$Y_n = \\frac{X_1+...+X_n}{n}$$的分布。",
+      "position_char": 4427,
+      "position_line": 90
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#9",
+      "type": "note",
+      "title": "积分换元",
+      "body": "设$(X,\\mathcal{A},\\mu)$是一个测度空间,$T:X\\to Y$是一个从$X$到集合$Y$的可测函数，$T_{*}\\mu$为pushforward测度，函数$g$是$Y$上的一个可积函数，那么$$\\int_{Y}g\\,d(T_{*}\\mu)=\\int_X g\\circ T\\,d\\mu$$",
+      "position_char": 5628,
+      "position_line": 108
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#10",
+      "type": "note",
+      "title": "依测度收敛版本的控制收敛定理",
+      "body": "任意随机变量$X_n\\xrightarrow{P}{X}$，如果$|X_n|\\leq Y$,并且$Y$的期望存在，那么$$E(X_n)\\to E(X)$$",
+      "position_char": 6433,
+      "position_line": 119
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#11",
+      "type": "note",
+      "title": "定理1",
+      "body": "1. 函数$f$是定义在$E$上的有界一致连续函数.\n2. 假设对$\\forall p\\in E$都存在$X_n$是概率空间$(\\Omega,\\mathcal{F},P)$上的值域为$E\\subseteq \\mathbb{R}$的一列独立同分布的随机变量且$X_n\\sim F(p)$其中$p\\in E$是这一列随机变量的均值.假设$Y_n = \\frac{X_1+...+X_n}{n}\\xrightarrow{P}{p}$\n3. 期望$E(f(Y_n))$存在对任意$n \\in \\mathbb{N}$成立。\n\n那么有：$$||E(f(Y_n)) -f||_u \\to 0$$",
+      "position_char": 9903,
+      "position_line": 158
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#12",
+      "type": "question",
+      "title": "问题",
+      "body": "如果我们解开用多项式逼近连续函数的限制，我们是否能用同样的概率路径取得到更多样的对连续函数的一致逼近?",
+      "position_char": 10309,
+      "position_line": 170
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#13",
+      "type": "note",
+      "title": "Radon-Nikodym导数",
+      "body": "在测度空间空间$(\\Omega,\\mathcal{F},\\mu)$上如果存在一个非负Borel可测函数$f:\\Omega \\to [0,\\infty)$，并且这个函数可以通过积分定义出可测空间$(\\Omega,\\mathcal{F})$上的另一个测度$$\\forall A\\in \\mathcal{F},\\nu(A):=\\int_A f\\,d\\mu$$\n那么此时我们称$f$是$\\nu$关于$\\mu$的Radon-Nikodym导数或者将成为\"密度\"。可以表示为$f=\\frac{d\\nu}{d\\mu}$.",
+      "position_char": 10886,
+      "position_line": 179
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#14",
+      "type": "note",
+      "title": "正态分布的随机变量",
+      "body": "在概率空间$(\\Omega,\\mathcal{F},P)$上如果一个随机变量$X$定义出来的pushforward测度$P_X$可以表示为$f_X$的积分$$P_X(A)=\\int_{A} \\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\\,dm$$对任意$A\\in \\mathcal{B}(\\mathbb{R})$成立.\n其中$\\mathcal{B}(\\mathbb{R})$是测度空间$(\\mathbb{R},\\mathcal{B}(\\mathbb{R}),m)$当中的Borel代数(m是Lebesgue测度)\n那么称$X \\sim \\mathcal{N}(\\mu,\\sigma^2)$是符合正态分布，均值为$\\mu$方差为$\\sigma^2$的随机变量。",
+      "position_char": 11193,
+      "position_line": 185
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#15",
+      "type": "note",
+      "title": "Radon Nikodym链式法则",
+      "body": "$\\nu,\\mu$是测度空间$(\\Omega,\\mathcal{F})$上的两个测度，$g$是定义在$\\Omega$上的非负Borel可测函数。如果存在$\\nu$关于$\\mu$的密度$\\frac{d\\nu}{d\\mu}$,那么$$\\int_{\\Omega}g\\,d\\nu=\\int_{\\Omega}g\\frac{d\\nu}{d\\mu}\\,d\\mu$$",
+      "position_char": 11644,
+      "position_line": 192
+    }
+  ]
+}

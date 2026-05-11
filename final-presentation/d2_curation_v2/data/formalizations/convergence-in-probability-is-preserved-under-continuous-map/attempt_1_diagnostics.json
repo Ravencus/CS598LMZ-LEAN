@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_07be35bbad3c.lean",
+      "line": 5,
+      "column": 21,
+      "severity": "error",
+      "message": "invalid binder annotation, type is not a class instance\n  ?m.4\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_07be35bbad3c.lean",
+      "line": 5,
+      "column": 21,
+      "severity": "error",
+      "message": "invalid binder annotation, type is not a class instance\n  ?m.4\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    }
+  ]
+}

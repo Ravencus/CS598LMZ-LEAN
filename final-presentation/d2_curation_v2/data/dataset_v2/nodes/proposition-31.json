@@ -1,0 +1,24 @@
+{
+  "id": "proposition-31",
+  "type": "problem",
+  "source_note": "关于序列极限的公开问题",
+  "english_source_note": "Open Problems on Sequence Limits",
+  "callout_id": "关于序列极限的公开问题#7",
+  "english_title": "Proposition 3.1",
+  "statement_en": "Let $a_1>0$, and suppose the sequence satisfies the difference equation $$\\Delta a_n= \\frac{f(n)}{S_n}$$ where $f(n)>0$ and $f(n)\\sim \\alpha n^{2\\beta}$. Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}} =\\sqrt{\\frac{\\alpha(\\beta+1)}{\\beta}}.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "asymptotic analysis of nonlinear difference equations",
+    "partial sum estimates",
+    "Stolz-Cesaro theorem"
+  ],
+  "prerequisites": [
+    "difference equations",
+    "asymptotic notation",
+    "limits of sequences",
+    "partial sums"
+  ],
+  "callout_body": "$a_1>0$，并且满足差分方程$$\\Delta a_n= \\frac{f(n)}{S_n}$$其中$f(n)>0$并且满足$f(n)\\sim \\alpha n^{2\\beta}$那么$$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}} =\\sqrt{\\frac{\\alpha(\\beta+1)}{\\beta}}$$"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "problem-1-11",
+  "type": "problem",
+  "source_note": "利用Stolz定理确定递归序列的渐近系数",
+  "english_source_note": "Asymptotic Coefficients via Stolz's Theorem",
+  "callout_id": "利用Stolz定理确定递归序列的渐近系数#1",
+  "english_title": "Problem 1",
+  "statement_en": "The sequence $\\{x_n\\}_{n\\geq 1}$ has initial value $x_1=1$ and satisfies the recurrence relation $$x_{n+1}=x_{n}+3\\sqrt{x_n}+\\frac{n}{\\sqrt{x_n}}.$$ Find $$\\lim_{n\\to \\infty}\\frac{x_n}{n^2}.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Cesaro-Stolz theorem",
+    "asymptotic analysis of recursive sequences",
+    "inequality estimation"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "recursive sequences",
+    "square-root inequalities",
+    "Cesaro-Stolz theorem"
+  ],
+  "callout_body": "数列$\\{x_n\\}_{n\\geq 1}$的初值为$1$,并且满足递推关系$$x_{n+1}=x_{n}+3\\sqrt{x_n}+\\frac{n}{\\sqrt{x_n}}$$求$$\\lim_{n\\to \\infty}\\frac{x_n}{n^2}$$"
+}

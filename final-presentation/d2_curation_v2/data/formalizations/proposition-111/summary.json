@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-111",
+  "english_title": "Proposition 1.1.1",
+  "statement_en": "For every natural number $N$, the inequality $$S_N<3$$ holds.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem mainTheorem (S : ℕ → ℝ) : ∀ N : ℕ, S N < 3 := by\n  sorry"
+}

@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_353c605b438c.lean",
+      "line": 4,
+      "column": 69,
+      "severity": "error",
+      "message": "unexpected token '!'; expected ')', ',' or ':'\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_353c605b438c.lean",
+      "line": 4,
+      "column": 69,
+      "severity": "error",
+      "message": "unexpected token '!'; expected ')', ',' or ':'\n"
+    }
+  ]
+}

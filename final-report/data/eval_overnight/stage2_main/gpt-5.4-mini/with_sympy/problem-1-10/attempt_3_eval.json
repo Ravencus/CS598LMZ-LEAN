@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Application type mismatch: The argument\n  Measurable.aestronglyMeasurable (Measurable.ennreal_ofReal hf_meas)\nhas type\n  MeasureTheory.AEStronglyMeasurable (fun x => ENNReal.ofReal (f x)) ?m.64\nbut is",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_4d57a29edc.lean",
+      "line": 16,
+      "column": 13,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  Measurable.aestronglyMeasurable (Measurable.ennreal_ofReal hf_meas)\nhas type\n  MeasureTheory.AEStronglyMeasurable (fun x => ENNReal.ofReal (f x)) ?m.64\nbut is expected to have type\n  Measurable fun x => ENNReal.ofReal (f x)\nin the application\n  MeasureTheory.lintegral_eq_zero_iff (Measurable.aestronglyMeasurable (Measurable.ennreal_ofReal hf_meas))\n"
+    }
+  ]
+}

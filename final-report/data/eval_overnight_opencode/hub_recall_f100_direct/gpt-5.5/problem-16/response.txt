@@ -1,0 +1,4 @@
+["term-by-term-estimates-hub", "piecewise-estimates-hub", "cauchy-condensation-test-hub"]
+- term-by-term-estimates-hub: The proof needs pointwise comparisons for \(a_n^{1-1/\log n}=a_n\cdot a_n^{-1/\log n}\), bounding terms differently depending on the size of \(a_n\) relative to \(n\).
+- piecewise-estimates-hub: A natural strategy is to split indices into cases such as \(a_n\ge n^{-K}\) and \(a_n<n^{-K}\), where the first part is controlled by a constant multiple of \(a_n\) and the second by a convergent \(p\)-series.
+- cauchy-condensation-test-hub: The logarithmic exponent suggests dyadic/block-style reasoning in \(n\), since \(\log n\) is nearly constant on dyadic intervals and such blocks help convert the modified powers into summable estimates.

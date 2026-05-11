@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-122-2",
+  "english_title": "Lemma 1.2.2",
+  "statement_en": "Let $$P(n):=a_dn^d+a_{d-1}n^{d-1}+\\cdots+a_1 n +a_0\\in \\mathbb{R}[n],\\ d\\geq 2,$$ be a polynomial of degree at least $2$ such that at least one of the coefficients $a_d,\\ldots,a_2$ is irrational. Let $i\\neq j\\in \\mathbb{Z}$ and $(m_1,m_2)\\in \\mathbb{Z}^2\\setminus \\{(0,0)\\}$. Then $$Q(n):=m_1P(n+i)-m_2P(n+j)$$ is a nonconstant polynomial, and at least one of its nonconstant coefficients is irrational.",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem polynomial_shift_difference_nonconstant_with_irrational_coeff\n    (P : Polynomial ℝ)\n    (hdeg : 2 ≤ P.natDegree)\n    (hirr : ∃ k : ℕ, 2 ≤ k ∧ Irrational (P.coeff k))\n    (i j m₁ m₂ : ℤ)\n    (hij : i ≠ j)\n    (hm : m₁ ≠ 0 ∨ m₂ ≠ 0) :\n    let Q : Polynomial ℝ :=\n      Polynomial.C (m₁ : ℝ) * P.comp (Polynomial.X + Polynomial.C (i : ℝ)) -\n        Polynomial.C (m₂ : ℝ) * P.comp (Polynomial.X + Polynomial.C (j : ℝ))\n    ∀ d : ℕ, P.natDegree = d →\n      (∃ k : ℕ, 1 ≤ k ∧ Q.coeff k ≠ 0) ∧\n      ∃ k : ℕ, 1 ≤ k ∧ Irrational (Q.coeff k) := by\n  sorry"
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-13-2",
+  "english_title": "Problem 1.3",
+  "statement_en": "Prove that the set $E$ formed by the sequence $\\xi_n=n\\text{ mod }2\\pi$ is dense in the interval $[0,2\\pi]$.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem dense_mod_two_pi_interval :\n    Set.Icc (0 : ℝ) (2 * Real.pi) ⊆\n      closure (Set.range fun n : ℕ => ((n : ℝ) % (2 * Real.pi))) := by\n  sorry"
+}

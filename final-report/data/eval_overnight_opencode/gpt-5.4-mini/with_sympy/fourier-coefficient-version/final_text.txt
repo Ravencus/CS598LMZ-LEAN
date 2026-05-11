@@ -1,0 +1,71 @@
+I’m loading the Lean proving workflow and then I’ll test a minimal proof shape against the checker.
+I’m checking whether the repository already contains a usable Fourier/Riemann-Lebesgue lemma or a similar proof pattern before I write Lean.
+I’m probing Mathlib for an existing Riemann-Lebesgue or Fourier-decay theorem so I can reuse it instead of rebuilding analysis from scratch.
+I found an actual `RiemannLebesgueLemma` file in Mathlib. I’m reading the exact theorem statement to see if I can specialize it directly to this circle/Fourier-coefficient form.
+The Riemann-Lebesgue theorem in Mathlib is for `ℝ`/finite-dimensional spaces, so I’m checking whether I can reduce `ℤ` with `natAbs` to a cocompact/coercion statement and compose.
+I’ve narrowed the key subproblem to the filter side. I’m checking the exact statement of `comap_abs_atTop` and related coercion lemmas so I can avoid guessing.
+I found the general Riemann-Lebesgue lemma, but matching the exact `exp(-inx)` normalization may still be fiddly. I’m checking whether Mathlib already has a Fourier-coefficient decay theorem closer to this statement.
+I have a concrete filter-reduction path now. I’m testing the `comap natAbs atTop = cofinite` lemma first, because everything else can then compose cleanly.
+I’ve got enough structure to try the full proof now: reduce the source filter via `natAbs`, apply Riemann-Lebesgue to the interval indicator, and then rewrite back to the stated Fourier coefficient.
+The last attempt exposed two issues: the source-filter proof was too aggressive with `simp`, and the Fourier-side rewrite needs `convert` rather than plain simplification. I’m tightening both pieces now.
+I’m switching to a more direct `simpa`-based rewrite chain. The previous `convert` route was fighting the indicator/interval integral shape too much.
+I’m using the last check to make the rewrites explicit rather than relying on heavy `simp`. That should avoid the recursion-depth failure and the indicator-to-interval mismatch.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+noncomputable section
+
+theorem riemannLebesgue_fourierCoefficients_tendsto_zero
+    {f : ℝ → ℂ}
+    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :
+    Tendsto
+      (fun n : ℤ =>
+        ‖((1 / (2 * Real.pi : ℂ)) *
+          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+  have hnatAbs : Tendsto Int.natAbs (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    exact map_comap_le
+  have hdist_eq : (fun n : ℤ => dist ((n : ℝ)) 0) = fun n : ℤ => ((Int.natAbs n : ℕ) : ℝ) := by
+    funext n
+    norm_num [Int.dist_eq, Int.abs_eq_natAbs]
+  have hnatAbsReal : Tendsto (fun n : ℤ => dist ((n : ℝ)) 0) (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    rw [hdist_eq]
+    exact (tendsto_natCast_atTop_atTop).comp hnatAbs
+  have hcoe : Tendsto (fun n : ℤ => (n : ℝ)) (Filter.comap Int.natAbs Filter.atTop) (Filter.cocompact ℝ) := by
+    refine tendsto_cocompact_of_tendsto_dist_comp_atTop 0 ?_
+    simpa using hnatAbsReal
+  have hpi : (2 * Real.pi : ℝ) ≠ 0 := by positivity
+  have hscale : Tendsto (fun n : ℤ => ((n : ℝ) * (2 * Real.pi)⁻¹))
+      (Filter.comap Int.natAbs Filter.atTop) (Filter.cocompact ℝ) := by
+    simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc] using
+      ((Filter.tendsto_cocompact_mul_right₀ (a := (2 * Real.pi : ℝ)⁻¹) (inv_ne_zero hpi)).comp hcoe)
+  have hRL0 := Real.tendsto_integral_exp_smul_cocompact ((Set.Icc (-Real.pi) Real.pi).indicator f)
+  have hEq : ∀ w : ℝ,
+      ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((x : ℂ) * (w : ℂ) * Complex.I)) =
+        ∫ x : ℝ, (Set.Icc (-Real.pi) Real.pi).indicator f x * Complex.exp (-((x : ℂ) * (w : ℂ) * Complex.I)) := by
+    intro w
+    rw [← integral_indicator measurableSet_Icc]
+    simp [Set.indicator, smul_eq_mul]
+  have hRL0' : Tendsto (fun w : ℝ =>
+      ∫ x : ℝ, (Set.Icc (-Real.pi) Real.pi).indicator f x *
+        Complex.exp (-((x : ℂ) * (w : ℂ) * Complex.I)))
+      (Filter.cocompact ℝ) (nhds 0) := by
+    simpa [Real.fourierChar_apply, smul_eq_mul, mul_comm, mul_left_comm, mul_assoc] using hRL0
+  have hRL1 : Tendsto
+      (fun n : ℤ => ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+    have h := hRL0'.comp hscale
+    simpa [Function.comp, hEq, mul_comm, mul_left_comm, mul_assoc, div_eq_mul_inv] using h
+  have hmain : Tendsto
+      (fun n : ℤ => (1 / (2 * Real.pi : ℂ)) *
+        ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using hRL1.const_mul (1 / (2 * Real.pi : ℂ))
+  exact hmain.norm
+```

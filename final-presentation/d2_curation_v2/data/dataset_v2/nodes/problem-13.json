@@ -1,0 +1,23 @@
+{
+  "id": "problem-13",
+  "type": "problem",
+  "source_note": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "english_source_note": "Deducing One Series Convergence from Another",
+  "callout_id": "由一个级数收敛证明另一个有关级数的收敛问题#3",
+  "english_title": "Problem 1.3",
+  "statement_en": "For $x_n\\in (0,1)$, assume $\\sum_{n=1}^{\\infty} n x_n<\\infty$. Prove that $$\\sum_{n=1}^{\\infty} x_n\\log(1/x_n)<\\infty.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "split the index set by size of $x_n$",
+    "comparison between logarithmic and polynomial growth",
+    "comparison test"
+  ],
+  "prerequisites": [
+    "convergence tests for positive series",
+    "elementary logarithm estimates",
+    "comparison test"
+  ],
+  "callout_body": "对于$x_n\\in (0,1)$假设$\\sum_{n=1}^{\\infty}nx_n<\\infty$，证明$$\\sum_{n=1}^{\\infty}x_n\\log(1/x_n)<\\infty$$"
+}

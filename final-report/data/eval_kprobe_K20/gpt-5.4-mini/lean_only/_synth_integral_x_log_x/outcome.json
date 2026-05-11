@@ -1,0 +1,113 @@
+{
+  "problem_id": "_synth_integral_x_log_x",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 233.6,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 20,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "integral_x_log_x",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 12,
+  "first_error": "Type mismatch: After simplification, term\n  hlim\n has type\n  Tendsto (fun t => t * log t) (𝓝[>] 0) (𝓝 0)\nbut is expected to have type\n  ContinuousWithinAt (fun x => x * log x) (Ici 0) 0",
+  "total_cost_usd": 0.0,
+  "total_tokens": 415279,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 19,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hlim\n has type\n  Tendsto (fun t => t * log t) (𝓝[>] 0) (𝓝 0)\nbut is expected to have type\n  ContinuousWithinAt (fun x => x * log x) (Ici 0) 0"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 20,
+      "column": 46,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hx0'\nhas type\n  ¬x = 0\nbut is expected to have type\n  0 ≠ x\nin the application\n  lt_of_le_of_ne hx hx0'"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 36,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  HasDerivAt.div_const h_sq 2\n has type\n  HasDerivAt (fun x => x ^ 2 * 2⁻¹) (2 * x * 2⁻¹) x\nbut is expected to have type\n  HasDerivAt (fun t => t ^ 2 * 2⁻¹) x x"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 43,
+      "column": 8,
+      "severity": "error",
+      "message": "No goals to be solved"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 44,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  htemp\n has type\n  HasDerivAt (log * fun t => t ^ 2 / 2) (x * log x + x / 2) x\nbut is expected to have type\n  HasDerivAt (fun t => t ^ 2 / 2 * log t) (x * log x + x / 2) x"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 46,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  HasDerivAt.div_const h_sq 4\n has type\n  HasDerivAt (fun x => x ^ 2 * 4⁻¹) (x * (2 * 4⁻¹)) x\nbut is expected to have type\n  HasDerivAt (fun t => t ^ 2 * 4⁻¹) (x * 2⁻¹) x"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 58,
+      "column": 8,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  nhdsWithin_le_nhds ?m.939\nhas type\n  ?m.938 ∈ 𝓝[?m.937] ?m.936\nbut is expected to have type\n  𝓝[>] 0 ≤ 𝓝 0\nin the application\n  Tendsto.mono_right tendsto_id (nhdsWithin_le_nhds ?m.939)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 64,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch\n  Tendsto.mul (Tendsto.div_const hx 2) hlogx\nhas type\n  Tendsto (fun x => x / 2 * (x * log x)) (𝓝[>] 0) (𝓝 (0 / 2 * 0))\nbut is expected to have type\n  Tendsto (fun x => x / 2 * (x * log x)) (𝓝[>] 0) (𝓝 0)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 66,
+      "column": 14,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  DivInvMonoid ℕ\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 67,
+      "column": 8,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  nhdsWithin_le_nhds ?m.1162\nhas type\n  ?m.1161 ∈ 𝓝[?m.1160] ?m.1159\nbut is expected to have type\n  ?m.1155 ≤ 𝓝 ?m.1150\nin the application\n  Tendsto.mono_left\n    (ContinuousAt.tendsto (Continuous.continuousAt (Continuous.div_const (Continuous.pow continuous_id 2) 4)))\n    (nhdsWithin_le_nhds ?m.1162)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 68,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch\n  Tendsto.sub hx_mul_log hx2_div4\nhas type\n  Tendsto (fun x => x ^ 2 / 2 * log x - x ^ 2 / 4) (𝓝[>] 0) (𝓝 (0 - 0))\nbut is expected to have type\n  Tendsto (fun x => x ^ 2 / 2 * log x - x ^ 2 / 4) (𝓝[>] 0) (𝓝 0)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 74,
+      "column": 38,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  nhdsWithin_le_nhds ?m.1441\nhas type\n  ?m.1440 ∈ 𝓝[?m.1439] ?m.1438\nbut is expected to have type\n  ?m.1434 ≤ 𝓝 1\nin the application\n  Tendsto.mono_left (ContinuousAt.tendsto h_cont_at) (nhdsWithin_le_nhds ?m.1441)\n"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "problem_id": "leibniz-test",
+  "model": "gpt-5.5",
+  "wall_seconds": 13.85,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "cauchy-convergence-criterion-hub",
+    "sum-estimates-via-summation-by-parts-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "basic-methods-in-analysis-i-hub",
+    "sum-estimates-via-summation-by-parts-hub"
+  ],
+  "tp": 1,
+  "fp": 2,
+  "fn": 1,
+  "precision": 0.3333,
+  "recall": 0.5,
+  "f1": 0.4
+}

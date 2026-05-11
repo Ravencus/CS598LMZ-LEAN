@@ -1,0 +1,23 @@
+{
+  "id": "exercise-18",
+  "type": "problem",
+  "source_note": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "english_source_note": "Deducing One Series Convergence from Another",
+  "callout_id": "由一个级数收敛证明另一个有关级数的收敛问题#8",
+  "english_title": "Exercise 1.8",
+  "statement_en": "Let $a_n \\geq 0$ be a real sequence. Prove that the series $$\\sum_{n\\geq 1} a_n,\\qquad \\sum_{n\\geq 1}\\frac{a_n}{a_n+1}$$ have the same convergence and divergence behavior.",
+  "problem_type": "exercise",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "limit comparison near zero",
+    "comparison test",
+    "equivalence of summands"
+  ],
+  "prerequisites": [
+    "convergence tests for positive series",
+    "basic limit computation",
+    "comparison test"
+  ],
+  "callout_body": "实数列$a_n \\geq 0$,证明级数$$\\sum_{n\\geq 1}a_n,\\sum_{n\\geq 1}\\frac{a_n}{a_n+1}$$具有相同的收敛，发散性质。"
+}

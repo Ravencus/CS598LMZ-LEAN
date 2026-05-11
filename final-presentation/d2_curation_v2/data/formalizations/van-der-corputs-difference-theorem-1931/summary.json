@@ -1,0 +1,18 @@
+{
+  "problem_id": "van-der-corputs-difference-theorem-1931",
+  "english_title": "van der Corput's Difference Theorem, 1931",
+  "statement_en": "If for every positive integer $h$, the sequence $u_{n+h}-u_n$ is uniformly distributed modulo $1$, then $u_n$ is also uniformly distributed modulo $1$.",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef UniformlyDistributedModOne (u : ℕ → ℝ) : Prop := by\n  sorry\n\ntheorem uniformlyDistributedModOne_of_all_positive_shifts\n    (u : ℕ → ℝ)\n    (h_uniform :\n      ∀ h : ℕ, 0 < h → UniformlyDistributedModOne (fun n : ℕ => u (n + h) - u n)) :\n    UniformlyDistributedModOne u := by\n  sorry"
+}

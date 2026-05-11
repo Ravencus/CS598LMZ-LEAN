@@ -1,0 +1,37 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "elaboration function for `Mathlib.Tactic.superscriptTerm` has not been implemented\n  ᵐ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_a85344700b.lean",
+      "line": 10,
+      "column": 20,
+      "severity": "error",
+      "message": "elaboration function for `Mathlib.Tactic.superscriptTerm` has not been implemented\n  ᵐ"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_a85344700b.lean",
+      "line": 9,
+      "column": 33,
+      "severity": "error",
+      "message": "unsolved goals\ncase hnonneg\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : Measure Ω\nf g : Ω → ℝ\nhf : Integrable f μ\nhg : Integrable g μ\nhfg : ∀ᵐ (x : Ω) ∂μ, g x ≤ f x\n⊢ 0 ≤ sorry\n\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : Measure Ω\nf g : Ω → ℝ\nhf : Integrable f μ\nhg : Integrable g μ\nhfg : ∀ᵐ (x : Ω) ∂μ, g x ≤ f x\nhnonneg : 0 ≤ sorry\n⊢ ∫ (x : Ω), f x ∂μ ≥ ∫ (x : Ω), g x ∂μ"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_a85344700b.lean",
+      "line": 10,
+      "column": 24,
+      "severity": "error",
+      "message": "unexpected token '∂'; expected command\n"
+    }
+  ]
+}

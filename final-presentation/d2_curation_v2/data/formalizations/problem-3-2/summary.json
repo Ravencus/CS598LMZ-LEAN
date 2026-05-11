@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-3-2",
+  "english_title": "Problem 3",
+  "statement_en": "Let \\(f(z)\\) be entire and satisfy $$\\\\int_{0}^{2\\\\pi} |f(re^{i \\\theta})|\\\\, d\\\theta < r^{1/2},\\\\quad \\\\forall r>0.$$ Prove that \\(f\\\\equiv 0\\).",
+  "difficulty": "medium",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Application type mismatch: The argument\n  r\nhas type\n  ℂ\nbut is expected to have type\n  ℝ\nin the application\n  √r"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem entire_zero_of_circle_integral_lt_sqrt\n    (f : ℂ → ℂ)\n    (hentire : Differentiable ℂ f)\n    (hbound :\n      ∀ r : ℝ, r > 0 →\n        ∫ θ in (0 : ℝ)..(2 * Real.pi),\n          ‖f ((r : ℂ) * Complex.exp ((θ : ℂ) * Complex.I))‖ < Real.sqrt r) :\n    f = 0 := by\n  sorry"
+}

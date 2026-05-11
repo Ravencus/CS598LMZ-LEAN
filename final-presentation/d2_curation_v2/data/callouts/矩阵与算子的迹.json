@@ -1,0 +1,65 @@
+{
+  "note_title": "矩阵与算子的迹",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "矩阵与算子的迹#1",
+      "type": "note",
+      "title": "线性算子的迹的定义",
+      "body": "假设$V$是定义在复数域上的线性空间，$\\mathscr{A}\\in \\mathcal{L}(V)$是$V$上的线性算子，假设其全体特征值为$\\lambda_1,...,\\lambda_n$,那么其迹被定义为其所有特征值的和，每个特征按照代数重数重复计算,即$$\\text{trace}(\\mathscr{A}):=\\sum_{i\\leq n}\\lambda_i$$特别的如果$V$是定义在实数域上的线性空间，那么算子$\\mathscr{A}$的迹定义为其在复数域上的所有特征值的和。",
+      "position_char": 70,
+      "position_line": 7
+    },
+    {
+      "id": "矩阵与算子的迹#2",
+      "type": "note",
+      "title": "方阵的迹的定义",
+      "body": "矩阵$M=(a_{i,j})$是定义在实数或者复数域上的n阶矩阵，那么矩阵的迹定义为其对角线元素之和，即$$\\text{trace}(M):=\\sum_{i\\leq n}a_{ii}$$",
+      "position_char": 336,
+      "position_line": 10
+    },
+    {
+      "id": "矩阵与算子的迹#3",
+      "type": "note",
+      "title": "性质1",
+      "body": "矩阵的迹是可交换的。",
+      "position_char": 482,
+      "position_line": 19
+    },
+    {
+      "id": "矩阵与算子的迹#4",
+      "type": "note",
+      "title": "性质2",
+      "body": "矩阵的迹在相似变换下是不变的。",
+      "position_char": 553,
+      "position_line": 24
+    },
+    {
+      "id": "矩阵与算子的迹#5",
+      "type": "note",
+      "title": "性质3",
+      "body": "矩阵的迹是线性的。即如果有两个n阶方程$A,B$那么成立等式$$\\text{trace}(aA+bB)=a\\,\\text{trace}(A)+b\\,\\text{trace}(B)$$其中$a,b$是两个常数。",
+      "position_char": 774,
+      "position_line": 29
+    },
+    {
+      "id": "矩阵与算子的迹#6",
+      "type": "note",
+      "title": "Schur分解定理",
+      "body": "n阶复矩阵$A$酉相似(unitary similarity)于一个上三角矩阵$T$,即存在一个酉矩阵(unitary matrix)$Q$使得$$A=QTQ^{\\dagger}$$并且上三角矩阵$T$的对角线为矩阵$A$的特征值。",
+      "position_char": 896,
+      "position_line": 32
+    },
+    {
+      "id": "矩阵与算子的迹#7",
+      "type": "note",
+      "title": "线性算子的迹的性质",
+      "body": "1. 算子交换迹不变：$$\\text{trace}(\\mathscr{A}\\circ \\mathscr{B})=\\text{trace}(\\mathscr{B}\\circ \\mathscr{A})$$\n2. 算子的迹矩阵是线性的:$$\\text{trace}(a\\mathscr{A}+b\\mathscr{B})=a \\,\\text{trace}(\\mathscr{A})+b \\,\\text{trace}(\\mathscr{A})$$其中$a,b$是两个常数。",
+      "position_char": 1555,
+      "position_line": 41
+    }
+  ]
+}

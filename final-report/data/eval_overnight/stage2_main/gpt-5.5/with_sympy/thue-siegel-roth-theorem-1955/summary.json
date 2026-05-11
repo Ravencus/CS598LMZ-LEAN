@@ -1,0 +1,58 @@
+{
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 57.6,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 17.43,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Invalid field `exists_pos_forall_int_nat_abs_sub_div_pow_le`: The environment does not contain `Exists.exists_pos_forall_int_nat_abs_sub_div_pow_le`, so it is not possible to project the field `exists"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 17.6,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": true,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 15.5,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": true,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+import Mathlib
+#check Irrational.denseRange
+#check Irrational.dense_range
+#check Irrational.exists_nat_mul_lt
+#check Irrational.exists_lt_int_mul
+#check Irrational.exists_int_mul_sub_lt
+#check Irrational.exists_nat_mul_sub_lt
+#check Real.exists_int_mul_sub_lt
+#check Real.fract

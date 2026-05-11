@@ -1,0 +1,24 @@
+{
+  "id": "proposition-0",
+  "type": "problem",
+  "source_note": "随机变量期望收敛导出几乎处处收敛的一个条件",
+  "english_source_note": "A Condition Turning Mean Convergence into Almost Sure Convergence",
+  "callout_id": "随机变量期望收敛导出几乎处处收敛的一个条件#1",
+  "english_title": "Proposition 0",
+  "statement_en": "Let $X_n$ be a sequence of random variables on a probability space. Assume $E(X_n) \\to C$ and that the sum of the variances satisfies $\\sum_{n\\geq 1} V(X_n) < \\infty$. Then $$X_n \\xrightarrow{a.s.} C.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "variance summability",
+    "almost sure convergence criterion",
+    "centering by expectations"
+  ],
+  "prerequisites": [
+    "random variables and expectation",
+    "variance",
+    "almost sure convergence",
+    "basic measure-theoretic probability"
+  ],
+  "callout_body": "$X_n$是概率空间上的一列随机变量，假设$E(X_n)\\to C$，并且这一列随机变量的方差收敛$\\sum_{n\\geq 1}V(X_n)< \\infty$，那么$$X_n\\xrightarrow{a.s.} C$$"
+}

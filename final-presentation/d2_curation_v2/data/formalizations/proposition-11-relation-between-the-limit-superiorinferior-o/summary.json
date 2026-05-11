@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-11-relation-between-the-limit-superiorinferior-o",
+  "english_title": "Proposition 1.1: Relation Between the Limit Superior/Inferior of a Real Sequence and Its Subsequences",
+  "statement_en": "In the extended real number system: \n- $\\limsup_{n\\to \\infty}a_n:=\\lim_{n\\to \\infty}\\sup_{k\\geq n}a_k=U$ is equivalent to:\n1. There exists a subsequence $a_{n_k}$ converging to $U$.\n2. For every $U'>U$, no subsequence converges to $U'$.\n- $\\liminf_{n\\to \\infty}a_n:=\\lim_{n\\to \\infty}\\inf_{k\\geq n}a_k=L$ is equivalent to:\n1. There exists a subsequence $a_{n_k}$ converging to $L$.\n2. For every $L'<L$, no subsequence converges to $L'$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\ntheorem ereal_limsup_liminf_subsequence_characterization\n    {a : ℕ → EReal} {U L : EReal} :\n    (((Filter.Tendsto\n          (fun n : ℕ => sSup {x : EReal | ∃ k : ℕ, n ≤ k ∧ a k = x})\n          Filter.atTop\n          (nhds U)) ↔\n        ((∃ φ : ℕ → ℕ, StrictMono φ ∧\n            Filter.Tendsto (fun n : ℕ => a (φ n)) Filter.atTop (nhds U)) ∧\n          ∀ U' : EReal, U < U' →\n            ¬ ∃ φ : ℕ → ℕ, StrictMono φ ∧\n                Filter.Tendsto (fun n : ℕ => a (φ n)) Filter.atTop (nhds U'))) ∧\n      ((Filter.Tendsto\n          (fun n : ℕ => sInf {x : EReal | ∃ k : ℕ, n ≤ k ∧ a k = x})\n          Filter.atTop\n          (nhds L)) ↔\n        ((∃ φ : ℕ → ℕ, StrictMono φ ∧\n            Filter.Tendsto (fun n : ℕ => a (φ n)) Filter.atTop (nhds L)) ∧\n          ∀ L' : EReal, L' < L →\n            ¬ ∃ φ : ℕ → ℕ, StrictMono φ ∧\n                Filter.Tendsto (fun n : ℕ => a (φ n)) Filter.atTop (nhds L')))) := by\n  sorry"
+}

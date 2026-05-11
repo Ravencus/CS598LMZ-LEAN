@@ -1,0 +1,23 @@
+{
+  "id": "uniform-convergence-version-of-dirichlet-convergence",
+  "type": "problem",
+  "source_note": "对Dirichlet判别的一个调整",
+  "english_source_note": "A Modification of Dirichlet's Test",
+  "callout_id": "对Dirichlet判别的一个调整#6",
+  "english_title": "Uniform Convergence Version of Dirichlet Convergence",
+  "statement_en": "Assume that: 1. the partial sums $\\sum_{n=1}^{N} b_n(z)$ are uniformly bounded for every positive integer $N$; 2. for every $z \\in D$, the sequence $a_n(z)$ decreases monotonically to $0$. Then the series $\\sum_n a_n(z)b_n(z)$ converges uniformly on $D$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "uniform Dirichlet test",
+    "summation by parts",
+    "uniform boundedness of partial sums"
+  ],
+  "prerequisites": [
+    "uniform convergence",
+    "Dirichlet test",
+    "series of functions"
+  ],
+  "callout_body": "1.  $\\sum_{n =1}^{N}b_n(z)$对任意正整数$N$一致有界\n2.  $a_n(z)\\forall z \\in D$单调收敛到0\n\n如果满足上述条件，那么$\\sum_{n} a_n(z)b_n(z)$在$D$上一致收敛。"
+}

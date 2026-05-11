@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-0-6",
+  "english_title": "Problem 0",
+  "statement_en": "Let $a_n$ be a nonnegative nonincreasing real sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ diverges. Prove that the series $\\sum_{n\\geq 1} \\min\\{a_n,1/n\\}$ diverges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem min_sequence_diverges_of_nonincreasing\n    (a : ℕ → ℝ)\n    (h_nonneg : ∀ n, 0 ≤ a n)\n    (h_mono : ∀ n, a (n + 1) ≤ a n)\n    (h_div : ¬ Summable (fun n : ℕ => a (n + 1))) :\n    ¬ Summable (fun n : ℕ => min (a (n + 1)) (1 / ((n : ℝ) + 1))) := by\n  sorry"
+}

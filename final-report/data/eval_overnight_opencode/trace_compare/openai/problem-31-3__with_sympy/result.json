@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "problem-31-3",
+  "big_outcome": "lean_proof",
+  "small_outcome": "no_final_proof",
+  "label": "different_plan",
+  "evidence": "BIG moved from failed direct lemma lookup to a Cauchy-condensation proof, with `hnonneg`, `hmono`, and `summable_condensed_iff_of_eventually_nonneg`. SMALL only tried guessed Mathlib lemma names such as `Real.not_summable_one_div_nat_mul_log_nat_add_two` via `simpa`/`exact` and never developed the c",
+  "wall_seconds": 10.49
+}

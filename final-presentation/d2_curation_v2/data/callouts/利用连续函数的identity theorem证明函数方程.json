@@ -1,0 +1,41 @@
+{
+  "note_title": "利用连续函数的identity theorem证明函数方程",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "利用连续函数的identity theorem证明函数方程#1",
+      "type": "note",
+      "title": "命题1",
+      "body": "假设$f,g$都是由$\\mathbb{R}$到某个Hausdroff的拓扑空间$Y$的连续映射，如果$$f(r)=g(r),\\forall r \\in \\mathbb{Q}$$那么$$f(x)=g(x),\\forall x \\in \\mathbb{R}$$",
+      "position_char": 35,
+      "position_line": 6
+    },
+    {
+      "id": "利用连续函数的identity theorem证明函数方程#2",
+      "type": "question",
+      "title": "问题1",
+      "body": "函数$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续函数，并且满足对任意的正整数$n$,以及任意的实数$x$都有$$f(x)=f(x+\\frac{1}{n})$$证明函数$f(x)$是一个常函数。",
+      "position_char": 438,
+      "position_line": 20
+    },
+    {
+      "id": "利用连续函数的identity theorem证明函数方程#3",
+      "type": "question",
+      "title": "问题2",
+      "body": "函数$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续函数，并且满足对任意的实数$x$都有$$f(x)=f(x+\\sqrt{2})=f(x+\\sqrt{3})$$证明函数$f(x)$是一个常函数。",
+      "position_char": 894,
+      "position_line": 27
+    },
+    {
+      "id": "利用连续函数的identity theorem证明函数方程#4",
+      "type": "tip",
+      "title": "想法",
+      "body": "通常而言，如果问题涉及的对象当中具有某种\"平移不变性\"，那么启用傅里叶分析的工具是很自然的。因为往往经过傅里叶分析的手段处理以后，较为复杂的诸如加法和卷积运算能转换为乘法的运算。",
+      "position_char": 1382,
+      "position_line": 39
+    }
+  ]
+}

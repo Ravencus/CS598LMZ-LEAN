@@ -1,0 +1,22 @@
+{
+  "id": "lemma-122",
+  "type": "problem",
+  "source_note": "模1均匀分布与Weyl判别",
+  "english_source_note": "Uniform Distribution mod 1 and Weyl's Criterion",
+  "callout_id": "模1均匀分布与Weyl判别#8",
+  "english_title": "Lemma 1.2.2",
+  "statement_en": "If $f\\in C([-1/2,1/2]\\to \\mathbb{C})$ and satisfies $f(-1/2)=f(1/2)$, then for every $\\varepsilon>0$ there exists a trigonometric polynomial $P_{\\varepsilon}\\in \\mathcal{P}$ such that, defining $T_{\\varepsilon}(x):=P_{\\varepsilon}(e^{2\\pi i x})$, one has $$\\|f-T_{\\varepsilon}\\|_{u}<\\varepsilon.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "identify periodic functions with functions on the circle",
+    "trigonometric polynomial approximation"
+  ],
+  "prerequisites": [
+    "continuous periodic functions",
+    "uniform norm",
+    "approximation on the unit circle"
+  ],
+  "callout_body": "$f\\in C([-1/2,1/2]\\to \\mathbb{C})$并且满足$f(-1/2)=f(1/2)$那么对任意的$\\varepsilon>0$存在一个三角多项式$P_{\\varepsilon}\\in \\mathcal{P}$使得我们可以定义$T_{\\varepsilon}(x):=P_{\\varepsilon}(e^{2\\pi i x})$使得\n$$||f-T_{\\varepsilon}||_{u}<\\varepsilon$$"
+}

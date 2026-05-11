@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Invalid field `convolution_average`: The environment does not contain `Function.convolution_average`, so it is not possible to project the field `convolution_average` from an expression\n  hx\nof type\n ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_5fc5da2780.lean",
+      "line": 12,
+      "column": 17,
+      "severity": "error",
+      "message": "Invalid field `convolution_average`: The environment does not contain `Function.convolution_average`, so it is not possible to project the field `convolution_average` from an expression\n  hx\nof type\n  ?m.53 ∈ nhds A → ?m.53 ∈ Filter.map x Filter.atTop\n"
+    }
+  ]
+}

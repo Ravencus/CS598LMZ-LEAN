@@ -1,0 +1,25 @@
+{
+  "id": "some-equivalent-statements-of-the-prime-number-theorem-landa",
+  "type": "problem",
+  "source_note": "素数定理的一些等价命题",
+  "english_source_note": "Equivalent Statements of the Prime Number Theorem",
+  "callout_id": "素数定理的一些等价命题#1",
+  "english_title": "Some Equivalent Statements of the Prime Number Theorem (Landau 1909)",
+  "statement_en": "The following statements are equivalent:\n1. $\\pi(x)\\sim \\frac{x}{\\log(x)}$\n2. $\\vartheta(x)\\sim x$\n3. $\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)-\\gamma+o(1)$\n4. $\\psi(x):=\\sum_{n\\leq x}\\Lambda(n)\\sim x$\n5. $\\sum_{n\\leq x}\\mu(n)=o(x)$\n6. $\\sum_{n\\geq 1}\\frac{\\mu(n)}{n}=0$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "equivalent formulations of the prime number theorem",
+    "Chebyshev functions",
+    "Möbius inversion",
+    "Dirichlet series"
+  ],
+  "prerequisites": [
+    "prime counting function and asymptotic notation",
+    "von Mangoldt function",
+    "Möbius function",
+    "basic analytic number theory"
+  ],
+  "callout_body": "\n1. $\\pi(x)\\sim \\frac{x}{\\log(x)}$\n2. $\\vartheta(x)\\sim x$\n3. $\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)-\\gamma+o(1)$\n4. $\\psi(x):=\\sum_{n\\leq x}\\Lambda(n)\\sim x$\n5. $\\sum_{n\\leq x}\\mu(n)=o(x)$\n6. $\\sum_{n\\geq 1}\\frac{\\mu(n)}{n}=0$"
+}

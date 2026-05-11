@@ -1,0 +1,22 @@
+{
+  "id": "cauchy-criterion-for-pointwise-convergence-of-function-seque",
+  "type": "problem",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "callout_id": "柯西收敛判别#12",
+  "english_title": "Cauchy Criterion for Pointwise Convergence of Function Sequences",
+  "statement_en": "A sequence of functions $f_n(x):X\\to \\mathbb{C}$ converges pointwise to a function $f(x):X\\to \\mathbb{C}$ if and only if for every fixed $x_0$ and every $\\varepsilon>0$ there exists a positive integer $N_{\\varepsilon,x_0}$ such that for all $n,m>N_{\\varepsilon,x_0}$, $$|f_n(x_0)-f_m(x_0)|<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "reduce to the scalar Cauchy criterion pointwise",
+    "fix a point $x_0$ and apply sequence convergence"
+  ],
+  "prerequisites": [
+    "pointwise convergence",
+    "Cauchy criterion for scalar sequences",
+    "complex-valued sequences"
+  ],
+  "callout_body": "函数列$f_n(x):X\\to \\mathbb{C}$逐点收敛到函数$f(x):X\\to \\mathbb{C}$当且仅当对于任意固定的$x_0$以及任意的$\\varepsilon>0$存在正整数$N_{\\varepsilon,x_0}$使得任意$n,m>N_{\\varepsilon,x_0}$都成立$$|f_n(x_0)-f_m(x_0)|<\\varepsilon$$"
+}

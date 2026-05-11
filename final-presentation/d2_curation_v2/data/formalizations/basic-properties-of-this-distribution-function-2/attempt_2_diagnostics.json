@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c864f5005984.lean",
+      "line": 8,
+      "column": 7,
+      "severity": "error",
+      "message": "expected token"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c864f5005984.lean",
+      "line": 8,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  LE Type\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c864f5005984.lean",
+      "line": 8,
+      "column": 6,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  OfNat Type 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Type\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c864f5005984.lean",
+      "line": 8,
+      "column": 7,
+      "severity": "error",
+      "message": "expected token"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c864f5005984.lean",
+      "line": 8,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  LE Type\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c864f5005984.lean",
+      "line": 8,
+      "column": 6,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  OfNat Type 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Type\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ]
+}

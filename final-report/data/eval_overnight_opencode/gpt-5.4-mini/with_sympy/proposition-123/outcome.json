@@ -1,0 +1,62 @@
+{
+  "problem_id": "proposition-123",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 404.73,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 9,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 5,
+  "first_error": "Application type mismatch: The argument\n  hn\nhas type\n  1 ≤ n\nbut is expected to have type\n  1 ≤ n - 1 + 1\nin the application\n  Finset.sum_Icc_succ_top hn\nTry this:\n  [apply] ring_nf\n  \n  The `ring` t",
+  "total_cost_usd": 0.0,
+  "total_tokens": 414798,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_63c97e4d38.lean",
+      "line": 29,
+      "column": 68,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hn\nhas type\n  1 ≤ n\nbut is expected to have type\n  1 ≤ n - 1 + 1\nin the application\n  Finset.sum_Icc_succ_top hn\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_63c97e4d38.lean",
+      "line": 35,
+      "column": 27,
+      "severity": "error",
+      "message": "unsolved goals\nf : ℕ → ℚ := fun k => 1 / ↑k.factorial\ng : ℕ → ℚ := fun k => 1 / ↑(k * (k + 1) * (k + 1).factorial)\nT : ℕ → ℚ := fun n => (Finset.range (n + 1)).sum f + 1 / ↑(n * n.factorial) + (Finset.Icc 1 (n - 1)).sum g\nm : ℕ\nih : 2 ≤ 2 + m → 1 ≤ 2 + m → T (2 + m) = 3\nhN : 2 ≤ 2 + (m + 1)\nh1 : 1 ≤ 2 + (m + 1)\nn : ℕ := 2 + m\nhn : 1 ≤ n\nhIcc : (Finset.Icc 1 n).sum g = (Finset.Icc 1 (n - 1)).sum g + g n\nu : ℚ := f (n + 1) + 1 / ↑((n + 1) * (n + 1).factorial) - 1 / ↑(n * n.factorial) + g n\nhnpos : 0 < n\nhn0 : ↑n ≠ 0\nhn1pos : 0 < n + 1\nhn1 : ↑(n + 1) ≠ 0\nhnf : ↑n.factorial ≠ 0\nhnf1 : ↑(n + 1).factorial ≠ 0\nhprod1 : ↑(n * n.factorial) ≠ 0\nhprod2 : ↑((n + 1) * (n + 1).factorial) ≠ 0\nhprod3 : ↑(n * (n + 1) * (n + 1).factorial) ≠ 0\n⊢ ↑(n * (1 + n).factorial + (1 + n).factorial) * ↑(1 + n).factorial * ↑(n * n.factorial) -\n          ↑(n * (1 + n).factorial + (1 + n).factorial) * ↑(1 + n).factorial *\n            ↑(n * (1 + n).factorial + n ^ 2 * (1 + n).factorial) +\n        ↑(n * (1 + n).factorial + (1 + n).factorial) * ↑(n * n.factorial) *\n          ↑(n * (1 + n).factorial + n ^ 2 * (1 + n).factorial) +\n      ↑(1 + n).factorial * ↑(n * n.factorial) * ↑(n * (1 + n).factorial + n ^ 2 * (1 + n).factorial) =\n    0"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_63c97e4d38.lean",
+      "line": 52,
+      "column": 43,
+      "severity": "error",
+      "message": "unsolved goals\nf : ℕ → ℚ := fun k => 1 / ↑k.factorial\ng : ℕ → ℚ := fun k => 1 / ↑(k * (k + 1) * (k + 1).factorial)\nT : ℕ → ℚ := fun n => (Finset.range (n + 1)).sum f + 1 / ↑(n * n.factorial) + (Finset.Icc 1 (n - 1)).sum g\nm : ℕ\nih : 2 ≤ 2 + m → 1 ≤ 2 + m → T (2 + m) = 3\nhN : 2 ≤ 2 + (m + 1)\nh1 : 1 ≤ 2 + (m + 1)\nn : ℕ := 2 + m\nhn : 1 ≤ n\nhIcc : (Finset.Icc 1 n).sum g = (Finset.Icc 1 (n - 1)).sum g + g n\nu : ℚ := f (n + 1) + 1 / ↑((n + 1) * (n + 1).factorial) - 1 / ↑(n * n.factorial) + g n\nhu : u = 0\n⊢ ∑ x ∈ Finset.range (2 + (m + 1)), 1 / ↑x.factorial +\n      (1 / ↑(2 + (m + 1)).factorial +\n        (1 / ↑((2 + (m + 1)) * (2 + (m + 1)).factorial) + ((Finset.Icc 1 (n - 1)).sum g + g n))) =\n    ∑ x ∈ Finset.range (2 + (m + 1)), 1 / ↑x.factorial +\n      (1 / ↑(2 + (m + 1)).factorial +\n        (1 / ↑((2 + (m + 1)) * (2 + (m + 1)).factorial) +\n          (∑ x ∈ Finset.Icc 1 (2 + m - 1), 1 / ↑(x * (1 + x) * (1 + x).factorial) +\n            1 / ↑((2 + m) * (2 + (m + 1)) * (2 + (m + 1)).factorial))))"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_63c97e4d38.lean",
+      "line": 59,
+      "column": 32,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  ih\n has type\n  1 ≤ 2 + m → T (2 + m) = 3\nbut is expected to have type\n  T (2 + m) = 3"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_63c97e4d38.lean",
+      "line": 61,
+      "column": 2,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hT\n has type\n  (↑(m + 2).factorial)⁻¹ * (↑m + 2)⁻¹ +\n      (∑ k ∈ Finset.range (m + 3), (↑k.factorial)⁻¹ +\n        ∑ k ∈ Finset.Icc 1 (m + 1), (↑(k + 1).factorial)⁻¹ * ((↑k + 1)⁻¹ * (↑k)⁻¹)) =\n    3\nbut is expected to have type\n  (↑(m + 2).factorial)⁻¹ * (↑m + 2)⁻¹ + ∑ x ∈ Finset.range (m + 3), (↑x.factorial)⁻¹ =\n    3 - ∑ x ∈ Finset.Icc 1 (m + 1), (↑(x + 1).factorial)⁻¹ * ((↑x + 1)⁻¹ * (↑x)⁻¹)\n"
+    }
+  ]
+}

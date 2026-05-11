@@ -1,0 +1,3 @@
+["basic-methods-in-analysis-i-hub", "term-by-term-estimates-hub"]
+- basic-methods-in-analysis-i-hub: The proof recognizes the sum through a telescoping transformation, rewriting `1/(n(n-1))` as `1/(n-1) - 1/n` to get the closed form `1 - 1/N`.
+- term-by-term-estimates-hub: Each summand is replaced termwise by a simpler equivalent expression whose finite sum is easy to control, yielding the desired upper bound `< 1`.

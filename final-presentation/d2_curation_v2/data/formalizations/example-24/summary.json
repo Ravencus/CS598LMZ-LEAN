@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-24",
+  "english_title": "Example 2.4",
+  "statement_en": "Show that\n$$\\\\prod_{n\\\\geq 0} \\\\cos\\\\left(\\\\frac{x}{2^{n+1}}\\\right)=\\\\frac{\\\\sin(x)}{x}.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sin_over_x_eq_tprod_cos_halves {x : ℝ} (hx : x ≠ 0) :\n    (∏' n : ℕ, Real.cos (x / (2 : ℝ) ^ (n + 1))) = Real.sin x / x := by\n  sorry"
+}

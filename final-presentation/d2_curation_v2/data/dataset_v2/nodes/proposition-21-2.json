@@ -1,0 +1,22 @@
+{
+  "id": "proposition-21-2",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#3",
+  "english_title": "Proposition 2.1",
+  "statement_en": "Let $a_n$ be a nonnegative nonincreasing real sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ diverges. Then the series $\\sum_{n\\geq 1} \\min\\{a_n,1/n^p\\}$ satisfies:\n1. it diverges for $0<p\\leq 1$;\n2. it converges for $p>1$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Cauchy condensation test",
+    "comparison with p-series"
+  ],
+  "prerequisites": [
+    "p-series",
+    "series convergence tests",
+    "monotone sequences"
+  ],
+  "callout_body": "$a_n$是一个非负不增的实数列，并且级数$\\sum_{n\\geq 1}a_n$发散。那么级数$\\sum_{n\\geq 1}\\min\\{a_n,1/n^p\\}$：\n1. $0<p\\leq 1$发散。\n2. $p>1$收敛。"
+}

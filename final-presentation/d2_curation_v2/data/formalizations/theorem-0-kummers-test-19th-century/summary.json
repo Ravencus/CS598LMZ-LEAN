@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-0-kummers-test-19th-century",
+  "english_title": "Theorem 0: Kummer's Test (19th Century)",
+  "statement_en": "For a positive-term series $\\sum_{n\\geq 1} a_n$, and an auxiliary sequence $\\xi_n>0$, define\n$$\\rho_n := \\xi_n \\frac{a_n}{a_{n+1}} - \\xi_{n+1}.$$ Assume that $\\rho_n$ has a limit $\\rho$. Then:\n1. If $\\rho>0$, the series converges.\n2. If $\\rho<0$ and $\\sum_{n\\geq 1} \\frac{1}{\\xi_n}$ diverges, then the series diverges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem kummersTest\n    (a ξ : ℕ → ℝ)\n    (ha_pos : ∀ n, 0 < a n)\n    (hξ_pos : ∀ n, 0 < ξ n)\n    (ρ : ℝ)\n    (hρ :\n      Filter.Tendsto\n        (fun n => ξ n * (a n / a (n + 1)) - ξ (n + 1))\n        Filter.atTop\n        (nhds ρ)) :\n    ((0 < ρ) → Summable (fun n => a (n + 1))) ∧\n    ((ρ < 0) → ¬ Summable (fun n => (ξ (n + 1))⁻¹) → ¬ Summable (fun n => a (n + 1))) := by\n  sorry"
+}

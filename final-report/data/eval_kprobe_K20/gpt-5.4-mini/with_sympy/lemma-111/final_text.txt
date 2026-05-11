@@ -1,0 +1,25 @@
+Loading the Lean proof workflow, then I’ll test a minimal proof shape and iterate against the checker.
+The proof should be a direct case split: use `P = A` when `A` is invertible, and `P = B` when `B` is invertible, then close by associativity. I’m checking that exact shape now.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Matrix
+
+def MatricesAreSimilar {n : Type*} [Fintype n] [DecidableEq n]
+    (M N : Matrix n n ℂ) : Prop :=
+  ∃ P : Matrix n n ℂ, Nonempty (Invertible P) ∧ (P * M = N * P ∨ P * N = M * P)
+
+theorem ab_ba_are_similar_if_left_or_right_invertible
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ)
+    (h : Nonempty (Invertible A) ∨ Nonempty (Invertible B)) :
+    MatricesAreSimilar (A * B) (B * A) := by
+  rcases h with hA | hB
+  · refine ⟨A, hA, ?_⟩
+    right
+    simp [mul_assoc]
+  · refine ⟨B, hB, ?_⟩
+    left
+    simp [mul_assoc]
+```

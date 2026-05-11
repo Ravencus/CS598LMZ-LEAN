@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-21-2",
+  "english_title": "Example 2.1",
+  "statement_en": "Let $a_n:=(-1)^n$. Then its partial sums are $$S_n:=\\begin{cases}1&n\\text{ is even}\\\\0&n\\text{ is odd}\\end{cases}$$ so $S_n$ does not converge. However, this sequence is Cesaro summable, because $$\\sigma_N:=\\frac{S_0+\\cdots+S_{N-1}}{N}=\\frac{\\lfloor\\frac{N}{2}+1\\rfloor}{N}$$ and its limit is $\\frac{1}{2}$.",
+  "difficulty": "easy",
+  "domain": "Fourier analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem alternatingSignCesaroSummable :\n    let a : ℕ → ℝ := fun n => (-1 : ℝ) ^ n;\n    let S : ℕ → ℝ := fun n => ∑ k in Finset.range (n + 1), a k;\n    (∀ n : ℕ, S n = if Even n then 1 else 0) ∧\n      (¬ ∃ l : ℝ, Filter.Tendsto S Filter.atTop (Filter.nhds l)) ∧\n      Filter.Tendsto\n        (fun N : ℕ => (∑ k in Finset.range N, S k) / (N : ℝ))\n        Filter.atTop\n        (Filter.nhds (1 / 2 : ℝ)) := by\n  sorry"
+}

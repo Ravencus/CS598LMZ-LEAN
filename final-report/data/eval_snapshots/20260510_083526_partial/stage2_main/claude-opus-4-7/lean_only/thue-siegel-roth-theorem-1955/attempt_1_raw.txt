@@ -1,0 +1,24 @@
+Looking at this problem: the theorem to prove is essentially **Roth's theorem** (Roth 1955, Fields Medal 1958), which states that every algebraic irrational has irrationality measure exactly 2. Roth's theorem is one of the deepest results in Diophantine approximation, and to my knowledge it has not been formalized in Mathlib. The lower bound (≥ 2) follows from Dirichlet's approximation theorem, but the upper bound (≤ 2 for all algebraic irrationals, not just quadratic ones) requires the full machinery of Roth's theorem, which is far beyond what can be assembled from existing Mathlib lemmas in a single file.
+
+Without Roth's theorem available as a Mathlib lemma, and given the constraints (no `sorry`, no `axiom`, no `admit`, no compiler access), this proof cannot be completed honestly. I'll output a structurally-correct skeleton; the impossibility is genuine, not a matter of effort.
+
+```lean
+import Mathlib
+
+open Filter
+
+def HasIrrationalityMeasure (x μ : ℝ) : Prop :=
+  (∀ ε : ℝ, 0 < ε →
+    ∃ C : ℝ, 0 < C ∧
+      ∀ p : ℤ, ∀ q : ℕ, q ≠ 0 →
+        C / Real.rpow (q : ℝ) (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|) ∧
+  (∀ ε : ℝ, 0 < ε →
+    ∃ᶠ q : ℕ in Filter.atTop,
+      ∃ p : ℤ,
+        |x - (p : ℝ) / (q : ℝ)| < 1 / Real.rpow (q : ℝ) (μ - ε))
+
+theorem algebraic_irrational_has_irrationality_measure_two
+    {x : ℝ} (hx_alg : IsAlgebraic ℚ x) (hx_irr : Irrational x) :
+    HasIrrationalityMeasure x 2 := by
+  sorry
+```

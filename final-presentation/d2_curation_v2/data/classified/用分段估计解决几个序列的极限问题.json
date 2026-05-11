@@ -1,0 +1,93 @@
+{
+  "note_title": "用分段估计解决几个序列的极限问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1"
+  ],
+  "callouts": [
+    {
+      "id": "用分段估计解决几个序列的极限问题#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "已知$x_n \\to A$,求$$\\lim_{n \\rightarrow \\infty} \\frac{x_n + x_{n-1} + ...+x_1}{n}$$",
+      "position_char": 58,
+      "position_line": 9,
+      "classification_result": {
+        "id": "用分段估计解决几个序列的极限问题#1",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Given that $x_n \\to A$, find $$\\lim_{n \\rightarrow \\infty} \\frac{x_n + x_{n-1} + \\cdots + x_1}{n}.$$",
+          "problem_type": "exercise",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Cesaro mean",
+            "sequence limit estimation",
+            "splitting the sum into initial and tail parts"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "basic properties of convergence",
+            "finite sum estimation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "用分段估计解决几个序列的极限问题#2",
+      "type": "question",
+      "title": "问题2",
+      "body": "假设$x_n\\to A,y_n \\to B$证明$$\\frac{x_1y_n+\\cdots +x_ny_1}{n}\\to AB$$",
+      "position_char": 1253,
+      "position_line": 22,
+      "classification_result": {
+        "id": "用分段估计解决几个序列的极限问题#2",
+        "classification": "problem",
+        "english_title": "Problem 2",
+        "if_problem": {
+          "statement_en": "Assume $x_n \\to A$ and $y_n \\to B$. Prove that $$\\frac{x_1y_n+\\cdots +x_ny_1}{n}\\to AB.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "convolution-type average",
+            "splitting into main term and error terms",
+            "sequence limit estimation",
+            "Cesaro-type averaging"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "algebra of limits",
+            "boundedness of convergent sequences",
+            "sum estimation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "用分段估计解决几个序列的极限问题#3",
+      "type": "tip",
+      "title": "想法",
+      "body": "如果你发现一个$S_n'$其形式比$S_n$更好得到渐近展开，比如说对$S_n$做某种放缩，只要放缩整体的误差是被$O(g(n))$控制起来的(这里表示目标误差精度)，那么最终的渐近展开是相同的。",
+      "position_char": 3499,
+      "position_line": 40,
+      "classification_result": {
+        "id": "用分段估计解决几个序列的极限问题#3",
+        "classification": "strategy_template",
+        "english_title": "Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Replace by a Better-Behaved Approximation with Controlled Error",
+          "summary_en": "If one can find a modified quantity $S_n'$ whose asymptotic expansion is easier to derive than that of $S_n$, then it is enough to compare $S_n$ and $S_n'$. When the total discrepancy is controlled by $O(g(n))$, at the target precision, the two quantities have the same final asymptotic expansion.",
+          "applicability": "Use this when a direct asymptotic analysis is difficult, but a suitably bounded approximation, comparison, or squeezing produces a simpler expression with the same asymptotic accuracy."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"用分段估计解决几个序列的极限问题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Given that $x_n \\\\to A$, find $$\\\\lim_{n \\\\rightarrow \\\\infty} \\\\frac{x_n + x_{n-1} + \\\\cdots + x_1}{n}.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Cesaro mean\",\n        \"sequence limit estimation\",\n        \"splitting the sum into initial and tail parts\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"basic properties of convergence\",\n        \"finite sum estimation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"用分段估计解决几个序列的极限问题#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume $x_n \\\\to A$ and $y_n \\\\to B$. Prove that $$\\\\frac{x_1y_n+\\\\cdots +x_ny_1}{n}\\\\to AB.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"convolution-type average\",\n        \"splitting into main term and error terms\",\n        \"sequence limit estimation\",\n        \"Cesaro-type averaging\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"algebra of limits\",\n        \"boundedness of convergent sequences\",\n        \"sum estimation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"用分段估计解决几个序列的极限问题#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Replace by a Better-Behaved Approximation with Controlled Error\",\n      \"summary_en\": \"If one can find a modified quantity $S_n'$ whose asymptotic expansion is easier to derive than that of $S_n$, then it is enough to compare $S_n$ and $S_n'$. When the total discrepancy is controlled by $O(g(n))$, at the target precision, the two quantities have the same final asymptotic expansion.\",\n      \"applicability\": \"Use this when a direct asymptotic analysis is difficult, but a suitably bounded approximation, comparison, or squeezing produces a simpler expression with the same asymptotic accuracy.\"\n    }\n  }\n]",
+  "classified": true
+}

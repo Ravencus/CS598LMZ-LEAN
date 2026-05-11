@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-124",
+  "english_title": "Example 1.2.4",
+  "statement_en": "The sequence $x_n:=\\sin(n)$ has no limit. Indeed, one can choose positive integers $n_k,m_k$ from the intervals $$I_{A,k}:=(2k\\pi+\\frac{\\pi}{4},2k\\pi+\\frac{2\\pi}{3}),\\quad I_{B,k}:=(2k\\pi+\\frac{5\\pi}{4},2k\\pi+\\frac{5\\pi}{3})$$ respectively, so that $$|\\sin(n_k)-\\sin(m_k)|\\geq \\sqrt{2},\\quad \\forall k\\in \\mathbb{Z}^{+}.$$ Hence the Cauchy criterion shows that the sequence does not converge.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sin_nat_has_no_limit :\n    (∃ n m : ℕ → ℕ,\n      (∀ k : ℕ,\n        let K : ℝ := ((k + 1 : ℕ) : ℝ)\n        2 * K * Real.pi + Real.pi / 4 < (n k : ℝ) ∧\n          (n k : ℝ) < 2 * K * Real.pi + 2 * Real.pi / 3) ∧\n      (∀ k : ℕ,\n        let K : ℝ := ((k + 1 : ℕ) : ℝ)\n        2 * K * Real.pi + 5 * Real.pi / 4 < (m k : ℝ) ∧\n          (m k : ℝ) < 2 * K * Real.pi + 5 * Real.pi / 3) ∧\n      ∀ k : ℕ, Real.sqrt 2 ≤ |Real.sin (n k) - Real.sin (m k)|) ∧\n    ¬ ∃ l : ℝ, Filter.Tendsto (fun n : ℕ => Real.sin n) Filter.atTop (nhds l) := by\n  sorry"
+}

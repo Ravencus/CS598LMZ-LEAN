@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-3-tsinghua-university-leadership-program-april-2025",
+  "weak_model": "gpt-5.4-mini",
+  "cell": "W-W-W",
+  "models": {
+    "plan": "gpt-5.4-mini",
+    "reason": "gpt-5.4-mini",
+    "formalize": "gpt-5.4-mini"
+  },
+  "success": false,
+  "n_errors": 0,
+  "first_error": "no code produced",
+  "stage_failures": [
+    "formalize"
+  ],
+  "stage_seconds": {
+    "plan": 8.6,
+    "reason": 11.0,
+    "formalize": 240.0,
+    "compile": 0.0
+  },
+  "plan_quality": {
+    "n_bullets": 5,
+    "is_numbered": true,
+    "is_nonempty": true,
+    "appears_to_restate_theorem": false
+  },
+  "splice_action": "skipped",
+  "signature_deviation": false
+}

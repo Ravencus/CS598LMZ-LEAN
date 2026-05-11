@@ -1,0 +1,23 @@
+{
+  "id": "generalization-of-the-gaussian-integral-formula",
+  "type": "problem",
+  "source_note": "n维球体的体积",
+  "english_source_note": "Volume of the n-Dimensional Ball",
+  "callout_id": "n维球体的体积#4",
+  "english_title": "Generalization of the Gaussian Integral Formula",
+  "statement_en": "$$\\int_{\\mathbb{R}^d} e^{-\\pi|x|^2}\\,dx =1.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "product decomposition",
+    "one-dimensional Gaussian integral",
+    "Fubini theorem"
+  ],
+  "prerequisites": [
+    "improper integrals",
+    "Fubini theorem",
+    "Gaussian integral in one variable"
+  ],
+  "callout_body": "$$\\int_{\\mathbb{R}^d} e^{-\\pi|x|^2}\\,dx =1$$"
+}

@@ -1,0 +1,27 @@
+{
+  "note_title": "Stirling渐近公式及不等式",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1",
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "Stirling渐近公式及不等式#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "证明$$S_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n)$$",
+      "position_char": 32,
+      "position_line": 6
+    },
+    {
+      "id": "Stirling渐近公式及不等式#2",
+      "type": "note",
+      "title": "命题4.1",
+      "body": "令$$r_n = S_n\n-(n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi}))=\\frac{1}{12n}+R(n)$$那么\n$$0<r_n <\\frac{1}{12n}$$",
+      "position_char": 2798,
+      "position_line": 69
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "problem_id": "proposition-127-generalization-of-a-sufficient-condition-for",
+  "model": "gpt-5.5",
+  "wall_seconds": 14.95,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "cauchy-convergence-criterion-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "integral-estimates-for-sums-hub",
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "tp": 1,
+  "fp": 2,
+  "fn": 2,
+  "precision": 0.3333,
+  "recall": 0.3333,
+  "f1": 0.3333
+}

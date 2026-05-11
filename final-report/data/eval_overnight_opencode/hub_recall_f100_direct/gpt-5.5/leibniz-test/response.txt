@@ -1,0 +1,4 @@
+["term-by-term-estimates-hub", "cauchy-convergence-criterion-hub", "sum-estimates-via-summation-by-parts-hub"]
+- term-by-term-estimates-hub: The core alternating-series argument pairs adjacent terms and uses monotonicity to bound each finite tail by its first omitted term.
+- cauchy-convergence-criterion-hub: To prove `Summable`, one naturally shows the partial sums form a Cauchy sequence by making all sufficiently far tails small.
+- sum-estimates-via-summation-by-parts-hub: An equivalent Dirichlet/Abel-summation proof uses bounded partial sums of `(-1)^n` together with monotone decay of `a n` to `0`.

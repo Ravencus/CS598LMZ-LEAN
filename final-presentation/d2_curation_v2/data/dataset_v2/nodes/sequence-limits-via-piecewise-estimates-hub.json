@@ -1,0 +1,18 @@
+{
+  "id": "sequence-limits-via-piecewise-estimates-hub",
+  "type": "hub",
+  "source_note": "用分段估计解决几个序列的极限问题",
+  "english_source_note": "Sequence Limits via Piecewise Estimates",
+  "is_top3": false,
+  "note_degree": 11,
+  "strategies": [
+    {
+      "callout_id": "用分段估计解决几个序列的极限问题#3",
+      "english_title": "Idea",
+      "strategy_name_en": "Replace by a Better-Behaved Approximation with Controlled Error",
+      "summary_en": "If one can find a modified quantity $S_n'$ whose asymptotic expansion is easier to derive than that of $S_n$, then it is enough to compare $S_n$ and $S_n'$. When the total discrepancy is controlled by $O(g(n))$, at the target precision, the two quantities have the same final asymptotic expansion.",
+      "applicability": "Use this when a direct asymptotic analysis is difficult, but a suitably bounded approximation, comparison, or squeezing produces a simpler expression with the same asymptotic accuracy.",
+      "callout_body": "如果你发现一个$S_n'$其形式比$S_n$更好得到渐近展开，比如说对$S_n$做某种放缩，只要放缩整体的误差是被$O(g(n))$控制起来的(这里表示目标误差精度)，那么最终的渐近展开是相同的。"
+    }
+  ]
+}

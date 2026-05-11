@@ -1,0 +1,44 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "Application type mismatch: The argument\n  hU_open\nhas type\n  IsOpen U\nbut is expected to have type\n  U ∈ nhds ?m.68\nin the application\n  DifferentiableOn.analyticAt hf_holo hU_open",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_31d41a92bf.lean",
+      "line": 14,
+      "column": 55,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hU_open\nhas type\n  IsOpen U\nbut is expected to have type\n  U ∈ nhds ?m.68\nin the application\n  DifferentiableOn.analyticAt hf_holo hU_open"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_31d41a92bf.lean",
+      "line": 19,
+      "column": 15,
+      "severity": "error",
+      "message": "Unknown identifier `EqOn`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_31d41a92bf.lean",
+      "line": 24,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown identifier `Metric.eventually_nhdsWithin_iff.mp`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_31d41a92bf.lean",
+      "line": 24,
+      "column": 56,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `x✝ : ?m.157` is not an inductive datatype\n"
+    }
+  ]
+}

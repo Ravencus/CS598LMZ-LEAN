@@ -1,0 +1,23 @@
+{
+  "id": "exercise-19",
+  "type": "problem",
+  "source_note": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "english_source_note": "Deducing One Series Convergence from Another",
+  "callout_id": "由一个级数收敛证明另一个有关级数的收敛问题#9",
+  "english_title": "Exercise 1.9",
+  "statement_en": "Let $f:[0,+\\infty)\\to [0,+\\infty)$ be nondecreasing, and suppose $\\lim_{x\\to 0^{+}}\\frac{f(x)}{x}=1$. Then for any nonnegative real sequence $a_n$, the series $\\sum_n a_n$ and $\\sum_n f(a_n)$ converge or diverge simultaneously.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "asymptotic equivalence near zero",
+    "comparison test",
+    "eventual two-sided bounds"
+  ],
+  "prerequisites": [
+    "limits of functions",
+    "convergence tests for positive series",
+    "comparison test"
+  ],
+  "callout_body": "若$f:[0,+\\infty)\\to [0,+\\infty)$单调不减，且$\\lim_{x\\to 0^{+}}\\frac{f(x)}{x}=1$则对于任意非负实数列$a_n$,级数$\\sum_n a_n$与$\\sum_n f(a_n)$同时收敛与发散。"
+}

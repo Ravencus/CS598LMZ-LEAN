@@ -1,0 +1,145 @@
+{
+  "note_title": "函数与序列的上下极限",
+  "is_hub": true,
+  "in_subset_via": [
+    "分析学基本方法目录1"
+  ],
+  "callouts": [
+    {
+      "id": "函数与序列的上下极限#1",
+      "type": "note",
+      "title": "命题1.1：实数列上(下)极限与子列的关系",
+      "body": "在拓展实数系中：\n* $\\limsup_{n\\to \\infty}a_n:=\\lim_{n\\to \\infty}\\sup_{k\\geq n}a_k=U$等价于：\n1. 存在一个子列$a_{n_k}$收敛到$U$。\n2. $\\forall U'>U$,没有任何子列收敛到$U'$。\n* $\\liminf_{n\\to \\infty}a_n:=\\lim_{n\\to \\infty}\\inf_{k\\geq n}a_k=L$等价于：\n1. 存在一个子列$a_{n_k}$收敛到$L$。\n2. $\\forall L'<L$,没有任何子列收敛到$L'$。",
+      "position_char": 54,
+      "position_line": 7
+    },
+    {
+      "id": "函数与序列的上下极限#2",
+      "type": "example",
+      "title": "例子1.2",
+      "body": "在[[证明正弦函数在整数上取值的序列的极限是不存在的]]当中，我们证明了$x_n:=\\sin(n)$的极限并不存在。现在我们从上下极限的角度来看待这个序列。由于$x_n$在区间$(-1,1)$当中稠密，根据对\"命题1.1\"的理解，其上极限为所有聚点中值最大的一个，而下极限为所有聚点中值最小的一个，因此$$\\limsup_{n\\to \\infty}x_n=1,\\liminf_{n\\to \\infty}x_n=-1$$",
+      "position_char": 3244,
+      "position_line": 49
+    },
+    {
+      "id": "函数与序列的上下极限#3",
+      "type": "example",
+      "title": "例子1.3:孪生素数猜想",
+      "body": "数论中一个重要的猜想称之为\"孪生素数猜想\"（twin prime conjecture),这个猜想可以表述为：$$\\text{整数中存在无数个素数 }p\\text{ 使得 }p+2\\text{ 也是素数 }$$如果用$p_n$表示第n个素数，那么此猜想利用下极限可以表达为等价的形式：$$\\liminf_{n\\to \\infty}(p_{n+1}-p_{n})=2$$因为如果令$g_n:=p_{n+1}-p_n$，那么只要$n>1$那么一定有$g_n\\geq 2$\n1. 如果孪生素数猜想成立，那么这无穷多个形如$p,p+2$的素数序列当中，一定能构成$g_n$的一个子列，并且这个子列恒等于2。此外也不能有任何子列收敛到比$2$更小的值，因为$n>1,g_n\\geq 2$。因此根据“命题1.1”，$\\liminf_{n\\to \\infty}g_n=2$。\n2. 如果$\\liminf_{n\\to \\infty}g_n=2$，那么\"命题1.1\"告诉我们，存在一个子列$g_{n_k}\\to 2$。而因为$g_n$是至少为$2$的整数列，其子列自然也是整数，于是一定存在一个$N$使得任意$n_k>N$都有$g_{n_k}=2$。因此有无数多对孪生素数。",
+      "position_char": 3476,
+      "position_line": 52
+    },
+    {
+      "id": "函数与序列的上下极限#4",
+      "type": "example",
+      "title": "例子1.4 Badly approximable的数",
+      "body": "实数$\\alpha$被称之为badly approximable如果存在一个正实数$C(\\alpha)$使得任意有理数$\\frac{p}{q}$都有$$\\left|\\alpha-\\frac{p}{q}\\right|\\geq \\frac{C(\\alpha)}{q^2}$$而这个定义可以等价地写成：$$\\alpha \\in \\mathbf{Bad} \\iff \\liminf_{q\\to \\infty }q||q\\alpha||>0$$此处$||x||:=\\min\\{|x-n|:n\\in \\mathbb{Z}\\}$表示$x$与最近的整数之间的距离。\n\n参考[[无理测度的定义以及基本的命题#1.4 与Badly approximable之间的关系]]：\n\n$q||q\\alpha||\\geq C(\\alpha)>0$于是$$\\liminf_{q\\to \\infty}q||q\\alpha||\\geq C(\\alpha)>0$$反过来如果$\\liminf_{q\\to \\infty}q||q\\alpha||=A(\\alpha)>0$那么根据“命题1.1”及其推论，这意味着至多存在$N$个$q$使得$0<q||q\\alpha||<A(\\alpha)$那么只要令$B(\\alpha):=\\min_{1\\leq q\\leq N}\\{q||q\\alpha||\\}$如此一来只需要令$$C(\\alpha):=\\min\\left\\{\\frac{A(\\alpha)}{2},B(\\alpha)\\right\\}$$那么我们就知道对任意的正整数$q$都有$$q||q\\alpha||\\geq C(\\alpha)>0$$于是$\\alpha\\in \\mathbf{Bad}$。",
+      "position_char": 4190,
+      "position_line": 60
+    },
+    {
+      "id": "函数与序列的上下极限#5",
+      "type": "note",
+      "title": "命题2.1.1",
+      "body": "对于非负有界序列$x_n,y_n$那么$$\\begin{aligned}\\limsup_{n\\to \\infty} x_n\\limsup_{n\\to \\infty} y_n&\\geq \\limsup_{n\\to \\infty} x_ny_n\\\\&\\geq \\liminf_{n\\to \\infty}x_ny_n\\\\ &\\geq \\liminf_{n\\to \\infty}x_n\\liminf_{n\\to \\infty}y_n\\end{aligned}$$",
+      "position_char": 5014,
+      "position_line": 72
+    },
+    {
+      "id": "函数与序列的上下极限#6",
+      "type": "example",
+      "title": "例子2.1.2",
+      "body": "$x_n:=-1,y_n:=(-1)^{n}$此时由于$x_ny_n = (-1)^{n+1}$因此$$\\limsup_{n\\to \\infty}x_ny_n =\\liminf_{n\\to \\infty}x_ny_n=1$$不过与此同$$\\limsup_{n\\to \\infty} x_n\\limsup_{n\\to \\infty} y_n=-1,\\liminf_{n\\to \\infty}x_n\\liminf_{n\\to \\infty}y_n=1$$因此在失去非负性的条件以后，“命题2.1.1”中的不等式不成立。",
+      "position_char": 5368,
+      "position_line": 80
+    },
+    {
+      "id": "函数与序列的上下极限#7",
+      "type": "example",
+      "title": "例子2.1.3",
+      "body": "$$x_n=\\begin{cases}2&n=2k\\\\1/2&n=2k+1\\end{cases}$$那么$\\limsup_{n\\to \\infty} x_n=2,\\limsup_{n\\to \\infty} \\frac{1}{x_n}=2$,从而$$\\limsup_{n\\to \\infty} x_n\\limsup_{n\\to \\infty} \\frac{1}{x_n}=4>1$$以及$$\\liminf_{n\\to \\infty} x_n\\liminf_{n\\to \\infty} \\frac{1}{x_n}=\\frac{1}{4}<1$$",
+      "position_char": 5684,
+      "position_line": 85
+    },
+    {
+      "id": "函数与序列的上下极限#8",
+      "type": "note",
+      "title": "命题2.1.4",
+      "body": "设$x_n>0$。在拓展实数意义下（约定$1/0=+\\infty,1/\\infty=0$）那么\n1. $$\\limsup_{ n\\to +\\infty}\\frac{1}{x_n} =\\frac{1}{\\liminf_{ n\\to +\\infty}x_n}$$\n2. $$\\liminf_{ n\\to +\\infty}\\frac{1}{x_n} =\\frac{1}{\\limsup_{ n\\to +\\infty}x_n}$$",
+      "position_char": 6781,
+      "position_line": 101
+    },
+    {
+      "id": "函数与序列的上下极限#9",
+      "type": "note",
+      "title": "命题2.2.1",
+      "body": "对任意序列$x_n,y_n$，成立不等式$$\\liminf_{n\\to \\infty} x_n + \\liminf_{n\\to \\infty} y_n\\leq \\liminf_{n\\to \\infty}(x_n+y_n)\\leq \\liminf_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n$$以及$$\\liminf_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n\\leq \\limsup_{n\\to \\infty}(x_n+y_n)\\leq \\limsup_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n$$",
+      "position_char": 7802,
+      "position_line": 118
+    },
+    {
+      "id": "函数与序列的上下极限#10",
+      "type": "note",
+      "title": "命题2.3.1",
+      "body": "$x_n$是一个有界序列，假设其上下极限分别为$U,L$。此时考虑一个连续函数$f:I\\to \\mathbb{R}$，其中$I$是一个包含闭区间$[L,U]$的**开区间**于是：\n1. 如果函数$f$在$I$上是单调不减的，那么$$\\limsup_{n\\to \\infty} f(x_n)=f(U),\\liminf_{n\\to \\infty} f(x_n)=f(L)$$\n2. 如果函数$f$在$I$上是单调不增的，那么$$\\limsup_{n\\to \\infty} f(x_n)=f(L),\\liminf_{n\\to \\infty} f(x_n)=f(U)$$",
+      "position_char": 9598,
+      "position_line": 144
+    },
+    {
+      "id": "函数与序列的上下极限#11",
+      "type": "example",
+      "title": "例子2.3.2",
+      "body": "$$x_n=\\begin{cases}1&n=2k\\\\-2&n=2k+1\\end{cases}$$此时$\\limsup_{n\\to \\infty} x_n=1,\\limsup_{n\\to \\infty} x_n^2=4$,从而$$(\\limsup_{n\\to \\infty} x_n)^2 \\neq \\limsup_{n\\to \\infty} x_n^2$$这当然不是说“命题2.3.1”是错误的，因为此处$[L,U]=[-2,1]$但是函数$f(x):=x^2$在这个区间里面并不具备任何一种单调性。",
+      "position_char": 9957,
+      "position_line": 153
+    },
+    {
+      "id": "函数与序列的上下极限#12",
+      "type": "note",
+      "title": "推论2.3.3",
+      "body": "如果序列$x_n$非负，那么$$\\limsup_{n\\to \\infty}x_n^2=\\left(\\limsup_{n\\to \\infty}x_n\\right)^2$$对于下极限也有$$\\liminf_{n\\to \\infty}x_n^2=\\left(\\liminf_{n\\to \\infty}x_n\\right)^2$$",
+      "position_char": 10261,
+      "position_line": 158
+    },
+    {
+      "id": "函数与序列的上下极限#13",
+      "type": "note",
+      "title": "定义3.1:函数的上下极限",
+      "body": "令$f:[0,+\\infty)\\to \\overline{\\mathbb{R}}$定义$$U:=\\limsup_{x\\to +\\infty}f(x)=\\lim_{R\\to +\\infty}\\left(\\sup_{x\\geq R}f(x)\\right)=\\inf_{R>0}\\sup_{x\\geq R}f(x)$$以及$$L:=\\liminf_{x\\to +\\infty}f(x)=\\lim_{R\\to +\\infty}\\left(\\inf_{x\\geq R}f(x)\\right)=\\sup_{R>0}\\inf_{x\\geq R}f(x)$$称$U$为函数$f$在$x\\to +\\infty$处的上极限，$L$为函数$f$在$x\\to +\\infty$处的下极限。",
+      "position_char": 11325,
+      "position_line": 185
+    },
+    {
+      "id": "函数与序列的上下极限#14",
+      "type": "note",
+      "title": "命题3.2:函数上下极限的基本性质",
+      "body": "令$U:=\\limsup_{x\\to +\\infty}f(x)$以及$L:=\\liminf_{x\\to +\\infty}f(x)$那么:\n1. 存在序列$x_n,y_n\\to +\\infty$满足$f(x_n)\\to U$以及$f(y_n)\\to L$。\n2. 对任意$r>U$存在一个$R_0$使得任意$x\\geq R_0$都有$f(x)<r$。对任意$r<U$任意$R$都存在$x\\geq R$使得$f(x)>r$。\n3. 对任意$r<L$存在一个$R_0$使得任意$x\\geq R_0$都有$f(x)>r$。对任意$r>L$任意$R$都存在$x\\geq R$使得$f(x)<r$。",
+      "position_char": 11881,
+      "position_line": 193
+    },
+    {
+      "id": "函数与序列的上下极限#15",
+      "type": "example",
+      "title": "例子3.3：关于以上性质的平凡例子",
+      "body": "令$f(x)=\\sin(x)$那么根据$x\\to +\\infty$函数上下极限的定义，我们知道$$U=\\limsup_{x\\to \\infty}\\sin(x)=1,\\quad L=\\liminf_{x\\to \\infty}\\sin(x)=-1$$\n* 关于性质1：存在$x_n,y_n\\to +\\infty$使得$\\sin(x_n)\\to 1$以及$\\sin(y_n)\\to -1$s实际上我们可以明确地写出这两个序列$$x_n:=\\frac{\\pi}{2}+2\\pi n,\\quad y_n:=\\frac{3\\pi}{2}+2\\pi n $$\n* 性质2.a,3.a在此处是平凡的，因为$\\sin(x)\\in [-1,1]$如果$r>1$或者$r<-1$自然都是成立性质2.a,3.a的。\n* 性质2.b，3.b,既然$\\sin(x_n)=1$，那么自然任意$r<1$，无论$R$多大，我们总是可以找到对应的$\\sin(x_m)>r$。同样的道理既然，$\\sin(y_n)=-1$，那么自然任意$r>-1$，无论$R$多大，我们总是可以找到对应的$\\sin(y_m)<r$。",
+      "position_char": 13279,
+      "position_line": 207
+    },
+    {
+      "id": "函数与序列的上下极限#16",
+      "type": "example",
+      "title": "例子3.4:没那么平凡的例子",
+      "body": "$f(x):=(1+1/x)\\sin(x^2)$对任意$x\\geq 1$,函数图像如下：\n\n![[作为函数上下极限例子的函数.png]]\n\n* 函数上下极限以及性质1：\n\n由于$f(x)\\leq (1+1/x)$，因此对任意$x\\geq R\\geq 1$都有$$f(x)\\leq 1+\\frac{1}{x}\\leq 1+ \\frac{1}{R}$$那么尾部的上确界$B(R):=\\sup_{x\\geq R}f(x)$满足$B(R)\\leq 1+\\frac{1}{R}$从而根据上极限的定义$$\\limsup_{x\\to \\infty} f(x)=\\lim_{R\\to \\infty}B(R)\\leq 1$$同时取一个序列$x_n\\to \\infty$满足$x_n^2=\\frac{\\pi}{2}+2\\pi n$那么$f(x_n)=1+\\frac{1}{x_n}\\to 1$从而$1$作为所有$x_n\\to +\\infty$序列形成的$f(x_n)$序列上极限的上确界，因此$U=1$。同理可得$L=-1$。\n\n* 关于性质2：\n\n对任意$2>r>1$，虽然函数在整个$x\\geq 1$的范围内的上界为$2$，但是性质2.a告诉我们，会存在一个$R_0$，使得$x\\geq R_0$都有$f(x)<r$。这是因为，$f(x)\\leq 1+1/x$从而我们只需要令$1+1/x<r$即可，根据函数单调性，我们只需要令$1+1/R_0<r$即可，也即是$$R_0>\\frac{1}{r-1}$$只要满足这一条，那么自然对任意$x\\geq R_0$都有$$f(x)<r$$\n对任意$r<1$以及任意的$R$，由于上面的构造，我们知道$\\sin(x_n^2)=1$因此$f(x_n)=1+\\frac{1}{x_n}$。要实现$f(x_n)>r$实际上只需要满足$x_n>R$就一定有$$f(x_n)=1+\\frac{1}{x_n}>1>r$$这样的$x_n$都是我们想要的$x$。\n\n* 关于性质3:略",
+      "position_char": 13809,
+      "position_line": 214
+    },
+    {
+      "id": "函数与序列的上下极限#17",
+      "type": "note",
+      "title": "命题3.5 :函数极限存在与上下极限的关系",
+      "body": "令$U:=\\limsup_{x\\to +\\infty}f(x)$以及$L:=\\liminf_{x\\to +\\infty}f(x)$那么：\n1. 如果函数的极限$\\lim_{x\\to +\\infty}f(x)$在$\\overline{\\mathbb{R}}$中存在且等于$\\ell$那么$$U=L=\\ell$$\n2. 反过来，如果$U=L=\\ell$那么函数的极限$\\lim_{x\\to +\\infty}f(x)$在$\\overline{\\mathbb{R}}$中存在且等于$\\ell$。",
+      "position_char": 14723,
+      "position_line": 233
+    }
+  ]
+}

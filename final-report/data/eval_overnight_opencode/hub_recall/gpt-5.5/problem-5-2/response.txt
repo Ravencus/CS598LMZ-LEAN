@@ -1,0 +1,4 @@
+["term-by-term-estimates-hub", "piecewise-estimates-hub", "using-known-asymptotics-to-derive-expansions-hub"]
+- term-by-term-estimates-hub: In a Jensen-formula proof, each zero with `log n ≤ R/2` contributes at least `log 2` to the zero-counting sum.
+- piecewise-estimates-hub: The key lower bound comes from restricting to the favorable region of zeros inside radius `R/2` and estimating that block separately.
+- using-known-asymptotics-to-derive-expansions-hub: One compares the zero count `#{n : log n ≤ R/2} ≈ e^(R/2)` against the growth-implied bound `O(R^ρ)`, giving the contradiction.

@@ -1,0 +1,25 @@
+{
+  "id": "problem-0-2",
+  "type": "problem",
+  "source_note": "渐近密度为p的整数子集上黎曼和的极限",
+  "english_source_note": "Riemann Sum Limits on Integer Sets of Density p",
+  "callout_id": "渐近密度为p的整数子集上黎曼和的极限#1",
+  "english_title": "Problem 0",
+  "statement_en": "Let $\\mathcal{A}$ be a subset of the positive integers, and for any $0\\leq a\\leq b\\leq 1$ define\n$$S_n(a,b):=\\#\\{k\\in\\mathcal{A}:an\\leq k\\leq bn \\}.$$ \nAssume that the limit of $\\frac{S_n(0,1)}{n}$ exists and equals $p$. Prove:\n\n1. If $0<a<b<1$, then $\\lim_{n\\to +\\infty}\\frac{S_n(a,b)}{n}$ exists, and determine its value.\n2. If $f$ is Riemann integrable on $[0,1]$, prove that\n$$\\lim_{n\\to \\infty}\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}f\\left(\\frac{k}{n}\\right)=p\\int_0^1 f(x)\\,dx.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "asymptotic density of integer subsets",
+    "interval counting via differences",
+    "approximation by step functions",
+    "Riemann integrability and squeeze argument"
+  ],
+  "prerequisites": [
+    "Riemann integrability on closed intervals",
+    "step functions",
+    "limits of sequences",
+    "indicator functions"
+  ],
+  "callout_body": "设$\\mathcal{A}$为正整数集的子集，对任意$0\\leq a\\leq b\\leq 1$定义$$S_n(a,b):=\\#\\{k\\in\\mathcal{A}:an\\leq k\\leq bn \\}$$若$\\frac{S_n(0,1)}{n}$的极限存在且为$p$，证明：\n\n1. 若$0<a<b<1$证明$\\lim_{n\\to +\\infty}\\frac{S_n(a,b)}{n}$存在并求其值。\n2. 若$f$在$[0,1]$上黎曼可积，证明$$\\lim_{n\\to \\infty}\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}f\\left(\\frac{k}{n}\\right)=p\\int_0^1 f(x)\\,dx$$"
+}

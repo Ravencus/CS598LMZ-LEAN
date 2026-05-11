@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_7ec6b8853e99.lean",
+      "line": 9,
+      "column": 5,
+      "severity": "error",
+      "message": "Invalid pattern: Expected a constructor or constant marked with `[match_pattern]`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_7ec6b8853e99.lean",
+      "line": 22,
+      "column": 20,
+      "severity": "error",
+      "message": "unexpected token ':='; expected ')', ',' or ':'\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_7ec6b8853e99.lean",
+      "line": 9,
+      "column": 5,
+      "severity": "error",
+      "message": "Invalid pattern: Expected a constructor or constant marked with `[match_pattern]`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_7ec6b8853e99.lean",
+      "line": 22,
+      "column": 20,
+      "severity": "error",
+      "message": "unexpected token ':='; expected ')', ',' or ':'\n"
+    }
+  ]
+}

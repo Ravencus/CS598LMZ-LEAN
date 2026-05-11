@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown constant `Filter.Tendsto.le_of_eventuallyLE`\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_eb20db25c6.lean",
+      "line": 11,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `Filter.Tendsto.le_of_eventuallyLE`\n"
+    }
+  ]
+}

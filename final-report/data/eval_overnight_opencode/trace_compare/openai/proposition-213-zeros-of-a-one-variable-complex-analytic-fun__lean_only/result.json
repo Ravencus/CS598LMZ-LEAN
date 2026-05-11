@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces use `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero`, rule out the locally-zero branch via an `AnalyticOnNhd` identity principle and `hf_nonzero`, then try to extract a punctured ball from `𝓝[≠] z0`. The SMALL trace already found the relevant lemma names in mcp call 2, but repeatedl",
+  "wall_seconds": 7.34
+}

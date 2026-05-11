@@ -1,0 +1,42 @@
+{
+  "id": "sum-estimates-via-summation-by-parts-hub",
+  "type": "hub",
+  "source_note": "基于分部求和法的和的估计",
+  "english_source_note": "Sum Estimates via Summation by Parts",
+  "is_top3": true,
+  "note_degree": 18,
+  "strategies": [
+    {
+      "callout_id": "基于分部求和法的和的估计#1",
+      "english_title": "Basic Idea",
+      "strategy_name_en": "Summation by Parts via Partial Sums and Differences",
+      "summary_en": "When a partial sum can be written as $\\sum_{n=M}^N a_n b_n$, estimate it indirectly by combining information about the difference sequence $a_{n+1}-a_n$ and the partial sums $B_N=\\sum_{n=M}^N b_n$. This is the core summation-by-parts viewpoint.",
+      "applicability": "Applies when one factor has manageable discrete differences and the other factor may be complicated but has known or estimable partial sums.",
+      "callout_body": "当我们处理某个部分和$S_{M,N}$的时候，如果我们发现被求和对象可以写成乘积的形式以至于部分和$S_{M,N}$可以写成$$S_{M,N}:=\\sum_{n=M}^N a_nb_n$$并且我们假设其中$a_n,b_n$满足假设:\n1. 其中形式较为简单的对象$a_n$，其差分序列$a_{n+1}-a_n$是较为简单的。\n2. 其中$b_n$的形式虽然较为复杂，但是其部分和$B_N:=\\sum_{n=M}^N b_n$对我们而言是熟悉的(通过其他方式获取到的，或者已知估计的)\n\n此时我们可以借助部分和$B_N$以及差分$a_{n+1}-a_n$的估计来间接地得到$S_N$的估计。"
+    },
+    {
+      "callout_id": "基于分部求和法的和的估计#4",
+      "english_title": "A Trick",
+      "strategy_name_en": "Use Monotonicity to Simplify Difference Estimates",
+      "summary_en": "The simplicity of $a_n$ should be judged not only by its explicit formula but also by structural properties such as monotonicity. If monotonicity gives good asymptotic decay information, then the difference behavior of $a_n$ may still be easy to control.",
+      "applicability": "Applies when $a_n$ has a complicated expression but monotonicity or asymptotic decay makes its discrete differences accessible for summation-by-parts estimates.",
+      "callout_body": "此外我们要注意，$a_n$的简单不仅仅局限于其表达式的简单，如果其拥有单调性，那么我们比较容易知道其衰减到0的速度，即$a_n$的渐近表达，那么即便$a_n$的表达式复杂，也可以被算作是差分形式简单的。"
+    },
+    {
+      "callout_id": "基于分部求和法的和的估计#5",
+      "english_title": "Idea 2.2",
+      "strategy_name_en": "Estimate After Majorization",
+      "summary_en": "If $\\sum_n a_n b_n$ is not directly suitable for summation by parts, first replace $a_n$ by an upper bound $c_n$ with $a_n \\le c_n$, and use nonnegativity of $b_n$ to compare with $\\sum_n c_n b_n$. Then apply summation by parts to the enlarged sum.",
+      "applicability": "Applies when a direct summation-by-parts setup fails, but a comparable majorant product produces a sum with a more tractable structure.",
+      "callout_body": "有时候虽然$\\sum_n a_nb_n$并不适合做基于分部求和的估计，但是如果此时我们知道其中某个对象，例如$a_n$的一种估计，比如$a_n \\leq c_n$以及$b_n$非负，然后我们发现放缩以后的和$\\sum_n c_n b_n$是适合基于分部求和的估计，那么此时再考虑分部求和或许就能达到目的。"
+    },
+    {
+      "callout_id": "基于分部求和法的和的估计#6",
+      "english_title": "Idea 2.3",
+      "strategy_name_en": "Transform to an Equivalent Product Sum",
+      "summary_en": "When a sum $\\sum_n a_n$ does not appear suitable for summation by parts, try to rewrite it, up to the required level of precision, as an equivalent sum $\\sum_n b_n c_n$. If the transformed sum has the right structure and relevant estimates are available, the method becomes effective.",
+      "applicability": "Applies when the original sum lacks a useful product structure, but an asymptotically equivalent or comparably accurate transformed sum does admit summation-by-parts analysis.",
+      "callout_body": "有时候一个和$\\sum_n a_n$看起来并不是适合做基于分部求和的估计，不过我们可以尝试把$\\sum_n a_n$转换为某个在估计精度下等价的和$\\sum_n b_nc_n$，此时如果我们已经有估计$\\sum_n b_nc_n$的关键信息，那么这个转换方案就是成功的。"
+    }
+  ]
+}

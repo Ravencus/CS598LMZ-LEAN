@@ -1,0 +1,73 @@
+{
+  "note_title": "函数卷积的基本性质",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "函数卷积的基本性质#1",
+      "type": "note",
+      "title": "卷积的定义",
+      "body": "$f,g$是拓扑群局部紧的可交换群$(G,+)$上由Haar测度$\\mu$建立起来的测度空间空间$(G,\\mathcal{F},\\mu)$当中的两个函数。这两个函数的卷积定义为$$f*g(x):=\\int_{G} f(x-y)g(y)\\,d\\mu(y)$$",
+      "position_char": 33,
+      "position_line": 6
+    },
+    {
+      "id": "函数卷积的基本性质#2",
+      "type": "note",
+      "title": "卷积的平移就是平移的卷积",
+      "body": "如果$T_z(f)$表示把函数$f$左平移$z$个单位，即$$T_z(f)=f(x-z)$$那么\n$$T_{z}(f*g)=(T_zf)*g=f*(T_zg)$$",
+      "position_char": 292,
+      "position_line": 15
+    },
+    {
+      "id": "函数卷积的基本性质#3",
+      "type": "note",
+      "title": "卷积的支集与各自的支集的关系",
+      "body": "卷积的支集包含在一个由两个函数分别的支集构成的集合的**闭包**里面。$$\\text{supp}(f)+\\text{supp}(g)=\\{x+y:x\\in\\text{supp}(f),y\\in\\text{supp}(g)\\}$$",
+      "position_char": 420,
+      "position_line": 21
+    },
+    {
+      "id": "函数卷积的基本性质#4",
+      "type": "note",
+      "title": "函数支集分别是紧的，那么卷积后的支集也紧",
+      "body": "如果分别的支集$\\text{supp}(f),\\text{supp}(g)$都是紧的，那么$A$紧，那么作为闭子集，$\\text{supp}(f*g)$也是紧的。",
+      "position_char": 1047,
+      "position_line": 29
+    },
+    {
+      "id": "函数卷积的基本性质#5",
+      "type": "note",
+      "title": "Young不等式",
+      "body": "$1\\leq p,q,r\\leq\\infty$并且满足$1/p+1/q=1/r+1$那么$$||f*g||_r\\leq||g||_p||f||_q$$",
+      "position_char": 1379,
+      "position_line": 36
+    },
+    {
+      "id": "函数卷积的基本性质#6",
+      "type": "note",
+      "title": "与光滑函数做卷积会得到光滑性",
+      "body": "如果函数$f \\in L^1,g\\in C^k$并且$\\partial^{\\alpha} g$有界($\\alpha$是多重指标，$|\\alpha|\\leq k$)那么$$f*g\\in C^k$$并且$$\\partial^{\\alpha}\\left(f*g\\right)=f*\\partial^{\\alpha}g$$",
+      "position_char": 1552,
+      "position_line": 44
+    },
+    {
+      "id": "函数卷积的基本性质#7",
+      "type": "note",
+      "title": "卷积的性质7",
+      "body": "$f\\in L^p,g\\in L^{q}$其中$1/p+1/q=1,p\\in[1,+\\infty]$那么$f*g$一致连续且有界，并且属于$C_0$。",
+      "position_char": 1807,
+      "position_line": 53
+    },
+    {
+      "id": "函数卷积的基本性质#8",
+      "type": "tip",
+      "title": "基本想法",
+      "body": "在LCH的条件下(局部紧的Hausdorff空间),$C_0$是$C_c$在一致度量下的闭包或者说$C_c$在$C_0$中式稠密的(这个范数条件非常重要，因为$C_c$在$L^p$下的闭包是$L^p$空间)。\n\n因此要证明某个函数$f\\in C_0$只需要证明对任意$\\varepsilon >0$存在$f_{\\varepsilon}\\in C_c$使得$$||f-f_{\\varepsilon}||_u <\\varepsilon$$即可。因为这样就说明$f$是$C_c$在一致范数导出拓扑下的一个极限点，那么必然属于$C_0$。",
+      "position_char": 2351,
+      "position_line": 64
+    }
+  ]
+}

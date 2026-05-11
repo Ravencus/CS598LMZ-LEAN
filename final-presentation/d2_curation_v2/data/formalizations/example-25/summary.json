@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-25",
+  "english_title": "Example 2.5",
+  "statement_en": "Let \\(q\\\\geq 2\\) be a positive integer, and let the real number \\(a\\) satisfy \\(|a|<1\\). Show that\n$$\\\\prod_{n\\\\geq 0}(1+a^{q^n}+\\\\cdots+a^{(q-1)q^n})=\\\\frac{1}{1-a}.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem geometric_qary_infinite_product\n    (q : ℕ) (hq : 2 ≤ q) (a : ℝ) (ha : |a| < 1) :\n    (∏' n : ℕ, Finset.sum (Finset.range q) (fun i => a ^ (i * q ^ n))) = 1 / (1 - a) := by\n  sorry"
+}

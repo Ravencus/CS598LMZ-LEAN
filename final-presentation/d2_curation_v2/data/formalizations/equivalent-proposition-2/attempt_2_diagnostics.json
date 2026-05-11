@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_73ff1175fdb0.lean",
+      "line": 6,
+      "column": 79,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_73ff1175fdb0.lean",
+      "line": 6,
+      "column": 79,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ]
+}

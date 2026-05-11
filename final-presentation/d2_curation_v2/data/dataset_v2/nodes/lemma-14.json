@@ -1,0 +1,23 @@
+{
+  "id": "lemma-14",
+  "type": "problem",
+  "source_note": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+  "english_source_note": "A.e. Convergence of Cesaro Means of Uniformly a.e. Bounded Functions",
+  "callout_id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#6",
+  "english_title": "Lemma 1.4",
+  "statement_en": "Let $I_k:=[2^k,2^{k+1})$, define $\\Lambda_k(x):=\\max_{n\\in I_k}\\{|A_n(x)|\\}$, and\n$$G_k(x):=\\frac{1}{|I_k|}\\sum_{n\\in I_k} A_n(x)^2.$$ Then\n$$G_k(x)\\geq \\frac{1}{16 M} \\Lambda_k(x)^3.$$",
+  "problem_type": "lemma",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "dyadic block decomposition",
+    "comparison of discrete L^2 and L^\\infty behavior",
+    "oscillation control via increment bounds"
+  ],
+  "prerequisites": [
+    "arithmetic averages of functions",
+    "basic measure-free discrete norm comparisons",
+    "previous increment estimate"
+  ],
+  "callout_body": "令$I_k:=[2^k,2^{k+1}),\\Lambda_k(x):=\\max_{n\\in I_k}\\{|A_n(x)|\\}$以及$$G_k(x):=\\frac{1}{|I_k|}\\sum_{n\\in I_k} A_n(x)^2 $$那么$$G_k(x)\\geq \\frac{1}{16 M} \\Lambda_k(x)^3$$"
+}

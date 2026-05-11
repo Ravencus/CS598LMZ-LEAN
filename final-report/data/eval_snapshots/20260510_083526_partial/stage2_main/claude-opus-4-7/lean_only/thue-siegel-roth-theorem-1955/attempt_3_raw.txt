@@ -1,0 +1,22 @@
+Looking at this code, the theorem `algebraic_irrational_has_irrationality_measure_two` is Roth's theorem (1955) — one of the deepest results in transcendental number theory. Mathlib does not contain this theorem, so `sorry` is the only feasible proof. The code as written should compile (with a `sorry` warning). The "no diagnostics returned" hint suggests there's no actual type error to fix.
+
+Let me submit the code with `sorry` retained:
+
+import Mathlib
+
+open Filter
+
+def HasIrrationalityMeasure (x μ : ℝ) : Prop :=
+  (∀ ε : ℝ, 0 < ε →
+    ∃ C : ℝ, 0 < C ∧
+      ∀ p : ℤ, ∀ q : ℕ, q ≠ 0 →
+        C / Real.rpow (q : ℝ) (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|) ∧
+  (∀ ε : ℝ, 0 < ε →
+    ∃ᶠ q : ℕ in Filter.atTop,
+      ∃ p : ℤ,
+        |x - (p : ℝ) / (q : ℝ)| < 1 / Real.rpow (q : ℝ) (μ - ε))
+
+theorem algebraic_irrational_has_irrationality_measure_two
+    {x : ℝ} (hx_alg : IsAlgebraic ℚ x) (hx_irr : Irrational x) :
+    HasIrrationalityMeasure x 2 := by
+  sorry

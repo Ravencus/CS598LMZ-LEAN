@@ -1,0 +1,54 @@
+import Mathlib
+
+open Real intervalIntegral MeasureTheory
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have hpi : (0:ℝ) < Real.pi := Real.pi_pos
+  have hcont : Continuous fun u => max (Real.cos u) 0 :=
+    Real.continuous_cos.max continuous_const
+  have split1 : ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 =
+      (∫ u in (0:ℝ)..(Real.pi/2), max (Real.cos u) 0) +
+      (∫ u in (Real.pi/2)..(2*Real.pi), max (Real.cos u) 0) := by
+    rw [← intervalIntegral.integral_add_adjacent_intervals
+      (hcont.intervalIntegrable _ _) (hcont.intervalIntegrable _ _)]
+  have split2 : ∫ u in (Real.pi/2)..(2*Real.pi), max (Real.cos u) 0 =
+      (∫ u in (Real.pi/2)..(3*Real.pi/2), max (Real.cos u) 0) +
+      (∫ u in (3*Real.pi/2)..(2*Real.pi), max (Real.cos u) 0) := by
+    rw [← intervalIntegral.integral_add_adjacent_intervals
+      (hcont.intervalIntegrable _ _) (hcont.intervalIntegrable _ _)]
+  have piece1 : ∫ u in (0:ℝ)..(Real.pi/2), max (Real.cos u) 0 = 1 := by
+    rw [intervalIntegral.integral_congr (g := Real.cos)]
+    · rw [integral_cos]; simp [Real.sin_pi_div_two]
+    · intro u hu
+      rw [Set.uIcc_of_le (by linarith : (0:ℝ) ≤ Real.pi/2)] at hu
+      have : 0 ≤ Real.cos u := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hu.1], hu.2⟩
+      exact max_eq_left this
+  have piece2 : ∫ u in (Real.pi/2)..(3*Real.pi/2), max (Real.cos u) 0 = 0 := by
+    rw [intervalIntegral.integral_congr (g := fun _ => 0)]
+    · simp
+    · intro u hu
+      rw [Set.uIcc_of_le (by linarith : Real.pi/2 ≤ 3*Real.pi/2)] at hu
+      have : Real.cos u ≤ 0 := Real.cos_nonpos_of_pi_div_two_le_of_le hu.1 (by linarith [hu.2])
+      exact max_eq_right this
+  have piece3 : ∫ u in (3*Real.pi/2)..(2*Real.pi), max (Real.cos u) 0 = 1 := by
+    rw [intervalIntegral.integral_congr (g := Real.cos)]
+    · rw [integral_cos]
+      have h1 : Real.sin (2 * Real.pi) = 0 := Real.sin_two_pi
+      have h2 : Real.sin (3 * Real.pi / 2) = -1 := by
+        have heq : (3 * Real.pi / 2 : ℝ) = Real.pi + Real.pi / 2 := by ring
+        rw [heq, Real.sin_add, Real.sin_pi, Real.cos_pi, Real.sin_pi_div_two]
+        ring
+      rw [h1, h2]; ring
+    · intro u hu
+      rw [Set.uIcc_of_le (by linarith : 3*Real.pi/2 ≤ 2*Real.pi)] at hu
+      have hcos_nn : 0 ≤ Real.cos u := by
+        have hshift : Real.cos (u - 2*Real.pi) = Real.cos u := Real.cos_sub_two_pi u
+        rw [← hshift]
+        apply Real.cos_nonneg_of_mem_Icc
+        refine ⟨?_, ?_⟩
+        · linarith [hu.1]
+        · linarith [hu.2]
+      exact max_eq_left hcos_nn
+  rw [split1, split2, piece1, piece2, piece3]
+  ring

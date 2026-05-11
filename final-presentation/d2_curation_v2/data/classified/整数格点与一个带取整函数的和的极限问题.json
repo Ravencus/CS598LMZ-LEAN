@@ -1,0 +1,197 @@
+{
+  "note_title": "整数格点与一个带取整函数的和的极限问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "求极限$$\\lim_{n\\to +\\infty}\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor$$",
+      "position_char": 51,
+      "position_line": 8,
+      "classification_result": {
+        "id": "整数格点与一个带取整函数的和的极限问题#1",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Find the limit $$\\lim_{n\\to +\\infty}\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Riemann sum approximation",
+            "lattice point counting",
+            "floor function decomposition"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "Riemann integrals",
+            "properties of the floor function"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#2",
+      "type": "tip",
+      "title": "想法",
+      "body": "如果一个和，看起来像一个黎曼和，那么我们只要找到其对应的函数，并用黎曼积分去近似它就好了。\n\n这里之所以说看起来像，而不是说本身就是一个黎曼和，是因为有时候，虽然一个和并不能算作是某个函数的黎曼和，但是误差并不超过问题要求的精度，那么我们可以配合利用[[利用已知的渐近结果求渐近展开的技巧]]同样达到目的。",
+      "position_char": 842,
+      "position_line": 23,
+      "classification_result": {
+        "id": "整数格点与一个带取整函数的和的极限问题#2",
+        "classification": "strategy_template",
+        "english_title": "Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Approximate a sum by a Riemann sum",
+          "summary_en": "If a sum resembles a Riemann sum, identify the corresponding function and approximate the sum by a Riemann integral. Even if it is not exactly a Riemann sum, the method still works when the discrepancy is within the required error tolerance.",
+          "applicability": "Applies when a discrete sum has scaled terms and indexing that approximate area or volume elements, especially in asymptotic limit problems."
+        }
+      }
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#3",
+      "type": "question",
+      "title": "问题2",
+      "body": "$$S_n:=\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor$$这个和，在$o(1)$的精度范围内，是否可以看成是一个黎曼和?",
+      "position_char": 1028,
+      "position_line": 30,
+      "classification_result": {
+        "id": "整数格点与一个带取整函数的和的极限问题#3",
+        "classification": "problem",
+        "english_title": "Problem 2",
+        "if_problem": {
+          "statement_en": "For $$S_n:=\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor,$$ can this sum, up to an error of order $o(1)$, be regarded as a Riemann sum?",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Riemann sum identification",
+            "asymptotic error analysis",
+            "floor function approximation"
+          ],
+          "prerequisites": [
+            "little-o notation",
+            "Riemann sums",
+            "properties of the floor function"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#4",
+      "type": "tip",
+      "title": "想法",
+      "body": "我们只要能在误差为$o(n^2)$的范围内估算出$h$这个函数的每个取值的在集合$\\{1,\\cdots,n\\}\\times\\{1,\\cdots,2n\\}$当中的原像的元素的个数，那么我们就能得到$S_n$的极限。即我们需要搞清楚下面这个四边形图形内部及其边界上的整数格点的数目，误差范围在$o(n^2)$级别:$$\\{(x,y)\\in \\{1,...,n\\}\\times\\{1,...,2n\\}:kn\\leq  2x+y < (k+1)n\\}$$其中$k=0,1,2,3$",
+      "position_char": 1832,
+      "position_line": 43,
+      "classification_result": {
+        "id": "整数格点与一个带取整函数的和的极限问题#4",
+        "classification": "strategy_template",
+        "english_title": "Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Reduce the sum to counting lattice points in level sets",
+          "summary_en": "Group terms according to the value of the floor function and estimate how many integer lattice points map to each value. An error of order $o(n^2)$ in these counts is sufficient to determine the limit of the normalized sum.",
+          "applicability": "Applies when a sum contains a floor function or piecewise-constant expression whose values are determined by linear inequalities over integer grids."
+        }
+      }
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#5",
+      "type": "note",
+      "title": "命题3.1",
+      "body": "$$\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor = 6+\\frac{8}{n}$$",
+      "position_char": 4342,
+      "position_line": 86,
+      "classification_result": {
+        "id": "整数格点与一个带取整函数的和的极限问题#5",
+        "classification": "problem",
+        "english_title": "Proposition 3.1",
+        "if_problem": {
+          "statement_en": "$$\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor = 6+\\frac{8}{n}.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "number theory",
+          "key_techniques": [
+            "exact evaluation of floor sums",
+            "lattice point counting",
+            "summation rearrangement"
+          ],
+          "prerequisites": [
+            "properties of the floor function",
+            "double sums",
+            "basic integer lattice geometry"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#6",
+      "type": "note",
+      "title": "引理3.2:Hermite恒等式",
+      "body": "令$x\\in \\mathbb{R}$那么$$\\sum_{k=0}^{n-1}\\left\\lfloor x+\\frac{k}{n}\\right\\rfloor=\\left\\lfloor nx\\right\\rfloor$$",
+      "position_char": 4498,
+      "position_line": 93,
+      "classification_result": {
+        "id": "整数格点与一个带取整函数的和的极限问题#6",
+        "classification": "problem",
+        "english_title": "Lemma 3.2: Hermite Identity",
+        "if_problem": {
+          "statement_en": "Let $x\\in \\mathbb{R}$. Then $$\\sum_{k=0}^{n-1}\\left\\lfloor x+\\frac{k}{n}\\right\\rfloor=\\left\\lfloor nx\\right\\rfloor.$$",
+          "problem_type": "lemma",
+          "difficulty": "easy",
+          "domain": "number theory",
+          "key_techniques": [
+            "floor function identities",
+            "fractional part decomposition"
+          ],
+          "prerequisites": [
+            "properties of the floor function",
+            "fractional parts"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#7",
+      "type": "question",
+      "title": "问题4.1",
+      "body": "求$$\\lim_{n\\to \\infty} \\frac{1}{n^3}\\sum_{i,j,k\\leq n} \\left\\lfloor \\frac{i+j+2k}{n}\\right\\rfloor$$",
+      "position_char": 5731,
+      "position_line": 104,
+      "classification_result": {
+        "id": "整数格点与一个带取整函数的和的极限问题#7",
+        "classification": "problem",
+        "english_title": "Problem 4.1",
+        "if_problem": {
+          "statement_en": "Find $$\\lim_{n\\to \\infty} \\frac{1}{n^3}\\sum_{i,j,k\\leq n} \\left\\lfloor \\frac{i+j+2k}{n}\\right\\rfloor.$$",
+          "problem_type": "exercise",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "multivariable Riemann sum approximation",
+            "floor function averaging",
+            "lattice point counting in three dimensions"
+          ],
+          "prerequisites": [
+            "multiple integrals",
+            "limits of sequences",
+            "properties of the floor function"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"整数格点与一个带取整函数的和的极限问题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Find the limit $$\\\\lim_{n\\\\to +\\\\infty}\\\\sum_{i\\\\leq n}\\\\sum_{j\\\\leq 2n}\\\\frac{2}{n^2}\\\\left\\\\lfloor\\\\frac{2i+j}{n}\\\\right\\\\rfloor.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Riemann sum approximation\",\n        \"lattice point counting\",\n        \"floor function decomposition\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"Riemann integrals\",\n        \"properties of the floor function\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"整数格点与一个带取整函数的和的极限问题#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Approximate a sum by a Riemann sum\",\n      \"summary_en\": \"If a sum resembles a Riemann sum, identify the corresponding function and approximate the sum by a Riemann integral. Even if it is not exactly a Riemann sum, the method still works when the discrepancy is within the required error tolerance.\",\n      \"applicability\": \"Applies when a discrete sum has scaled terms and indexing that approximate area or volume elements, especially in asymptotic limit problems.\"\n    }\n  },\n  {\n    \"id\": \"整数格点与一个带取整函数的和的极限问题#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2\",\n    \"if_problem\": {\n      \"statement_en\": \"For $$S_n:=\\\\sum_{i\\\\leq n}\\\\sum_{j\\\\leq 2n}\\\\frac{2}{n^2}\\\\left\\\\lfloor\\\\frac{2i+j}{n}\\\\right\\\\rfloor,$$ can this sum, up to an error of order $o(1)$, be regarded as a Riemann sum?\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Riemann sum identification\",\n        \"asymptotic error analysis\",\n        \"floor function approximation\"\n      ],\n      \"prerequisites\": [\n        \"little-o notation\",\n        \"Riemann sums\",\n        \"properties of the floor function\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"整数格点与一个带取整函数的和的极限问题#4\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Reduce the sum to counting lattice points in level sets\",\n      \"summary_en\": \"Group terms according to the value of the floor function and estimate how many integer lattice points map to each value. An error of order $o(n^2)$ in these counts is sufficient to determine the limit of the normalized sum.\",\n      \"applicability\": \"Applies when a sum contains a floor function or piecewise-constant expression whose values are determined by linear inequalities over integer grids.\"\n    }\n  },\n  {\n    \"id\": \"整数格点与一个带取整函数的和的极限问题#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 3.1\",\n    \"if_problem\": {\n      \"statement_en\": \"$$\\\\sum_{i\\\\leq n}\\\\sum_{j\\\\leq 2n}\\\\frac{2}{n^2}\\\\left\\\\lfloor\\\\frac{2i+j}{n}\\\\right\\\\rfloor = 6+\\\\frac{8}{n}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"exact evaluation of floor sums\",\n        \"lattice point counting\",\n        \"summation rearrangement\"\n      ],\n      \"prerequisites\": [\n        \"properties of the floor function\",\n        \"double sums\",\n        \"basic integer lattice geometry\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"整数格点与一个带取整函数的和的极限问题#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 3.2: Hermite Identity\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $x\\\\in \\\\mathbb{R}$. Then $$\\\\sum_{k=0}^{n-1}\\\\left\\\\lfloor x+\\\\frac{k}{n}\\\\right\\\\rfloor=\\\\left\\\\lfloor nx\\\\right\\\\rfloor.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"floor function identities\",\n        \"fractional part decomposition\"\n      ],\n      \"prerequisites\": [\n        \"properties of the floor function\",\n        \"fractional parts\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"整数格点与一个带取整函数的和的极限问题#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 4.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Find $$\\\\lim_{n\\\\to \\\\infty} \\\\frac{1}{n^3}\\\\sum_{i,j,k\\\\leq n} \\\\left\\\\lfloor \\\\frac{i+j+2k}{n}\\\\right\\\\rfloor.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"multivariable Riemann sum approximation\",\n        \"floor function averaging\",\n        \"lattice point counting in three dimensions\"\n      ],\n      \"prerequisites\": [\n        \"multiple integrals\",\n        \"limits of sequences\",\n        \"properties of the floor function\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

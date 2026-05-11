@@ -1,0 +1,2 @@
+["identity-theorem-hub"]
+- identity-theorem-hub: The proof is by contradiction: if zeros of `f` accumulate at `z0`, the identity theorem for holomorphic functions on a connected domain forces `f` to vanish identically on `U`, contradicting `hf_nonzero`.

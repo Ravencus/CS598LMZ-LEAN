@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-32",
+  "english_title": "Example 3.2",
+  "statement_en": "Prove that $\\sum_n \\frac{1}{n\\log^2(n)}$ converges.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem summable_one_div_n_log_sq :\n    Summable (fun n : ℕ => 1 / ((n : ℝ) * (Real.log (n : ℝ)) ^ 2)) := by\n  sorry"
+}

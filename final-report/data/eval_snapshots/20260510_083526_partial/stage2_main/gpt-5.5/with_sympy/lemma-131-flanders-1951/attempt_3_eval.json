@@ -1,0 +1,58 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 6,
+  "first_error": "Invalid alternative name `zero`: Expected `mk`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 25,
+      "column": 18,
+      "severity": "error",
+      "message": "Invalid alternative name `zero`: Expected `mk`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 27,
+      "column": 18,
+      "severity": "error",
+      "message": "Invalid alternative name `succ`: Expected `mk`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 24,
+      "column": 18,
+      "severity": "error",
+      "message": "Alternative `mk` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 56,
+      "column": 18,
+      "severity": "error",
+      "message": "Invalid alternative name `zero`: Expected `mk`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 58,
+      "column": 18,
+      "severity": "error",
+      "message": "Invalid alternative name `succ`: Expected `mk`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 55,
+      "column": 18,
+      "severity": "error",
+      "message": "Alternative `mk` has not been provided"
+    }
+  ]
+}

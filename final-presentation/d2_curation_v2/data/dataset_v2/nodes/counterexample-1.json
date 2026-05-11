@@ -1,0 +1,23 @@
+{
+  "id": "counterexample-1",
+  "type": "problem",
+  "source_note": "随机变量期望收敛导出几乎处处收敛的一个条件",
+  "english_source_note": "A Condition Turning Mean Convergence into Almost Sure Convergence",
+  "callout_id": "随机变量期望收敛导出几乎处处收敛的一个条件#2",
+  "english_title": "Counterexample 1",
+  "statement_en": "Consider random variables $X_n \\sim \\mathcal{N}(\\frac{1}{\\sqrt{n}}, \\frac{1}{n^2})$. Then clearly the means converge to $C=0$, and the series of variances converges. However, in this case $E(X_n)^2 = \\frac{1}{n}$, and this series does not converge.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "probability theory",
+  "key_techniques": [
+    "constructing Gaussian counterexamples",
+    "checking summability of variances",
+    "comparing mean-square related series"
+  ],
+  "prerequisites": [
+    "normal distribution",
+    "expectation and variance",
+    "series convergence"
+  ],
+  "callout_body": "考虑随机变量$X_n \\sim \\mathcal{N}(\\frac{1}{\\sqrt{n}},\\frac{1}{n^2})$,那么显然均值是收敛到$C=0$的，并且方差的和是收敛的，不过此时$E(X_n)^2 = \\frac{1}{n}$，这个和可并不收敛。"
+}

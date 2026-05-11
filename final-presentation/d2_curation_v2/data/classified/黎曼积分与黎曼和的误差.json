@@ -1,0 +1,43 @@
+{
+  "note_title": "黎曼积分与黎曼和的误差",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1",
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "黎曼积分与黎曼和的误差#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "$f\\in C^2([0,1])$，令$$R_n:=\\int_0^1f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1}f(k/n)$$求$$\\lim_{n\\to \\infty}nR_n$$",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "黎曼积分与黎曼和的误差#1",
+        "classification": "problem",
+        "english_title": "Problem 0",
+        "if_problem": {
+          "statement_en": "Let $f\\in C^2([0,1])$, and define\n$$R_n:=\\int_0^1 f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1} f(k/n).$$\nFind\n$$\\lim_{n\\to\\infty} nR_n.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Riemann sum error estimation",
+            "Taylor expansion",
+            "comparison between integral and left-endpoint Riemann sum"
+          ],
+          "prerequisites": [
+            "Riemann integral",
+            "properties of $C^2$ functions",
+            "Taylor's theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"黎曼积分与黎曼和的误差#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 0\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f\\\\in C^2([0,1])$, and define\\n$$R_n:=\\\\int_0^1 f(t)\\\\,\\\\mathrm{d}t-\\\\frac1n\\\\sum_{k=0}^{n-1} f(k/n).$$\\nFind\\n$$\\\\lim_{n\\\\to\\\\infty} nR_n.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Riemann sum error estimation\",\n        \"Taylor expansion\",\n        \"comparison between integral and left-endpoint Riemann sum\"\n      ],\n      \"prerequisites\": [\n        \"Riemann integral\",\n        \"properties of $C^2$ functions\",\n        \"Taylor's theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

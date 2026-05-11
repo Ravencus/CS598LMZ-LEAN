@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-12",
+  "english_title": "Lemma 1.2",
+  "statement_en": "Let $X,Y$ be topological spaces, let $f:X\\to Y$ be a continuous map, and let $E$ be a dense subset of $X$. Then $f(E)$ is dense in the subspace $f(X)$.",
+  "difficulty": "easy",
+  "domain": "topology",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem continuous_image_dense_in_range\n    {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]\n    (f : X → Y) (hf : Continuous f) {E : Set X} (hE : Dense E) :\n    Dense ({y : Set.range f | y.1 ∈ f '' E} : Set (Set.range f)) := by\n  sorry"
+}

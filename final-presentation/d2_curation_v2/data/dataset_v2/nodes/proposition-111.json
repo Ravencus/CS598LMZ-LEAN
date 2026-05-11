@@ -1,0 +1,22 @@
+{
+  "id": "proposition-111",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#2",
+  "english_title": "Proposition 1.1.1",
+  "statement_en": "For every natural number $N$, the inequality $$S_N<3$$ holds.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "termwise comparison",
+    "bounding partial sums"
+  ],
+  "prerequisites": [
+    "finite sums",
+    "basic inequalities",
+    "factorials"
+  ],
+  "callout_body": "对任意的自然数$N$都成立不等式：$$S_N<3$$"
+}

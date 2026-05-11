@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Application type mismatch: The argument\n  hfreq\nhas type\n  ∃ᶠ (z : ℂ) in nhdsWithin z0 U, f z = 0\nbut is expected to have type\n  ∃ᶠ (z : ℂ) in nhdsWithin z0 {z0}ᶜ, f z = 0\nin the application\n  Analyti",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_cbbd9afe8b.lean",
+      "line": 30,
+      "column": 6,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hfreq\nhas type\n  ∃ᶠ (z : ℂ) in nhdsWithin z0 U, f z = 0\nbut is expected to have type\n  ∃ᶠ (z : ℂ) in nhdsWithin z0 {z0}ᶜ, f z = 0\nin the application\n  AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq (DifferentiableOn.analyticOnNhd hf_holo hU_open)\n    analyticOnNhd_const hU_connected hz0U hfreq\n"
+    }
+  ]
+}

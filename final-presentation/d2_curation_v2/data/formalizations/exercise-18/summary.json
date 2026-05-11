@@ -1,0 +1,18 @@
+{
+  "problem_id": "exercise-18",
+  "english_title": "Exercise 1.8",
+  "statement_en": "Let $a_n \\geq 0$ be a real sequence. Prove that the series $$\\sum_{n\\geq 1} a_n,\\qquad \\sum_{n\\geq 1}\\frac{a_n}{a_n+1}$$ have the same convergence and divergence behavior.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sameConvergenceBehavior_of_nonneg_real_sequence\n    (a : ℕ → ℝ) (ha : ∀ n, 0 ≤ a n) :\n    Summable (fun n : ℕ => a (n + 1)) ↔\n      Summable (fun n : ℕ => a (n + 1) / (a (n + 1) + 1)) := by\n  sorry"
+}

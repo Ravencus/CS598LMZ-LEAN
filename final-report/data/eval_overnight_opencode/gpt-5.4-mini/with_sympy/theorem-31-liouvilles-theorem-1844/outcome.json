@@ -1,0 +1,76 @@
+{
+  "problem_id": "theorem-31-liouvilles-theorem-1844",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 383.39,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 7,
+  "first_error": "Unknown identifier `α`",
+  "total_cost_usd": 0.0,
+  "total_tokens": 2455685,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_61958f62a9.lean",
+      "line": 13,
+      "column": 25,
+      "severity": "error",
+      "message": "Unknown identifier `α`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_61958f62a9.lean",
+      "line": 28,
+      "column": 83,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  P\nhas type\n  ℚ[X]\nof sort `Type` but is expected to have type\n  (Polynomial.aeval α) ?m.176 = 0\nof sort `Prop` in the application\n  IsLocalization.integerNormalization_aeval_eq_zero M ?m.176 P"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_61958f62a9.lean",
+      "line": 28,
+      "column": 66,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  algebraMap ℚ ℝ\nhas type\n  ℚ →+* ℝ\nbut is expected to have type\n  ?m.164[X]\nin the application\n  @IsLocalization.integerNormalization_aeval_eq_zero ℤ Int.instCommRing M ?m.164 ?m.165 ?m.166 ?m.167 ℝ Real.commRing\n    (Ring.toIntAlgebra ℝ) ?m.171 ?m.172 (algebraMap ℚ ℝ)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_61958f62a9.lean",
+      "line": 40,
+      "column": 61,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  IsSimpleRing ℤ\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_61958f62a9.lean",
+      "line": 45,
+      "column": 10,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hQroot\nhas type\n  (Polynomial.aeval α) (IsLocalization.integerNormalization M P) = 0\nbut is expected to have type\n  Polynomial.eval α (Polynomial.map (algebraMap ℤ ℝ) (IsLocalization.integerNormalization M P)) = 0\nin the application\n  Liouville.exists_pos_real_of_irrational_root h_irr hQ0 hQroot"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_61958f62a9.lean",
+      "line": 54,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hbound'\n has type\n  1 ≤ A * ((↑(q - 1) + 1) ^ d * |α - ↑p / (↑(q - 1) + 1)|)\nbut is expected to have type\n  1 ≤ A * (↑q ^ d * |α - ↑p / ↑q|)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_61958f62a9.lean",
+      "line": 59,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hC\n has type\n  A⁻¹ * ((↑q ^ d)⁻¹ * 2⁻¹) < |α - ↑p / ↑q|\nbut is expected to have type\n  A⁻¹ * 2⁻¹ / ↑q ^ d < |α - ↑p / ↑q|\n"
+    }
+  ]
+}

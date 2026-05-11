@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-112",
+  "english_title": "Lemma 1.1.2",
+  "statement_en": "Under any matrix norm, $GL_n(\\mathbb{C})$ is a dense subspace of $M_n(\\mathbb{C})$.",
+  "difficulty": "medium",
+  "domain": "linear algebra",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem gl_dense_in_matrix_complex\n    {n : Type*} [Fintype n] [DecidableEq n] :\n    Dense ({A : Matrix n n ℂ | IsUnit A} : Set (Matrix n n ℂ)) := by\n  sorry"
+}

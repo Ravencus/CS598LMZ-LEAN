@@ -1,0 +1,22 @@
+{
+  "id": "hoeffding-inequality",
+  "type": "problem",
+  "source_note": "样本期望的渐近展开系数",
+  "english_source_note": "Asymptotic Expansion Coefficients of Sample Means",
+  "callout_id": "样本期望的渐近展开系数#6",
+  "english_title": "Hoeffding Inequality",
+  "statement_en": "Assume that the random variables $X_n$ on a probability space $(\\Omega,\\mathcal{F},P)$ are independent and identically distributed, and that $X_n(\\omega)\\in [a,b]$ for every positive integer $n$. Let $\\overline{X}_n$ be the arithmetic mean of the first $n$ random variables, and let $\\mu$ be their common mean. Then for every $\\varepsilon>0$, $$P\\left(|\\overline{X}_n-\\mu|\\geq \\varepsilon \\right)\\leq 2\\exp\\left(-\\frac{2n\\varepsilon^2}{(b-a)^2}\\right).$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "concentration inequality",
+    "exponential tail bound for bounded independent variables"
+  ],
+  "prerequisites": [
+    "independent identically distributed random variables",
+    "sample mean",
+    "probability inequalities"
+  ],
+  "callout_body": "假设概率空间$(\\Omega,\\mathcal{F},P)$上的随机变量$X_n$是独立同分布的，并且$X_n(\\omega)\\in [a,b]$对任意正整数n成立，$\\overline{X}_n$是前n个随机变量的算术平均值，$\\mu$是这列随机变量的均值，那么对于任意$\\varepsilon>0$都有:$$P\\left(|\\overline{X}_n-\\mu|\\geq \\varepsilon \\right)\\leq 2\\exp\\left(-\\frac{2n\\varepsilon^2}{(b-a)^2}\\right)$$"
+}

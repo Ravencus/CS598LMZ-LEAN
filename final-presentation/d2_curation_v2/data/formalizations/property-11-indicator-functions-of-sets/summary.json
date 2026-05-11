@@ -1,0 +1,24 @@
+{
+  "problem_id": "property-11-indicator-functions-of-sets",
+  "english_title": "Property 1.1: Indicator Functions of Sets",
+  "statement_en": "For sets $A,B \\subset X$, their indicator functions satisfy the identities\n$1_{A\\cap B}(x)=1_A(x)1_B(x)$,\n$1_{A\\cup B}(x)=1_A(x)+1_B(x)-1_A(x)1_B(x)$,\n$1_{A^c}(x)=1-1_A(x)$,\n$1_{A\\setminus B}(x)=1_A(x)(1-1_B(x))$,\nand\n$1_{A\\triangle B}(x)=1_A(x)+1_B(x)-2\\cdot 1_A(x)1_B(x)$.\nAlso, if $A+B:=\\{x+y:x\\in A,y\\in B\\}$, then\n$\\operatorname{supp}(1_A*1_B)\\subseteq \\overline{A+B}$.",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to synthesize instance of type class\n  HAdd (Set ℝ) (Set ℝ) ?m.42\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped Topology Pointwise\nopen MeasureTheory\n\nuniverse u\n\ntheorem indicator_set_identities (X : Type u) (A B : Set X) :\n    (∀ x : X,\n      Set.indicator (A ∩ B) (fun _ => (1 : ℤ)) x =\n        Set.indicator A (fun _ => (1 : ℤ)) x * Set.indicator B (fun _ => (1 : ℤ)) x) ∧\n    (∀ x : X,\n      Set.indicator (A ∪ B) (fun _ => (1 : ℤ)) x =\n        Set.indicator A (fun _ => (1 : ℤ)) x +\n          Set.indicator B (fun _ => (1 : ℤ)) x -\n            Set.indicator A (fun _ => (1 : ℤ)) x * Set.indicator B (fun _ => (1 : ℤ)) x) ∧\n    (∀ x : X,\n      Set.indicator Aᶜ (fun _ => (1 : ℤ)) x =\n        1 - Set.indicator A (fun _ => (1 : ℤ)) x) ∧\n    (∀ x : X,\n      Set.indicator (A \\ B) (fun _ => (1 : ℤ)) x =\n        Set.indicator A (fun _ => (1 : ℤ)) x *\n          (1 - Set.indicator B (fun _ => (1 : ℤ)) x)) ∧\n    (∀ x : X,\n      Set.indicator ((A \\ B) ∪ (B \\ A)) (fun _ => (1 : ℤ)) x =\n        Set.indicator A (fun _ => (1 : ℤ)) x +\n          Set.indicator B (fun _ => (1 : ℤ)) x -\n            2 * (Set.indicator A (fun _ => (1 : ℤ)) x * Set.indicator B (fun _ => (1 : ℤ)) x)) := by\n  sorry\n\ntheorem indicator_convolution_support_subset_closure_add\n    (A B : Set ℝ) (μ : Measure ℝ) :\n    Function.support\n        (fun x : ℝ =>\n          ∫ y, Set.indicator A (fun _ => (1 : ℝ)) y *\n            Set.indicator B (fun _ => (1 : ℝ)) (x - y) ∂μ) ⊆\n      closure (A + B) := by\n  sorry"
+}

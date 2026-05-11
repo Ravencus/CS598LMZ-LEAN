@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-122-divergence-of-the-harmonic-sequence",
+  "english_title": "Example 1.2.2: Divergence of the Harmonic Sequence",
+  "statement_en": "Define the harmonic sequence $$H_n:=\\sum_{k\\leq n}\\frac{1}{k}.$$ Prove that this sequence diverges.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\nnoncomputable def harmonicSeq (n : ℕ) : ℝ :=\n  Finset.sum (Finset.Icc 1 n) fun k => (1 : ℝ) / (k : ℝ)\n\ntheorem harmonic_sequence_diverges :\n    ¬ ∃ l : ℝ, Tendsto harmonicSeq atTop (nhds l) := by\n  sorry"
+}

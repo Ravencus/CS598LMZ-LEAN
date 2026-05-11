@@ -1,0 +1,21 @@
+{
+  "id": "proposition-112",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#3",
+  "english_title": "Proposition 1.1.2",
+  "statement_en": "$$S_N':=\\sum_{n=2}^{N}\\frac{1}{n(n-1)}<1$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "telescoping series",
+    "partial fraction decomposition"
+  ],
+  "prerequisites": [
+    "finite sums",
+    "rational identity manipulation"
+  ],
+  "callout_body": "$$S_N':=\\sum_{n=2}^{N}\\frac{1}{n(n-1)}<1$$"
+}

@@ -1,0 +1,2 @@
+Now I have all the lemmas confirmed. Let me submit my first proof attempt.
+The `push_neg` approach failed. Let me handle the negation manually.

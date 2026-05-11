@@ -1,0 +1,41 @@
+{
+  "problem_id": "mit-integration-competition",
+  "model": "claude-opus-4-7",
+  "condition": "with_sympy",
+  "outcome": "instruction_violation",
+  "overall_success": false,
+  "wall_seconds": 61.42,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 3,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": true,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": true,
+  "expected_theorem_name": "integral_sq_cantorFloorSeries",
+  "signature_ok": true,
+  "sympy_emitted": true,
+  "sympy_verified": false,
+  "n_errors": 0,
+  "first_error": null,
+  "total_cost_usd": 0.340856,
+  "total_tokens": 121560,
+  "sympy_witnesses": [
+    {
+      "block": {
+        "kind": "equality",
+        "expression": "9 * (Rational(1,4) * Sum(1/3**k, (k, 1, oo)).doit()**2 + Rational(1,4) * Sum(1/9**k, (k, 1, oo)).doit())",
+        "expected": "27/32"
+      },
+      "verifier": {
+        "correct": false,
+        "computed": null,
+        "error": "import_failed: No module named 'sympy'"
+      }
+    }
+  ],
+  "errors_only": []
+}

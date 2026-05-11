@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "problem-1-10",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_search_diff",
+  "evidence": "Both traces use the same decomposition: derive `∀ᵐ x ∂ μ.restrict E, ENNReal.ofReal (f x) = 0` from the zero restricted lintegral, then convert `ofReal` zero plus nonnegativity into `f x = 0`. The BIG model found the applicable lemma/signature `MeasureTheory.lintegral_eq_zero_iff'` with an explicit ",
+  "wall_seconds": 7.98
+}

@@ -1,0 +1,4 @@
+["cauchy-convergence-criterion-hub", "term-by-term-estimates-hub", "sequence-limits-via-piecewise-estimates-hub"]
+- cauchy-convergence-criterion-hub: The proof naturally establishes convergence by controlling tail behavior, often via limsup/liminf or Cauchy-style arguments for the recursively defined sequence.
+- term-by-term-estimates-hub: One needs pointwise bounds from the recurrence, such as upper bounds using monotonicity of `sqrt` and fixed-point comparisons around `4`.
+- sequence-limits-via-piecewise-estimates-hub: The core limit argument compares the sequence to simpler bounding quantities and squeezes liminf/limsup to the same value, yielding the final asymptotic limit.

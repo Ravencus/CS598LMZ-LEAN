@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_700fe315bd09.lean",
+      "line": 9,
+      "column": 74,
+      "severity": "error",
+      "message": "expected token"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_700fe315bd09.lean",
+      "line": 20,
+      "column": 23,
+      "severity": "error",
+      "message": "expected token\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_700fe315bd09.lean",
+      "line": 9,
+      "column": 74,
+      "severity": "error",
+      "message": "expected token"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_700fe315bd09.lean",
+      "line": 20,
+      "column": 23,
+      "severity": "error",
+      "message": "expected token\n"
+    }
+  ]
+}

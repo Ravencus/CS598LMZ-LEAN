@@ -1,0 +1,139 @@
+{
+  "note_title": "Re0微积分2：自然底数e及其快速计算",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分段估计",
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "a. 证明序列$$S_N:=\\sum_{n=0}^{N}\\frac{1}{n!}$$存在极限。\nb. 假设$S_N\\to e$，那么证明$$e=3-\\sum_{n\\geq 0}\\frac{1}{(n+1)(n+2)(n+2)!}$$\nc. 由上面给出近似计算$S_N$的极限$e$的更高效的方式(误差分析)。",
+      "position_char": 43,
+      "position_line": 7
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#2",
+      "type": "note",
+      "title": "命题1.1.1",
+      "body": "对任意的自然数$N$都成立不等式：$$S_N<3$$",
+      "position_char": 633,
+      "position_line": 24
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#3",
+      "type": "note",
+      "title": "命题1.1.2",
+      "body": "$$S_N':=\\sum_{n=2}^{N}\\frac{1}{n(n-1)}<1$$",
+      "position_char": 1071,
+      "position_line": 31
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#4",
+      "type": "note",
+      "title": "级数的定义",
+      "body": "定义一个和式表达的序列$S_N:=\\sum_{n=r}^{N}a_n$，我们可以用表达式$$\\sum_{n=r}^{\\infty}a_n$$来表示序列$\\{S_N\\}_{n=r}^{\\infty}$。如果序列$S_N$的极限存在，即存在一个数$A$满足，对任意的$\\varepsilon>0$存在一个正整数$N_{\\varepsilon}$使得任意$N>N_{\\varepsilon}$都有不等式$$\\left|\\sum_{n=r}^{N}a_n-A\\right|<\\varepsilon$$成立。那么此时，$\\sum_{n=r}^{\\infty}a_n$也可以表达序列$S_N$的极限，即写作$$\\sum_{n=r}^{\\infty}a_n=A$$此时我们说级数$\\sum_{n=r}^{\\infty}a_n$收敛到$A$。当然这个级数代表的序列$\\{S_N\\}_{n=r}^{\\infty}$其极限也可能不存在，那么此时$\\sum_{n=r}^{\\infty}a_n$当然不能用于替代任何实数。",
+      "position_char": 1795,
+      "position_line": 43
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#5",
+      "type": "note",
+      "title": "命题1.2.1",
+      "body": "级数$$\\sum_{n\\geq 0}\\frac{1}{(n+1)(n+2)(n+2)!}$$是收敛的，也就是说$T_N$的极限是存在的。",
+      "position_char": 2441,
+      "position_line": 48
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#6",
+      "type": "note",
+      "title": "命题1.2.2",
+      "body": "$$\\lim_{N\\to \\infty }3-T_N=\\lim_{N\\to \\infty}S_N$$",
+      "position_char": 3018,
+      "position_line": 58
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#7",
+      "type": "note",
+      "title": "命题1.2.3",
+      "body": "下面的等式对于$N\\geq 2$恒成立：$$1+\\frac{1}{1!}+\\cdots+\\frac{1}{N!}+\\frac{1}{NN!}=3-\\frac{1}{1\\cdot 2\\cdot 2!}-\\cdots \\frac{1}{(N-1)NN!}$$",
+      "position_char": 3116,
+      "position_line": 63
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#8",
+      "type": "note",
+      "title": "命题1.2.6(练习1.2.5)",
+      "body": "序列如果极限存在的话，那么其子列的极限也存在并且和原来的序列的极限一致。",
+      "position_char": 3733,
+      "position_line": 77
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#9",
+      "type": "note",
+      "title": "序列的子列的定义",
+      "body": "1. 序列:所谓序列$\\{a_n\\}_{n\\in\\mathbb{N}}$是一个函数$$a:\\mathbb{N}\\to \\mathbb{C}$$\n2. $\\{a_n\\}_{n\\in\\mathbb{N}}$的子列$\\{a_{n_k}\\}_{k\\in\\mathbb{N}}$是从原来的序列当中选取若干元素构成的新的序列，其中$\\{n_k\\}_{k\\in\\mathbb{N}}$是一个严格单调增加的自然数集中的序列。",
+      "position_char": 3872,
+      "position_line": 82
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#10",
+      "type": "example",
+      "title": "例子1.2.7",
+      "body": "序列$a_n = n$,而$a_{2k}$就是原来序列的子列。相当于是从$1,2,\\cdots n\\cdots$当中挑选出偶数的元素，并按照在原来的序列$a_n$当中的顺序排列成的新的序列。此时的$n_k:=2k$，这是一个取值为自然数，并且严格单调增加的序列。",
+      "position_char": 4120,
+      "position_line": 88
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#11",
+      "type": "example",
+      "title": "例子1.2.8",
+      "body": "在本节的问题当中出现了序列$T_N:=\\sum_{n=0}^{N}\\frac{1}{(n+1)(n+2)(n+2)!}$,而$T_{N-2}$显然是其一个子列。按照子列的定义来表述，我们可以引入变量$N_k:=k-2$,从而得到子列$T_{N_k}$。",
+      "position_char": 4276,
+      "position_line": 91
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#12",
+      "type": "question",
+      "title": "问题2.0",
+      "body": "1. 分析绝对误差$$R_N:=|S_N-e|$$\n2. 分析绝对误差$$R_N':=|3-T_N-e|$$\n3. 对比两个绝对误差$R_N,R_N'$。",
+      "position_char": 4709,
+      "position_line": 103
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#13",
+      "type": "note",
+      "title": "命题2.1.1",
+      "body": "从定义上不难发现$$R_N=\\sum_{n>N}\\frac{1}{n!}$$那么我们断言，当$N$足够大的时候，存在常数$C_1,C_2$使得$$C_1\\frac{1}{N!N}\\leq R_N\\leq C_2\\frac{1}{N!N}$$记作$$R_N = \\Theta\\left(\\frac{1}{N!N}\\right)$$",
+      "position_char": 4988,
+      "position_line": 112
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#14",
+      "type": "tip",
+      "title": "该想法的版本2:把无穷问题转换为有限问题",
+      "body": "1. 如果要思考一个命题$S_{\\infty}$，此命题涉及一个对象$x_{\\infty}$。\n2. 我们不妨去考虑一个更弱的命题$S_{N}$或者$S_h$，这个命题涉及一个对象$x_{N}$或者$x_h$,这是一个有限的且具体的问题。但是如果这个有限的问题，对于一定程度上任意的参数$N$或者$h$成立那么原来的命题被解决/证明。",
+      "position_char": 5291,
+      "position_line": 117
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#15",
+      "type": "note",
+      "title": "命题2.1.2(练习)",
+      "body": "对于足够大的$n$,两个实的序列满足$$x_n\\geq y_n$$并且两个序列的极限都存在，那么一定有$$\\lim_{n\\to \\infty} x_n \\geq \\lim_{n\\to \\infty} y_n$$",
+      "position_char": 5906,
+      "position_line": 125
+    },
+    {
+      "id": "Re0微积分2:自然底数e及其快速计算#16",
+      "type": "note",
+      "title": "命题2.2.1(练习)",
+      "body": "$$R_N':=\\sum_{n>N}\\frac{1}{(n+1)(n+2)(n+2)!}$$那么对于足够大的$N$由$$R_N' = \\Theta\\left(\\frac{1}{N!N^5}\\right)$$",
+      "position_char": 6968,
+      "position_line": 135
+    }
+  ]
+}

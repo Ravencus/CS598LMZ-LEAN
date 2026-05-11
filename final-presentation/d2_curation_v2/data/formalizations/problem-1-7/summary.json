@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-1-7",
+  "english_title": "Problem 1",
+  "statement_en": "Let $$S_n:=\\sum_{k\\leq n}\\sin(k/n^2).$$ Find $$\\lim_{n\\to \\infty }S_n.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sum_sin_div_nsq_tendsto_half :\n    Filter.Tendsto\n      (fun n : ℕ => Finset.sum (Finset.range (n + 1)) (fun k => Real.sin ((k : ℝ) / (n : ℝ) ^ 2)))\n      Filter.atTop\n      (nhds ((1 : ℝ) / 2)) := by\n  sorry"
+}

@@ -1,0 +1,23 @@
+I’m checking the theorem against Mathlib and will iterate with the Lean checker until it compiles.
+The proof should be direct: strict monotonicity is just arithmetic on `Nat`, and the second conjunct should reduce by `rfl`. I’m checking that minimal version now.
+`omega` is too weak here. I’m checking the exact Nat multiplication monotonicity lemma names and then I’ll finish with a direct rewrite.
+I’m switching from guessing exact lemma names to searching Mathlib for the monotonicity theorem that matches `n ↦ 2 * n`.
+I found a bundled theorem that matches this exactly: `StrictMono.const_mul'`. I’m trying the proof by instantiating it with the identity function and `2`.
+The generic theorem route is uncertain, so I’m checking a fully explicit Nat inequality proof directly.
+I found that `Nat.mul_lt_mul_left` is used as a rewrite lemma in Mathlib, so I’m trying the goal rewrite version next.
+The rewrite leaves only the positivity side condition `0 < 2`, so `decide` should close it. I’m checking the full theorem with that.
+I found the directional lemma: `Nat.mul_lt_mul_left` proves `a * 2 < b * 2` from `a < b`. I’m trying that with commutativity to match `2 * a < 2 * b`.
+I’ve got the right structural lemma now. I’m trying the shortest version: multiply the inequality on the right and commute the factors.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem evenIndexedSubsequenceOfNaturalSequence :
+    StrictMono (fun k : ℕ => 2 * k) ∧
+      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by
+  constructor
+  · intro a b h
+    exact (Nat.mul_lt_mul_left (by decide)).2 h
+  · intro k
+    rfl
+```

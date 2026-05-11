@@ -1,0 +1,23 @@
+{
+  "id": "weyl-criterion",
+  "type": "problem",
+  "source_note": "从一个求极限问题引入Weyl判别",
+  "english_source_note": "Introducing Weyl's Criterion via a Limit Problem",
+  "callout_id": "从一个求极限问题引入Weyl判别#2",
+  "english_title": "Weyl Criterion",
+  "statement_en": "If $s_n$ is equidistributed on the closed interval $[a,b]$, then\n$$\\frac{1}{N}\\sum_{n=1}^{N}f(s_n)\\to\n\\frac{1}{b-a}\\int_{a}^{b}f(x)dx$$\nfor every continuous function $f$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "equidistribution",
+    "Weyl criterion",
+    "limit of Cesaro averages"
+  ],
+  "prerequisites": [
+    "uniform distribution",
+    "continuity on closed intervals",
+    "Riemann integration"
+  ],
+  "callout_body": "如果$s_n$在闭区间$[a,b]$上**均匀分布(equidistributed)**，那么$$\\frac{1}{N}\\sum_{n=1}^{N}f(s_n)\\to\n\\frac{1}{b-a}\\int_{a}^{b}f(x)dx$$此结果对任意连续函数$f$成立。"
+}

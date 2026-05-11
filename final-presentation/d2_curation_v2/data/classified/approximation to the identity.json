@@ -1,0 +1,180 @@
+{
+  "note_title": "approximation to the identity",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计"
+  ],
+  "callouts": [
+    {
+      "id": "approximation to the identity#1",
+      "type": "note",
+      "title": "Approximate identity(逼近单位)",
+      "body": "对于一个$\\mathbb{R}^n$上的可积的函数族$K_{\\lambda}(x)\\in L(\\mathbb{R}^d),\\lambda>0$:\n1.  函数积分为1：$\\int_{\\mathbb{R}^d}K_{\\lambda}(x)dx=1$ \n2.  绝对值的积分的一致有界性：$\\int_{\\mathbb{R}^d}|K_{\\lambda}(x)|dx\\leq A$并且$A$与参数$\\lambda$无关。\n3. 绝对值积分的任意尾部都衰减到0：对任意的$\\delta>0$，$$\\int_{|x|\\geq\\delta}|K_{\\lambda}(x)|dx\\to0,\\text{ as }\\lambda\\to\\infty$$",
+      "position_char": 33,
+      "position_line": 6,
+      "classification_result": {
+        "id": "approximation to the identity#1",
+        "classification": "definition",
+        "english_title": "Approximate Identity",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "approximation to the identity#2",
+      "type": "note",
+      "title": "代数",
+      "body": "如果给一个线性空间配备一个封闭且具有双线性性的二元运算，那么我们这是一个\"代数\"(algebra).假设我们用$\\cdot :V\\times V \\to \\times V$表示这个具有双线性性的封闭的线性空间$V$上的二元运算，下面称其为乘法，那么\n* **如果乘法满足结合律**:称之为结合代数。即如果$a,b,c \\in V$那么$$(a\\cdot b)\\cdot c = a \\cdot (b\\cdot c)$$\n* **如果乘法具有单位元**：称之为有单位的代数。也就是说存在一个$I \\in V$使得$a \\cdot I = a,\\forall a \\in V$.\n* **如果乘法具有交换律**: 那么称之为交换代数，也就是说$\\forall a,b \\in V$那么$$a\\cdot b = b \\cdot a$$",
+      "position_char": 907,
+      "position_line": 16,
+      "classification_result": {
+        "id": "approximation to the identity#2",
+        "classification": "definition",
+        "english_title": "Algebra",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "approximation to the identity#3",
+      "type": "note",
+      "title": "欧氏空间上卷积的Young不等式",
+      "body": "$1\\leq p,q,r \\leq \\infty,\\frac{1}{p}+\\frac{1}{q} = \\frac{1}{r} + 1$,那么$$||f*g||_{L^r}\\leq ||g||_{L^p}||f||_{L^q}$$",
+      "position_char": 1588,
+      "position_line": 27,
+      "classification_result": {
+        "id": "approximation to the identity#3",
+        "classification": "problem",
+        "english_title": "Young's Inequality for Convolution on Euclidean Space",
+        "if_problem": {
+          "statement_en": "Let $1\\leq p,q,r \\leq \\infty$ satisfy $\\frac{1}{p}+\\frac{1}{q} = \\frac{1}{r} + 1$. Then\n$$||f*g||_{L^r}\\leq ||g||_{L^p}||f||_{L^q}.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Holder's inequality",
+            "Minkowski integral inequality",
+            "convolution estimates"
+          ],
+          "prerequisites": [
+            "Lp spaces",
+            "convolution",
+            "Holder's inequality"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "approximation to the identity#4",
+      "type": "note",
+      "title": "逼近单位的三个基本结果",
+      "body": "1. $f \\in L^p(\\mathbb{R}^d),1\\leq p\\leq \\infty$，那么$f * K_{\\lambda}\\in L^p(\\mathbb{R}^d)$并且$$||f * K_{\\lambda}-f||_{L^p}\\to 0,\\text{ as }\\lambda\\to \\infty$$\n2. 如果函数$f$在$\\mathbb{R}^d$上一致连续并且有界，那么$f*K_{\\lambda}$也是一致连续并且有界的，并且$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty$$\n3. 如果函数$f$在$\\mathbb{R}^d$上有界并且在开集$\\Omega\\subset \\mathbb{R}^d$上连续，那么$f*K_{\\lambda}$在$\\mathbb{R}^d$上有界且一致连续，此外对于任意的紧子集$D \\subset \\Omega$都有$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty$$",
+      "position_char": 2190,
+      "position_line": 44,
+      "classification_result": {
+        "id": "approximation to the identity#4",
+        "classification": "problem",
+        "english_title": "Three Basic Results for Approximate Identities",
+        "if_problem": {
+          "statement_en": "Let $\\{K_{\\lambda}\\}$ be an approximate identity.\n1. If $f \\in L^p(\\mathbb{R}^d)$ with $1\\leq p\\leq \\infty$, then $f * K_{\\lambda}\\in L^p(\\mathbb{R}^d)$ and\n$$||f * K_{\\lambda}-f||_{L^p}\\to 0,\\text{ as }\\lambda\\to \\infty.$$\n2. If $f$ is bounded and uniformly continuous on $\\mathbb{R}^d$, then $f*K_{\\lambda}$ is also bounded and uniformly continuous, and\n$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty.$$\n3. If $f$ is bounded on $\\mathbb{R}^d$ and continuous on an open set $\\Omega\\subset \\mathbb{R}^d$, then $f*K_{\\lambda}$ is bounded and uniformly continuous on $\\mathbb{R}^d$; moreover, for every compact set $D \\subset \\Omega$,\n$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "approximate identity decomposition",
+            "uniform continuity estimates",
+            "tail control of kernels",
+            "Young's inequality"
+          ],
+          "prerequisites": [
+            "approximate identities",
+            "Lp spaces",
+            "uniform continuity",
+            "convolution"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "approximation to the identity#5",
+      "type": "note",
+      "title": "命题1.5.1:在函数连续点处点态收敛",
+      "body": "设$f\\in L^{\\infty}(\\mathbb{R}^n\\to \\mathbb{R})$，$\\{K_{\\lambda}\\}$是逼近单位元。若$x_0\\in \\mathbb{R}^n$是$f$的一个连续点，即$\\lim_{x\\to x_0}f(x)=f(x_0)$则$$\\lim_{\\lambda\\to \\infty}f*K_{\\lambda}(x)=f(x_0)$$",
+      "position_char": 5752,
+      "position_line": 94,
+      "classification_result": {
+        "id": "approximation to the identity#5",
+        "classification": "problem",
+        "english_title": "Proposition 1.5.1: Pointwise Convergence at Points of Continuity",
+        "if_problem": {
+          "statement_en": "Let $f\\in L^{\\infty}(\\mathbb{R}^n\\to \\mathbb{R})$, and let $\\{K_{\\lambda}\\}$ be an approximate identity. If $x_0\\in \\mathbb{R}^n$ is a point of continuity of $f$, that is, $\\lim_{x\\to x_0}f(x)=f(x_0)$, then\n$$\\lim_{\\lambda\\to \\infty}f*K_{\\lambda}(x_0)=f(x_0).$$",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "split into near and far contributions",
+            "continuity at a point",
+            "tail decay of approximate identities"
+          ],
+          "prerequisites": [
+            "continuity",
+            "approximate identities",
+            "convolution",
+            "bounded functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "approximation to the identity#6",
+      "type": "note",
+      "title": "好的逼近单位元",
+      "body": "1.  函数积分为1：$\\int_{\\mathbb{R}^d}K_{\\lambda}(x)dx=1$ \n2.  函数全局的控制：$K_{\\lambda}(x)=O(\\lambda^{n})$\n3.  尾部的控制:\n$$K_{\\lambda}(x)=O\\left(\\frac{1}{\\lambda^{\\varepsilon_0} |x|^{n+\\varepsilon_0}}\\right)$$",
+      "position_char": 7464,
+      "position_line": 108,
+      "classification_result": {
+        "id": "approximation to the identity#6",
+        "classification": "definition",
+        "english_title": "Good Approximate Identity",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "approximation to the identity#7",
+      "type": "note",
+      "title": "几乎处处收敛的性质",
+      "body": "如果$K_{\\lambda}$是$L^1(\\mathbb{R}^d)$当中的好的逼近单位元,$f\\in L^p(\\mathbb{R}^d),1\\leq p\\leq \\infty$那么$$f*K_{\\lambda}(x)\\to f(x) \\text{ for a.e. }x$$",
+      "position_char": 8583,
+      "position_line": 126,
+      "classification_result": {
+        "id": "approximation to the identity#7",
+        "classification": "problem",
+        "english_title": "Almost Everywhere Convergence Property",
+        "if_problem": {
+          "statement_en": "If $K_{\\lambda}$ is a good approximate identity in $L^1(\\mathbb{R}^d)$ and $f\\in L^p(\\mathbb{R}^d)$ with $1\\leq p\\leq \\infty$, then\n$$f*K_{\\lambda}(x)\\to f(x) \\text{ for a.e. }x.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "maximal function estimates",
+            "Lebesgue differentiation principle",
+            "approximate identities"
+          ],
+          "prerequisites": [
+            "Lp spaces",
+            "almost everywhere convergence",
+            "Hardy-Littlewood maximal function",
+            "good approximate identities"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"approximation to the identity#1\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Approximate Identity\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"approximation to the identity#2\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Algebra\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"approximation to the identity#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Young's Inequality for Convolution on Euclidean Space\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $1\\\\leq p,q,r \\\\leq \\\\infty$ satisfy $\\\\frac{1}{p}+\\\\frac{1}{q} = \\\\frac{1}{r} + 1$. Then\\n$$||f*g||_{L^r}\\\\leq ||g||_{L^p}||f||_{L^q}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Holder's inequality\",\n        \"Minkowski integral inequality\",\n        \"convolution estimates\"\n      ],\n      \"prerequisites\": [\n        \"Lp spaces\",\n        \"convolution\",\n        \"Holder's inequality\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"approximation to the identity#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Three Basic Results for Approximate Identities\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $\\\\{K_{\\\\lambda}\\\\}$ be an approximate identity.\\n1. If $f \\\\in L^p(\\\\mathbb{R}^d)$ with $1\\\\leq p\\\\leq \\\\infty$, then $f * K_{\\\\lambda}\\\\in L^p(\\\\mathbb{R}^d)$ and\\n$$||f * K_{\\\\lambda}-f||_{L^p}\\\\to 0,\\\\text{ as }\\\\lambda\\\\to \\\\infty.$$\\n2. If $f$ is bounded and uniformly continuous on $\\\\mathbb{R}^d$, then $f*K_{\\\\lambda}$ is also bounded and uniformly continuous, and\\n$$f * K_{\\\\lambda}\\\\rightrightarrows f \\\\text{ as }\\\\lambda \\\\to \\\\infty.$$\\n3. If $f$ is bounded on $\\\\mathbb{R}^d$ and continuous on an open set $\\\\Omega\\\\subset \\\\mathbb{R}^d$, then $f*K_{\\\\lambda}$ is bounded and uniformly continuous on $\\\\mathbb{R}^d$; moreover, for every compact set $D \\\\subset \\\\Omega$,\\n$$f * K_{\\\\lambda}\\\\rightrightarrows f \\\\text{ as }\\\\lambda \\\\to \\\\infty.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"approximate identity decomposition\",\n        \"uniform continuity estimates\",\n        \"tail control of kernels\",\n        \"Young's inequality\"\n      ],\n      \"prerequisites\": [\n        \"approximate identities\",\n        \"Lp spaces\",\n        \"uniform continuity\",\n        \"convolution\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"approximation to the identity#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1.5.1: Pointwise Convergence at Points of Continuity\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f\\\\in L^{\\\\infty}(\\\\mathbb{R}^n\\\\to \\\\mathbb{R})$, and let $\\\\{K_{\\\\lambda}\\\\}$ be an approximate identity. If $x_0\\\\in \\\\mathbb{R}^n$ is a point of continuity of $f$, that is, $\\\\lim_{x\\\\to x_0}f(x)=f(x_0)$, then\\n$$\\\\lim_{\\\\lambda\\\\to \\\\infty}f*K_{\\\\lambda}(x_0)=f(x_0).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"split into near and far contributions\",\n        \"continuity at a point\",\n        \"tail decay of approximate identities\"\n      ],\n      \"prerequisites\": [\n        \"continuity\",\n        \"approximate identities\",\n        \"convolution\",\n        \"bounded functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"approximation to the identity#6\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Good Approximate Identity\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"approximation to the identity#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Almost Everywhere Convergence Property\",\n    \"if_problem\": {\n      \"statement_en\": \"If $K_{\\\\lambda}$ is a good approximate identity in $L^1(\\\\mathbb{R}^d)$ and $f\\\\in L^p(\\\\mathbb{R}^d)$ with $1\\\\leq p\\\\leq \\\\infty$, then\\n$$f*K_{\\\\lambda}(x)\\\\to f(x) \\\\text{ for a.e. }x.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"maximal function estimates\",\n        \"Lebesgue differentiation principle\",\n        \"approximate identities\"\n      ],\n      \"prerequisites\": [\n        \"Lp spaces\",\n        \"almost everywhere convergence\",\n        \"Hardy-Littlewood maximal function\",\n        \"good approximate identities\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

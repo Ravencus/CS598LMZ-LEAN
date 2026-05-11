@@ -1,0 +1,90 @@
+{
+  "note_title": "黎曼积分的定义以及黎曼可积的判别",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#1",
+      "type": "note",
+      "title": "黎曼和的概念",
+      "body": "对于$[a,b]$上的实值函数$f$而言，点列$P$ $$a=x_0<x_1<\\cdots <x_n=b$$称之为$[a,b]$的一个划分(partition)，记$|I_i|=x_i-x_{i-1}$为第$i$个子区间的长度，$\\xi_i^{*}\\in [x_{i-1},x_i]$是当中任意的一点,记所有固定的这样的每个区间的代表元的集合为$\\xi:=\\{\\xi_1^{*},...,\\xi_n^{*}\\}$。此时我们称$(P,\\xi)$是闭区间$[a,b]$上的一个带标志点的划分（tagged partition）。那么函数$f$在区间$[a,b]$上关于带标志点的划分$(P,\\xi)$的黎曼和定义为:$$S_f(P,\\xi):=\\sum_{i=}^{n} f(\\xi_i^{*})|I_i|$$",
+      "position_char": 64,
+      "position_line": 8
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#2",
+      "type": "note",
+      "title": "实数的闭区间上黎曼积分的定义",
+      "body": "对任意的$\\varepsilon>0$，都存在一个$\\delta_{\\varepsilon}$使得任意$\\lambda(P)<\\delta_{\\varepsilon}$的带标志点的划分$(P,\\xi)$都有$$|I-S_f(P,\\xi)|<\\varepsilon$$此时函数$f$被称之为区间$I$上的黎曼可积函数，其黎曼和的极限就称之为函数在闭区间$[a,b]$上的黎曼积分。用符号表示为$$\\int_{a}^{b}f(x)\\,dx:=\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)$$",
+      "position_char": 487,
+      "position_line": 13
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#3",
+      "type": "note",
+      "title": "黎曼和的一般定义",
+      "body": "令$a:=(a_1,\\cdots,a_n),b:=(b_1,\\cdots,b_n)$是$\\mathbb{R}^n$当中的两个向量，定义$$I_{a,b}:=\\{x=(x_1,\\cdots,x_n)\\in \\mathbb{R}^n:a_i\\leq x_i\\leq b_i\\}$$为一个超长方体。$$|I|=\\prod_{i=1}^n(b_i-a_i)$$称之为长方体$I$的体积。\n\n$P$称之为$I_{a,b}$的一个划分，如果我们可以把$I$表示为一系列有限个更小的互相不相交的子超立方体的并，即$$I_{a,b}=\\bigcup_{k=1}^mI_k$$如果我们在每个$I_k$当中选取一个点$\\xi_k\\in \\mathbb{R}^n$，并且令$\\xi:=\\{\\xi_1,\\cdots,\\xi_k\\}$，那么我们称$(P,\\xi)$为$I_{a,b}$上带标志点的划分。\n\n现在考虑$I_{a,b}\\to \\mathbb{R}$上定义的有界函数$f(x)$，我们把和$$S_f(P,\\xi):=\\sum_{k=1}^m f(\\xi_k)|I_k|$$称之为函数$f$在区间$I_{a,b}$上的按照带标志点的划分$(P,\\xi)$的黎曼和。",
+      "position_char": 1057,
+      "position_line": 19
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#4",
+      "type": "note",
+      "title": "实数的闭区间上黎曼积分的定义",
+      "body": "$$\\int_{I_{a,b}}f(x)\\,dx:=\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)$$或者用$\\varepsilon-\\delta$的的语言来表述就是:\n\n对任意的$\\varepsilon>0$，都存在一个$\\delta_{\\varepsilon}$使得任意$\\lambda(P)<\\delta_{\\varepsilon}$的带标志点的划分$(P,\\xi)$都有$$|I-S_f(P,\\xi)|<\\varepsilon$$此时$I$就称之为函数在超长方体$I_{a,b}\\subset \\mathbb{R}^n$上的黎曼积分。",
+      "position_char": 1811,
+      "position_line": 31
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#5",
+      "type": "note",
+      "title": "黎曼可积的定义",
+      "body": "对于$I_{a,b}$上的黎曼可积的有界函数$f$,如果极限$$\\lim_{P;\\lambda(P)\\to 0}S_f(P,\\xi)$$是存在的，那么就称之为$I_{a,b}$上的黎曼可积函数。",
+      "position_char": 2163,
+      "position_line": 38
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#6",
+      "type": "note",
+      "title": "定理2.1.1:黎曼可积的柯西判别",
+      "body": "函数$f:[a,b]\\to \\mathbb{R}$是黎曼可积的，当且仅当对任意$\\varepsilon>0$,存在一个$\\delta_{\\varepsilon}>0$使得任意满足$\\lambda(P'),\\lambda(P'')<\\delta_{\\varepsilon}$的划分$(P',\\xi'),(P'',\\xi'')$都有$$|S_f(P',\\xi')-S_f(P'',\\xi'')|<\\varepsilon$$",
+      "position_char": 2544,
+      "position_line": 49
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#7",
+      "type": "note",
+      "title": "定理2.1.2：黎曼可积的夹逼定理",
+      "body": "函数$f:[a,b]\\to \\mathbb{R}$黎曼可积，当且仅当对任意的$\\varepsilon>0$存在两个黎曼可积函数$\\alpha_{\\varepsilon},\\beta_{\\varepsilon}$满足$$\\alpha_{\\varepsilon}\\leq f\\leq \\beta_{\\varepsilon}$$并且$$\\left|\\int_a^b \\alpha_{\\varepsilon}(x)-\\beta_{\\varepsilon}\\,dx\\right|<\\varepsilon$$",
+      "position_char": 2803,
+      "position_line": 54
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#8",
+      "type": "note",
+      "title": "定理2.2.3:黎曼判别",
+      "body": "一个有界函数$f$在闭区间$[a,b]$上黎曼可积，当且仅当对任意的$\\varepsilon>0$存在一个$\\delta_{\\varepsilon}>0$使得对任意的满足$\\lambda(P)<\\delta_{\\varepsilon}$都有$$\\sum_{i=1}^n \\omega_f([x_{i-1},x_i])(x_i-x_{i-1})<\\varepsilon$$",
+      "position_char": 4123,
+      "position_line": 67
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#9",
+      "type": "note",
+      "title": "函数黎曼可积的达布等价条件",
+      "body": "长方体$I_{a,b}\\subset \\mathbb{R}^n$上的函数$f$黎曼可积，等价于，对任意的$\\varepsilon>0$存在划分$P_{\\varepsilon}$从而使得$$\\sum_{k=1}^{n_{\\varepsilon}} (M_k-m_k)|I_k|$$其中$\\{I_k\\}_{k=1}^{n_{\\varepsilon}}$是划分$P_{\\varepsilon}$产生的子长方体（$\\mathbb{R}$上的时候称之为区间，有时候为了方便都统一称之为区间），$M_k,m_k$分别是$I_k$上函数$f$的上确界和下确界。",
+      "position_char": 4425,
+      "position_line": 74
+    },
+    {
+      "id": "黎曼积分的定义以及黎曼可积的判别#10",
+      "type": "note",
+      "title": "黎曼可积的Lebesgue等价条件，Lebesgue& Vitali 1907",
+      "body": "闭区间$[a,b]$上的有界函数$f$黎曼可积当且仅当函数$f$是在此闭区间上几乎处处连续的。",
+      "position_char": 4747,
+      "position_line": 79
+    }
+  ]
+}

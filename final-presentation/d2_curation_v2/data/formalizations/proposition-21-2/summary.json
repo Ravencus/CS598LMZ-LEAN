@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-21-2",
+  "english_title": "Proposition 2.1",
+  "statement_en": "Let $a_n$ be a nonnegative nonincreasing real sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ diverges. Then the series $\\sum_{n\\geq 1} \\min\\{a_n,1/n^p\\}$ satisfies:\n1. it diverges for $0<p\\leq 1$;\n2. it converges for $p>1$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem min_with_p_series_divergence_convergence\n    (a : ℕ → ℝ)\n    (ha_nonneg : ∀ n : ℕ, 0 ≤ a n)\n    (ha_nonincreasing : ∀ n : ℕ, a (n + 1) ≤ a n)\n    (ha_diverges : ¬ Summable (fun n : ℕ => a (n + 1))) :\n    (∀ p : ℝ, 0 < p → p ≤ 1 →\n      ¬ Summable (fun n : ℕ => min (a (n + 1)) (1 / Real.rpow (n + 1 : ℝ) p))) ∧\n    (∀ p : ℝ, 1 < p →\n      Summable (fun n : ℕ => min (a (n + 1)) (1 / Real.rpow (n + 1 : ℝ) p))) := by\n  sorry"
+}

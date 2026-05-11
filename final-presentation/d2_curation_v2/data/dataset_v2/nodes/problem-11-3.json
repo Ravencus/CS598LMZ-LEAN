@@ -1,0 +1,23 @@
+{
+  "id": "problem-11-3",
+  "type": "problem",
+  "source_note": "Kronecker定理，Dirichlet定理及其应用",
+  "english_source_note": "Kronecker's Theorem, Dirichlet's Theorem, and Applications",
+  "callout_id": "Kronecker定理,Dirichlet定理及其应用#1",
+  "english_title": "Problem 1.1",
+  "statement_en": "Prove that the set formed by the sequence $\\eta_n = \\left\\{\\frac{n}{2\\pi}\\right\\}$ is dense in the interval $[0,1]$, where $\\{x\\}$ denotes the fractional part of the real number $x$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "density modulo 1",
+    "irrationality of $\\frac{1}{2\\pi}$",
+    "Kronecker theorem"
+  ],
+  "prerequisites": [
+    "fractional part",
+    "dense subsets of $[0,1]$",
+    "irrational numbers"
+  ],
+  "callout_body": "证明，序列$\\eta_n = \\left\\{\\frac{n}{2\\pi}\\right\\}$形成的集合作为$[0,1]$区间当中的稠密子集。其中$\\{x\\}$表示实数$x$的小数部分。"
+}

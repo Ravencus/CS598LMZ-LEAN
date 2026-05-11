@@ -1,0 +1,23 @@
+{
+  "id": "problem-1-2",
+  "type": "problem",
+  "source_note": "n个连续的阶乘之积有多少个因子",
+  "english_source_note": "How Many Divisors in a Product of n Consecutive Factorials",
+  "callout_id": "n个连续的阶乘之积有多少个因子#1",
+  "english_title": "Problem 1",
+  "statement_en": "Let $d(n)$ denote the number of positive divisors of the integer $n$, and define $$D(n):=d(1!\\cdot 2!\\cdots n!).$$ Find the limit $$\\lim_{n\\to \\infty}D(n)^{1/n}.$$",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "number theory",
+  "key_techniques": [
+    "prime factorization of factorial products",
+    "asymptotic analysis of divisor-counting functions",
+    "prime number theorem"
+  ],
+  "prerequisites": [
+    "divisor function",
+    "factorization of factorials via prime valuations",
+    "basic asymptotic notation"
+  ],
+  "callout_body": "函数$d(n)$表示整数$n$的因子的个数，定义$$D(n):=d(1!\\cdot 2!\\cdots n!)$$求极限$$\\lim_{n\\to \\infty}D(n)^{1/n}$$"
+}

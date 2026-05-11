@@ -1,0 +1,71 @@
+{
+  "note_title": "从一个求极限问题引入Weyl判别",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "从一个求极限问题引入Weyl判别#1",
+      "type": "question",
+      "title": "问题",
+      "body": "求极限\n$$\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\to \\text{ ? }$$",
+      "position_char": 51,
+      "position_line": 8,
+      "classification_result": {
+        "id": "从一个求极限问题引入Weyl判别#1",
+        "classification": "problem",
+        "english_title": "Problem",
+        "if_problem": {
+          "statement_en": "Find the limit\n$$\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\to \\text{ ? }$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "equidistribution",
+            "Weyl criterion",
+            "averaging of sequences"
+          ],
+          "prerequisites": [
+            "uniform distribution mod 1",
+            "basic properties of continuous functions",
+            "integration of trigonometric functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从一个求极限问题引入Weyl判别#2",
+      "type": "note",
+      "title": "Weyl判别",
+      "body": "如果$s_n$在闭区间$[a,b]$上**均匀分布(equidistributed)**，那么$$\\frac{1}{N}\\sum_{n=1}^{N}f(s_n)\\to\n\\frac{1}{b-a}\\int_{a}^{b}f(x)dx$$此结果对任意连续函数$f$成立。",
+      "position_char": 2208,
+      "position_line": 38,
+      "classification_result": {
+        "id": "从一个求极限问题引入Weyl判别#2",
+        "classification": "problem",
+        "english_title": "Weyl Criterion",
+        "if_problem": {
+          "statement_en": "If $s_n$ is equidistributed on the closed interval $[a,b]$, then\n$$\\frac{1}{N}\\sum_{n=1}^{N}f(s_n)\\to\n\\frac{1}{b-a}\\int_{a}^{b}f(x)dx$$\nfor every continuous function $f$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "equidistribution",
+            "Weyl criterion",
+            "limit of Cesaro averages"
+          ],
+          "prerequisites": [
+            "uniform distribution",
+            "continuity on closed intervals",
+            "Riemann integration"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"从一个求极限问题引入Weyl判别#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem\",\n    \"if_problem\": {\n      \"statement_en\": \"Find the limit\\n$$\\\\frac{1}{N}\\\\sum_{n=1}^{N}|\\\\cos(n^2)|\\\\to \\\\text{ ? }$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"equidistribution\",\n        \"Weyl criterion\",\n        \"averaging of sequences\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution mod 1\",\n        \"basic properties of continuous functions\",\n        \"integration of trigonometric functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从一个求极限问题引入Weyl判别#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Weyl Criterion\",\n    \"if_problem\": {\n      \"statement_en\": \"If $s_n$ is equidistributed on the closed interval $[a,b]$, then\\n$$\\\\frac{1}{N}\\\\sum_{n=1}^{N}f(s_n)\\\\to\\n\\\\frac{1}{b-a}\\\\int_{a}^{b}f(x)dx$$\\nfor every continuous function $f$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"equidistribution\",\n        \"Weyl criterion\",\n        \"limit of Cesaro averages\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution\",\n        \"continuity on closed intervals\",\n        \"Riemann integration\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

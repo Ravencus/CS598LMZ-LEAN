@@ -1,0 +1,2 @@
+["estimates-for-the-sum-of-prime-reciprocals-hub"]
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof hinges on expressing the same polynomial action in two equivalent ways, using \((BA)^{k+1}=B(AB)^kA\), so that an annihilating polynomial for \(AB\) gives \(X p\) annihilating \(BA\), and conversely.

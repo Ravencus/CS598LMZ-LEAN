@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-132-a-toy-model",
+  "english_title": "Example 1.3.2: A Toy Model",
+  "statement_en": "Estimate \\(S_N:=\\sum_{N<n\\leq N^2}\\frac{1}{n^2+1}\\) using termwise bounds and piecewise splitting. A direct bound gives \\(S_N=O(1)\\), while splitting at \\(N^{3/2}\\) yields \\[\\begin{aligned}S_N&=\\sum_{N<n\\leq N^{3/2}}\\frac{1}{n^2+1}+\\sum_{N^{3/2}<n\\leq N^{2}}\\frac{1}{n^2+1}\\\\&<\\frac{1}{N^2}(N^{3/2}-N)+\\frac{1}{N^3}(N^2-N^{3/2})\\\\&=\\frac{1}{\\sqrt{N}}-\\frac{1}{N^{3/2}}=O\\left(\\frac{1}{\\sqrt{N}}\\right).\\end{aligned}\\]",
+  "difficulty": "easy",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\nopen Asymptotics\n\nnoncomputable def S (N : ℕ) : ℝ :=\n  Finset.sum (Finset.Icc (N + 1) (N ^ 2)) fun n => 1 / ((n : ℝ) ^ 2 + 1)\n\ntheorem sum_reciprocal_sq_plus_one_bigO :\n    ((fun N : ℕ => S N) =O[Filter.atTop] (fun _ : ℕ => (1 : ℝ))) ∧\n      ((fun N : ℕ => S N) =O[Filter.atTop] (fun N : ℕ => 1 / Real.sqrt (N : ℝ))) := by\n  sorry"
+}

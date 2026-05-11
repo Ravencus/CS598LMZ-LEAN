@@ -1,0 +1,25 @@
+{
+  "problem_id": "mertens-estimates",
+  "model": "gpt-5.5",
+  "wall_seconds": 18.29,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "estimates-for-the-sum-of-prime-reciprocals-hub",
+    "expand-conditions-into-sums-or-integrals-and-swap-order-hub",
+    "term-by-term-estimates-hub",
+    "using-known-asymptotics-to-derive-expansions-hub"
+  ],
+  "truth": [
+    "expand-conditions-into-sums-or-integrals-and-swap-order-hub",
+    "integral-estimates-for-sums-hub",
+    "sum-estimates-via-summation-by-parts-hub",
+    "using-known-asymptotics-to-derive-expansions-hub"
+  ],
+  "tp": 2,
+  "fp": 2,
+  "fn": 2,
+  "precision": 0.5,
+  "recall": 0.5,
+  "f1": 0.5
+}

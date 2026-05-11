@@ -1,0 +1,4 @@
+["an-epsilon-of-room-for-measure-zero-sets-hub", "an-epsilon-of-room-hub", "term-by-term-estimates-hub"]
+- an-epsilon-of-room-for-measure-zero-sets-hub: The discontinuity set is naturally controlled by auxiliary threshold sets such as points with oscillation or jump size at least `ε`, then shown null via countability/finite bounds.
+- an-epsilon-of-room-hub: The proof reduces the full discontinuity statement to fixed positive thresholds, e.g. `1/n`, and recovers the original set as a countable union over those finite-scale statements.
+- term-by-term-estimates-hub: Bounded variation controls the total sum of separated jumps/oscillations, so each threshold-sized discontinuity contributes a definite amount and only finitely many can occur at that scale.

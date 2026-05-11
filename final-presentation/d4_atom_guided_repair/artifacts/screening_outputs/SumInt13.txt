@@ -1,0 +1,82 @@
+Let  
+\[
+H_n=\sum_{k=1}^n \frac1k.
+\]
+We want to prove
+\[
+H_n\ge \log n+\frac{n+1}{2n}.
+\]
+
+The key point is to use the convexity of \(f(x)=\frac1x\) on \((0,\infty)\).
+
+**Step 1: A convexity estimate on each interval.**
+
+Since
+\[
+f''(x)=\frac{2}{x^3}>0 \qquad (x>0),
+\]
+the function \(f(x)=1/x\) is convex on \((0,\infty)\).
+
+For a convex function \(f\), the graph lies below each secant line, so on every interval \([k,k+1]\),
+\[
+f(x)\le \frac{k+1-x}{1}f(k)+\frac{x-k}{1}f(k+1)
+\qquad (x\in[k,k+1]).
+\]
+Integrating from \(k\) to \(k+1\), we get
+\[
+\int_k^{k+1} f(x)\,dx
+\le \frac{f(k)+f(k+1)}{2}.
+\]
+Applying this to \(f(x)=1/x\),
+\[
+\int_k^{k+1}\frac{dx}{x}\le \frac12\left(\frac1k+\frac1{k+1}\right).
+\]
+
+Since \(\int_k^{k+1}\frac{dx}{x}=\log\frac{k+1}{k}\), this gives
+\[
+\log\frac{k+1}{k}\le \frac12\left(\frac1k+\frac1{k+1}\right).
+\]
+
+**Step 2: Sum these inequalities.**
+
+Summing for \(k=1,\dots,n-1\),
+\[
+\sum_{k=1}^{n-1}\log\frac{k+1}{k}
+\le \frac12\sum_{k=1}^{n-1}\left(\frac1k+\frac1{k+1}\right).
+\]
+The left-hand side telescopes:
+\[
+\sum_{k=1}^{n-1}\log\frac{k+1}{k}=\log n.
+\]
+The right-hand side is
+\[
+\frac12\left(\sum_{k=1}^{n-1}\frac1k+\sum_{k=2}^{n}\frac1k\right)
+=\frac12\left(H_{n-1}+(H_n-1)\right).
+\]
+Since \(H_{n-1}=H_n-\frac1n\), this becomes
+\[
+\log n\le \frac12\left(H_n-\frac1n+H_n-1\right)
+=H_n-\frac12\left(1+\frac1n\right).
+\]
+Therefore
+\[
+H_n\ge \log n+\frac12\left(1+\frac1n\right)
+=\log n+\frac{n+1}{2n}.
+\]
+
+This is exactly the desired bound.
+
+It is stronger than the monotonicity bound
+\[
+H_n\ge \log n+\frac1n,
+\]
+because
+\[
+\frac{n+1}{2n}-\frac1n=\frac{n-1}{2n}\ge 0.
+\]
+
+**Final answer.**
+\[
+\boxed{\,H_n=\sum_{k=1}^n \frac1k \ge \log n+\frac{n+1}{2n}\,}
+\]
+for every integer \(n\ge 1\). This follows by applying convexity of \(x\mapsto 1/x\) on each interval \([k,k+1]\) and summing the resulting trapezoidal estimates.

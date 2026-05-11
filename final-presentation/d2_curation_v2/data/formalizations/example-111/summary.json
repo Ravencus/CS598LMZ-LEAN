@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-111",
+  "english_title": "Example 1.1.1",
+  "statement_en": "For $f(t)=\\log t$, one has $$\\sum_{1\\leq n\\leq x}\\log(n)=x\\log(x)-x+O(\\log(x+2)).$$",
+  "difficulty": "easy",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\nopen Asymptotics Filter\n\ntheorem log_sum_asymptotic :\n    Asymptotics.IsBigO Filter.atTop\n      (fun x : ℕ =>\n        Finset.sum (Finset.Icc 1 x) (fun n => Real.log (n : ℝ)) -\n          ((x : ℝ) * Real.log (x : ℝ) - (x : ℝ)))\n      (fun x : ℕ => Real.log ((x : ℝ) + 2)) := by\n  sorry"
+}

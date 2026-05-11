@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-215-zeros-of-a-one-variable-real-analytic-functi",
+  "english_title": "Proposition 2.1.5: Zeros of a One-Variable Real Analytic Function Are Isolated on an Open Interval",
+  "statement_en": "Let $f:I\\to \\mathbb{R}$ be a nonzero real analytic function on an open interval $I$. Then all zeros of $f$ in $I$ are isolated.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem analytic_zeros_are_isolated\n    (I : Set ℝ) (f : ℝ → ℝ)\n    (hI : IsOpen I)\n    (hanalytic : ∀ x ∈ I, AnalyticAt ℝ f x)\n    (hnonzero : ¬ ∀ x ∈ I, f x = 0) :\n    ∀ x ∈ I, f x = 0 →\n      ∃ ε > 0, ∀ y ∈ I, y ≠ x → |y - x| < ε → f y ≠ 0 := by\n  sorry"
+}

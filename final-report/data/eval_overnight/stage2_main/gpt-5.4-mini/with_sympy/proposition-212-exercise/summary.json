@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-212-exercise",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 84.3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 38.66,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Filter.le_of_tendsto`\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 25.13,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `le_of_eventuallyLE`: The environment does not contain `Function.le_of_eventuallyLE`, so it is not possible to project the field `le_of_eventuallyLE` from an expression\n  hlim\nof type\n  "
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 13.41,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Filter.Tendsto.le_of_eventuallyLE`\n"
+    }
+  ]
+}

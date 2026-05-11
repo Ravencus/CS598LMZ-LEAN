@@ -1,0 +1,72 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 8,
+  "first_error": "Invalid alternative name `h_add`: Expected `add` or `monomial`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_7da55bc99d.lean",
+      "line": 19,
+      "column": 6,
+      "severity": "error",
+      "message": "Invalid alternative name `h_add`: Expected `add` or `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7da55bc99d.lean",
+      "line": 21,
+      "column": 6,
+      "severity": "error",
+      "message": "Invalid alternative name `h_monomial`: Expected `add` or `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7da55bc99d.lean",
+      "line": 18,
+      "column": 6,
+      "severity": "error",
+      "message": "Alternative `add` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7da55bc99d.lean",
+      "line": 18,
+      "column": 6,
+      "severity": "error",
+      "message": "Alternative `monomial` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7da55bc99d.lean",
+      "line": 42,
+      "column": 6,
+      "severity": "error",
+      "message": "Invalid alternative name `h_add`: Expected `add` or `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7da55bc99d.lean",
+      "line": 44,
+      "column": 6,
+      "severity": "error",
+      "message": "Invalid alternative name `h_monomial`: Expected `add` or `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7da55bc99d.lean",
+      "line": 41,
+      "column": 6,
+      "severity": "error",
+      "message": "Alternative `add` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7da55bc99d.lean",
+      "line": 41,
+      "column": 6,
+      "severity": "error",
+      "message": "Alternative `monomial` has not been provided\n"
+    }
+  ]
+}

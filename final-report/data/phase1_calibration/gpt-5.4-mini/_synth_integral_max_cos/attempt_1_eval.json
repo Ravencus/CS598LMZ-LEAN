@@ -1,0 +1,14 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 15,
+  "first_error": "linarith failed to find a contradiction\n⊢ False\nfailed",
+  "sympy_witnesses": []
+}

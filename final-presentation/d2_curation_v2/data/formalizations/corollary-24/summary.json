@@ -1,0 +1,24 @@
+{
+  "problem_id": "corollary-24",
+  "english_title": "Corollary 2.4",
+  "statement_en": "Assume $f \\in C(\\mathbb{T}\\to \\mathbb{C})$, and the series of its Fourier coefficients converges absolutely, that is, $$\\sum_{n\\in \\mathbb{Z}}|\\widehat{f}(n)|<\\infty.$$ Then the partial sums of the Fourier series of $f$ converge uniformly to $f$ itself.",
+  "difficulty": "easy",
+  "domain": "Fourier analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\nabbrev Torus := { z : ℂ // ‖z‖ = 1 }\n\ntheorem absoluteSummable_fourierCoefficients_uniformConvergence\n    {f : Torus → ℂ} {fhat : ℤ → ℂ}\n    (hf : Continuous f)\n    (hcoeff : Summable (fun n : ℤ => ‖fhat n‖)) :\n    TendstoUniformly\n      (fun N : ℕ => fun z : Torus =>\n        ∑ n ∈ Finset.Icc (-(N : ℤ)) (N : ℤ), fhat n * ((z : ℂ) ^ (n : ℤ)))\n      f\n      Filter.atTop := by\n  sorry"
+}

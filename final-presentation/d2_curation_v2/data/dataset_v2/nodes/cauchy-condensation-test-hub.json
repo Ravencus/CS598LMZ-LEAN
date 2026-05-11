@@ -1,0 +1,26 @@
+{
+  "id": "cauchy-condensation-test-hub",
+  "type": "hub",
+  "source_note": "柯西凝聚判别法",
+  "english_source_note": "Cauchy Condensation Test",
+  "is_top3": false,
+  "note_degree": 13,
+  "strategies": [
+    {
+      "callout_id": "柯西凝聚判别法#2",
+      "english_title": "Basic Idea of Dyadic Decomposition for Partial Sums of Nonnegative Nonincreasing Sequences",
+      "strategy_name_en": "Dyadic decomposition of partial sums",
+      "summary_en": "For a nonnegative nonincreasing sequence, split the index set into dyadic blocks $\\{2^k,\\dots,2^{k+1}-1\\}$ and estimate the contribution of each block separately. This converts a partial sum into a sum of easily comparable pieces.",
+      "applicability": "Applies when estimating partial sums of nonnegative monotone sequences, especially in condensation-style arguments and blockwise comparison tests.",
+      "callout_body": "对于部分和$\\sum_{n\\geq N}a_n$其中被求和对象，序列$a_n$不增，非负，那么我们可以对自然数的子集$\\{1,...,N\\}$做Dyadic分解，把这个集合分解为$M_N = \\lfloor\\log_2^{N}\\rfloor$段形如$$\\{2^k,...,2^{k+1}-1\\}$$的集合(其中$k\\in \\{0,...,M_N-1\\}$)，以及一段$\\{2^{M_N},...,N\\}$.于是$$\\sum_{n\\leq N}a_n=\\sum_{k=0}^{M_N-1}\\sum_{2^k\\leq n<2^{k+1}}a_n+R_N$$于是我们可以对每一段$\\sum_{2^k\\leq n<2^{k+1}}a_n$做简单的估计从而估计整个部分和。"
+    },
+    {
+      "callout_id": "柯西凝聚判别法#5",
+      "english_title": "Idea 2.3",
+      "strategy_name_en": "Partial dyadic decomposition with a weight",
+      "summary_en": "When the whole integrand is not monotone, rewrite it as $\\omega(t)f(t)$ where $f(t)$ remains nonnegative and monotone. Apply dyadic estimates only to $f$, while treating $\\omega$ as a weight, to derive a comparable series criterion.",
+      "applicability": "Applies when studying improper integrals whose integrands are nonnegative but not fully monotone, yet admit a factorization into a monotone part times a weight.",
+      "callout_body": "有的时候我们也并不是一定需要对整个积分做基于dyadic分解的放缩，我们可以只对其中某部分进行这样的操作。毕竟要求整个被积函数单调，这个条件还是太强了一些。我们可以稍微推广一下之前的估计方法，如果我们可以把被积函数看成是$\\omega(t)f(t)$的形式，其中$f(t)$依旧拥有单调性以及非负性，而$\\omega(t)f(t)$不一定具有单调性，但是具有非负性。那么我们可以只针对$f$，利用单调性进行放缩，把$\\omega$单纯看成是积分的某种权重函数，这样也可以得到一个广义上的同阶的级数。"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "property-11-indicator-functions-of-sets",
+  "type": "problem",
+  "source_note": "把集合问题转换为函数问题",
+  "english_source_note": "Reducing Set Problems to Function Problems",
+  "callout_id": "把集合问题转换为函数问题#2",
+  "english_title": "Property 1.1: Indicator Functions of Sets",
+  "statement_en": "For sets $A,B \\subset X$, their indicator functions satisfy the identities\n$1_{A\\cap B}(x)=1_A(x)1_B(x)$,\n$1_{A\\cup B}(x)=1_A(x)+1_B(x)-1_A(x)1_B(x)$,\n$1_{A^c}(x)=1-1_A(x)$,\n$1_{A\\setminus B}(x)=1_A(x)(1-1_B(x))$,\nand\n$1_{A\\triangle B}(x)=1_A(x)+1_B(x)-2\\cdot 1_A(x)1_B(x)$.\nAlso, if $A+B:=\\{x+y:x\\in A,y\\in B\\}$, then\n$\\operatorname{supp}(1_A*1_B)\\subseteq \\overline{A+B}$.",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "indicator function identities",
+    "set operation algebra",
+    "support of convolution"
+  ],
+  "prerequisites": [
+    "basic set theory",
+    "indicator functions",
+    "convolution and support"
+  ],
+  "callout_body": "1. $A\\cap B$的特征函数$$1_{A\\cap B}(x)=1_A(x)1_B(x)$$\n2. $A\\cup B$的特征函数$$1_{A\\cup B}(x)=1_A(x)+1_B(x)-1_A(x)1_B(x)$$\n3. $A^c$的特征函数$$1_{A^c}(x)=1-1_A(x)$$\n4. $A\\setminus B$的特征函数$$1_{A\\setminus B}(x)=1_A(x)(1-1_B(x))$$这是因为我们可以把$A\\setminus B$表示为$A\\cap B^c$那么用交集的特征函数就能推导出来上面的关系。\n5. $A\\triangle B$的特征函数$$1_{A\\triangle B}(x)=1_A(x)+1_B(x)-2\\cdot 1_A(x)1_B(x)$$因为其中$A\\triangle B=(A\\setminus B)\\cup (B\\setminus A)$然后我们可以用$A\\setminus B$的特征函数的规律推导出此结果。\n6. $A+B$定义为$$A+B:=\\{x+y:x\\in A,y\\in B\\}$$该集合与特征函数$1_A,1_B$的关系为$$\\text{supp}(1_A*1_B)\\subseteq \\overline{A+B}$$这是函数卷积的基本性质，具体可以参考[[函数卷积的基本性质#1.4 卷积支集的性质]]。"
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-11-2",
+  "english_title": "Proposition 1.1",
+  "statement_en": "Assume that the countable family $\\{E_i\\}_{i\\geq 1}$ consists of $\\mu^{*}$-measurable sets. Then their union is also $\\mu^{*}$-measurable.",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem outerMeasure_countable_union_isCaratheodory\n    {α : Type*} (μ : MeasureTheory.OuterMeasure α) (E : ℕ → Set α)\n    (hE : ∀ i : ℕ, μ.IsCaratheodory (E i)) :\n    μ.IsCaratheodory (⋃ i : ℕ, E i) := by\n  sorry"
+}

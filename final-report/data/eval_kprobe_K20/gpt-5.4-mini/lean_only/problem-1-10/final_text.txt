@@ -1,0 +1,24 @@
+I’m loading the Lean proving workflow and then I’ll test a minimal proof shape to see which Mathlib lemmas fit this statement.
+I’ve got the shape: this should collapse to a standard `lintegral_eq_zero` lemma for a nonnegative function, then transfer the result to the restricted measure. I’m checking which exact Mathlib names are available.
+I’m searching Mathlib for the exact zero-integral lemma instead of guessing theorem names. Once I have it, this should become a short one-step proof.
+I found the exact lemmas in Mathlib. I’m trying the shortest proof now: `setLIntegral_eq_zero_iff` plus `ae_restrict_iff'`, then `simp` to turn `ofReal (f x) = 0` into `f x = 0`.
+The proof compiles. I’m returning the final Lean code now; the positive-measure hypothesis ends up unused in Mathlib because zero integral of a nonnegative measurable function already gives the a.e. conclusion.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem ae_zero_of_nonneg_measurable_lintegral_zero
+    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}
+    {f : Ω → ℝ} {E : Set Ω}
+    (hf_meas : Measurable f)
+    (hf_nonneg : ∀ x, 0 ≤ f x)
+    (hE_meas : MeasurableSet E)
+    (hE_pos : 0 < μ E)
+    (h_int_zero : ∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0) :
+    ∀ᵐ x ∂μ.restrict E, f x = 0 := by
+  rw [MeasureTheory.ae_restrict_iff' hE_meas]
+  have h0 : ∀ᵐ x ∂μ, x ∈ E → ENNReal.ofReal (f x) = 0 := by
+    exact (MeasureTheory.setLIntegral_eq_zero_iff hE_meas hf_meas.ennreal_ofReal).mp h_int_zero
+  filter_upwards [h0] with x hx hxe
+  exact le_antisymm (by simpa [ENNReal.ofReal_eq_zero] using hx hxe) (hf_nonneg x)
+```

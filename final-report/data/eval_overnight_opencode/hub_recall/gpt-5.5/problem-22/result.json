@@ -1,0 +1,23 @@
+{
+  "problem_id": "problem-22",
+  "model": "gpt-5.5",
+  "wall_seconds": 23.69,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "cauchy-condensation-test-hub",
+    "piecewise-estimates-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "cauchy-condensation-test-hub",
+    "estimates-for-the-sum-of-prime-reciprocals-hub",
+    "sum-estimates-via-summation-by-parts-hub"
+  ],
+  "tp": 1,
+  "fp": 2,
+  "fn": 2,
+  "precision": 0.3333,
+  "recall": 0.3333,
+  "f1": 0.3333
+}

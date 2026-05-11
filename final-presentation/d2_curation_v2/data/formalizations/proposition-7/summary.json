@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-7",
+  "english_title": "Proposition",
+  "statement_en": "Let $f:[a,b]\\to \\mathbb{R}$ be a bounded monotone function. Then $f$ is continuous almost everywhere.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `volume.restrict`\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `Measure.restrict`\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `volume.restrict`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem monotone_bounded_continuous_ae_on_Icc\n    {a b : ℝ} {f : ℝ → ℝ}\n    (hmono : MonotoneOn f (Set.Icc a b))\n    (hbounded : ∃ C : ℝ, ∀ x ∈ Set.Icc a b, ‖f x‖ ≤ C) :\n    ∀ᵐ x ∂(volume.restrict (Set.Icc a b)), ContinuousWithinAt f (Set.Icc a b) x := by\n  sorry"
+}

@@ -1,0 +1,66 @@
+{
+  "note_title": "approximation to the identity",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分段估计"
+  ],
+  "callouts": [
+    {
+      "id": "approximation to the identity#1",
+      "type": "note",
+      "title": "Approximate identity(逼近单位)",
+      "body": "对于一个$\\mathbb{R}^n$上的可积的函数族$K_{\\lambda}(x)\\in L(\\mathbb{R}^d),\\lambda>0$:\n1.  函数积分为1：$\\int_{\\mathbb{R}^d}K_{\\lambda}(x)dx=1$ \n2.  绝对值的积分的一致有界性：$\\int_{\\mathbb{R}^d}|K_{\\lambda}(x)|dx\\leq A$并且$A$与参数$\\lambda$无关。\n3. 绝对值积分的任意尾部都衰减到0：对任意的$\\delta>0$，$$\\int_{|x|\\geq\\delta}|K_{\\lambda}(x)|dx\\to0,\\text{ as }\\lambda\\to\\infty$$",
+      "position_char": 33,
+      "position_line": 6
+    },
+    {
+      "id": "approximation to the identity#2",
+      "type": "note",
+      "title": "代数",
+      "body": "如果给一个线性空间配备一个封闭且具有双线性性的二元运算，那么我们这是一个\"代数\"(algebra).假设我们用$\\cdot :V\\times V \\to \\times V$表示这个具有双线性性的封闭的线性空间$V$上的二元运算，下面称其为乘法，那么\n* **如果乘法满足结合律**:称之为结合代数。即如果$a,b,c \\in V$那么$$(a\\cdot b)\\cdot c = a \\cdot (b\\cdot c)$$\n* **如果乘法具有单位元**：称之为有单位的代数。也就是说存在一个$I \\in V$使得$a \\cdot I = a,\\forall a \\in V$.\n* **如果乘法具有交换律**: 那么称之为交换代数，也就是说$\\forall a,b \\in V$那么$$a\\cdot b = b \\cdot a$$",
+      "position_char": 907,
+      "position_line": 16
+    },
+    {
+      "id": "approximation to the identity#3",
+      "type": "note",
+      "title": "欧氏空间上卷积的Young不等式",
+      "body": "$1\\leq p,q,r \\leq \\infty,\\frac{1}{p}+\\frac{1}{q} = \\frac{1}{r} + 1$,那么$$||f*g||_{L^r}\\leq ||g||_{L^p}||f||_{L^q}$$",
+      "position_char": 1588,
+      "position_line": 27
+    },
+    {
+      "id": "approximation to the identity#4",
+      "type": "note",
+      "title": "逼近单位的三个基本结果",
+      "body": "1. $f \\in L^p(\\mathbb{R}^d),1\\leq p\\leq \\infty$，那么$f * K_{\\lambda}\\in L^p(\\mathbb{R}^d)$并且$$||f * K_{\\lambda}-f||_{L^p}\\to 0,\\text{ as }\\lambda\\to \\infty$$\n2. 如果函数$f$在$\\mathbb{R}^d$上一致连续并且有界，那么$f*K_{\\lambda}$也是一致连续并且有界的，并且$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty$$\n3. 如果函数$f$在$\\mathbb{R}^d$上有界并且在开集$\\Omega\\subset \\mathbb{R}^d$上连续，那么$f*K_{\\lambda}$在$\\mathbb{R}^d$上有界且一致连续，此外对于任意的紧子集$D \\subset \\Omega$都有$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty$$",
+      "position_char": 2190,
+      "position_line": 44
+    },
+    {
+      "id": "approximation to the identity#5",
+      "type": "note",
+      "title": "命题1.5.1:在函数连续点处点态收敛",
+      "body": "设$f\\in L^{\\infty}(\\mathbb{R}^n\\to \\mathbb{R})$，$\\{K_{\\lambda}\\}$是逼近单位元。若$x_0\\in \\mathbb{R}^n$是$f$的一个连续点，即$\\lim_{x\\to x_0}f(x)=f(x_0)$则$$\\lim_{\\lambda\\to \\infty}f*K_{\\lambda}(x)=f(x_0)$$",
+      "position_char": 5752,
+      "position_line": 94
+    },
+    {
+      "id": "approximation to the identity#6",
+      "type": "note",
+      "title": "好的逼近单位元",
+      "body": "1.  函数积分为1：$\\int_{\\mathbb{R}^d}K_{\\lambda}(x)dx=1$ \n2.  函数全局的控制：$K_{\\lambda}(x)=O(\\lambda^{n})$\n3.  尾部的控制:\n$$K_{\\lambda}(x)=O\\left(\\frac{1}{\\lambda^{\\varepsilon_0} |x|^{n+\\varepsilon_0}}\\right)$$",
+      "position_char": 7464,
+      "position_line": 108
+    },
+    {
+      "id": "approximation to the identity#7",
+      "type": "note",
+      "title": "几乎处处收敛的性质",
+      "body": "如果$K_{\\lambda}$是$L^1(\\mathbb{R}^d)$当中的好的逼近单位元,$f\\in L^p(\\mathbb{R}^d),1\\leq p\\leq \\infty$那么$$f*K_{\\lambda}(x)\\to f(x) \\text{ for a.e. }x$$",
+      "position_char": 8583,
+      "position_line": 126
+    }
+  ]
+}

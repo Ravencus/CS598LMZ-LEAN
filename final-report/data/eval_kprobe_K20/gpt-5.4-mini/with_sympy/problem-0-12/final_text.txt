@@ -1,0 +1,8 @@
+I’m checking what analytic number theory support already exists in the workspace before trying to prove this from scratch.
+I found some existing analytic lemmas in the workspace, but nothing yet that directly implies unboundedness. I’m checking whether Mathlib already has a theorem I can reuse instead of inventing a deep equidistribution argument.
+I haven’t found a direct theorem yet. I’m switching to a raw source search in Mathlib to see whether the needed equidistribution machinery exists under a less obvious name.
+I’m sanity-checking the analytic behavior numerically so I don’t waste the remaining proof budget on a false lead.
+I haven’t found a usable theorem by direct search. I’m delegating a broader source scan to see if Mathlib has a hidden equidistribution or quadratic-sequence lemma under a different name.
+I couldn’t complete a compiling Lean proof within the available Mathlib tools and 20-call budget.
+
+The obstruction is analytic: this statement needs a genuine lower-bound argument for the quadratic Weyl sum `∑_{n≤N} sin(n^2)`, and Mathlib doesn’t appear to provide the required Weyl/van der Corput machinery or a reusable theorem for this exact sequence.

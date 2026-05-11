@@ -1,0 +1,23 @@
+{
+  "id": "lemma-1-2",
+  "type": "problem",
+  "source_note": "Etemadi关于强大数定律的证明",
+  "english_source_note": "Etemadi's Proof of the Strong Law of Large Numbers",
+  "callout_id": "Etemadi关于强大数定律的证明#2",
+  "english_title": "Lemma 1",
+  "statement_en": "If $T_n = \\sum_{i\\leq n}Y_i$, then $$\\frac{T_n}{n}-\\frac{S_n}{n}\\xrightarrow{a.e.}0.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "truncation",
+    "comparison of partial sums",
+    "almost sure convergence"
+  ],
+  "prerequisites": [
+    "partial sums of random variables",
+    "indicator truncation",
+    "almost everywhere convergence"
+  ],
+  "callout_body": "如果定义$T_n = \\sum_{i\\leq n}Y_i$那么，$$\\frac{T_n}{n}-\\frac{S_n}{n}\\xrightarrow{a.e.}{0}$$"
+}

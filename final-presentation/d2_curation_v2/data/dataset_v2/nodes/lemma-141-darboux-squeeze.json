@@ -1,0 +1,22 @@
+{
+  "id": "lemma-141-darboux-squeeze",
+  "type": "problem",
+  "source_note": "模1均匀分布与Weyl判别",
+  "english_source_note": "Uniform Distribution mod 1 and Weyl's Criterion",
+  "callout_id": "模1均匀分布与Weyl判别#10",
+  "english_title": "Lemma 1.4.1: Darboux Squeeze",
+  "statement_en": "If $f$ is a Riemann integrable function on the closed interval $[a,b]$, then for every $\\varepsilon>0$ there exist step functions $g_{\\varepsilon},h_{\\varepsilon}$ on $[a,b]$ such that for all $x\\in [a,b]$, $$g_{\\varepsilon}(x)\\leq f(x)\\leq h_{\\varepsilon}(x),$$ and $$\\int_a^b\\bigl(h_{\\varepsilon}(x)-g_{\\varepsilon}(x)\\bigr)\\,dx<\\varepsilon.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Darboux upper and lower sums",
+    "approximation by step functions"
+  ],
+  "prerequisites": [
+    "Riemann integrability",
+    "step functions",
+    "upper and lower Darboux sums"
+  ],
+  "callout_body": "$f$闭区间$[a,b]$上的Riemann可积函数，对任意的$\\varepsilon>0$存在$[a,b]$上定义的step function $g_{\\varepsilon},h_{\\varepsilon}$，使得对所有$x\\in [0,1]$都有$$g_{\\varepsilon}(x)\\leq f(x)\\leq h_{\\varepsilon}(x)$$并且$$\\int_{a}^b (h_{\\varepsilon}(x)-g_{\\varepsilon}(x))<\\varepsilon$$"
+}

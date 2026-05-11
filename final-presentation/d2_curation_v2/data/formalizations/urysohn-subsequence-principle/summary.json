@@ -1,0 +1,24 @@
+{
+  "problem_id": "urysohn-subsequence-principle",
+  "english_title": "Urysohn Subsequence Principle",
+  "statement_en": "Let $y_n$ be a sequence in a topological space. If every subsequence $y_{n(m)}$ has a further subsequence $y_{n(m_k)}$ converging to an element $y$ of the space, then $y_n \\to y$.",
+  "difficulty": "medium",
+  "domain": "topology",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  y\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem subsequence_convergence_implies_sequence_convergence\n    {α : Type*} [TopologicalSpace α]\n    (yseq : ℕ → α) (y : α)\n    (h :\n      ∀ n : ℕ → ℕ, StrictMono n →\n        ∃ k : ℕ → ℕ, StrictMono k ∧\n          Filter.Tendsto (fun m => yseq (n (k m))) Filter.atTop (nhds y)) :\n    Filter.Tendsto yseq Filter.atTop (nhds y) := by\n  sorry"
+}

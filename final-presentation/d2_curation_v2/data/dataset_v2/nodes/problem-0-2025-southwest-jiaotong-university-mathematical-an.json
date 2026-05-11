@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-2025-southwest-jiaotong-university-mathematical-an",
+  "type": "problem",
+  "source_note": "证明正弦函数在整数上取值的序列的极限是不存在的",
+  "english_source_note": "Nonexistence of a Limit for Sine on the Integers",
+  "callout_id": "证明正弦函数在整数上取值的序列的极限是不存在的#1",
+  "english_title": "Problem 0 (2025 Southwest Jiaotong University Mathematical Analysis Problem)",
+  "statement_en": "Prove that the limit $$\\lim_{n \\rightarrow \\infty} \\sin(n)$$ does not exist.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "non-Cauchy criterion for sequences",
+    "density modulo $2\\pi$",
+    "periodicity of sine"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "Cauchy criterion",
+    "continuity and periodicity of trigonometric functions"
+  ],
+  "callout_body": "证明极限$$\\lim_{n \\rightarrow \\infty} \\sin(n)$$并不存在。"
+}

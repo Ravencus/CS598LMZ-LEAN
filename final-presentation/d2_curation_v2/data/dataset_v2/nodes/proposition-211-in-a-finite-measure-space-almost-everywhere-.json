@@ -1,0 +1,22 @@
+{
+  "id": "proposition-211-in-a-finite-measure-space-almost-everywhere-",
+  "type": "problem",
+  "source_note": "有限测度下各个收敛之间的关系",
+  "english_source_note": "Relations Among Convergences on Finite Measure Spaces",
+  "callout_id": "有限测度下各个收敛之间的关系#4",
+  "english_title": "Proposition 2.1.1: In a Finite Measure Space, Almost Everywhere Convergence Implies Convergence in Measure",
+  "statement_en": "If $\\mu(X)<\\infty$, then $$f_n\\xrightarrow{a.e.}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Egorov-type finite measure argument",
+    "measure estimate on exceptional sets"
+  ],
+  "prerequisites": [
+    "measure theory",
+    "almost everywhere convergence",
+    "convergence in measure"
+  ],
+  "callout_body": "如果$\\mu(X)<\\infty$,那么$$f_n\\xrightarrow{a.e.}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$"
+}

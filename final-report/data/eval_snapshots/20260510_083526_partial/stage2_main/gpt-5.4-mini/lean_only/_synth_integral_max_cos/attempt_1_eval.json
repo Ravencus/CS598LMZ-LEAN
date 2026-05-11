@@ -1,0 +1,72 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 8,
+  "first_error": "Type mismatch: After simplification, term\n  hu\n has type\n  u ∈ Set.uIcc 0 (Real.pi / 2)\nbut is expected to have type\n  0 ≤ u ∧ u ≤ Real.pi / 2",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 16,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hu\n has type\n  u ∈ Set.uIcc 0 (Real.pi / 2)\nbut is expected to have type\n  0 ≤ u ∧ u ≤ Real.pi / 2"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 29,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hu\n has type\n  u ∈ Set.uIcc (Real.pi / 2) (3 * Real.pi / 2)\nbut is expected to have type\n  Real.pi / 2 ≤ u ∧ u ≤ 3 * Real.pi / 2"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 30,
+      "column": 36,
+      "severity": "error",
+      "message": "Unknown constant `Real.cos_nonpos_of_mem_Icc`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 38,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hu\n has type\n  u ∈ Set.uIcc (3 * Real.pi / 2) (2 * Real.pi)\nbut is expected to have type\n  3 * Real.pi / 2 ≤ u ∧ u ≤ 2 * Real.pi"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 51,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `Real.integral_cos`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 58,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `Real.integral_cos`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 71,
+      "column": 92,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h01\nhas type\n  0 ≤ Real.pi / 2\nbut is expected to have type\n  IntervalIntegrable (fun u => max (Real.cos u) 0) ?m.885 ?m.876 ?m.877\nin the application\n  intervalIntegral.integral_add_adjacent_intervals h01"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 81,
+      "column": 10,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0\nin the target expression\n  ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    1 + (0 + 1)\n\nh01 : 0 ≤ Real.pi / 2\nh12 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh23 : 3 * Real.pi / 2 ≤ 2 * Real.pi\nh0 : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nhmid : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = 0\nh3 :\n  ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 = ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u\nhcos0 : ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u = 1\nhcos2 : ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u = 1\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\n⊢ ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    1 + (0 + 1)\n"
+    }
+  ]
+}

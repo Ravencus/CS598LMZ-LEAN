@@ -1,0 +1,30 @@
+{
+  "problem_id": "counterexample-12",
+  "english_title": "Counterexample 1.2",
+  "statement_en": "In the Lebesgue measure space $(\\mathbb{R},\\mathcal{F},m)$, consider the decreasing sequence $E_n:=[n,+\\infty)$. Their intersection is the empty set, since if $x\\in \\bigcap_{n\\geq 1}E_n$, then $x$ would be greater than every positive integer, which is impossible. However, $\\mu(E_n)=+\\infty$ for all $n\\geq 1$, so the conclusion of continuity from above fails without the finite-measure assumption.",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected term\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem continuityFromAboveFailsWithoutFiniteMeasure :\n    let E : ℕ → Set ℝ := fun n => Set.Ici (n : ℝ)\n    (∀ n : ℕ, E (n + 1) ⊆ E n) ∧\n      (⋂ n : ℕ, E n) = (∅ : Set ℝ) ∧\n      (∀ n : ℕ, volume (E n) = ∞) := by\n  sorry"
+}

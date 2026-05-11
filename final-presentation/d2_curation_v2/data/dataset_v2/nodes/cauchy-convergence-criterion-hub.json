@@ -1,0 +1,26 @@
+{
+  "id": "cauchy-convergence-criterion-hub",
+  "type": "hub",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "is_top3": false,
+  "note_degree": 10,
+  "strategies": [
+    {
+      "callout_id": "柯西收敛判别#5",
+      "english_title": "Idea 1.2.1",
+      "strategy_name_en": "Disprove the Cauchy Property via Subsequences",
+      "summary_en": "To show a sequence is not Cauchy, either find a subsequence that itself fails the Cauchy criterion, or construct two convergent subsequences whose terms stay a definite distance apart. A particularly effective special case is to find two subsequences converging to different limits.",
+      "applicability": "Applies when proving that a sequence diverges or is not Cauchy, especially when direct lower bounds on $|a_n-a_m|$ are difficult to obtain.",
+      "callout_body": "1. 找到一个并不满足柯西收敛判别的子列。\n2. 找到两个收敛的子列,$a_n,b_n$使得$|b_n-a_n|>\\varepsilon_0$。这里面的一种特殊的做法是，找到两个收敛到不同结果的子列。"
+    },
+    {
+      "callout_id": "柯西收敛判别#14",
+      "english_title": "Where Does the Limit in Uniform Convergence Come From?",
+      "strategy_name_en": "Construct the Uniform Limit from Pointwise Limits",
+      "summary_en": "When a function sequence satisfies the uniform Cauchy condition, first use the pointwise Cauchy criterion at each fixed point to define a candidate limit function $f(x)$. Then prove uniform convergence by showing that $\\sup_{x\\in X}|f_n(x)-f(x)|$ can be made arbitrarily small.",
+      "applicability": "Applies when proving uniform convergence from a uniform Cauchy condition and the existence of the limit function is not given in advance.",
+      "callout_body": "这个极限可以从逐点收敛而来。因为我们已经证明了函数列逐点收敛的柯西判别。既然现在函数列$f_n(x)$对于每个固定的$x$都满足逐点收敛的柯西判别，那么就必然存在一个极限函数，假设为$f(x)$，那么接下来我们只要估计$\\sup_{x\\in X}|f_n(x)-f(x)|$，如果能把这个对象找到一个任意小的上界，那么一致收敛就能被证明。"
+    }
+  ]
+}

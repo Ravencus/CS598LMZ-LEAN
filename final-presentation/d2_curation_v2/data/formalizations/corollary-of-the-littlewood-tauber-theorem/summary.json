@@ -1,0 +1,30 @@
+{
+  "problem_id": "corollary-of-the-littlewood-tauber-theorem",
+  "english_title": "Corollary of the Littlewood-Tauber Theorem",
+  "statement_en": "If the arithmetic means of a sequence $y_n$ converge to $a$, and its differences satisfy the estimate\n$$\\Delta y_n = O\\left(\\frac{1}{n}\\right),$$\nthen the limit of $y_n$ exists and is equal to $a$.",
+  "difficulty": "medium",
+  "domain": "summability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter Asymptotics\nopen scoped BigOperators\n\ntheorem arithmeticMeans_convergence_of_difference_bigO\n    {y : ℕ → ℝ} {a : ℝ}\n    (hmean :\n      Tendsto\n        (fun n : ℕ => ((n + 1 : ℝ)⁻¹) * (∑ k in Finset.range (n + 1), y k))\n        atTop\n        (nhds a))\n    (hdiff :\n      Asymptotics.IsBigO\n        atTop\n        (fun n : ℕ => y (n + 1) - y n)\n        (fun n : ℕ => (n + 1 : ℝ)⁻¹)) :\n    Tendsto y atTop (nhds a) := by\n  sorry"
+}

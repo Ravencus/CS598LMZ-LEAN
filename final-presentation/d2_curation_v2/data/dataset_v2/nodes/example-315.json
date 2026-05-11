@@ -1,0 +1,24 @@
+{
+  "id": "example-315",
+  "type": "problem",
+  "source_note": "和与积分换序",
+  "english_source_note": "Interchanging Sums and Integrals",
+  "callout_id": "和与积分换序#7",
+  "english_title": "Example 3.1.5",
+  "statement_en": "Let \\(a>0\\), \\(b\\in \\mathbb{R}\\), and \\(a>|b|\\). Compute the parameter-dependent integral \\[I(a,b):=\\int_0^{\\infty}e^{-ax}J_0(bx)\\,dx,\\] where \\(J_0(z)\\) is the Bessel function of the first kind of order zero.",
+  "problem_type": "example",
+  "difficulty": "hard",
+  "domain": "special functions",
+  "key_techniques": [
+    "power series expansion of Bessel functions",
+    "Laplace-type integrals",
+    "interchange of summation and integration"
+  ],
+  "prerequisites": [
+    "Bessel function series",
+    "Gamma function",
+    "parameter-dependent integrals",
+    "justification of exchanging sum and integral"
+  ],
+  "callout_body": "令$a>0,b\\in \\mathbb{R}$并且满足$a>|b|$，计算含参数积分$$I(a,b):=\\int_0^{\\infty}e^{-ax}J_0(bx)\\,dx$$其中$J_0(z)$是第一类零阶贝塞尔函数。"
+}

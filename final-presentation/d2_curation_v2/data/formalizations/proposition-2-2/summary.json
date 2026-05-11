@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-2-2",
+  "english_title": "Proposition 2",
+  "statement_en": "Let $f:[a,b]\\to \\mathbb{R}$ be a function of bounded variation. Then $f$ is continuous almost everywhere.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "`BoundedVariationOn` has already been declared"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem boundedVariation_continuous_ae_on_Icc\n    (a b : ℝ) (hab : a ≤ b) (f : ℝ → ℝ)\n    (hf : BoundedVariationOn f (Set.Icc a b)) :\n    ∀ᵐ x ∂(volume.restrict (Set.Icc a b)), ContinuousWithinAt f (Set.Icc a b) x := by\n  sorry"
+}

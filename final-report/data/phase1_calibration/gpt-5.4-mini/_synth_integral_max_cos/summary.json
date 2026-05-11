@@ -1,0 +1,30 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "gpt-5.4-mini",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 2,
+  "wall_seconds": 387.2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 141.58,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 15,
+      "first_error": "linarith failed to find a contradiction\n⊢ False\nfailed"
+    },
+    {
+      "attempt": 2,
+      "model_failed": true
+    }
+  ]
+}

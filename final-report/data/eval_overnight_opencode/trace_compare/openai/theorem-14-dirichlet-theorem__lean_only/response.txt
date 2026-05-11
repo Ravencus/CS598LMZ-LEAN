@@ -1,0 +1,2 @@
+{"label":"same_plan_search_diff","evidence":"Both traces began by searching Mathlib for an existing irrational approximation/density lemma. BIG found and used `Real.exists_int_int_abs_mul_sub_le` after several probes, while SMALL only checked unrelated/unsuccessful names like `Real.exists_int_near` and stopped after one failed lookup."}
+The failure is best explained as search failure, not a Lean implementation mismatch. SMALL never reached an attempted proof using the Dirichlet-style lemma that BIG ultimately relied on.

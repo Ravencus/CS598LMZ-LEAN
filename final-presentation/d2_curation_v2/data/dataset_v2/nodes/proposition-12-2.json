@@ -1,0 +1,21 @@
+{
+  "id": "proposition-12-2",
+  "type": "problem",
+  "source_note": "无理测度的定义以及基本的命题",
+  "english_source_note": "Irrationality Measure: Definition and Basics",
+  "callout_id": "无理测度的定义以及基本的命题#4",
+  "english_title": "Proposition 1.2",
+  "statement_en": "The irrationality measure of every irrational number is at least 2.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "Dirichlet approximation theorem",
+    "infinitely many rational approximations"
+  ],
+  "prerequisites": [
+    "definition of irrationality measure",
+    "basic rational approximation theorem"
+  ],
+  "callout_body": "无理数的无理测度至少是2。"
+}

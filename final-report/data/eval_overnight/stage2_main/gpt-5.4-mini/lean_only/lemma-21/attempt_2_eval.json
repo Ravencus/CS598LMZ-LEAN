@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Unknown constant `Complex.norm_exp_mul_I_sub_one`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_eb15a3e068.lean",
+      "line": 5,
+      "column": 6,
+      "severity": "error",
+      "message": "Unknown constant `Complex.norm_exp_mul_I_sub_one`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eb15a3e068.lean",
+      "line": 4,
+      "column": 87,
+      "severity": "error",
+      "message": "unsolved goals\nx : ℝ\n⊢ ‖Complex.exp (↑(2 * Real.pi * x) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x|\n"
+    }
+  ]
+}

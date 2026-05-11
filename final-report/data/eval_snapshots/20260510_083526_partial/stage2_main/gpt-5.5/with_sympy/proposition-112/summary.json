@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-112",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 73.6,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 19.94,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "unsolved goals\nN : ℕ\nih : 2 ≤ N → ∑ n ∈ Finset.Icc 2 N, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑N\nhN : 2 ≤ N + 1\nhN2 : 2 ≤ N\nhsucc : 2 ≤ N + 1\nhNpos : ↑N ≠ 0\n⊢ ¬↑N + 1 = 0\nTry this:\n  [apply] ring_nf\n  \n  The "
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 25.56,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "unsolved goals\nN : ℕ\nih : 2 ≤ N → ∑ n ∈ Finset.Icc 2 N, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑N\nhN : 2 ≤ N + 1\nhN2 : 2 ≤ N\nhsucc : 2 ≤ N + 1\nhNpos : ↑N ≠ 0\n⊢ ¬↑N + 1 = 0"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 20.57,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "unsolved goals\ncase pos\nN : ℕ\nih : 2 ≤ N → ∑ n ∈ Finset.Icc 2 N, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑N\nhN : 2 ≤ N + 1\nhN2 : 2 ≤ N\nhsucc : 2 ≤ N + 1\nhNpos : ↑N ≠ 0\nhN1pos : ↑(N + 1) ≠ 0\nhpred : ↑(N + 1 - 1)"
+    }
+  ]
+}

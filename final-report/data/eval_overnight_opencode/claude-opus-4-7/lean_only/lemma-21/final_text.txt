@@ -1,0 +1,100 @@
+I'll work on this theorem about the complex exponential. Let me start by exploring what Mathlib offers.
+Good - `Complex.norm_exp_sub_one_le` exists with parameter `x` and `hx`. Let me check its signature.
+Compiles silently. Let me try to get the type info via an error.
+The lemma is: `‖x‖ ≤ 1 → ‖Complex.exp x - 1‖ ≤ 2 * ‖x‖`. Only works when `‖x‖ ≤ 1`. We need it for arbitrary `x`. So we need a case split: if `|x| ≤ 1/(2π)` use this; otherwise the RHS `2π|x| ≥ 1` so we need `‖exp z - 1‖ ≤ 2`, which uses triangle: `‖exp z - 1‖ ≤ ‖exp z‖ + 1`. For purely imaginary `z`, `‖exp z‖ = 1`, so `‖exp z - 1‖ ≤ 2`.
+
+Wait — actually there's likely a more direct lemma. Let me search for one without hypothesis.
+No direct one. Let me build the proof manually using the case split strategy. The plan:
+
+- Let `θ = 2π x`. We want `‖exp(iθ) - 1‖ ≤ |θ|`. Note `2π|x| = |2πx| = |θ|` since `2π ≥ 0`.
+- Case 1: `|θ| ≤ 1`. Use `Complex.norm_exp_sub_one_le` since `‖iθ‖ = |θ|`. Gives `≤ 2|θ|`. Hmm, that's not tight enough!
+
+Actually `Complex.norm_exp_sub_one_le` gives `≤ 2‖z‖`, not `≤ ‖z‖`. So even in case 1 we get `≤ 2|θ|`, not `≤ |θ|`. So this approach fails.
+
+Better: use triangle inequality globally. `‖exp(iθ) - 1‖ ≤ ‖exp(iθ)‖ + 1 = 2`. We need `≤ |θ|` so this fails when `|θ| < 2`.
+
+Hmm. The standard proof uses `|e^{iθ} - 1| = 2|sin(θ/2)| ≤ |θ|`. Let me look for `Complex.norm_exp_ofReal_mul_I_sub_one` or sine bound.
+Good, `Complex.exp_mul_I` works. And the abs sin bound exists somewhere. Let me try a complete proof using `Real.abs_sin_lt_abs_of_pos` or similar.
+
+Actually let me try a cleaner approach: use the integral / MVT-style bound. There's `Complex.norm_exp_sub_one_sub_id_le` perhaps, or we can prove it via `‖exp(iθ) - 1‖² = 2 - 2cos(θ) = 4sin²(θ/2) ≤ θ²`.
+
+Let me try a direct attack with squaring.
+Good progress. Let me also think about the key inequality. I'll use `norm_sub_one_le` style — there's `Complex.norm_exp_ofReal_mul_I_sub_one_le`? Let me try a streamlined approach. I have 3 calls left. Let me write the full proof.
+
+Key idea: `‖exp(iθ) - 1‖² = (cos θ - 1)² + sin² θ = 2 - 2cos θ`. And `2 - 2cos θ ≤ θ²` follows from `Real.cos_lt_one_sub_sq_div_two_of_pos` style — actually simpler: `1 - cos θ ≤ θ²/2` is in Mathlib as `Real.one_sub_cos_le_half_sq` or via `Real.cos_le_one_sub_sq...`. Hmm. Better: use `Real.abs_sin_le` and double-angle.
+
+Actually, there's `Real.cos_lt_one_of_ne_zero` but I want `1 - cos θ ≤ θ²/2`. Let me also try `Real.add_one_le_exp` style... no.
+
+Try direct: `‖exp(iθ) - 1‖ ≤ |θ|` can be done by noting `‖exp(iθ) - 1‖² = 2(1 - cos θ) = 4 sin²(θ/2) ≤ 4(θ/2)² = θ²`. Then sqrt gives `≤ |θ|`.
+
+Let me write this fully:
+Excellent — `hexp` and `hnormsq` work! I just need `hcos : 2 - 2 * cos θ ≤ θ^2` and the final combine. For `hcos`, I'll use `Real.cos_le_one` and the double angle: `1 - cos θ = 2 sin²(θ/2)`, then `|sin(θ/2)| ≤ |θ/2|` via `Real.abs_sin_lt_abs_of_pos`... let me check what exists.
+
+Actually, simpler: `Real.cos_lt_one_sub_sq_div_two_of_pos` may not exist. There's `Real.add_pow_le_pow_mul_pow_of_sq` — no. Let me just use `Real.abs_sin_le_abs` style. Actually:
+
+`Real.sin_sq_le_one`... no. There's `Real.sin_le_self` for x ≥ 0, but I want sin² ≤ x². The clean fact is `|sin x| ≤ |x|` for all real x — this is `Real.abs_sin_lt_abs_of_pos` (strict) or just `Real.abs_sin_le_abs`? Let me try names.
+
+Combined plan: `1 - cos θ = 2 sin²(θ/2) ≤ 2 (θ/2)² = θ²/2`, so `2 - 2 cos θ ≤ θ²`. Then `‖...‖² ≤ θ² = |θ|²`, so `‖...‖ ≤ |θ|` by `sq_le_sq'` or `abs_le_abs`.
+
+I have 2 calls left. Let me write the whole thing carefully:
+Big progress! `Real.abs_sin_le_abs` is actually a fact (no arg) — fine, just remove the application. And `hsinsq` from `|sin| ≤ |θ/2|` needs `sq_le_sq` carefully. Let me fix and try the final version. I have 1 call left.
+
+The cleanest way: from `|a| ≤ |b|`, `a^2 ≤ b^2` via `sq_le_sq'` or `pow_le_pow_left` with abs. Use `abs_le_abs_iff_sq_le_sq` or just `(abs_le_abs_iff_sq_le_sq ..).mp` — simpler: `nlinarith [abs_nonneg (Real.sin (θ/2)), abs_nonneg (θ/2), hsin, sq_abs (Real.sin (θ/2)), sq_abs (θ/2)]`.
+
+Actually `sq_le_sq'` needs `-|b| ≤ a` and `a ≤ |b|`. Simpler — just use `mul_self_le_mul_self`:
+`(sin(θ/2))^2 = |sin(θ/2)|^2 ≤ |θ/2|^2 = (θ/2)^2`.
+
+For the final step, `abs_le_of_sq_le_sq'` — let me use simpler: `Real.sqrt_le_sqrt` or `abs_le_of_sq_le_sq`. Actually since `‖.‖ ≥ 0`, from `‖.‖² ≤ |θ|² = θ²`, we get `‖.‖ ≤ |θ|` by `sq_le_sq₀` or by `Real.sqrt_sq_eq_abs`-style argument. Let me use `abs_le_of_sq_le_sq` which takes `a^2 ≤ b^2` and `0 ≤ b` to give `|a| ≤ b`; since `‖.‖ ≥ 0`, `|‖.‖| = ‖.‖`.
+
+Final attempt, last call:
+Budget exhausted. Two issues: `rw [hhalf] at *` rewrote `hhalf` itself into trivial. And `rw [← sq_abs θ]` in `hsq` got confused. Let me submit a manually fixed final version.
+
+Fix 1: In `hcos`, don't use `rw [hhalf] at *`. Instead: `have : 1 - Real.cos θ ≤ θ^2 / 2 := by rw [hhalf]; nlinarith [hsinsq]; linarith`.
+
+Fix 2: For `hsq`, do `rw [hnormsq]; rw [show |θ|^2 = θ^2 from sq_abs θ]; exact hcos`.
+
+Wait — `sq_abs θ` is `|θ|^2 = θ^2`. So `|θ|^2 = θ^2`. We want goal `2 - 2 cos θ ≤ |θ|^2`. Rewrite `|θ|^2` to `θ^2` then exact `hcos`. Use `rw [sq_abs]; exact hcos`.
+
+Final answer:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  set θ : ℝ := 2 * Real.pi * x with hθdef
+  have hpi : 0 ≤ 2 * Real.pi := by positivity
+  have habs : |θ| = 2 * Real.pi * |x| := by
+    rw [hθdef, abs_mul, abs_of_nonneg hpi]
+  suffices h : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖ ≤ |θ| by
+    rw [habs] at h; exact h
+  have hexp : Complex.exp ((θ : ℂ) * Complex.I) - 1 =
+      ((Real.cos θ - 1 : ℝ) : ℂ) + ((Real.sin θ : ℝ) : ℂ) * Complex.I := by
+    rw [Complex.exp_mul_I]; push_cast; ring
+  have hnormsq : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖^2 = 2 - 2 * Real.cos θ := by
+    rw [hexp, Complex.sq_abs, Complex.normSq_add_mul_I]
+    nlinarith [Real.sin_sq_add_cos_sq θ]
+  have hhalf : 1 - Real.cos θ = 2 * (Real.sin (θ/2))^2 := by
+    have h2 : Real.cos θ = 1 - 2 * (Real.sin (θ/2))^2 := by
+      have hcos2 := Real.cos_two_mul (θ/2)
+      have hθ2 : 2 * (θ/2) = θ := by ring
+      rw [hθ2] at hcos2
+      have hsc := Real.sin_sq_add_cos_sq (θ/2)
+      nlinarith [hsc, hcos2]
+    linarith
+  have hsin : |Real.sin (θ/2)| ≤ |θ/2| := Real.abs_sin_le_abs
+  have hsinsq : (Real.sin (θ/2))^2 ≤ (θ/2)^2 := by
+    have h1 : (Real.sin (θ/2))^2 = |Real.sin (θ/2)|^2 := (sq_abs _).symm
+    have h2 : (θ/2)^2 = |θ/2|^2 := (sq_abs _).symm
+    rw [h1, h2]
+    exact pow_le_pow_left (abs_nonneg _) hsin 2
+  have hcos : 2 - 2 * Real.cos θ ≤ θ^2 := by
+    have hstep : 1 - Real.cos θ ≤ θ^2 / 2 := by
+      rw [hhalf]
+      nlinarith [hsinsq]
+    linarith
+  have hsq : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖^2 ≤ |θ|^2 := by
+    rw [hnormsq, sq_abs]; exact hcos
+  exact (abs_le_of_sq_le_sq' hsq (abs_nonneg θ)).2
+```

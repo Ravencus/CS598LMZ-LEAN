@@ -1,0 +1,5 @@
+["term-by-term-estimates-hub", "sequence-limits-via-piecewise-estimates-hub", "piecewise-estimates-hub", "basic-methods-in-analysis-i-hub"]
+- term-by-term-estimates-hub: The proof bounds each summand using `Real.sin_le` and `Real.sin_gt_sub_cube`, giving `U n - E n ≤ f n ≤ U n`.
+- sequence-limits-via-piecewise-estimates-hub: It replaces the original sum `f n` by the easier comparison sum `U n`, then proves the discrepancy `E n` tends to `0`.
+- piecewise-estimates-hub: The error sum `E n` is bounded by a uniform per-term estimate times the number of terms via `Finset.sum_le_sum` and `Finset.sum_const`.
+- basic-methods-in-analysis-i-hub: The proof uses a simpler tractable upper/comparison sum `U n`, computes it explicitly with `sum_id`, and transfers its limit to the original sum by squeezing.

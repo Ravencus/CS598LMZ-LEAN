@@ -1,0 +1,23 @@
+{
+  "id": "gautschi-inequality-1959",
+  "type": "problem",
+  "source_note": "部分积的上界估计与Gautschi不等式",
+  "english_source_note": "Upper Bounds for Partial Products and Gautschi's Inequality",
+  "callout_id": "部分积的上界估计与Gautschi不等式#7",
+  "english_title": "Gautschi Inequality, 1959",
+  "statement_en": "For $s\\in(0,1)$ and $x>0$,\n$$x^{1-s}<\\frac{\\Gamma(x+1)}{\\Gamma(x+s)}<(1+x)^{1-s}.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "special functions",
+  "key_techniques": [
+    "Gamma function inequalities",
+    "convexity or concavity arguments",
+    "ratio estimates for special functions"
+  ],
+  "prerequisites": [
+    "Gamma function",
+    "basic properties of special functions",
+    "convexity and logarithmic estimates"
+  ],
+  "callout_body": "当$s\\in(0,1),x>0$的时候:$$x^{1-s}<\\frac{\\Gamma(x+1)}{\\Gamma(x+s)}<(1+x)^{1-s}$$"
+}

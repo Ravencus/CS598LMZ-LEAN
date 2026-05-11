@@ -1,0 +1,114 @@
+{
+  "note_title": "两个非负不增序列互相竞争从而使得级数发散",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限",
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "$a_n$是一个非负不增的实数列，并且级数$\\sum_{n\\geq 1}a_n$发散。证明级数$\\sum_{n\\geq 1}\\min\\{a_n,1/n\\}$发散。",
+      "position_char": 42,
+      "position_line": 7
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#2",
+      "type": "tip",
+      "title": "想法1.1",
+      "body": "意识到$b_n:=\\min\\{a_n,1/n\\}$也是一个非负单调不增的实数列，对于这种数列构成的级数，通过基于dyadic分解的估计可以得到其收敛的充要条件，这种技术被柯西封装为[[柯西凝聚判别法]]。",
+      "position_char": 254,
+      "position_line": 18
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#3",
+      "type": "note",
+      "title": "命题2.1",
+      "body": "$a_n$是一个非负不增的实数列，并且级数$\\sum_{n\\geq 1}a_n$发散。那么级数$\\sum_{n\\geq 1}\\min\\{a_n,1/n^p\\}$：\n1. $0<p\\leq 1$发散。\n2. $p>1$收敛。",
+      "position_char": 1403,
+      "position_line": 31
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#4",
+      "type": "question",
+      "title": "问题2.2",
+      "body": "$\\alpha_n,\\beta_n$是两个非负不增的实数列，并且级数$\\sum_{n\\geq 1}\\alpha_n,\\sum_{n\\geq 1}\\beta_n$发散。那么级数$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$是否一定发散？",
+      "position_char": 1799,
+      "position_line": 43
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#5",
+      "type": "tip",
+      "title": "想法2.3",
+      "body": "反例构造的基本想法是，构造$\\alpha_n$是一个下降阶梯一样的序列。每个阶梯上，函数是常值，而阶梯整体上是不断下降的，后面的阶梯比前面的阶梯更低。\n\n假设每一个阶梯的长度为$L_k$每一段阶梯上的常值为$F_k$那么只要$F_k\\geq F_{k+1}$,那么此时构造出来的序列就是单调不整的。此时序列的的和为$$\\sum_{n\\geq 1}\\alpha_n = \\sum_{k\\geq 1}L_k F_k$$要使得$\\alpha_n$的和发散只要$L_kF_k$衰减很慢，甚至不衰减（比如$F_k=\\frac{1}{k},L_k=k$）就行。我们用同样的方式构造$\\beta_n$，比如阶梯长度用序列$L_k$控制，每段阶梯上的常数序列为$G_k$，那么只要使得$$\\sum_{n\\geq 1}\\beta_n = \\sum_{k\\geq 1}L_k G_k=+\\infty$$就可以让$\\beta_n$也满足条件。但是我们现在要构造$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$收敛，那么就要好好权衡$L_k,G_k,F_k$三者之间的关系了。因为我们需要$$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}=\\sum_{k\\geq 1}L_k\\min\\{F_k,G_k\\}<+\\infty$$也就是说：\n1. $L_k$整体趋势上需得是增加的（但不必单调），并且增长不能太慢，因为要保证$L_kG_k,L_kF_k$是不能衰减太快。\n2. $\\min\\{F_k,G_k\\}$又要衰减得足够快，以至于$L_k\\min\\{F_k,G_k\\}$衰减得足够快，从而$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$是收敛的。\n\n为了解决以上困难，我们这样考虑：\n* 我们先选取一列$u_k\\downarrow 0$，使得$\\sum_k u_k <+\\infty$。然后取整数序列$L_k$使得存在无穷多个$L_k u_k \\geq  c>0$,从而使得$\\sum_k L_k u_k=+\\infty$\n* 我们再选取一列$v_k \\downarrow 0$满足$v_k\\leq u_k$并且使得$L_k v_k$衰减得足够快，以至于$\\sum_{k} L_k v_k <+\\infty$。\n* 然后这两个序列按照下面的次序构成$\\alpha_n,\\beta_n$的每一段阶梯上的值：$$\\alpha_n:v_{2k}\\geq u_{2k+1}>v_{2k+2}\\geq u_{2k+3}$$以及$$\\beta_n:u_{2k}>v_{2k+1}\\geq u_{2k+2}>v_{2k+3}$$\n\n这样一来$$\\sum_{n\\geq 1}\\alpha_n = \\sum_{k\\text{ odd}}L_kv_k + \\sum_{k \\text{ even}} L_ku_k$$以及$$\\sum_{n\\geq 1}\\alpha_n = \\sum_{k\\text{ even}}L_kv_k + \\sum_{k \\text{ odd}} L_ku_k$$两个都是发散级数，但是$$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\} =\\sum_{k} L_k v_k<\\infty$$",
+      "position_char": 1978,
+      "position_line": 50
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#6",
+      "type": "example",
+      "title": "反例2.3",
+      "body": "关于以上分析，一个解决方案是令$$F_k:=\\begin{cases}2^{-2^k}&k是奇数 \\\\ 2^{-2^{k+1}} &k是偶数\\end{cases},G_k:=\\begin{cases}2^{-2^{k+1}}&k是奇数 \\\\ 2^{-2^{k}} &k是偶数\\end{cases},L_k=2^{2^{k}}$$如此一来:\n1. 当$k$是奇数的时候$L_kF_k=1$当$k$是偶数的时候$L_kF_k=\\frac{1}{2^{2^k}}$于是这足以保证$\\alpha_n$对应的级数的发散性。\n2. 当$k$是偶数的时候$L_kG_k=\\frac{1}{2^{2^k}}$，当$k$是奇数的时候$L_kG_k=1$这足以保证$\\beta_n$对应的级数的发散性。\n\n此时\n$$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}=\\sum_{k\\geq 1}L_k\\min\\{F_k,G_k\\}=\\sum_{k\\geq 1} \\frac{1}{2^{2^k}}<+\\infty$$",
+      "position_char": 3429,
+      "position_line": 67
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#7",
+      "type": "note",
+      "title": "命题2.4",
+      "body": "$\\alpha_n,\\beta_n$是一个非负不增的实数列，并且级数$\\sum_{n\\geq 1}\\alpha_n,\\sum_{n\\geq 1}\\beta_n$均发散，此外存在一个正实数$c$对于足够大的$n$都有$$2^n\\beta_{2^n}\\geq c >0$$那么级数$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$发散",
+      "position_char": 3957,
+      "position_line": 84
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#8",
+      "type": "note",
+      "title": "引理2.5",
+      "body": "设$a_n$是一个非负，单调不增的实数列，且级数$\\sum_{n\\geq 1}a_n$发散。如果$S\\subseteq \\mathbb{N}$是自然的一个子集，其自然密度为正，即$$d(S)=\\lim_{N\\to \\infty} \\frac{|S\\cap \\{1,2,\\cdots,N\\}|}{N}=\\delta>0$$那么子级数$\\sum_{n\\in S}a_n$也发散。",
+      "position_char": 4280,
+      "position_line": 94
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#9",
+      "type": "note",
+      "title": "命题2.6",
+      "body": "$\\alpha_n,\\beta_n$是两个非负不增的实数列，并且级数$\\sum_{n\\geq 1}\\alpha_n,\\sum_{n\\geq 1}\\beta_n$发散。如果存在正实数$C$使得集合$\\{n:\\alpha_n\\geq C \\beta_n\\}$的自然密度为正，那么级数$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$发散。",
+      "position_char": 5523,
+      "position_line": 106
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#10",
+      "type": "note",
+      "title": "命题3.1",
+      "body": "若非负函数$f(x)$在$[1,+\\infty)$上局部可积单调不增，且$\\int_1^{+\\infty}f(x)\\,dx=+\\infty$那么积分$$\\int_{1}^{+\\infty}\\min\\{f(x),\\frac{1}{x}\\}\\,dx=+\\infty$$",
+      "position_char": 6253,
+      "position_line": 118
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#11",
+      "type": "tip",
+      "title": "想法3.2",
+      "body": "既然离散的版本可以基于dyadic分解的方式对一个和进行估计，那么为什么不能对一个积分也用类似的估计呢？毕竟$g(x):=\\min\\{f(x),\\frac{1}{x}\\}$同样是可以非负单调不增的函数。",
+      "position_char": 6457,
+      "position_line": 123
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#12",
+      "type": "note",
+      "title": "引理3.3:积分的凝聚判别法",
+      "body": "设函数$f:[1,+\\infty)\\to \\mathbb{R}$满足下列的条件：\n1. $f(x)$在该区间上是局部可积的，即对任意闭区间$[1,M]$上都是黎曼可积的。\n2. $f(x)$在该区间上非负单调不增。\n\n那么广义积分$\\int_{1}^{+\\infty}f(x)\\,dx$收敛，当且仅当级数$\\sum_{n=1}^{+\\infty}2^n f(2^n)$收敛。",
+      "position_char": 6578,
+      "position_line": 127
+    },
+    {
+      "id": "两个非负不增序列互相竞争从而使得级数发散#13",
+      "type": "note",
+      "title": "命题3.4",
+      "body": "若非负函数$f(x)$在$[1,+\\infty)$上局部可积单调不增，且$\\int_1^{+\\infty}f(x)\\,dx=+\\infty$那么积分$\\int_{1}^{+\\infty}\\min\\{f(x),\\frac{1}{x^p}\\}\\,dx$:\n1. $0<p\\leq 1$发散。\n2. $p>1$收敛。",
+      "position_char": 7280,
+      "position_line": 148
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+["basic-methods-in-analysis-i-hub", "term-by-term-estimates-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- basic-methods-in-analysis-i-hub: The finite sum is handled by recognizing a simpler exact form via the telescoping identity `1/(n(n-1)) = 1/(n-1) - 1/n`.
+- term-by-term-estimates-hub: The proof proceeds termwise, replacing each summand by a simpler expression whose finite sum is easy to compute and bound.
+- estimates-for-the-sum-of-prime-reciprocals-hub: Its “different expressions of the same object” strategy is directly relevant because the key move is rewriting the same rational summand in partial-fraction form.

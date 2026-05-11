@@ -1,0 +1,21 @@
+{
+  "id": "uniqueness-of-the-limit-of-a-sequence",
+  "type": "problem",
+  "source_note": "Re0微积分1：用牛顿迭代法求算术平方根",
+  "english_source_note": "Re0 Calculus 1: Arithmetic Square Roots by Newton Iteration",
+  "callout_id": "Re0微积分1:用牛顿迭代法求算术平方根#9",
+  "english_title": "Uniqueness of the Limit of a Sequence",
+  "statement_en": "If the limit of a sequence exists, then the limit is unique.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "epsilon argument",
+    "proof by contradiction"
+  ],
+  "prerequisites": [
+    "definition of sequence limit",
+    "basic properties of absolute value"
+  ],
+  "callout_body": "如果一个序列的极限存在，那么极限是唯一的。"
+}

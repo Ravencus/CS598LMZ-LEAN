@@ -1,0 +1,105 @@
+{
+  "success": true,
+  "exit_code": 0,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 9,
+      "column": 33,
+      "severity": "warning",
+      "message": "unused variable `K`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 11,
+      "column": 25,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 11,
+      "column": 27,
+      "severity": "warning",
+      "message": "unused variable `g`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 13,
+      "column": 18,
+      "severity": "warning",
+      "message": "unused variable `p`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 13,
+      "column": 32,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 15,
+      "column": 20,
+      "severity": "warning",
+      "message": "unused variable `p`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 15,
+      "column": 34,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 15,
+      "column": 36,
+      "severity": "warning",
+      "message": "unused variable `g`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 17,
+      "column": 29,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 19,
+      "column": 39,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 21,
+      "column": 28,
+      "severity": "warning",
+      "message": "unused variable `F`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 21,
+      "column": 47,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 21,
+      "column": 62,
+      "severity": "warning",
+      "message": "unused variable `s`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a4a60658ce01.lean",
+      "line": 23,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`\n"
+    }
+  ],
+  "errors_only": []
+}

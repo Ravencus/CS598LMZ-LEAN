@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "linarith failed to find a contradiction\ncase h.h\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : Measure Ω\nf g : Ω → ℝ\nhf : Integrable f μ\nhg : Integrable g μ\nhfg : ∀ᵐ (x : Ω) ∂μ, g x ≤ f x\nx : Ω\nhx : g x ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_a85344700b.lean",
+      "line": 12,
+      "column": 4,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h.h\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : Measure Ω\nf g : Ω → ℝ\nhf : Integrable f μ\nhg : Integrable g μ\nhfg : ∀ᵐ (x : Ω) ∂μ, g x ≤ f x\nx : Ω\nhx : g x ≤ f x\na✝ : f x - g x < 0 x\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_a85344700b.lean",
+      "line": 14,
+      "column": 26,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hnonneg\nhas type\n  0 ≤ᶠ[ae μ] fun x => f x - g x\nbut is expected to have type\n  0 ≤ fun x => f x - g x\nin the application\n  integral_nonneg hnonneg\n"
+    }
+  ]
+}

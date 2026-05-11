@@ -1,0 +1,23 @@
+{
+  "id": "proposition-1-equivalent-form-of-the-strong-law-of-large-num",
+  "type": "problem",
+  "source_note": "Etemadi关于强大数定律的证明",
+  "english_source_note": "Etemadi's Proof of the Strong Law of Large Numbers",
+  "callout_id": "Etemadi关于强大数定律的证明#3",
+  "english_title": "Proposition 1: Equivalent Form of the Strong Law of Large Numbers",
+  "statement_en": "Prove that $$\\frac{T_n}{n}=\\frac{\\sum_{i\\leq n}Y_i}{n}$$ converges almost everywhere to $E(X_1)=\\mu$, where $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed nonnegative random variables, and $Y_i = X_i\\mathbf{1}_{|X_i|\\leq i}$.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "key_techniques": [
+    "truncation",
+    "reduction to nonnegative variables",
+    "almost sure convergence"
+  ],
+  "prerequisites": [
+    "strong and weak laws of large numbers",
+    "indicator truncation",
+    "independent and identically distributed random variables"
+  ],
+  "callout_body": "证明$$\\frac{T_n}{n}=\\frac{\\sum_{i\\leq n}Y_i}{n}$$是几乎处处收敛到$E(X_1)=\\mu$的，其中$X_1,...,X_n,...$是独立同分布的非负随机变量,$Y_i = X_i\\mathbf{1}_{|X_i|\\leq i}$."
+}

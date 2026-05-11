@@ -1,0 +1,22 @@
+{
+  "id": "urysohn-subsequence-principle",
+  "type": "problem",
+  "source_note": "有限测度空间上依测度收敛的等价命题",
+  "english_source_note": "Equivalent Conditions for Convergence in Measure",
+  "callout_id": "有限测度空间上依测度收敛的等价命题#2",
+  "english_title": "Urysohn Subsequence Principle",
+  "statement_en": "Let $y_n$ be a sequence in a topological space. If every subsequence $y_{n(m)}$ has a further subsequence $y_{n(m_k)}$ converging to an element $y$ of the space, then $y_n \\to y$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "topology",
+  "key_techniques": [
+    "subsequence criterion for convergence",
+    "contradiction using neighborhoods"
+  ],
+  "prerequisites": [
+    "topological convergence",
+    "subsequences",
+    "basic topology"
+  ],
+  "callout_body": "如果$y_n$属于拓扑空间当中的集合，并且任意子列$y_{n(m)}$都存在一个收敛到拓扑空间当中元素$y$的子列$y_{n(m_k)}\\to y$，那么$y_n\\to y$."
+}

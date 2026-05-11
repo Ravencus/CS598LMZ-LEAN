@@ -1,0 +1,30 @@
+{
+  "problem_id": "some-equivalent-statements-of-the-prime-number-theorem-landa",
+  "english_title": "Some Equivalent Statements of the Prime Number Theorem (Landau 1909)",
+  "statement_en": "The following statements are equivalent:\n1. $\\pi(x)\\sim \\frac{x}{\\log(x)}$\n2. $\\vartheta(x)\\sim x$\n3. $\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)-\\gamma+o(1)$\n4. $\\psi(x):=\\sum_{n\\leq x}\\Lambda(n)\\sim x$\n5. $\\sum_{n\\leq x}\\mu(n)=o(x)$\n6. $\\sum_{n\\geq 1}\\frac{\\mu(n)}{n}=0$",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected ';' or line break\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected ';' or line break\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem primeNumberTheoremEquivalentStatements\n    (primeCounting vartheta : ℝ → ℝ) (Λ μ : ℕ → ℝ) (γ : ℝ) :\n    let P1 : Prop := Asymptotics.IsEquivalent Filter.atTop primeCounting (fun x => x / Real.log x)\n    let P2 : Prop := Asymptotics.IsEquivalent Filter.atTop vartheta (fun x => x)\n    let P3 : Prop :=\n      Asymptotics.IsLittleO Filter.atTop\n        (fun x : ℝ =>\n          (∑ n in Finset.Icc 1 ⌊x⌋₊, Λ n / (n : ℝ)) - (Real.log x - γ))\n        (fun _ : ℝ => (1 : ℝ))\n    let psiFun : ℝ → ℝ := fun x => ∑ n in Finset.Icc 1 ⌊x⌋₊, Λ n\n    let P4 : Prop := Asymptotics.IsEquivalent Filter.atTop psiFun (fun x => x)\n    let P5 : Prop :=\n      Asymptotics.IsLittleO Filter.atTop\n        (fun x : ℝ => ∑ n in Finset.Icc 1 ⌊x⌋₊, μ n)\n        (fun x => x)\n    let P6 : Prop := HasSum (fun n : ℕ => μ (n + 1) / (n + 1 : ℝ)) 0\n    (P1 ↔ P2) ∧ (P1 ↔ P3) ∧ (P1 ↔ P4) ∧ (P1 ↔ P5) ∧ (P1 ↔ P6) := by\n  sorry"
+}

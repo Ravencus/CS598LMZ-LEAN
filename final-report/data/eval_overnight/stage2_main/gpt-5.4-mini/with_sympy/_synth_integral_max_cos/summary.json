@@ -1,0 +1,58 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 242.8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 147.83,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 13,
+      "first_error": "Unknown identifier `volume`"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 44.31,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 15,
+      "first_error": "Unknown identifier `Measure.volume`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 42.71,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Application type mismatch: The argument\n  0\nhas type\n  ℝ\nbut is expected to have type\n  MeasureTheory.Measure ℝ\nin the application\n  IntervalIntegrable (fun u => max (Real.cos u) 0) 0"
+    }
+  ]
+}

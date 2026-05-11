@@ -1,0 +1,518 @@
+{
+  "note_title": "模1均匀分布与Weyl判别",
+  "is_hub": true,
+  "in_subset_via": [
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "模1均匀分布与Weyl判别#1",
+      "type": "note",
+      "title": "序列均匀分布的概念",
+      "body": "实数列$u_n$称之为在闭区间$[a,b]$上均匀分布(uniformly distributed/equidistributed)的,如果$$\\lim_{N\\to \\infty}\\frac{|\\{n:1\\leq n\\leq N ,u_n \\in [c,d]\\}|}{N}=\\frac{d-c}{b-a}$$其中$[c,d]\\subseteq [a,b]$，即前$N$个序列$u_n$当中的落在闭区间$[c,d]$当中的元素的个数。",
+      "position_char": 48,
+      "position_line": 7,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#1",
+        "classification": "definition",
+        "english_title": "Concept of Uniform Distribution of a Sequence",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#2",
+      "type": "note",
+      "title": "实数模1的概念",
+      "body": "实数$x$可以表示为$$x=E(x)+\\varepsilon(x)$$其中$E(x)$是一个整数,$\\varepsilon(x) \\in [-\\frac{1}{2},\\frac{1}{2})$称之为实数$x$模1的余数。",
+      "position_char": 288,
+      "position_line": 10,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#2",
+        "classification": "definition",
+        "english_title": "Concept of a Real Number Modulo 1",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#3",
+      "type": "note",
+      "title": "序列模1均匀分布的概念",
+      "body": "实数列$u_n$称之为模1均匀分布的,如果$$\\lim_{N\\to \\infty}\\frac{\\nu(a,b,N;u_n)}{N}=b-a$$其中$[a,b]\\subseteq [-1/2,1/2]$。此处$$\\nu(a,b,N;u_n):=|\\{n:\\varepsilon(u_n)\\in [a,b],1\\leq n\\leq N\\}|$$表示序列$u_n$模$1$形成的序列$\\varepsilon(u_n)$的前$N$项目落在闭区间$[a,b]$中的个数。",
+      "position_char": 959,
+      "position_line": 16,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#3",
+        "classification": "definition",
+        "english_title": "Concept of Uniform Distribution Modulo 1 of a Sequence",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#4",
+      "type": "example",
+      "title": "非均匀分布的例子",
+      "body": "简单的例子$u_n=\\frac{1}{n}$,其模1以后，$$\\varepsilon(u_1)=0,\\varepsilon(u_1)=-\\frac{1}{2},\\varepsilon(u_n)=\\frac{1}{n},n\\geq 3$$首先这个序列组成的集合根本不在$[-1/2,1/2)$中稠密，比如考察$[-1/2,0]$这样一个区间当中，其中只包含$-1/2$这样一个元素，那么序列在此区间当中比例的极限为0，而不是$1/2$。",
+      "position_char": 1907,
+      "position_line": 28,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#4",
+        "classification": "problem",
+        "english_title": "Example of a Non-Uniformly Distributed Sequence",
+        "if_problem": {
+          "statement_en": "A simple example is $u_n=\\frac{1}{n}$. After reduction modulo $1$, $$\\varepsilon(u_1)=0,\\varepsilon(u_2)=-\\frac{1}{2},\\varepsilon(u_n)=\\frac{1}{n},n\\geq 3.$$ This sequence is not uniformly distributed modulo $1$; for instance, in the interval $[-1/2,0]$ there is only the element $-1/2$, so the limiting proportion of terms in this interval is $0$ rather than $1/2$.",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "analyze the image modulo 1 explicitly",
+            "test the definition on a specific interval"
+          ],
+          "prerequisites": [
+            "definition of uniform distribution modulo 1",
+            "fractional part or remainder modulo 1"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#5",
+      "type": "example",
+      "title": "非模1均匀分布的例子2",
+      "body": "假设$r_n$是对$[-\\frac{1}{2},\\frac{1}{2})$之间的有理数的一种枚举方式。然后定义$$\\xi_n:=\\begin{cases}r_{n}&100|n\\\\0&\\text{otherwise}\\end{cases}$$比如考察区间$[\\frac{1}{4},\\frac{1}{5}]$，前$N$个序列$\\xi_n$的元素当中有不超过$N/100$个元素落在此区间里面。于是最后比例的极限肯定是小于等于区间长度$1/4-1/5 = 1/20$的。不过和之前的例子不同的是，此序列在$[-\\frac{1}{2},\\frac{1}{2})$当中是稠密的。\n\n这里我们虽然用$100|n$这个条件增加了$\\xi_n =0$的频率，减少了其落在$[-\\frac{1}{2},0),(0,\\frac{1}{2})$的频率，但是因为有理数的稠密性，序列$\\xi_n$对应的集合依旧是稠密的。",
+      "position_char": 2208,
+      "position_line": 33,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#5",
+        "classification": "problem",
+        "english_title": "Second Example of a Sequence Not Uniformly Distributed Modulo 1",
+        "if_problem": {
+          "statement_en": "Let $r_n$ be an enumeration of the rational numbers in $[-\\frac{1}{2},\\frac{1}{2})$, and define $$\\xi_n:=\\begin{cases}r_n&100\\mid n\\\\0&\\text{otherwise.}\\end{cases}$$ Then $(\\xi_n)$ is not uniformly distributed modulo $1$. For example, for a fixed interval such as $[\\frac{1}{5},\\frac{1}{4}]$, among the first $N$ terms at most $N/100$ lie in this interval, so the limiting proportion is at most $1/100$, not the interval length $1/20$. Nevertheless, the set of values of the sequence is dense in $[-\\frac{1}{2},\\frac{1}{2})$.",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "construct a sparse perturbation of a dense set",
+            "compare limiting frequency with interval length"
+          ],
+          "prerequisites": [
+            "definition of uniform distribution modulo 1",
+            "density of the rational numbers"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#6",
+      "type": "note",
+      "title": "Weyl判别,1916",
+      "body": "以下三者等价：\n1.  $u_n$模1均匀分布\n2.  对于任意非零整数$k$    $$\\frac{1}{N}\\sum_{n=1}^{N}e^{2\\pi ik u_n}\\to0$$\n\n3.  对于任意连续函数$f:[-\\frac{1}{2},\\frac{1}{2}]\\to\\mathbb{C}$有$$\\frac{1}{N}\\sum_{n=1}^{N}f(\\varepsilon(u_n))\\to\\int_{-1/2}^{1/2}f(x)dx$$",
+      "position_char": 2683,
+      "position_line": 42,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#6",
+        "classification": "problem",
+        "english_title": "Weyl Criterion, 1916",
+        "if_problem": {
+          "statement_en": "The following are equivalent:\n1. $u_n$ is uniformly distributed modulo $1$.\n2. For every nonzero integer $k$, $$\\frac{1}{N}\\sum_{n=1}^{N}e^{2\\pi i k u_n}\\to0.$$\n3. For every continuous function $f:[-\\frac{1}{2},\\frac{1}{2}]\\to\\mathbb{C}$, $$\\frac{1}{N}\\sum_{n=1}^{N}f(\\varepsilon(u_n))\\to\\int_{-1/2}^{1/2}f(x)\\,dx.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "Fourier analysis",
+            "trigonometric polynomial approximation"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "continuous functions on compact intervals",
+            "complex exponentials and Fourier series"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#7",
+      "type": "note",
+      "title": "引理1.2.1",
+      "body": "$f\\in C(\\mathbb{T}\\to \\mathbb{C})$那么对任意的$\\varepsilon>0$存在一个多项式$P_{\\varepsilon}(z)$使得$$||f-P_{\\varepsilon}||_{u}<\\varepsilon$$",
+      "position_char": 3592,
+      "position_line": 57,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#7",
+        "classification": "problem",
+        "english_title": "Lemma 1.2.1",
+        "if_problem": {
+          "statement_en": "If $f\\in C(\\mathbb{T}\\to \\mathbb{C})$, then for every $\\varepsilon>0$ there exists a polynomial $P_{\\varepsilon}(z)$ such that $$\\|f-P_{\\varepsilon}\\|_{u}<\\varepsilon.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "analysis",
+          "key_techniques": [
+            "Stone-Weierstrass approximation",
+            "uniform approximation on compact spaces"
+          ],
+          "prerequisites": [
+            "continuous functions on the circle",
+            "uniform norm",
+            "Weierstrass or Stone-Weierstrass theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#8",
+      "type": "note",
+      "title": "引理1.2.2",
+      "body": "$f\\in C([-1/2,1/2]\\to \\mathbb{C})$并且满足$f(-1/2)=f(1/2)$那么对任意的$\\varepsilon>0$存在一个三角多项式$P_{\\varepsilon}\\in \\mathcal{P}$使得我们可以定义$T_{\\varepsilon}(x):=P_{\\varepsilon}(e^{2\\pi i x})$使得\n$$||f-T_{\\varepsilon}||_{u}<\\varepsilon$$",
+      "position_char": 4559,
+      "position_line": 71,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#8",
+        "classification": "problem",
+        "english_title": "Lemma 1.2.2",
+        "if_problem": {
+          "statement_en": "If $f\\in C([-1/2,1/2]\\to \\mathbb{C})$ and satisfies $f(-1/2)=f(1/2)$, then for every $\\varepsilon>0$ there exists a trigonometric polynomial $P_{\\varepsilon}\\in \\mathcal{P}$ such that, defining $T_{\\varepsilon}(x):=P_{\\varepsilon}(e^{2\\pi i x})$, one has $$\\|f-T_{\\varepsilon}\\|_{u}<\\varepsilon.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "identify periodic functions with functions on the circle",
+            "trigonometric polynomial approximation"
+          ],
+          "prerequisites": [
+            "continuous periodic functions",
+            "uniform norm",
+            "approximation on the unit circle"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#9",
+      "type": "note",
+      "title": "引理1.3.1",
+      "body": "$f$是$[-1/2,1/2]$上实值的黎曼可积的函数，那么对任意$\\varepsilon>0$存在一个$g_{\\varepsilon} \\in C([-1/2,1/2]\\to \\mathbb{C})$使得$$\\int_{-1/2}^{1/2}|f(x)-g_{\\varepsilon}(x)|\\,dx<\\varepsilon$$",
+      "position_char": 6580,
+      "position_line": 87,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#9",
+        "classification": "problem",
+        "english_title": "Lemma 1.3.1",
+        "if_problem": {
+          "statement_en": "If $f$ is a real-valued Riemann integrable function on $[-1/2,1/2]$, then for every $\\varepsilon>0$ there exists $g_{\\varepsilon} \\in C([-1/2,1/2]\\to \\mathbb{C})$ such that $$\\int_{-1/2}^{1/2}|f(x)-g_{\\varepsilon}(x)|\\,dx<\\varepsilon.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "approximation of Riemann integrable functions by continuous functions",
+            "integral norm approximation"
+          ],
+          "prerequisites": [
+            "Riemann integrability",
+            "continuous functions on closed intervals",
+            "basic integration theory"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#10",
+      "type": "note",
+      "title": "引理1.4.1:Darboux夹逼",
+      "body": "$f$闭区间$[a,b]$上的Riemann可积函数，对任意的$\\varepsilon>0$存在$[a,b]$上定义的step function $g_{\\varepsilon},h_{\\varepsilon}$，使得对所有$x\\in [0,1]$都有$$g_{\\varepsilon}(x)\\leq f(x)\\leq h_{\\varepsilon}(x)$$并且$$\\int_{a}^b (h_{\\varepsilon}(x)-g_{\\varepsilon}(x))<\\varepsilon$$",
+      "position_char": 8424,
+      "position_line": 102,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#10",
+        "classification": "problem",
+        "english_title": "Lemma 1.4.1: Darboux Squeeze",
+        "if_problem": {
+          "statement_en": "If $f$ is a Riemann integrable function on the closed interval $[a,b]$, then for every $\\varepsilon>0$ there exist step functions $g_{\\varepsilon},h_{\\varepsilon}$ on $[a,b]$ such that for all $x\\in [a,b]$, $$g_{\\varepsilon}(x)\\leq f(x)\\leq h_{\\varepsilon}(x),$$ and $$\\int_a^b\\bigl(h_{\\varepsilon}(x)-g_{\\varepsilon}(x)\\bigr)\\,dx<\\varepsilon.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Darboux upper and lower sums",
+            "approximation by step functions"
+          ],
+          "prerequisites": [
+            "Riemann integrability",
+            "step functions",
+            "upper and lower Darboux sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#11",
+      "type": "note",
+      "title": "命题1.4.2：Weyl判别的加强",
+      "body": "序列$x_n$模1均匀分布，当且仅当对于定义在区间$[0,1]$上的任意黎曼可积函数$f$，成立$$\\frac{1}{N}\\sum_{n=1}^{N}f(\\{u_n\\})\\to\\int_{0}^{1}f(x)dx$$",
+      "position_char": 8763,
+      "position_line": 109,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#11",
+        "classification": "problem",
+        "english_title": "Proposition 1.4.2: Strengthened Weyl Criterion",
+        "if_problem": {
+          "statement_en": "A sequence $x_n$ is uniformly distributed modulo $1$ if and only if for every Riemann integrable function $f$ defined on $[0,1]$, $$\\frac{1}{N}\\sum_{n=1}^{N}f(\\{u_n\\})\\to\\int_{0}^{1}f(x)\\,dx.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "Weyl criterion",
+            "approximation of integrable functions by simple or continuous functions"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "Riemann integrable functions",
+            "Weyl criterion"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#12",
+      "type": "note",
+      "title": "命题2.1.1",
+      "body": "$u_n=b\\log(n)$对任意的$b$，此序列都不会是模1均匀分布的。",
+      "position_char": 10205,
+      "position_line": 122,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#12",
+        "classification": "problem",
+        "english_title": "Proposition 2.1.1",
+        "if_problem": {
+          "statement_en": "For any $b$, the sequence $u_n=b\\log(n)$ is not uniformly distributed modulo $1$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "analyze growth of logarithmic sequences",
+            "apply Weyl criterion or density arguments"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "properties of the logarithm",
+            "basic asymptotic analysis"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#13",
+      "type": "note",
+      "title": "命题2.1.2",
+      "body": "$\\log(n)$模1的余数再对应的区间中是稠密的。",
+      "position_char": 10870,
+      "position_line": 129,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#13",
+        "classification": "problem",
+        "english_title": "Proposition 2.1.2",
+        "if_problem": {
+          "statement_en": "The remainders modulo $1$ of $\\log(n)$ form a dense subset of the corresponding interval.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "density argument",
+            "control of logarithmic increments"
+          ],
+          "prerequisites": [
+            "density in intervals",
+            "properties of the logarithm",
+            "reduction modulo 1"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#14",
+      "type": "note",
+      "title": "命题2",
+      "body": "$u_n=n\\gamma$,其中$\\gamma$是任意的一个正无理数，该序列是模1均匀分布的。",
+      "position_char": 11288,
+      "position_line": 140,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#14",
+        "classification": "problem",
+        "english_title": "Proposition 2",
+        "if_problem": {
+          "statement_en": "Let $u_n=n\\gamma$, where $\\gamma$ is any positive irrational number. Then the sequence is uniformly distributed modulo $1$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "number theory",
+          "key_techniques": [
+            "Weyl criterion",
+            "geometric series cancellation for irrational rotations"
+          ],
+          "prerequisites": [
+            "irrational numbers",
+            "uniform distribution modulo 1",
+            "complex exponentials"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#15",
+      "type": "note",
+      "title": "命题3",
+      "body": "$u_n=an^{b},a\\neq0,b\\in(0,1)$,那么这个序列是模1均匀分布的。",
+      "position_char": 11839,
+      "position_line": 151,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#15",
+        "classification": "problem",
+        "english_title": "Proposition 3",
+        "if_problem": {
+          "statement_en": "If $u_n=an^{b}$ with $a\\neq0$ and $b\\in(0,1)$, then this sequence is uniformly distributed modulo $1$.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "van der Corput difference theorem",
+            "analysis of power sequences"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "difference methods",
+            "asymptotic behavior of powers"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#16",
+      "type": "note",
+      "title": "命题4",
+      "body": "$$\\frac{\\sum_{n=1}^{N}|\\cos(n^2)|}{N}\\to\\frac{2}{\\pi}=\\frac{1}{2\\pi}\\int_{0}^{2\\pi}|\\cos(x)|dx$$",
+      "position_char": 12274,
+      "position_line": 158,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#16",
+        "classification": "problem",
+        "english_title": "Proposition 4",
+        "if_problem": {
+          "statement_en": "$$\\frac{\\sum_{n=1}^{N}|\\cos(n^2)|}{N}\\to\\frac{2}{\\pi}=\\frac{1}{2\\pi}\\int_{0}^{2\\pi}|\\cos(x)|\\,dx.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "equidistribution of polynomial sequences",
+            "averaging via an integral limit"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "continuity and integrability of trigonometric functions",
+            "change of variables on periodic intervals"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#17",
+      "type": "note",
+      "title": "命题5",
+      "body": "$n^2$模$2\\pi$在$[0,2\\pi]$当中均匀分布",
+      "position_char": 12407,
+      "position_line": 163,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#17",
+        "classification": "problem",
+        "english_title": "Proposition 5",
+        "if_problem": {
+          "statement_en": "The sequence $n^2$ modulo $2\\pi$ is uniformly distributed on $[0,2\\pi]$.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "Weyl criterion for polynomial sequences",
+            "exponential sum estimates"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "quadratic sequences",
+            "periodic rescaling"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#18",
+      "type": "note",
+      "title": "van der Corput's difference theorem,1931",
+      "body": "如果序列$u_{n+h}-u_n$是模1均匀分布的对任意正整数$h$成立，那么$u_n$也是模1均匀分布的。",
+      "position_char": 12472,
+      "position_line": 168,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#18",
+        "classification": "problem",
+        "english_title": "van der Corput's Difference Theorem, 1931",
+        "if_problem": {
+          "statement_en": "If for every positive integer $h$, the sequence $u_{n+h}-u_n$ is uniformly distributed modulo $1$, then $u_n$ is also uniformly distributed modulo $1$.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "difference method",
+            "reduction of equidistribution to shifted differences"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "Weyl criterion",
+            "basic exponential sum methods"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "模1均匀分布与Weyl判别#19",
+      "type": "note",
+      "title": "命题6",
+      "body": "比如$\\{\\frac{0}{1},\\frac{0}{2},\\frac{1}{2},\\frac{0}{3},\\frac{1}{3},\\frac{2}{3},\\dots\\frac{k-1}{k},...\\}$的序列是模1均匀分布的。",
+      "position_char": 12740,
+      "position_line": 176,
+      "classification_result": {
+        "id": "模1均匀分布与Weyl判别#19",
+        "classification": "problem",
+        "english_title": "Proposition 6",
+        "if_problem": {
+          "statement_en": "For example, the sequence $$\\left\\{\\frac{0}{1},\\frac{0}{2},\\frac{1}{2},\\frac{0}{3},\\frac{1}{3},\\frac{2}{3},\\dots,\\frac{k-1}{k},\\dots\\right\\}$$ is uniformly distributed modulo $1$.",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "counting rational points with bounded denominator",
+            "compare block averages with interval length"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "basic counting arguments",
+            "rational numbers in intervals"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"模1均匀分布与Weyl判别#1\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Concept of Uniform Distribution of a Sequence\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#2\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Concept of a Real Number Modulo 1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#3\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Concept of Uniform Distribution Modulo 1 of a Sequence\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example of a Non-Uniformly Distributed Sequence\",\n    \"if_problem\": {\n      \"statement_en\": \"A simple example is $u_n=\\\\frac{1}{n}$. After reduction modulo $1$, $$\\\\varepsilon(u_1)=0,\\\\varepsilon(u_2)=-\\\\frac{1}{2},\\\\varepsilon(u_n)=\\\\frac{1}{n},n\\\\geq 3.$$ This sequence is not uniformly distributed modulo $1$; for instance, in the interval $[-1/2,0]$ there is only the element $-1/2$, so the limiting proportion of terms in this interval is $0$ rather than $1/2$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"analyze the image modulo 1 explicitly\",\n        \"test the definition on a specific interval\"\n      ],\n      \"prerequisites\": [\n        \"definition of uniform distribution modulo 1\",\n        \"fractional part or remainder modulo 1\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Second Example of a Sequence Not Uniformly Distributed Modulo 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $r_n$ be an enumeration of the rational numbers in $[-\\\\frac{1}{2},\\\\frac{1}{2})$, and define $$\\\\xi_n:=\\\\begin{cases}r_n&100\\\\mid n\\\\\\\\0&\\\\text{otherwise.}\\\\end{cases}$$ Then $(\\\\xi_n)$ is not uniformly distributed modulo $1$. For example, for a fixed interval such as $[\\\\frac{1}{5},\\\\frac{1}{4}]$, among the first $N$ terms at most $N/100$ lie in this interval, so the limiting proportion is at most $1/100$, not the interval length $1/20$. Nevertheless, the set of values of the sequence is dense in $[-\\\\frac{1}{2},\\\\frac{1}{2})$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"construct a sparse perturbation of a dense set\",\n        \"compare limiting frequency with interval length\"\n      ],\n      \"prerequisites\": [\n        \"definition of uniform distribution modulo 1\",\n        \"density of the rational numbers\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Weyl Criterion, 1916\",\n    \"if_problem\": {\n      \"statement_en\": \"The following are equivalent:\\n1. $u_n$ is uniformly distributed modulo $1$.\\n2. For every nonzero integer $k$, $$\\\\frac{1}{N}\\\\sum_{n=1}^{N}e^{2\\\\pi i k u_n}\\\\to0.$$\\n3. For every continuous function $f:[-\\\\frac{1}{2},\\\\frac{1}{2}]\\\\to\\\\mathbb{C}$, $$\\\\frac{1}{N}\\\\sum_{n=1}^{N}f(\\\\varepsilon(u_n))\\\\to\\\\int_{-1/2}^{1/2}f(x)\\\\,dx.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"Fourier analysis\",\n        \"trigonometric polynomial approximation\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"continuous functions on compact intervals\",\n        \"complex exponentials and Fourier series\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f\\\\in C(\\\\mathbb{T}\\\\to \\\\mathbb{C})$, then for every $\\\\varepsilon>0$ there exists a polynomial $P_{\\\\varepsilon}(z)$ such that $$\\\\|f-P_{\\\\varepsilon}\\\\|_{u}<\\\\varepsilon.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"analysis\",\n      \"key_techniques\": [\n        \"Stone-Weierstrass approximation\",\n        \"uniform approximation on compact spaces\"\n      ],\n      \"prerequisites\": [\n        \"continuous functions on the circle\",\n        \"uniform norm\",\n        \"Weierstrass or Stone-Weierstrass theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.2.2\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f\\\\in C([-1/2,1/2]\\\\to \\\\mathbb{C})$ and satisfies $f(-1/2)=f(1/2)$, then for every $\\\\varepsilon>0$ there exists a trigonometric polynomial $P_{\\\\varepsilon}\\\\in \\\\mathcal{P}$ such that, defining $T_{\\\\varepsilon}(x):=P_{\\\\varepsilon}(e^{2\\\\pi i x})$, one has $$\\\\|f-T_{\\\\varepsilon}\\\\|_{u}<\\\\varepsilon.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"identify periodic functions with functions on the circle\",\n        \"trigonometric polynomial approximation\"\n      ],\n      \"prerequisites\": [\n        \"continuous periodic functions\",\n        \"uniform norm\",\n        \"approximation on the unit circle\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#9\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.3.1\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f$ is a real-valued Riemann integrable function on $[-1/2,1/2]$, then for every $\\\\varepsilon>0$ there exists $g_{\\\\varepsilon} \\\\in C([-1/2,1/2]\\\\to \\\\mathbb{C})$ such that $$\\\\int_{-1/2}^{1/2}|f(x)-g_{\\\\varepsilon}(x)|\\\\,dx<\\\\varepsilon.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"approximation of Riemann integrable functions by continuous functions\",\n        \"integral norm approximation\"\n      ],\n      \"prerequisites\": [\n        \"Riemann integrability\",\n        \"continuous functions on closed intervals\",\n        \"basic integration theory\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#10\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.4.1: Darboux Squeeze\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f$ is a Riemann integrable function on the closed interval $[a,b]$, then for every $\\\\varepsilon>0$ there exist step functions $g_{\\\\varepsilon},h_{\\\\varepsilon}$ on $[a,b]$ such that for all $x\\\\in [a,b]$, $$g_{\\\\varepsilon}(x)\\\\leq f(x)\\\\leq h_{\\\\varepsilon}(x),$$ and $$\\\\int_a^b\\\\bigl(h_{\\\\varepsilon}(x)-g_{\\\\varepsilon}(x)\\\\bigr)\\\\,dx<\\\\varepsilon.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Darboux upper and lower sums\",\n        \"approximation by step functions\"\n      ],\n      \"prerequisites\": [\n        \"Riemann integrability\",\n        \"step functions\",\n        \"upper and lower Darboux sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#11\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1.4.2: Strengthened Weyl Criterion\",\n    \"if_problem\": {\n      \"statement_en\": \"A sequence $x_n$ is uniformly distributed modulo $1$ if and only if for every Riemann integrable function $f$ defined on $[0,1]$, $$\\\\frac{1}{N}\\\\sum_{n=1}^{N}f(\\\\{u_n\\\\})\\\\to\\\\int_{0}^{1}f(x)\\\\,dx.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"Weyl criterion\",\n        \"approximation of integrable functions by simple or continuous functions\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"Riemann integrable functions\",\n        \"Weyl criterion\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#12\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"For any $b$, the sequence $u_n=b\\\\log(n)$ is not uniformly distributed modulo $1$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"analyze growth of logarithmic sequences\",\n        \"apply Weyl criterion or density arguments\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"properties of the logarithm\",\n        \"basic asymptotic analysis\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#13\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1.2\",\n    \"if_problem\": {\n      \"statement_en\": \"The remainders modulo $1$ of $\\\\log(n)$ form a dense subset of the corresponding interval.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"density argument\",\n        \"control of logarithmic increments\"\n      ],\n      \"prerequisites\": [\n        \"density in intervals\",\n        \"properties of the logarithm\",\n        \"reduction modulo 1\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#14\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $u_n=n\\\\gamma$, where $\\\\gamma$ is any positive irrational number. Then the sequence is uniformly distributed modulo $1$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"Weyl criterion\",\n        \"geometric series cancellation for irrational rotations\"\n      ],\n      \"prerequisites\": [\n        \"irrational numbers\",\n        \"uniform distribution modulo 1\",\n        \"complex exponentials\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#15\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 3\",\n    \"if_problem\": {\n      \"statement_en\": \"If $u_n=an^{b}$ with $a\\\\neq0$ and $b\\\\in(0,1)$, then this sequence is uniformly distributed modulo $1$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"van der Corput difference theorem\",\n        \"analysis of power sequences\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"difference methods\",\n        \"asymptotic behavior of powers\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#16\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 4\",\n    \"if_problem\": {\n      \"statement_en\": \"$$\\\\frac{\\\\sum_{n=1}^{N}|\\\\cos(n^2)|}{N}\\\\to\\\\frac{2}{\\\\pi}=\\\\frac{1}{2\\\\pi}\\\\int_{0}^{2\\\\pi}|\\\\cos(x)|\\\\,dx.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"equidistribution of polynomial sequences\",\n        \"averaging via an integral limit\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"continuity and integrability of trigonometric functions\",\n        \"change of variables on periodic intervals\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#17\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 5\",\n    \"if_problem\": {\n      \"statement_en\": \"The sequence $n^2$ modulo $2\\\\pi$ is uniformly distributed on $[0,2\\\\pi]$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"Weyl criterion for polynomial sequences\",\n        \"exponential sum estimates\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"quadratic sequences\",\n        \"periodic rescaling\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#18\",\n    \"classification\": \"problem\",\n    \"english_title\": \"van der Corput's Difference Theorem, 1931\",\n    \"if_problem\": {\n      \"statement_en\": \"If for every positive integer $h$, the sequence $u_{n+h}-u_n$ is uniformly distributed modulo $1$, then $u_n$ is also uniformly distributed modulo $1$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"difference method\",\n        \"reduction of equidistribution to shifted differences\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"Weyl criterion\",\n        \"basic exponential sum methods\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"模1均匀分布与Weyl判别#19\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 6\",\n    \"if_problem\": {\n      \"statement_en\": \"For example, the sequence $$\\\\left\\\\{\\\\frac{0}{1},\\\\frac{0}{2},\\\\frac{1}{2},\\\\frac{0}{3},\\\\frac{1}{3},\\\\frac{2}{3},\\\\dots,\\\\frac{k-1}{k},\\\\dots\\\\right\\\\}$$ is uniformly distributed modulo $1$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"counting rational points with bounded denominator\",\n        \"compare block averages with interval length\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"basic counting arguments\",\n        \"rational numbers in intervals\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

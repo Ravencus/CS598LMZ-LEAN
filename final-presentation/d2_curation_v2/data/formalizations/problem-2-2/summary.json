@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-2-2",
+  "english_title": "Problem 2",
+  "statement_en": "Let $$A_N:=\\prod_{n\\leq N}\\frac{n}{n+a},$$ where $a$ is a fixed real number. Find $$\\lim_{n\\to \\infty }A_N.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\nopen scoped BigOperators\n\ndef A (a : ℝ) (N : ℕ) : ℝ :=\n  Finset.prod (Finset.Icc 1 N) (fun n => (n : ℝ) / ((n : ℝ) + a))\n\ntheorem tendsto_A_zero_of_pos (a : ℝ) (ha : 0 < a) :\n    Tendsto (fun N : ℕ => A a N) atTop (nhds 0) := by\n  sorry"
+}

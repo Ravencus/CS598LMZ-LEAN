@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "fourier-coefficient-version",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces use the same core decomposition: reduce the integer index through `Int.natAbs`, prove coercion to `ℝ` tends to `Filter.cocompact`, then apply the Riemann-Lebesgue/Fourier decay result. The SMALL trace reaches nearly the BIG proof by mcp call 9, but fails on Lean details such as proving `",
+  "wall_seconds": 14.33
+}

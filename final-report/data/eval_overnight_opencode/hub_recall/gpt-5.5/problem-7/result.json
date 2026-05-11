@@ -1,0 +1,23 @@
+{
+  "problem_id": "problem-7",
+  "model": "gpt-5.5",
+  "wall_seconds": 16.44,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "cauchy-convergence-criterion-hub",
+    "piecewise-estimates-hub",
+    "sum-estimates-via-summation-by-parts-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "basic-methods-in-analysis-i-hub",
+    "sum-estimates-via-summation-by-parts-hub"
+  ],
+  "tp": 1,
+  "fp": 3,
+  "fn": 1,
+  "precision": 0.25,
+  "recall": 0.5,
+  "f1": 0.3333
+}

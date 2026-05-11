@@ -1,0 +1,22 @@
+{
+  "id": "problem-2-8",
+  "type": "problem",
+  "source_note": "自然数的r次幂的部分和估计",
+  "english_source_note": "Partial Sum Estimates for Powers of Integers",
+  "callout_id": "自然数的r次幂的部分和估计#7",
+  "english_title": "Problem 2",
+  "statement_en": "Find an asymptotic expansion of\n$$\\sum_{k\\leq n}\\sqrt{k},$$\nespecially determining the constant term in the asymptotic expansion.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "Euler-Maclaurin summation",
+    "power-sum asymptotics"
+  ],
+  "prerequisites": [
+    "asymptotic expansion",
+    "summation formulas",
+    "basic properties of zeta values"
+  ],
+  "callout_body": "求$$\\sum_{k\\leq n}\\sqrt{k}$$的渐近展开，特别是需要得到其常数项的渐近系数。"
+}

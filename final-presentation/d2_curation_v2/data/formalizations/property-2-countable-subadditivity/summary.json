@@ -1,0 +1,24 @@
+{
+  "problem_id": "property-2-countable-subadditivity",
+  "english_title": "Property 2: Countable Subadditivity",
+  "statement_en": "If $E_1,\\cdots,E_n,\\cdots \\in \\mathcal{F}$, then $$\\mu\\left(\\bigcup_{n\\geq 1}E_n\\right)\\leq \\sum_{n\\geq 1}\\mu(E_n).$$",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem measure_iUnion_from_one_le_tsum {α : Type*} [MeasurableSpace α]\n    (μ : MeasureTheory.Measure α) (E : ℕ → Set α) :\n    μ (⋃ n : ℕ, E (n + 1)) ≤ ∑' n : ℕ, μ (E (n + 1)) := by\n  sorry"
+}

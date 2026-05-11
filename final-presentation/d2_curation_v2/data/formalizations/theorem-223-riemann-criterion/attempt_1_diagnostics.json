@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_fe1736121f88.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instSupSet', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_fe1736121f88.lean",
+      "line": 22,
+      "column": 14,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_fe1736121f88.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instSupSet', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_fe1736121f88.lean",
+      "line": 22,
+      "column": 14,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','\n"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "example-242-the-typewriter-sequence-does-not-satisfy-the-hyp",
+  "type": "problem",
+  "source_note": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+  "english_source_note": "Lp Decay Rates Ensuring Almost Everywhere Convergence to 0",
+  "callout_id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#8",
+  "english_title": "Example 2.4.2: The Typewriter Sequence Does Not Satisfy the Hypotheses of Proposition 2.4.1",
+  "statement_en": "Although the typewriter sequence converges to \\(0\\) in every \\(L^p\\) norm, it does not satisfy the variance condition in Proposition 2.4.1. Indeed, for every \\(2^k \\leq n < 2^{k+1}\\),\n\\[\n\\mathrm{Var}(f_n)=E(f_n^2)-(E(f_n))^2=\\frac{1}{2^k}-\\frac{1}{4^k},\n\\]\nso\n\\[\n\\mathrm{Var}(f_n) \\geq \\frac{1}{2^{k+1}} \\geq \\frac{1}{2n}.\n\\]\nHence \\(\\sum_{n\\geq 1} \\mathrm{Var}(f_n)\\) diverges, so the typewriter sequence does not satisfy the variance hypothesis of Proposition 2.4.1.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "variance computation",
+    "comparison test for divergence",
+    "analysis of the typewriter sequence"
+  ],
+  "prerequisites": [
+    "variance of random variables",
+    "series divergence tests",
+    "typewriter sequence"
+  ],
+  "callout_body": "我们已经知道对于打字机函数列而言$f_n$对任意的$L^p$范数都是收敛到0的。此处的关键在于计算这个函数列的方差。由于$$V(f_n)=E(f^2_n)-(E(f_n))^2=\\frac{1}{2^k}-\\frac{1}{4^k}$$对任意的$2^k\\leq n<2^{k+1}$成立。那么由于$$V(f_n)\\geq \\frac{1}{2^{k+1}}\\geq \\frac{1}{2n}$$因此$\\sum_{n\\geq 1}V(f_n)$不是一个收敛的级数，因此打字机数列并不满足“命题2.4.1”对方差的要求。"
+}

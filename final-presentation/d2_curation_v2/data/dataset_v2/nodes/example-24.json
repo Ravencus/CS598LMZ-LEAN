@@ -1,0 +1,23 @@
+{
+  "id": "example-24",
+  "type": "problem",
+  "source_note": "制造telescoping sum求和或求乘积",
+  "english_source_note": "Using Telescoping Sums for Sums and Products",
+  "callout_id": "制造telescoping sum求和或求乘积#8",
+  "english_title": "Example 2.4",
+  "statement_en": "Show that\n$$\\\\prod_{n\\\\geq 0} \\\\cos\\\\left(\\\\frac{x}{2^{n+1}}\\\right)=\\\\frac{\\\\sin(x)}{x}.$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "telescoping product",
+    "double-angle formula for sine",
+    "limit \\(\\\\sin t/t \\\to 1\\)"
+  ],
+  "prerequisites": [
+    "trigonometric identities",
+    "limits",
+    "infinite products"
+  ],
+  "callout_body": "\n$$\\prod_{n\\geq 0} \\cos\\left(\\frac{x}{2^{n+1}}\\right)=\\frac{\\sin(x)}{x}$$\n\n* 考虑到正弦函数的二倍角公式$$\\sin(x)=2\\sin(x/2)\\cos(x/2)$$这个式子在当前情境下可以写成$$\\cos\\left(\\frac{x}{2^{n+1}}\\right)=\\frac{\\sin\\left(\\frac{x}{2^{n}}\\right)}{2\\sin\\left(\\frac{x}{2^{n+1}}\\right)}$$于是$$\\prod_{n= 0}^{N} \\cos\\left(\\frac{x}{2^{n+1}}\\right)=\\frac{1}{2^{N+1}}\\prod_{n=0}^{N}\\frac{\\sin\\left(\\frac{x}{2^{n}}\\right)}{\\sin\\left(\\frac{x}{2^{n+1}}\\right)}=\\frac{1}{2^{N+1}}\\frac{\\sin(x)}{\\sin\\left(\\frac{x}{2^{N+1}}\\right)}\\to \\frac{\\sin(x)}{x}$$"
+}

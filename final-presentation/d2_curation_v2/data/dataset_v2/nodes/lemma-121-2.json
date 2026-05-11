@@ -1,0 +1,21 @@
+{
+  "id": "lemma-121-2",
+  "type": "problem",
+  "source_note": "对含参数方程根的估计",
+  "english_source_note": "Estimates for Roots of Parameterized Equations",
+  "callout_id": "对含参数方程根的估计#3",
+  "english_title": "Lemma 1.2.1",
+  "statement_en": "Let the \\(N(s)\\) positive roots of \\(\\cos(x)=sx\\) be ordered as\n\\\\[\nx_1(s)<x_2(s)<\\\\cdots<x_{N(s)}(s).\n\\\\]\nThen:\n1. \\(N(s)\\\\sim \\\\frac{1}{\\\\pi s}\\).\n2. For every \\(1\\\\leq k\\\\leq N(s)\\),\n\\\\[\nk\\\\pi<x_k(s)<(k+1)\\\\pi.\n\\\\]",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "monotonicity and sign changes of trigonometric functions",
+    "root localization"
+  ],
+  "prerequisites": [
+    "intermediate value theorem",
+    "properties of cosine"
+  ],
+  "callout_body": "设$\\cos(x)=sx$的$N(s)$个正根按照顺序排列为$$x_1(s)<x_2(s)<\\cdots<x_{N(s)}(s)$$那么:\n1. $N(s)\\sim \\frac{1}{\\pi s}$\n2. 对于$1\\leq k\\leq N(s)$都有$$k\\pi<x_k(s)<(k+1)\\pi$$"
+}

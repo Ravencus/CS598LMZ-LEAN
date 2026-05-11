@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-1-convergence-in-the-lp-norm-implies-convergence",
+  "english_title": "Proposition 1: Convergence in the \\(L^p\\) Norm Implies Convergence in Measure",
+  "statement_en": "$$f_n\\xrightarrow{L^p}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 4,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem lp_convergence_implies_convergence_in_measure\n    {α : Type*} [MeasurableSpace α] (μ : Measure α) (p : ENNReal)\n    (f : α → ℝ) (fSeq : ℕ → α → ℝ)\n    (hp : 0 < p)\n    (hLp : Filter.Tendsto\n      (fun n : ℕ => eLpNorm (fun x : α => fSeq n x - f x) p μ)\n      Filter.atTop\n      (Filter.nhds (0 : ENNReal))) :\n    ∀ ε : ℝ, 0 < ε →\n      Filter.Tendsto\n        (fun n : ℕ => μ {x : α | ε ≤ ‖fSeq n x - f x‖})\n        Filter.atTop\n        (Filter.nhds (0 : ENNReal)) := by\n  sorry"
+}

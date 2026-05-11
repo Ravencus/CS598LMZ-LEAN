@@ -1,0 +1,21 @@
+{
+  "problem_id": "lebesgue-measure-of-a-region-bounded-by-a-function",
+  "model": "gpt-5.5",
+  "wall_seconds": 21.62,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "interchanging-sums-and-integrals-hub",
+    "piecewise-estimates-hub",
+    "reducing-set-problems-to-function-problems-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-for-measure-zero-sets-hub"
+  ],
+  "tp": 0,
+  "fp": 3,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

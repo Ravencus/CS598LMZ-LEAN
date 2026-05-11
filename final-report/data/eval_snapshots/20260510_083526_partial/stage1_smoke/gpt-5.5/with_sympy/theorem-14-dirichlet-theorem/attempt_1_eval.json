@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Invalid field `exists_nat_abs_mul_sub_lt`: The environment does not contain `Function.exists_nat_abs_mul_sub_lt`, so it is not possible to project the field `exists_nat_abs_mul_sub_lt` from an express",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_2116dfb92f.lean",
+      "line": 6,
+      "column": 28,
+      "severity": "error",
+      "message": "Invalid field `exists_nat_abs_mul_sub_lt`: The environment does not contain `Function.exists_nat_abs_mul_sub_lt`, so it is not possible to project the field `exists_nat_abs_mul_sub_lt` from an expression\n  hα\nof type `α ∈ Set.range Rat.cast → False`\n"
+    }
+  ]
+}

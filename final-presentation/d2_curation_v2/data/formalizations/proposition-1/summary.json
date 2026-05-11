@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-1",
+  "english_title": "Proposition 1",
+  "statement_en": "If the required accuracy of the asymptotic expansion of $S_n$ is $O(g(n))$, and there is another known asymptotic expansion for a sum $S'_n$ with the same accuracy $O(g(n))$, and moreover\n$$S_n-S_n'=O(g(n)),$$\nthen the asymptotic expansions of $S_n$ and $S'_n$ are the same up to accuracy $O(g(n))$.",
+  "difficulty": "easy",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter Asymptotics\n\ntheorem asymptoticExpansions_same_up_to_accuracy_O\n    {S S' A A' g : ℕ → ℝ}\n    (hS : (fun n => S n - A n) =O[atTop] g)\n    (hS' : (fun n => S' n - A' n) =O[atTop] g)\n    (hDiff : (fun n => S n - S' n) =O[atTop] g) :\n    (fun n => A n - A' n) =O[atTop] g := by\n  sorry"
+}

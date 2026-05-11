@@ -1,0 +1,14 @@
+I’ll use the checker sparingly to identify the existing Mathlib theorem for preserving eventual inequalities under limits, then submit the completed proof.
+The direct theorem name I expected is not closing the goal, so I’m switching to a robust epsilon/nhds proof and will only probe the specific neighborhood lemmas needed.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto hy hx hxy
+```

@@ -1,0 +1,58 @@
+{
+  "problem_id": "fourier-coefficient-version",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 129.3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 89.39,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_int`\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 16.74,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_comp_intCast`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 15.79,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_comp_natAbs_atTop`\n"
+    }
+  ]
+}

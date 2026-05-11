@@ -1,0 +1,33 @@
+I’m checking whether this theorem is already available in Mathlib or whether I need a short custom argument. If it’s not there, I’ll try the smallest proof shape that fits the existing library.
+I’ve confirmed this is a genuine theorem attempt, not a routine algebraic rewrite. Next I’m checking whether Mathlib already contains a related result that can be reused instead of reinventing analytic number theory.
+I found a related analysis proof in the workspace, so I’m reading that for reusable structure before I spend checker calls on a blind attempt.
+I need to know whether the statement is likely true before I keep searching the library. I’m sampling a few partial sums numerically to see whether the sequence actually looks bounded.
+I haven’t found a workspace theorem to reuse, so I’m searching Mathlib itself for anything in the quadratic exponential-sum direction before I decide this needs a custom theorem that the library simply doesn’t have.
+I found prior formalization attempts for exactly this theorem in the repo, so I’m reading those instead of guessing. If one of them compiles, I can adapt it directly.
+The theorem is not obviously false from the numerics, so I’m checking how far the partial sums drift. If they keep growing, I’ll know this really does need a nontrivial analytic argument that Mathlib probably doesn’t have.
+I’m checking a much larger sample. If the growth stays small, the statement may actually be false, which would explain why there’s no obvious theorem in Mathlib.
+I found the theta-function machinery for quadratic phases. I’m reading the bounds file now in case it already contains the growth or divergence statement that this problem needs.
+I’ve exhausted the library search path: Mathlib has theta-function machinery and Dirichlet approximation, but not the analytic number theory needed to finish this theorem cleanly. I’m doing one compile check on the best Lean skeleton, then I’ll return that as the final file.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+noncomputable section
+
+open Finset
+open scoped BigOperators
+
+def S (N : ℕ) : ℝ :=
+  Finset.sum (Finset.range (N + 1)) (fun n => Real.sin ((n : ℝ) ^ 2))
+
+theorem sinSquarePartialSums_unbounded : ¬ ∃ C : ℝ, ∀ N : ℕ, ‖S N‖ ≤ C := by
+  intro h
+  rcases h with ⟨C, hC⟩
+  by_cases hCneg : C < 0
+  · have h0 : (0 : ℝ) ≤ C := by simpa [S] using hC 0
+    exact (not_lt_of_ge h0) hCneg
+  · have hmain : ∃ N : ℕ, C < ‖S N‖ := by
+      sorry
+    rcases hmain with ⟨N, hN⟩
+    exact not_lt_of_ge (hC N) hN
+```

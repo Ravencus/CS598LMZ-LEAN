@@ -1,0 +1,18 @@
+{
+  "problem_id": "properties-of-the-trace-of-a-linear-operator",
+  "english_title": "Properties of the Trace of a Linear Operator",
+  "statement_en": "For linear operators $\\mathscr{A},\\mathscr{B}$, the trace satisfies: 1. $$\\text{trace}(\\mathscr{A}\\circ \\mathscr{B})=\\text{trace}(\\mathscr{B}\\circ \\mathscr{A}).$$ 2. $$\\text{trace}(a\\mathscr{A}+b\\mathscr{B})=a\\,\\text{trace}(\\mathscr{A})+b\\,\\text{trace}(\\mathscr{B}),$$ where $a,b$ are constants.",
+  "difficulty": "easy",
+  "domain": "linear algebra",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem linearMap_trace_comp_comm\n    {K V : Type*}\n    [Field K]\n    [AddCommGroup V]\n    [Module K V]\n    [Module.Free K V]\n    [Module.Finite K V]\n    (A B : Module.End K V) :\n    LinearMap.trace K V (A.comp B) = LinearMap.trace K V (B.comp A) := by\n  sorry\n\ntheorem linearMap_trace_linear_combination\n    {K V : Type*}\n    [Field K]\n    [AddCommGroup V]\n    [Module K V]\n    [Module.Free K V]\n    [Module.Finite K V]\n    (A B : Module.End K V)\n    (a b : K) :\n    LinearMap.trace K V (a • A + b • B) =\n      a * LinearMap.trace K V A + b * LinearMap.trace K V B := by\n  sorry"
+}

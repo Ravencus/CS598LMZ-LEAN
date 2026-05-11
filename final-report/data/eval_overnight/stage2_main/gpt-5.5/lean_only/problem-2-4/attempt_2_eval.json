@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown constant `Filter.Tendsto.cesaro_mul`\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 12,
+      "column": 14,
+      "severity": "error",
+      "message": "Unknown constant `Filter.Tendsto.cesaro_mul`\n"
+    }
+  ]
+}

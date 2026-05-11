@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-126-exercise-125",
+  "english_title": "Proposition 1.2.6 (Exercise 1.2.5)",
+  "statement_en": "If a sequence has a limit, then every subsequence also has a limit, and that limit is equal to the limit of the original sequence.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem subsequence_has_same_limit\n    {α : Type*} [TopologicalSpace α] {u : ℕ → α} {l : α}\n    (hu : Filter.Tendsto u Filter.atTop (nhds l)) :\n    ∀ φ : ℕ → ℕ, StrictMono φ →\n      ∃ m : α, Filter.Tendsto (fun n => u (φ n)) Filter.atTop (nhds m) ∧ m = l := by\n  sorry"
+}

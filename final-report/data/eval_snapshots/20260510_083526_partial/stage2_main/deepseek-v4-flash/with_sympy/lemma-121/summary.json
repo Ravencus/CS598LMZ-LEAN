@@ -1,0 +1,58 @@
+{
+  "problem_id": "lemma-121",
+  "model": "deepseek-v4-flash",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 389.8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 138.66,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "unexpected end of input"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 177.12,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": true,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Function expected at\n  conj\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  z.1\n\nHint: The identifier `conj` is unknown, and Lean's `autoI"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 66.94,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": true,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Complex.conj`\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+I'll work on this theorem. The key is to use `MeasureTheory.integral_mono_ae` from Mathlib.
+Compiled on first try.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory
+
+theorem integral_ge_of_ae_ge
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}
+    (hf : Integrable f μ) (hg : Integrable g μ)
+    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :
+    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by
+  exact integral_mono_ae hg hf hfg
+```

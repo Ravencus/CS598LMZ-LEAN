@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-125-a-necessary-condition-for-a-cauchy-sequence",
+  "english_title": "Proposition 1.2.5: A Necessary Condition for a Cauchy Sequence",
+  "statement_en": "If $(a_n)$ is a Cauchy sequence, then for every fixed positive integer $p$, $$|a_{n+p}-a_n|\\to 0.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem cauchySeq_shift_diff_tendsto_zero {a : ℕ → ℝ} (ha : CauchySeq a) :\n    ∀ p : ℕ, 0 < p → Filter.Tendsto (fun n : ℕ => |a (n + p) - a n|) Filter.atTop (nhds 0) := by\n  sorry"
+}

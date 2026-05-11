@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-41",
+  "english_title": "Proposition 4.1",
+  "statement_en": "Let $$r_n = S_n-(n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi}))=\\frac{1}{12n}+R(n).$$ Then $$0<r_n<\\frac{1}{12n}.$$",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.log', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def rSeq (S : ℕ → ℝ) (n : ℕ) : ℝ :=\n  S n - (((n : ℝ) * Real.log (n : ℝ)) - (n : ℝ) + (1 / 2 : ℝ) * Real.log (n : ℝ) +\n    Real.log (Real.sqrt (2 * Real.pi)))\n\ntheorem stirling_remainder_bounds\n    (S R : ℕ → ℝ) {n : ℕ} (hn : 0 < n)\n    (hrn : rSeq S n = 1 / (12 * (n : ℝ)) + R n) :\n    0 < rSeq S n ∧ rSeq S n < 1 / (12 * (n : ℝ)) := by\n  sorry"
+}

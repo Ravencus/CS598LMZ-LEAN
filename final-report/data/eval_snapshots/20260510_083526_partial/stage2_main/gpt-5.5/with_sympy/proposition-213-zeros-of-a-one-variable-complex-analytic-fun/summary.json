@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 193.8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 140.38,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "Application type mismatch: The argument\n  hU_open\nhas type\n  IsOpen U\nbut is expected to have type\n  U ∈ nhds ?m.68\nin the application\n  DifferentiableOn.analyticAt hf_holo hU_open"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 22.85,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Tactic `rcases` failed: `hne : (nhds z0).1 {x | (fun x => x ∈ {z0}ᶜ → f x ≠ 0) x}` is not an inductive datatype\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 23.57,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∀ᶠ (y : ?m.164) in nhds ?m.166, ?m.167 y\nin the target expression\n  ∀ᶠ (z : ℂ) in nhdsWithin z0 {z0}ᶜ, f z ≠ 0\n\ncase inr\nU : Set ℂ\n"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+I’m loading the Lean proof workflow and then I’ll shape a minimal proof attempt to check against Mathlib.
+I’m checking whether Mathlib already has a convolution or Cesàro lemma I can reuse before I commit to a manual epsilon proof.
+I’m probing the names of the convergence lemmas that are likely to help with Cesàro-style estimates.
+I’m locating the installed Mathlib sources so I can search for any ready-made Cesàro or summation lemmas instead of guessing names.

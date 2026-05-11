@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-31-2",
+  "english_title": "Proposition 3.1",
+  "statement_en": "$$\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor = 6+\\frac{8}{n}.$$",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem double_sum_floor_identity\n    (n : ℕ) (hn : 0 < n) :\n    ∑ i in Finset.Icc (0 : ℕ) n,\n      ∑ j in Finset.Icc (0 : ℕ) (2 * n),\n        ((2 : ℚ) / (n : ℚ) ^ 2) *\n          (Int.floor (((((2 : ℕ) * i + j : ℕ) : ℚ) / (n : ℚ))) : ℚ)\n      =\n        (6 : ℚ) + (8 : ℚ) / (n : ℚ) := by\n  sorry"
+}

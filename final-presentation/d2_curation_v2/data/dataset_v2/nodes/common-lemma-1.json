@@ -1,0 +1,23 @@
+{
+  "id": "common-lemma-1",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "callout_id": "Borel-Cantelli lemma及其应用#4",
+  "english_title": "Common Lemma 1",
+  "statement_en": "For each $\\varepsilon > 0$, define $$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}.$$ If for every $\\varepsilon > 0$ one has $$\\sum_{n\\geq1}\\mu(A_{n,\\varepsilon})<\\infty,$$ then $$\\mu\\left(\\limsup_{n\\to\\infty}A_{n,\\varepsilon}\\right)=0,\\quad \\forall \\varepsilon>0,$$ and hence $$f_n(x) \\to f(x) \\text{ a.e. }x.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Borel-Cantelli lemma",
+    "control of deviation sets",
+    "almost everywhere convergence criterion"
+  ],
+  "prerequisites": [
+    "measure spaces",
+    "almost everywhere convergence",
+    "Borel-Cantelli lemma"
+  ],
+  "callout_body": "如果$\\forall \\varepsilon > 0$,定义集合$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}$都有\n$$\\sum_{n\\geq1}\\mu(A_{n,\\varepsilon})<\\infty$$那么可以得到结论\n$$\\mu\\left(\\limsup_{n\\to\\infty}A_{n,\\varepsilon}\\right)=0,\\forall \\varepsilon>0$$于是\n$$f_n(x) \\to f(x) \\text{ a.e. }x$$"
+}

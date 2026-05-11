@@ -1,0 +1,80 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 11,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown constant `Real.limsup_sin_atTop`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 13,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown constant `Real.liminf_sin_atTop`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 22,
+      "column": 4,
+      "severity": "warning",
+      "message": "try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 29,
+      "column": 51,
+      "severity": "error",
+      "message": "Unknown constant `Real.sin_three_pi_div_two`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 29,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  h\n has type\n  Real.sin (Real.pi * 3 / 2 + Real.pi * (↑n * 2)) = Real.sin (Real.pi * 3 / 2)\nbut is expected to have type\n  Real.sin (Real.pi * 3 / 2 + Real.pi * (↑n * 2)) = -1"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 30,
+      "column": 4,
+      "severity": "warning",
+      "message": "try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 11,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown constant `Real.limsup_sin_atTop`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 13,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown constant `Real.liminf_sin_atTop`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 29,
+      "column": 51,
+      "severity": "error",
+      "message": "Unknown constant `Real.sin_three_pi_div_two`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_2b6693e03a46.lean",
+      "line": 29,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  h\n has type\n  Real.sin (Real.pi * 3 / 2 + Real.pi * (↑n * 2)) = Real.sin (Real.pi * 3 / 2)\nbut is expected to have type\n  Real.sin (Real.pi * 3 / 2 + Real.pi * (↑n * 2)) = -1"
+    }
+  ],
+  "splice_action": "passthrough",
+  "signature_deviation": false
+}

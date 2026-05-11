@@ -1,0 +1,11 @@
+import Mathlib
+#check Real.sin
+#check DenseRange
+#check denseRange_iff_closure_range
+#check Set.mem_closure_iff
+#check Metric.mem_closure_iff
+#check Real.denseRange_sin
+#check Real.denseRange_cos
+#check Real.denseRange_nat_sin
+#check denseRange_natCast
+#check Set.range

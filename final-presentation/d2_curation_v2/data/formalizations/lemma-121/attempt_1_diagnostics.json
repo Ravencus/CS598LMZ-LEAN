@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_82f14fb8d9cc.lean",
+      "line": 6,
+      "column": 26,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  TopologicalSpace Torus\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_82f14fb8d9cc.lean",
+      "line": 6,
+      "column": 26,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  TopologicalSpace Torus\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ]
+}

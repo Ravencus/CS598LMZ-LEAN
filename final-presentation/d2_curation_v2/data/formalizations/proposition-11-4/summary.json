@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-11-4",
+  "english_title": "Proposition 1.1",
+  "statement_en": "Assume $p_n$ is a nonincreasing sequence of positive real numbers, and let $\\varepsilon_n\\in\\{-1,1\\}$ be such that the series $\\sum_{n\\geq 1}\\varepsilon_n p_n$ converges. Then:\n1. If $\\sum_{n\\geq 1} p_n$ diverges, then the upper limit of the arithmetic means of $\\varepsilon_n$ is at least $0$ and the lower limit is at most $0$, that is,\n$$\\liminf_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}\\leq 0\\leq \\limsup_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}.$$\n2. $$(\\varepsi",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem signed_series_liminf_limsup_and_weighted_partial_sums\n    (p ε : ℕ → ℝ)\n    (hp_pos : ∀ n, 0 < p n)\n    (hp_mono : Antitone p)\n    (hε : ∀ n, ε n = -1 ∨ ε n = 1)\n    (hconv : Summable (fun n : ℕ => ε (n + 1) * p (n + 1))) :\n    (¬ Summable (fun n : ℕ => p (n + 1)) →\n      Filter.liminf\n          (fun n : ℕ => (Finset.sum (Finset.Icc 1 (n + 1)) ε) / (n + 1 : ℝ))\n          Filter.atTop\n        ≤ 0 ∧\n      0 ≤\n        Filter.limsup\n          (fun n : ℕ => (Finset.sum (Finset.Icc 1 (n + 1)) ε) / (n + 1 : ℝ))\n          Filter.atTop) ∧\n    Filter.Tendsto\n      (fun n : ℕ => (Finset.sum (Finset.Icc 1 (n + 1)) ε) * p (n + 1))\n      Filter.atTop\n      (nhds 0) := by\n  sorry"
+}

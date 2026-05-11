@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-231",
+  "english_title": "Proposition 2.3.1",
+  "statement_en": "Let $x_n$ be a bounded sequence with limit superior $U$ and limit inferior $L$. Let $f:I\\to \\mathbb{R}$ be continuous, where $I$ is an open interval containing the closed interval $[L,U]$. Then:\n1. If $f$ is nondecreasing on $I$, then $$\\limsup_{n\\to \\infty} f(x_n)=f(U),\\qquad \\liminf_{n\\to \\infty} f(x_n)=f(L).$$\n2. If $f$ is nonincreasing on $I$, then $$\\limsup_{n\\to \\infty} f(x_n)=f(L),\\qquad \\liminf_{n\\to \\infty} f(x_n)=f(U).$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Set\n\ndef IsLimsupSeq (x : ℕ → ℝ) (U : ℝ) : Prop :=\n  (∀ ε > 0, ∃ N : ℕ, ∀ n ≥ N, x n < U + ε) ∧\n    ∀ ε > 0, ∀ N : ℕ, ∃ n ≥ N, U - ε < x n\n\ndef IsLiminfSeq (x : ℕ → ℝ) (L : ℝ) : Prop :=\n  (∀ ε > 0, ∃ N : ℕ, ∀ n ≥ N, L - ε < x n) ∧\n    ∀ ε > 0, ∀ N : ℕ, ∃ n ≥ N, x n < L + ε\n\ntheorem continuous_monotone_limsup_liminf_of_sequence\n    (x : ℕ → ℝ) (U L : ℝ) (I : Set ℝ) (f : ℝ → ℝ)\n    (hx_bdd : ∃ M : ℝ, ∀ n : ℕ, |x n| ≤ M)\n    (hU : IsLimsupSeq x U) (hL : IsLiminfSeq x L)\n    (hLU : L ≤ U)\n    (hI_open : IsOpen I) (hI_convex : Convex ℝ I)\n    (hIcc : Set.Icc L U ⊆ I)\n    (hf_cont : ContinuousOn f I) :\n    ((MonotoneOn f I →\n        IsLimsupSeq (fun n => f (x n)) (f U) ∧\n        IsLiminfSeq (fun n => f (x n)) (f L)) ∧\n      (AntitoneOn f I →\n        IsLimsupSeq (fun n => f (x n)) (f L) ∧\n        IsLiminfSeq (fun n => f (x n)) (f U))) := by\n  sorry"
+}

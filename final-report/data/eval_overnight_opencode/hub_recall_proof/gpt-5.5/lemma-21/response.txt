@@ -1,0 +1,2 @@
+["piecewise-estimates-hub"]
+- piecewise-estimates-hub: The proof’s main step invokes `Real.norm_exp_I_mul_ofReal_sub_one_le` to replace the complex exponential difference by the simpler uniform bound `|2 * Real.pi * x|`, then finishes by rewriting that absolute-value expression algebraically.

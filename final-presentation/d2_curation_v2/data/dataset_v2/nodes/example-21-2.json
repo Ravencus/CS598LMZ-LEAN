@@ -1,0 +1,23 @@
+{
+  "id": "example-21-2",
+  "type": "problem",
+  "source_note": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+  "english_source_note": "Dirichlet Kernels Fail, Fejer Kernels Approximate Identity",
+  "callout_id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#3",
+  "english_title": "Example 2.1",
+  "statement_en": "Let $a_n:=(-1)^n$. Then its partial sums are $$S_n:=\\begin{cases}1&n\\text{ is even}\\\\0&n\\text{ is odd}\\end{cases}$$ so $S_n$ does not converge. However, this sequence is Cesaro summable, because $$\\sigma_N:=\\frac{S_0+\\cdots+S_{N-1}}{N}=\\frac{\\lfloor\\frac{N}{2}+1\\rfloor}{N}$$ and its limit is $\\frac{1}{2}$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "Fourier analysis",
+  "key_techniques": [
+    "compute partial sums explicitly",
+    "Cesaro averaging",
+    "limit of arithmetic means"
+  ],
+  "prerequisites": [
+    "definition of partial sums",
+    "definition of Cesaro summability",
+    "basic sequence limits"
+  ],
+  "callout_body": "$a_n:=(-1)^n$，那么其部分和$$S_n:=\\begin{cases}1&n\\text{是偶数}\\\\0&n\\text{是奇数}\\end{cases}$$是不存在极限的。但是这个序列确实Cesaro可和的，因为$$\\sigma_N:=\\frac{S_0+\\cdots+S_{N-1}}{N}=\\frac{\\lfloor\\frac{N}{2}+1\\rfloor}{N}$$其极限为$\\frac{1}{2}$。"
+}

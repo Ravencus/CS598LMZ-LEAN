@@ -1,0 +1,26 @@
+{
+  "id": "reducing-set-problems-to-function-problems-hub",
+  "type": "hub",
+  "source_note": "把集合问题转换为函数问题",
+  "english_source_note": "Reducing Set Problems to Function Problems",
+  "is_top3": false,
+  "note_degree": 10,
+  "strategies": [
+    {
+      "callout_id": "把集合问题转换为函数问题#1",
+      "english_title": "Core Idea",
+      "strategy_name_en": "Convert Set Problems into Function Problems via Indicator Functions",
+      "summary_en": "When a problem involves a set $A \\subset X$, replace the set by its indicator function $1_A(x)$ on $X$. Analyze $1_A$ using functional or analytic tools, then translate the resulting properties back into statements about $A$.",
+      "applicability": "Use this when a problem is formulated in terms of sets, membership, measure, or set operations, and functional-analytic, integral, or convolution methods are easier to apply than direct set-based arguments.",
+      "callout_body": "如果一个问题种涉及集合$A\\subset X$,那么可以尝试把集合$A$的问题转换为$X$上定义的特征函数$1_A(x)$的问题，然后使用分析函数的工具得到$1_A$的性质，最后把这种性质转换回$A$的性质。通常而言，处理后者的工具会更多，我们也更好入手。"
+    },
+    {
+      "callout_id": "把集合问题转换为函数问题#3",
+      "english_title": "Property 1.2: Relation Between Set Measure and Indicator Functions",
+      "strategy_name_en": "Express Measure Questions Through Integrals and Sums of Indicator Functions",
+      "summary_en": "Replace the measure of a set by the integral of its indicator function, and replace sums of measures of sets by integrals of sums of indicator functions. For sequences of sets, introduce counting functions such as $F(x)=\\sum_n 1_{A_n}(x)$ to study overlap and limsup behavior pointwise.",
+      "applicability": "Use this when studying sizes of sets, sums of measures, finite cardinalities, or limsup sets in a measure space, especially when pointwise analysis of indicator sums is more tractable than direct set manipulations.",
+      "callout_body": "此外集合的测度也可以视为特征函数的积分。例如在测度空间$(X,\\mathcal{F},\\mu)$上的一个集合$A\\in \\mathcal{F}$,我们可以把研究集合$A$的测度$\\mu(A)$转变为研究特征函数的积分，即$$\\mu(A)=\\int_{X} 1_A(x)\\,d\\mu(x)$$\n1. 如果集合$A$是一个有限集合，此时测度空间可以考虑为一个计数测度。从而变成$$|A|=\\sum_{n \\in A} 1_A(n)$$此时问题变成研究序列$1_A(n)$的和的问题。\n2. 如果有一列元素$A_n \\in \\mathcal{F}$,我们需要考虑其测度的和$\\sum_{n\\leq N}\\mu(A_n)$那么我们可以考虑构造函数$f(x):=\\sum_{n\\leq N}1_{A_n}(x)$，从而$$\\sum_{n\\leq N}\\mu(A_n)=\\int_X f(x)\\,d\\mu(x)$$因此现在目标就是搞清楚$f(x)$及其积分。\n3. 一列元素$A_n \\in \\mathcal{F}$然后令$F(x):=\\sum_{n}1_{A_n}(x)$，那么$$\\limsup_{n\\to \\infty}A_n \\iff \\{x:F(x)=+\\infty\\}$$那么$$\\mu(\\limsup_{n\\to \\infty}A_n)=0 \\iff F(x) <+\\infty \\text{ a.e.}$$"
+    }
+  ]
+}

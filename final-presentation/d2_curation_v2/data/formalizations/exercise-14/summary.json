@@ -1,0 +1,18 @@
+{
+  "problem_id": "exercise-14",
+  "english_title": "Exercise 1.4",
+  "statement_en": "Let $x_n\\in (0,1)$ and $q>0$. If $\\sum_{n\\geq 1} n^q x_n<+\\infty$, then $$\\sum_{n\\geq 1} x_n(\\log(1/x_n))^q<\\infty.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem summable_x_log_inv_pow_of_summable_npow_mul\n    (x : ℕ → ℝ) (q : ℕ)\n    (hq : 0 < q)\n    (hx : ∀ n : ℕ, 0 < x n ∧ x n < 1)\n    (hsum : Summable (fun n : ℕ => ((n + 1 : ℝ) ^ q) * x (n + 1))) :\n    Summable (fun n : ℕ => x (n + 1) * (Real.log (1 / x (n + 1))) ^ q) := by\n  sorry"
+}

@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "theorem-31-liouvilles-theorem-1844",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces use the same decomposition: prove irrationality from minpoly degree, clear denominators via `IsLocalization.integerNormalization`, get an integer polynomial root, then apply a Liouville-style integer-polynomial lemma. The SMALL trace found that route in its final_text but its proof attem",
+  "wall_seconds": 6.22
+}

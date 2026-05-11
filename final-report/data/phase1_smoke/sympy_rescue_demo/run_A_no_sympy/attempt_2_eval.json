@@ -1,0 +1,103 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 5,
+      "column": 67,
+      "severity": "error",
+      "message": "Unknown identifier `volume`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 6,
+      "column": 4,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, failed to prove the goal after exhaustive search.\nInitial goal:\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\nRemaining goals after safe rules:\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) (sorry ()) 0 (2 * Real.pi)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 7,
+      "column": 68,
+      "severity": "error",
+      "message": "Unknown identifier `volume`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 10,
+      "column": 16,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nhInt : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\nx : ℝ\nhx : x ∈ Set.uIcc 0 (Real.pi / 2)\na✝ : x < min 0 (2 * Real.pi)\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 10,
+      "column": 36,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nhInt : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\nx : ℝ\nhx : x ∈ Set.uIcc 0 (Real.pi / 2)\na✝ : max 0 (2 * Real.pi) < x\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 12,
+      "column": 59,
+      "severity": "error",
+      "message": "Unknown identifier `volume`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 14,
+      "column": 4,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, failed to prove the goal after exhaustive search.\nInitial goal:\n  hInt : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\n  hInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (Real.pi / 2)\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (Real.pi / 2) (3 * Real.pi / 2)\nRemaining goals after safe rules:\n  hInt : IntervalIntegrable (fun u => max (Real.cos u) 0) (sorry ()) 0 (2 * Real.pi)\n  hInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) (sorry ()) 0 (Real.pi / 2)\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) (sorry ()) (Real.pi / 2) (3 * Real.pi / 2)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 16,
+      "column": 59,
+      "severity": "error",
+      "message": "Unknown identifier `volume`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 18,
+      "column": 4,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, failed to prove the goal after exhaustive search.\nInitial goal:\n  hInt : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\n  hInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (Real.pi / 2)\n  hInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (Real.pi / 2) (3 * Real.pi / 2)\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (3 * Real.pi / 2) (2 * Real.pi)\nRemaining goals after safe rules:\n  hInt : IntervalIntegrable (fun u => max (Real.cos u) 0) (sorry ()) 0 (2 * Real.pi)\n  hInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) (sorry ()) 0 (Real.pi / 2)\n  hInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) (sorry ()) (Real.pi / 2) (3 * Real.pi / 2)\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) (sorry ()) (3 * Real.pi / 2) (2 * Real.pi)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 34,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  max ?m.309 ?m.310\nin the target expression\n  (fun x => max (Real.cos x) 0) u = Real.cos u\n\ncase h\nhInt : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (3 * Real.pi / 2) (2 * Real.pi)\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nu : ℝ\nhu : u ∈ Set.uIcc 0 (Real.pi / 2)\n⊢ (fun x => max (Real.cos x) 0) u = Real.cos u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 41,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  max ?m.388 ?m.389\nin the target expression\n  (fun x => max (Real.cos x) 0) u = (fun x => 0) u\n\ncase h\nhInt : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (3 * Real.pi / 2) (2 * Real.pi)\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nhleft : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nu : ℝ\nhu : u ∈ Set.uIcc (Real.pi / 2) (3 * Real.pi / 2)\n⊢ (fun x => max (Real.cos x) 0) u = (fun x => 0) u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 48,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  max ?m.463 ?m.464\nin the target expression\n  (fun x => max (Real.cos x) 0) u = Real.cos u\n\ncase h\nhInt : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (3 * Real.pi / 2) (2 * Real.pi)\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nhleft : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nhmid : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0\nu : ℝ\nhu : u ∈ Set.uIcc (3 * Real.pi / 2) (2 * Real.pi)\n⊢ (fun x => max (Real.cos x) 0) u = Real.cos u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 61,
+      "column": 6,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0\nin the target expression\n  ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    2\n\nhInt : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (2 * Real.pi)\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (3 * Real.pi / 2) (2 * Real.pi)\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nhleft : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nhmid : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0\nhright :\n  ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 = ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u\n⊢ ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    2\n"
+    }
+  ],
+  "n_errors": 13
+}

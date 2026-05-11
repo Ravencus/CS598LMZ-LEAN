@@ -1,0 +1,58 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "deepseek-v4-flash",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": true,
+  "why_success": "lean_proof",
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 497.8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 239.06,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "expected token"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 174.94,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Application type mismatch: The argument\n  h_meas_ennreal\nhas type\n  AEMeasurable (fun x => ENNReal.ofReal (f x)) (μ.restrict E)\nbut is expected to have type\n  Measurable ?m.90\nin the application\n  lin"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 76.59,
+      "outcome": "lean_proof",
+      "overall_success": true,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

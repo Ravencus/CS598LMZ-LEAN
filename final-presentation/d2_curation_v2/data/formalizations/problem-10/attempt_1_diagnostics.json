@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c779f46166e5.lean",
+      "line": 3,
+      "column": 60,
+      "severity": "error",
+      "message": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  Ω"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c779f46166e5.lean",
+      "line": 5,
+      "column": 10,
+      "severity": "error",
+      "message": "Function expected at\n  iIndepFun\nbut this term has type\n  ?m.4\n\nNote: Expected a function because this term is being applied to the argument\n  X\n\nHint: The identifier `iIndepFun` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c779f46166e5.lean",
+      "line": 11,
+      "column": 21,
+      "severity": "error",
+      "message": "invalid binder annotation, type is not a class instance\n  ?m.4\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c779f46166e5.lean",
+      "line": 3,
+      "column": 60,
+      "severity": "error",
+      "message": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  Ω"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c779f46166e5.lean",
+      "line": 5,
+      "column": 10,
+      "severity": "error",
+      "message": "Function expected at\n  iIndepFun\nbut this term has type\n  ?m.4\n\nNote: Expected a function because this term is being applied to the argument\n  X\n\nHint: The identifier `iIndepFun` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c779f46166e5.lean",
+      "line": 11,
+      "column": 21,
+      "severity": "error",
+      "message": "invalid binder annotation, type is not a class instance\n  ?m.4\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    }
+  ]
+}

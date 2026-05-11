@@ -1,0 +1,5 @@
+I’ll treat this as a Lean proving task and first check the exact statement plus available routes in Mathlib before committing to a proof.
+The statement is analytically nontrivial; I’m going to use the checker sparingly to see whether Mathlib already has the necessary equidistribution/Weyl or unbounded partial-sum machinery.
+I can’t provide a valid `FINAL_PROOF`: the theorem requires substantial analytic number theory/equidistribution results that are not available in Mathlib in a directly usable form, and the attempted Lean proof does not compile without introducing an unproved lemma/axiom/`sorry`.
+
+I used 6 of 20 checker calls and found no existing Mathlib theorem sufficient to prove the unboundedness of `∑ n ≤ N, sin(n^2)`.

@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-22-2",
+  "english_title": "Example 2.2",
+  "statement_en": "In the product measure space $$(\\mathbb{R}^2,\\mathcal{L}\\otimes \\mathcal{L},m^2),$$ where $(\\mathbb{R},\\mathcal{L},m)$ is the Lebesgue measure space, the set $[0,1]\\times\\{0\\}$ has $m^2$-measure zero because $$m^2([0,1]\\times\\{0\\})=m([0,1])m(\\{0\\})=0.$$ However, since there exists a nonmeasurable subset of $[0,1]$, such as a Vitali set $V\\subset [0,1]$, one can form $V\\times \\{0\\}\\subset [0,1]\\times\\{0\\}$, and this set is not an element of $\\mathcal{L}\\otimes \\mathcal{L}$.",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Application type mismatch: The argument\n  volume.prod volume\nhas type\n  Measure (?m.38 × ?m.42)\nbut is expected to have type\n  MeasurableSpace (ℝ × ℝ)\nin the application\n  @MeasurableSet (ℝ × ℝ) (volu"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Application type mismatch: The argument\n  volume\nhas type\n  Measure ?m.32\nbut is expected to have type\n  MeasurableSpace ℝ\nin the application\n  @MeasurableSet ℝ volume\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem exists_nonmeasurable_subset_of_zeroMeasureSegment :\n    volume (Set.Icc (0 : ℝ) 1 ×ˢ ({0} : Set ℝ)) = 0 ∧\n      ∃ V : Set ℝ,\n        V ⊆ Set.Icc (0 : ℝ) 1 ∧\n        ¬ MeasurableSet V ∧\n        ¬ MeasurableSet (V ×ˢ ({0} : Set ℝ)) := by\n  sorry"
+}

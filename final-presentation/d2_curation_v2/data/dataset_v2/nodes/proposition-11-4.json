@@ -1,0 +1,24 @@
+{
+  "id": "proposition-11-4",
+  "type": "problem",
+  "source_note": "给正项级数条件正负号以后级数收敛意味着什么",
+  "english_source_note": "What Sign Choices Imply for Positive Series Convergence",
+  "callout_id": "给正项级数条件正负号以后级数收敛意味着什么#1",
+  "english_title": "Proposition 1.1",
+  "statement_en": "Assume $p_n$ is a nonincreasing sequence of positive real numbers, and let $\\varepsilon_n\\in\\{-1,1\\}$ be such that the series $\\sum_{n\\geq 1}\\varepsilon_n p_n$ converges. Then:\n1. If $\\sum_{n\\geq 1} p_n$ diverges, then the upper limit of the arithmetic means of $\\varepsilon_n$ is at least $0$ and the lower limit is at most $0$, that is,\n$$\\liminf_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}\\leq 0\\leq \\limsup_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}.$$\n2. $$(\\varepsilon_1+\\cdots+\\varepsilon_n)p_n\\to 0.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "summation by parts",
+    "partial sums of sign sequences",
+    "necessary conditions for convergence of series"
+  ],
+  "prerequisites": [
+    "convergence of infinite series",
+    "monotone sequences",
+    "limsup and liminf",
+    "Abel transformation"
+  ],
+  "callout_body": "假设$p_n$是单调不增的正实数列,令$\\varepsilon_k\\in \\{-1,1\\}$是使得级数$\\sum_{n\\geq 1}\\varepsilon_n p_n$收敛的序列，那么：\n1. 如果$\\sum_{n\\geq 1} p_n$是发散的级数那么$\\varepsilon_n$的算术平均值的上极限大于等于0，下极限小于等于0，即$$\\liminf_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}\\leq 0\\leq \\limsup_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}$$\n2. $$(\\varepsilon_1+\\cdots+\\varepsilon_n)p_n\\to 0$$"
+}

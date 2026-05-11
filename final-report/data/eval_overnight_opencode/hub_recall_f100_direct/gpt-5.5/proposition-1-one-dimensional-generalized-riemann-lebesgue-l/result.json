@@ -1,0 +1,22 @@
+{
+  "problem_id": "proposition-1-one-dimensional-generalized-riemann-lebesgue-l",
+  "model": "gpt-5.5",
+  "wall_seconds": 13.84,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+    "piecewise-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-hub",
+    "piecewise-estimates-hub"
+  ],
+  "tp": 2,
+  "fp": 1,
+  "fn": 0,
+  "precision": 0.6667,
+  "recall": 1.0,
+  "f1": 0.8
+}

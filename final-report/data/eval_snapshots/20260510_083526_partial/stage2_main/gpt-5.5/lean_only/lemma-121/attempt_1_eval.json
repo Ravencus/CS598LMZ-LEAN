@@ -1,0 +1,37 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Application type mismatch: The argument\n  continuousAt_subtype_val\nhas type\n  ContinuousAt Subtype.val ?m.79\nbut is expected to have type\n  ContinuousAt (fun z => ⟨↑z, ⋯⟩) z\nin the application\n  Conti",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_466d847439.lean",
+      "line": 14,
+      "column": 31,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  continuousAt_subtype_val\nhas type\n  ContinuousAt Subtype.val ?m.79\nbut is expected to have type\n  ContinuousAt (fun z => ⟨↑z, ⋯⟩) z\nin the application\n  ContinuousAt.comp (Continuous.continuousAt hf) continuousAt_subtype_val"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_466d847439.lean",
+      "line": 16,
+      "column": 4,
+      "severity": "error",
+      "message": "Unknown constant `Polynomial.exists_forall_norm_sub_lt_of_isCompact`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_466d847439.lean",
+      "line": 15,
+      "column": 9,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `x✝ : ?m.81` is not an inductive datatype\n"
+    }
+  ]
+}

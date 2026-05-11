@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-221",
+  "english_title": "Proposition 2.2.1",
+  "statement_en": "For arbitrary sequences $x_n,y_n$, the inequalities $$\\liminf_{n\\to \\infty} x_n + \\liminf_{n\\to \\infty} y_n\\leq \\liminf_{n\\to \\infty}(x_n+y_n)\\leq \\liminf_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n$$ and $$\\liminf_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n\\leq \\limsup_{n\\to \\infty}(x_n+y_n)\\leq \\limsup_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n$$ hold.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def seqLiminf (u : ℕ → ℝ) : ℝ :=\n  sSup (Set.range fun n : ℕ => sInf (Set.range fun m : ℕ => u (n + m)))\n\nnoncomputable def seqLimsup (u : ℕ → ℝ) : ℝ :=\n  sInf (Set.range fun n : ℕ => sSup (Set.range fun m : ℕ => u (n + m)))\n\ntheorem liminf_limsup_add_inequalities (x y : ℕ → ℝ) :\n    seqLiminf x + seqLiminf y ≤ seqLiminf (fun n => x n + y n) ∧\n    seqLiminf (fun n => x n + y n) ≤ seqLiminf x + seqLimsup y ∧\n    seqLiminf x + seqLimsup y ≤ seqLimsup (fun n => x n + y n) ∧\n    seqLimsup (fun n => x n + y n) ≤ seqLimsup x + seqLimsup y := by\n  sorry"
+}

@@ -1,0 +1,68 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 9,
+      "column": 4,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, failed to prove the goal after exhaustive search.\nInitial goal:\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\nRemaining goals after safe rules:\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 12,
+      "column": 4,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, failed to prove the goal after exhaustive search.\nInitial goal:\n  hInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)\nRemaining goals after safe rules:\n  hInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 15,
+      "column": 4,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, failed to prove the goal after exhaustive search.\nInitial goal:\n  hInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\n  hInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) volume (3 * Real.pi / 2) (2 * Real.pi)\nRemaining goals after safe rules:\n  hInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\n  hInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)\n  ⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) volume (3 * Real.pi / 2) (2 * Real.pi)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 21,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (x : ℝ) in 0..3 * Real.pi / 2, max (Real.cos x) 0\nin the target expression\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\n\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (3 * Real.pi / 2) (2 * Real.pi)\n⊢ ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 30,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  max ?m.274 ?m.275\nin the target expression\n  (fun x => max (Real.cos x) 0) u = Real.cos u\n\ncase h\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (3 * Real.pi / 2) (2 * Real.pi)\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nu : ℝ\nhu : u ∈ Set.uIcc 0 (Real.pi / 2)\n⊢ (fun x => max (Real.cos x) 0) u = Real.cos u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 37,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  max ?m.353 ?m.354\nin the target expression\n  (fun x => max (Real.cos x) 0) u = (fun x => 0) u\n\ncase h\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (3 * Real.pi / 2) (2 * Real.pi)\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nhleft : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nu : ℝ\nhu : u ∈ Set.uIcc (Real.pi / 2) (3 * Real.pi / 2)\n⊢ (fun x => max (Real.cos x) 0) u = (fun x => 0) u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 44,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  max ?m.428 ?m.429\nin the target expression\n  (fun x => max (Real.cos x) 0) u = Real.cos u\n\ncase h\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (3 * Real.pi / 2) (2 * Real.pi)\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nhleft : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nhmid : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0\nu : ℝ\nhu : u ∈ Set.uIcc (3 * Real.pi / 2) (2 * Real.pi)\n⊢ (fun x => max (Real.cos x) 0) u = Real.cos u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 51,
+      "column": 6,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0\nin the target expression\n  ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    2\n\nhInt₁ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume 0 (Real.pi / 2)\nhInt₂ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (Real.pi / 2) (3 * Real.pi / 2)\nhInt₃ : IntervalIntegrable (fun u => max (Real.cos u) 0) volume (3 * Real.pi / 2) (2 * Real.pi)\nhsplit :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nhleft : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nhmid : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0\nhright :\n  ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 = ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u\n⊢ ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    2\n"
+    }
+  ],
+  "n_errors": 8
+}

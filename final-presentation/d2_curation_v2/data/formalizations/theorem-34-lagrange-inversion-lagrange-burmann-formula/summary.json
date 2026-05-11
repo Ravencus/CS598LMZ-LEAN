@@ -1,0 +1,30 @@
+{
+  "problem_id": "theorem-34-lagrange-inversion-lagrange-burmann-formula",
+  "english_title": "Theorem 3.4 (Lagrange Inversion / Lagrange-Burmann Formula)",
+  "statement_en": "Assume \\(\\\\phi(x)\\) is analytic in a neighborhood of \\(x=r\\), and \\(\\\\phi(r)\\\neq 0\\). Consider the equation\n\\\\[\nx=r+s\\\\phi(x).\n\\\\]\nThen in a neighborhood of \\(s=0\\), the equation has a unique analytic solution\n\\\\[\nx(s)=r+\\\\sum_{i\\\\ge 1} c_i s^i,\n\\\\]\nwhere the coefficients are given by\n\\\\[\nc_i=\\\\frac{1}{i!}\\\\lim_{x\\\to r}\\\\frac{d^{\\,i-1}}{dx^{\\,i-1}}\\\\big[(x-r)^i\\\\phi(x)^i\\\\big].\n\\\\]",
+  "difficulty": "hard",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  r\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\ntheorem analytic_implicit_solution_with_lagrange_coefficients\n    (φ : ℂ → ℂ) (r : ℂ)\n    (hφ : AnalyticAt ℂ φ r) (hr : φ r ≠ 0) :\n    ∃! ψ : ℂ → ℂ,\n      AnalyticAt ℂ ψ 0 ∧\n      ∃ c : ℕ → ℂ,\n        (∃ ε : ℝ, 0 < ε ∧\n          ∀ s : ℂ, ‖s‖ < ε →\n            ψ s = r + ∑' n : ℕ, c (n + 1) * s ^ (n + 1)) ∧\n        (∃ ε : ℝ, 0 < ε ∧\n          ∀ s : ℂ, ‖s‖ < ε →\n            ψ s = r + s * φ (ψ s)) ∧\n        (∀ i : ℕ, 1 ≤ i →\n          Filter.Tendsto\n            (fun x : ℂ =>\n              iteratedDeriv (i - 1) (fun y : ℂ => (y - r) ^ i * (φ y) ^ i) x)\n            (nhds r)\n            (nhds ((Nat.factorial i : ℂ) * c i))) := by\n  sorry"
+}

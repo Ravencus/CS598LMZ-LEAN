@@ -1,0 +1,79 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 9,
+  "first_error": "Type mismatch\n  hu.left\nhas type\n  min 0 (Real.pi / 2) ≤ u\nbut is expected to have type\n  0 ≤ u",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 21,
+      "column": 24,
+      "severity": "error",
+      "message": "Type mismatch\n  hu.left\nhas type\n  min 0 (Real.pi / 2) ≤ u\nbut is expected to have type\n  0 ≤ u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 22,
+      "column": 34,
+      "severity": "error",
+      "message": "Type mismatch\n  hu.right\nhas type\n  u ≤ max 0 (Real.pi / 2)\nbut is expected to have type\n  u ≤ Real.pi / 2"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 23,
+      "column": 62,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hu0\nhas type\n  0 ≤ u\nbut is expected to have type\n  -(Real.pi / 2) ≤ u\nin the application\n  And.intro hu0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 31,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown constant `Real.cos_nonpos_of_mem_Icc`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 41,
+      "column": 10,
+      "severity": "error",
+      "message": "Type mismatch\n  hu.left\nhas type\n  min (3 * Real.pi / 2) (2 * Real.pi) ≤ u\nbut is expected to have type\n  3 * Real.pi / 2 ≤ u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 42,
+      "column": 10,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase right.h\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhleft : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nhmid : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0\nu : ℝ\nhu : u ∈ Set.uIcc (3 * Real.pi / 2) (2 * Real.pi)\na✝ : 5 * Real.pi / 2 < u\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 43,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown constant `Real.cos_nonneg_of_mem_Icc'`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 46,
+      "column": 29,
+      "severity": "error",
+      "message": "Unknown constant `Real.sin_three_pi_div_two`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 4,
+      "column": 59,
+      "severity": "error",
+      "message": "unsolved goals\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhleft : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nhmid : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0\nhright :\n  ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 = ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u\n⊢ 1 + -Real.sin (3 * Real.pi / 2) = 2\n\ncase hab\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) MeasureTheory.volume (Real.pi / 2) (3 * Real.pi / 2)\n\ncase hbc\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) MeasureTheory.volume (3 * Real.pi / 2) (2 * Real.pi)\n\ncase hab\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) MeasureTheory.volume 0 (Real.pi / 2)\n\ncase hbc\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ IntervalIntegrable (fun u => max (Real.cos u) 0) MeasureTheory.volume (Real.pi / 2) (2 * Real.pi)\n"
+    }
+  ]
+}

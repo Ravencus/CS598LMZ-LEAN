@@ -1,0 +1,11 @@
+{
+  "problem_id": "example-127",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "lean_impl",
+  "evidence": "Both split the conjunction, prove `StrictMono (fun k => 2 * k)` by introducing `a b h/hab` and using simplification plus `omega`, then close the identity goal with `rfl`. Trace A initially failed because `omega` did not see the unfolded arithmetic goal until `dsimp` was added, while Trace B used `si",
+  "wall_seconds": 8.78
+}

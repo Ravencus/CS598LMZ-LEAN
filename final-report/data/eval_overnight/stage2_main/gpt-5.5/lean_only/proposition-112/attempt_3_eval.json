@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "unsolved goals\ncase step\nN : ℕ\nhN : 2 ≤ N\nn : ℕ\nhn : 2 ≤ n\nih : ∑ n ∈ Finset.Icc 2 n, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑n\nhnsucc : 2 ≤ n + 1\nhnq : ↑n ≠ 0\nhsnq : ↑(n + 1) ≠ 0\nhn1q : ↑(n + 1 - 1) = ↑n\n⊢ 1 ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_a7eea12d7c.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "unsolved goals\ncase step\nN : ℕ\nhN : 2 ≤ N\nn : ℕ\nhn : 2 ≤ n\nih : ∑ n ∈ Finset.Icc 2 n, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑n\nhnsucc : 2 ≤ n + 1\nhnq : ↑n ≠ 0\nhsnq : ↑(n + 1) ≠ 0\nhn1q : ↑(n + 1 - 1) = ↑n\n⊢ 1 + ↑n * ↑(1 + n) - ↑(1 + n) = -↑n + ↑n * ↑(1 + n)\n"
+    }
+  ]
+}

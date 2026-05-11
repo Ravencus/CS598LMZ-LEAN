@@ -1,0 +1,21 @@
+{
+  "id": "theorem-1",
+  "type": "problem",
+  "source_note": "Weierstrass逼近定理的概率途径证明",
+  "english_source_note": "A Probabilistic Proof of the Weierstrass Approximation Theorem",
+  "callout_id": "Weierstrass逼近定理的概率途径证明#11",
+  "english_title": "Theorem 1",
+  "statement_en": "Assume: (1) $f$ is a bounded uniformly continuous function on $E$. (2) For every $p\\in E$, there exists a sequence of independent and identically distributed random variables $X_n$ on a probability space $(\\Omega,\\mathcal{F},P)$ taking values in $E\\subseteq \\mathbb{R}$ such that $X_n\\sim F(p)$ and $p\\in E$ is the mean of this sequence. Assume\n$$Y_n = \\frac{X_1+\\cdots+X_n}{n}\\xrightarrow{P}{p}.$$ (3) The expectation $E(f(Y_n))$ exists for every $n\\in \\mathbb{N}$. Then\n$$||E(f(Y_n)) -f||_u \\to 0.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis and probability theory",
+  "key_techniques": [
+    "law of large numbers type convergence",
+    "probabilistic approximation of functions"
+  ],
+  "prerequisites": [
+    "uniform continuity",
+    "convergence in probability"
+  ],
+  "callout_body": "1. 函数$f$是定义在$E$上的有界一致连续函数.\n2. 假设对$\\forall p\\in E$都存在$X_n$是概率空间$(\\Omega,\\mathcal{F},P)$上的值域为$E\\subseteq \\mathbb{R}$的一列独立同分布的随机变量且$X_n\\sim F(p)$其中$p\\in E$是这一列随机变量的均值.假设$Y_n = \\frac{X_1+...+X_n}{n}\\xrightarrow{P}{p}$\n3. 期望$E(f(Y_n))$存在对任意$n \\in \\mathbb{N}$成立。\n\n那么有：$$||E(f(Y_n)) -f||_u \\to 0$$"
+}

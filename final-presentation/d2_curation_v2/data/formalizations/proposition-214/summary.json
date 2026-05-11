@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-214",
+  "english_title": "Proposition 2.1.4",
+  "statement_en": "Suppose $x_n>0$. In the extended real sense (with the conventions $1/0=+\\infty$ and $1/\\infty=0$):\n1. $$\\limsup_{ n\\to +\\infty}\\frac{1}{x_n} =\\frac{1}{\\liminf_{ n\\to +\\infty}x_n}$$\n2. $$\\liminf_{ n\\to +\\infty}\\frac{1}{x_n} =\\frac{1}{\\limsup_{ n\\to +\\infty}x_n}$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped ENNReal\n\nnoncomputable def seqLimsup (u : ℕ → ℝ≥0∞) : ℝ≥0∞ :=\n  ⨅ N : ℕ, sSup (Set.range fun n : ℕ => u (n + N))\n\nnoncomputable def seqLiminf (u : ℕ → ℝ≥0∞) : ℝ≥0∞ :=\n  ⨆ N : ℕ, sInf (Set.range fun n : ℕ => u (n + N))\n\ntheorem reciprocal_seqLimsup_seqLiminf\n    (x : ℕ → ℝ) (hx : ∀ n : ℕ, 0 < x n) :\n    seqLimsup (fun n : ℕ => (ENNReal.ofReal (x n))⁻¹) =\n      (seqLiminf (fun n : ℕ => ENNReal.ofReal (x n)))⁻¹\n    ∧\n    seqLiminf (fun n : ℕ => (ENNReal.ofReal (x n))⁻¹) =\n      (seqLimsup (fun n : ℕ => ENNReal.ofReal (x n)))⁻¹ := by\n  sorry"
+}

@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Invalid field `ennreal`: The environment does not contain `Function.ennreal`, so it is not possible to project the field `ennreal` from an expression\n  hf_meas\nof type\n  ∀ ⦃t : Set ℝ⦄, MeasurableSet t",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_2e3b020fc8.lean",
+      "line": 15,
+      "column": 75,
+      "severity": "error",
+      "message": "Invalid field `ennreal`: The environment does not contain `Function.ennreal`, so it is not possible to project the field `ennreal` from an expression\n  hf_meas\nof type\n  ∀ ⦃t : Set ℝ⦄, MeasurableSet t → MeasurableSet (f ⁻¹' t)\n"
+    }
+  ]
+}

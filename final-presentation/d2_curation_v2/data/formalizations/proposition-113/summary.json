@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-113",
+  "english_title": "Proposition 1.1.3",
+  "statement_en": "Let $A,B \\in M_n(\\mathbb{C})$. Then $AB$ and $BA$ have the same characteristic polynomial.",
+  "difficulty": "medium",
+  "domain": "linear algebra",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem matrix_charpoly_mul_eq_charpoly_mul (n : ℕ) (A B : Matrix (Fin n) (Fin n) ℂ) :\n    Matrix.charpoly (A * B) = Matrix.charpoly (B * A) := by\n  sorry"
+}

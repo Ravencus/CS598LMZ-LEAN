@@ -1,0 +1,125 @@
+{
+  "problem_id": "_synth_integral_x_log_x",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 366.99,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 14,
+  "first_error": "linarith failed to find a contradiction\ncase h\nx : ℝ\nhx : x ∈ Set.Ioo 0 1\na✝ : x = 0\n⊢ False\nfailed",
+  "total_cost_usd": 0.0,
+  "total_tokens": 1355918,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 9,
+      "column": 27,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nx : ℝ\nhx : x ∈ Set.Ioo 0 1\na✝ : x = 0\n⊢ False\nfailed"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 13,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  HasDerivAt.mul (Real.hasDerivAt_log hx0) hpow\n has type\n  HasDerivAt (Real.log * fun y => y * y) (x + x * (2 * Real.log x)) x\nbut is expected to have type\n  HasDerivAt (fun y => y * (y * Real.log y)) (x + x * (2 * Real.log x)) x"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 21,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  HasDerivAt.sub hhalf hsq\n has type\n  HasDerivAt ((fun y => y * (y * (2⁻¹ * Real.log y))) + -fun y => y * (y * 4⁻¹))\n    (-(x * (2 * 4⁻¹)) + 2⁻¹ * (x + x * (2 * Real.log x))) x\nbut is expected to have type\n  HasDerivAt (fun y => -(y * (y * 4⁻¹)) + y * (y * (2⁻¹ * Real.log y))) (x * Real.log x) x"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 24,
+      "column": 17,
+      "severity": "error",
+      "message": "Unknown identifier `continuous_mul_log.continuousOn.intervalIntegrable`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 27,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhdsWithin`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 27,
+      "column": 53,
+      "severity": "error",
+      "message": "Unknown constant `Filter.𝓝`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 29,
+      "column": 9,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhdsWithin`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 29,
+      "column": 55,
+      "severity": "error",
+      "message": "Unknown constant `Filter.𝓝`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 30,
+      "column": 43,
+      "severity": "error",
+      "message": "failed to prove positivity/nonnegativity/nonzeroness"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 42,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhdsWithin`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 42,
+      "column": 53,
+      "severity": "error",
+      "message": "Unknown constant `Filter.𝓝`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 44,
+      "column": 6,
+      "severity": "error",
+      "message": "`fun_prop` was unable to prove `ContinuousAt (fun x => 1 / 2 * (Real.log x * x ^ 2) - 1 / 4 * x ^ 2) 1`\n\nIssues:\n  Failed to prove necessary assumption `1 ≠ 0` when applying theorem `ContinuousAt.log`."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 48,
+      "column": 31,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hderiv\nhas type\n  ∀ x ∈ Set.Ioo 0 1, HasDerivAt (fun y => 1 / 2 * (Real.log y * y ^ 2) - 1 / 4 * y ^ 2) (x * Real.log x) x\nbut is expected to have type\n  ?m.1896 < ?m.1897\nin the application\n  @intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto ℝ ?m.1894 ?m.1895 ?m.1896 ?m.1897 ?m.1898\n    (fun x => 1 / 2 * (Real.log x * x ^ 2) - 1 / 4 * x ^ 2) ?m.1958 hderiv"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_04e76a5a5c.lean",
+      "line": 4,
+      "column": 46,
+      "severity": "error",
+      "message": "unsolved goals\nhderiv : ∀ x ∈ Set.Ioo 0 1, HasDerivAt (fun y => 1 / 2 * (Real.log y * y ^ 2) - 1 / 4 * y ^ 2) (x * Real.log x) x\nhint : IntervalIntegrable (fun x => x * Real.log x) MeasureTheory.volume 0 1\nha : Filter.Tendsto (fun x => 1 / 2 * (Real.log x * x ^ 2) - 1 / 4 * x ^ 2) sorry sorry\nhb : Filter.Tendsto (fun x => 1 / 2 * (Real.log x * x ^ 2) - 1 / 4 * x ^ 2) sorry sorry\n⊢ ∫ (x : ℝ) in 0..1, x * Real.log x = -1 / 4\n"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "example-13-twin-prime-conjecture",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#3",
+  "english_title": "Example 1.3: Twin Prime Conjecture",
+  "statement_en": "Let $p_n$ be the $n$th prime. The twin prime conjecture is equivalent to $$\\liminf_{n\\to \\infty}(p_{n+1}-p_n)=2.$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "key_techniques": [
+    "reformulate a number-theoretic statement using limit inferior",
+    "use integrality of prime gaps",
+    "subsequence characterization of liminf"
+  ],
+  "prerequisites": [
+    "prime numbers",
+    "subsequences",
+    "limit inferior"
+  ],
+  "callout_body": "数论中一个重要的猜想称之为\"孪生素数猜想\"（twin prime conjecture),这个猜想可以表述为：$$\\text{整数中存在无数个素数 }p\\text{ 使得 }p+2\\text{ 也是素数 }$$如果用$p_n$表示第n个素数，那么此猜想利用下极限可以表达为等价的形式：$$\\liminf_{n\\to \\infty}(p_{n+1}-p_{n})=2$$因为如果令$g_n:=p_{n+1}-p_n$，那么只要$n>1$那么一定有$g_n\\geq 2$\n1. 如果孪生素数猜想成立，那么这无穷多个形如$p,p+2$的素数序列当中，一定能构成$g_n$的一个子列，并且这个子列恒等于2。此外也不能有任何子列收敛到比$2$更小的值，因为$n>1,g_n\\geq 2$。因此根据“命题1.1”，$\\liminf_{n\\to \\infty}g_n=2$。\n2. 如果$\\liminf_{n\\to \\infty}g_n=2$，那么\"命题1.1\"告诉我们，存在一个子列$g_{n_k}\\to 2$。而因为$g_n$是至少为$2$的整数列，其子列自然也是整数，于是一定存在一个$N$使得任意$n_k>N$都有$g_{n_k}=2$。因此有无数多对孪生素数。"
+}

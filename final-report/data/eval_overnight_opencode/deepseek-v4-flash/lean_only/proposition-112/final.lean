@@ -1,0 +1,63 @@
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  have h_term_identity (k : ℕ) (hk : 2 ≤ k) : (1 : ℚ) / (((k+1 : ℕ) : ℚ) * ((k : ℕ) : ℚ)) = (1 : ℚ) / (k : ℚ) - (1 : ℚ) / ((k+1 : ℕ) : ℚ) := by
+    have hk0 : (k : ℚ) ≠ 0 := by
+      intro hzero
+      have : (k : ℕ) = 0 := by exact_mod_cast hzero
+      omega
+    have hkp0 : ((k+1 : ℕ) : ℚ) ≠ 0 := by
+      intro hzero
+      have : (k+1 : ℕ) = 0 := by exact_mod_cast hzero
+      omega
+    field_simp [hk0, hkp0]
+    push_cast
+    ring
+  have Icc_insert_succ (a b : ℕ) (h : a ≤ b+1) : Finset.Icc a (b+1) = insert (b+1) (Finset.Icc a b) := by
+    ext x
+    constructor
+    · intro hx
+      rcases Finset.mem_Icc.mp hx with ⟨hx1, hx2⟩
+      by_cases hx' : x ≤ b
+      · apply Finset.mem_insert_of_mem
+        exact Finset.mem_Icc.mpr ⟨hx1, hx'⟩
+      · have hx_eq : x = b+1 := by omega
+        subst hx_eq
+        apply Finset.mem_insert.mpr
+        left; rfl
+    · intro hx
+      rcases Finset.mem_insert.mp hx with (hx' | hx')
+      · subst hx'
+        exact Finset.mem_Icc.mpr ⟨h, le_refl (b+1)⟩
+      · rcases Finset.mem_Icc.mp hx' with ⟨hx1, hx2⟩
+        exact Finset.mem_Icc.mpr ⟨hx1, Nat.le_succ_of_le hx2⟩
+  have hsum_eq : Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = (1 : ℚ) - (1 : ℚ) / (N : ℚ) := by
+    refine Nat.le_induction ?_ (fun k hk h_ih => ?_) N hN
+    · norm_num
+    · have h_not_mem : (k + 1) ∉ Finset.Icc 2 k := by
+        intro hmem
+        rcases Finset.mem_Icc.mp hmem with ⟨h2, hk'⟩
+        omega
+      have hsub : (k+1 : ℕ) - 1 = (k : ℕ) := by omega
+      calc
+        Finset.sum (Finset.Icc 2 (k+1)) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ)))
+            = Finset.sum (insert (k+1) (Finset.Icc 2 k)) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) := by
+          rw [Icc_insert_succ 2 k (by omega)]
+        _ = ((1 : ℚ) / (((k+1 : ℕ) : ℚ) * (((k+1 : ℕ) - 1 : ℕ) : ℚ))) +
+            Finset.sum (Finset.Icc 2 k) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) := by
+          rw [Finset.sum_insert h_not_mem]
+        _ = ((1 : ℚ) / (((k+1 : ℕ) : ℚ) * ((k : ℕ) : ℚ))) + ((1 : ℚ) - (1 : ℚ) / (k : ℚ)) := by
+          rw [hsub, h_ih]
+        _ = (1 : ℚ) - (1 : ℚ) / ((k+1 : ℕ) : ℚ) := by
+          rw [h_term_identity k hk]
+          ring
+  have h_lt : (1 : ℚ) - (1 : ℚ) / (N : ℚ) < (1 : ℚ) := by
+    have hNpos : (0 : ℚ) < (N : ℚ) := by
+      have hNpos' : 0 < N := by omega
+      exact_mod_cast hNpos'
+    have hdivpos : 0 < (1 : ℚ) / (N : ℚ) := div_pos (by norm_num) hNpos
+    linarith
+  exact hsum_eq.trans_lt h_lt

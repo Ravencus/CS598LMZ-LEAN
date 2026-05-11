@@ -1,0 +1,30 @@
+{
+  "problem_id": "quantitative-version-of-the-above-problem",
+  "english_title": "Quantitative Version of the Above Problem",
+  "statement_en": "Assume $p\\in \\mathbb{P}$. Estimate the function defined by the series $$S(x):=\\sum_{p\\leq x} \\frac{1}{p}.$$",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def primeReciprocalSum (x : ℕ) : ℝ :=\n  Finset.sum ((Finset.range (x + 1)).filter Nat.Prime) (fun p => (1 : ℝ) / (p : ℝ))\n\ntheorem primeReciprocalSum_estimate :\n    ∃ C : ℝ, ∀ x : ℕ, 2 ≤ x →\n      |primeReciprocalSum x - Real.log (Real.log (x : ℝ))| ≤ C := by\n  sorry"
+}

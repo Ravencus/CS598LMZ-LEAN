@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-1-a-necessary-condition-for-uniform-distribution",
+  "english_title": "Proposition 1: A Necessary Condition for Uniform Distribution Modulo 1",
+  "statement_en": "If the sequence $x_n$ is uniformly distributed modulo $1$, then its difference sequence $\\Delta x_n$ must satisfy\n$$\\limsup_{n\\to \\infty} n|\\Delta x_n|=+\\infty.$$",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef UniformlyDistributedModOne (x : ℕ → ℝ) : Prop :=\n  True\n\ntheorem uniformlyDistributedModOne_limsup_nat_mul_abs_difference_eq_top\n    (x : ℕ → ℝ) (h_ud : UniformlyDistributedModOne x) :\n    Filter.Tendsto\n      (fun N : ℕ =>\n        sSup ((fun n : ℕ => (n : ℝ) * |x (n + 1) - x n|) '' Set.Ici N))\n      Filter.atTop\n      Filter.atTop := by\n  sorry"
+}

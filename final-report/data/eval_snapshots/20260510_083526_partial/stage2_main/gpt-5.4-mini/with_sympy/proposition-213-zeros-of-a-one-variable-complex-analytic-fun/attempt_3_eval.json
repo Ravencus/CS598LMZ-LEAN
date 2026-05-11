@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown constant `AnalyticOn.isolatedZeros`\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_afdc17286b.lean",
+      "line": 20,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `AnalyticOn.isolatedZeros`\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  Complex.normSq ?z\nin the target expression\n  ‖↑(Real.cos (2 * Real.pi * x)) + ↑(Real.sin (2 * Real.pi * x)) * Complex.I - 1‖ = 2 * ",
+  "sympy_witnesses": []
+}

@@ -1,0 +1,3 @@
+["an-epsilon-of-room-hub", "basic-methods-in-analysis-i-hub"]
+- an-epsilon-of-room-hub: The compactness/FIP proof reduces the infinite intersection problem to checking every finite subintersection, which is nonempty because the intervals are decreasing.
+- basic-methods-in-analysis-i-hub: A sequence-based proof can construct a limiting point from finite-stage endpoint data, then pass from the approximating intervals to the full intersection using closedness.

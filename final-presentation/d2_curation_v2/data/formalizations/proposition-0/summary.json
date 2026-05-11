@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-0",
+  "english_title": "Proposition 0",
+  "statement_en": "Let $X_n$ be a sequence of random variables on a probability space. Assume $E(X_n) \\to C$ and that the sum of the variances satisfies $\\sum_{n\\geq 1} V(X_n) < \\infty$. Then $$X_n \\xrightarrow{a.s.} C.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter MeasureTheory\n\ntheorem almostSureConvergence_of_tendsto_expectation_and_summable_variances\n    {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω) [IsProbabilityMeasure μ]\n    (X : ℕ → Ω → ℝ) (C : ℝ)\n    (h_meas : ∀ n, Measurable (X n))\n    (h_expectation : Tendsto (fun n => ∫ x, X n x ∂μ) atTop (nhds C))\n    (h_variance : Summable (fun n => ∫ x, (X n x - ∫ y, X n y ∂μ) ^ 2 ∂μ)) :\n    ∀ᵐ x ∂μ, Tendsto (fun n => X n x) atTop (nhds C) := by\n  sorry"
+}

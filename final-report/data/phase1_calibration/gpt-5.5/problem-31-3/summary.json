@@ -1,0 +1,56 @@
+{
+  "problem_id": "problem-31-3",
+  "model": "gpt-5.5",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "wall_seconds": 55.4,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 13.17,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Real.not_summable_one_div_nat_mul_log_nat_add_two`\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 14.25,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Real.not_summable_one_div_nat_mul_log_nat_add_two`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 13.58,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Real.not_summable_one_div_nat_mul_log_nat_add_two`\n"
+    }
+  ]
+}

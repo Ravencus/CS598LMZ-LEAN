@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_66693aeb5ac5.lean",
+      "line": 7,
+      "column": 35,
+      "severity": "error",
+      "message": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (A N)\n\nHint: The identifier `volume` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_66693aeb5ac5.lean",
+      "line": 8,
+      "column": 6,
+      "severity": "error",
+      "message": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (⋂ N : ℕ, A N)\n\nHint: The identifier `volume` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_66693aeb5ac5.lean",
+      "line": 9,
+      "column": 16,
+      "severity": "error",
+      "message": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (E n)\n\nHint: The identifier `volume` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_66693aeb5ac5.lean",
+      "line": 7,
+      "column": 35,
+      "severity": "error",
+      "message": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (A N)\n\nHint: The identifier `volume` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_66693aeb5ac5.lean",
+      "line": 8,
+      "column": 6,
+      "severity": "error",
+      "message": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (⋂ N : ℕ, A N)\n\nHint: The identifier `volume` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_66693aeb5ac5.lean",
+      "line": 9,
+      "column": 16,
+      "severity": "error",
+      "message": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (E n)\n\nHint: The identifier `volume` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+import Mathlib
+
+open Real
+
+#check sin_lt_sin_of_lt_of_le_pi_div_two
+#check sin_nonneg_of_nonneg_of_le_pi
+#check sin_nonpos_of_nonpos_of_neg_pi_le
+#check sin_pos_of_pos_of_lt_pi
+#check cos_pos_of_mem_Ioo
+#check sin_nonneg_of_nonneg_of_le_pi

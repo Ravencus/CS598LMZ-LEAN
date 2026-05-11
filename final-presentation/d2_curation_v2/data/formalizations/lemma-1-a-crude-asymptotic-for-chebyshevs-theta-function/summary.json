@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-1-a-crude-asymptotic-for-chebyshevs-theta-function",
+  "english_title": "Lemma 1: A Crude Asymptotic for Chebyshev's Theta Function",
+  "statement_en": "Define $\\theta(x):=\\sum_{p\\leq x}\\log(p)$. Then $$\\theta(x)=x+o(x).$$",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Asymptotics\nopen scoped BigOperators\n\nnoncomputable def theta (x : ℝ) : ℝ :=\n  ∑ p in ((Finset.range (Nat.floor x + 1)).filter Nat.Prime), Real.log (p : ℝ)\n\ntheorem chebyshevTheta_asymptotic :\n    (fun x : ℝ => theta x - x) =o[Filter.atTop] (fun x : ℝ => x) := by\n  sorry"
+}

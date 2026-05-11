@@ -1,0 +1,25 @@
+{
+  "note_title": "满足这种函数极限性质的函数是几乎处处为0的",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "满足这种函数极限性质的函数是几乎处处为0的#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "函数$f:[0,1]\\to \\mathbb{R}$满足对任意$\\forall x_0 \\in [0,1]$都有$\\lim_{x\\to x_0}f(x)=0$那么函数几乎处处为0.",
+      "position_char": 39,
+      "position_line": 7
+    },
+    {
+      "id": "满足这种函数极限性质的函数是几乎处处为0的#2",
+      "type": "question",
+      "title": "问题2：2024年的一个数学分析考研题目",
+      "body": "函数$f:[a,b]\\to \\mathbb{R}$满足对任意$\\forall x_0 \\in [a,b]$都有$\\lim_{x\\to x_0}f(x)=0$，那么函数在区间$[a,b]$上Riemann可积并且积分为0。",
+      "position_char": 1689,
+      "position_line": 33
+    }
+  ]
+}

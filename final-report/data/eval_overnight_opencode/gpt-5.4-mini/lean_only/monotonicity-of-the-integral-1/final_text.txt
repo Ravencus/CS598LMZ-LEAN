@@ -1,0 +1,17 @@
+I’m loading the Lean proof workflow and then I’ll try a minimal proof, checking it in Lean before refining if needed.
+I’m trying the direct monotonicity theorem first; if Mathlib exposes the expected lemma, this should be a one-step proof.
+`integral_mono_ae` exists, but its argument order is different. I’m checking the exact type before writing the final proof.
+I’m switching to the likely monotonicity orientation: prove `∫ g ≤ ∫ f` directly from `g ≤ f` almost everywhere.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory
+
+theorem integral_ge_of_ae_ge
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}
+    (hf : Integrable f μ) (hg : Integrable g μ)
+    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :
+    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by
+  exact integral_mono_ae hg hf hfg
+```

@@ -1,0 +1,30 @@
+{
+  "problem_id": "relation-between-the-support-of-a-convolution-and-the-suppor",
+  "english_title": "Relation Between the Support of a Convolution and the Supports of the Factors",
+  "statement_en": "The support of the convolution is contained in the closure of the sum of the supports of the two functions. Here\n$$\\operatorname{supp}(f)+\\operatorname{supp}(g)=\\{x+y:x\\in\\operatorname{supp}(f),\\ y\\in\\operatorname{supp}(g)\\}.$$",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Set.closure`\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to synthesize instance of type class\n  HAdd (Set ℝ) (Set ℝ) ?m.32\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\nopen scoped Pointwise\n\ntheorem convolution_support_subset_closure_add_support\n    (f g : ℝ → ℝ) :\n    Function.support (fun z : ℝ => ∫ x : ℝ, f x * g (z - x))\n      ⊆ closure (Function.support f + Function.support g) := by\n  sorry"
+}

@@ -1,0 +1,2 @@
+["piecewise-estimates-hub"]
+- piecewise-estimates-hub: The proof naturally splits `[0, 2π]` into regions where `cos u ≥ 0` and where `cos u ≤ 0`, rewrites `max (cos u) 0` accordingly, and evaluates the resulting elementary integrals.

@@ -1,0 +1,1 @@
+I’m checking which existing Mathlib lemmas already match Borel-Cantelli and `ae_tendsto` so I can keep the proof minimal.

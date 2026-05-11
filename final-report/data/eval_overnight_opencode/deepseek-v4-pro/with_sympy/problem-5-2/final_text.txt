@@ -1,0 +1,1 @@
+Let me first check what complex analysis lemmas are available in Mathlib for this proof:

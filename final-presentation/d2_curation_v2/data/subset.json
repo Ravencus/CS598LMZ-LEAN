@@ -1,0 +1,1531 @@
+{
+  "meta": {
+    "k_neighbors_per_hub": 15,
+    "num_hubs": 12
+  },
+  "hubs": [
+    "逐项估计",
+    "分析学基本方法目录1",
+    "和的积分估计",
+    "分段估计",
+    "an epsilon of room",
+    "函数与序列的上下极限",
+    "Borel-Cantelli lemma及其应用",
+    "和与积分换序",
+    "基于分部求和法的和的估计",
+    "利用已知的渐近结果求渐近展开的技巧",
+    "模1均匀分布与Weyl判别",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "selected_notes": [
+    {
+      "title": "逐项估计",
+      "degree": 47,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 20124,
+      "is_hub": true,
+      "in_subset_via": [
+        "分析学基本方法目录1",
+        "和的积分估计",
+        "分段估计",
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "分析学基本方法目录1",
+      "degree": 45,
+      "tags": [
+        "math",
+        "info"
+      ],
+      "char_count": 26528,
+      "is_hub": true,
+      "in_subset_via": [
+        "逐项估计",
+        "和的积分估计",
+        "分段估计",
+        "an epsilon of room",
+        "函数与序列的上下极限",
+        "基于分部求和法的和的估计",
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "和的积分估计",
+      "degree": 43,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 11560,
+      "is_hub": true,
+      "in_subset_via": [
+        "逐项估计",
+        "分析学基本方法目录1",
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "分段估计",
+      "degree": 42,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 13527,
+      "is_hub": true,
+      "in_subset_via": [
+        "逐项估计",
+        "分析学基本方法目录1",
+        "基于分部求和法的和的估计",
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "an epsilon of room",
+      "degree": 32,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 5653,
+      "is_hub": true,
+      "in_subset_via": [
+        "分析学基本方法目录1",
+        "Borel-Cantelli lemma及其应用",
+        "模1均匀分布与Weyl判别",
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "函数与序列的上下极限",
+      "degree": 19,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 16064,
+      "is_hub": true,
+      "in_subset_via": [
+        "分析学基本方法目录1"
+      ]
+    },
+    {
+      "title": "和与积分换序",
+      "degree": 18,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 9447,
+      "is_hub": true,
+      "in_subset_via": [
+        "逐项估计",
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "基于分部求和法的和的估计",
+      "degree": 18,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 7369,
+      "is_hub": true,
+      "in_subset_via": [
+        "分析学基本方法目录1",
+        "分段估计",
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "Borel-Cantelli lemma及其应用",
+      "degree": 18,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 10672,
+      "is_hub": true,
+      "in_subset_via": [
+        "an epsilon of room",
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "利用已知的渐近结果求渐近展开的技巧",
+      "degree": 16,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 3707,
+      "is_hub": true,
+      "in_subset_via": [
+        "分析学基本方法目录1",
+        "和的积分估计",
+        "分段估计"
+      ]
+    },
+    {
+      "title": "模1均匀分布与Weyl判别",
+      "degree": 15,
+      "tags": [
+        "math",
+        "数论",
+        "实分析",
+        "丢番图逼近"
+      ],
+      "char_count": 13064,
+      "is_hub": true,
+      "in_subset_via": [
+        "an epsilon of room"
+      ]
+    },
+    {
+      "title": "approximation to the identity",
+      "degree": 14,
+      "tags": [
+        "math",
+        "调和分析"
+      ],
+      "char_count": 11924,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分段估计"
+      ]
+    },
+    {
+      "title": "an epsilon of room证明集合为0测度的策略",
+      "degree": 14,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 6327,
+      "is_hub": true,
+      "in_subset_via": [
+        "an epsilon of room",
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "把条件函数展开为新的和或积分然后换序",
+      "degree": 14,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 5141,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "柯西凝聚判别法",
+      "degree": 13,
+      "tags": [
+        "math",
+        "微积分",
+        "实分析"
+      ],
+      "char_count": 5739,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分段估计"
+      ]
+    },
+    {
+      "title": "identity theorem",
+      "degree": 13,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 5009,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room",
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "无理测度的定义以及基本的命题",
+      "degree": 13,
+      "tags": [
+        "math",
+        "实分析",
+        "数论",
+        "丢番图逼近"
+      ],
+      "char_count": 14269,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room",
+        "函数与序列的上下极限",
+        "Borel-Cantelli lemma及其应用",
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "Re0微积分1：用牛顿迭代法求算术平方根",
+      "degree": 12,
+      "tags": [
+        "math",
+        "微积分",
+        "数值分析",
+        "re0微积分"
+      ],
+      "char_count": 7312,
+      "is_hub": false,
+      "in_subset_via": [
+        "分析学基本方法目录1",
+        "函数与序列的上下极限"
+      ]
+    },
+    {
+      "title": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+      "degree": 11,
+      "tags": [
+        "math",
+        "调和分析"
+      ],
+      "char_count": 6260,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分析学基本方法目录1",
+        "分段估计",
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "用分段估计解决几个序列的极限问题",
+      "degree": 11,
+      "tags": [
+        "math",
+        "实分析",
+        "微积分",
+        "考研"
+      ],
+      "char_count": 4111,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分析学基本方法目录1",
+        "分段估计",
+        "an epsilon of room",
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "柯西收敛判别",
+      "degree": 10,
+      "tags": [
+        "math",
+        "实分析",
+        "考研",
+        "微积分"
+      ],
+      "char_count": 9302,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "和的积分估计",
+        "函数与序列的上下极限"
+      ]
+    },
+    {
+      "title": "基于分部积分法的积分的估计",
+      "degree": 10,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 2649,
+      "is_hub": false,
+      "in_subset_via": [
+        "分析学基本方法目录1",
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "素数倒数和的估计",
+      "degree": 10,
+      "tags": [
+        "math",
+        "数论"
+      ],
+      "char_count": 4641,
+      "is_hub": false,
+      "in_subset_via": [
+        "和的积分估计",
+        "基于分部求和法的和的估计",
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "Riemann - Lebesgue lemma的证明",
+      "degree": 10,
+      "tags": [
+        "math",
+        "实分析",
+        "调和分析"
+      ],
+      "char_count": 14246,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room"
+      ]
+    },
+    {
+      "title": "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "degree": 10,
+      "tags": [
+        "math",
+        "实分析",
+        "考研",
+        "数论"
+      ],
+      "char_count": 4590,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限",
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "把集合问题转换为函数问题",
+      "degree": 10,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 3376,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用",
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "Kronecker定理，Dirichlet定理及其应用",
+      "degree": 10,
+      "tags": [
+        "math",
+        "数论",
+        "丢番图逼近"
+      ],
+      "char_count": 5994,
+      "is_hub": false,
+      "in_subset_via": [
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "函数傅里叶展开的Dini判别及其应用",
+      "degree": 9,
+      "tags": [
+        "math",
+        "调和分析"
+      ],
+      "char_count": 1640,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计"
+      ]
+    },
+    {
+      "title": "从几个极限问题去理解Landau符号",
+      "degree": 9,
+      "tags": [
+        "math",
+        "微积分",
+        "考研"
+      ],
+      "char_count": 8633,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分析学基本方法目录1"
+      ]
+    },
+    {
+      "title": "黎曼积分与黎曼和的误差",
+      "degree": 9,
+      "tags": [
+        "math",
+        "微积分"
+      ],
+      "char_count": 3209,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分析学基本方法目录1",
+        "和的积分估计"
+      ]
+    },
+    {
+      "title": "Stirling渐近公式及不等式",
+      "degree": 9,
+      "tags": [
+        "math",
+        "微积分"
+      ],
+      "char_count": 3864,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分析学基本方法目录1",
+        "和的积分估计"
+      ]
+    },
+    {
+      "title": "对误差的分析从而改进分段估计",
+      "degree": 9,
+      "tags": [
+        "math",
+        "微积分"
+      ],
+      "char_count": 4793,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分析学基本方法目录1",
+        "和的积分估计",
+        "分段估计"
+      ]
+    },
+    {
+      "title": "Re0微积分2：自然底数e及其快速计算",
+      "degree": 9,
+      "tags": [
+        "math",
+        "微积分",
+        "re0微积分"
+      ],
+      "char_count": 7162,
+      "is_hub": false,
+      "in_subset_via": [
+        "逐项估计",
+        "分段估计",
+        "an epsilon of room"
+      ]
+    },
+    {
+      "title": "加强收敛性质的条件与手段",
+      "degree": 9,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 2266,
+      "is_hub": false,
+      "in_subset_via": [
+        "分段估计",
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "广义的Riemann - Lebesgue lemma",
+      "degree": 9,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 3075,
+      "is_hub": false,
+      "in_subset_via": [
+        "分段估计",
+        "an epsilon of room"
+      ]
+    },
+    {
+      "title": "Weierstrass逼近定理的概率途径证明",
+      "degree": 9,
+      "tags": [
+        "math",
+        "概率论",
+        "实分析"
+      ],
+      "char_count": 13517,
+      "is_hub": false,
+      "in_subset_via": [
+        "分段估计",
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "有限测度下各个收敛之间的关系",
+      "degree": 9,
+      "tags": [
+        "math",
+        "实分析",
+        "概率论"
+      ],
+      "char_count": 5305,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "Fubini-Tonelli定理的例子与反例",
+      "degree": 9,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 5317,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "把积分或求和对象视为一个计数函数并展开",
+      "degree": 8,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 4408,
+      "is_hub": false,
+      "in_subset_via": [
+        "和的积分估计",
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "Etemadi关于强大数定律的证明",
+      "degree": 8,
+      "tags": [
+        "math",
+        "概率论"
+      ],
+      "char_count": 5665,
+      "is_hub": false,
+      "in_subset_via": [
+        "和的积分估计",
+        "Borel-Cantelli lemma及其应用",
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "degree": 8,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 2596,
+      "is_hub": false,
+      "in_subset_via": [
+        "分段估计",
+        "基于分部求和法的和的估计",
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "对含参数方程根的估计",
+      "degree": 8,
+      "tags": [
+        "math",
+        "微积分",
+        "实分析"
+      ],
+      "char_count": 12959,
+      "is_hub": false,
+      "in_subset_via": [
+        "分段估计"
+      ]
+    },
+    {
+      "title": "测度论的基础概念",
+      "degree": 8,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 12037,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "自然数的r次幂的部分和估计",
+      "degree": 7,
+      "tags": [
+        "math",
+        "微积分"
+      ],
+      "char_count": 4650,
+      "is_hub": false,
+      "in_subset_via": [
+        "和的积分估计",
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "实分析的复办法",
+      "degree": 7,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 5985,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room"
+      ]
+    },
+    {
+      "title": "函数卷积的基本性质",
+      "degree": 7,
+      "tags": [
+        "math",
+        "调和分析"
+      ],
+      "char_count": 3622,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room"
+      ]
+    },
+    {
+      "title": "利用连续函数的identity theorem证明函数方程",
+      "degree": 7,
+      "tags": [
+        "math",
+        "大学数学竞赛"
+      ],
+      "char_count": 2406,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room"
+      ]
+    },
+    {
+      "title": "有限测度空间上依测度收敛的等价命题",
+      "degree": 7,
+      "tags": [
+        "math",
+        "实分析",
+        "概率论"
+      ],
+      "char_count": 3118,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "素数定理的一些等价命题",
+      "degree": 7,
+      "tags": [
+        "math",
+        "数论"
+      ],
+      "char_count": 6873,
+      "is_hub": false,
+      "in_subset_via": [
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "制造telescoping sum求和或求乘积",
+      "degree": 7,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 4305,
+      "is_hub": false,
+      "in_subset_via": [
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "给正项级数条件正负号以后级数收敛意味着什么",
+      "degree": 6,
+      "tags": [
+        "math",
+        "实分析",
+        "大学数学竞赛"
+      ],
+      "char_count": 6427,
+      "is_hub": false,
+      "in_subset_via": [
+        "和的积分估计",
+        "函数与序列的上下极限",
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "收敛的连乘积的上界估计与糖水不等式",
+      "degree": 6,
+      "tags": [
+        "math",
+        "微积分",
+        "高考"
+      ],
+      "char_count": 1754,
+      "is_hub": false,
+      "in_subset_via": [
+        "和的积分估计"
+      ]
+    },
+    {
+      "title": "部分积的上界估计与Gautschi不等式",
+      "degree": 6,
+      "tags": [
+        "math",
+        "微积分",
+        "大学数学竞赛",
+        "中学数学竞赛",
+        "考研"
+      ],
+      "char_count": 4271,
+      "is_hub": false,
+      "in_subset_via": [
+        "和的积分估计"
+      ]
+    },
+    {
+      "title": "和的估计的一个典型案例",
+      "degree": 6,
+      "tags": [
+        "math",
+        "微积分",
+        "考研"
+      ],
+      "char_count": 2703,
+      "is_hub": false,
+      "in_subset_via": [
+        "和的积分估计",
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "矩阵交换次序特征多项式不变",
+      "degree": 6,
+      "tags": [
+        "math",
+        "线性代数"
+      ],
+      "char_count": 1785,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room"
+      ]
+    },
+    {
+      "title": "Lebesgue微分定理",
+      "degree": 6,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 6106,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room",
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "利用Stolz定理确定递归序列的渐近系数",
+      "degree": 6,
+      "tags": [
+        "math",
+        "微积分",
+        "大学数学竞赛",
+        "考研"
+      ],
+      "char_count": 4302,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限"
+      ]
+    },
+    {
+      "title": "两个非负不增序列互相竞争从而使得级数发散",
+      "degree": 6,
+      "tags": [
+        "math",
+        "考研",
+        "大学数学竞赛"
+      ],
+      "char_count": 7761,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限",
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "一个递推序列的渐近问题",
+      "degree": 6,
+      "tags": [
+        "math",
+        "实分析",
+        "考研"
+      ],
+      "char_count": 2565,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限"
+      ]
+    },
+    {
+      "title": "关于序列极限的公开问题",
+      "degree": 6,
+      "tags": [
+        "math",
+        "实分析",
+        "微积分",
+        "大学数学竞赛"
+      ],
+      "char_count": 11092,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限"
+      ]
+    },
+    {
+      "title": "黎曼积分的定义以及黎曼可积的判别",
+      "degree": 6,
+      "tags": [
+        "math",
+        "实分析",
+        "微积分"
+      ],
+      "char_count": 4882,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限",
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+      "degree": 6,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 6051,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "揭露全纯以及亚纯函数信息的Liouville原则",
+      "degree": 6,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 4986,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "Leibniz收敛判断",
+      "degree": 6,
+      "tags": [
+        "math",
+        "微积分"
+      ],
+      "char_count": 1886,
+      "is_hub": false,
+      "in_subset_via": [
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "Wintner mean value theorem",
+      "degree": 6,
+      "tags": [
+        "math",
+        "数论"
+      ],
+      "char_count": 8341,
+      "is_hub": false,
+      "in_subset_via": [
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "一个竞赛中的和的渐近展开问题",
+      "degree": 6,
+      "tags": [
+        "math",
+        "大学数学竞赛",
+        "微积分"
+      ],
+      "char_count": 1653,
+      "is_hub": false,
+      "in_subset_via": [
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "由一个级数收敛证明另一个有关级数的收敛问题",
+      "degree": 6,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 5545,
+      "is_hub": false,
+      "in_subset_via": [
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "Silverman–Toeplitz定理",
+      "degree": 6,
+      "tags": [
+        "math",
+        "微积分",
+        "实分析"
+      ],
+      "char_count": 4388,
+      "is_hub": false,
+      "in_subset_via": [
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "黎曼可积的Lebesgue判别",
+      "degree": 6,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 2882,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "Kummer判别：对多种比值判别变形的统一",
+      "degree": 5,
+      "tags": [
+        "math",
+        "微积分",
+        "考研",
+        "大学数学竞赛"
+      ],
+      "char_count": 6466,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限"
+      ]
+    },
+    {
+      "title": "判断序列在区间内稠密的几个命题",
+      "degree": 5,
+      "tags": [
+        "math",
+        "实分析",
+        "数论"
+      ],
+      "char_count": 6341,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限",
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "随机变量期望收敛导出几乎处处收敛的一个条件",
+      "degree": 5,
+      "tags": [
+        "math",
+        "概率论",
+        "实分析"
+      ],
+      "char_count": 2604,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用",
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "证明函数项级数几乎处处绝对收敛",
+      "degree": 5,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 1194,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+      "degree": 5,
+      "tags": [
+        "math",
+        "概率论"
+      ],
+      "char_count": 5469,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "矩阵与算子的迹",
+      "degree": 5,
+      "tags": [
+        "math",
+        "线性代数"
+      ],
+      "char_count": 1816,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "Euler-Maclaurin求和公式在和的估计当中的应用",
+      "degree": 5,
+      "tags": [
+        "math",
+        "微积分",
+        "考研",
+        "大学数学竞赛"
+      ],
+      "char_count": 1777,
+      "is_hub": false,
+      "in_subset_via": [
+        "基于分部求和法的和的估计",
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "通过pi的无理测度证明级数收敛2",
+      "degree": 4,
+      "tags": [
+        "math",
+        "数论",
+        "丢番图逼近"
+      ],
+      "char_count": 7504,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限"
+      ]
+    },
+    {
+      "title": "满足特定条件的两个集合尺寸的比例",
+      "degree": 4,
+      "tags": [
+        "math",
+        "组合学",
+        "调和分析",
+        "中学数学竞赛"
+      ],
+      "char_count": 2141,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "一个交错的双重级数的级数的收敛性判别",
+      "degree": 4,
+      "tags": [
+        "math",
+        "微积分",
+        "大学数学竞赛"
+      ],
+      "char_count": 2090,
+      "is_hub": false,
+      "in_subset_via": [
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+      "degree": 4,
+      "tags": [
+        "math",
+        "数论"
+      ],
+      "char_count": 1706,
+      "is_hub": false,
+      "in_subset_via": [
+        "基于分部求和法的和的估计",
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "对Dirichlet判别的一个调整",
+      "degree": 4,
+      "tags": [
+        "math",
+        "实分析",
+        "复分析"
+      ],
+      "char_count": 4812,
+      "is_hub": false,
+      "in_subset_via": [
+        "基于分部求和法的和的估计"
+      ]
+    },
+    {
+      "title": "n个连续的阶乘之积有多少个因子",
+      "degree": 4,
+      "tags": [
+        "math",
+        "数论"
+      ],
+      "char_count": 3216,
+      "is_hub": false,
+      "in_subset_via": [
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "不适用于逐项估计求和的极限的例子",
+      "degree": 4,
+      "tags": [
+        "math",
+        "微积分"
+      ],
+      "char_count": 1548,
+      "is_hub": false,
+      "in_subset_via": [
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "样本期望的渐近展开系数",
+      "degree": 4,
+      "tags": [
+        "math",
+        "实分析",
+        "概率论",
+        "大学数学竞赛"
+      ],
+      "char_count": 6522,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "带根号的三项迭代序列极限的存在性问题",
+      "degree": 3,
+      "tags": [
+        "math",
+        "实分析",
+        "考研",
+        "大学数学竞赛"
+      ],
+      "char_count": 1309,
+      "is_hub": false,
+      "in_subset_via": [
+        "函数与序列的上下极限"
+      ]
+    },
+    {
+      "title": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+      "degree": 3,
+      "tags": [
+        "math",
+        "实分析",
+        "大学数学竞赛"
+      ],
+      "char_count": 5374,
+      "is_hub": false,
+      "in_subset_via": [
+        "Borel-Cantelli lemma及其应用"
+      ]
+    },
+    {
+      "title": "对自变量进行二进制展开求积分",
+      "degree": 3,
+      "tags": [
+        "math",
+        "微积分",
+        "实分析",
+        "概率论"
+      ],
+      "char_count": 6166,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "傅里叶逆变换公式",
+      "degree": 3,
+      "tags": [],
+      "char_count": 2592,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "通过重整来证明表达式的非负性",
+      "degree": 3,
+      "tags": [
+        "math",
+        "tool_idea"
+      ],
+      "char_count": 3401,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "整数格点与一个带取整函数的和的极限问题",
+      "degree": 3,
+      "tags": [
+        "math",
+        "微积分",
+        "组合学",
+        "大学数学竞赛"
+      ],
+      "char_count": 6441,
+      "is_hub": false,
+      "in_subset_via": [
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "从一个求极限问题引入Weyl判别",
+      "degree": 3,
+      "tags": [
+        "math",
+        "实分析",
+        "遍历理论",
+        "丢番图逼近"
+      ],
+      "char_count": 2996,
+      "is_hub": false,
+      "in_subset_via": [
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "模1均匀分布序列对序列差分的要求",
+      "degree": 3,
+      "tags": [
+        "math",
+        "数论"
+      ],
+      "char_count": 2477,
+      "is_hub": false,
+      "in_subset_via": [
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+      "degree": 3,
+      "tags": [
+        "math",
+        "数论",
+        "丢番图逼近"
+      ],
+      "char_count": 1384,
+      "is_hub": false,
+      "in_subset_via": [
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "复三角多项式在Lp空间中的稠密性",
+      "degree": 3,
+      "tags": [
+        "math",
+        "实分析",
+        "泛函分析"
+      ],
+      "char_count": 2332,
+      "is_hub": false,
+      "in_subset_via": [
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "Cantor集以及它的性质",
+      "degree": 3,
+      "tags": [
+        "math",
+        "实分析",
+        "拓扑"
+      ],
+      "char_count": 3367,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "关于log的一个积分",
+      "degree": 2,
+      "tags": [
+        "math",
+        "微积分",
+        "大学数学竞赛"
+      ],
+      "char_count": 2055,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "利用Dirichlet卷积法解决几个数论中求和问题",
+      "degree": 2,
+      "tags": [
+        "math",
+        "数论"
+      ],
+      "char_count": 1818,
+      "is_hub": false,
+      "in_subset_via": [
+        "和与积分换序"
+      ]
+    },
+    {
+      "title": "函数积分的单调性",
+      "degree": 2,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 2108,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "单调有界函数几乎处处连续",
+      "degree": 2,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 964,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "满足这种函数极限性质的函数是几乎处处为0的",
+      "degree": 2,
+      "tags": [
+        "math",
+        "实分析",
+        "考研"
+      ],
+      "char_count": 1955,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "n维球体的体积",
+      "degree": 2,
+      "tags": [
+        "math",
+        "微积分"
+      ],
+      "char_count": 3739,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    },
+    {
+      "title": "被求和对象的值U形分布时和的估计",
+      "degree": 1,
+      "tags": [
+        "math",
+        "微积分",
+        "大学数学竞赛"
+      ],
+      "char_count": 7005,
+      "is_hub": false,
+      "in_subset_via": [
+        "利用已知的渐近结果求渐近展开的技巧"
+      ]
+    },
+    {
+      "title": "判断剧烈震荡的序列部分和的有界性问题",
+      "degree": 1,
+      "tags": [
+        "math",
+        "数论",
+        "概率论"
+      ],
+      "char_count": 6044,
+      "is_hub": false,
+      "in_subset_via": [
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "渐近密度为p的整数子集上黎曼和的极限",
+      "degree": 1,
+      "tags": [
+        "math",
+        "大学数学竞赛",
+        "实分析",
+        "数论"
+      ],
+      "char_count": 4034,
+      "is_hub": false,
+      "in_subset_via": [
+        "模1均匀分布与Weyl判别"
+      ]
+    },
+    {
+      "title": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+      "degree": 1,
+      "tags": [
+        "math",
+        "实分析"
+      ],
+      "char_count": 1596,
+      "is_hub": false,
+      "in_subset_via": [
+        "an epsilon of room证明集合为0测度的策略"
+      ]
+    }
+  ],
+  "stats": {
+    "total_unique_notes": 105,
+    "hubs_in_subset": 12,
+    "neighbors_in_subset": 93,
+    "shared_across_hubs": 43
+  }
+}

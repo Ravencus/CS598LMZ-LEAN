@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-fudan-university-2024-graduate-entrance-examinatio",
+  "type": "problem",
+  "source_note": "一个递推序列的渐近问题",
+  "english_source_note": "Asymptotics of a Recursive Sequence",
+  "callout_id": "一个递推序列的渐近问题#1",
+  "english_title": "Problem 0: Fudan University 2024 Graduate Entrance Examination Problem",
+  "statement_en": "Let $a_1=2024$, and suppose that for every positive integer $n$ the sequence satisfies the recurrence relation $$a_{n+1}=a_n+\\frac{2}{a_n}.$$ Find $$\\lim_{n\\to\\infty}\\frac{a_n}{\\sqrt{n}}.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "asymptotic analysis of recursive sequences",
+    "squaring the recurrence",
+    "comparison with differential equations"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "recursive sequences",
+    "algebraic manipulation"
+  ],
+  "callout_body": "$a_1=2024$,并且对任意正整数n序列满足递推关系$$a_{n+1}=a_{n}+\\frac{2}{a_n}$$求$$\\lim_{n\\to \\infty}\\frac{a_n}{\\sqrt{n}}$$"
+}

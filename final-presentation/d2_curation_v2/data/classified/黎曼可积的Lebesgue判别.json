@@ -1,0 +1,41 @@
+{
+  "note_title": "黎曼可积的Lebesgue判别",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "黎曼可积的Lebesgue判别#1",
+      "type": "note",
+      "title": "黎曼可积的Lebesgue等价条件，Lebesgue& Vitali 1907",
+      "body": "闭区间$[a,b]$上的有界函数$f$黎曼可积当且仅当函数$f$是在此闭区间上几乎处处连续的。",
+      "position_char": 31,
+      "position_line": 5,
+      "classification_result": {
+        "id": "黎曼可积的Lebesgue判别#1",
+        "classification": "problem",
+        "english_title": "Lebesgue Criterion for Riemann Integrability, Lebesgue & Vitali 1907",
+        "if_problem": {
+          "statement_en": "A bounded function $f$ on the closed interval $[a,b]$ is Riemann integrable if and only if $f$ is continuous almost everywhere on this closed interval.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "measure zero characterization of discontinuity sets",
+            "Riemann integrability criterion via upper and lower sums"
+          ],
+          "prerequisites": [
+            "Riemann integrability",
+            "continuity and discontinuity of functions",
+            "measure zero sets",
+            "almost everywhere"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"黎曼可积的Lebesgue判别#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lebesgue Criterion for Riemann Integrability, Lebesgue & Vitali 1907\",\n    \"if_problem\": {\n      \"statement_en\": \"A bounded function $f$ on the closed interval $[a,b]$ is Riemann integrable if and only if $f$ is continuous almost everywhere on this closed interval.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"measure zero characterization of discontinuity sets\",\n        \"Riemann integrability criterion via upper and lower sums\"\n      ],\n      \"prerequisites\": [\n        \"Riemann integrability\",\n        \"continuity and discontinuity of functions\",\n        \"measure zero sets\",\n        \"almost everywhere\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

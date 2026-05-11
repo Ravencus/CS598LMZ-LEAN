@@ -1,0 +1,122 @@
+{
+  "note_title": "利用连续函数的identity theorem证明函数方程",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "利用连续函数的identity theorem证明函数方程#1",
+      "type": "note",
+      "title": "命题1",
+      "body": "假设$f,g$都是由$\\mathbb{R}$到某个Hausdroff的拓扑空间$Y$的连续映射，如果$$f(r)=g(r),\\forall r \\in \\mathbb{Q}$$那么$$f(x)=g(x),\\forall x \\in \\mathbb{R}$$",
+      "position_char": 35,
+      "position_line": 6,
+      "classification_result": {
+        "id": "利用连续函数的identity theorem证明函数方程#1",
+        "classification": "problem",
+        "english_title": "Proposition 1",
+        "if_problem": {
+          "statement_en": "Assume $f,g$ are both continuous maps from $\\mathbb{R}$ to some Hausdorff topological space $Y$. If $$f(r)=g(r),\\forall r \\in \\mathbb{Q}$$ then $$f(x)=g(x),\\forall x \\in \\mathbb{R}.$$",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "density of the rational numbers in $\\mathbb{R}$",
+            "continuity and uniqueness from a dense subset",
+            "Hausdorff separation to identify limits"
+          ],
+          "prerequisites": [
+            "continuity in topological spaces",
+            "density of $\\mathbb{Q}$ in $\\mathbb{R}$",
+            "Hausdorff topological spaces"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "利用连续函数的identity theorem证明函数方程#2",
+      "type": "question",
+      "title": "问题1",
+      "body": "函数$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续函数，并且满足对任意的正整数$n$,以及任意的实数$x$都有$$f(x)=f(x+\\frac{1}{n})$$证明函数$f(x)$是一个常函数。",
+      "position_char": 438,
+      "position_line": 20,
+      "classification_result": {
+        "id": "利用连续函数的identity theorem证明函数方程#2",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Let $f:\\mathbb{R}\\to \\mathbb{R}$ be a continuous function such that for every positive integer $n$ and every real number $x$, $$f(x)=f\\left(x+\\frac{1}{n}\\right).$$ Prove that $f(x)$ is a constant function.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "translation invariance",
+            "using invariance on rational shifts",
+            "continuity plus density of rational numbers"
+          ],
+          "prerequisites": [
+            "continuous functions on $\\mathbb{R}$",
+            "density of $\\mathbb{Q}$ in $\\mathbb{R}$",
+            "basic functional equations"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "利用连续函数的identity theorem证明函数方程#3",
+      "type": "question",
+      "title": "问题2",
+      "body": "函数$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续函数，并且满足对任意的实数$x$都有$$f(x)=f(x+\\sqrt{2})=f(x+\\sqrt{3})$$证明函数$f(x)$是一个常函数。",
+      "position_char": 894,
+      "position_line": 27,
+      "classification_result": {
+        "id": "利用连续函数的identity theorem证明函数方程#3",
+        "classification": "problem",
+        "english_title": "Problem 2",
+        "if_problem": {
+          "statement_en": "Let $f:\\mathbb{R}\\to \\mathbb{R}$ be a continuous function such that for every real number $x$, $$f(x)=f(x+\\sqrt{2})=f(x+\\sqrt{3}).$$ Prove that $f(x)$ is a constant function.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "translation invariance",
+            "integer linear combinations of $\\sqrt{2}$ and $\\sqrt{3}$",
+            "density of the generated additive subgroup",
+            "continuity plus dense-orbit argument"
+          ],
+          "prerequisites": [
+            "continuous functions on $\\mathbb{R}$",
+            "density arguments in $\\mathbb{R}$",
+            "basic irrationality and linear combination arguments",
+            "functional equations"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "利用连续函数的identity theorem证明函数方程#4",
+      "type": "tip",
+      "title": "想法",
+      "body": "通常而言，如果问题涉及的对象当中具有某种\"平移不变性\"，那么启用傅里叶分析的工具是很自然的。因为往往经过傅里叶分析的手段处理以后，较为复杂的诸如加法和卷积运算能转换为乘法的运算。",
+      "position_char": 1382,
+      "position_line": 39,
+      "classification_result": {
+        "id": "利用连续函数的identity theorem证明函数方程#4",
+        "classification": "strategy_template",
+        "english_title": "Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Use Fourier analysis for translation-invariant problems",
+          "summary_en": "When a problem involves translation invariance, Fourier analysis is often a natural tool. After applying Fourier-analytic methods, complicated operations such as addition and convolution are frequently converted into multiplication.",
+          "applicability": "Applies when the main structure of the problem is invariance under shifts or when additive and convolution-type relations are present."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"利用连续函数的identity theorem证明函数方程#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume $f,g$ are both continuous maps from $\\\\mathbb{R}$ to some Hausdorff topological space $Y$. If $$f(r)=g(r),\\\\forall r \\\\in \\\\mathbb{Q}$$ then $$f(x)=g(x),\\\\forall x \\\\in \\\\mathbb{R}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"density of the rational numbers in $\\\\mathbb{R}$\",\n        \"continuity and uniqueness from a dense subset\",\n        \"Hausdorff separation to identify limits\"\n      ],\n      \"prerequisites\": [\n        \"continuity in topological spaces\",\n        \"density of $\\\\mathbb{Q}$ in $\\\\mathbb{R}$\",\n        \"Hausdorff topological spaces\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"利用连续函数的identity theorem证明函数方程#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:\\\\mathbb{R}\\\\to \\\\mathbb{R}$ be a continuous function such that for every positive integer $n$ and every real number $x$, $$f(x)=f\\\\left(x+\\\\frac{1}{n}\\\\right).$$ Prove that $f(x)$ is a constant function.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"translation invariance\",\n        \"using invariance on rational shifts\",\n        \"continuity plus density of rational numbers\"\n      ],\n      \"prerequisites\": [\n        \"continuous functions on $\\\\mathbb{R}$\",\n        \"density of $\\\\mathbb{Q}$ in $\\\\mathbb{R}$\",\n        \"basic functional equations\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"利用连续函数的identity theorem证明函数方程#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:\\\\mathbb{R}\\\\to \\\\mathbb{R}$ be a continuous function such that for every real number $x$, $$f(x)=f(x+\\\\sqrt{2})=f(x+\\\\sqrt{3}).$$ Prove that $f(x)$ is a constant function.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"translation invariance\",\n        \"integer linear combinations of $\\\\sqrt{2}$ and $\\\\sqrt{3}$\",\n        \"density of the generated additive subgroup\",\n        \"continuity plus dense-orbit argument\"\n      ],\n      \"prerequisites\": [\n        \"continuous functions on $\\\\mathbb{R}$\",\n        \"density arguments in $\\\\mathbb{R}$\",\n        \"basic irrationality and linear combination arguments\",\n        \"functional equations\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"利用连续函数的identity theorem证明函数方程#4\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Use Fourier analysis for translation-invariant problems\",\n      \"summary_en\": \"When a problem involves translation invariance, Fourier analysis is often a natural tool. After applying Fourier-analytic methods, complicated operations such as addition and convolution are frequently converted into multiplication.\",\n      \"applicability\": \"Applies when the main structure of the problem is invariance under shifts or when additive and convolution-type relations are present.\"\n    }\n  }\n]",
+  "classified": true
+}

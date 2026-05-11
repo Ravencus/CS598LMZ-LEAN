@@ -1,0 +1,22 @@
+{
+  "id": "12-a-naive-incorrect-idea",
+  "type": "problem",
+  "source_note": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+  "english_source_note": "A.e. Convergence of Cesaro Means of Uniformly a.e. Bounded Functions",
+  "callout_id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#4",
+  "english_title": "1.2: A Naive Incorrect Idea",
+  "statement_en": "The implication \"for a nonnegative sequence $b_n$, if $\\sum_n \\frac{b_n}{n}<+\\infty$, then $\\sum_n b_n<+\\infty$\" is false. A counterexample is given by $b_n:=1_{n=2^k}$. Then\n$$\\sum_{n\\geq 2}\\frac{b_n}{n}=\\sum_{k\\geq 1}\\frac{1}{2^k}<+\\infty,$$\nbut\n$$\\sum_{n\\geq 2} b_n =\\sum_{k\\geq 1}1=+\\infty.$$",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "constructing sparse sequences",
+    "counterexample by dyadic support"
+  ],
+  "prerequisites": [
+    "series of nonnegative terms",
+    "indicator notation",
+    "basic convergence tests"
+  ],
+  "callout_body": "有没有可能对于非负序列$b_n$，如果$\\sum_n \\frac{b_n}{n}<+\\infty$那么$\\sum_{n}b_n<+\\infty$呢？因为如果这样能成功的话，我们不妨假设$b_n:=\\int_X A_n^2(x)\\,d\\mu$从而直接得到$\\sum_n b_n<+\\infty$从而实现\"Borel-Cantelli引理+Chebyshev不等式\"的路径，完成对$A_n(x)$几乎处处收敛到0的论证。\n\n但这是错误的，因为我们轻易可以给出反例：$b_n:=1_{n=2^k}$那么此时$$\\sum_{n\\geq 2}\\frac{b_n}{n}=\\sum_{k\\geq 1}\\frac{1}{2^k}<+\\infty$$但是$$\\sum_{n\\geq 2} b_n =\\sum_{k\\geq 1}1=+\\infty$$"
+}

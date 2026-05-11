@@ -1,0 +1,5 @@
+["term-by-term-estimates-hub", "piecewise-estimates-hub", "reducing-set-problems-to-function-problems-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- term-by-term-estimates-hub: The main theorem proves equality of sums by first proving a pointwise identity for each summand via `hpoint`, then applying `Finset.sum_congr`.
+- piecewise-estimates-hub: The proof splits the integer division case according to `if n ≤ s + k`, proving the quotient is either `1` or `0` with separate bounds.
+- reducing-set-problems-to-function-problems-hub: `sum_indicator_tail` represents the finite tail condition `n ≤ s + k` by an indicator-valued summand and evaluates the sum by filtering/counting the corresponding set.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof repeatedly uses “different expressions of the same object,” especially Euclidean decompositions like `m = m % n + n * (m / n)` and `x = (m + r) / n`, to convert floor terms into integer-division terms.

@@ -1,0 +1,18 @@
+I’ll first identify the relevant Mathlib API for the Borel-Cantelli/limsup part, then assemble the a.e. convergence proof from the ε-null limsup statement.
+I found the likely Mathlib Borel-Cantelli lemma: `MeasureTheory.measure_setOf_frequently_eq_zero`, which matches the `∃ᶠ n in atTop` set directly. I’m checking a minimal proof around that API now.
+The given Lean hypothesis is not the mathematical finiteness condition: `μ ...` has type `ℝ≥0∞`, and Mathlib has `ENNReal.summable : Summable f` for every `f : ℕ → ℝ≥0∞`. So the assumption is vacuous in Lean; the Borel-Cantelli lemma needs `∑' n, μ ... ≠ ∞`, not `Summable`. I’m checking whether there is any coercion/alternate interpretation available, but this looks like a false theorem as stated.
+No valid Lean proof exists for the signature as stated.
+
+The issue is that `μ ... : ℝ≥0∞`, and in Mathlib:
+
+```lean
+ENNReal.summable : Summable f
+```
+
+for every `f : ℕ → ℝ≥0∞`. So the hypothesis is vacuous. The Borel-Cantelli lemma instead needs:
+
+```lean
+∑' n, μ {x | ε ≤ |fSeq (n + 1) x - f x|} ≠ ∞
+```
+
+The theorem is therefore false as stated; for example, take `α = Unit`, nonzero measure, `fSeq n x = 1`, and `f x = 0`. The hypothesis holds trivially, but the limsup set has positive measure and `fSeq` does not tend to `f`.

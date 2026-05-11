@@ -1,0 +1,3 @@
+I’m checking whether this can be reduced to a closed-form dyadic moment computation, then I’ll formalize the shortest proof that compiles.
+I’ve got a clean recurrence in mind; I’m checking the exact `tsum` and interval-integral lemmas available so the Lean proof stays minimal.
+I’ve got the proof structure: prove a self-similarity relation on the two halves, turn that into two moment equations, then solve the linear system. I’m trying the Lean version now.

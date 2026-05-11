@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-212-squeeze-theorem-for-riemann-integrability",
+  "english_title": "Theorem 2.1.2: Squeeze Theorem for Riemann Integrability",
+  "statement_en": "A function $f:[a,b]\\to \\mathbb{R}$ is Riemann integrable if and only if for every $\\varepsilon>0$ there exist two Riemann integrable functions $\\alpha_{\\varepsilon},\\beta_{\\varepsilon}$ such that $$\\alpha_{\\varepsilon}\\leq f\\leq \\beta_{\\varepsilon}$$ and $$\\left|\\int_a^b \\alpha_{\\varepsilon}(x)-\\beta_{\\varepsilon}\\,dx\\right|<\\varepsilon.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem riemannIntegrable_iff_exists_intervalIntegrable_bounds\n    {a b : ℝ} {f : ℝ → ℝ} :\n    IntervalIntegrable f volume a b ↔\n      ∀ ε > 0, ∃ α β : ℝ → ℝ,\n        IntervalIntegrable α volume a b ∧\n        IntervalIntegrable β volume a b ∧\n        (∀ x ∈ Set.Icc a b, α x ≤ f x) ∧\n        (∀ x ∈ Set.Icc a b, f x ≤ β x) ∧\n        |∫ x in a..b, (α x - β x)| < ε := by\n  sorry"
+}

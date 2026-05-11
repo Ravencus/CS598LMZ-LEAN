@@ -1,0 +1,24 @@
+{
+  "id": "lebesgue-density-theorem",
+  "type": "problem",
+  "source_note": "Lebesgue微分定理",
+  "english_source_note": "Lebesgue Differentiation Theorem",
+  "callout_id": "Lebesgue微分定理#2",
+  "english_title": "Lebesgue Density Theorem",
+  "statement_en": "Let $A$ be a Lebesgue measurable subset of $\\mathbb{R}^n$. Then for almost every point, $$d_A(x)=1_A(x)\\text{ for a.e. }x\\in \\mathbb{R}^n$$ In general, if a point $x$ satisfies $d_A(x)=1$, then it is called a density point of $A$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Lebesgue differentiation theorem",
+    "indicator functions",
+    "density of measurable sets"
+  ],
+  "prerequisites": [
+    "Lebesgue measurable sets",
+    "indicator functions",
+    "Lebesgue measure",
+    "almost everywhere statements"
+  ],
+  "callout_body": "集合$A$是$\\mathbb{R}^n$当中Lebesgue可测的子集，那么对于几乎所有点而言$$d_A(x)=1_A(x)\\text{ for a.e. }x\\in \\mathbb{R}^n$$\n\n一般来说如果一个点$x$对应的$d_A(x)=1$那么我们一般称其为\"集合A的密度点\"或者说a point of density for A。"
+}

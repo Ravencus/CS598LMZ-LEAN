@@ -1,0 +1,21 @@
+{
+  "id": "problem-10",
+  "type": "problem",
+  "source_note": "Weierstrass逼近定理的概率途径证明",
+  "english_source_note": "A Probabilistic Proof of the Weierstrass Approximation Theorem",
+  "callout_id": "Weierstrass逼近定理的概率途径证明#8",
+  "english_title": "Problem",
+  "statement_en": "Consider $n$ independent and identically distributed random variables $X_1,\\ldots,X_n$ on a probability space $(\\Omega,\\mathcal{F},P)$, each with Bernoulli$(p)$ distribution. Determine the distribution of their average\n$$Y_n = \\frac{X_1+\\cdots+X_n}{n}.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "binomial distribution",
+    "distribution of sums of independent Bernoulli variables"
+  ],
+  "prerequisites": [
+    "independence",
+    "Bernoulli and binomial distributions"
+  ],
+  "callout_body": "考虑概率空间$(\\Omega,\\mathcal{F},P)$上的n个满足bernoulli(p)分布的独立同分布的随机变量$X_1,...,X_n$，考虑其“平均值”$$Y_n = \\frac{X_1+...+X_n}{n}$$的分布。"
+}

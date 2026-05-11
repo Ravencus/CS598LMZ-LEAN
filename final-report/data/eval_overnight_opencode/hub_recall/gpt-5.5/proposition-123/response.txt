@@ -1,0 +1,4 @@
+["basic-methods-in-analysis-i-hub", "estimates-for-the-sum-of-prime-reciprocals-hub", "term-by-term-estimates-hub"]
+- basic-methods-in-analysis-i-hub: The proof is a finite algebraic sum identity, naturally handled by rewriting the factorial sums into a recognizable telescoping or inductive form.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The key strategy is to view the two sides as different finite expressions for the same quantity and compare them algebraically.
+- term-by-term-estimates-hub: Although no inequalities are needed, the relevant local move is termwise manipulation of summands so that the finite sums can be simplified or made to telescope.

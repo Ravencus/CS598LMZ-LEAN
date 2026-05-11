@@ -1,0 +1,24 @@
+{
+  "problem_id": "cauchy-criterion-for-pointwise-convergence-of-function-seque",
+  "english_title": "Cauchy Criterion for Pointwise Convergence of Function Sequences",
+  "statement_en": "A sequence of functions $f_n(x):X\\to \\mathbb{C}$ converges pointwise to a function $f(x):X\\to \\mathbb{C}$ if and only if for every fixed $x_0$ and every $\\varepsilon>0$ there exists a positive integer $N_{\\varepsilon,x_0}$ such that for all $n,m>N_{\\varepsilon,x_0}$, $$|f_n(x_0)-f_m(x_0)|<\\varepsilon.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Complex.abs`\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem pointwise_convergence_iff_pointwise_cauchy\n    {X : Type*} (f_seq : ℕ → X → ℂ) (f : X → ℂ) :\n    (∀ x0 : X, Filter.Tendsto (fun n : ℕ => f_seq n x0) Filter.atTop (nhds (f x0))) ↔\n    (∀ x0 : X, ∀ ε : ℝ, ε > 0 → ∃ N : ℕ, ∀ n m : ℕ, n > N → m > N →\n      ‖f_seq n x0 - f_seq m x0‖ < ε) := by\n  sorry"
+}

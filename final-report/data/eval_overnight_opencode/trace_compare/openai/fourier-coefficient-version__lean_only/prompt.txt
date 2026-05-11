@@ -1,0 +1,205 @@
+You are analyzing two Lean theorem-proving traces from the same problem. The "BIG" model succeeded; the "SMALL" model failed. Classify the failure mode.
+
+Problem id: fourier-coefficient-version    Condition: lean_only
+
+=== BIG (passed) ===
+model: gpt-5.5    outcome: lean_proof    wall=155.63s    mcp_calls=6
+--- mcp call 1 (✗) ---
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+noncomputable section
+
+theorem riemannLebesgue_fourierCoefficients_tendsto_zero
+    {f : ℝ → ℂ}
+    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :
+    Tendsto
+      (fun n : ℤ =>
+        ‖((1 / (2 * Real.pi : ℂ)) *
+          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+  simpa [mul_assoc] using
+    ((IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_comp_natAbs_atTop hf).const_mul
+      (1 / (2 * Real.pi : ℂ))).norm
+
+--- mcp call 2 (✗) ---
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+noncomputable section
+
+theorem riemannLebesgue_fourierCoefficients_tendsto_zero
+    {f : ℝ → ℂ}
+    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :
+    Tendsto
+      (fun n : ℤ =>
+        ‖((1 / (2 * Real.pi : ℂ)) *
+          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+  have hnatAbs : Tendsto Int.natAbs (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    exact map_comap_le
+  have hdist_eq : (fun n : ℤ => dist ((n : ℝ)) 0) = fun n : ℤ => ((Int.natAbs n : ℕ) : ℝ) := by
+    funext n
+    norm_num [Int.dist_eq, Int.abs_eq_natAbs]
+  have hnatAbsReal : Tendsto (fun n : ℤ => dist ((n : ℝ)) 0) (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    rw [hdist_eq]
+    exact (tendsto_natCast_atTop_atTop).comp hnatAbs
+  have hcoe : Tendsto (fun n : ℤ => (n : ℝ)) (Filter.comap Int.natAbs Filter.atTop) (Filter.cocompact ℝ) := by
+    refine tendsto_cocompact_of_tendsto_dist_comp_atTop 0 ?_
+    simpa using hnatAbsReal
+  have hpi : (2 * Real.pi : ℝ) ≠ 0 := by positivity
+  have hscale : Tendsto (fun n : ℤ => ((n : ℝ) * (2 
+--- mcp call 3 (✗) ---
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+noncomputable section
+
+#check IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_comp_natAbs_atTop
+#check IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_comp_intCast
+#check IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_int
+#check Real.tendsto_integral_exp_smul_cocompact
+#check Filter.tendsto_cocompact_of_tendsto_dist_comp_atTop
+#check tendsto_cocompact_of_tendsto_dist_comp_atTop
+
+--- mcp call 4 (✗) ---
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+noncomputable section
+
+theorem riemannLebesgue_fourierCoefficients_tendsto_zero
+    {f : ℝ → ℂ}
+    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :
+    Tendsto
+      (fun n : ℤ =>
+        ‖((1 / (2 * Real.pi : ℂ)) *
+          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+  have hnatAbs : Tendsto Int.natAbs (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    exact map_comap_le
+  have hdist_eq : (fun n : ℤ => dist ((n : ℝ)) 0) = fun n : ℤ => ((Int.natAbs n : ℕ) : ℝ) := by
+    funext n
+    rw [dist_eq_norm, sub_zero, Real.norm_eq_abs, ← Int.cast_abs, Int.abs_eq_natAbs]
+  have hnatAbsReal : Tendsto (fun n : ℤ => dist ((n : ℝ)) 0) (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    rw [hdist_eq]
+    exact (tendsto_natCast_atTop_atTop).comp hnatAbs
+  have hcoe : Tendsto (fun n : ℤ => (n : ℝ)) (Filter.comap Int.natAbs Filter.atTop) (Filter.cocompact ℝ) := by
+    refine tendsto_cocompact_of_tendsto_dist_comp_atTop 0 ?_
+    simpa using hnatAbsReal
+  have hpi : (2 * Real.pi : ℝ) ≠ 0 := by positivity
+  have hscale
+--- mcp call 5 (✗) ---
+import Mathlib
+
+example : (fun n : ℤ => dist ((n : ℝ)) 0) = fun n : ℤ => ((Int.natAbs n : ℕ) : ℝ) := by
+  funext n
+  rw [dist_eq_norm, sub_zero]
+  simpa only [Int.norm_eq_abs, Int.cast_abs, Int.abs_eq_natAbs, Nat.cast_natCast] using (rfl : ‖(n : ℝ)‖ = ‖(n : ℝ)‖)
+
+example (s : Set ℝ) (f : ℝ → ℂ) (x : ℝ) (hx : x ∉ s) : s.indicator f x = 0 := by
+  simp [Set.indicator, hx]
+
+--- mcp call 6 (✓) ---
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+noncomputable section
+
+theorem riemannLebesgue_fourierCoefficients_tendsto_zero
+    {f : ℝ → ℂ}
+    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :
+    Tendsto
+      (fun n : ℤ =>
+        ‖((1 / (2 * Real.pi : ℂ)) *
+          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+  have hnatAbs : Tendsto Int.natAbs (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    exact map_comap_le
+  have hdist_eq : (fun n : ℤ => dist ((n : ℝ)) 0) = fun n : ℤ => ((Int.natAbs n : ℕ) : ℝ) := by
+    funext n
+    rw [dist_eq_norm, sub_zero, Real.norm_eq_abs]
+    exact (Int.cast_abs (R := ℝ) (a := n)).symm.trans (Nat.cast_natAbs (α := ℝ) n).symm
+  have hnatAbsReal : Tendsto (fun n : ℤ => dist ((n : ℝ)) 0) (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    rw [hdist_eq]
+    exact (tendsto_natCast_atTop_atTop).comp hnatAbs
+  have hcoe : Tendsto (fun n : ℤ => (n : ℝ)) (Filter.comap Int.natAbs Filter.atTop) (Filter.cocompact ℝ) := by
+    refine tendsto_cocompact_of_tendsto_dist_comp_atTop 0 ?_
+    simpa using hnatAbsReal
+  have hpi :
+--- final_text ---
+I’ll look for the relevant Mathlib Fourier/Riemann-Lebesgue API first, then spend checker calls only on candidate proofs.
+I found a previous concise candidate based on an `IntervalIntegrable` Riemann-Lebesgue lemma. I’m checking that first because it matches the target statement directly.
+That candidate failed without useful diagnostics, so I’m checking the more explicit proof path that builds the frequency tendsto and applies the cocompact integral theorem.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+noncomputable section
+
+theorem riemannLebesgue_fourierCoefficients_tendsto_zero
+    {f : ℝ → ℂ}
+    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :
+    Tendsto
+      (fun n : ℤ =>
+        ‖((1 / (2 * Real.pi : ℂ)) *
+          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+  have hnatAbs : Tendsto Int.natAbs (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    exact map_comap_le
+  have hdist_eq : (fun n : ℤ => dist ((n : ℝ)) 0) = fun n : ℤ => ((Int.natAbs n : ℕ) : ℝ) := by
+    funext n
+    rw [dist_eq_norm, sub_zero, Real.norm_eq_abs]
+    ex
+
+=== SMALL (failed) ===
+model: gpt-5.4-mini    outcome: wall_budget_exceeded    wall=602.97s    mcp_calls=0
+--- mcp call 1 (✗) ---
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+#check RiemannLebesgue
+#check tendsto_integral_mul_exp
+#check tendsto_integral_mul_exp_mul_I
+#check tendsto_integral_mul_exp_mul_I_mul_nat
+#check tendsto_integral_mul_exp_mul_I_atTop
+#check tendsto_integral_mul_exp_mul_I_nat
+#check intervalIntegral.integral_mul_exp_mul_I
+#check intervalIntegral.tendsto_integral_mul_exp_mul_I
+#check Complex.tendsto_exp_mul_I_mul_reIm
+#check Filter.Tendsto.comp
+#check Filter.comap
+#check Int.natAbs
+#check intervalIntegral.integral_sub_comm
+#check intervalIntegral.integral_mul_right
+#check intervalIntegral.integral_mul_left
+#check intervalIntegral.norm_integral_le_integral_norm
+
+--- final_text ---
+
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"label": "different_plan" | "same_plan_lean_impl_diff" | "same_plan_search_diff" | "unclear",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+LABEL DEFINITIONS:
+  different_plan          : The two models pursued substantively different decompositions (e.g., one used induction, the other used a continuous estimate).
+  same_plan_lean_impl_diff: Both pursued the same plan; the small model's failure was at the Lean tactic / type-checking level (wrong tactic, type mismatch, syntax).
+  same_plan_search_diff   : Same plan; the small model couldn't find the correct Mathlib lemma name or applicability.
+  unclear                 : Cannot tell from the visible evidence.
+
+Output the JSON object first, then the justification.

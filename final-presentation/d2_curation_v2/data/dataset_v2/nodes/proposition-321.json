@@ -1,0 +1,23 @@
+{
+  "id": "proposition-321",
+  "type": "problem",
+  "source_note": "证明正弦函数在整数上取值的序列的极限是不存在的",
+  "english_source_note": "Nonexistence of a Limit for Sine on the Integers",
+  "callout_id": "证明正弦函数在整数上取值的序列的极限是不存在的#8",
+  "english_title": "Proposition 3.2.1",
+  "statement_en": "The following sequences do not have limits: \n$$x_n:=\\sin(\\sqrt{n}),z_n:=\\sin(\\log(n)).$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "construction of oscillating subsequences",
+    "slowly varying phase analysis",
+    "periodicity of sine"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "subsequences",
+    "properties of logarithm and square root"
+  ],
+  "callout_body": "下列序列的极限都不存在: \n$$x_n:=\\sin(\\sqrt{n}),z_n:=\\sin(\\log(n))$$"
+}

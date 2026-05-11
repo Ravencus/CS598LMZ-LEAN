@@ -1,0 +1,23 @@
+{
+  "problem_id": "borel-cantelli-lemma",
+  "model": "gpt-5.5",
+  "wall_seconds": 18.3,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-for-measure-zero-sets-hub",
+    "borel-cantelli-lemma-and-applications-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-for-measure-zero-sets-hub",
+    "an-epsilon-of-room-hub",
+    "reducing-set-problems-to-function-problems-hub"
+  ],
+  "tp": 1,
+  "fp": 2,
+  "fn": 2,
+  "precision": 0.3333,
+  "recall": 0.3333,
+  "f1": 0.3333
+}

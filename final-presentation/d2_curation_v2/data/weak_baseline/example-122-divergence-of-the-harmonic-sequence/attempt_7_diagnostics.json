@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 19,
+      "column": 8,
+      "severity": "error",
+      "message": "`simp` made no progress\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 19,
+      "column": 8,
+      "severity": "error",
+      "message": "`simp` made no progress\n"
+    }
+  ]
+}

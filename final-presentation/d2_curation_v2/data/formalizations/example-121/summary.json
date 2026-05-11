@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-121",
+  "english_title": "Example 1.2.1",
+  "statement_en": "Let $y_n=\\frac{(-1)^n}{n}$ be the sequence whose limit is to be discussed. By examining points on the real line, one finds that only $0$ satisfies the geometric interpretation of limit. For example, if $\\varepsilon_0 =1/3$, then $$I_{\\varepsilon_0}(0)=(-1/3,1/3)$$ contains infinitely many terms of the sequence, while outside the interval there are only the three terms $-1,1/2,-1/3$. Most importantly, this geometric property holds for every choice of radius $\\varepsilon$.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def alternatingReciprocalSeq (n : ℕ) : ℝ :=\n  ((-1 : ℝ) ^ (n + 1)) / ((n : ℝ) + 1)\n\ndef GeometricLimitProperty (u : ℕ → ℝ) (x : ℝ) : Prop :=\n  ∀ ε : ℝ, ε > 0 → Set.Finite {n : ℕ | u n ∉ Set.Ioo (x - ε) (x + ε)}\n\ntheorem alternatingReciprocalSeq_one_third_example :\n    Set.Infinite {n : ℕ | alternatingReciprocalSeq n ∈ Set.Ioo (-(1 / 3 : ℝ)) (1 / 3 : ℝ)} ∧\n      {n : ℕ | alternatingReciprocalSeq n ∉ Set.Ioo (-(1 / 3 : ℝ)) (1 / 3 : ℝ)} =\n        {n : ℕ | n = 0 ∨ n = 1 ∨ n = 2} := by\n  sorry\n\ntheorem alternatingReciprocalSeq_geometric_limit_iff (x : ℝ) :\n    GeometricLimitProperty alternatingReciprocalSeq x ↔ x = 0 := by\n  sorry"
+}

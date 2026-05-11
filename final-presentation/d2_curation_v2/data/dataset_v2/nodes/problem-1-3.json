@@ -1,0 +1,23 @@
+{
+  "id": "problem-1-3",
+  "type": "problem",
+  "source_note": "整数格点与一个带取整函数的和的极限问题",
+  "english_source_note": "A Limit Problem for Lattice Points and Floor Sums",
+  "callout_id": "整数格点与一个带取整函数的和的极限问题#1",
+  "english_title": "Problem 1",
+  "statement_en": "Find the limit $$\\lim_{n\\to +\\infty}\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Riemann sum approximation",
+    "lattice point counting",
+    "floor function decomposition"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "Riemann integrals",
+    "properties of the floor function"
+  ],
+  "callout_body": "求极限$$\\lim_{n\\to +\\infty}\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor$$"
+}

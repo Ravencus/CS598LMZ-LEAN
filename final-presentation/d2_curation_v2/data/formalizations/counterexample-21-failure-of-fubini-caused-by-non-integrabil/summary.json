@@ -1,0 +1,30 @@
+{
+  "problem_id": "counterexample-21-failure-of-fubini-caused-by-non-integrabil",
+  "english_title": "Counterexample 2.1: Failure of Fubini Caused by Non-Integrability",
+  "statement_en": "Consider\n$$f(x,y):=\\begin{cases}\\frac{x^2-y^2}{(x^2+y^2)^{2}}&(x,y)\\in[0,1]^2,(x,y)\\not = (0,0)\\\\0 &(x,y)=(0,0).\\end{cases}$$\nLet $I = [0,1]$. Show that $|f|$ is measurable but\n$$\\int_{I^2}|f(x,y)|d(x,y)=+\\infty,$$\nso $f$ is not integrable and Fubini's theorem does not apply. Moreover, the two iterated integrals give different values:\n$$\\int_0^1 \\left(\\int_0^1 \\frac{x^2-y^2}{(x^2+y^2)^2} dy\\right) dx = \\frac{\\pi}{4},$$\nwhile\n$$\\int_0^1 \\left(\\int_0^1 \\frac{x^2-y^2}{(x^2+y^2)^2} dx\\right) dy = - ",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.decidableEq', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\nnoncomputable def fubiniCounterexample (x y : ℝ) : ℝ :=\n  if x = 0 ∧ y = 0 then\n    0\n  else\n    (x ^ 2 - y ^ 2) / (x ^ 2 + y ^ 2) ^ 2\n\nnoncomputable def unitSquareMeasure : Measure (ℝ × ℝ) :=\n  volume.restrict ((Set.Icc (0 : ℝ) 1) ×ˢ (Set.Icc (0 : ℝ) 1))\n\ntheorem fubini_counterexample_main :\n    Measurable (fun p : ℝ × ℝ => |fubiniCounterexample p.1 p.2|) ∧\n      ((∫⁻ p : ℝ × ℝ,\n          ENNReal.ofReal |fubiniCounterexample p.1 p.2| ∂unitSquareMeasure) = (∞ : ℝ≥0∞)) ∧\n      (¬ Integrable\n          (fun p : ℝ × ℝ => fubiniCounterexample p.1 p.2)\n          unitSquareMeasure) ∧\n      ((∫ x in (0 : ℝ)..1, ∫ y in (0 : ℝ)..1, fubiniCounterexample x y) = Real.pi / 4) ∧\n      ((∫ y in (0 : ℝ)..1, ∫ x in (0 : ℝ)..1, fubiniCounterexample x y) = -(Real.pi / 4)) := by\n  sorry"
+}

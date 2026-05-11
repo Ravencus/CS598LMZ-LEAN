@@ -1,0 +1,269 @@
+{
+  "note_title": "Borel-Cantelli lemma及其应用",
+  "is_hub": true,
+  "in_subset_via": [
+    "an epsilon of room",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "Borel-Cantelli lemma及其应用#1",
+      "type": "note",
+      "title": "Borel-Cantelli lemma",
+      "body": "$(X,\\mathcal{F},\\mu)$是一个测度空间，$E_1,E_2,E_3,...\\in \\mathcal{F}$并且满足测度的和收敛，$$\\sum_{n\\geq 1}\\mu(E_n)<\\infty$$\n那么$$\\mu\\left(\\bigcup_{n\\geq N}E_n\\right)\\to0$$或者说几乎所有$x\\in X$都包含在至多有限个$E_n$当中，即$$\\mu(\\limsup_{n\\to\\infty}E_n)=0$$",
+      "position_char": 73,
+      "position_line": 10,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#1",
+        "classification": "problem",
+        "english_title": "Borel-Cantelli Lemma",
+        "if_problem": {
+          "statement_en": "Let $(X,\\mathcal{F},\\mu)$ be a measure space, and let $E_1,E_2,E_3,\\dots \\in \\mathcal{F}$ satisfy $$\\sum_{n\\geq 1}\\mu(E_n)<\\infty.$$ Then $$\\mu\\left(\\bigcup_{n\\geq N}E_n\\right)\\to0,$$ equivalently, almost every $x\\in X$ belongs to at most finitely many of the sets $E_n$, that is, $$\\mu(\\limsup_{n\\to\\infty}E_n)=0.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "subadditivity of measure",
+            "continuity of measure from above",
+            "limsup of sets"
+          ],
+          "prerequisites": [
+            "measure spaces",
+            "countable subadditivity",
+            "set limsup"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#2",
+      "type": "example",
+      "title": "例子0.1",
+      "body": "$([0,1],\\mathcal{B}([0,1]),m)$是一个测度空间，$m$是Lebesgue测度。假设集合$I_n = [0,\\frac{1}{n^2}]$,那么因为$$\\sum_{n\\geq 1} m(I_n)=\\sum_{n\\geq 1} \\frac{1}{n^2}<\\infty$$因此$m(x\\in I_n \\text{ i.o. })=0$。也就是说，$[0,1]$上几乎所有点都只属于有限多个形如$I_n = [0,\\frac{1}{n^2}]$的区间，这很显然。其实这里唯一一个属于无穷多个此类区间的点就只有$x=0$这一个点罢了。",
+      "position_char": 1751,
+      "position_line": 29,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#2",
+        "classification": "problem",
+        "english_title": "Example 0.1",
+        "if_problem": {
+          "statement_en": "In the measure space $([0,1],\\mathcal{B}([0,1]),m)$, where $m$ is Lebesgue measure, let $I_n = [0,\\frac{1}{n^2}]$. Since $$\\sum_{n\\geq 1} m(I_n)=\\sum_{n\\geq 1} \\frac{1}{n^2}<\\infty,$$ it follows that $m(x\\in I_n \\text{ i.o. })=0$. In other words, almost every point of $[0,1]$ belongs to only finitely many intervals of the form $I_n = [0,\\frac{1}{n^2}]$. In fact, the only point belonging to infinitely many such intervals is $x=0$.",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "measure theory",
+          "key_techniques": [
+            "application of the Borel-Cantelli lemma",
+            "computation of Lebesgue measures of intervals"
+          ],
+          "prerequisites": [
+            "Lebesgue measure",
+            "Borel-Cantelli lemma",
+            "convergence of the p-series"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#3",
+      "type": "example",
+      "title": "反例0.2",
+      "body": "$([0,1],\\mathcal{L}([0,1]),m)$是集合$[0,1]$上的Lebesgue测度空间，其中$m$是Lebesgue测度。考虑此空间上的一列集合列$E_n:=(0,\\frac{1}{n})$。定义$A_N:=\\cup_{n\\geq N}E_n$，我们知道$A_N=(0,\\frac{1}{N})$，依据测度的“自上而下的连续性”，我们知道$$m(\\limsup_{n\\to \\infty}E_n)=\\lim_{N\\to \\infty}m(A_N)=0$$然而如果我们会发现$m(E_n)=\\frac{1}{n}$其组成的级数是不收敛的。",
+      "position_char": 2196,
+      "position_line": 36,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#3",
+        "classification": "problem",
+        "english_title": "Counterexample 0.2",
+        "if_problem": {
+          "statement_en": "In the Lebesgue measure space $([0,1],\\mathcal{L}([0,1]),m)$, consider the sequence of sets $E_n:=(0,\\frac{1}{n})$. Define $A_N:=\\cup_{n\\geq N}E_n$. Then $A_N=(0,\\frac{1}{N})$, so by continuity of measure from above, $$m(\\limsup_{n\\to \\infty}E_n)=\\lim_{N\\to \\infty}m(A_N)=0.$$ However, $m(E_n)=\\frac{1}{n}$ and the series formed by these measures diverges.",
+          "problem_type": "counterexample",
+          "difficulty": "easy",
+          "domain": "measure theory",
+          "key_techniques": [
+            "explicit computation of a limsup set",
+            "continuity of measure from above"
+          ],
+          "prerequisites": [
+            "Lebesgue measure",
+            "set limsup",
+            "harmonic series divergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#4",
+      "type": "note",
+      "title": "常用引理1",
+      "body": "如果$\\forall \\varepsilon > 0$,定义集合$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}$都有\n$$\\sum_{n\\geq1}\\mu(A_{n,\\varepsilon})<\\infty$$那么可以得到结论\n$$\\mu\\left(\\limsup_{n\\to\\infty}A_{n,\\varepsilon}\\right)=0,\\forall \\varepsilon>0$$于是\n$$f_n(x) \\to f(x) \\text{ a.e. }x$$",
+      "position_char": 2577,
+      "position_line": 43,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#4",
+        "classification": "problem",
+        "english_title": "Common Lemma 1",
+        "if_problem": {
+          "statement_en": "For each $\\varepsilon > 0$, define $$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}.$$ If for every $\\varepsilon > 0$ one has $$\\sum_{n\\geq1}\\mu(A_{n,\\varepsilon})<\\infty,$$ then $$\\mu\\left(\\limsup_{n\\to\\infty}A_{n,\\varepsilon}\\right)=0,\\quad \\forall \\varepsilon>0,$$ and hence $$f_n(x) \\to f(x) \\text{ a.e. }x.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "Borel-Cantelli lemma",
+            "control of deviation sets",
+            "almost everywhere convergence criterion"
+          ],
+          "prerequisites": [
+            "measure spaces",
+            "almost everywhere convergence",
+            "Borel-Cantelli lemma"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#5",
+      "type": "note",
+      "title": "常用引理2",
+      "body": "$$A_{n}:=\\{x:|f_n(x)-f(x)|\\geq \\varepsilon_n\\}$$其中$\\varepsilon_n \\downarrow 0$，并且同时$$\\sum_{n\\geq 1}\\mu(A_n)<\\infty$$\n于是按照上面同样的做法，如果$x \\not \\in \\limsup_{n\\to\\infty} A_{n}$那么存在一个$N_x$使得$\\forall n >N_x$都有$$|f_n(x)-f(x)|< \\varepsilon_n$$同样能表示$f_n(x)\\to f(x)$，那么能得到结论，$$f_n(x)\\to f(x)$$几乎处处成立。",
+      "position_char": 3810,
+      "position_line": 57,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#5",
+        "classification": "problem",
+        "english_title": "Common Lemma 2",
+        "if_problem": {
+          "statement_en": "Let $$A_{n}:=\\{x:|f_n(x)-f(x)|\\geq \\varepsilon_n\\},$$ where $\\varepsilon_n \\downarrow 0$, and suppose also that $$\\sum_{n\\geq 1}\\mu(A_n)<\\infty.$$ Then if $x \\not \\in \\limsup_{n\\to\\infty} A_{n}$, there exists $N_x$ such that for all $n >N_x$, $$|f_n(x)-f(x)|< \\varepsilon_n.$$ Hence $f_n(x)\\to f(x)$, and therefore $$f_n(x)\\to f(x)$$ almost everywhere.",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "Borel-Cantelli lemma",
+            "shrinking error thresholds",
+            "almost everywhere convergence criterion"
+          ],
+          "prerequisites": [
+            "measure spaces",
+            "almost everywhere convergence",
+            "Borel-Cantelli lemma"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#6",
+      "type": "note",
+      "title": "The second Borel-Cantelli lemma",
+      "body": "集合列$E_1,..,E_n,..\\in\\mathcal{F}$互相之间是独立的，并且其测度形成的集合不收敛$$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty$$\n那么$$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)=\\mathbb{P}(E_n \\text{ i.o.})=1$$",
+      "position_char": 4906,
+      "position_line": 71,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#6",
+        "classification": "problem",
+        "english_title": "The Second Borel-Cantelli Lemma",
+        "if_problem": {
+          "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ be mutually independent, and suppose that $$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty.$$ Then $$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)=\\mathbb{P}(E_n \\text{ i.o.})=1.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "independence",
+            "complements of tail events",
+            "Borel-Cantelli argument"
+          ],
+          "prerequisites": [
+            "probability spaces",
+            "independence of events",
+            "infinite series"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#7",
+      "type": "note",
+      "title": "The second Borel-Cantelli lemma,版本2",
+      "body": "合列$E_1,..,E_n,..\\in\\mathcal{F}$互相之间是独立的，并且$\\mathbb{P}(E_n)<1$那么$$\\mathbb{P}(\\cup_{n\\geq 1}E_n)=1\\implies \\mathbb{P}(E_n \\text{ i.o.})=1$$",
+      "position_char": 5651,
+      "position_line": 84,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#7",
+        "classification": "problem",
+        "english_title": "The Second Borel-Cantelli Lemma, Version 2",
+        "if_problem": {
+          "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ be mutually independent, and suppose that $\\mathbb{P}(E_n)<1$. Then $$\\mathbb{P}(\\cup_{n\\geq 1}E_n)=1\\implies \\mathbb{P}(E_n \\text{ i.o.})=1.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "independence",
+            "reformulation of the second Borel-Cantelli lemma",
+            "tail-event reasoning"
+          ],
+          "prerequisites": [
+            "probability spaces",
+            "independence of events",
+            "Borel-Cantelli lemma"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#8",
+      "type": "note",
+      "title": "定量版本的第二Borel-Cantelli引理",
+      "body": "集合列$E_1,..,E_n,..\\in\\mathcal{F}$满足存在一个正实数$C$使得$$\\sum_{i,j\\leq N}\\mathbb{P}(E_i \\cap E_j)\\leq C \\left(\\sum_{i\\leq N}\\mathbb{P}(E_i)\\right)^2$$对无穷多个正整数$N$成立，并且其测度形成的集合不收敛$$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty$$\n那么$$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)\\geq \\frac{1}{C}$$",
+      "position_char": 6162,
+      "position_line": 93,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#8",
+        "classification": "problem",
+        "english_title": "Quantitative Version of the Second Borel-Cantelli Lemma",
+        "if_problem": {
+          "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ satisfy the condition that there exists a positive real number $C$ such that $$\\sum_{i,j\\leq N}\\mathbb{P}(E_i \\cap E_j)\\leq C \\left(\\sum_{i\\leq N}\\mathbb{P}(E_i)\\right)^2$$ for infinitely many positive integers $N$, and suppose also that $$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty.$$ Then $$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)\\geq \\frac{1}{C}.$$",
+          "problem_type": "lemma",
+          "difficulty": "hard",
+          "domain": "probability theory",
+          "key_techniques": [
+            "second-moment method",
+            "pairwise intersection estimates",
+            "quantitative Borel-Cantelli bound"
+          ],
+          "prerequisites": [
+            "probability spaces",
+            "expectation and variance methods",
+            "Borel-Cantelli lemmas"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#9",
+      "type": "note",
+      "title": "大致的思路",
+      "body": "通过集合的特征函数把集合的问题转换为函数的问题，使用处理函数的工具来分析问题。",
+      "position_char": 7296,
+      "position_line": 107,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma及其应用#9",
+        "classification": "strategy_template",
+        "english_title": "Rough Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Convert set problems into function problems via indicator functions",
+          "summary_en": "Represent events or sets by their indicator functions, and then analyze the resulting functions using tools from function spaces and integration. This turns questions about set occurrence into questions about convergence or bounds for functions.",
+          "applicability": "Use this strategy when a measure-theoretic or probabilistic question about sets can be reformulated in terms of indicator functions, especially for applying analytic tools to limsup events, averages, or convergence."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Borel-Cantelli Lemma\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $(X,\\\\mathcal{F},\\\\mu)$ be a measure space, and let $E_1,E_2,E_3,\\\\dots \\\\in \\\\mathcal{F}$ satisfy $$\\\\sum_{n\\\\geq 1}\\\\mu(E_n)<\\\\infty.$$ Then $$\\\\mu\\\\left(\\\\bigcup_{n\\\\geq N}E_n\\\\right)\\\\to0,$$ equivalently, almost every $x\\\\in X$ belongs to at most finitely many of the sets $E_n$, that is, $$\\\\mu(\\\\limsup_{n\\\\to\\\\infty}E_n)=0.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"subadditivity of measure\",\n        \"continuity of measure from above\",\n        \"limsup of sets\"\n      ],\n      \"prerequisites\": [\n        \"measure spaces\",\n        \"countable subadditivity\",\n        \"set limsup\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 0.1\",\n    \"if_problem\": {\n      \"statement_en\": \"In the measure space $([0,1],\\\\mathcal{B}([0,1]),m)$, where $m$ is Lebesgue measure, let $I_n = [0,\\\\frac{1}{n^2}]$. Since $$\\\\sum_{n\\\\geq 1} m(I_n)=\\\\sum_{n\\\\geq 1} \\\\frac{1}{n^2}<\\\\infty,$$ it follows that $m(x\\\\in I_n \\\\text{ i.o. })=0$. In other words, almost every point of $[0,1]$ belongs to only finitely many intervals of the form $I_n = [0,\\\\frac{1}{n^2}]$. In fact, the only point belonging to infinitely many such intervals is $x=0$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"application of the Borel-Cantelli lemma\",\n        \"computation of Lebesgue measures of intervals\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue measure\",\n        \"Borel-Cantelli lemma\",\n        \"convergence of the p-series\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Counterexample 0.2\",\n    \"if_problem\": {\n      \"statement_en\": \"In the Lebesgue measure space $([0,1],\\\\mathcal{L}([0,1]),m)$, consider the sequence of sets $E_n:=(0,\\\\frac{1}{n})$. Define $A_N:=\\\\cup_{n\\\\geq N}E_n$. Then $A_N=(0,\\\\frac{1}{N})$, so by continuity of measure from above, $$m(\\\\limsup_{n\\\\to \\\\infty}E_n)=\\\\lim_{N\\\\to \\\\infty}m(A_N)=0.$$ However, $m(E_n)=\\\\frac{1}{n}$ and the series formed by these measures diverges.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"explicit computation of a limsup set\",\n        \"continuity of measure from above\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue measure\",\n        \"set limsup\",\n        \"harmonic series divergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Common Lemma 1\",\n    \"if_problem\": {\n      \"statement_en\": \"For each $\\\\varepsilon > 0$, define $$A_{n,\\\\varepsilon}:=\\\\{x:|f_n(x)-f(x)|\\\\geq\\\\varepsilon\\\\}.$$ If for every $\\\\varepsilon > 0$ one has $$\\\\sum_{n\\\\geq1}\\\\mu(A_{n,\\\\varepsilon})<\\\\infty,$$ then $$\\\\mu\\\\left(\\\\limsup_{n\\\\to\\\\infty}A_{n,\\\\varepsilon}\\\\right)=0,\\\\quad \\\\forall \\\\varepsilon>0,$$ and hence $$f_n(x) \\\\to f(x) \\\\text{ a.e. }x.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"Borel-Cantelli lemma\",\n        \"control of deviation sets\",\n        \"almost everywhere convergence criterion\"\n      ],\n      \"prerequisites\": [\n        \"measure spaces\",\n        \"almost everywhere convergence\",\n        \"Borel-Cantelli lemma\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Common Lemma 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $$A_{n}:=\\\\{x:|f_n(x)-f(x)|\\\\geq \\\\varepsilon_n\\\\},$$ where $\\\\varepsilon_n \\\\downarrow 0$, and suppose also that $$\\\\sum_{n\\\\geq 1}\\\\mu(A_n)<\\\\infty.$$ Then if $x \\\\not \\\\in \\\\limsup_{n\\\\to\\\\infty} A_{n}$, there exists $N_x$ such that for all $n >N_x$, $$|f_n(x)-f(x)|< \\\\varepsilon_n.$$ Hence $f_n(x)\\\\to f(x)$, and therefore $$f_n(x)\\\\to f(x)$$ almost everywhere.\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"Borel-Cantelli lemma\",\n        \"shrinking error thresholds\",\n        \"almost everywhere convergence criterion\"\n      ],\n      \"prerequisites\": [\n        \"measure spaces\",\n        \"almost everywhere convergence\",\n        \"Borel-Cantelli lemma\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"The Second Borel-Cantelli Lemma\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $E_1,E_2,\\\\dots \\\\in\\\\mathcal{F}$ be mutually independent, and suppose that $$\\\\sum_{n\\\\geq 1}\\\\mathbb{P}(E_n)=\\\\infty.$$ Then $$\\\\mathbb{P}(\\\\limsup_{n\\\\to\\\\infty}E_n)=\\\\mathbb{P}(E_n \\\\text{ i.o.})=1.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"independence\",\n        \"complements of tail events\",\n        \"Borel-Cantelli argument\"\n      ],\n      \"prerequisites\": [\n        \"probability spaces\",\n        \"independence of events\",\n        \"infinite series\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"The Second Borel-Cantelli Lemma, Version 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $E_1,E_2,\\\\dots \\\\in\\\\mathcal{F}$ be mutually independent, and suppose that $\\\\mathbb{P}(E_n)<1$. Then $$\\\\mathbb{P}(\\\\cup_{n\\\\geq 1}E_n)=1\\\\implies \\\\mathbb{P}(E_n \\\\text{ i.o.})=1.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"independence\",\n        \"reformulation of the second Borel-Cantelli lemma\",\n        \"tail-event reasoning\"\n      ],\n      \"prerequisites\": [\n        \"probability spaces\",\n        \"independence of events\",\n        \"Borel-Cantelli lemma\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Quantitative Version of the Second Borel-Cantelli Lemma\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $E_1,E_2,\\\\dots \\\\in\\\\mathcal{F}$ satisfy the condition that there exists a positive real number $C$ such that $$\\\\sum_{i,j\\\\leq N}\\\\mathbb{P}(E_i \\\\cap E_j)\\\\leq C \\\\left(\\\\sum_{i\\\\leq N}\\\\mathbb{P}(E_i)\\\\right)^2$$ for infinitely many positive integers $N$, and suppose also that $$\\\\sum_{n\\\\geq 1}\\\\mathbb{P}(E_n)=\\\\infty.$$ Then $$\\\\mathbb{P}(\\\\limsup_{n\\\\to\\\\infty}E_n)\\\\geq \\\\frac{1}{C}.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"second-moment method\",\n        \"pairwise intersection estimates\",\n        \"quantitative Borel-Cantelli bound\"\n      ],\n      \"prerequisites\": [\n        \"probability spaces\",\n        \"expectation and variance methods\",\n        \"Borel-Cantelli lemmas\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma及其应用#9\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Rough Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Convert set problems into function problems via indicator functions\",\n      \"summary_en\": \"Represent events or sets by their indicator functions, and then analyze the resulting functions using tools from function spaces and integration. This turns questions about set occurrence into questions about convergence or bounds for functions.\",\n      \"applicability\": \"Use this strategy when a measure-theoretic or probabilistic question about sets can be reformulated in terms of indicator functions, especially for applying analytic tools to limsup events, averages, or convergence.\"\n    }\n  }\n]",
+  "classified": true
+}

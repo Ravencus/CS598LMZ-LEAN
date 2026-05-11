@@ -1,0 +1,26 @@
+{
+  "note_title": "和的估计的一个典型案例",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计",
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "和的估计的一个典型案例#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "求极限$$\\lim_{n\\to \\infty} \\sum_{k=1}^n \\frac{1}{n^2}\\sqrt{(n+k)(n+k+1)}$$",
+      "position_char": 39,
+      "position_line": 7
+    },
+    {
+      "id": "和的估计的一个典型案例#2",
+      "type": "quote",
+      "title": "",
+      "body": "先确认自己走在正确的道路上，然后再奔跑才明智。因为在错误的道路上狂奔，只会让自己越来越难以回头。",
+      "position_char": 2179,
+      "position_line": 38
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Application type mismatch: The argument\n  h_meas_ennreal\nhas type\n  AEMeasurable (fun x => ENNReal.ofReal (f x)) (μ.restrict E)\nbut is expected to have type\n  Measurable ?m.90\nin the application\n  lin",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_656623ffe9.lean",
+      "line": 19,
+      "column": 42,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h_meas_ennreal\nhas type\n  AEMeasurable (fun x => ENNReal.ofReal (f x)) (μ.restrict E)\nbut is expected to have type\n  Measurable ?m.90\nin the application\n  lintegral_eq_zero_iff h_meas_ennreal"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_656623ffe9.lean",
+      "line": 23,
+      "column": 4,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h1.h\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : Measure Ω\nf : Ω → ℝ\nE : Set Ω\nhf_meas : Measurable f\nhf_nonneg : ∀ (x : Ω), 0 ≤ f x\nhE_meas : MeasurableSet E\nhE_pos : 0 < μ E\nh_int_zero : ∫⁻ (x : Ω) in E, ENNReal.ofReal (f x) ∂μ = 0\nh_meas_ennreal : AEMeasurable (fun x => ENNReal.ofReal (f x)) (μ.restrict E)\nh_int_restrict : ∫⁻ (x : Ω) in E, ENNReal.ofReal (f x) ∂μ = 0\nh_ae_zero_ennreal : (fun x => ENNReal.ofReal (f x)) =ᶠ[ae (μ.restrict E)] fun x => 0\nx : Ω\nhx : ENNReal.ofReal (f x) = 0\nhx_nonpos : f x ≤ 0\na✝ : f x < 0\n⊢ False\nfailed\n"
+    }
+  ]
+}

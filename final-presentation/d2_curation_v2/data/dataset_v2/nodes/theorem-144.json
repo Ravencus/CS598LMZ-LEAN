@@ -1,0 +1,22 @@
+{
+  "id": "theorem-144",
+  "type": "problem",
+  "source_note": "无理测度的定义以及基本的命题",
+  "english_source_note": "Irrationality Measure: Definition and Basics",
+  "callout_id": "无理测度的定义以及基本的命题#10",
+  "english_title": "Theorem 1.4.4",
+  "statement_en": "Let $\\alpha$ be an irrational number. A positive integer $q$ is a best approximation to $\\alpha$ if and only if $q$ is the denominator of some convergent in the continued fraction expansion of $\\alpha$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "continued fractions",
+    "characterization of best approximations by convergents"
+  ],
+  "prerequisites": [
+    "definition of best approximation",
+    "continued fraction convergents",
+    "basic properties of irrational numbers"
+  ],
+  "callout_body": "令$\\alpha$是一个无理数，正整数$q$为$\\alpha$的最佳逼近，当且仅当$q$是$\\alpha$对应的的连分数展开的某个收敛分数（convergent）的分母。"
+}

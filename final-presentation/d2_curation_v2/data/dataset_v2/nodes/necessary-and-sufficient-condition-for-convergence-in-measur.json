@@ -1,0 +1,22 @@
+{
+  "id": "necessary-and-sufficient-condition-for-convergence-in-measur",
+  "type": "problem",
+  "source_note": "有限测度空间上依测度收敛的等价命题",
+  "english_source_note": "Equivalent Conditions for Convergence in Measure",
+  "callout_id": "有限测度空间上依测度收敛的等价命题#1",
+  "english_title": "Necessary and Sufficient Condition for Convergence in Measure on a Finite Measure Space",
+  "statement_en": "On a finite measure space, let $X_n$ be a sequence of measurable functions. Then $X_n \\xrightarrow{\\mu} X$ if and only if for every subsequence $X_{n(m)}$, there exists a further subsequence $X_{n(m_k)}$ that converges to $X$ almost everywhere.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "subsequence principle",
+    "almost everywhere convergence versus convergence in measure"
+  ],
+  "prerequisites": [
+    "convergence in measure",
+    "almost everywhere convergence",
+    "finite measure spaces"
+  ],
+  "callout_body": "在***有限测度***空间上，函数列$X_n$是一列可测函数，那么$X_n \\xrightarrow{\\mu}{X}$等价于任意子列$X_{n(m)}$都存在一个子列的之列$X_{n(m_k)}$几乎处处收敛到$X$"
+}

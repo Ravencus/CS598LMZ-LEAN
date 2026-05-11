@@ -1,0 +1,3 @@
+I’m checking the relevant Mathlib lemmas first, then I’ll try the shortest proof that fits the exact signature.
+I didn’t find a local proof pattern, so I’m probing Mathlib for the exact lintegral-zero lemma names before writing the proof.
+I need one quick repository lookup now to see whether the bundled Mathlib sources are available locally; that determines whether I can search exact theorem names or should rely on the checker.

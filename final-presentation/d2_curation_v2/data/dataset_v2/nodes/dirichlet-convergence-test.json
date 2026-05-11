@@ -1,0 +1,23 @@
+{
+  "id": "dirichlet-convergence-test",
+  "type": "problem",
+  "source_note": "对Dirichlet判别的一个调整",
+  "english_source_note": "A Modification of Dirichlet's Test",
+  "callout_id": "对Dirichlet判别的一个调整#1",
+  "english_title": "Dirichlet Convergence Test",
+  "statement_en": "Let $a_n:\\mathbb{N} \\to \\mathbb{R}$ and $b_n:\\mathbb{N} \\to \\mathbb{C}$. If $a_n$ decreases monotonically to $0$, and there exists a positive real number $M$ such that $\\left|\\sum_{n=1}^N b_n\\right|<M$ for every positive integer $N$, then the series $\\sum_{n\\geq 1} a_n b_n$ converges.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "summation by parts",
+    "bounded partial sums",
+    "monotone convergence to zero"
+  ],
+  "prerequisites": [
+    "series convergence",
+    "partial sums",
+    "Abel summation"
+  ],
+  "callout_body": "$a_n:\\mathbb{N} \\to \\mathbb{R},b_n:\\mathbb{N} \\to\\mathbb{C}$,如果$a_n$单调收敛到0,并且存在正实数使得$\\left|\\sum_{n=1}^N b_n\\right|<M$对任意正整数$N$成立，那么级数$\\sum_{n\\geq 1}a_nb_n$收敛。"
+}

@@ -1,0 +1,358 @@
+{
+  "n_problems": 30,
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "condition": "lean_only",
+  "plan_relation_counts": {
+    "same_plan": 21,
+    "unclear": 4,
+    "different_plan": 5
+  },
+  "divergence_counts": {
+    "none": 11,
+    "n/a": 9,
+    "lean_impl": 6,
+    "instruction_following": 2,
+    "search": 2
+  },
+  "outcome_pair_counts": {
+    "lean_proof|lean_proof": 15,
+    "compile_fail|instruction_violation": 3,
+    "instruction_violation|instruction_violation": 3,
+    "lean_proof|instruction_violation": 5,
+    "lean_proof|compile_fail": 3,
+    "compile_fail|lean_proof": 1
+  },
+  "results": [
+    {
+      "problem_id": "proposition-112",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces prove the same telescoping closed form by induction, rewriting the sum over `Finset.Icc` with `Finset.sum_Icc_succ_top`, then finish by showing `0 < 1 / (N : ℚ)` and using `linarith`.",
+      "wall_seconds": 7.42
+    },
+    {
+      "problem_id": "mit-integration-competition",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "compile_fail",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "unclear",
+      "divergence": "n/a",
+      "evidence": "Trace A never develops a real mathematical decomposition; it tries `norm_num`, probes lemma names, then attempts `native_decide`, self-reference, and notation/macro shortcuts. Trace B gives a binary-expansion calculation in prose, but its Lean attempts are only `sorry`, `norm_num`, and `simp only [c",
+      "wall_seconds": 9.9
+    },
+    {
+      "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both successful proofs use `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero`; in the locally-zero branch they invoke an analytic identity theorem on the preconnected open set, and in the other branch they extract a punctured neighborhood where `f ≠ 0`.",
+      "wall_seconds": 9.98
+    },
+    {
+      "problem_id": "lemma-111",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "lean_impl",
+      "evidence": "Both traces use the same mathematical decomposition: split on whether A or B is invertible, choose P = A for the A-invertible case and P = B for the B-invertible case, then prove the selected disjunct by associativity. The only visible difference is Lean implementation: Trace B first tried `rw [← Ma",
+      "wall_seconds": 12.5
+    },
+    {
+      "problem_id": "conjecture-33",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "instruction_violation",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces identify the core missing ingredient as a density/equidistribution or Diophantine approximation fact for natural-number samples of sine, then leave the analytic approximation step unproved with `sorry`. Trace A searches `Real.denseRange_sin`, irrational dense-range lemmas, and ends at `M",
+      "wall_seconds": 13.1
+    },
+    {
+      "problem_id": "monotonicity-of-the-integral-1",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces solve the theorem by directly invoking the same Mathlib monotonicity lemma, `integral_mono_ae`, with the same argument order `hg hf hfg`. Trace A first searched with `#check` for monotonicity lemmas, while Trace B went straight to the proof, but both passed with identical final Lean code",
+      "wall_seconds": 6.75
+    },
+    {
+      "problem_id": "lemma-121",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "compile_fail",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "same_plan",
+      "divergence": "instruction_following",
+      "evidence": "Both traces identify the same mathematical obstruction: ordinary complex polynomials in z are not dense in C(T), and both cite the need for Laurent polynomials / the counterexample f(z)=conj z. Trace B then submits `sorry` in MCP calls 1 and 3, while Trace A avoids `sorry` and concludes no valid Lea",
+      "wall_seconds": 12.24
+    },
+    {
+      "problem_id": "problem-2-4",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "compile_fail",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "same_plan",
+      "divergence": "instruction_following",
+      "evidence": "Both traces converged on the same Cesaro/convolution proof strategy: use `Filter.Tendsto.cesaro` with an `n+1` shift, decompose around `x k - A` and `y k - B`, and establish boundedness of the error sequence (Trace A calls 3-9; Trace B calls 5-10). The visible split is that Trace B began emitting `s",
+      "wall_seconds": 19.92
+    },
+    {
+      "problem_id": "problem-22",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "unclear",
+      "divergence": "n/a",
+      "evidence": "Trace A mostly performs lemma-name probing and then rejects the theorem as false, with no visible formal development of the advertised contrapositive. Trace B repeatedly tries to prove the stated theorem, mainly via partitioning indices by which sequence is smaller, and ultimately emits `sorry`.",
+      "wall_seconds": 7.88
+    },
+    {
+      "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "different_plan",
+      "divergence": "n/a",
+      "evidence": "Trace A uses a concrete counterexample in Lean: constant sequence 0, target limit 1, RHS proved true, then `tendsto_nhds_unique` derives `0 = 1`. Trace B starts proving the original biconditional by `constructor`, completes only the forward convergence-implies-Cauchy direction, and leaves the false ",
+      "wall_seconds": 12.47
+    },
+    {
+      "problem_id": "proposition-123",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces use induction from N ≥ 2, split the range sum with Finset.sum_range_succ, split the Icc sum at the top endpoint, and close the step with the same local rational factorial correction identity.",
+      "wall_seconds": 7.01
+    },
+    {
+      "problem_id": "lemma-131-flanders-1951",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces prove the same core intertwining identity between powers/evaluations of AB and BA, then use `minpoly.dvd_iff`/`minpoly.aeval` to show divisibility after multiplying by `X`. Trace A builds `hpow` for `A * (B*A)^m = (A*B)^m * A`; Trace B builds the symmetric generalized `key` lemma via mon",
+      "wall_seconds": 6.42
+    },
+    {
+      "problem_id": "theorem-14-dirichlet-theorem",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces searched briefly for density/irrational-approximation lemmas, then converged on `Real.exists_int_int_abs_mul_sub_le` after choosing `n` with `1 / (n+1) < ε` and converting the resulting positive integer `k` to `k.toNat`. Both ultimately produced passing Lean proofs with the same proof sh",
+      "wall_seconds": 6.21
+    },
+    {
+      "problem_id": "example-127",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "lean_impl",
+      "evidence": "Both split the conjunction, prove `StrictMono (fun k => 2 * k)` by introducing `a b h/hab` and using simplification plus `omega`, then close the identity goal with `rfl`. Trace A initially failed because `omega` did not see the unfolded arithmetic goal until `dsimp` was added, while Trace B used `si",
+      "wall_seconds": 8.78
+    },
+    {
+      "problem_id": "_synth_integral_max_cos",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "lean_impl",
+      "evidence": "Both traces split [0, 2π] into [0, π/2], [π/2, 3π/2], and [3π/2, 2π], prove max(cos u,0) is cos/0/cos on those intervals, then compute the two cosine integrals as 1+1. The main difference is Lean execution: Trace A spends several failed calls adapting interval-integral congruence, adjacency, and tri",
+      "wall_seconds": 16.25
+    },
+    {
+      "problem_id": "proposition-126-exercise-125",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces choose `m = l`, then prove convergence of the subsequence by composing `hu` with `hφ.tendsto_atTop`. The Lean proof bodies are identical: `intro φ hφ`, `refine ⟨l, ?_, rfl⟩`, and `exact hu.comp hφ.tendsto_atTop`.",
+      "wall_seconds": 4.72
+    },
+    {
+      "problem_id": "problem-31-3",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces converge on Cauchy condensation: Trace A uses `summable_condensed_iff_of_eventually_nonneg`, while Trace B explicitly states and implements the condensation reduction for `f n = 1 / ((n+2) * log(n+2))`. Both ultimately produce passing Lean proofs, so the difference is only implementation",
+      "wall_seconds": 8.27
+    },
+    {
+      "problem_id": "problem-0-12",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "instruction_violation",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "unclear",
+      "divergence": "n/a",
+      "evidence": "Trace A mostly performed Mathlib/API probing, tried bogus contradiction paths, tested unsafe shortcuts, and ended with a partial `C < 0` split plus `sorry`. Trace B gave up almost immediately after checking the signature and sketching informal Weyl/equidistribution ideas, also ending with `sorry`.",
+      "wall_seconds": 10.41
+    },
+    {
+      "problem_id": "fourier-coefficient-version",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "different_plan",
+      "divergence": "n/a",
+      "evidence": "Trace A ultimately builds a `Tendsto (fun n : ℤ => (n : ℝ)) ... (Filter.cocompact ℝ)` bridge and applies the interval-integrable Riemann-Lebesgue lemma family directly. Trace B instead tries to extend `f` by an indicator to a globally integrable `g` and apply `Real.tendsto_integral_exp_smul_cocompac",
+      "wall_seconds": 6.21
+    },
+    {
+      "problem_id": "lemma-21",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "compile_fail",
+      "plan_relation": "different_plan",
+      "divergence": "n/a",
+      "evidence": "Trace A’s successful proof hinges on finding and applying `Real.norm_exp_I_mul_ofReal_sub_one_le`, then normalizing `|2 * Real.pi * x|`. Trace B abandons the direct lemma route and develops a manual trigonometric proof via `exp_mul_I`, norm-square identities, half-angle formulas, and `Real.abs_sin_l",
+      "wall_seconds": 7.62
+    },
+    {
+      "problem_id": "problem-1-10",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "lean_impl",
+      "evidence": "Both traces reduce the zero set integral to an a.e. statement for `ENNReal.ofReal (f x)` using the `lintegral_eq_zero_iff` lemma family, then convert `ENNReal.ofReal (f x) = 0` plus `hf_nonneg` into `f x = 0`. Trace A initially tried the wrong `ae_eq_zero` route and had several type/proof-shape fail",
+      "wall_seconds": 6.51
+    },
+    {
+      "problem_id": "problem-5-2",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "different_plan",
+      "divergence": "n/a",
+      "evidence": "Trace A primarily searched for existing Mathlib automation/lemmas and then attempted unsafe/kernel-bypass routes after `aesop` and `exact?` failed. Trace B reasoned mathematically via zero counting/Jensen/Hadamard/Carlson-style arguments and repeatedly used `sorry`, including a sketched `g(w)=f(log ",
+      "wall_seconds": 6.83
+    },
+    {
+      "problem_id": "proposition-212-exercise",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "search",
+      "evidence": "Both traces converge on the same Mathlib-lemma plan: prove the limit inequality directly with `le_of_tendsto_of_tendsto hy hx hxy`. Trace A spent several failed probes trying related theorem names and checks before finding it, while Trace B reached the same final proof after one preliminary lemma at",
+      "wall_seconds": 6.03
+    },
+    {
+      "problem_id": "_synth_integral_x_log_x",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both traces converge on the antiderivative `x^2 / 2 * Real.log x - x^2 / 4` and use `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto` / `integral_eq_sub_of_hasDerivAt_of_tendsto` to handle the improper endpoint at 0. Both final calls pass, with differences only in local derivative algebra ",
+      "wall_seconds": 8.48
+    },
+    {
+      "problem_id": "theorem-31-liouvilles-theorem-1844",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "compile_fail",
+      "plan_relation": "same_plan",
+      "divergence": "search",
+      "evidence": "Both traces pursue the same decomposition: prove α irrational from degree ≥ 2, clear denominators via `IsLocalization.integerNormalization`, show the integer polynomial has α as a root, then use Mathlib's Liouville-style lower-bound lemma. Trace A reaches the `Liouville.exists_pos_real_of_irrational",
+      "wall_seconds": 12.86
+    },
+    {
+      "problem_id": "thue-siegel-roth-theorem-1955",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "different_plan",
+      "divergence": "n/a",
+      "evidence": "Trace A tried to solve the theorem by locating and directly invoking an existing Mathlib-style theorem, specifically `hx_alg.hasIrrationalityMeasure_two hx_irr`. Trace B instead decomposed the custom definition into Roth lower-bound and Dirichlet upper-bound components, repeatedly leaving the Roth p",
+      "wall_seconds": 5.7
+    },
+    {
+      "problem_id": "lemma-32-hermite-identity",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "none",
+      "evidence": "Both final successful proofs use the same direct decomposition around m = floor (n*x), reducing each summand to integer division of m+k by n. Trace A packages the key floor step as floor_int_add_small_div, while Trace B proves the analogous step inline as step1.",
+      "wall_seconds": 9.46
+    },
+    {
+      "problem_id": "problem-7",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "instruction_violation",
+      "outcome_b": "instruction_violation",
+      "plan_relation": "unclear",
+      "divergence": "n/a",
+      "evidence": "Trace A mostly probes Mathlib summability and alternating-series lemmas, then passes by introducing an axiom. Trace B compiles the statement with `sorry`, adds informal Dirichlet/block-decomposition commentary, but does not pursue a visible Lean proof plan.",
+      "wall_seconds": 9.48
+    },
+    {
+      "problem_id": "problem-1-7",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "compile_fail",
+      "outcome_b": "lean_proof",
+      "plan_relation": "same_plan",
+      "divergence": "lean_impl",
+      "evidence": "Both traces reduce the problem to comparing the sine sum with the linear sum ∑ k/n² and showing that linear sum tends to 1/2; Trace B does this via an explicit squeeze with a cubic error term, while Trace A describes `sin x = x + O(x^2)` and starts proving the same finite-sum reduction. The split oc",
+      "wall_seconds": 10.24
+    },
+    {
+      "problem_id": "common-lemma-1",
+      "model_a": "gpt-5.5",
+      "model_b": "claude-opus-4-7",
+      "outcome_a": "lean_proof",
+      "outcome_b": "compile_fail",
+      "plan_relation": "same_plan",
+      "divergence": "lean_impl",
+      "evidence": "Both traces try the same Borel-Cantelli decomposition: prove the limsup/frequently set has measure zero using `MeasureTheory.measure_setOf_frequently_eq_zero`, then derive a.e. convergence by applying that result to thresholds `1/(k+1)`. Trace A then checks `ENNReal.summable` and finds the hypothesi",
+      "wall_seconds": 13.18
+    }
+  ]
+}

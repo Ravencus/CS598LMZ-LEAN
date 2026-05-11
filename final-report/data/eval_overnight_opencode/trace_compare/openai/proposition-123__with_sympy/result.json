@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "proposition-123",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces pursue an induction/telescoping proof over N with finite-sum last-term rewrites and a rational algebra identity. BIG succeeds after fixing Lean-level details around `sum_Icc_succ_top`, `Nat.factorial_succ`, casts, and `field_simp`; SMALL finds the same overall structure but fails on indu",
+  "wall_seconds": 6.45
+}

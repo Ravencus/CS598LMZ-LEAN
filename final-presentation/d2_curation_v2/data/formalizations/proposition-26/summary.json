@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-26",
+  "english_title": "Proposition 2.6",
+  "statement_en": "Let $\\alpha_n,\\beta_n$ be two nonnegative nonincreasing real sequences such that both series $\\sum_{n\\geq 1}\\alpha_n$ and $\\sum_{n\\geq 1}\\beta_n$ diverge. If there exists a positive real number $C$ such that the set $\\{n:\\alpha_n\\geq C\\beta_n\\}$ has positive natural density, then the series $\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$ diverges.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to synthesize instance of type class\n  DecidablePred fun n => n ∈ s\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef HasPositiveNatDensity (s : Set ℕ) : Prop := by\n  classical\n  exact\n    ∃ δ : ℝ,\n      0 < δ ∧\n        Filter.Tendsto\n          (fun N : ℕ => ((Finset.card ((Finset.range N).filter fun n => n ∈ s) : ℕ) : ℝ) / (N : ℝ))\n          Filter.atTop\n          (nhds δ)\n\ntheorem min_series_diverges_of_positive_density\n    (α β : ℕ → ℝ)\n    (hα_nonneg : ∀ n, 0 ≤ α n)\n    (hβ_nonneg : ∀ n, 0 ≤ β n)\n    (hα_antitone : Antitone α)\n    (hβ_antitone : Antitone β)\n    (hα_div : ¬ Summable (fun n : ℕ => α (n + 1)))\n    (hβ_div : ¬ Summable (fun n : ℕ => β (n + 1)))\n    (hcomp :\n      ∃ C : ℝ,\n        0 < C ∧\n          HasPositiveNatDensity {n : ℕ | C * β (n + 1) ≤ α (n + 1)}) :\n    ¬ Summable (fun n : ℕ => min (α (n + 1)) (β (n + 1))) := by\n  sorry"
+}

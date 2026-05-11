@@ -1,0 +1,77 @@
+I’m checking the available Mathlib facts first, then I’ll build the shortest proof that compiles.
+I found a nearby proof file for algebraic irrationals. I’m reading that first because it may already contain the exact Liouville-style structure we need.
+The nearby files show a route through `Real.exists_int_int_abs_mul_sub_le`, but this theorem needs a uniform lower bound in terms of algebraic degree. I’m searching for a direct Mathlib theorem on `minpoly` or Liouville bounds before writing a custom argument.
+I haven’t found a local proof template yet, so I’m probing Mathlib for a direct theorem that already packages Liouville’s bound. If that exists, the proof will be short; otherwise I’ll need a more elaborate algebraic-number argument.
+I need the actual Mathlib source tree to search for the theorem names. I’m checking the repo layout outside the workspace now.
+I found Mathlib’s Liouville-theory files. I’m reading those because the exact result may already be there, which would turn this into a one-line reduction.
+I found a theorem in Mathlib that already proves the key approximation bound for any irrational root of a nonzero integer polynomial. The remaining work is to extract an integer polynomial for `α` from `IsAlgebraic ℚ α` and align the exponent with `d`.
+I now have the likely route: prove irrationality from the degree hypothesis, then use the existing Liouville bound for an irrational root of an integer polynomial. I’m checking the minpoly bridge between `ℤ` and `ℚ` so the exponent comes out as the requested `d`.
+I hit an important distinction: algebraic over `ℚ` does not mean integral over `ℤ`, so `minpoly ℤ α` is not available in general. I’m now looking for the exact Mathlib lemma that clears denominators of a rational polynomial to an integer polynomial.
+I have the proof skeleton now. I’m writing the full Lean proof in one shot to stay within the checker budget, using denominator clearing on `minpoly ℚ α` and then the existing irrational-root bound.
+The first compile got hung up on the minpoly nonzero proof syntax. I’m tightening that and then I’ll rerun the checker.
+I don’t have a saved source file here; I’m just iterating in the checker. I’m rerunning with the corrected `minpoly.ne_zero` form.
+The failure is on the `minpoly.ne_zero` invocation itself, so I’m isolating that syntax with a tiny check before spending more budget on the full proof.
+The blocker was notation: `ℚ[X]` needs `open scoped Polynomial`. I’m adding that and rerunning the full proof.
+I’ve got one last checker run. This version fixes the zero/nonzero direction, uses the localized theorem with the correct namespace, and avoids the earlier `natDegree_map` rewrite issue.
+FINAL_PROOF:
+```lean
+import Mathlib
+open scoped Polynomial
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  have h_irr : Irrational α := by
+    rintro ⟨q, rfl⟩
+    have h1 : (minpoly ℚ α).natDegree = 1 := by
+      exact (minpoly.natDegree_eq_one_iff (A := ℚ) (x := α)).2 ⟨q, rfl⟩
+    have hd1 : d = 1 := by
+      simpa [h_deg] using h1
+    omega
+  let P : ℚ[X] := minpoly ℚ α
+  have hP0 : P ≠ 0 := by
+    simpa [P] using (minpoly.ne_zero h_alg.isIntegral)
+  let M : Submonoid ℤ := nonZeroDivisors ℤ
+  have hQ0 : (IsLocalization.integerNormalization M P) ≠ 0 := by
+    intro hzero
+    apply hP0
+    exact (IsLocalization.integerNormalization_eq_zero_iff (M := M) (hM := le_rfl) P).mp hzero
+  have hQroot : Polynomial.aeval α (IsLocalization.integerNormalization M P) = 0 := by
+    simpa [M, P] using
+      (IsLocalization.integerNormalization_aeval_eq_zero (M := M) (algebraMap ℚ ℝ) P (x := α)
+        (by simpa [P] using (minpoly.aeval (A := ℚ) (x := α))))
+  obtain ⟨b, hb, hmap⟩ := IsLocalization.integerNormalization_spec (M := M) P
+  have hb0 : (b : ℚ) ≠ 0 := by
+    exact_mod_cast (mem_nonZeroDivisors_iff_ne_zero.mp hb)
+  have hdegP : P.natDegree = d := by
+    simpa [P] using h_deg
+  have hdegQ : (IsLocalization.integerNormalization M P).natDegree = d := by
+    have htmp : ((IsLocalization.integerNormalization M P).map (algebraMap ℤ ℚ)).natDegree = d := by
+      rw [hmap]
+      simpa [hdegP, Algebra.smul_def] using
+        (Polynomial.natDegree_C_mul (a := (b : ℚ)) hb0 (p := P))
+    have hmapnat := Polynomial.natDegree_map_eq_of_injective (algebraMap ℤ ℚ).injective
+      (p := IsLocalization.integerNormalization M P)
+    exact hmapnat.symm.trans htmp
+  obtain ⟨A, hApos, hAineq⟩ :=
+    Liouville.exists_pos_real_of_irrational_root h_irr (f := IsLocalization.integerNormalization M P)
+      hQ0 hQroot
+  refine ⟨(1 : ℝ) / (2 * A), ?_, ?_⟩
+  · positivity
+  · intro q hq p
+    have hsucc : (q - 1) + 1 = q := Nat.succ_pred_eq_of_pos hq
+    have hpos : (0 : ℝ) < 2 * A * (q : ℝ) ^ d := by
+      positivity
+    have hbound : (1 : ℝ) ≤ A * (q : ℝ) ^ d * |α - (p : ℝ) / (q : ℝ)| := by
+      have hbound' := hAineq p (q - 1)
+      simpa [hsucc, hdegQ, mul_assoc, mul_comm, mul_left_comm] using hbound'
+    have hlt : (1 : ℝ) < |α - (p : ℝ) / (q : ℝ)| * (2 * A * (q : ℝ) ^ d) := by
+      nlinarith
+    have hC : (1 : ℝ) / (2 * A * (q : ℝ) ^ d) < |α - (p : ℝ) / (q : ℝ)| := by
+      simpa [mul_assoc, mul_comm, mul_left_comm] using (div_lt_iff₀ hpos).2 hlt
+    simpa [mul_assoc, mul_comm, mul_left_comm] using hC
+```

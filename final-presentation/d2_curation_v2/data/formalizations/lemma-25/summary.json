@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-25",
+  "english_title": "Lemma 2.5",
+  "statement_en": "Let $a_n$ be a nonnegative nonincreasing real sequence such that the series $\\sum_{n\\geq 1}a_n$ diverges. If $S\\subseteq \\mathbb{N}$ has positive natural density, that is,\n$$d(S)=\\lim_{N\\to \\infty} \\frac{|S\\cap \\{1,2,\\cdots,N\\}|}{N}=\\delta>0,$$\nthen the subseries $\\sum_{n\\in S}a_n$ also diverges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to synthesize instance of type class\n  Decidable (n + 1 ∈ S)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\ntheorem subseries_diverges_of_positive_density\n    (a : ℕ → ℝ) (S : Set ℕ) (δ : ℝ)\n    [DecidablePred fun n => n ∈ S]\n    (h_nonneg : ∀ n, 0 ≤ a n)\n    (h_nonincreasing : Antitone a)\n    (h_diverges : ¬ Summable (fun n : ℕ => a (n + 1)))\n    (h_density :\n      Tendsto\n        (fun N : ℕ =>\n          (((Finset.Icc 1 N).filter fun n => n ∈ S).card : ℝ) / (N : ℝ))\n        atTop\n        (nhds δ))\n    (hδ : 0 < δ) :\n    ¬ Summable (fun n : ℕ => if n + 1 ∈ S then a (n + 1) else 0) := by\n  sorry"
+}

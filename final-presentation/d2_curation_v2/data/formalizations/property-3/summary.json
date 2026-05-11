@@ -1,0 +1,18 @@
+{
+  "problem_id": "property-3",
+  "english_title": "Property 3",
+  "statement_en": "The trace of a matrix is linear. That is, for two $n\\times n$ matrices $A,B$, one has $$\\text{trace}(aA+bB)=a\\,\\text{trace}(A)+b\\,\\text{trace}(B),$$ where $a,b$ are constants.",
+  "difficulty": "easy",
+  "domain": "linear algebra",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem matrix_trace_linear\n    {n : Type*} [Fintype n] [DecidableEq n]\n    {R : Type*} [CommSemiring R]\n    (a b : R) (A B : Matrix n n R) :\n    Matrix.trace (a • A + b • B) = a * Matrix.trace A + b * Matrix.trace B := by\n  sorry"
+}

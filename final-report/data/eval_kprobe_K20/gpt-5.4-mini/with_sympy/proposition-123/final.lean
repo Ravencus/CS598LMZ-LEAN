@@ -1,0 +1,10 @@
+import Mathlib
+#check Finset.sum_range_succ
+#check Finset.sum_Icc_succ_top
+#check Finset.sum_Icc_succ_bot
+#check Finset.sum_Icc_eq_sum_range
+#check Finset.sum_Ico_eq_sum_range
+#check Finset.sum_Ico_succ_top
+#check Finset.sum_Ico_succ_bot
+#check Finset.sum_range_add
+#check Finset.sum_range_succ'

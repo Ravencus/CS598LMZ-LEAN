@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-112",
+  "english_title": "Example 1.1.2",
+  "statement_en": "Let $f(t):=|\\cos(2\\pi t)|$. Then $$\\sum_{y\\leq n\\leq x}\\cos(2\\pi n)=O(x-y).$$ However, if one ignores the monotonicity requirement in the simple integral estimate and applies it blindly, one would incorrectly obtain an $O(1)$ estimate.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.cos', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def absCosTwoPi (t : ℝ) : ℝ := |Real.cos (2 * Real.pi * t)|\n\ntheorem cosineIntegerIntervalSum_linearBound_but_not_O_one :\n    (∃ C : ℝ, 0 < C ∧ ∀ x y : ℕ,\n      |∑ n in Finset.Ioc y x, Real.cos (2 * Real.pi * (n : ℝ))| ≤ C * ((x - y : ℕ) : ℝ))\n    ∧\n    ¬ (∃ C : ℝ, 0 < C ∧ ∀ x y : ℕ,\n      |∑ n in Finset.Ioc y x, Real.cos (2 * Real.pi * (n : ℝ))| ≤ C) := by\n  sorry"
+}

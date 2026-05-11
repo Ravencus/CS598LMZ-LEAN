@@ -1,0 +1,2 @@
+Good, the statement compiles. Now let me explore available lemmas.
+Only 1 call left. Let me try to find the condensation test lemma with different casing.

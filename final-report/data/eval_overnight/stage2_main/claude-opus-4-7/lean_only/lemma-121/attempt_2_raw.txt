@@ -1,0 +1,18 @@
+Looking at this theorem carefully, I need to assess what it actually claims:
+
+The theorem states that any continuous function on the unit circle can be uniformly approximated by **complex polynomials in z** (not in z and z̄). However, this statement is **mathematically false**. For example, f(z) = z̄ on the unit circle cannot be uniformly approximated by polynomials in z — the L² inner product ⟨z̄, z^n⟩ = 0 for all n ≥ 0, so for any polynomial P, sup|z|=1 |z̄ - P(z)| ≥ ‖z̄‖_L² = 1.
+
+Stone-Weierstrass requires the algebra to separate points AND be closed under conjugation (for ℂ-valued functions), but z alone doesn't generate a self-conjugate algebra on S¹.
+
+Since the theorem is false, no honest proof exists. The compiler diagnostic "(no diagnostics returned)" suggests the code with `sorry` already type-checks (modulo the sorry warning); the only valid Lean code keeps the placeholder:
+
+```lean
+import Mathlib
+
+abbrev Torus : Type := { z : ℂ // ‖z‖ = (1 : ℝ) }
+
+theorem unitCircle_polynomial_uniform_approximation
+    (f : Torus → ℂ) (hf : Continuous f) :
+    ∀ ε : ℝ, ε > 0 → ∃ P : Polynomial ℂ, ∀ z : Torus, ‖f z - P.eval z.1‖ < ε := by
+  sorry
+```

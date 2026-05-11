@@ -1,0 +1,24 @@
+{
+  "problem_id": "chebyshev-inequality",
+  "english_title": "Chebyshev Inequality",
+  "statement_en": "$$\\mu\\left(\\{x:|f_n(x)-f(x)|\\geq \\varepsilon\\}\\right)\\leq \\frac{1}{\\varepsilon^p}||f_n-f||^p_{L^p}$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem measure_set_ge_le_LpNorm_pow\n    {α : Type*} [MeasurableSpace α]\n    (μ : MeasureTheory.Measure α) (fₙ f : α → ℝ) (ε : ℝ) (p : ℕ) :\n    μ ({x : α | |fₙ x - f x| ≥ ε} : Set α) ≤\n      ENNReal.ofReal ((ε ^ p)⁻¹ * ∫ x, ‖fₙ x - f x‖ ^ p ∂μ) := by\n  sorry"
+}

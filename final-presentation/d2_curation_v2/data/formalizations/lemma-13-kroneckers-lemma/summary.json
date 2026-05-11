@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-13-kroneckers-lemma",
+  "english_title": "Lemma 1.3: Kronecker's Lemma",
+  "statement_en": "For an arithmetic function $f$, if there exists $s$ with $\\operatorname{Re}(s)>0$ such that $$\\sum_{n\\ge 1} \\frac{f(n)}{n^s}<\\infty,$$ then $$\\frac{1}{x^s}\\sum_{n\\le x} f(n)\\to 0.$$",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem arithmetic_function_dirichlet_series_implies_partial_sum_decay\n    (f : ℕ → ℂ)\n    (h :\n      ∃ s : ℂ,\n        0 < s.re ∧\n          Summable (fun n : ℕ => f (n + 1) / Complex.cpow (((n + 1 : ℕ) : ℂ)) s)) :\n    ∃ s : ℂ,\n      0 < s.re ∧\n        Filter.Tendsto\n          (fun N : ℕ =>\n            (Complex.cpow (((N + 1 : ℕ) : ℂ)) s)⁻¹ *\n              (Finset.sum (Finset.Icc 1 (N + 1)) f))\n          Filter.atTop\n          (nhds (0 : ℂ)) := by\n  sorry"
+}

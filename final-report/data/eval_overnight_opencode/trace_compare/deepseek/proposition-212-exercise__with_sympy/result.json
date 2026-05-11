@@ -1,0 +1,12 @@
+{
+  "vendor": "deepseek",
+  "big": "deepseek-v4-pro",
+  "small": "deepseek-v4-flash",
+  "condition": "with_sympy",
+  "problem_id": "proposition-212-exercise",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces use the same epsilon/half-gap contradiction: assume a < b, use convergence to force x near a and y near b, combine with eventual x ≥ y, and derive a contradiction. The SMALL trace gets stuck in Lean mechanics around `filter_upwards` destructuring and applying `Filter.eventually_atTop`, d",
+  "wall_seconds": 9.21
+}

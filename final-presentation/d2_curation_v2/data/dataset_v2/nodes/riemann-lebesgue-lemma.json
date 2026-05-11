@@ -1,0 +1,24 @@
+{
+  "id": "riemann-lebesgue-lemma",
+  "type": "problem",
+  "source_note": "Riemann - Lebesgue lemma的证明",
+  "english_source_note": "Proof of the Riemann-Lebesgue Lemma",
+  "callout_id": "Riemann - Lebesgue lemma的证明#5",
+  "english_title": "Riemann-Lebesgue Lemma",
+  "statement_en": "The Fourier transform $\\mathcal{F}$ defined on $L^1(G)$ is a linear map $$L^1(G) \\to C_0(\\hat{G}).$$",
+  "problem_type": "lemma",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "Pontryagin duality framework",
+    "translation continuity on LCA groups",
+    "character separation at infinity"
+  ],
+  "prerequisites": [
+    "locally compact abelian groups",
+    "Haar measure",
+    "Fourier transform on LCA groups",
+    "$C_0(\\hat{G})$"
+  ],
+  "callout_body": "定义在$L^1(G)$上的傅里叶变换$\\mathcal{F}$是一个$$L^1(G)\\to C_0(\\hat{G})$$的线性泛函。"
+}

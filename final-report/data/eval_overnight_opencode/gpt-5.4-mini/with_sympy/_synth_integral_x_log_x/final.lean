@@ -1,0 +1,48 @@
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  let F : ℝ → ℝ := fun x => -(x ^ 2 / 4) + (x ^ 2 / 2) * Real.log x
+  have hderiv : ∀ x ∈ Set.Ioo (0 : ℝ) 1, HasDerivAt F (x * Real.log x) x := by
+    intro x hx
+    have hx0 : x ≠ 0 := ne_of_gt hx.1
+    have hsq2 : HasDerivAt (fun y : ℝ => y ^ 2) (2 * x) x := by
+      simpa [pow_two, mul_comm, mul_left_comm, mul_assoc] using (hasDerivAt_id x).pow 2
+    have hpow2 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc] using hsq2.div_const 2
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    have hmul : HasDerivAt (fun y : ℝ => (y ^ 2 / 2) * Real.log y) (x / 2 + x * Real.log x) x := by
+      have hcancel : (x ^ 2 / 2) * x⁻¹ = x / 2 := by
+        field_simp [hx0]
+      simpa [hcancel, add_comm, add_left_comm, add_assoc, mul_comm, mul_left_comm, mul_assoc] using
+        hpow2.mul hlog
+    have hsq4 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      have h : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x * (2 * 4⁻¹)) x := by
+        simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc] using hsq2.div_const 4
+      have hnum : (2 : ℝ) * 4⁻¹ = 1 / 2 := by norm_num
+      simpa [hnum, mul_comm, mul_left_comm, mul_assoc] using h
+    have hneg : HasDerivAt (fun y : ℝ => -(y ^ 2 / 4)) (-(x / 2)) x := hsq4.neg
+    simpa [F, add_comm, add_left_comm, add_assoc] using hneg.add hmul
+  have hint : IntervalIntegrable (fun x => x * Real.log x) MeasureTheory.volume 0 1 := by
+    simpa using (Real.continuous_mul_log.intervalIntegrable 0 1)
+  have hpos : (0 : ℝ) < 2 := by norm_num
+  have ha0 : Filter.Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℝ)) (nhdsWithin 0 (Set.Ioi 0)) (𝓝 0) :=
+    tendsto_log_mul_rpow_nhdsGT_zero hpos
+  have ha1 : Filter.Tendsto (fun x : ℝ => x ^ 2) (nhdsWithin 0 (Set.Ioi 0)) (𝓝 0) := by
+    exact Filter.tendsto_nhdsWithin_of_tendsto_nhds ((continuous_id.pow 2).tendsto 0)
+  have ha : Filter.Tendsto F (nhdsWithin 0 (Set.Ioi 0)) (𝓝 0) := by
+    have h1 : Filter.Tendsto (fun x : ℝ => x ^ 2 / 2 * Real.log x) (nhdsWithin 0 (Set.Ioi 0)) (𝓝 0) := by
+      simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc] using ha0.const_mul (1 / 2)
+    have h2 : Filter.Tendsto (fun x : ℝ => x ^ 2 / 4) (nhdsWithin 0 (Set.Ioi 0)) (𝓝 0) := by
+      simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc] using ha1.const_mul (1 / 4)
+    simpa [F, add_comm, add_left_comm, add_assoc] using h1.sub h2
+  have hb : Filter.Tendsto F (nhdsWithin 1 (Set.Iio 1)) (𝓝 (-1 / 4 : ℝ)) := by
+    have hcont : ContinuousAt F 1 := by
+      unfold F
+      continuity
+    have hlim : Filter.Tendsto F (𝓝 1) (𝓝 (F 1)) := hcont.tendsto
+    simpa [F] using hlim.mono_left nhdsWithin_le_nhds
+  have hab : (0 : ℝ) < 1 := by norm_num
+  have hmain := intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto (a := (0 : ℝ)) (b := 1)
+    hab hderiv hint ha hb
+  simpa using hmain

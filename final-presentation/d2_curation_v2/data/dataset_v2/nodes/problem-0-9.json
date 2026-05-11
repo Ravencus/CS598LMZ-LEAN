@@ -1,0 +1,24 @@
+{
+  "id": "problem-0-9",
+  "type": "problem",
+  "source_note": "证明函数项级数几乎处处绝对收敛",
+  "english_source_note": "Almost Everywhere Absolute Convergence of Function Series",
+  "callout_id": "证明函数项级数几乎处处绝对收敛#1",
+  "english_title": "Problem 0",
+  "statement_en": "Let $a_n,r_n$ be two real sequences satisfying $\\sum_{n\\geq 1}|a_n|<\\infty$. Prove that the series $$\\sum_{n\\geq 1}\\frac{a_n}{\\sqrt{|x-r_n|}}$$ is absolutely convergent for almost every $x\\in \\mathbb{R}$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Fubini-Tonelli theorem",
+    "local integrability estimate",
+    "absolute convergence via integrability"
+  ],
+  "prerequisites": [
+    "Lebesgue integration",
+    "almost everywhere statements",
+    "summable series of real numbers",
+    "Fubini-Tonelli theorem"
+  ],
+  "callout_body": "考虑两个实数列$a_n,r_n$满足$\\sum_{n\\geq 1}|a_n|<\\infty$，证明级数$$\\sum_{n\\geq 1}\\frac{a_n}{\\sqrt{|x-r_n|}}$$对$x\\in \\mathbb{R}$是几乎处处绝对收敛的。"
+}

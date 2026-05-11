@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-1-3",
+  "english_title": "Proposition 1",
+  "statement_en": "Let $\\{r_n\\}$ be a sequence taking values only in $0,-2,2$. If $\\sum_{n\\geq 1}\\frac{r_n}{3^n}=0$, then necessarily $$r_n \\equiv 0.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem signedTernarySeries_eq_zero\n    (r : ℕ → ℤ)\n    (hr : ∀ n : ℕ, r n = 0 ∨ r n = -2 ∨ r n = 2)\n    (hsum : HasSum (fun n : ℕ => (r (n + 1) : ℝ) / (3 : ℝ) ^ (n + 1)) 0) :\n    ∀ n : ℕ, r (n + 1) = 0 := by\n  sorry"
+}

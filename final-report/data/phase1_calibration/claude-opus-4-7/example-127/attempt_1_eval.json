@@ -1,0 +1,14 @@
+{
+  "outcome": "lean_proof",
+  "overall_success": true,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 0,
+  "first_error": null,
+  "sympy_witnesses": []
+}

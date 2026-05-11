@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "unsolved goals\nα✝ β✝ : ℕ → ℝ\nhα_nonneg : ∀ (n : ℕ), 0 ≤ α✝ n\nhβ_nonneg : ∀ (n : ℕ), 0 ≤ β✝ n\nhα_antitone : Antitone α✝\nhβ_antitone : Antitone β✝\nhα_div : ¬Summable fun n => α✝ (n + 1)\nhβ_div : ¬Summab",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_13b500ea33.lean",
+      "line": 15,
+      "column": 50,
+      "severity": "error",
+      "message": "unsolved goals\nα✝ β✝ : ℕ → ℝ\nhα_nonneg : ∀ (n : ℕ), 0 ≤ α✝ n\nhβ_nonneg : ∀ (n : ℕ), 0 ≤ β✝ n\nhα_antitone : Antitone α✝\nhβ_antitone : Antitone β✝\nhα_div : ¬Summable fun n => α✝ (n + 1)\nhβ_div : ¬Summable fun n => β✝ (n + 1)\nα : ℕ → ℝ := fun x => 1\nβ : ℕ → ℝ := fun x => 1\n⊢ Summable fun x => 1"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_13b500ea33.lean",
+      "line": 17,
+      "column": 15,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hαs\nhas type\n  Summable fun n => α (n + 1)\nbut is expected to have type\n  Summable fun n => α✝ (n + 1)\nin the application\n  hα_div hαs\n"
+    }
+  ]
+}

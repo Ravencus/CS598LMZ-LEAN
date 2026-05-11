@@ -1,0 +1,18 @@
+{
+  "problem_id": "dominated-convergence-theorem-for-convergence-in-probability",
+  "english_title": "Dominated Convergence Theorem for Convergence in Probability",
+  "statement_en": "If random variables $X_n\\xrightarrow{P}{X}$, and if $|X_n|\\leq Y$ with $E(Y)$ finite, then\n$$E(X_n)\\to E(X).$$",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\nopen scoped ENNReal\n\ntheorem tendsto_expectation_of_tendstoInProbability_dominated\n    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} [IsProbabilityMeasure μ]\n    (X : Ω → ℝ) (Xn : ℕ → Ω → ℝ) (Y : Ω → ℝ)\n    (hprob :\n      ∀ ε : ℝ, 0 < ε →\n        Filter.Tendsto\n          (fun n : ℕ => μ {ω | ε ≤ |Xn n ω - X ω|})\n          Filter.atTop\n          (nhds 0))\n    (hdom : ∀ n ω, |Xn n ω| ≤ Y ω)\n    (hY : Integrable Y μ) :\n    Filter.Tendsto\n      (fun n : ℕ => ∫ ω, Xn n ω ∂μ)\n      Filter.atTop\n      (nhds (∫ ω, X ω ∂μ)) := by\n  sorry"
+}

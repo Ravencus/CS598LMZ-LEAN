@@ -1,0 +1,8 @@
+I'll tackle Liouville's theorem. Let me first explore what Mathlib lemmas are available for the key components (minimal polynomial, MVT, algebraic numbers), then build the proof.
+
+**Plan:**
+1. Set `f = minpoly ℚ α`, get monic, degree d, f(α)=0
+2. Clear denominators: ∃ N : ℕ such that `N • f` has integer coefficients, giving `|f(p/q)| ≥ 1/(N·q^d)`
+3. Use MVT: `|f(p/q)| = |f'(ξ)|·|p/q - α|` for some ξ → bound f' on compact interval
+4. Split into |α-p/q| > 1 (trivial) and ≤ 1 (use MVT bound)
+Good, key lemmas exist. Let me check their type signatures more carefully:

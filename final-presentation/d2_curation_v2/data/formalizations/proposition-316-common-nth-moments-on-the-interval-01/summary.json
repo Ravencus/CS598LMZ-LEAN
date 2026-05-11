@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-316-common-nth-moments-on-the-interval-01",
+  "english_title": "Proposition 3.1.6: Common nth Moments on the Interval (0,1)",
+  "statement_en": "Compute the moments \\(b_n:=\\int_0^1 g(x)x^n\\,dx\\) for common functions on \\((0,1)\\), including \\((\\ln x)^k\\), \\((1-x)^a\\), and \\(\\frac{1}{\\sqrt{1-x^2}}\\), expressing the results using Gamma and Beta functions and related factorial formulas.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem moment_formulas_common_functions :\n    (∀ n k : ℕ,\n      ∫ x in (0 : ℝ)..1, (Real.log x) ^ k * x ^ n\n        = (((-1 : ℝ) ^ k) * (Nat.factorial k : ℝ)) / (((n : ℝ) + 1) ^ (k + 1))) ∧\n    (∀ n : ℕ, ∀ a : ℝ,\n      -1 < a →\n        ∫ x in (0 : ℝ)..1, Real.rpow (1 - x) a * x ^ n\n          = (Real.Gamma (a + 1) * (Nat.factorial n : ℝ)) / Real.Gamma (a + (n : ℝ) + 2)) ∧\n    (∀ m : ℕ,\n      ∫ x in (0 : ℝ)..1, x ^ (2 * m) / Real.sqrt (1 - x ^ 2)\n        = (Real.pi / 2) *\n            ((Nat.factorial (2 * m) : ℝ) /\n              (((4 : ℝ) ^ m) * (Nat.factorial m : ℝ) ^ 2))) := by\n  sorry"
+}

@@ -1,0 +1,39 @@
+{
+  "outcome": "sympy_rescue",
+  "overall_success": true,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": true,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": true,
+  "sympy_verified": true,
+  "n_errors": 1,
+  "first_error": "unexpected token '<'; expected command\n",
+  "sympy_witnesses": [
+    {
+      "block": {
+        "kind": "integral",
+        "var": "x",
+        "lower": "0",
+        "upper": "1",
+        "expression": "x*log(x)",
+        "expected": "-1/4"
+      },
+      "verifier": {
+        "correct": true,
+        "computed": "-1/4",
+        "error": null
+      }
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_2bfb82e651.lean",
+      "line": 7,
+      "column": 0,
+      "severity": "error",
+      "message": "unexpected token '<'; expected command\n"
+    }
+  ]
+}

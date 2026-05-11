@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-122",
+  "english_title": "Lemma 1.2.2",
+  "statement_en": "If $f\\in C([-1/2,1/2]\\to \\mathbb{C})$ and satisfies $f(-1/2)=f(1/2)$, then for every $\\varepsilon>0$ there exists a trigonometric polynomial $P_{\\varepsilon}\\in \\mathcal{P}$ such that, defining $T_{\\varepsilon}(x):=P_{\\varepsilon}(e^{2\\pi i x})$, one has $$\\|f-T_{\\varepsilon}\\|_{u}<\\varepsilon.$$",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instSupSet', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Set\n\nnoncomputable def uniformNormOn (s : Set ℝ) (f : ℝ → ℂ) : ℝ :=\n  sSup ((fun x : ℝ => ‖f x‖) '' s)\n\ndef CirclePolynomial (P : ℂ → ℂ) : Prop :=\n  ∃ s : Finset ℤ, ∃ c : ℤ → ℂ, ∀ z : ℂ, P z = Finset.sum s (fun n => c n * z ^ (Int.natAbs n))\n\ntheorem periodic_continuous_complex_uniform_trig_approx\n    (f : ℝ → ℂ)\n    (hf : ContinuousOn f (Set.Icc (-((1 : ℝ) / 2)) ((1 : ℝ) / 2)))\n    (hperiod : f (-((1 : ℝ) / 2)) = f ((1 : ℝ) / 2)) :\n    ∀ ε : ℝ, ε > 0 →\n      ∃ P : ℂ → ℂ,\n        CirclePolynomial P ∧\n        uniformNormOn\n          (Set.Icc (-((1 : ℝ) / 2)) ((1 : ℝ) / 2))\n          (fun x => f x - P (Complex.exp (2 * Real.pi * Complex.I * (x : ℂ)))) < ε := by\n  sorry"
+}

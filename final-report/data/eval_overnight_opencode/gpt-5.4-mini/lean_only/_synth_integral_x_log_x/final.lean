@@ -1,0 +1,49 @@
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  have hderiv : ∀ x ∈ Set.Ioo (0 : ℝ) 1,
+      HasDerivAt (fun y : ℝ => (1 / 2 : ℝ) * (Real.log y * y ^ 2) - (1 / 4 : ℝ) * y ^ 2)
+        (x * Real.log x) x := by
+    intro x hx
+    have hx0 : x ≠ 0 := by linarith
+    have hpow : HasDerivAt (fun y : ℝ => y ^ 2) (2 * x) x := by
+      simpa [pow_two] using (hasDerivAt_id x).pow 2
+    have hmul : HasDerivAt (fun y : ℝ => Real.log y * y ^ 2) (x + 2 * x * Real.log x) x := by
+      simpa [pow_two, hx0, mul_comm, mul_left_comm, mul_assoc, add_comm, add_left_comm, add_assoc] using
+        (Real.hasDerivAt_log hx0).mul hpow
+    have hhalf : HasDerivAt (fun y : ℝ => (1 / 2 : ℝ) * (Real.log y * y ^ 2))
+        ((1 / 2 : ℝ) * (x + 2 * x * Real.log x)) x := by
+      simpa [mul_comm, mul_left_comm, mul_assoc, add_comm, add_left_comm, add_assoc] using
+        hmul.const_mul (1 / 2 : ℝ)
+    have hsq : HasDerivAt (fun y : ℝ => (1 / 4 : ℝ) * y ^ 2) ((1 / 4 : ℝ) * (2 * x)) x := by
+      simpa [pow_two, mul_comm, mul_left_comm, mul_assoc] using hpow.const_mul (1 / 4 : ℝ)
+    simpa [pow_two, mul_comm, mul_left_comm, mul_assoc, add_comm, add_left_comm, add_assoc,
+      sub_eq_add_neg, one_div, div_eq_mul_inv] using hhalf.sub hsq
+  have hint : IntervalIntegrable (fun x : ℝ => x * Real.log x) MeasureTheory.volume 0 1 := by
+    simpa using (continuous_mul_log.continuousOn.intervalIntegrable (a := (0 : ℝ)) (b := (1 : ℝ)))
+  have ha : Filter.Tendsto
+      (fun x : ℝ => (1 / 2 : ℝ) * (Real.log x * x ^ 2) - (1 / 4 : ℝ) * x ^ 2)
+      (Filter.nhdsWithin (0 : ℝ) (Set.Ioi (0 : ℝ))) (Filter.𝓝 (0 : ℝ)) := by
+    have hlog : Filter.Tendsto (fun x : ℝ => Real.log x * x ^ 2)
+        (Filter.nhdsWithin (0 : ℝ) (Set.Ioi (0 : ℝ))) (Filter.𝓝 (0 : ℝ)) :=
+      tendsto_log_mul_rpow_nhdsGT_zero (by positivity)
+    have h1 : Filter.Tendsto (fun x : ℝ => (1 / 2 : ℝ) * (Real.log x * x ^ 2))
+        (Filter.nhdsWithin (0 : ℝ) (Set.Ioi (0 : ℝ))) (Filter.𝓝 (0 : ℝ)) := by
+      simpa [mul_comm, mul_left_comm, mul_assoc] using hlog.const_mul (1 / 2 : ℝ)
+    have h2 : Filter.Tendsto (fun x : ℝ => (1 / 4 : ℝ) * x ^ 2)
+        (Filter.nhdsWithin (0 : ℝ) (Set.Ioi (0 : ℝ))) (Filter.𝓝 (0 : ℝ)) := by
+      have hcont : Continuous (fun x : ℝ => (1 / 4 : ℝ) * x ^ 2) := by
+        fun_prop
+      exact tendsto_nhdsWithin_of_tendsto_nhds hcont.continuousAt.tendsto
+    simpa [sub_eq_add_neg] using h1.sub h2
+  have hb : Filter.Tendsto
+      (fun x : ℝ => (1 / 2 : ℝ) * (Real.log x * x ^ 2) - (1 / 4 : ℝ) * x ^ 2)
+      (Filter.nhdsWithin (1 : ℝ) (Set.Iio (1 : ℝ))) (Filter.𝓝 (-1 / 4 : ℝ)) := by
+    have hcont : ContinuousAt (fun x : ℝ => (1 / 2 : ℝ) * (Real.log x * x ^ 2) - (1 / 4 : ℝ) * x ^ 2) 1 := by
+      fun_prop
+    simpa [pow_two, sub_eq_add_neg] using tendsto_nhdsWithin_of_tendsto_nhds hcont.tendsto
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+      (f := fun x : ℝ => (1 / 2 : ℝ) * (Real.log x * x ^ 2) - (1 / 4 : ℝ) * x ^ 2)
+      (fa := 0) (fb := -1 / 4) hderiv hint ha hb]
+  norm_num

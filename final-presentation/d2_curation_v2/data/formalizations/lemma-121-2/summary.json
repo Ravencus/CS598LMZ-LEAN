@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-121-2",
+  "english_title": "Lemma 1.2.1",
+  "statement_en": "Let the \\(N(s)\\) positive roots of \\(\\cos(x)=sx\\) be ordered as\n\\\\[\nx_1(s)<x_2(s)<\\\\cdots<x_{N(s)}(s).\n\\\\]\nThen:\n1. \\(N(s)\\\\sim \\\\frac{1}{\\\\pi s}\\).\n2. For every \\(1\\\\leq k\\\\leq N(s)\\),\n\\\\[\nk\\\\pi<x_k(s)<(k+1)\\\\pi.\n\\\\]",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem roots_cos_eq_smul_asymptotic_and_bounds\n    (N : ℝ → ℕ) (x : ℝ → ℕ → ℝ)\n    (hroot : ∀ ⦃s : ℝ⦄, 0 < s → ∀ ⦃k : ℕ⦄, 1 ≤ k → k ≤ N s →\n      0 < x s k ∧ Real.cos (x s k) = s * x s k)\n    (hstrict : ∀ ⦃s : ℝ⦄, 0 < s → StrictMonoOn (x s) (Set.Icc 1 (N s)))\n    (hexhaustive : ∀ ⦃s y : ℝ⦄, 0 < s → 0 < y → Real.cos y = s * y →\n      ∃ k : ℕ, 1 ≤ k ∧ k ≤ N s ∧ x s k = y) :\n    Filter.Tendsto (fun s : ℝ => (N s : ℝ) * (Real.pi * s))\n      (nhdsWithin 0 (Set.Ioi 0)) (nhds 1) ∧\n    ∀ ⦃s : ℝ⦄, 0 < s → ∀ ⦃k : ℕ⦄, 1 ≤ k → k ≤ N s →\n      (k : ℝ) * Real.pi < x s k ∧ x s k < ((k : ℝ) + 1) * Real.pi := by\n  sorry"
+}

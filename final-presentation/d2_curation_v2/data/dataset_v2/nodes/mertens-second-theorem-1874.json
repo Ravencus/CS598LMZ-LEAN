@@ -1,0 +1,23 @@
+{
+  "id": "mertens-second-theorem-1874",
+  "type": "problem",
+  "source_note": "素数倒数和的估计",
+  "english_source_note": "Estimates for the Sum of Prime Reciprocals",
+  "callout_id": "素数倒数和的估计#3",
+  "english_title": "Mertens' Second Theorem, 1874",
+  "statement_en": "There exists a constant $B$ (now called the Mertens constant) such that $$\\sum_{p\\le x}\\frac{1}{p}=\\log\\log(x)+B+O\\left(\\frac{1}{\\log(x)}\\right).$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "partial summation",
+    "prime counting estimates",
+    "Mertens estimates"
+  ],
+  "prerequisites": [
+    "asymptotic notation",
+    "prime number estimates",
+    "logarithmic summation"
+  ],
+  "callout_body": "存在一个常数$B$(现在称之为Mertens常数)使得$$\\sum_{p\\le x}\\frac{1}{p}=\\log\\log(x)+B+O\\left(\\frac{1}{\\log(x)}\\right)$$"
+}

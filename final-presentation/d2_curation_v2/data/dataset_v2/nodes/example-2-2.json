@@ -1,0 +1,21 @@
+{
+  "id": "example-2-2",
+  "type": "problem",
+  "source_note": "Weierstrass逼近定理的概率途径证明",
+  "english_source_note": "A Probabilistic Proof of the Weierstrass Approximation Theorem",
+  "callout_id": "Weierstrass逼近定理的概率途径证明#4",
+  "english_title": "Example 2",
+  "statement_en": "Consider the probability space $([0,1],\\mathcal{B}([0,1]),m)$, where $m$ is Lebesgue measure. Define the Bernoulli$(p)$ random variable\n$$Y_2(\\omega):=\\begin{cases}0& 1\\geq \\omega >p\\\\ 1& p\\geq \\omega \\geq 0 \\end{cases}$$\nThen its pushforward measure satisfies\n$$P_{Y_2}(\\{0\\})=m((p,1])=1-p,\\qquad P_{Y_2}(\\{1\\})=m([0,p])=p.$$",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "probability theory",
+  "key_techniques": [
+    "constructing random variables on $[0,1]$",
+    "computing pushforward measures via Lebesgue measure"
+  ],
+  "prerequisites": [
+    "Borel sigma algebra",
+    "Lebesgue measure"
+  ],
+  "callout_body": "考虑概率空间$([0,1],\\mathcal{B}([0,1]),m)$其中sigma代数是在闭区间上定义的Borel sigma代数，概率测度此时设定为实数的Lebesgue测度$m$.在此基础上考虑一个符合Bernoulli(p)的随机变量$$Y_2(\\omega):=\\begin{cases}0& 1\\geq \\omega >p\\\\ 1& p\\geq \\omega \\geq 0 \\end{cases}$$此时pushforward测度为$$P_{Y_2}(\\{0\\})=m((p,1])=1-p$$以及$$P_{Y_2}(\\{1\\})=m([0,p])=p$$"
+}

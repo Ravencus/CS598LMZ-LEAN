@@ -1,0 +1,18 @@
+{
+  "problem_id": "lebesgue-equivalent-condition-for-riemann-integrability-lebe",
+  "english_title": "Lebesgue Equivalent Condition for Riemann Integrability, Lebesgue and Vitali 1907",
+  "statement_en": "A bounded function $f$ on the closed interval $[a,b]$ is Riemann integrable if and only if $f$ is continuous almost everywhere on this closed interval.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem bounded_riemann_integrable_iff_ae_continuousWithinAt\n    {a b : ℝ} {f : ℝ → ℝ}\n    (hbounded : ∃ C : ℝ, ∀ x ∈ Set.Icc a b, ‖f x‖ ≤ C) :\n    IntervalIntegrable f volume a b ↔\n      ∀ᵐ x ∂(volume.restrict (Set.Icc a b)), ContinuousWithinAt f (Set.Icc a b) x := by\n  sorry"
+}

@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "problem-22",
+  "big_outcome": "lean_proof",
+  "small_outcome": "instruction_violation",
+  "label": "different_plan",
+  "evidence": "BIG pivots to showing the theorem is false, giving a block counterexample where both original series diverge but the minimum is summable. SMALL instead keeps trying to prove the statement via monotone-series or dyadic condensation lemmas, then outputs a `sorry` proof.",
+  "wall_seconds": 7.05
+}

@@ -1,0 +1,23 @@
+{
+  "id": "caratheodory-extension-theorem",
+  "type": "problem",
+  "source_note": "测度论的基础概念",
+  "english_source_note": "Basic Concepts in Measure Theory",
+  "callout_id": "测度论的基础概念#10",
+  "english_title": "Caratheodory Extension Theorem",
+  "statement_en": "Let $\\mu^{*}:\\mathcal{P}(X)\\to [0,\\infty]$ be an outer measure on $X$, and let $\\mathcal{F}$ be the family of all subsets of $X$ that are $\\mu^{*}$-measurable in the Caratheodory sense. Define $\\mu:\\mathcal{F}\\to [0,+\\infty]$ by restricting the outer measure, namely $\\mu(E)=\\mu^{*}(E)$ for all $E\\in\\mathcal{F}$. Then $\\mathcal{F}$ is a $\\sigma$-algebra, $\\mu$ is a measure on $\\mathcal{F}$, and $(X,\\mathcal{F},\\mu)$ is a measure space.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Caratheodory measurability criterion",
+    "closure properties of measurable sets",
+    "restriction of outer measure"
+  ],
+  "prerequisites": [
+    "outer measure",
+    "sigma-algebra",
+    "countable additivity"
+  ],
+  "callout_body": "如果$\\mu^{*}:\\mathcal{P}(X)\\to [0,\\infty]$是集合$X$上的外测度，$\\mathcal{F}$是一个包含$\\mathcal{P}(X)$当中所有在Cratheodory意义下$\\mu^{*}-$可测的集族。令$\\mu:\\mathcal{F}\\to [0,+\\infty]$是外测度在$\\mathcal{F}$上的限制，即$\\mu(E)=\\mu^{*}(E)$,只要$E\\in \\mathcal{F}$。那么$\\mathcal{F}$是一个$\\sigma-$代数，而$\\mu$是在此代数上的测度，$(X,\\mathcal{F},\\mu)$是一个测度空间。"
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "perron-formula",
+  "english_title": "Perron Formula",
+  "statement_en": "Let $f:\\mathbb{N}\\to \\mathbb{C}$ be a function of subpolynomial growth, meaning that $f(n)\\lesssim_{\\varepsilon,f} n^{\\varepsilon}$ for every natural number $n$ and every $\\varepsilon>0$. Let $F(s)$ denote the Dirichlet series on the half-plane $\\{\\operatorname{Re}(s)>1\\}$ given by $$F(s):=\\sum_{n\\geq 1} \\frac{f(n)}{n^s}.$$ Then for every positive non-integer real number $x$ and every $\\sigma>1$, one has $$\\sum_{n\\leq x}f(n)=\\frac{1}{2\\pi i }\\lim_{T\\to \\infty}\\int_{\\sigma-iT}^{\\sigma+iT}F(s)\\fra",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 5,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Complex.exp', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators Topology Interval\nopen Filter MeasureTheory\n\nnoncomputable section\n\ndef SubpolynomialGrowth (f : ℕ → ℂ) : Prop :=\n  ∀ ε : ℝ, 0 < ε → ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, 1 ≤ n → ‖f n‖ ≤ C * (n : ℝ) ^ ε\n\ndef complexPowReal (x : ℝ) (s : ℂ) : ℂ :=\n  Complex.exp (s * Complex.log (x : ℂ))\n\ndef DirichletSeries (f : ℕ → ℂ) (s : ℂ) : ℂ :=\n  ∑' n : ℕ, if h : 1 ≤ n then f n * Complex.exp (-s * Complex.log (n : ℂ)) else 0\n\ndef PerronVerticalIntegral (F : ℂ → ℂ) (x σ T : ℝ) : ℂ :=\n  ∫ t in (-T)..T,\n    (F ((σ : ℂ) + (t : ℂ) * Complex.I) *\n        complexPowReal x ((σ : ℂ) + (t : ℂ) * Complex.I) /\n        ((σ : ℂ) + (t : ℂ) * Complex.I)) *\n      Complex.I\n\ndef PerronConstant : ℂ :=\n  (1 : ℂ) / ((2 * Real.pi : ℂ) * Complex.I)\n\ntheorem perron_formula_subpolynomial_growth\n    (f : ℕ → ℂ)\n    (hf : SubpolynomialGrowth f)\n    {x σ : ℝ}\n    (hx_pos : 0 < x)\n    (hx_nonint : ¬ ∃ n : ℕ, x = n)\n    (hσ : 1 < σ)\n    {L : ℂ}\n    (hlim :\n      Filter.Tendsto\n        (fun T : ℝ => PerronVerticalIntegral (DirichletSeries f) x σ T)\n        Filter.atTop\n        (nhds L)) :\n    Finset.sum (Finset.Icc 1 (Nat.floor x)) (fun n => f n) = PerronConstant * L := by\n  sorry"
+}

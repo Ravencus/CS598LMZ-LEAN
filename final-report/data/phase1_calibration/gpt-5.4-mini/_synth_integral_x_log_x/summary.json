@@ -1,0 +1,56 @@
+{
+  "problem_id": "_synth_integral_x_log_x",
+  "model": "gpt-5.4-mini",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "wall_seconds": 128.7,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 55.35,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown constant `Real.integral_mul_log`"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 35.72,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown identifier `IntervalIntegral.integral_mul_log`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 23.41,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Real.integral_mul_log`\n"
+    }
+  ]
+}

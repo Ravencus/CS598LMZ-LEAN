@@ -1,0 +1,434 @@
+{
+  "total_callouts": 638,
+  "callouts_by_type": {
+    "note": 357,
+    "tip": 101,
+    "question": 90,
+    "example": 74,
+    "error": 11,
+    "failure": 3,
+    "quote": 2
+  },
+  "per_note": [
+    {
+      "title": "逐项估计",
+      "callout_count": 14
+    },
+    {
+      "title": "分析学基本方法目录1",
+      "callout_count": 11
+    },
+    {
+      "title": "和的积分估计",
+      "callout_count": 8
+    },
+    {
+      "title": "分段估计",
+      "callout_count": 11
+    },
+    {
+      "title": "an epsilon of room",
+      "callout_count": 3
+    },
+    {
+      "title": "函数与序列的上下极限",
+      "callout_count": 17
+    },
+    {
+      "title": "和与积分换序",
+      "callout_count": 10
+    },
+    {
+      "title": "基于分部求和法的和的估计",
+      "callout_count": 6
+    },
+    {
+      "title": "Borel-Cantelli lemma及其应用",
+      "callout_count": 9
+    },
+    {
+      "title": "利用已知的渐近结果求渐近展开的技巧",
+      "callout_count": 1
+    },
+    {
+      "title": "模1均匀分布与Weyl判别",
+      "callout_count": 19
+    },
+    {
+      "title": "approximation to the identity",
+      "callout_count": 7
+    },
+    {
+      "title": "an epsilon of room证明集合为0测度的策略",
+      "callout_count": 6
+    },
+    {
+      "title": "把条件函数展开为新的和或积分然后换序",
+      "callout_count": 5
+    },
+    {
+      "title": "柯西凝聚判别法",
+      "callout_count": 9
+    },
+    {
+      "title": "identity theorem",
+      "callout_count": 10
+    },
+    {
+      "title": "无理测度的定义以及基本的命题",
+      "callout_count": 12
+    },
+    {
+      "title": "Re0微积分1：用牛顿迭代法求算术平方根",
+      "callout_count": 15
+    },
+    {
+      "title": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+      "callout_count": 7
+    },
+    {
+      "title": "用分段估计解决几个序列的极限问题",
+      "callout_count": 3
+    },
+    {
+      "title": "柯西收敛判别",
+      "callout_count": 15
+    },
+    {
+      "title": "基于分部积分法的积分的估计",
+      "callout_count": 2
+    },
+    {
+      "title": "素数倒数和的估计",
+      "callout_count": 6
+    },
+    {
+      "title": "Riemann - Lebesgue lemma的证明",
+      "callout_count": 8
+    },
+    {
+      "title": "证明正弦函数在整数上取值的序列的极限是不存在的",
+      "callout_count": 9
+    },
+    {
+      "title": "把集合问题转换为函数问题",
+      "callout_count": 3
+    },
+    {
+      "title": "Kronecker定理，Dirichlet定理及其应用",
+      "callout_count": 11
+    },
+    {
+      "title": "函数傅里叶展开的Dini判别及其应用",
+      "callout_count": 1
+    },
+    {
+      "title": "从几个极限问题去理解Landau符号",
+      "callout_count": 13
+    },
+    {
+      "title": "黎曼积分与黎曼和的误差",
+      "callout_count": 1
+    },
+    {
+      "title": "Stirling渐近公式及不等式",
+      "callout_count": 2
+    },
+    {
+      "title": "对误差的分析从而改进分段估计",
+      "callout_count": 2
+    },
+    {
+      "title": "Re0微积分2：自然底数e及其快速计算",
+      "callout_count": 16
+    },
+    {
+      "title": "加强收敛性质的条件与手段",
+      "callout_count": 2
+    },
+    {
+      "title": "广义的Riemann - Lebesgue lemma",
+      "callout_count": 1
+    },
+    {
+      "title": "Weierstrass逼近定理的概率途径证明",
+      "callout_count": 15
+    },
+    {
+      "title": "有限测度下各个收敛之间的关系",
+      "callout_count": 5
+    },
+    {
+      "title": "Fubini-Tonelli定理的例子与反例",
+      "callout_count": 9
+    },
+    {
+      "title": "把积分或求和对象视为一个计数函数并展开",
+      "callout_count": 4
+    },
+    {
+      "title": "Etemadi关于强大数定律的证明",
+      "callout_count": 7
+    },
+    {
+      "title": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+      "callout_count": 2
+    },
+    {
+      "title": "对含参数方程根的估计",
+      "callout_count": 11
+    },
+    {
+      "title": "测度论的基础概念",
+      "callout_count": 23
+    },
+    {
+      "title": "自然数的r次幂的部分和估计",
+      "callout_count": 7
+    },
+    {
+      "title": "实分析的复办法",
+      "callout_count": 9
+    },
+    {
+      "title": "函数卷积的基本性质",
+      "callout_count": 8
+    },
+    {
+      "title": "利用连续函数的identity theorem证明函数方程",
+      "callout_count": 4
+    },
+    {
+      "title": "有限测度空间上依测度收敛的等价命题",
+      "callout_count": 5
+    },
+    {
+      "title": "素数定理的一些等价命题",
+      "callout_count": 4
+    },
+    {
+      "title": "制造telescoping sum求和或求乘积",
+      "callout_count": 9
+    },
+    {
+      "title": "给正项级数条件正负号以后级数收敛意味着什么",
+      "callout_count": 3
+    },
+    {
+      "title": "收敛的连乘积的上界估计与糖水不等式",
+      "callout_count": 4
+    },
+    {
+      "title": "部分积的上界估计与Gautschi不等式",
+      "callout_count": 7
+    },
+    {
+      "title": "和的估计的一个典型案例",
+      "callout_count": 2
+    },
+    {
+      "title": "矩阵交换次序特征多项式不变",
+      "callout_count": 6
+    },
+    {
+      "title": "Lebesgue微分定理",
+      "callout_count": 2
+    },
+    {
+      "title": "利用Stolz定理确定递归序列的渐近系数",
+      "callout_count": 4
+    },
+    {
+      "title": "两个非负不增序列互相竞争从而使得级数发散",
+      "callout_count": 13
+    },
+    {
+      "title": "一个递推序列的渐近问题",
+      "callout_count": 1
+    },
+    {
+      "title": "关于序列极限的公开问题",
+      "callout_count": 9
+    },
+    {
+      "title": "黎曼积分的定义以及黎曼可积的判别",
+      "callout_count": 10
+    },
+    {
+      "title": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+      "callout_count": 8
+    },
+    {
+      "title": "揭露全纯以及亚纯函数信息的Liouville原则",
+      "callout_count": 6
+    },
+    {
+      "title": "Leibniz收敛判断",
+      "callout_count": 3
+    },
+    {
+      "title": "Wintner mean value theorem",
+      "callout_count": 7
+    },
+    {
+      "title": "一个竞赛中的和的渐近展开问题",
+      "callout_count": 3
+    },
+    {
+      "title": "由一个级数收敛证明另一个有关级数的收敛问题",
+      "callout_count": 11
+    },
+    {
+      "title": "Silverman–Toeplitz定理",
+      "callout_count": 4
+    },
+    {
+      "title": "黎曼可积的Lebesgue判别",
+      "callout_count": 1
+    },
+    {
+      "title": "Kummer判别：对多种比值判别变形的统一",
+      "callout_count": 7
+    },
+    {
+      "title": "判断序列在区间内稠密的几个命题",
+      "callout_count": 13
+    },
+    {
+      "title": "随机变量期望收敛导出几乎处处收敛的一个条件",
+      "callout_count": 4
+    },
+    {
+      "title": "证明函数项级数几乎处处绝对收敛",
+      "callout_count": 3
+    },
+    {
+      "title": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+      "callout_count": 5
+    },
+    {
+      "title": "矩阵与算子的迹",
+      "callout_count": 7
+    },
+    {
+      "title": "Euler-Maclaurin求和公式在和的估计当中的应用",
+      "callout_count": 2
+    },
+    {
+      "title": "通过pi的无理测度证明级数收敛2",
+      "callout_count": 5
+    },
+    {
+      "title": "满足特定条件的两个集合尺寸的比例",
+      "callout_count": 3
+    },
+    {
+      "title": "一个交错的双重级数的级数的收敛性判别",
+      "callout_count": 1
+    },
+    {
+      "title": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+      "callout_count": 2
+    },
+    {
+      "title": "对Dirichlet判别的一个调整",
+      "callout_count": 6
+    },
+    {
+      "title": "n个连续的阶乘之积有多少个因子",
+      "callout_count": 7
+    },
+    {
+      "title": "不适用于逐项估计求和的极限的例子",
+      "callout_count": 1
+    },
+    {
+      "title": "样本期望的渐近展开系数",
+      "callout_count": 6
+    },
+    {
+      "title": "带根号的三项迭代序列极限的存在性问题",
+      "callout_count": 2
+    },
+    {
+      "title": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+      "callout_count": 8
+    },
+    {
+      "title": "对自变量进行二进制展开求积分",
+      "callout_count": 8
+    },
+    {
+      "title": "傅里叶逆变换公式",
+      "callout_count": 2
+    },
+    {
+      "title": "通过重整来证明表达式的非负性",
+      "callout_count": 0
+    },
+    {
+      "title": "整数格点与一个带取整函数的和的极限问题",
+      "callout_count": 7
+    },
+    {
+      "title": "从一个求极限问题引入Weyl判别",
+      "callout_count": 2
+    },
+    {
+      "title": "模1均匀分布序列对序列差分的要求",
+      "callout_count": 3
+    },
+    {
+      "title": "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+      "callout_count": 1
+    },
+    {
+      "title": "复三角多项式在Lp空间中的稠密性",
+      "callout_count": 2
+    },
+    {
+      "title": "Cantor集以及它的性质",
+      "callout_count": 2
+    },
+    {
+      "title": "关于log的一个积分",
+      "callout_count": 1
+    },
+    {
+      "title": "利用Dirichlet卷积法解决几个数论中求和问题",
+      "callout_count": 1
+    },
+    {
+      "title": "函数积分的单调性",
+      "callout_count": 5
+    },
+    {
+      "title": "单调有界函数几乎处处连续",
+      "callout_count": 2
+    },
+    {
+      "title": "满足这种函数极限性质的函数是几乎处处为0的",
+      "callout_count": 2
+    },
+    {
+      "title": "n维球体的体积",
+      "callout_count": 4
+    },
+    {
+      "title": "被求和对象的值U形分布时和的估计",
+      "callout_count": 2
+    },
+    {
+      "title": "判断剧烈震荡的序列部分和的有界性问题",
+      "callout_count": 6
+    },
+    {
+      "title": "渐近密度为p的整数子集上黎曼和的极限",
+      "callout_count": 3
+    },
+    {
+      "title": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+      "callout_count": 2
+    }
+  ]
+}

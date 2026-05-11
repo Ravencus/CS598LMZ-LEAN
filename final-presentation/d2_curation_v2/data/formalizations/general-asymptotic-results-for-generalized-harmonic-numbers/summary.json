@@ -1,0 +1,24 @@
+{
+  "problem_id": "general-asymptotic-results-for-generalized-harmonic-numbers",
+  "english_title": "General Asymptotic Results for Generalized Harmonic Numbers",
+  "statement_en": "For $r>0$ with $r \\neq 1$,\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).$$\nFor $r=1$,\n$$\\sum_{k=1}^n k^{-1}=\\gamma+\\log(n) + \\frac{1}{2} n^{-1}-\\frac{1}{12} n^{-2}+O\\left(n^{-4}\\right).$$",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter Asymptotics\n\nnoncomputable def partialPowerSum (r : ℝ) (n : ℕ) : ℝ :=\n  ∑ k ∈ Finset.Icc 1 n, Real.rpow (k : ℝ) (-r)\n\nnoncomputable def mainTerm (ζ : ℝ → ℝ) (r : ℝ) (n : ℕ) : ℝ :=\n  ζ r\n    + (1 / (1 - r)) * Real.rpow (n : ℝ) (1 - r)\n    + (1 / 2 : ℝ) * Real.rpow (n : ℝ) (-r)\n    - (r / 12) * Real.rpow (n : ℝ) (-r - 1)\n\nnoncomputable def harmonicMainTerm (γ : ℝ) (n : ℕ) : ℝ :=\n  γ + Real.log (n : ℝ)\n    + (1 / 2 : ℝ) * Real.rpow (n : ℝ) (-1 : ℝ)\n    - (1 / 12 : ℝ) * Real.rpow (n : ℝ) (-2 : ℝ)\n\ntheorem generalized_harmonic_sum_asymptotic\n    (ζ : ℝ → ℝ) (γ : ℝ) :\n    (∀ r : ℝ, 0 < r → r ≠ 1 →\n      (fun n : ℕ => partialPowerSum r n - mainTerm ζ r n) =O[atTop]\n        (fun n : ℕ => Real.rpow (n : ℝ) (-r - 3))) ∧\n    ((fun n : ℕ => partialPowerSum 1 n - harmonicMainTerm γ n) =O[atTop]\n      (fun n : ℕ => Real.rpow (n : ℝ) (-4 : ℝ))) := by\n  sorry"
+}

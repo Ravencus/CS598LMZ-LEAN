@@ -1,0 +1,239 @@
+{
+  "note_title": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#1",
+      "type": "question",
+      "title": "问题0：（北师大2025夏令营）",
+      "body": "Lebesgue可测函数列$||f_n||_{L^1(\\mathbb{R})}\\leq \\frac{1}{4^n}$证明$f_n(x)$几乎处处收敛到0。",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#1",
+        "classification": "problem",
+        "english_title": "Problem 0: Beijing Normal University 2025 Summer Camp",
+        "if_problem": {
+          "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of Lebesgue measurable functions such that \\(\\|f_n\\|_{L^1(\\mathbb{R})} \\leq \\frac{1}{4^n}\\). Prove that \\(f_n(x) \\to 0\\) almost everywhere.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "monotone convergence theorem",
+            "absolute convergence almost everywhere",
+            "summability of \\(L^1\\) norms"
+          ],
+          "prerequisites": [
+            "Lebesgue integration",
+            "almost everywhere convergence",
+            "monotone convergence theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#2",
+      "type": "tip",
+      "title": "想法1.2.l",
+      "body": "如果函数列$f_n(x)$构成的含参数级数$\\sum_{n\\geq 1}f_n(x)$是**几乎处处绝对收敛**的，那么由于绝对收敛的必要条件，$f_n(x)$就是几乎处处收敛到0。\n\n尝试证明$\\sum_{n\\geq 1}f_n(x)$几乎处处绝对收敛的途径，可以从证明$\\sum_{n\\geq 1}|f_n(x)|$可积来证明。因为$\\int_{\\mathbb{R}}\\sum_{n\\geq 1}|f_n(x)|\\,dx <\\infty$，可以导出$\\sum_{n\\geq 1}|f_n(x)|$几乎处处有限，也就是几乎处处绝对收敛。\n\n证明$\\sum_{n\\geq 1}|f_n(x)|$可积这件事，**单调收敛定理**则可以排上用场，单调收敛可以保证积分与级数可以交换次序，从而$$\\int_{\\mathbb{R}} \\sum_{n\\geq 1}|f_n(x)|\\,dx = \\sum_{n\\geq 1}\\int_{\\mathbb{R}}|f_n(x)|\\,dx = \\sum_{n\\geq 1}||f_n||_{L^1}$$由“问题0”的条件，右边的级数是收敛的，于是整个逻辑可以成立，从而函数列$f_n(x)$几乎处处收敛到0。",
+      "position_char": 751,
+      "position_line": 18,
+      "classification_result": {
+        "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#2",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.2.l",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Prove almost everywhere convergence via absolute summability",
+          "summary_en": "To show \\(f_n(x) \\to 0\\) almost everywhere, prove that the series \\(\\sum_{n\\ge 1} f_n(x)\\) converges absolutely almost everywhere. A standard route is to show \\(\\sum_{n\\ge 1} |f_n(x)|\\) is integrable by exchanging sum and integral using the monotone convergence theorem.",
+          "applicability": "Applies when one has a sequence of measurable functions with summable \\(L^1\\) norms or other hypotheses implying integrability of \\(\\sum |f_n|\\)."
+        }
+      }
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#3",
+      "type": "note",
+      "title": "引理1.2.2：单调收敛定理(Beppo-Levi定理)",
+      "body": "$(\\Sigma,\\mathcal{F},\\mu)$是一个测度空间，序列$\\{f_n\\}_{n=1}^{\\infty}$是一个定义在$X\\in \\Sigma$上的逐点不减，非负$(\\Sigma,\\mathcal{B}_{\\overline{\\mathbb{R}}_{\\geq 0}})$的可测函数列。那么这个函数列逐点的上极限，即$$\\sup_{n\\geq 1}f_n:x\\mapsto \\sup_{n\\geq 1} f_n(x)$$也是一个$(\\Sigma,\\mathcal{B}_{\\overline{\\mathbb{R}}_{\\geq 0}})$可测函数，并且$$\\sup_{n\\geq 1}\\int_{X} f_n\\,d\\mu = \\int_{X}\\sup_{n\\geq 1} f_n\\,d\\mu$$",
+      "position_char": 1302,
+      "position_line": 26,
+      "classification_result": {
+        "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#3",
+        "classification": "problem",
+        "english_title": "Lemma 1.2.2: Monotone Convergence Theorem (Beppo-Levi Theorem)",
+        "if_problem": {
+          "statement_en": "Let \\((\\Sigma, \\mathcal{F}, \\mu)\\) be a measure space, and let \\(\\{f_n\\}_{n=1}^{\\infty}\\) be a sequence of nonnegative measurable functions on \\(X \\in \\Sigma\\) that is pointwise nondecreasing. Then the pointwise supremum\n\\[\n\\sup_{n\\geq 1} f_n : x \\mapsto \\sup_{n\\geq 1} f_n(x)\n\\]\nis measurable, and\n\\[\n\\sup_{n\\geq 1} \\int_X f_n\\, d\\mu = \\int_X \\sup_{n\\geq 1} f_n\\, d\\mu.\n\\]",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "monotone convergence",
+            "measurability of pointwise supremum"
+          ],
+          "prerequisites": [
+            "measure spaces",
+            "measurable functions",
+            "Lebesgue integration"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#4",
+      "type": "note",
+      "title": "命题2.1.1",
+      "body": "Lebesgue可测函数列$||f_n||_{L^p(\\mathbb{R})}^p\\leq a_n$其中$p\\geq 1$，并且非负序列$a_n$满足$\\sum_{n\\geq 1}a_n$收敛，那么$f_n(x)$几乎处处收敛到0。",
+      "position_char": 3102,
+      "position_line": 47,
+      "classification_result": {
+        "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#4",
+        "classification": "problem",
+        "english_title": "Proposition 2.1.1",
+        "if_problem": {
+          "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of Lebesgue measurable functions such that \\(\\|f_n\\|_{L^p(\\mathbb{R})}^p \\leq a_n\\), where \\(p \\geq 1\\), and let \\(\\{a_n\\}\\) be a nonnegative sequence with \\(\\sum_{n\\geq 1} a_n\\) convergent. Then \\(f_n(x) \\to 0\\) almost everywhere.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "reduction to the \\(L^1\\) case via \\(|f_n|^p\\)",
+            "summability of norms",
+            "almost everywhere convergence criterion"
+          ],
+          "prerequisites": [
+            "\\(L^p\\) spaces",
+            "Lebesgue measurable functions",
+            "almost everywhere convergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#5",
+      "type": "example",
+      "title": "例子2.2.1",
+      "body": "参考[[打字机函数列（type writer sequence）]]，这就是一个$L^p$收敛但并非几乎处处收敛的可测函数列的例子，并且这个函数列不但不是几乎处处收敛，它在任何一个点都不收敛到0。",
+      "position_char": 4043,
+      "position_line": 60,
+      "classification_result": {
+        "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#5",
+        "classification": "problem",
+        "english_title": "Example 2.2.1",
+        "if_problem": {
+          "statement_en": "The typewriter sequence provides an example of a sequence of measurable functions that converges in \\(L^p\\) but does not converge almost everywhere; in fact, it does not converge to \\(0\\) at any point.",
+          "problem_type": "counterexample",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "construction of the typewriter sequence",
+            "distinguishing \\(L^p\\) convergence from almost everywhere convergence"
+          ],
+          "prerequisites": [
+            "\\(L^p\\) convergence",
+            "almost everywhere convergence",
+            "examples of measurable function sequences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#6",
+      "type": "note",
+      "title": "命题2.3.1",
+      "body": "Lebesgue可测的函数列满足：\n1. $||f_n||_{L^p(\\mathbb{R})}\\to 0$\n2. $f_n$非负，且对于几乎所有$x$逐点单调递减\n\n那么函数列几乎处处收敛到0。",
+      "position_char": 4296,
+      "position_line": 67,
+      "classification_result": {
+        "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#6",
+        "classification": "problem",
+        "english_title": "Proposition 2.3.1",
+        "if_problem": {
+          "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of Lebesgue measurable functions such that:\n1. \\(\\|f_n\\|_{L^p(\\mathbb{R})} \\to 0\\);\n2. \\(f_n\\) is nonnegative and pointwise monotone decreasing for almost every \\(x\\).\nThen \\(f_n(x) \\to 0\\) almost everywhere.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "pointwise monotonicity",
+            "identification of the pointwise limit",
+            "contradiction using \\(L^p\\) norm convergence"
+          ],
+          "prerequisites": [
+            "\\(L^p\\) spaces",
+            "almost everywhere convergence",
+            "monotone sequences of functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#7",
+      "type": "note",
+      "title": "命题2.4.1",
+      "body": "设$f_n$是概率空间$(\\Omega,\\mathcal{F},P)$上的一个随机变量$||f_n||_{L^2}\\to 0$，并且$f_n$的方差形成的级数收敛那么此随机变量几乎处处收敛到0。",
+      "position_char": 4755,
+      "position_line": 80,
+      "classification_result": {
+        "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#7",
+        "classification": "problem",
+        "english_title": "Proposition 2.4.1",
+        "if_problem": {
+          "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of random variables on a probability space \\((\\Omega, \\mathcal{F}, P)\\) such that \\(\\|f_n\\|_{L^2} \\to 0\\), and suppose the series of variances \\(\\sum_{n\\ge 1} \\mathrm{Var}(f_n)\\) converges. Then \\(f_n\\) converges to \\(0\\) almost surely.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "probability theory",
+          "key_techniques": [
+            "variance summability",
+            "\\(L^2\\) control",
+            "almost sure convergence criteria"
+          ],
+          "prerequisites": [
+            "probability spaces",
+            "random variables",
+            "variance and expectation",
+            "almost sure convergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#8",
+      "type": "example",
+      "title": "例子2.4.2：打字机函数列不满足命题2.4.1的条件",
+      "body": "我们已经知道对于打字机函数列而言$f_n$对任意的$L^p$范数都是收敛到0的。此处的关键在于计算这个函数列的方差。由于$$V(f_n)=E(f^2_n)-(E(f_n))^2=\\frac{1}{2^k}-\\frac{1}{4^k}$$对任意的$2^k\\leq n<2^{k+1}$成立。那么由于$$V(f_n)\\geq \\frac{1}{2^{k+1}}\\geq \\frac{1}{2n}$$因此$\\sum_{n\\geq 1}V(f_n)$不是一个收敛的级数，因此打字机数列并不满足“命题2.4.1”对方差的要求。",
+      "position_char": 5577,
+      "position_line": 92,
+      "classification_result": {
+        "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#8",
+        "classification": "problem",
+        "english_title": "Example 2.4.2: The Typewriter Sequence Does Not Satisfy the Hypotheses of Proposition 2.4.1",
+        "if_problem": {
+          "statement_en": "Although the typewriter sequence converges to \\(0\\) in every \\(L^p\\) norm, it does not satisfy the variance condition in Proposition 2.4.1. Indeed, for every \\(2^k \\leq n < 2^{k+1}\\),\n\\[\n\\mathrm{Var}(f_n)=E(f_n^2)-(E(f_n))^2=\\frac{1}{2^k}-\\frac{1}{4^k},\n\\]\nso\n\\[\n\\mathrm{Var}(f_n) \\geq \\frac{1}{2^{k+1}} \\geq \\frac{1}{2n}.\n\\]\nHence \\(\\sum_{n\\geq 1} \\mathrm{Var}(f_n)\\) diverges, so the typewriter sequence does not satisfy the variance hypothesis of Proposition 2.4.1.",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "variance computation",
+            "comparison test for divergence",
+            "analysis of the typewriter sequence"
+          ],
+          "prerequisites": [
+            "variance of random variables",
+            "series divergence tests",
+            "typewriter sequence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 0: Beijing Normal University 2025 Summer Camp\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\\\(\\\\{f_n\\\\}\\\\) be a sequence of Lebesgue measurable functions such that \\\\(\\\\|f_n\\\\|_{L^1(\\\\mathbb{R})} \\\\leq \\\\frac{1}{4^n}\\\\). Prove that \\\\(f_n(x) \\\\to 0\\\\) almost everywhere.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"monotone convergence theorem\",\n        \"absolute convergence almost everywhere\",\n        \"summability of \\\\(L^1\\\\) norms\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue integration\",\n        \"almost everywhere convergence\",\n        \"monotone convergence theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.2.l\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Prove almost everywhere convergence via absolute summability\",\n      \"summary_en\": \"To show \\\\(f_n(x) \\\\to 0\\\\) almost everywhere, prove that the series \\\\(\\\\sum_{n\\\\ge 1} f_n(x)\\\\) converges absolutely almost everywhere. A standard route is to show \\\\(\\\\sum_{n\\\\ge 1} |f_n(x)|\\\\) is integrable by exchanging sum and integral using the monotone convergence theorem.\",\n      \"applicability\": \"Applies when one has a sequence of measurable functions with summable \\\\(L^1\\\\) norms or other hypotheses implying integrability of \\\\(\\\\sum |f_n|\\\\).\"\n    }\n  },\n  {\n    \"id\": \"函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.2.2: Monotone Convergence Theorem (Beppo-Levi Theorem)\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\\\((\\\\Sigma, \\\\mathcal{F}, \\\\mu)\\\\) be a measure space, and let \\\\(\\\\{f_n\\\\}_{n=1}^{\\\\infty}\\\\) be a sequence of nonnegative measurable functions on \\\\(X \\\\in \\\\Sigma\\\\) that is pointwise nondecreasing. Then the pointwise supremum\\n\\\\[\\n\\\\sup_{n\\\\geq 1} f_n : x \\\\mapsto \\\\sup_{n\\\\geq 1} f_n(x)\\n\\\\]\\nis measurable, and\\n\\\\[\\n\\\\sup_{n\\\\geq 1} \\\\int_X f_n\\\\, d\\\\mu = \\\\int_X \\\\sup_{n\\\\geq 1} f_n\\\\, d\\\\mu.\\n\\\\]\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"monotone convergence\",\n        \"measurability of pointwise supremum\"\n      ],\n      \"prerequisites\": [\n        \"measure spaces\",\n        \"measurable functions\",\n        \"Lebesgue integration\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\\\(\\\\{f_n\\\\}\\\\) be a sequence of Lebesgue measurable functions such that \\\\(\\\\|f_n\\\\|_{L^p(\\\\mathbb{R})}^p \\\\leq a_n\\\\), where \\\\(p \\\\geq 1\\\\), and let \\\\(\\\\{a_n\\\\}\\\\) be a nonnegative sequence with \\\\(\\\\sum_{n\\\\geq 1} a_n\\\\) convergent. Then \\\\(f_n(x) \\\\to 0\\\\) almost everywhere.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"reduction to the \\\\(L^1\\\\) case via \\\\(|f_n|^p\\\\)\",\n        \"summability of norms\",\n        \"almost everywhere convergence criterion\"\n      ],\n      \"prerequisites\": [\n        \"\\\\(L^p\\\\) spaces\",\n        \"Lebesgue measurable functions\",\n        \"almost everywhere convergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2.2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"The typewriter sequence provides an example of a sequence of measurable functions that converges in \\\\(L^p\\\\) but does not converge almost everywhere; in fact, it does not converge to \\\\(0\\\\) at any point.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"construction of the typewriter sequence\",\n        \"distinguishing \\\\(L^p\\\\) convergence from almost everywhere convergence\"\n      ],\n      \"prerequisites\": [\n        \"\\\\(L^p\\\\) convergence\",\n        \"almost everywhere convergence\",\n        \"examples of measurable function sequences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.3.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\\\(\\\\{f_n\\\\}\\\\) be a sequence of Lebesgue measurable functions such that:\\n1. \\\\(\\\\|f_n\\\\|_{L^p(\\\\mathbb{R})} \\\\to 0\\\\);\\n2. \\\\(f_n\\\\) is nonnegative and pointwise monotone decreasing for almost every \\\\(x\\\\).\\nThen \\\\(f_n(x) \\\\to 0\\\\) almost everywhere.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"pointwise monotonicity\",\n        \"identification of the pointwise limit\",\n        \"contradiction using \\\\(L^p\\\\) norm convergence\"\n      ],\n      \"prerequisites\": [\n        \"\\\\(L^p\\\\) spaces\",\n        \"almost everywhere convergence\",\n        \"monotone sequences of functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.4.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\\\(\\\\{f_n\\\\}\\\\) be a sequence of random variables on a probability space \\\\((\\\\Omega, \\\\mathcal{F}, P)\\\\) such that \\\\(\\\\|f_n\\\\|_{L^2} \\\\to 0\\\\), and suppose the series of variances \\\\(\\\\sum_{n\\\\ge 1} \\\\mathrm{Var}(f_n)\\\\) converges. Then \\\\(f_n\\\\) converges to \\\\(0\\\\) almost surely.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"variance summability\",\n        \"\\\\(L^2\\\\) control\",\n        \"almost sure convergence criteria\"\n      ],\n      \"prerequisites\": [\n        \"probability spaces\",\n        \"random variables\",\n        \"variance and expectation\",\n        \"almost sure convergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2.4.2: The Typewriter Sequence Does Not Satisfy the Hypotheses of Proposition 2.4.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Although the typewriter sequence converges to \\\\(0\\\\) in every \\\\(L^p\\\\) norm, it does not satisfy the variance condition in Proposition 2.4.1. Indeed, for every \\\\(2^k \\\\leq n < 2^{k+1}\\\\),\\n\\\\[\\n\\\\mathrm{Var}(f_n)=E(f_n^2)-(E(f_n))^2=\\\\frac{1}{2^k}-\\\\frac{1}{4^k},\\n\\\\]\\nso\\n\\\\[\\n\\\\mathrm{Var}(f_n) \\\\geq \\\\frac{1}{2^{k+1}} \\\\geq \\\\frac{1}{2n}.\\n\\\\]\\nHence \\\\(\\\\sum_{n\\\\geq 1} \\\\mathrm{Var}(f_n)\\\\) diverges, so the typewriter sequence does not satisfy the variance hypothesis of Proposition 2.4.1.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"variance computation\",\n        \"comparison test for divergence\",\n        \"analysis of the typewriter sequence\"\n      ],\n      \"prerequisites\": [\n        \"variance of random variables\",\n        \"series divergence tests\",\n        \"typewriter sequence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

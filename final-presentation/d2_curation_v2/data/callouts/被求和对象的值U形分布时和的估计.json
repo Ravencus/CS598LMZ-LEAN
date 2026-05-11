@@ -1,0 +1,25 @@
+{
+  "note_title": "被求和对象的值U形分布时和的估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "被求和对象的值U形分布时和的估计#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "$$S_n:=\\sum_{k=2}^{n-1}\\frac{1}{(n-k)\\log(k)}$$求$$\\lim_{n\\to \\infty}S_n$$",
+      "position_char": 43,
+      "position_line": 7
+    },
+    {
+      "id": "被求和对象的值U形分布时和的估计#2",
+      "type": "question",
+      "title": "问题2.1",
+      "body": "求极限$$\\lim_{n\\to \\infty} \\frac{\\log^2(n)}{n}\\sum_{k=2}^{n-2}\\frac{1}{\\log(k)\\log(n-k)}$$",
+      "position_char": 1745,
+      "position_line": 34
+    }
+  ]
+}

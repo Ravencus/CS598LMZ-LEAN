@@ -1,0 +1,44 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "Unknown identifier `frequently_iff`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_cbbd9afe8b.lean",
+      "line": 17,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown identifier `frequently_iff`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_cbbd9afe8b.lean",
+      "line": 25,
+      "column": 31,
+      "severity": "error",
+      "message": "Function expected at\n  f - fun x => 0\nbut this term has type\n  ?m.105\n\nNote: Expected a function because this term is being applied to the argument\n  z"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_cbbd9afe8b.lean",
+      "line": 26,
+      "column": 17,
+      "severity": "error",
+      "message": "Unknown identifier `EqOn`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_cbbd9afe8b.lean",
+      "line": 27,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `DifferentiableOn.eqOn_of_preconnected_of_frequently_eq`\n"
+    }
+  ]
+}

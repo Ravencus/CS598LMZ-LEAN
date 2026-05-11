@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "big_outcome": "lean_proof",
+  "small_outcome": "wall_budget_exceeded",
+  "label": "same_plan_search_diff",
+  "evidence": "BIG succeeded by identifying the existing Mathlib/API route `hx_alg.hasIrrationalityMeasure_two hx_irr`. SMALL only tried `#check` guesses such as `Real.irrationality_measure_two`, `Real.irrationalityMeasure`, and `HasIrrationalityMeasure`, then timed out without finding the applicable theorem.",
+  "wall_seconds": 5.39
+}

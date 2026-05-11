@@ -1,0 +1,21 @@
+{
+  "id": "example-1-an-analogy",
+  "type": "problem",
+  "source_note": "分段估计",
+  "english_source_note": "Piecewise Estimates",
+  "callout_id": "分段估计#2",
+  "english_title": "Example 1: An Analogy",
+  "statement_en": "Let \\(\\text{B}:=\\{1,2,3\\}\\) and \\(\\text{H}:=\\{4,5,6\\}\\). We want to order these two sets to form sequences \\(b_1,b_2,b_3\\) and \\(h_1,h_2,h_3\\) so that \\[b_1h_1+b_2h_2+b_3h_3\\] is minimized.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "combinatorics",
+  "key_techniques": [
+    "rearrangement principle",
+    "pairing largest with smallest"
+  ],
+  "prerequisites": [
+    "permutations",
+    "basic inequalities"
+  ],
+  "callout_body": "现在有两组数$\\text{B}:=\\{1,2,3\\},\\text{H}:=\\{4,5,6\\}$,我们现在需要给$A,B$这两个集合一个排序，使得形成一个序列$b_1,b_2,b_3$以及$h_1,h_2,h_3$使得$$b_1h_1+b_2h_2+b_3h_3$$最小。"
+}

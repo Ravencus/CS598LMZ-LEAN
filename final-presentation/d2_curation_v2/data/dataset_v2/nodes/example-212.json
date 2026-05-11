@@ -1,0 +1,21 @@
+{
+  "id": "example-212",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#6",
+  "english_title": "Example 2.1.2",
+  "statement_en": "Let $x_n:=-1$ and $y_n:=(-1)^n$. Then $x_ny_n=(-1)^{n+1}$, so $$\\limsup_{n\\to \\infty}x_ny_n=1,\\qquad \\liminf_{n\\to \\infty}x_ny_n=-1.$$ But at the same time $$\\limsup_{n\\to \\infty} x_n\\limsup_{n\\to \\infty} y_n=-1,\\qquad \\liminf_{n\\to \\infty}x_n\\liminf_{n\\to \\infty}y_n=1.$$ Therefore, after dropping the nonnegativity assumption, the inequalities in Proposition 2.1.1 fail.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "construct a sign-changing counterexample",
+    "direct computation of limsup and liminf"
+  ],
+  "prerequisites": [
+    "limit superior and limit inferior",
+    "alternating sequences"
+  ],
+  "callout_body": "$x_n:=-1,y_n:=(-1)^{n}$此时由于$x_ny_n = (-1)^{n+1}$因此$$\\limsup_{n\\to \\infty}x_ny_n =\\liminf_{n\\to \\infty}x_ny_n=1$$不过与此同$$\\limsup_{n\\to \\infty} x_n\\limsup_{n\\to \\infty} y_n=-1,\\liminf_{n\\to \\infty}x_n\\liminf_{n\\to \\infty}y_n=1$$因此在失去非负性的条件以后，“命题2.1.1”中的不等式不成立。"
+}

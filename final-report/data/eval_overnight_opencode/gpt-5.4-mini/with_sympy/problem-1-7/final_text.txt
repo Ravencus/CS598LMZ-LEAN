@@ -1,0 +1,2 @@
+I’m checking for any local proof patterns first, then I’ll try the cleanest asymptotic argument in Lean.
+I’m probing Mathlib for the relevant sine asymptotic lemmas before committing to a proof shape.

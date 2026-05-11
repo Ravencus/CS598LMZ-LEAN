@@ -1,0 +1,34 @@
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  have key : ∀ M : ℕ, 2 ≤ M → 
+      Finset.sum (Finset.Icc 2 M) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - 1/(M : ℚ) := by
+    intro M hM
+    induction M with
+    | zero => omega
+    | succ k ih =>
+      by_cases hk : 2 ≤ k
+      · rw [Finset.sum_Icc_succ_top (by omega : 2 ≤ k + 1)]
+        rw [ih hk]
+        have hk0 : (k : ℚ) ≠ 0 := by
+          have : 0 < k := by omega
+          exact_mod_cast this.ne'
+        have hk1 : ((k + 1 : ℕ) : ℚ) ≠ 0 := by
+          have : 0 < k + 1 := by omega
+          exact_mod_cast this.ne'
+        push_cast
+        field_simp
+        ring
+      · interval_cases k
+        · omega
+        · rw [show (1 + 1 : ℕ) = 2 from rfl]
+          rw [Finset.Icc_self]
+          simp
+          norm_num
+  rw [key N hN]
+  have hN0 : 0 < (N : ℚ) := by exact_mod_cast (by omega : 0 < N)
+  have : 0 < 1/(N : ℚ) := by positivity
+  linarith

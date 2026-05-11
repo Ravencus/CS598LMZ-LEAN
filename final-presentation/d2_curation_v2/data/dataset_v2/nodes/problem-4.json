@@ -1,0 +1,23 @@
+{
+  "id": "problem-4",
+  "type": "problem",
+  "source_note": "n个连续的阶乘之积有多少个因子",
+  "english_source_note": "How Many Divisors in a Product of n Consecutive Factorials",
+  "callout_id": "n个连续的阶乘之积有多少个因子#7",
+  "english_title": "Problem 4",
+  "statement_en": "Estimate $f(x)-\\theta(x)$ with error term required to be $o(x)$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "comparison of related prime sums",
+    "asymptotic estimation",
+    "reduction to Chebyshev theta function"
+  ],
+  "prerequisites": [
+    "Chebyshev theta function",
+    "prime-sum asymptotics",
+    "asymptotic notation"
+  ],
+  "callout_body": "估计$f(x)-\\theta(x)$的精度要求为$o(x)$。"
+}

@@ -1,0 +1,58 @@
+{
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 67.9,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 20.88,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Invalid field `exists_pos_forall_le_rat_sub_of_irrational`: The environment does not contain `Exists.exists_pos_forall_le_rat_sub_of_irrational`, so it is not possible to project the field `exists_pos"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 17.66,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown constant `IsAlgebraic.exists_pos_forall_le_rat_sub_of_irrational`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 22.19,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": true,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+["cauchy-condensation-test-hub", "piecewise-estimates-hub", "term-by-term-estimates-hub"]
+- cauchy-condensation-test-hub: The natural route is to use dyadic/block decomposition for nonnegative nonincreasing sequences, translating divergence of monotone series into lower bounds on block contributions.
+- piecewise-estimates-hub: The proof would split the index set into regions/blocks where one of `α n` or `β n` controls the minimum, then estimate those pieces separately.
+- term-by-term-estimates-hub: The key inequalities involve comparing each term `min (α n) (β n)` with simpler termwise bounds derived from `α n` and `β n`, then summing those estimates.

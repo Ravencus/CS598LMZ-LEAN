@@ -1,0 +1,22 @@
+{
+  "id": "problem-31-2",
+  "type": "problem",
+  "source_note": "对含参数方程根的估计",
+  "english_source_note": "Estimates for Roots of Parameterized Equations",
+  "callout_id": "对含参数方程根的估计#7",
+  "english_title": "Problem 3.1",
+  "statement_en": "Let the \\(N(s)\\) positive roots of \\(\\cos(x)=sx\\) be ordered as\n\\\\[\nx_1<x_2<\\\\cdots<x_{N(s)}.\n\\\\]\nProve that\n\\\\[\n\\\\lim_{s\\\to 0^{+}}s^2\\\\sum_{k=1}^{N(s)}\\\\frac{1}{(x_k-(k-1/2)\\\\pi)^2}=\\\\frac{1}{2}.\n\\\\]",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "local expansion of roots near \\u005c((k-1/2)\\\\pi\\u005c)",
+    "Tannery's theorem and cutoff estimates"
+  ],
+  "prerequisites": [
+    "implicit function theorem",
+    "series convergence",
+    "asymptotic notation"
+  ],
+  "callout_body": "设$\\cos(x)=sx$的$N(s)$个正根按照顺序排列为$$x_1<x_2<\\cdots<x_{N(s)}$$证明$$\\lim_{s\\to 0^{+}}s^2\\sum_{k=1}^{N(s)}\\frac{1}{(x_k-(k-1/2)\\pi)^2}=\\frac{1}{2}$$"
+}

@@ -1,0 +1,58 @@
+{
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "model": "claude-opus-4-7",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 358.5,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 108.57,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": true,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 153.85,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": true,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 89.12,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": true,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 8,
+      "first_error": "unexpected identifier; expected command"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "problem-41",
+  "type": "problem",
+  "source_note": "整数格点与一个带取整函数的和的极限问题",
+  "english_source_note": "A Limit Problem for Lattice Points and Floor Sums",
+  "callout_id": "整数格点与一个带取整函数的和的极限问题#7",
+  "english_title": "Problem 4.1",
+  "statement_en": "Find $$\\lim_{n\\to \\infty} \\frac{1}{n^3}\\sum_{i,j,k\\leq n} \\left\\lfloor \\frac{i+j+2k}{n}\\right\\rfloor.$$",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "multivariable Riemann sum approximation",
+    "floor function averaging",
+    "lattice point counting in three dimensions"
+  ],
+  "prerequisites": [
+    "multiple integrals",
+    "limits of sequences",
+    "properties of the floor function"
+  ],
+  "callout_body": "求$$\\lim_{n\\to \\infty} \\frac{1}{n^3}\\sum_{i,j,k\\leq n} \\left\\lfloor \\frac{i+j+2k}{n}\\right\\rfloor$$"
+}

@@ -1,0 +1,6 @@
+I’m loading the Lean workflow and then I’ll test a minimal proof shape against the checker.
+I’m checking for existing Mathlib convergence lemmas first, because this proof is likely to hinge on a standard summability theorem.
+I found a likely built-in Dirichlet test theorem; I’m reading that section now to see if the proof can be reduced to a standard summability lemma.
+I found a promising bounded-variation route, but I’m also checking whether this exact theorem already has a nearby finished proof in the workspace, which would be much safer to adapt.
+I’m probing a few exact lemma names now so I can write the proof without guessing syntax.
+I couldn’t complete a verified Lean proof within the checker budget.

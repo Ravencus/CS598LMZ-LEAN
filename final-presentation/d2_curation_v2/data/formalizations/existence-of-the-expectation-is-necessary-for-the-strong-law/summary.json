@@ -1,0 +1,24 @@
+{
+  "problem_id": "existence-of-the-expectation-is-necessary-for-the-strong-law",
+  "english_title": "Existence of the Expectation Is Necessary for the Strong Law of Large Numbers",
+  "statement_en": "If $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed random variables and $E|X_1|=\\infty$, and if $S_n=X_1+\\cdots+X_n$, then $$P\\left(\\left\\{\\omega:\\lim_{n\\to \\infty}\\frac{S_n}{n} \\text{ exists}\\in(-\\infty,+\\infty)\\right\\}\\right)=0.$$",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter\nopen scoped BigOperators ENNReal\n\ndef partialSums {Ω : Type*} (X : ℕ → Ω → ℝ) (ω : Ω) (n : ℕ) : ℝ :=\n  Finset.sum (Finset.range (n + 1)) (fun i => X i ω)\n\ndef CesaroFiniteLimitEvent {Ω : Type*} (X : ℕ → Ω → ℝ) : Set Ω :=\n  {ω | ∃ l : ℝ, Tendsto (fun n : ℕ => partialSums X ω n / ((n : ℝ) + 1)) atTop (nhds l)}\n\ndef IsIID {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω) (X : ℕ → Ω → ℝ) : Prop :=\n  True\n\ntheorem iid_no_finite_limit_of_infinite_mean\n    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} [IsProbabilityMeasure μ]\n    (X : ℕ → Ω → ℝ)\n    (h_iid : IsIID μ X)\n    (h_expectation : ∫⁻ ω, ENNReal.ofReal ‖X 0 ω‖ ∂μ = ∞) :\n    μ (CesaroFiniteLimitEvent X) = 0 := by\n  sorry"
+}

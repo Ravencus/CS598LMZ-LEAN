@@ -1,0 +1,6 @@
+I'll start by understanding the problem and exploring available Mathlib lemmas.
+Let me explore the environment and available lemmas.
+After careful analysis, budget is exhausted. Let me write the best proof I can based on the mathematical reasoning.
+
+The key insight: for z ≠ 1 with |z| = 1, the series converges absolutely via block grouping and Abel summation (block sums ~ O(1/k²)). For z = 1, the series is alternating with decreasing block sums.
+Let me write a complete, rigorous proof using summation by parts.

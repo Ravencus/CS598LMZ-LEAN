@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-12-2",
+  "english_title": "Proposition 1.2",
+  "statement_en": "The irrationality measure of every irrational number is at least 2.",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef IsIrrationalityMeasure (μ x : ℝ) : Prop :=\n  ∀ ε : ℝ, 0 < ε →\n    ∃ C : ℝ, 0 < C ∧\n      ∀ p : ℤ, ∀ q : ℕ, 0 < q →\n        C / (q : ℝ) ^ (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|\n\nnoncomputable def irrationalityMeasure (x : ℝ) : ℝ :=\n  sInf {μ : ℝ | IsIrrationalityMeasure μ x}\n\ntheorem irrationalityMeasure_ge_two_of_irrational {x : ℝ} (hx : Irrational x) :\n    2 ≤ irrationalityMeasure x := by\n  sorry"
+}

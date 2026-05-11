@@ -1,0 +1,11 @@
+{
+  "problem_id": "common-lemma-1",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "compile_fail",
+  "plan_relation": "same_plan",
+  "divergence": "lean_impl",
+  "evidence": "Both traces try the same Borel-Cantelli decomposition: prove the limsup/frequently set has measure zero using `MeasureTheory.measure_setOf_frequently_eq_zero`, then derive a.e. convergence by applying that result to thresholds `1/(k+1)`. Trace A then checks `ENNReal.summable` and finds the hypothesi",
+  "wall_seconds": 13.18
+}

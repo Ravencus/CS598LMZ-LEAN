@@ -1,0 +1,22 @@
+{
+  "id": "proposition-1-convergence-in-the-lp-norm-implies-convergence",
+  "type": "problem",
+  "source_note": "有限测度下各个收敛之间的关系",
+  "english_source_note": "Relations Among Convergences on Finite Measure Spaces",
+  "callout_id": "有限测度下各个收敛之间的关系#2",
+  "english_title": "Proposition 1: Convergence in the \\(L^p\\) Norm Implies Convergence in Measure",
+  "statement_en": "$$f_n\\xrightarrow{L^p}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Chebyshev inequality",
+    "Lp norm estimate"
+  ],
+  "prerequisites": [
+    "measurable functions",
+    "Lp spaces",
+    "convergence in measure"
+  ],
+  "callout_body": "$$f_n\\xrightarrow{L^p}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "example-33-a-trivial-example-for-the-above-properties",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#15",
+  "english_title": "Example 3.3: A Trivial Example for the Above Properties",
+  "statement_en": "Let $f(x)=\\sin(x)$. Then $$\\limsup_{x\\to \\infty}\\sin(x)=1,\\qquad \\liminf_{x\\to \\infty}\\sin(x)=-1.$$ Moreover, explicit sequences realizing these values are $$x_n:=\\frac{\\pi}{2}+2\\pi n,\\qquad y_n:=\\frac{3\\pi}{2}+2\\pi n,$$ for which $\\sin(x_n)\\to 1$ and $\\sin(y_n)\\to -1$, illustrating the basic properties of function limsup and liminf.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "evaluate sine at special sequences",
+    "illustrate sequential characterization of limsup and liminf"
+  ],
+  "prerequisites": [
+    "trigonometric functions",
+    "limit superior and limit inferior of functions",
+    "sequences tending to infinity"
+  ],
+  "callout_body": "令$f(x)=\\sin(x)$那么根据$x\\to +\\infty$函数上下极限的定义，我们知道$$U=\\limsup_{x\\to \\infty}\\sin(x)=1,\\quad L=\\liminf_{x\\to \\infty}\\sin(x)=-1$$\n* 关于性质1：存在$x_n,y_n\\to +\\infty$使得$\\sin(x_n)\\to 1$以及$\\sin(y_n)\\to -1$s实际上我们可以明确地写出这两个序列$$x_n:=\\frac{\\pi}{2}+2\\pi n,\\quad y_n:=\\frac{3\\pi}{2}+2\\pi n $$\n* 性质2.a,3.a在此处是平凡的，因为$\\sin(x)\\in [-1,1]$如果$r>1$或者$r<-1$自然都是成立性质2.a,3.a的。\n* 性质2.b，3.b,既然$\\sin(x_n)=1$，那么自然任意$r<1$，无论$R$多大，我们总是可以找到对应的$\\sin(x_m)>r$。同样的道理既然，$\\sin(y_n)=-1$，那么自然任意$r>-1$，无论$R$多大，我们总是可以找到对应的$\\sin(y_m)<r$。"
+}

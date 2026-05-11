@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-0-using-newtons-method-to-compute-a-square-root-zori",
+  "english_title": "Problem 0: Using Newton's Method to Compute a Square Root, Zorich Mathematical Analysis Exercise 3.2.7",
+  "statement_en": "Assume $a>0$ and define the sequence $$x_{n+1}:=\\frac{1}{2}\\left(x_n+\\frac{a}{x_n}\\right).$$ 1. Prove that under the condition $x_1>0$, we have $x_n\\to \\sqrt{a}$. 2. Estimate the absolute error $e_n:=x_n-\\sqrt{a}$ and give an upper bound for $|e_n|$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen Filter\n\ndef newtonSqrtSeq (a x1 : ℝ) : ℕ → ℝ\n  | 0 => x1\n  | n + 1 => (newtonSqrtSeq a x1 n + a / newtonSqrtSeq a x1 n) / 2\n\ndef errorSeq (a x1 : ℝ) (n : ℕ) : ℝ :=\n  newtonSqrtSeq a x1 n - Real.sqrt a\n\ntheorem newtonSqrtSeq_tendsto_sqrt_and_has_error_upper_bound\n    {a x1 : ℝ} (ha : 0 < a) (hx1 : 0 < x1) :\n    Tendsto (newtonSqrtSeq a x1) atTop (nhds (Real.sqrt a)) ∧\n      ∃ B : ℕ → ℝ, (∀ n : ℕ, 0 ≤ B n) ∧ ∀ n : ℕ, |errorSeq a x1 n| ≤ B n := by\n  sorry"
+}

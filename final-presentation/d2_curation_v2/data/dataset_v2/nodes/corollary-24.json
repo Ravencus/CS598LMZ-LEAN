@@ -1,0 +1,23 @@
+{
+  "id": "corollary-24",
+  "type": "problem",
+  "source_note": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+  "english_source_note": "Dirichlet Kernels Fail, Fejer Kernels Approximate Identity",
+  "callout_id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#6",
+  "english_title": "Corollary 2.4",
+  "statement_en": "Assume $f \\in C(\\mathbb{T}\\to \\mathbb{C})$, and the series of its Fourier coefficients converges absolutely, that is, $$\\sum_{n\\in \\mathbb{Z}}|\\widehat{f}(n)|<\\infty.$$ Then the partial sums of the Fourier series of $f$ converge uniformly to $f$ itself.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "Fourier analysis",
+  "key_techniques": [
+    "Weierstrass M-test",
+    "absolute convergence of Fourier series",
+    "uniform convergence"
+  ],
+  "prerequisites": [
+    "continuous functions on the torus",
+    "Fourier series",
+    "uniform convergence"
+  ],
+  "callout_body": "假设$f \\in C(\\mathbb{T}\\to \\mathbb{C})$，并且其对应的傅里叶系数形成的级数绝对收敛，即$$\\sum_{n\\in \\mathbb{Z}}|\\widehat{f}(n)|<\\infty$$那么函数的傅里叶级数的部分和一致收敛到函数本身。"
+}

@@ -1,0 +1,226 @@
+{
+  "note_title": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#1",
+      "type": "note",
+      "title": "命题0，CMC数学组高年级决赛题目",
+      "body": "$(X,\\Omega,\\mu)$是一个测度空间，$f_n$是$X$上一列几乎处处一致有界的可测函数列。令$A_N(x):=\\frac{1}{N}\\sum_{n\\leq N} f_n(x)$那么$$\\sum_{N\\geq 1} \\frac{1}{N}\\int_X A_{N}^{2}(x)\\,d\\mu <\\infty\\implies A_N(x)\\xrightarrow{a.e.}{0}$$",
+      "position_char": 43,
+      "position_line": 7,
+      "classification_result": {
+        "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#1",
+        "classification": "problem",
+        "english_title": "Proposition 0, CMC Mathematics Group Senior Final Problem",
+        "if_problem": {
+          "statement_en": "Let $(X,\\Omega,\\mu)$ be a measure space, and let $f_n$ be a sequence of measurable functions on $X$ that is almost everywhere uniformly bounded. Define $A_N(x):=\\frac{1}{N}\\sum_{n\\leq N} f_n(x)$. Then\n$$\\sum_{N\\geq 1} \\frac{1}{N}\\int_X A_{N}^{2}(x)\\,d\\mu <\\infty\\implies A_N(x)\\xrightarrow{a.e.}{0}.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Borel-Cantelli type convergence arguments",
+            "dyadic decomposition",
+            "maximal control from averaged square bounds",
+            "almost everywhere convergence from summability"
+          ],
+          "prerequisites": [
+            "measure theory",
+            "almost everywhere convergence",
+            "Chebyshev inequality",
+            "series and summability"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#2",
+      "type": "note",
+      "title": "Kolmogorov强大数定律",
+      "body": "设$X_n$是概率空间上的一列独立的随机变量（不要求同分布），其期望为0，方差有限，并且额外满足$$\\sum_{n\\geq 1} \\frac{V(X_n)}{n^2}<+\\infty$$那么随机变量$\\frac{X_1+\\cdots+X_n}{n}$几乎处处收敛到0。",
+      "position_char": 302,
+      "position_line": 12,
+      "classification_result": {
+        "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#2",
+        "classification": "problem",
+        "english_title": "Kolmogorov Strong Law of Large Numbers",
+        "if_problem": {
+          "statement_en": "Let $X_n$ be a sequence of independent random variables on a probability space, not necessarily identically distributed, with mean $0$ and finite variance, and suppose additionally that\n$$\\sum_{n\\geq 1} \\frac{V(X_n)}{n^2}<+\\infty.$$ Then the random variables $\\frac{X_1+\\cdots+X_n}{n}$ converge almost surely to $0$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "variance summability",
+            "strong law of large numbers",
+            "independence"
+          ],
+          "prerequisites": [
+            "probability spaces",
+            "independent random variables",
+            "expectation and variance",
+            "almost sure convergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#3",
+      "type": "error",
+      "title": "1.1:直接尝试用Borel-Cantelli引理失败",
+      "body": "关于这个问题我首先想到可以借助[[Borel-Cantelli lemma及其应用#1. 此lemma在序列的几乎处处收敛上的应用]],然后接合Chebyshev不等式来证明最后的几乎处处收敛。具体来说，令$$A_{n,\\varepsilon}:=\\{x:|A_n|\\geq \\varepsilon\\}$$如果对任意的$\\varepsilon>0$，我们可以证明$\\sum_{n\\geq 1}\\mu(A_{n,\\varepsilon})$收敛，那么问题就解决了。我们可以尝试用Chebyshev来估计$\\mu(A_{n,\\varepsilon})$的上界。一个简单的估计为$$\\mu(A_{n,\\varepsilon})\\leq \\frac{\\int_X A_n^2(x)\\,d\\mu}{\\varepsilon^2}$$也就是说我们只要证明，$\\sum_n \\int_X A_n^2(x)\\,d\\mu$收敛即可。但是很不巧，条件中给到的是$\\sum_n \\frac{\\int_X A_n^2(x)\\,d\\mu}{n}$收敛。",
+      "position_char": 1006,
+      "position_line": 19,
+      "classification_result": {
+        "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#3",
+        "classification": "remark",
+        "english_title": "1.1: Direct Attempt Using the Borel-Cantelli Lemma Fails",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#4",
+      "type": "error",
+      "title": "1.2:一个天真的错误想法",
+      "body": "有没有可能对于非负序列$b_n$，如果$\\sum_n \\frac{b_n}{n}<+\\infty$那么$\\sum_{n}b_n<+\\infty$呢？因为如果这样能成功的话，我们不妨假设$b_n:=\\int_X A_n^2(x)\\,d\\mu$从而直接得到$\\sum_n b_n<+\\infty$从而实现\"Borel-Cantelli引理+Chebyshev不等式\"的路径，完成对$A_n(x)$几乎处处收敛到0的论证。\n\n但这是错误的，因为我们轻易可以给出反例：$b_n:=1_{n=2^k}$那么此时$$\\sum_{n\\geq 2}\\frac{b_n}{n}=\\sum_{k\\geq 1}\\frac{1}{2^k}<+\\infty$$但是$$\\sum_{n\\geq 2} b_n =\\sum_{k\\geq 1}1=+\\infty$$",
+      "position_char": 1512,
+      "position_line": 23,
+      "classification_result": {
+        "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#4",
+        "classification": "problem",
+        "english_title": "1.2: A Naive Incorrect Idea",
+        "if_problem": {
+          "statement_en": "The implication \"for a nonnegative sequence $b_n$, if $\\sum_n \\frac{b_n}{n}<+\\infty$, then $\\sum_n b_n<+\\infty$\" is false. A counterexample is given by $b_n:=1_{n=2^k}$. Then\n$$\\sum_{n\\geq 2}\\frac{b_n}{n}=\\sum_{k\\geq 1}\\frac{1}{2^k}<+\\infty,$$\nbut\n$$\\sum_{n\\geq 2} b_n =\\sum_{k\\geq 1}1=+\\infty.$$",
+          "problem_type": "counterexample",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "constructing sparse sequences",
+            "counterexample by dyadic support"
+          ],
+          "prerequisites": [
+            "series of nonnegative terms",
+            "indicator notation",
+            "basic convergence tests"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#5",
+      "type": "note",
+      "title": "引理1.3",
+      "body": "存在正实数$M$使得$$|A_{n+1}(x)-A_n(x)|\\leq \\frac{2M}{n+1}$$几乎处处成立。",
+      "position_char": 2104,
+      "position_line": 32,
+      "classification_result": {
+        "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#5",
+        "classification": "problem",
+        "english_title": "Lemma 1.3",
+        "if_problem": {
+          "statement_en": "There exists a positive real number $M$ such that\n$$|A_{n+1}(x)-A_n(x)|\\leq \\frac{2M}{n+1}$$\nalmost everywhere.",
+          "problem_type": "lemma",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "difference estimate for arithmetic means",
+            "uniform boundedness"
+          ],
+          "prerequisites": [
+            "arithmetic averages of functions",
+            "almost everywhere boundedness",
+            "basic inequalities"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#6",
+      "type": "note",
+      "title": "引理1.4",
+      "body": "令$I_k:=[2^k,2^{k+1}),\\Lambda_k(x):=\\max_{n\\in I_k}\\{|A_n(x)|\\}$以及$$G_k(x):=\\frac{1}{|I_k|}\\sum_{n\\in I_k} A_n(x)^2 $$那么$$G_k(x)\\geq \\frac{1}{16 M} \\Lambda_k(x)^3$$",
+      "position_char": 2528,
+      "position_line": 41,
+      "classification_result": {
+        "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#6",
+        "classification": "problem",
+        "english_title": "Lemma 1.4",
+        "if_problem": {
+          "statement_en": "Let $I_k:=[2^k,2^{k+1})$, define $\\Lambda_k(x):=\\max_{n\\in I_k}\\{|A_n(x)|\\}$, and\n$$G_k(x):=\\frac{1}{|I_k|}\\sum_{n\\in I_k} A_n(x)^2.$$ Then\n$$G_k(x)\\geq \\frac{1}{16 M} \\Lambda_k(x)^3.$$",
+          "problem_type": "lemma",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "dyadic block decomposition",
+            "comparison of discrete L^2 and L^\\infty behavior",
+            "oscillation control via increment bounds"
+          ],
+          "prerequisites": [
+            "arithmetic averages of functions",
+            "basic measure-free discrete norm comparisons",
+            "previous increment estimate"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#7",
+      "type": "note",
+      "title": "引理1.5",
+      "body": "在“命题0\"的条件下$G_k(x)$几乎处处收敛到0。",
+      "position_char": 2714,
+      "position_line": 45,
+      "classification_result": {
+        "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#7",
+        "classification": "problem",
+        "english_title": "Lemma 1.5",
+        "if_problem": {
+          "statement_en": "Under the assumptions of Proposition 0, $G_k(x)$ converges to $0$ almost everywhere.",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "summability over dyadic blocks",
+            "almost everywhere convergence from integrable control"
+          ],
+          "prerequisites": [
+            "measure theory",
+            "almost everywhere convergence",
+            "dyadic decomposition",
+            "Proposition 0 assumptions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#8",
+      "type": "tip",
+      "title": "想法1.6",
+      "body": "这个信息能对我们的目的，即制造$G_k$控制$\\Lambda_k$的不等式，有什么意义？联想到[[函数p范数与无穷范数之间的关系]]当中下界不等式的估计，我们可以把$G_k=\\frac{1}{|I_k|}\\sum_{n\\in I_k}|A_n|^2$理解为离散的$L^2$范数的平方，$\\lambda$理解为离散的$L^\\infty$范数。所以为了建立由$L^2$范数控制$L^{\\infty}$范数的不等式，我们需要讨论集合$\\{n\\in I_k:|A_n|\\geq \\lambda - \\varepsilon\\}$这个集合的计数测度，也就是元素个数的下界估计。而这就可以结合$\\lambda=|A_{n_0}|$不能快速下降的特性来完成。",
+      "position_char": 4570,
+      "position_line": 72,
+      "classification_result": {
+        "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#8",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.6",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Control a Discrete Supremum Norm by a Discrete L2 Average via Level-Set Counting",
+          "summary_en": "Interpret $G_k$ as a discrete $L^2$ norm squared and $\\Lambda_k$ as a discrete $L^\\infty$ norm. To bound the supremum by the average, estimate the size of the index set where $|A_n|$ stays close to its maximum, using the fact that the sequence cannot decrease too quickly.",
+          "applicability": "This applies when one has a blockwise average-of-squares quantity and needs to control the maximum on the same block, together with increment bounds preventing rapid decay."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"一致几乎处处有界函数列算术平均值几乎处处收敛的问题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 0, CMC Mathematics Group Senior Final Problem\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $(X,\\\\Omega,\\\\mu)$ be a measure space, and let $f_n$ be a sequence of measurable functions on $X$ that is almost everywhere uniformly bounded. Define $A_N(x):=\\\\frac{1}{N}\\\\sum_{n\\\\leq N} f_n(x)$. Then\\n$$\\\\sum_{N\\\\geq 1} \\\\frac{1}{N}\\\\int_X A_{N}^{2}(x)\\\\,d\\\\mu <\\\\infty\\\\implies A_N(x)\\\\xrightarrow{a.e.}{0}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Borel-Cantelli type convergence arguments\",\n        \"dyadic decomposition\",\n        \"maximal control from averaged square bounds\",\n        \"almost everywhere convergence from summability\"\n      ],\n      \"prerequisites\": [\n        \"measure theory\",\n        \"almost everywhere convergence\",\n        \"Chebyshev inequality\",\n        \"series and summability\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一致几乎处处有界函数列算术平均值几乎处处收敛的问题#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Kolmogorov Strong Law of Large Numbers\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $X_n$ be a sequence of independent random variables on a probability space, not necessarily identically distributed, with mean $0$ and finite variance, and suppose additionally that\\n$$\\\\sum_{n\\\\geq 1} \\\\frac{V(X_n)}{n^2}<+\\\\infty.$$ Then the random variables $\\\\frac{X_1+\\\\cdots+X_n}{n}$ converge almost surely to $0$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"variance summability\",\n        \"strong law of large numbers\",\n        \"independence\"\n      ],\n      \"prerequisites\": [\n        \"probability spaces\",\n        \"independent random variables\",\n        \"expectation and variance\",\n        \"almost sure convergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一致几乎处处有界函数列算术平均值几乎处处收敛的问题#3\",\n    \"classification\": \"remark\",\n    \"english_title\": \"1.1: Direct Attempt Using the Borel-Cantelli Lemma Fails\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一致几乎处处有界函数列算术平均值几乎处处收敛的问题#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"1.2: A Naive Incorrect Idea\",\n    \"if_problem\": {\n      \"statement_en\": \"The implication \\\"for a nonnegative sequence $b_n$, if $\\\\sum_n \\\\frac{b_n}{n}<+\\\\infty$, then $\\\\sum_n b_n<+\\\\infty$\\\" is false. A counterexample is given by $b_n:=1_{n=2^k}$. Then\\n$$\\\\sum_{n\\\\geq 2}\\\\frac{b_n}{n}=\\\\sum_{k\\\\geq 1}\\\\frac{1}{2^k}<+\\\\infty,$$\\nbut\\n$$\\\\sum_{n\\\\geq 2} b_n =\\\\sum_{k\\\\geq 1}1=+\\\\infty.$$\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"constructing sparse sequences\",\n        \"counterexample by dyadic support\"\n      ],\n      \"prerequisites\": [\n        \"series of nonnegative terms\",\n        \"indicator notation\",\n        \"basic convergence tests\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一致几乎处处有界函数列算术平均值几乎处处收敛的问题#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.3\",\n    \"if_problem\": {\n      \"statement_en\": \"There exists a positive real number $M$ such that\\n$$|A_{n+1}(x)-A_n(x)|\\\\leq \\\\frac{2M}{n+1}$$\\nalmost everywhere.\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"difference estimate for arithmetic means\",\n        \"uniform boundedness\"\n      ],\n      \"prerequisites\": [\n        \"arithmetic averages of functions\",\n        \"almost everywhere boundedness\",\n        \"basic inequalities\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一致几乎处处有界函数列算术平均值几乎处处收敛的问题#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.4\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $I_k:=[2^k,2^{k+1})$, define $\\\\Lambda_k(x):=\\\\max_{n\\\\in I_k}\\\\{|A_n(x)|\\\\}$, and\\n$$G_k(x):=\\\\frac{1}{|I_k|}\\\\sum_{n\\\\in I_k} A_n(x)^2.$$ Then\\n$$G_k(x)\\\\geq \\\\frac{1}{16 M} \\\\Lambda_k(x)^3.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"dyadic block decomposition\",\n        \"comparison of discrete L^2 and L^\\\\infty behavior\",\n        \"oscillation control via increment bounds\"\n      ],\n      \"prerequisites\": [\n        \"arithmetic averages of functions\",\n        \"basic measure-free discrete norm comparisons\",\n        \"previous increment estimate\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一致几乎处处有界函数列算术平均值几乎处处收敛的问题#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.5\",\n    \"if_problem\": {\n      \"statement_en\": \"Under the assumptions of Proposition 0, $G_k(x)$ converges to $0$ almost everywhere.\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"summability over dyadic blocks\",\n        \"almost everywhere convergence from integrable control\"\n      ],\n      \"prerequisites\": [\n        \"measure theory\",\n        \"almost everywhere convergence\",\n        \"dyadic decomposition\",\n        \"Proposition 0 assumptions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一致几乎处处有界函数列算术平均值几乎处处收敛的问题#8\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.6\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Control a Discrete Supremum Norm by a Discrete L2 Average via Level-Set Counting\",\n      \"summary_en\": \"Interpret $G_k$ as a discrete $L^2$ norm squared and $\\\\Lambda_k$ as a discrete $L^\\\\infty$ norm. To bound the supremum by the average, estimate the size of the index set where $|A_n|$ stays close to its maximum, using the fact that the sequence cannot decrease too quickly.\",\n      \"applicability\": \"This applies when one has a blockwise average-of-squares quantity and needs to control the maximum on the same block, together with increment bounds preventing rapid decay.\"\n    }\n  }\n]",
+  "classified": true
+}

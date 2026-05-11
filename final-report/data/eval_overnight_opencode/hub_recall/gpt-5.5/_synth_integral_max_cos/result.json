@@ -1,0 +1,17 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "gpt-5.5",
+  "wall_seconds": 20.41,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "piecewise-estimates-hub"
+  ],
+  "truth": [],
+  "tp": 0,
+  "fp": 1,
+  "fn": 0,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

@@ -1,0 +1,23 @@
+{
+  "id": "equivalent-proposition-2",
+  "type": "problem",
+  "source_note": "Etemadi关于强大数定律的证明",
+  "english_source_note": "Etemadi's Proof of the Strong Law of Large Numbers",
+  "callout_id": "Etemadi关于强大数定律的证明#5",
+  "english_title": "Equivalent Proposition 2",
+  "statement_en": "Prove that $$\\frac{T_{n_k}}{n_k}\\xrightarrow{a.e.}{\\mu}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "subsequence method",
+    "almost sure convergence",
+    "Borel-Cantelli lemma"
+  ],
+  "prerequisites": [
+    "subsequence convergence",
+    "almost everywhere convergence",
+    "partial sums of random variables"
+  ],
+  "callout_body": "证明$$\\frac{T_{n_k}}{n_k}\\xrightarrow{a.e.}{\\mu}$$"
+}

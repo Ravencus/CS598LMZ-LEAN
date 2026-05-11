@@ -1,0 +1,23 @@
+{
+  "id": "example-114-compute-a-function-limit",
+  "type": "problem",
+  "source_note": "分析学基本方法目录1",
+  "english_source_note": "Basic Methods in Analysis I",
+  "callout_id": "分析学基本方法目录1#7",
+  "english_title": "Example 1.1.4: Compute a Function Limit",
+  "statement_en": "Compute the limit $$\\\\lim_{x\\\to 0}\\\\frac{\\\\sin(x)}{x}.$$",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "local expansion",
+    "small-o notation",
+    "function approximation by a linear term"
+  ],
+  "prerequisites": [
+    "basic trigonometric limits",
+    "small-o notation",
+    "limits of functions"
+  ],
+  "callout_body": "求函数极限$$\\lim_{x\\to 0}\\frac{\\sin(x)}{x}$$此函数极限势必关系到函数$\\sin(x)$在$x=0$处的性质，那么函数在$x=0$处的极限又如何研究呢？经过上面的分析我们要分析逼近$\\sin(x)$的线性函数，以及逼近误差。我们发现$$\\sin(x)=x+o(x)$$于是函数$\\frac{\\sin(x)}{x}$在$x=0$的小邻域当中具有逼近$$\\frac{\\sin(x)}{x}=1+o(1)$$这便意味着此函数在$x\\to 0$处的极限为1."
+}

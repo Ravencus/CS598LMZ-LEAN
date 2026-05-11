@@ -1,0 +1,57 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f21c7f287834.lean",
+      "line": 9,
+      "column": 6,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f21c7f287834.lean",
+      "line": 12,
+      "column": 6,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f21c7f287834.lean",
+      "line": 17,
+      "column": 57,
+      "severity": "warning",
+      "message": "unused variable `X`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f21c7f287834.lean",
+      "line": 30,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f21c7f287834.lean",
+      "line": 9,
+      "column": 6,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f21c7f287834.lean",
+      "line": 12,
+      "column": 6,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f21c7f287834.lean",
+      "line": 30,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ]
+}

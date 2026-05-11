@@ -1,0 +1,38 @@
+You are formalizing a real proof in Lean 4 + Mathlib. You have access to a `check_lean_proof` MCP tool that compiles Lean code and returns diagnostics. Use it to iterate on your proof.
+
+THEOREM (English):
+A real sequence $x_n$ converges to a real number $x$ if and only if for every $\varepsilon>0$ there exists a positive integer $N_{\varepsilon}$ such that for all $n,m>N_{\varepsilon}$, $$|x_n-x_m|<\varepsilon.$$
+
+LEAN 4 SIGNATURE (use VERBATIM — do NOT change name, hypotheses, or conclusion):
+import Mathlib
+
+theorem real_sequence_tendsto_iff_eventually_pairwise_close
+    (xSeq : ℕ → ℝ) (x : ℝ) :
+    Filter.Tendsto xSeq Filter.atTop (nhds x) ↔
+      ∀ ε > 0, ∃ N : ℕ, 0 < N ∧ ∀ n m : ℕ, N < n → N < m → |xSeq n - xSeq m| < ε := by
+  sorry
+
+You have a HARD BUDGET of 20 `check_lean_proof` calls. Each call response includes `calls_used` and `calls_budget` so you can track usage. When the budget is exhausted, no further checker calls work — submit your best final attempt and stop.
+
+Notation: `ℕ`/`ℤ`/`ℚ`/`ℝ`/`ℂ`, `Finset.sum`, `Filter.Tendsto`, `Filter.atTop`,
+`nhds`, `Real.pi`, `Summable`, etc. Sum syntax: `∑ k ∈ Finset.range n, ...`
+(NOT `∑ k in ...`).
+
+Tactics: `intro`, `rcases`, `obtain`, `have`, `calc`, `simp`, `ring`,
+`linarith`, `nlinarith`, `gcongr`, `positivity`, `field_simp`, `omega`,
+`norm_num`, `funext`, `rw`, `exact`, `induction`, `push_cast`.
+
+Rules:
+  - Do NOT use `sorry`, `admit`, or `axiom` in the FINAL proof (unless using SYMPY-SKILL below).
+  - Do NOT invent Mathlib lemma names. Prefer tactics over guessed names.
+  - First line must be `import Mathlib`. The signature must match byte-for-byte.
+
+
+
+When you have a proof that compiles (or you've used the budget), output your FINAL answer as one fenced lean block, prefixed with the literal token `FINAL_PROOF:`. Output it exactly once, after your proof compiles or you've stopped iterating:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+... your final code ...
+```

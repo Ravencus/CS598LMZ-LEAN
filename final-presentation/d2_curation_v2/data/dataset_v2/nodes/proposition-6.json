@@ -1,0 +1,22 @@
+{
+  "id": "proposition-6",
+  "type": "problem",
+  "source_note": "模1均匀分布与Weyl判别",
+  "english_source_note": "Uniform Distribution mod 1 and Weyl's Criterion",
+  "callout_id": "模1均匀分布与Weyl判别#19",
+  "english_title": "Proposition 6",
+  "statement_en": "For example, the sequence $$\\left\\{\\frac{0}{1},\\frac{0}{2},\\frac{1}{2},\\frac{0}{3},\\frac{1}{3},\\frac{2}{3},\\dots,\\frac{k-1}{k},\\dots\\right\\}$$ is uniformly distributed modulo $1$.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "key_techniques": [
+    "counting rational points with bounded denominator",
+    "compare block averages with interval length"
+  ],
+  "prerequisites": [
+    "uniform distribution modulo 1",
+    "basic counting arguments",
+    "rational numbers in intervals"
+  ],
+  "callout_body": "比如$\\{\\frac{0}{1},\\frac{0}{2},\\frac{1}{2},\\frac{0}{3},\\frac{1}{3},\\frac{2}{3},\\dots\\frac{k-1}{k},...\\}$的序列是模1均匀分布的。"
+}

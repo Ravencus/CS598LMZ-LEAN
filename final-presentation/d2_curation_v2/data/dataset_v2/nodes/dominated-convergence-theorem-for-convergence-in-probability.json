@@ -1,0 +1,21 @@
+{
+  "id": "dominated-convergence-theorem-for-convergence-in-probability",
+  "type": "problem",
+  "source_note": "Weierstrass逼近定理的概率途径证明",
+  "english_source_note": "A Probabilistic Proof of the Weierstrass Approximation Theorem",
+  "callout_id": "Weierstrass逼近定理的概率途径证明#10",
+  "english_title": "Dominated Convergence Theorem for Convergence in Probability",
+  "statement_en": "If random variables $X_n\\xrightarrow{P}{X}$, and if $|X_n|\\leq Y$ with $E(Y)$ finite, then\n$$E(X_n)\\to E(X).$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "key_techniques": [
+    "convergence in probability",
+    "dominated convergence"
+  ],
+  "prerequisites": [
+    "expectation",
+    "dominated convergence theorem"
+  ],
+  "callout_body": "任意随机变量$X_n\\xrightarrow{P}{X}$，如果$|X_n|\\leq Y$,并且$Y$的期望存在，那么$$E(X_n)\\to E(X)$$"
+}

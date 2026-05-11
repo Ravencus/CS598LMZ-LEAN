@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-23",
+  "english_title": "Example 2.3",
+  "statement_en": "For all \\(|a|<1\\), show that\n$$\\\\prod_{n\\\\geq 0} (1+a^{2^n})=\\\\frac{1}{1-a}.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem infiniteProduct_one_add_pow_two_pow (a : ℝ) (ha : |a| < 1) :\n    HasProd (fun n : ℕ => (1 : ℝ) + a ^ (2 ^ n)) (1 / (1 - a)) := by\n  sorry"
+}

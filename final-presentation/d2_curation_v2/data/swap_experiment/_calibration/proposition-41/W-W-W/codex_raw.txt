@@ -1,0 +1,10 @@
+The theorem is not provable as stated.
+
+`hrn` only gives
+`rSeq S n = 1 / (12 * (n : ℝ)) + R n`,
+so it does not impose any sign condition on `R n`. The conclusion
+`0 < rSeq S n ∧ rSeq S n < 1 / (12 * (n : ℝ))`
+would require, at minimum, assumptions equivalent to
+`-1 / (12 * (n : ℝ)) < R n ∧ R n < 0`.
+
+If you want, I can formalize the corrected Lean theorem once you provide the missing bounds on `R n`.

@@ -1,0 +1,22 @@
+{
+  "id": "theorem-31-liouvilles-theorem-1844",
+  "type": "problem",
+  "source_note": "无理测度的定义以及基本的命题",
+  "english_source_note": "Irrationality Measure: Definition and Basics",
+  "callout_id": "无理测度的定义以及基本的命题#11",
+  "english_title": "Theorem 3.1: Liouville's Theorem (1844)",
+  "statement_en": "If $\\alpha$ is an algebraic number of degree $d$ ($d\\geq 2$), then there exists a constant $C(\\alpha)>0$ such that $$\\left|\\alpha-\\frac{p}{q}\\right|>\\frac{C(\\alpha)}{q^d}$$ for every positive integer $q$ and every integer $p$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "minimal polynomial estimates",
+    "lower bounds for rational approximation to algebraic numbers"
+  ],
+  "prerequisites": [
+    "algebraic numbers",
+    "polynomials over the integers",
+    "irrationality measure"
+  ],
+  "callout_body": "如果$\\alpha$是一个d次代数数($d\\geq 2$)，那么存在一个常数$C(\\alpha)>0$使得不等式$$\\left|\\alpha-\\frac{p}{q}\\right|>\\frac{C(\\alpha)}{q^d}$$对任意正整数$q$以及任意整数$p$成立。"
+}

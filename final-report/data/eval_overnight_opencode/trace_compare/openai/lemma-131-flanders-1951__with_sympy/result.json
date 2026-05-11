@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "lemma-131-flanders-1951",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_search_diff",
+  "evidence": "Both traces pursue the same annihilation-transfer/minpoly divisibility strategy: BIG proves power/intertwining identities and uses scalar centrality; SMALL explicitly states the same idea in final_text and probes `minpoly`/`aeval` plus the identity `A * (B*A)^k = ...`. SMALL gets stuck trying to fin",
+  "wall_seconds": 8.71
+}

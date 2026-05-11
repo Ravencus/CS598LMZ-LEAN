@@ -1,0 +1,18 @@
+{
+  "id": "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+  "type": "hub",
+  "source_note": "Kronecker定理，Dirichlet定理及其应用",
+  "english_source_note": "Kronecker's Theorem, Dirichlet's Theorem, and Applications",
+  "is_top3": false,
+  "note_degree": 10,
+  "strategies": [
+    {
+      "callout_id": "Kronecker定理,Dirichlet定理及其应用#11",
+      "english_title": "Main Idea of the Proof",
+      "strategy_name_en": "Find Two Close Fractional Parts and Subtract",
+      "summary_en": "To prove Dirichlet-type approximation, look for two multiples $q_1\\alpha$ and $q_2\\alpha$ whose fractional parts are very close. Their difference then produces an integer $q_2-q_1$ with controlled size and small distance to an integer.",
+      "applicability": "This strategy applies when one wants to prove existence of integers $q$ such that $||q\\alpha||$ is small, especially via pigeonhole arguments on fractional parts modulo $1$.",
+      "callout_body": "那么根据这个观察，我们如果能在正整数的某个子集$A_n$里面，找到两个$q_1,q_2$使得$q_1\\alpha,q_2\\alpha$他们彼此之间模1的余数的距离小于$\\frac{1}{n}$，并且保证$1\\leq q_2-q_1\\leq n$那么我们也就完成了对Dirichlet定理的证明。"
+    }
+  ]
+}

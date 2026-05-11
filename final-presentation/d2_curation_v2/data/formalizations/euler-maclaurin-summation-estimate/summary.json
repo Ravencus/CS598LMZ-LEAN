@@ -1,0 +1,24 @@
+{
+  "problem_id": "euler-maclaurin-summation-estimate",
+  "english_title": "Euler-Maclaurin Summation Estimate",
+  "statement_en": "The Euler-Maclaurin summation formula gives expansions such as $$\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt,$$ and more generally $$\\sum_{y<k\\leq x}f(k)=\\int_{y}^{x}f(t)dt+\\sum_{k=1}^{p}\\frac{(-1)^k}{k}\\left(B_k(\\{x\\})f^{(k-1)}(x)-B_k(\\{y\\})f^{(k-1)}(y)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{y}^{x}B_{p}(\\{t\\})f^{(p)}(t)dt.$$",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem eulerMaclaurinSummationFormula\n    (f : ℝ → ℝ) (B : ℕ → ℝ → ℝ) (D : ℕ → ℝ → ℝ) (frac : ℝ → ℝ)\n    (m n p y x : ℕ) :\n    ((Finset.sum (Finset.Icc m n) fun k => f (k : ℝ)) =\n        (∫ t in (m : ℝ)..(n : ℝ), f t) +\n          (f (m : ℝ) + f (n : ℝ)) / 2 +\n          (Finset.sum (Finset.Icc 1 (p / 2)) fun r =>\n            (B (2 * r) 0 / (Nat.factorial (2 * r) : ℝ)) *\n              (D (2 * r - 1) (n : ℝ) - D (2 * r - 1) (m : ℝ))) +\n          (((-1 : ℝ) ^ (p + 1)) / (Nat.factorial p : ℝ)) *\n            (∫ t in (m : ℝ)..(n : ℝ), B p (frac t) * D p t))\n    ∧\n    ((Finset.sum (Finset.Icc (y + 1) x) fun k => f (k : ℝ)) =\n        (∫ t in (y : ℝ)..(x : ℝ), f t) +\n          (Finset.sum (Finset.Icc 1 p) fun k =>\n            (((-1 : ℝ) ^ k) / (k : ℝ)) *\n              (B k (frac (x : ℝ)) * D (k - 1) (x : ℝ) -\n                B k (frac (y : ℝ)) * D (k - 1) (y : ℝ))) +\n          (((-1 : ℝ) ^ (p + 1)) / (Nat.factorial p : ℝ)) *\n            (∫ t in (y : ℝ)..(x : ℝ), B p (frac t) * D p t)) := by\n  sorry"
+}

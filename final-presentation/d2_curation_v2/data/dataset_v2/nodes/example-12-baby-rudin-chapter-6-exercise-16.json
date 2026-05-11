@@ -1,0 +1,23 @@
+{
+  "id": "example-12-baby-rudin-chapter-6-exercise-16",
+  "type": "problem",
+  "source_note": "把积分或求和对象视为一个计数函数并展开",
+  "english_source_note": "Treating Sums or Integrals as Counting Functions",
+  "callout_id": "把积分或求和对象视为一个计数函数并展开#3",
+  "english_title": "Example 1.2: Baby Rudin, Chapter 6, Exercise 16",
+  "statement_en": "For $\\operatorname{Re}(s)>1$, define $$ \\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}. $$ Prove that $$ \\zeta(s) = s \\int_{1}^{\\infty} \\frac{[x]}{x^{s+1}} \\, dx .$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "rewrite the floor function as a counting function",
+    "interchange summation and integration",
+    "integral representation of the zeta function"
+  ],
+  "prerequisites": [
+    "Riemann zeta function",
+    "improper integrals",
+    "Tonelli or Fubini theorem"
+  ],
+  "callout_body": "对于$\\text{Re}(s)>1$，定义\n$$ \\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}$$\n证明：$$ \\zeta(s) = s \\int_{1}^{\\infty} \\frac{[x]}{x^{s+1}} \\, dx $$"
+}

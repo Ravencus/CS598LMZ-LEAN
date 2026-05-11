@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-34",
+  "english_title": "Proposition 3.4",
+  "statement_en": "Let $f(x)$ be a nonnegative locally integrable nonincreasing function on $[1,+\\infty)$, and suppose\n$$\\int_1^{+\\infty}f(x)\\,dx=+\\infty.$$ Then the integral\n$$\\int_{1}^{+\\infty}\\min\\{f(x),\\frac{1}{x^p}\\}\\,dx$$\nsatisfies:\n1. it diverges for $0<p\\leq 1$;\n2. it converges for $p>1$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem min_trunc_integral_behavior\n    {f : ℝ → ℝ}\n    (h_nonneg : ∀ x ∈ Set.Ici (1 : ℝ), 0 ≤ f x)\n    (h_antitone : AntitoneOn f (Set.Ici (1 : ℝ)))\n    (h_locInt : ∀ b : ℝ, 1 ≤ b → IntervalIntegrable f volume 1 b)\n    (h_diverge : Filter.Tendsto (fun b : ℝ => ∫ x in 1..b, f x) Filter.atTop Filter.atTop) :\n    (∀ p : ℝ, 0 < p → p ≤ 1 →\n        Filter.Tendsto\n          (fun b : ℝ => ∫ x in 1..b, min (f x) (1 / Real.rpow x p))\n          Filter.atTop\n          Filter.atTop) ∧\n    (∀ p : ℝ, 1 < p →\n        ∃ L : ℝ,\n          Filter.Tendsto\n            (fun b : ℝ => ∫ x in 1..b, min (f x) (1 / Real.rpow x p))\n            Filter.atTop\n            (nhds L)) := by\n  sorry"
+}

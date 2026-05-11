@@ -1,0 +1,76 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model": "deepseek-v4-pro",
+  "condition": "with_sympy",
+  "outcome": "wall_budget_exceeded",
+  "overall_success": false,
+  "wall_seconds": 600.02,
+  "wall_exceeded": true,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 2,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 7,
+  "first_error": "Function expected at\n  AnalyticOn.analyticAt ?m.32 h_analOn\nbut this term has type\n  AnalyticAt ℂ f ?m.30\n\nNote: Expected a function because this term is being applied to the argument\n  hz0U",
+  "total_cost_usd": 0.041638,
+  "total_tokens": 59853,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_88a60e4119.lean",
+      "line": 6,
+      "column": 8,
+      "severity": "error",
+      "message": "Function expected at\n  AnalyticOn.analyticAt ?m.32 h_analOn\nbut this term has type\n  AnalyticAt ℂ f ?m.30\n\nNote: Expected a function because this term is being applied to the argument\n  hz0U"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_88a60e4119.lean",
+      "line": 6,
+      "column": 28,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h_open\nhas type\n  IsOpen U\nbut is expected to have type\n  U ∈ nhds ?m.30\nin the application\n  AnalyticOn.analyticAt h_open"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_88a60e4119.lean",
+      "line": 9,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `AnalyticAt.eq_zero_or_eventually_ne_zero`\nAnalyticAt.eventually_eq_zero_or_eventually_ne_zero.{u_1, u_2} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type u_2}\n  [NormedAddCommGroup E] [NormedSpace 𝕜 E] {f : 𝕜 → E} {z₀ : 𝕜} (hf : AnalyticAt 𝕜 f z₀) :\n  (∀ᶠ (z : 𝕜) in nhds z₀, f z = 0) ∨ ∀ᶠ (z : 𝕜) in nhdsWithin z₀ {z₀}ᶜ, f z ≠ 0"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_88a60e4119.lean",
+      "line": 11,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `AnalyticAt.eq_zero_or_eventually_nhds_ne_zero`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_88a60e4119.lean",
+      "line": 12,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `HasFPowerSeriesAt.eq_zero_or_eventually_ne_zero`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_88a60e4119.lean",
+      "line": 13,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `HasFPowerSeriesAt.eventually_eq_zero_or_eventually_ne_zero`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_88a60e4119.lean",
+      "line": 14,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `AnalyticAt.locally_ne_zero`\n"
+    }
+  ]
+}

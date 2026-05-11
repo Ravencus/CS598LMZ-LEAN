@@ -1,0 +1,18 @@
+{
+  "problem_id": "uniqueness-of-the-limit-of-a-sequence",
+  "english_title": "Uniqueness of the Limit of a Sequence",
+  "statement_en": "If the limit of a sequence exists, then the limit is unique.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sequence_limit_unique {α : Type*} [TopologicalSpace α] [T2Space α]\n    (u : ℕ → α) {l₁ l₂ : α}\n    (h₁ : Filter.Tendsto u Filter.atTop (nhds l₁))\n    (h₂ : Filter.Tendsto u Filter.atTop (nhds l₂)) :\n    l₁ = l₂ := by\n  sorry"
+}

@@ -1,0 +1,26 @@
+{
+  "note_title": "Lebesgue微分定理",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "Lebesgue微分定理#1",
+      "type": "note",
+      "title": "Lebesgue微分定理",
+      "body": "如果$f \\in L^1_{\\text{loc}}(\\mathbb{R}^m)$那么下面极限几乎处处成立：$$\\lim_{\\begin{aligned}m(B)&\\to 0 \\\\x \\in\nB\\end{aligned}}\\frac{1}{m(B)}\\int_{B} f(y)dy = f(x)$$\n即几乎所有点都是Lebesgue点。",
+      "position_char": 32,
+      "position_line": 6
+    },
+    {
+      "id": "Lebesgue微分定理#2",
+      "type": "note",
+      "title": "Lebesgue密度定理",
+      "body": "集合$A$是$\\mathbb{R}^n$当中Lebesgue可测的子集，那么对于几乎所有点而言$$d_A(x)=1_A(x)\\text{ for a.e. }x\\in \\mathbb{R}^n$$\n\n一般来说如果一个点$x$对应的$d_A(x)=1$那么我们一般称其为\"集合A的密度点\"或者说a point of density for A。",
+      "position_char": 5567,
+      "position_line": 89
+    }
+  ]
+}

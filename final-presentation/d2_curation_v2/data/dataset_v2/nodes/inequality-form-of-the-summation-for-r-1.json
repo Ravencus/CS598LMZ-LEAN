@@ -1,0 +1,23 @@
+{
+  "id": "inequality-form-of-the-summation-for-r-1",
+  "type": "problem",
+  "source_note": "自然数的r次幂的部分和估计",
+  "english_source_note": "Partial Sum Estimates for Powers of Integers",
+  "callout_id": "自然数的r次幂的部分和估计#5",
+  "english_title": "Inequality Form of the Summation for r > 1",
+  "statement_en": "If $r>1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n),$$\nwhere the remainder satisfies\n$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "Euler-Maclaurin summation with explicit remainder",
+    "remainder bounds"
+  ],
+  "prerequisites": [
+    "Riemann zeta function",
+    "Bernoulli numbers",
+    "error estimation",
+    "big-O and explicit inequalities"
+  ],
+  "callout_body": "如果$r>1$，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n)$$\n其中余项$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}$$"
+}

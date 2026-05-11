@@ -1,0 +1,25 @@
+I'll work on proving this theorem about Lean 4 + Mathlib. Let me start by exploring the available lemmas.
+Compiled on the first try with only unused variable warnings.
+
+Wait — the `h1` step required `MeasureTheory.lintegral_eq_zero_iff`. Let me double-check the logic: we have `∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0`, which by definition is `∫⁻ x, ENNReal.ofReal (f x) ∂(μ.restrict E) = 0`. Applying `lintegral_eq_zero_iff` gives us `ENNReal.ofReal (f x) = 0` a.e. with respect to `μ.restrict E`. Then `ENNReal.ofReal (f x) = 0` implies `f x ≤ 0`, combined with `0 ≤ f x` gives `f x = 0`. 
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem ae_zero_of_nonneg_measurable_lintegral_zero
+    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}
+    {f : Ω → ℝ} {E : Set Ω}
+    (hf_meas : Measurable f)
+    (hf_nonneg : ∀ x, 0 ≤ f x)
+    (hE_meas : MeasurableSet E)
+    (hE_pos : 0 < μ E)
+    (h_int_zero : ∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0) :
+    ∀ᵐ x ∂μ.restrict E, f x = 0 := by
+  have h1 : ∀ᵐ x ∂μ.restrict E, ENNReal.ofReal (f x) = 0 := by
+    rw [MeasureTheory.lintegral_eq_zero_iff] at h_int_zero
+    · exact h_int_zero
+    · exact hf_meas.ennreal_ofReal
+  filter_upwards [h1] with x hx
+  exact (ENNReal.ofReal_eq_zero.mp hx).antisymm (hf_nonneg x)
+```

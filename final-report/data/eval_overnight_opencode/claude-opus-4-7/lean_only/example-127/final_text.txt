@@ -1,0 +1,17 @@
+I'll work on this proof. The theorem has two parts: StrictMono for `k ↦ 2*k`, and that the identity function applied to `2*k` equals `2*k`.
+Compiled on the first try.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem evenIndexedSubsequenceOfNaturalSequence :
+    StrictMono (fun k : ℕ => 2 * k) ∧
+      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by
+  refine ⟨?_, ?_⟩
+  · intro a b hab
+    simp
+    omega
+  · intro k
+    rfl
+```

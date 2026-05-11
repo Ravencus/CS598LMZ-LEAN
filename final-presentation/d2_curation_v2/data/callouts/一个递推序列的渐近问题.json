@@ -1,0 +1,17 @@
+{
+  "note_title": "一个递推序列的渐近问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "一个递推序列的渐近问题#1",
+      "type": "question",
+      "title": "问题0：复旦大学2024考研题目",
+      "body": "$a_1=2024$,并且对任意正整数n序列满足递推关系$$a_{n+1}=a_{n}+\\frac{2}{a_n}$$求$$\\lim_{n\\to \\infty}\\frac{a_n}{\\sqrt{n}}$$",
+      "position_char": 39,
+      "position_line": 7
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "note_title": "一个交错的双重级数的级数的收敛性判别",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "一个交错的双重级数的级数的收敛性判别#1",
+      "type": "question",
+      "title": "问题1，CMC 2024",
+      "body": "证明$$\\sum_{n\\geq 1}\\sum_{k\\geq 1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n^2+k^2}$$是收敛的。",
+      "position_char": 43,
+      "position_line": 7
+    }
+  ]
+}

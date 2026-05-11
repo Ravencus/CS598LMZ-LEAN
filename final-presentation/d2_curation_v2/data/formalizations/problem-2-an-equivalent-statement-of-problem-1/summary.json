@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-2-an-equivalent-statement-of-problem-1",
+  "english_title": "Problem 2: An Equivalent Statement of Problem 1",
+  "statement_en": "Show that $$\\sum_{n=1}^{N}\\log\\left(1-\\frac{1}{2n}\\right)<-\\frac{1}{2}\\log(2N).$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ntheorem log_sum_lt_neg_half_log (N : ℕ) (hN : 1 ≤ N) :\n    (∑ n in Finset.Icc 1 N, Real.log (1 - (1 : ℝ) / (2 * (n : ℝ)))) <\n      -((1 / 2 : ℝ) * Real.log (2 * (N : ℝ))) := by\n  sorry"
+}

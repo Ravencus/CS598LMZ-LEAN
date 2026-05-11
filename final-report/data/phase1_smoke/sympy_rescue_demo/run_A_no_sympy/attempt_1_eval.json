@@ -1,0 +1,61 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 15,
+      "column": 65,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h0\nhas type\n  0 ≤ Real.pi / 2\nbut is expected to have type\n  IntervalIntegrable ?m.377 ?m.378 ?m.374 ?m.375\nin the application\n  intervalIntegral.integral_add_adjacent_intervals h0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 14,
+      "column": 75,
+      "severity": "error",
+      "message": "unsolved goals\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 22,
+      "column": 14,
+      "severity": "error",
+      "message": "Tactic `apply` failed: could not unify the conclusion of `@intervalIntegral.integral_congr`\n  ∫ (x : ℝ) in ?a..?b, ?f x ∂?μ = ∫ (x : ℝ) in ?a..?b, ?g x ∂?μ\nwith the goal\n  (fun u =>\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0) =\n    fun u =>\n    Real.cos u + ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u\n\nNote: The full type of `@intervalIntegral.integral_congr` is\n  ∀ {E : Type ?u.353.8442} [inst : NormedAddCommGroup E] [inst_1 : NormedSpace ℝ E] {f g : ℝ → E}\n    {μ : MeasureTheory.Measure ℝ} {a b : ℝ},\n    Set.EqOn f g (Set.uIcc a b) → ∫ (x : ℝ) in a..b, f x ∂μ = ∫ (x : ℝ) in a..b, g x ∂μ\n\ncase e_f\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ (fun u =>\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0) =\n    fun u =>\n    Real.cos u + ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, Real.cos u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 26,
+      "column": 12,
+      "severity": "error",
+      "message": "No goals to be solved"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 47,
+      "column": 69,
+      "severity": "error",
+      "message": "unsolved goals\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u + -((3 * Real.pi / 2 - Real.pi / 2) * Real.sin (3 * Real.pi / 2)) =\n    1 + -Real.sin (3 * Real.pi / 2)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 50,
+      "column": 35,
+      "severity": "error",
+      "message": "Unknown constant `Real.sin_three_mul_pi_div_two`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P17_ec0d361689.lean",
+      "line": 49,
+      "column": 13,
+      "severity": "error",
+      "message": "unsolved goals\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ 1 + -Real.sin (3 * Real.pi / 2) = 2\n"
+    }
+  ],
+  "n_errors": 7
+}

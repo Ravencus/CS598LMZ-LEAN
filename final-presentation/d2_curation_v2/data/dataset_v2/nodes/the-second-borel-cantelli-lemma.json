@@ -1,0 +1,23 @@
+{
+  "id": "the-second-borel-cantelli-lemma",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "callout_id": "Borel-Cantelli lemma及其应用#6",
+  "english_title": "The Second Borel-Cantelli Lemma",
+  "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ be mutually independent, and suppose that $$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty.$$ Then $$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)=\\mathbb{P}(E_n \\text{ i.o.})=1.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "independence",
+    "complements of tail events",
+    "Borel-Cantelli argument"
+  ],
+  "prerequisites": [
+    "probability spaces",
+    "independence of events",
+    "infinite series"
+  ],
+  "callout_body": "集合列$E_1,..,E_n,..\\in\\mathcal{F}$互相之间是独立的，并且其测度形成的集合不收敛$$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty$$\n那么$$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)=\\mathbb{P}(E_n \\text{ i.o.})=1$$"
+}

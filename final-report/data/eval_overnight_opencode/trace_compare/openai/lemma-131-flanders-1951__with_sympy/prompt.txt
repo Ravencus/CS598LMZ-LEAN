@@ -1,0 +1,221 @@
+You are analyzing two Lean theorem-proving traces from the same problem. The "BIG" model succeeded; the "SMALL" model failed. Classify the failure mode.
+
+Problem id: lemma-131-flanders-1951    Condition: with_sympy
+
+=== BIG (passed) ===
+model: gpt-5.5    outcome: lean_proof    wall=51.4s    mcp_calls=2
+--- mcp call 1 (✗) ---
+import Mathlib
+
+open Polynomial
+
+#check minpoly.dvd
+#check minpoly.aeval
+#check aeval_X
+#check aeval_mul
+#check Matrix.mul_assoc
+#check Matrix.mul_eq_mul
+#check Polynomial.aeval_X
+#check Polynomial.aeval_mul
+#check Polynomial.eval₂_mul
+#check Polynomial.aeval_def
+#check AlgHom.map_mul
+#check IsScalarTower
+
+example {n : Type*} [Fintype n] [DecidableEq n] (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) := by
+  sorry
+
+--- mcp call 2 (✓) ---
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  constructor
+  · have hpow : ∀ m : ℕ, A * (B * A) ^ m = (A * B) ^ m * A := by
+      intro m
+      induction m with
+      | zero => simp
+      | succ m ih =>
+          have hBAA : A * (B * A) = (A * B) * A := by rw [mul_assoc]
+          calc
+            A * (B * A) ^ m.succ = A * ((B * A) ^ m * (B * A)) := by rw [pow_succ]
+            _ = (A * (B * A) ^ m) * (B * A) := by rw [mul_assoc]
+            _ = ((A * B) ^ m * A) * (B * A) := by rw [ih]
+            _ = (A * B) ^ m * (A * (B * A)) := by rw [mul_assoc]
+            _ = (A * B) ^ m * ((A * B) * A) := by exact congrArg (fun M => (A * B) ^ m * M) hBAA
+            _ = ((A * B) ^ m * (A * B)) * A := by rw [← mul_assoc]
+            _ = (A * B) ^ m.succ * A := by rw [pow_succ]
+    have hscalar : ∀ (a : ℂ), ∀ M : Matrix n n ℂ,
+        M * (algebraMap ℂ (Matrix n n ℂ) a) = algebraMap ℂ (Matrix n n ℂ) a * M := by
+      intro a M
+      simpa using (Algebra.commutes (R := ℂ) (A := Matr
+--- final_text ---
+I’ll use the Lean prover workflow and spend the checker budget on API discovery plus a compact proof attempt. The key route is to use matrix identities to show evaluation transfer: `p(BA)=0` implies `(X*p)(AB)=0`, then translate via `minpoly.dvd`.
+The checker accepts the statement, but `sorry` warnings make that probe “unsuccessful”, so I’ll avoid placeholder checks unless isolating errors. I’m checking for existing Mathlib facts and the exact `aeval` shape before committing to the proof.
+I found an existing checked proof pattern in the repository for this exact theorem. I’ll verify it in the current checker before returning it, rather than assume it still compiles.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  constructor
+  · have hpow : ∀ m : ℕ, A * (B * A) ^ m = (A * B) ^ m * A := by
+      intro m
+      induction m with
+      | zero => simp
+      | succ m ih =>
+          have hBAA : A * (B * A) = (A * B) * A := by rw [mul_assoc]
+          calc
+   
+
+=== SMALL (failed) ===
+model: gpt-5.4-mini    outcome: compile_fail    wall=164.35s    mcp_calls=9
+--- mcp call 1 (✗) ---
+import Mathlib
+
+open Polynomial
+
+#check minpoly.dvd_aeval
+#check minpoly.aeval
+#check aeval_minpoly
+#check Polynomial.aeval_mul
+#check Polynomial.aeval_X
+#check Matrix.mul_assoc
+#check Matrix.mul_apply
+#check congrArg
+
+example {n : Type*} [Fintype n] [DecidableEq n] (A B : Matrix n n ℂ) :
+    A * (B * A) = (A * B) * A := by
+  simp [Matrix.mul_assoc]
+
+--- mcp call 2 (✓) ---
+import Mathlib
+
+open Polynomial
+
+example {n : Type*} [Fintype n] [DecidableEq n] (A B : Matrix n n ℂ) :
+    A * (B * A) = (A * B) * A := by
+  simp [Matrix.mul_assoc]
+
+--- mcp call 3 (✗) ---
+import Mathlib
+
+open Polynomial
+
+example {n : Type*} [Fintype n] [DecidableEq n] (A : Matrix n n ℂ) :
+    minpoly ℂ A ∣ X * minpoly ℂ A := by
+  apply minpoly.dvd
+
+--- mcp call 4 (✓) ---
+import Mathlib
+
+open Polynomial
+
+example {n : Type*} [Fintype n] [DecidableEq n] (A : Matrix n n ℂ) :
+    (aeval A) (minpoly ℂ A) = 0 := by
+  simpa using aeval_minpoly (𝕜 := ℂ) (x := A)
+
+--- mcp call 5 (✗) ---
+import Mathlib
+
+open Polynomial
+
+example {n : Type*} [Fintype n] [DecidableEq n] (A B : Matrix n n ℂ) :
+    True := by
+  have h : ∀ p : Polynomial ℂ, A * Polynomial.aeval (B * A) p = Polynomial.aeval (A * B) p * A := by
+    intro p
+    induction p using Polynomial.induction_on with
+    | C c =>
+        simp
+    | X =>
+        simp [Matrix.mul_assoc]
+    | add p q hp hq =>
+        simp [hp, hq, add_mul, mul_add, Matrix.mul_assoc]
+    | mul p q hp hq =>
+        simp [hp, hq, mul_assoc, left_distrib, right_distrib]
+  trivial
+
+--- mcp call 6 (✗) ---
+import Mathlib
+
+open Polynomial
+
+example {n : Type*} [Fintype n] [DecidableEq n] (A B : Matrix n n ℂ) :
+    True := by
+  have h : ∀ p : Polynomial ℂ, A * Polynomial.aeval (B * A) p = Polynomial.aeval (A * B) p * A := by
+    intro p
+    induction p using Polynomial.induction_on with
+    | C c =>
+        simp
+    | monomial n c =>
+        simp
+    | add p q hp hq =>
+        simp [hp, hq, add_mul, mul_add, Matrix.mul_assoc]
+  trivial
+
+--- mcp call 7 (✗) ---
+import Mathlib
+
+example {n : Type*} [Fintype n] [DecidableEq n] (c : ℂ) (A : Matrix n n ℂ) :
+    A * (algebraMap ℂ (Matrix n n ℂ) c) = (algebraMap ℂ (Matrix n n ℂ) c) * A := by
+  simpa using (algebraMap_commutes (R := ℂ) (A := Matrix n n ℂ) c A)
+
+--- mcp call 8 (✗) ---
+import Mathlib
+
+example {n : Type*} [Fintype n] [DecidableEq n] (c : ℂ) (A : Matrix n n ℂ) :
+    A * (algebraMap ℂ (Matrix n n ℂ) c) = (algebraMap ℂ (Matrix n n ℂ) c) * A := by
+  rw [algebraMap_eq_smul_one]
+  simp [mul_comm, mul_assoc]
+
+--- mcp call 9 (✗) ---
+import Mathlib
+
+example {n : Type*} [Fintype n] [DecidableEq n] (c : ℂ) (A : Matrix n n ℂ) :
+    A * (algebraMap ℂ (Matrix n n ℂ) c) = (algebraMap ℂ (Matrix n n ℂ) c) * A := by
+  ext i j
+  simp [Matrix.mul_apply]
+
+--- final_text ---
+I’m loading the Lean proof workflow and checking the exact statement shape before iterating.
+I’m looking for existing Mathlib lemmas about `minpoly` on products and matrix multiplication so I can avoid inventing API names.
+I didn’t find local examples, so I’m checking whether the repo already contains a theorem statement or digest for this exact result.
+I have a proof idea: show `X * minpoly` annihilates the reversed product via `A * (BA)^k = (AB)^k * A`, then apply minimal-polynomial divisibility. I’m checking the exact lemma names now.
+I’m probing the minimal-polynomial divisibility API directly so I can use the right theorem instead of guessing.
+I have the divisibility lemma. I’m now validating the polynomial-induction shape for the intertwining identity that converts `AB`-annihilation into `BA`-annihilation.
+I have one key subgoal left: commuting a scalar matrix past an arbitrary matrix. I’m checking the exact centrality lemma name so the final proof stays minimal.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly 
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"label": "different_plan" | "same_plan_lean_impl_diff" | "same_plan_search_diff" | "unclear",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+LABEL DEFINITIONS:
+  different_plan          : The two models pursued substantively different decompositions (e.g., one used induction, the other used a continuous estimate).
+  same_plan_lean_impl_diff: Both pursued the same plan; the small model's failure was at the Lean tactic / type-checking level (wrong tactic, type mismatch, syntax).
+  same_plan_search_diff   : Same plan; the small model couldn't find the correct Mathlib lemma name or applicability.
+  unclear                 : Cannot tell from the visible evidence.
+
+Output the JSON object first, then the justification.

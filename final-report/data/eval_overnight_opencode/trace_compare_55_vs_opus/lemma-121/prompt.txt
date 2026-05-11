@@ -1,0 +1,101 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: lemma-121
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: compile_fail    wall=61.86s    mcp_calls=1
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+abbrev Torus : Type := { z : ℂ // ‖z‖ = (1 : ℝ) }
+
+theorem unitCircle_polynomial_uniform_approximation
+    (f : Torus → ℂ) (hf : Continuous f) :
+    ∀ ε : ℝ, ε > 0 → ∃ P : Polynomial ℂ, ∀ z : Torus, ‖f z - P.eval z.1‖ < ε := by
+  intro ε hε
+  classical
+  let K : Set ℂ := { z : ℂ | ‖z‖ = (1 : ℝ) }
+  let g : C(K, ℂ) := ⟨fun z => f ⟨z.1, z.2⟩, by
+    rw [continuous_iff_continuousAt]
+    intro z
+    exact hf.continuousAt.comp (continuousAt_subtype_val)⟩
+  obtain ⟨P, hP⟩ :=
+    Polynomial.exists_forall_norm_sub_lt_of_isCompact
+      (s := K) (isCompact_isClosed (isClosed_eq continuous_norm continuous_const))
+      g hε
+  refine ⟨P, ?_⟩
+  intro z
+  simpa [K, g, dist_eq_norm, norm_sub_rev] using hP ⟨z.1, z.2⟩
+--- final_text ---
+I’ll first verify the theorem statement and available surrounding API rather than assuming a high-level approximation theorem exists, because the stated complex polynomial approximation result has a mathematical caveat on the unit circle.
+The Lean statement matches a mathematically false theorem: positive-power complex polynomials restricted to the unit circle are not uniformly dense in all continuous functions on the circle. A standard counterexample is `f z = conj z`, whose uniform polynomial approximants would extend holomorphically to the disk and force an impossible boundary approximation.
+I’m going to do a quick API search for any Mathlib theorem with this exact approximation shape before concluding, but I will not spend checker calls on blind lemma guesses.
+The existing local traces include the same problem and identify it as false; one prior attempt used a guessed `Polynomial.exists_forall_norm_sub_lt_of_isCompact`, which would imply an invalid complex Stone-Weierstrass statement. I’ll compile that exact shape once to confirm whether there is any such Mathlib API available.
+The requested theorem is false as stated, so there is no valid Lean proof without adding an axiom or `sorry`.
+
+A correct version would need Laurent polynomials, or an extra hypothesis that `f` is the boundary value of a function holomorphic on the disk.
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: instruction_violation    wall=87.53s    mcp_calls=3
+--- mcp call 1 (PASS) ---
+import Mathlib
+
+abbrev Torus : Type := { z : ℂ // ‖z‖ = (1 : ℝ) }
+
+theorem unitCircle_polynomial_uniform_approximation
+    (f : Torus → ℂ) (hf : Continuous f) :
+    ∀ ε : ℝ, ε > 0 → ∃ P : Polynomial ℂ, ∀ z : Torus, ‖f z - P.eval z.1‖ < ε := by
+  sorry
+
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+-- Test: can we even get z̄ on the torus as a continuous function?
+example : Continuous (fun z : { z : ℂ // ‖z‖ = (1 : ℝ) } => starRingEnd ℂ z.1) := by
+  exact Complex.continuous_conj.comp continuous_subtype_val
+
+--- mcp call 3 (PASS) ---
+import Mathlib
+
+abbrev Torus : Type := { z : ℂ // ‖z‖ = (1 : ℝ) }
+
+theorem unitCircle_polynomial_uniform_approximation
+    (f : Torus → ℂ) (hf : Continuous f) :
+    ∀ ε : ℝ, ε > 0 → ∃ P : Polynomial ℂ, ∀ z : Torus, ‖f z - P.eval z.1‖ < ε := by
+  sorry
+
+--- final_text ---
+I'll work on this theorem about polynomial approximation on the unit circle. This is essentially Stone-Weierstrass for the disk algebra... wait, but Laurent polynomials would be needed for the full Stone-Weierstrass on the circle. Let me check what's being asked: approximation by polynomials (not Laurent polynomials). 
+
+Actually, this statement as written is FALSE in general - polynomials in z alone form the disk algebra A(D), which is NOT dense in C(T). For example, $\bar{z} = 1/z$ on T cannot be uniformly approximated by polynomials in z.
+
+So either the statement is wrong, or there's some trick. Let me check by trying to use the checker - maybe Lean's `Polynomial ℂ` evaluation allows something, or maybe I need to find a contradiction... wait, no, I need to prove it.
+
+Let me think again. The statement asks for ANY ε > 0, exists P such that ‖f z - P.eval z.1‖ < ε for all z. This is uniform approximation by polynomials. This IS false for general continuous f.
+
+Hmm, but I need to prove it. Maybe I should look at it more carefully - perhaps there's a way using the fact that `Polynomial ℂ` has specific evaluation. Let me start exploring.
+Let me think about this more carefully.
+
+The theorem as stated is: For continuous f on the unit circle, exists polynomial P (in z) such that uniform error < ε. This is FALSE in general - the Stone-Weierstrass approximation on T requires Laurent polynomials (both z and z̄).
+
+BUT... wait. Let me re-read. `‖z‖ = (1 : ℝ)`. So `Torus` is the unit circ
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

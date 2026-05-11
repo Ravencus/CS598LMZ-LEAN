@@ -1,0 +1,24 @@
+{
+  "id": "proposition-33",
+  "type": "problem",
+  "source_note": "关于序列极限的公开问题",
+  "english_source_note": "Open Problems on Sequence Limits",
+  "callout_id": "关于序列极限的公开问题#9",
+  "english_title": "Proposition 3.3",
+  "statement_en": "Let $q$ be a positive integer. Let $a_1>0$, and suppose the sequence satisfies the difference equation $$\\Delta a_n= \\frac{f(n)}{S_n^q}$$ where $f(n)>0$, $f(n)\\sim \\alpha n^{2\\beta}$, and $\\beta>\\frac{q-1}{2}$. Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\gamma}} =\\left(\\frac{\\alpha(\\gamma+1)^q}{\\gamma}\\right)^{\\frac{1}{q+1}}$$ where $\\gamma=\\frac{2\\beta-q+1}{q+1}$.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "asymptotic analysis of nonlinear difference equations",
+    "scaling arguments",
+    "partial sum growth estimates"
+  ],
+  "prerequisites": [
+    "difference equations",
+    "asymptotic notation",
+    "limits of sequences",
+    "partial sums"
+  ],
+  "callout_body": "令$q$是正整数，序列$a_1>0$，并且满足差分方程$$\\Delta a_n= \\frac{f(n)}{S_n^q}$$其中$f(n)>0$并且满足$f(n)\\sim \\alpha n^{2\\beta}$并且$\\beta>\\frac{q-1}{2}$那么$$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\gamma}} =\\left(\\frac{\\alpha(\\gamma+1)^q}{\\gamma}\\right)^{\\frac{1}{q+1}}$$其中$\\gamma=\\frac{2\\beta-q+1}{q+1}$。"
+}

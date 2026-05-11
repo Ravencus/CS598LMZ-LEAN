@@ -1,0 +1,18 @@
+{
+  "problem_id": "gautschi-inequality-1959",
+  "english_title": "Gautschi Inequality, 1959",
+  "statement_en": "For $s\\in(0,1)$ and $x>0$,\n$$x^{1-s}<\\frac{\\Gamma(x+1)}{\\Gamma(x+s)}<(1+x)^{1-s}.$$",
+  "difficulty": "hard",
+  "domain": "special functions",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem gamma_ratio_bounds\n    {s x : ℝ} (hs0 : 0 < s) (hs1 : s < 1) (hx : 0 < x) :\n    Real.rpow x (1 - s) < Real.Gamma (x + 1) / Real.Gamma (x + s) ∧\n      Real.Gamma (x + 1) / Real.Gamma (x + s) < Real.rpow (1 + x) (1 - s) := by\n  sorry"
+}

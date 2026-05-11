@@ -1,0 +1,12 @@
+I’m loading the Lean proving workflow and then I’ll test a minimal proof skeleton to identify the exact Mathlib lemmas needed.
+The theorem statement looks suspicious: the right-hand side does not mention `x`, so it would imply the same Cauchy condition characterizes convergence to every real number. I’m checking that mismatch before spending checker budget on an impossible proof.
+The statement is false as written, so it cannot be proved in Lean.
+
+Counterexample: `xSeq n = 0` for all `n`, `x = 1`.  
+Then the RHS holds (the sequence is Cauchy), but `xSeq` does not tend to `1`.
+
+A correct version would be one of these:
+- `Filter.Tendsto xSeq Filter.atTop (nhds x) ↔ ∀ ε > 0, ∃ N, ∀ n ≥ N, |xSeq n - x| < ε`
+- `CauchySeq xSeq ↔ ∀ ε > 0, ∃ N, ∀ n m, N < n → N < m → |xSeq n - xSeq m| < ε`
+
+If you want, I can formalize the corrected theorem in Lean.

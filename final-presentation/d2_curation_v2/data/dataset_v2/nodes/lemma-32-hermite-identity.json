@@ -1,0 +1,21 @@
+{
+  "id": "lemma-32-hermite-identity",
+  "type": "problem",
+  "source_note": "整数格点与一个带取整函数的和的极限问题",
+  "english_source_note": "A Limit Problem for Lattice Points and Floor Sums",
+  "callout_id": "整数格点与一个带取整函数的和的极限问题#6",
+  "english_title": "Lemma 3.2: Hermite Identity",
+  "statement_en": "Let $x\\in \\mathbb{R}$. Then $$\\sum_{k=0}^{n-1}\\left\\lfloor x+\\frac{k}{n}\\right\\rfloor=\\left\\lfloor nx\\right\\rfloor.$$",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "number theory",
+  "key_techniques": [
+    "floor function identities",
+    "fractional part decomposition"
+  ],
+  "prerequisites": [
+    "properties of the floor function",
+    "fractional parts"
+  ],
+  "callout_body": "令$x\\in \\mathbb{R}$那么$$\\sum_{k=0}^{n-1}\\left\\lfloor x+\\frac{k}{n}\\right\\rfloor=\\left\\lfloor nx\\right\\rfloor$$"
+}

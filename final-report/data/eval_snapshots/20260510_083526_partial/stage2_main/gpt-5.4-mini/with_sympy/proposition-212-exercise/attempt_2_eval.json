@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Invalid field `le_of_eventuallyLE`: The environment does not contain `Function.le_of_eventuallyLE`, so it is not possible to project the field `le_of_eventuallyLE` from an expression\n  hlim\nof type\n  ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_a2abd9ac7a.lean",
+      "line": 15,
+      "column": 34,
+      "severity": "error",
+      "message": "Invalid field `le_of_eventuallyLE`: The environment does not contain `Function.le_of_eventuallyLE`, so it is not possible to project the field `le_of_eventuallyLE` from an expression\n  hlim\nof type\n  ?m.109 ∈ nhds (b - a) → ?m.109 ∈ Filter.map (fun n => y n - x n) Filter.atTop\n"
+    }
+  ]
+}

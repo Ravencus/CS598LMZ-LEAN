@@ -1,0 +1,23 @@
+{
+  "id": "youngs-inequality",
+  "type": "problem",
+  "source_note": "函数卷积的基本性质",
+  "english_source_note": "Basic Properties of Convolution",
+  "callout_id": "函数卷积的基本性质#5",
+  "english_title": "Young's Inequality",
+  "statement_en": "Let $1\\leq p,q,r\\leq\\infty$ satisfy $1/p+1/q=1/r+1$. Then\n$$\\|f*g\\|_r\\leq\\|g\\|_p\\|f\\|_q.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "Holder's inequality",
+    "Minkowski's integral inequality",
+    "interpolation or norm estimates for convolution"
+  ],
+  "prerequisites": [
+    "Lebesgue spaces",
+    "convolution",
+    "Holder's inequality"
+  ],
+  "callout_body": "$1\\leq p,q,r\\leq\\infty$并且满足$1/p+1/q=1/r+1$那么$$||f*g||_r\\leq||g||_p||f||_q$$"
+}

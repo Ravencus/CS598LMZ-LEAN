@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_acc30a3cf8d4.lean",
+      "line": 8,
+      "column": 6,
+      "severity": "error",
+      "message": "expected token"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_acc30a3cf8d4.lean",
+      "line": 8,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch\n  P\nhas type\n  Matrix (Fin 2) (Fin 2) ℚ\nbut is expected to have type\n  Prop\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_acc30a3cf8d4.lean",
+      "line": 8,
+      "column": 6,
+      "severity": "error",
+      "message": "expected token"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_acc30a3cf8d4.lean",
+      "line": 8,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch\n  P\nhas type\n  Matrix (Fin 2) (Fin 2) ℚ\nbut is expected to have type\n  Prop\n"
+    }
+  ]
+}

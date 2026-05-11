@@ -1,0 +1,23 @@
+{
+  "problem_id": "problem-1-7",
+  "model": "gpt-5.5",
+  "wall_seconds": 13.03,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "basic-methods-in-analysis-i-hub",
+    "piecewise-estimates-hub",
+    "sequence-limits-via-piecewise-estimates-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "basic-methods-in-analysis-i-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "tp": 2,
+  "fp": 2,
+  "fn": 0,
+  "precision": 0.5,
+  "recall": 1.0,
+  "f1": 0.6667
+}

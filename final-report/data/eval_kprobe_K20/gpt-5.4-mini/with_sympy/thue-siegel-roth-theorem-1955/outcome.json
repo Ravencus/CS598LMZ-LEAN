@@ -1,0 +1,36 @@
+{
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 251.87,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 4,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "algebraic_irrational_has_irrationality_measure_two",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Invalid field `hasIrrationalityMeasure_two`: The environment does not contain `Exists.hasIrrationalityMeasure_two`, so it is not possible to project the field `hasIrrationalityMeasure_two` from an exp",
+  "total_cost_usd": 0.0,
+  "total_tokens": 1296180,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_b37d1ec50b.lean",
+      "line": 18,
+      "column": 47,
+      "severity": "error",
+      "message": "Invalid field `hasIrrationalityMeasure_two`: The environment does not contain `Exists.hasIrrationalityMeasure_two`, so it is not possible to project the field `hasIrrationalityMeasure_two` from an expression\n  hx_alg\nof type\n  ∃ p, p ≠ 0 ∧ (Polynomial.aeval x) p = 0\n"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+I'll work on proving this integral of the Cantor-like function. Let me start by checking the signature compiles and then build the proof using functional equations and integral splitting.

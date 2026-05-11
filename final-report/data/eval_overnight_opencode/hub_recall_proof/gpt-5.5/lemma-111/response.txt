@@ -1,0 +1,2 @@
+["estimates-for-the-sum-of-prime-reciprocals-hub"]
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof uses associativity to recognize two parenthesized matrix products as the same object after choosing `A` or `B` as the similarity witness via `simp [Matrix.mul_assoc]`.

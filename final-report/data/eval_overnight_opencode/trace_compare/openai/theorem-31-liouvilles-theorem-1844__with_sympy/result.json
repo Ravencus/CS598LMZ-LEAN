@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "theorem-31-liouvilles-theorem-1844",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces pursue the same decomposition: prove `Irrational α`, set `P := minpoly ℚ α`, pass to `IsLocalization.integerNormalization M P`, and prove nonzero/root facts. The SMALL trace repeatedly fails while instantiating the same lemmas and proof terms, e.g. malformed rational witness handling wit",
+  "wall_seconds": 10.42
+}

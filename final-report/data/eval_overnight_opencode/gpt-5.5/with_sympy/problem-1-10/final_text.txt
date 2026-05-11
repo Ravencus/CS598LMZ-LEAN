@@ -1,0 +1,24 @@
+I’ll look for existing digest guidance, then use the checker sparingly to validate the Mathlib lemmas and final proof.
+The likely route is to turn the zero set integral into `ENNReal.ofReal (f x) = 0` almost everywhere under `μ.restrict E`, then use nonnegativity to convert `ofReal` zero back to `f x = 0`.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem ae_zero_of_nonneg_measurable_lintegral_zero
+    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}
+    {f : Ω → ℝ} {E : Set Ω}
+    (hf_meas : Measurable f)
+    (hf_nonneg : ∀ x, 0 ≤ f x)
+    (hE_meas : MeasurableSet E)
+    (hE_pos : 0 < μ E)
+    (h_int_zero : ∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0) :
+    ∀ᵐ x ∂μ.restrict E, f x = 0 := by
+  have h_ae_ofReal : ∀ᵐ x ∂μ.restrict E, ENNReal.ofReal (f x) = 0 := by
+    exact ((MeasureTheory.lintegral_eq_zero_iff'
+      ((ENNReal.continuous_ofReal.measurable.comp hf_meas).aemeasurable
+        : AEMeasurable (fun x => ENNReal.ofReal (f x)) (μ.restrict E))).mp h_int_zero)
+  filter_upwards [h_ae_ofReal] with x hx
+  have hle : f x ≤ 0 := by
+    simpa [ENNReal.ofReal_eq_zero] using hx
+  exact le_antisymm hle (hf_nonneg x)
+```

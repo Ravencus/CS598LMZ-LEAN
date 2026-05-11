@@ -1,0 +1,43 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 2,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 2,
+  "any_timeout": false,
+  "wall_seconds": 127.0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 41.52,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 5,
+      "first_error": "expected token"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 80.68,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown identifier `ae_eq_zero_of_lintegral_eq_zero`\n"
+    }
+  ]
+}

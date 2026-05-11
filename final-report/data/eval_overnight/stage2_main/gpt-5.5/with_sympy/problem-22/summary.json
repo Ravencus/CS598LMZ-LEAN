@@ -1,0 +1,58 @@
+{
+  "problem_id": "problem-22",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 123.8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 25.93,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b ≥ 0\n  a ≥ 0\n  a - b ≥ 1\nwhere\n a := ↑n\n b := ↑N"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 75.12,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": true,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 15.76,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": true,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

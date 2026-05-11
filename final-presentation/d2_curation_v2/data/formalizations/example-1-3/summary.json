@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-1-3",
+  "english_title": "Example 1",
+  "statement_en": "Consider the probability space $(\\{0,1\\},\\mathcal{P}(\\{0,1\\}),P_0)$, where $P_0(\\{0\\})=1-p$ and $P_0(\\{1\\})=p$. Define the Bernoulli$(p)$ random variable\n$$Y_1(\\omega):=\\begin{cases}0& \\omega =0\\\\ 1&\\omega =1\\end{cases}$$\nThen its pushforward measure satisfies\n$$P_{Y_1}(\\{0\\})=1-p,\\qquad P_{Y_1}(\\{1\\})=p.$$",
+  "difficulty": "easy",
+  "domain": "probability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen MeasureTheory\n\ndef Y₁ : Bool → ℕ\n  | false => 0\n  | true => 1\n\ntheorem bernoulli_pushforward_singletons\n    (p : ℝ≥0∞) (hp : p ≤ 1) (P0 : Measure Bool)\n    (hfalse : P0 ({false} : Set Bool) = 1 - p) (htrue : P0 ({true} : Set Bool) = p) :\n    ((Measure.map Y₁ P0) ({0} : Set ℕ) = 1 - p) ∧ ((Measure.map Y₁ P0) ({1} : Set ℕ) = p) := by\n  sorry"
+}

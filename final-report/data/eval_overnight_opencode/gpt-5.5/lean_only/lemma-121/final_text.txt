@@ -1,0 +1,7 @@
+I’ll first verify the theorem statement and available surrounding API rather than assuming a high-level approximation theorem exists, because the stated complex polynomial approximation result has a mathematical caveat on the unit circle.
+The Lean statement matches a mathematically false theorem: positive-power complex polynomials restricted to the unit circle are not uniformly dense in all continuous functions on the circle. A standard counterexample is `f z = conj z`, whose uniform polynomial approximants would extend holomorphically to the disk and force an impossible boundary approximation.
+I’m going to do a quick API search for any Mathlib theorem with this exact approximation shape before concluding, but I will not spend checker calls on blind lemma guesses.
+The existing local traces include the same problem and identify it as false; one prior attempt used a guessed `Polynomial.exists_forall_norm_sub_lt_of_isCompact`, which would imply an invalid complex Stone-Weierstrass statement. I’ll compile that exact shape once to confirm whether there is any such Mathlib API available.
+The requested theorem is false as stated, so there is no valid Lean proof without adding an axiom or `sorry`.
+
+A correct version would need Laurent polynomials, or an extra hypothesis that `f` is the boundary value of a function holomorphic on the disk.

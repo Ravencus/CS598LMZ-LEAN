@@ -1,0 +1,226 @@
+{
+  "note_title": "函数卷积的基本性质",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "函数卷积的基本性质#1",
+      "type": "note",
+      "title": "卷积的定义",
+      "body": "$f,g$是拓扑群局部紧的可交换群$(G,+)$上由Haar测度$\\mu$建立起来的测度空间空间$(G,\\mathcal{F},\\mu)$当中的两个函数。这两个函数的卷积定义为$$f*g(x):=\\int_{G} f(x-y)g(y)\\,d\\mu(y)$$",
+      "position_char": 33,
+      "position_line": 6,
+      "classification_result": {
+        "id": "函数卷积的基本性质#1",
+        "classification": "definition",
+        "english_title": "Definition of Convolution",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数卷积的基本性质#2",
+      "type": "note",
+      "title": "卷积的平移就是平移的卷积",
+      "body": "如果$T_z(f)$表示把函数$f$左平移$z$个单位，即$$T_z(f)=f(x-z)$$那么\n$$T_{z}(f*g)=(T_zf)*g=f*(T_zg)$$",
+      "position_char": 292,
+      "position_line": 15,
+      "classification_result": {
+        "id": "函数卷积的基本性质#2",
+        "classification": "problem",
+        "english_title": "Translation of a Convolution Equals the Convolution of Translations",
+        "if_problem": {
+          "statement_en": "If $T_z(f)$ denotes the left translation of $f$ by $z$, namely $T_z(f)=f(x-z)$, then\n$$T_{z}(f*g)=(T_zf)*g=f*(T_zg).$$",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "change of variables in the convolution integral",
+            "translation invariance of Haar measure"
+          ],
+          "prerequisites": [
+            "definition of convolution",
+            "Haar measure",
+            "translation operators on groups"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数卷积的基本性质#3",
+      "type": "note",
+      "title": "卷积的支集与各自的支集的关系",
+      "body": "卷积的支集包含在一个由两个函数分别的支集构成的集合的**闭包**里面。$$\\text{supp}(f)+\\text{supp}(g)=\\{x+y:x\\in\\text{supp}(f),y\\in\\text{supp}(g)\\}$$",
+      "position_char": 420,
+      "position_line": 21,
+      "classification_result": {
+        "id": "函数卷积的基本性质#3",
+        "classification": "problem",
+        "english_title": "Relation Between the Support of a Convolution and the Supports of the Factors",
+        "if_problem": {
+          "statement_en": "The support of the convolution is contained in the closure of the sum of the supports of the two functions. Here\n$$\\operatorname{supp}(f)+\\operatorname{supp}(g)=\\{x+y:x\\in\\operatorname{supp}(f),\\ y\\in\\operatorname{supp}(g)\\}.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "support analysis",
+            "local vanishing arguments",
+            "properties of convolution integrals"
+          ],
+          "prerequisites": [
+            "definition of support",
+            "definition of convolution",
+            "basic topology of locally compact groups"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数卷积的基本性质#4",
+      "type": "note",
+      "title": "函数支集分别是紧的，那么卷积后的支集也紧",
+      "body": "如果分别的支集$\\text{supp}(f),\\text{supp}(g)$都是紧的，那么$A$紧，那么作为闭子集，$\\text{supp}(f*g)$也是紧的。",
+      "position_char": 1047,
+      "position_line": 29,
+      "classification_result": {
+        "id": "函数卷积的基本性质#4",
+        "classification": "problem",
+        "english_title": "If the Supports Are Compact, Then the Support of the Convolution Is Also Compact",
+        "if_problem": {
+          "statement_en": "If $\\operatorname{supp}(f)$ and $\\operatorname{supp}(g)$ are both compact, then the support of $f*g$ is also compact.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "support inclusion for convolutions",
+            "compactness of sums of compact sets",
+            "closed subset of a compact set"
+          ],
+          "prerequisites": [
+            "support of a convolution",
+            "compactness in topological groups",
+            "basic topology"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数卷积的基本性质#5",
+      "type": "note",
+      "title": "Young不等式",
+      "body": "$1\\leq p,q,r\\leq\\infty$并且满足$1/p+1/q=1/r+1$那么$$||f*g||_r\\leq||g||_p||f||_q$$",
+      "position_char": 1379,
+      "position_line": 36,
+      "classification_result": {
+        "id": "函数卷积的基本性质#5",
+        "classification": "problem",
+        "english_title": "Young's Inequality",
+        "if_problem": {
+          "statement_en": "Let $1\\leq p,q,r\\leq\\infty$ satisfy $1/p+1/q=1/r+1$. Then\n$$\\|f*g\\|_r\\leq\\|g\\|_p\\|f\\|_q.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "Holder's inequality",
+            "Minkowski's integral inequality",
+            "interpolation or norm estimates for convolution"
+          ],
+          "prerequisites": [
+            "Lebesgue spaces",
+            "convolution",
+            "Holder's inequality"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数卷积的基本性质#6",
+      "type": "note",
+      "title": "与光滑函数做卷积会得到光滑性",
+      "body": "如果函数$f \\in L^1,g\\in C^k$并且$\\partial^{\\alpha} g$有界($\\alpha$是多重指标，$|\\alpha|\\leq k$)那么$$f*g\\in C^k$$并且$$\\partial^{\\alpha}\\left(f*g\\right)=f*\\partial^{\\alpha}g$$",
+      "position_char": 1552,
+      "position_line": 44,
+      "classification_result": {
+        "id": "函数卷积的基本性质#6",
+        "classification": "problem",
+        "english_title": "Convolution with a Smooth Function Yields Smoothness",
+        "if_problem": {
+          "statement_en": "If $f \\in L^1$, $g\\in C^k$, and $\\partial^{\\alpha} g$ is bounded for every multi-index $\\alpha$ with $|\\alpha|\\leq k$, then\n$$f*g\\in C^k$$\nand\n$$\\partial^{\\alpha}\\left(f*g\\right)=f*\\partial^{\\alpha}g.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "differentiate under the integral sign",
+            "dominated convergence theorem",
+            "bounded derivative estimates"
+          ],
+          "prerequisites": [
+            "convolution",
+            "multi-index notation",
+            "dominated convergence theorem",
+            "basic differentiability theory"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数卷积的基本性质#7",
+      "type": "note",
+      "title": "卷积的性质7",
+      "body": "$f\\in L^p,g\\in L^{q}$其中$1/p+1/q=1,p\\in[1,+\\infty]$那么$f*g$一致连续且有界，并且属于$C_0$。",
+      "position_char": 1807,
+      "position_line": 53,
+      "classification_result": {
+        "id": "函数卷积的基本性质#7",
+        "classification": "problem",
+        "english_title": "Convolution of Dual Lebesgue Exponents Is Uniformly Continuous, Bounded, and Vanishes at Infinity",
+        "if_problem": {
+          "statement_en": "If $f\\in L^p$ and $g\\in L^{q}$ with $1/p+1/q=1$ and $p\\in[1,+\\infty]$, then $f*g$ is uniformly continuous and bounded, and moreover belongs to $C_0$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "Holder's inequality",
+            "approximation by compactly supported continuous functions",
+            "translation continuity in $L^p$"
+          ],
+          "prerequisites": [
+            "Lebesgue spaces",
+            "convolution",
+            "uniform continuity",
+            "space $C_0$"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数卷积的基本性质#8",
+      "type": "tip",
+      "title": "基本想法",
+      "body": "在LCH的条件下(局部紧的Hausdorff空间),$C_0$是$C_c$在一致度量下的闭包或者说$C_c$在$C_0$中式稠密的(这个范数条件非常重要，因为$C_c$在$L^p$下的闭包是$L^p$空间)。\n\n因此要证明某个函数$f\\in C_0$只需要证明对任意$\\varepsilon >0$存在$f_{\\varepsilon}\\in C_c$使得$$||f-f_{\\varepsilon}||_u <\\varepsilon$$即可。因为这样就说明$f$是$C_c$在一致范数导出拓扑下的一个极限点，那么必然属于$C_0$。",
+      "position_char": 2351,
+      "position_line": 64,
+      "classification_result": {
+        "id": "函数卷积的基本性质#8",
+        "classification": "strategy_template",
+        "english_title": "Basic Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Prove Membership in $C_0$ by Uniform Approximation from $C_c$",
+          "summary_en": "On a locally compact Hausdorff space, $C_0$ is the closure of $C_c$ in the uniform norm. Therefore, to prove $f\\in C_0$, it suffices to approximate $f$ uniformly by compactly supported continuous functions.",
+          "applicability": "Use this strategy when you want to show a function vanishes at infinity by constructing approximants in $C_c$ and proving convergence in the sup norm."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"函数卷积的基本性质#1\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Definition of Convolution\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数卷积的基本性质#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Translation of a Convolution Equals the Convolution of Translations\",\n    \"if_problem\": {\n      \"statement_en\": \"If $T_z(f)$ denotes the left translation of $f$ by $z$, namely $T_z(f)=f(x-z)$, then\\n$$T_{z}(f*g)=(T_zf)*g=f*(T_zg).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"change of variables in the convolution integral\",\n        \"translation invariance of Haar measure\"\n      ],\n      \"prerequisites\": [\n        \"definition of convolution\",\n        \"Haar measure\",\n        \"translation operators on groups\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数卷积的基本性质#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Relation Between the Support of a Convolution and the Supports of the Factors\",\n    \"if_problem\": {\n      \"statement_en\": \"The support of the convolution is contained in the closure of the sum of the supports of the two functions. Here\\n$$\\\\operatorname{supp}(f)+\\\\operatorname{supp}(g)=\\\\{x+y:x\\\\in\\\\operatorname{supp}(f),\\\\ y\\\\in\\\\operatorname{supp}(g)\\\\}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"support analysis\",\n        \"local vanishing arguments\",\n        \"properties of convolution integrals\"\n      ],\n      \"prerequisites\": [\n        \"definition of support\",\n        \"definition of convolution\",\n        \"basic topology of locally compact groups\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数卷积的基本性质#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"If the Supports Are Compact, Then the Support of the Convolution Is Also Compact\",\n    \"if_problem\": {\n      \"statement_en\": \"If $\\\\operatorname{supp}(f)$ and $\\\\operatorname{supp}(g)$ are both compact, then the support of $f*g$ is also compact.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"support inclusion for convolutions\",\n        \"compactness of sums of compact sets\",\n        \"closed subset of a compact set\"\n      ],\n      \"prerequisites\": [\n        \"support of a convolution\",\n        \"compactness in topological groups\",\n        \"basic topology\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数卷积的基本性质#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Young's Inequality\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $1\\\\leq p,q,r\\\\leq\\\\infty$ satisfy $1/p+1/q=1/r+1$. Then\\n$$\\\\|f*g\\\\|_r\\\\leq\\\\|g\\\\|_p\\\\|f\\\\|_q.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"Holder's inequality\",\n        \"Minkowski's integral inequality\",\n        \"interpolation or norm estimates for convolution\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue spaces\",\n        \"convolution\",\n        \"Holder's inequality\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数卷积的基本性质#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Convolution with a Smooth Function Yields Smoothness\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f \\\\in L^1$, $g\\\\in C^k$, and $\\\\partial^{\\\\alpha} g$ is bounded for every multi-index $\\\\alpha$ with $|\\\\alpha|\\\\leq k$, then\\n$$f*g\\\\in C^k$$\\nand\\n$$\\\\partial^{\\\\alpha}\\\\left(f*g\\\\right)=f*\\\\partial^{\\\\alpha}g.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"differentiate under the integral sign\",\n        \"dominated convergence theorem\",\n        \"bounded derivative estimates\"\n      ],\n      \"prerequisites\": [\n        \"convolution\",\n        \"multi-index notation\",\n        \"dominated convergence theorem\",\n        \"basic differentiability theory\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数卷积的基本性质#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Convolution of Dual Lebesgue Exponents Is Uniformly Continuous, Bounded, and Vanishes at Infinity\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f\\\\in L^p$ and $g\\\\in L^{q}$ with $1/p+1/q=1$ and $p\\\\in[1,+\\\\infty]$, then $f*g$ is uniformly continuous and bounded, and moreover belongs to $C_0$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"Holder's inequality\",\n        \"approximation by compactly supported continuous functions\",\n        \"translation continuity in $L^p$\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue spaces\",\n        \"convolution\",\n        \"uniform continuity\",\n        \"space $C_0$\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数卷积的基本性质#8\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Basic Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Prove Membership in $C_0$ by Uniform Approximation from $C_c$\",\n      \"summary_en\": \"On a locally compact Hausdorff space, $C_0$ is the closure of $C_c$ in the uniform norm. Therefore, to prove $f\\\\in C_0$, it suffices to approximate $f$ uniformly by compactly supported continuous functions.\",\n      \"applicability\": \"Use this strategy when you want to show a function vanishes at infinity by constructing approximants in $C_c$ and proving convergence in the sup norm.\"\n    }\n  }\n]",
+  "classified": true
+}

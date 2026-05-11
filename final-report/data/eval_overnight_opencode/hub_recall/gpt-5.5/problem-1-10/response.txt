@@ -1,0 +1,3 @@
+["an-epsilon-of-room-for-measure-zero-sets-hub", "piecewise-estimates-hub"]
+- an-epsilon-of-room-for-measure-zero-sets-hub: The proof reduces `f = 0` a.e. to showing auxiliary positive-level sets like `{x ∈ E | f x ≥ ε}` or `{x ∈ E | f x > 0}` have measure zero.
+- piecewise-estimates-hub: The key estimate is the lower bound `∫ f ≥ ε * μ({f ≥ ε})` on each level set, so a zero integral forces those level sets to have zero measure.

@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-5-2",
+  "english_title": "Problem 5",
+  "statement_en": "Let \\(\\\rho>0\\). An entire function satisfies the growth estimate $$f(z)=O\\\\bigl(e^{|z|^{\\\rho}}\\\\bigr)$$ and for every \\(n>3\\) one has $$f(\\\\log n)=0.$$ Prove that \\(f\\\\equiv 0\\).",
+  "difficulty": "hard",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem entire_zero_of_growth_and_log_nat_zeros\n    {ρ : ℝ} (hρ : 0 < ρ) {f : ℂ → ℂ}\n    (hentire : Differentiable ℂ f)\n    (hgrowth : ∃ C : ℝ, 0 ≤ C ∧ ∀ z : ℂ, ‖f z‖ ≤ C * Real.exp (Real.rpow ‖z‖ ρ))\n    (hzero : ∀ n : ℕ, 3 < n → f (Complex.ofReal (Real.log (n : ℝ))) = 0) :\n    f = 0 := by\n  sorry"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "theorem-211-cauchy-criterion-for-riemann-integrability",
+  "type": "problem",
+  "source_note": "黎曼积分的定义以及黎曼可积的判别",
+  "english_source_note": "Riemann Integral and Criteria for Integrability",
+  "callout_id": "黎曼积分的定义以及黎曼可积的判别#6",
+  "english_title": "Theorem 2.1.1: Cauchy Criterion for Riemann Integrability",
+  "statement_en": "A function $f:[a,b]\\to \\mathbb{R}$ is Riemann integrable if and only if for every $\\varepsilon>0$, there exists $\\delta_{\\varepsilon}>0$ such that for any tagged partitions $(P',\\xi')$ and $(P'',\\xi'')$ satisfying $\\lambda(P'),\\lambda(P'')<\\delta_{\\varepsilon}$, one has $$|S_f(P',\\xi')-S_f(P'',\\xi'')|<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Cauchy criterion",
+    "comparison of Riemann sums",
+    "epsilon-delta argument"
+  ],
+  "prerequisites": [
+    "definition of Riemann integral",
+    "tagged partitions and mesh",
+    "Cauchy criterion for limits"
+  ],
+  "callout_body": "函数$f:[a,b]\\to \\mathbb{R}$是黎曼可积的，当且仅当对任意$\\varepsilon>0$,存在一个$\\delta_{\\varepsilon}>0$使得任意满足$\\lambda(P'),\\lambda(P'')<\\delta_{\\varepsilon}$的划分$(P',\\xi'),(P'',\\xi'')$都有$$|S_f(P',\\xi')-S_f(P'',\\xi'')|<\\varepsilon$$"
+}

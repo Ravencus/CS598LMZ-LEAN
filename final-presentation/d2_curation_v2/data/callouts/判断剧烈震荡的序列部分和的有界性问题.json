@@ -1,0 +1,57 @@
+{
+  "note_title": "判断剧烈震荡的序列部分和的有界性问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "判断剧烈震荡的序列部分和的有界性问题#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "令$$S_N:=\\sum_{n\\leq N}\\sin(n^2)$$这是否为一个无界序列？",
+      "position_char": 39,
+      "position_line": 7
+    },
+    {
+      "id": "判断剧烈震荡的序列部分和的有界性问题#2",
+      "type": "tip",
+      "title": "想法1.1.1：给此想法一个概率的背景",
+      "body": "考虑一族随参数$N$变化的有限概率空间$(\\Omega_N,\\mathcal{F}_N,\\mathbb{P}_N)$其中$$\\Omega_N:=\\{1,2,\\cdots,N\\},\\quad\\mathcal{F}_N=2^{\\Omega_N},\\quad\\mathbb{P}_N(A):=\\frac{|A|}{N}$$在这个“舞台”上，从$\\{1,2,\\cdots,N\\}$当中任选一个下标作为我们随机均匀选取的片段的起点，这件事可以表达为一个随机变量$K \\sim U(\\Omega_N)$，即$\\Omega_N$上的均匀分布的随机变量。于是我们随机选取的长为$h$的序列$a_1,\\cdots,a_N$的片段就是一列随机变量序列$$X_{N,i}(\\omega):=a_{K(\\omega)+i},\\quad i=1,\\cdots,h$$现在我们真正关心的其实是这一随机片段的和，也就是随机变量$$Y_{N,h}(\\omega):=\\sum_{i=1}^h X_{N,i}(\\omega) $$如果此时我们知道$$\\text{Var}_N(Y_{N,h})\\to f(h)$$其中$f(h)>0$并且$f(h)\\to +\\infty$。那么我们可以断定，序列一定是无界的。因为$Y_{N,h}=S_{K+h}-S_{K}$如果$|S_N|\\leq M$对任意正整数$N$成立，那么随机变量$Y_{N,h}$一定是具有上界$2M$的，从而方差对任意固定的$h$都有$$\\limsup_{N\\to \\infty}\\text{Var}_N(Y_{N,h})\\leq 4M^2$$这就和我们对方差的假设矛盾了。因此$S_N$必然是无界序列。",
+      "position_char": 666,
+      "position_line": 20
+    },
+    {
+      "id": "判断剧烈震荡的序列部分和的有界性问题#3",
+      "type": "note",
+      "title": "命题1.2.1: 问题0的推广",
+      "body": "设$$P(n):=a_dn^d+a_{d-1}n^{d-1}+\\cdots+a_1 n +a_0\\in \\mathbb{R}[n],d\\geq 2$$是次数至少为2的，系数$a_d,\\cdots,a_2$当中至少有一个系数为无理数的多项式。设函数$F:\\mathbb{T}\\to \\mathbb{C}$对应的傅里叶级数绝对收敛，并且积分为0。那么序列$$S_N(F):=\\sum_{n=1}^{N}F\\circ P(n)$$是一个无界序列。",
+      "position_char": 3010,
+      "position_line": 34
+    },
+    {
+      "id": "判断剧烈震荡的序列部分和的有界性问题#4",
+      "type": "note",
+      "title": "引理1.2.2",
+      "body": "设$$P(n):=a_dn^d+a_{d-1}n^{d-1}+\\cdots+a_1 n +a_0\\in \\mathbb{R}[n],d\\geq 2$$是次数至少为2的，系数$a_d,\\cdots,a_2$当中至少有一个系数为无理数的多项式。令$i\\neq j\\in \\mathbb{Z}$，$(m_1,m_2)\\in \\mathbb{Z}^2\\setminus \\{(0,0)\\}$则$$Q(n):=m_1P(n+i)-m_2P(n+j)$$是一个非常数多项式，并且它的非常数系数里至少有一个无理数。",
+      "position_char": 3420,
+      "position_line": 42
+    },
+    {
+      "id": "判断剧烈震荡的序列部分和的有界性问题#5",
+      "type": "note",
+      "title": "命题1.2.3: 问题0结果的优化",
+      "body": "令$$S_N:=\\sum_{n\\leq N}\\sin(n^2)$$那么$$\\limsup_{N\\to \\infty}\\frac{|S_N|}{\\sqrt{N}}>0$$",
+      "position_char": 5792,
+      "position_line": 58
+    },
+    {
+      "id": "判断剧烈震荡的序列部分和的有界性问题#6",
+      "type": "question",
+      "title": "猜想1.2.4",
+      "body": "令$$S_N:=\\sum_{n\\leq N}\\sin(n^2)$$证明或证伪，存在正实数$C$使得$$\\limsup_{N\\to \\infty}\\frac{|S_N|}{\\sqrt{N\\log\\log N}}=C$$",
+      "position_char": 5909,
+      "position_line": 62
+    }
+  ]
+}

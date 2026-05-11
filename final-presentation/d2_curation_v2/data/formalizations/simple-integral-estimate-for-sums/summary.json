@@ -1,0 +1,30 @@
+{
+  "problem_id": "simple-integral-estimate-for-sums",
+  "english_title": "Simple Integral Estimate for Sums",
+  "statement_en": "If a function $f:[x,y]\\to\\mathbb{R}$ is monotone, then its sum over integers can be estimated by an integral in the quantitative form $$\\sum_{n\\in\\mathbb{Z}:y\\leq n\\leq x} f(n)=\\int_y^x f(t)\\,dt+O(|f(x)|+|f(y)|).$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem monotone_integer_sum_integral_estimate\n    (f : ℝ → ℝ) (hf : Monotone f) (x y : ℤ) (hxy : y ≤ x) :\n    ∃ C : ℝ,\n      0 ≤ C ∧\n        |(∑ n in Finset.Icc y x, f (n : ℝ)) - (∫ t in (y : ℝ)..(x : ℝ), f t)|\n          ≤ C * (|f (x : ℝ)| + |f (y : ℝ)|) := by\n  sorry"
+}

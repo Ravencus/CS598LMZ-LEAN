@@ -1,0 +1,50 @@
+{
+  "problem_id": "common-lemma-1",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 32.25,
+  "wall_exceeded": false,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 2,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "summable_measure_limsup_null_ae_tendsto",
+  "signature_ok": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Unknown constant `Filter.Eventually.all`\nFilter.mem_atTop_sets.{u_3} {α : Type u_3} [Preorder α] [IsDirectedOrder α] [Nonempty α] {s : Set α} :\n  s ∈ Filter.atTop ↔ ∃ a, ∀ b ≥ a, b ∈ s",
+  "total_cost_usd": 0.0,
+  "total_tokens": 83290,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_eff8cc8fcd.lean",
+      "line": 11,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Filter.Eventually.all`\nFilter.mem_atTop_sets.{u_3} {α : Type u_3} [Preorder α] [IsDirectedOrder α] [Nonempty α] {s : Set α} :\n  s ∈ Filter.atTop ↔ ∃ a, ∀ b ≥ a, b ∈ s"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_eff8cc8fcd.lean",
+      "line": 13,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown identifier `eventually_atTop`\nFilter.EventuallyEq.{u_1, u_2} {α : Type u_1} {β : Type u_2} (l : Filter α) (f g : α → β) : Prop"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_eff8cc8fcd.lean",
+      "line": 15,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Filter.EventuallyEq.nhds_iff`\nMetric.mem_nhds_iff.{u} {α : Type u} [PseudoMetricSpace α] {x : α} {s : Set α} :\n  s ∈ nhds x ↔ ∃ ε > 0, Metric.ball x ε ⊆ s\nMetric.eventually_nhds_iff.{u} {α : Type u} [PseudoMetricSpace α] {x : α} {p : α → Prop} :\n  (∀ᶠ (y : α) in nhds x, p y) ↔ ∃ ε > 0, ∀ ⦃y : α⦄, dist y x < ε → p y\n"
+    }
+  ]
+}

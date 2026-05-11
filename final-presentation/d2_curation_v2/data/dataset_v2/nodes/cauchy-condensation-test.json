@@ -1,0 +1,22 @@
+{
+  "id": "cauchy-condensation-test",
+  "type": "problem",
+  "source_note": "柯西凝聚判别法",
+  "english_source_note": "Cauchy Condensation Test",
+  "callout_id": "柯西凝聚判别法#1",
+  "english_title": "Cauchy Condensation Test",
+  "statement_en": "Let $a_n$ be a nonincreasing, nonnegative sequence. Then the series $\\sum_{n\\geq 1} a_n$ converges if and only if the series $\\sum_k 2^k a_{2^k}$ converges.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "dyadic decomposition",
+    "block comparison estimates"
+  ],
+  "prerequisites": [
+    "series convergence",
+    "monotone sequences",
+    "comparison test"
+  ],
+  "callout_body": "序列$a_n$不增，非负，那么级数$\\sum_{n\\geq1}a_n$的收敛发散性质等价于$\\sum_{k}2^ka_{2^k}$的收敛发散性。"
+}

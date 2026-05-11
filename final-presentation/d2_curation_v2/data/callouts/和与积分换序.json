@@ -1,0 +1,90 @@
+{
+  "note_title": "和与积分换序",
+  "is_hub": true,
+  "in_subset_via": [
+    "逐项估计",
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "和与积分换序#1",
+      "type": "tip",
+      "title": "核心想法0",
+      "body": "1. 如果我们有一个求和/积分问题，比如$\\sum X$这个和或$\\int X$这个积分是难以处理的，\n2. 此时我们又发现我们可以把$X$写成一个新的和或者积分，$X=\\sum Y$或者$X =\\int Y$那么此时我们得到了:\n$$\\sum \\sum Y \\text{ or }\\sum \\int Y\\text{ or } \\int \\sum Y \\text{ or }\\int \\int Y$$\n3. 交换二者的次序，试试看交换以后的结果会不会更好。简单来说就是给目标对象换一个表达方式，并且期望这个新的表达比原本的表达在当前状况下更好处理。",
+      "position_char": 38,
+      "position_line": 6
+    },
+    {
+      "id": "和与积分换序#2",
+      "type": "example",
+      "title": "例子0.1：全纯函数的幂级数表示与积分表示",
+      "body": "比如[[全纯函数与解析函数的等价性]]当中，带入这个视角我们无非就是把全纯函数$f(z)$的积分表示，即柯西积分公式，通过内部做展开的方式，然后交换得到函数的幂级数表示。我们很难说，一个全纯函数的积分表示更好还是幂级数表示更好，直到我们明确我们的目标。\n\n例如，当我们讨论全纯函数零点的时候，我们会尝试在零点附近进行幂级数展开，这样会方便我们处理局部的信息。比如[[identity theorem#^a4f64f]]这个命题当中，为了证明全纯函数的零点都是孤立的，我们就用的是全纯函数的幂级数表示而非积分表示。\n\n再比如，当我们需要通过全纯函数的全局条件推断其本身性质的时候，积分表示就更管用。例如[[揭露全纯以及亚纯函数信息的Liouville原则]]当中许多关于全纯函数增长速度控制的条件。全纯函数的幂级数表示就很难结合这种函数的全局条件，但是积分表示就很合适。",
+      "position_char": 382,
+      "position_line": 14
+    },
+    {
+      "id": "和与积分换序#3",
+      "type": "tip",
+      "title": "想法3.1.1",
+      "body": "此时我们展开无非就是得到：$$\\int f(x)g(x) = \\int f(x)\\sum a_n x^n = \\sum a_n\\int f(x)x^n$$无论是计算积分还是做积分估计，我们需要保证两点：\n1. $f$的n次矩，也就是$b_n:=\\int f(x)x^n$对我们而言是简单的（已知，好算，好估计）\n2. $\\sum a_n b_n$对我们来说是简单的（已知，好算，好估计）",
+      "position_char": 1061,
+      "position_line": 35
+    },
+    {
+      "id": "和与积分换序#4",
+      "type": "tip",
+      "title": "想法3.1.2",
+      "body": "有时候，展开未必是直接对$g$进行展开，而是$$\\int f(x)g(x)=\\int f(x)h(u)$$其中$h(u)=g(x)$。然后我们是对$h(u)$进行展开，从而得到$$\\int f(x)h(u)=\\int f(x)\\sum a_n u^n = \\sum a_n \\int f(x)u^n(x)$$也就是说，我们也不能只是关注那些普通的$n$次矩好算的函数$f$，也要关注对于一些特殊的n次矩$\\int f(x)u^n(x)$优化的函数。",
+      "position_char": 1320,
+      "position_line": 42
+    },
+    {
+      "id": "和与积分换序#5",
+      "type": "note",
+      "title": "命题3.1.3:正半轴上指数衰减的函数n次矩",
+      "body": "区间$[0,+\\infty)$上常见的$n$次矩简单的函数$g(x)$以及它们的$n$次矩$b_n:=\\int_0^{\\infty}g(x)x^n\\,dx$：\n* 指数衰减型$e^{-ax}$，$$\\begin{aligned}b_n&=\\int_0^{\\infty}e^{-ax}x^n\\,dx \\xlongequal{t=ax}\\frac{1}{a^{n+1}}\\int_0^{\\infty}t^ne^{-t}\\,dt \\\\&= \\frac{\\Gamma(n+1)}{a^{n+1}}\\\\&=\\frac{n!}{a^{n+1}}\\end{aligned}$$\n* 高斯函数$e^{-ax^2}$,$$\\begin{aligned}b_n&=\\int_0^{\\infty}e^{-ax^2}x^n\\\\&\\xlongequal{t=ax^2}\\frac{1}{2a^{(n+1)/2}}\\int_0^{\\infty}t^{\\frac{n}{2}-\\frac{1}{2}}e^{-t}\\,dt \\\\&=\\frac{\\Gamma(\\frac{n+1}{2})}{2a^{(n+1)/2}}\\end{aligned}$$\n* 玻色-爱因斯坦分布（简化）$\\frac{1}{e^x-1}$。这个函数的$n$次矩的计算本身就体现了\"想法3.1.2\"的技巧，我们利用$$\\frac{1}{e^x-1}=\\frac{e^{-x}}{1-e^{-x}}=\\sum_{k\\geq 1} e^{-kx}$$从而交换次序，并结合上面已经推导出来的指数型的普通n次矩的结论，得到$$\\begin{aligned}b_n&=\\int_0^{\\infty}\\frac{x^n}{e^x-1}\\,dx \\\\&= \\int_0^{\\infty}x^n\\sum_{k\\geq 1} e^{-kx}\\\\&= \\sum_{k\\geq 1}\\int_0^{\\infty}x^ne^{-kx} \\,dx \\\\&= \\sum_{k\\geq 1}\\frac{n!}{k^{n+1}}\\\\&=n!\\zeta(n+1)\\end{aligned}$$\n* 费米-狄拉克分布（简化），方法与思路与上一个类似。利用$$\\frac{1}{e^x+1}=\\frac{e^{-x}}{1+e^{-x}}=\\sum_{k\\geq 1} (-1)^{k-1}e^{-kx}$$从而$$\\begin{aligned}b_n&=\\int_0^{\\infty}\\frac{x^n}{e^x+1}\\,dx \\\\&= \\int_0^{\\infty}x^n\\sum_{k\\geq 1} (-1)^{k-1}e^{-kx}\\\\&= \\sum_{k\\geq 1}(-1)^{k-1}\\int_0^{\\infty}x^ne^{-kx} \\,dx \\\\&= n!\\sum_{k\\geq 1}\\frac{(-1)^{k-1}}{k^{n+1}}\\\\&=n!(1-2^{-n})\\zeta(n+1)\\end{aligned}$$",
+      "position_char": 1616,
+      "position_line": 47
+    },
+    {
+      "id": "和与积分换序#6",
+      "type": "example",
+      "title": "例子3.1.4",
+      "body": "计算含参数积分$$I(a):=\\int_{-\\infty}^{\\infty}e^{-x^2}\\cos(ax)\\,dx$$",
+      "position_char": 2931,
+      "position_line": 55
+    },
+    {
+      "id": "和与积分换序#7",
+      "type": "example",
+      "title": "例子3.1.5",
+      "body": "令$a>0,b\\in \\mathbb{R}$并且满足$a>|b|$，计算含参数积分$$I(a,b):=\\int_0^{\\infty}e^{-ax}J_0(bx)\\,dx$$其中$J_0(z)$是第一类零阶贝塞尔函数。",
+      "position_char": 3916,
+      "position_line": 63
+    },
+    {
+      "id": "和与积分换序#8",
+      "type": "note",
+      "title": "命题3.1.6: 区间$(0,1)$上常见的$n$次矩",
+      "body": "相比于无穷区间，有限区间$(0,1)$上的积分矩通常与 $\\Gamma$ 函数、Beta 函数以及阶乘幂密切相关。以下是常见的 $g(x)$ 及其 $n$ 次矩 $b_n:=\\int_0^1 g(x)x^n\\,dx$：\n* **对数函数** $(\\ln x)^k$(其中$k$为正整数)。利用换元 $x=e^{-t}$ 将其转化为 Gamma 函数积分：\n$$\\begin{aligned}b_n&=\\int_0^1 x^n (\\ln x)^k \\,dx \\\\&\\xlongequal{x=e^{-t}} \\int_{\\infty}^0 e^{-nt}(-t)^k (-e^{-t})\\,dt \\\\&= (-1)^k \\int_0^{\\infty} t^k e^{-(n+1)t}\\,dt \\\\&= (-1)^k \\frac{\\Gamma(k+1)}{(n+1)^{k+1}} = (-1)^k \\frac{k!}{(n+1)^{k+1}}\\end{aligned}$$\n* 特别地，当 $k=1$ 时，$b_n = -\\frac{1}{(n+1)^2}$。\n* **移位幂函数** $(1-x)^a$(其中$a>-1$)。这直接对应于 Euler Beta 函数的定义：\n$$\\begin{aligned}b_n&=\\int_0^1 x^n (1-x)^a \\,dx \\\\&= B(n+1, a+1) \\\\&= \\frac{\\Gamma(n+1)\\Gamma(a+1)}{\\Gamma(n+a+2)}\\end{aligned}$$如果 $a$ 是正整数 $m$，则 $b_n = \\frac{n!m!}{(n+m+1)!}$。\n* $\\frac{1}{\\sqrt{1-x^2}}$。利用三角换元 $x=\\sin \\theta$ 转化为 Wallis 积分公式：\n$$\\begin{aligned}b_n&=\\int_0^1 \\frac{x^n}{\\sqrt{1-x^2}}\\,dx \\\\&\\xlongequal{x=\\sin \\theta} \\int_0^{\\frac{\\pi}{2}} \\sin^n \\theta \\,d\\theta \\\\&= \\frac{\\sqrt{\\pi}}{2}\\frac{\\Gamma(\\frac{n+1}{2})}{\\Gamma(\\frac{n}{2}+1)}\\end{aligned}$$此时通常需要讨论 $n$ 的奇偶性。若 $n=2k$，则 $b_{2k} = \\frac{\\pi}{2}\\frac{(2k-1)!!}{(2k)!!} = \\frac{\\pi}{2}\\frac{\\binom{2k}{k}}{4^k}$。",
+      "position_char": 5044,
+      "position_line": 70
+    },
+    {
+      "id": "和与积分换序#9",
+      "type": "example",
+      "title": "例子3.1.7",
+      "body": "计算积分 $$I = \\int_0^1 \\frac{\\ln x}{1+x}\\,dx$$",
+      "position_char": 6236,
+      "position_line": 80
+    },
+    {
+      "id": "和与积分换序#10",
+      "type": "example",
+      "title": "例子3.1.8",
+      "body": "计算含参数积分（第一类零阶贝塞尔函数的积分表示）：$$I(a) := \\int_0^1 \\frac{\\cos(ax)}{\\sqrt{1-x^2}}\\,dx$$",
+      "position_char": 7070,
+      "position_line": 90
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "big_outcome": "lean_proof",
+  "small_outcome": "instruction_violation",
+  "label": "same_plan_search_diff",
+  "evidence": "Both traces start with the same direct `simpa [HasIrrationalityMeasure] using hx_alg.hasIrrationalityMeasure_two hx_irr` attempt and then search for an existing Mathlib theorem. BIG eventually succeeds by invoking Lean search with `apply?`, while SMALL only checks several guessed theorem names and c",
+  "wall_seconds": 6.44
+}

@@ -1,0 +1,29 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_942e4dfd3cda.lean",
+      "line": 8,
+      "column": 51,
+      "severity": "warning",
+      "message": "unused variable `X`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_942e4dfd3cda.lean",
+      "line": 18,
+      "column": 19,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_942e4dfd3cda.lean",
+      "line": 18,
+      "column": 19,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','\n"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+  "type": "hub",
+  "source_note": "Re0微积分1：用牛顿迭代法求算术平方根",
+  "english_source_note": "Re0 Calculus 1: Arithmetic Square Roots by Newton Iteration",
+  "is_top3": false,
+  "note_degree": 12,
+  "strategies": [
+    {
+      "callout_id": "Re0微积分1:用牛顿迭代法求算术平方根#3",
+      "english_title": "A Basic Idea of Analysis",
+      "strategy_name_en": "Approximate a complicated object by simpler objects",
+      "summary_en": "To study a property of a complicated object, replace it by a family of simpler known objects that approximate it arbitrarily well. Then transfer the analysis of the property to those approximating objects.",
+      "applicability": "Applies when a target object can be approximated by simpler objects in a way relevant to the property being studied.",
+      "callout_body": "当我们想要研究一个复杂的对象$\\text{A}$的某个性质$P$的时候，不妨想个办法找到某个由一些我们已知的并且认为相对简单的对象构成的集合$\\Omega$,使得$A$可以由$\\Omega$当中的元素任意逼近。那么我们可以从研究$A$的性质$P$,转而研究$\\Omega$当中元素的性质$P$。"
+    },
+    {
+      "callout_id": "Re0微积分1:用牛顿迭代法求算术平方根#5",
+      "english_title": "Three Things to Clarify When Implementing This Idea in Analysis",
+      "strategy_name_en": "Framework for approximation in analysis",
+      "summary_en": "When using approximation in analysis, one must identify an approximating family, determine whether convergence actually occurs, and compare different approximations by estimating their errors.",
+      "applicability": "Applies to problems where an object is studied through approximating sequences, families, or constructions.",
+      "callout_body": "1. 如何找到这样一个在性质$P$的意义下，无限逼近对象$A$的集合$\\Omega$? \n2. 我们如何判断某个集合里面的元素会任意逼近某个对象? (**收敛性的判断**)\n3. 如果我们的这种无限逼近的选项不止一个，例如有两个集合$\\Omega_1,\\Omega_2$当中的元素都可以任意逼近$A$，如何对比二者逼近的品质？(**误差的估计**)"
+    },
+    {
+      "callout_id": "Re0微积分1:用牛顿迭代法求算术平方根#14",
+      "english_title": "Basic Idea",
+      "strategy_name_en": "Transfer an iteration through a defining equation",
+      "summary_en": "If two sequences are linked by an equation $G(x_n,y_n)=0$ and one sequence has a known iteration, then the relation can be used to convert the iteration for $x_n$ into an iteration or recurrence for $y_n$.",
+      "applicability": "Applies when an auxiliary sequence is implicitly related to an iterated sequence and one wants to analyze the auxiliary sequence through that relation.",
+      "callout_body": "如果我们知道两个序列$x_n,y_n$之间的一个方程$$G(x_n,y_n)=0$$同时知道其中一个的迭代$$F(x_n,x_{n-1},...,x_1)=x_{n+1}$$我们想要分析$y_n$，那么可以经由方程$G$把关于$x_n$迭代变成关于$y_n$的迭代。"
+    }
+  ]
+}

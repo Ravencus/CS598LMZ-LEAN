@@ -1,0 +1,11 @@
+{
+  "problem_id": "mit-integration-competition",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "compile_fail",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "unclear",
+  "divergence": "n/a",
+  "evidence": "Trace A never develops a real mathematical decomposition; it tries `norm_num`, probes lemma names, then attempts `native_decide`, self-reference, and notation/macro shortcuts. Trace B gives a binary-expansion calculation in prose, but its Lean attempts are only `sorry`, `norm_num`, and `simp only [c",
+  "wall_seconds": 9.9
+}

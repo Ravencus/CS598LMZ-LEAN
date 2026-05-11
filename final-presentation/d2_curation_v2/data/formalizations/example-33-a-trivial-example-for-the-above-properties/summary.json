@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-33-a-trivial-example-for-the-above-properties",
+  "english_title": "Example 3.3: A Trivial Example for the Above Properties",
+  "statement_en": "Let $f(x)=\\sin(x)$. Then $$\\limsup_{x\\to \\infty}\\sin(x)=1,\\qquad \\liminf_{x\\to \\infty}\\sin(x)=-1.$$ Moreover, explicit sequences realizing these values are $$x_n:=\\frac{\\pi}{2}+2\\pi n,\\qquad y_n:=\\frac{3\\pi}{2}+2\\pi n,$$ for which $\\sin(x_n)\\to 1$ and $\\sin(y_n)\\to -1$, illustrating the basic properties of function limsup and liminf.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Application type mismatch: The argument\n  Filter.map Real.sin Filter.atTop\nhas type\n  Filter ℝ\nbut is expected to have type\n  ?m.17 → ?m.16\nin the application\n  Filter.liminf (Filter.map Real.sin Filt"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sin_limsup_liminf_atTop_and_sequences :\n    Filter.limsup Real.sin Filter.atTop = 1 ∧\n    Filter.liminf Real.sin Filter.atTop = -1 ∧\n    let x : ℕ → ℝ := fun n => Real.pi / 2 + 2 * Real.pi * (n : ℝ)\n    let y : ℕ → ℝ := fun n => 3 * Real.pi / 2 + 2 * Real.pi * (n : ℝ)\n    Filter.Tendsto (fun n => Real.sin (x n)) Filter.atTop (nhds 1) ∧\n      Filter.Tendsto (fun n => Real.sin (y n)) Filter.atTop (nhds (-1)) := by\n  sorry"
+}

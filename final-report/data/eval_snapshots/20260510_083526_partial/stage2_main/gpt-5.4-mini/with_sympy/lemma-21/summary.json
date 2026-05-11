@@ -1,0 +1,58 @@
+{
+  "problem_id": "lemma-21",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 263.5,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 59.74,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 3,
+      "first_error": "Unknown constant `Complex.norm_exp_mul_I_sub_one`"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 142.47,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown constant `Complex.sq_abs`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 53.44,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  Real.cos (2 * ?x)\nin the target expression\n  Complex.normSq (Complex.cos (↑x * (↑Real.pi * 2)) + Complex.I * Complex.sin (↑x * (↑Re"
+    }
+  ]
+}

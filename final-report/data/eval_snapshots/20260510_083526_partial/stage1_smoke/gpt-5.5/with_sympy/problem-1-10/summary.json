@@ -1,0 +1,43 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 2,
+  "overall_success": true,
+  "why_success": "lean_proof",
+  "attempts_used": 2,
+  "any_timeout": false,
+  "wall_seconds": 39.3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 16.29,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression\n  MeasureTheory.lintegral_eq_zero_iff\nof type\n  Measurable ?m.55 "
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 18.34,
+      "outcome": "lean_proof",
+      "overall_success": true,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

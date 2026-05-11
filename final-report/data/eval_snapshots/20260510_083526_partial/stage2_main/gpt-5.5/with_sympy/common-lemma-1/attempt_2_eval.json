@@ -1,0 +1,37 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Application type mismatch: The argument\n  h ε hε\nhas type\n  Summable fun n => μ {x | ε ≤ |fSeq (n + 1) x - f x|}\nbut is expected to have type\n  ∑' (i : ℕ), μ {x | ?m.123 i x} ≠ ⊤\nin the application\n  ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_ea0aab5ba6.lean",
+      "line": 18,
+      "column": 59,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h ε hε\nhas type\n  Summable fun n => μ {x | ε ≤ |fSeq (n + 1) x - f x|}\nbut is expected to have type\n  ∑' (i : ℕ), μ {x | ?m.123 i x} ≠ ⊤\nin the application\n  measure_setOf_frequently_eq_zero (h ε hε)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ea0aab5ba6.lean",
+      "line": 18,
+      "column": 6,
+      "severity": "error",
+      "message": "Invalid argument name `s` for function `measure_setOf_frequently_eq_zero`\n\nHint: Perhaps you meant one of the following parameter names:\n  • `α`: s̵α̲\n  • `F`: s̵F̲\n  • `p`: s̵p̲\n  • `hp`: s̵h̲p̲"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ea0aab5ba6.lean",
+      "line": 28,
+      "column": 25,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hz\n has type\n  μ {x | ∃ᶠ (n : ℕ) in atTop, (↑k + 1)⁻¹ ≤ |fSeq (n + 1) x - f x|} = 0\nbut is expected to have type\n  μ {a | ∀ (x : ℕ), ∃ x_1, x ≤ x_1 ∧ (↑k + 1)⁻¹ ≤ |fSeq (x_1 + 1) a - f a|} = 0\n"
+    }
+  ]
+}

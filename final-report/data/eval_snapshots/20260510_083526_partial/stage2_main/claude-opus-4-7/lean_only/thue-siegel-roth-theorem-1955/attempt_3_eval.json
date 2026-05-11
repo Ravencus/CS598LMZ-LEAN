@@ -1,0 +1,72 @@
+{
+  "outcome": "instruction_violation",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": true,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 8,
+  "first_error": "unexpected identifier; expected command",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_8ce3f4cc12.lean",
+      "line": 3,
+      "column": 0,
+      "severity": "error",
+      "message": "unexpected identifier; expected command"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_8ce3f4cc12.lean",
+      "line": 3,
+      "column": 33,
+      "severity": "error",
+      "message": "unexpected token; expected identifier"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_8ce3f4cc12.lean",
+      "line": 3,
+      "column": 96,
+      "severity": "error",
+      "message": "unexpected token 'theorem'; expected ':'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_8ce3f4cc12.lean",
+      "line": 3,
+      "column": 104,
+      "severity": "error",
+      "message": "unexpected token '('; expected identifier"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_8ce3f4cc12.lean",
+      "line": 3,
+      "column": 106,
+      "severity": "error",
+      "message": "unexpected token; expected '_' or identifier"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_8ce3f4cc12.lean",
+      "line": 3,
+      "column": 211,
+      "severity": "error",
+      "message": "unexpected token ','; expected identifier"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_8ce3f4cc12.lean",
+      "line": 3,
+      "column": 215,
+      "severity": "error",
+      "message": "unexpected token; expected ':'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_8ce3f4cc12.lean",
+      "line": 7,
+      "column": 0,
+      "severity": "error",
+      "message": "invalid 'import' command, it must be used in the beginning of the file\n"
+    }
+  ]
+}

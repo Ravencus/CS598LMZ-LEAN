@@ -1,0 +1,18 @@
+{
+  "problem_id": "estimate-for-bernoulli-polynomials-on-one-period",
+  "english_title": "Estimate for Bernoulli Polynomials on One Period",
+  "statement_en": "One has the bound $$|B_p(\\{t\\})|\\leq \\frac{2p!}{(2\\pi)^p}\\zeta(p).$$",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem periodicBernoulli_bound\n    (B : ℕ → ℝ → ℝ) (ζ : ℕ → ℝ) (p : ℕ) (t : ℝ) :\n    |B p (Int.fract t)| ≤ (2 * (Nat.factorial p : ℝ)) / ((2 * Real.pi) ^ p) * ζ p := by\n  sorry"
+}

@@ -1,0 +1,44 @@
+You are formalizing a real proof in Lean 4 + Mathlib. You have access to a `check_lean_proof` MCP tool that compiles Lean code and returns diagnostics. Use it to iterate on your proof.
+
+THEOREM (English):
+For each $\varepsilon > 0$, define $$A_{n,\varepsilon}:=\{x:|f_n(x)-f(x)|\geq\varepsilon\}.$$ If for every $\varepsilon > 0$ one has $$\sum_{n\geq1}\mu(A_{n,\varepsilon})<\infty,$$ then $$\mu\left(\limsup_{n\to\infty}A_{n,\varepsilon}\right)=0,\quad \forall \varepsilon>0,$$ and hence $$f_n(x) \to f(x) \text{ a.e. }x.$$
+
+LEAN 4 SIGNATURE (use VERBATIM — do NOT change name, hypotheses, or conclusion):
+import Mathlib
+
+open Filter MeasureTheory
+open scoped Topology MeasureTheory
+
+theorem summable_measure_limsup_null_ae_tendsto
+    {α : Type*} [MeasurableSpace α] (μ : Measure α)
+    (fSeq : ℕ → α → ℝ) (f : α → ℝ)
+    (h :
+      ∀ ε > 0, Summable (fun n : ℕ => μ {x | ε ≤ |fSeq (n + 1) x - f x|})) :
+    (∀ ε > 0, μ {x | ∃ᶠ n in Filter.atTop, ε ≤ |fSeq (n + 1) x - f x|} = 0) ∧
+      ∀ᵐ x ∂μ, Tendsto (fun n : ℕ => fSeq n x) Filter.atTop (nhds (f x)) := by
+  sorry
+
+You have a HARD BUDGET of 10 `check_lean_proof` calls. Each call response includes `calls_used` and `calls_budget` so you can track usage. When the budget is exhausted, no further checker calls work — submit your best final attempt and stop.
+
+Notation: `ℕ`/`ℤ`/`ℚ`/`ℝ`/`ℂ`, `Finset.sum`, `Filter.Tendsto`, `Filter.atTop`,
+`nhds`, `Real.pi`, `Summable`, etc. Sum syntax: `∑ k ∈ Finset.range n, ...`
+(NOT `∑ k in ...`).
+
+Tactics: `intro`, `rcases`, `obtain`, `have`, `calc`, `simp`, `ring`,
+`linarith`, `nlinarith`, `gcongr`, `positivity`, `field_simp`, `omega`,
+`norm_num`, `funext`, `rw`, `exact`, `induction`, `push_cast`.
+
+Rules:
+  - Do NOT use `sorry`, `admit`, or `axiom` in the FINAL proof (unless using SYMPY-SKILL below).
+  - Do NOT invent Mathlib lemma names. Prefer tactics over guessed names.
+  - First line must be `import Mathlib`. The signature must match byte-for-byte.
+
+
+
+When you have a proof that compiles (or you've used the budget), output your FINAL answer as one fenced lean block, prefixed with the literal token `FINAL_PROOF:`. Output it exactly once, after your proof compiles or you've stopped iterating:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+... your final code ...
+```

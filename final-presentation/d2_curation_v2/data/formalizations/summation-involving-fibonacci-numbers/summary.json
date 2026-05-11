@@ -1,0 +1,18 @@
+{
+  "problem_id": "summation-involving-fibonacci-numbers",
+  "english_title": "Summation Involving Fibonacci Numbers",
+  "statement_en": "Let \\(F_n\\) be the \\(n\\)-th Fibonacci number. Evaluate\n$$\\\\sum_{n \\\\geq 1} \\\\frac{1}{F_nF_{n+4}}.$$",
+  "difficulty": "hard",
+  "domain": "discrete mathematics",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem fibonacci_reciprocal_sum :\n    (∑' n : ℕ, (1 : ℝ) / ((Nat.fib (n + 1) : ℝ) * (Nat.fib (n + 5) : ℝ))) = (7 : ℝ) / 18 := by\n  sorry"
+}

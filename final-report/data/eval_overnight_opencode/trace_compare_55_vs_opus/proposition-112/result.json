@@ -1,0 +1,11 @@
+{
+  "problem_id": "proposition-112",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "none",
+  "evidence": "Both traces prove the same telescoping closed form by induction, rewriting the sum over `Finset.Icc` with `Finset.sum_Icc_succ_top`, then finish by showing `0 < 1 / (N : ℚ)` and using `linarith`.",
+  "wall_seconds": 7.42
+}

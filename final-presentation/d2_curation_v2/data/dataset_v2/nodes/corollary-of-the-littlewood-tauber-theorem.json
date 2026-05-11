@@ -1,0 +1,23 @@
+{
+  "id": "corollary-of-the-littlewood-tauber-theorem",
+  "type": "problem",
+  "source_note": "模1均匀分布序列对序列差分的要求",
+  "english_source_note": "Difference Conditions for Uniform Distribution mod 1",
+  "callout_id": "模1均匀分布序列对序列差分的要求#3",
+  "english_title": "Corollary of the Littlewood-Tauber Theorem",
+  "statement_en": "If the arithmetic means of a sequence $y_n$ converge to $a$, and its differences satisfy the estimate\n$$\\Delta y_n = O\\left(\\frac{1}{n}\\right),$$\nthen the limit of $y_n$ exists and is equal to $a$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "summability theory",
+  "key_techniques": [
+    "Cesaro means",
+    "application of a Tauberian theorem",
+    "difference estimates"
+  ],
+  "prerequisites": [
+    "arithmetic means of sequences",
+    "Littlewood-Tauber theorem",
+    "big-O notation"
+  ],
+  "callout_body": "如果一个序列$y_n$的算术平均值收敛到$a$,并且其差分具有估计$\\Delta y_n = O\\left(\\frac{1}{n}\\right)$那么$y_n$的极限存在且为$a$。"
+}

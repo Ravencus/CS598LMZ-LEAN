@@ -1,0 +1,3 @@
+I’m loading the Lean proving workflow and will first test a small proof skeleton against the checker.
+I’ve reduced the proof to an induction/telescoping shape. I’m checking which Finset summation lemmas Mathlib already provides so I can keep the final proof minimal.
+I’m checking whether the installed Mathlib source has a ready-made `Icc`/`range` shift lemma. If not, I’ll fall back to an induction proof with explicit algebra.

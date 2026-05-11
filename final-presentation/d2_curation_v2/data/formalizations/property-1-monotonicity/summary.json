@@ -1,0 +1,24 @@
+{
+  "problem_id": "property-1-monotonicity",
+  "english_title": "Property 1: Monotonicity",
+  "statement_en": "If $E_1,E_2 \\in \\mathcal{F}$ and $E_1\\subseteq E_2$, then $$\\mu(E_1)\\leq \\mu(E_2).$$",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem measure_mono_of_measurable_subset\n    {α : Type*} [MeasurableSpace α] (μ : Measure α) {E₁ E₂ : Set α}\n    (hE₁ : MeasurableSet E₁) (hE₂ : MeasurableSet E₂) (hsubset : E₁ ⊆ E₂) :\n    μ E₁ ≤ μ E₂ := by\n  sorry"
+}

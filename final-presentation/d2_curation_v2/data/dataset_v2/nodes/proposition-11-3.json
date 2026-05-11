@@ -1,0 +1,21 @@
+{
+  "id": "proposition-11-3",
+  "type": "problem",
+  "source_note": "无理测度的定义以及基本的命题",
+  "english_source_note": "Irrationality Measure: Definition and Basics",
+  "callout_id": "无理测度的定义以及基本的命题#3",
+  "english_title": "Proposition 1.1",
+  "statement_en": "The irrationality measure of every rational number is 1.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "analyzing the definition of irrationality measure",
+    "lower bound for distance between a rational number and distinct rationals"
+  ],
+  "prerequisites": [
+    "definition of irrationality measure",
+    "basic properties of rational numbers"
+  ],
+  "callout_body": "任何有理数的无理测度都是1。"
+}

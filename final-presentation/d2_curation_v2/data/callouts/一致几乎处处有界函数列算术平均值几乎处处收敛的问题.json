@@ -1,0 +1,73 @@
+{
+  "note_title": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#1",
+      "type": "note",
+      "title": "命题0，CMC数学组高年级决赛题目",
+      "body": "$(X,\\Omega,\\mu)$是一个测度空间，$f_n$是$X$上一列几乎处处一致有界的可测函数列。令$A_N(x):=\\frac{1}{N}\\sum_{n\\leq N} f_n(x)$那么$$\\sum_{N\\geq 1} \\frac{1}{N}\\int_X A_{N}^{2}(x)\\,d\\mu <\\infty\\implies A_N(x)\\xrightarrow{a.e.}{0}$$",
+      "position_char": 43,
+      "position_line": 7
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#2",
+      "type": "note",
+      "title": "Kolmogorov强大数定律",
+      "body": "设$X_n$是概率空间上的一列独立的随机变量（不要求同分布），其期望为0，方差有限，并且额外满足$$\\sum_{n\\geq 1} \\frac{V(X_n)}{n^2}<+\\infty$$那么随机变量$\\frac{X_1+\\cdots+X_n}{n}$几乎处处收敛到0。",
+      "position_char": 302,
+      "position_line": 12
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#3",
+      "type": "error",
+      "title": "1.1:直接尝试用Borel-Cantelli引理失败",
+      "body": "关于这个问题我首先想到可以借助[[Borel-Cantelli lemma及其应用#1. 此lemma在序列的几乎处处收敛上的应用]],然后接合Chebyshev不等式来证明最后的几乎处处收敛。具体来说，令$$A_{n,\\varepsilon}:=\\{x:|A_n|\\geq \\varepsilon\\}$$如果对任意的$\\varepsilon>0$，我们可以证明$\\sum_{n\\geq 1}\\mu(A_{n,\\varepsilon})$收敛，那么问题就解决了。我们可以尝试用Chebyshev来估计$\\mu(A_{n,\\varepsilon})$的上界。一个简单的估计为$$\\mu(A_{n,\\varepsilon})\\leq \\frac{\\int_X A_n^2(x)\\,d\\mu}{\\varepsilon^2}$$也就是说我们只要证明，$\\sum_n \\int_X A_n^2(x)\\,d\\mu$收敛即可。但是很不巧，条件中给到的是$\\sum_n \\frac{\\int_X A_n^2(x)\\,d\\mu}{n}$收敛。",
+      "position_char": 1006,
+      "position_line": 19
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#4",
+      "type": "error",
+      "title": "1.2:一个天真的错误想法",
+      "body": "有没有可能对于非负序列$b_n$，如果$\\sum_n \\frac{b_n}{n}<+\\infty$那么$\\sum_{n}b_n<+\\infty$呢？因为如果这样能成功的话，我们不妨假设$b_n:=\\int_X A_n^2(x)\\,d\\mu$从而直接得到$\\sum_n b_n<+\\infty$从而实现\"Borel-Cantelli引理+Chebyshev不等式\"的路径，完成对$A_n(x)$几乎处处收敛到0的论证。\n\n但这是错误的，因为我们轻易可以给出反例：$b_n:=1_{n=2^k}$那么此时$$\\sum_{n\\geq 2}\\frac{b_n}{n}=\\sum_{k\\geq 1}\\frac{1}{2^k}<+\\infty$$但是$$\\sum_{n\\geq 2} b_n =\\sum_{k\\geq 1}1=+\\infty$$",
+      "position_char": 1512,
+      "position_line": 23
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#5",
+      "type": "note",
+      "title": "引理1.3",
+      "body": "存在正实数$M$使得$$|A_{n+1}(x)-A_n(x)|\\leq \\frac{2M}{n+1}$$几乎处处成立。",
+      "position_char": 2104,
+      "position_line": 32
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#6",
+      "type": "note",
+      "title": "引理1.4",
+      "body": "令$I_k:=[2^k,2^{k+1}),\\Lambda_k(x):=\\max_{n\\in I_k}\\{|A_n(x)|\\}$以及$$G_k(x):=\\frac{1}{|I_k|}\\sum_{n\\in I_k} A_n(x)^2 $$那么$$G_k(x)\\geq \\frac{1}{16 M} \\Lambda_k(x)^3$$",
+      "position_char": 2528,
+      "position_line": 41
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#7",
+      "type": "note",
+      "title": "引理1.5",
+      "body": "在“命题0\"的条件下$G_k(x)$几乎处处收敛到0。",
+      "position_char": 2714,
+      "position_line": 45
+    },
+    {
+      "id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#8",
+      "type": "tip",
+      "title": "想法1.6",
+      "body": "这个信息能对我们的目的，即制造$G_k$控制$\\Lambda_k$的不等式，有什么意义？联想到[[函数p范数与无穷范数之间的关系]]当中下界不等式的估计，我们可以把$G_k=\\frac{1}{|I_k|}\\sum_{n\\in I_k}|A_n|^2$理解为离散的$L^2$范数的平方，$\\lambda$理解为离散的$L^\\infty$范数。所以为了建立由$L^2$范数控制$L^{\\infty}$范数的不等式，我们需要讨论集合$\\{n\\in I_k:|A_n|\\geq \\lambda - \\varepsilon\\}$这个集合的计数测度，也就是元素个数的下界估计。而这就可以结合$\\lambda=|A_{n_0}|$不能快速下降的特性来完成。",
+      "position_char": 4570,
+      "position_line": 72
+    }
+  ]
+}

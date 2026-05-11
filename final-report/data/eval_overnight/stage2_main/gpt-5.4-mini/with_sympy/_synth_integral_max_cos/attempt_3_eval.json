@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Application type mismatch: The argument\n  0\nhas type\n  ℝ\nbut is expected to have type\n  MeasureTheory.Measure ℝ\nin the application\n  IntervalIntegrable (fun u => max (Real.cos u) 0) 0",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 8,
+      "column": 66,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  0\nhas type\n  ℝ\nbut is expected to have type\n  MeasureTheory.Measure ℝ\nin the application\n  IntervalIntegrable (fun u => max (Real.cos u) 0) 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 10,
+      "column": 2,
+      "severity": "error",
+      "message": "No goals to be solved\n"
+    }
+  ]
+}

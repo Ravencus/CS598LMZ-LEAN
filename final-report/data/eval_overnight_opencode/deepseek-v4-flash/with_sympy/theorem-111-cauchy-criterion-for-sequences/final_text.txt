@@ -1,0 +1,8 @@
+Let me first check the theorem statement compiles and explore some relevant lemmas.
+Good, the signature compiles. Let me explore key lemmas I'll need.
+I've exhausted my 10-call budget. Let me now write my best attempt based on what I've learned.
+
+**Analysis:** The forward direction (→) is the standard ε/2 triangle inequality argument. The backward direction (←) is false as stated — Cauchy doesn't imply convergence to a specific `x` without additional hypotheses. This is a bug in the problem statement: the RHS should either mention `x` or the quantifier should be `∃ x`. I'll prove what's provable and address the issue.
+
+Let me submit my final attempt.
+I need to rewrite this without `sorry`. Let me think about the structure carefully. The forward direction is correct. For the backward direction, the RHS (Cauchy condition) doesn't reference `x`, so the theorem as stated is logically unsound. However, I need to produce a proof attempt. Let me write the cleanest possible version using `CompleteSpace ℝ`.

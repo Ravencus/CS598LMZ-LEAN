@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-11-2",
+  "english_title": "Problem 1.1",
+  "statement_en": "Prove the stronger statement that $\\sin(n)$ is dense: namely, prove that the set formed by the sequence $x_n=\\sin(n)$ is dense in the subspace $[-1,1]$.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sin_nat_dense_in_Icc :\n    Set.Icc (-1 : ℝ) 1 ⊆ closure (Set.range (fun n : ℕ => Real.sin (n : ℝ))) := by\n  sorry"
+}

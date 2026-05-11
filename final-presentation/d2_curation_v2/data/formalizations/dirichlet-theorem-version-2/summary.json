@@ -1,0 +1,18 @@
+{
+  "problem_id": "dirichlet-theorem-version-2",
+  "english_title": "Dirichlet Theorem (Version 2)",
+  "statement_en": "Let $\\alpha$ be irrational. For every positive integer $n$, there exists a positive integer $q\\leq n$ such that $$0<||q\\alpha||<\\frac{1}{n}.$$",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem irrational_approximation_by_multiples\n    (α : ℝ) (hα : Irrational α) :\n    ∀ n : ℕ, 0 < n →\n      ∃ q : ℕ, 0 < q ∧ q ≤ n ∧\n        ∃ p : ℤ,\n          0 < |(q : ℝ) * α - (p : ℝ)| ∧\n          |(q : ℝ) * α - (p : ℝ)| < 1 / (n : ℝ) := by\n  sorry"
+}

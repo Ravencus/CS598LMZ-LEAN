@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+  "english_title": "Theorem 1.1.1: Cauchy Criterion for Sequences",
+  "statement_en": "A real sequence $x_n$ converges to a real number $x$ if and only if for every $\\varepsilon>0$ there exists a positive integer $N_{\\varepsilon}$ such that for all $n,m>N_{\\varepsilon}$, $$|x_n-x_m|<\\varepsilon.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem real_sequence_tendsto_iff_eventually_pairwise_close\n    (xSeq : ℕ → ℝ) (x : ℝ) :\n    Filter.Tendsto xSeq Filter.atTop (nhds x) ↔\n      ∀ ε > 0, ∃ N : ℕ, 0 < N ∧ ∀ n m : ℕ, N < n → N < m → |xSeq n - xSeq m| < ε := by\n  sorry"
+}

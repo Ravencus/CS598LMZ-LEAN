@@ -1,0 +1,23 @@
+{
+  "id": "proposition-212-p-veress-1917",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#7",
+  "english_title": "Proposition 2.1.2 (P. Veress, 1917)",
+  "statement_en": "If $a_k>0$, $a_k\\to 0$, and the series $\\sum_{k\\ge 1} a_k$ diverges, then for the partial sums $S_n:=\\sum_{k\\le n} a_k$, the fractional parts $Q_n:=\\{S_n\\}$ are dense in $[0,1)$.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "number theory",
+  "key_techniques": [
+    "apply density modulo 1 to partial sums",
+    "monotone divergence",
+    "vanishing increments"
+  ],
+  "prerequisites": [
+    "series and partial sums",
+    "fractional parts",
+    "divergent positive series"
+  ],
+  "callout_body": "如果$a_k>0,a_k\\to 0$,并且级数$\\sum_{k\\geq 1}a_k$发散，那么其部分和序列$S_n:=\\sum_{k\\leq n}a_k$的小数部分$Q_n:=\\{S_n\\}$在区间$[0,1)$中稠密。"
+}

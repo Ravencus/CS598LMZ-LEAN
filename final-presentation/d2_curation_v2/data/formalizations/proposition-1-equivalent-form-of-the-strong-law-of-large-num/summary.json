@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-1-equivalent-form-of-the-strong-law-of-large-num",
+  "english_title": "Proposition 1: Equivalent Form of the Strong Law of Large Numbers",
+  "statement_en": "Prove that $$\\frac{T_n}{n}=\\frac{\\sum_{i\\leq n}Y_i}{n}$$ converges almost everywhere to $E(X_1)=\\mu$, where $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed nonnegative random variables, and $Y_i = X_i\\mathbf{1}_{|X_i|\\leq i}$.",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `ProbabilityTheory.IsProbabilityMeasure`\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ntheorem truncated_average_converges_ae_to_expectation\n    {Ω : Type*}\n    [MeasurableSpace Ω]\n    (ℙ : MeasureTheory.Measure Ω)\n    [MeasureTheory.IsProbabilityMeasure ℙ]\n    (X : ℕ → Ω → ℝ)\n    (μ : ℝ)\n    (h_meas : ∀ n, MeasureTheory.AEStronglyMeasurable (X n) ℙ)\n    (h_nonneg : ∀ n ω, 0 ≤ X n ω)\n    (h_indep : ProbabilityTheory.iIndepFun X ℙ)\n    (h_ident : ∀ n, ProbabilityTheory.IdentDistrib (X n) (X 0) ℙ ℙ)\n    (h_int : MeasureTheory.Integrable (X 0) ℙ)\n    (hμ : ∫ ω, X 0 ω ∂ℙ = μ) :\n    let Y : ℕ → Ω → ℝ := fun i ω => if |X i ω| ≤ (i : ℝ) then X i ω else 0\n    let T : ℕ → Ω → ℝ := fun n ω => Finset.sum (Finset.Icc 1 n) (fun i => Y i ω)\n    ∀ᵐ ω ∂ℙ, Filter.Tendsto (fun n : ℕ => T n ω / (n : ℝ)) Filter.atTop (nhds μ) := by\n  sorry"
+}

@@ -1,0 +1,20 @@
+I’m checking the Lean-specific workflow first, then I’ll build the proof incrementally with the checker.
+I’m looking for any local digest or prior proof pattern that matches this Borel–Cantelli style statement before I write Lean.
+I found the relevant Borel–Cantelli theorem in Mathlib; now I’m checking its exact statement so I can map the hypotheses cleanly.
+The first part looks like a direct Borel–Cantelli application. I’m now checking the exact `ae_tendsto_iff` / filter lemma I can use for the second part.
+I’m switching to the Lean checker for exact lemma discovery since the shell can’t probe Lean interactively here.
+I noticed the theorem uses `fSeq (n + 1)` everywhere, so I’m checking the standard `atTop` shift lemma to move from the tail back to the full sequence cleanly.
+I have the proof shape now. I’m writing the full Lean proof with the Borel–Cantelli lemma, a countable basis `1/(n+1)`, and a tail-shift lemma for the sequence.
+One subgoal failed at extracting the `atTop` witness. I’m switching to the standard `eventually_atTop.1` form and rechecking.
+The remaining issue is just coercing the `∀ᶠ` statement into an explicit `N`. I’m rewriting that step with `rw [Filter.eventually_atTop]` on a local copy of the hypothesis.
+The `atTop` extraction still isn’t convincing Lean, so I’m switching to the explicit `Filter.eventually_atTop.mp` form and then destructuring the resulting existential.
+The remaining failure is just that the `Metric.tendsto_nhds` subgoal is still an `∀ᶠ`, so I need to rewrite that goal with `Filter.eventually_atTop` before introducing `N`.
+I need the actual Lean compiler output now; the checker is too sparse on this proof. I’m dropping the current proof into a scratch file and compiling it directly.
+I’m simplifying the epsilon-step: build the eventuality with `Filter.eventually_atTop.2` directly instead of rewriting the goal. That should avoid the brittle `rw`/`rcases` path.
+I’m isolating the convergence subproof in a tiny `example` so I can tell whether the issue is in the tail-to-full-sequence step or earlier.
+I’ve confirmed the tail convergence step is fine. The remaining trouble is in one of the Borel–Cantelli/a.e. setup lemmas, so I’m isolating those next.
+I can’t finish this as stated: in Mathlib, `Summable` for `ℝ≥0∞` is automatic, so the hypothesis is vacuous and the theorem is false.
+
+A counterexample is easy: take any measure space with a non-null set, let `fSeq` be constant `0`, `f` be constant `1`. The `Summable` hypothesis holds, but the conclusion fails for any `ε < 1`.
+
+If you want, I can formalize the corrected version with the stronger hypothesis `∀ ε > 0, ∑' n, μ {x | ε ≤ |fSeq (n+1) x - f x|} ≠ ∞` or with `NNReal`/`toReal` measures.

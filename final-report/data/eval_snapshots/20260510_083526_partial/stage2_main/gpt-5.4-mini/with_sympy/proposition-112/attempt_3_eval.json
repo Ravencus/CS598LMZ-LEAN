@@ -1,0 +1,44 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "linarith failed to find a contradiction\ncase h1.h\nN : ℕ\nhN : 2 ≤ N\nhtel : ∀ (m : ℕ), ∑ k ∈ Finset.range m, (1 / ↑(k + 1) - 1 / ↑(k + 2)) = 1 - 1 / ↑(m + 1)\nk : ℕ\nhk1 : ↑(k + 1) ≠ 0\nhk2 : ↑(k + 2) ≠ 0\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_479706324e.lean",
+      "line": 30,
+      "column": 4,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h1.h\nN : ℕ\nhN : 2 ≤ N\nhtel : ∀ (m : ℕ), ∑ k ∈ Finset.range m, (1 / ↑(k + 1) - 1 / ↑(k + 2)) = 1 - 1 / ↑(m + 1)\nk : ℕ\nhk1 : ↑(k + 1) ≠ 0\nhk2 : ↑(k + 2) ≠ 0\na✝ : 1 < ↑(k + 2) - ↑(k + 1)\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_479706324e.lean",
+      "line": 39,
+      "column": 18,
+      "severity": "error",
+      "message": "Unknown constant `Finset.sum_Icc_eq_sum_range`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_479706324e.lean",
+      "line": 38,
+      "column": 71,
+      "severity": "error",
+      "message": "unsolved goals\nN : ℕ\nhN : 2 ≤ N\nhtel : ∀ (m : ℕ), ∑ k ∈ Finset.range m, (1 / ↑(k + 1) - 1 / ↑(k + 2)) = 1 - 1 / ↑(m + 1)\nhterm : ∀ (k : ℕ), 1 / (↑(k + 2) * ↑(k + 1)) = 1 / ↑(k + 1) - 1 / ↑(k + 2)\n⊢ ∑ n ∈ Finset.Icc 2 N, 1 / (↑n * ↑(n - 1)) = ∑ k ∈ Finset.range (N - 1), 1 / (↑(2 + k) * ↑(2 + k - 1))"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_479706324e.lean",
+      "line": 67,
+      "column": 2,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hlt\n has type\n  0 < N\nbut is expected to have type\n  ∑ x ∈ Finset.Icc 2 N, (↑(x - 1))⁻¹ * (↑x)⁻¹ < 1\n"
+    }
+  ]
+}

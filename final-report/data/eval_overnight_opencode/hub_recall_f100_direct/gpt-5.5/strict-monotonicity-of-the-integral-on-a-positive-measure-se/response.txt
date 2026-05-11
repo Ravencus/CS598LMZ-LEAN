@@ -1,0 +1,3 @@
+["an-epsilon-of-room-hub", "piecewise-estimates-hub"]
+- an-epsilon-of-room-hub: The key strict-positivity step is to replace `0 < h x` a.e. by a uniform lower bound `1/n < h x` on some positive-measure subset.
+- piecewise-estimates-hub: Once such a subset is found, the integral is bounded below by “base times height,” namely roughly `(1/n) * μ A > 0`.

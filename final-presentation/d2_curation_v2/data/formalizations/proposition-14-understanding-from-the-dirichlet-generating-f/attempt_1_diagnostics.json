@@ -1,0 +1,78 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 11,
+      "column": 5,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "`LSeries` has already been declared"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 16,
+      "column": 4,
+      "severity": "error",
+      "message": "`riemannZeta` has already been declared"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 20,
+      "column": 6,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 25,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 32,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 11,
+      "column": 5,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "`LSeries` has already been declared"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 16,
+      "column": 4,
+      "severity": "error",
+      "message": "`riemannZeta` has already been declared"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_6ad22eb56535.lean",
+      "line": 20,
+      "column": 6,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    }
+  ]
+}

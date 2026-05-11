@@ -1,0 +1,23 @@
+{
+  "id": "theorem-111-cauchy-criterion-for-sequences",
+  "type": "problem",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "callout_id": "柯西收敛判别#1",
+  "english_title": "Theorem 1.1.1: Cauchy Criterion for Sequences",
+  "statement_en": "A real sequence $x_n$ converges to a real number $x$ if and only if for every $\\varepsilon>0$ there exists a positive integer $N_{\\varepsilon}$ such that for all $n,m>N_{\\varepsilon}$, $$|x_n-x_m|<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "epsilon arguments",
+    "triangle inequality",
+    "Cauchy sequence criterion"
+  ],
+  "prerequisites": [
+    "definition of convergence of a sequence",
+    "basic properties of real numbers",
+    "triangle inequality"
+  ],
+  "callout_body": "实数列$x_n$收敛到实数$x$，当且仅当对于任意$\\varepsilon>0$存在正整数$N_{\\varepsilon}$使得任意$n,m>N_{\\varepsilon}$都成立$$|x_n-x_m|<\\varepsilon$$"
+}

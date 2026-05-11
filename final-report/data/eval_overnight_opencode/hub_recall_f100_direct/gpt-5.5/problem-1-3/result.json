@@ -1,0 +1,22 @@
+{
+  "problem_id": "problem-1-3",
+  "model": "gpt-5.5",
+  "wall_seconds": 15.88,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "basic-methods-in-analysis-i-hub",
+    "piecewise-estimates-hub",
+    "sequence-limits-via-piecewise-estimates-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "using-known-asymptotics-to-derive-expansions-hub"
+  ],
+  "tp": 0,
+  "fp": 4,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

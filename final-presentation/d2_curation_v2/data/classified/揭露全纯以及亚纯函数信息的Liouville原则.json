@@ -1,0 +1,186 @@
+{
+  "note_title": "揭露全纯以及亚纯函数信息的Liouville原则",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#1",
+      "type": "note",
+      "title": "Liouville原则",
+      "body": "1. 对亚纯/全纯函数的模的上界估计，可以经由Cauchy积分公式，以及其衍生出来的Cauchy不等式，导出对函数导数(高阶导数)的模的估计。\n2. 对亚纯函数/全纯函数的模在圆周上平均值的估计（也就是某种积分估计），可以经由Cauchy积分公式转换为对Laurent/Taylor级数的系数的估计。\n3. 亚纯函数/全纯函数其导数的模，Laurent/Taylor展开的系数反过来又能说明函数的一些性质。",
+      "position_char": 293,
+      "position_line": 10,
+      "classification_result": {
+        "id": "揭露全纯以及亚纯函数信息的Liouville原则#1",
+        "classification": "strategy_template",
+        "english_title": "Liouville Principle",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Liouville Principle",
+          "summary_en": "Bounds on the modulus or circular averages of holomorphic or meromorphic functions can be converted, via the Cauchy integral formula and Cauchy inequalities, into bounds on derivatives or Laurent/Taylor coefficients. These derivative and coefficient bounds can then be used to deduce structural properties of the function.",
+          "applicability": "Use this strategy when a holomorphic or meromorphic function satisfies growth bounds, boundary integral bounds, or average-value estimates, and one wants to infer rigidity, vanishing, polynomiality, or coefficient constraints."
+        }
+      }
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#2",
+      "type": "question",
+      "title": "问题2",
+      "body": "如果一个整函数的上界估计为,$$|f(z)|\\leq M(1+|z|)^A,z\\in\n\\mathbb{C}$$那么需要证明这个整函数就是一个最多$\\lfloor A \\rfloor$的多项式。",
+      "position_char": 1807,
+      "position_line": 26,
+      "classification_result": {
+        "id": "揭露全纯以及亚纯函数信息的Liouville原则#2",
+        "classification": "problem",
+        "english_title": "Problem 2",
+        "if_problem": {
+          "statement_en": "If an entire function satisfies $$|f(z)|\\\\leq M(1+|z|)^A,\\\\quad z\\\\in \\\\mathbb{C},$$ prove that \\(f\\) is a polynomial of degree at most $$\\\\lfloor A \\\rfloor.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "complex analysis",
+          "key_techniques": [
+            "Cauchy inequalities",
+            "growth estimate for entire functions",
+            "vanishing of higher derivatives"
+          ],
+          "prerequisites": [
+            "entire functions",
+            "Cauchy integral formula",
+            "Cauchy estimates",
+            "Taylor expansion"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#3",
+      "type": "question",
+      "title": "问题3",
+      "body": "整函数$f(z)$满足不等式,$$\\int_{0}^{2\\pi}\n|f(re^{i \\theta})| d\\theta < r^{1/2},\\forall r >0$$ 证明函数为0.",
+      "position_char": 2263,
+      "position_line": 35,
+      "classification_result": {
+        "id": "揭露全纯以及亚纯函数信息的Liouville原则#3",
+        "classification": "problem",
+        "english_title": "Problem 3",
+        "if_problem": {
+          "statement_en": "Let \\(f(z)\\) be entire and satisfy $$\\\\int_{0}^{2\\\\pi} |f(re^{i \\\theta})|\\\\, d\\\theta < r^{1/2},\\\\quad \\\\forall r>0.$$ Prove that \\(f\\\\equiv 0\\).",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "complex analysis",
+          "key_techniques": [
+            "Cauchy integral formula for coefficients",
+            "integral estimate on circles",
+            "coefficient decay implying vanishing"
+          ],
+          "prerequisites": [
+            "entire functions",
+            "Taylor series",
+            "Cauchy coefficient formula",
+            "basic integral estimates"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#4",
+      "type": "question",
+      "title": "问题4",
+      "body": "$|f(z)| \\leq \\frac{1}{|\\text{Im}(z)|}$证明整函数为0",
+      "position_char": 2662,
+      "position_line": 47,
+      "classification_result": {
+        "id": "揭露全纯以及亚纯函数信息的Liouville原则#4",
+        "classification": "problem",
+        "english_title": "Problem 4",
+        "if_problem": {
+          "statement_en": "Suppose an entire function \\(f\\) satisfies $$|f(z)| \\\\leq \\\\frac{1}{|\\\\operatorname{Im}(z)|}.$$ Prove that \\(f\\\\equiv 0\\).",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "complex analysis",
+          "key_techniques": [
+            "Liouville-type growth argument",
+            "estimates on horizontal lines or shifted circles",
+            "entire-function rigidity"
+          ],
+          "prerequisites": [
+            "entire functions",
+            "Liouville theorem",
+            "Cauchy estimates",
+            "basic properties of the imaginary part"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#5",
+      "type": "question",
+      "title": "问题5",
+      "body": "$\\rho >0$整函数有上界估计$f(z) = O(e^{|z|^{\\rho}})$并且对于$n>3$都有$f(\\log(n))=0$。证明整函数是0.",
+      "position_char": 3560,
+      "position_line": 58,
+      "classification_result": {
+        "id": "揭露全纯以及亚纯函数信息的Liouville原则#5",
+        "classification": "problem",
+        "english_title": "Problem 5",
+        "if_problem": {
+          "statement_en": "Let \\(\\\rho>0\\). An entire function satisfies the growth estimate $$f(z)=O\\\\bigl(e^{|z|^{\\\rho}}\\\\bigr)$$ and for every \\(n>3\\) one has $$f(\\\\log n)=0.$$ Prove that \\(f\\\\equiv 0\\).",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "complex analysis",
+          "key_techniques": [
+            "zero set rigidity for entire functions",
+            "construction of an auxiliary function with prescribed zeros",
+            "growth comparison and Liouville-type argument"
+          ],
+          "prerequisites": [
+            "entire functions",
+            "order and growth of entire functions",
+            "zeros of holomorphic functions",
+            "Liouville theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#6",
+      "type": "question",
+      "title": "问题6",
+      "body": "$f$是整函数$u(z) = \\text{Re}(f)$是其实部,并且对于任意圆周$C_r(0)$上都有上界估计$$u(z)\\leq Cr^s,s\\geq 0$$那么整函数$f$是一个至多不超过$s$次的多项式。",
+      "position_char": 4160,
+      "position_line": 67,
+      "classification_result": {
+        "id": "揭露全纯以及亚纯函数信息的Liouville原则#6",
+        "classification": "problem",
+        "english_title": "Problem 6",
+        "if_problem": {
+          "statement_en": "Let \\(f\\) be entire, and let $$u(z)=\\\\operatorname{Re}(f(z))$$ be its real part. Suppose that on every circle \\(C_r(0)\\) one has the upper bound $$u(z)\\\\leq Cr^s,\\\\quad s\\\\geq 0.$$ Prove that \\(f\\) is a polynomial of degree at most \\(s\\).",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "complex analysis",
+          "key_techniques": [
+            "harmonic estimates for the real part",
+            "Cauchy estimates via bounds on real part",
+            "polynomial growth criterion for entire functions"
+          ],
+          "prerequisites": [
+            "entire functions",
+            "harmonic functions",
+            "Cauchy integral formula",
+            "Liouville theorem",
+            "Taylor expansion"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"揭露全纯以及亚纯函数信息的Liouville原则#1\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Liouville Principle\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Liouville Principle\",\n      \"summary_en\": \"Bounds on the modulus or circular averages of holomorphic or meromorphic functions can be converted, via the Cauchy integral formula and Cauchy inequalities, into bounds on derivatives or Laurent/Taylor coefficients. These derivative and coefficient bounds can then be used to deduce structural properties of the function.\",\n      \"applicability\": \"Use this strategy when a holomorphic or meromorphic function satisfies growth bounds, boundary integral bounds, or average-value estimates, and one wants to infer rigidity, vanishing, polynomiality, or coefficient constraints.\"\n    }\n  },\n  {\n    \"id\": \"揭露全纯以及亚纯函数信息的Liouville原则#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2\",\n    \"if_problem\": {\n      \"statement_en\": \"If an entire function satisfies $$|f(z)|\\\\leq M(1+|z|)^A,\\\\quad z\\\\in \\\\mathbb{C},$$ prove that \\(f\\) is a polynomial of degree at most $$\\\\lfloor A \\\\rfloor.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"complex analysis\",\n      \"key_techniques\": [\n        \"Cauchy inequalities\",\n        \"growth estimate for entire functions\",\n        \"vanishing of higher derivatives\"\n      ],\n      \"prerequisites\": [\n        \"entire functions\",\n        \"Cauchy integral formula\",\n        \"Cauchy estimates\",\n        \"Taylor expansion\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"揭露全纯以及亚纯函数信息的Liouville原则#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 3\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\(f(z)\\) be entire and satisfy $$\\\\int_{0}^{2\\\\pi} |f(re^{i \\\\theta})|\\\\, d\\\\theta < r^{1/2},\\\\quad \\\\forall r>0.$$ Prove that \\(f\\\\equiv 0\\).\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"complex analysis\",\n      \"key_techniques\": [\n        \"Cauchy integral formula for coefficients\",\n        \"integral estimate on circles\",\n        \"coefficient decay implying vanishing\"\n      ],\n      \"prerequisites\": [\n        \"entire functions\",\n        \"Taylor series\",\n        \"Cauchy coefficient formula\",\n        \"basic integral estimates\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"揭露全纯以及亚纯函数信息的Liouville原则#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 4\",\n    \"if_problem\": {\n      \"statement_en\": \"Suppose an entire function \\(f\\) satisfies $$|f(z)| \\\\leq \\\\frac{1}{|\\\\operatorname{Im}(z)|}.$$ Prove that \\(f\\\\equiv 0\\).\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"complex analysis\",\n      \"key_techniques\": [\n        \"Liouville-type growth argument\",\n        \"estimates on horizontal lines or shifted circles\",\n        \"entire-function rigidity\"\n      ],\n      \"prerequisites\": [\n        \"entire functions\",\n        \"Liouville theorem\",\n        \"Cauchy estimates\",\n        \"basic properties of the imaginary part\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"揭露全纯以及亚纯函数信息的Liouville原则#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 5\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\(\\\\rho>0\\). An entire function satisfies the growth estimate $$f(z)=O\\\\bigl(e^{|z|^{\\\\rho}}\\\\bigr)$$ and for every \\(n>3\\) one has $$f(\\\\log n)=0.$$ Prove that \\(f\\\\equiv 0\\).\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"complex analysis\",\n      \"key_techniques\": [\n        \"zero set rigidity for entire functions\",\n        \"construction of an auxiliary function with prescribed zeros\",\n        \"growth comparison and Liouville-type argument\"\n      ],\n      \"prerequisites\": [\n        \"entire functions\",\n        \"order and growth of entire functions\",\n        \"zeros of holomorphic functions\",\n        \"Liouville theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"揭露全纯以及亚纯函数信息的Liouville原则#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 6\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\(f\\) be entire, and let $$u(z)=\\\\operatorname{Re}(f(z))$$ be its real part. Suppose that on every circle \\(C_r(0)\\) one has the upper bound $$u(z)\\\\leq Cr^s,\\\\quad s\\\\geq 0.$$ Prove that \\(f\\) is a polynomial of degree at most \\(s\\).\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"complex analysis\",\n      \"key_techniques\": [\n        \"harmonic estimates for the real part\",\n        \"Cauchy estimates via bounds on real part\",\n        \"polynomial growth criterion for entire functions\"\n      ],\n      \"prerequisites\": [\n        \"entire functions\",\n        \"harmonic functions\",\n        \"Cauchy integral formula\",\n        \"Liouville theorem\",\n        \"Taylor expansion\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

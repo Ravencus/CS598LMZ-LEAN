@@ -1,0 +1,22 @@
+{
+  "id": "proposition-35-relation-between-existence-of-a-function-limi",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#17",
+  "english_title": "Proposition 3.5: Relation Between Existence of a Function Limit and Limit Superior/Inferior",
+  "statement_en": "Let $U:=\\limsup_{x\\to +\\infty}f(x)$ and $L:=\\liminf_{x\\to +\\infty}f(x)$. Then:\n1. If the limit $\\lim_{x\\to +\\infty}f(x)$ exists in $\\overline{\\mathbb{R}}$ and equals $\\ell$, then $$U=L=\\ell.$$\n2. Conversely, if $U=L=\\ell$, then the limit $\\lim_{x\\to +\\infty}f(x)$ exists in $\\overline{\\mathbb{R}}$ and equals $\\ell$.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "characterize existence of a limit by equality of limsup and liminf",
+    "use tail bounds at infinity"
+  ],
+  "prerequisites": [
+    "limit of a function at infinity",
+    "limit superior and limit inferior of functions",
+    "extended real numbers"
+  ],
+  "callout_body": "令$U:=\\limsup_{x\\to +\\infty}f(x)$以及$L:=\\liminf_{x\\to +\\infty}f(x)$那么：\n1. 如果函数的极限$\\lim_{x\\to +\\infty}f(x)$在$\\overline{\\mathbb{R}}$中存在且等于$\\ell$那么$$U=L=\\ell$$\n2. 反过来，如果$U=L=\\ell$那么函数的极限$\\lim_{x\\to +\\infty}f(x)$在$\\overline{\\mathbb{R}}$中存在且等于$\\ell$。"
+}

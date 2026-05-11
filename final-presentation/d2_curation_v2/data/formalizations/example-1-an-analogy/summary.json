@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-1-an-analogy",
+  "english_title": "Example 1: An Analogy",
+  "statement_en": "Let \\(\\text{B}:=\\{1,2,3\\}\\) and \\(\\text{H}:=\\{4,5,6\\}\\). We want to order these two sets to form sequences \\(b_1,b_2,b_3\\) and \\(h_1,h_2,h_3\\) so that \\[b_1h_1+b_2h_2+b_3h_3\\] is minimized.",
+  "difficulty": "easy",
+  "domain": "combinatorics",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem exists_orderings_minimizing_dot_product :\n    ∃ b h : Fin 3 → ℕ,\n      Set.BijOn b (Set.univ : Set (Fin 3)) ({1, 2, 3} : Set ℕ) ∧\n      Set.BijOn h (Set.univ : Set (Fin 3)) ({4, 5, 6} : Set ℕ) ∧\n      ∀ b' h' : Fin 3 → ℕ,\n        Set.BijOn b' (Set.univ : Set (Fin 3)) ({1, 2, 3} : Set ℕ) →\n        Set.BijOn h' (Set.univ : Set (Fin 3)) ({4, 5, 6} : Set ℕ) →\n        (Finset.univ.sum fun i : Fin 3 => b i * h i) ≤\n          Finset.univ.sum (fun i : Fin 3 => b' i * h' i) := by\n  sorry"
+}

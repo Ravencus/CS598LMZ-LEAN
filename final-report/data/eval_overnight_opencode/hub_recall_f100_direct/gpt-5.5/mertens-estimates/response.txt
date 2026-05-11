@@ -1,0 +1,5 @@
+["expand-conditions-into-sums-or-integrals-and-swap-order-hub", "using-known-asymptotics-to-derive-expansions-hub", "term-by-term-estimates-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- expand-conditions-into-sums-or-integrals-and-swap-order-hub: The key identity `log n = ∑_{d ∣ n} Λ(d)` is a Dirichlet-convolution/divisor-sum expansion, and summing over `n ≤ x` requires swapping the divisor and outer sums.
+- using-known-asymptotics-to-derive-expansions-hub: The first estimate is obtained by comparing the divisor-sum expression with the known asymptotic for `∑_{n≤x} log n = log(x!)`, via Stirling-type bounds.
+- term-by-term-estimates-hub: Passing from the von Mangoldt-weighted prime-power sum to the prime-only sum requires bounding the contribution of higher prime powers term by term and showing it is `O(1)`.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The second statement is exactly a logarithmically weighted prime-reciprocal estimate, derived by representing the same quantity through the von Mangoldt prime-power expansion and comparing the two forms.

@@ -1,0 +1,26 @@
+{
+  "id": "an-epsilon-of-room-for-measure-zero-sets-hub",
+  "type": "hub",
+  "source_note": "an epsilon of room证明集合为0测度的策略",
+  "english_source_note": "An Epsilon of Room for Measure Zero Sets",
+  "is_top3": true,
+  "note_degree": 14,
+  "strategies": [
+    {
+      "callout_id": "an epsilon of room证明集合为0测度的策略#1",
+      "english_title": "Basic Idea",
+      "strategy_name_en": "Epsilon-neighborhood measure-zero strategy",
+      "summary_en": "To prove a set has measure zero, replace the original target by auxiliary sets such as $A_{\\varepsilon}$ and estimate their measures instead. The core move is to cover $A_{\\varepsilon}$ by larger sets whose total measure can be made arbitrarily small, or to control them using available weak-type estimates.",
+      "applicability": "Applies when proving that a set has measure zero directly is difficult, but one can instead estimate related enlarged or auxiliary sets and show their measures can be made arbitrarily small.",
+      "callout_body": "1. 在测度空间当中，我们要证明一个集合$A$为零测度，即$\\mu(A) =0$，但是这件事通常并不好直接展开。\n2. 于是转而把命题修改为，证明$A_{\\varepsilon}$这个集合对于$\\forall \\varepsilon >0$都有$\\mu(A_{\\varepsilon})=0$.\n3. 证明的思路无非就是，用一些更大的集合去覆盖$A_{\\varepsilon}$，然后证明这种覆盖其测度的上界可以任意小，即$$\\mu(A_{\\varepsilon})<r,\\forall r>0$$也就是说用一个与参数$r$有关的一族集合去覆盖$A_{\\varepsilon}$,并通过调整$r$使得这一族集合的测度可以任意小。或者可以利用一些现成的对集合的控制，比如一些weak-type的不等式。总之无非就是估计把问题转换为估计$A_{\\varepsilon}$。"
+    },
+    {
+      "callout_id": "an epsilon of room证明集合为0测度的策略#4",
+      "english_title": "Insight",
+      "strategy_name_en": "Estimate distribution functions by domination and decomposition",
+      "summary_en": "To estimate $\\lambda_f(\\alpha)$, dominate $|f|$ by a larger or simpler expression and then decompose it into pieces with more manageable distribution functions. This lets one transfer known weak estimates to the original function.",
+      "applicability": "Applies when a direct estimate of the distribution function of $f$ is hard, but $f$ can be bounded or decomposed into simpler functions such as $g$ and $h$.",
+      "callout_body": "如果我们要估计$\\lambda_f(\\alpha)$,那么可以尝试放大$|f|$,或者放大以后再把函数分解为更简单，更熟悉，分布函数更好估计的函数,比如$$|f| \\leq |g|+|h|$$此时$$\\lambda_f(\\alpha)\\leq \\lambda_g(\\alpha/2)+\\lambda_h(\\alpha/2)$$这样我们可以利用一些已有的弱估计的结论。"
+    }
+  ]
+}

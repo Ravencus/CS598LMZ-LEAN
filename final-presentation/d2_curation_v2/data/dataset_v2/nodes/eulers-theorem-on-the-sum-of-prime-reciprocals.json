@@ -1,0 +1,22 @@
+{
+  "id": "eulers-theorem-on-the-sum-of-prime-reciprocals",
+  "type": "problem",
+  "source_note": "素数倒数和的估计",
+  "english_source_note": "Estimates for the Sum of Prime Reciprocals",
+  "callout_id": "素数倒数和的估计#1",
+  "english_title": "Euler's Theorem on the Sum of Prime Reciprocals",
+  "statement_en": "Let $\\mathbb{P}$ be the set of prime numbers. The series $$\\sum_{p\\in \\mathbb{P}} \\frac{1}{p}$$ diverges.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "key_techniques": [
+    "Euler product",
+    "comparison with the harmonic series"
+  ],
+  "prerequisites": [
+    "prime numbers",
+    "infinite series",
+    "Euler product for the zeta function"
+  ],
+  "callout_body": "$\\mathbb{P}$是素数的集合，级数$$\\sum_{p\\in  \\mathbb{P}} \\frac{1}{p}$$发散。"
+}

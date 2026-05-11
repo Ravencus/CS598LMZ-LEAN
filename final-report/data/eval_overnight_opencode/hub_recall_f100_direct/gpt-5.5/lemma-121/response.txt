@@ -1,0 +1,2 @@
+[]
+No hubs selected: as stated with `Polynomial ℂ` in `z` only, the theorem is false; for example `f z = conj z.1` on the unit circle cannot be uniformly approximated by holomorphic polynomials in `z` alone.

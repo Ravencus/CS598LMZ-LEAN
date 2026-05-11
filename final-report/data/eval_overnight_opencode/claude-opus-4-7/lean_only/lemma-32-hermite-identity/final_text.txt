@@ -1,0 +1,216 @@
+I'll work on this Hermite identity proof. Let me start by exploring what Mathlib has.
+No direct Hermite lemma. Let me think about the proof strategy.
+
+The classic proof: Let $\alpha = \{nx\}/n$, so $\lfloor nx \rfloor = nx - n\alpha$ where $0 \le n\alpha < 1$ (actually fractional part of $nx$ divided by $n$... let me reconsider).
+
+Actually, the cleanest proof: write $nx = m + r$ where $m = \lfloor nx \rfloor$ and $0 \le r < 1$. Hmm, this is getting complex.
+
+Let me try a different approach — search for if Mathlib already has this identity:
+Not in Mathlib directly. Let me try the proof approach. The classic proof uses:
+- Let $f(x) = \sum_{k=0}^{n-1} \lfloor x + k/n \rfloor - \lfloor nx \rfloor$
+- Show $f(x + 1/n) = f(x)$ (periodicity)
+- Show $f(x) = 0$ on $[0, 1/n)$
+
+For $x \in [0, 1/n)$: $nx \in [0,1)$ so $\lfloor nx \rfloor = 0$. Each $x + k/n \in [k/n, (k+1)/n) \subset [0,1)$, so all floors are 0.
+
+This requires real analysis. Let me think of a more direct approach.
+
+**Alternative approach**: Use induction on $n$? Or use the result via `Int.floor` properties. 
+
+Actually, there's a neat trick: $\lfloor nx \rfloor = \sum_{k=0}^{n-1} \lfloor x + k/n \rfloor$ follows from the fact that as $k$ ranges over $0, ..., n-1$, the values $\lfloor x + k/n \rfloor$ jump by 1 at exactly the right places.
+
+Let me try a direct attack — handle $n = 0$ separately, then for $n \ge 1$:
+
+The key identity: Let $m = \lfloor nx \rfloor$, write $m = qn + r$ with $0 \le r < n$. Then $x \in [m/n, (m+1)/n) = [(qn+r)/n, (qn+r+1)/n) = [q + r/n, q + (r+1)/n)$.
+
+So $\lfloor x + k/n \rfloor$: $x + k/n \in [q + (r+k)/n, q + (r+k+1)/n)$.
+- If $r + k < n$: floor is $q$
+- If $r + k \ge n$: $x + k/n \in [q+1+(r+k-n)/n, ...)$, floor is $q+1$
+
+Number of $k \in \{0,...,n-1\}$ with $r+k < n$ is $n - r$. So sum is $(n-r)q + r(q+1) = nq + r = m$. ✓
+
+This is the proof. Let me try formalizing — this is going to be tricky. Let me first check if a "smart tactic" works:
+Good. Base case handled. Now for $n > 0$. Let me set up the proof using $m = \lfloor nx \rfloor$ and write $x = (m + \{nx\})/n$ where $\{nx\} = nx - m \in [0,1)$.
+
+Actually, the cleanest formalization: split sum by whether $r + k < n$ where $r = m \% n$.
+
+Hmm, even simpler — let me try to use the fact directly. Let $y = nx - \lfloor nx \rfloor \in [0,1)$. Then $x = (\lfloor nx \rfloor + y)/n$.
+
+Let me try a substantial proof:
+Interesting — there's `floor_intCast_div_natCast` over ℚ. For ℝ, let me check:
+Key insight: `floor_intCast_div_natCast` works over ℚ. We can cast to ℚ when arguments are rationals. Specifically, in our problem $\lfloor x + k/n \rfloor$, if we write $nx = m + y$ with $m = \lfloor nx \rfloor$, $y \in [0,1)$, then $x + k/n = (m+k+y)/n$. The floor of this is $(m+k+\lfloor y \rfloor)/n$... no wait, $y$ is real.
+
+Let me think differently. **Key lemma**: $\lfloor (a + r)/n \rfloor = (a + \lfloor n \cdot r/n \cdot ... \rfloor)/n$... Hmm.
+
+Actually the cleanest version: $\lfloor x + k/n \rfloor = \lfloor (nx + k)/n \rfloor$, and using that the floor of $(a + r)/n$ where $a \in \mathbb{Z}$, $r \in \mathbb{R}$, $n > 0$ equals $(a + \lfloor r \rfloor)/n$... not quite.
+
+Let me try: $\lfloor x + k/n \rfloor$. Let $nx = m + y$ where $m = \lfloor nx \rfloor$, $y \in [0,1)$. Then $x + k/n = (m+k+y)/n$. We need $\lfloor (m+k+y)/n \rfloor$ where $m+k+y$ has integer part $m+k+\lfloor y \rfloor = m+k$ (since $y \in [0,1)$, so $\lfloor y \rfloor = 0$) wait $y$ could be 0. So $m+k+y \in [m+k, m+k+1)$. Thus $\lfloor (m+k+y)/n \rfloor = \lfloor (m+k)/n \rfloor$ ONLY IF the interval $[m+k, m+k+1)/n$ doesn't span an integer. Hmm, $(m+k+y)/n \in [(m+k)/n, (m+k+1)/n)$ — width $1/n < 1$, but could span integer.
+
+Actually $\lfloor (m+k+y)/n \rfloor = (m+k) \text{ div } n$ when $(m+k+y)/n < ((m+k) \text{ div } n) + 1$, i.e., $m+k+y < n \cdot ((m+k) \text{ div } n + 1) = (m+k) - ((m+k) \mod n) + n$. So $y < n - (m+k) \mod n$. Since $y < 1$ and $(m+k) \mod n \le n-1$, we have $n - (m+k) \mod n \ge 1 > y$. ✓
+
+So $\lfloor x + k/n \rfloor = (m+k) \text{ div } n = \lfloor (m+k : \mathbb{R})/n \rfloor$ (using `floor_intCast_div_natCast` over ℚ or similar).
+
+So $\sum_{k=0}^{n-1} \lfloor x + k/n \rfloor = \sum_{k=0}^{n-1} \lfloor (m+k)/n \rfloor$ where $m = \lfloor nx \rfloor$. And we need to show this equals $m$.
+
+This is the **easy** identity: $\sum_{k=0}^{n-1} \lfloor (m+k)/n \rfloor = m$. As $k$ goes from $0$ to $n-1$, $m+k$ goes from $m$ to $m+n-1$, covering exactly one full residue class set, and the floors sum to $m$. Specifically: among $m, m+1, ..., m+n-1$, the quotient floor is $\lfloor m/n \rfloor$ exactly $n - (m \mod n)$ times and $\lfloor m/n \rfloor + 1$ exactly $(m \mod n)$ times.
+
+Hmm, this is still complicated to formalize. Let me try an even more direct approach. **Periodicity strategy**: 
+
+The function $f(x) = \sum_{k=0}^{n-1} \lfloor x+k/n \rfloor - \lfloor nx \rfloor$ is periodic with period $1/n$ (replacing $x$ by $x+1/n$ shifts the sum by 1 from the wraparound, and shifts $\lfloor nx \rfloor$ by 1).
+
+Hmm let me try yet another angle. Perhaps just try `decide` style brute force won't work for real numbers. Let me attempt a fairly comprehensive proof:
+`field_simp` already closes the goal. Let me think about how to prove $\lfloor (nx+k)/n \rfloor = (m+k)/n$ (integer division). Use `Int.floor_eq_iff`:
+
+$\lfloor (nx+k)/n \rfloor = q$ iff $q \le (nx+k)/n < q+1$ iff $qn \le nx + k < qn + n$.
+
+So I need to show $(m+k)/n \cdot n \le nx+k < (m+k)/n \cdot n + n$, i.e., $(m+k) - ((m+k) \% n) \le nx + k$ and $nx + k < (m+k) - ((m+k)\%n) + n$.
+
+We have $m \le nx < m+1$, so $m+k \le nx+k < m+k+1$. And $(m+k)/n \cdot n = (m+k) - (m+k)\%n$, and $0 \le (m+k)\%n < n$.
+
+- $(m+k) - (m+k)\%n \le m+k \le nx+k$. ✓
+- $nx+k < m+k+1 \le (m+k) - (m+k)\%n + n$ since $(m+k)\%n \le n-1$, so $(m+k) - (m+k)\%n + n \ge m+k - (n-1) + n = m+k+1$. ✓
+
+OK let me write this more carefully using `Int.floor_eq_iff`:
+Good. Now let me check the second part — what's the sum $\sum_{k=0}^{n-1} (m+k)/n$ (integer division)?
+
+Claim: $\sum_{k=0}^{n-1} \lfloor (m+k)/n \rfloor_{\mathbb{Z}} = m$ for any integer $m$ and positive $n$.
+
+Proof: Write $m = qn + r$, $0 \le r < n$. Then $m+k = qn + (r+k)$.
+- For $k \in \{0, ..., n-1-r\}$: $r+k \in \{r, ..., n-1\}$, so $(m+k)/n = q$. That's $n-r$ values.
+- For $k \in \{n-r, ..., n-1\}$: $r+k \in \{n, ..., n+r-1\}$, so $(m+k)/n = q+1$. That's $r$ values.
+
+Sum = $(n-r) q + r(q+1) = nq + r = m$. ✓
+
+Let me try to use a cleaner lemma — maybe Mathlib has $\sum_{k} \lfloor (m+k)/n \rfloor = m$ or can be done via induction. Let me search:
+No direct lemma. Let me write the full proof. I'll be ambitious and try to do it all at once:
+Good progress — let me fix the issues. Many small problems. Let me restructure:
+Many issues. Let me also notice I split incorrectly — I should split at `n - rN` but my `range_add_sum_Ico` use is mismatching. Let me also notice the key issue with `step1`: there's a confusion between `(((m+↑k)/↑n) : ℝ)` and `(((m+↑k)/↑n : ℤ) : ℝ)` because of how Lean is parsing the `/`. The `Int` cast is creating problems.
+
+I have 4 calls left. Let me be more careful and use `Int.floor_div_eq_div` or compute directly. Let me rewrite cleanly:
+OK let me take a fundamentally different approach. Given limited budget remaining, let me try to be much smarter. The issue is the floor_eq_iff cast confusion. Let me use a different approach: use Int.floor_intCast_div_natCast pattern, casting through ℚ. Actually, there's a much cleaner approach via `Int.floor_div_int`:
+OK let me try a completely different, cleaner strategy. Rather than reducing to (m+k)/n integer division, use induction on n? No, doesn't decompose nicely. 
+
+Actually let me try: for $k = 0, ..., n-1$, $\lfloor x + k/n \rfloor$. Setting $u = nx - \lfloor nx \rfloor \in [0, 1)$, then $x = (\lfloor nx \rfloor + u)/n$, so $x + k/n = (\lfloor nx \rfloor + u + k)/n$.
+
+Let me just trust the Int approach but fix issues. The crucial issue in step1 is the cast notation. Let me be more careful:
+Great progress! Several fixable issues:
+
+1. **step1 second part**: `nlinarith` failure — need `hm_lo`/`hm_hi` related to `n*x` differently. Let me try `nlinarith` with more hints or use direct approach.
+
+2. **keyDiv**: pattern needs to be `(?m + ↑n * ?m')/↑n`, mine is `↑n * q + (...)`, but it expects `(?+ ↑n * ?)`. So I need `(r + k) + n * q` form. Or use `Int.add_mul_ediv_right` instead, or use `mul_comm`.
+
+3. **part2**: same issue. Use the other lemma form.
+
+4. **simp [card_Ico]**: doesn't exist. The card simplifies via `Nat.Ico_card` or `simp` will handle.
+
+5. Last step: just need linarith with the right facts.
+
+I have 3 calls left. Let me write very carefully:
+Great progress! Almost there. 2 calls left. Issues to fix:
+
+1. **step1 second part `(↑d + 1) * ↑n ≤ ↑n*x + ↑k`**: `linarith` needs help — we have `hm_hi: ↑n*x < ↑m + 1` and want to bound `↑n*x + ↑k < (↑d+1)*↑n`. We need integer-related: $nx < m+1 \le ...$. Actually we have $m+k < (d+1)n$ as integer, so $m + k + 1 \le (d+1)n$, hence $nx + k < m + 1 + k \le (d+1)n$. Need to use `add_one_le_iff` (since integers are discrete). Let me add `hd_hi_int_le : m + k + 1 ≤ (d+1) * n` via `Int.add_one_le_iff`.
+
+2. **keyDiv**: needs `add_comm` at end: `(r + ↑k) / ↑n + q = q + (r + ↑k) / ↑n` — just `ring`.
+
+3. **split_sum**: Need `range_eq_Ico` rewrite on the right too. Use `Finset.range` instead of `Ico 0`.
+
+4. **Last step**: Goal is `↑n * q + (↑n - ↑(n - rN)) < m`. We have `↑(n - (n - rN)) = ↑rN`. But the LHS is `↑n - ↑(n - rN)`, not `↑(n - (n - rN))`. Need to bridge with `Nat.cast_sub`.
+
+Let me consolidate. Final attempt:
+ALMOST! Last issue: goal is `n • q + rN • 1 < m` (using smul, since `Nat → Int` is via smul, not cast). I need to convert `n • q` to `↑n * q` and `rN • 1` to `↑rN`. `nsmul_eq_mul` should work. Let me also note `hmod` and `hrN`.
+
+Only 1 call left. Let me fix the final linarith carefully. The goal after `rw [hcard_eq]` is `n • q + rN • 1 = m`. I need to convert smul to mult. `n • q = (n : ℤ) * q` and `rN • 1 = (rN : ℤ)`. Then with `hmod: q*n + r = m`, `hrr: r = ↑rN`, this is `linarith` after `simp`. Let me submit final attempt:
+SUCCESS! The proof compiles (only warnings, no errors).
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+  have hnZ : (0 : ℤ) < (n : ℤ) := by exact_mod_cast hn
+  have hnZne : (n : ℤ) ≠ 0 := ne_of_gt hnZ
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have hm_lo : (m : ℝ) ≤ (n : ℝ) * x := Int.floor_le _
+  have hm_hi : (n : ℝ) * x < m + 1 := Int.lt_floor_add_one _
+  have step1 : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + (k : ℤ)) / (n : ℤ) := by
+    intro k _
+    have hxk : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by field_simp
+    rw [hxk, Int.floor_eq_iff]
+    set d : ℤ := (m + (k : ℤ)) / (n : ℤ) with hd_def
+    have hd_lo_int : d * n ≤ m + k := Int.ediv_mul_le _ hnZne
+    have hd_hi_int : m + (k : ℤ) < (d + 1) * n := by
+      have := Int.lt_ediv_add_one_mul_self (m + (k : ℤ)) hnZ; linarith
+    have hd_hi_int_le : m + (k : ℤ) + 1 ≤ (d + 1) * n := hd_hi_int
+    have hd_loR : (d : ℝ) * (n : ℝ) ≤ (m : ℝ) + (k : ℝ) := by exact_mod_cast hd_lo_int
+    have hd_hiR : (m : ℝ) + (k : ℝ) + 1 ≤ ((d : ℝ) + 1) * (n : ℝ) := by exact_mod_cast hd_hi_int_le
+    refine ⟨?_, ?_⟩
+    · rw [le_div_iff₀ hnpos]; linarith
+    · rw [div_lt_iff₀ hnpos]; linarith
+  rw [Finset.sum_congr rfl step1]
+  have hmod : (m / (n : ℤ)) * n + m % (n : ℤ) = m := by
+    have h := Int.ediv_add_emod m (n : ℤ); linarith
+  set q : ℤ := m / (n : ℤ) with hq_def
+  set r : ℤ := m % (n : ℤ) with hr_def
+  have hr_lo : 0 ≤ r := Int.emod_nonneg _ hnZne
+  have hr_hi : r < n := Int.emod_lt_of_pos _ hnZ
+  have keyDiv : ∀ k : ℕ, (m + (k : ℤ)) / (n : ℤ) = q + (r + (k : ℤ)) / (n : ℤ) := by
+    intro k
+    have h1 : m + (k : ℤ) = (r + (k : ℤ)) + q * (n : ℤ) := by linarith
+    rw [h1, Int.add_mul_ediv_right _ _ hnZne]; ring
+  have sum_eq : ∑ k ∈ Finset.range n, (m + (k : ℤ)) / (n : ℤ)
+              = ∑ k ∈ Finset.range n, (q + (r + (k : ℤ)) / (n : ℤ)) :=
+    Finset.sum_congr rfl (fun k _ => keyDiv k)
+  rw [sum_eq, Finset.sum_add_distrib]
+  simp only [Finset.sum_const, Finset.card_range]
+  obtain ⟨rN, hrN⟩ : ∃ rN : ℕ, (rN : ℤ) = r := ⟨r.toNat, Int.toNat_of_nonneg hr_lo⟩
+  have hrN_lt : rN < n := by exact_mod_cast (hrN ▸ hr_hi)
+  have hrN_le : rN ≤ n := le_of_lt hrN_lt
+  have split_sum :
+      ∑ k ∈ Finset.range n, ((r + (k : ℤ)) / (n : ℤ)) =
+      (∑ k ∈ Finset.range (n - rN), ((r + (k : ℤ)) / (n : ℤ))) +
+      (∑ k ∈ Finset.Ico (n - rN) n, ((r + (k : ℤ)) / (n : ℤ))) := by
+    have h := Finset.sum_Ico_consecutive (fun k : ℕ => ((r + (k : ℤ)) / (n : ℤ)))
+              (Nat.zero_le _) (Nat.sub_le n rN)
+    simp only [Finset.range_eq_Ico] at *
+    linarith [h]
+  have part1 : ∀ k ∈ Finset.range (n - rN), ((r + (k : ℤ)) / (n : ℤ)) = 0 := by
+    intro k hk
+    rw [Finset.mem_range] at hk
+    apply Int.ediv_eq_zero_of_lt (by linarith)
+    have hkZ : (k : ℤ) < (n : ℤ) - (rN : ℤ) := by
+      have h1 : (k : ℤ) < ((n - rN : ℕ) : ℤ) := by exact_mod_cast hk
+      have h2 : ((n - rN : ℕ) : ℤ) = (n : ℤ) - rN := by push_cast; omega
+      linarith
+    have hrr : r = (rN : ℤ) := hrN.symm
+    linarith
+  have part2 : ∀ k ∈ Finset.Ico (n - rN) n, ((r + (k : ℤ)) / (n : ℤ)) = 1 := by
+    intro k hk
+    rw [Finset.mem_Ico] at hk
+    obtain ⟨hk1, hk2⟩ := hk
+    have hrr : r = (rN : ℤ) := hrN.symm
+    have hk1Z : ((n : ℤ) - rN) ≤ (k : ℤ) := by
+      have h1 : ((n - rN : ℕ) : ℤ) ≤ (k : ℤ) := by exact_mod_cast hk1
+      have h2 : ((n - rN : ℕ) : ℤ) = (n : ℤ) - rN := by push_cast; omega
+      linarith
+    have hk2Z : (k : ℤ) < n := by exact_mod_cast hk2
+    have h_lower : (n : ℤ) ≤ r + k := by linarith
+    have h_upper : r + (k : ℤ) < 2 * n := by linarith
+    have heq : r + (k : ℤ) = (r + (k : ℤ) - n) + 1 * n := by ring
+    rw [heq, Int.add_mul_ediv_right _ _ hnZne]
+    have hzero : (r + (k : ℤ) - n) / (n : ℤ) = 0 := by
+      apply Int.ediv_eq_zero_of_lt <;> linarith
+    rw [hzero]; ring
+  rw [split_sum, Finset.sum_congr rfl part1, Finset.sum_congr rfl part2]
+  simp only [Finset.sum_const_zero, Finset.sum_const, zero_add, Nat.card_Ico, nsmul_eq_mul]
+  have hcard_eq : (n - (n - rN) : ℕ) = rN := by omega
+  rw [hcard_eq]
+  have hrr : r = (rN : ℤ) := hrN.symm
+  push_cast
+  linarith
+```

@@ -1,0 +1,24 @@
+{
+  "id": "example-31",
+  "type": "problem",
+  "source_note": "Wintner mean value theorem",
+  "english_source_note": "Wintner Mean Value Theorem",
+  "callout_id": "Wintner mean value theorem#7",
+  "english_title": "Example 3.1",
+  "statement_en": "Define the arithmetic function $$P_{\\alpha}(n)=\\sum_{d|n} \\sin(2\\pi d\\alpha),$$ where $\\alpha\\not\\in \\mathbb{Z}$. Find the limit $$\\lim_{N\\to \\infty} \\frac{1}{N}\\sum_{n\\leq N} P_{\\alpha}(n).$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "Dirichlet convolution interpretation",
+    "mean value theorem for arithmetic functions",
+    "trigonometric sum analysis"
+  ],
+  "prerequisites": [
+    "arithmetic functions",
+    "divisor sums",
+    "trigonometric functions",
+    "mean values of arithmetic functions"
+  ],
+  "callout_body": "定义算术函数$$P_{\\alpha}(n)=\\sum_{d|n} \\sin(2\\pi d\\alpha)$$其中$\\alpha\\not \\in \\mathbb{Z}$。求极限$$\\lim_{N\\to \\infty} \\frac{1}{N}\\sum_{n\\leq N} P_{\\alpha}(n)$$"
+}

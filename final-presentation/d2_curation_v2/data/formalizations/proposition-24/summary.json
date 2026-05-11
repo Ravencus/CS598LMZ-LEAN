@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-24",
+  "english_title": "Proposition 2.4",
+  "statement_en": "Let $f:[0,1]\\to \\mathbb{R}$ be nonnegative and nondecreasing, and suppose that\n$$\\int_0^1 \\frac{f(t)}{t}\\,dt<\\infty.$$Then necessarily $f(t)\\to 0$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  IntegrableOn\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (fun t : ℝ => f t / t)\n\nHint: The identifier `Integrab"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem nonneg_nondecreasing_tendsto_zero_of_integrable_div\n    (f : ℝ → ℝ)\n    (h_nonneg : ∀ x ∈ Set.Icc (0 : ℝ) 1, 0 ≤ f x)\n    (h_mono : MonotoneOn f (Set.Icc (0 : ℝ) 1))\n    (h_int : MeasureTheory.IntegrableOn (fun t : ℝ => f t / t) (Set.Ioc (0 : ℝ) 1)) :\n    Filter.Tendsto f (nhdsWithin 0 (Set.Ioi (0 : ℝ))) (nhds 0) := by\n  sorry"
+}

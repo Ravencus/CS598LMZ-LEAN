@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4edb159bc1b5.lean",
+      "line": 5,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.sin', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4edb159bc1b5.lean",
+      "line": 14,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4edb159bc1b5.lean",
+      "line": 5,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.sin', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4edb159bc1b5.lean",
+      "line": 14,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ]
+}

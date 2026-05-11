@@ -1,0 +1,2 @@
+["estimates-for-the-sum-of-prime-reciprocals-hub"]
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof hinges on recognizing the same product written in two associative forms, e.g. `A * (B * A) = (A * B) * A`, which supplies the similarity witness when `A` is invertible, and similarly for `B`.

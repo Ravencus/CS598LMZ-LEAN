@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "unsolved goals\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : MeasureTheory.Measure Ω\nf : Ω → ℝ\nE : Set Ω\nhf_meas : Measurable f\nhf_nonneg : ∀ (x : Ω), 0 ≤ f x\nhE_meas : MeasurableSet E\nhE_pos : 0 < μ E\nh",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_9a48d94175.lean",
+      "line": 12,
+      "column": 62,
+      "severity": "error",
+      "message": "unsolved goals\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : MeasureTheory.Measure Ω\nf : Ω → ℝ\nE : Set Ω\nhf_meas : Measurable f\nhf_nonneg : ∀ (x : Ω), 0 ≤ f x\nhE_meas : MeasurableSet E\nhE_pos : 0 < μ E\nh_int_zero : ∫⁻ (x : Ω) in E, ENNReal.ofReal (f x) ∂μ = 0\n⊢ AEMeasurable (fun x => ENNReal.ofReal (f x)) (μ.restrict E)\n"
+    }
+  ]
+}

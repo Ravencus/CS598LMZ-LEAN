@@ -1,0 +1,23 @@
+{
+  "id": "example-123",
+  "type": "problem",
+  "source_note": "Re0微积分1：用牛顿迭代法求算术平方根",
+  "english_source_note": "Re0 Calculus 1: Arithmetic Square Roots by Newton Iteration",
+  "callout_id": "Re0微积分1:用牛顿迭代法求算术平方根#8",
+  "english_title": "Example 1.2.3",
+  "statement_en": "It is important to note that the condition is that for every symmetric interval $I_{\\varepsilon}(L)$ centered at some real number $L$, there are only finitely many terms outside the interval, rather than merely infinitely many terms inside it. This difference is illustrated by the sequence $$b_n=\\begin{cases}1&\\text{n is even}\\\\ -1&\\text{n is odd}\\end{cases}.$$ This sequence has no limit. If the center $x\\neq 1,-1$, then for sufficiently small $\\varepsilon$, the interval $I_{\\varepsilon}(x)$ contains no terms of $b_n$. If $x=1$, then outside $I_{\\varepsilon}(x)$ there are always infinitely many terms with $b_n=-1$; similarly for $x=-1$. Hence no point satisfies the geometric property, so the sequence has no limit.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "counterexample construction",
+    "geometric interpretation of limit",
+    "alternating sequence analysis"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "real line intervals",
+    "basic logic"
+  ],
+  "callout_body": "一定要注意这里强调的是，以某个实数$L$为中心任意半径的对称区间$I_{\\varepsilon}(L)$的**外部只有有限多个元素，而不是内部有无穷个序列的元素**。这其中的差别可以从下面的例子当中看出来:\n\n定义为$$b_n=\\begin{cases}1&\\text{n 是偶数}\\\\ -1&\\text{n 是奇数}\\end{cases}$$的序列没有极限。因为如果我们的对称区间$I_{\\varepsilon}(x)$的中心$x\\neq 1,-1$的话，只要$\\varepsilon$足够小，那么其内部就不会包含任何序列$b_n$的元素，这就无法满足上面的几何性质。但是如果$x=1$,那么$I_{\\varepsilon}(x)$其外部始终存在无穷多个$b_n=-1$,反过来$x=-1$也是如此.因此不存在一个点满足这样的几何性质，因此该序列没有极限。"
+}

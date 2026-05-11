@@ -1,0 +1,43 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_37c562f356c8.lean",
+      "line": 7,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_37c562f356c8.lean",
+      "line": 36,
+      "column": 15,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  HAdd (Set ℝ) (Set ℝ) ?m.42\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_37c562f356c8.lean",
+      "line": 31,
+      "column": 23,
+      "severity": "error",
+      "message": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  ℝ\n\nHint: The identifier `Measure` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_37c562f356c8.lean",
+      "line": 36,
+      "column": 15,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  HAdd (Set ℝ) (Set ℝ) ?m.42\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_37c562f356c8.lean",
+      "line": 31,
+      "column": 23,
+      "severity": "error",
+      "message": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  ℝ\n\nHint: The identifier `Measure` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ]
+}

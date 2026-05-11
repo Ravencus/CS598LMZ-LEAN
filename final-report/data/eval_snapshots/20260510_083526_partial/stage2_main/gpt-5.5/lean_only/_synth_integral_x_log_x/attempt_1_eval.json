@@ -1,0 +1,65 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 7,
+  "first_error": "Type mismatch: After simplification, term\n  HasDerivAt.sub (hasDerivAt_const 0 0) (HasDerivAt.const_mul (1 / 4) (hasDerivAt_pow 2 0))\n has type\n  HasDerivAt ((fun x => 0) - fun y => 4⁻¹ * y ^ 2) 0 0\nb",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 14,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  HasDerivAt.sub (hasDerivAt_const 0 0) (HasDerivAt.const_mul (1 / 4) (hasDerivAt_pow 2 0))\n has type\n  HasDerivAt ((fun x => 0) - fun y => 4⁻¹ * y ^ 2) 0 0\nbut is expected to have type\n  HasDerivAt (fun y => y ^ 2 / 2 * Real.log y - y ^ 2 / 4) 0 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 28,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  HasDerivAt.const_mul (1 / 4) (HasDerivAt.pow (hasDerivAt_id x) 2)\n has type\n  HasDerivAt (fun y => y * (y * 4⁻¹)) (x * (2 * 4⁻¹)) x\nbut is expected to have type\n  HasDerivAt (fun y => y * (y * 4⁻¹)) (x * 2⁻¹) x"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 43,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown identifier `Tendsto`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 48,
+      "column": 12,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  Real.continuousAt_log\nhas type\n  ?m.903 ≠ 0 → ContinuousAt Real.log ?m.903\nbut is expected to have type\n  ContinuousAt ?m.901 ?m.902\nin the application\n  ContinuousAt.mul (ContinuousAt.const_mul (ContinuousAt.pow continuousAt_id 2) (1 / 2)) Real.continuousAt_log"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 53,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown constant `Real.continuousAt_log.ContinuousWithinAt`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 54,
+      "column": 60,
+      "severity": "error",
+      "message": "Invalid field `ContinuousWithinAt`: The environment does not contain `Function.ContinuousWithinAt`, so it is not possible to project the field `ContinuousWithinAt` from an expression\n  ContinuousAt.const_mul (ContinuousAt.pow continuousAt_id 2) (1 / 4)\nof type\n  ∀ ⦃U : Set ℝ⦄,\n    U ∈ nhds ((fun x => 1 / 4 * id x ^ 2) ?m.1026) → U ∈ Filter.map (fun x => 1 / 4 * id x ^ 2) (nhds ?m.1026)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 60,
+      "column": 53,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hderiv\nhas type\n  ∀ x ∈ Set.Icc 0 1, HasDerivAt (fun y => y ^ 2 / 2 * Real.log y - y ^ 2 / 4) (x * Real.log x) x\nbut is expected to have type\n  ∀ x ∈ Set.uIcc ?m.1157 ?m.1158, HasDerivAt ?m.1160 (?m.1161 x) x\nin the application\n  intervalIntegral.integral_eq_sub_of_hasDerivAt hderiv\n"
+    }
+  ]
+}

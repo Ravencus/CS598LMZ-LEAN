@@ -1,0 +1,30 @@
+{
+  "problem_id": "inequality-form-of-the-summation-for-r-1",
+  "english_title": "Inequality Form of the Summation for r > 1",
+  "statement_en": "If $r>1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n),$$\nwhere the remainder satisfies\n$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ntheorem zeta_partial_sum_euler_maclaurin\n    (ζ : ℝ → ℝ) (r : ℝ) (hr : 1 < r) :\n    ∃ E : ℕ → ℝ,\n      ∀ n : ℕ, 1 ≤ n →\n        (Finset.sum (Finset.Icc 1 n) (fun k => Real.rpow (k : ℝ) (-r)) =\n            ζ r\n              + (1 / (1 - r)) * Real.rpow (n : ℝ) (1 - r)\n              + (1 / 2 : ℝ) * Real.rpow (n : ℝ) (-r)\n              - (r / 12 : ℝ) * Real.rpow (n : ℝ) (-r - 1)\n              + E n)\n          ∧\n          |E n| < (r * (r + 1) * (r + 2)) / (720 * Real.rpow (n : ℝ) (r + 3)) := by\n  sorry"
+}

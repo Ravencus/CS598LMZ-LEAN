@@ -1,0 +1,24 @@
+{
+  "id": "lebesgue-differentiation-theorem",
+  "type": "problem",
+  "source_note": "Lebesgue微分定理",
+  "english_source_note": "Lebesgue Differentiation Theorem",
+  "callout_id": "Lebesgue微分定理#1",
+  "english_title": "Lebesgue Differentiation Theorem",
+  "statement_en": "If $f \\in L^1_{\\text{loc}}(\\mathbb{R}^m)$, then the following limit holds almost everywhere: $$\\lim_{\\begin{aligned}m(B)&\\to 0 \\\\x \\in B\\end{aligned}}\\frac{1}{m(B)}\\int_{B} f(y)dy = f(x)$$ That is, almost every point is a Lebesgue point.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Hardy-Littlewood maximal function",
+    "differentiation of integrals",
+    "approximation by continuous functions"
+  ],
+  "prerequisites": [
+    "local integrability",
+    "Lebesgue measure",
+    "almost everywhere convergence",
+    "maximal inequalities"
+  ],
+  "callout_body": "如果$f \\in L^1_{\\text{loc}}(\\mathbb{R}^m)$那么下面极限几乎处处成立：$$\\lim_{\\begin{aligned}m(B)&\\to 0 \\\\x \\in\nB\\end{aligned}}\\frac{1}{m(B)}\\int_{B} f(y)dy = f(x)$$\n即几乎所有点都是Lebesgue点。"
+}

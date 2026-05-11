@@ -1,0 +1,76 @@
+{
+  "problem_id": "theorem-14-dirichlet-theorem",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 23.46,
+  "wall_exceeded": false,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 1,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 7,
+  "first_error": "Unknown constant `Real.exists_int_near`",
+  "total_cost_usd": 0.0,
+  "total_tokens": 52082,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ec3e961023.lean",
+      "line": 4,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Real.exists_int_near`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ec3e961023.lean",
+      "line": 5,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown identifier `exists_int_near`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ec3e961023.lean",
+      "line": 6,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Rat.exists_int_near`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ec3e961023.lean",
+      "line": 7,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown identifier `irrational_iff`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ec3e961023.lean",
+      "line": 8,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Real.exists_rat_btwn`\nexists_rat_btwn.{u_4} {K : Type u_4} [Field K] [LinearOrder K] [IsStrictOrderedRing K] [Archimedean K] {x y : K}\n  (h : x < y) : ∃ q, x < ↑q ∧ ↑q < y\nRat.cast_injective.{u_3} {α : Type u_3} [DivisionRing α] [CharZero α] : Function.Injective Rat.cast"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ec3e961023.lean",
+      "line": 11,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Int.exists_lt_and_lt`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ec3e961023.lean",
+      "line": 12,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Nat.exists_lt`\n"
+    }
+  ]
+}

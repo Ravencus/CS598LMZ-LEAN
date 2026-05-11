@@ -1,0 +1,7 @@
+The stated theorem is analytically false as written: polynomials in `z` alone are not uniformly dense in all continuous complex-valued functions on the unit circle. I’ll still check whether Mathlib has a directly matching theorem or whether the statement has a formal loophole before deciding the best final attempt.
+Prior saved attempts in the repository either leave this exact theorem as `sorry` or assume a non-existent polynomial approximation lemma. I’m checking the relevant Mathlib Stone-Weierstrass API to confirm whether any theorem could apply to this exact signature.
+I can’t produce a valid `FINAL_PROOF` for this signature because the theorem is false as stated.
+
+Polynomials in `z` alone are not uniformly dense in `C(𝕋, ℂ)`. A standard counterexample is `f z = Complex.conj z.1`, i.e. `1 / z` on the unit circle. Uniform limits of ordinary polynomials in `z` on the circle extend holomorphically to the disk, but `conj z` does not.
+
+Mathlib’s relevant Stone-Weierstrass result also reflects this: density for complex-valued functions requires the `starClosure`, meaning conjugates are included. The statement would need Laurent/trigonometric polynomials, or polynomials in both `z` and `conj z`, not just `Polynomial ℂ` evaluated at `z`.

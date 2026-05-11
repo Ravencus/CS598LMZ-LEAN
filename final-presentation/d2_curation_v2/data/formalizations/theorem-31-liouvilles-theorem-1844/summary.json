@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-31-liouvilles-theorem-1844",
+  "english_title": "Theorem 3.1: Liouville's Theorem (1844)",
+  "statement_en": "If $\\alpha$ is an algebraic number of degree $d$ ($d\\geq 2$), then there exists a constant $C(\\alpha)>0$ such that $$\\left|\\alpha-\\frac{p}{q}\\right|>\\frac{C(\\alpha)}{q^d}$$ for every positive integer $q$ and every integer $p$.",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem liouville_approximation_lower_bound\n    {α : ℝ} {d : ℕ}\n    (h_alg : IsAlgebraic ℚ α)\n    (h_deg : (minpoly ℚ α).natDegree = d)\n    (hd : 2 ≤ d) :\n    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,\n      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by\n  sorry"
+}

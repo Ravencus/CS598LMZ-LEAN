@@ -1,0 +1,3 @@
+I’m loading the Lean theorem-proving workflow and checking what Mathlib already provides for polynomial approximation on the circle.
+I’m checking for any existing digest notes and then I’ll probe Mathlib for a polynomial-approximation theorem I can reuse instead of rebuilding it.
+I’ve confirmed the checker is working. I’m now probing for a bundled approximation theorem in Mathlib before falling back to a direct construction.

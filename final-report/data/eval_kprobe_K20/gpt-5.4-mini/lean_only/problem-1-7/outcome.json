@@ -1,0 +1,36 @@
+{
+  "problem_id": "problem-1-7",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 66.22,
+  "wall_exceeded": false,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 2,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "sum_sin_div_nsq_tendsto_half",
+  "signature_ok": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown constant `Real.abs_sub_sin_le`\nabs_sub_le.{u_1} {G : Type u_1} [AddCommGroup G] [LinearOrder G] [IsOrderedAddMonoid G] (a b c : G) :\n  |a - c| ≤ |a - b| + |b - c|\nabs_sub_comm.{u_1} {α : Type ",
+  "total_cost_usd": 0.0,
+  "total_tokens": 125512,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_5350b9d390.lean",
+      "line": 5,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Real.abs_sub_sin_le`\nabs_sub_le.{u_1} {G : Type u_1} [AddCommGroup G] [LinearOrder G] [IsOrderedAddMonoid G] (a b c : G) :\n  |a - c| ≤ |a - b| + |b - c|\nabs_sub_comm.{u_1} {α : Type u_1} [Lattice α] [AddGroup α] (a b : α) : |a - b| = |b - a|\nexists_nat_gt.{u_1} {R : Type u_1} [Semiring R] [PartialOrder R] [IsStrictOrderedRing R] [Archimedean R] (x : R) :\n  ∃ n, x < ↑n\n"
+    }
+  ]
+}

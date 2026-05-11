@@ -1,0 +1,24 @@
+{
+  "id": "theorem-11-wintner-mean-value-theorem-early-20th-century",
+  "type": "problem",
+  "source_note": "Wintner mean value theorem",
+  "english_source_note": "Wintner Mean Value Theorem",
+  "callout_id": "Wintner mean value theorem#1",
+  "english_title": "Theorem 1.1: Wintner Mean Value Theorem, Early 20th Century",
+  "statement_en": "If an arithmetic function $f$ is the Dirichlet convolution of $1$ with another arithmetic function $g$, that is, $$f=1*g,$$ and if the series $$\\sum_{n\\geq 1}\\frac{g(n)}{n}$$ converges absolutely, then the mean value $M(f)$ of $f$ exists and equals the sum of that series, namely $$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "Dirichlet convolution expansion",
+    "mean value estimation of arithmetic functions",
+    "absolute convergence of Dirichlet series"
+  ],
+  "prerequisites": [
+    "arithmetic functions",
+    "Dirichlet convolution",
+    "mean value of arithmetic functions",
+    "series convergence"
+  ],
+  "callout_body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$并且级数$\\sum_{n\\geq 1}\\frac{g(n)}{n}$绝对收敛，那么$f$的平均值$M(f)$就是该级数收敛到的值,即：$$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}$$"
+}

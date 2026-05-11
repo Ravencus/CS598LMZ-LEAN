@@ -1,0 +1,11 @@
+import Mathlib
+
+theorem ae_Tn_div_n_sub_Sn_div_n_tendsto_zero
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω}
+    (Y S T : ℕ → Ω → ℝ)
+    (hT : ∀ n, T n = fun ω => ∑ i in Finset.range (n + 1), Y i ω) :
+    ∀ᵐ ω ∂μ, Filter.Tendsto
+      (fun n : ℕ => T n ω / (n : ℝ) - S n ω / (n : ℝ))
+      Filter.atTop
+      (nhds 0) := by
+  sorry

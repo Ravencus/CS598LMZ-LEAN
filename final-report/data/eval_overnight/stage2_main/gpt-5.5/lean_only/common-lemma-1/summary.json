@@ -1,0 +1,58 @@
+{
+  "problem_id": "common-lemma-1",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 102.6,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 32.94,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 5,
+      "first_error": "Invalid field `tsum_nat_add_tendsto_zero`: The environment does not contain `Exists.tsum_nat_add_tendsto_zero`, so it is not possible to project the field `tsum_nat_add_tendsto_zero` from an expressio"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 33.3,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "failed to synthesize instance of type class\n  AddCommGroup ENNReal\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 28.85,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown identifier `measure_limsup_eq_zero`"
+    }
+  ]
+}

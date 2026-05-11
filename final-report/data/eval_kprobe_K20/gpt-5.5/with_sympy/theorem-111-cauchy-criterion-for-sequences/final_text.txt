@@ -1,0 +1,23 @@
+The stated equivalence appears mathematically false: the right side is the Cauchy property and does not depend on `x`, so a constant sequence `0` would satisfy it for `x = 1` while not tending to `1`. I’ll verify this against Mathlib rather than trying to force an impossible proof.
+The requested theorem is false as stated: the RHS is independent of `x`. Lean verifies a counterexample with the constant zero sequence and `x = 1`.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+example : ¬ (Filter.Tendsto (fun _ : ℕ => (0 : ℝ)) Filter.atTop (nhds (1 : ℝ)) ↔
+      ∀ ε > 0, ∃ N : ℕ, 0 < N ∧ ∀ n m : ℕ, N < n → N < m →
+        |(fun _ : ℕ => (0 : ℝ)) n - (fun _ : ℕ => (0 : ℝ)) m| < ε) := by
+  intro h
+  have hright : ∀ ε > 0, ∃ N : ℕ, 0 < N ∧ ∀ n m : ℕ, N < n → N < m →
+      |(fun _ : ℕ => (0 : ℝ)) n - (fun _ : ℕ => (0 : ℝ)) m| < ε := by
+    intro ε hε
+    refine ⟨1, by norm_num, ?_⟩
+    intro n m hn hm
+    simpa using hε
+  have hleft := h.mpr hright
+  have hconst : Filter.Tendsto (fun _ : ℕ => (0 : ℝ)) Filter.atTop (nhds (0 : ℝ)) :=
+    tendsto_const_nhds
+  have hx : (0 : ℝ) = 1 := tendsto_nhds_unique hconst hleft
+  norm_num at hx
+```

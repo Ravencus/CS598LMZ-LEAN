@@ -1,0 +1,23 @@
+{
+  "id": "cauchy-criterion-for-uniform-convergence",
+  "type": "problem",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "callout_id": "柯西收敛判别#13",
+  "english_title": "Cauchy Criterion for Uniform Convergence",
+  "statement_en": "A sequence of functions $f_n(x):X\\to \\mathbb{C}$ converges uniformly to a function $f(x):X\\to \\mathbb{C}$ if and only if for every $\\varepsilon>0$ there exists a positive integer $N_{\\varepsilon}$ such that for all $n,m>N_{\\varepsilon}$, $$\\sup_{x\\in X}|f_n(x)-f_m(x)|<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "supremum norm estimate",
+    "uniform Cauchy condition",
+    "pointwise limit plus uniform tail control"
+  ],
+  "prerequisites": [
+    "uniform convergence",
+    "pointwise convergence",
+    "supremum of a function"
+  ],
+  "callout_body": "函数列$f_n(x):X\\to \\mathbb{C}$一致收敛到函数$f(x):X\\to \\mathbb{C}$当且仅当对于任意$\\varepsilon>0$存在正整数$N_{\\varepsilon}$使得任意$n,m>N_{\\varepsilon}$都成立$$\\sup_{x\\in X}|f_n(x)-f_m(x)|<\\varepsilon$$"
+}

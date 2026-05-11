@@ -1,0 +1,59 @@
+{
+  "note_title": "基于分部求和法的和的估计",
+  "is_hub": true,
+  "in_subset_via": [
+    "分析学基本方法目录1",
+    "分段估计",
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "基于分部求和法的和的估计#1",
+      "type": "tip",
+      "title": "基本想法",
+      "body": "当我们处理某个部分和$S_{M,N}$的时候，如果我们发现被求和对象可以写成乘积的形式以至于部分和$S_{M,N}$可以写成$$S_{M,N}:=\\sum_{n=M}^N a_nb_n$$并且我们假设其中$a_n,b_n$满足假设:\n1. 其中形式较为简单的对象$a_n$，其差分序列$a_{n+1}-a_n$是较为简单的。\n2. 其中$b_n$的形式虽然较为复杂，但是其部分和$B_N:=\\sum_{n=M}^N b_n$对我们而言是熟悉的(通过其他方式获取到的，或者已知估计的)\n\n此时我们可以借助部分和$B_N$以及差分$a_{n+1}-a_n$的估计来间接地得到$S_N$的估计。",
+      "position_char": 38,
+      "position_line": 6
+    },
+    {
+      "id": "基于分部求和法的和的估计#2",
+      "type": "example",
+      "title": "例子1.1",
+      "body": "求$\\sum_{k=1}^{n}k2^k$的和的封闭表达式。\n\n这个问题当中一种观点是可以把$k$视为是一个求和，然后交换，基本思想参考[[和与积分换序]]。\n\n$$\\begin{aligned}\\sum_{k\\leq n}k2^k&=\\sum_{k\\leq n}2^k\\sum_{i\\leq k}1 \\\\ &=\\sum_{i\\leq n}\\sum_{k\\leq n}2^k\\chi_{i\\leq k} \\\\ &= \\sum_{i\\leq n}\\sum_{i\\leq k\\leq n}2^k \\\\ &= \\sum_{i\\leq n} \\left(2^{n+1}-2^{i}\\right) \\\\ &=n2^{n+1}-2^{n+1}+2 \\end{aligned}$$\n这根本上是分部求和法。我们不妨把上述过程给一般化，假设我们要求$A_n = \\sum_{k\\leq n} a_k b_k$,然后假设$b_n$的前n项和为$S_n$,然后假设$a_k = \\sum_{i\\leq k} c_i$,于是我们重复上述过程:\n$$\\begin{aligned}\\sum_{k\\leq n}a_kb_k&=\\sum_{k\\leq n}b_k\\sum_{i\\leq k}c_i \\\\ &=\\sum_{i\\leq n}\\sum_{k\\leq n}c_ib_k1_{i\\leq k} \\\\ &= \\sum_{i\\leq n}c_i\\sum_{i\\leq k\\leq n}b_k \\\\ &= \\sum_{i\\leq n}c_i \\left(S_n-S_{i-1}\\right) \\\\ &=a_nS_{n}-\\sum_{i\\leq n}c_iS_{i-1} \\\\ &= a_nS_{n}-\\sum_{i\\leq n-1}c_{i+1}S_{i}\\end{aligned}$$其中我们能看到$c_{i+1}$是$a_{i+1}-a_i$也就是差分，$S_i$是$b_i$的前n项和，因此这本质上就是分部求和法。",
+      "position_char": 468,
+      "position_line": 20
+    },
+    {
+      "id": "基于分部求和法的和的估计#3",
+      "type": "tip",
+      "title": "上面的基本想法",
+      "body": "当$a_n$有着更强更好的性质的时候，我们同时就可以放松对$b_n$的部分和的要求。",
+      "position_char": 3088,
+      "position_line": 55
+    },
+    {
+      "id": "基于分部求和法的和的估计#4",
+      "type": "tip",
+      "title": "一个技巧",
+      "body": "此外我们要注意，$a_n$的简单不仅仅局限于其表达式的简单，如果其拥有单调性，那么我们比较容易知道其衰减到0的速度，即$a_n$的渐近表达，那么即便$a_n$的表达式复杂，也可以被算作是差分形式简单的。",
+      "position_char": 3151,
+      "position_line": 58
+    },
+    {
+      "id": "基于分部求和法的和的估计#5",
+      "type": "tip",
+      "title": "想法2.2",
+      "body": "有时候虽然$\\sum_n a_nb_n$并不适合做基于分部求和的估计，但是如果此时我们知道其中某个对象，例如$a_n$的一种估计，比如$a_n \\leq c_n$以及$b_n$非负，然后我们发现放缩以后的和$\\sum_n c_n b_n$是适合基于分部求和的估计，那么此时再考虑分部求和或许就能达到目的。",
+      "position_char": 4043,
+      "position_line": 67
+    },
+    {
+      "id": "基于分部求和法的和的估计#6",
+      "type": "tip",
+      "title": "想法2.3",
+      "body": "有时候一个和$\\sum_n a_n$看起来并不是适合做基于分部求和的估计，不过我们可以尝试把$\\sum_n a_n$转换为某个在估计精度下等价的和$\\sum_n b_nc_n$，此时如果我们已经有估计$\\sum_n b_nc_n$的关键信息，那么这个转换方案就是成功的。",
+      "position_char": 6407,
+      "position_line": 85
+    }
+  ]
+}

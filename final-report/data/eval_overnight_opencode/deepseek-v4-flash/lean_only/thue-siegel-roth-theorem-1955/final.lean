@@ -1,0 +1,21 @@
+import Mathlib
+open Filter
+
+def HasIrrationalityMeasure (x μ : ℝ) : Prop :=
+  (∀ ε : ℝ, 0 < ε →
+    ∃ C : ℝ, 0 < C ∧
+      ∀ p : ℤ, ∀ q : ℕ, q ≠ 0 →
+        C / Real.rpow (q : ℝ) (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|) ∧
+  (∀ ε : ℝ, 0 < ε →
+    ∃ᶠ q : ℕ in Filter.atTop,
+      ∃ p : ℤ,
+        |x - (p : ℝ) / (q : ℝ)| < 1 / Real.rpow (q : ℝ) (μ - ε))
+
+theorem algebraic_irrational_has_irrationality_measure_two
+    {x : ℝ} (hx_alg : IsAlgebraic ℚ x) (hx_irr : Irrational x) :
+    HasIrrationalityMeasure x 2 := by
+  -- Roth's theorem (1955): every algebraic irrational has irrationality measure 2.
+  -- This is a deep result not yet available in Mathlib.
+  -- The second condition follows from Dirichlet's approximation theorem for any irrational.
+  -- The first condition (the upper bound) is the hard part, equivalent to Roth's theorem.
+  sorry

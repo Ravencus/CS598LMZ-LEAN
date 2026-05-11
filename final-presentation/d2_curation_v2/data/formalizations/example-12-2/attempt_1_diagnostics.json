@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a7de7158fdc1.lean",
+      "line": 5,
+      "column": 74,
+      "severity": "error",
+      "message": "Type mismatch\n  -1\nhas type\n  ℝ\nbut is expected to have type\n  Filter ?m.20 → ?m.19\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a7de7158fdc1.lean",
+      "line": 5,
+      "column": 74,
+      "severity": "error",
+      "message": "Type mismatch\n  -1\nhas type\n  ℝ\nbut is expected to have type\n  Filter ?m.20 → ?m.19\n"
+    }
+  ]
+}

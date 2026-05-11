@@ -1,0 +1,19 @@
+{
+  "problem_id": "monotonicity-of-the-integral-1",
+  "model": "gpt-5.5",
+  "wall_seconds": 13.43,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-for-measure-zero-sets-hub"
+  ],
+  "tp": 0,
+  "fp": 1,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

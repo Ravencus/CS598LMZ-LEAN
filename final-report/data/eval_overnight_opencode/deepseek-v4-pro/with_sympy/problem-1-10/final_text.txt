@@ -1,0 +1,57 @@
+Now let me plan the proof.
+
+**Theorem**: If f ≥ 0 is measurable and ∫_E f dμ = 0 with μ(E) > 0, then f = 0 μ-a.e. on E.
+
+**Strategy**:
+1. `ENNReal.ofReal ∘ f` is measurable and nonnegative
+2. The integral `∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0` is the lintegral w.r.t. `μ.restrict E`
+3. A key lemma (`lintegral_eq_zero_iff'`) says lintegral zero ↔ function zero a.e.
+4. `ENNReal.ofReal (f x) = 0 ↔ f x ≤ 0`, combined with `f x ≥ 0` gives `f x = 0`
+
+Let me write the first attempt and probe for the right lemma names.
+Good, I can see two issues:
+1. `lintegral_eq_zero_iff'` takes only 1 argument (AEMeasurable), not 2
+2. `ENNReal.ofReal_eq_zero_iff` doesn't exist — need a different lemma for `ENNReal.ofReal r = 0 → r ≤ 0`
+
+Let me fix both.
+Two issues:
+1. `hg_meas.aemeasurable.restrict` doesn't take `hE_meas` as argument
+2. Need `exfalso` before contradiction
+
+Let me fix both.
+The proof compiles. The unused variable warnings for `hE_meas` and `hE_pos` are fine — those hypotheses aren't needed (the theorem holds without them), but the signature requires them.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory
+
+theorem ae_zero_of_nonneg_measurable_lintegral_zero
+    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}
+    {f : Ω → ℝ} {E : Set Ω}
+    (hf_meas : Measurable f)
+    (hf_nonneg : ∀ x, 0 ≤ f x)
+    (hE_meas : MeasurableSet E)
+    (hE_pos : 0 < μ E)
+    (h_int_zero : ∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0) :
+    ∀ᵐ x ∂μ.restrict E, f x = 0 := by
+  have hg_meas : Measurable (fun x : Ω => ENNReal.ofReal (f x)) :=
+    ENNReal.measurable_ofReal.comp hf_meas
+  have hg_aemeasurable : AEMeasurable (fun x : Ω => ENNReal.ofReal (f x)) (μ.restrict E) :=
+    hg_meas.aemeasurable (μ := μ.restrict E)
+  have h_int : ∫⁻ x, ENNReal.ofReal (f x) ∂(μ.restrict E) = 0 := h_int_zero
+  have h_ae_zero : (fun x : Ω => ENNReal.ofReal (f x)) =ᵐ[μ.restrict E] 0 :=
+    ((lintegral_eq_zero_iff' hg_aemeasurable).mp h_int)
+  filter_upwards [h_ae_zero] with x hx
+  have hx_val : ENNReal.ofReal (f x) = (0 : ENNReal) := hx
+  by_cases hpos : 0 < f x
+  · exfalso
+    have hpos' : 0 < ENNReal.ofReal (f x) := by
+      rw [ENNReal.ofReal_pos]
+      exact hpos
+    rw [hx_val] at hpos'
+    exact lt_irrefl 0 hpos'
+  · have hnonneg : 0 ≤ f x := hf_nonneg x
+    linarith
+```

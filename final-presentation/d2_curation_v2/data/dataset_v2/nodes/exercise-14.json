@@ -1,0 +1,23 @@
+{
+  "id": "exercise-14",
+  "type": "problem",
+  "source_note": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "english_source_note": "Deducing One Series Convergence from Another",
+  "callout_id": "由一个级数收敛证明另一个有关级数的收敛问题#4",
+  "english_title": "Exercise 1.4",
+  "statement_en": "Let $x_n\\in (0,1)$ and $q>0$. If $\\sum_{n\\geq 1} n^q x_n<+\\infty$, then $$\\sum_{n\\geq 1} x_n(\\log(1/x_n))^q<\\infty.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "compare logarithmic powers with polynomial weights",
+    "split the index set by decay rate of $x_n$",
+    "comparison test"
+  ],
+  "prerequisites": [
+    "convergence tests for positive series",
+    "logarithmic growth estimates",
+    "comparison test"
+  ],
+  "callout_body": "设序列$x_n\\in (0,1),q>0$。若$\\sum_{n\\geq 1} n^qx_n<+\\infty$则$$\\sum_{n\\geq 1}x_n(\\log(1/x_n))^q<\\infty$$"
+}

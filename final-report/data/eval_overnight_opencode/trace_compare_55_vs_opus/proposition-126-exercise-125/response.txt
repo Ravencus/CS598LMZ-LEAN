@@ -1,0 +1,2 @@
+{"plan_relation":"same_plan","divergence":"none","evidence":"Both traces choose `m = l`, then prove convergence of the subsequence by composing `hu` with `hφ.tendsto_atTop`. The Lean proof bodies are identical: `intro φ hφ`, `refine ⟨l, ?_, rfl⟩`, and `exact hu.comp hφ.tendsto_atTop`."}
+Both approaches use the same Mathlib lemma family and the same filter-composition decomposition. There is no meaningful divergence, since both checker calls pass with the same proof shape.

@@ -1,0 +1,48 @@
+{
+  "problem_id": "theorem-31-liouvilles-theorem-1844",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 446.05,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Unknown identifier `α`",
+  "total_cost_usd": 0.0,
+  "total_tokens": 2789188,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7afdde418a.lean",
+      "line": 14,
+      "column": 28,
+      "severity": "error",
+      "message": "Unknown identifier `α`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7afdde418a.lean",
+      "line": 25,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown identifier `X`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7afdde418a.lean",
+      "line": 25,
+      "column": 10,
+      "severity": "error",
+      "message": "failed to prove index is valid, possible solutions:\n  - Use `have`-expressions to prove the index is valid\n  - Use `a[i]!` notation instead, runtime check is performed, and 'Panic' error message is produced if index is not valid\n  - Use `a[i]?` notation instead, result is an `Option` type\n  - Use `a[i]'h` notation instead, where `h` is a proof that index is valid\nα : ℝ\nd : ℕ\nh_alg : IsAlgebraic ℚ α\nh_deg : (minpoly ℚ α).natDegree = d\nhd : 2 ≤ d\nh_irr : Irrational α\n⊢ ?m.84 ℤ sorry\n"
+    }
+  ]
+}

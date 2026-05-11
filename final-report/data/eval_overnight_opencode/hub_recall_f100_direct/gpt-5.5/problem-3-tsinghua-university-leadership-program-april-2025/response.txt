@@ -1,0 +1,4 @@
+["using-known-asymptotics-to-derive-expansions-hub", "sequence-limits-via-piecewise-estimates-hub", "basic-methods-in-analysis-i-hub"]
+- using-known-asymptotics-to-derive-expansions-hub: The proof naturally uses local asymptotics such as `tan x ~ x` and `log ((1+t)/(1-t)) ~ 2t`, giving `n * log(tan(pi/4 + 1/n)) -> 2`.
+- sequence-limits-via-piecewise-estimates-hub: One replaces the original powered sequence by the easier logarithmic quantity and proves the discrepancy from `2/n` is negligible.
+- basic-methods-in-analysis-i-hub: The expression is a complicated parameter-dependent product/power, handled by converting it to a simpler recognizable exponential-limit form.

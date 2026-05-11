@@ -1,0 +1,71 @@
+{
+  "note_title": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列#1",
+      "type": "note",
+      "title": "命题1",
+      "body": "如果$x_n$是模1均匀分布的序列，并且$y_n$满足$\\sum_{n\\leq N} |y_n|=o(N)$那么$x_n+y_n$也是模1均匀分布的序列。",
+      "position_char": 30,
+      "position_line": 5,
+      "classification_result": {
+        "id": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列#1",
+        "classification": "problem",
+        "english_title": "Proposition 1",
+        "if_problem": {
+          "statement_en": "If $x_n$ is a sequence uniformly distributed modulo $1$, and $y_n$ satisfies $\\sum_{n\\leq N} |y_n|=o(N)$, then $x_n+y_n$ is also uniformly distributed modulo $1$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "Weyl's criterion",
+            "exponential sum estimation",
+            "perturbation by a sequence with vanishing average absolute value"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "little-o notation",
+            "basic properties of exponential functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列#2",
+      "type": "note",
+      "title": "引理2.1",
+      "body": "$$|e(x)-1|\\leq 2\\pi |x|,\\forall x \\in \\mathbb{R}$$",
+      "position_char": 793,
+      "position_line": 18,
+      "classification_result": {
+        "id": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列#2",
+        "classification": "problem",
+        "english_title": "Lemma 2.1",
+        "if_problem": {
+          "statement_en": "$$|e(x)-1|\\leq 2\\pi |x|,\\forall x \\in \\mathbb{R}$$",
+          "problem_type": "lemma",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "mean value theorem",
+            "elementary exponential inequality"
+          ],
+          "prerequisites": [
+            "complex exponential function",
+            "mean value theorem",
+            "absolute value inequalities"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"给模1均匀分布的序列增加一个算术平均值渐近为0的序列#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1\",\n    \"if_problem\": {\n      \"statement_en\": \"If $x_n$ is a sequence uniformly distributed modulo $1$, and $y_n$ satisfies $\\\\sum_{n\\\\leq N} |y_n|=o(N)$, then $x_n+y_n$ is also uniformly distributed modulo $1$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"Weyl's criterion\",\n        \"exponential sum estimation\",\n        \"perturbation by a sequence with vanishing average absolute value\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"little-o notation\",\n        \"basic properties of exponential functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"给模1均匀分布的序列增加一个算术平均值渐近为0的序列#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"$$|e(x)-1|\\\\leq 2\\\\pi |x|,\\\\forall x \\\\in \\\\mathbb{R}$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"mean value theorem\",\n        \"elementary exponential inequality\"\n      ],\n      \"prerequisites\": [\n        \"complex exponential function\",\n        \"mean value theorem\",\n        \"absolute value inequalities\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

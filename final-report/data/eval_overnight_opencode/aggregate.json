@@ -1,0 +1,474 @@
+{
+  "n_cells_total": 300,
+  "leaderboard": {
+    "gpt-5.5": {
+      "lean_only": {
+        "n": 30,
+        "pass_rate": 0.6333,
+        "outcomes": {
+          "lean_proof": 19,
+          "sympy_rescue": 0,
+          "signature_mismatch": 4,
+          "instruction_violation": 3,
+          "compile_fail": 4,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 0,
+          "no_final_proof": 0
+        },
+        "budget_hit_cells": 0,
+        "wall_seconds": {
+          "n": 30,
+          "median": 111.36,
+          "mean": 124.696,
+          "max": 366.58,
+          "p90": 220.52
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 6.0,
+          "mean": 5.5667,
+          "max": 10,
+          "p90": 9
+        },
+        "mcp_calls_passing": {
+          "n": 19,
+          "median": 5,
+          "mean": 5.1053,
+          "max": 9,
+          "p90": 9
+        },
+        "cost_total_usd": 0.0,
+        "cost_mean_per_cell_usd": 0.0,
+        "source_breakdown": {
+          "explicit_block": 27,
+          "last_compiled_tool_call": 2,
+          "last_submitted_tool_call": 1
+        }
+      },
+      "with_sympy": {
+        "n": 30,
+        "pass_rate": 0.6333,
+        "outcomes": {
+          "lean_proof": 18,
+          "sympy_rescue": 1,
+          "signature_mismatch": 3,
+          "instruction_violation": 6,
+          "compile_fail": 1,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 0,
+          "no_final_proof": 1
+        },
+        "budget_hit_cells": 0,
+        "wall_seconds": {
+          "n": 30,
+          "median": 71.15,
+          "mean": 97.0,
+          "max": 333.03,
+          "p90": 183.25
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 4.0,
+          "mean": 4.5333,
+          "max": 10,
+          "p90": 9
+        },
+        "mcp_calls_passing": {
+          "n": 19,
+          "median": 3,
+          "mean": 4.1053,
+          "max": 10,
+          "p90": 8
+        },
+        "cost_total_usd": 0.0,
+        "cost_mean_per_cell_usd": 0.0,
+        "source_breakdown": {
+          "explicit_block": 26,
+          "last_compiled_tool_call": 2,
+          "none": 1,
+          "last_submitted_tool_call": 1
+        }
+      }
+    },
+    "gpt-5.4-mini": {
+      "lean_only": {
+        "n": 30,
+        "pass_rate": 0.2667,
+        "outcomes": {
+          "lean_proof": 8,
+          "sympy_rescue": 0,
+          "signature_mismatch": 0,
+          "instruction_violation": 3,
+          "compile_fail": 13,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 3,
+          "no_final_proof": 3
+        },
+        "budget_hit_cells": 0,
+        "wall_seconds": {
+          "n": 30,
+          "median": 195.76,
+          "mean": 231.796,
+          "max": 602.97,
+          "p90": 457.34
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 3.0,
+          "mean": 4.3667,
+          "max": 10,
+          "p90": 10
+        },
+        "mcp_calls_passing": {
+          "n": 8,
+          "median": 2.0,
+          "mean": 3,
+          "max": 10,
+          "p90": 4
+        },
+        "cost_total_usd": 0.0,
+        "cost_mean_per_cell_usd": 0.0,
+        "source_breakdown": {
+          "explicit_block": 20,
+          "none": 5,
+          "last_submitted_tool_call": 4,
+          "last_compiled_tool_call": 1
+        }
+      },
+      "with_sympy": {
+        "n": 30,
+        "pass_rate": 0.3,
+        "outcomes": {
+          "lean_proof": 8,
+          "sympy_rescue": 1,
+          "signature_mismatch": 2,
+          "instruction_violation": 3,
+          "compile_fail": 12,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 2,
+          "no_final_proof": 2
+        },
+        "budget_hit_cells": 1,
+        "wall_seconds": {
+          "n": 30,
+          "median": 166.56,
+          "mean": 220.5073,
+          "max": 600.02,
+          "p90": 455.76
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 5.5,
+          "mean": 5.3667,
+          "max": 11,
+          "p90": 10
+        },
+        "mcp_calls_passing": {
+          "n": 9,
+          "median": 5,
+          "mean": 5.2222,
+          "max": 11,
+          "p90": 9
+        },
+        "cost_total_usd": 0.0,
+        "cost_mean_per_cell_usd": 0.0,
+        "source_breakdown": {
+          "explicit_block": 21,
+          "last_compiled_tool_call": 2,
+          "none": 2,
+          "last_submitted_tool_call": 5
+        }
+      }
+    },
+    "deepseek-v4-pro": {
+      "lean_only": {
+        "n": 30,
+        "pass_rate": 0.2333,
+        "outcomes": {
+          "lean_proof": 7,
+          "sympy_rescue": 0,
+          "signature_mismatch": 0,
+          "instruction_violation": 0,
+          "compile_fail": 0,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 23,
+          "no_final_proof": 0
+        },
+        "budget_hit_cells": 0,
+        "wall_seconds": {
+          "n": 30,
+          "median": 600.02,
+          "mean": 503.331,
+          "max": 613.14,
+          "p90": 602.62
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 2.0,
+          "mean": 3.7,
+          "max": 10,
+          "p90": 9
+        },
+        "mcp_calls_passing": {
+          "n": 7,
+          "median": 2,
+          "mean": 2,
+          "max": 3,
+          "p90": 2
+        },
+        "cost_total_usd": 1.557699,
+        "cost_mean_per_cell_usd": 0.051923,
+        "source_breakdown": {
+          "explicit_block": 7,
+          "none": 8,
+          "last_compiled_tool_call": 14,
+          "last_submitted_tool_call": 1
+        }
+      },
+      "with_sympy": {
+        "n": 30,
+        "pass_rate": 0.2,
+        "outcomes": {
+          "lean_proof": 6,
+          "sympy_rescue": 0,
+          "signature_mismatch": 1,
+          "instruction_violation": 0,
+          "compile_fail": 0,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 22,
+          "no_final_proof": 1
+        },
+        "budget_hit_cells": 0,
+        "wall_seconds": {
+          "n": 30,
+          "median": 600.02,
+          "mean": 502.632,
+          "max": 610.6,
+          "p90": 601.0
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 2.5,
+          "mean": 3.4333,
+          "max": 10,
+          "p90": 9
+        },
+        "mcp_calls_passing": {
+          "n": 6,
+          "median": 1.5,
+          "mean": 1.6667,
+          "max": 3,
+          "p90": 2
+        },
+        "cost_total_usd": 1.618222,
+        "cost_mean_per_cell_usd": 0.053941,
+        "source_breakdown": {
+          "explicit_block": 6,
+          "none": 7,
+          "last_compiled_tool_call": 15,
+          "last_submitted_tool_call": 2
+        }
+      }
+    },
+    "claude-opus-4-7": {
+      "lean_only": {
+        "n": 30,
+        "pass_rate": 0.5333,
+        "outcomes": {
+          "lean_proof": 16,
+          "sympy_rescue": 0,
+          "signature_mismatch": 0,
+          "instruction_violation": 11,
+          "compile_fail": 3,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 0,
+          "no_final_proof": 0
+        },
+        "budget_hit_cells": 0,
+        "wall_seconds": {
+          "n": 30,
+          "median": 91.375,
+          "mean": 117.571,
+          "max": 329.36,
+          "p90": 277.52
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 5.0,
+          "mean": 5.5,
+          "max": 10,
+          "p90": 10
+        },
+        "mcp_calls_passing": {
+          "n": 16,
+          "median": 4.5,
+          "mean": 4.6875,
+          "max": 10,
+          "p90": 9
+        },
+        "cost_total_usd": 15.732884,
+        "cost_mean_per_cell_usd": 0.524429,
+        "source_breakdown": {
+          "explicit_block": 30
+        }
+      },
+      "with_sympy": {
+        "n": 30,
+        "pass_rate": 0.5,
+        "outcomes": {
+          "lean_proof": 14,
+          "sympy_rescue": 1,
+          "signature_mismatch": 0,
+          "instruction_violation": 8,
+          "compile_fail": 7,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 0,
+          "no_final_proof": 0
+        },
+        "budget_hit_cells": 0,
+        "wall_seconds": {
+          "n": 30,
+          "median": 99.44,
+          "mean": 112.9673,
+          "max": 318.99,
+          "p90": 216.01
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 6.0,
+          "mean": 5.6667,
+          "max": 10,
+          "p90": 10
+        },
+        "mcp_calls_passing": {
+          "n": 15,
+          "median": 2,
+          "mean": 3.4,
+          "max": 9,
+          "p90": 7
+        },
+        "cost_total_usd": 15.714569,
+        "cost_mean_per_cell_usd": 0.523819,
+        "source_breakdown": {
+          "explicit_block": 30
+        }
+      }
+    },
+    "deepseek-v4-flash": {
+      "lean_only": {
+        "n": 30,
+        "pass_rate": 0.2,
+        "outcomes": {
+          "lean_proof": 6,
+          "sympy_rescue": 0,
+          "signature_mismatch": 2,
+          "instruction_violation": 1,
+          "compile_fail": 3,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 11,
+          "no_final_proof": 7
+        },
+        "budget_hit_cells": 4,
+        "wall_seconds": {
+          "n": 30,
+          "median": 454.025,
+          "mean": 433.0227,
+          "max": 618.36,
+          "p90": 600.09
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 5.5,
+          "mean": 5.3333,
+          "max": 11,
+          "p90": 11
+        },
+        "mcp_calls_passing": {
+          "n": 6,
+          "median": 2.0,
+          "mean": 3,
+          "max": 10,
+          "p90": 2
+        },
+        "cost_total_usd": 0.472237,
+        "cost_mean_per_cell_usd": 0.015741,
+        "source_breakdown": {
+          "explicit_block": 10,
+          "none": 9,
+          "last_compiled_tool_call": 10,
+          "last_submitted_tool_call": 1
+        }
+      },
+      "with_sympy": {
+        "n": 30,
+        "pass_rate": 0.2333,
+        "outcomes": {
+          "lean_proof": 7,
+          "sympy_rescue": 0,
+          "signature_mismatch": 0,
+          "instruction_violation": 2,
+          "compile_fail": 4,
+          "model_timeout": 0,
+          "wall_budget_exceeded": 15,
+          "no_final_proof": 2
+        },
+        "budget_hit_cells": 5,
+        "wall_seconds": {
+          "n": 30,
+          "median": 593.6,
+          "mean": 440.0783,
+          "max": 610.6,
+          "p90": 600.65
+        },
+        "mcp_calls_all": {
+          "n": 30,
+          "median": 10.0,
+          "mean": 6.3333,
+          "max": 11,
+          "p90": 11
+        },
+        "mcp_calls_passing": {
+          "n": 7,
+          "median": 2,
+          "mean": 1.7143,
+          "max": 3,
+          "p90": 2
+        },
+        "cost_total_usd": 0.489773,
+        "cost_mean_per_cell_usd": 0.016326,
+        "source_breakdown": {
+          "explicit_block": 13,
+          "last_compiled_tool_call": 15,
+          "none": 2
+        }
+      }
+    }
+  },
+  "sympy_ablation": {
+    "gpt-5.5": {
+      "lean_only": 0.6333,
+      "with_sympy": 0.6333,
+      "delta": 0.0
+    },
+    "gpt-5.4-mini": {
+      "lean_only": 0.2667,
+      "with_sympy": 0.3,
+      "delta": 0.0333
+    },
+    "deepseek-v4-pro": {
+      "lean_only": 0.2333,
+      "with_sympy": 0.2,
+      "delta": -0.0333
+    },
+    "claude-opus-4-7": {
+      "lean_only": 0.5333,
+      "with_sympy": 0.5,
+      "delta": -0.0333
+    },
+    "deepseek-v4-flash": {
+      "lean_only": 0.2,
+      "with_sympy": 0.2333,
+      "delta": 0.0333
+    }
+  }
+}

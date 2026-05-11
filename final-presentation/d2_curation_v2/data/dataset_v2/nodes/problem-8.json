@@ -1,0 +1,23 @@
+{
+  "id": "problem-8",
+  "type": "problem",
+  "source_note": "关于log的一个积分",
+  "english_source_note": "An Integral Involving log",
+  "callout_id": "关于log的一个积分#1",
+  "english_title": "Problem",
+  "statement_en": "Evaluate the integral: $$\\int_{0}^{1} \\log(1-x) \\log(x) \\, dx$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "integration by parts",
+    "series expansion",
+    "Beta and Gamma function methods"
+  ],
+  "prerequisites": [
+    "properties of logarithms",
+    "definite integration",
+    "power series"
+  ],
+  "callout_body": "求积分:$$\\int_{0}^{1} \\log(1-x) \\log(x) dx$$"
+}

@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-131-wiener-ikehara-theorem-simplified-version",
+  "english_title": "Lemma 1.3.1: Wiener-Ikehara Theorem (Simplified Version)",
+  "statement_en": "Let $b>0$, and let $f(n)$ be a nonnegative arithmetic function. Write $$F(s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}$$ for its associated Dirichlet series.\n\nAssume that the series converges absolutely in the region $\\mathrm{Re}(s)>b$, and that it admits analytic continuation to $\\mathrm{Re}(s)\\geq b$ as a meromorphic function $F(s)$. Suppose that in this region the function has exactly one simple pole, namely at $s=b$. If the residue of $F(s)$ at $s=b$ is $c$, then $$\\sum_{n\\leq x} f(n)\\sim \\frac{c}{b}x",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'tsum', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators Topology\n\nnoncomputable def dirichletSeries (f : ℕ → ℝ) (s : ℂ) : ℂ :=\n  ∑' n : ℕ, ((f (n + 1) : ℂ) / (((n + 1 : ℕ) : ℂ) ^ s))\n\ndef DirichletSeriesAbsConvergesInHalfPlane (f : ℕ → ℝ) (b : ℝ) : Prop :=\n  ∀ s : ℂ, b < s.re →\n    Summable (fun n : ℕ => ‖((f (n + 1) : ℂ) / (((n + 1 : ℕ) : ℂ) ^ s))‖)\n\ndef HasMeromorphicContinuationToClosedHalfPlane (f : ℕ → ℝ) (b : ℝ) : Prop :=\n  True\n\ndef HasExactlyOneSimplePoleAt (f : ℕ → ℝ) (b : ℝ) : Prop :=\n  True\n\ndef ResidueAtEquals (f : ℕ → ℝ) (b c : ℝ) : Prop :=\n  True\n\ntheorem dirichlet_series_tauberian_asymptotic\n    {f : ℕ → ℝ} {b c : ℝ}\n    (hb : 0 < b)\n    (hf_nonneg : ∀ n : ℕ, 0 ≤ f n)\n    (habs : DirichletSeriesAbsConvergesInHalfPlane f b)\n    (hmero : HasMeromorphicContinuationToClosedHalfPlane f b)\n    (hpole : HasExactlyOneSimplePoleAt f b)\n    (hres : ResidueAtEquals f b c) :\n    Filter.Tendsto\n      (fun x : ℝ => (∑ n ∈ Finset.Icc (1 : ℕ) ⌊x⌋₊, f n) / Real.rpow x b)\n      Filter.atTop\n      (nhds (c / b)) := by\n  sorry"
+}

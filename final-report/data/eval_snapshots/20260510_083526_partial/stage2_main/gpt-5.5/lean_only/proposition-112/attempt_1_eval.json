@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Application type mismatch: The argument\n  hn\nhas type\n  2 ≤ n\nbut is expected to have type\n  2 ≤ n + 1\nin the application\n  Finset.sum_Icc_succ_top hn\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_a7eea12d7c.lean",
+      "line": 14,
+      "column": 34,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hn\nhas type\n  2 ≤ n\nbut is expected to have type\n  2 ≤ n + 1\nin the application\n  Finset.sum_Icc_succ_top hn\n"
+    }
+  ]
+}

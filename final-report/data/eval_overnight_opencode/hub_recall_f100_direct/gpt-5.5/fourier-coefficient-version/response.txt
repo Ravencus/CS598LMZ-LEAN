@@ -1,0 +1,4 @@
+["an-epsilon-of-room-hub", "integral-estimates-via-integration-by-parts-hub", "piecewise-estimates-hub"]
+- an-epsilon-of-room-hub: The standard proof first proves decay for better-behaved approximants to `f`, such as smooth or step functions, then transfers the result to the original `L¹` function by `L¹` approximation.
+- integral-estimates-via-integration-by-parts-hub: For smooth approximants, the oscillatory integral against `e^{-inx}` is estimated by integrating by parts, producing decay like `O(1 / |n|)`.
+- piecewise-estimates-hub: The approximation error is controlled by the simple bound `|∫ (f - g) e^{-inx}| ≤ ∫ |f - g|`, splitting the proof into the approximant contribution and the small `L¹` error.

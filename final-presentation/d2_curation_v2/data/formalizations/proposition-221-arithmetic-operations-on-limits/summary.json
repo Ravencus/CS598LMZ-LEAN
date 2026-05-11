@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-221-arithmetic-operations-on-limits",
+  "english_title": "Proposition 2.2.1: Arithmetic Operations on Limits",
+  "statement_en": "Assume the limits of two sequences exist, with $x_n\\to a$ and $y_n\\to b$. Then: 1. Addition: $x_n+y_n \\to a+b$. 2. Subtraction: $x_n-y_n \\to a-b$. 3. Multiplication: $x_ny_n \\to ab$. 4. Division: if $b\\neq 0$ and $\\frac{x_n}{y_n}$ is defined, then $\\frac{x_n}{y_n}\\to \\frac{a}{b}$.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 6,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 6,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  a\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 6,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sequence_limit_arithmetic\n    {x y : ℕ → ℝ} {a b : ℝ}\n    (hx : Filter.Tendsto x Filter.atTop (Filter.nhds a))\n    (hy : Filter.Tendsto y Filter.atTop (Filter.nhds b)) :\n    Filter.Tendsto (fun n => x n + y n) Filter.atTop (Filter.nhds (a + b)) ∧\n    Filter.Tendsto (fun n => x n - y n) Filter.atTop (Filter.nhds (a - b)) ∧\n    Filter.Tendsto (fun n => x n * y n) Filter.atTop (Filter.nhds (a * b)) ∧\n    (∀ (hb : b ≠ 0) (hdiv : ∀ n, y n ≠ 0),\n      Filter.Tendsto (fun n => x n / y n) Filter.atTop (Filter.nhds (a / b))) := by\n  sorry"
+}

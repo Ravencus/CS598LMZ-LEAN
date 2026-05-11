@@ -1,0 +1,18 @@
+{
+  "id": "identity-theorem-hub",
+  "type": "hub",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "is_top3": false,
+  "note_degree": 13,
+  "strategies": [
+    {
+      "callout_id": "identity theorem#1",
+      "english_title": "Abstraction of the Identity Theorem",
+      "strategy_name_en": "Identity theorem reduction from a subset",
+      "summary_en": "To prove that two sufficiently regular functions on a domain are identical, it can be enough to verify equality on a smaller subset. Strong regularity lets local or partial information determine the global function.",
+      "applicability": "Applies when working with classes of functions whose values on a dense set, accumulation set, or other determining subset uniquely determine the whole function.",
+      "callout_body": "为了验证，在$U$上拥有某种好的正则性$P$的两个函数$f,g$恒等，我们只需要验证在子集$S\\subset U$上恒等。即正则性强的对象，局部信息包含了全局信息。"
+    }
+  ]
+}

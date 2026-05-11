@@ -1,0 +1,34 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 96.09,
+  "wall_exceeded": false,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 5,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown constant `MeasureTheory.lintegral_eq_zero_iff.mp`\n",
+  "total_cost_usd": 0.0,
+  "total_tokens": 149511,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_2e3b020fc8.lean",
+      "line": 4,
+      "column": 15,
+      "severity": "error",
+      "message": "Unknown constant `MeasureTheory.lintegral_eq_zero_iff.mp`\n"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "expand-conditions-into-sums-or-integrals-and-swap-order-hub",
+  "type": "hub",
+  "source_note": "把条件函数展开为新的和或积分然后换序",
+  "english_source_note": "Expand Conditions into Sums or Integrals and Swap Order",
+  "is_top3": false,
+  "note_degree": 14,
+  "strategies": [
+    {
+      "callout_id": "把条件函数展开为新的和或积分然后换序#1",
+      "english_title": "Expand the Condition into a Sum",
+      "strategy_name_en": "Expand an indicator condition into a sum and interchange summation order",
+      "summary_en": "Rewrite a constrained sum using an indicator function, then expand that indicator as an auxiliary sum. After that, interchange the order of summation to transform the original problem into a more tractable one.",
+      "applicability": "Applies when a summation is restricted by a condition on the indices and the corresponding indicator function can be represented as a sum over simpler objects.",
+      "callout_body": "当我们遇到形如$$\\sum_{a,b;\\text{cond}}f(a,b)\n=\\sum_{a,b}f(a,b)1_{\\text{cond}}(a,b)$$其中cond表示一个与$a,b$有关的一个条件。我们想到可以把$1_{\\text{cond}}(a,b)$函数展开成一个求和的形式\n$$1_{\\text{cond}}(a,b)=\\sum_{c}g_c(a,b)$$这样展开以后，我们就得到一个双重求和:\n$$\\begin{aligned}\\sum_{a,b;\\text{cond}}f(a,b) &=\n\\sum_{a,b}f(a,b)1_{\\text{cond}}(a,b) \\\\ &=\n\\sum_{a,b}f(a,b)\\sum_{c}g_c(a,b) =\n\\sum_{a,b}\\sum_{c}f(a,b)g_c(a,b) \\\\ &=\n\\sum_{c}\\sum_{a,b}f(a,b)g_c(a,b)\\end{aligned}$$"
+    },
+    {
+      "callout_id": "把条件函数展开为新的和或积分然后换序#2",
+      "english_title": "Convolution Method",
+      "strategy_name_en": "Convolution method",
+      "summary_en": "Express part of the summand as a Dirichlet convolution of simpler arithmetic functions, then interchange the order of summation. This reduces the estimation of a difficult arithmetic function to estimates for more familiar ones.",
+      "applicability": "Applies in multiplicative and analytic number theory when an arithmetic function admits a useful Dirichlet convolution decomposition.",
+      "callout_body": "我们把被求和对象当中的一部分展开为更简单的函数的Dirichlet卷积的形式,然后交换求和次序，从而试图把对该数论函数的估计变成对更为熟悉且简单的数论函数的估计。"
+    },
+    {
+      "callout_id": "把条件函数展开为新的和或积分然后换序#3",
+      "english_title": "Common Form 1 of the Convolution Method",
+      "strategy_name_en": "Partial-sum reduction via Dirichlet convolution",
+      "summary_en": "If \\(f=h*g\\), then the partial sum \\(F(x)=\\\\sum_{n\\\\le x} f(n)\\) can be rewritten as \\(F(x)=\\\\sum_{d\\\\le x} g(d)H(x/d)\\), where \\(H(x)=\\\\sum_{n\\\\le x} h(n)\\). This converts the original problem into estimating weighted partial sums of a simpler function.",
+      "applicability": "Applies when one wants to estimate partial sums of an arithmetic function that factors as a Dirichlet convolution and one factor has known or manageable summatory behavior.",
+      "callout_body": "假设我们需要估计$F(x):=\\sum_{n\\leq x}f(n)$，其中$f(x)$是某个不好处理的算术函数。然而我们知道$$f=h*g$$其中$g$相对简单，而$h$的和$H(x):=\\sum_{n\\leq x}h(n)$的渐近结果是已知的。那么$$\\begin{aligned}F(x)&=\\sum_{n\\leq x}f(n)=\\sum_{n\\leq x}\\sum_{d|n}g(d)h(n/d)\\\\&=\\sum_{n\\leq x}\\sum_{d\\leq x}g(d)h(n/d)1_{d|n}=\\sum_{d\\leq x}\\sum_{n\\leq x}g(d)h(n/d)1_{d|n}\\\\&=\\sum_{d\\leq x}g(d)\\sum_{q\\leq x/d}h(q) \\\\&= \\sum_{d\\leq x}g(d)H(x/d)\\end{aligned}$$这样问题就会变成我们熟悉的问题。\n\n当然因为Dirichlet卷积是可以交换次序的，因此我们也可以把卷积写成$f=g*h$，假设其中$g$的和为$G(x):=\\sum_{d\\leq x}g(d)$，这个和已知而$h$相对简单，那么重复以上过程也可以得到$$F(x)=\\sum_{d\\leq x}h(d)G(x/d)$$"
+    },
+    {
+      "callout_id": "把条件函数展开为新的和或积分然后换序#4",
+      "english_title": "Special Form 1 of the Convolution Method",
+      "strategy_name_en": "Convolution with the constant-one function",
+      "summary_en": "When \\(g=f*1\\), the partial sum of \\(g\\) can be rewritten using floor terms, leading to formulas such as \\(\\\\sum_{n\\\\le x} g(n)=\\\\sum_{n\\\\le x} f(n)\\\\lfloor x/n\\\rfloor\\). Approximating the floor function then yields a main term plus an error term.",
+      "applicability": "Applies when an arithmetic function is the Dirichlet convolution of another function with the constant-one function, especially in divisor-sum type problems.",
+      "callout_body": "如果数论函数具有关系$$g=f*1$$那么根据“卷积法的常见形式1”，假设$F(x):=\\sum_{n\\leq x}f(n)$以及$\\lfloor x\\rfloor=\\sum_{n\\leq x}1$,一般而言这个和的渐近是已知的,于是$$\\sum_{n\\leq x}g(n) =\\sum_{n\\leq x} f(n)\\left\\lfloor \\frac{x}{n}\\right\\rfloor$$当然如果对最右边的形式做进一步估计,利用粗略的处理$\\left\\lfloor \\frac{x}{n}\\right\\rfloor=\\frac{x}{n}+O(1)$还会得到$$\\sum_{n\\leq x}g(n)=x\\sum_{n\\leq x} \\frac{f(n)}{n}+O\\left(\\sum_{n\\leq x}|f(n)|\\right)$$"
+    },
+    {
+      "callout_id": "把条件函数展开为新的和或积分然后换序#5",
+      "english_title": "Idea 1.2.1: Handling the Coprimality Condition in Double Sums",
+      "strategy_name_en": "Remove a coprimality condition by Möbius inversion",
+      "summary_en": "Replace the indicator \\(1_{(a,b)=1}\\) by the Möbius expansion \\(\\\\sum_{d\\\\mid (a,b)} \\\\mu(d)\\), then interchange summation and rescale variables. This transforms a sum over coprime pairs into a weighted sum of unrestricted double sums.",
+      "applicability": "Applies when a double sum is restricted by a gcd condition such as \\((a,b)=1\\) and Möbius inversion allows the condition to be encoded algebraically.",
+      "callout_body": "如果目标是估计和\n$$S_N:=\\sum_{a,b\\leq N;(a,b)=1}f(a,b)=\\sum_{a,b\\leq N}f(a,b)1_{(a,b)=1}$$其中条件函数$1_{(a,b)=1}$是个麻烦。我们可以用下面的思路展开条件函数：\n\n令函数$$\\varepsilon(n):=\\begin{cases}1&n=1\\\\0&\\text{otherwise}\\end{cases}$$考虑到Mobius函数与1的卷积$$\\varepsilon=\\mu*1\\iff \\varepsilon(n) =\\sum_{d|n}\\mu(d)$$那么条件函数可以写成$$1_{(a,b)=1}=\\sum_{d|(a,b)}\\mu(d)$$于是目标和可以改写为$$\\begin{aligned}S_N&=\\sum_{a,b\\leq N}f(a,b)\\sum_{d|(a,b)}\\mu(d)\\\\&=\\sum_{a,b\\leq N}f(a,b)\\sum_{d\\leq N}\\mu(d)1_{d|a}1_{d|b}\\\\&= \\sum_{d\\leq N}\\mu(d)\\sum_{a,b\\leq N}f(a,b)1_{d|a}1_{d|b}\\\\&=\\sum_{d\\leq N}\\mu(d)\\sum_{m,n\\leq \\lfloor N/d \\rfloor}f(dm,dn)\\end{aligned}$$令$$F_d(x):=\\sum_{m,n\\leq x}f(dm,dn)$$假设我们知道改函数的一个估计$$F_d(\\lfloor N/d\\rfloor)=\\text{main}_d(N)+\\text{Error}_d(N)$$的估计。如果:\n* $\\sum_{d\\leq N}|\\mu(d)|\\cdot |\\text{Error}_d(N)|$很小\n* $\\sum_{d\\leq N}\\mu(d)\\cdot\\text{main}_d(N)$容易估计\n\n那么这种处理条件函数的思路通常可行。"
+    }
+  ]
+}

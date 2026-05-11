@@ -1,0 +1,24 @@
+{
+  "id": "theorem-12-a-variant-of-the-identity-theorem-for-continuous-",
+  "type": "problem",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "callout_id": "identity theorem#3",
+  "english_title": "Theorem 1.2: A Variant of the Identity Theorem for Continuous Functions",
+  "statement_en": "Let $f,g:X\\to Y$ be continuous maps from a topological space $X$ to a Hausdorff ordered topological space $Y$, and assume the order relation is compatible with the topology in the sense that $\\{(y_1,y_2)\\in Y\\times Y:y_1\\leq y_2\\}$ is closed. If $$f(x)\\leq g(x),\\forall x\\in Z$$ for some dense subset $Z\\subset X$, then $$f(x)\\leq g(x),\\forall x\\in X.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "general topology",
+  "key_techniques": [
+    "density of a subset",
+    "continuity into a product space",
+    "closedness of the order relation"
+  ],
+  "prerequisites": [
+    "continuous maps between topological spaces",
+    "dense subsets",
+    "Hausdorff spaces",
+    "ordered topological spaces"
+  ],
+  "callout_body": "假设映射$f,g:X\\to Y$是从拓扑空间$X$到$Y$的两个连续映射，其中$Y$是Hausdroff的有序拓扑空间,并且其上的序关系\"$\\leq$\"与拓扑是相容的，即集合$\\{(y_1,y_2)\\in Y\\times Y:y_1\\leq y_2\\}$是一个闭集。\n\n那么如果两个函数$$f(x)\\leq g(x),\\forall x\\in Z$$其中$Z\\subset X$是一个稠密子集。那么$$f(x)\\leq g(x),\\forall x\\in X$$"
+}

@@ -1,0 +1,46 @@
+I’m loading the Lean proving workflow and checking what Mathlib already gives for isolated zeros of holomorphic/differentiable complex functions.
+I’m checking for an existing digest or prior proof pattern, then I’ll probe Mathlib for the exact isolated-zeros lemma names.
+Mathlib has an `Analysis.Analytic.IsolatedZeros` file, so I’m reading the local theorem statements to see the exact lemma I can reuse.
+I have the isolated-zero theorems; now I’m checking the bridge from `DifferentiableOn` to `AnalyticOnNhd` and whether there’s a direct `mem_nhds`/ball formulation.
+I’ve got the likely proof shape. I’m verifying the exact `DifferentiableOn → AnalyticOnNhd` theorem and the neighborhood-to-ball extraction before I write the Lean proof.
+I have the proof skeleton. I’m sending one full Lean attempt now, using the analytic identity principle to rule out a zero neighborhood and then extracting a punctured ball.
+The first attempt failed on two details: the punctured-neighborhood notation in an explicit type annotation, and the exact name for the analytic bridge theorem. I’m checking the theorem names directly now.
+I’ve isolated the issue to the punctured-filter annotation. I’m switching that part to an explicit `nhdsWithin` set membership, which should also make the `Metric.mem_nhdsWithin_iff` step cleaner.
+The remaining issue is the syntax for `nhdsWithin` with an explicit predicate. I’m checking how Mathlib writes it elsewhere so I can avoid the parser trap.
+I found the missing piece: `𝓝[≠]` is a scoped notation. I’m reopening topology scope and converting the eventual statement to a set-membership lemma before extracting the radius.
+The current proof is structurally right, but the checker is still failing without diagnostics. I’m probing a more direct `eventually_nhdsWithin_iff` route, which may avoid the set-membership conversion entirely.
+FINAL_PROOF:
+```lean
+import Mathlib
+open scoped Topology
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  have hA : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hz0A : AnalyticAt ℂ f z0 := hA z0 hz0U
+  have hne : ∀ᶠ z in 𝓝[≠] z0, f z ≠ 0 := by
+    rcases hz0A.eventually_eq_zero_or_eventually_ne_zero with hzero | hne
+    · exfalso
+      have hfw := hz0A.frequently_zero_iff_eventually_zero.mpr hzero
+      have hEq : EqOn f 0 U :=
+        hA.eqOn_zero_of_preconnected_of_frequently_eq_zero hU_connected hz0U hfw
+      exact hf_nonzero (fun z hz => hEq hz)
+    · exact hne
+  have hne' : ∀ᶠ z in 𝓝 z0, z ≠ z0 → f z ≠ 0 := by
+    simpa [eventually_nhdsWithin_iff] using hne
+  rcases Metric.eventually_nhds_iff_ball.mp hne' with ⟨r, hr, hball⟩
+  refine ⟨r, hr, ?_⟩
+  intro z hzU hzlt hz0
+  by_contra hneq
+  have hznonzero : f z ≠ 0 :=
+    hball z (by simpa [Metric.mem_ball, dist_eq_norm] using hzlt) hneq
+  exact hznonzero hz0
+```

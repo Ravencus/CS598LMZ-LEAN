@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-132",
+  "english_title": "Lemma 1.3.2",
+  "statement_en": "Let $a = \\liminf_{n\\to \\infty}\\frac{a_n}{\\sqrt{n}}$ and $b=\\limsup_{n\\to \\infty}\\frac{a_n}{\\sqrt{n}}$. Then $$0<a\\leq b<+\\infty.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\ndef normalizedBySqrt (u : ℕ → ℝ) (n : ℕ) : ℝ :=\n  u n / Real.sqrt (n : ℝ)\n\ndef tailInf (u : ℕ → ℝ) (n : ℕ) : ℝ :=\n  sInf (Set.range fun m : ℕ => normalizedBySqrt u (n + m))\n\ndef tailSup (u : ℕ → ℝ) (n : ℕ) : ℝ :=\n  sSup (Set.range fun m : ℕ => normalizedBySqrt u (n + m))\n\ndef seqLiminf (u : ℕ → ℝ) : ℝ :=\n  sSup (Set.range fun n : ℕ => tailInf u n)\n\ndef seqLimsup (u : ℕ → ℝ) : ℝ :=\n  sInf (Set.range fun n : ℕ => tailSup u n)\n\ntheorem sqrtNormalized_liminf_limsup_pos_le_finite\n    (aₙ : ℕ → ℝ) :\n    let a := seqLiminf aₙ\n    let b := seqLimsup aₙ\n    0 < a ∧ a ≤ b ∧ ∃ M : ℝ, b < M := by\n  sorry"
+}

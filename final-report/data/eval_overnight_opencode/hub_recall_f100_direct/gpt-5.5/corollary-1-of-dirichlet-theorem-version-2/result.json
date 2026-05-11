@@ -1,0 +1,20 @@
+{
+  "problem_id": "corollary-1-of-dirichlet-theorem-version-2",
+  "model": "gpt-5.5",
+  "wall_seconds": 16.13,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+  ],
+  "truth": [
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+  ],
+  "tp": 0,
+  "fp": 2,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

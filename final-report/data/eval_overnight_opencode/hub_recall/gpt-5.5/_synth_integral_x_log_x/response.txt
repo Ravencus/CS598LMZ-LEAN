@@ -1,0 +1,3 @@
+["integral-estimates-via-integration-by-parts-hub", "an-epsilon-of-room-hub"]
+- integral-estimates-via-integration-by-parts-hub: The core computation is integration by parts, taking \(u=\log x\) and \(dv=x\,dx\), giving an elementary antiderivative and the value \(-1/4\).
+- an-epsilon-of-room-hub: Because \(\log x\) is singular at \(0\), a clean proof often first computes the integral on \([\varepsilon,1]\) and then passes to the limit as \(\varepsilon \to 0^+\).

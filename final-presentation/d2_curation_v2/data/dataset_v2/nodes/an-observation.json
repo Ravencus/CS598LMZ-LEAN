@@ -1,0 +1,23 @@
+{
+  "id": "an-observation",
+  "type": "problem",
+  "source_note": "Kronecker定理，Dirichlet定理及其应用",
+  "english_source_note": "Kronecker's Theorem, Dirichlet's Theorem, and Applications",
+  "callout_id": "Kronecker定理,Dirichlet定理及其应用#10",
+  "english_title": "An Observation",
+  "statement_en": "If the difference between the residues of two numbers $x,y$ modulo $1$ is less than a sufficiently small $r>0$, then $||x-y||<r$.",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "fractional parts",
+    "nearest-integer argument",
+    "modulo 1 comparison"
+  ],
+  "prerequisites": [
+    "fractional part",
+    "integer part",
+    "nearest-integer distance $||x||$"
+  ],
+  "callout_body": "如果两个数$x,y$模$1$的余数的差小于一个足够小的$r>0$，那么$||x-y||<r$。因为$$|\\varepsilon(x)-\\varepsilon(y)|<r\\iff |x-y-(E(x)-E(y))|<r$$此时如果$r<\\frac{1}{2}$，这便意味着$x-y$这个实数与$E(x)-E(y)$这个整数的距离小于$r<\\frac{1}{2}$,这意味着$E(x)-E(y)$就是距离$x-y$最近的整数，从而$$||x-y||<r$$"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "problem-31-3",
+  "type": "problem",
+  "source_note": "柯西凝聚判别法",
+  "english_source_note": "Cauchy Condensation Test",
+  "callout_id": "柯西凝聚判别法#7",
+  "english_title": "Problem 3.1",
+  "statement_en": "Prove that the series $\\sum_n \\frac{1}{n\\log(n)}$ diverges.",
+  "problem_type": "exercise",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Cauchy condensation test",
+    "comparison with harmonic series"
+  ],
+  "prerequisites": [
+    "series convergence",
+    "logarithms",
+    "Cauchy condensation test"
+  ],
+  "callout_body": "证明级数$\\sum_{n}\\frac{1}{n\\log(n)}$是发散的。"
+}

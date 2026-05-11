@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-22-3",
+  "english_title": "Example 2.2",
+  "statement_en": "Show that\n$$\\\\prod_{k=2}^{n}\\\\left(1-\\\\frac{1}{k^2}\\\right)=\\\\frac{n+1}{2n}.$$",
+  "difficulty": "easy",
+  "domain": "algebra",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem telescoping_product_one_sub_inv_sq\n    (n : ℕ) (hn : 1 ≤ n) :\n    ∏ k ∈ Finset.Icc 2 n, (1 - 1 / ((k : ℚ) ^ 2)) =\n      ((n : ℚ) + 1) / (2 * (n : ℚ)) := by\n  sorry"
+}

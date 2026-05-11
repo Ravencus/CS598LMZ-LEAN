@@ -1,0 +1,3 @@
+["an-epsilon-of-room-hub", "basic-methods-in-analysis-i-hub"]
+- an-epsilon-of-room-hub: The proof reduces the infinite convergence claim to eventual tail control: once `u n` is in every neighborhood of `l` for all large `n`, a strictly increasing subsequence eventually lands in that same tail.
+- basic-methods-in-analysis-i-hub: The theorem is a basic sequence-limit transfer principle, showing that convergence of the original approximating sequence controls the corresponding subsequence approximants.

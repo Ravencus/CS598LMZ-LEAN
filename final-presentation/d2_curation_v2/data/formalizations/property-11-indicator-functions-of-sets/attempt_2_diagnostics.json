@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "exit_code": 0,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_37c562f356c8.lean",
+      "line": 8,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_37c562f356c8.lean",
+      "line": 31,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`\n"
+    }
+  ],
+  "errors_only": []
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "translation-of-a-convolution-equals-the-convolution-of-trans",
+  "english_title": "Translation of a Convolution Equals the Convolution of Translations",
+  "statement_en": "If $T_z(f)$ denotes the left translation of $f$ by $z$, namely $T_z(f)=f(x-z)$, then\n$$T_{z}(f*g)=(T_zf)*g=f*(T_zg).$$",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen MeasureTheory\n\ndef leftTranslation (z : ℝ) (f : ℝ → ℂ) : ℝ → ℂ :=\n  fun x => f (x - z)\n\ndef convolution (f g : ℝ → ℂ) : ℝ → ℂ :=\n  fun x => ∫ t : ℝ, f (x - t) * g t\n\ntheorem leftTranslation_convolution\n    (z : ℝ) (f g : ℝ → ℂ) :\n    leftTranslation z (convolution f g) = convolution (leftTranslation z f) g ∧\n    convolution (leftTranslation z f) g = convolution f (leftTranslation z g) := by\n  sorry"
+}

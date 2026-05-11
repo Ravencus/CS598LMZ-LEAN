@@ -1,0 +1,2 @@
+["identity-theorem-hub"]
+- identity-theorem-hub: The proof uses `eqOn_of_preconnected_of_eventuallyEq` to turn local eventual equality `f = 0` near `z0` into equality on all of connected `U`, yielding the contradiction with `hf_nonzero`; the other branch uses the local nonvanishing alternative to get the isolated zero disk.

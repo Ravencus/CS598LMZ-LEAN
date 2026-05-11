@@ -1,0 +1,25 @@
+import Mathlib
+
+theorem ae_zero_of_nonneg_measurable_lintegral_zero
+    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}
+    {f : Ω → ℝ} {E : Set Ω}
+    (hf_meas : Measurable f)
+    (hf_nonneg : ∀ x, 0 ≤ f x)
+    (hE_meas : MeasurableSet E)
+    (hE_pos : 0 < μ E)
+    (h_int_zero : ∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0) :
+    ∀ᵐ x ∂μ.restrict E, f x = 0 := by
+  set g := fun x : Ω => ENNReal.ofReal (f x) with hg_def
+  have hg_meas : Measurable g := ENNReal.measurable_ofReal.comp hf_meas
+  have hg_lintegral_zero : ∫⁻ x, g x ∂(μ.restrict E) = 0 := by
+    simpa [hg_def] using h_int_zero
+  have hg_aemeasurable : AEMeasurable g (μ.restrict E) :=
+    hg_meas.aemeasurable
+  have hg_ae_zero : g =ᵐ[μ.restrict E] 0 :=
+    (MeasureTheory.lintegral_eq_zero_iff hg_aemeasurable).mp hg_lintegral_zero
+  filter_upwards [hg_ae_zero] with x hx
+  have hfx_nonpos : f x ≤ 0 := by
+    have hx' : ENNReal.ofReal (f x) = 0 := by simpa [hg_def] using hx
+    exact ENNReal.ofReal_eq_zero.mp hx'
+  have hfx_nonneg : 0 ≤ f x := hf_nonneg x
+  linarith

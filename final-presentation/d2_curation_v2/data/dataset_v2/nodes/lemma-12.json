@@ -1,0 +1,23 @@
+{
+  "id": "lemma-12",
+  "type": "problem",
+  "source_note": "证明正弦函数在整数上取值的序列的极限是不存在的",
+  "english_source_note": "Nonexistence of a Limit for Sine on the Integers",
+  "callout_id": "证明正弦函数在整数上取值的序列的极限是不存在的#3",
+  "english_title": "Lemma 1.2",
+  "statement_en": "Let $X,Y$ be topological spaces, let $f:X\\to Y$ be a continuous map, and let $E$ be a dense subset of $X$. Then $f(E)$ is dense in the subspace $f(X)$.",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "topology",
+  "key_techniques": [
+    "closure and density arguments",
+    "continuity of images of dense sets",
+    "subspace topology"
+  ],
+  "prerequisites": [
+    "topological spaces",
+    "dense subsets",
+    "continuous mappings"
+  ],
+  "callout_body": "$X,Y$是两个拓扑空间，$f:X\\to Y$是一个连续映射，$E$为$X$的一个稠密子集，那么$f(E)$是子空间$f(Y)$的一个稠密子集。"
+}

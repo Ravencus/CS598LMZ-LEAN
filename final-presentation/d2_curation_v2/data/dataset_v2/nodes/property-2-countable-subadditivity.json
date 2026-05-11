@@ -1,0 +1,23 @@
+{
+  "id": "property-2-countable-subadditivity",
+  "type": "problem",
+  "source_note": "测度论的基础概念",
+  "english_source_note": "Basic Concepts in Measure Theory",
+  "callout_id": "测度论的基础概念#12",
+  "english_title": "Property 2: Countable Subadditivity",
+  "statement_en": "If $E_1,\\cdots,E_n,\\cdots \\in \\mathcal{F}$, then $$\\mu\\left(\\bigcup_{n\\geq 1}E_n\\right)\\leq \\sum_{n\\geq 1}\\mu(E_n).$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "disjointification",
+    "countable additivity",
+    "comparison by inclusion"
+  ],
+  "prerequisites": [
+    "measure",
+    "countable additivity",
+    "sigma-algebra"
+  ],
+  "callout_body": "$E_1,\\cdots,E_n,\\cdots \\in \\mathcal{F}$,那么$$\\mu\\left(\\bigcup_{n\\geq 1}E_n\\right)\\leq \\sum_{n\\geq 1}\\mu(E_n)$$"
+}

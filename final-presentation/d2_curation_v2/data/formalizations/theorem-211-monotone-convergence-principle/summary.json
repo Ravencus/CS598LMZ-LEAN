@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-211-monotone-convergence-principle",
+  "english_title": "Theorem 2.1.1 (Monotone Convergence Principle)",
+  "statement_en": "A monotone (not necessarily strictly monotone) bounded real sequence must have a limit.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem monotone_bounded_real_sequence_has_limit\n    (u : ℕ → ℝ)\n    (hmono : Monotone u ∨ Antitone u)\n    (hbounded : BddAbove (Set.range u) ∧ BddBelow (Set.range u)) :\n    ∃ l : ℝ, Filter.Tendsto u Filter.atTop (nhds l) := by\n  sorry"
+}

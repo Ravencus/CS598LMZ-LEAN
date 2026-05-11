@@ -1,0 +1,18 @@
+{
+  "problem_id": "lebesgue-measure-of-a-region-bounded-by-a-function",
+  "english_title": "Lebesgue Measure of a Region Bounded by a Function",
+  "statement_en": "Let $f(x)$ be a nonnegative function on $\\mathbb{R}^k$, and define $$A:=\\{(x,y) \\in \\mathbb{R}^{k}\\times \\mathbb{R}:0\\leq y \\leq f(x)\\}.$$ Then the \"area\" of this set can be computed by integration, namely $$\\int_{\\mathbb{R}^k} f(x)\\,dx = m(A),$$ where $m$ denotes Lebesgue measure.",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem lintegral_ofReal_eq_volume_subgraph\n    {k : ℕ} (f : (Fin k → ℝ) → ℝ)\n    (hf_meas : AEMeasurable f volume)\n    (hf_nonneg : ∀ x, 0 ≤ f x) :\n    ∫⁻ x, ENNReal.ofReal (f x) ∂volume\n      = volume {p : (Fin k → ℝ) × ℝ | 0 ≤ p.2 ∧ p.2 ≤ f p.1} := by\n  sorry"
+}

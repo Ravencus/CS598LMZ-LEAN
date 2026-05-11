@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-112-ingham-tauberian-theorem-1945",
+  "english_title": "Lemma 1.1.2: Ingham Tauberian Theorem (1945)",
+  "statement_en": "If an arithmetic function $f$ is the Dirichlet convolution sum of another arithmetic function $g$, namely $$f=1*g,$$ and let $F(x):=\\sum_{n\\leq x}f(n)$ and $G(x):=\\sum_{n\\leq x}g(n)$. If $$F(x)=Ax+o(x),$$ then $$\\sum_{n\\leq x}\\frac{g(n)}{n}=\\frac{G(x)}{x}+A+o(1).$$",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem dirichletConvolutionSummatoryAsymptotic\n    (f g : ℕ → ℝ) (A : ℝ)\n    (hconv : ∀ n : ℕ, f n = ∑ d in n.divisors, g d)\n    (hF :\n      ((fun x : ℝ => (∑ n in Finset.Icc 1 ⌊x⌋₊, f n) - A * x) =o[Filter.atTop]\n        (fun x => x))) :\n    ((fun x : ℝ =>\n        (∑ n in Finset.Icc 1 ⌊x⌋₊, g n / (n : ℝ)) -\n          (((∑ n in Finset.Icc 1 ⌊x⌋₊, g n) / x) + A)) =o[Filter.atTop]\n      (fun x => (1 : ℝ))) := by\n  sorry"
+}

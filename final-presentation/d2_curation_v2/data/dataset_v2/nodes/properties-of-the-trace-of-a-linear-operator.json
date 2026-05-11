@@ -1,0 +1,23 @@
+{
+  "id": "properties-of-the-trace-of-a-linear-operator",
+  "type": "problem",
+  "source_note": "矩阵与算子的迹",
+  "english_source_note": "Traces of Matrices and Operators",
+  "callout_id": "矩阵与算子的迹#7",
+  "english_title": "Properties of the Trace of a Linear Operator",
+  "statement_en": "For linear operators $\\mathscr{A},\\mathscr{B}$, the trace satisfies: 1. $$\\text{trace}(\\mathscr{A}\\circ \\mathscr{B})=\\text{trace}(\\mathscr{B}\\circ \\mathscr{A}).$$ 2. $$\\text{trace}(a\\mathscr{A}+b\\mathscr{B})=a\\,\\text{trace}(\\mathscr{A})+b\\,\\text{trace}(\\mathscr{B}),$$ where $a,b$ are constants.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "linear algebra",
+  "key_techniques": [
+    "passing to matrix representations",
+    "cyclic property of trace",
+    "linearity of trace"
+  ],
+  "prerequisites": [
+    "linear operators",
+    "matrix representation of linear maps",
+    "trace of a matrix"
+  ],
+  "callout_body": "1. 算子交换迹不变：$$\\text{trace}(\\mathscr{A}\\circ \\mathscr{B})=\\text{trace}(\\mathscr{B}\\circ \\mathscr{A})$$\n2. 算子的迹矩阵是线性的:$$\\text{trace}(a\\mathscr{A}+b\\mathscr{B})=a \\,\\text{trace}(\\mathscr{A})+b \\,\\text{trace}(\\mathscr{A})$$其中$a,b$是两个常数。"
+}

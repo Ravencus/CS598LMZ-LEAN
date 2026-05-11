@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-22",
+  "english_title": "Example 2.2",
+  "statement_en": "If $|\\lambda|<1$ and the sequence $x_n$ converges to $a$, then\n$$\\sum_{k=0}^{n}\\lambda^{n-k}x_k\\to \\frac{a}{1-\\lambda}.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'λ'; expected '_' or identifier\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ntheorem weighted_geometric_sum_tendsto\n    (r a : ℝ) (x : ℕ → ℝ)\n    (hr : |r| < 1)\n    (hx : Filter.Tendsto x Filter.atTop (Filter.nhds a)) :\n    Filter.Tendsto\n      (fun n : ℕ => ∑ k in Finset.range (n + 1), r ^ (n - k) * x k)\n      Filter.atTop\n      (Filter.nhds (a / (1 - r))) := by\n  sorry"
+}

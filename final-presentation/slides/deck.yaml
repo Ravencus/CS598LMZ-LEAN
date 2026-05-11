@@ -1,0 +1,404 @@
+deck:
+  title: "CS598LMZ Final Presentation"
+  author: "Zheng"
+  slide_size: "16:9"
+
+  slides:
+    # --- Slide 1: Title ---
+    - elements:
+        - type: text
+          text: "Structured AI Theorem Proving"
+          region: {top: 28, left: 5, width: 90, height: 12}
+          style:
+            font_size: 48
+            bold: true
+            alignment: center
+
+        - type: text
+          text: "with Human-Learnable Knowledge Extraction"
+          region: {top: 42, left: 5, width: 90, height: 12}
+          style:
+            font_size: 40
+            bold: true
+            alignment: center
+
+        - type: text
+          text: "Zheng"
+          region: {top: 70, left: 10, width: 80, height: 6}
+          style:
+            font_size: 22
+            alignment: center
+            color: "#444444"
+
+    # --- Dataset: asymmetric utility ---
+    - elements:
+        - type: title
+          text: "Dataset: asymmetric utility"
+          region: {top: 0, left: 0, width: 100, height: 12}
+
+        # Anchor / context line
+        - type: text
+          text: "Our relational graph: problems linked by shared strategy / technique. Two directions of use, one solved, one open."
+          region: {top: 13, left: 2, width: 96, height: 8}
+          style:
+            font_size: 18
+            italic: true
+            color: "#444444"
+            alignment: center
+
+        # Left column — Forward (works)
+        - type: text
+          text: "Forward direction — works"
+          region: {top: 24, left: 0, width: 50, height: 6}
+          style:
+            font_size: 22
+            bold: true
+            alignment: center
+            color: "#1f7a3a"
+
+        - type: bullets
+          region: {top: 32, left: 2, width: 47, height: 60}
+          items:
+            - "Graph edge = ground truth: \"these two problems share a strategy / technique\""
+            - "Hub nodes = recurring techniques (deterministic top-3 + degree ≥ 10)"
+            - "Enables hub-recall benchmarks, transfer experiments, conditioned generation"
+            - "Already used in our midterm preliminary results (digest hub recovery)"
+          style:
+            font_size: 18
+
+        # Right column — Reverse (open)
+        - type: text
+          text: "Reverse direction — open"
+          region: {top: 24, left: 50, width: 50, height: 6}
+          style:
+            font_size: 22
+            bold: true
+            alignment: center
+            color: "#a14d3a"
+
+        - type: bullets
+          region: {top: 32, left: 51, width: 47, height: 60}
+          items:
+            - "Given two digest outputs (NL abstractions), are they \"the same intuition\"?"
+            - "Different wording, same idea — vs — same wording, too problem-specific?"
+            - "Semantic equivalence in NL math reasoning is unsolved"
+            - "Blocks direct evaluation of digest agent quality"
+          style:
+            font_size: 18
+
+        # Closing line — frame as contribution + limitation
+        - type: text
+          text: "Contribution: dataset is ready for forward use.   Limitation: reverse-direction evaluation is the open problem."
+          region: {top: 92, left: 2, width: 96, height: 7}
+          style:
+            font_size: 16
+            bold: true
+            alignment: center
+
+    # --- Opening a can of worms: digest gap ---
+    - elements:
+        - type: title
+          text: "Opening a can of worms"
+          region: {top: 0, left: 0, width: 100, height: 12}
+
+        - type: text
+          text: "We gave gpt-5.4 the full reasoning trace and asked, three ways, to extract the abstract strategy. The trace explicitly contains the words \"by pigeonhole\"."
+          region: {top: 13, left: 2, width: 96, height: 8}
+          style:
+            font_size: 18
+            italic: true
+            color: "#444444"
+            alignment: center
+
+        # Three boxes — one per prompt variant
+        # Box 1: Naive
+        - type: text
+          text: "Naive prompt"
+          region: {top: 24, left: 0, width: 33.33, height: 5}
+          style:
+            font_size: 18
+            bold: true
+            alignment: center
+
+        - type: text
+          text: "\"think of the objects as vectors, and look for a subset whose directions align enough to prevent too much cancellation… projecting vectors onto carefully chosen directions…\""
+          region: {top: 30, left: 1, width: 31, height: 55}
+          style:
+            font_size: 14
+            italic: true
+            color: "#333333"
+
+        # Box 2: Directed (told NOT to mention specifics)
+        - type: text
+          text: "Directed prompt"
+          region: {top: 24, left: 33.33, width: 33.33, height: 5}
+          style:
+            font_size: 18
+            bold: true
+            alignment: center
+
+        - type: text
+          text: "\"directional or component-wise alignment, while cancellation is the main obstruction… discrete partitioning, decomposition into components, and continuous averaging…\""
+          region: {top: 30, left: 34.5, width: 31, height: 55}
+          style:
+            font_size: 14
+            italic: true
+            color: "#333333"
+
+        # Box 3: Atomic
+        - type: text
+          text: "Atomic-format prompt"
+          region: {top: 24, left: 66.66, width: 33.34, height: 5}
+          style:
+            font_size: 18
+            bold: true
+            alignment: center
+
+        - type: text
+          text: "Trigger: lower bound on the size of a sum formed by selecting some vectors/items that can cancel…\nAction: Choose a direction, keep only the items with nonnegative projection… average over all directions.\nBoundary: weakens in higher dimensions or when no projection-based lower bound controls the target."
+          region: {top: 30, left: 68, width: 31, height: 55}
+          style:
+            font_size: 14
+            italic: true
+            color: "#333333"
+
+        # Punchline strip
+        - type: text
+          text: "Three prompts, zero \"pigeonhole.\" The model paraphrases the application; it doesn't name the principle. Recovering edges to related problems — let alone the hub — is a categorical gap."
+          region: {top: 86, left: 2, width: 96, height: 13}
+          style:
+            font_size: 18
+            bold: true
+            alignment: center
+
+    # --- Sorry-with-witness: sympy closes the analytic gap ---
+    - elements:
+        - type: title
+          text: "Sorry-with-witness: sympy closes the analytic gap"
+          region: {top: 0, left: 0, width: 100, height: 12}
+
+        - type: text
+          text: "Averaging proof had 3 sorry's. One is a definite integral. Lean can't close it; sympy can in one call."
+          region: {top: 13, left: 2, width: 96, height: 8}
+          style:
+            font_size: 18
+            italic: true
+            color: "#444444"
+            alignment: center
+
+        # Left — Without sympy
+        - type: text
+          text: "Without sympy — pure Lean"
+          region: {top: 24, left: 0, width: 50, height: 6}
+          style:
+            font_size: 20
+            bold: true
+            alignment: center
+            color: "#a14d3a"
+
+        - type: text
+          text: "lemma integral_max_cos :\n    ∫ u in (0 : ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by\n  sorry"
+          region: {top: 31, left: 1, width: 49, height: 18}
+          style:
+            font_size: 14
+            font: "Consolas"
+            color: "#222222"
+
+        - type: text
+          text: "Mathlib has no closed form. To close in pure Lean: FTC + integral splitting at the zero of cos + periodicity. Substantial bespoke proof."
+          region: {top: 51, left: 2, width: 48, height: 30}
+          style:
+            font_size: 16
+            color: "#333333"
+            italic: true
+
+        # Right — With sympy-witness
+        - type: text
+          text: "With sympy-witness"
+          region: {top: 24, left: 50, width: 50, height: 6}
+          style:
+            font_size: 20
+            bold: true
+            alignment: center
+            color: "#1f7a3a"
+
+        - type: text
+          text: "import sympy as sp\nu = sp.Symbol('u', real=True)\nresult = sp.integrate(\n    sp.Max(sp.cos(u), 0), (u, 0, 2*sp.pi))\n# result = 2"
+          region: {top: 31, left: 51, width: 49, height: 18}
+          style:
+            font_size: 14
+            font: "Consolas"
+            color: "#222222"
+
+        - type: text
+          text: "One call. Trusted external witness. Lean keeps the sorry; we accept it because sympy independently verified the underlying claim."
+          region: {top: 51, left: 51, width: 48, height: 30}
+          style:
+            font_size: 16
+            color: "#333333"
+            italic: true
+
+        # Bottom transition strip
+        - type: text
+          text: "Decompose work by tool. Each tool is a dense information sink. → Next: decompose work by model capability — planning, reasoning, coding, formalization."
+          region: {top: 86, left: 2, width: 96, height: 13}
+          style:
+            font_size: 17
+            bold: true
+            alignment: center
+
+    # --- Evaluation: Ablation (case study from harmonic divergence) ---
+    - elements:
+        # Title — full width, no edge padding
+        - type: title
+          text: "Evaluation (x/4): Ablation"
+          region: {top: 0, left: 0, width: 100, height: 12}
+
+        # Equation PNG — leftmost, same height as title (12%), ~25% width
+        - type: image
+          path: "figures/eq_harmonic_target.png"
+          region: {top: 12, left: 0, width: 25, height: 12}
+
+        # Lean signature — remaining 75% width, 2 rows, small monospaced
+        - type: text
+          text: "def harmonicSeq (n : ℕ) : ℝ := ∑ k ∈ Finset.Icc 1 n, (1:ℝ) / k\ntheorem harmonic_sequence_diverges : ¬ ∃ l : ℝ, Tendsto harmonicSeq atTop (nhds l)"
+          region: {top: 12, left: 25, width: 75, height: 12}
+          style:
+            font_size: 13
+            font: "Consolas"
+            color: "#333333"
+
+        # --- Three columns (each exactly 1/3 width, no gaps) ---
+        # Column 1: Strong baseline (Opus 4.7, three runs)
+        - type: text
+          text: "Opus 4.7, three runs ✅"
+          region: {top: 24, left: 0, width: 33.33, height: 5}
+          style:
+            font_size: 18
+            bold: true
+            alignment: center
+
+        - type: image
+          path: "figures/code_strong_proof.png"
+          region: {top: 30, left: 0, width: 33.33, height: 35}
+
+        - type: text
+          text: "1. Mechanical — `∑ k in S` → `∑ k ∈ S`\n2. Strategy — `simp_rw` failed; `funext` lifts pointwise eq to function eq\n3. Success — clean compile, 0 errors"
+          region: {top: 66, left: 0, width: 33.33, height: 33}
+          style:
+            font_size: 18
+
+        # Column 2: Weak baseline (gpt-5.4-mini, ten rounds, fails)
+        - type: text
+          text: "GPT 5.4 mini, ten rounds ❌"
+          region: {top: 24, left: 33.33, width: 33.33, height: 5}
+          style:
+            font_size: 18
+            bold: true
+            alignment: center
+
+        - type: table
+          region: {top: 30, left: 33.33, width: 33.33, height: 20}
+          headers: ["#", "errors", "Category"]
+          rows:
+            - ["1", "13", "Hallucinated API"]
+            - ["2", "2", "Type mismatch"]
+            - ["3", "3", "Type mismatch"]
+            - ["4–10", "1", "Mechanistic loop"]
+          style:
+            header_font_size: 14
+            cell_font_size: 12
+
+        - type: image
+          path: "figures/code_weak_attempt4_excerpt.png"
+          region: {top: 52, left: 33.33, width: 33.33, height: 10}
+
+        - type: bullets
+          region: {top: 64, left: 33.33, width: 33.33, height: 22}
+          items:
+            - "same `funext` insight"
+            - "same Mathlib lemma"
+            - "same contradiction step"
+          style:
+            font_size: 16
+
+        - type: text
+          text: "→ correct strategy + proof flow"
+          region: {top: 88, left: 33.33, width: 33.33, height: 8}
+          style:
+            font_size: 16
+            bold: true
+            alignment: center
+
+        # Column 3: Findings
+        - type: text
+          text: "Findings"
+          region: {top: 24, left: 66.66, width: 33.34, height: 5}
+          style:
+            font_size: 18
+            bold: true
+            alignment: center
+
+        - type: bullets
+          region: {top: 30, left: 66.66, width: 33.34, height: 69}
+          items:
+            - "Capability decomposition: planning · reasoning · coding · formalization"
+            - "Weak ≈ strong on planning + reasoning (right strategy at attempt 4)"
+            - "Weak fails at formalization (Lean tactic ordering, can't close the bridge)"
+            - "Coding not tested here — covered by sympy-witness above"
+            - "Implication: cheap model (~6×) for planning + reasoning; strong reserved for formalization"
+          style:
+            font_size: 16
+
+    # --- Future work ---
+    - elements:
+        - type: title
+          text: "Future work"
+          region: {top: 0, left: 0, width: 100, height: 12}
+
+        # Left — Scaling already-built infrastructure
+        - type: text
+          text: "Scaling already-built infrastructure"
+          region: {top: 13, left: 0, width: 50, height: 6}
+          style:
+            font_size: 22
+            bold: true
+            alignment: center
+            color: "#1f7a3a"
+
+        - type: bullets
+          region: {top: 21, left: 2, width: 47, height: 60}
+          items:
+            - "Sympy-witness coverage across more sorry'd proofs"
+            - "Ablation matrix expanded (more problems × more weak models)"
+            - "Digest probe across more proof traces — quantify the categorical gap"
+          style:
+            font_size: 18
+
+        - type: text
+          text: "Infrastructure is in place; ran into the weekly usage-limit on the coding plan during benchmarking. At-scale evaluation will run after the limit resets."
+          region: {top: 78, left: 2, width: 47, height: 20}
+          style:
+            font_size: 16
+            italic: true
+            color: "#444444"
+
+        # Right — New directions
+        - type: text
+          text: "New directions"
+          region: {top: 13, left: 50, width: 50, height: 6}
+          style:
+            font_size: 22
+            bold: true
+            alignment: center
+            color: "#a14d3a"
+
+        - type: bullets
+          region: {top: 21, left: 51, width: 48, height: 75}
+          items:
+            - "Atomic analysis (Pikachu345's 3 criteria): per-step intuition, boundary, counterexample — stricter standard for digest"
+            - "Reasoning Arbitration: proactive delegation to tools — extension of sorry-with-witness"
+            - "Broader tool integration: Mathematica, OR-Tools, Z3 — multi-tool dense information sinks"
+            - "Closing the digest-equivalence problem: methodology for measuring when two NL digests describe the same intuition"
+          style:
+            font_size: 18

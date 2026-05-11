@@ -1,0 +1,20 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "deepseek-v4-pro",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": "model_timeout",
+  "attempts_used": 1,
+  "any_timeout": true,
+  "wall_seconds": 240.1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "model_timeout": true,
+      "wall_seconds": 240.07,
+      "outcome": "model_timeout",
+      "overall_success": false
+    }
+  ]
+}

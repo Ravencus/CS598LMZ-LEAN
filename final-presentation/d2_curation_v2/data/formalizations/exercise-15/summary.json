@@ -1,0 +1,18 @@
+{
+  "problem_id": "exercise-15",
+  "english_title": "Exercise 1.5",
+  "statement_en": "Assume $\\sum_{n\\geq 1} a_n$ converges absolutely, and let $p>1/2$. Prove that $$\\sum_{n\\geq 1} \\frac{\\sqrt{|a_n|}}{n^p}<+\\infty.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sqrt_abs_div_rpow_summable_of_summable_abs\n    (a : ℕ → ℝ) {p : ℝ}\n    (habs : Summable (fun n : ℕ => |a (n + 1)|))\n    (hp : (1 : ℝ) / 2 < p) :\n    Summable (fun n : ℕ => Real.sqrt (|a (n + 1)|) / Real.rpow (n + 1 : ℝ) p) := by\n  sorry"
+}

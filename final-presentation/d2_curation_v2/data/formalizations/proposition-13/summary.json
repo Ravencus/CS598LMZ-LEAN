@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-13",
+  "english_title": "Proposition 1.3",
+  "statement_en": "If a set has outer measure zero, then it is measurable in the Caratheodory sense.",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  OuterMeasure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `OuterMeasure` is unknown, and"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem outerMeasure_zero_measurable_caratheodory {α : Type*} (μ : MeasureTheory.OuterMeasure α)\n    {s : Set α} (hs : μ s = 0) : MeasurableSet[μ.caratheodory] s := by\n  sorry"
+}

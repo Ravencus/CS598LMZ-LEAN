@@ -1,0 +1,37 @@
+{
+  "note_title": "用分段估计解决几个序列的极限问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1",
+    "分段估计",
+    "an epsilon of room",
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "用分段估计解决几个序列的极限问题#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "已知$x_n \\to A$,求$$\\lim_{n \\rightarrow \\infty} \\frac{x_n + x_{n-1} + ...+x_1}{n}$$",
+      "position_char": 58,
+      "position_line": 9
+    },
+    {
+      "id": "用分段估计解决几个序列的极限问题#2",
+      "type": "question",
+      "title": "问题2",
+      "body": "假设$x_n\\to A,y_n \\to B$证明$$\\frac{x_1y_n+\\cdots +x_ny_1}{n}\\to AB$$",
+      "position_char": 1253,
+      "position_line": 22
+    },
+    {
+      "id": "用分段估计解决几个序列的极限问题#3",
+      "type": "tip",
+      "title": "想法",
+      "body": "如果你发现一个$S_n'$其形式比$S_n$更好得到渐近展开，比如说对$S_n$做某种放缩，只要放缩整体的误差是被$O(g(n))$控制起来的(这里表示目标误差精度)，那么最终的渐近展开是相同的。",
+      "position_char": 3499,
+      "position_line": 40
+    }
+  ]
+}

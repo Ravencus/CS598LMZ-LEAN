@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-114-compute-a-function-limit",
+  "english_title": "Example 1.1.4: Compute a Function Limit",
+  "statement_en": "Compute the limit $$\\\\lim_{x\\\to 0}\\\\frac{\\\\sin(x)}{x}.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limit_sin_div_x_at_zero :\n    Filter.Tendsto (fun x : ℝ => Real.sin x / x) (nhdsWithin 0 ({0}ᶜ)) (nhds 1) := by\n  sorry"
+}

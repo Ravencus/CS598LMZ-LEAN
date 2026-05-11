@@ -1,0 +1,23 @@
+{
+  "id": "problem-31",
+  "type": "problem",
+  "source_note": "Re0微积分1：用牛顿迭代法求算术平方根",
+  "english_source_note": "Re0 Calculus 1: Arithmetic Square Roots by Newton Iteration",
+  "callout_id": "Re0微积分1:用牛顿迭代法求算术平方根#15",
+  "english_title": "Problem 3.1",
+  "statement_en": "Approximate the irrational number $\\sqrt{2}$ by rational numbers, with absolute error at most $10^{-10}$.",
+  "problem_type": "exercise",
+  "difficulty": "easy",
+  "domain": "numerical analysis",
+  "key_techniques": [
+    "rational approximation",
+    "error estimation",
+    "Newton method or decimal approximation"
+  ],
+  "prerequisites": [
+    "square roots",
+    "absolute error",
+    "rational numbers"
+  ],
+  "callout_body": "对无理数$\\sqrt{2}$进行有理数逼近，要求绝对误差不大于$10^{-10}$."
+}

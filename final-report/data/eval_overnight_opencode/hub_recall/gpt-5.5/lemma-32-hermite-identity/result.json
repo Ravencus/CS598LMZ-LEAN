@@ -1,0 +1,21 @@
+{
+  "problem_id": "lemma-32-hermite-identity",
+  "model": "gpt-5.5",
+  "wall_seconds": 25.31,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "estimates-for-the-sum-of-prime-reciprocals-hub",
+    "expand-conditions-into-sums-or-integrals-and-swap-order-hub",
+    "piecewise-estimates-hub"
+  ],
+  "truth": [
+    "using-known-asymptotics-to-derive-expansions-hub"
+  ],
+  "tp": 0,
+  "fp": 3,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

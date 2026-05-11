@@ -1,0 +1,26 @@
+{
+  "id": "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+  "type": "hub",
+  "source_note": "证明正弦函数在整数上取值的序列的极限是不存在的",
+  "english_source_note": "Nonexistence of a Limit for Sine on the Integers",
+  "is_top3": false,
+  "note_degree": 10,
+  "strategies": [
+    {
+      "callout_id": "证明正弦函数在整数上取值的序列的极限是不存在的#5",
+      "english_title": "Idea 2.1.1",
+      "strategy_name_en": "Use the Cauchy Necessary Condition via Successive Differences",
+      "summary_en": "To show a sequence does not converge, test a necessary condition for being Cauchy: if $a_n$ converges, then $|a_{n+1}-a_n| \\to 0$. Assume this holds and derive a contradiction by computing or estimating the successive differences.",
+      "applicability": "Applies when a sequence has an explicit formula and the difference between consecutive terms is easy to analyze.",
+      "callout_body": "参考[[柯西收敛判别#^9993bc]]，序列成为柯西列的一个必要条件是差分的绝对值$|a_{n+1}-a_n|$收敛到0。那么序列$\\sin(n)$满足这一条吗？我们不妨假设它满足，看看这会发生什么。"
+    },
+    {
+      "callout_id": "证明正弦函数在整数上取值的序列的极限是不存在的#6",
+      "english_title": "Idea 2.2.1",
+      "strategy_name_en": "Separate the Range into Two Positively Distanced Sets Across Periods",
+      "summary_en": "Exploit periodicity by choosing two subsets $A,B$ of the range with positive mutual distance, then show that in each period there are integers landing in domain intervals mapped into $A$ and $B$. This yields two subsequences whose function values stay uniformly apart, preventing convergence.",
+      "applicability": "Applies to nonconstant periodic functions sampled along integers or other discrete sets when each period contains sample points in separated regions of the graph.",
+      "callout_body": "由于函数的周期性，我们只要能够在$\\sin(x)$的值域$[-1,1]$当中分离出两个集合$A,B$然后保证$$d(A,B):=\\inf\\{|x-y|:x\\in A,y\\in B\\}>0$$然后在每个周期内保证$A,B$对应的定义域中的集集合$I_{A,k},I_{B,k}$当中各自至少包含一个整数$n_k,m_k$那么我们就可以保证$$|\\sin(n_k)-\\sin(m_k)|\\geq d(A,B)>0,\\forall k\\in \\mathbb{Z}^{+}$$我们这里可以加强命题，只需要考虑如果$|I_{A,k}|,|I_{B,k}|\\geq 1$，那么其中一定会包含整数。"
+    }
+  ]
+}

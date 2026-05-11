@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-221-exercise",
+  "english_title": "Proposition 2.2.1 (Exercise)",
+  "statement_en": "$$R_N':=\\sum_{n>N}\\frac{1}{(n+1)(n+2)(n+2)!}.$$ Then, for sufficiently large $N$, $$R_N' = \\Theta\\left(\\frac{1}{N!N^5}\\right).$$",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen scoped BigOperators Topology\n\ndef RPrime (N : ℕ) : ℝ :=\n  ∑' k : ℕ,\n    1 /\n      (((N + k + 2 : ℕ) : ℝ) *\n        ((N + k + 3 : ℕ) : ℝ) *\n          (((N + k + 3).factorial : ℕ) : ℝ))\n\ntheorem RPrime_eventually_theta_one_div_factorial_mul_pow_five :\n    ∃ c C : ℝ,\n      0 < c ∧\n      0 < C ∧\n      ∃ N₀ : ℕ,\n        ∀ N : ℕ,\n          N₀ ≤ N →\n            c * (1 / ((N.factorial : ℝ) * (N : ℝ) ^ 5)) ≤ RPrime N ∧\n              RPrime N ≤ C * (1 / ((N.factorial : ℝ) * (N : ℝ) ^ 5)) := by\n  sorry"
+}

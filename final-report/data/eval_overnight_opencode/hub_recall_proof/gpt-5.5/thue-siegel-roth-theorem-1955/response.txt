@@ -1,0 +1,2 @@
+[]
+No catalogue hub is actually used in the displayed proof; the proof is a single `apply?` automation step that closes the goal by finding an existing theorem, with no visible analytic estimate, approximation, summation, or measure-zero strategy.

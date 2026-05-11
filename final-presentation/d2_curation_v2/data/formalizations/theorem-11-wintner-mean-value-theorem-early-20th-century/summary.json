@@ -1,0 +1,24 @@
+{
+  "problem_id": "theorem-11-wintner-mean-value-theorem-early-20th-century",
+  "english_title": "Theorem 1.1: Wintner Mean Value Theorem, Early 20th Century",
+  "statement_en": "If an arithmetic function $f$ is the Dirichlet convolution of $1$ with another arithmetic function $g$, that is, $$f=1*g,$$ and if the series $$\\sum_{n\\geq 1}\\frac{g(n)}{n}$$ converges absolutely, then the mean value $M(f)$ of $f$ exists and equals the sum of that series, namely $$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}.$$",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ndef MeanValue (f : ℕ → ℂ) (L : ℂ) : Prop :=\n  Filter.Tendsto\n    (fun N : ℕ => (Finset.sum (Finset.range N) (fun n => f (n + 1)) : ℂ) / (N : ℂ))\n    Filter.atTop\n    (nhds L)\n\ntheorem meanValue_of_dirichletConvolution\n    (f g : ℕ → ℂ)\n    (hconv : ∀ n : ℕ, f (n + 1) = Finset.sum (n + 1).divisors (fun d => g ((n + 1) / d)))\n    (habs : Summable (fun n : ℕ => ‖g (n + 1) / (n + 1 : ℂ)‖)) :\n    ∃ L : ℂ, MeanValue f L ∧ L = ∑' n : ℕ, g (n + 1) / (n + 1 : ℂ) := by\n  sorry"
+}

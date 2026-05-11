@@ -1,0 +1,6 @@
+Let me explore the workspace digests for any relevant lessons, and check the proof style.
+Now let me think through the proof strategy. This is the Stone-Weierstrass theorem for the unit circle — any continuous complex-valued function on the torus can be uniformly approximated by complex polynomials.
+
+The key Mathlib machinery: `ContinuousMap.subalgebra_isROrC_topologicalClosure_eq_top` (complex Stone-Weierstrass). For a self-adjoint subalgebra separating points on a compact Hausdorff space, it's dense.
+
+Let me first check what tools Mathlib has available via a `#check` probe.

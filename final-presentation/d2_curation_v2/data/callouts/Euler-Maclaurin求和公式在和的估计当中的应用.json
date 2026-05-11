@@ -1,0 +1,26 @@
+{
+  "note_title": "Euler-Maclaurin求和公式在和的估计当中的应用",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "Euler-Maclaurin求和公式在和的估计当中的应用#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "级数$$\\sum_{n\\geq }\\frac{\\sin(\\sqrt{n})}{n}$$是否收敛?",
+      "position_char": 50,
+      "position_line": 8
+    },
+    {
+      "id": "Euler-Maclaurin求和公式在和的估计当中的应用#2",
+      "type": "note",
+      "title": "命题1.1",
+      "body": "集合$\\{\\sin(\\sqrt{n}):n\\in \\mathbb{N}\\}$其在$(-1,1)$当中稠密。",
+      "position_char": 635,
+      "position_line": 21
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "note_title": "分段估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1"
+  ],
+  "callouts": [
+    {
+      "id": "分段估计#1",
+      "type": "tip",
+      "title": "底乘以高",
+      "body": "1. **积分版本(上界)**:在测度空间$(X,\\mathcal{F},\\mu)$上的某个有限测度的集合$E$上对上界为$M$的函数$f$求积分，那么一个非常粗略的积分估计就是$$\\left|\\int_{E}f\\,d\\mu\\right|\\leq \\int_{E}\\left|f\\right|\\,d\\mu\\leq M\\mu(E)$$\n2. **积分版本(下界)**:在测度空间$(X,\\mathcal{F},\\mu)$上的某个有限测度的集合$E$上对有下界为$M$的非负函数$f$求积分，那么一个非常粗略的积分估计就是$$\\int_{E}f\\,d\\mu \\geq M\\mu(E)$$\n3. **求和版本**: 如果被求和函数$a_n$在整数的某个有限子集$E$上求和，并且有上界$M$，那么$$\\left|\\sum_{n\\in E} a_n \\right| \\leq M |E| $$实际上求和版本不过是把积分版本的测度换成了特殊的counting measure.于是同样的如果被求和是非负的对象，那么也有类似的下界估计。",
+      "position_char": 37,
+      "position_line": 5,
+      "classification_result": {
+        "id": "分段估计#1",
+        "classification": "strategy_template",
+        "english_title": "Base Times Height",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Base Times Height",
+          "summary_en": "Estimate an integral or sum crudely by bounding the integrand or summand uniformly and multiplying that bound by the measure or size of the underlying set. For nonnegative objects, the same idea also gives lower bounds from a uniform lower bound.",
+          "applicability": "Applies when a function or sequence is uniformly bounded above or below on a finite-measure set or a finite index set, and a rough first estimate is sufficient."
+        }
+      }
+    },
+    {
+      "id": "分段估计#2",
+      "type": "example",
+      "title": "例子1：一个比喻",
+      "body": "现在有两组数$\\text{B}:=\\{1,2,3\\},\\text{H}:=\\{4,5,6\\}$,我们现在需要给$A,B$这两个集合一个排序，使得形成一个序列$b_1,b_2,b_3$以及$h_1,h_2,h_3$使得$$b_1h_1+b_2h_2+b_3h_3$$最小。",
+      "position_char": 687,
+      "position_line": 16,
+      "classification_result": {
+        "id": "分段估计#2",
+        "classification": "problem",
+        "english_title": "Example 1: An Analogy",
+        "if_problem": {
+          "statement_en": "Let \\(\\text{B}:=\\{1,2,3\\}\\) and \\(\\text{H}:=\\{4,5,6\\}\\). We want to order these two sets to form sequences \\(b_1,b_2,b_3\\) and \\(h_1,h_2,h_3\\) so that \\[b_1h_1+b_2h_2+b_3h_3\\] is minimized.",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "combinatorics",
+          "key_techniques": [
+            "rearrangement principle",
+            "pairing largest with smallest"
+          ],
+          "prerequisites": [
+            "permutations",
+            "basic inequalities"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "分段估计#3",
+      "type": "tip",
+      "title": "简单分段估计的抽象",
+      "body": "1. 我们要对一个积分$\\int_{E}f\\,d\\mu$做估计，但是直接用\"底乘高\"即$\\mu(E)M$太粗糙了，基本很难得到有价值的结果。\n2. 我们发现$f$在集合$E$的两个子集$E_1,E_2$上有两种不同的特性出现，为了让估计误差更小，于是做$$\\int_{E}\\left|f\\right|\\,d\\mu \\leq \\int_{E_1}\\left|f\\right|\\,d\\mu +\\int_{E_2}\\left|f\\right|\\,d\\mu $$这样的分段处理。我们会对每一段用针对性的手法进行估计，也就是所谓的\"**分而治之**\"。",
+      "position_char": 1029,
+      "position_line": 26,
+      "classification_result": {
+        "id": "分段估计#3",
+        "classification": "strategy_template",
+        "english_title": "Abstraction of Simple Piecewise Estimation",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Piecewise Estimation by Divide and Conquer",
+          "summary_en": "When a single global bound is too crude, split the domain into subsets on which the function exhibits different behaviors, and estimate each part separately with tailored arguments. This improves precision by replacing one rough estimate with several more adapted ones.",
+          "applicability": "Applies to integrals or sums when different regions of the domain admit different kinds of control."
+        }
+      }
+    },
+    {
+      "id": "分段估计#4",
+      "type": "tip",
+      "title": "分段估计在函数收敛上的运用",
+      "body": "如果我们想要估计$\\int_E |f_n(x)|\\,d\\mu(x)$的上界,然后我们发现当$x\\in E_n$的时候，$|f_n(x)|<M_n$(当然$M_n$也可能是一个常数),而剩下的部分又可以很好的被控制起来，那么此时可以尝试用分段估计提升估计精度。\n1. 如果$f_n$是$L^p$的序列，那么$$\\begin{aligned}\\int_E |f_n(x)|\\,d\\mu(x)&\\leq \\int_{E_n}*+\\int_{E\\setminus E_n}* \\\\ &\\leq M_n\\mu(E)+\\frac{||f_n||_{L^p}}{M_n^p}\\end{aligned}$$\n2. 如果$|f_n|<M$是有界的函数列，那么尾部也可以用有界性结合$\\mu(E\\setminus E_n)$来控制。",
+      "position_char": 1344,
+      "position_line": 32,
+      "classification_result": {
+        "id": "分段估计#4",
+        "classification": "strategy_template",
+        "english_title": "Using Piecewise Estimation in Function Convergence",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Piecewise Estimation for Convergence of Functions",
+          "summary_en": "To bound \\(\\int_E |f_n(x)|\\,d\\mu(x)\\), split \\(E\\) into a region where \\(|f_n|\\) has a direct pointwise bound and a complementary region whose contribution can be controlled by norm estimates or small measure. This is especially useful for showing smallness as \\(n\\to\\infty\\).",
+          "applicability": "Applies to parameter-dependent function sequences, especially in \\(L^p\\) settings or for uniformly bounded functions, when different parts of the domain are controlled in different ways."
+        }
+      }
+    },
+    {
+      "id": "分段估计#5",
+      "type": "note",
+      "title": "此上下文中分布函数的定义",
+      "body": "$(X,\\mathcal{F},\\mu)$是一个测度空间,$f:X\\to \\mathbb{C}$是一个$(\\mathcal{F},\\mathcal{B}(\\mathbb{C}))$的可测函数,也就是$\\mathcal{B}(\\mathbb{C})$当中元素关于映射$f$的原像是$\\mathcal{F}$当中的元素。定义$$\\lambda_f(a):=\\mu(\\{x:|f(x)| >a\\})$$",
+      "position_char": 5601,
+      "position_line": 63,
+      "classification_result": {
+        "id": "分段估计#5",
+        "classification": "definition",
+        "english_title": "Definition of the Distribution Function in This Context",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "分段估计#6",
+      "type": "note",
+      "title": "这种分布函数的基本性质",
+      "body": "1. $\\lambda_f$是一个单调减少并且右连续的函数。\n2. 如果$|f|\\leq |g|$那么$\\lambda_f \\leq \\lambda_g$\n3. 如果$|f_n|\\uparrow |f|$那么$\\lambda_{f_n}\\uparrow \\lambda_f$\n4. 如果$f = g+h$那么$\\lambda_f(a)\\leq \\lambda_g(a/2)+\\lambda_h(a/2)$\n5. 如果$f = gh$那么$\\lambda_f(a)\\leq \\lambda_g(\\sqrt{a/2})+\\lambda_h(\\sqrt{a/2})$",
+      "position_char": 5873,
+      "position_line": 68,
+      "classification_result": {
+        "id": "分段估计#6",
+        "classification": "problem",
+        "english_title": "Basic Properties of This Distribution Function",
+        "if_problem": {
+          "statement_en": "Let \\((X,\\mathcal{F},\\mu)\\) be a measure space and let \\(\\lambda_f(a):=\\mu(\\{x:|f(x)|>a\\})\\). Then: (1) \\(\\lambda_f\\) is decreasing and right-continuous; (2) if \\(|f|\\leq |g|\\), then \\(\\lambda_f\\leq \\lambda_g\\); (3) if \\(|f_n|\\uparrow |f|\\), then \\(\\lambda_{f_n}\\uparrow \\lambda_f\\); (4) if \\(f=g+h\\), then \\(\\lambda_f(a)\\leq \\lambda_g(a/2)+\\lambda_h(a/2)\\); (5) if \\(f=gh\\), then \\(\\lambda_f(a)\\leq \\lambda_g(\\sqrt{a/2})+\\lambda_h(\\sqrt{a/2})\\).",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "measure theory",
+          "key_techniques": [
+            "set inclusion arguments",
+            "monotone convergence of measurable sets",
+            "triangle inequality"
+          ],
+          "prerequisites": [
+            "measure spaces",
+            "measurable functions",
+            "basic properties of measures"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "分段估计#7",
+      "type": "tip",
+      "title": "想法1.3.1",
+      "body": "在一个和（或积分）的估计$\\sum_I X$当中，当我们考虑[[逐项估计]]的时候，我们想象一个底乘以高的模型。此时如果我们想要改进逐项估计的精度，但是又发现我们不能改善“高”也就是$X$的估计，那么我们还可以考虑改善底，也就是做一个分段估计。",
+      "position_char": 6774,
+      "position_line": 81,
+      "classification_result": {
+        "id": "分段估计#7",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.3.1",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Improve the Base Instead of the Height",
+          "summary_en": "When termwise estimation already gives the best available bound on each summand or integrand, improve the total estimate by shrinking or partitioning the underlying domain rather than refining the pointwise bound itself. This reframes the estimate as improving the effective size of the set being summed or integrated over.",
+          "applicability": "Applies when pointwise bounds cannot be sharpened, but the domain can be decomposed so that separate pieces contribute more efficiently."
+        }
+      }
+    },
+    {
+      "id": "分段估计#8",
+      "type": "example",
+      "title": "例子1.3.2(一个玩具模型)",
+      "body": "假设我们现在要估计和$S_N:=\\sum_{N<n\\leq N^2}\\frac{1}{n^2+1}$。当然和的积分估计可以告诉我们$S_N \\asymp \\frac{1}{N}$。但这里我们假装不知道这个做法，我就就是要用逐项估计来解决问题。于是我们想到当$N<n\\leq N^2$的时候有$$\\frac{1}{n^2+1}<\\frac{1}{N^2}$$于是直接逐项估计我们得到$$S_N<\\frac{1}{N^2}\\times (N^2-N)=1-\\frac{1}{N}=O(1)$$我们带着答案去审视这个估计就会发现，这个估计距离真正理想的结果差太远了，它甚至不是一个无穷小量。于是我们引入分段估计来着手改造它，我们可以引入一个$(N,N^2] \\cap \\mathbb{N}$的分段点，比如$N^{3/2}$好了。那么此时我们结合分段估计，再来做一次逐项估计就会得到$$\\begin{aligned}S_N&:=\\sum_{N<n\\leq N^2}\\frac{1}{n^2+1}\\\\&= \\sum_{N<n\\leq N^{3/2}}\\frac{1}{n^2+1}+\\sum_{N^{3/2}<n\\leq N^{2}}\\frac{1}{n^2+1}\\\\&<\\frac{1}{N^2}\\times (N^{3/2}-N)+\\frac{1}{N^3}\\times \\left(N^2-N^{3/2}\\right)\\\\&= \\frac{1}{\\sqrt{N}}-\\frac{1}{N^{3/2}}=O\\left(\\frac{1}{\\sqrt{N}}\\right)\\end{aligned}$$虽然如果对比“标准答案”这个精度还是有很大差距，但是的确比直接进行逐项估计改善了很多精度。**在很多真正的问题（并非玩具模型）当中，我们可能没有一个类似于“和的积分估计”相对于该例子这样的如此理想的工具，但是我们依旧可以通过选择合适的断点来一定程度上优化估计精度。**",
+      "position_char": 6931,
+      "position_line": 86,
+      "classification_result": {
+        "id": "分段估计#8",
+        "classification": "problem",
+        "english_title": "Example 1.3.2: A Toy Model",
+        "if_problem": {
+          "statement_en": "Estimate \\(S_N:=\\sum_{N<n\\leq N^2}\\frac{1}{n^2+1}\\) using termwise bounds and piecewise splitting. A direct bound gives \\(S_N=O(1)\\), while splitting at \\(N^{3/2}\\) yields \\[\\begin{aligned}S_N&=\\sum_{N<n\\leq N^{3/2}}\\frac{1}{n^2+1}+\\sum_{N^{3/2}<n\\leq N^{2}}\\frac{1}{n^2+1}\\\\&<\\frac{1}{N^2}(N^{3/2}-N)+\\frac{1}{N^3}(N^2-N^{3/2})\\\\&=\\frac{1}{\\sqrt{N}}-\\frac{1}{N^{3/2}}=O\\left(\\frac{1}{\\sqrt{N}}\\right).\\end{aligned}\\]",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "termwise estimation",
+            "piecewise splitting of the summation range",
+            "choice of cutoff point"
+          ],
+          "prerequisites": [
+            "Big-O notation",
+            "finite sums",
+            "basic comparison estimates"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "分段估计#9",
+      "type": "tip",
+      "title": "想法1.3.2",
+      "body": "当我们对一个和或者积分做逐项估计的时候我们发现其余项并不能得到统一的控制。那么这个时候一个很自然的想法就出现了：我们把变量所在的集合或者区间进行划分（或截断），从而使得至少其中一部分的余项可以被统一地控制，剩下那部分我们再想别的办法。",
+      "position_char": 8720,
+      "position_line": 98,
+      "classification_result": {
+        "id": "分段估计#9",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.3.2",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Split Off the Uniformly Controllable Part",
+          "summary_en": "When the remainder terms in a sum or integral cannot be controlled uniformly over the whole domain, partition or truncate the domain so that at least one part admits a uniform estimate. The remaining part is then handled by a different argument.",
+          "applicability": "Applies when global uniform control fails, but partial uniform control becomes available after splitting the domain or range."
+        }
+      }
+    },
+    {
+      "id": "分段估计#10",
+      "type": "tip",
+      "title": "想法1.4.1",
+      "body": "这种一般出现在含参数的和或者积分的估计问题当中，特别是需要求含参数和或者积分的极限的问题。假设$$I_n:=\\int_E f_n(x)\\,dx$$然后$f_n(x)$在$E$上存在一个奇点$x_0\\in E$，其余部分$f_n$有界，并且除去奇点以外$f_n(x)\\to 0$。也就是说，这个含参数的积分的极限基本由$f_n$在奇点附近的行为决定。于是这个时候我们可以通过对$E$进行划分$$E=U(x_0)\\cup (E\\setminus U(x_0))$$于是积分估计变成估计$$I_n=\\int_{E\\setminus U(x_0)}+\\int_{U(x_0)}$$两部分。两部分我们需要用不同的方式去估计，从而使得精度尽可能提高。",
+      "position_char": 9777,
+      "position_line": 106,
+      "classification_result": {
+        "id": "分段估计#10",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.4.1",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Isolate the Singular Region",
+          "summary_en": "For parameter-dependent sums or integrals whose asymptotic behavior is driven by a singularity, split the domain into a neighborhood of the singular point and its complement. Estimate the two pieces separately, using different methods near and away from the singularity.",
+          "applicability": "Applies to limits of parameter-dependent integrals or sums when there is a distinguished point where the main contribution concentrates."
+        }
+      }
+    },
+    {
+      "id": "分段估计#11",
+      "type": "tip",
+      "title": "对可数分段的表述",
+      "body": "所谓可数分段其实就是分组求和。假设我们可以把求和或者积分的集合$X$表示为可数个不相交的子集的并，即$$X=\\bigcup_{k\\geq 1}A_k$$然后我们考虑基于$A_k$的分组求和/求积分：\n1. 如果是测度$\\mu$上的积分，我们可以理解为$$\\int_X f(x)\\,d\\mu(x)=\\sum_{k\\geq 1}\\int_{A_k}f(x)\\,d\\mu(x)$$\n2. 如果是$\\mathbb{N}$上的求和，那么我们可以理解为$$\\sum_{n\\geq 1}f(n)=\\sum_{k\\geq 1}\\sum_{n\\in A_k}f(k)$$\n同时，还要求$\\int_{A_k}f(x)\\,d\\mu(x),\\sum_{n\\in A_k}f(k)$比原来的对象明显更好处理，更容易做估计。那么把问题转换为后者去考虑，则称之为“基于$f$的可数分段的估计”。",
+      "position_char": 10909,
+      "position_line": 113,
+      "classification_result": {
+        "id": "分段估计#11",
+        "classification": "strategy_template",
+        "english_title": "Formulation of Countable Piecewise Decomposition",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Countable Piecewise Decomposition",
+          "summary_en": "Represent the domain as a countable disjoint union and rewrite the original sum or integral as a grouped sum over those pieces. The method is useful when each piece is significantly easier to estimate than the whole object at once.",
+          "applicability": "Applies when a sum or integral can be naturally grouped over a countable partition and each group has better structure for estimation."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"分段估计#1\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Base Times Height\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Base Times Height\",\n      \"summary_en\": \"Estimate an integral or sum crudely by bounding the integrand or summand uniformly and multiplying that bound by the measure or size of the underlying set. For nonnegative objects, the same idea also gives lower bounds from a uniform lower bound.\",\n      \"applicability\": \"Applies when a function or sequence is uniformly bounded above or below on a finite-measure set or a finite index set, and a rough first estimate is sufficient.\"\n    }\n  },\n  {\n    \"id\": \"分段估计#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1: An Analogy\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\\\(\\\\text{B}:=\\\\{1,2,3\\\\}\\\\) and \\\\(\\\\text{H}:=\\\\{4,5,6\\\\}\\\\). We want to order these two sets to form sequences \\\\(b_1,b_2,b_3\\\\) and \\\\(h_1,h_2,h_3\\\\) so that \\\\[b_1h_1+b_2h_2+b_3h_3\\\\] is minimized.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"combinatorics\",\n      \"key_techniques\": [\n        \"rearrangement principle\",\n        \"pairing largest with smallest\"\n      ],\n      \"prerequisites\": [\n        \"permutations\",\n        \"basic inequalities\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"分段估计#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Abstraction of Simple Piecewise Estimation\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Piecewise Estimation by Divide and Conquer\",\n      \"summary_en\": \"When a single global bound is too crude, split the domain into subsets on which the function exhibits different behaviors, and estimate each part separately with tailored arguments. This improves precision by replacing one rough estimate with several more adapted ones.\",\n      \"applicability\": \"Applies to integrals or sums when different regions of the domain admit different kinds of control.\"\n    }\n  },\n  {\n    \"id\": \"分段估计#4\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Using Piecewise Estimation in Function Convergence\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Piecewise Estimation for Convergence of Functions\",\n      \"summary_en\": \"To bound \\\\(\\\\int_E |f_n(x)|\\\\,d\\\\mu(x)\\\\), split \\\\(E\\\\) into a region where \\\\(|f_n|\\\\) has a direct pointwise bound and a complementary region whose contribution can be controlled by norm estimates or small measure. This is especially useful for showing smallness as \\\\(n\\\\to\\\\infty\\\\).\",\n      \"applicability\": \"Applies to parameter-dependent function sequences, especially in \\\\(L^p\\\\) settings or for uniformly bounded functions, when different parts of the domain are controlled in different ways.\"\n    }\n  },\n  {\n    \"id\": \"分段估计#5\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Definition of the Distribution Function in This Context\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"分段估计#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Basic Properties of This Distribution Function\",\n    \"if_problem\": {\n      \"statement_en\": \"Let \\\\((X,\\\\mathcal{F},\\\\mu)\\\\) be a measure space and let \\\\(\\\\lambda_f(a):=\\\\mu(\\\\{x:|f(x)|>a\\\\})\\\\). Then: (1) \\\\(\\\\lambda_f\\\\) is decreasing and right-continuous; (2) if \\\\(|f|\\\\leq |g|\\\\), then \\\\(\\\\lambda_f\\\\leq \\\\lambda_g\\\\); (3) if \\\\(|f_n|\\\\uparrow |f|\\\\), then \\\\(\\\\lambda_{f_n}\\\\uparrow \\\\lambda_f\\\\); (4) if \\\\(f=g+h\\\\), then \\\\(\\\\lambda_f(a)\\\\leq \\\\lambda_g(a/2)+\\\\lambda_h(a/2)\\\\); (5) if \\\\(f=gh\\\\), then \\\\(\\\\lambda_f(a)\\\\leq \\\\lambda_g(\\\\sqrt{a/2})+\\\\lambda_h(\\\\sqrt{a/2})\\\\).\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"set inclusion arguments\",\n        \"monotone convergence of measurable sets\",\n        \"triangle inequality\"\n      ],\n      \"prerequisites\": [\n        \"measure spaces\",\n        \"measurable functions\",\n        \"basic properties of measures\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"分段估计#7\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.3.1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Improve the Base Instead of the Height\",\n      \"summary_en\": \"When termwise estimation already gives the best available bound on each summand or integrand, improve the total estimate by shrinking or partitioning the underlying domain rather than refining the pointwise bound itself. This reframes the estimate as improving the effective size of the set being summed or integrated over.\",\n      \"applicability\": \"Applies when pointwise bounds cannot be sharpened, but the domain can be decomposed so that separate pieces contribute more efficiently.\"\n    }\n  },\n  {\n    \"id\": \"分段估计#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.3.2: A Toy Model\",\n    \"if_problem\": {\n      \"statement_en\": \"Estimate \\\\(S_N:=\\\\sum_{N<n\\\\leq N^2}\\\\frac{1}{n^2+1}\\\\) using termwise bounds and piecewise splitting. A direct bound gives \\\\(S_N=O(1)\\\\), while splitting at \\\\(N^{3/2}\\\\) yields \\\\[\\\\begin{aligned}S_N&=\\\\sum_{N<n\\\\leq N^{3/2}}\\\\frac{1}{n^2+1}+\\\\sum_{N^{3/2}<n\\\\leq N^{2}}\\\\frac{1}{n^2+1}\\\\\\\\&<\\\\frac{1}{N^2}(N^{3/2}-N)+\\\\frac{1}{N^3}(N^2-N^{3/2})\\\\\\\\&=\\\\frac{1}{\\\\sqrt{N}}-\\\\frac{1}{N^{3/2}}=O\\\\left(\\\\frac{1}{\\\\sqrt{N}}\\\\right).\\\\end{aligned}\\\\]\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"termwise estimation\",\n        \"piecewise splitting of the summation range\",\n        \"choice of cutoff point\"\n      ],\n      \"prerequisites\": [\n        \"Big-O notation\",\n        \"finite sums\",\n        \"basic comparison estimates\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"分段估计#9\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.3.2\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Split Off the Uniformly Controllable Part\",\n      \"summary_en\": \"When the remainder terms in a sum or integral cannot be controlled uniformly over the whole domain, partition or truncate the domain so that at least one part admits a uniform estimate. The remaining part is then handled by a different argument.\",\n      \"applicability\": \"Applies when global uniform control fails, but partial uniform control becomes available after splitting the domain or range.\"\n    }\n  },\n  {\n    \"id\": \"分段估计#10\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.4.1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Isolate the Singular Region\",\n      \"summary_en\": \"For parameter-dependent sums or integrals whose asymptotic behavior is driven by a singularity, split the domain into a neighborhood of the singular point and its complement. Estimate the two pieces separately, using different methods near and away from the singularity.\",\n      \"applicability\": \"Applies to limits of parameter-dependent integrals or sums when there is a distinguished point where the main contribution concentrates.\"\n    }\n  },\n  {\n    \"id\": \"分段估计#11\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Formulation of Countable Piecewise Decomposition\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Countable Piecewise Decomposition\",\n      \"summary_en\": \"Represent the domain as a countable disjoint union and rewrite the original sum or integral as a grouped sum over those pieces. The method is useful when each piece is significantly easier to estimate than the whole object at once.\",\n      \"applicability\": \"Applies when a sum or integral can be naturally grouped over a countable partition and each group has better structure for estimation.\"\n    }\n  }\n]",
+  "classified": true
+}

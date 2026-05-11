@@ -1,0 +1,17 @@
+import Mathlib
+
+open MeasureTheory
+
+theorem integral_ge_of_ae_ge
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}
+    (hf : Integrable f μ) (hg : Integrable g μ)
+    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :
+    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by
+  have h_nonneg_ae : ∀ᵐ x ∂μ, 0 ≤ f x - g x := by
+    filter_upwards [hfg] with x hx
+    linarith
+  have h_int_nonneg : 0 ≤ ∫ x, (f x - g x) ∂μ :=
+    integral_nonneg_of_ae h_nonneg_ae
+  have h_eq : ∫ x, (f x - g x) ∂μ = (∫ x, f x ∂μ) - (∫ x, g x ∂μ) :=
+    integral_sub hf hg
+  linarith

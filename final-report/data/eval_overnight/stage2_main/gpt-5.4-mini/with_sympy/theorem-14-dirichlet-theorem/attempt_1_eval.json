@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Invalid field `irrational_approximation`: The environment does not contain `Function.irrational_approximation`, so it is not possible to project the field `irrational_approximation` from an expression",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_c0654e1205.lean",
+      "line": 6,
+      "column": 17,
+      "severity": "error",
+      "message": "Invalid field `irrational_approximation`: The environment does not contain `Function.irrational_approximation`, so it is not possible to project the field `irrational_approximation` from an expression\n  hα\nof type `α ∈ Set.range Rat.cast → False`\n"
+    }
+  ]
+}

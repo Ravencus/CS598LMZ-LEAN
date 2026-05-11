@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-14",
+  "english_title": "Lemma 1.4",
+  "statement_en": "Let $I_k:=[2^k,2^{k+1})$, define $\\Lambda_k(x):=\\max_{n\\in I_k}\\{|A_n(x)|\\}$, and\n$$G_k(x):=\\frac{1}{|I_k|}\\sum_{n\\in I_k} A_n(x)^2.$$ Then\n$$G_k(x)\\geq \\frac{1}{16 M} \\Lambda_k(x)^3.$$",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ndef I_k (k : ℕ) : Finset ℕ :=\n  Finset.Ico (2 ^ k) (2 ^ (k + 1))\n\nnoncomputable def Lambda_k {α : Type*} (A : ℕ → α → ℝ) (k : ℕ) (x : α) : ℝ :=\n  sSup ((fun n : ℕ => |A n x|) '' ((I_k k : Finset ℕ) : Set ℕ))\n\nnoncomputable def G_k {α : Type*} (A : ℕ → α → ℝ) (k : ℕ) (x : α) : ℝ :=\n  Finset.sum (I_k k) (fun n => (A n x) ^ 2) / ((I_k k).card : ℝ)\n\ntheorem lower_bound_G_k {α : Type*} (A : ℕ → α → ℝ) (M : ℝ) (hM : 0 < M)\n    (k : ℕ) (x : α) :\n    G_k A k x ≥ (1 / (16 * M)) * (Lambda_k A k x) ^ 3 := by\n  sorry"
+}

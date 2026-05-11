@@ -1,0 +1,73 @@
+{
+  "note_title": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "函数在任何可测集合上积分为0意味着函数几乎处处为0#1",
+      "type": "note",
+      "title": "命题1",
+      "body": "$(X,\\mathcal{F},\\mu)$是一个测度空间如果可测函数$f:X\\to \\mathbb{R}$满足$$\\int_E f \\,d\\mu =0 $$对任意$E \\in \\mathcal{F}$成立,那么$f =0$几乎处处成立。",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "函数在任何可测集合上积分为0意味着函数几乎处处为0#1",
+        "classification": "problem",
+        "english_title": "Proposition 1",
+        "if_problem": {
+          "statement_en": "Let $(X,\\mathcal{F},\\mu)$ be a measure space. If a measurable function $f:X\\to \\mathbb{R}$ satisfies $$\\int_E f \\,d\\mu =0$$ for every $E \\in \\mathcal{F}$, then $f=0$ almost everywhere.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "decomposition into positive and negative parts",
+            "testing the integral on level sets",
+            "contradiction via positive measure subsets"
+          ],
+          "prerequisites": [
+            "measure spaces and measurable sets",
+            "Lebesgue integration",
+            "almost everywhere equality",
+            "positive and negative parts of a function"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "函数在任何可测集合上积分为0意味着函数几乎处处为0#2",
+      "type": "note",
+      "title": "练习1",
+      "body": "用同样的方式证明$C_{\\varepsilon}:=\\{x\\in X:f^{-}>\\varepsilon\\}$对任意$\\varepsilon$也是零测度的。",
+      "position_char": 963,
+      "position_line": 18,
+      "classification_result": {
+        "id": "函数在任何可测集合上积分为0意味着函数几乎处处为0#2",
+        "classification": "problem",
+        "english_title": "Exercise 1",
+        "if_problem": {
+          "statement_en": "Prove in the same way that for every $\\varepsilon$, the set $C_{\\varepsilon}:=\\{x\\in X:f^{-}>\\varepsilon\\}$ also has measure zero.",
+          "problem_type": "exercise",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "apply the previous argument symmetrically",
+            "use level sets of the negative part",
+            "contradiction via nonzero integral on a positive measure set"
+          ],
+          "prerequisites": [
+            "measure spaces and measurable sets",
+            "Lebesgue integration",
+            "positive and negative parts of a function",
+            "measure zero sets"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"函数在任何可测集合上积分为0意味着函数几乎处处为0#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $(X,\\\\mathcal{F},\\\\mu)$ be a measure space. If a measurable function $f:X\\\\to \\\\mathbb{R}$ satisfies $$\\\\int_E f \\\\,d\\\\mu =0$$ for every $E \\\\in \\\\mathcal{F}$, then $f=0$ almost everywhere.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"decomposition into positive and negative parts\",\n        \"testing the integral on level sets\",\n        \"contradiction via positive measure subsets\"\n      ],\n      \"prerequisites\": [\n        \"measure spaces and measurable sets\",\n        \"Lebesgue integration\",\n        \"almost everywhere equality\",\n        \"positive and negative parts of a function\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"函数在任何可测集合上积分为0意味着函数几乎处处为0#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Exercise 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Prove in the same way that for every $\\\\varepsilon$, the set $C_{\\\\varepsilon}:=\\\\{x\\\\in X:f^{-}>\\\\varepsilon\\\\}$ also has measure zero.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"apply the previous argument symmetrically\",\n        \"use level sets of the negative part\",\n        \"contradiction via nonzero integral on a positive measure set\"\n      ],\n      \"prerequisites\": [\n        \"measure spaces and measurable sets\",\n        \"Lebesgue integration\",\n        \"positive and negative parts of a function\",\n        \"measure zero sets\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

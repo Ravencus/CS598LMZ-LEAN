@@ -1,0 +1,30 @@
+{
+  "problem_id": "equivalent-proposition-2",
+  "english_title": "Equivalent Proposition 2",
+  "statement_en": "Prove that $$\\frac{T_{n_k}}{n_k}\\xrightarrow{a.e.}{\\mu}.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem ae_tendsto_subseq_div\n    {α : Type*} [MeasurableSpace α]\n    (m : MeasureTheory.Measure α) (T : ℕ → α → ℝ) (n : ℕ → ℕ) (μ : α → ℝ) :\n    ∀ᵐ x ∂m, Filter.Tendsto (fun k : ℕ => T (n k) x / (n k : ℝ)) Filter.atTop (nhds (μ x)) := by\n  sorry"
+}

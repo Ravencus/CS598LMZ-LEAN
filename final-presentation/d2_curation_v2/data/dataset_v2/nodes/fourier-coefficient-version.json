@@ -1,0 +1,22 @@
+{
+  "id": "fourier-coefficient-version",
+  "type": "problem",
+  "source_note": "Riemann - Lebesgue lemma的证明",
+  "english_source_note": "Proof of the Riemann-Lebesgue Lemma",
+  "callout_id": "Riemann - Lebesgue lemma的证明#3",
+  "english_title": "Fourier Coefficient Version",
+  "statement_en": "If $f \\in L^1(\\mathbb{T})$, then $|\\hat{f}(n)|\\to 0$. More precisely, $$\\hat{f}(n) = \\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} f(x)e^{-inx} \\, dx \\to 0 \\text{ as } |n| \\to \\infty.$$",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "Riemann-Lebesgue lemma",
+    "Fourier coefficient estimates"
+  ],
+  "prerequisites": [
+    "$L^1(\\mathbb{T})$ functions",
+    "Fourier coefficients",
+    "integration on the torus"
+  ],
+  "callout_body": "$f \\in L^1(\\mathbb{T})$那么$|\\hat{f}(n)|\\to 0$具体来说:\n$$\\hat{f}(n) =\n\\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} f(x)e^{-inx} dx \\to 0 \\text{\nas } |n| \\to \\infty$$"
+}

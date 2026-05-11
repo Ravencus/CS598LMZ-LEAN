@@ -1,0 +1,23 @@
+{
+  "id": "fourier-inversion-formula-in-the-present-convention",
+  "type": "problem",
+  "source_note": "实分析的复办法",
+  "english_source_note": "Complex Methods in Real Analysis",
+  "callout_id": "实分析的复办法#8",
+  "english_title": "Fourier Inversion Formula in the Present Convention",
+  "statement_en": "If $f\\in \\mathscr{F}$, then $$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x).$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "Fourier inversion",
+    "integrability and decay",
+    "transform convention"
+  ],
+  "prerequisites": [
+    "Fourier transform",
+    "Lebesgue integration",
+    "inversion theorem"
+  ],
+  "callout_body": "$f\\in \\mathscr{F}$,那么$$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x)$$"
+}

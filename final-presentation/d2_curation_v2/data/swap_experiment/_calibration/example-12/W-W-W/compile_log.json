@@ -1,0 +1,38 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0a326c0463d3.lean",
+      "line": 12,
+      "column": 18,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case left\n  ⊢ (seqLimsup fun n => Real.sin ↑n) = 1"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0a326c0463d3.lean",
+      "line": 12,
+      "column": 18,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case right\n  ⊢ (seqLiminf fun n => Real.sin ↑n) = -1\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0a326c0463d3.lean",
+      "line": 12,
+      "column": 18,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case left\n  ⊢ (seqLimsup fun n => Real.sin ↑n) = 1"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0a326c0463d3.lean",
+      "line": 12,
+      "column": 18,
+      "severity": "error",
+      "message": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case right\n  ⊢ (seqLiminf fun n => Real.sin ↑n) = -1\n"
+    }
+  ],
+  "splice_action": "passthrough",
+  "signature_deviation": false
+}

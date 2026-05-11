@@ -1,0 +1,40 @@
+{
+  "note_title": "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "已知序列模1均匀分布,那么加上log(n)对分布影响不大#1",
+      "type": "note",
+      "title": "命题1，Rindler 1972",
+      "body": "假设$x_n$是模1均匀分布的序列，证明$x_n+\\log(n)$也是模1均匀分布的。",
+      "position_char": 41,
+      "position_line": 7,
+      "classification_result": {
+        "id": "已知序列模1均匀分布,那么加上log(n)对分布影响不大#1",
+        "classification": "problem",
+        "english_title": "Proposition 1, Rindler 1972",
+        "if_problem": {
+          "statement_en": "Assume that $x_n$ is a sequence uniformly distributed modulo $1$. Prove that $x_n + \\log(n)$ is also uniformly distributed modulo $1$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "Weyl criterion",
+            "exponential sum estimates"
+          ],
+          "prerequisites": [
+            "uniform distribution modulo 1",
+            "basic properties of logarithms",
+            "Fourier/exponential sum criterion"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"已知序列模1均匀分布,那么加上log(n)对分布影响不大#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1, Rindler 1972\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume that $x_n$ is a sequence uniformly distributed modulo $1$. Prove that $x_n + \\\\log(n)$ is also uniformly distributed modulo $1$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"Weyl criterion\",\n        \"exponential sum estimates\"\n      ],\n      \"prerequisites\": [\n        \"uniform distribution modulo 1\",\n        \"basic properties of logarithms\",\n        \"Fourier/exponential sum criterion\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

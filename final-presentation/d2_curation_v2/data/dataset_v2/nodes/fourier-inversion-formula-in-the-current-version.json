@@ -1,0 +1,25 @@
+{
+  "id": "fourier-inversion-formula-in-the-current-version",
+  "type": "problem",
+  "source_note": "傅里叶逆变换公式",
+  "english_source_note": "Fourier Inversion Formula",
+  "callout_id": "傅里叶逆变换公式#2",
+  "english_title": "Fourier Inversion Formula in the Current Version",
+  "statement_en": "If $f\\in \\mathscr{F}$, then $$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x).$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "Fourier analysis",
+  "key_techniques": [
+    "Fourier inversion",
+    "complex analytic continuation",
+    "contour shifting",
+    "decay estimates"
+  ],
+  "prerequisites": [
+    "Fourier transform",
+    "Schwartz functions",
+    "holomorphic functions on strips",
+    "integration on the real line"
+  ],
+  "callout_body": "$f\\in \\mathscr{F}$,那么$$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x)$$"
+}

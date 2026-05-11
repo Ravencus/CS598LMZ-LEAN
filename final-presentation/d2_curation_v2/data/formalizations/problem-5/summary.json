@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-5",
+  "english_title": "Problem",
+  "statement_en": "Find the limit\n$$\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\to \\text{ ? }$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem cosine_square_average_limit :\n    Filter.Tendsto\n      (fun N : ℕ =>\n        ((1 : ℝ) / (N : ℝ)) *\n          Finset.sum (Finset.Icc 1 N) (fun n => |Real.cos ((n : ℝ) ^ (2 : ℕ))|))\n      Filter.atTop\n      (Filter.nhds ((2 : ℝ) / Real.pi)) := by\n  sorry"
+}

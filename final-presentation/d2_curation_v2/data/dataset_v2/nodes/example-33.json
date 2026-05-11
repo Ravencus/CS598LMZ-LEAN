@@ -1,0 +1,24 @@
+{
+  "id": "example-33",
+  "type": "problem",
+  "source_note": "柯西凝聚判别法",
+  "english_source_note": "Cauchy Condensation Test",
+  "callout_id": "柯西凝聚判别法#9",
+  "english_title": "Example 3.3",
+  "statement_en": "Let $a_n$ be a positive real sequence that is increasing, and suppose that the series $\\sum_{n\\geq 1} \\frac{1}{a_n}$ converges. Prove that $\\sum_{n\\geq 1} \\frac{n}{a_1+\\cdots+a_n}$ also converges.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "monotonicity estimates",
+    "partial sum comparison",
+    "Cauchy condensation style blocking"
+  ],
+  "prerequisites": [
+    "positive series",
+    "monotone sequences",
+    "comparison test",
+    "partial sums"
+  ],
+  "callout_body": "已知正实数序列$a_n$是单调增加的，并且级数$\\sum_{n\\geq 1}\\frac{1}{a_n}$是收敛的，证明$\\sum_{n\\geq 1}\\frac{n}{a_1+\\cdots+a_n}$也是收敛的。"
+}

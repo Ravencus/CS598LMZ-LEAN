@@ -1,0 +1,43 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 2,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 2,
+  "any_timeout": false,
+  "wall_seconds": 62.6,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 24.24,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 10,
+      "first_error": "Invalid alternative name `h_add`: Expected `add` or `monomial`"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 33.33,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "unsolved goals\ncase monomial\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nm : ℕ\nc : ℂ\nhpow : B * (A * B) ^ m = (B * A) ^ m * B\n⊢ B * ((algebraMap ℂ (Matrix n n ℂ)) c * (A *"
+    }
+  ]
+}

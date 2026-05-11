@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-14",
+  "english_title": "Example 1.4",
+  "statement_en": "The series\n$$\\sum_{n\\geq 1} \\frac{n!e^n}{n^{n+p}}$$ converges when $p>\\frac{3}{2}$ and diverges when $p\\leq \\frac{3}{2}$. Indeed,\n$$\\frac{a_n}{a_{n+1}}=1+(p-1/2)\\frac{1}{n}+O(1/n^2).$$ Therefore:\n1. If $p>\\frac{3}{2}$, then $p-1/2>1$, so Raabe's test implies convergence.\n2. If $p=\\frac{3}{2}$, then $p-1/2=1$, so Gauss's test implies divergence.\n3. If $p<\\frac{3}{2}$, then $p-1/2<1$, so Raabe's test implies divergence.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem factorial_exp_series_summable_iff (p : ℝ) :\n    Summable\n      (fun n : ℕ =>\n        ((Nat.factorial (n + 1) : ℝ) * Real.exp (n + 1 : ℝ)) /\n          (((n + 1 : ℝ) ^ (n + 1)) * Real.rpow (n + 1 : ℝ) p)) ↔\n      (3 / 2 : ℝ) < p := by\n  sorry"
+}

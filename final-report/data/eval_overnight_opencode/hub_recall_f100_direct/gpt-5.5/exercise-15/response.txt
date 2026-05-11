@@ -1,0 +1,4 @@
+["term-by-term-estimates-hub", "integral-estimates-for-sums-hub", "an-epsilon-of-room-hub"]
+- term-by-term-estimates-hub: The proof centers on bounding each summand, typically via Cauchy-Schwarz/Young-type estimates, by simpler summable pieces involving `|a_n|` and a power sequence.
+- integral-estimates-for-sums-hub: One needs the standard convergence criterion for the power series `∑ 1 / n^q` when `q > 1`, often justified by integral comparison.
+- an-epsilon-of-room-hub: The strict hypothesis `p > 1/2` gives room to choose an intermediate exponent so the power-series comparison has exponent strictly greater than `1`.

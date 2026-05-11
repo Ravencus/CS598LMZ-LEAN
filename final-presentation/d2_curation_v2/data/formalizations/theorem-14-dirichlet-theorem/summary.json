@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-14-dirichlet-theorem",
+  "english_title": "Theorem 1.4: Dirichlet Theorem",
+  "statement_en": "For an irrational number $\\alpha$ and any $\\varepsilon>0$, there exists a positive integer $q_{\\varepsilon}$ such that $$||q_{\\varepsilon}\\alpha||<\\varepsilon.$$",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem irrational_approximation_by_positive_integer\n    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :\n    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by\n  sorry"
+}

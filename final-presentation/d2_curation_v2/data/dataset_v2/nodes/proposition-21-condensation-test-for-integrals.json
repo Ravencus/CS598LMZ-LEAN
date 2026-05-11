@@ -1,0 +1,24 @@
+{
+  "id": "proposition-21-condensation-test-for-integrals",
+  "type": "problem",
+  "source_note": "柯西凝聚判别法",
+  "english_source_note": "Cauchy Condensation Test",
+  "callout_id": "柯西凝聚判别法#3",
+  "english_title": "Proposition 2.1: Condensation Test for Integrals",
+  "statement_en": "Let $f:[1,+\\infty)\\to \\mathbb{R}$ satisfy: (1) $f$ is locally integrable on $[1,+\\infty)$; (2) $f$ is nonnegative and nonincreasing on this interval. Then the improper integral $\\int_1^{+\\infty} f(x)\\,dx$ converges if and only if the series $\\sum_{n=1}^{+\\infty} 2^n f(2^n)$ converges.\n\nAlso, let $f:(0,1]\\to \\mathbb{R}$ satisfy: (1) $f$ is locally integrable on $(0,1]$; (2) $f$ is nonnegative and nonincreasing on this interval. Then the improper integral $\\int_0^1 f(x)\\,dx$ converges if and only if the series $\\sum_{n=1}^{+\\infty} 2^{-n} f(2^{-n})$ converges.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "dyadic decomposition",
+    "integral comparison",
+    "monotonicity estimates"
+  ],
+  "prerequisites": [
+    "improper integrals",
+    "local integrability",
+    "monotone functions",
+    "series convergence"
+  ],
+  "callout_body": "设函数$f:[1,+\\infty)\\to \\mathbb{R}$满足下列的条件：\n1. $f(x)$在该区间上是局部可积的，即对任意闭区间$[a,b]\\subset [1,+\\infty)$上都是黎曼可积的。\n2. $f(x)$在该区间上非负单调不增。\n\n那么广义积分$\\int_{1}^{+\\infty}f(x)\\,dx$收敛，当且仅当级数$\\sum_{n=1}^{+\\infty}2^n f(2^n)$收敛。\n\n---\n\n设函数$f:(0,1]\\to \\mathbb{R}$满足下列的条件：\n1. $f(x)$在该区间上是局部可积的，即对任意闭区间$[a,b]\\subset (0,1]$上都是黎曼可积的。\n2. $f(x)$在该区间上非负单调不增。\n\n那么广义积分$\\int_{0}^{1}f(x)\\,dx$收敛，当且仅当级数$\\sum_{n=1}^{+\\infty}2^{-n} f(2^{-n})$收敛。"
+}

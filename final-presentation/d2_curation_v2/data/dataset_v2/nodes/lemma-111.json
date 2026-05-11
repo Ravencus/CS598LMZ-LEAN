@@ -1,0 +1,23 @@
+{
+  "id": "lemma-111",
+  "type": "problem",
+  "source_note": "矩阵交换次序特征多项式不变",
+  "english_source_note": "Characteristic Polynomial Invariant Under Order Swap",
+  "callout_id": "矩阵交换次序特征多项式不变#2",
+  "english_title": "Lemma 1.1.1",
+  "statement_en": "If $A \\text{ or } B \\in GL_n(\\mathbb{C})$, then $AB$ and $BA$ are similar.",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "linear algebra",
+  "key_techniques": [
+    "conjugation by an invertible matrix",
+    "similarity transformation"
+  ],
+  "prerequisites": [
+    "invertible matrices",
+    "general linear group",
+    "similarity of matrices",
+    "matrix multiplication"
+  ],
+  "callout_body": "矩阵$A\\text{ or }B \\in GL_n(\\mathbb{C})$$AB$与$BA$相似。"
+}

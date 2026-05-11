@@ -1,0 +1,73 @@
+{
+  "note_title": "单调有界函数几乎处处连续",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "单调有界函数几乎处处连续#1",
+      "type": "note",
+      "title": "命题",
+      "body": "$f:[a,b]\\to \\mathbb{R}$是单调有界函数，那么函数是几乎处处连续的函数。",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "单调有界函数几乎处处连续#1",
+        "classification": "problem",
+        "english_title": "Proposition",
+        "if_problem": {
+          "statement_en": "Let $f:[a,b]\\to \\mathbb{R}$ be a bounded monotone function. Then $f$ is continuous almost everywhere.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "countability of discontinuities of monotone functions",
+            "one-sided limits",
+            "measure zero sets"
+          ],
+          "prerequisites": [
+            "monotone functions",
+            "continuity and discontinuity",
+            "almost everywhere",
+            "basic measure theory"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "单调有界函数几乎处处连续#2",
+      "type": "note",
+      "title": "命题2",
+      "body": "$f:[a,b]\\to \\mathbb{R}$是有界变差函数，那么函数是几乎处处连续的函数。",
+      "position_char": 861,
+      "position_line": 24,
+      "classification_result": {
+        "id": "单调有界函数几乎处处连续#2",
+        "classification": "problem",
+        "english_title": "Proposition 2",
+        "if_problem": {
+          "statement_en": "Let $f:[a,b]\\to \\mathbb{R}$ be a function of bounded variation. Then $f$ is continuous almost everywhere.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Jordan decomposition",
+            "reduction to monotone functions",
+            "measure zero sets"
+          ],
+          "prerequisites": [
+            "functions of bounded variation",
+            "monotone functions",
+            "almost everywhere",
+            "basic measure theory"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"单调有界函数几乎处处连续#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:[a,b]\\\\to \\\\mathbb{R}$ be a bounded monotone function. Then $f$ is continuous almost everywhere.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"countability of discontinuities of monotone functions\", \"one-sided limits\", \"measure zero sets\"],\n      \"prerequisites\": [\"monotone functions\", \"continuity and discontinuity\", \"almost everywhere\", \"basic measure theory\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"单调有界函数几乎处处连续#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:[a,b]\\\\to \\\\mathbb{R}$ be a function of bounded variation. Then $f$ is continuous almost everywhere.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"Jordan decomposition\", \"reduction to monotone functions\", \"measure zero sets\"],\n      \"prerequisites\": [\"functions of bounded variation\", \"monotone functions\", \"almost everywhere\", \"basic measure theory\"]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

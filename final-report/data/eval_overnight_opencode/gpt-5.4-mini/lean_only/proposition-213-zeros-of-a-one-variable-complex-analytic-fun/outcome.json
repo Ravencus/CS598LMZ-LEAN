@@ -1,0 +1,34 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 182.98,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 6,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown identifier `EqOn`\n",
+  "total_cost_usd": 0.0,
+  "total_tokens": 875434,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_33d9014f3e.lean",
+      "line": 20,
+      "column": 17,
+      "severity": "error",
+      "message": "Unknown identifier `EqOn`\n"
+    }
+  ]
+}

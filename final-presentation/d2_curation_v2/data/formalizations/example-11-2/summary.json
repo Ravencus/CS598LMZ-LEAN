@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-11-2",
+  "english_title": "Example 1.1",
+  "statement_en": "Compute the Laplace transform of $\\lfloor x\\rfloor$, that is, evaluate the parameter-dependent integral $$I_s:= \\int_0^{\\infty} \\lfloor x\\rfloor e^{-sx}\\,dx.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Real\n\ntheorem laplaceTransform_floor\n    (s : ℝ) (hs : 0 < s) :\n    ∫ x in Set.Ici (0 : ℝ), (((Int.floor x : ℤ) : ℝ) * Real.exp (-s * x)) =\n      1 / (s * (Real.exp s - 1)) := by\n  sorry"
+}

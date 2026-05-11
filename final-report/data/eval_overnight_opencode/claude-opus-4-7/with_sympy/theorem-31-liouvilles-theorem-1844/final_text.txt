@@ -1,0 +1,238 @@
+I'll work on this Liouville-style approximation theorem. Let me start by loading the Lean skill and planning the proof.
+Let me check for any digests and think about this problem carefully.
+Good - this is a similar problem. Now let me think about the proof strategy.
+
+## Strategy
+
+**Mathematical content (Liouville's theorem):**
+
+For an algebraic number α with minimal polynomial f ∈ ℚ[X] of degree d ≥ 2, let F(X) = q^d · f(p/q). Since f is the minimal polynomial of α (over ℚ, monic typically), F(p/q) ≠ 0 when p/q ≠ α (and even when p/q = α, well, actually α is irrational since d ≥ 2 so p/q ≠ α always).
+
+The standard Liouville proof:
+- Let f be the minimal polynomial of α. Then f(α) = 0.
+- Write f(x) = (x - α) g(x) where g is bounded on [α-1, α+1] by some M.
+- |f(p/q)| = |p/q - α| · |g(p/q)|
+- If |α - p/q| ≥ 1, the bound is trivial (e.g., C = 1).
+- If |α - p/q| < 1, then |g(p/q)| ≤ M, so |α - p/q| ≥ |f(p/q)|/M.
+- f(p/q) = (integer combination)/q^d, and is nonzero (since f is irreducible of degree ≥ 2, α is irrational, so p/q ≠ α, and f minimal means rational roots would force degree 1). So q^d · f(p/q) is a nonzero integer of certain form... actually q^d times the denominator-cleared polynomial. The bound becomes |α - p/q| ≥ 1/(M·q^d · D) where D is the LCM of denominators of f.
+
+This is HARD to formalize from scratch in 10 budget calls. Let me check if Mathlib has Liouville's theorem.
+
+Mathlib has `Liouville` theorem actually — `Liouville.transcendental` etc. There's `Polynomial.exists_pos_real_of_irrational_root` or similar. Let me search.
+
+Actually Mathlib has `Liouville.exists_pos_real_of_irrational_root`. Let me check.
+Excellent! This is gold. `Liouville.exists_pos_real_of_irrational_root` gives us exactly what we need — but with `b+1` (always positive) and using an integer polynomial. Let me think about how to adapt this.
+
+The Mathlib version:
+```
+theorem exists_pos_real_of_irrational_root {α : ℝ} (ha : Irrational α) {f : ℤ[X]} (f0 : f ≠ 0)
+    (fa : eval α (map (algebraMap ℤ ℝ) f) = 0) :
+    ∃ A : ℝ, 0 < A ∧ ∀ a : ℤ, ∀ b : ℕ,
+      (1 : ℝ) ≤ ((b : ℝ) + 1) ^ f.natDegree * (|α - a / (b + 1)| * A)
+```
+
+This gives us `|α - a/(b+1)| ≥ 1/(A · (b+1)^d)` for ALL a:ℤ, b:ℕ. So C = 1/A.
+
+I need to:
+1. Show α is irrational (since d ≥ 2)
+2. Get an integer polynomial annihilating α with the same degree d
+3. Apply the theorem with C = 1/A
+4. Convert from "∀ b:ℕ, |α - p/(b+1)|" to "∀ q:ℕ, q > 0, |α - p/q|"
+
+For step 2: `minpoly ℚ α` has natDegree d. To get an integer polynomial, multiply by lcm of denominators. The resulting polynomial has the same degree. We can use `minpoly ℚ α` mapped to ℝ — `eval α ((minpoly ℚ α).map (algebraMap ℚ ℝ)) = 0` follows from `aeval ℚ α (minpoly ℚ α) = 0`.
+
+Actually, an easier approach: `IsIntegral ℚ α` along with denominator clearing. But there's a simpler way — use `f.scaleRoots c` or similar... Actually let me think.
+
+There's `IsAlgebraic.exists_smul_isIntegral` or similar. Actually let me look at what's available.
+
+Hmm, the simplest: Let `f : ℚ[X] = minpoly ℚ α`. It has natDegree d. Multiply by an integer constant c (the LCM of denominators of coefficients) to make it an integer polynomial g, where g.natDegree = d still and g(α) = 0 (since constant multiple).
+
+Let me check Mathlib for `IsLocalization.integerNormalization` or `Polynomial.exists_integer_multiple` or such.
+OK, no direct theorem. Let me design the proof.
+
+## Plan
+
+Use `Liouville.exists_pos_real_of_irrational_root` directly.
+
+**Step 1:** From `h_alg : IsAlgebraic ℚ α` and `h_deg : (minpoly ℚ α).natDegree = d`, get an integer polynomial `g : ℤ[X]` with `g ≠ 0`, `eval α (g.map (algebraMap ℤ ℝ)) = 0`, and `g.natDegree = d`.
+
+The minimal polynomial of α over ℚ has rational coefficients. Multiply by the LCM of denominators to clear them. The result is `(C : ℚ) * minpoly` where C is a positive integer, which has the same degree.
+
+Actually a simpler approach: There exists *some* integer polynomial `g ≠ 0` of degree exactly `d` with `g(α) = 0`. We don't strictly need degree d — we need at most d. Wait, we need degree EXACTLY d for the conclusion `q^d`. Or we need natDegree of g ≤ d so that the bound `(b+1)^g.natDegree` is ≤ `(b+1)^d`.
+
+Actually if `g.natDegree ≤ d` and `(b+1)^g.natDegree ≤ (b+1)^d`, then from `1 ≤ (b+1)^g.natDegree · |α - p/(b+1)| · A`, we get `1 ≤ (b+1)^d · |α - p/(b+1)| · A` (when b+1 ≥ 1). So we just need `g.natDegree ≤ d`, which is fine because the minimal polynomial has the smallest degree among annihilating polynomials.
+
+**Step 2:** Show α is irrational. Since d ≥ 2, the minimal polynomial has degree ≥ 2, so α can't be rational (a rational has minimal polynomial of degree 1).
+
+**Step 3:** Apply `exists_pos_real_of_irrational_root` to get A > 0 with `1 ≤ (b+1)^g.natDegree · |α - p/(b+1)| · A` for all p:ℤ, b:ℕ.
+
+**Step 4:** Convert "q : ℕ, q > 0" to "b+1 where b = q-1". So given q > 0, set b = q-1 so b+1 = q.
+
+**Step 5:** Convert the bound `1 ≤ q^g.natDegree · |α - p/q| · A` and `g.natDegree ≤ d` to `|α - p/q| > C/q^d` with `C = 1/(2A)` (strict ineq needs slight loosening).
+
+Actually the original gives `1 ≤ q^d · |α - p/q| · A`, i.e., `|α - p/q| ≥ 1/(A · q^d)`. We need STRICT `>`. So use C = 1/(2A): `|α - p/q| ≥ 1/(A·q^d) > 1/(2A·q^d)` ✓.
+
+Let me write the proof. This is intricate, especially clearing denominators. Let me search for an existing lemma for integer poly from rational poly.
+`IsLocalization.integerNormalization` exists. With `R = ℤ`, `M = nonZeroDivisors ℤ`, `S = ℚ`, this gives us an integer polynomial. And `integerNormalization_aeval_eq_zero` gives `aeval α g = 0`. Also `integerNormalization_eq_zero_iff` (with `M ≤ nonZeroDivisors`) tells us if `p ≠ 0` then the integer normalization is non-zero. Also `integerNormalization_support` gives `support ⊆ support`, so `natDegree ≤ natDegree`.
+
+Let me look at the structure more carefully. The integer normalization of `minpoly ℚ α : ℚ[X]` (viewed in ℚ[X]) — but wait, `IsLocalization` needs `R = ℤ`, `S = ℚ`. So `g = integerNormalization (nonZeroDivisors ℤ) (minpoly ℚ α) : ℤ[X]`.
+
+`g.support ⊆ (minpoly ℚ α).support` ⟹ `g.natDegree ≤ (minpoly ℚ α).natDegree = d`.
+
+For `eval α (g.map (algebraMap ℤ ℝ)) = 0`: we have `aeval α (minpoly ℚ α) = 0` in ℝ (where the algebra map ℚ → ℝ).
+
+Hmm, but `aeval ℚ α (minpoly ℚ α) = 0` because α is a root over ℚ. Then `integerNormalization_aeval_eq_zero` would give `aeval α (integerNormalization ... (minpoly ℚ α)) = 0` in ℝ.
+
+The form `eval α (g.map (algebraMap ℤ ℝ)) = 0` is equivalent to `aeval α g = 0` via `eval_map_algebraMap`.
+
+This is getting complex. Let me try a more direct route. Actually, can I find a precise statement using `denomsClearable`?
+
+Let me write the proof and use the budget strategically. Let me first write a draft and check it.
+Let me search for the irrationality lemma for algebraic of degree ≥ 2.
+Hmm, this is the converse direction. I need: if α is algebraic of degree ≥ 2 then α is irrational. Let me search.
+`minpoly.two_le_natDegree_iff` is exactly what we need! Since `(minpoly ℚ α).natDegree = d ≥ 2`, we have `α ∉ (algebraMap ℚ ℝ).range`, which is the definition of `Irrational α`.
+So Irrational means `x ∉ Set.range ((↑) : ℚ → ℝ)`. The range of `algebraMap ℚ ℝ` is the same as `Set.range ((↑) : ℚ → ℝ)`. So `α ∉ (algebraMap ℚ ℝ).range ↔ Irrational α`.
+
+Now I have all the pieces. Let me write the proof.
+
+```
+1. From h_alg : IsAlgebraic ℚ α, get IsIntegral ℚ α via isAlgebraic_iff_isIntegral
+2. From hd ≥ 2 and h_deg, deduce 2 ≤ (minpoly ℚ α).natDegree
+3. Apply minpoly.two_le_natDegree_iff to get α ∉ (algebraMap ℚ ℝ).range
+4. Convert to Irrational α
+5. Let g = IsLocalization.integerNormalization (nonZeroDivisors ℤ) (minpoly ℚ α) : ℤ[X]
+6. Show g ≠ 0 (using minpoly nonzero + integerNormalization_eq_zero_iff)
+7. Show aeval α g = 0 in ℝ via integerNormalization_aeval_eq_zero
+8. Convert: eval α (g.map (algebraMap ℤ ℝ)) = 0 via eval_map_algebraMap
+9. Apply Liouville.exists_pos_real_of_irrational_root → A, hA, h
+10. For ∀ q > 0, ∀ p, let b = q - 1 (so b+1 = q), apply h p b
+11. Get 1 ≤ q^g.natDegree * |α - p/q| * A, hence |α - p/q| ≥ 1/(A * q^g.natDegree)
+12. Note g.natDegree ≤ d (from integerNormalization_support and natDegree_le_of_support_subset),
+    so q^g.natDegree ≤ q^d, and |α - p/q| ≥ 1/(A * q^d).
+13. Set C = 1/(2A): |α - p/q| > C/q^d.
+```
+
+Wait, step 12 might fail: if q = 0... but q > 0. If q ≥ 1 then q^g.natDegree ≤ q^d when g.natDegree ≤ d. ✓.
+
+There's one subtle issue: the inequality is `1 ≤ (b+1)^g.natDegree * (|α - p/(b+1)| * A)`. So `|α - p/(b+1)| ≥ 1/(A * (b+1)^g.natDegree)`.
+
+Since `(b+1)^g.natDegree ≤ (b+1)^d` (for `b+1 ≥ 1`, g.natDegree ≤ d), we have `1/(A * (b+1)^d) ≤ 1/(A * (b+1)^g.natDegree) ≤ |α - p/(b+1)|`.
+
+So `|α - p/q| ≥ 1/(A · q^d)` and then `> 1/(2A · q^d)`. Set C = 1/(2A).
+
+Let me draft the proof. The trickiest parts:
+- Converting `Irrational α` 
+- The denominator-clearing with `integerNormalization`
+- Getting `g.natDegree ≤ d`
+
+Let me try a first attempt.
+Good — `Polynomial.le_natDegree_of_mem_supp` says `a ∈ p.support → a ≤ natDegree p`. To show `g.natDegree ≤ p.natDegree` from `g.support ⊆ p.support`: if `g ≠ 0` then `g.natDegree ∈ g.support ⊆ p.support`, so `g.natDegree ≤ p.natDegree`. Or just use `natDegree_le_natDegree_of_support_subset` if it exists... let me just construct it.
+
+Actually since I just need this for clarity, I'll prove it inline. Let me write the proof carefully. Let me first do an initial check to verify my approach compiles. I'll use a streamlined version.
+Only 2 errors. Let me fix them:
+
+1. `omega` can't handle the cast from `q - 1` (Nat subtraction). Use simp/push_cast properly.
+2. `div_lt_div_iff` might be named `div_lt_div_iff₀` now.
+So it's `div_lt_div_iff₀` now. Let me also simplify the hb_eq issue. Now let me iterate:
+The proof compiles successfully on the second attempt. Let me submit the final answer.
+
+## Summary
+
+**Strategy:** Used Mathlib's `Liouville.exists_pos_real_of_irrational_root` which provides the key Liouville-style bound for integer polynomial roots. Combined with:
+- `minpoly.two_le_natDegree_iff` to deduce α is irrational from `(minpoly ℚ α).natDegree ≥ 2`
+- `IsLocalization.integerNormalization` (with `M = nonZeroDivisors ℤ`) to clear denominators of the minimal polynomial, yielding an integer polynomial g with g(α) = 0 and `g.natDegree ≤ d`
+- Set `C = 1/(2A)` where A is the constant from Liouville's lemma, giving a strict inequality.
+
+**Key lemmas:**
+- `Liouville.exists_pos_real_of_irrational_root`
+- `IsLocalization.integerNormalization_aeval_eq_zero`, `_support`, `_eq_zero_iff`
+- `minpoly.two_le_natDegree_iff`, `minpoly.ne_zero`
+- `le_natDegree_of_mem_supp`
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  -- Step 1: α is integral over ℚ
+  have h_int : IsIntegral ℚ α := h_alg.isIntegral
+  -- Step 2: degree of minpoly is ≥ 2
+  have h_deg_ge : 2 ≤ (minpoly ℚ α).natDegree := h_deg ▸ hd
+  -- Step 3: α is irrational
+  have h_irr : Irrational α := by
+    have : α ∉ (algebraMap ℚ ℝ).range :=
+      (minpoly.two_le_natDegree_iff h_int).mp h_deg_ge
+    intro ⟨q, hq⟩
+    exact this ⟨q, hq⟩
+  -- Step 4: integer polynomial annihilating α
+  set f : ℚ[X] := minpoly ℚ α with hf_def
+  have hf_ne : f ≠ 0 := minpoly.ne_zero h_int
+  have hf_aeval : aeval α f = 0 := minpoly.aeval ℚ α
+  set g : ℤ[X] := IsLocalization.integerNormalization (nonZeroDivisors ℤ) f with hg_def
+  have hg_ne : g ≠ 0 := by
+    rw [hg_def]
+    exact (IsLocalization.integerNormalization_eq_zero_iff
+      (M := nonZeroDivisors ℤ) (le_refl _) f).not.mpr hf_ne
+  have hg_aeval : aeval α g = (0 : ℝ) := by
+    rw [hg_def]
+    exact IsLocalization.integerNormalization_aeval_eq_zero (M := nonZeroDivisors ℤ) f
+      (by simpa using hf_aeval)
+  have hg_eval : eval α (g.map (algebraMap ℤ ℝ)) = 0 := by
+    rw [eval_map_algebraMap]; exact hg_aeval
+  -- Step 5: g.natDegree ≤ d
+  have hg_supp : g.support ⊆ f.support := by
+    rw [hg_def]
+    exact IsLocalization.integerNormalization_support _ f
+  have hg_natDeg : g.natDegree ≤ d := by
+    rw [← h_deg]
+    have hg_nd_mem : g.natDegree ∈ g.support := natDegree_mem_support_of_nonzero hg_ne
+    have : g.natDegree ∈ f.support := hg_supp hg_nd_mem
+    exact le_natDegree_of_mem_supp _ this
+  -- Step 6: apply Liouville
+  obtain ⟨A, hA, h_bd⟩ := Liouville.exists_pos_real_of_irrational_root h_irr hg_ne hg_eval
+  refine ⟨1 / (2 * A), by positivity, ?_⟩
+  intro q hq p
+  -- Apply h_bd with a = p, b = q - 1
+  have hq1 : (q : ℝ) ≥ 1 := by exact_mod_cast hq
+  have hq_pos : (0 : ℝ) < (q : ℝ) := by exact_mod_cast hq
+  set b : ℕ := q - 1 with hb_def
+  have hb_eq : (b : ℝ) + 1 = (q : ℝ) := by
+    have : b + 1 = q := by rw [hb_def]; omega
+    exact_mod_cast this
+  have key : (1 : ℝ) ≤ ((b : ℝ) + 1) ^ g.natDegree * (|α - p / (b + 1)| * A) := h_bd p b
+  rw [hb_eq] at key
+  -- |α - p / q| ≥ 1 / (q^g.natDegree * A)
+  have hA_pos : 0 < A := hA
+  have h_qpow_pos : (0 : ℝ) < (q : ℝ) ^ g.natDegree := by positivity
+  have h_qpow_d_pos : (0 : ℝ) < (q : ℝ) ^ d := by positivity
+  have h_qpow_le : (q : ℝ) ^ g.natDegree ≤ (q : ℝ) ^ d := by
+    apply pow_le_pow_right₀ hq1 hg_natDeg
+  -- 1 ≤ q^nd * (|α - p/q| * A) means |α - p/q| ≥ 1/(q^nd * A)
+  have h1 : 1 / ((q : ℝ) ^ g.natDegree * A) ≤ |α - p / q| := by
+    have : 1 ≤ (q : ℝ) ^ g.natDegree * |α - p / q| * A := by
+      have := key
+      ring_nf at this ⊢
+      linarith
+    have hprod_pos : 0 < (q : ℝ) ^ g.natDegree * A := by positivity
+    rw [div_le_iff₀ hprod_pos]
+    nlinarith [abs_nonneg (α - (p : ℝ) / q)]
+  have h2 : 1 / ((q : ℝ) ^ d * A) ≤ |α - p / q| := by
+    have h_le : 1 / ((q : ℝ) ^ d * A) ≤ 1 / ((q : ℝ) ^ g.natDegree * A) := by
+      apply one_div_le_one_div_of_le
+      · positivity
+      · nlinarith
+    linarith
+  -- Now C / q^d < 1 / (q^d * A)
+  have h3 : 1 / (2 * A) / ((q : ℝ) ^ d) < 1 / ((q : ℝ) ^ d * A) := by
+    rw [div_div, div_lt_div_iff₀ (by positivity) (by positivity)]
+    nlinarith [hA_pos, h_qpow_d_pos]
+  linarith
+```

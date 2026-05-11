@@ -1,0 +1,2 @@
+["cauchy-convergence-criterion-hub"]
+- cauchy-convergence-criterion-hub: The RHS is exactly the Cauchy condition for a real sequence, and the intended proof uses the Cauchy convergence criterion, though the Lean statement as written is false because the RHS does not force convergence specifically to the given `x`.

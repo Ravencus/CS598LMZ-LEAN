@@ -1,0 +1,23 @@
+{
+  "id": "corollary-1-of-dirichlet-theorem-version-2",
+  "type": "problem",
+  "source_note": "Kronecker定理，Dirichlet定理及其应用",
+  "english_source_note": "Kronecker's Theorem, Dirichlet's Theorem, and Applications",
+  "callout_id": "Kronecker定理,Dirichlet定理及其应用#8",
+  "english_title": "Corollary 1 of Dirichlet Theorem (Version 2)",
+  "statement_en": "For an irrational number $\\alpha$ and any $\\varepsilon>0$, there exist infinitely many positive integers $q$ such that $$||q\\alpha||<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "application of Dirichlet theorem",
+    "infinite sequence extraction",
+    "approximation modulo 1"
+  ],
+  "prerequisites": [
+    "Dirichlet theorem",
+    "irrational numbers",
+    "nearest-integer distance $||x||$"
+  ],
+  "callout_body": "对于无理数$\\alpha$以及任意的$\\varepsilon>0$存在无限多个正整数$q$使得$$||q\\alpha||<\\varepsilon$$"
+}

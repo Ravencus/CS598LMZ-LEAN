@@ -1,0 +1,68 @@
+{
+  "note_title": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1",
+    "分段估计",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#1",
+      "type": "note",
+      "title": "Dirichlet核",
+      "body": "$$D_N(x):=\\sum_{|n|\\leq N}e^{inx}=\\frac{\\sin\\left[\\left(N+\\frac{1}{2}\\right)x\\right]}{\\sin(x/2)}$$",
+      "position_char": 58,
+      "position_line": 7
+    },
+    {
+      "id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#2",
+      "type": "note",
+      "title": "估计的基本思路",
+      "body": "因为被积对象的分子具有周期性，在$[0,\\pi]$内的积分会走过很多个周期，于是考虑通过换元得到在$[0,(N+\\frac{1}{2})\\pi]$上的积分，然分拆积分。(思路可以参考[[分段估计#2. 可数分段]])最后把不完整的周期分离出去，整个渐进问题就是估计一个不完整的周期，以及在一个周期里面做渐进。",
+      "position_char": 1389,
+      "position_line": 20
+    },
+    {
+      "id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#3",
+      "type": "example",
+      "title": "例子2.1",
+      "body": "$a_n:=(-1)^n$，那么其部分和$$S_n:=\\begin{cases}1&n\\text{是偶数}\\\\0&n\\text{是奇数}\\end{cases}$$是不存在极限的。但是这个序列确实Cesaro可和的，因为$$\\sigma_N:=\\frac{S_0+\\cdots+S_{N-1}}{N}=\\frac{\\lfloor\\frac{N}{2}+1\\rfloor}{N}$$其极限为$\\frac{1}{2}$。",
+      "position_char": 2816,
+      "position_line": 33
+    },
+    {
+      "id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#4",
+      "type": "note",
+      "title": "定理2.2",
+      "body": "$$F_N(x):=\\frac{1}{N}\\frac{\\sin^2(Nx/2)}{\\sin^2(x/2)}$$并且这是一个$L^1([-\\pi,\\pi])$上的逼近单位元。",
+      "position_char": 3557,
+      "position_line": 41
+    },
+    {
+      "id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#5",
+      "type": "note",
+      "title": "推论2.3",
+      "body": "如果函数$f$是单位圆周$\\mathbb{T}$上的可积函数，并且其傅里叶系数满足$$\\widehat{f}(n)=0,\\forall n\\in \\mathbb{Z}$$那么在$f$的任意连续点处都为取值为0。",
+      "position_char": 4352,
+      "position_line": 53
+    },
+    {
+      "id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#6",
+      "type": "note",
+      "title": "推论2.4",
+      "body": "假设$f \\in C(\\mathbb{T}\\to \\mathbb{C})$，并且其对应的傅里叶系数形成的级数绝对收敛，即$$\\sum_{n\\in \\mathbb{Z}}|\\widehat{f}(n)|<\\infty$$那么函数的傅里叶级数的部分和一致收敛到函数本身。",
+      "position_char": 5030,
+      "position_line": 60
+    },
+    {
+      "id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#7",
+      "type": "note",
+      "title": "推论2.5",
+      "body": "如果$f \\in C(\\mathbb{T}\\to \\mathbb{C})$那么可以被$\\mathbb{T}$上的多项式一致逼近。",
+      "position_char": 5791,
+      "position_line": 67
+    }
+  ]
+}

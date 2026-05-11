@@ -1,0 +1,58 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 80.2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 23.26,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Invalid rewrite argument: Expected an equality or iff proof or definition name, but `minpoly.dvd ?A ?x\n  ?hp` is a proof of\n  minpoly ?A ?x ∣ ?p"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 26.12,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 8,
+      "first_error": "Invalid alternative name `h_add`: Expected `add` or `monomial`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 23.6,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "`simp` made no progress"
+    }
+  ]
+}

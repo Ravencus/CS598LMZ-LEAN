@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-318",
+  "english_title": "Example 3.1.8",
+  "statement_en": "Compute the parameter-dependent integral \\[I(a) := \\int_0^1 \\frac{\\cos(ax)}{\\sqrt{1-x^2}}\\,dx.\\]",
+  "difficulty": "medium",
+  "domain": "special functions",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unknown namespace `IntervalIntegral`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen Real MeasureTheory\n\ndef I (a : ℝ) : ℝ :=\n  ∫ x in (0 : ℝ)..1, Real.cos (a * x) / Real.sqrt (1 - x ^ 2)\n\ntheorem compute_parameter_dependent_integral (a : ℝ) :\n    I a = ∫ x in (0 : ℝ)..1, Real.cos (a * x) / Real.sqrt (1 - x ^ 2) := by\n  sorry"
+}

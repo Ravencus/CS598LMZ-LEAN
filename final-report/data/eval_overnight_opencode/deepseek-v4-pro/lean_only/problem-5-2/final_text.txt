@@ -1,0 +1,1 @@
+Let me look at the existing completed proofs to understand the style, especially `isolated_zero.lean` since it's about zeros of holomorphic functions.

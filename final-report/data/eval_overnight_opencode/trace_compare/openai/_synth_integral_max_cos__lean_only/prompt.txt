@@ -1,0 +1,353 @@
+You are analyzing two Lean theorem-proving traces from the same problem. The "BIG" model succeeded; the "SMALL" model failed. Classify the failure mode.
+
+Problem id: _synth_integral_max_cos    Condition: lean_only
+
+=== BIG (passed) ===
+model: gpt-5.5    outcome: lean_proof    wall=170.28s    mcp_calls=8
+--- mcp call 1 (✗) ---
+import Mathlib
+
+#check intervalIntegral.integral_comp_add_right
+#check intervalIntegral.integral_deriv_eq_sub
+#check intervalIntegral.integral_of_le
+#check intervalIntegral.integral_congr_ae
+#check Set.EqOn
+#check Real.integral_cos
+#check Real.integral_sin
+#check Real.cos_nonneg_of_mem_Icc
+#check Real.cos_nonpos_of_mem_Icc
+#check Real.cos_eq_zero_iff
+#check Real.sin_pi_div_two
+#check Real.sin_three_pi_div_two
+#check Real.sin_two_pi
+#check max_eq_left
+#check max_eq_right
+--- mcp call 2 (✗) ---
+import Mathlib
+
+#check intervalIntegral.integral_deriv_eq_sub
+#check Real.cos_nonneg_of_mem_Icc
+#check Real.cos_nonpos_of_mem_Icc
+#check Real.sin_pi_div_two
+#check max_eq_left
+#check max_eq_right
+--- mcp call 3 (✓) ---
+import Mathlib
+
+example : 1 = 1 := by norm_num
+--- mcp call 4 (✗) ---
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h0 : (0:ℝ) ≤ Real.pi / 2 := by positivity
+  have h1 : Real.pi / 2 ≤ 3 * Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h2 : 3 * Real.pi / 2 ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+  calc
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0
+        = (∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0)
+          + (∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0)
+          + (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0) := by
+            rw [← intervalIntegral.integral_add_adjacent_intervals
+                (a := (0:ℝ)) (b := Real.pi / 2) (c := 3 * Real.pi / 2),
+              ← intervalIntegral.integral_add_adjacent_intervals
+                (a := (0:ℝ)) (b := 3 * Real.pi / 2) (c := 2 * Real.pi)]
+            abel
+    _ = (∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u)
+          + 0
+          + (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), Real.cos u) := by
+            congr 2
+            · apply intervalIntegral.integral_congr
+              intro u hu
+              exact max_eq_left (Real.cos_nonneg_of_mem_Icc ⟨by linarith [hu.1], by linarith [hu.
+--- mcp call 5 (✗) ---
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h01 : (0 : ℝ) ≤ Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h12 : Real.pi / 2 ≤ 3 * Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h23 : 3 * Real.pi / 2 ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+  have h02 : (Real.pi / 2 : ℝ) ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+
+  have h0 : ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0 = ∫ u in 0..(Real.pi / 2), Real.cos u := by
+    refine intervalIntegral.integral_congr ?_
+    intro u hu
+    have huIcc : u ∈ Set.Icc (0 : ℝ) (Real.pi / 2) := by
+      simpa [Set.uIcc_of_le h01] using hu
+    have huIcc' : u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+      constructor
+      · nlinarith [huIcc.1, Real.pi_pos]
+      · exact huIcc.2
+    have hcos : 0 ≤ Real.cos u := Real.cos_nonneg_of_mem_Icc huIcc'
+    simpa [max_eq_left hcos]
+
+  have hmid : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 = 0 := by
+    have hmid' : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 =
+        ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), (0 : ℝ) := by
+      refine intervalIntegral.integral_congr ?_
+      intr
+--- mcp call 6 (✗) ---
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h01 : (0 : ℝ) ≤ Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h12 : Real.pi / 2 ≤ 3 * Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h23 : 3 * Real.pi / 2 ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+  have h02 : (Real.pi / 2 : ℝ) ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+
+  have h0 : ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0 = ∫ u in 0..(Real.pi / 2), Real.cos u := by
+    refine intervalIntegral.integral_congr ?_
+    intro u hu
+    have huIcc : u ∈ Set.Icc (0 : ℝ) (Real.pi / 2) := by
+      simpa [Set.uIcc_of_le h01] using hu
+    have huIcc' : u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+      constructor
+      · nlinarith [huIcc.1, Real.pi_pos]
+      · exact huIcc.2
+    have hcos : 0 ≤ Real.cos u := Real.cos_nonneg_of_mem_Icc huIcc'
+    simp [max_eq_left hcos]
+
+  have hmid : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 = 0 := by
+    have hmid' : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 =
+        ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), (0 : ℝ) := by
+      refine intervalIntegral.integral_congr ?_
+      intro
+--- mcp call 7 (✓) ---
+import Mathlib
+
+example : ∫ u in (3 * Real.pi / 2)..(2 * Real.pi), Real.cos u = 1 := by
+  rw [integral_cos]
+  have hsin3 : Real.sin (3 * Real.pi / 2) = -1 := by
+    have h := Real.sin_add_pi (Real.pi / 2)
+    rw [Real.sin_pi_div_two] at h
+    convert h using 2 <;> ring
+  simp [Real.sin_two_pi, hsin3]
+--- mcp call 8 (✓) ---
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h01 : (0 : ℝ) ≤ Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h12 : Real.pi / 2 ≤ 3 * Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h23 : 3 * Real.pi / 2 ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+  have h02 : (Real.pi / 2 : ℝ) ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+
+  have h0 : ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0 = ∫ u in 0..(Real.pi / 2), Real.cos u := by
+    refine intervalIntegral.integral_congr ?_
+    intro u hu
+    have huIcc : u ∈ Set.Icc (0 : ℝ) (Real.pi / 2) := by
+      simpa [Set.uIcc_of_le h01] using hu
+    have huIcc' : u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+      constructor
+      · nlinarith [huIcc.1, Real.pi_pos]
+      · exact huIcc.2
+    have hcos : 0 ≤ Real.cos u := Real.cos_nonneg_of_mem_Icc huIcc'
+    simp [max_eq_left hcos]
+
+  have hmid : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 = 0 := by
+    have hmid' : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 =
+        ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), (0 : ℝ) := by
+      refine intervalIntegral.integral_congr ?_
+      intro
+--- final_text ---
+I’ll first probe Mathlib’s interval integral and real trigonometric lemmas so the proof uses existing API rather than guessed names.
+The checker accepts normal proof files, but the probe with `#check` is not returning useful diagnostics here. I’ll inspect the local Mathlib sources for the relevant interval-integral and trig lemmas, then spend the remaining checker calls on full proof attempts.
+I found a previous nearby proof shape, but this Mathlib version uses unnamespaced `integral_cos` and the adjacent-interval lemma takes interval-integrability hypotheses instead of order proofs. I’m adapting those API differences and adding parentheses where interval notation would otherwise capture additions into the integrand.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h01 : (0 : ℝ) ≤ Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h12 : Real.pi / 2 ≤ 3 * Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h23 : 3 * Real.pi / 2 ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+  have h02 : (Real.pi / 2 : ℝ) ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+
+  have h0 : ∫ u in (0:ℝ)..(Real.pi / 2), max (
+
+=== SMALL (failed) ===
+model: gpt-5.4-mini    outcome: compile_fail    wall=208.54s    mcp_calls=10
+--- mcp call 1 (✗) ---
+import Mathlib
+#check Real.integral_cos
+#check integral_cos
+#check Real.cos_nonneg
+#check cos_nonneg
+#check intervalIntegral.integral_congr
+#check intervalIntegral.integral_comp_sub_right
+#check intervalIntegral.integral_symm
+#check integral_add_adjacent_intervals
+#check MeasureTheory.integral_add_adjacent_intervals
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  sorry
+
+--- mcp call 2 (✗) ---
+import Mathlib
+#check Real.cos_nonneg_of_mem_Icc
+#check Real.cos_nonneg_iff
+#check Real.cos_nonneg_of_mem_Icc_of_le_pi_div_two
+#check Real.cos_nonneg_of_mem_Icc
+#check Real.integral_cos
+
+example : ∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u = 1 := by
+  simpa using (Real.integral_cos (0:ℝ) (Real.pi / 2))
+
+--- mcp call 3 (✗) ---
+import Mathlib
+#check Real.cos_nonneg_of_mem_Icc
+#check Real.cos_nonpos_of_mem_Icc
+#check Real.cos_nonneg_of_mem_Icc_pi_div_two
+#check Real.cos_nonpos_of_mem_Icc_pi_div_two
+
+example (x : ℝ) (h : x ∈ Set.Icc 0 (Real.pi / 2)) : 0 ≤ Real.cos x := by
+  exact Real.cos_nonneg_of_mem_Icc (by linarith) (by linarith) h
+
+--- mcp call 4 (✗) ---
+import Mathlib
+example (x : ℝ) (h : x ∈ Set.Icc 0 (Real.pi / 2)) : 0 ≤ Real.cos x := by
+  exact Real.cos_nonneg_of_mem_Icc h
+
+example (x : ℝ) (h : x ∈ Set.Icc (Real.pi / 2) (3 * Real.pi / 2)) : Real.cos x ≤ 0 := by
+  exact Real.cos_nonpos_of_mem_Icc h
+
+--- mcp call 5 (✗) ---
+import Mathlib
+#check Real.cos_add_pi
+#check Real.cos_pi_add
+#check Real.cos_sub_pi
+#check Real.cos_pi_sub
+#check Real.sin_add_pi
+#check Real.sin_sub_pi
+
+--- mcp call 6 (✗) ---
+import Mathlib
+example : ∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u = 1 := by
+  refine intervalIntegral.integral_congr ?_
+  intro u hu
+  rfl
+  
+
+--- mcp call 7 (✓) ---
+import Mathlib
+example : ∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u = ∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u := by
+  exact intervalIntegral.integral_congr (by intro u hu; rfl)
+
+--- mcp call 8 (✓) ---
+import Mathlib
+example (x : ℝ) : Real.cos (x + Real.pi) = -Real.cos x := by
+  simpa using (Real.cos_add_pi x)
+
+example (x : ℝ) : Real.cos (x - Real.pi) = -Real.cos x := by
+  simpa using (Real.cos_sub_pi x)
+
+--- mcp call 9 (✗) ---
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h1 : ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0 = 1 := by
+    calc
+      ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0
+          = ∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u := by
+              exact intervalIntegral.integral_congr (by
+                intro u hu
+                rw [max_eq_left]
+                exact Real.cos_nonneg_of_mem_Icc <| by
+                  have hmem : 0 ≤ u ∧ u ≤ Real.pi / 2 := by simpa using hu
+                  constructor
+                  · linarith
+                  · exact hmem.2)
+      _ = 1 := by simpa using (Real.integral_cos (0:ℝ) (Real.pi / 2))
+  have h2 : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 = 0 := by
+    refine intervalIntegral.integral_congr ?_
+    intro u hu
+    rw [max_eq_right]
+    have hmem : Real.pi / 2 ≤ u ∧ u ≤ 3 * Real.pi / 2 := by simpa using hu
+    have hIcc : (u - Real.pi) ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+      constructor <;> linarith
+    have hnonneg : 0 ≤ Real.cos (u - Real.pi) := Real.cos_nonneg_of_mem_Icc hIcc
+    have hle : Real.cos u ≤ 0 := by
+      have := hnonneg
+      rw [
+--- mcp call 10 (✗) ---
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h1 : ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0 = 1 := by
+    calc
+      ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0
+          = ∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u := by
+              exact intervalIntegral.integral_congr (by
+                intro u hu
+                simpa using (max_eq_left (by
+                  have hmem : 0 ≤ u ∧ u ≤ Real.pi / 2 := by simpa using hu
+                  have hIcc : u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+                    constructor
+                    · linarith
+                    · exact hmem.2
+                  exact Real.cos_nonneg_of_mem_Icc hIcc)))
+      _ = 1 := by simpa using (integral_cos (0:ℝ) (Real.pi / 2))
+  have h2 : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 = 0 := by
+    calc
+      ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0
+          = ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), (0 : ℝ) := by
+              exact intervalIntegral.integral_congr (by
+                intro u hu
+                simpa using (max_eq_right (by
+                  have hmem : Real.pi / 2 ≤ u ∧ u
+--- final_text ---
+I’m loading the Lean proving workflow and then I’ll try a compact proof, checking it against Mathlib and tightening only if needed.
+I’m checking Mathlib for existing cosine integral and positivity lemmas so I can keep the proof short and avoid guessing theorem names.
+I’ve confirmed the antiderivative lemma for `cos`; now I’m probing the interval positivity lemmas to split the integral cleanly.
+I’ve got the proof shape: split at `π/2` and `3π/2`, rewrite `max` to `cos` or `0` on each piece, then use `Real.integral_cos` on the two positive arcs. I’m checking the full Lean script now.
+I hit a few name/rewriting mismatches, so I’m switching to the exact namespace-qualified lemmas and using `simpa` around the interval congruence step to keep the proof robust.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h1 : ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0 = 1 := by
+    calc
+      ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0
+          = ∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u := by
+              exact intervalIntegral.integral_congr (by
+                intro u hu
+                have hmem : 0 ≤ u ∧ u
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"label": "different_plan" | "same_plan_lean_impl_diff" | "same_plan_search_diff" | "unclear",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+LABEL DEFINITIONS:
+  different_plan          : The two models pursued substantively different decompositions (e.g., one used induction, the other used a continuous estimate).
+  same_plan_lean_impl_diff: Both pursued the same plan; the small model's failure was at the Lean tactic / type-checking level (wrong tactic, type mismatch, syntax).
+  same_plan_search_diff   : Same plan; the small model couldn't find the correct Mathlib lemma name or applicability.
+  unclear                 : Cannot tell from the visible evidence.
+
+Output the JSON object first, then the justification.

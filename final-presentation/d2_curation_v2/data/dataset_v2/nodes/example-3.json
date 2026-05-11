@@ -1,0 +1,21 @@
+{
+  "id": "example-3",
+  "type": "problem",
+  "source_note": "Weierstrass逼近定理的概率途径证明",
+  "english_source_note": "A Probabilistic Proof of the Weierstrass Approximation Theorem",
+  "callout_id": "Weierstrass逼近定理的概率途径证明#5",
+  "english_title": "Example 3",
+  "statement_en": "Based on Example 2, define\n$$Y_3(\\omega):=\\begin{cases}0& \\omega \\in [p,1]-\\{\\frac{1+p}{2}\\}\\\\ 1& \\omega \\in [0,p) \\cup \\{\\frac{1+p}{2}\\}\\end{cases}$$\nThen the pushforward measure is unchanged:\n$$P_{Y_3}(\\{0\\})=m\\left([p,1]-\\left\\{\\frac{1+p}{2}\\right\\}\\right)=1-p,\\qquad P_{Y_3}(\\{1\\})=m\\left([0,p) \\cup \\left\\{\\frac{1+p}{2}\\right\\}\\right)=p.$$",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "probability theory",
+  "key_techniques": [
+    "modifying a random variable on a null set",
+    "pushforward measure invariance under null-set changes"
+  ],
+  "prerequisites": [
+    "Lebesgue measure",
+    "measure zero sets"
+  ],
+  "callout_body": "在例子2的基础上考虑$$Y_3(\\omega):=\\begin{cases}0& \\omega \\in [p,1]-\\{\\frac{1+p}{2}\\}\\\\ 1& \\omega \\in [0,p) \\cup \\{\\frac{1+p}{2}\\}\\end{cases}$$此时pushforward测度为$$P_{Y_2}(\\{0\\})=m([p,1]-\\{\\frac{1+p}{2}\\})=1-p$$以及$$P_{Y_2}(\\{1\\})=m([0,p) \\cup \\{\\frac{1+p}{2}\\})=p$$"
+}

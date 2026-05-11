@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "piecewise-estimates-hub"]
+- term-by-term-estimates-hub: The proof relies on a pointwise comparison such as splitting each term and bounding `x_n log(1/x_n)` by a summable majorant built from `n x_n` and an exponentially small error.
+- piecewise-estimates-hub: The key estimate is naturally piecewise: if `x_n ≥ e^{-n}` then `log(1/x_n) ≤ n`, while if `x_n < e^{-n}` then `x_n log(1/x_n)` is bounded by about `n e^{-n}`.

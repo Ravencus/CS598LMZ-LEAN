@@ -1,0 +1,23 @@
+{
+  "id": "corollary-131",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#5",
+  "english_title": "Corollary 1.3.1",
+  "statement_en": "Let $S_N:=\\sum_{n\\leq N} a_n$ be a bounded divergent sequence of partial sums, where $a_n\\in\\mathbb{R}$ and $a_n\\to 0$. Then the partial sums $S_N$ are dense in the interval $(\\liminf_{N\\to\\infty} S_N,\\limsup_{N\\to\\infty} S_N)$.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "apply Proposition 1 to partial sums",
+    "difference of consecutive partial sums",
+    "limsup and liminf of partial sums"
+  ],
+  "prerequisites": [
+    "series and partial sums",
+    "bounded divergent sequences",
+    "density criterion from small differences"
+  ],
+  "callout_body": "序列$S_N:=\\sum_{n\\leq N}a_n$有界并且发散，其中$a_n$是实数，并且$a_n\\to 0$。那么其部分和序列$S_N:=\\sum_{n\\leq N}a_n$会在区间$(\\liminf_{N\\to \\infty}S_N,\\limsup_{N\\to \\infty}S_N)$中稠密。"
+}

@@ -1,0 +1,4 @@
+I’m going to load the Lean proving workflow, inspect the theorem shape, and then iterate with the checker.
+I’ve loaded the proving workflow. Next I’m checking whether there’s an existing digest or nearby lemma pattern that matches this Borel-Cantelli style statement.
+I’ve reduced this to two likely components: a Borel-Cantelli lemma for the limsup sets, and a pointwise criterion turning “eventually below every epsilon” into `Tendsto`. I’m probing Mathlib for the exact lemma names now.
+The obvious `measure_limsup_*` names aren’t in scope, so I’m searching the installed Mathlib sources for the actual Borel-Cantelli lemma name and the pointwise convergence lemma.

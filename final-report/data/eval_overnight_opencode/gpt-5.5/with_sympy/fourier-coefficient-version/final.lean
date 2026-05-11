@@ -1,0 +1,70 @@
+import Mathlib
+
+open MeasureTheory Filter Topology
+
+noncomputable section
+
+theorem riemannLebesgue_fourierCoefficients_tendsto_zero
+    {f : ℝ → ℂ}
+    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :
+    Tendsto
+      (fun n : ℤ =>
+        ‖((1 / (2 * Real.pi : ℂ)) *
+          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+  have hnatAbs : Tendsto Int.natAbs (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    exact map_comap_le
+  have hdist_eq : (fun n : ℤ => dist ((n : ℝ)) 0) = fun n : ℤ => ((Int.natAbs n : ℕ) : ℝ) := by
+    funext n
+    rw [dist_eq_norm, sub_zero, Real.norm_eq_abs]
+    exact (Int.cast_abs (R := ℝ) (a := n)).symm.trans (Nat.cast_natAbs (α := ℝ) n).symm
+  have hnatAbsReal : Tendsto (fun n : ℤ => dist ((n : ℝ)) 0) (Filter.comap Int.natAbs Filter.atTop) Filter.atTop := by
+    rw [hdist_eq]
+    exact (tendsto_natCast_atTop_atTop).comp hnatAbs
+  have hcoe : Tendsto (fun n : ℤ => (n : ℝ)) (Filter.comap Int.natAbs Filter.atTop) (Filter.cocompact ℝ) := by
+    refine tendsto_cocompact_of_tendsto_dist_comp_atTop 0 ?_
+    simpa using hnatAbsReal
+  have hpi : (2 * Real.pi : ℝ) ≠ 0 := by positivity
+  have hscale : Tendsto (fun n : ℤ => ((n : ℝ) * (2 * Real.pi)⁻¹))
+      (Filter.comap Int.natAbs Filter.atTop) (Filter.cocompact ℝ) := by
+    simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc] using
+      ((tendsto_cocompact_mul_right₀ (a := (2 * Real.pi : ℝ)⁻¹) (inv_ne_zero hpi)).comp hcoe)
+  have hRL : Tendsto
+      (fun n : ℤ => ∫ v : ℝ,
+        Real.fourierChar (-(v * ((n : ℝ) * (2 * Real.pi)⁻¹))) •
+          (Set.Icc (-Real.pi) Real.pi).indicator f v)
+      (Filter.comap Int.natAbs Filter.atTop) (nhds 0) := by
+    simpa [Function.comp_def] using
+      (Real.tendsto_integral_exp_smul_cocompact ((Set.Icc (-Real.pi) Real.pi).indicator f)).comp hscale
+  have hRL1 : Tendsto
+      (fun n : ℤ => ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+    refine hRL.congr' (Eventually.of_forall ?_)
+    intro n
+    symm
+    calc
+      ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I))
+          = ∫ x in Set.Icc (-Real.pi) Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)) := by
+              rw [intervalIntegral.integral_of_le]
+              · rw [integral_Icc_eq_integral_Ioc]
+              · linarith [Real.pi_pos]
+      _ = ∫ x : ℝ, (Set.Icc (-Real.pi) Real.pi).indicator
+            (fun x => f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I))) x := by
+              rw [integral_indicator measurableSet_Icc]
+      _ = ∫ x : ℝ, Real.fourierChar (-(x * ((n : ℝ) * (2 * Real.pi)⁻¹))) •
+            (Set.Icc (-Real.pi) Real.pi).indicator f x := by
+              congr 1
+              funext x
+              by_cases hx : x ∈ Set.Icc (-Real.pi) Real.pi
+              · simp [Set.indicator, hx, Real.fourierChar_apply, Circle.smul_def,
+                  mul_comm, mul_left_comm, mul_assoc]
+              · simp [Set.indicator, hx]
+  have hmain : Tendsto
+      (fun n : ℤ => (1 / (2 * Real.pi : ℂ)) *
+        ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using hRL1.const_mul (1 / (2 * Real.pi : ℂ))
+  simpa using hmain.norm

@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-212",
+  "english_title": "Proposition 2.1.2",
+  "statement_en": "The remainders modulo $1$ of $\\log(n)$ form a dense subset of the corresponding interval.",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Unknown constant `Real.fract`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem log_nat_fractional_parts_dense :\n    Dense\n      (Set.range fun n : ℕ =>\n        (⟨Int.fract (Real.log (n + 1)),\n          by\n            constructor\n            · exact Int.fract_nonneg (Real.log (n + 1))\n            · exact le_of_lt (Int.fract_lt_one (Real.log (n + 1)))⟩ :\n          Set.Icc (0 : ℝ) 1)) := by\n  sorry"
+}

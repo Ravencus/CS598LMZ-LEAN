@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-212-2",
+  "english_title": "Lemma 2.1.2",
+  "statement_en": "If the series $$\\sum_{n\\geq 1}\\frac{a_n}{n}$$ formed from a complex sequence $a_n$ converges, then its partial sums satisfy $$\\sum_{n\\leq N} a_n=o(N).$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem partialSums_littleO_of_series_div_nat_summable\n    (a : ℕ → ℂ)\n    (h : Summable (fun n : ℕ => a (n + 1) / ((n + 1 : ℕ) : ℂ))) :\n    (fun N : ℕ => ∑ n ∈ Finset.Icc 1 N, a n) =o[Filter.atTop] fun N : ℕ => (N : ℂ) := by\n  sorry"
+}

@@ -1,0 +1,4 @@
+["reducing-set-problems-to-function-problems-hub", "estimates-for-the-sum-of-prime-reciprocals-hub", "using-known-asymptotics-to-derive-expansions-hub"]
+- reducing-set-problems-to-function-problems-hub: The proof replaces the interval-restricted integral by a whole-line integral using `(Set.Icc (-Real.pi) Real.pi).indicator f`, via `integral_indicator`.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The `calc` block in `hRL1` represents the same Fourier coefficient in several equivalent forms, ultimately matching it to `Real.fourierChar`.
+- using-known-asymptotics-to-derive-expansions-hub: The main convergence is obtained by invoking the known theorem `Real.tendsto_integral_exp_smul_cocompact` and transferring it through filter/scaling rewrites and equality of integrals.

@@ -1,0 +1,11 @@
+import Mathlib
+#check Summable.of_norm_bounded
+#check Summable.of_nonneg_bounded
+#check Summable.of_tendsto_zero
+#check Summable.tendsto_zero
+#check summable_of_tendsto_nat
+#check summable_of_tendsto_zero
+#check summable_nat_add_iff
+#check Summable.mul_right
+#check Summable.mul_left
+#check Complex.norm_sq

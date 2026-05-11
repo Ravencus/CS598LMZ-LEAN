@@ -1,0 +1,94 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 17,
+      "column": 3,
+      "severity": "error",
+      "message": "unknown tactic"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 16,
+      "column": 81,
+      "severity": "error",
+      "message": "unsolved goals\nζ : ℝ → ℝ\nr : ℝ\nhr : 1 < r\n⊢ ∃ E,\n    ∀ (n : ℕ),\n      1 ≤ n →\n        ∑ k ∈ Finset.Icc 1 n, (↑k).rpow (-r) =\n            ζ r + 1 / (1 - r) * (↑n).rpow (1 - r) + 1 / 2 * (↑n).rpow (-r) - r / 12 * (↑n).rpow (-r - 1) + E n ∧\n          |E n| < r * (r + 1) * (r + 2) / (720 * (↑n).rpow (r + 3))"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 17,
+      "column": 70,
+      "severity": "error",
+      "message": "unexpected token ','; expected ':'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 17,
+      "column": 100,
+      "severity": "error",
+      "message": "unexpected token 'with'; expected ':'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 24,
+      "column": 61,
+      "severity": "error",
+      "message": "unexpected token 'by'; expected identifier"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 25,
+      "column": 18,
+      "severity": "error",
+      "message": "unexpected token '`'; expected ':=', 'where' or '|'\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 17,
+      "column": 3,
+      "severity": "error",
+      "message": "unknown tactic"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 16,
+      "column": 81,
+      "severity": "error",
+      "message": "unsolved goals\nζ : ℝ → ℝ\nr : ℝ\nhr : 1 < r\n⊢ ∃ E,\n    ∀ (n : ℕ),\n      1 ≤ n →\n        ∑ k ∈ Finset.Icc 1 n, (↑k).rpow (-r) =\n            ζ r + 1 / (1 - r) * (↑n).rpow (1 - r) + 1 / 2 * (↑n).rpow (-r) - r / 12 * (↑n).rpow (-r - 1) + E n ∧\n          |E n| < r * (r + 1) * (r + 2) / (720 * (↑n).rpow (r + 3))"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 17,
+      "column": 70,
+      "severity": "error",
+      "message": "unexpected token ','; expected ':'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 17,
+      "column": 100,
+      "severity": "error",
+      "message": "unexpected token 'with'; expected ':'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 24,
+      "column": 61,
+      "severity": "error",
+      "message": "unexpected token 'by'; expected identifier"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_ef3086f7fff8.lean",
+      "line": 25,
+      "column": 18,
+      "severity": "error",
+      "message": "unexpected token '`'; expected ':=', 'where' or '|'\n"
+    }
+  ],
+  "splice_action": "wrap",
+  "signature_deviation": false
+}

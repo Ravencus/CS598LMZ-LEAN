@@ -1,0 +1,23 @@
+{
+  "id": "proposition-31-2",
+  "type": "problem",
+  "source_note": "整数格点与一个带取整函数的和的极限问题",
+  "english_source_note": "A Limit Problem for Lattice Points and Floor Sums",
+  "callout_id": "整数格点与一个带取整函数的和的极限问题#5",
+  "english_title": "Proposition 3.1",
+  "statement_en": "$$\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor = 6+\\frac{8}{n}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "key_techniques": [
+    "exact evaluation of floor sums",
+    "lattice point counting",
+    "summation rearrangement"
+  ],
+  "prerequisites": [
+    "properties of the floor function",
+    "double sums",
+    "basic integer lattice geometry"
+  ],
+  "callout_body": "$$\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor = 6+\\frac{8}{n}$$"
+}

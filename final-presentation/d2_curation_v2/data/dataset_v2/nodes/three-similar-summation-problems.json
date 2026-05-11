@@ -1,0 +1,25 @@
+{
+  "id": "three-similar-summation-problems",
+  "type": "problem",
+  "source_note": "利用Dirichlet卷积法解决几个数论中求和问题",
+  "english_source_note": "Using Dirichlet Convolution for Number-Theoretic Sums",
+  "callout_id": "利用Dirichlet卷积法解决几个数论中求和问题#1",
+  "english_title": "Three Similar Summation Problems",
+  "statement_en": "1. Let $\\varphi(k)$ be Euler's totient function, the number of natural numbers not exceeding $k$ that are relatively prime to $k$. Compute $$\\sum_{k=1}^{n}\\varphi(k)\\left\\lfloor\\frac{n}{k}\\right\\rfloor.$$ 2. Compute $$\\sum_{k=1}^{n}\\mu(k)\\left\\lfloor\\frac{n}{k}\\right\\rfloor,$$ where $\\mu$ is the Mobius function. 3. Compute $$\\sum_{k=1}^{n}(-1)^{\\Omega(k)}\\left\\lfloor\\frac{n}{k}\\right\\rfloor,$$ where $\\Omega(k)$ denotes the number of distinct prime factors of $k$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "key_techniques": [
+    "Dirichlet convolution",
+    "arithmetic functions",
+    "summation with floor functions",
+    "Mobius inversion"
+  ],
+  "prerequisites": [
+    "Euler's totient function",
+    "Mobius function",
+    "Dirichlet convolution",
+    "basic multiplicative number theory"
+  ],
+  "callout_body": "1. 令$\\varphi(k)$为欧拉函数(Euler's totient function)，表示不超过k且与k互素的自然数的个数。求:$$\\sum_{k= 1}^{n}\\varphi(k)\\left \\lfloor\\frac{n}{k}\\right\\rfloor$$\n2. \n$$\\sum_{k= 1}^{n}\\mu(k)\\left \\lfloor\\frac{n}{k}\\right\\rfloor$$其中$\\mu$是莫比乌斯(Mobius function)函数\n3. \n$$\\sum_{k=1}^{n} (-1)^{\\Omega(k)} \\left \\lfloor\\frac{n}{k}\\right\\rfloor$$其中$\\Omega(k)$表示k含有多少个不同的素因子。"
+}

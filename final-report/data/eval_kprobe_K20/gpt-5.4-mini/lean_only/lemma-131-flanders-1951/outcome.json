@@ -1,0 +1,36 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 462.1,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 20,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "minpoly_matrix_mul_reverse_differ_by_at_most_X",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "unsolved goals\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B X Y : Matrix n n ℂ\nk : ℕ\nih : X * (Y * X) ^ k = (X * Y) ^ k * X\n⊢ (X * Y) ^ k * (X * (Y * X)) = (X * Y) ^ k * (X * Y) * X",
+  "total_cost_usd": 0.0,
+  "total_tokens": 2926048,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0b30d6de89.lean",
+      "line": 22,
+      "column": 47,
+      "severity": "error",
+      "message": "unsolved goals\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B X Y : Matrix n n ℂ\nk : ℕ\nih : X * (Y * X) ^ k = (X * Y) ^ k * X\n⊢ (X * Y) ^ k * (X * (Y * X)) = (X * Y) ^ k * (X * Y) * X"
+    }
+  ]
+}

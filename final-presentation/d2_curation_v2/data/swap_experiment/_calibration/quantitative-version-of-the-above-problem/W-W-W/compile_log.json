@@ -1,0 +1,52 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_8ecdbacbcabf.lean",
+      "line": 8,
+      "column": 68,
+      "severity": "error",
+      "message": "unexpected token 'import'; expected '{' or tactic"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_8ecdbacbcabf.lean",
+      "line": 8,
+      "column": 66,
+      "severity": "error",
+      "message": "unsolved goals\n⊢ ∃ C, ∀ (x : ℕ), 2 ≤ x → |primeReciprocalSum x - Real.log (Real.log ↑x)| ≤ C"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_8ecdbacbcabf.lean",
+      "line": 9,
+      "column": 2,
+      "severity": "error",
+      "message": "invalid 'import' command, it must be used in the beginning of the file\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_8ecdbacbcabf.lean",
+      "line": 8,
+      "column": 68,
+      "severity": "error",
+      "message": "unexpected token 'import'; expected '{' or tactic"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_8ecdbacbcabf.lean",
+      "line": 8,
+      "column": 66,
+      "severity": "error",
+      "message": "unsolved goals\n⊢ ∃ C, ∀ (x : ℕ), 2 ≤ x → |primeReciprocalSum x - Real.log (Real.log ↑x)| ≤ C"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_8ecdbacbcabf.lean",
+      "line": 9,
+      "column": 2,
+      "severity": "error",
+      "message": "invalid 'import' command, it must be used in the beginning of the file\n"
+    }
+  ],
+  "splice_action": "wrap",
+  "signature_deviation": false
+}

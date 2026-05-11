@@ -1,0 +1,25 @@
+{
+  "id": "example-14",
+  "type": "problem",
+  "source_note": "Kummer判别：对多种比值判别变形的统一",
+  "english_source_note": "Kummer's Test: A Unified View of Ratio-Type Tests",
+  "callout_id": "Kummer判别:对多种比值判别变形的统一#5",
+  "english_title": "Example 1.4",
+  "statement_en": "The series\n$$\\sum_{n\\geq 1} \\frac{n!e^n}{n^{n+p}}$$ converges when $p>\\frac{3}{2}$ and diverges when $p\\leq \\frac{3}{2}$. Indeed,\n$$\\frac{a_n}{a_{n+1}}=1+(p-1/2)\\frac{1}{n}+O(1/n^2).$$ Therefore:\n1. If $p>\\frac{3}{2}$, then $p-1/2>1$, so Raabe's test implies convergence.\n2. If $p=\\frac{3}{2}$, then $p-1/2=1$, so Gauss's test implies divergence.\n3. If $p<\\frac{3}{2}$, then $p-1/2<1$, so Raabe's test implies divergence.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "ratio asymptotic expansion",
+    "Raabe's test",
+    "Gauss's test",
+    "factorial-exponential term analysis"
+  ],
+  "prerequisites": [
+    "infinite series",
+    "big-O notation",
+    "Raabe's test",
+    "Gauss's test"
+  ],
+  "callout_body": "级数$\\sum_{n\\geq 1}\\frac{n!e^n}{n^{n+p}}$在$p>\\frac{3}{2}$的时候是收敛的，$p\\leq \\frac{3}{2}$的时候是发散的。首先，因为级数的$a_n$具有明显的乘法结构，因此考虑比值判别法。经过上面的分析我们知道，比值判别的精髓在于给出$\\frac{a_n}{a_{n+1}}$的渐近展开，此处$$\\frac{a_n}{a_{n+1}}= 1+(p-1/2)\\frac{1}{n}+O(1/n^2)$$于是结合目前已知的比值判别法：\n1. $p>\\frac{3}{2}$的时候，由于$p-1/2>1$那么Raabe判别告诉我们，级数收敛。\n2. $p=\\frac{3}{2}$的时候因为$p-1/2=1$那么根据Guass判别，级数发散。\n3. $p<\\frac{3}{2}$的时候因为$p-1/2<1$那么Raabe判别告诉我们，级数发散。"
+}

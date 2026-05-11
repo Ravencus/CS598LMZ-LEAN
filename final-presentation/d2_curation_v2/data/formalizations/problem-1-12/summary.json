@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-1-12",
+  "english_title": "Problem 1",
+  "statement_en": "Assume that \\(\\sum_{j=1}^{n} a_j = o\\left(\\sqrt{n}\\right)\\). Prove that\n\\[\n\\sum_j \\frac{a_j}{j}\n\\]\nconverges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  0\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem summable_of_partial_sums_little_o_sqrt\n    (a : ℕ → ℝ)\n    (h :\n      Filter.Tendsto\n        (fun n : ℕ =>\n          (Finset.sum (Finset.range n.succ) (fun j => a j.succ)) / Real.sqrt (n.succ : ℝ))\n        Filter.atTop\n        (𝓝 0)) :\n    Summable (fun j : ℕ => a j.succ / (j.succ : ℝ)) := by\n  sorry"
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-1-9",
+  "english_title": "Problem 1",
+  "statement_en": "The set of all complex trigonometric polynomials is dense in $L^p([a,b]\\to \\mathbb{C})$ for $1\\leq p<\\infty$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\nnoncomputable section\n\nstructure ComplexTrigPoly where\n  coeffs : ℤ → ℂ\n  support : Finset ℤ\n\ndef ComplexTrigPoly.eval (P : ComplexTrigPoly) (x : ℝ) : ℂ :=\n  Finset.sum P.support (fun n => P.coeffs n * Complex.exp (((n : ℂ) * (x : ℂ)) * Complex.I))\n\nabbrev intervalMeasure (a b : ℝ) : Measure ℝ :=\n  volume.restrict (Set.Icc a b)\n\ntheorem complexTrigonometricPolynomials_dense_Lp_interval\n    {a b : ℝ} {p : ℝ≥0∞}\n    (hp1 : (1 : ℝ≥0∞) ≤ p) (hp_top : p < ⊤) :\n    ∃ T : ComplexTrigPoly → MeasureTheory.Lp ℂ p (intervalMeasure a b), DenseRange T := by\n  sorry"
+}

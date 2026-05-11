@@ -1,0 +1,30 @@
+{
+  "problem_id": "dirichlet-convergence-test",
+  "english_title": "Dirichlet Convergence Test",
+  "statement_en": "Let $a_n:\\mathbb{N} \\to \\mathbb{R}$ and $b_n:\\mathbb{N} \\to \\mathbb{C}$. If $a_n$ decreases monotonically to $0$, and there exists a positive real number $M$ such that $\\left|\\sum_{n=1}^N b_n\\right|<M$ for every positive integer $N$, then the series $\\sum_{n\\geq 1} a_n b_n$ converges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  0\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem dirichlet_series_convergence\n    (a : ℕ → ℝ) (b : ℕ → ℂ)\n    (ha_nonneg : ∀ n : ℕ, 0 ≤ a n)\n    (ha_antitone : Antitone a)\n    (ha_tendsto : Filter.Tendsto a Filter.atTop (𝓝 0))\n    (hbounded : ∃ M : ℝ, 0 < M ∧ ∀ N : ℕ, ‖Finset.sum (Finset.range N) (fun n => b (n + 1))‖ < M) :\n    Summable (fun n : ℕ => (a (n + 1) : ℂ) * b (n + 1)) := by\n  sorry"
+}

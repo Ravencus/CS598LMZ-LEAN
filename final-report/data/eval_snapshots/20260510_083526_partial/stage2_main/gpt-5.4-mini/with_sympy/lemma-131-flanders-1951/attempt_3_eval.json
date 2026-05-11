@@ -1,0 +1,58 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 6,
+  "first_error": "unsolved goals\ncase C.a\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA✝ B✝ A B : Matrix n n ℂ\nc : ℂ\ni j : n\n⊢ ∑ j_1, B i j_1 * (algebraMap ℂ (Matrix n n ℂ)) c j_1 j = ∑ x, B x j * (algebraMap",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 14,
+      "column": 10,
+      "severity": "error",
+      "message": "unsolved goals\ncase C.a\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA✝ B✝ A B : Matrix n n ℂ\nc : ℂ\ni j : n\n⊢ ∑ j_1, B i j_1 * (algebraMap ℂ (Matrix n n ℂ)) c j_1 j = ∑ x, B x j * (algebraMap ℂ (Matrix n n ℂ)) c i x"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 35,
+      "column": 51,
+      "severity": "error",
+      "message": "unsolved goals\nn✝ : Type u_1\ninst✝¹ : Fintype n✝\ninst✝ : DecidableEq n✝\nA✝ B✝ A B : Matrix n✝ n✝ ℂ\nc : ℂ\nn : ℕ\nih : B * (aeval (A * B)) (C c * X ^ n) = (aeval (B * A)) (C c * X ^ n) * B → B * (A * B) ^ n = (B * A) ^ n * B\na✝ : B * (aeval (A * B)) (C c * X ^ (n + 1)) = (aeval (B * A)) (C c * X ^ (n + 1)) * B\n⊢ B * (aeval (A * B)) (C c * X ^ n) = (aeval (B * A)) (C c * X ^ n) * B"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 41,
+      "column": 10,
+      "severity": "error",
+      "message": "invalid 'calc' step, left-hand side is\n  B * (aeval (A * B)) ((monomial n) c) : Matrix n✝ n✝ ℂ\nbut is expected to be\n  B * (aeval (A * B)) (C c * X ^ (n + 1)) : Matrix n✝ n✝ ℂ"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 46,
+      "column": 10,
+      "severity": "error",
+      "message": "invalid 'calc' step, right-hand side is\n  (aeval (B * A)) ((monomial n) c) * B : Matrix n✝ n✝ ℂ\nbut is expected to be\n  (aeval (B * A)) (C c * X ^ (n + 1)) * B : Matrix n✝ n✝ ℂ"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 42,
+      "column": 41,
+      "severity": "error",
+      "message": "unsolved goals\nn✝ : Type u_1\ninst✝¹ : Fintype n✝\ninst✝ : DecidableEq n✝\nA✝ B✝ A B : Matrix n✝ n✝ ℂ\nn : ℕ\nc : ℂ\na✝ : B * (aeval (A * B)) (C c * X ^ n) = (aeval (B * A)) (C c * X ^ n) * B\nhpow : B * (A * B) ^ n = (B * A) ^ n * B\n⊢ B * ((algebraMap ℂ (Matrix n✝ n✝ ℂ)) c * (A * B) ^ n) = c • (B * (A * B) ^ n)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 46,
+      "column": 61,
+      "severity": "error",
+      "message": "unsolved goals\nn✝ : Type u_1\ninst✝¹ : Fintype n✝\ninst✝ : DecidableEq n✝\nA✝ B✝ A B : Matrix n✝ n✝ ℂ\nn : ℕ\nc : ℂ\na✝ : B * (aeval (A * B)) (C c * X ^ n) = (aeval (B * A)) (C c * X ^ n) * B\nhpow : B * (A * B) ^ n = (B * A) ^ n * B\n⊢ c • ((B * A) ^ n * B) = (algebraMap ℂ (Matrix n✝ n✝ ℂ)) c * (B * A) ^ n * B"
+    }
+  ]
+}

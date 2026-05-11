@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-21",
+  "english_title": "Lemma 2.1",
+  "statement_en": "$$|e(x)-1|\\leq 2\\pi |x|,\\forall x \\in \\mathbb{R}$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Complex.abs`\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem complex_exponential_sub_one_bound (x : ℝ) :\n    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by\n  sorry"
+}

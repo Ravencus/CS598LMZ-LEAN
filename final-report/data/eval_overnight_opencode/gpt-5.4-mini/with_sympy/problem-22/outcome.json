@@ -1,0 +1,31 @@
+{
+  "problem_id": "problem-22",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "signature_mismatch",
+  "overall_success": false,
+  "wall_seconds": 303.9,
+  "wall_exceeded": false,
+  "final_proof_source": "last_compiled_tool_call",
+  "mcp_calls": 7,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 0,
+  "first_error": null,
+  "total_cost_usd": 0.0,
+  "total_tokens": 376926,
+  "sympy_witnesses": [],
+  "errors_only": [],
+  "signature_ok": false,
+  "expected_theorem_name": "divergent_min_of_nonnegative_nonincreasing_divergent",
+  "audit": {
+    "reclassified_from": "lean_proof"
+  }
+}

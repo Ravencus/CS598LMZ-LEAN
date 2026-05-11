@@ -1,0 +1,5 @@
+I’m checking whether the statement is actually provable as written before I spend proof budget on a dead end.
+I’m looking for any existing digest or proof pattern, but this theorem looks suspiciously stronger than what the hypotheses support.
+This statement is false as written, so there is no valid Lean proof to produce from these hypotheses alone.
+
+Counterpoint: there are nonzero entire functions with prescribed zeros at `log n` and very small growth, so `hzero` plus `hgrowth` do not force `f = 0`. If you want, I can formalize a corrected version, for example by adding an actual accumulation point for the zeros or strengthening the growth/zero hypotheses.

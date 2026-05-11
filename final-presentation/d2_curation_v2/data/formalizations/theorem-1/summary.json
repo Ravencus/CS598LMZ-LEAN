@@ -1,0 +1,30 @@
+{
+  "problem_id": "theorem-1",
+  "english_title": "Theorem 1",
+  "statement_en": "Assume: (1) $f$ is a bounded uniformly continuous function on $E$. (2) For every $p\\in E$, there exists a sequence of independent and identically distributed random variables $X_n$ on a probability space $(\\Omega,\\mathcal{F},P)$ taking values in $E\\subseteq \\mathbb{R}$ such that $X_n\\sim F(p)$ and $p\\in E$ is the mean of this sequence. Assume\n$$Y_n = \\frac{X_1+\\cdots+X_n}{n}\\xrightarrow{P}{p}.$$ (3) The expectation $E(f(Y_n))$ exists for every $n\\in \\mathbb{N}$. Then\n$$||E(f(Y_n)) -f||_u \\to 0.$",
+  "difficulty": "hard",
+  "domain": "real analysis and probability theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen scoped BigOperators\nopen Filter MeasureTheory\n\ndef sampleMean {Ω : Type*} (X : ℕ → Ω → ℝ) (n : ℕ) : Ω → ℝ :=\n  fun ω => (Finset.sum (Finset.range n.succ) fun i => X i ω) / (n.succ : ℝ)\n\ndef ConvergesInProbabilityTo {Ω : Type*} [MeasurableSpace Ω]\n    (μ : Measure Ω) (Y : ℕ → Ω → ℝ) (p : ℝ) : Prop :=\n  ∀ ε : ℝ, 0 < ε →\n    Tendsto (fun n => μ {ω | ε ≤ ‖Y n ω - p‖}) atTop (nhds 0)\n\ndef IsIID {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω) (X : ℕ → Ω → ℝ) : Prop :=\n  True\n\ndef HasMeanOn (E : Set ℝ) {Ω : Type*} [MeasurableSpace Ω]\n    (μ : Measure Ω) (X : ℕ → Ω → ℝ) (p : ℝ) : Prop :=\n  p ∈ E ∧ ∀ n : ℕ, (∫ ω, X n ω ∂μ) = p\n\ndef supNormOn (E : Set ℝ) (g : E → ℝ) : ℝ :=\n  sSup (Set.range fun x : E => ‖g x‖)\n\ntheorem bounded_uniformly_continuous_expectation_uniform_convergence\n    (E : Set ℝ) (f : ℝ → ℝ) (g : ℕ → E → ℝ)\n    (h_bounded : ∃ C : ℝ, ∀ x ∈ E, ‖f x‖ ≤ C)\n    (h_uc : UniformContinuous fun x : E => f x.1)\n    (h_prob :\n      ∀ p : E,\n        ∃ (Ω : Type*) (_ : MeasurableSpace Ω) (μ : Measure Ω),\n          IsProbabilityMeasure μ ∧\n          ∃ X : ℕ → Ω → ℝ,\n            IsIID μ X ∧\n            HasMeanOn E μ X p.1 ∧\n            ConvergesInProbabilityTo μ (sampleMean X) p.1 ∧\n            (∀ n : ℕ, Integrable (fun ω => f (sampleMean X n ω)) μ) ∧\n            (∀ n : ℕ, g n p = (∫ ω, f (sampleMean X n ω) ∂μ))) :\n    Tendsto (fun n => supNormOn E (fun p => g n p - f p.1)) atTop (nhds 0) := by\n  sorry"
+}

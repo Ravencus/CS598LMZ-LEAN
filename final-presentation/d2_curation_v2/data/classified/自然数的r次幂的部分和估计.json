@@ -1,0 +1,218 @@
+{
+  "note_title": "自然数的r次幂的部分和估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "自然数的r次幂的部分和估计#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "求极限:\n$$\\lim_{N \\to \\infty} N\\sum_{n>N} \\frac{1}{n^2}$$",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "自然数的r次幂的部分和估计#1",
+        "classification": "problem",
+        "english_title": "Problem 0",
+        "if_problem": {
+          "statement_en": "Compute the limit:\n$$\\lim_{N \\to \\infty} N\\sum_{n>N} \\frac{1}{n^2}.$$",
+          "problem_type": "exercise",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "comparison with improper integrals",
+            "asymptotics of tail sums"
+          ],
+          "prerequisites": [
+            "convergence of p-series",
+            "basic limit computation",
+            "integral test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#2",
+      "type": "question",
+      "title": "转换以后的问题",
+      "body": "求$$S(N):=\\zeta(2)-\\sum_{n\\leq N}\\frac{1}{n^2}$$的精确到$\\frac{1}{N}$系数的渐近展开。",
+      "position_char": 404,
+      "position_line": 17,
+      "classification_result": {
+        "id": "自然数的r次幂的部分和估计#2",
+        "classification": "problem",
+        "english_title": "Transformed Problem",
+        "if_problem": {
+          "statement_en": "Find an asymptotic expansion of\n$$S(N):=\\zeta(2)-\\sum_{n\\leq N}\\frac{1}{n^2}$$\nwith the coefficient of $\\frac{1}{N}$ determined exactly.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Euler-Maclaurin summation",
+            "tail expansion of zeta-type series"
+          ],
+          "prerequisites": [
+            "Riemann zeta function",
+            "asymptotic expansion",
+            "summation formulas"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#3",
+      "type": "note",
+      "title": "关于广义调和数一般的渐近结果",
+      "body": "如果$r>0,r \\neq 1$的时候，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right)$$\n如果$r=1$的时候,$$\\sum_{k=1}^n k^{-1}=\\gamma+\\log(n) + \\frac{1}{2} n^{-1}-\\frac{1}{12} n^{-2}+O\\left(n^{-4}\\right)$$",
+      "position_char": 543,
+      "position_line": 22,
+      "classification_result": {
+        "id": "自然数的r次幂的部分和估计#3",
+        "classification": "problem",
+        "english_title": "General Asymptotic Results for Generalized Harmonic Numbers",
+        "if_problem": {
+          "statement_en": "For $r>0$ with $r \\neq 1$,\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).$$\nFor $r=1$,\n$$\\sum_{k=1}^n k^{-1}=\\gamma+\\log(n) + \\frac{1}{2} n^{-1}-\\frac{1}{12} n^{-2}+O\\left(n^{-4}\\right).$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Euler-Maclaurin summation",
+            "Bernoulli number correction terms"
+          ],
+          "prerequisites": [
+            "generalized harmonic numbers",
+            "Riemann zeta function",
+            "Euler-Maclaurin formula",
+            "big-O notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#4",
+      "type": "note",
+      "title": "r>1时候渐近展开前几项",
+      "body": "如果$r>1$，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right)$$",
+      "position_char": 860,
+      "position_line": 30,
+      "classification_result": {
+        "id": "自然数的r次幂的部分和估计#4",
+        "classification": "problem",
+        "english_title": "First Terms of the Asymptotic Expansion for r > 1",
+        "if_problem": {
+          "statement_en": "If $r>1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Euler-Maclaurin summation",
+            "series remainder estimation"
+          ],
+          "prerequisites": [
+            "Riemann zeta function",
+            "asymptotic expansion",
+            "big-O notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#5",
+      "type": "note",
+      "title": "r>1时候求和的不等式形式",
+      "body": "如果$r>1$，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n)$$\n其中余项$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}$$",
+      "position_char": 2348,
+      "position_line": 51,
+      "classification_result": {
+        "id": "自然数的r次幂的部分和估计#5",
+        "classification": "problem",
+        "english_title": "Inequality Form of the Summation for r > 1",
+        "if_problem": {
+          "statement_en": "If $r>1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n),$$\nwhere the remainder satisfies\n$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Euler-Maclaurin summation with explicit remainder",
+            "remainder bounds"
+          ],
+          "prerequisites": [
+            "Riemann zeta function",
+            "Bernoulli numbers",
+            "error estimation",
+            "big-O and explicit inequalities"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#6",
+      "type": "note",
+      "title": "0<r<1时候渐近展开前几项",
+      "body": "如果$0<r<1$，\n$$\\sum_{k=1}^n k^{-r}=\\frac{1}{1-r} n^{1-r}+\\zeta(r)+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n)$$\n其中余项$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}$$",
+      "position_char": 2670,
+      "position_line": 61,
+      "classification_result": {
+        "id": "自然数的r次幂的部分和估计#6",
+        "classification": "problem",
+        "english_title": "First Terms of the Asymptotic Expansion for 0 < r < 1",
+        "if_problem": {
+          "statement_en": "If $0<r<1$, then\n$$\\sum_{k=1}^n k^{-r}=\\frac{1}{1-r} n^{1-r}+\\zeta(r)+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n),$$\nwhere the remainder satisfies\n$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Euler-Maclaurin summation",
+            "analytic continuation viewpoint for zeta values",
+            "explicit remainder estimation"
+          ],
+          "prerequisites": [
+            "generalized harmonic sums",
+            "Riemann zeta function",
+            "Euler-Maclaurin formula",
+            "error bounds"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#7",
+      "type": "question",
+      "title": "问题2",
+      "body": "求$$\\sum_{k\\leq n}\\sqrt{k}$$的渐近展开，特别是需要得到其常数项的渐近系数。",
+      "position_char": 3412,
+      "position_line": 73,
+      "classification_result": {
+        "id": "自然数的r次幂的部分和估计#7",
+        "classification": "problem",
+        "english_title": "Problem 2",
+        "if_problem": {
+          "statement_en": "Find an asymptotic expansion of\n$$\\sum_{k\\leq n}\\sqrt{k},$$\nespecially determining the constant term in the asymptotic expansion.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Euler-Maclaurin summation",
+            "power-sum asymptotics"
+          ],
+          "prerequisites": [
+            "asymptotic expansion",
+            "summation formulas",
+            "basic properties of zeta values"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"自然数的r次幂的部分和估计#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 0\",\n    \"if_problem\": {\n      \"statement_en\": \"Compute the limit:\\n$$\\\\lim_{N \\\\to \\\\infty} N\\\\sum_{n>N} \\\\frac{1}{n^2}.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"comparison with improper integrals\",\n        \"asymptotics of tail sums\"\n      ],\n      \"prerequisites\": [\n        \"convergence of p-series\",\n        \"basic limit computation\",\n        \"integral test\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"自然数的r次幂的部分和估计#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Transformed Problem\",\n    \"if_problem\": {\n      \"statement_en\": \"Find an asymptotic expansion of\\n$$S(N):=\\\\zeta(2)-\\\\sum_{n\\\\leq N}\\\\frac{1}{n^2}$$\\nwith the coefficient of $\\\\frac{1}{N}$ determined exactly.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Euler-Maclaurin summation\",\n        \"tail expansion of zeta-type series\"\n      ],\n      \"prerequisites\": [\n        \"Riemann zeta function\",\n        \"asymptotic expansion\",\n        \"summation formulas\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"自然数的r次幂的部分和估计#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"General Asymptotic Results for Generalized Harmonic Numbers\",\n    \"if_problem\": {\n      \"statement_en\": \"For $r>0$ with $r \\\\neq 1$,\\n$$\\\\sum_{k=1}^n k^{-r}=\\\\zeta(r)+\\\\frac{1}{1-r} n^{1-r}+\\\\frac{1}{2} n^{-r}-\\\\frac{r}{12} n^{-r-1}+O\\\\left(n^{-r-3}\\\\right).$$\\nFor $r=1$,\\n$$\\\\sum_{k=1}^n k^{-1}=\\\\gamma+\\\\log(n) + \\\\frac{1}{2} n^{-1}-\\\\frac{1}{12} n^{-2}+O\\\\left(n^{-4}\\\\right).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Euler-Maclaurin summation\",\n        \"Bernoulli number correction terms\"\n      ],\n      \"prerequisites\": [\n        \"generalized harmonic numbers\",\n        \"Riemann zeta function\",\n        \"Euler-Maclaurin formula\",\n        \"big-O notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"自然数的r次幂的部分和估计#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"First Terms of the Asymptotic Expansion for r > 1\",\n    \"if_problem\": {\n      \"statement_en\": \"If $r>1$, then\\n$$\\\\sum_{k=1}^n k^{-r}=\\\\zeta(r)+\\\\frac{1}{1-r} n^{1-r}+\\\\frac{1}{2} n^{-r}-\\\\frac{r}{12} n^{-r-1}+O\\\\left(n^{-r-3}\\\\right).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Euler-Maclaurin summation\",\n        \"series remainder estimation\"\n      ],\n      \"prerequisites\": [\n        \"Riemann zeta function\",\n        \"asymptotic expansion\",\n        \"big-O notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"自然数的r次幂的部分和估计#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Inequality Form of the Summation for r > 1\",\n    \"if_problem\": {\n      \"statement_en\": \"If $r>1$, then\\n$$\\\\sum_{k=1}^n k^{-r}=\\\\zeta(r)+\\\\frac{1}{1-r} n^{1-r}+\\\\frac{1}{2} n^{-r}-\\\\frac{r}{12} n^{-r-1}+E_r(n),$$\\nwhere the remainder satisfies\\n$$|E_r(n)|<\\\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Euler-Maclaurin summation with explicit remainder\",\n        \"remainder bounds\"\n      ],\n      \"prerequisites\": [\n        \"Riemann zeta function\",\n        \"Bernoulli numbers\",\n        \"error estimation\",\n        \"big-O and explicit inequalities\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"自然数的r次幂的部分和估计#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"First Terms of the Asymptotic Expansion for 0 < r < 1\",\n    \"if_problem\": {\n      \"statement_en\": \"If $0<r<1$, then\\n$$\\\\sum_{k=1}^n k^{-r}=\\\\frac{1}{1-r} n^{1-r}+\\\\zeta(r)+\\\\frac{1}{2} n^{-r}-\\\\frac{r}{12} n^{-r-1}+E_r(n),$$\\nwhere the remainder satisfies\\n$$|E_r(n)|<\\\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Euler-Maclaurin summation\",\n        \"analytic continuation viewpoint for zeta values\",\n        \"explicit remainder estimation\"\n      ],\n      \"prerequisites\": [\n        \"generalized harmonic sums\",\n        \"Riemann zeta function\",\n        \"Euler-Maclaurin formula\",\n        \"error bounds\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"自然数的r次幂的部分和估计#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Find an asymptotic expansion of\\n$$\\\\sum_{k\\\\leq n}\\\\sqrt{k},$$\\nespecially determining the constant term in the asymptotic expansion.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Euler-Maclaurin summation\",\n        \"power-sum asymptotics\"\n      ],\n      \"prerequisites\": [\n        \"asymptotic expansion\",\n        \"summation formulas\",\n        \"basic properties of zeta values\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

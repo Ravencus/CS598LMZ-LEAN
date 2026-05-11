@@ -1,0 +1,24 @@
+{
+  "id": "exercise-15",
+  "type": "problem",
+  "source_note": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "english_source_note": "Deducing One Series Convergence from Another",
+  "callout_id": "由一个级数收敛证明另一个有关级数的收敛问题#5",
+  "english_title": "Exercise 1.5",
+  "statement_en": "Assume $\\sum_{n\\geq 1} a_n$ converges absolutely, and let $p>1/2$. Prove that $$\\sum_{n\\geq 1} \\frac{\\sqrt{|a_n|}}{n^p}<+\\infty.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "split the index set into two cases",
+    "comparison test",
+    "Cauchy-Schwarz as an alternative method"
+  ],
+  "prerequisites": [
+    "absolute convergence",
+    "comparison test",
+    "p-series convergence",
+    "Cauchy-Schwarz inequality"
+  ],
+  "callout_body": "[[Riemann-Lebesgue引理的一个特殊情况#^abe598]]当中有这样一个问题：\n\n假设$\\sum_{n\\geq 1} a_n$绝对收敛，并且$p>1/2$，证明$$\\sum_{n\\geq 1} \\frac{\\sqrt{|a_n|}}{n^p}<+\\infty$$\n除了利用柯西不等式以外，我们还可以尝试用本文当中的思路解决问题。\n\n令$M:=\\{n:\\frac{\\sqrt{|a_n|}}{n^p}\\leq |a_n|\\}$于是当$n\\in M^c$的时候$|a_n|\\leq \\frac{1}{n^{2p}}$，从而$\\frac{\\sqrt{|a_n|}}{n^p}\\leq \\frac{1}{n^{2p}}$。于是$$\\begin{aligned}\\sum_{n\\geq 1} \\frac{\\sqrt{|a_n|}}{n^p}&= \\sum_{n\\in M}*+\\sum_{n\\in M^c}*\\\\&\\leq \\sum_{n\\in M} |a_n|+\\sum_{n\\in M^c} \\frac{1}{n^{2p}}\\\\&\\leq \\sum_{n\\geq 1}|a_n|+\\sum_{n\\geq 1}\\frac{1}{n^{2p}}<+\\infty\\end{aligned}$$"
+}

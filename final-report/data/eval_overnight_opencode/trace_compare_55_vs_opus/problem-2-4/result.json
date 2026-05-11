@@ -1,0 +1,11 @@
+{
+  "problem_id": "problem-2-4",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "compile_fail",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "same_plan",
+  "divergence": "instruction_following",
+  "evidence": "Both traces converged on the same Cesaro/convolution proof strategy: use `Filter.Tendsto.cesaro` with an `n+1` shift, decompose around `x k - A` and `y k - B`, and establish boundedness of the error sequence (Trace A calls 3-9; Trace B calls 5-10). The visible split is that Trace B began emitting `s",
+  "wall_seconds": 19.92
+}

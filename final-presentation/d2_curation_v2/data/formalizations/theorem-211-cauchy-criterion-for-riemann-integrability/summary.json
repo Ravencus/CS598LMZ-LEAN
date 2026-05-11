@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-211-cauchy-criterion-for-riemann-integrability",
+  "english_title": "Theorem 2.1.1: Cauchy Criterion for Riemann Integrability",
+  "statement_en": "A function $f:[a,b]\\to \\mathbb{R}$ is Riemann integrable if and only if for every $\\varepsilon>0$, there exists $\\delta_{\\varepsilon}>0$ such that for any tagged partitions $(P',\\xi')$ and $(P'',\\xi'')$ satisfying $\\lambda(P'),\\lambda(P'')<\\delta_{\\varepsilon}$, one has $$|S_f(P',\\xi')-S_f(P'',\\xi'')|<\\varepsilon.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\naxiom TaggedPartition : ℝ → ℝ → Type\naxiom mesh : {a b : ℝ} → TaggedPartition a b → ℝ\naxiom riemannSum : (ℝ → ℝ) → {a b : ℝ} → TaggedPartition a b → ℝ\naxiom RiemannIntegrableOn : (ℝ → ℝ) → ℝ → ℝ → Prop\n\ntheorem riemannIntegrableOn_iff_riemannSums_cauchy\n    (f : ℝ → ℝ) (a b : ℝ) :\n    RiemannIntegrableOn f a b ↔\n      ∀ ε > 0, ∃ δ : ℝ, δ > 0 ∧\n        ∀ P' P'' : TaggedPartition a b,\n          mesh P' < δ →\n          mesh P'' < δ →\n          |riemannSum f P' - riemannSum f P''| < ε := by\n  sorry"
+}

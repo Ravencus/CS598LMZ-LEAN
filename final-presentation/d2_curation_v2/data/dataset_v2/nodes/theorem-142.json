@@ -1,0 +1,22 @@
+{
+  "id": "theorem-142",
+  "type": "problem",
+  "source_note": "无理测度的定义以及基本的命题",
+  "english_source_note": "Irrationality Measure: Definition and Basics",
+  "callout_id": "无理测度的定义以及基本的命题#8",
+  "english_title": "Theorem 1.4.2",
+  "statement_en": "Let the irrational real number $\\alpha$ have continued fraction expansion $[a_0;a_1,a_2,\\cdots]$. Then $\\alpha$ is badly approximable if and only if there exists a positive real constant $C$ such that $$a_n\\leq C,\\forall n \\in \\mathbb{N}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "continued fractions",
+    "estimates using convergents"
+  ],
+  "prerequisites": [
+    "definition of badly approximable numbers",
+    "continued fraction expansion",
+    "properties of convergents"
+  ],
+  "callout_body": "设实无理数$\\alpha$写成连分数为$[a_0;a_1,a_2,\\cdots]$是badly approximable的数，当且仅当存在正实数$C$使得$$a_n\\leq C,\\forall n \\in \\mathbb{N}$$"
+}

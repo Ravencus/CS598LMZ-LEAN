@@ -1,0 +1,7 @@
+I’ll work this as a Lean proof task, but first I’m checking the underlying mathematical shape. The key question is whether the stated theorem is actually true under only monotonicity and divergence assumptions.
+I found a mathematical obstruction: the statement is false. Monotonicity alone still allows alternating very long plateaus where one sequence contributes mass while the other has already dropped much lower, so both series can diverge while the pointwise minimum is summable.
+No valid Lean proof exists for the given signature: the theorem is false.
+
+Counterexample idea: build nonincreasing step sequences on very long blocks. On even blocks, make `α` small but still much larger than `β`, and choose the block length so `α` contributes about `1` while `β` contributes about `2^-k`. On odd blocks, reverse the roles. Since later blocks can be made arbitrarily longer while values keep decreasing, both `∑ α n` and `∑ β n` diverge, but `∑ min (α n) (β n)` is bounded by a geometric series.
+
+So I cannot honestly provide a compiling `FINAL_PROOF` for this theorem without using an inconsistency, `axiom`, `sorry`, or changing the statement.

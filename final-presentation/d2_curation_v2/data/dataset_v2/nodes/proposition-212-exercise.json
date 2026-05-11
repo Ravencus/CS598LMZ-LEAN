@@ -1,0 +1,21 @@
+{
+  "id": "proposition-212-exercise",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#15",
+  "english_title": "Proposition 2.1.2 (Exercise)",
+  "statement_en": "For sufficiently large $n$, suppose two real sequences satisfy $$x_n\\geq y_n$$ and both limits exist. Then necessarily $$\\lim_{n\\to \\infty} x_n \\geq \\lim_{n\\to \\infty} y_n.$$",
+  "problem_type": "exercise",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "order preservation under limits",
+    "limit laws"
+  ],
+  "prerequisites": [
+    "limits of real sequences",
+    "basic order properties"
+  ],
+  "callout_body": "对于足够大的$n$,两个实的序列满足$$x_n\\geq y_n$$并且两个序列的极限都存在，那么一定有$$\\lim_{n\\to \\infty} x_n \\geq \\lim_{n\\to \\infty} y_n$$"
+}

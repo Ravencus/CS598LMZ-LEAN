@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "english_title": "Lemma 1.3.1 (Flanders, 1951)",
+  "statement_en": "Let $A,B\\in M_{n}(\\mathbb{C})$. Then the minimal polynomials of $AB$ and $BA$ differ by at most a factor of $x$.",
+  "difficulty": "hard",
+  "domain": "linear algebra",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Polynomial\n\ntheorem minpoly_matrix_mul_reverse_differ_by_at_most_X\n    {n : Type*} [Fintype n] [DecidableEq n]\n    (A B : Matrix n n ℂ) :\n    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧\n    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by\n  sorry"
+}

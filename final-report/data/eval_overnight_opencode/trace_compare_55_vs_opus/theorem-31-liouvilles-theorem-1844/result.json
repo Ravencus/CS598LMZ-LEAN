@@ -1,0 +1,11 @@
+{
+  "problem_id": "theorem-31-liouvilles-theorem-1844",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "compile_fail",
+  "plan_relation": "same_plan",
+  "divergence": "search",
+  "evidence": "Both traces pursue the same decomposition: prove α irrational from degree ≥ 2, clear denominators via `IsLocalization.integerNormalization`, show the integer polynomial has α as a root, then use Mathlib's Liouville-style lower-bound lemma. Trace A reaches the `Liouville.exists_pos_real_of_irrational",
+  "wall_seconds": 12.86
+}

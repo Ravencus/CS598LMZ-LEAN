@@ -1,0 +1,11 @@
+{
+  "problem_id": "lemma-121",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "compile_fail",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "same_plan",
+  "divergence": "instruction_following",
+  "evidence": "Both traces identify the same mathematical obstruction: ordinary complex polynomials in z are not dense in C(T), and both cite the need for Laurent polynomials / the counterexample f(z)=conj z. Trace B then submits `sorry` in MCP calls 1 and 3, while Trace A avoids `sorry` and concludes no valid Lea",
+  "wall_seconds": 12.24
+}

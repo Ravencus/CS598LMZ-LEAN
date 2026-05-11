@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_703cd65b95ef.lean",
+      "line": 5,
+      "column": 6,
+      "severity": "error",
+      "message": "Unknown constant `Set.closure`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_703cd65b95ef.lean",
+      "line": 5,
+      "column": 6,
+      "severity": "error",
+      "message": "Unknown constant `Set.closure`\n"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "problem_id": "problem-1-7",
+  "model": "claude-opus-4-7",
+  "condition": "with_sympy",
+  "outcome": "instruction_violation",
+  "overall_success": false,
+  "wall_seconds": 134.86,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": true,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": true,
+  "expected_theorem_name": "sum_sin_div_nsq_tendsto_half",
+  "signature_ok": true,
+  "sympy_emitted": true,
+  "sympy_verified": false,
+  "n_errors": 0,
+  "first_error": null,
+  "total_cost_usd": 0.512537,
+  "total_tokens": 269162,
+  "sympy_witnesses": [
+    {
+      "block": {
+        "kind": "limit",
+        "var": "n",
+        "expression": "Sum(sin(k/n**2), (k, 0, n))",
+        "point": "oo",
+        "expected": "1/2"
+      },
+      "verifier": {
+        "correct": false,
+        "computed": null,
+        "error": "import_failed: No module named 'sympy'"
+      }
+    }
+  ],
+  "errors_only": []
+}

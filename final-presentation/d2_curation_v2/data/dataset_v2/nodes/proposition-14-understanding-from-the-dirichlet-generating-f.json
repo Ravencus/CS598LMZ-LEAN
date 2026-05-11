@@ -1,0 +1,24 @@
+{
+  "id": "proposition-14-understanding-from-the-dirichlet-generating-f",
+  "type": "problem",
+  "source_note": "Wintner mean value theorem",
+  "english_source_note": "Wintner Mean Value Theorem",
+  "callout_id": "Wintner mean value theorem#4",
+  "english_title": "Proposition 1.4: Understanding from the Dirichlet Generating Function",
+  "statement_en": "If $f=g*1$, then on the level of Dirichlet generating functions one has $$L(f,s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}=\\zeta(s)\\sum_{n\\geq 1}\\frac{g(n)}{n^s},\\quad \\operatorname{Re}(s)>1.$$ If moreover the series $$\\sum_{n\\geq 1}\\frac{g(n)}{n}$$ converges absolutely, then the mean value $M(f)$ exists and equals $$\\sum_{n\\geq 1}\\frac{g(n)}{n}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "Dirichlet generating functions",
+    "Euler factorization via convolution",
+    "mean value theorem for arithmetic functions"
+  ],
+  "prerequisites": [
+    "Dirichlet convolution",
+    "Dirichlet series",
+    "Riemann zeta function",
+    "absolute convergence"
+  ],
+  "callout_body": "因为如果$f=g*1$，那么这个关系体现在Dirichlet生成函数上就是$$L(f,s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}=\\zeta(s)\\sum_{n\\geq 1}\\frac{g(n)}{n^s},\\text{Re}(s)>1$$然后$g$满足级数$\\sum_{n\\geq 1}\\frac{g(n)}{n}$绝对收敛那么$M(f)$存在且等于$\\sum_{n\\geq 1}\\frac{g(n)}{n}$"
+}

@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_eb4b9b5d0b27.lean",
+      "line": 10,
+      "column": 5,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_eb4b9b5d0b27.lean",
+      "line": 12,
+      "column": 7,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Measure.restrict', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_eb4b9b5d0b27.lean",
+      "line": 16,
+      "column": 22,
+      "severity": "error",
+      "message": "expected token\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_eb4b9b5d0b27.lean",
+      "line": 10,
+      "column": 5,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_eb4b9b5d0b27.lean",
+      "line": 12,
+      "column": 7,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Measure.restrict', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_eb4b9b5d0b27.lean",
+      "line": 16,
+      "column": 22,
+      "severity": "error",
+      "message": "expected token\n"
+    }
+  ]
+}

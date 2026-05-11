@@ -1,0 +1,7 @@
+["an-epsilon-of-room-hub", "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub", "interchanging-sums-and-integrals-hub", "piecewise-estimates-hub"]
+- an-epsilon-of-room-hub: The intended proof is an approximation argument, replacing an arbitrary continuous function by finite polynomial/trigonometric approximants.
+- dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub: Fejer kernels are the standard analytic tool for uniformly approximating continuous functions on the circle by trigonometric polynomials.
+- interchanging-sums-and-integrals-hub: The Fejer-convolution proof expands the kernel as a finite Fourier sum and interchanges the finite sum with the integral.
+- piecewise-estimates-hub: Uniform convergence of the approximate identity is proved by splitting the circle into a small neighborhood, controlled by uniform continuity, and its complement, controlled by kernel decay.
+
+Note: as stated with ordinary `Polynomial ℂ` in `z` only, the Lean theorem is false for arbitrary continuous `f : Torus → ℂ`; one needs trigonometric/Laurent polynomials or extra holomorphic hypotheses.

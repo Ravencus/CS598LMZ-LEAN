@@ -1,0 +1,2 @@
+{"label":"same_plan_search_diff","evidence":"BIG succeeded by identifying the existing Mathlib/API route `hx_alg.hasIrrationalityMeasure_two hx_irr`. SMALL only tried `#check` guesses such as `Real.irrationality_measure_two`, `Real.irrationalityMeasure`, and `HasIrrationalityMeasure`, then timed out without finding the applicable theorem."}
+Both traces are searching for a pre-existing irrationality-measure/Roth-style Mathlib result rather than developing a new proof. The failure is name/API discovery: SMALL never reached the instance or namespace form that BIG used.

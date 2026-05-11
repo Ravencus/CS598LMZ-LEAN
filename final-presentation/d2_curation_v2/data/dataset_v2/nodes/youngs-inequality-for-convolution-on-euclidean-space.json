@@ -1,0 +1,23 @@
+{
+  "id": "youngs-inequality-for-convolution-on-euclidean-space",
+  "type": "problem",
+  "source_note": "approximation to the identity",
+  "english_source_note": "Approximation to the Identity",
+  "callout_id": "approximation to the identity#3",
+  "english_title": "Young's Inequality for Convolution on Euclidean Space",
+  "statement_en": "Let $1\\leq p,q,r \\leq \\infty$ satisfy $\\frac{1}{p}+\\frac{1}{q} = \\frac{1}{r} + 1$. Then\n$$||f*g||_{L^r}\\leq ||g||_{L^p}||f||_{L^q}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Holder's inequality",
+    "Minkowski integral inequality",
+    "convolution estimates"
+  ],
+  "prerequisites": [
+    "Lp spaces",
+    "convolution",
+    "Holder's inequality"
+  ],
+  "callout_body": "$1\\leq p,q,r \\leq \\infty,\\frac{1}{p}+\\frac{1}{q} = \\frac{1}{r} + 1$,那么$$||f*g||_{L^r}\\leq ||g||_{L^p}||f||_{L^q}$$"
+}

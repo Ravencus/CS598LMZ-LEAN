@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_d2d8e12a30aa.lean",
+      "line": 6,
+      "column": 12,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_d2d8e12a30aa.lean",
+      "line": 6,
+      "column": 12,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','\n"
+    }
+  ]
+}

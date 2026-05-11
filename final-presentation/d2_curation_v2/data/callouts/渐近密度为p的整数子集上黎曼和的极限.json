@@ -1,0 +1,33 @@
+{
+  "note_title": "渐近密度为p的整数子集上黎曼和的极限",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "渐近密度为p的整数子集上黎曼和的极限#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "设$\\mathcal{A}$为正整数集的子集，对任意$0\\leq a\\leq b\\leq 1$定义$$S_n(a,b):=\\#\\{k\\in\\mathcal{A}:an\\leq k\\leq bn \\}$$若$\\frac{S_n(0,1)}{n}$的极限存在且为$p$，证明：\n\n1. 若$0<a<b<1$证明$\\lim_{n\\to +\\infty}\\frac{S_n(a,b)}{n}$存在并求其值。\n2. 若$f$在$[0,1]$上黎曼可积，证明$$\\lim_{n\\to \\infty}\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}f\\left(\\frac{k}{n}\\right)=p\\int_0^1 f(x)\\,dx$$",
+      "position_char": 50,
+      "position_line": 8
+    },
+    {
+      "id": "渐近密度为p的整数子集上黎曼和的极限#2",
+      "type": "tip",
+      "title": "想法1.1",
+      "body": "我们可以把第一个问题的结果$\\frac{S_n(a,b)}{n}\\to p(b-a)$看成是$$\\frac{S_n(a,b)}{n}=\\frac{1}{n}\\sum_{k\\in \\mathcal{A},1\\leq k\\leq n}1_{[a,b]}\\left(\\frac{k}{n}\\right)\\to p(b-a)=p\\int_0^{1}1_{[a,b]}(x)\\,dx$$也就是说，我们验证了，我们最终要证明的命题对于任意的$I\\subseteq [0,1]$的指标函数$1_{I}(x)$成立。那么根据积分的线性性质，我们可以证明对任意的阶梯函数(step function)$$\\varphi(x):=\\sum_{i=1}^m c_i1_{I_i}(x)$$都成立（其中$I_i$是相交的闭区间$[0,1]$的子区间）。那么接下来就很简单了，闭区间上的黎曼可积函数都可以被两个阶梯函数夹住（详细参考[[模1均匀分布与Weyl判别#^7be3fb]]），于是整个问题就算是结束了。",
+      "position_char": 1276,
+      "position_line": 26
+    },
+    {
+      "id": "渐近密度为p的整数子集上黎曼和的极限#3",
+      "type": "error",
+      "title": "问题1.2: 不可以把黎曼可积替换为Lebesgue可积",
+      "body": "对于Dirichlet函数$$D(x):=\\begin{cases}1&x\\in \\mathbb{Q}\\cap [0,1]\\\\0&x\\notin \\mathbb{Q}\\cap [0,1]\\end{cases}$$它由于在$[0,1]$上任何一个点处都不连续，因此根据Lebesgue的黎曼可积判别法，从而这是一个黎曼不可积的函数。但是我们的确可以找到阶梯函数$\\varphi(x)\\equiv 0$来对该函数进行$L^1$逼近。因为$D(x)$在$[0,1]$上是几乎处处为0的，从而$$\\int_{[0,1]}|D(x)-\\varphi(x)|\\,dx=0$$但是在我们当前的这个问题当中,令$\\mathcal{A}$就为全体正整数集本身，于是$$\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}D(k/n)=1$$而阶梯函数给出的和$\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}\\varphi(k/n)=0$这两边是对不上的。倘若我们想要执行“想法1.1”当中的用阶梯函数逼近$D$的想法，凭借三角不等式就会发现误差上的问题。注意以下所有积分都是Lebesgue积分。$$\\begin{aligned}\\left|\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}D(k/n)-p\\int_0^1 D(x)\\,dx\\right|&\\leq \\left|\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}D(k/n)-\\varphi(k/n)\\right|\\\\&+\\left|\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}\\varphi(k/n)-p\\int_0^1 \\varphi(k/n)\\right|\\\\&+p\\left|\\int_0^1 D(x)-\\varphi(x)\\,dx\\right|\\\\&\\leq \\left|\\frac{1}{n}\\sum_{k\\leq n,k\\in \\mathcal{A}}D(k/n)-\\varphi(k/n)\\right| \\end{aligned}$$但是这根本没用，因为最后的误差永远无法缩小到比$1$更小，事实上对于Lebesgue积分以及$D(x)$来说“问题0”当中的结论也根本不成立。",
+      "position_char": 1827,
+      "position_line": 32
+    }
+  ]
+}

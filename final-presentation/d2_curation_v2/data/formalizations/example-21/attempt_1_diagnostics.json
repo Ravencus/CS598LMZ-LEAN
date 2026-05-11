@@ -1,0 +1,43 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 5,
+      "column": 24,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 11,
+      "column": 8,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 13,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 5,
+      "column": 24,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 11,
+      "column": 8,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    }
+  ]
+}

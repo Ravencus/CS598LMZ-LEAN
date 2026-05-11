@@ -1,0 +1,2 @@
+[]
+No catalogue hub is genuinely relevant; the proof is just elementary natural-number arithmetic and strict monotonicity of multiplication by a positive constant, not an analysis strategy.

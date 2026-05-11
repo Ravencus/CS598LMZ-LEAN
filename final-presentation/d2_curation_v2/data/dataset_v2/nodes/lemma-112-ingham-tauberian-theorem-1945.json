@@ -1,0 +1,25 @@
+{
+  "id": "lemma-112-ingham-tauberian-theorem-1945",
+  "type": "problem",
+  "source_note": "素数定理的一些等价命题",
+  "english_source_note": "Equivalent Statements of the Prime Number Theorem",
+  "callout_id": "素数定理的一些等价命题#3",
+  "english_title": "Lemma 1.1.2: Ingham Tauberian Theorem (1945)",
+  "statement_en": "If an arithmetic function $f$ is the Dirichlet convolution sum of another arithmetic function $g$, namely $$f=1*g,$$ and let $F(x):=\\sum_{n\\leq x}f(n)$ and $G(x):=\\sum_{n\\leq x}g(n)$. If $$F(x)=Ax+o(x),$$ then $$\\sum_{n\\leq x}\\frac{g(n)}{n}=\\frac{G(x)}{x}+A+o(1).$$",
+  "problem_type": "lemma",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "Tauberian arguments",
+    "Dirichlet convolution",
+    "partial summation",
+    "asymptotic analysis"
+  ],
+  "prerequisites": [
+    "arithmetic functions",
+    "Dirichlet convolution",
+    "summatory functions",
+    "little-o notation"
+  ],
+  "callout_body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$令$F(x):=\\sum_{n\\leq x}f(n),G(x):=\\sum_{n\\leq x}g(n)$如果$$F(x)=Ax+o(x)$$那么$$\\sum_{n\\leq x}\\frac{g(n)}{n}=\\frac{G(x)}{x}+A+o(1)$$"
+}

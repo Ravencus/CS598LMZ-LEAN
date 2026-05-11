@@ -1,0 +1,18 @@
+{
+  "problem_id": "comparing-two-decimals-in-base-r",
+  "english_title": "Comparing Two Decimals in Base r",
+  "statement_en": "Suppose two real numbers \\\\(a,b\\\\in(0,1)\\\\) have the same first \\\\(k\\\\) digits in their base-\\\\(r\\\\) expansions, with \\\\(k\\\\ge 1\\\\), and the \\\\((k+1)\\\\)-st digit satisfies \\\\(a_{k+1}>b_{k+1}\\\\). Then \\\\(a>b\\\\).",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem baseExpansion_lex_gt_implies_gt\n    (r k : ℕ) (a b : ℝ) (aDigits bDigits : ℕ → ℕ)\n    (hr : 1 < r) (hk : 1 ≤ k)\n    (ha : a ∈ Set.Ioo (0 : ℝ) 1) (hb : b ∈ Set.Ioo (0 : ℝ) 1)\n    (ha_exp : a = ∑' n : ℕ, (aDigits n : ℝ) / (r : ℝ) ^ (n + 1))\n    (hb_exp : b = ∑' n : ℕ, (bDigits n : ℝ) / (r : ℝ) ^ (n + 1))\n    (ha_bound : ∀ n : ℕ, aDigits n < r)\n    (hb_bound : ∀ n : ℕ, bDigits n < r)\n    (hfirst : ∀ n : ℕ, n < k → aDigits n = bDigits n)\n    (hnext : bDigits k < aDigits k) :\n    b < a := by\n  sorry"
+}

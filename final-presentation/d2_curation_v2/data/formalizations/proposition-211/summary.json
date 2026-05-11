@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-211",
+  "english_title": "Proposition 2.1.1",
+  "statement_en": "For nonnegative bounded sequences $x_n,y_n$, $$\\begin{aligned}\\limsup_{n\\to \\infty} x_n\\limsup_{n\\to \\infty} y_n&\\geq \\limsup_{n\\to \\infty} x_ny_n\\\\&\\geq \\liminf_{n\\to \\infty}x_ny_n\\\\ &\\geq \\liminf_{n\\to \\infty}x_n\\liminf_{n\\to \\infty}y_n.\\end{aligned}$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def seqLimsup (u : ℕ → ℝ) : ℝ :=\n  ⨅ N : ℕ, sSup (u '' Set.Ici N)\n\nnoncomputable def seqLiminf (u : ℕ → ℝ) : ℝ :=\n  ⨆ N : ℕ, sInf (u '' Set.Ici N)\n\ntheorem limsup_liminf_mul_of_nonneg_bounded\n    (x y : ℕ → ℝ)\n    (hx_nonneg : ∀ n : ℕ, 0 ≤ x n)\n    (hy_nonneg : ∀ n : ℕ, 0 ≤ y n)\n    (hx_bdd : ∃ Cx : ℝ, ∀ n : ℕ, x n ≤ Cx)\n    (hy_bdd : ∃ Cy : ℝ, ∀ n : ℕ, y n ≤ Cy) :\n    seqLimsup x * seqLimsup y ≥ seqLimsup (fun n : ℕ => x n * y n) ∧\n      seqLimsup (fun n : ℕ => x n * y n) ≥ seqLiminf (fun n : ℕ => x n * y n) ∧\n        seqLiminf (fun n : ℕ => x n * y n) ≥ seqLiminf x * seqLiminf y := by\n  sorry"
+}

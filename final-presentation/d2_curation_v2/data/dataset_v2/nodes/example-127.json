@@ -1,0 +1,21 @@
+{
+  "id": "example-127",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#10",
+  "english_title": "Example 1.2.7",
+  "statement_en": "Consider the sequence $a_n=n$. Then $a_{2k}$ is a subsequence of the original sequence. This means selecting the even-indexed elements from $1,2,\\cdots,n,\\cdots$ and arranging them in the same order as in the original sequence $a_n$. Here $n_k:=2k$, which is a sequence of natural numbers that is strictly increasing.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "constructing a subsequence",
+    "checking monotonicity of indices"
+  ],
+  "prerequisites": [
+    "definition of sequence",
+    "definition of subsequence"
+  ],
+  "callout_body": "序列$a_n = n$,而$a_{2k}$就是原来序列的子列。相当于是从$1,2,\\cdots n\\cdots$当中挑选出偶数的元素，并按照在原来的序列$a_n$当中的顺序排列成的新的序列。此时的$n_k:=2k$，这是一个取值为自然数，并且严格单调增加的序列。"
+}

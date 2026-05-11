@@ -1,0 +1,23 @@
+{
+  "id": "problem",
+  "type": "problem",
+  "source_note": "样本期望的渐近展开系数",
+  "english_source_note": "Asymptotic Expansion Coefficients of Sample Means",
+  "callout_id": "样本期望的渐近展开系数#1",
+  "english_title": "Problem",
+  "statement_en": "Find the limit of the following parameter-dependent integral: $$\\lim_{n\\to \\infty} \\int_{[0,1]^n}n\\left(\\frac{\\sum_{i\\leq n} x_i^2}{\\sum_{i\\leq n} x_i}-\\frac{2}{3}\\right)\\,dx_{1}\\cdots dx_n$$",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "key_techniques": [
+    "rewrite the integral as an expectation",
+    "asymptotic expansion of a ratio of sample means",
+    "Taylor expansion around the population means"
+  ],
+  "prerequisites": [
+    "expectation and integration over product spaces",
+    "law of large numbers",
+    "Taylor expansion"
+  ],
+  "callout_body": "求下面含参数积分的极限:$$\\lim_{n\\to \\infty} \\int_{[0,1]^n}n\\left(\\frac{\\sum_{i\\leq n} x_i^2}{\\sum_{i\\leq n} x_i}-\\frac{2}{3}\\right)\\,dx_{1}\\cdots dx_n$$"
+}

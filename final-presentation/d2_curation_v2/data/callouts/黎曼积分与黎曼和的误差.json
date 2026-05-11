@@ -1,0 +1,19 @@
+{
+  "note_title": "黎曼积分与黎曼和的误差",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1",
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "黎曼积分与黎曼和的误差#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "$f\\in C^2([0,1])$，令$$R_n:=\\int_0^1f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1}f(k/n)$$求$$\\lim_{n\\to \\infty}nR_n$$",
+      "position_char": 32,
+      "position_line": 6
+    }
+  ]
+}

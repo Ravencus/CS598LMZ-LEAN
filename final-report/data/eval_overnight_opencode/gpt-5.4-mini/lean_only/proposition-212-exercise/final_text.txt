@@ -1,0 +1,14 @@
+I’m checking the available proof shape first, then I’ll try the shortest order/filter argument and iterate with the Lean checker.
+I found a direct Mathlib theorem for this exact situation; I’m checking its argument order before writing the final proof.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto hy hx hxy
+```

@@ -1,0 +1,2 @@
+{"label":"different_plan","evidence":"BIG moved from failed direct lemma lookup to a Cauchy-condensation proof, with `hnonneg`, `hmono`, and `summable_condensed_iff_of_eventually_nonneg`. SMALL only tried guessed Mathlib lemma names such as `Real.not_summable_one_div_nat_mul_log_nat_add_two` via `simpa`/`exact` and never developed the condensation argument."}
+The failure is not just a Lean implementation mismatch: SMALL did not attempt the successful decomposition visible in BIG. It remained stuck on finding or applying a pre-existing theorem for the exact shifted series.

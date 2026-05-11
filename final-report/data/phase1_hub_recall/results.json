@@ -1,0 +1,412 @@
+[
+  {
+    "problem_id": "exercise-19",
+    "model": "gpt-5.5",
+    "wall_seconds": 8.8,
+    "predicted": [
+      "term-by-term-estimates-hub"
+    ],
+    "ground_truth": [
+      "piecewise-estimates-hub",
+      "using-known-asymptotics-to-derive-expansions-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "rationale": "Use the limit f(x)/x=1 to get eventual termwise bounds (1-epsilon)a_n <= f(a_n) <= (1+epsilon)a_n on the tail, so the two nonnegative series are comparable up to finitely many terms.",
+    "raw_excerpt": "{\"hubs\":[\"term-by-term-estimates-hub\"],\"rationale\":\"Use the limit f(x)/x=1 to get eventual termwise bounds (1-epsilon)a_n <= f(a_n) <= (1+epsilon)a_n on the tail, so the two nonnegative series are comparable up to finitely many terms.\"}"
+  },
+  {
+    "problem_id": "problem-2-4",
+    "model": "gpt-5.5",
+    "wall_seconds": 11.0,
+    "predicted": [
+      "piecewise-estimates-hub",
+      "sequence-limits-via-piecewise-estimates-hub"
+    ],
+    "ground_truth": [
+      "an-epsilon-of-room-hub",
+      "basic-methods-in-analysis-i-hub",
+      "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+      "piecewise-estimates-hub",
+      "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+      "term-by-term-estimates-hub",
+      "using-known-asymptotics-to-derive-expansions-hub"
+    ],
+    "precision": 0.5,
+    "recall": 0.14285714285714285,
+    "tp": 1,
+    "fp": 1,
+    "fn": 6,
+    "rationale": "The proof reduces to bounding the averaged convolution of error terms by splitting the finite sum into initial/tail index ranges and using uniform boundedness plus convergence to make each piece small.",
+    "raw_excerpt": "{\"hubs\":[\"piecewise-estimates-hub\",\"sequence-limits-via-piecewise-estimates-hub\"],\"rationale\":\"The proof reduces to bounding the averaged convolution of error terms by splitting the finite sum into initial/tail index ranges and using uniform boundedness plus convergence to make each piece small.\"}"
+  },
+  {
+    "problem_id": "exercise-19",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 17.9,
+    "predicted": [
+      "an-epsilon-of-room-hub",
+      "term-by-term-estimates-hub"
+    ],
+    "ground_truth": [
+      "piecewise-estimates-hub",
+      "using-known-asymptotics-to-derive-expansions-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 2,
+    "fn": 2,
+    "rationale": "The proof uses the limit condition with epsilon-of-room to obtain $(1-\\varepsilon)x \\le f(x) \\le (1+\\varepsilon)x$ near 0, then applies term-by-term comparison between $a_n$ and $f(a_n)$ to transfer convergence/divergence.",
+    "raw_excerpt": "{\"hubs\": [\"term-by-term-estimates-hub\", \"an-epsilon-of-room-hub\"], \"rationale\": \"The proof uses the limit condition with epsilon-of-room to obtain $(1-\\\\varepsilon)x \\\\le f(x) \\\\le (1+\\\\varepsilon)x$ near 0, then applies term-by-term comparison between $a_n$ and $f(a_n)$ to transfer convergence/dive"
+  },
+  {
+    "problem_id": "problem-1-4",
+    "model": "gpt-5.5",
+    "wall_seconds": 12.0,
+    "predicted": [
+      "integral-estimates-via-integration-by-parts-hub",
+      "sum-estimates-via-summation-by-parts-hub"
+    ],
+    "ground_truth": [
+      "integral-estimates-for-sums-hub",
+      "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+      "sum-estimates-via-summation-by-parts-hub"
+    ],
+    "precision": 0.5,
+    "recall": 0.3333333333333333,
+    "tp": 1,
+    "fp": 1,
+    "fn": 2,
+    "rationale": "Convergence is naturally shown by summation by parts with the decreasing factor 1/n and estimates for partial sums of sin(sqrt n), which are obtained by oscillatory integral estimates/integration by parts.",
+    "raw_excerpt": "{\"hubs\":[\"sum-estimates-via-summation-by-parts-hub\",\"integral-estimates-via-integration-by-parts-hub\"],\"rationale\":\"Convergence is naturally shown by summation by parts with the decreasing factor 1/n and estimates for partial sums of sin(sqrt n), which are obtained by oscillatory integral estimates/"
+  },
+  {
+    "problem_id": "problem-2-4",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 21.7,
+    "predicted": [
+      "piecewise-estimates-hub",
+      "sequence-limits-via-piecewise-estimates-hub",
+      "term-by-term-estimates-hub"
+    ],
+    "ground_truth": [
+      "an-epsilon-of-room-hub",
+      "basic-methods-in-analysis-i-hub",
+      "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+      "piecewise-estimates-hub",
+      "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+      "term-by-term-estimates-hub",
+      "using-known-asymptotics-to-derive-expansions-hub"
+    ],
+    "precision": 0.6666666666666666,
+    "recall": 0.2857142857142857,
+    "tp": 2,
+    "fp": 1,
+    "fn": 5,
+    "rationale": "The standard proof splits the convolution-like sum into head/middle/tail blocks where bounds differ, uses term-by-term estimates after writing $x_k=A+\\epsilon_k$, $y_k=B+\\delta_k$, and compares the average to $AB$ via controlled discrepancy.",
+    "raw_excerpt": "{\"hubs\": [\"piecewise-estimates-hub\", \"sequence-limits-via-piecewise-estimates-hub\", \"term-by-term-estimates-hub\"], \"rationale\": \"The standard proof splits the convolution-like sum into head/middle/tail blocks where bounds differ, uses term-by-term estimates after writing $x_k=A+\\\\epsilon_k$, $y_k=B+"
+  },
+  {
+    "problem_id": "problem-1-4",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 12.2,
+    "predicted": [
+      "integral-estimates-via-integration-by-parts-hub",
+      "sum-estimates-via-summation-by-parts-hub"
+    ],
+    "ground_truth": [
+      "integral-estimates-for-sums-hub",
+      "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+      "sum-estimates-via-summation-by-parts-hub"
+    ],
+    "precision": 0.5,
+    "recall": 0.3333333333333333,
+    "tp": 1,
+    "fp": 1,
+    "fn": 2,
+    "rationale": "Convergence is shown via Abel/summation by parts using bounded partial sums of $\\sin(\\sqrt{n})$ (estimated through integration by parts on $\\int \\sin(\\sqrt{x})\\,dx$) combined with the decreasing factor $1/n$.",
+    "raw_excerpt": "{\"hubs\": [\"sum-estimates-via-summation-by-parts-hub\", \"integral-estimates-via-integration-by-parts-hub\"], \"rationale\": \"Convergence is shown via Abel/summation by parts using bounded partial sums of $\\\\sin(\\\\sqrt{n})$ (estimated through integration by parts on $\\\\int \\\\sin(\\\\sqrt{x})\\\\,dx$) combined"
+  },
+  {
+    "problem_id": "monotonicity-of-the-integral-1",
+    "model": "gpt-5.5",
+    "wall_seconds": 9.0,
+    "predicted": [
+      "piecewise-estimates-hub"
+    ],
+    "ground_truth": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "rationale": "The proof splits off the measure-zero exceptional set and uses the nonnegativity of f-g almost everywhere to get the lower bound on the integral.",
+    "raw_excerpt": "{\"hubs\":[\"piecewise-estimates-hub\"],\"rationale\":\"The proof splits off the measure-zero exceptional set and uses the nonnegativity of f-g almost everywhere to get the lower bound on the integral.\"}"
+  },
+  {
+    "problem_id": "lemma-21",
+    "model": "gpt-5.5",
+    "wall_seconds": 13.1,
+    "predicted": [
+      "piecewise-estimates-hub"
+    ],
+    "ground_truth": [
+      "sum-estimates-via-summation-by-parts-hub",
+      "term-by-term-estimates-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "rationale": "Write e(x)-1 as an integral of its derivative and bound the integrand uniformly by 2π, giving a crude length-times-supremum estimate.",
+    "raw_excerpt": "{\"hubs\":[\"piecewise-estimates-hub\"],\"rationale\":\"Write e(x)-1 as an integral of its derivative and bound the integrand uniformly by 2π, giving a crude length-times-supremum estimate.\"}"
+  },
+  {
+    "problem_id": "monotonicity-of-the-integral-1",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 16.3,
+    "predicted": [],
+    "ground_truth": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 1,
+    "rationale": "This is a basic monotonicity property of the Lebesgue integral, established directly from the definition by handling the null set where f<g; none of the listed hubs (which target more specific techniques like integration by parts, summation by parts, or measure-zero set estimation) match this foundational result.",
+    "raw_excerpt": "{\"hubs\": [], \"rationale\": \"This is a basic monotonicity property of the Lebesgue integral, established directly from the definition by handling the null set where f<g; none of the listed hubs (which target more specific techniques like integration by parts, summation by parts, or measure-zero set es"
+  },
+  {
+    "problem_id": "lemma-21",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 15.5,
+    "predicted": [
+      "piecewise-estimates-hub"
+    ],
+    "ground_truth": [
+      "sum-estimates-via-summation-by-parts-hub",
+      "term-by-term-estimates-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "rationale": "The standard proof writes $e(x)-1=\\int_0^x e'(t)\\,dt$ and bounds the integrand uniformly by $2\\pi$, then multiplies by the interval length $|x|$ — a textbook piecewise/uniform estimate.",
+    "raw_excerpt": "{\"hubs\": [\"piecewise-estimates-hub\"], \"rationale\": \"The standard proof writes $e(x)-1=\\\\int_0^x e'(t)\\\\,dt$ and bounds the integrand uniformly by $2\\\\pi$, then multiplies by the interval length $|x|$ — a textbook piecewise/uniform estimate.\"}"
+  },
+  {
+    "problem_id": "conjecture-33",
+    "model": "gpt-5.5",
+    "wall_seconds": 16.7,
+    "predicted": [
+      "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+      "sequence-limits-via-piecewise-estimates-hub"
+    ],
+    "ground_truth": [
+      "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 2,
+    "fn": 1,
+    "rationale": "The proof relies on Diophantine approximation of integer multiples modulo 2π near the maxima of sin, then compares the sequence to the simpler asymptotic form exp(-c n θ_n^2) to realize arbitrary limits in [0,1].",
+    "raw_excerpt": "{\"hubs\":[\"kroneckers-theorem-dirichlets-theorem-and-applications-hub\",\"sequence-limits-via-piecewise-estimates-hub\"],\"rationale\":\"The proof relies on Diophantine approximation of integer multiples modulo 2π near the maxima of sin, then compares the sequence to the simpler asymptotic form exp(-c n θ_"
+  },
+  {
+    "problem_id": "theorem-13-gausss-test",
+    "model": "gpt-5.5",
+    "wall_seconds": 11.2,
+    "predicted": [
+      "term-by-term-estimates-hub",
+      "using-known-asymptotics-to-derive-expansions-hub"
+    ],
+    "ground_truth": [
+      "cauchy-condensation-test-hub",
+      "integral-estimates-for-sums-hub",
+      "term-by-term-estimates-hub"
+    ],
+    "precision": 0.5,
+    "recall": 0.3333333333333333,
+    "tp": 1,
+    "fp": 1,
+    "fn": 2,
+    "rationale": "The proof estimates the logarithm of the term ratios term-by-term, sums the expansion to get a_n comparable to 1/n using the harmonic asymptotic plus a convergent error, and then compares with the divergent harmonic series.",
+    "raw_excerpt": "{\"hubs\":[\"term-by-term-estimates-hub\",\"using-known-asymptotics-to-derive-expansions-hub\"],\"rationale\":\"The proof estimates the logarithm of the term ratios term-by-term, sums the expansion to get a_n comparable to 1/n using the harmonic asymptotic plus a convergent error, and then compares with the "
+  },
+  {
+    "problem_id": "theorem-31-liouvilles-theorem-1844",
+    "model": "gpt-5.5",
+    "wall_seconds": 10.1,
+    "predicted": [
+      "estimates-for-the-sum-of-prime-reciprocals-hub",
+      "piecewise-estimates-hub"
+    ],
+    "ground_truth": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub",
+      "an-epsilon-of-room-hub",
+      "borel-cantelli-lemma-and-applications-hub",
+      "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 2,
+    "fn": 4,
+    "rationale": "The proof compares two descriptions of the minimal polynomial evaluated at p/q: an arithmetic lower bound from nonzero integer numerator over q^d and an analytic/local upper bound controlled uniformly by |alpha-p/q|.",
+    "raw_excerpt": "{\"hubs\":[\"estimates-for-the-sum-of-prime-reciprocals-hub\",\"piecewise-estimates-hub\"],\"rationale\":\"The proof compares two descriptions of the minimal polynomial evaluated at p/q: an arithmetic lower bound from nonzero integer numerator over q^d and an analytic/local upper bound controlled uniformly b"
+  },
+  {
+    "problem_id": "conjecture-33",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 20.4,
+    "predicted": [
+      "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+    ],
+    "ground_truth": [
+      "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "rationale": "Density of the sequence requires controlling $\\sin(n)$ near $1$ via Diophantine approximation of $\\pi/2$ by integers, which is precisely the Kronecker/Dirichlet approximation framework.",
+    "raw_excerpt": "{\"hubs\": [\"kroneckers-theorem-dirichlets-theorem-and-applications-hub\"], \"rationale\": \"Density of the sequence requires controlling $\\\\sin(n)$ near $1$ via Diophantine approximation of $\\\\pi/2$ by integers, which is precisely the Kronecker/Dirichlet approximation framework.\"}"
+  },
+  {
+    "problem_id": "problem-0-beijing-normal-university-2025-summer-camp",
+    "model": "gpt-5.5",
+    "wall_seconds": 7.3,
+    "predicted": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub",
+      "borel-cantelli-lemma-and-applications-hub"
+    ],
+    "ground_truth": [
+      "borel-cantelli-lemma-and-applications-hub"
+    ],
+    "precision": 0.5,
+    "recall": 1.0,
+    "tp": 1,
+    "fp": 1,
+    "fn": 0,
+    "rationale": "Use Markov's inequality to estimate the auxiliary sets {|f_n|>ε}, sum their measures, and apply Borel-Cantelli to show exceedances occur only finitely often for each ε, giving f_n(x)→0 a.e.",
+    "raw_excerpt": "{\"hubs\":[\"borel-cantelli-lemma-and-applications-hub\",\"an-epsilon-of-room-for-measure-zero-sets-hub\"],\"rationale\":\"Use Markov's inequality to estimate the auxiliary sets {|f_n|>ε}, sum their measures, and apply Borel-Cantelli to show exceedances occur only finitely often for each ε, giving f_n(x)→0 a"
+  },
+  {
+    "problem_id": "problem-0-beijing-normal-university-2025-summer-camp",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 13.1,
+    "predicted": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub",
+      "borel-cantelli-lemma-and-applications-hub",
+      "interchanging-sums-and-integrals-hub"
+    ],
+    "ground_truth": [
+      "borel-cantelli-lemma-and-applications-hub"
+    ],
+    "precision": 0.3333333333333333,
+    "recall": 1.0,
+    "tp": 1,
+    "fp": 2,
+    "fn": 0,
+    "rationale": "Standard proof uses Markov inequality plus Borel-Cantelli (or equivalently swaps sum/integral via Tonelli to show $\\sum|f_n|<\\infty$ a.e.), and proves the bad set has measure zero by covering with sets of arbitrarily small measure.",
+    "raw_excerpt": "{\"hubs\": [\"borel-cantelli-lemma-and-applications-hub\", \"interchanging-sums-and-integrals-hub\", \"an-epsilon-of-room-for-measure-zero-sets-hub\"], \"rationale\": \"Standard proof uses Markov inequality plus Borel-Cantelli (or equivalently swaps sum/integral via Tonelli to show $\\\\sum|f_n|<\\\\infty$ a.e.), "
+  },
+  {
+    "problem_id": "theorem-31-liouvilles-theorem-1844",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 27.3,
+    "predicted": [
+      "estimates-for-the-sum-of-prime-reciprocals-hub"
+    ],
+    "ground_truth": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub",
+      "an-epsilon-of-room-hub",
+      "borel-cantelli-lemma-and-applications-hub",
+      "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "rationale": "Liouville's theorem is proved by representing f(p/q) (where f is the minimal polynomial of α) two different ways: as a nonzero rational with denominator q^d (lower bound 1/q^d) and via the mean value theorem as |f(p/q) - f(α)| ≤ sup|f'|·|α - p/q|, then comparing these representations.",
+    "raw_excerpt": "{\"hubs\": [\"estimates-for-the-sum-of-prime-reciprocals-hub\"], \"rationale\": \"Liouville's theorem is proved by representing f(p/q) (where f is the minimal polynomial of α) two different ways: as a nonzero rational with denominator q^d (lower bound 1/q^d) and via the mean value theorem as |f(p/q) - f(α)"
+  },
+  {
+    "problem_id": "proposition-141",
+    "model": "gpt-5.5",
+    "wall_seconds": 18.7,
+    "predicted": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub",
+      "borel-cantelli-lemma-and-applications-hub",
+      "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+    ],
+    "ground_truth": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub",
+      "an-epsilon-of-room-hub",
+      "borel-cantelli-lemma-and-applications-hub",
+      "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "tp": 3,
+    "fp": 0,
+    "fn": 1,
+    "rationale": "The usual proof decomposes Bad into fixed-constant exceptional sets, shows these have measure zero via limsup/metric Diophantine approximation estimates, and relies on Dirichlet-type rational approximation structure.",
+    "raw_excerpt": "{\"hubs\":[\"an-epsilon-of-room-for-measure-zero-sets-hub\",\"borel-cantelli-lemma-and-applications-hub\",\"kroneckers-theorem-dirichlets-theorem-and-applications-hub\"],\"rationale\":\"The usual proof decomposes Bad into fixed-constant exceptional sets, shows these have measure zero via limsup/metric Diophant"
+  },
+  {
+    "problem_id": "theorem-13-gausss-test",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 49.5,
+    "predicted": [
+      "sequence-limits-via-piecewise-estimates-hub",
+      "using-known-asymptotics-to-derive-expansions-hub"
+    ],
+    "ground_truth": [
+      "cauchy-condensation-test-hub",
+      "integral-estimates-for-sums-hub",
+      "term-by-term-estimates-hub"
+    ],
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 2,
+    "fn": 3,
+    "rationale": "The proof derives $a_n \\sim c/n$ by taking logs of the telescoping ratio and using the known asymptotic that $\\sum 1/n^r$ converges for $r>1$, then compares with the harmonic series — fitting the pattern of comparing a quantity to a known asymptotic with a controlled remainder.",
+    "raw_excerpt": "{\"hubs\": [\"using-known-asymptotics-to-derive-expansions-hub\", \"sequence-limits-via-piecewise-estimates-hub\"], \"rationale\": \"The proof derives $a_n \\\\sim c/n$ by taking logs of the telescoping ratio and using the known asymptotic that $\\\\sum 1/n^r$ converges for $r>1$, then compares with the harmonic"
+  },
+  {
+    "problem_id": "proposition-141",
+    "model": "claude-opus-4-7",
+    "wall_seconds": 47.0,
+    "predicted": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub",
+      "borel-cantelli-lemma-and-applications-hub"
+    ],
+    "ground_truth": [
+      "an-epsilon-of-room-for-measure-zero-sets-hub",
+      "an-epsilon-of-room-hub",
+      "borel-cantelli-lemma-and-applications-hub",
+      "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+    ],
+    "precision": 1.0,
+    "recall": 0.5,
+    "tp": 2,
+    "fp": 0,
+    "fn": 2,
+    "rationale": "Proving m(Bad)=0 typically writes Bad as a union of auxiliary sets Bad_c and shows each has measure arbitrarily small via covering, while the complement is a limsup event {||qx||<c/q infinitely often} amenable to Borel-Cantelli-style measure analysis.",
+    "raw_excerpt": "{\"hubs\": [\"an-epsilon-of-room-for-measure-zero-sets-hub\", \"borel-cantelli-lemma-and-applications-hub\"], \"rationale\": \"Proving m(Bad)=0 typically writes Bad as a union of auxiliary sets Bad_c and shows each has measure arbitrarily small via covering, while the complement is a limsup event {||qx||<c/q"
+  }
+]

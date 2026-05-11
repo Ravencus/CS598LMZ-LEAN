@@ -1,0 +1,25 @@
+{
+  "note_title": "傅里叶逆变换公式",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "傅里叶逆变换公式#1",
+      "type": "note",
+      "title": "可延拓为带状区域上满足衰减条件的全纯函数的实函数",
+      "body": "$f\\in \\mathscr{S}$,指的是存在某个正实数$a$使得$f \\in \\mathscr{S}_a$满足:\n1. 函数$f$可以解析延拓为在带状区域$S_a:=\\{z\\in \\mathbb{C}:|\\text{Im}(z)|<a\\}$上全纯的函数$f(z)$。\n2. $f(z)$满足衰减的条件:$$|f(x+iy)|\\lesssim_{b,f} \\frac{1}{1+|x|^{\\alpha}}$$其中$\\alpha>1$,$|y|\\leq b<a$",
+      "position_char": 20,
+      "position_line": 3
+    },
+    {
+      "id": "傅里叶逆变换公式#2",
+      "type": "note",
+      "title": "当前版本下的傅里叶逆变换公式",
+      "body": "$f\\in \\mathscr{F}$,那么$$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x)$$",
+      "position_char": 294,
+      "position_line": 8
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_06020a552ca4.lean",
+      "line": 6,
+      "column": 63,
+      "severity": "error",
+      "message": "unexpected token ':='; expected ')', ',' or ':'\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_06020a552ca4.lean",
+      "line": 6,
+      "column": 63,
+      "severity": "error",
+      "message": "unexpected token ':='; expected ')', ',' or ':'\n"
+    }
+  ]
+}

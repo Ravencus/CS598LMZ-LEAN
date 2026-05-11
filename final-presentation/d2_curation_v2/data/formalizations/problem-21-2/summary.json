@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-21-2",
+  "english_title": "Problem 2.1",
+  "statement_en": "Find the limit $$\\lim_{n\\to \\infty} \\frac{\\log^2(n)}{n}\\sum_{k=2}^{n-2}\\frac{1}{\\log(k)\\log(n-k)}.$$",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ntheorem log_squared_over_n_sum_log_reciprocals_tendsto_one :\n    Filter.Tendsto\n      (fun n : ℕ =>\n        ((Real.log (n : ℝ)) ^ 2 / (n : ℝ)) *\n          Finset.sum (Finset.Icc 2 (n - 2)) (fun k =>\n            (1 : ℝ) / (Real.log (k : ℝ) * Real.log ((n - k : ℕ) : ℝ))))\n      Filter.atTop\n      (Filter.nhds (1 : ℝ)) := by\n  sorry"
+}

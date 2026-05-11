@@ -1,0 +1,24 @@
+{
+  "id": "problem-4-2",
+  "type": "problem",
+  "source_note": "揭露全纯以及亚纯函数信息的Liouville原则",
+  "english_source_note": "Liouville Principles for Holomorphic and Meromorphic Functions",
+  "callout_id": "揭露全纯以及亚纯函数信息的Liouville原则#4",
+  "english_title": "Problem 4",
+  "statement_en": "Suppose an entire function \\(f\\) satisfies $$|f(z)| \\\\leq \\\\frac{1}{|\\\\operatorname{Im}(z)|}.$$ Prove that \\(f\\\\equiv 0\\).",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "Liouville-type growth argument",
+    "estimates on horizontal lines or shifted circles",
+    "entire-function rigidity"
+  ],
+  "prerequisites": [
+    "entire functions",
+    "Liouville theorem",
+    "Cauchy estimates",
+    "basic properties of the imaginary part"
+  ],
+  "callout_body": "$|f(z)| \\leq \\frac{1}{|\\text{Im}(z)|}$证明整函数为0"
+}

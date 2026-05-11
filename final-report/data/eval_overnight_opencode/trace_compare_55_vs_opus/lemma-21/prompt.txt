@@ -1,0 +1,333 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: lemma-21
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=75.81s    mcp_calls=7
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+#check Complex.norm_exp_sub_one_le
+#check Complex.norm_exp_sub_one_le_of_real
+#check norm_exp_sub_one_le
+#check Complex.normSq
+#check Complex.norm_mul_I
+#check Complex.norm_ofReal
+#check Complex.abs_ofReal
+#check Real.norm_eq_abs
+#check Complex.normSq_apply
+
+example (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  sorry
+
+--- mcp call 2 (FAIL) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h :
+      ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+        |2 * Real.pi * x| := by
+    simpa using Complex.norm_exp_mul_I_sub_one_le (2 * Real.pi * x)
+  calc
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ |2 * Real.pi * x| := h
+    _ = 2 * Real.pi * |x| := by
+      rw [abs_mul, abs_mul, abs_of_pos Real.two_pi_pos, abs_of_nonneg (by positivity)]
+      ring
+
+--- mcp call 3 (FAIL) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h :
+      ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+        |2 * Real.pi * x| := by
+    simpa using Complex.norm_exp_mul_I_sub_one_le (2 * Real.pi * x)
+  calc
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ |2 * Real.pi * x| := h
+    _ = 2 * Real.pi * |x| := by
+      rw [abs_mul, abs_mul, abs_of_pos Real.pi_pos]
+      norm_num
+
+--- mcp call 4 (FAIL) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h :
+      ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+        |2 * Real.pi * x| := by
+    simpa using Complex.norm_exp_mul_I_sub_one_le (2 * Real.pi * x)
+  calc
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ |2 * Real.pi * x| := h
+    _ = 2 * Real.pi * |x| := by
+      calc
+        |2 * Real.pi * x| = |2 * Real.pi| * |x| := by rw [abs_mul]
+        _ = (2 * Real.pi) * |x| := by
+          rw [abs_of_pos]
+          positivity
+        _ = 2 * Real.pi * |x| := by ring
+
+--- mcp call 5 (FAIL) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h :
+      ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+        |2 * Real.pi * x| := by
+    simpa using Complex.norm_exp_mul_I_sub_one_le (2 * Real.pi * x)
+  have habs : |2 * Real.pi * x| = 2 * Real.pi * |x| := by
+    rw [abs_mul, abs_mul]
+    rw [abs_of_pos Real.pi_pos]
+    norm_num
+  exact h.trans_eq habs
+
+--- mcp call 6 (FAIL) ---
+import Mathlib
+
+#guard_msgs in
+#check Complex.norm_exp_mul_I_sub_one_le
+
+#guard_msgs in
+#check Complex.norm_exp_I_mul_ofReal_sub_one_le
+
+example (x : ℝ) : |2 * Real.pi * x| = 2 * Real.pi * |x| := by
+  rw [abs_mul, abs_mul]
+  rw [abs_of_pos Real.pi_pos]
+  norm_num
+
+--- mcp call 7 (PASS) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h :
+      ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+        |2 * Real.pi * x| := by
+    simpa [mul_comm, Real.norm_eq_abs] using
+      (Real.norm_exp_I_mul_ofReal_sub_one_le (x := 2 * Real.pi * x))
+  have habs : |2 * Real.pi * x| = 2 * Real.pi * |x| := by
+    rw [abs_mul, abs_mul, abs_of_pos Real.pi_pos]
+    norm_num
+  exact h.trans_eq habs
+
+--- final_text ---
+I’ll use the checker sparingly to identify the relevant Mathlib exponential inequality, then assemble the proof around the real scalar specialization.
+I found a prior nearby attempt in the workspace that uses the expected trigonometric bound lemma. I’ll verify it directly against the requested signature.
+The earlier name was namespaced differently in this Mathlib. The available theorem is `Real.norm_exp_I_mul_ofReal_sub_one_le`, so I’m switching to that and normalizing the multiplication order.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h :
+      ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+        |2 * Real.pi * x| := by
+    simpa [mul_comm, Real.norm_eq_abs] using
+      (Real.norm_exp_I_mul_ofReal_sub_one_le (x := 2 * Real.pi * x))
+  have habs : |2 * Real.pi * x| = 2 * Real.pi * |x| := by
+    rw [abs_mul, abs_mul, abs_of_pos Real.pi_pos]
+    norm_num
+  exact h.trans_eq habs
+```
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: compile_fail    wall=124.9s    mcp_calls=10
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+example (x : ℝ) : ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h := Complex.norm_exp_sub_one_le (z := ((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) (by
+    rw [norm_mul, Complex.norm_I, mul_one, Complex.norm_real]
+    sorry)
+  sorry
+
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+#check @Complex.norm_exp_sub_one_le
+
+--- mcp call 3 (PASS) ---
+import Mathlib
+
+example : True := by
+  have := @Complex.norm_exp_sub_one_le
+  exact?
+
+--- mcp call 4 (FAIL) ---
+import Mathlib
+
+example : (1 : ℕ) = 2 := by
+  have h := @Complex.norm_exp_sub_one_le
+  exact h
+
+--- mcp call 5 (FAIL) ---
+import Mathlib
+
+-- Try to find: ‖exp(I*t) - 1‖ ≤ |t|  for real t
+example (t : ℝ) : ‖Complex.exp (t * Complex.I) - 1‖ ≤ |t| := by
+  exact?
+
+--- mcp call 6 (FAIL) ---
+import Mathlib
+
+-- The key identity: exp(I*t) - 1 in terms of sin/cos
+example (t : ℝ) : Complex.exp (t * Complex.I) = Complex.cos t + Complex.sin t * Complex.I := by
+  exact Complex.exp_mul_I t
+
+-- Try abs of sin
+example (t : ℝ) : |Real.sin t| ≤ |t| := by
+  exact Real.abs_sin_lt_abs_of_pos.le <;> sorry
+
+--- mcp call 7 (FAIL) ---
+import Mathlib
+
+example (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  set θ : ℝ := 2 * Real.pi * x with hθ
+  -- Step 1: ‖exp(I*θ) - 1‖² = 4 * sin(θ/2)²
+  -- Step 2: |sin(θ/2)| ≤ |θ/2|
+  -- So ‖exp(I*θ) - 1‖ ≤ 2*|θ/2| = |θ| ≤ 2π|x| (with equality if x≥0)
+  have hpi : 0 ≤ 2 * Real.pi := by positivity
+  have habs : |θ| = 2 * Real.pi * |x| := by
+    rw [hθ, abs_mul, abs_mul, abs_of_nonneg hpi, abs_of_nonneg (by norm_num : (0:ℝ) ≤ 2),
+        abs_of_nonneg Real.pi_pos.le]
+  rw [← habs]
+  -- Now prove ‖exp(I*θ) - 1‖ ≤ |θ|
+  have key : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖ ≤ |θ| := by
+    have hexp : Complex.exp ((θ : ℂ) * Complex.I) = Complex.cos θ + Complex.sin θ * Complex.I := by
+      exact_mod_cast Complex.exp_mul_I (θ : ℂ)
+    sorry
+  exact key
+
+--- mcp call 8 (FAIL) ---
+import Mathlib
+
+example (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  set θ : ℝ := 2 * Real.pi * x with hθdef
+  have hpi : 0 ≤ 2 * Real.pi := by positivity
+  have habs : |θ| = 2 * Real.pi * |x| := by
+    rw [hθdef, abs_mul, abs_of_nonneg hpi]
+  -- Reduce to ‖exp(I*θ) - 1‖ ≤ |θ|
+  suffices h : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖ ≤ |θ| by
+    rw [habs] at h; exact h
+  -- Use ‖exp(I*θ) - 1‖² = 4 sin²(θ/2) and |sin(θ/2)| ≤ |θ/2|
+  -- ‖a + b*I‖² = a² + b²
+  have hexp : Complex.exp ((θ : ℂ) * Complex.I) - 1 =
+      ((Real.cos θ - 1 : ℝ) : ℂ) + ((Real.sin θ : ℝ) : ℂ) * Complex.I := by
+    rw [Complex.exp_mul_I]
+    push_cast
+    ring
+  -- norm squared
+  have hnormsq : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖^2 = 2 - 2 * Real.cos θ := by
+    rw [hexp, Complex.sq_abs, Complex.normSq_add_mul_I]
+    have : (Real.sin θ)^2 + (Real.cos θ)^2 = 1 := Real.sin_sq_add_cos_sq θ
+    nlinarith [this]
+  -- 2 - 2 cos θ ≤ θ²
+  have hcos : 2 - 2 * Real.cos θ ≤ θ^2 := by
+    have h1 := Real.cos_lt_one_sub_sq_div_two_of_pos -- guess
+    sorry
+  -- Combine
+  have h := Real.sqrt_le_sqrt hcos.le
+  sorry
+
+--- mcp call 9 (FAIL) ---
+import Mathlib
+
+example (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  set θ : ℝ := 2 * Real.pi * x with hθdef
+  have hpi : 0 ≤ 2 * Real.pi := by positivity
+  have habs : |θ| = 2 * Real.pi * |x| := by
+    rw [hθdef, abs_mul, abs_of_nonneg hpi]
+  suffices h : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖ ≤ |θ| by
+    rw [habs] at h; exact h
+  have hexp : Complex.exp ((θ : ℂ) * Complex.I) - 1 =
+      ((Real.cos θ - 1 : ℝ) : ℂ) + ((Real.sin θ : ℝ) : ℂ) * Complex.I := by
+    rw [Complex.exp_mul_I]
+    push_cast
+    ring
+  have hnormsq : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖^2 = 2 - 2 * Real.cos θ := by
+    rw [hexp, Complex.sq_abs, Complex.normSq_add_mul_I]
+    nlinarith [Real.sin_sq_add_cos_sq θ]
+  -- 1 - cos θ = 2 sin²(θ/2)
+  have hhalf : 1 - Real.cos θ = 2 * (Real.sin (θ/2))^2 := by
+    have := Real.cos_sq_half θ  -- maybe cos² (θ/2) = (1 + cos θ)/2
+    -- alternative: cos θ = 1 - 2 sin²(θ/2)
+    have h2 : Real.cos θ = 1 - 2 * (Real.sin (θ/2))^2 := by
+      have := Real.cos_two_mul (θ/2)
+      have hθ2 : 2 * (θ/2) = θ := by ring
+      rw [hθ2] at this
+      have hsc := Real.sin_sq_add_cos_sq (θ/2)
+      nlinarith [hsc, this]
+    lin
+--- mcp call 10 (FAIL) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  set θ : ℝ := 2 * Real.pi * x with hθdef
+  have hpi : 0 ≤ 2 * Real.pi := by positivity
+  have habs : |θ| = 2 * Real.pi * |x| := by
+    rw [hθdef, abs_mul, abs_of_nonneg hpi]
+  suffices h : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖ ≤ |θ| by
+    rw [habs] at h; exact h
+  have hexp : Complex.exp ((θ : ℂ) * Complex.I) - 1 =
+      ((Real.cos θ - 1 : ℝ) : ℂ) + ((Real.sin θ : ℝ) : ℂ) * Complex.I := by
+    rw [Complex.exp_mul_I]; push_cast; ring
+  have hnormsq : ‖Complex.exp ((θ : ℂ) * Complex.I) - 1‖^2 = 2 - 2 * Real.cos θ := by
+    rw [hexp, Complex.sq_abs, Complex.normSq_add_mul_I]
+    nlinarith [Real.sin_sq_add_cos_sq θ]
+  have hhalf : 1 - Real.cos θ = 2 * (Real.sin (θ/2))^2 := by
+    have h2 : Real.cos θ = 1 - 2 * (Real.sin (θ/2))^2 := by
+      have hcos2 := Real.cos_two_mul (θ/2)
+      have hθ2 : 2 * (θ/2) = θ := by ring
+      rw [hθ2] at hcos2
+      have hsc := Real.sin_sq_add_cos_sq (θ/2)
+      nlinarith [hsc, hcos2]
+    linarith
+  have hsin : |Real.sin (θ/2)| ≤ |θ/2| := Real.abs_sin_le_abs
+  have hsinsq : (Real.sin (θ/2))^2 ≤ 
+--- final_text ---
+I'll work on this theorem about the complex exponential. Let me start by exploring what Mathlib offers.
+Good - `Complex.norm_exp_sub_one_le` exists with parameter `x` and `hx`. Let me check its signature.
+Compiles silently. Let me try to get the type info via an error.
+The lemma is: `‖x‖ ≤ 1 → ‖Complex.exp x - 1‖ ≤ 2 * ‖x‖`. Only works when `‖x‖ ≤ 1`. We need it for arbitrary `x`. So we need a case split: if `|x| ≤ 1/(2π)` use this; otherwise the RHS `2π|x| ≥ 1` so we need `‖exp z - 1‖ ≤ 2`, which uses triangle: `‖exp z - 1‖ ≤ ‖exp z‖ + 1`. For purely imaginary `z`, `‖exp z‖ = 1`, so `‖exp z - 1‖ ≤ 2`.
+
+Wait — actually there's likely a more direct lemma. Let me search for one without hypothesis.
+No direct one. Let me build the proof manually using the case split strategy. The plan:
+
+- Let `θ = 2π x`. We want `‖exp(iθ) - 1‖ ≤ |θ|`. Note `2π|x| = |2πx| = |θ|` since `2π ≥ 0`.
+- Case 1: `|θ| ≤ 1`. Use `Complex.norm_exp_sub_one_le` since `‖iθ‖ = |θ|`. Gives `≤ 2|θ|`. Hmm, that's not tight enough!
+
+Actually `Complex.norm_exp_sub_one_le` gives `≤ 2‖z‖`, not `≤ ‖z‖`. So even in case 1 we get `≤ 2|θ|`, not `≤ |θ|`. So this approach fails.
+
+Better: use triangle inequality globally. `‖exp(iθ) - 1‖ ≤ ‖exp(iθ)‖ + 1 = 2`. We need `≤ |θ|` so this fails when `|θ| < 2`.
+
+Hmm. The standard proof uses `|e^{iθ} - 1| = 2|sin(θ/2)| ≤ |θ|`. Let me look for `Complex.norm_exp_ofReal_mul_I_sub_one` or sine bound.
+Good, `Complex.exp_mul_I` works. And the abs sin bound exists somewhere. Let me try a com
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

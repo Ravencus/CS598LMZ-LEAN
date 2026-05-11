@@ -1,0 +1,29 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_9161890b2a2d.lean",
+      "line": 3,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.log', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_9161890b2a2d.lean",
+      "line": 7,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_9161890b2a2d.lean",
+      "line": 3,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.log', which is 'noncomputable'"
+    }
+  ]
+}

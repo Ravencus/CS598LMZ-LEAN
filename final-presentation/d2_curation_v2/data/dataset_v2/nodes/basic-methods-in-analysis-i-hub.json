@@ -1,0 +1,50 @@
+{
+  "id": "basic-methods-in-analysis-i-hub",
+  "type": "hub",
+  "source_note": "分析学基本方法目录1",
+  "english_source_note": "Basic Methods in Analysis I",
+  "is_top3": true,
+  "note_degree": 45,
+  "strategies": [
+    {
+      "callout_id": "分析学基本方法目录1#1",
+      "english_title": "Overview of the Idea of an Epsilon of Room",
+      "strategy_name_en": "Epsilon of Room",
+      "summary_en": "When a target object \\(x_0\\) is hard to study directly, replace it with a family of better-understood approximating objects \\(x_{\\\\varepsilon}\\) together with analogous statements \\(S_{\\\\varepsilon}\\). If proving all \\(S_{\\\\varepsilon}\\) implies the desired statement \\(S_0\\) for \\(x_0\\), then the original problem is solved indirectly.",
+      "applicability": "Applies when a mathematical object is inaccessible directly but can be approximated by simpler objects whose properties can be controlled uniformly in \\(\\\\varepsilon\\).",
+      "callout_body": "假设我要研究一个对象$x_0$，以及与这个对象有关的一个数学命题$S_0$，我们这样一组对象简写为$(S_0,x_0)$。但是我们无法直接理解$x_0$这个对象，我们缺乏直接对$x_0$进行操作从而解决与之相关的$S_0$的技术和条件。不过我们发现一个我们已经很好地理解的一系列对象$x_{\\varepsilon}$，关于$x_{\\varepsilon}$也有一个类似的命题$S_{\\varepsilon}$，我们把这一组对象简写为$(x_{\\varepsilon},S_{\\varepsilon})$。\n\n这个时候，如果$(x_{\\varepsilon},S_{\\varepsilon})$恰好是一个足够好的对象，以至于我们可以从$$(x_{\\varepsilon},S_{\\varepsilon})\\forall \\varepsilon\\implies (x_0,S_0)$$那么原来的问题也就解决了。"
+    },
+    {
+      "callout_id": "分析学基本方法目录1#5",
+      "english_title": "Idea 1.1.2",
+      "strategy_name_en": "Study a Limit Object Through an Approximating Sequence",
+      "summary_en": "If an object \\(x\\) can be represented as the limit of a sequence \\(x_n\\), then properties of \\(x\\) can often be studied by analyzing corresponding properties of the approximating sequence \\(x_n\\). This shifts the problem from a possibly abstract object to concrete finite-stage approximations.",
+      "applicability": "Applies whenever the target object is given or naturally realized as the limit of a sequence and the finite approximants are easier to compute or estimate.",
+      "callout_body": "如果我们有一个对象$x$，它可以表达为某个序列$x_n$的极限。如果我们要研究$x$的某个性质，我们不妨研究$x_n$这个序列的有关性质。"
+    },
+    {
+      "callout_id": "分析学基本方法目录1#8",
+      "english_title": "Core Idea of the Above Method",
+      "strategy_name_en": "Upper-Bound Simplification for Sums and Products",
+      "summary_en": "To study a complicated sum or product \\(S_n\\), seek a simpler upper bound \\(U_n\\) with acceptable error and a more tractable expression. This may come either from an exact recognizable form or from a controlled comparison such as integral bounds or telescoping transformations.",
+      "applicability": "Applies when direct evaluation of a sum or product is difficult, but a simpler comparison object can still reveal the needed asymptotic or quantitative information.",
+      "callout_body": "如果我们需要给一个乘积，或者一个和$S_n$一个函数表示的上界$U_n$，使得$$S_n\\leq U_n$$对$n>M$都成立。通常来说$U_n$的表达和性质要比$S_n$要简单很多，这也是为什么上界估计是有用的原因:我们用一个有误差但可以接受的上界换来一个一窥复杂的$S_n$的特定信息的机会。\n\n为了得到这个$U_n$我们其中一种主要的想法是：\n1. $S_n$是否可以本身就非常容易求乘积或者和，并且乘积或者和是对我们而言比较简单或者熟悉的形式？比如假设$S_n=H_n$是调和数，或者其他什么我们很熟悉的特殊函数，亦或者就是多项式等等。\n2. 如果第一个做不到，我们的想法是，是否可以通过放缩得到一个$S_n'$使得$S_n'$与$S_n$之间的误差符合要求，同时$S_n'$具有一个简单或者熟悉的表达式。比如积分放缩，寻求的就是积分的形式是对我们而言是简单的或者非常熟悉的。再比如“裂项求和”就是属于这种类型的形式。"
+    },
+    {
+      "callout_id": "分析学基本方法目录1#9",
+      "english_title": "Simple Integral Estimates Using Convexity",
+      "strategy_name_en": "Convexity-Based Integral Estimate",
+      "summary_en": "Use convexity, often via the Hermite-Hadamard inequality, to compare discrete sums with integrals over unit intervals. This gives improved lower bounds for sums compared with using monotonicity alone, though usually without changing the order of the error term.",
+      "applicability": "Applies when estimating sums of values of a convex function, especially when monotonicity-based integral comparison is available and a slightly sharper bound is desired.",
+      "callout_body": "简单的积分估计本质上是一种[[逐项估计]]，我们利用函数的单调性，然后把函数在整数处的取值放缩为函数在长度为1的区间上的积分。按照相同的思路，有时候我们也可以利用函数的凸性来把函数逐项放缩为长度为1的区间上的积分。\n\n其主要参考的命题为：\n对于在区间$[a,b]$上凸的函数而言，对任意$x_1,x_2\\in [a,b]$并且满足$x_1<x_2$都有$$\\frac{f(x_1)+f(x_2)}{2}\\geq \\frac{1}{x_2-x_1}\\int_{x_1}^{x_2} f(x)\\,dx$$\n* 参考[[Hermite-Hadamard不等式与函数凸性]].\n\n那么对每个区间利用这样的结果进行放缩，我们得到$$\\sum_{k=1}^{n-1} \\frac{f(x_k)+f(x_{k+1})}{2}(x_{k+1}-x_k)\\geq \\int_{x_1}^{x_n}f(x)\\,dx$$如果$x_k=k$那么以上结果可以等价于$$\\sum_{k=1}^n f(k)\\geq \\frac{f(1)+f(n)}{2}+\\int_{1}^{n}f(x)\\,dx$$\n\n---\n这种估计，对于单调凸函数而言是对和的下界估计的精度改进，这种改进不是本质的，误差级别不会变但是下界要比单纯利用单调性会好上一点。\n\n比如我们假设$f$是严格单调减少的，单纯利用单调性得到的下界估计是$$\\sum_{k=1}^n f(k)\\geq f(n)+\\int_{1}^n f(x)\\,dx$$相对于利用凸性得到的下界估计，由于严格单调减少性$$\\frac{f(1)+f(n)}{2}\\geq f(n)$$于是我们知道由凸性得到的下界估计会好上一些，但不本质。\n\n同样的道理，如果我们假设函数严格单调增加，那么单纯利用单调性得到的下界估计是$$\\sum_{k=1}^n f(k)>f(1)+\\int_{1}^n f(x)\\,dx$$由于严格增加性，于是$$\\frac{f(1)+f(n)}{2}\\geq f(1)$$因此由凸性得到的下界估计会更好一些。"
+    },
+    {
+      "callout_id": "分析学基本方法目录1#10",
+      "english_title": "Basic Idea",
+      "strategy_name_en": "Summation by Parts Strategy",
+      "summary_en": "When a partial sum has the form $$S_{M,N}=\\\\sum_{n=M}^N a_n b_n,$$ and \\(a_n\\) has manageable differences while partial sums of \\(b_n\\) are accessible, estimate \\(S_{M,N}\\) indirectly through the partial sums \\(B_N\\\\) and the differences \\(a_{n+1}-a_n\\).",
+      "applicability": "Applies to weighted sums where one factor has simple discrete variation and the other has useful partial-sum information, as in Dirichlet-type arguments.",
+      "callout_body": "当我们处理某个部分和$S_{M,N}$的时候，如果我们发现被求和对象可以写成乘积的形式以至于部分和$S_{M,N}$可以写成$$S_{M,N}:=\\sum_{n=M}^N a_nb_n$$并且我们假设其中$a_n,b_n$满足假设:\n1. 其中形式较为简单的对象$a_n$，其差分序列$a_{n+1}-a_n$是较为简单的。\n2. 其中$b_n$的形式虽然较为复杂，但是其部分和$B_N:=\\sum_{n=M}^N b_n$对我们而言是熟悉的(通过其他方式获取到的，或者已知估计的)\n\n此时我们可以借助部分和$B_N$以及差分$a_{n+1}-a_n$的估计来间接地得到$S_N$的估计。"
+    }
+  ]
+}

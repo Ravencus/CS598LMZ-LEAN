@@ -60,6 +60,15 @@ After completing the proof (or exhausting attempts), summarize:
 - If a tactic fails, understand WHY before trying a different one. Read the error message.
 - If stuck for more than 3 attempts on the same subgoal, step back and reconsider the overall strategy.
 
+## Checker Call Budget
+
+You operate under a **hard budget of `check_lean_proof` calls** per problem (the value is reported back in every tool response under `calls_budget` / `calls_used`). When `calls_budget` is set:
+
+- **Plan before calling.** Sketch the full proof on paper before submitting. Don't use the checker as a REPL — each call is expensive.
+- **Batch your checks.** Submit the most complete attempt you can, not one tactic at a time. Use `sorry` strategically to isolate WHICH subgoal is failing, then fix several issues per submission.
+- **Spend your last calls wisely.** When `calls_used` approaches `calls_budget`, prioritize one big, careful submission over multiple small probes.
+- **If you hit `BUDGET_EXHAUSTED`** (you'll see `budget_exhausted: true`), no further checker calls will work. Submit your best attempt as the final answer — using `sorry` for incomplete parts — and clearly report what you tried and where you got stuck. Do not loop forever trying to call the checker.
+
 ## Lean 4 Quick Reference
 
 Common tactics:

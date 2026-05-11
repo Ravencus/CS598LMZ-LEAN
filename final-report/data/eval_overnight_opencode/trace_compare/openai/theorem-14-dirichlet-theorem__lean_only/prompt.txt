@@ -1,0 +1,175 @@
+You are analyzing two Lean theorem-proving traces from the same problem. The "BIG" model succeeded; the "SMALL" model failed. Classify the failure mode.
+
+Problem id: theorem-14-dirichlet-theorem    Condition: lean_only
+
+=== BIG (passed) ===
+model: gpt-5.5    outcome: lean_proof    wall=139.75s    mcp_calls=6
+--- mcp call 1 (✗) ---
+import Mathlib
+
+#check Irrational
+#check Irrational.denseRange
+#check Irrational.denseRange_zsmul
+#check Irrational.denseRange_intCast_mul
+#check denseRange_intCast_mul
+#check Int.exists_nearest_le
+#check exists_int_abs_sub_lt
+#check exists_int_sub_abs_lt
+
+--- mcp call 2 (✗) ---
+import Mathlib
+
+#check Irrational
+#check DenseRange
+#check Set.Finite.exists_lt_ncard
+#check exists_rat_near
+#check Rat.denseRange_cast
+#check Int.fract
+#check Int.floor
+#check floor
+#check exists_floor
+
+--- mcp call 3 (✗) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  simpa [mul_comm] using hα.exists_nat_abs_mul_sub_int_lt hε
+
+--- mcp call 4 (✗) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  obtain ⟨n, hn_gt⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have hpos : (0 : ℝ) < (n : ℝ) := lt_trans (one_div_pos.mpr hε) hn_gt
+    exact Nat.cast_pos.mp hpos
+  have hden_pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+  have hbound : (1 : ℝ) / ((n : ℝ) + 1) < ε := by
+    have hlt : 1 / ε < (n : ℝ) + 1 := lt_trans hn_gt (lt_add_one _)
+    have hmul : (1 : ℝ) < ε * ((n : ℝ) + 1) := by
+      calc
+        (1 : ℝ) = ε * (1 / ε) := by field_simp [hε.ne']
+        _ < ε * ((n : ℝ) + 1) := mul_lt_mul_of_pos_left hlt hε
+    exact (div_lt_iff₀ hden_pos).mpr hmul
+  obtain ⟨j, k, hk0, hk_le, habs⟩ := Real.exists_int_int_abs_mul_sub_le α hn_pos
+  refine ⟨k.toNat, Int.toNat_pos.mpr hk0, ⟨j, ?_⟩⟩
+  have hk_nat_int : (k.toNat : ℤ) = k := Int.toNat_of_nonneg hk0.le
+  have hk_real : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by exact_mod_cast hk_nat_int
+  calc
+    |(k.toNat : ℝ) * α - j| = |(k : ℝ) * α - j| := by rw [hk_real]
+    _ ≤ (1 : ℝ) / ((n : ℝ) + 1) := habs
+    _ < ε := hbound
+
+--- mcp call 5 (✓) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  obtain ⟨n, hn_gt⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have hpos : (0 : ℝ) < (n : ℝ) := lt_trans (one_div_pos.mpr hε) hn_gt
+    exact Nat.cast_pos.mp hpos
+  have hden_pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+  have hbound : (1 : ℝ) / ((n : ℝ) + 1) < ε := by
+    have hlt : 1 / ε < (n : ℝ) + 1 := lt_trans hn_gt (lt_add_one _)
+    have hmul : (1 : ℝ) < ε * ((n : ℝ) + 1) := by
+      calc
+        (1 : ℝ) = ε * (1 / ε) := by field_simp [hε.ne']
+        _ < ε * ((n : ℝ) + 1) := mul_lt_mul_of_pos_left hlt hε
+    exact (div_lt_iff₀ hden_pos).mpr hmul
+  obtain ⟨j, k, hk0, hk_le, habs⟩ := Real.exists_int_int_abs_mul_sub_le α hn_pos
+  have hk_nat_int : (k.toNat : ℤ) = k := Int.toNat_of_nonneg hk0.le
+  have hq_pos_int : (0 : ℤ) < (k.toNat : ℤ) := by simpa [hk_nat_int] using hk0
+  have hq_pos : 0 < k.toNat := by exact_mod_cast hq_pos_int
+  refine ⟨k.toNat, hq_pos, ⟨j, ?_⟩⟩
+  have hk_real : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by exact_mod_cast hk_nat_int
+  calc
+    |(k.toNat : ℝ) * α - j| = |(k : ℝ) *
+--- mcp call 6 (✓) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  have _ : Irrational α := hα
+  obtain ⟨n, hn_gt⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have hpos : (0 : ℝ) < (n : ℝ) := lt_trans (one_div_pos.mpr hε) hn_gt
+    exact Nat.cast_pos.mp hpos
+  have hden_pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+  have hbound : (1 : ℝ) / ((n : ℝ) + 1) < ε := by
+    have hlt : 1 / ε < (n : ℝ) + 1 := lt_trans hn_gt (lt_add_one _)
+    have hmul : (1 : ℝ) < ε * ((n : ℝ) + 1) := by
+      calc
+        (1 : ℝ) = ε * (1 / ε) := by field_simp [hε.ne']
+        _ < ε * ((n : ℝ) + 1) := mul_lt_mul_of_pos_left hlt hε
+    exact (div_lt_iff₀ hden_pos).mpr hmul
+  obtain ⟨j, k, hk0, hk_le, habs⟩ := Real.exists_int_int_abs_mul_sub_le α hn_pos
+  have hk_nat_int : (k.toNat : ℤ) = k := Int.toNat_of_nonneg hk0.le
+  have hq_pos_int : (0 : ℤ) < (k.toNat : ℤ) := by simpa [hk_nat_int] using hk0
+  have hq_pos : 0 < k.toNat := by exact_mod_cast hq_pos_int
+  refine ⟨k.toNat, hq_pos, ⟨j, ?_⟩⟩
+  have hk_real : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by exact_mod_cast hk_nat_int
+  calc
+    |(k.to
+--- final_text ---
+I’ll use the Lean prover workflow and first look for existing Mathlib density/irrational-rotation lemmas, since this theorem is likely already covered by the topology/additive subgroup API.
+There is an existing Mathlib theorem with exactly this content up to multiplication order. I’ll verify the minimal proof directly.
+The one-line lemma from prior snapshots is not available in this Mathlib build, so I’m switching to the bundled Dirichlet theorem `Real.exists_int_int_abs_mul_sub_le` and converting its integer denominator to a positive natural.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  have _ : Irrational α := hα
+  obtain ⟨n, hn_gt⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have hpos : (0 : ℝ) < (n : ℝ) := lt_trans (one_div_pos.mpr hε) hn_gt
+    exact Nat.cast_pos.mp hpos
+  have hden_pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+  have hbound : (1 : ℝ) / ((n : ℝ) + 1) < ε := by
+    have hlt : 1 / ε < (n : ℝ) + 1 := lt_trans hn_gt (lt_add_one _)
+    have hmul : (1 : ℝ) < ε * ((n : ℝ) + 1) := by
+      calc
+        (1
+
+=== SMALL (failed) ===
+model: gpt-5.4-mini    outcome: compile_fail    wall=23.46s    mcp_calls=1
+--- mcp call 1 (✗) ---
+import Mathlib
+
+#check Irrational
+#check Real.exists_int_near
+#check exists_int_near
+#check Rat.exists_int_near
+#check irrational_iff
+#check Real.exists_rat_btwn
+#check exists_rat_btwn
+#check Rat.cast_injective
+#check Int.exists_lt_and_lt
+#check Nat.exists_lt
+
+--- final_text ---
+I’m loading the Lean proving workflow, then I’ll test a minimal proof shape and iterate with the checker.
+I’m checking for an existing approximation lemma first; if Mathlib already has it, the proof will be short and robust.
+The first lookup didn’t surface usable names, so I’m probing the installed Mathlib source tree directly for irrational-approximation lemmas.
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"label": "different_plan" | "same_plan_lean_impl_diff" | "same_plan_search_diff" | "unclear",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+LABEL DEFINITIONS:
+  different_plan          : The two models pursued substantively different decompositions (e.g., one used induction, the other used a continuous estimate).
+  same_plan_lean_impl_diff: Both pursued the same plan; the small model's failure was at the Lean tactic / type-checking level (wrong tactic, type mismatch, syntax).
+  same_plan_search_diff   : Same plan; the small model couldn't find the correct Mathlib lemma name or applicability.
+  unclear                 : Cannot tell from the visible evidence.
+
+Output the JSON object first, then the justification.

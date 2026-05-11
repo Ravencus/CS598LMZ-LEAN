@@ -1,0 +1,280 @@
+I'll work on this Liouville-type theorem. Let me start by exploring the approach and using the checker strategically.
+Let me think about this carefully before using any checker calls.
+
+**Mathematical strategy (Liouville's theorem):**
+The standard proof: Let $f$ be the minimal polynomial of $\alpha$ over $\mathbb{Q}$ with integer coefficients (after clearing denominators), of degree $d$. For any $p/q$ with $q > 0$:
+- If $|\alpha - p/q| \geq 1$, we're done with $C = 1$ (since $q^d \geq 1$, so $1/q^d \leq 1$).
+- Otherwise $p/q$ is in $[\alpha-1, \alpha+1]$. By MVT, $|f(p/q)| = |f(p/q) - f(\alpha)| \leq M |\alpha - p/q|$ where $M = \sup_{x \in [\alpha-1,\alpha+1]} |f'(x)|$.
+- $q^d f(p/q)$ is a nonzero integer (nonzero because $f$ is the minimal polynomial and $p/q \neq \alpha$ since $\alpha$ is irrational of degree $\geq 2$), so $|f(p/q)| \geq 1/q^d$.
+- Thus $|\alpha - p/q| \geq 1/(M q^d)$.
+
+This is a substantial proof. Let me check if Mathlib has it directly — there's `Liouville` theory in Mathlib.
+
+Let me check what's in Mathlib first.
+Hmm, no diagnostics returned. Let me try again with more careful exploration:
+No diagnostics, but exit_code 1. Strange. Let me try a simpler check:
+Empty diagnostics suggest the name doesn't exist or there's an issue. Let me try a different search approach and also test the basic theorem skeleton:
+Good, statement compiles. Now the issue with #check returning empty is concerning. Let me try to use Mathlib's `Liouville` machinery. There's `Liouville.transcendental` and `Polynomial.exists_pos_real_of_irrational_root` should exist. Let me try a different approach — try to use what's in Mathlib's Liouville file:
+That lemma doesn't exist with that name. I have 5 calls left. Let me search smartly — Mathlib has `Liouville` definition and uses `Liouville.transcendental`. The fact I need is essentially the converse: algebraic numbers are NOT Liouville. This is exactly the content of `Liouville.transcendental`!
+
+In Mathlib, `Liouville` is defined as: `α` is Liouville if for all `n : ℕ`, there exist `p q` with `q > 1` such that `0 < |α - p/q| < 1/q^n`. And `Liouville.transcendental` states Liouville numbers are transcendental.
+
+The contrapositive: an algebraic α is NOT Liouville. So for some `n`, for all rational `p/q` with `q > 1`, either `α = p/q` or `|α - p/q| ≥ 1/q^n`.
+
+But I need a stronger statement: for `n = d` specifically and a uniform constant. Mathlib must have this — let me search.
+
+Let me look for `liouvilleWith` which is the more useful version:
+Empty diagnostics again — likely both names unknown. I have 4 calls left. Let me think differently.
+
+I have limited budget and don't know the exact API. Let me try a completely different strategy: **just use `C = 1` and prove via casework**. Wait, that won't work since `|α - p/q|` can be arbitrarily small for the right `p, q`.
+
+Actually, let me think. Maybe I should write a direct proof. The key tools I need:
+- Convert minimal polynomial in ℚ[X] to ℤ[X] (clear denominators)
+- MVT or polynomial Taylor expansion
+- Bound on derivatives on a compact interval
+
+This is genuinely hard to write in Lean from scratch in a few calls.
+
+**Alternative idea:** Maybe Mathlib's `Liouville` file has exactly this. Let me check `Polynomial.exists_pos_real_of_root_of_isAlgebraic` or similar - actually the lemma is called `Polynomial.exists_one_le_pow_mul_dist`:
+Empty again — name unknown. 3 calls left. Let me try to find this directly via filesystem:
+Excellent! `Polynomial.exists_pos_real_of_irrational_root` does exist! Let me check its full statement:
+I found exactly what I need: `Polynomial.exists_pos_real_of_irrational_root`. It gives me, for an irrational α that's a root of integer polynomial f, an A>0 such that `1 ≤ (b+1)^d * (|α - a/(b+1)| * A)`.
+
+So `|α - a/(b+1)| ≥ 1/((b+1)^d * A)`. With `b+1 = q`, this gives `|α - a/q| ≥ 1/(q^d * A) = (1/A)/q^d`.
+
+I need:
+1. α is irrational (since it's algebraic of degree ≥ 2)
+2. Integer polynomial f with α as root, of natDegree = d (use minpoly's integerization)
+3. Convert the bound: need `>` not `≥`, but `≥` should give what we need with `C/2` or strict argument
+4. Handle case when p < 0 (the lemma uses ℤ × ℕ for a/(b+1); my goal uses ℤ × ℕ q>0)
+
+Let me look at more Mathlib:
+Now I need to:
+1. Get an integer polynomial `f` of natDegree = d that has α as root. Use `IsIntegrallyClosed.minpoly` or `IsAlgebraic.isIntegral` + clearing denominators. Or: use the minpoly over ℤ.
+
+Let me search for relating minpoly over ℚ vs ℤ:
+This is getting complex. Let me think more carefully. The issue with using `minpoly ℤ α` is that α is a ℝ-element, and ℝ isn't typically an ℤ-algebra structurally. Actually it is via algebraMap.
+
+Actually let me take a more pragmatic approach: **clear denominators of `minpoly ℚ α`**. There's a `Polynomial.integerNormalization` function:
+OK, `IsLocalization.integerNormalization` exists. But this is getting complex. Let me take a more practical approach.
+
+**Strategy:** I'll use `minpoly ℤ α` directly (viewing α via algebraMap ℤ → ℝ). The key facts:
+- `minpoly.aeval ℤ α` gives the minpoly is zero at α
+- We need `(minpoly ℤ α).natDegree = d` matching the ℚ degree — this is true since ℤ is integrally closed in ℚ (for monic integer poly): `minpoly.isIntegrallyClosed_eq_field_fractions'`.
+
+But this requires α to be `IsIntegral ℤ`, which means satisfying a monic integer polynomial. **That's NOT always true** for algebraic numbers (e.g., 1/2 satisfies 2x-1=0, not a monic integer poly, and minpoly ℚ has degree 1 anyway, so doesn't fit our hypothesis d≥2).
+
+For d≥2, α is not rational. So α is irrational. We need an integer polynomial (not necessarily monic) of natDegree d with α as root. Use `integerNormalization` of `minpoly ℚ α`.
+
+Given budget constraints (3 calls left), let me write the full proof carefully and just submit it. Let me draft it:
+Good. Now there's `IsLocalization.integerNormalization_aeval_eq_zero`. The localization to use is `(nonZeroDivisors ℤ)` viewing ℚ as the fraction field. Now there's a subtle issue: the natDegree might decrease. But since `integerNormalization` multiplies by a nonzero element of `M` (in ℤ → ℚ, that's a nonzero integer), the natDegree should be preserved.
+
+Actually let me think — does `integerNormalization` preserve natDegree? It maps p (with rational coeffs) to a polynomial q with integer coeffs such that `q.map (↑) = b • p` for some nonzero b. So q's map = (b times p), which has same natDegree as p (since b ≠ 0). And `(q.map ↑).natDegree = q.natDegree` (cast doesn't kill leading coeff since q has integer coeffs). So `q.natDegree = (b•p).natDegree = p.natDegree`.
+
+OK this is getting really complex. Given my budget (3 calls left), let me **just write the proof and submit it** as a final attempt. I'll be conservative and carefully construct it:
+Empty diagnostics — likely the lemma name `minpoly.eq_zero_iff_not_isAlgebraic` is wrong. I have 2 calls left. Let me write the proof much more carefully and conservatively, ready to submit.
+
+Given the complexity, I'll **submit a proof using `Polynomial.exists_pos_real_of_irrational_root`** with all the necessary scaffolding. Let me prepare it carefully:
+Now I have a good plan. Let me put together the proof. I have 2 calls left, so I'll commit my best attempt now.
+
+**Plan:**
+1. Show α is irrational (via degree ≥ 2 + algebraic).
+2. Build integer polynomial `f := integerNormalization (nonZeroDivisors ℤ) (minpoly ℚ α)` with `natDegree = d`.
+3. Apply `Polynomial.exists_pos_real_of_irrational_root` to get `A > 0` with the lower bound.
+4. Convert to our form. Set `C := 1/(2A)` (to make it strict). Actually we need `>` not `≥`. We get `|α - a/(b+1)| * A ≥ 1/(b+1)^d`, so `|α - a/(b+1)| ≥ 1/((b+1)^d * A)`. To get strict `>`, use `C = 1/(2A)`.
+
+For `q > 0` we have `q = b+1` where `b = q-1`. Then `|α - p/q| ≥ 1/(A * q^d) > (1/(2A)) / q^d`.
+
+The proof of irrationality from degree ≥ 2: if α were rational, then `minpoly ℚ α = X - α` would have degree 1, contradicting `d ≥ 2`. The relevant lemma might be `minpoly.natDegree_le` or use that the minpoly of a rational `q : ℚ` over `ℚ` has natDegree 1 (since `X - q` is monic, irreducible, and annihilates `q`).
+
+This is complex. Let me write this carefully and use my last 2 calls wisely. Let me submit a very carefully crafted proof:
+Great, the proof is mostly right but has errors. Let me fix them:
+
+1. Line 19: After `rw [this]`, the goal has `minpoly ℚ ((algebraMap ℚ ℝ) r)`. I should use a different approach — actually `minpoly.eq_X_sub_C'` may need a different form.
+2. Line 32: `aeval_def` rewrite issue — the def unfolding doesn't match. I need to compute differently.
+3. Line 37: integerNormalization_eq_zero_iff issue — it's stated as iff, the rewrite needs different direction.
+4. **Critical: `Polynomial.exists_pos_real_of_irrational_root` is "Unknown"** — but I just verified it exists in the file. The issue: the file is in namespace `Polynomial`? Let me check:
+So `exists_pos_real_of_irrational_root` is NOT in the Polynomial namespace — it's at the top level (in implicit `Liouville` namespace? Let me check more carefully):
+`namespace Liouville` opens at line 39. But our function is at line 126, which is `theorem exists_pos_real_of_irrational_root`. Wait but it's inside namespace Liouville? Actually there might be a `namespace Liouville` opened then `end Liouville` was needed. Let me check more carefully:
+So `exists_pos_real_of_irrational_root` is inside `namespace Liouville` (from line 39 to 221). So the qualified name is `Liouville.exists_pos_real_of_irrational_root`!
+
+Now I have only 1 call left. I must fix all the errors and submit. Let me fix issues:
+
+1. **Fix namespace:** Use `Liouville.exists_pos_real_of_irrational_root`.
+2. **Fix `eval = 0` from `aeval = 0`:** Use `eval_map_algebraMap`.
+3. **Fix `integerNormalization_eq_zero_iff`:** This is an `iff` lemma. Use `.not.mpr` or `mt` instead of `rw`.
+4. **Fix the irrationality proof:** After `rw [this]`, the goal is `(minpoly ℚ ((algebraMap ℚ ℝ) r)).natDegree = 1`. Need to show minpoly of an element coming from ℚ is `X - C r`, hence degree 1. There's a lemma: `minpoly.algebraMap_eq` or similar. Actually we can compute: `aeval` of `X - C r` at `(algebraMap ℚ ℝ) r` is 0, but degree concerns…
+
+Let me use a cleaner approach for irrationality:
+- If `α = (r : ℝ) = (algebraMap ℚ ℝ) r`, then `minpoly ℚ α` divides `X - C r` (which is monic and has α as root). So `(minpoly ℚ α).natDegree ≤ 1`. Combined with `d ≥ 2`, contradiction.
+
+The relevant lemma: `minpoly.natDegree_le` of the form `(minpoly K x).natDegree ≤ p.natDegree` when `p` is monic and annihilates `x`.
+
+Let me search:
+Got it! `minpoly.two_le_natDegree_iff` gives an iff for irrationality. Let me check:
+Excellent! `minpoly.two_le_natDegree_iff` gives `2 ≤ (minpoly A x).natDegree ↔ x ∉ (algebraMap A B).range`. So irrationality follows from `2 ≤ d`. 
+
+Now let me check `aeval_def` issue. The issue is `aeval α f = 0` where `f : ℤ[X]` and `α : ℝ`. We want `eval α (map (algebraMap ℤ ℝ) f) = 0`. There's `Polynomial.aeval_def`:
+`eval_map_algebraMap` exists. The conversion is: `eval α (map (algebraMap ℤ ℝ) f) = aeval α f` (per line 276). So I should use `eval_map_algebraMap` to go from `aeval α f = 0` to `eval α (...) = 0`.
+
+Now let me also handle `integerNormalization_eq_zero_iff` correctly — it takes `hM : M ≤ nonZeroDivisors R` (we have `le_rfl` since `M = nonZeroDivisors ℤ`). And `(le_rfl)` should work, but note in ℤ, `nonZeroDivisors` is fine. The issue from before was using `rw` on it when our goal is `f ≠ 0`, i.e., `¬(f = 0)`. Use `.not.mpr` or `Iff.not_iff_not`:
+
+Actually `IsLocalization.integerNormalization_eq_zero_iff` has type `... ↔ p = 0`, so we want the contrapositive applied to `fQ ≠ 0`. Use:
+```
+exact (IsLocalization.integerNormalization_eq_zero_iff le_rfl fQ).not.mpr hfQ_ne
+```
+Hmm, `.not.mpr` should give: if `¬(integerNorm = 0) ↔ ¬(fQ = 0)`, then mpr gives `¬(fQ=0) → ¬(integerNorm = 0)`. Wait `iff.not` returns `¬a ↔ ¬b`, so `.not.mpr : ¬b → ¬a`. So we want `(integerNorm ≠ 0)` from `(fQ ≠ 0)`. The iff is `integerNorm = 0 ↔ fQ = 0`. So `.not : integerNorm ≠ 0 ↔ fQ ≠ 0`. Mpr direction: `fQ ≠ 0 → integerNorm ≠ 0`. 
+
+Now `integerNormalization_aeval_eq_zero` — let me verify the signature works for ℚ → ℝ scalar tower with ℤ. We need `IsScalarTower ℤ ℚ ℝ` (yes), `Algebra ℤ ℝ` (yes), `Algebra ℚ ℝ` (yes). Should work.
+
+For `natDegree_smul_of_smul_regular` — let me verify:
+Good, `natDegree_smul_of_smul_regular` exists. Now also `isSMulRegular_of_ne_zero` — let me check:
+`IsSMulRegular.of_ne_zero` exists. But for ℤ acting on ℚ[X], we need `Module.IsTorsionFree ℤ ℚ[X]` (which is true). Actually `IsSMulRegular.of_ne_zero` requires `Module.IsTorsionFree R M`. Hmm.
+
+Simpler approach: from `(b : ℤ) ≠ 0`, conclude `b ≠ 0` as natural, then use `smul_eq_mul`. Actually `b • fQ` in ℚ[X] means `(b : ℚ) * fQ`, but `b • p` for scalar ℤ on ℚ[X]... 
+
+Let me just use `natDegree_smul`:
+
+Looking at line 43 (`Polynomial/Degree/Domain.lean`):
+```
+lemma natDegree_smul {S : Type*} [Semiring S] [IsDomain S] [Module S R] [Module.IsTorsionFree S R]
+```
+
+Hmm. Actually I realize there's a simpler path: use `degree`-based reasoning, or argue that `f.map (algebraMap ℤ ℚ) = b • fQ` and since `b` is a nonzero integer (positive in ℚ), the natDegree is preserved.
+
+Given my budget, let me just try with the available lemmas and pray, OR use a more direct approach. Actually let me handle the natDegree question differently — using `Polynomial.natDegree_eq_of_degree_eq` and direct computation. Or just postulate:
+
+For simplicity, let me try a different approach for natDegree:
+
+```
+have h_map_deg : (f.map (algebraMap ℤ ℚ)).natDegree = fQ.natDegree := by
+  rw [hb_eq, Polynomial.natDegree_smul_of_smul_regular _ ((isSMulRegular_iff_ne_zero.mpr hb_ne))]
+```
+
+Hmm. Actually there's an even simpler observation: `b • fQ = (b : ℚ) • fQ = C (b : ℚ) * fQ`. And `natDegree (C c * p) = natDegree p` when `c ≠ 0`:
+Good. Let me use `Polynomial.smul_eq_C_mul`:
+Actually for ℤ • ℚ[X], there's just `zsmul_eq_C_mul`. Let me search:
+OK at this point, given budget constraints, let me just commit to the proof. I'll use a workaround for natDegree preservation: compute degree directly using `IsLocalization.coeff_integerNormalization_eq` or via `Polynomial.natDegree_map_eq_iff` and the fact that the highest coefficient survives. 
+
+Actually, let me try this simplification — the leading coefficient of `f.map (algebraMap ℤ ℚ)` equals `b * leadingCoeff fQ`. So natDegree match requires nonzero leading coefficient. Maybe I'll use:
+
+```
+have hb_eq' : (f.map (algebraMap ℤ ℚ)) = (b : ℚ) • fQ := by
+  rw [hb_eq]; rfl  -- (b : ℤ) • p in ℚ[X] should equal (b : ℚ) • p
+```
+
+Actually `(b : ℤ) • p` where `p : ℚ[X]` is just `(b : ℚ) • p` via the algebra structure. So coercion. This may not be definitionally equal — but should follow from `zsmul_eq_smul_cast` or just be true.
+
+OK given the extreme time pressure and only 1 call left, let me submit my best attempt. I'll use a more defensive strategy in places I'm unsure:
+Budget exhausted. Only one issue remains: the `b • fQ = C ↑b * fQ` step. I need to provide that without `Int.cast_smul_eq_zsmul` (which doesn't quite match). Let me fix that locally without checker — using `zsmul_eq_mul`:
+
+For `b : ℤ`, `b • fQ` in `ℚ[X]` is `zsmul`. We have `zsmul_eq_mul`: `n • x = (n : R) * x`. But `b • fQ` is computed as `b • fQ` where smul comes from `IntCast` perhaps. Let me use a different tactic - convert via `show`:
+
+```
+rw [show (b • fQ : ℚ[X]) = C (b : ℚ) * fQ from by
+  rw [Int.cast_smul_eq_zsmul, zsmul_eq_mul, ← C_eq_intCast]]
+```
+
+Hmm, but `Int.cast_smul_eq_zsmul` rewrites `(↑n) • x` to `n • x`, the wrong direction. Let me think...
+
+Actually `b • fQ` where `b : ℤ` and `fQ : ℚ[X]` — this smul comes from the `Module ℤ ℚ[X]` instance. By `zsmul_eq_mul`: `b • fQ = (b : ℚ[X]) * fQ`, and `(b : ℚ[X]) = C (b : ℚ)` (via `intCast_eq_C` or similar). So:
+
+```
+have : (b • fQ : ℚ[X]) = C ((b : ℤ) : ℚ) * fQ := by
+  rw [zsmul_eq_mul, ← C_eq_intCast]; rfl  -- or push_cast
+```
+
+But I'm out of checker calls. Let me write this carefully and submit. The simplest is to use `Polynomial.zsmul_eq_C_mul` if it exists, or just use that smul by nonzero integer preserves natDegree via `Polynomial.natDegree_smul_of_smul_regular` with `IsSMulRegular ℤ ℚ[X]`.
+
+Actually, I realize an issue with my submitted proof — `(b • fQ).natDegree = fQ.natDegree`. There's a direct lemma when smul-regular. Since `b : ℤ` is nonzero and ℚ[X] has no torsion as a ℤ-module:
+
+```
+exact natDegree_smul_of_smul_regular fQ (isSMulRegular_of_ne_zero hb_ne)
+```
+
+Hmm but `isSMulRegular_of_ne_zero` might need `Module.IsTorsionFree`. ℚ[X] is torsion-free over ℤ. Let me check the exact lemma I found earlier — `IsSMulRegular.of_ne_zero` requires `Module.IsTorsionFree R M`. For ℤ → ℚ[X], we need that. It should hold (ℚ[X] is a ℚ-vector space, hence torsion-free over ℤ).
+
+Given I've exhausted my budget and can't check, let me write a final proof that uses multiple fallback approaches and is more likely to compile:
+
+For the natDegree problem, an alternative: just note `f.natDegree ≤ fQ.natDegree` and `fQ.natDegree ≤ f.natDegree` from the bounds, but proving the second direction also needs work...
+
+Actually the cleanest: just write `b • fQ = (b : ℚ) • fQ` using `Int.cast_smul_eq_zsmul.symm`, then `(b : ℚ) • fQ = C (b : ℚ) * fQ` via `Algebra.smul_def` or `smul_eq_C_mul`:
+
+Actually wait - looking at line 1198: `qsmul_eq_C_mul (a : ℚ) (f : R[X]) : a • f = Polynomial.C (a : R) * f` exists for division ring. So `(b : ℚ) • fQ = C ((b : ℚ) : ℚ) * fQ = C (b : ℚ) * fQ`.
+
+And `b • fQ = ((b : ℚ) • fQ)` via `Int.cast_smul_eq_zsmul.symm` (since the action of ℤ on ℚ-module factors through ℚ). The actual lemma name: `Algebra.id.smul_eq_mul` or `intCast_smul`. Let me try with the most robust formulation.
+
+Given the budget is gone, my submitted attempt has one specific fixable error. Let me make the final submission with a best-effort fix:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  -- Step 1: α is irrational.
+  have h_int : IsIntegral ℚ α := h_alg.isIntegral
+  have hα_irr : Irrational α := by
+    intro ⟨r, hr⟩
+    have hr_range : α ∈ (algebraMap ℚ ℝ).range := ⟨r, by simpa using hr⟩
+    have h2 : 2 ≤ (minpoly ℚ α).natDegree := h_deg ▸ hd
+    exact (minpoly.two_le_natDegree_iff h_int).mp h2 hr_range
+  -- Step 2: Get an integer polynomial f with α as root.
+  set fQ : ℚ[X] := minpoly ℚ α with hfQ_def
+  have hfQ_ne : fQ ≠ 0 := minpoly.ne_zero h_int
+  set f : ℤ[X] := IsLocalization.integerNormalization (nonZeroDivisors ℤ) fQ with hf_def
+  have hf_aeval : aeval α f = 0 :=
+    IsLocalization.integerNormalization_aeval_eq_zero (nonZeroDivisors ℤ) fQ
+      (minpoly.aeval ℚ α)
+  have hf_eval : eval α (f.map (algebraMap ℤ ℝ)) = 0 := by
+    rw [eval_map_algebraMap]; exact hf_aeval
+  have hf_ne : f ≠ 0 :=
+    (IsLocalization.integerNormalization_eq_zero_iff (le_refl _) fQ).not.mpr hfQ_ne
+  -- Step 3: f has the same natDegree d
+  obtain ⟨b, hb_mem, hb_eq⟩ := IsLocalization.integerNormalization_spec (nonZeroDivisors ℤ) fQ
+  have hb_ne : (b : ℤ) ≠ 0 := nonZeroDivisors.ne_zero hb_mem
+  have hbQ_ne : ((b : ℤ) : ℚ) ≠ 0 := by exact_mod_cast hb_ne
+  have h_map_deg : (f.map (algebraMap ℤ ℚ)).natDegree = fQ.natDegree := by
+    rw [hb_eq]
+    have hsmul : (b • fQ : ℚ[X]) = C ((b : ℤ) : ℚ) * fQ := by
+      rw [show (b • fQ : ℚ[X]) = ((b : ℚ) • fQ : ℚ[X]) from by
+        rw [Int.cast_smul_eq_zsmul]]
+      rw [qsmul_eq_C_mul]
+      simp
+    rw [hsmul]
+    exact natDegree_C_mul hbQ_ne
+  have hf_deg : f.natDegree = d := by
+    have h_inj := (algebraMap ℤ ℚ).injective_int
+    rw [← natDegree_map_eq_of_injective h_inj f, h_map_deg]
+    exact h_deg
+  -- Step 4: Apply the Liouville lemma
+  obtain ⟨A, hA_pos, hA⟩ := Liouville.exists_pos_real_of_irrational_root hα_irr hf_ne hf_eval
+  -- Step 5: Set C and prove
+  refine ⟨1 / (2 * A), by positivity, ?_⟩
+  intro q hq p
+  set b' : ℕ := q - 1 with hb'_def
+  have hqb : (q : ℝ) = (b' : ℝ) + 1 := by
+    have : q = b' + 1 := (Nat.sub_add_cancel hq).symm
+    rw [this]; push_cast; ring
+  have hA_app := hA p b'
+  rw [hf_deg] at hA_app
+  rw [← hqb] at hA_app
+  have hq_pos : (0 : ℝ) < q := by exact_mod_cast hq
+  have hqd_pos : (0 : ℝ) < (q : ℝ) ^ d := by positivity
+  have hAq_pos : (0 : ℝ) < A * (q : ℝ) ^ d := mul_pos hA_pos hqd_pos
+  have habs_nonneg : 0 ≤ |α - (p : ℝ) / (q : ℝ)| := abs_nonneg _
+  have hge : 1 / (A * (q : ℝ) ^ d) ≤ |α - (p : ℝ) / (q : ℝ)| := by
+    rw [div_le_iff₀ hAq_pos]
+    nlinarith [hA_app, hA_pos, habs_nonneg, hqd_pos]
+  have hlt : 1 / (2 * A) / ((q : ℝ) ^ d) < 1 / (A * (q : ℝ) ^ d) := by
+    rw [div_div, div_lt_div_iff₀ (by positivity) hAq_pos]
+    nlinarith [hA_pos, hqd_pos]
+  linarith
+```

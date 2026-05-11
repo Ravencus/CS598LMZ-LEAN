@@ -1,0 +1,4 @@
+I’m loading the Lean proving workflow, then I’ll check the statement and build the proof in small verified steps.
+The proof looks recursive: split `[0,1]` at `1/2`, derive functional equations for the series on each half, then solve two linear equations for `∫ f` and `∫ f^2`. I’m checking the exact Mathlib interval-integral lemmas I’ll need.
+I have the recurrence I want. The remaining work is Lean mechanics: expressing `tsum` as head plus tail and using the right interval-integral change-of-variables lemmas. I’m probing those theorem names now.
+The recurrence proof is still the right route. I’m searching the installed Mathlib sources for the exact `tsum` tail theorem names so I can keep the proof small rather than re-deriving sequence machinery.

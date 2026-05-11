@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Application type mismatch: The argument\n  p\nhas type\n  Polynomial.{0} ℂ\nof sort `Type` but is expected to have type\n  Polynomial.{u_1} (Matrix n n ℂ)\nof sort `Type u_1` in the application\n  eval (D * ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 11,
+      "column": 27,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  p\nhas type\n  Polynomial.{0} ℂ\nof sort `Type` but is expected to have type\n  Polynomial.{u_1} (Matrix n n ℂ)\nof sort `Type u_1` in the application\n  eval (D * C) p\n"
+    }
+  ]
+}

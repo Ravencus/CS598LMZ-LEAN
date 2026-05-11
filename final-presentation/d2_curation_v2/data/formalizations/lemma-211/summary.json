@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-211",
+  "english_title": "Lemma 2.1.1",
+  "statement_en": "Let $H_N$ denote the $N$th harmonic number. Then for every positive integer $N$,\n$$H_N>\\log(N)+\\frac{1}{2}.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instInv', which is 'noncomputable'"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def harmonicNumber (N : ℕ) : ℝ :=\n  Finset.sum (Finset.Icc 1 N) (fun k => (k : ℝ)⁻¹)\n\ntheorem harmonicNumber_gt_log_add_one_half (N : ℕ) (hN : 0 < N) :\n    harmonicNumber N > Real.log (N : ℝ) + (1 / 2 : ℝ) := by\n  sorry"
+}

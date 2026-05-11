@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-23-counterexample-after-removing-condition-3",
+  "english_title": "Example 2.3: Counterexample After Removing Condition 3",
+  "statement_en": "Define\n$$a_{n,k}:=\\begin{cases}1&(n,k)=(1,1)\\\\n&(n,k)=(n,n)\\\\1-n&(n,k)=(n,n-1)\\\\0&\\text{otherwise.}\\end{cases}$$\nThis double sequence does not satisfy condition 3 of Proposition 2.1. Let $$x_k:=\\frac{(-1)^k}{k}.$$ Then\n$$\\sum_{k\\le n} a_{n,k}x_k = a_{n,n-1}x_{n-1}+a_{n,n}x_n = 2(-1)^n,$$\nso the limit of the sum does not exist, and therefore it cannot equal the limit $0$ of $x_k$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef a : ℕ → ℕ → ℚ\n  | 1, 1 => 1\n  | n, k =>\n      if k = n then n\n      else if k + 1 = n then 1 - n\n      else 0\n\ndef x : ℕ → ℚ\n  | 0 => 0\n  | k + 1 => ((-1 : ℚ) ^ (k + 1)) / (k + 1)\n\ndef rowSum (n : ℕ) : ℚ :=\n  Finset.sum (Finset.range (n + 1)) (fun k => a n k * x k)\n\ntheorem doubleSequence_counterexample :\n    (∀ n ≥ 2, rowSum n = 2 * ((-1 : ℚ) ^ n)) ∧\n    ¬ Filter.Tendsto rowSum Filter.atTop (nhds (0 : ℚ)) ∧\n    Filter.Tendsto x Filter.atTop (nhds (0 : ℚ)) := by\n  sorry"
+}

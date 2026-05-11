@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-217-fejer",
+  "english_title": "Proposition 2.1.7 (Fejer)",
+  "statement_en": "Let $f:[1,+\\infty)\\to\\mathbb{R}$ be differentiable, with $f'(x)>0$ and $f'(x)$ monotonically decreasing. Assume also that\n$$\\lim_{x\\to \\infty} f'(x)=0,\\quad \\lim_{x\\to \\infty} x f'(x)=\\infty.$$ \nThen the sequence $f(n)$ is uniformly distributed modulo $1$.",
+  "difficulty": "hard",
+  "domain": "uniform distribution theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\ndef UniformlyDistributedModOne (u : ℕ → ℝ) : Prop :=\n  ∀ a b : ℝ,\n    0 ≤ a →\n    a ≤ b →\n    b ≤ 1 →\n      Tendsto\n        (fun N : ℕ =>\n          (Finset.sum (Finset.range N) fun n =>\n            if Int.fract (u n) ∈ Set.Icc a b then (1 : ℝ) else 0) /\n            (N : ℝ))\n        atTop\n        (nhds (b - a))\n\ntheorem monotone_deriv_tends_uniformlyDistributedModOne\n    {f : ℝ → ℝ}\n    (hDiff : DifferentiableOn ℝ f (Set.Ici (1 : ℝ)))\n    (hPos : ∀ ⦃x : ℝ⦄, x ∈ Set.Ici (1 : ℝ) → 0 < deriv f x)\n    (hAnti : AntitoneOn (deriv f) (Set.Ici (1 : ℝ)))\n    (hLim0 : Tendsto (fun x : ℝ => deriv f x) atTop (nhds (0 : ℝ)))\n    (hLimTop : Tendsto (fun x : ℝ => x * deriv f x) atTop atTop) :\n    UniformlyDistributedModOne (fun n : ℕ => f n) := by\n  sorry"
+}

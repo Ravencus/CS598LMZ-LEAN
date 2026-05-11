@@ -1,0 +1,58 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 399.3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 169.3,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Application type mismatch: The argument\n  m\nhas type\n  Polynomial.{0} ℂ\nof sort `Type` but is expected to have type\n  Polynomial.{u_1} (Matrix n n ℂ)\nof sort `Type u_1` in the application\n  eval (B * "
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 59.88,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 5,
+      "first_error": "Invalid alternative name `X`: Expected `monomial`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 162.47,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 7,
+      "first_error": "unsolved goals\nidx : Type u_1\ninst✝¹ : Fintype idx\ninst✝ : DecidableEq idx\nA✝ B✝ A B : Matrix idx idx ℂ\nm : ℂ[X] := minpoly ℂ (B * A)\nhm : (aeval (B * A)) m = 0\nk : ℕ\nhk : A * (B * A) ^ k = (A * B) ^ "
+    }
+  ]
+}

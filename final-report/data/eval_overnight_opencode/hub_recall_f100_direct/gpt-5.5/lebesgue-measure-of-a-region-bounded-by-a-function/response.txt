@@ -1,0 +1,4 @@
+["reducing-set-problems-to-function-problems-hub", "interchanging-sums-and-integrals-hub", "piecewise-estimates-hub"]
+- reducing-set-problems-to-function-problems-hub: The measure of the subgraph is proved by replacing the set with its indicator function and integrating that indicator over the product space.
+- interchanging-sums-and-integrals-hub: The core proof uses Tonelli/Fubini to rewrite the product-space integral as iterated integrals over vertical fibers.
+- piecewise-estimates-hub: Each vertical fiber is the interval-like set `{y | 0 ≤ y ∧ y ≤ f x}`, whose measure is computed as its length `f x` using nonnegativity.

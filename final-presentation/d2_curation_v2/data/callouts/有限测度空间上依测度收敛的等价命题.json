@@ -1,0 +1,49 @@
+{
+  "note_title": "有限测度空间上依测度收敛的等价命题",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#1",
+      "type": "note",
+      "title": "有限测度空间上依照测度收敛的充要条件",
+      "body": "在***有限测度***空间上，函数列$X_n$是一列可测函数，那么$X_n \\xrightarrow{\\mu}{X}$等价于任意子列$X_{n(m)}$都存在一个子列的之列$X_{n(m_k)}$几乎处处收敛到$X$",
+      "position_char": 39,
+      "position_line": 6
+    },
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#2",
+      "type": "note",
+      "title": "Urysohn subsequence principle",
+      "body": "如果$y_n$属于拓扑空间当中的集合，并且任意子列$y_{n(m)}$都存在一个收敛到拓扑空间当中元素$y$的子列$y_{n(m_k)}\\to y$，那么$y_n\\to y$.",
+      "position_char": 1435,
+      "position_line": 26
+    },
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#3",
+      "type": "example",
+      "title": "反例1",
+      "body": "假设命题成立不需要测度空间是有限的，那么在实数的Lebesgue测度空间上考虑函数列$f_n(x):=(x+1/n)^2$。这个函数列处处收敛到$x^2$,因此它的子列以及子列的子列都是处处收敛到$x^2$的。但是这个序列并不依Lebesgue测度收敛到$x^2$，因为对充分小的$\\varepsilon$$$\\{x\\in \\mathbb{R}:(x+1/n)^2-x^2\\geq \\varepsilon\\}=[\\frac{n\\varepsilon}{2}-\\frac{n}{2},+\\infty)$$对任意的$n\\in \\mathbb{N}$而言这个集合的测度都是无穷的。因此该序列不会依测度收敛到$x^2$,这就与命题矛盾了。",
+      "position_char": 1807,
+      "position_line": 33
+    },
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#4",
+      "type": "question",
+      "title": "问题",
+      "body": "对于连续函数$f:\\mathbb{R}\\to \\mathbb{R}$的连续映射，$X_n$是概率空间当中的一列随机变量，那么$X_n$在什么条件下的收敛可以使得$f(X_n)$保持这种收敛性？",
+      "position_char": 2155,
+      "position_line": 38
+    },
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#5",
+      "type": "note",
+      "title": "依照概率收敛在连续映射下保持不变",
+      "body": "假设$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续映射，那么\n$$X_n(\\omega)\\xrightarrow {\\text{P}}X(\\omega) \\implies f(X_n) \\xrightarrow {P}{f(X)}$$",
+      "position_char": 2735,
+      "position_line": 54
+    }
+  ]
+}

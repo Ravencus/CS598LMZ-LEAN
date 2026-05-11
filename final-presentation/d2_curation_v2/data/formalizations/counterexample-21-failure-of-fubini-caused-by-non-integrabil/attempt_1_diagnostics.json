@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a6f205d45223.lean",
+      "line": 5,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.decidableEq', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a6f205d45223.lean",
+      "line": 15,
+      "column": 71,
+      "severity": "error",
+      "message": "expected token\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a6f205d45223.lean",
+      "line": 5,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.decidableEq', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_a6f205d45223.lean",
+      "line": 15,
+      "column": 71,
+      "severity": "error",
+      "message": "expected token\n"
+    }
+  ]
+}

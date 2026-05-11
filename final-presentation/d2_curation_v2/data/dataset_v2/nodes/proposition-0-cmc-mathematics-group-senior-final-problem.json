@@ -1,0 +1,25 @@
+{
+  "id": "proposition-0-cmc-mathematics-group-senior-final-problem",
+  "type": "problem",
+  "source_note": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+  "english_source_note": "A.e. Convergence of Cesaro Means of Uniformly a.e. Bounded Functions",
+  "callout_id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#1",
+  "english_title": "Proposition 0, CMC Mathematics Group Senior Final Problem",
+  "statement_en": "Let $(X,\\Omega,\\mu)$ be a measure space, and let $f_n$ be a sequence of measurable functions on $X$ that is almost everywhere uniformly bounded. Define $A_N(x):=\\frac{1}{N}\\sum_{n\\leq N} f_n(x)$. Then\n$$\\sum_{N\\geq 1} \\frac{1}{N}\\int_X A_{N}^{2}(x)\\,d\\mu <\\infty\\implies A_N(x)\\xrightarrow{a.e.}{0}.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Borel-Cantelli type convergence arguments",
+    "dyadic decomposition",
+    "maximal control from averaged square bounds",
+    "almost everywhere convergence from summability"
+  ],
+  "prerequisites": [
+    "measure theory",
+    "almost everywhere convergence",
+    "Chebyshev inequality",
+    "series and summability"
+  ],
+  "callout_body": "$(X,\\Omega,\\mu)$是一个测度空间，$f_n$是$X$上一列几乎处处一致有界的可测函数列。令$A_N(x):=\\frac{1}{N}\\sum_{n\\leq N} f_n(x)$那么$$\\sum_{N\\geq 1} \\frac{1}{N}\\int_X A_{N}^{2}(x)\\,d\\mu <\\infty\\implies A_N(x)\\xrightarrow{a.e.}{0}$$"
+}

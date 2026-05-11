@@ -1,0 +1,30 @@
+{
+  "problem_id": "convolution-of-dual-lebesgue-exponents-is-uniformly-continuo",
+  "english_title": "Convolution of Dual Lebesgue Exponents Is Uniformly Continuous, Bounded, and Vanishes at Infinity",
+  "statement_en": "If $f\\in L^p$ and $g\\in L^{q}$ with $1/p+1/q=1$ and $p\\in[1,+\\infty]$, then $f*g$ is uniformly continuous and bounded, and moreover belongs to $C_0$.",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'integral', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Unknown identifier `𝓝`"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter MeasureTheory\n\nnoncomputable section\n\ndef convolutionFun (f g : ℝ → ℂ) : ℝ → ℂ :=\n  fun x => ∫ t : ℝ, f t * g (x - t)\n\ndef InC0 (h : ℝ → ℂ) : Prop :=\n  Continuous h ∧\n    Filter.Tendsto h Filter.atTop (Filter.nhds (0 : ℂ)) ∧\n    Filter.Tendsto h Filter.atBot (Filter.nhds (0 : ℂ))\n\ntheorem lp_convolution_uniformContinuous_bounded_inC0\n    {p q : ENNReal} {f g : ℝ → ℂ}\n    (hf : MemLp f p volume) (hg : MemLp g q volume)\n    (hp : (1 : ENNReal) ≤ p)\n    (hpq : (1 : ENNReal) / p + (1 : ENNReal) / q = 1) :\n    UniformContinuous (convolutionFun f g) ∧\n      (∃ C : ℝ, 0 ≤ C ∧ ∀ x : ℝ, ‖convolutionFun f g x‖ ≤ C) ∧\n      InC0 (convolutionFun f g) := by\n  sorry"
+}

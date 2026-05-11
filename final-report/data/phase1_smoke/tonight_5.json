@@ -1,0 +1,58 @@
+[
+  {
+    "problem_id": "example-127",
+    "kind": "pure",
+    "source": "dataset_v2",
+    "statement_en": "Define a_n = n. Show that a_{2k} (i.e., the doubled-index subsequence) is a strictly monotone sub-indexing of the natural sequence: StrictMono (k -> 2*k) and id(2*k) = 2*k.",
+    "verified_signature": "import Mathlib\n\ntheorem evenIndexedSubsequenceOfNaturalSequence :\n    StrictMono (fun k : ℕ => 2 * k) ∧\n      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by\n  sorry",
+    "phase1_evidence": "§1.4: gpt-5.4-mini K=3 fails (omega blocked by un-β-reduced lambda); gpt-5.5 K=2 succeeds via dsimp+omega+rfl. Real evidence already collected."
+  },
+  {
+    "problem_id": "lemma-21",
+    "kind": "pure",
+    "source": "dataset_v2",
+    "statement_en": "For all real x: ‖exp(2π i x) - 1‖ ≤ 2π|x|. A standard inequality on the complex exponential.",
+    "verified_signature": "import Mathlib\n\ntheorem complex_exponential_sub_one_bound (x : ℝ) :\n    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by\n  sorry",
+    "phase1_evidence": "Untested — predicted to be moderate difficulty; requires Mathlib API knowledge of Complex.exp norm bounds."
+  },
+  {
+    "problem_id": "problem-31-3",
+    "kind": "pure",
+    "source": "dataset_v2",
+    "statement_en": "The series Σ 1/((n+2)·log(n+2)) diverges (Bertrand-style series at the boundary of integral test).",
+    "verified_signature": "import Mathlib\n\ntheorem harmonic_log_series_diverges :\n    ¬ Summable (fun n : ℕ => 1 / (((n : ℝ) + 2) * Real.log ((n : ℝ) + 2))) := by\n  sorry",
+    "phase1_evidence": "Untested — predicted to be moderate difficulty; Mathlib has the API but may need careful invocation."
+  },
+  {
+    "problem_id": "_synth_integral_max_cos",
+    "kind": "computational",
+    "source": "synthetic (canonical sorry-with-witness example)",
+    "statement_en": "Prove that the integral from 0 to 2π of max(cos u, 0) equals 2.",
+    "verified_signature": "import Mathlib\n\nlemma integral_max_cos :\n    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by\n  sorry",
+    "expected_sympy_block": {
+      "kind": "integral",
+      "var": "u",
+      "lower": "0",
+      "upper": "2*pi",
+      "expression": "Max(cos(u), 0)",
+      "expected": "2"
+    },
+    "phase1_evidence": "§1.5 verified end-to-end: gpt-5.5 emits the sympy block; sympy returns correct=True, computed=2."
+  },
+  {
+    "problem_id": "_synth_integral_x_log_x",
+    "kind": "computational",
+    "source": "synthetic (clean sympy-amenable definite integral)",
+    "statement_en": "Prove that the integral from 0 to 1 of x·log(x) equals -1/4.",
+    "verified_signature": "import Mathlib\n\nlemma integral_x_log_x :\n    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by\n  sorry",
+    "expected_sympy_block": {
+      "kind": "integral",
+      "var": "x",
+      "lower": "0",
+      "upper": "1",
+      "expression": "x*log(x)",
+      "expected": "-1/4"
+    },
+    "phase1_evidence": "Sympy verified the closed form (correct=True, computed=-1/4) in <0.1s. Mathlib has no built-in closed form for this integral; pure-Lean attempt requires integration by parts and limit handling."
+  }
+]

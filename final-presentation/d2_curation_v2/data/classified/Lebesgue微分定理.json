@@ -1,0 +1,74 @@
+{
+  "note_title": "Lebesgue微分定理",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "Lebesgue微分定理#1",
+      "type": "note",
+      "title": "Lebesgue微分定理",
+      "body": "如果$f \\in L^1_{\\text{loc}}(\\mathbb{R}^m)$那么下面极限几乎处处成立：$$\\lim_{\\begin{aligned}m(B)&\\to 0 \\\\x \\in\nB\\end{aligned}}\\frac{1}{m(B)}\\int_{B} f(y)dy = f(x)$$\n即几乎所有点都是Lebesgue点。",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "Lebesgue微分定理#1",
+        "classification": "problem",
+        "english_title": "Lebesgue Differentiation Theorem",
+        "if_problem": {
+          "statement_en": "If $f \\in L^1_{\\text{loc}}(\\mathbb{R}^m)$, then the following limit holds almost everywhere: $$\\lim_{\\begin{aligned}m(B)&\\to 0 \\\\x \\in B\\end{aligned}}\\frac{1}{m(B)}\\int_{B} f(y)dy = f(x)$$ That is, almost every point is a Lebesgue point.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Hardy-Littlewood maximal function",
+            "differentiation of integrals",
+            "approximation by continuous functions"
+          ],
+          "prerequisites": [
+            "local integrability",
+            "Lebesgue measure",
+            "almost everywhere convergence",
+            "maximal inequalities"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Lebesgue微分定理#2",
+      "type": "note",
+      "title": "Lebesgue密度定理",
+      "body": "集合$A$是$\\mathbb{R}^n$当中Lebesgue可测的子集，那么对于几乎所有点而言$$d_A(x)=1_A(x)\\text{ for a.e. }x\\in \\mathbb{R}^n$$\n\n一般来说如果一个点$x$对应的$d_A(x)=1$那么我们一般称其为\"集合A的密度点\"或者说a point of density for A。",
+      "position_char": 5567,
+      "position_line": 89,
+      "classification_result": {
+        "id": "Lebesgue微分定理#2",
+        "classification": "problem",
+        "english_title": "Lebesgue Density Theorem",
+        "if_problem": {
+          "statement_en": "Let $A$ be a Lebesgue measurable subset of $\\mathbb{R}^n$. Then for almost every point, $$d_A(x)=1_A(x)\\text{ for a.e. }x\\in \\mathbb{R}^n$$ In general, if a point $x$ satisfies $d_A(x)=1$, then it is called a density point of $A$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Lebesgue differentiation theorem",
+            "indicator functions",
+            "density of measurable sets"
+          ],
+          "prerequisites": [
+            "Lebesgue measurable sets",
+            "indicator functions",
+            "Lebesgue measure",
+            "almost everywhere statements"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Lebesgue微分定理#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lebesgue Differentiation Theorem\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f \\\\in L^1_{\\\\text{loc}}(\\\\mathbb{R}^m)$, then the following limit holds almost everywhere: $$\\\\lim_{\\\\begin{aligned}m(B)&\\\\to 0 \\\\\\\\x \\\\in B\\\\end{aligned}}\\\\frac{1}{m(B)}\\\\int_{B} f(y)dy = f(x)$$ That is, almost every point is a Lebesgue point.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Hardy-Littlewood maximal function\",\n        \"differentiation of integrals\",\n        \"approximation by continuous functions\"\n      ],\n      \"prerequisites\": [\n        \"local integrability\",\n        \"Lebesgue measure\",\n        \"almost everywhere convergence\",\n        \"maximal inequalities\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Lebesgue微分定理#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lebesgue Density Theorem\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $A$ be a Lebesgue measurable subset of $\\\\mathbb{R}^n$. Then for almost every point, $$d_A(x)=1_A(x)\\\\text{ for a.e. }x\\\\in \\\\mathbb{R}^n$$ In general, if a point $x$ satisfies $d_A(x)=1$, then it is called a density point of $A$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Lebesgue differentiation theorem\",\n        \"indicator functions\",\n        \"density of measurable sets\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue measurable sets\",\n        \"indicator functions\",\n        \"Lebesgue measure\",\n        \"almost everywhere statements\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

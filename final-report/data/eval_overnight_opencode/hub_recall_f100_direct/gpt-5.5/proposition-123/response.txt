@@ -1,0 +1,4 @@
+["basic-methods-in-analysis-i-hub", "term-by-term-estimates-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- basic-methods-in-analysis-i-hub: The proof is a finite-sum algebra problem where the key move is to recognize a tractable exact/telescoping form for a factorial expression.
+- term-by-term-estimates-hub: Although no inequality estimate is needed, the relevant strategy is termwise manipulation of summands to make the whole finite sum collapse.
+- estimates-for-the-sum-of-prime-reciprocals-hub: Its “different expressions of the same object” strategy fits the identity proof: both sides are transformed into the same finite rational expression.

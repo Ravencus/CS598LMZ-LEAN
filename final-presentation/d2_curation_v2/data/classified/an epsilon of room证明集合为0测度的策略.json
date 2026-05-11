@@ -1,0 +1,159 @@
+{
+  "note_title": "an epsilon of room证明集合为0测度的策略",
+  "is_hub": true,
+  "in_subset_via": [
+    "an epsilon of room",
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#1",
+      "type": "note",
+      "title": "基本的思路",
+      "body": "1. 在测度空间当中，我们要证明一个集合$A$为零测度，即$\\mu(A) =0$，但是这件事通常并不好直接展开。\n2. 于是转而把命题修改为，证明$A_{\\varepsilon}$这个集合对于$\\forall \\varepsilon >0$都有$\\mu(A_{\\varepsilon})=0$.\n3. 证明的思路无非就是，用一些更大的集合去覆盖$A_{\\varepsilon}$，然后证明这种覆盖其测度的上界可以任意小，即$$\\mu(A_{\\varepsilon})<r,\\forall r>0$$也就是说用一个与参数$r$有关的一族集合去覆盖$A_{\\varepsilon}$,并通过调整$r$使得这一族集合的测度可以任意小。或者可以利用一些现成的对集合的控制，比如一些weak-type的不等式。总之无非就是估计把问题转换为估计$A_{\\varepsilon}$。",
+      "position_char": 77,
+      "position_line": 9,
+      "classification_result": {
+        "id": "an epsilon of room证明集合为0测度的策略#1",
+        "classification": "strategy_template",
+        "english_title": "Basic Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Epsilon-neighborhood measure-zero strategy",
+          "summary_en": "To prove a set has measure zero, replace the original target by auxiliary sets such as $A_{\\varepsilon}$ and estimate their measures instead. The core move is to cover $A_{\\varepsilon}$ by larger sets whose total measure can be made arbitrarily small, or to control them using available weak-type estimates.",
+          "applicability": "Applies when proving that a set has measure zero directly is difficult, but one can instead estimate related enlarged or auxiliary sets and show their measures can be made arbitrarily small."
+        }
+      }
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#2",
+      "type": "question",
+      "title": "本问题意义下的分布函数的定义",
+      "body": "$(X,\\mathcal{F},\\mu)$是一个测度空间$f:X\\to \\mathbb{C}$是一个$(\\mathcal{F},\\mathcal{B}(\\mathbb{C}))$的可测函数,也就是$\\mathcal{B}(\\mathbb{C})$当中元素关于映射$f$的原像是$\\mathcal{F}$当中的元素。定义$$\\lambda_f(a):=\\mu(\\{x:|f(x)| >a\\})$$",
+      "position_char": 610,
+      "position_line": 18,
+      "classification_result": {
+        "id": "an epsilon of room证明集合为0测度的策略#2",
+        "classification": "definition",
+        "english_title": "Definition of the Distribution Function in This Problem",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#3",
+      "type": "note",
+      "title": "这种分布函数的基本性质",
+      "body": "1. $\\lambda_f$是一个单调减少并且右连续的函数。\n2. 如果$|f|\\leq |g|$那么$\\lambda_f \\leq \\lambda_g$\n3. 如果$|f_n|\\uparrow |f|$那么$\\lambda_{f_n}\\uparrow \\lambda_f$\n4. 如果$f = g+h$那么$\\lambda_f(a)\\leq \\lambda_g(a/2)+\\lambda_h(a/2)$\n5. 如果$f = gh$那么$\\lambda_f(a)\\leq \\lambda_g(\\sqrt{a/2})+\\lambda_h(\\sqrt{a/2})$",
+      "position_char": 1145,
+      "position_line": 25,
+      "classification_result": {
+        "id": "an epsilon of room证明集合为0测度的策略#3",
+        "classification": "problem",
+        "english_title": "Basic Properties of This Distribution Function",
+        "if_problem": {
+          "statement_en": "Let $(X,\\mathcal{F},\\mu)$ be a measure space and let $f$ be measurable. Prove the following properties of the distribution function $\\lambda_f(a)=\\mu(\\{x:|f(x)|>a\\})$: (1) $\\lambda_f$ is decreasing and right-continuous; (2) if $|f|\\le |g|$, then $\\lambda_f\\le \\lambda_g$; (3) if $|f_n|\\uparrow |f|$, then $\\lambda_{f_n}\\uparrow \\lambda_f$; (4) if $f=g+h$, then $\\lambda_f(a)\\le \\lambda_g(a/2)+\\lambda_h(a/2)$; (5) if $f=gh$, then $\\lambda_f(a)\\le \\lambda_g(\\sqrt{a/2})+\\lambda_h(\\sqrt{a/2})$.",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "set inclusion arguments",
+            "monotone convergence for measurable sets",
+            "triangle inequality",
+            "pointwise comparison"
+          ],
+          "prerequisites": [
+            "measurable functions",
+            "measure spaces",
+            "continuity from above and below of measures",
+            "basic inequalities"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#4",
+      "type": "note",
+      "title": "启示",
+      "body": "如果我们要估计$\\lambda_f(\\alpha)$,那么可以尝试放大$|f|$,或者放大以后再把函数分解为更简单，更熟悉，分布函数更好估计的函数,比如$$|f| \\leq |g|+|h|$$此时$$\\lambda_f(\\alpha)\\leq \\lambda_g(\\alpha/2)+\\lambda_h(\\alpha/2)$$这样我们可以利用一些已有的弱估计的结论。",
+      "position_char": 1474,
+      "position_line": 34,
+      "classification_result": {
+        "id": "an epsilon of room证明集合为0测度的策略#4",
+        "classification": "strategy_template",
+        "english_title": "Insight",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Estimate distribution functions by domination and decomposition",
+          "summary_en": "To estimate $\\lambda_f(\\alpha)$, dominate $|f|$ by a larger or simpler expression and then decompose it into pieces with more manageable distribution functions. This lets one transfer known weak estimates to the original function.",
+          "applicability": "Applies when a direct estimate of the distribution function of $f$ is hard, but $f$ can be bounded or decomposed into simpler functions such as $g$ and $h$."
+        }
+      }
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#5",
+      "type": "question",
+      "title": "问题1",
+      "body": "证明在sigma-finite的测度空间$(\\Omega,\\mathcal{F},\\mu)$上，**对于非负可测函数$f$，在一个测度为正的集合$E$上的积分$\\int_{E}f\\,d\\mu =0$那么$f =0$在集合$E$上几乎处处成立。**",
+      "position_char": 3083,
+      "position_line": 53,
+      "classification_result": {
+        "id": "an epsilon of room证明集合为0测度的策略#5",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Prove that on a $\\sigma$-finite measure space $(\\Omega,\\mathcal{F},\\mu)$, if $f$ is a nonnegative measurable function and $\\int_E f\\,d\\mu=0$ for a measurable set $E$ with positive measure, then $f=0$ almost everywhere on $E$.",
+          "problem_type": "exercise",
+          "difficulty": "easy",
+          "domain": "measure theory",
+          "key_techniques": [
+            "contradiction via level sets",
+            "distribution function or superlevel set argument",
+            "positivity of the integral of a nonnegative function"
+          ],
+          "prerequisites": [
+            "Lebesgue integration",
+            "almost everywhere equality",
+            "measurable level sets",
+            "nonnegative measurable functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#6",
+      "type": "question",
+      "title": "问题2",
+      "body": "证明连续函数$f:\\mathbb{R}\\to \\mathbb{R}$的图像$$G:=\\{(x,y):y=f(x)\\}$$在$\\mathbb{R}^2$的Lebesgue测度下是零测度的。",
+      "position_char": 3908,
+      "position_line": 66,
+      "classification_result": {
+        "id": "an epsilon of room证明集合为0测度的策略#6",
+        "classification": "problem",
+        "english_title": "Problem 2",
+        "if_problem": {
+          "statement_en": "Prove that the graph of a continuous function $f:\\mathbb{R}\\to\\mathbb{R}$, namely $$G:=\\{(x,y):y=f(x)\\},$$ has Lebesgue measure zero in $\\mathbb{R}^2$.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "covering the graph by thin rectangles",
+            "uniform continuity on bounded intervals",
+            "countable decomposition of $\\mathbb{R}$"
+          ],
+          "prerequisites": [
+            "Lebesgue measure on $\\mathbb{R}^2$",
+            "continuity and uniform continuity",
+            "countable subadditivity",
+            "measure zero sets"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"an epsilon of room证明集合为0测度的策略#1\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Basic Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Epsilon-neighborhood measure-zero strategy\",\n      \"summary_en\": \"To prove a set has measure zero, replace the original target by auxiliary sets such as $A_{\\\\varepsilon}$ and estimate their measures instead. The core move is to cover $A_{\\\\varepsilon}$ by larger sets whose total measure can be made arbitrarily small, or to control them using available weak-type estimates.\",\n      \"applicability\": \"Applies when proving that a set has measure zero directly is difficult, but one can instead estimate related enlarged or auxiliary sets and show their measures can be made arbitrarily small.\"\n    }\n  },\n  {\n    \"id\": \"an epsilon of room证明集合为0测度的策略#2\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Definition of the Distribution Function in This Problem\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"an epsilon of room证明集合为0测度的策略#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Basic Properties of This Distribution Function\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $(X,\\\\mathcal{F},\\\\mu)$ be a measure space and let $f$ be measurable. Prove the following properties of the distribution function $\\\\lambda_f(a)=\\\\mu(\\\\{x:|f(x)|>a\\\\})$: (1) $\\\\lambda_f$ is decreasing and right-continuous; (2) if $|f|\\\\le |g|$, then $\\\\lambda_f\\\\le \\\\lambda_g$; (3) if $|f_n|\\\\uparrow |f|$, then $\\\\lambda_{f_n}\\\\uparrow \\\\lambda_f$; (4) if $f=g+h$, then $\\\\lambda_f(a)\\\\le \\\\lambda_g(a/2)+\\\\lambda_h(a/2)$; (5) if $f=gh$, then $\\\\lambda_f(a)\\\\le \\\\lambda_g(\\\\sqrt{a/2})+\\\\lambda_h(\\\\sqrt{a/2})$.\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"set inclusion arguments\",\n        \"monotone convergence for measurable sets\",\n        \"triangle inequality\",\n        \"pointwise comparison\"\n      ],\n      \"prerequisites\": [\n        \"measurable functions\",\n        \"measure spaces\",\n        \"continuity from above and below of measures\",\n        \"basic inequalities\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"an epsilon of room证明集合为0测度的策略#4\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Insight\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Estimate distribution functions by domination and decomposition\",\n      \"summary_en\": \"To estimate $\\\\lambda_f(\\\\alpha)$, dominate $|f|$ by a larger or simpler expression and then decompose it into pieces with more manageable distribution functions. This lets one transfer known weak estimates to the original function.\",\n      \"applicability\": \"Applies when a direct estimate of the distribution function of $f$ is hard, but $f$ can be bounded or decomposed into simpler functions such as $g$ and $h$.\"\n    }\n  },\n  {\n    \"id\": \"an epsilon of room证明集合为0测度的策略#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Prove that on a $\\\\sigma$-finite measure space $(\\\\Omega,\\\\mathcal{F},\\\\mu)$, if $f$ is a nonnegative measurable function and $\\\\int_E f\\\\,d\\\\mu=0$ for a measurable set $E$ with positive measure, then $f=0$ almost everywhere on $E$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"contradiction via level sets\",\n        \"distribution function or superlevel set argument\",\n        \"positivity of the integral of a nonnegative function\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue integration\",\n        \"almost everywhere equality\",\n        \"measurable level sets\",\n        \"nonnegative measurable functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"an epsilon of room证明集合为0测度的策略#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Prove that the graph of a continuous function $f:\\\\mathbb{R}\\\\to\\\\mathbb{R}$, namely $$G:=\\\\{(x,y):y=f(x)\\\\},$$ has Lebesgue measure zero in $\\\\mathbb{R}^2$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"covering the graph by thin rectangles\",\n        \"uniform continuity on bounded intervals\",\n        \"countable decomposition of $\\\\mathbb{R}$\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue measure on $\\\\mathbb{R}^2$\",\n        \"continuity and uniform continuity\",\n        \"countable subadditivity\",\n        \"measure zero sets\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

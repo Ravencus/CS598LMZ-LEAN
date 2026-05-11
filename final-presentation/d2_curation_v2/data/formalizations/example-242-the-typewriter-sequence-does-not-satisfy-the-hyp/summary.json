@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-242-the-typewriter-sequence-does-not-satisfy-the-hyp",
+  "english_title": "Example 2.4.2: The Typewriter Sequence Does Not Satisfy the Hypotheses of Proposition 2.4.1",
+  "statement_en": "Although the typewriter sequence converges to \\(0\\) in every \\(L^p\\) norm, it does not satisfy the variance condition in Proposition 2.4.1. Indeed, for every \\(2^k \\leq n < 2^{k+1}\\),\n\\[\n\\mathrm{Var}(f_n)=E(f_n^2)-(E(f_n))^2=\\frac{1}{2^k}-\\frac{1}{4^k},\n\\]\nso\n\\[\n\\mathrm{Var}(f_n) \\geq \\frac{1}{2^{k+1}} \\geq \\frac{1}{2n}.\n\\]\nHence \\(\\sum_{n\\geq 1} \\mathrm{Var}(f_n)\\) diverges, so the typewriter sequence does not satisfy the variance hypothesis of Proposition 2.4.1.",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem typewriter_variance_not_summable\n    (Var : ℕ → ℝ)\n    (h_formula : ∀ k n : ℕ,\n      2 ^ k ≤ n + 1 →\n      n + 1 < 2 ^ (k + 1) →\n      Var (n + 1) = (1 : ℝ) / ((2 : ℝ) ^ k) - (1 : ℝ) / ((4 : ℝ) ^ k))\n    (h_lower : ∀ k n : ℕ,\n      2 ^ k ≤ n + 1 →\n      n + 1 < 2 ^ (k + 1) →\n      Var (n + 1) ≥ (1 : ℝ) / ((2 : ℝ) * (n + 1))) :\n    ¬ Summable (fun n : ℕ => Var (n + 1)) := by\n  sorry"
+}

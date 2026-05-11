@@ -1,0 +1,58 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 114.3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 48.81,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown identifier `MeasureTheory.ae_zero_of_lintegral_eq_zero`\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 35.08,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown identifier `lintegral_eq_zero_iff`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 23.15,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Application type mismatch: The argument\n  Measurable.aestronglyMeasurable (Measurable.ennreal_ofReal hf_meas)\nhas type\n  MeasureTheory.AEStronglyMeasurable (fun x => ENNReal.ofReal (f x)) ?m.64\nbut is"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+Let  
+\[
+S_n=\sum_{k=1}^{n}\log\!\left(1+\frac{k}{n^2}\right).
+\]
+We compute \(\lim_{n\to\infty} S_n\).
+
+Since \(\frac{k}{n^2}\ge 0\), we can use the standard inequality
+\[
+0\le \log(1+x)\le x \qquad (x\ge 0).
+\]
+Applying this with \(x=\frac{k}{n^2}\), we get
+\[
+0\le \log\!\left(1+\frac{k}{n^2}\right)\le \frac{k}{n^2}.
+\]
+Summing from \(k=1\) to \(n\),
+\[
+0\le S_n\le \sum_{k=1}^n \frac{k}{n^2}
+= \frac{1}{n^2}\sum_{k=1}^n k
+= \frac{1}{n^2}\cdot \frac{n(n+1)}{2}
+= \frac{n+1}{2n}.
+\]
+This bound alone is not enough to force convergence to \(0\), so we sharpen it.
+
+Use the Taylor estimate near \(0\):
+\[
+\log(1+x)=x+O(x^2)\qquad (x\to 0).
+\]
+More explicitly, for \(x\ge 0\),
+\[
+0\le x-\log(1+x)\le \frac{x^2}{2}.
+\]
+Hence
+\[
+\log(1+x)\le x.
+\]
+So
+\[
+S_n\le \sum_{k=1}^n \frac{k}{n^2}
+= \frac{n+1}{2n},
+\]
+but more importantly we can compare the full sum to the linear term:
+\[
+S_n
+= \sum_{k=1}^n \left(\frac{k}{n^2}+O\!\left(\frac{k^2}{n^4}\right)\right).
+\]
+Thus
+\[
+S_n
+= \frac{1}{n^2}\sum_{k=1}^n k
++ O\!\left(\frac{1}{n^4}\sum_{k=1}^n k^2\right).
+\]
+Now
+\[
+\frac{1}{n^2}\sum_{k=1}^n k
+= \frac{n(n+1)}{2n^2}
+= \frac{n+1}{2n},
+\]
+and
+\[
+\frac{1}{n^4}\sum_{k=1}^n k^2
+= \frac{n(n+1)(2n+1)}{6n^4}
+= O\!\left(\frac1n\right).
+\]
+So this asymptotic would suggest a limit of \(1/2\). Let us verify this rigorously.
+
+Indeed, since
+\[
+\max_{1\le k\le n}\frac{k}{n^2}=\frac1n\to 0,
+\]
+the approximation \(\log(1+x)\sim x\) is uniform over \(x=\frac{k}{n^2}\). Define
+\[
+\varepsilon_n=\sup_{0\le x\le 1/n}\left|\frac{\log(1+x)}{x}-1\right|.
+\]
+Then \(\varepsilon_n\to 0\), and for every \(1\le k\le n\),
+\[
+\log\!\left(1+\frac{k}{n^2}\right)=\frac{k}{n^2}(1+\delta_{k,n}),
+\qquad |\delta_{k,n}|\le \varepsilon_n.
+\]
+Therefore
+\[
+S_n
+=\sum_{k=1}^n \frac{k}{n^2}(1+\delta_{k,n})
+=\frac{1}{n^2}\sum_{k=1}^n k
++\sum_{k=1}^n \frac{k}{n^2}\delta_{k,n}.
+\]
+The error term satisfies
+\[
+\left|\sum_{k=1}^n \frac{k}{n^2}\delta_{k,n}\right|
+\le \varepsilon_n \cdot \frac{1}{n^2}\sum_{k=1}^n k
+= \varepsilon_n \cdot \frac{n+1}{2n}\to 0.
+\]
+Hence
+\[
+S_n-\frac{1}{n^2}\sum_{k=1}^n k \to 0.
+\]
+Since
+\[
+\frac{1}{n^2}\sum_{k=1}^n k
+=\frac{n(n+1)}{2n^2}
+=\frac{n+1}{2n}\to \frac12,
+\]
+it follows that
+\[
+\lim_{n\to\infty} \sum_{k=1}^{n}\log\!\left(1+\frac{k}{n^2}\right)=\frac12.
+\]
+
+Final answer:
+\[
+\boxed{\frac12}.
+\]

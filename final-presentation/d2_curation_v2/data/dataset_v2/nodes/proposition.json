@@ -1,0 +1,23 @@
+{
+  "id": "proposition",
+  "type": "problem",
+  "source_note": "n维球体的体积",
+  "english_source_note": "Volume of the n-Dimensional Ball",
+  "callout_id": "n维球体的体积#1",
+  "english_title": "Proposition",
+  "statement_en": "The volume formula for the $d$-dimensional ball of radius $r$ in $\\mathbb{R}^n$ is $$\\frac{\\pi^{d/2}}{\\Gamma(d/2+1)}r^d.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Gaussian integral",
+    "change of variables",
+    "polar coordinates"
+  ],
+  "prerequisites": [
+    "Lebesgue integration",
+    "Gamma function",
+    "multivariable calculus"
+  ],
+  "callout_body": "$\\mathbb{R}^n$当中的$n$维球体的体积公式为$$\\frac{\\pi^{d/2}}{\\Gamma(d/2+1)}r^d$$"
+}

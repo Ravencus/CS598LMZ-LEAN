@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-14-understanding-from-the-dirichlet-generating-f",
+  "english_title": "Proposition 1.4: Understanding from the Dirichlet Generating Function",
+  "statement_en": "If $f=g*1$, then on the level of Dirichlet generating functions one has $$L(f,s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}=\\zeta(s)\\sum_{n\\geq 1}\\frac{g(n)}{n^s},\\quad \\operatorname{Re}(s)>1.$$ If moreover the series $$\\sum_{n\\geq 1}\\frac{g(n)}{n}$$ converges absolutely, then the mean value $M(f)$ exists and equals $$\\sum_{n\\geq 1}\\frac{g(n)}{n}.$$",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 4,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\nopen Filter\n\nnoncomputable section\n\ndef arithmeticOne : ℕ → ℂ := fun _ => 1\n\ndef dirichletConvolution (f g : ℕ → ℂ) (n : ℕ) : ℂ :=\n  Finset.sum (n.divisors) fun d => f d * g (n / d)\n\ndef myLSeries (f : ℕ → ℂ) (s : ℂ) : ℂ :=\n  ∑' n : ℕ, f (n + 1) / Complex.cpow (((n + 1 : ℕ) : ℂ)) s\n\ndef myRiemannZeta (s : ℂ) : ℂ :=\n  ∑' n : ℕ, (1 : ℂ) / Complex.cpow (((n + 1 : ℕ) : ℂ)) s\n\ndef meanValueSeq (f : ℕ → ℂ) (N : ℕ) : ℂ :=\n  Finset.sum (Finset.Icc 1 N) f / (N : ℂ)\n\ndef MeanValueExists (f : ℕ → ℂ) (c : ℂ) : Prop :=\n  Tendsto (meanValueSeq f) atTop (nhds c)\n\ntheorem dirichlet_generating_function_of_convolution\n    (f g : ℕ → ℂ) (s : ℂ)\n    (hf : f = dirichletConvolution g arithmeticOne)\n    (hs : 1 < s.re) :\n    myLSeries f s = myRiemannZeta s * myLSeries g s := by\n  sorry\n\ntheorem mean_value_of_convolution\n    (f g : ℕ → ℂ)\n    (hf : f = dirichletConvolution g arithmeticOne)\n    (hg : Summable (fun n : ℕ => ‖g (n + 1) / (((n + 1 : ℕ) : ℂ))‖)) :\n    MeanValueExists f (∑' n : ℕ, g (n + 1) / (((n + 1 : ℕ) : ℂ))) := by\n  sorry"
+}

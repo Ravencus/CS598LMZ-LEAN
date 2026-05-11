@@ -1,0 +1,18 @@
+{
+  "problem_id": "littlewood-tauber-theorem-1911",
+  "english_title": "Littlewood-Tauber Theorem (1911)",
+  "statement_en": "If the sequence $y_n$ is Abel summable and its Abel sum converges to $a$, that is,\n$$\\lim_{x\\to 1^{-}}\\sum_{n\\geq 0}y_nx^n=a,$$\nand moreover $y_n = O\\left(\\frac{1}{n}\\right)$, then the series itself converges to $a$:\n$$\\sum_{n\\geq 0}y_n = a.$$",
+  "difficulty": "hard",
+  "domain": "summability theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem abel_summable_of_bigO_one_div_n\n    (y : ℕ → ℝ) (a : ℝ)\n    (hpow : ∀ x : ℝ, x ∈ Set.Iio 1 → Summable (fun n => y n * x ^ n))\n    (habel :\n      Filter.Tendsto\n        (fun x : ℝ => ∑' n, y n * x ^ n)\n        (nhdsWithin 1 (Set.Iio 1))\n        (nhds a))\n    (hO : ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℕ, 1 ≤ n → ‖y n‖ ≤ C / (n : ℝ)) :\n    HasSum y a := by\n  sorry"
+}

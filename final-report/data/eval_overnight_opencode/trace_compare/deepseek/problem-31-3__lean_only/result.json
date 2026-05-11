@@ -1,0 +1,12 @@
+{
+  "vendor": "deepseek",
+  "big": "deepseek-v4-pro",
+  "small": "deepseek-v4-flash",
+  "condition": "lean_only",
+  "problem_id": "problem-31-3",
+  "big_outcome": "lean_proof",
+  "small_outcome": "wall_budget_exceeded",
+  "label": "same_plan_search_diff",
+  "evidence": "BIG found and used the precise Mathlib entry `summable_condensed_iff_of_eventually_nonneg` after checking it, while SMALL repeatedly probed `summable_condensed_iff` and related log/tendsto lemmas, with several failed #check calls and no proof attempt.",
+  "wall_seconds": 6.74
+}

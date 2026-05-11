@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-111-method-of-exhaustion",
+  "english_title": "Example 1.1.1: Method of Exhaustion",
+  "statement_en": "Consider the unit circle $S^1$ and its circumference, denoted by a quantity $a$. Suppose we know that the unit circle can be approximated arbitrarily well by inscribed regular polygons. 1. Define the set of inscribed regular polygons as $\\Omega=\\{p_1,...,p_n,...\\}$. 2. The property $P$ is perimeter, and the perimeter of the inscribed regular $n$-gon $p_n$ is $$L_n=2n\\sin\\left(\\frac{\\pi}{n}\\right).$$ 3. Measuring closeness by the absolute difference of real numbers, we obtain $$\\forall \\varepsilo",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.sin', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef Ω : Set ℕ := {n : ℕ | 3 ≤ n}\n\nnoncomputable def L (n : ℕ) : ℝ :=\n  2 * (n : ℝ) * Real.sin (Real.pi / (n : ℝ))\n\ntheorem unitCircleInscribedRegularPolygonsApproximation (a : ℝ) :\n    (∀ n : ℕ, n ∈ Ω ↔ 3 ≤ n) ∧\n    (∀ n : ℕ, L n = 2 * (n : ℝ) * Real.sin (Real.pi / (n : ℝ))) ∧\n    (∀ ε > 0, ∃ p_n ∈ Ω, |L p_n - a| < ε) := by\n  sorry"
+}

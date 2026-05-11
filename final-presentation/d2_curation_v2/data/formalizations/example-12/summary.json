@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-12",
+  "english_title": "Example 1.2",
+  "statement_en": "Let $x_n:=\\sin(n)$. Since the values of $x_n$ are dense in $(-1,1)$, the largest accumulation point is $1$ and the smallest accumulation point is $-1$. Hence $$\\limsup_{n\\to \\infty}x_n=1,\\qquad \\liminf_{n\\to \\infty}x_n=-1.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instSupSet', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def seqLimsup (u : ℕ → ℝ) : ℝ :=\n  sSup {x : ℝ | ClusterPt x (Filter.map u Filter.atTop)}\n\nnoncomputable def seqLiminf (u : ℕ → ℝ) : ℝ :=\n  sInf {x : ℝ | ClusterPt x (Filter.map u Filter.atTop)}\n\ntheorem sin_nat_limsup_liminf :\n    seqLimsup (fun n : ℕ => Real.sin n) = 1 ∧\n      seqLiminf (fun n : ℕ => Real.sin n) = -1 := by\n  sorry"
+}

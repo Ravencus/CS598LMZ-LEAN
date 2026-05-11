@@ -1,0 +1,72 @@
+{
+  "note_title": "Euler-Maclaurin求和公式在和的估计当中的应用",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "Euler-Maclaurin求和公式在和的估计当中的应用#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "级数$$\\sum_{n\\geq }\\frac{\\sin(\\sqrt{n})}{n}$$是否收敛?",
+      "position_char": 50,
+      "position_line": 8,
+      "classification_result": {
+        "id": "Euler-Maclaurin求和公式在和的估计当中的应用#1",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Does the series $$\\sum_{n\\geq }\\frac{\\sin(\\sqrt{n})}{n}$$ converge?",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Euler-Maclaurin summation",
+            "summation by parts",
+            "oscillatory cancellation"
+          ],
+          "prerequisites": [
+            "series convergence tests",
+            "asymptotic estimation",
+            "properties of oscillatory sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Euler-Maclaurin求和公式在和的估计当中的应用#2",
+      "type": "note",
+      "title": "命题1.1",
+      "body": "集合$\\{\\sin(\\sqrt{n}):n\\in \\mathbb{N}\\}$其在$(-1,1)$当中稠密。",
+      "position_char": 635,
+      "position_line": 21,
+      "classification_result": {
+        "id": "Euler-Maclaurin求和公式在和的估计当中的应用#2",
+        "classification": "problem",
+        "english_title": "Proposition 1.1",
+        "if_problem": {
+          "statement_en": "The set $$\\{\\sin(\\sqrt{n}):n\\in \\mathbb{N}\\}$$ is dense in $$(-1,1)$$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "density arguments",
+            "distribution of sequences modulo 1",
+            "continuity of the sine function"
+          ],
+          "prerequisites": [
+            "dense subsets of the real line",
+            "basic sequence theory",
+            "trigonometric functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Euler-Maclaurin求和公式在和的估计当中的应用#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Does the series $$\\\\sum_{n\\\\geq }\\\\frac{\\\\sin(\\\\sqrt{n})}{n}$$ converge?\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Euler-Maclaurin summation\",\n        \"summation by parts\",\n        \"oscillatory cancellation\"\n      ],\n      \"prerequisites\": [\n        \"series convergence tests\",\n        \"asymptotic estimation\",\n        \"properties of oscillatory sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Euler-Maclaurin求和公式在和的估计当中的应用#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"The set $$\\\\{\\\\sin(\\\\sqrt{n}):n\\\\in \\\\mathbb{N}\\\\}$$ is dense in $$(-1,1)$$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"density arguments\",\n        \"distribution of sequences modulo 1\",\n        \"continuity of the sine function\"\n      ],\n      \"prerequisites\": [\n        \"dense subsets of the real line\",\n        \"basic sequence theory\",\n        \"trigonometric functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

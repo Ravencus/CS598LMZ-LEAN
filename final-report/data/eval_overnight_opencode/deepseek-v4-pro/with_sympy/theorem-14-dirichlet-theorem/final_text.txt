@@ -1,0 +1,5 @@
+Now let me follow the structured workflow. First, let me explore the mathematical setting and check available lemmas.
+Hmm, diagnostics are empty but it failed. Let me try a simpler check:
+Good — all the `Int.floor`/`Int.fract` lemmas exist. Let me check pigeonhole lemmas:
+3 calls left. Let me carefully check what approximation lemmas exist:
+2 calls left. Let me write the full proof using Finset pigeonhole:

@@ -1,0 +1,36 @@
+{
+  "problem_id": "problem-7",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "wall_budget_exceeded",
+  "overall_success": false,
+  "wall_seconds": 1200.07,
+  "wall_exceeded": true,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 2,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "floorSqrtAlternatingHarmonic_powerSeries_converges_on_unitCircle",
+  "signature_ok": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown identifier `summable_nat_rpow`\n",
+  "total_cost_usd": 0.0,
+  "total_tokens": 3789723,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_a6ab3f24ad.lean",
+      "line": 4,
+      "column": 41,
+      "severity": "error",
+      "message": "Unknown identifier `summable_nat_rpow`\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+Let me plan the proof. The integral ∫₀¹ x·log(x) dx = -1/4. Using FTC with antiderivative F(x) = (x²/2)·log(x) - x²/4:
+
+- F'(x) = x·log(x) on (0,1)
+- F(1) - F(0) = (-1/4) - 0 = -1/4
+
+Let me first check what lemmas are available.
+Good, `hasDerivAt_log` exists and gives `HasDerivAt log (x⁻¹) x`. Let me check more lemmas.
+The FTC lemma order is different. Let me check the exact signature.
+Now I see `hasDerivAt_pow 2 x` gives `HasDerivAt (fun x => x ^ 2) (↑2 * x ^ (2 - 1)) x`. Let me check for alternate FTC lemmas that only require differentiability on the open interval.
+Let me search for related integral lemmas in the codebase and Mathlib.
+Let me read the key lemmas.

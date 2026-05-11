@@ -1,0 +1,24 @@
+{
+  "problem_id": "strict-monotonicity-of-the-integral-on-a-positive-measure-se",
+  "english_title": "Strict Monotonicity of the Integral on a Positive Measure Set",
+  "statement_en": "If $h>0$ almost everywhere on a measurable set $E$ with positive measure, then $$\\int_E h\\,d\\mu > 0.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem integral_pos_of_ae_pos_on_measurableSet\n    {α : Type*} [MeasurableSpace α] {μ : MeasureTheory.Measure α} {E : Set α} {h : α → ℝ}\n    (hE : MeasurableSet E) (hμE : 0 < μ E) (hint : MeasureTheory.IntegrableOn h E μ)\n    (hpos : ∀ᵐ x ∂(μ.restrict E), 0 < h x) :\n    0 < ∫ x in E, h x ∂μ := by\n  sorry"
+}

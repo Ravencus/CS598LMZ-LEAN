@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-127-generalization-of-a-sufficient-condition-for",
+  "english_title": "Proposition 1.2.7: Generalization of a Sufficient Condition for a Cauchy Sequence",
+  "statement_en": "If a sequence $(a_n)$ in a metric space $(X,d)$ satisfies $d(a_{n+1},a_n)\\leq b_n$ and the series $\\sum_{n\\geq 1} b_n$ converges, then $(a_n)$ is a Cauchy sequence in that metric space.",
+  "difficulty": "medium",
+  "domain": "metric space theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem cauchy_of_dist_succ_le_summable\n    {X : Type*} [MetricSpace X] (a : ℕ → X) (b : ℕ → ℝ)\n    (hdist : ∀ n : ℕ, dist (a (n + 1)) (a n) ≤ b n)\n    (hsummable : Summable b) :\n    Cauchy (Filter.map a Filter.atTop) := by\n  sorry"
+}

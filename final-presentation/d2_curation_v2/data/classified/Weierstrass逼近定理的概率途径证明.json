@@ -1,0 +1,354 @@
+{
+  "note_title": "Weierstrass逼近定理的概率途径证明",
+  "is_hub": false,
+  "in_subset_via": [
+    "分段估计",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#1",
+      "type": "note",
+      "title": "weierstrass逼近定理",
+      "body": "$f\\in C([0,1]\\to \\mathbb{R})$可以被同样定义在$[0,1]$上的实系数多项式一致逼近。",
+      "position_char": 40,
+      "position_line": 7,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#1",
+        "classification": "problem",
+        "english_title": "Weierstrass Approximation Theorem",
+        "if_problem": {
+          "statement_en": "Every $f\\in C([0,1]\\to \\mathbb{R})$ can be uniformly approximated by real-coefficient polynomials that are also defined on $[0,1]$.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "uniform approximation by polynomials",
+            "probabilistic method"
+          ],
+          "prerequisites": [
+            "continuous functions on compact intervals",
+            "uniform convergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#2",
+      "type": "note",
+      "title": "pushforward测度",
+      "body": "设$(X,\\mathcal{A},\\mu)$是一个测度空间,$T:X\\to Y$是一个从$X$到集合$Y$的可测函数($\\mu$可测)。对于$Y$上的一个sigma代数$\\mathcal{B}$定义pushforward测度$T_{*}\\mu$为$Y$上的一个测度，满足任意$B\\in \\mathcal{B}$都有$$T_{*}\\mu(B):=\\mu(T^{-1}(B))$$其中$T^{-1}(B)$是集合$B$在$T$下的原像，因此这种测度也称之为像测度。",
+      "position_char": 1381,
+      "position_line": 36,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#2",
+        "classification": "definition",
+        "english_title": "Pushforward Measure",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#3",
+      "type": "example",
+      "title": "例子1",
+      "body": "考虑概率空间$(\\{0,1\\},\\mathcal{P}(\\{0,1\\}),P_0)$，其中sigma代数是$\\{0,1\\}$的幂集，概率测度定义为$P_0(\\{0\\})=1-p,P_0(\\{1\\})=p$.在此基础上考虑一个符合Bernoulli(p)的随机变量$$Y_1(\\omega):=\\begin{cases}0& \\omega =0\\\\ 1&\\omega =1\\end{cases}$$也就是说，这是一个恒等映射。于是可以定义出pushforward测度，$$P_{Y_1}(\\{0\\})=P(Y_1=0)=P(\\{0\\})=1-p$$\n以及$$P_{Y_1}(\\{1\\})=P(Y_1=1)=P(\\{1\\})=p$$",
+      "position_char": 2008,
+      "position_line": 48,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#3",
+        "classification": "problem",
+        "english_title": "Example 1",
+        "if_problem": {
+          "statement_en": "Consider the probability space $(\\{0,1\\},\\mathcal{P}(\\{0,1\\}),P_0)$, where $P_0(\\{0\\})=1-p$ and $P_0(\\{1\\})=p$. Define the Bernoulli$(p)$ random variable\n$$Y_1(\\omega):=\\begin{cases}0& \\omega =0\\\\ 1&\\omega =1\\end{cases}$$\nThen its pushforward measure satisfies\n$$P_{Y_1}(\\{0\\})=1-p,\\qquad P_{Y_1}(\\{1\\})=p.$$",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "probability theory",
+          "key_techniques": [
+            "computing pushforward measures",
+            "Bernoulli random variables"
+          ],
+          "prerequisites": [
+            "probability spaces",
+            "pushforward measure"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#4",
+      "type": "example",
+      "title": "例子2",
+      "body": "考虑概率空间$([0,1],\\mathcal{B}([0,1]),m)$其中sigma代数是在闭区间上定义的Borel sigma代数，概率测度此时设定为实数的Lebesgue测度$m$.在此基础上考虑一个符合Bernoulli(p)的随机变量$$Y_2(\\omega):=\\begin{cases}0& 1\\geq \\omega >p\\\\ 1& p\\geq \\omega \\geq 0 \\end{cases}$$此时pushforward测度为$$P_{Y_2}(\\{0\\})=m((p,1])=1-p$$以及$$P_{Y_2}(\\{1\\})=m([0,p])=p$$",
+      "position_char": 2345,
+      "position_line": 52,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#4",
+        "classification": "problem",
+        "english_title": "Example 2",
+        "if_problem": {
+          "statement_en": "Consider the probability space $([0,1],\\mathcal{B}([0,1]),m)$, where $m$ is Lebesgue measure. Define the Bernoulli$(p)$ random variable\n$$Y_2(\\omega):=\\begin{cases}0& 1\\geq \\omega >p\\\\ 1& p\\geq \\omega \\geq 0 \\end{cases}$$\nThen its pushforward measure satisfies\n$$P_{Y_2}(\\{0\\})=m((p,1])=1-p,\\qquad P_{Y_2}(\\{1\\})=m([0,p])=p.$$",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "probability theory",
+          "key_techniques": [
+            "constructing random variables on $[0,1]$",
+            "computing pushforward measures via Lebesgue measure"
+          ],
+          "prerequisites": [
+            "Borel sigma algebra",
+            "Lebesgue measure"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#5",
+      "type": "example",
+      "title": "例子3",
+      "body": "在例子2的基础上考虑$$Y_3(\\omega):=\\begin{cases}0& \\omega \\in [p,1]-\\{\\frac{1+p}{2}\\}\\\\ 1& \\omega \\in [0,p) \\cup \\{\\frac{1+p}{2}\\}\\end{cases}$$此时pushforward测度为$$P_{Y_2}(\\{0\\})=m([p,1]-\\{\\frac{1+p}{2}\\})=1-p$$以及$$P_{Y_2}(\\{1\\})=m([0,p) \\cup \\{\\frac{1+p}{2}\\})=p$$",
+      "position_char": 2832,
+      "position_line": 61,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#5",
+        "classification": "problem",
+        "english_title": "Example 3",
+        "if_problem": {
+          "statement_en": "Based on Example 2, define\n$$Y_3(\\omega):=\\begin{cases}0& \\omega \\in [p,1]-\\{\\frac{1+p}{2}\\}\\\\ 1& \\omega \\in [0,p) \\cup \\{\\frac{1+p}{2}\\}\\end{cases}$$\nThen the pushforward measure is unchanged:\n$$P_{Y_3}(\\{0\\})=m\\left([p,1]-\\left\\{\\frac{1+p}{2}\\right\\}\\right)=1-p,\\qquad P_{Y_3}(\\{1\\})=m\\left([0,p) \\cup \\left\\{\\frac{1+p}{2}\\right\\}\\right)=p.$$",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "probability theory",
+          "key_techniques": [
+            "modifying a random variable on a null set",
+            "pushforward measure invariance under null-set changes"
+          ],
+          "prerequisites": [
+            "Lebesgue measure",
+            "measure zero sets"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#6",
+      "type": "note",
+      "title": "随机变量的独立性",
+      "body": "当我们说两个此空间上的随机变量$X,Y$互相独立的时候指的$\\forall B_1,B_2 \\in \\mathcal{B}(\\mathbb{R})$都有$\\mathcal{F}$当中的两个元素$X^{-1}(B_1),Y^{-1}(B_2)$的独立。也就是说$$P(X^{-1}(B_1)\\cap Y^{-1}(B_2))=P(X^{-1}(B_1))P(Y^{-1}(B_2))$$",
+      "position_char": 3680,
+      "position_line": 80,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#6",
+        "classification": "definition",
+        "english_title": "Independence of Random Variables",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#7",
+      "type": "note",
+      "title": "两个随机变量的联合概率分布",
+      "body": "如果我们从更为广义角度来理解随机变量，把$$Z(\\omega)=(X(\\omega),Y(\\omega))$$这种随机向量也当成随机变量来看待，那么按照由随机变量定义出来的pushforward测度的定义，我们可以定义一种由$Z:\\Omega\\to\\mathbb{R}\\times \\mathbb{R}$给出来的pushforward测度$P_Z:=Z_{*}P$.\n此时定义值域上的product sigma代数为$\\mathcal{B}(\\mathbb{R}) \\otimes \\mathcal{B}(\\mathbb{R})$那么其中任意元素$B_1\\times B_2$的$P_Z$测度被定义为$$P_Z(B_1\\times B_2)=P((X,Y)\\in B_1\\times B_2)=P(X\\in B_1 \\cap Y\\in B_2 )$$",
+      "position_char": 3895,
+      "position_line": 83,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#7",
+        "classification": "definition",
+        "english_title": "Joint Probability Distribution of Two Random Variables",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#8",
+      "type": "question",
+      "title": "问题",
+      "body": "考虑概率空间$(\\Omega,\\mathcal{F},P)$上的n个满足bernoulli(p)分布的独立同分布的随机变量$X_1,...,X_n$，考虑其“平均值”$$Y_n = \\frac{X_1+...+X_n}{n}$$的分布。",
+      "position_char": 4427,
+      "position_line": 90,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#8",
+        "classification": "problem",
+        "english_title": "Problem",
+        "if_problem": {
+          "statement_en": "Consider $n$ independent and identically distributed random variables $X_1,\\ldots,X_n$ on a probability space $(\\Omega,\\mathcal{F},P)$, each with Bernoulli$(p)$ distribution. Determine the distribution of their average\n$$Y_n = \\frac{X_1+\\cdots+X_n}{n}.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "binomial distribution",
+            "distribution of sums of independent Bernoulli variables"
+          ],
+          "prerequisites": [
+            "independence",
+            "Bernoulli and binomial distributions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#9",
+      "type": "note",
+      "title": "积分换元",
+      "body": "设$(X,\\mathcal{A},\\mu)$是一个测度空间,$T:X\\to Y$是一个从$X$到集合$Y$的可测函数，$T_{*}\\mu$为pushforward测度，函数$g$是$Y$上的一个可积函数，那么$$\\int_{Y}g\\,d(T_{*}\\mu)=\\int_X g\\circ T\\,d\\mu$$",
+      "position_char": 5628,
+      "position_line": 108,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#9",
+        "classification": "problem",
+        "english_title": "Change of Variables for Integrals",
+        "if_problem": {
+          "statement_en": "Let $(X,\\mathcal{A},\\mu)$ be a measure space, let $T:X\\to Y$ be measurable, let $T_{*}\\mu$ be the pushforward measure, and let $g$ be an integrable function on $Y$. Then\n$$\\int_{Y}g\\,d(T_{*}\\mu)=\\int_X g\\circ T\\,d\\mu.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "pushforward measures",
+            "change of variables in measure theory"
+          ],
+          "prerequisites": [
+            "measurable functions",
+            "Lebesgue integration"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#10",
+      "type": "note",
+      "title": "依测度收敛版本的控制收敛定理",
+      "body": "任意随机变量$X_n\\xrightarrow{P}{X}$，如果$|X_n|\\leq Y$,并且$Y$的期望存在，那么$$E(X_n)\\to E(X)$$",
+      "position_char": 6433,
+      "position_line": 119,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#10",
+        "classification": "problem",
+        "english_title": "Dominated Convergence Theorem for Convergence in Probability",
+        "if_problem": {
+          "statement_en": "If random variables $X_n\\xrightarrow{P}{X}$, and if $|X_n|\\leq Y$ with $E(Y)$ finite, then\n$$E(X_n)\\to E(X).$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "probability theory",
+          "key_techniques": [
+            "convergence in probability",
+            "dominated convergence"
+          ],
+          "prerequisites": [
+            "expectation",
+            "dominated convergence theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#11",
+      "type": "note",
+      "title": "定理1",
+      "body": "1. 函数$f$是定义在$E$上的有界一致连续函数.\n2. 假设对$\\forall p\\in E$都存在$X_n$是概率空间$(\\Omega,\\mathcal{F},P)$上的值域为$E\\subseteq \\mathbb{R}$的一列独立同分布的随机变量且$X_n\\sim F(p)$其中$p\\in E$是这一列随机变量的均值.假设$Y_n = \\frac{X_1+...+X_n}{n}\\xrightarrow{P}{p}$\n3. 期望$E(f(Y_n))$存在对任意$n \\in \\mathbb{N}$成立。\n\n那么有：$$||E(f(Y_n)) -f||_u \\to 0$$",
+      "position_char": 9903,
+      "position_line": 158,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#11",
+        "classification": "problem",
+        "english_title": "Theorem 1",
+        "if_problem": {
+          "statement_en": "Assume: (1) $f$ is a bounded uniformly continuous function on $E$. (2) For every $p\\in E$, there exists a sequence of independent and identically distributed random variables $X_n$ on a probability space $(\\Omega,\\mathcal{F},P)$ taking values in $E\\subseteq \\mathbb{R}$ such that $X_n\\sim F(p)$ and $p\\in E$ is the mean of this sequence. Assume\n$$Y_n = \\frac{X_1+\\cdots+X_n}{n}\\xrightarrow{P}{p}.$$ (3) The expectation $E(f(Y_n))$ exists for every $n\\in \\mathbb{N}$. Then\n$$||E(f(Y_n)) -f||_u \\to 0.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis and probability theory",
+          "key_techniques": [
+            "law of large numbers type convergence",
+            "probabilistic approximation of functions"
+          ],
+          "prerequisites": [
+            "uniform continuity",
+            "convergence in probability"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#12",
+      "type": "question",
+      "title": "问题",
+      "body": "如果我们解开用多项式逼近连续函数的限制，我们是否能用同样的概率路径取得到更多样的对连续函数的一致逼近?",
+      "position_char": 10309,
+      "position_line": 170,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#12",
+        "classification": "remark",
+        "english_title": "Problem",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#13",
+      "type": "note",
+      "title": "Radon-Nikodym导数",
+      "body": "在测度空间空间$(\\Omega,\\mathcal{F},\\mu)$上如果存在一个非负Borel可测函数$f:\\Omega \\to [0,\\infty)$，并且这个函数可以通过积分定义出可测空间$(\\Omega,\\mathcal{F})$上的另一个测度$$\\forall A\\in \\mathcal{F},\\nu(A):=\\int_A f\\,d\\mu$$\n那么此时我们称$f$是$\\nu$关于$\\mu$的Radon-Nikodym导数或者将成为\"密度\"。可以表示为$f=\\frac{d\\nu}{d\\mu}$.",
+      "position_char": 10886,
+      "position_line": 179,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#13",
+        "classification": "definition",
+        "english_title": "Radon-Nikodym Derivative",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#14",
+      "type": "note",
+      "title": "正态分布的随机变量",
+      "body": "在概率空间$(\\Omega,\\mathcal{F},P)$上如果一个随机变量$X$定义出来的pushforward测度$P_X$可以表示为$f_X$的积分$$P_X(A)=\\int_{A} \\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\\,dm$$对任意$A\\in \\mathcal{B}(\\mathbb{R})$成立.\n其中$\\mathcal{B}(\\mathbb{R})$是测度空间$(\\mathbb{R},\\mathcal{B}(\\mathbb{R}),m)$当中的Borel代数(m是Lebesgue测度)\n那么称$X \\sim \\mathcal{N}(\\mu,\\sigma^2)$是符合正态分布，均值为$\\mu$方差为$\\sigma^2$的随机变量。",
+      "position_char": 11193,
+      "position_line": 185,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#14",
+        "classification": "definition",
+        "english_title": "Normally Distributed Random Variable",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Weierstrass逼近定理的概率途径证明#15",
+      "type": "note",
+      "title": "Radon Nikodym链式法则",
+      "body": "$\\nu,\\mu$是测度空间$(\\Omega,\\mathcal{F})$上的两个测度，$g$是定义在$\\Omega$上的非负Borel可测函数。如果存在$\\nu$关于$\\mu$的密度$\\frac{d\\nu}{d\\mu}$,那么$$\\int_{\\Omega}g\\,d\\nu=\\int_{\\Omega}g\\frac{d\\nu}{d\\mu}\\,d\\mu$$",
+      "position_char": 11644,
+      "position_line": 192,
+      "classification_result": {
+        "id": "Weierstrass逼近定理的概率途径证明#15",
+        "classification": "problem",
+        "english_title": "Radon-Nikodym Chain Rule",
+        "if_problem": {
+          "statement_en": "Let $\\nu,\\mu$ be two measures on the measurable space $(\\Omega,\\mathcal{F})$, and let $g$ be a nonnegative Borel measurable function on $\\Omega$. If the density $\\frac{d\\nu}{d\\mu}$ of $\\nu$ with respect to $\\mu$ exists, then\n$$\\int_{\\Omega}g\\,d\\nu=\\int_{\\Omega}g\\frac{d\\nu}{d\\mu}\\,d\\mu.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "Radon-Nikodym derivative",
+            "integration with respect to absolutely continuous measures"
+          ],
+          "prerequisites": [
+            "absolute continuity of measures",
+            "Lebesgue integration"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Weierstrass Approximation Theorem\",\n    \"if_problem\": {\n      \"statement_en\": \"Every $f\\\\in C([0,1]\\\\to \\\\mathbb{R})$ can be uniformly approximated by real-coefficient polynomials that are also defined on $[0,1]$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"uniform approximation by polynomials\",\n        \"probabilistic method\"\n      ],\n      \"prerequisites\": [\n        \"continuous functions on compact intervals\",\n        \"uniform convergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#2\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Pushforward Measure\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Consider the probability space $(\\\\{0,1\\\\},\\\\mathcal{P}(\\\\{0,1\\\\}),P_0)$, where $P_0(\\\\{0\\\\})=1-p$ and $P_0(\\\\{1\\\\})=p$. Define the Bernoulli$(p)$ random variable\\n$$Y_1(\\\\omega):=\\\\begin{cases}0& \\\\omega =0\\\\\\\\ 1&\\\\omega =1\\\\end{cases}$$\\nThen its pushforward measure satisfies\\n$$P_{Y_1}(\\\\{0\\\\})=1-p,\\\\qquad P_{Y_1}(\\\\{1\\\\})=p.$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"computing pushforward measures\",\n        \"Bernoulli random variables\"\n      ],\n      \"prerequisites\": [\n        \"probability spaces\",\n        \"pushforward measure\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Consider the probability space $([0,1],\\\\mathcal{B}([0,1]),m)$, where $m$ is Lebesgue measure. Define the Bernoulli$(p)$ random variable\\n$$Y_2(\\\\omega):=\\\\begin{cases}0& 1\\\\geq \\\\omega >p\\\\\\\\ 1& p\\\\geq \\\\omega \\\\geq 0 \\\\end{cases}$$\\nThen its pushforward measure satisfies\\n$$P_{Y_2}(\\\\{0\\\\})=m((p,1])=1-p,\\\\qquad P_{Y_2}(\\\\{1\\\\})=m([0,p])=p.$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"constructing random variables on $[0,1]$\",\n        \"computing pushforward measures via Lebesgue measure\"\n      ],\n      \"prerequisites\": [\n        \"Borel sigma algebra\",\n        \"Lebesgue measure\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 3\",\n    \"if_problem\": {\n      \"statement_en\": \"Based on Example 2, define\\n$$Y_3(\\\\omega):=\\\\begin{cases}0& \\\\omega \\\\in [p,1]-\\\\{\\\\frac{1+p}{2}\\\\}\\\\\\\\ 1& \\\\omega \\\\in [0,p) \\\\cup \\\\{\\\\frac{1+p}{2}\\\\}\\\\end{cases}$$\\nThen the pushforward measure is unchanged:\\n$$P_{Y_3}(\\\\{0\\\\})=m\\\\left([p,1]-\\\\left\\\\{\\\\frac{1+p}{2}\\\\right\\\\}\\\\right)=1-p,\\\\qquad P_{Y_3}(\\\\{1\\\\})=m\\\\left([0,p) \\\\cup \\\\left\\\\{\\\\frac{1+p}{2}\\\\right\\\\}\\\\right)=p.$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"modifying a random variable on a null set\",\n        \"pushforward measure invariance under null-set changes\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue measure\",\n        \"measure zero sets\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#6\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Independence of Random Variables\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#7\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Joint Probability Distribution of Two Random Variables\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem\",\n    \"if_problem\": {\n      \"statement_en\": \"Consider $n$ independent and identically distributed random variables $X_1,\\\\ldots,X_n$ on a probability space $(\\\\Omega,\\\\mathcal{F},P)$, each with Bernoulli$(p)$ distribution. Determine the distribution of their average\\n$$Y_n = \\\\frac{X_1+\\\\cdots+X_n}{n}.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"binomial distribution\",\n        \"distribution of sums of independent Bernoulli variables\"\n      ],\n      \"prerequisites\": [\n        \"independence\",\n        \"Bernoulli and binomial distributions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#9\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Change of Variables for Integrals\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $(X,\\\\mathcal{A},\\\\mu)$ be a measure space, let $T:X\\\\to Y$ be measurable, let $T_{*}\\\\mu$ be the pushforward measure, and let $g$ be an integrable function on $Y$. Then\\n$$\\\\int_{Y}g\\\\,d(T_{*}\\\\mu)=\\\\int_X g\\\\circ T\\\\,d\\\\mu.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"pushforward measures\",\n        \"change of variables in measure theory\"\n      ],\n      \"prerequisites\": [\n        \"measurable functions\",\n        \"Lebesgue integration\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#10\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Dominated Convergence Theorem for Convergence in Probability\",\n    \"if_problem\": {\n      \"statement_en\": \"If random variables $X_n\\\\xrightarrow{P}{X}$, and if $|X_n|\\\\leq Y$ with $E(Y)$ finite, then\\n$$E(X_n)\\\\to E(X).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"convergence in probability\",\n        \"dominated convergence\"\n      ],\n      \"prerequisites\": [\n        \"expectation\",\n        \"dominated convergence theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#11\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Theorem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume: (1) $f$ is a bounded uniformly continuous function on $E$. (2) For every $p\\\\in E$, there exists a sequence of independent and identically distributed random variables $X_n$ on a probability space $(\\\\Omega,\\\\mathcal{F},P)$ taking values in $E\\\\subseteq \\\\mathbb{R}$ such that $X_n\\\\sim F(p)$ and $p\\\\in E$ is the mean of this sequence. Assume\\n$$Y_n = \\\\frac{X_1+\\\\cdots+X_n}{n}\\\\xrightarrow{P}{p}.$$ (3) The expectation $E(f(Y_n))$ exists for every $n\\\\in \\\\mathbb{N}$. Then\\n$$||E(f(Y_n)) -f||_u \\\\to 0.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis and probability theory\",\n      \"key_techniques\": [\n        \"law of large numbers type convergence\",\n        \"probabilistic approximation of functions\"\n      ],\n      \"prerequisites\": [\n        \"uniform continuity\",\n        \"convergence in probability\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#12\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Problem\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#13\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Radon-Nikodym Derivative\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#14\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Normally Distributed Random Variable\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Weierstrass逼近定理的概率途径证明#15\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Radon-Nikodym Chain Rule\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $\\\\nu,\\\\mu$ be two measures on the measurable space $(\\\\Omega,\\\\mathcal{F})$, and let $g$ be a nonnegative Borel measurable function on $\\\\Omega$. If the density $\\\\frac{d\\\\nu}{d\\\\mu}$ of $\\\\nu$ with respect to $\\\\mu$ exists, then\\n$$\\\\int_{\\\\Omega}g\\\\,d\\\\nu=\\\\int_{\\\\Omega}g\\\\frac{d\\\\nu}{d\\\\mu}\\\\,d\\\\mu.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"Radon-Nikodym derivative\",\n        \"integration with respect to absolutely continuous measures\"\n      ],\n      \"prerequisites\": [\n        \"absolute continuity of measures\",\n        \"Lebesgue integration\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

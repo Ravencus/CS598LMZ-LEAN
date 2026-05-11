@@ -1,0 +1,47 @@
+{
+  "label": "A_no_sympy",
+  "problem_id": "_synth_integral_max_cos",
+  "model": "gpt-5.5",
+  "K": 3,
+  "sympy_skill_enabled": false,
+  "success": false,
+  "why_success": null,
+  "sympy_witnesses": 0,
+  "attempts_used": 3,
+  "wall_seconds": 95.4,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 29.06,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 7
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 31.79,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 13
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 26.52,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 8
+    }
+  ]
+}

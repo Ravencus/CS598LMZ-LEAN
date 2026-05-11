@@ -1,0 +1,305 @@
+{
+  "note_title": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#1",
+      "type": "question",
+      "title": "问题1.1",
+      "body": "序列$a_n>0$，级数$\\sum_{n\\geq 1}a_n$收敛，证明级数$\\sum_{n\\geq 1}a_n^{\\frac{n}{n+1}}$也收敛。",
+      "position_char": 53,
+      "position_line": 7,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#1",
+        "classification": "problem",
+        "english_title": "Problem 1.1",
+        "if_problem": {
+          "statement_en": "Let $a_n>0$ be a sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ converges. Prove that the series $\\sum_{n\\geq 1} a_n^{\\frac{n}{n+1}}$ also converges.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "split the index set into cases",
+            "comparison test",
+            "exponential-type threshold estimates"
+          ],
+          "prerequisites": [
+            "convergence tests for positive series",
+            "comparison test",
+            "basic exponent manipulation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#2",
+      "type": "tip",
+      "title": "想法1.2",
+      "body": "一个从逐项估计的直接想法是，如果$a_n^{\\frac{n}{n+1}}\\leq C a_n$那么我们就可以利用$\\sum_n a_n$的收敛性导出$\\sum_n a_n^{\\frac{n}{n+1}}$收敛。但问题是，对于足够大的$n$，这种控制一定可以实现吗？如果不能实现我们又该如何？\n\n我们可以把上述控制不等式换一个更简单的形式$$a_n^{\\frac{n}{n+1}}\\leq C a_n\\iff a_n \\geq \\frac{1}{C^{n+1}}$$这个不等式不禁让我们冒出一个分段估计的计划：\n1. 令$M:=\\{n\\geq 1:a_n^{\\frac{n}{n+1}}\\leq C a_n\\}$那么在这个集合上，级数的被求和对象$a_n^{\\frac{n}{n+1}}$可以被控制起来。\n2. 而$M^{c}$对应着集合$\\{n\\geq 1:a_n^{\\frac{n}{n+1}}> C a_n\\}$而这个集合等价于$\\{n\\geq 1:a_n<\\frac{1}{C^{n+1}}\\}$这便意味着在这个集合上$$a_n^{\\frac{n}{n+1}}<\\frac{1}{C^n}$$这岂不是意味着，只要$C>1$，在此集合上级数也可以可以被很好控制的。",
+      "position_char": 154,
+      "position_line": 10,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#2",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.2",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Partition by Dominating Comparison",
+          "summary_en": "Try to compare the target summand with the original summand on one subset of indices, and on the complementary subset derive a simpler explicit bound. This reduces the proof to two comparison arguments after partitioning the index set by whether a key inequality holds.",
+          "applicability": "Applies when one wants to deduce convergence of a transformed positive series from a known convergent series, but a uniform termwise bound fails globally and can instead be enforced on part of the index set."
+        }
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#3",
+      "type": "question",
+      "title": "问题1.3",
+      "body": "对于$x_n\\in (0,1)$假设$\\sum_{n=1}^{\\infty}nx_n<\\infty$，证明$$\\sum_{n=1}^{\\infty}x_n\\log(1/x_n)<\\infty$$",
+      "position_char": 1097,
+      "position_line": 19,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#3",
+        "classification": "problem",
+        "english_title": "Problem 1.3",
+        "if_problem": {
+          "statement_en": "For $x_n\\in (0,1)$, assume $\\sum_{n=1}^{\\infty} n x_n<\\infty$. Prove that $$\\sum_{n=1}^{\\infty} x_n\\log(1/x_n)<\\infty.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "split the index set by size of $x_n$",
+            "comparison between logarithmic and polynomial growth",
+            "comparison test"
+          ],
+          "prerequisites": [
+            "convergence tests for positive series",
+            "elementary logarithm estimates",
+            "comparison test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#4",
+      "type": "note",
+      "title": "练习1.4",
+      "body": "设序列$x_n\\in (0,1),q>0$。若$\\sum_{n\\geq 1} n^qx_n<+\\infty$则$$\\sum_{n\\geq 1}x_n(\\log(1/x_n))^q<\\infty$$",
+      "position_char": 1770,
+      "position_line": 30,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#4",
+        "classification": "problem",
+        "english_title": "Exercise 1.4",
+        "if_problem": {
+          "statement_en": "Let $x_n\\in (0,1)$ and $q>0$. If $\\sum_{n\\geq 1} n^q x_n<+\\infty$, then $$\\sum_{n\\geq 1} x_n(\\log(1/x_n))^q<\\infty.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "compare logarithmic powers with polynomial weights",
+            "split the index set by decay rate of $x_n$",
+            "comparison test"
+          ],
+          "prerequisites": [
+            "convergence tests for positive series",
+            "logarithmic growth estimates",
+            "comparison test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#5",
+      "type": "note",
+      "title": "练习1.5",
+      "body": "[[Riemann-Lebesgue引理的一个特殊情况#^abe598]]当中有这样一个问题：\n\n假设$\\sum_{n\\geq 1} a_n$绝对收敛，并且$p>1/2$，证明$$\\sum_{n\\geq 1} \\frac{\\sqrt{|a_n|}}{n^p}<+\\infty$$\n除了利用柯西不等式以外，我们还可以尝试用本文当中的思路解决问题。\n\n令$M:=\\{n:\\frac{\\sqrt{|a_n|}}{n^p}\\leq |a_n|\\}$于是当$n\\in M^c$的时候$|a_n|\\leq \\frac{1}{n^{2p}}$，从而$\\frac{\\sqrt{|a_n|}}{n^p}\\leq \\frac{1}{n^{2p}}$。于是$$\\begin{aligned}\\sum_{n\\geq 1} \\frac{\\sqrt{|a_n|}}{n^p}&= \\sum_{n\\in M}*+\\sum_{n\\in M^c}*\\\\&\\leq \\sum_{n\\in M} |a_n|+\\sum_{n\\in M^c} \\frac{1}{n^{2p}}\\\\&\\leq \\sum_{n\\geq 1}|a_n|+\\sum_{n\\geq 1}\\frac{1}{n^{2p}}<+\\infty\\end{aligned}$$",
+      "position_char": 2109,
+      "position_line": 35,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#5",
+        "classification": "problem",
+        "english_title": "Exercise 1.5",
+        "if_problem": {
+          "statement_en": "Assume $\\sum_{n\\geq 1} a_n$ converges absolutely, and let $p>1/2$. Prove that $$\\sum_{n\\geq 1} \\frac{\\sqrt{|a_n|}}{n^p}<+\\infty.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "split the index set into two cases",
+            "comparison test",
+            "Cauchy-Schwarz as an alternative method"
+          ],
+          "prerequisites": [
+            "absolute convergence",
+            "comparison test",
+            "p-series convergence",
+            "Cauchy-Schwarz inequality"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#6",
+      "type": "question",
+      "title": "问题1.6",
+      "body": "序列$a_n>0$，级数$\\sum_{n\\geq 1}a_n$收敛，证明级数$\\sum_{n\\geq 3}a_n^{1-\\frac{1}{\\ln(n)}}$也收敛。",
+      "position_char": 2704,
+      "position_line": 49,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#6",
+        "classification": "problem",
+        "english_title": "Problem 1.6",
+        "if_problem": {
+          "statement_en": "Let $a_n>0$ be a sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ converges. Prove that the series $\\sum_{n\\geq 3} a_n^{1-\\frac{1}{\\ln(n)}}$ also converges.",
+          "problem_type": "exercise",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "partition by decay speed",
+            "rewrite powers using exponentials and logarithms",
+            "comparison with a p-series"
+          ],
+          "prerequisites": [
+            "convergence tests for positive series",
+            "properties of logarithms and exponentials",
+            "p-series convergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#7",
+      "type": "tip",
+      "title": "想法1.7",
+      "body": "这个问题与前面的问题颇为类似，特别是“问题1.1”。于是我们简单尝试考虑集合$$M:=\\{n:a_n^{1-\\frac{1}{\\ln(n)}}\\leq a_n\\}$$然而这个集合至多是一个有限集合，因为只要$a_n<1$那么就有$n\\not \\in M$,所以如果按照这样的集合进行分段，这是完全没有意义的。因为有限项根本不影响级数的收敛与发散性，直接去掉这个集合以后，问题不变。也就是说，我们这里如果选用$M,M^c$的分段根本等于什么也没做。\n\n不过这并非代表这种想法失效了。因为从一般的角度上考虑，我们的这种分段应该是$$S:=\\{n:a_n 满足某个条件\\}$$两个级数的被求和对象比大小只是条件之一。另一种常用的判断条件是，既然$\\sum_n a_n$收敛，那么$a_n$收敛得有多快？我们可以用其收敛的速度作为条件，把正整数$n$分为两部分。\n\n具体来说$$R:=\\{n:a_n\\leq n^{-p}\\}$$由于$$a_n^{1-\\frac{1}{\\ln(n)}}=a_n \\exp\\left(-\\frac{\\ln(a_n)}{\\ln(n)}\\right)$$那么如果\n1. $n\\in R$，于是$$a_n^{1-\\frac{1}{\\ln(n)}}\\leq (n^{-p})^{1-\\frac{1}{\\ln(n)}}=n^{-p}e^p$$\n2. $n\\in R^c$，此时$a_n>n^{-p}$于是$$a_n^{1-\\frac{1}{\\ln(n)}}=a_n \\exp\\left(-\\frac{\\ln(a_n)}{\\ln(n)}\\right)<a_ne^{p}$$\n所以只需要令$p>1$我们就可以依靠分段估计解决问题。",
+      "position_char": 3028,
+      "position_line": 54,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#7",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.7",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Partition by Rate of Decay",
+          "summary_en": "When direct comparison between two summands gives a useless partition, instead divide indices according to how fast the original terms decay, such as whether $a_n\\le n^{-p}$. On each part, use that decay information to derive a bound suited either to a known convergent model series or to the original convergent series.",
+          "applicability": "Applies when a transformed summand depends on both the size of $a_n$ and the index $n$, and a naive partition by pointwise comparison does not isolate the difficult terms."
+        }
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#8",
+      "type": "note",
+      "title": "练习1.8",
+      "body": "实数列$a_n \\geq 0$,证明级数$$\\sum_{n\\geq 1}a_n,\\sum_{n\\geq 1}\\frac{a_n}{a_n+1}$$具有相同的收敛，发散性质。",
+      "position_char": 4128,
+      "position_line": 68,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#8",
+        "classification": "problem",
+        "english_title": "Exercise 1.8",
+        "if_problem": {
+          "statement_en": "Let $a_n \\geq 0$ be a real sequence. Prove that the series $$\\sum_{n\\geq 1} a_n,\\qquad \\sum_{n\\geq 1}\\frac{a_n}{a_n+1}$$ have the same convergence and divergence behavior.",
+          "problem_type": "exercise",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "limit comparison near zero",
+            "comparison test",
+            "equivalence of summands"
+          ],
+          "prerequisites": [
+            "convergence tests for positive series",
+            "basic limit computation",
+            "comparison test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#9",
+      "type": "note",
+      "title": "练习1.9",
+      "body": "若$f:[0,+\\infty)\\to [0,+\\infty)$单调不减，且$\\lim_{x\\to 0^{+}}\\frac{f(x)}{x}=1$则对于任意非负实数列$a_n$,级数$\\sum_n a_n$与$\\sum_n f(a_n)$同时收敛与发散。",
+      "position_char": 4269,
+      "position_line": 73,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#9",
+        "classification": "problem",
+        "english_title": "Exercise 1.9",
+        "if_problem": {
+          "statement_en": "Let $f:[0,+\\infty)\\to [0,+\\infty)$ be nondecreasing, and suppose $\\lim_{x\\to 0^{+}}\\frac{f(x)}{x}=1$. Then for any nonnegative real sequence $a_n$, the series $\\sum_n a_n$ and $\\sum_n f(a_n)$ converge or diverge simultaneously.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "asymptotic equivalence near zero",
+            "comparison test",
+            "eventual two-sided bounds"
+          ],
+          "prerequisites": [
+            "limits of functions",
+            "convergence tests for positive series",
+            "comparison test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#10",
+      "type": "example",
+      "title": "例子2.1",
+      "body": "参考[[Carleman不等式#^d22522]]当中的例子，对于关键的$p=1$的情况。对于正实数序列$a_k$,已知$\\sum_n \\frac{1}{a_n}$收敛，现在我们要证明$\\sum_k \\frac{n}{A_n}$收敛，其中$A_n$是序列$a_k$的前$n$项和。\n\n这个时候如果我们要考虑，哪些$n$能够使得不等式$\\frac{n}{A_n}\\leq \\frac{1}{a_n}$我们其实导不出什么有用的信息。",
+      "position_char": 4524,
+      "position_line": 81,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#10",
+        "classification": "problem",
+        "english_title": "Example 2.1",
+        "if_problem": {
+          "statement_en": "For the critical case $p=1$, let $a_n>0$ and suppose $\\sum_n \\frac{1}{a_n}$ converges. Prove that $\\sum_n \\frac{n}{A_n}$ converges, where $A_n$ is the sum of the first $n$ terms of the sequence $a_k$.",
+          "problem_type": "example",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "comparison involving partial sums",
+            "summation structure analysis",
+            "testing the limits of a partition strategy"
+          ],
+          "prerequisites": [
+            "convergence tests for positive series",
+            "partial sums",
+            "basic inequalities for sequences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "由一个级数收敛证明另一个有关级数的收敛问题#11",
+      "type": "example",
+      "title": "例子2.2",
+      "body": "我们可以用今天的这个方法处理[[两个非负不增序列互相竞争从而使得级数发散#^0e9ff1]]当中的问题吗？\n\n$a_n$是一个非负不增的实数列，并且级数$\\sum_{n\\geq 1}a_n$发散。证明级数$\\sum_{n\\geq 1}\\min\\{a_n,1/n\\}$发散。\n\n不能。如果我们令$M:=\\{n:a_n\\leq \\frac{1}{n}\\}$那么$$\\sum_{n\\geq1 }\\min\\{a_n,\\frac{1}{n}\\}=\\sum_{n\\in M} a_n +\\sum_{n\\in M^c} \\frac{1}{n}$$如果$M,M^c$当中任何一个集合是有限集，那么根据$a_n,\\frac{1}{n}$的单调性我们便能证明目标级数的发散性，但问题就出在，如果$M,M^c$都是无限集合，这种论证就会无能为力。也正是因为这种论证没有利用到$\\frac{1}{n}$所在的部分的集合的密度，因此如果这套推理依旧可以沿用到[[两个非负不增序列互相竞争从而使得级数发散#^654598]]这个问题上，从而会导致[[两个非负不增序列互相竞争从而使得级数发散#^6caf8e]]这种反例的出现。因此这种方法无法断言类似于目标级数的收敛与发散性。\n\n而正确的做法，例如利用柯西凝聚判别，也就是说我们依旧适用分段估计，不过是dyadic的分块，这是对于这种单调非负级数收敛判别的充要条件，并且可以充分利用到$\\frac{1}{n}$的单调性以及衰减速度的条件，从而可以成功。",
+      "position_char": 4769,
+      "position_line": 88,
+      "classification_result": {
+        "id": "由一个级数收敛证明另一个有关级数的收敛问题#11",
+        "classification": "remark",
+        "english_title": "Example 2.2",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_n>0$ be a sequence, and suppose the series $\\\\sum_{n\\\\geq 1} a_n$ converges. Prove that the series $\\\\sum_{n\\\\geq 1} a_n^{\\\\frac{n}{n+1}}$ also converges.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"split the index set into cases\",\n        \"comparison test\",\n        \"exponential-type threshold estimates\"\n      ],\n      \"prerequisites\": [\n        \"convergence tests for positive series\",\n        \"comparison test\",\n        \"basic exponent manipulation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.2\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Partition by Dominating Comparison\",\n      \"summary_en\": \"Try to compare the target summand with the original summand on one subset of indices, and on the complementary subset derive a simpler explicit bound. This reduces the proof to two comparison arguments after partitioning the index set by whether a key inequality holds.\",\n      \"applicability\": \"Applies when one wants to deduce convergence of a transformed positive series from a known convergent series, but a uniform termwise bound fails globally and can instead be enforced on part of the index set.\"\n    }\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1.3\",\n    \"if_problem\": {\n      \"statement_en\": \"For $x_n\\\\in (0,1)$, assume $\\\\sum_{n=1}^{\\\\infty} n x_n<\\\\infty$. Prove that $$\\\\sum_{n=1}^{\\\\infty} x_n\\\\log(1/x_n)<\\\\infty.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"split the index set by size of $x_n$\",\n        \"comparison between logarithmic and polynomial growth\",\n        \"comparison test\"\n      ],\n      \"prerequisites\": [\n        \"convergence tests for positive series\",\n        \"elementary logarithm estimates\",\n        \"comparison test\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Exercise 1.4\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $x_n\\\\in (0,1)$ and $q>0$. If $\\\\sum_{n\\\\geq 1} n^q x_n<+\\\\infty$, then $$\\\\sum_{n\\\\geq 1} x_n(\\\\log(1/x_n))^q<\\\\infty.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"compare logarithmic powers with polynomial weights\",\n        \"split the index set by decay rate of $x_n$\",\n        \"comparison test\"\n      ],\n      \"prerequisites\": [\n        \"convergence tests for positive series\",\n        \"logarithmic growth estimates\",\n        \"comparison test\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Exercise 1.5\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume $\\\\sum_{n\\\\geq 1} a_n$ converges absolutely, and let $p>1/2$. Prove that $$\\\\sum_{n\\\\geq 1} \\\\frac{\\\\sqrt{|a_n|}}{n^p}<+\\\\infty.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"split the index set into two cases\",\n        \"comparison test\",\n        \"Cauchy-Schwarz as an alternative method\"\n      ],\n      \"prerequisites\": [\n        \"absolute convergence\",\n        \"comparison test\",\n        \"p-series convergence\",\n        \"Cauchy-Schwarz inequality\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1.6\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_n>0$ be a sequence, and suppose the series $\\\\sum_{n\\\\geq 1} a_n$ converges. Prove that the series $\\\\sum_{n\\\\geq 3} a_n^{1-\\\\frac{1}{\\\\ln(n)}}$ also converges.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"partition by decay speed\",\n        \"rewrite powers using exponentials and logarithms\",\n        \"comparison with a p-series\"\n      ],\n      \"prerequisites\": [\n        \"convergence tests for positive series\",\n        \"properties of logarithms and exponentials\",\n        \"p-series convergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#7\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.7\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Partition by Rate of Decay\",\n      \"summary_en\": \"When direct comparison between two summands gives a useless partition, instead divide indices according to how fast the original terms decay, such as whether $a_n\\\\le n^{-p}$. On each part, use that decay information to derive a bound suited either to a known convergent model series or to the original convergent series.\",\n      \"applicability\": \"Applies when a transformed summand depends on both the size of $a_n$ and the index $n$, and a naive partition by pointwise comparison does not isolate the difficult terms.\"\n    }\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Exercise 1.8\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_n \\\\geq 0$ be a real sequence. Prove that the series $$\\\\sum_{n\\\\geq 1} a_n,\\\\qquad \\\\sum_{n\\\\geq 1}\\\\frac{a_n}{a_n+1}$$ have the same convergence and divergence behavior.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"limit comparison near zero\",\n        \"comparison test\",\n        \"equivalence of summands\"\n      ],\n      \"prerequisites\": [\n        \"convergence tests for positive series\",\n        \"basic limit computation\",\n        \"comparison test\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#9\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Exercise 1.9\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:[0,+\\\\infty)\\\\to [0,+\\\\infty)$ be nondecreasing, and suppose $\\\\lim_{x\\\\to 0^{+}}\\\\frac{f(x)}{x}=1$. Then for any nonnegative real sequence $a_n$, the series $\\\\sum_n a_n$ and $\\\\sum_n f(a_n)$ converge or diverge simultaneously.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"asymptotic equivalence near zero\",\n        \"comparison test\",\n        \"eventual two-sided bounds\"\n      ],\n      \"prerequisites\": [\n        \"limits of functions\",\n        \"convergence tests for positive series\",\n        \"comparison test\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#10\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"For the critical case $p=1$, let $a_n>0$ and suppose $\\\\sum_n \\\\frac{1}{a_n}$ converges. Prove that $\\\\sum_n \\\\frac{n}{A_n}$ converges, where $A_n$ is the sum of the first $n$ terms of the sequence $a_k$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"comparison involving partial sums\",\n        \"summation structure analysis\",\n        \"testing the limits of a partition strategy\"\n      ],\n      \"prerequisites\": [\n        \"convergence tests for positive series\",\n        \"partial sums\",\n        \"basic inequalities for sequences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"由一个级数收敛证明另一个有关级数的收敛问题#11\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Example 2.2\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

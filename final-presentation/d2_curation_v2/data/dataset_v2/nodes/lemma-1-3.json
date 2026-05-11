@@ -1,0 +1,24 @@
+{
+  "id": "lemma-1-3",
+  "type": "problem",
+  "source_note": "Riemann - Lebesgue lemma的证明",
+  "english_source_note": "Proof of the Riemann-Lebesgue Lemma",
+  "callout_id": "Riemann - Lebesgue lemma的证明#8",
+  "english_title": "Lemma 1",
+  "statement_en": "For any neighborhood $U$ of the identity element $1_G$ in an LCA group $G$, there exists a set $K \\subseteq \\hat{G}$ such that if $\\chi \\in \\hat{G} \\setminus K$, then there exists $x \\in U$ with $$\\operatorname{Re}\\chi(x)\\leq 0.$$",
+  "problem_type": "lemma",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "properties of characters on LCA groups",
+    "compactness arguments in the dual group",
+    "separation of characters at infinity"
+  ],
+  "prerequisites": [
+    "locally compact abelian groups",
+    "dual groups",
+    "characters",
+    "basic topological group theory"
+  ],
+  "callout_body": "对于LCA群$G$当中单位元$1_G$的任意邻域$U$存在$K \\subseteq \\hat{G}$使得如果$\\chi \\in \\hat{G} - K$那么存在$x \\in U$使得$\\text{Re}\\chi(x)\\leq 0$."
+}

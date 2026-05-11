@@ -1,0 +1,180 @@
+{
+  "note_title": "部分积的上界估计与Gautschi不等式",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "部分积的上界估计与Gautschi不等式#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "证明:$$\\prod_{n=1}^{N}\\left(1-\\frac{1}{2n}\\right)<\\frac{1}{\\sqrt{2N}}$$",
+      "position_char": 61,
+      "position_line": 9,
+      "classification_result": {
+        "id": "部分积的上界估计与Gautschi不等式#1",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Prove that $$\\prod_{n=1}^{N}\\left(1-\\frac{1}{2n}\\right)<\\frac{1}{\\sqrt{2N}}.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "logarithmic transformation of products",
+            "partial product estimation",
+            "comparison with harmonic-type bounds"
+          ],
+          "prerequisites": [
+            "properties of logarithms",
+            "basic inequalities",
+            "finite products and sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#2",
+      "type": "question",
+      "title": "问题2：问题1的等价命题",
+      "body": "$$\\sum_{n=1}^{N}\\log\\left(1-\\frac{1}{2n}\\right)<-\\frac{1}{2}\\log(2N)$$",
+      "position_char": 165,
+      "position_line": 14,
+      "classification_result": {
+        "id": "部分积的上界估计与Gautschi不等式#2",
+        "classification": "problem",
+        "english_title": "Problem 2: An Equivalent Statement of Problem 1",
+        "if_problem": {
+          "statement_en": "Show that $$\\sum_{n=1}^{N}\\log\\left(1-\\frac{1}{2n}\\right)<-\\frac{1}{2}\\log(2N).$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "converting products to sums via logarithms",
+            "sum estimation",
+            "logarithmic inequalities"
+          ],
+          "prerequisites": [
+            "properties of logarithms",
+            "equivalence between product and sum forms",
+            "basic inequality manipulation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#3",
+      "type": "failure",
+      "title": "这样处理的一个问题",
+      "body": "这里既然最后依旧是对被积分对象$\\log(1-\\frac{1}{2t})$做放缩，那么这样与对和做逐项放缩有何区别呢？积分放缩的好处是，如果函数恰好积分的结果是简单的，那么我们就可以用一个简单的（我们熟悉的）函数作为和的上界。但是如果积分并不简单（熟悉），何必积分放缩？",
+      "position_char": 797,
+      "position_line": 20,
+      "classification_result": {
+        "id": "部分积的上界估计与Gautschi不等式#3",
+        "classification": "remark",
+        "english_title": "A Problem with This Approach",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#4",
+      "type": "note",
+      "title": "引理2.1.1",
+      "body": "$H_N$表示第$N$个调和数，那么对任意正整数$N$都有\n$$H_N>\\log(N)+\\frac{1}{2}$$",
+      "position_char": 1278,
+      "position_line": 29,
+      "classification_result": {
+        "id": "部分积的上界估计与Gautschi不等式#4",
+        "classification": "problem",
+        "english_title": "Lemma 2.1.1",
+        "if_problem": {
+          "statement_en": "Let $H_N$ denote the $N$th harmonic number. Then for every positive integer $N$,\n$$H_N>\\log(N)+\\frac{1}{2}.$$",
+          "problem_type": "lemma",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "harmonic number estimates",
+            "comparison between sums and integrals",
+            "logarithmic bounds"
+          ],
+          "prerequisites": [
+            "harmonic numbers",
+            "definite integrals",
+            "monotonicity and comparison"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#5",
+      "type": "error",
+      "title": "验证差分的失败",
+      "body": "首先尝试[[对部分和渐近展开的常数项做估计#3.从结果开始逐项放缩]]的做法中的直接验证差分的方法。也就是说我们为了验证$S_N:=\\sum_{n=1}^{N} a_n<U_N$，也就是“问题2”当中对应的那个问题，我们希望尝试一个更强的命题，即验证是否有$$S_{N+1}-S_N = a_{N+1}< \\Delta U_N$$是否对任意正整数$N$成立。对应具体的问题，也就是验证对任意正整数$N$是否成立$$\\log\\left(1-\\frac{1}{2(N+1)}\\right)<-\\frac{1}{2}\\left(\\log(2N+2)-\\log(2N)\\right)$$该不等式等价于$$\\log(2N+1)<\\frac{\\log(2N+2)+\\log(2N)}{2}$$但这是不对的，因为$\\log(x)$是一个concave的函数，成立不等式$$\\frac{\\log(x)+\\log(y)}{2}\\leq  \\log((x+y)/2)$$不等式号恰好是反的，因此这个想法注定失败。",
+      "position_char": 1534,
+      "position_line": 39,
+      "classification_result": {
+        "id": "部分积的上界估计与Gautschi不等式#5",
+        "classification": "remark",
+        "english_title": "Failure of Verifying the Difference",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#6",
+      "type": "tip",
+      "title": "想法2.3.1:利用concave性制造的telescoping sum",
+      "body": "详细参考[[逐项估计#^d27913]]，借助对数函数的concave性质，我们得到$$\\log(2n)-\\log(2n-1)\\geq \\frac{\\log(2n+1)-\\log(2n-1)}{2}$$而后者是一个telescoping sum，其和的精度正好符合“问题2”的要求。",
+      "position_char": 2039,
+      "position_line": 46,
+      "classification_result": {
+        "id": "部分积的上界估计与Gautschi不等式#6",
+        "classification": "strategy_template",
+        "english_title": "Idea 2.3.1: Constructing a Telescoping Sum Using Concavity",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Constructing a Telescoping Sum Using Concavity",
+          "summary_en": "Use the concavity of a function, here the logarithm, to derive a local inequality whose right-hand side forms a telescoping sum. This converts a difficult termwise estimate into a summable global bound.",
+          "applicability": "Applies when a concave function appears in a sum or product estimate and one can rewrite neighboring terms so that concavity yields differences that telescope."
+        }
+      }
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#7",
+      "type": "note",
+      "title": "Gautschi不等式,1959",
+      "body": "当$s\\in(0,1),x>0$的时候:$$x^{1-s}<\\frac{\\Gamma(x+1)}{\\Gamma(x+s)}<(1+x)^{1-s}$$",
+      "position_char": 3141,
+      "position_line": 61,
+      "classification_result": {
+        "id": "部分积的上界估计与Gautschi不等式#7",
+        "classification": "problem",
+        "english_title": "Gautschi Inequality, 1959",
+        "if_problem": {
+          "statement_en": "For $s\\in(0,1)$ and $x>0$,\n$$x^{1-s}<\\frac{\\Gamma(x+1)}{\\Gamma(x+s)}<(1+x)^{1-s}.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "special functions",
+          "key_techniques": [
+            "Gamma function inequalities",
+            "convexity or concavity arguments",
+            "ratio estimates for special functions"
+          ],
+          "prerequisites": [
+            "Gamma function",
+            "basic properties of special functions",
+            "convexity and logarithmic estimates"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"部分积的上界估计与Gautschi不等式#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Prove that $$\\\\prod_{n=1}^{N}\\\\left(1-\\\\frac{1}{2n}\\\\right)<\\\\frac{1}{\\\\sqrt{2N}}.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"logarithmic transformation of products\",\n        \"partial product estimation\",\n        \"comparison with harmonic-type bounds\"\n      ],\n      \"prerequisites\": [\n        \"properties of logarithms\",\n        \"basic inequalities\",\n        \"finite products and sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"部分积的上界估计与Gautschi不等式#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2: An Equivalent Statement of Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Show that $$\\\\sum_{n=1}^{N}\\\\log\\\\left(1-\\\\frac{1}{2n}\\\\right)<-\\\\frac{1}{2}\\\\log(2N).$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"converting products to sums via logarithms\",\n        \"sum estimation\",\n        \"logarithmic inequalities\"\n      ],\n      \"prerequisites\": [\n        \"properties of logarithms\",\n        \"equivalence between product and sum forms\",\n        \"basic inequality manipulation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"部分积的上界估计与Gautschi不等式#3\",\n    \"classification\": \"remark\",\n    \"english_title\": \"A Problem with This Approach\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"部分积的上界估计与Gautschi不等式#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 2.1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $H_N$ denote the $N$th harmonic number. Then for every positive integer $N$,\\n$$H_N>\\\\log(N)+\\\\frac{1}{2}.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"harmonic number estimates\",\n        \"comparison between sums and integrals\",\n        \"logarithmic bounds\"\n      ],\n      \"prerequisites\": [\n        \"harmonic numbers\",\n        \"definite integrals\",\n        \"monotonicity and comparison\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"部分积的上界估计与Gautschi不等式#5\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Failure of Verifying the Difference\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"部分积的上界估计与Gautschi不等式#6\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 2.3.1: Constructing a Telescoping Sum Using Concavity\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Constructing a Telescoping Sum Using Concavity\",\n      \"summary_en\": \"Use the concavity of a function, here the logarithm, to derive a local inequality whose right-hand side forms a telescoping sum. This converts a difficult termwise estimate into a summable global bound.\",\n      \"applicability\": \"Applies when a concave function appears in a sum or product estimate and one can rewrite neighboring terms so that concavity yields differences that telescope.\"\n    }\n  },\n  {\n    \"id\": \"部分积的上界估计与Gautschi不等式#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Gautschi Inequality, 1959\",\n    \"if_problem\": {\n      \"statement_en\": \"For $s\\\\in(0,1)$ and $x>0$,\\n$$x^{1-s}<\\\\frac{\\\\Gamma(x+1)}{\\\\Gamma(x+s)}<(1+x)^{1-s}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"special functions\",\n      \"key_techniques\": [\n        \"Gamma function inequalities\",\n        \"convexity or concavity arguments\",\n        \"ratio estimates for special functions\"\n      ],\n      \"prerequisites\": [\n        \"Gamma function\",\n        \"basic properties of special functions\",\n        \"convexity and logarithmic estimates\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

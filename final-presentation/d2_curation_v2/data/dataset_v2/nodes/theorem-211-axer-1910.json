@@ -1,0 +1,25 @@
+{
+  "id": "theorem-211-axer-1910",
+  "type": "problem",
+  "source_note": "Wintner mean value theorem",
+  "english_source_note": "Wintner Mean Value Theorem",
+  "callout_id": "Wintner mean value theorem#5",
+  "english_title": "Theorem 2.1.1: Axer 1910",
+  "statement_en": "If an arithmetic function $f$ is the Dirichlet convolution of $1$ with another arithmetic function $g$, that is, $$f=1*g,$$ and if:\n1. $$\\sum_{n\\geq 1}\\frac{g(n)}{n}$$ converges conditionally,\n2. $$\\sum_{n\\leq x}|g(n)|=O(x),$$\nthen the mean value $M(f)$ of $f$ exists and equals the sum of that series, namely $$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "Dirichlet convolution expansion",
+    "conditional convergence control",
+    "growth bounds on partial sums"
+  ],
+  "prerequisites": [
+    "arithmetic functions",
+    "Dirichlet convolution",
+    "conditional convergence",
+    "big-O notation",
+    "mean value of arithmetic functions"
+  ],
+  "callout_body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$如果：\n1. $\\sum_{n\\geq 1}\\frac{g(n)}{n}$条件收敛\n2. $\\sum_{n\\leq x}|g(n)|=O(x)$\n\n那么$f$的平均值$M(f)$就是该级数收敛到的值,即：$$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}$$"
+}

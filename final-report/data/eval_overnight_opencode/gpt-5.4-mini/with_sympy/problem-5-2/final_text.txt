@@ -1,0 +1,7 @@
+I’m checking whether this statement is actually provable as written or whether I need a workaround.
+I’m looking for any local digest or prior proof pattern that might apply before I spend checker calls.
+The theorem is false as stated, so there is no valid Lean proof to provide.
+
+A counterexample exists: entire functions of finite order can have zeros at `log n` for all `n > 3` without being identically zero, so the assumptions do not force `f = 0`.
+
+If you want, I can help weaken or correct the statement into something provable in Lean.

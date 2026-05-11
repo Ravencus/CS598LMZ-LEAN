@@ -1,0 +1,18 @@
+{
+  "problem_id": "change-of-variables-for-integrals",
+  "english_title": "Change of Variables for Integrals",
+  "statement_en": "Let $(X,\\mathcal{A},\\mu)$ be a measure space, let $T:X\\to Y$ be measurable, let $T_{*}\\mu$ be the pushforward measure, and let $g$ be an integrable function on $Y$. Then\n$$\\int_{Y}g\\,d(T_{*}\\mu)=\\int_X g\\circ T\\,d\\mu.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem pushforward_integral_comp\n    {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]\n    (μ : Measure X) (T : X → Y) (hT : Measurable T) (g : Y → ℝ)\n    (hg : Integrable g (Measure.map T μ)) :\n    MeasureTheory.integral (Measure.map T μ) g =\n      MeasureTheory.integral μ (fun x => g (T x)) := by\n  sorry"
+}

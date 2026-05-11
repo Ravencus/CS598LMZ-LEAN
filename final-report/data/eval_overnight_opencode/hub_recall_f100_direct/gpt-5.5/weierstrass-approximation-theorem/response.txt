@@ -1,0 +1,4 @@
+["an-epsilon-of-room-hub", "basic-methods-in-analysis-i-hub", "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub"]
+- an-epsilon-of-room-hub: The theorem is exactly an approximation statement: replace an arbitrary continuous function by better-behaved polynomial functions within any prescribed uniform error.
+- basic-methods-in-analysis-i-hub: The proof relies on studying a continuous function through controlled approximants, with the uniform norm error made smaller than a given ε.
+- re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub: Its general approximation principle is strongly relevant: analyze a complicated object by approximating it arbitrarily well with simpler known objects, here polynomials.

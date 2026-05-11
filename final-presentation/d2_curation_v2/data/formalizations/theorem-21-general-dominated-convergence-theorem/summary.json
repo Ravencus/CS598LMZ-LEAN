@@ -1,0 +1,24 @@
+{
+  "problem_id": "theorem-21-general-dominated-convergence-theorem",
+  "english_title": "Theorem 2.1: General Dominated Convergence Theorem",
+  "statement_en": "Let \\((\\\\Omega,\\\\mathcal{F},\\\\mu)\\) be a measure space, and let \\\\(\\\\{f_{\\\\alpha}\\\\}_{\\\\alpha\\\\in A}\\\\) be a family of measurable functions. Suppose there exists an integrable function \\(g\\\\ge 0\\) such that\n\\\\[\n|f_{\\\\alpha}|\\\\le g,\\\\quad \\\\forall \\\\alpha\\\\in A.\n\\\\]\nIf \\(f_{\\\\alpha}\\\to f\\) almost everywhere, then\n\\\\[\n\\\\int_{\\\\Omega} f_{\\\\alpha}\\\\,d\\\\mu \\\to \\\\int_{\\\\Omega} f\\\\,d\\\\mu.\n\\\\]",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  Ω\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter\n\ntheorem dominated_convergence_integral_tendsto\n    {A Ω : Type*}\n    [MeasurableSpace Ω]\n    {μ : MeasureTheory.Measure Ω}\n    {l : Filter A}\n    (fα : A → Ω → ℝ)\n    (f g : Ω → ℝ)\n    (h_meas : ∀ a, Measurable (fα a))\n    (hf_meas : Measurable f)\n    (hg_int : MeasureTheory.Integrable g μ)\n    (hg_nonneg : 0 ≤ᵐ[μ] g)\n    (h_bound : ∀ a, ∀ᵐ x ∂μ, |fα a x| ≤ g x)\n    (h_ae_tendsto : ∀ᵐ x ∂μ, Tendsto (fun a => fα a x) l (nhds (f x))) :\n    Tendsto (fun a => ∫ x, fα a x ∂μ) l (nhds (∫ x, f x ∂μ)) := by\n  sorry"
+}

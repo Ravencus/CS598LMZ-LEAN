@@ -1,0 +1,22 @@
+{
+  "problem_id": "proposition-212-p-veress-1917",
+  "model": "gpt-5.5",
+  "wall_seconds": 13.67,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "cauchy-convergence-criterion-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+  ],
+  "tp": 0,
+  "fp": 3,
+  "fn": 2,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

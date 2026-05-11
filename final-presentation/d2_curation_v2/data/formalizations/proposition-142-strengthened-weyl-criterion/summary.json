@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-142-strengthened-weyl-criterion",
+  "english_title": "Proposition 1.4.2: Strengthened Weyl Criterion",
+  "statement_en": "A sequence $x_n$ is uniformly distributed modulo $1$ if and only if for every Riemann integrable function $f$ defined on $[0,1]$, $$\\frac{1}{N}\\sum_{n=1}^{N}f(\\{u_n\\})\\to\\int_{0}^{1}f(x)\\,dx.$$",
+  "difficulty": "hard",
+  "domain": "uniform distribution theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators Topology\nopen Filter\n\nnoncomputable section\n\ndef fracPart (x : ℝ) : ℝ :=\n  x - Int.floor x\n\ndef UniformlyDistributedModOne (u : ℕ → ℝ) : Prop :=\n  ∀ f : ℝ → ℝ,\n    IntervalIntegrable f volume 0 1 →\n      Tendsto\n        (fun N : ℕ =>\n          ((1 : ℝ) / N) * ∑ n in Finset.Icc 1 N, f (fracPart (u n)))\n        atTop\n        (nhds (∫ x in (0 : ℝ)..1, f x))\n\ntheorem uniformlyDistributedModOne_iff_forall_riemann_integrable_average\n    (u : ℕ → ℝ) :\n    UniformlyDistributedModOne u ↔\n      ∀ f : ℝ → ℝ,\n        IntervalIntegrable f volume 0 1 →\n          Tendsto\n            (fun N : ℕ =>\n              ((1 : ℝ) / N) * ∑ n in Finset.Icc 1 N, f (fracPart (u n)))\n            atTop\n            (nhds (∫ x in (0 : ℝ)..1, f x)) := by\n  sorry"
+}

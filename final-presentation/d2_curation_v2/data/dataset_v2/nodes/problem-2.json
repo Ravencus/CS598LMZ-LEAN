@@ -1,0 +1,25 @@
+{
+  "id": "problem-2",
+  "type": "problem",
+  "source_note": "利用连续函数的identity theorem证明函数方程",
+  "english_source_note": "Functional Equations via the Identity Theorem",
+  "callout_id": "利用连续函数的identity theorem证明函数方程#3",
+  "english_title": "Problem 2",
+  "statement_en": "Let $f:\\mathbb{R}\\to \\mathbb{R}$ be a continuous function such that for every real number $x$, $$f(x)=f(x+\\sqrt{2})=f(x+\\sqrt{3}).$$ Prove that $f(x)$ is a constant function.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "translation invariance",
+    "integer linear combinations of $\\sqrt{2}$ and $\\sqrt{3}$",
+    "density of the generated additive subgroup",
+    "continuity plus dense-orbit argument"
+  ],
+  "prerequisites": [
+    "continuous functions on $\\mathbb{R}$",
+    "density arguments in $\\mathbb{R}$",
+    "basic irrationality and linear combination arguments",
+    "functional equations"
+  ],
+  "callout_body": "函数$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续函数，并且满足对任意的实数$x$都有$$f(x)=f(x+\\sqrt{2})=f(x+\\sqrt{3})$$证明函数$f(x)$是一个常函数。"
+}

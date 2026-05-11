@@ -1,0 +1,23 @@
+{
+  "id": "counterexample-12",
+  "type": "problem",
+  "source_note": "测度论的基础概念",
+  "english_source_note": "Basic Concepts in Measure Theory",
+  "callout_id": "测度论的基础概念#15",
+  "english_title": "Counterexample 1.2",
+  "statement_en": "In the Lebesgue measure space $(\\mathbb{R},\\mathcal{F},m)$, consider the decreasing sequence $E_n:=[n,+\\infty)$. Their intersection is the empty set, since if $x\\in \\bigcap_{n\\geq 1}E_n$, then $x$ would be greater than every positive integer, which is impossible. However, $\\mu(E_n)=+\\infty$ for all $n\\geq 1$, so the conclusion of continuity from above fails without the finite-measure assumption.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "constructing a decreasing sequence",
+    "analyzing infinite measure",
+    "testing necessity of hypotheses"
+  ],
+  "prerequisites": [
+    "Lebesgue measure",
+    "continuity from above",
+    "infinite measure"
+  ],
+  "callout_body": "当我们考虑Lebesgue测度空间$(\\mathbb{R},\\mathcal{F},m)$的时候，考虑一列单调下降的集合序列$E_n:=[n,+\\infty)$,这一列集合的交集实际上是一个空集。因为$E:=\\cap_{n\\geq 1}E_n$，那么任意实数$x$如果$x \\in E$,它会大于任意正整数，这是不可能的。因此$E$实际上是空集，然而$\\mu(E_n)=+\\infty,\\forall n\\geq 1$，所以这是不可能的。"
+}

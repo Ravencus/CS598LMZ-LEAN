@@ -1,0 +1,58 @@
+{
+  "note_title": "傅里叶逆变换公式",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "傅里叶逆变换公式#1",
+      "type": "note",
+      "title": "可延拓为带状区域上满足衰减条件的全纯函数的实函数",
+      "body": "$f\\in \\mathscr{S}$,指的是存在某个正实数$a$使得$f \\in \\mathscr{S}_a$满足:\n1. 函数$f$可以解析延拓为在带状区域$S_a:=\\{z\\in \\mathbb{C}:|\\text{Im}(z)|<a\\}$上全纯的函数$f(z)$。\n2. $f(z)$满足衰减的条件:$$|f(x+iy)|\\lesssim_{b,f} \\frac{1}{1+|x|^{\\alpha}}$$其中$\\alpha>1$,$|y|\\leq b<a$",
+      "position_char": 20,
+      "position_line": 3,
+      "classification_result": {
+        "id": "傅里叶逆变换公式#1",
+        "classification": "definition",
+        "english_title": "Real Functions Extendable to Holomorphic Functions on a Strip with Decay Conditions",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "傅里叶逆变换公式#2",
+      "type": "note",
+      "title": "当前版本下的傅里叶逆变换公式",
+      "body": "$f\\in \\mathscr{F}$,那么$$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x)$$",
+      "position_char": 294,
+      "position_line": 8,
+      "classification_result": {
+        "id": "傅里叶逆变换公式#2",
+        "classification": "problem",
+        "english_title": "Fourier Inversion Formula in the Current Version",
+        "if_problem": {
+          "statement_en": "If $f\\in \\mathscr{F}$, then $$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x).$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "Fourier analysis",
+          "key_techniques": [
+            "Fourier inversion",
+            "complex analytic continuation",
+            "contour shifting",
+            "decay estimates"
+          ],
+          "prerequisites": [
+            "Fourier transform",
+            "Schwartz functions",
+            "holomorphic functions on strips",
+            "integration on the real line"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"傅里叶逆变换公式#1\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Real Functions Extendable to Holomorphic Functions on a Strip with Decay Conditions\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"傅里叶逆变换公式#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Fourier Inversion Formula in the Current Version\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f\\\\in \\\\mathscr{F}$, then $$\\\\int_{\\\\mathbb{R}} \\\\widehat{f}(\\\\xi)e^{2\\\\pi i x \\\\xi }\\\\,d\\\\xi=f(x).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"Fourier analysis\",\n      \"key_techniques\": [\n        \"Fourier inversion\",\n        \"complex analytic continuation\",\n        \"contour shifting\",\n        \"decay estimates\"\n      ],\n      \"prerequisites\": [\n        \"Fourier transform\",\n        \"Schwartz functions\",\n        \"holomorphic functions on strips\",\n        \"integration on the real line\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

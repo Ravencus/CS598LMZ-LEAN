@@ -1,0 +1,2 @@
+import Mathlib
+#check Real.infinite_rat_abs_sub_lt_one_div_den_sq_of_irrational

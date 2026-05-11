@@ -1,0 +1,20 @@
+{
+  "problem_id": "problem-3-2",
+  "model": "gpt-5.5",
+  "wall_seconds": 12.72,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "identity-theorem-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "interchanging-sums-and-integrals-hub"
+  ],
+  "tp": 0,
+  "fp": 2,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

@@ -1,0 +1,22 @@
+{
+  "id": "proposition-26",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#9",
+  "english_title": "Proposition 2.6",
+  "statement_en": "Let $\\alpha_n,\\beta_n$ be two nonnegative nonincreasing real sequences such that both series $\\sum_{n\\geq 1}\\alpha_n$ and $\\sum_{n\\geq 1}\\beta_n$ diverge. If there exists a positive real number $C$ such that the set $\\{n:\\alpha_n\\geq C\\beta_n\\}$ has positive natural density, then the series $\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$ diverges.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "positive density subseries lemma",
+    "comparison on a dense subset"
+  ],
+  "prerequisites": [
+    "natural density",
+    "subseries divergence",
+    "monotone sequences"
+  ],
+  "callout_body": "$\\alpha_n,\\beta_n$是两个非负不增的实数列，并且级数$\\sum_{n\\geq 1}\\alpha_n,\\sum_{n\\geq 1}\\beta_n$发散。如果存在正实数$C$使得集合$\\{n:\\alpha_n\\geq C \\beta_n\\}$的自然密度为正，那么级数$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$发散。"
+}

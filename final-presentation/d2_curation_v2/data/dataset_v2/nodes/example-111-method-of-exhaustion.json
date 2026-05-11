@@ -1,0 +1,23 @@
+{
+  "id": "example-111-method-of-exhaustion",
+  "type": "problem",
+  "source_note": "Re0微积分1：用牛顿迭代法求算术平方根",
+  "english_source_note": "Re0 Calculus 1: Arithmetic Square Roots by Newton Iteration",
+  "callout_id": "Re0微积分1:用牛顿迭代法求算术平方根#4",
+  "english_title": "Example 1.1.1: Method of Exhaustion",
+  "statement_en": "Consider the unit circle $S^1$ and its circumference, denoted by a quantity $a$. Suppose we know that the unit circle can be approximated arbitrarily well by inscribed regular polygons. 1. Define the set of inscribed regular polygons as $\\Omega=\\{p_1,...,p_n,...\\}$. 2. The property $P$ is perimeter, and the perimeter of the inscribed regular $n$-gon $p_n$ is $$L_n=2n\\sin\\left(\\frac{\\pi}{n}\\right).$$ 3. Measuring closeness by the absolute difference of real numbers, we obtain $$\\forall \\varepsilon >0,\\exists p_n\\in \\Omega\\text{ s.t. }|L_n-a|<\\varepsilon.$$",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "approximation by polygons",
+    "geometric limit interpretation",
+    "perimeter formula"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "basic geometry",
+    "trigonometric formulas"
+  ],
+  "callout_body": "假设我们现在有一个对象$S^1$为单位圆周，我们想要研究$S^1$的称之为周长的性质，即一个数量$a$.假设我们已经知道，我们可以用单位圆周的内接正多变形去任意逼近单位圆周。\n1. 此处定义圆内接正多边形的集合为$\\Omega=\\{p_1,...,p_n,...\\}$.\n2. 这里的性质$P$,就是图形的周长。单位圆内接正$n$边形$p_n$的周长为$$L_n=2n\\sin\\left(\\frac{\\pi}{n}\\right)$$\n3. 此处衡量两个对象周长的相近的程度的装置自然就是实数差的绝对值，因为周长本质上还是实数。于是我们相当于得到了$$\\forall \\varepsilon >0,\\exists p_n\\in \\Omega\\text{ s.t. }|L_n-a|<\\varepsilon$$"
+}

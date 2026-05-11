@@ -1,0 +1,25 @@
+{
+  "id": "example-1",
+  "type": "problem",
+  "source_note": "矩阵交换次序特征多项式不变",
+  "english_source_note": "Characteristic Polynomial Invariant Under Order Swap",
+  "callout_id": "矩阵交换次序特征多项式不变#5",
+  "english_title": "Example 1",
+  "statement_en": "Let $P =\\begin{pmatrix}0,1\\\\0,0\\end{pmatrix}$ and $Q =\\begin{pmatrix}0,0\\\\0,1\\end{pmatrix}$. Then $$PQ=\\begin{pmatrix}0,1\\\\0,0\\end{pmatrix},\\quad QP=\\begin{pmatrix}0,0\\\\0,0\\end{pmatrix}.$$ The characteristic polynomials of $PQ$ and $QP$ are both $x^2$. However, one minimal polynomial is $x^2$ and the other is $x$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "linear algebra",
+  "key_techniques": [
+    "direct matrix multiplication",
+    "computing characteristic polynomials",
+    "computing minimal polynomials",
+    "counterexample by explicit matrices"
+  ],
+  "prerequisites": [
+    "matrix multiplication",
+    "characteristic polynomial",
+    "minimal polynomial",
+    "nilpotent matrices"
+  ],
+  "callout_body": "令矩阵$P =\\begin{pmatrix}0,1\\\\0,0\\end{pmatrix},Q =\\begin{pmatrix}0,0\\\\0,1\\end{pmatrix}$于是$$PQ=\\begin{pmatrix}0,1\\\\0,0\\end{pmatrix},QP=\\begin{pmatrix}0,0\\\\0,0\\end{pmatrix}$$而$PQ,QP$的特征多项式都为$x^2$。然而极小多项式一个为$x^2$另一个为$x$"
+}

@@ -1,0 +1,5 @@
+I’m checking for any local digest or prior proof schema that applies before I commit to a proof shape.
+I’ve reduced this to a summability criterion problem. Next I’m checking whether Mathlib already has the exact comparison lemma I need, so I can keep the proof short.
+I’m now checking the available summability lemmas directly. If the alternating-series lemma is in Mathlib, this should collapse to a short split on `z = 1`.
+I found the local Mathlib source tree. I’m searching there now for the exact series lemmas instead of guessing names.
+I’ve got the proof skeleton. I’m now checking the exact sigma-summation theorem names so I can keep the formalization aligned with Mathlib rather than guessing.

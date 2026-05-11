@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Application type mismatch: The argument\n  hNxN\nhas type\n  Nx ≤ N\nof sort `Prop` but is expected to have type\n  ℕ\nof sort `Type` in the application\n  hNx hNxN",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_eb20db25c6.lean",
+      "line": 52,
+      "column": 21,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hNxN\nhas type\n  Nx ≤ N\nof sort `Prop` but is expected to have type\n  ℕ\nof sort `Type` in the application\n  hNx hNxN"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eb20db25c6.lean",
+      "line": 56,
+      "column": 21,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hNyN\nhas type\n  Ny ≤ N\nof sort `Prop` but is expected to have type\n  ℕ\nof sort `Type` in the application\n  hNy hNyN\n"
+    }
+  ]
+}

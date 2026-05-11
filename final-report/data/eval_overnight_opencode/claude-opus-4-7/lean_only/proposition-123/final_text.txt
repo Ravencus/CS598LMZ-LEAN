@@ -1,0 +1,109 @@
+I'll work on this factorial sum identity. Let me start by loading the lean-prover skill and exploring the problem.
+Let me analyze the problem first.
+
+**The identity:** $1 + \sum_{k=1}^N \frac{1}{k!} + \frac{1}{N \cdot N!} = 3 - \sum_{k=1}^{N-1} \frac{1}{k(k+1)(k+1)!}$
+
+Wait, the LHS is `Finset.sum (Finset.range (N+1)) (fun k => 1/k!)` which is $\sum_{k=0}^{N} \frac{1}{k!} = \frac{1}{0!} + \frac{1}{1!} + \cdots + \frac{1}{N!} = 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{N!}$.
+
+**Key telescoping identity:** $\frac{1}{k \cdot k!} - \frac{1}{(k+1)(k+1)!} = \frac{(k+1)(k+1)! - k \cdot k!}{k(k+1) \cdot k! \cdot (k+1)!}$
+
+Actually, a cleaner one: $\frac{1}{k \cdot k!} - \frac{1}{(k+1) \cdot (k+1)!} = \frac{1}{k(k+1)(k+1)!} \cdot ?$
+
+Let me compute: $\frac{1}{k \cdot k!} - \frac{1}{(k+1)(k+1)!}$. We have $(k+1)(k+1)! = (k+1)^2 \cdot k!$. So $\frac{1}{k\cdot k!} - \frac{1}{(k+1)^2 k!} = \frac{(k+1)^2 - k}{k(k+1)^2 k!} = \frac{k^2+k+1}{k(k+1)^2 k!}$. Hmm not clean.
+
+Try: $\frac{1}{k!} = \frac{1}{(k-1)!} - \frac{k-1}{k!}$... Let me think differently.
+
+Standard identity: $\frac{1}{(k+1)!} = \frac{1}{k!} - \frac{k}{(k+1)!}$. Telescoping: $\sum_{k=0}^N \frac{1}{k!}$... 
+
+Actually, let me try **induction on N**. Base case N=2, then inductive step. Going from N to N+1:
+- LHS_N+1 - LHS_N = $\frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!} - \frac{1}{N \cdot N!}$
+- RHS_N+1 - RHS_N = $-\frac{1}{N(N+1)(N+1)!}$
+
+So need: $\frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!} - \frac{1}{N \cdot N!} = -\frac{1}{N(N+1)(N+1)!}$
+
+Multiply through: $\frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!} + \frac{1}{N(N+1)(N+1)!} = \frac{1}{N \cdot N!}$
+
+LHS = $\frac{N(N+1) + N + 1}{N(N+1)(N+1)!} = \frac{N^2 + 2N + 1}{N(N+1)(N+1)!} = \frac{(N+1)^2}{N(N+1)(N+1)!} = \frac{N+1}{N(N+1)!} = \frac{1}{N \cdot N!}$ ✓
+
+So induction works. Let me draft a proof and check.
+Good progress. Two issues:
+1. The `Finset.Icc_insert_succ_right` approach didn't fully resolve. Need different approach.
+2. Linarith fails because of the sums - they're symbolic. Need to use `ih` more carefully.
+
+The key insight: after `field_simp`, the sums are still there. I need to express the new sum equation in terms of the old one, isolating the difference. Let me restructure: instead of trying to combine everything at once, compute the *difference* RHS_{N+1} - RHS_N and LHS_{N+1} - LHS_N and show they're equal.
+
+Let me try a cleaner approach using `Finset.sum_Icc_succ_top`:
+Let me try a more direct strategy: prove the induction step by computing the difference. I'll avoid the Icc manipulation by using `Finset.sum_Icc_succ_top` directly on the new sum.
+
+The key relation: `∑ k ∈ Finset.Icc 1 N, f k = ∑ k ∈ Finset.Icc 1 (N-1), f k + f N` when `N ≥ 1`. Let me check this lemma exists:
+Great, that works. Now let me carefully craft the full induction proof. The key is the step computation. Let me think carefully about it.
+
+Goal at successor step (N ≥ 2, going to N+1):
+
+LHS(N+1): $\sum_{k=0}^{N+1} \frac{1}{k!} + \frac{1}{(N+1)(N+1)!}$
+RHS(N+1): $3 - \sum_{k=1}^{N} \frac{1}{k(k+1)(k+1)!}$
+
+Using IH (for N): $\sum_{k=0}^{N} \frac{1}{k!} + \frac{1}{N\cdot N!} = 3 - \sum_{k=1}^{N-1} \frac{1}{k(k+1)(k+1)!}$
+
+LHS(N+1) = $\sum_{k=0}^{N} \frac{1}{k!} + \frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!}$
+       = IH_LHS - $\frac{1}{N\cdot N!}$ + $\frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!}$
+       = IH_RHS - $\frac{1}{N\cdot N!}$ + $\frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!}$
+
+RHS(N+1) = IH_RHS - $\frac{1}{N(N+1)(N+1)!}$
+
+So need: $-\frac{1}{N \cdot N!} + \frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!} = -\frac{1}{N(N+1)(N+1)!}$
+
+i.e., $\frac{1}{N \cdot N!} = \frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!} + \frac{1}{N(N+1)(N+1)!}$
+
+Common denominator $N(N+1)(N+1)!$: RHS = $\frac{N(N+1) + N + 1}{N(N+1)(N+1)!} = \frac{(N+1)^2}{N(N+1)(N+1)!} = \frac{N+1}{N(N+1)!} = \frac{1}{N \cdot N!}$ ✓
+
+Now let me write a careful proof. I'll use `Nat.le_induction` and process step by step.
+Very close! The issue is that `key` has `(N+1).factorial` casts (Nat factorial cast), but the goal after `rw [hfact_succ]` has `(↑N + 1) * ↑N.factorial`. Linarith can't connect them. I need to make `key` use the same form.
+
+Let me push casts on `key` to match goal's form:
+Now the goal still has `↑(N+1).factorial` (as a cast of `Nat`), while my key uses `(↑N+1) * ↑N.factorial`. I need either to rewrite the goal to expand `(N+1).factorial`, or match the form in `key`.
+
+Let me rewrite the goal to expand `(N+1).factorial`:
+The proof compiles successfully. Used 6/10 budget.
+
+**Summary:**
+- **Strategy:** Induction on N with `Nat.le_induction` starting at N=2.
+- **Base case:** Simplify the explicit small sums (range 3 and Icc 1 1), then `norm_num [Nat.factorial]`.
+- **Inductive step:** Split off the new top term on both sides (LHS via `Finset.sum_range_succ`, RHS via expressing `Icc 1 N = insert N (Icc 1 (N-1))`), then reduce to a pure algebraic identity about `1/(N·N!)`, `1/(N+1)!`, etc. After `push_cast [Nat.factorial_succ]` to normalize all factorial casts to `(N+1)·N!` form, `field_simp; ring` proves the algebraic key lemma and `linarith` combines it with the IH.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem factorial_sum_identity (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.range (N + 1)) (fun k => (1 : ℚ) / (k.factorial : ℚ)) +
+        (1 : ℚ) / (((N * N.factorial : ℕ) : ℕ) : ℚ) =
+      (3 : ℚ) -
+        Finset.sum (Finset.Icc 1 (N - 1))
+          (fun k => (1 : ℚ) / (((k * (k + 1) * (k + 1).factorial : ℕ) : ℕ) : ℚ)) := by
+  induction N, hN using Nat.le_induction with
+  | base =>
+    simp only [Finset.sum_range_succ, Finset.range_one, Finset.sum_singleton,
+               show (2 : ℕ) - 1 = 1 from rfl, Finset.Icc_self, Finset.sum_singleton]
+    norm_num [Nat.factorial]
+  | succ N hN ih =>
+    have hN1 : (N + 1) - 1 = N := by omega
+    have hIcc : Finset.Icc 1 ((N+1) - 1) = insert N (Finset.Icc 1 (N - 1)) := by
+      rw [hN1]
+      ext x
+      simp [Finset.mem_Icc, Finset.mem_insert]
+      omega
+    rw [hIcc]
+    rw [Finset.sum_insert (by simp [Finset.mem_Icc]; omega)]
+    rw [Finset.sum_range_succ]
+    have hfac : (N+1).factorial = (N+1) * N.factorial := Nat.factorial_succ N
+    push_cast [hfac] at ih ⊢
+    have hNfac_pos : (N.factorial : ℚ) > 0 := by exact_mod_cast Nat.factorial_pos N
+    have hN_pos : (N : ℚ) > 0 := by exact_mod_cast (by omega : 0 < N)
+    have hN1_pos : ((N : ℚ) + 1) > 0 := by linarith
+    have key : (1 : ℚ) / ((↑N + 1) * ↑N.factorial) + 1 / ((↑N + 1) * ((↑N + 1) * ↑N.factorial))
+             - 1 / (↑N * ↑N.factorial) + 1 / (↑N * (↑N + 1) * ((↑N + 1) * ↑N.factorial)) = 0 := by
+      field_simp
+      ring
+    linarith [ih, key]
+```

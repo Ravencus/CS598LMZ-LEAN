@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-212-exercise",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 110.9,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 15.65,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `le_of_eventuallyLE`: The environment does not contain `Function.le_of_eventuallyLE`, so it is not possible to project the field `le_of_eventuallyLE` from an expression\n  hy\nof type\n  ?m"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 16.01,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Filter.Tendsto.le_of_eventuallyLE`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 71.87,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Application type mismatch: The argument\n  hNxN\nhas type\n  Nx ≤ N\nof sort `Prop` but is expected to have type\n  ℕ\nof sort `Type` in the application\n  hNx hNxN"
+    }
+  ]
+}

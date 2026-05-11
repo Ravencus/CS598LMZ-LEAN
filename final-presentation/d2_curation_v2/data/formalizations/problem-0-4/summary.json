@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-0-4",
+  "english_title": "Problem 0",
+  "statement_en": "Compute the limit:\n$$\\lim_{N \\to \\infty} N\\sum_{n>N} \\frac{1}{n^2}.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limit_N_mul_tail_sum_inv_sq :\n    Filter.Tendsto\n      (fun N : ℕ =>\n        (N : ℝ) * ∑' n : ℕ, if N < n then (1 : ℝ) / (n : ℝ)^2 else 0)\n      Filter.atTop\n      (nhds 1) := by\n  sorry"
+}

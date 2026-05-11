@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 19,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  fun hab => Finset.sum_Icc_succ_top hab fun k => 1 / ↑k\n has type\n  ∑ x ∈ Finset.Icc 1 (n + 1 + 1), (↑x)⁻¹ = ∑ x ∈ Finset.Icc 1 (n + 1), (↑x)⁻¹ + (↑n + 1 + 1)⁻¹\nbut is expected to have type\n  ∑ x ∈ Finset.Icc 1 (n + 1), (↑x)⁻¹ = ∑ x ∈ Finset.range (n + 1), (↑x + 1)⁻¹\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 19,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  fun hab => Finset.sum_Icc_succ_top hab fun k => 1 / ↑k\n has type\n  ∑ x ∈ Finset.Icc 1 (n + 1 + 1), (↑x)⁻¹ = ∑ x ∈ Finset.Icc 1 (n + 1), (↑x)⁻¹ + (↑n + 1 + 1)⁻¹\nbut is expected to have type\n  ∑ x ∈ Finset.Icc 1 (n + 1), (↑x)⁻¹ = ∑ x ∈ Finset.range (n + 1), (↑x + 1)⁻¹\n"
+    }
+  ]
+}

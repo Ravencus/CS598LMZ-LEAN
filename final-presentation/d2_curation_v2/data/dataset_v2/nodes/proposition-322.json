@@ -1,0 +1,23 @@
+{
+  "id": "proposition-322",
+  "type": "problem",
+  "source_note": "证明正弦函数在整数上取值的序列的极限是不存在的",
+  "english_source_note": "Nonexistence of a Limit for Sine on the Integers",
+  "callout_id": "证明正弦函数在整数上取值的序列的极限是不存在的#9",
+  "english_title": "Proposition 3.2.2",
+  "statement_en": "The sequence $\\sin(2^n)$ does not have a limit.",
+  "problem_type": "example",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "density or distribution modulo $2\\pi$",
+    "subsequence argument",
+    "oscillation of trigonometric sequences"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "subsequences",
+    "modular behavior of exponential sequences"
+  ],
+  "callout_body": "序列$\\sin(2^n)$的极限不存在。"
+}

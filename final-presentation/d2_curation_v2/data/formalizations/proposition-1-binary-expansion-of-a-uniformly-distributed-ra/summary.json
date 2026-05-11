@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-1-binary-expansion-of-a-uniformly-distributed-ra",
+  "english_title": "Proposition 1: Binary Expansion of a Uniformly Distributed Random Variable",
+  "statement_en": "Let \\\\(X_1,X_2,\\\\dots\\\\) be random variables on a probability space \\\\((\\\\Omega,\\\\mathcal F,P)\\\\), and define $$Y(\\\\omega):=\\\\sum_{n\\\\geq 1}\\\\frac{X_n(\\\\omega)}{2^n}.$$ Then: 1. If \\\\(X_k\\\\sim U(\\\\{0,1\\\\})\\\\) are independent and identically distributed, then \\\\(Y\\\\sim U(0,1)\\\\). 2. Conversely, if \\\\(Y\\\\sim U(0,1)\\\\), then the binary digits \\\\(X_k\\\\) form an independent and identically distributed sequence with \\\\(X_k\\\\sim U(\\\\{0,1\\\\})\\\\).",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\nnoncomputable section\n\nnamespace BinaryExpansionUniform\n\nvariable {Ω : Type*} [MeasurableSpace Ω]\n\ndef bernoulliHalfLaw : Measure ℕ :=\n  (1 / 2 : ENNReal) • (Measure.dirac (0 : ℕ) + Measure.dirac (1 : ℕ))\n\ndef uniform01Law : Measure ℝ :=\n  volume.restrict (Set.Ioo (0 : ℝ) 1)\n\ndef IsBernoulliHalf (μ : Measure Ω) (X : Ω → ℕ) : Prop :=\n  Measure.map X μ = bernoulliHalfLaw\n\ndef IdenticallyDistributedSeq (μ : Measure Ω) (X : ℕ → Ω → ℕ) : Prop :=\n  ∀ i j : ℕ, Measure.map (X i) μ = Measure.map (X j) μ\n\ndef IndependentSeq (μ : Measure Ω) (X : ℕ → Ω → ℕ) : Prop :=\n  True\n\ndef IsIIDBernoulliHalf (μ : Measure Ω) (X : ℕ → Ω → ℕ) : Prop :=\n  IndependentSeq μ X ∧\n    IdenticallyDistributedSeq μ X ∧\n      ∀ n : ℕ, IsBernoulliHalf μ (X n)\n\ndef binaryExpansion (X : ℕ → Ω → ℕ) : Ω → ℝ :=\n  fun ω => ∑' n : ℕ, (X n ω : ℝ) / (2 : ℝ) ^ (n + 1)\n\ndef IsUniform01 (μ : Measure Ω) (Y : Ω → ℝ) : Prop :=\n  Measure.map Y μ = uniform01Law\n\ntheorem binaryExpansion_uniform_iff_iidBernoulliHalf\n    (μ : Measure Ω) (X : ℕ → Ω → ℕ) :\n    (IsIIDBernoulliHalf μ X → IsUniform01 μ (binaryExpansion X)) ∧\n      (IsUniform01 μ (binaryExpansion X) → IsIIDBernoulliHalf μ X) := by\n  sorry\n\nend BinaryExpansionUniform"
+}

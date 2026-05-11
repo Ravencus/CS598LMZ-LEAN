@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-0-cmc-mathematics-group-senior-final-problem",
+  "english_title": "Proposition 0, CMC Mathematics Group Senior Final Problem",
+  "statement_en": "Let $(X,\\Omega,\\mu)$ be a measure space, and let $f_n$ be a sequence of measurable functions on $X$ that is almost everywhere uniformly bounded. Define $A_N(x):=\\frac{1}{N}\\sum_{n\\leq N} f_n(x)$. Then\n$$\\sum_{N\\geq 1} \\frac{1}{N}\\int_X A_{N}^{2}(x)\\,d\\mu <\\infty\\implies A_N(x)\\xrightarrow{a.e.}{0}.$$",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  X\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\nnoncomputable section\n\ntheorem aeuBounded_averages_tendsto_ae_zero\n    {X : Type*} [MeasurableSpace X] {μ : Measure X} (f : ℕ → X → ℝ)\n    (hf_meas : ∀ n : ℕ, Measurable (f n))\n    (hf_ae_bdd : ∃ C : ℝ, ∀ᵐ x ∂μ, ∀ n : ℕ, ‖f n x‖ ≤ C)\n    (hseries :\n      Summable\n        (fun N : ℕ =>\n          ((1 : ℝ) / (N + 1 : ℝ)) *\n            ∫ x, ((((N + 1 : ℝ)⁻¹) * (Finset.sum (Finset.Icc 1 (N + 1)) fun n => f n x)) ^ (2 : ℕ)) ∂μ)) :\n    ∀ᵐ x ∂μ, Filter.Tendsto\n      (fun N : ℕ =>\n        ((N + 1 : ℝ)⁻¹) * (Finset.sum (Finset.Icc 1 (N + 1)) fun n => f n x))\n      Filter.atTop (nhds 0) := by\n  sorry"
+}

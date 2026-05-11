@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-1-one-dimensional-generalized-riemann-lebesgue-l",
+  "english_title": "Proposition 1: One-Dimensional Generalized Riemann-Lebesgue Lemma",
+  "statement_en": "Let $f \\in L^{1}([a,b])$, and let $g$ be a measurable bounded periodic function with period $T$. Then\n$$\\lim_{n\\to +\\infty}\\int_{[a,b]} f(x)g(nx)\\, dx =\\left(\\frac{1}{T}\\int_{[0,T)}g(x)\\,dx\\right)\\left(\\int_{[a,b]}f(x)\\,dx\\right).$$\nThat is, the limit equals the average value of $g$ over one period multiplied by the integral of $f$ over the interval.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem periodic_average_limit\n    {f g : ℝ → ℝ} {a b T : ℝ}\n    (hf : IntervalIntegrable f volume a b)\n    (hg_meas : Measurable g)\n    (hg_bdd : ∃ C : ℝ, ∀ x : ℝ, ‖g x‖ ≤ C)\n    (hg_per : Function.Periodic g T)\n    (hT : 0 < T) :\n    Filter.Tendsto\n      (fun n : ℕ => ∫ x in a..b, f x * g ((n : ℝ) * x))\n      Filter.atTop\n      (nhds\n        (((1 / T) * (∫ x in Set.Ioc 0 T, g x)) * (∫ x in a..b, f x))) := by\n  sorry"
+}

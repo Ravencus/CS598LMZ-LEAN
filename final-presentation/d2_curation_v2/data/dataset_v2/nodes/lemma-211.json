@@ -1,0 +1,23 @@
+{
+  "id": "lemma-211",
+  "type": "problem",
+  "source_note": "部分积的上界估计与Gautschi不等式",
+  "english_source_note": "Upper Bounds for Partial Products and Gautschi's Inequality",
+  "callout_id": "部分积的上界估计与Gautschi不等式#4",
+  "english_title": "Lemma 2.1.1",
+  "statement_en": "Let $H_N$ denote the $N$th harmonic number. Then for every positive integer $N$,\n$$H_N>\\log(N)+\\frac{1}{2}.$$",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "harmonic number estimates",
+    "comparison between sums and integrals",
+    "logarithmic bounds"
+  ],
+  "prerequisites": [
+    "harmonic numbers",
+    "definite integrals",
+    "monotonicity and comparison"
+  ],
+  "callout_body": "$H_N$表示第$N$个调和数，那么对任意正整数$N$都有\n$$H_N>\\log(N)+\\frac{1}{2}$$"
+}

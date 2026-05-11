@@ -1,0 +1,23 @@
+{
+  "id": "proposition-1-5",
+  "type": "problem",
+  "source_note": "一个竞赛中的和的渐近展开问题",
+  "english_source_note": "An Asymptotic Expansion Problem for a Sum",
+  "callout_id": "一个竞赛中的和的渐近展开问题#2",
+  "english_title": "Proposition 1",
+  "statement_en": "If the required accuracy of the asymptotic expansion of $S_n$ is $O(g(n))$, and there is another known asymptotic expansion for a sum $S'_n$ with the same accuracy $O(g(n))$, and moreover\n$$S_n-S_n'=O(g(n)),$$\nthen the asymptotic expansions of $S_n$ and $S'_n$ are the same up to accuracy $O(g(n))$.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "big-O comparison",
+    "transfer of asymptotic expansions",
+    "error control"
+  ],
+  "prerequisites": [
+    "big-O notation",
+    "asymptotic expansions",
+    "basic proof techniques"
+  ],
+  "callout_body": "如果我们对$S_n$的渐近展开的精度要求为$O(g(n))$,而此时恰好有另一个已知渐近展开结果，且精度也为$O(g(n))$的和$S'_n$，同时$$S_n-S_n'=O(g(n))$$那么$S_n,S_n'$的渐近展开在$O(g(n))$的精度下是相同的。"
+}

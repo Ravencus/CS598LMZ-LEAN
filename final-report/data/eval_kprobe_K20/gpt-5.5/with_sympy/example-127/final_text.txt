@@ -1,0 +1,15 @@
+I’ll verify the direct arithmetic proof: split the conjunction, prove strict monotonicity of doubling with `omega`, and close the identity part by reflexivity.
+`omega` did not unfold the indexing function in the monotonicity goal. I’ll switch to the standard monotonicity lemma for multiplying by a positive natural number.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem evenIndexedSubsequenceOfNaturalSequence :
+    StrictMono (fun k : ℕ => 2 * k) ∧
+      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by
+  constructor
+  · intro a b h
+    exact Nat.mul_lt_mul_of_pos_left h (by norm_num : 0 < 2)
+  · intro k
+    rfl
+```

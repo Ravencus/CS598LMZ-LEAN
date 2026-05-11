@@ -1,0 +1,5 @@
+["estimates-for-the-sum-of-prime-reciprocals-hub", "term-by-term-estimates-hub", "expand-conditions-into-sums-or-integrals-and-swap-order-hub", "an-epsilon-of-room-hub"]
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof centrally uses alternative expressions for prime reciprocal sums, typically via finite Euler-product comparisons.
+- term-by-term-estimates-hub: One needs inequalities comparing harmonic sums, prime reciprocal sums, and product factors term by term.
+- expand-conditions-into-sums-or-integrals-and-swap-order-hub: Expanding finite Euler products corresponds to reorganizing sums over integers by their prime-power factorizations.
+- an-epsilon-of-room-hub: The summability contradiction is usually proved through finite truncations of the infinite prime series and then passing back to the infinite statement.

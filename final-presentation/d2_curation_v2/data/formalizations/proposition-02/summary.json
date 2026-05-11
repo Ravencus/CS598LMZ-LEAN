@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-02",
+  "english_title": "Proposition 0.2",
+  "statement_en": "Prove the following implications: 1. $$\\\\forall \\\\varepsilon>0,\\\\ x<a+\\\\varepsilon\\\\implies x\\\\le a.$$ 2. $$b>0\\\text{ and }(\\\\forall \\\\varepsilon>0,\\\\ x<a+b\\\\varepsilon)\\\\implies x\\\\le a.$$ 3. $$\\\\forall \\\\varepsilon>0,\\\\ x>a-\\\\varepsilon\\\\implies x\\\\ge a.$$ 4. $$b>0\\\text{ and }(\\\\forall \\\\varepsilon>0,\\\\ x>a-b\\\\varepsilon)\\\\implies x\\\\ge a.$$ 5. $$\\\\forall \\\\varepsilon>0,\\\\ |x-a|<\\\\varepsilon\\\\implies x=a.$$ 6. $$b>0\\\text{ and }(\\\\forall \\\\varepsilon>0,\\\\ |x-a|<b\\\\varepsilon)\\\\implies x=a.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem epsilonImplications :\n    ∀ a b x : ℝ,\n      ((∀ ε > 0, x < a + ε) → x ≤ a) ∧\n      ((b > 0 ∧ ∀ ε > 0, x < a + b * ε) → x ≤ a) ∧\n      ((∀ ε > 0, x > a - ε) → x ≥ a) ∧\n      ((b > 0 ∧ ∀ ε > 0, x > a - b * ε) → x ≥ a) ∧\n      ((∀ ε > 0, |x - a| < ε) → x = a) ∧\n      ((b > 0 ∧ ∀ ε > 0, |x - a| < b * ε) → x = a) := by\n  sorry"
+}

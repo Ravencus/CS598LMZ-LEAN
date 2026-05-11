@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-01",
+  "english_title": "Example 0.1",
+  "statement_en": "Show that $$x=0\\\\iff |x|<\\\\varepsilon,\\\\forall \\\\varepsilon>0.$$ In particular, prove that if $$|x|<\\\\varepsilon\\\\quad \\\\forall \\\\varepsilon>0,$$ then \\(x=0\\).",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem eq_zero_iff_abs_lt_forall_pos (x : ℝ) :\n    x = 0 ↔ ∀ ε > 0, |x| < ε := by\n  sorry\n\ntheorem eq_zero_of_abs_lt_forall_pos (x : ℝ) (h : ∀ ε > 0, |x| < ε) : x = 0 := by\n  sorry"
+}

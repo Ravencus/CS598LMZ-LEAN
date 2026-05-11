@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-0",
+  "english_title": "Problem 0",
+  "statement_en": "Prove that $$S_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n).$$",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators Topology\n\ntheorem stirling_log_sum_asymptotic :\n    (fun n : ℕ =>\n      (∑ k ∈ Finset.Icc 1 n, Real.log (k : ℝ)) -\n        ((n : ℝ) * Real.log (n : ℝ) - (n : ℝ) +\n          (1 / 2 : ℝ) * Real.log (n : ℝ) + Real.log (Real.sqrt (2 * Real.pi)))) =O[Filter.atTop]\n      (fun n : ℕ => (1 : ℝ) / n) := by\n  sorry"
+}

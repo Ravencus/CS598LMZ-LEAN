@@ -1,0 +1,383 @@
+You are analyzing two Lean theorem-proving traces from the same problem. The "BIG" model succeeded; the "SMALL" model failed. Classify the failure mode.
+
+Problem id: _synth_integral_x_log_x    Condition: lean_only
+
+=== BIG (passed) ===
+model: gpt-5.5    outcome: lean_proof    wall=203.36s    mcp_calls=9
+--- mcp call 1 (✗) ---
+import Mathlib
+
+#check intervalIntegral.integral_mul_deriv_eq_deriv_mul
+#check intervalIntegral.integral_deriv_mul_eq_sub
+#check intervalIntegral.integral_deriv_eq_sub
+#check intervalIntegral.integral_comp_mul_deriv
+#check intervalIntegral.integral_log
+#check Real.integral_log
+#check integral_log
+#check intervalIntegral.integral_id_mul_log
+#check intervalIntegral.integral_mul_log
+#check integral_mul_log
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  sorry
+--- mcp call 2 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := by positivity
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      simpa using (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ))
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      simpa using (((hasDerivAt_id x).pow 2).const_mul (1 / 4 : ℝ))
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    convert (h1.mul hlog).sub h2 using 1 <;> ring_nf
+  · exact (Continuous.intervalIntegrable (by fun_prop) : IntervalIntegrable (fun x : ℝ => x * Real.log x) volume 0 1)
+  · have hlog2 : Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℝ)) (𝓝[>] 0) (𝓝 0) :=
+      tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
+    have hsq : Tendsto (fun x : ℝ => x ^ 2 / 4) (𝓝[>] 0) (𝓝 0) := by
+      simpa using ((tendsto_nhdsWithin_of_tendsto_nhds (ContinuousAt.tendsto (by fun_prop : ContinuousAt (fun x : ℝ => x ^ 2 / 4) 0))))
+    have hmain : Tendsto (fun x : ℝ => x ^ 
+--- mcp call 3 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := by positivity
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      simpa using (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ))
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      simpa using (((hasDerivAt_id x).pow 2).const_mul (1 / 4 : ℝ))
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    have h := (h1.mul hlog).sub h2
+    convert h using 1
+    ring_nf
+  · simpa [mul_comm] using ((intervalIntegrable_log' (a := (0 : ℝ)) (b := 1)).continuousOn_mul continuousOn_id)
+  · have hlog2 : Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℝ)) (𝓝[>] 0) (𝓝 0) :=
+      tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
+    have hsq : Tendsto (fun x : ℝ => x ^ 2 / 4) (𝓝[>] 0) (𝓝 0) := by
+      simpa using (tendsto_nhdsWithin_of_tendsto_nhds (ContinuousAt.tendsto (by fun_prop : ContinuousAt (fun x : ℝ => x ^ 2 / 4) 0)))
+    have hmain : T
+--- mcp call 4 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := ne_of_gt hx.1
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ)) using 1 <;> ring
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 4 : ℝ)) using 1 <;> ring
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    have h := (h1.mul hlog).sub h2
+    convert h using 1
+    field_simp [hx0]
+    ring
+  · simpa [mul_comm] using ((intervalIntegral.intervalIntegrable_log' (a := (0 : ℝ)) (b := 1)).continuousOn_mul continuousOn_id)
+  · have hlog2 : Filter.Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℝ)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
+      tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
+    have hsq : Filter.Tendsto (fun x : ℝ => x ^ 2 / 4) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
+      simpa using (tendsto_nhdsWith
+--- mcp call 5 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := ne_of_gt hx.1
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ)) using 1 <;> ring_nf
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 4 : ℝ)) using 1 <;> ring_nf
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    have h := (h1.mul hlog).sub h2
+    convert h using 1
+    field_simp [hx0]
+    ring
+  · simpa [mul_comm] using ((intervalIntegral.intervalIntegrable_log' (a := (0 : ℝ)) (b := 1)).continuousOn_mul continuousOn_id)
+  · have hlog2 : Filter.Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℝ)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
+      tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
+    have hsq : Filter.Tendsto (fun x : ℝ => x ^ 2 / 4) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
+      simpa using (tendsto_nh
+--- mcp call 6 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := ne_of_gt hx.1
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ)) using 1
+      · ext y; ring_nf
+      · simp
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 4 : ℝ)) using 1
+      · ext y; ring_nf
+      · ring_nf
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    have h := (h1.mul hlog).sub h2
+    convert h using 1
+    field_simp [hx0]
+    ring
+  · simpa [mul_comm] using ((intervalIntegral.intervalIntegrable_log' (a := (0 : ℝ)) (b := 1)).continuousOn_mul continuousOn_id)
+  · have hlog2 : Filter.Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℝ)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
+      tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
+    have hsq : Filter.Tendsto (fun x : ℝ => x ^ 2 / 4) (nhdsWithin 0 (Set.I
+--- mcp call 7 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := ne_of_gt hx.1
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ)) using 1
+      · ext y; change y ^ 2 * (1 / 2) = y ^ 2 * (1 / 2); rfl
+      · change x = x; rfl
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 4 : ℝ)) using 1
+      · ext y; change y ^ 2 * (1 / 4) = y ^ 2 * (1 / 4); rfl
+      · change x * (1 / 2) = x * (1 / 2); rfl
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    have h := (h1.mul hlog).sub h2
+    convert h using 1
+    field_simp [hx0]
+    ring
+  · simpa [mul_comm] using ((intervalIntegral.intervalIntegrable_log' (a := (0 : ℝ)) (b := 1)).continuousOn_mul continuousOn_id)
+  · have hlog2 : Filter.Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℝ)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
+      tendsto_log_mul_r
+--- mcp call 8 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := ne_of_gt hx.1
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ)) using 1
+      · ext y; simp; ring
+      · simp; ring
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 4 : ℝ)) using 1
+      · ext y; simp; ring
+      · simp; ring
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    have h := (h1.mul hlog).sub h2
+    convert h using 1
+    field_simp [hx0]
+    ring
+  · simpa [mul_comm] using ((intervalIntegral.intervalIntegrable_log' (a := (0 : ℝ)) (b := 1)).continuousOn_mul continuousOn_id)
+  · have hlog2 : Filter.Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℝ)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
+      tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
+    have hsq : Filter.Tendsto (fun x : ℝ => x ^ 2 / 4) (nhds
+--- mcp call 9 (✓) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := ne_of_gt hx.1
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ)) using 1
+      · ext y; simp; ring
+      · simp
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 4 : ℝ)) using 1
+      · ext y; simp; ring
+      · simp; ring
+    have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hx0
+    have h := (h1.mul hlog).sub h2
+    convert h using 1
+    field_simp [hx0]
+    ring
+  · simpa [mul_comm] using ((intervalIntegral.intervalIntegrable_log' (a := (0 : ℝ)) (b := 1)).continuousOn_mul continuousOn_id)
+  · have hlog2 : Filter.Tendsto (fun x : ℝ => Real.log x * x ^ (2 : ℕ)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
+      simpa [Real.rpow_natCast] using (tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2))
+    have hsq : Filter.Tendsto
+--- final_text ---
+I’ll look for the relevant Mathlib integration-by-parts or precomputed logarithm integral APIs first, batching checks to conserve the 10-call budget.
+The first batch indicates the candidate interval-integral lemmas exist. I’m going to inspect their signatures in the local Mathlib source so the proof can use the right hypotheses instead of guessing.
+I found `integral_eq_sub_of_hasDerivAt_of_tendsto`, the same improper-FTC lemma Mathlib uses for `∫ log`. I’ll try a direct antiderivative `x^2 / 2 * log x - x^2 / 4`, whose derivative is `x * log x` and whose right limit at `0` is `0`.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  rw [intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (f := fun x : ℝ => x ^ 2 / 2 * Real.log x - x ^ 2 / 4)
+    (fa := 0) (fb := -1/4) (by norm_num)]
+  · ring
+  · intro x hx
+    have hx0 : x ≠ 0 := ne_of_gt hx.1
+    have h1 : HasDerivAt (fun y : ℝ => y ^ 2 / 2) x x := by
+      convert (((hasDerivAt_id x).pow 2).const_mul (1 / 2 : ℝ)) using 1
+      · ext y; simp; ring
+      · simp
+    have h2 : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      convert (((hasDerivAt_id x).pow
+
+=== SMALL (failed) ===
+model: gpt-5.4-mini    outcome: compile_fail    wall=366.99s    mcp_calls=10
+--- mcp call 1 (✗) ---
+import Mathlib
+#check intervalIntegral.integral_mul_log
+#check intervalIntegral.integral_log
+#check intervalIntegral.integral_comp_mul_right
+#check intervalIntegral.integral_mul
+#check intervalIntegral.integral_integral
+#check Real.log
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  sorry
+--- mcp call 2 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  simpa [mul_comm] using intervalIntegral.integral_mul_log
+--- mcp call 3 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  simpa [mul_comm] using Real.integral_mul_log
+--- mcp call 4 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  norm_num [intervalIntegral.integral_mul_log]
+--- mcp call 5 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  simpa using (Real.integral_mul_log (a := (1 : ℝ)) (by positivity))
+--- mcp call 6 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  exact Real.integral_mul_log (a := (1 : ℝ)) (by positivity)
+--- mcp call 7 (✗) ---
+import Mathlib
+#print Real.integral_mul_log
+--- mcp call 8 (✗) ---
+import Mathlib
+
+example : True := by
+  have h : ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := Real.integral_mul_log
+  trivial
+--- mcp call 9 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  have hderiv : ∀ x ∈ Set.Ioo (0 : ℝ) 1,
+      HasDerivAt (fun y : ℝ => y ^ 2 / 2 * Real.log y - y ^ 2 / 4) (x * Real.log x) x := by
+    intro x hx
+    have hx0 : x ≠ 0 := by linarith
+    have hpow : HasDerivAt (fun y : ℝ => y ^ 2) (2 * x) x := by
+      simpa [pow_two] using (hasDerivAt_id x).pow 2
+    have hmul : HasDerivAt (fun y : ℝ => y ^ 2 * Real.log y) (2 * x * Real.log x + x) x := by
+      simpa [pow_two, hx0, mul_comm, mul_left_comm, mul_assoc] using hpow.mul (Real.hasDerivAt_log hx0)
+    have hhalf : HasDerivAt (fun y : ℝ => y ^ 2 * Real.log y / 2) (x * Real.log x + x / 2) x := by
+      simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc, add_comm, add_left_comm, add_assoc] using hmul.const_mul (1 / 2)
+    have hsq : HasDerivAt (fun y : ℝ => y ^ 2 / 4) (x / 2) x := by
+      have hpow2 : HasDerivAt (fun y : ℝ => y ^ 2) (2 * x) x := by
+        simpa [pow_two] using (hasDerivAt_id x).pow 2
+      simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc] using hpow2.const_mul (1 / 4)
+    simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc, add_comm, add_left_comm, add_assoc] u
+--- mcp call 10 (✗) ---
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  have hderiv : ∀ x ∈ Set.Ioo (0 : ℝ) 1,
+      HasDerivAt (fun y : ℝ => (1 / 2 : ℝ) * (y ^ 2 * Real.log y) - (1 / 4 : ℝ) * y ^ 2)
+        (x * Real.log x) x := by
+    intro x hx
+    have hx0 : x ≠ 0 := by linarith
+    have hpow : HasDerivAt (fun y : ℝ => y ^ 2) (2 * x) x := by
+      simpa [pow_two] using (hasDerivAt_id x).pow 2
+    have hmul : HasDerivAt (fun y : ℝ => y ^ 2 * Real.log y) (x + 2 * x * Real.log x) x := by
+      simpa [pow_two, hx0, mul_comm, mul_left_comm, mul_assoc, add_comm, add_left_comm, add_assoc] using
+        (Real.hasDerivAt_log hx0).mul hpow
+    have hhalf : HasDerivAt (fun y : ℝ => (1 / 2 : ℝ) * (y ^ 2 * Real.log y))
+        ((1 / 2 : ℝ) * (x + 2 * x * Real.log x)) x := by
+      simpa [mul_comm, mul_left_comm, mul_assoc, add_comm, add_left_comm, add_assoc] using
+        hmul.const_mul (1 / 2 : ℝ)
+    have hsq : HasDerivAt (fun y : ℝ => (1 / 4 : ℝ) * y ^ 2) ((1 / 4 : ℝ) * (2 * x)) x := by
+      simpa [pow_two, mul_comm, mul_left_comm, mul_assoc] using hpow.const_mul (1 / 4 : ℝ)
+    simpa [pow_two, mul_comm, mul_left_comm, mul_assoc, add_comm, add_left_comm, add_assoc, s
+--- final_text ---
+I’ll verify the theorem shape in Lean and then iterate on a short proof using the checker.
+I’m checking for an existing Mathlib integral lemma first, since that is likely the shortest proof.
+I found related Mathlib theorems; I’m reading the exact statement so I can apply the shortest one correctly.
+I found prior solution sketches in the workspace; I’m reading the most promising one before trying the checker.
+I still don’t have the theorem’s exact type, so I’m forcing a type mismatch to make Lean reveal more about it.
+I found raw attempt logs; those should show what Lean actually rejected. I’m reading them now.
+I have a full calculus proof sketched. I’m submitting it now and will only refine if the checker gives a concrete error.
+I fixed the parser issues by avoiding `𝓝[>]` notation and rewrote the primitive with left-multiplied constants so the derivative lemmas line up better.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  have hderiv : ∀ x ∈ Set.Ioo (0 : ℝ) 1,
+      HasDerivAt (fun y : ℝ => (1 / 2 : ℝ) * (Real.log y * y ^ 2) - (1 / 4 : ℝ) * y ^ 2)
+        (x * Real.log x) x := by
+    intro x hx
+    have hx0 : x ≠ 0
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"label": "different_plan" | "same_plan_lean_impl_diff" | "same_plan_search_diff" | "unclear",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+LABEL DEFINITIONS:
+  different_plan          : The two models pursued substantively different decompositions (e.g., one used induction, the other used a continuous estimate).
+  same_plan_lean_impl_diff: Both pursued the same plan; the small model's failure was at the Lean tactic / type-checking level (wrong tactic, type mismatch, syntax).
+  same_plan_search_diff   : Same plan; the small model couldn't find the correct Mathlib lemma name or applicability.
+  unclear                 : Cannot tell from the visible evidence.
+
+Output the JSON object first, then the justification.

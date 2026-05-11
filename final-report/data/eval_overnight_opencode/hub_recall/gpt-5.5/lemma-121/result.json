@@ -1,0 +1,25 @@
+{
+  "problem_id": "lemma-121",
+  "model": "gpt-5.5",
+  "wall_seconds": 17.97,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+    "interchanging-sums-and-integrals-hub",
+    "piecewise-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-hub",
+    "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+    "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+  ],
+  "tp": 2,
+  "fp": 2,
+  "fn": 2,
+  "precision": 0.5,
+  "recall": 0.5,
+  "f1": 0.5
+}

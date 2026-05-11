@@ -1,0 +1,24 @@
+{
+  "problem_id": "weierstrass-approximation-theorem",
+  "english_title": "Weierstrass Approximation Theorem",
+  "statement_en": "Every $f\\in C([0,1]\\to \\mathbb{R})$ can be uniformly approximated by real-coefficient polynomials that are also defined on $[0,1]$.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to synthesize instance of type class\n  Semiring ↑(Set.Icc 0 1)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem polynomial_uniform_approximation_on_unitInterval\n    (f : C(Set.Icc (0 : ℝ) 1, ℝ)) :\n    ∀ ε > 0, ∃ p : Polynomial ℝ, ∀ x : Set.Icc (0 : ℝ) 1, ‖f x - p.eval x.1‖ < ε := by\n  sorry"
+}

@@ -1,0 +1,23 @@
+I’ll look for existing Mathlib lemmas around `limsup`, summable measures, and almost everywhere convergence, then use the checker on a complete proof attempt rather than probing one line at a time.
+I found a concise existing Mathlib path: `measure_setOf_frequently_eq_zero` proves the Borel-Cantelli limsup statement directly, and `ae_eventually_notMem` gives the eventual tail estimates needed for pointwise convergence.
+The checker returned an empty diagnostic payload on one plausible proof, so I’m going to verify the same Lean file through `lake env lean` locally to get the missing compiler output without spending more MCP calls.
+The signature is not just hard; it appears false as stated. In Mathlib, `Summable` for `ℝ≥0∞` is inhabited for every sequence (`ENNReal.summable`), so the hypothesis does not encode finite total measure. For example, on `Unit` with a Dirac measure and `fSeq n x = 1`, `f x = 0`, the hypothesis holds but the limsup at `ε = 1` has measure `1`, not `0`.
+I can’t produce a valid final proof for this exact signature because it is false in Mathlib.
+
+The issue is the hypothesis:
+
+```lean
+Summable (fun n : ℕ => μ {x | ε ≤ |fSeq (n + 1) x - f x|})
+```
+
+has codomain `ℝ≥0∞`, and Mathlib has `ENNReal.summable`: every `ℝ≥0∞`-valued sequence is `Summable`, even when its `tsum` is `∞`. So the hypothesis does not encode `∑ μ(Aₙ) < ∞`.
+
+Counterexample: take `α = Unit`, `μ = Measure.dirac ()`, `fSeq n x = 1`, `f x = 0`. The hypothesis holds by `ENNReal.summable`, but for `ε = 1`, the limsup set is all of `Unit`, with measure `1`, not `0`.
+
+The signature should use a finite-series condition such as:
+
+```lean
+∀ ε > 0, (∑' n : ℕ, μ {x | ε ≤ |fSeq (n + 1) x - f x|}) ≠ ⊤
+```
+
+rather than `Summable ...`.

@@ -1,0 +1,23 @@
+{
+  "id": "example-21",
+  "type": "problem",
+  "source_note": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "english_source_note": "Deducing One Series Convergence from Another",
+  "callout_id": "由一个级数收敛证明另一个有关级数的收敛问题#10",
+  "english_title": "Example 2.1",
+  "statement_en": "For the critical case $p=1$, let $a_n>0$ and suppose $\\sum_n \\frac{1}{a_n}$ converges. Prove that $\\sum_n \\frac{n}{A_n}$ converges, where $A_n$ is the sum of the first $n$ terms of the sequence $a_k$.",
+  "problem_type": "example",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "comparison involving partial sums",
+    "summation structure analysis",
+    "testing the limits of a partition strategy"
+  ],
+  "prerequisites": [
+    "convergence tests for positive series",
+    "partial sums",
+    "basic inequalities for sequences"
+  ],
+  "callout_body": "参考[[Carleman不等式#^d22522]]当中的例子，对于关键的$p=1$的情况。对于正实数序列$a_k$,已知$\\sum_n \\frac{1}{a_n}$收敛，现在我们要证明$\\sum_k \\frac{n}{A_n}$收敛，其中$A_n$是序列$a_k$的前$n$项和。\n\n这个时候如果我们要考虑，哪些$n$能够使得不等式$\\frac{n}{A_n}\\leq \\frac{1}{a_n}$我们其实导不出什么有用的信息。"
+}

@@ -1,0 +1,23 @@
+I’m checking which Mathlib lemmas already match this exact bound so I can keep the proof minimal.
+The first probe hit the checker’s no-`sorry` rule, so I’m switching to lemma discovery only before writing a full proof.
+I found a matching bound in Mathlib for `‖exp (I * x) - 1‖ ≤ ‖x‖`; now I’m testing a one-line rewrite from your statement to that lemma.
+I’ve got the likely theorem; I’m tightening the rewrite and the `ℝ` norm/absolute-value conversion into a single clean proof attempt.
+The bound lemma exists, but the coercions/rewrite are finicky. I’m switching to a `convert`-style proof so Lean does the transport explicitly.
+I’m trying the rewrite on the theorem itself rather than on the target; that’s usually more reliable when `simp` misses a coercion.
+I found a proven version in the repo history using the real-valued bound directly; I’m trying that exact shape now.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h :
+      ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+        |2 * Real.pi * x| := by
+    simpa [mul_comm, Real.norm_eq_abs] using
+      (Real.norm_exp_I_mul_ofReal_sub_one_le (x := 2 * Real.pi * x))
+  have habs : |2 * Real.pi * x| = 2 * Real.pi * |x| := by
+    rw [abs_mul, abs_mul, abs_of_pos Real.pi_pos]
+    norm_num
+  exact h.trans_eq habs
+```

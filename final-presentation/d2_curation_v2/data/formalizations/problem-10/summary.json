@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-10",
+  "english_title": "Problem",
+  "statement_en": "Consider $n$ independent and identically distributed random variables $X_1,\\ldots,X_n$ on a probability space $(\\Omega,\\mathcal{F},P)$, each with Bernoulli$(p)$ distribution. Determine the distribution of their average\n$$Y_n = \\frac{X_1+\\cdots+X_n}{n}.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  Ω"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\nstructure BernoulliIID {Ω : Type*} [MeasurableSpace Ω] (P : MeasureTheory.Measure Ω) (n : ℕ)\n    (p : ℝ) (X : Fin n → Ω → ℝ) : Prop where\n  indep : True\n  support : ∀ i x, X i x = 0 ∨ X i x = 1\n  prob_one : ∀ i, P {x | X i x = 1} = ENNReal.ofReal p\n\ntheorem bernoulli_average_distribution\n    {Ω : Type*} [MeasurableSpace Ω]\n    (P : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure P]\n    (n : ℕ) (hn : 0 < n)\n    (p : ℝ) (hp0 : 0 ≤ p) (hp1 : p ≤ 1)\n    (X : Fin n → Ω → ℝ) (hX : BernoulliIID P n p X) :\n    ∀ k : ℕ,\n      P {x | (∑ i : Fin n, X i x) / (n : ℝ) = (k : ℝ) / (n : ℝ)} =\n        if hkn : k ≤ n then\n          ENNReal.ofReal ((Nat.choose n k : ℝ) * p ^ k * (1 - p) ^ (n - k))\n        else\n          0 := by\n  sorry"
+}

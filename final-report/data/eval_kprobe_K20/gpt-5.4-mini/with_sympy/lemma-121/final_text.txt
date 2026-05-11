@@ -1,0 +1,7 @@
+I’m checking whether this theorem is already in Mathlib or if the statement is actually too strong as written. If it’s false, I’ll try to confirm that quickly before deciding on the best possible final output.
+I’ve confirmed there isn’t an obvious existing lemma in the repo search. Next I’m checking the local digests for any related proof pattern before I spend checker calls.
+This statement is false as written, so there is no Lean proof.
+
+Counterexample: `f z := (z.1)⁻¹` is continuous on `Torus`, but ordinary polynomials in `z` are not uniformly dense in `C(𝕋, ℂ)`. You need Laurent polynomials or trigonometric polynomials for a true approximation theorem.
+
+If you want, I can formalize the corrected version.

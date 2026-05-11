@@ -1,0 +1,78 @@
+import Mathlib
+
+open Filter Finset
+open scoped BigOperators
+
+lemma cesaro_shift (x : ℕ → ℝ) (A : ℝ)
+    (hx : Filter.Tendsto x Filter.atTop (nhds A)) :
+    Filter.Tendsto
+      (fun n : ℕ => (Finset.sum (Finset.range (n + 1)) (fun k => x k)) / ((n + 1 : ℕ) : ℝ))
+      Filter.atTop (nhds A) := by
+  have h := hx.cesaro
+  have hcomp := h.comp (tendsto_add_atTop_nat 1)
+  refine hcomp.congr' ?_
+  filter_upwards [Ici_mem_atTop 0] with n hn
+  simp [div_eq_inv_mul, mul_comm]
+
+lemma conv_zero (u v : ℕ → ℝ)
+    (hu : Filter.Tendsto u Filter.atTop (nhds 0))
+    (hv : Filter.Tendsto v Filter.atTop (nhds 0)) :
+    Filter.Tendsto
+      (fun n : ℕ => (Finset.sum (Finset.range (n + 1)) (fun k => u k * v (n - k))) / ((n + 1 : ℕ) : ℝ))
+      Filter.atTop (nhds 0) := by
+  sorry
+
+theorem convolution_average_tendsto_mul
+    (x y : ℕ → ℝ) (A B : ℝ)
+    (hx : Filter.Tendsto x Filter.atTop (nhds A))
+    (hy : Filter.Tendsto y Filter.atTop (nhds B)) :
+    Filter.Tendsto
+      (fun n : ℕ =>
+        (Finset.sum (Finset.range (n + 1)) (fun k => x k * y (n - k))) / ((n + 1 : ℕ) : ℝ))
+      Filter.atTop
+      (nhds (A * B)) := by
+  let u : ℕ → ℝ := fun n => x n - A
+  let v : ℕ → ℝ := fun n => y n - B
+  have hu : Filter.Tendsto u Filter.atTop (nhds 0) := by
+    simpa [u] using hx.sub (tendsto_const_nhds (x := A))
+  have hv : Filter.Tendsto v Filter.atTop (nhds 0) := by
+    simpa [v] using hy.sub (tendsto_const_nhds (x := B))
+  have h1 : Filter.Tendsto
+      (fun n : ℕ => (Finset.sum (Finset.range (n + 1)) (fun k => u k * B)) / ((n + 1 : ℕ) : ℝ))
+      Filter.atTop (nhds 0) := by
+    simpa [Finset.mul_sum, div_eq_inv_mul, mul_assoc, mul_comm, mul_left_comm] using
+      (cesaro_shift u 0 hu).mul_const B
+  have h2 : Filter.Tendsto
+      (fun n : ℕ => (Finset.sum (Finset.range (n + 1)) (fun k => A * v (n - k))) / ((n + 1 : ℕ) : ℝ))
+      Filter.atTop (nhds 0) := by
+    have hv' : Filter.Tendsto
+      (fun n : ℕ => (Finset.sum (Finset.range (n + 1)) (fun k => v (n - k))) / ((n + 1 : ℕ) : ℝ))
+      Filter.atTop (nhds 0) := by
+      refine (cesaro_shift v 0 hv).congr' ?_
+      filter_upwards [Ici_mem_atTop 0] with n hn
+      rw [← Finset.sum_range_reflect (fun k => v k) (n + 1)]
+      simp
+    simpa [Finset.mul_sum, div_eq_inv_mul, mul_assoc, mul_comm, mul_left_comm] using
+      (tendsto_const_nhds (x := A)).mul hv'
+  have h3 := conv_zero u v hu hv
+  have hsum : Filter.Tendsto
+      (fun n : ℕ => A * B
+        + (Finset.sum (Finset.range (n + 1)) (fun k => u k * B)) / ((n + 1 : ℕ) : ℝ)
+        + (Finset.sum (Finset.range (n + 1)) (fun k => A * v (n - k))) / ((n + 1 : ℕ) : ℝ)
+        + (Finset.sum (Finset.range (n + 1)) (fun k => u k * v (n - k))) / ((n + 1 : ℕ) : ℝ))
+      Filter.atTop (nhds (A * B)) := by
+    simpa using (((tendsto_const_nhds (x := A * B)).add h1).add h2).add h3
+  refine hsum.congr' ?_
+  filter_upwards [Ici_mem_atTop 0] with n hn
+  have hden : (((n + 1 : ℕ) : ℝ)) ≠ 0 := Nat.cast_add_one_ne_zero n
+  field_simp [hden]
+  have hconst :
+      A * B * ((n + 1 : ℕ) : ℝ) =
+        Finset.sum (Finset.range (n + 1)) (fun _ => A * B) := by
+    simp [mul_comm, mul_left_comm, mul_assoc]
+  rw [hconst]
+  rw [← Finset.sum_add_distrib, ← Finset.sum_add_distrib, ← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro k hk
+  simp [u, v]
+  ring

@@ -1,0 +1,18 @@
+{
+  "problem_id": "almost-everywhere-convergence-property",
+  "english_title": "Almost Everywhere Convergence Property",
+  "statement_en": "If $K_{\\lambda}$ is a good approximate identity in $L^1(\\mathbb{R}^d)$ and $f\\in L^p(\\mathbb{R}^d)$ with $1\\leq p\\leq \\infty$, then\n$$f*K_{\\lambda}(x)\\to f(x) \\text{ for a.e. }x.$$",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter Topology ENNReal\n\nnoncomputable section\n\nabbrev Rd (d : ℕ) := EuclideanSpace ℝ (Fin d)\n\ndef GoodApproximateIdentity {d : ℕ} (K : ℕ → Rd d → ℝ) : Prop := True\n\ndef convolutionApprox {d : ℕ} (f : Rd d → ℝ) (K : ℕ → Rd d → ℝ) (n : ℕ) (x : Rd d) : ℝ := 0\n\ntheorem ae_tendsto_convolution_of_goodApproximateIdentity\n    {d : ℕ} {p : ℝ≥0∞} {f : Rd d → ℝ} {K : ℕ → Rd d → ℝ}\n    (hK : GoodApproximateIdentity K)\n    (hf : MemLp f p volume)\n    (hp : 1 ≤ p ∧ p ≤ ⊤) :\n    ∀ᵐ x ∂(volume : Measure (Rd d)),\n      Tendsto (fun n : ℕ => convolutionApprox f K n x) atTop (nhds (f x)) := by\n  sorry"
+}

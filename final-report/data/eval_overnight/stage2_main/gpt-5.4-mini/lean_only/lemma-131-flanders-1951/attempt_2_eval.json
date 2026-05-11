@@ -1,0 +1,51 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 5,
+  "first_error": "Invalid alternative name `X`: Expected `monomial`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 21,
+      "column": 6,
+      "severity": "error",
+      "message": "Invalid alternative name `X`: Expected `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 31,
+      "column": 6,
+      "severity": "error",
+      "message": "Invalid alternative name `mul`: Expected `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 19,
+      "column": 12,
+      "severity": "error",
+      "message": "unsolved goals\ncase C\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA✝ B✝ A B : Matrix n n ℂ\nm : ℂ[X] := minpoly ℂ (B * A)\nhm : (aeval (B * A)) m = 0\nc : ℂ\n⊢ A * (algebraMap ℂ (Matrix n n ℂ)) c = (algebraMap ℂ (Matrix n n ℂ)) c * A"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 18,
+      "column": 6,
+      "severity": "error",
+      "message": "Alternative `monomial` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 50,
+      "column": 24,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hzero\nhas type\n  (aeval (A * B)) (m * X) = 0\nof sort `Prop` but is expected to have type\n  Type ?u.4063.98456\nof sort `Type (?u.4063.98456 + 1)` in the application\n  @minpoly.dvd hzero"
+    }
+  ]
+}

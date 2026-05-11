@@ -1,0 +1,43 @@
+{
+  "problem_id": "problem-22",
+  "model": "claude-opus-4-7",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 318.99,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "divergent_min_of_nonnegative_nonincreasing_divergent",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Type mismatch\n  le_min (hα_nonneg ?m.71) (hβ_nonneg ?m.72)\nhas type\n  0 ≤ min (α ?m.71) (β ?m.72)\nbut is expected to have type\n  0 ≤ α (x✝ + 1)",
+  "total_cost_usd": 1.244207,
+  "total_tokens": 514822,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ba2e3ba407.lean",
+      "line": 23,
+      "column": 47,
+      "severity": "error",
+      "message": "Type mismatch\n  le_min (hα_nonneg ?m.71) (hβ_nonneg ?m.72)\nhas type\n  0 ≤ min (α ?m.71) (β ?m.72)\nbut is expected to have type\n  0 ≤ α (x✝ + 1)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_ba2e3ba407.lean",
+      "line": 24,
+      "column": 14,
+      "severity": "error",
+      "message": "Type mismatch\n  min_le_left ?m.76 ?m.77\nhas type\n  min ?m.76 ?m.77 ≤ ?m.76\nbut is expected to have type\n  α (n + 1) ≤ min (α (n + 1)) (β (n + 1))\n"
+    }
+  ]
+}

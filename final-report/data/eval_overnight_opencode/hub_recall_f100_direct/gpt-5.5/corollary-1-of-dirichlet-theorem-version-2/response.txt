@@ -1,0 +1,3 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "an-epsilon-of-room-hub"]
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: The core proof uses Dirichlet’s pigeonhole argument on fractional parts of multiples of `α` to produce integers `q` with `||qα||` arbitrarily small.
+- an-epsilon-of-room-hub: The infinitude conclusion is obtained by proving finite/quantitative approximation statements for arbitrarily large parameters and then passing from “arbitrarily small error” to infinitely many qualifying `q`.

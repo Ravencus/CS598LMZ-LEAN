@@ -1,0 +1,23 @@
+{
+  "id": "counterexample-24-counterexample-in-the-summation-version",
+  "type": "problem",
+  "source_note": "Fubini-Tonelli定理的例子与反例",
+  "english_source_note": "Examples and Counterexamples for Fubini-Tonelli",
+  "callout_id": "Fubini-Tonelli定理的例子与反例#9",
+  "english_title": "Counterexample 2.4: Counterexample in the Summation Version",
+  "statement_en": "Let $\\Omega=\\{1,2,3,\\ldots\\}$, let $\\mu$ be counting measure, and let $\\mathcal{P}(\\Omega)$ be the power set. Define on $\\Omega^2$ the function\n$$f(i,j)=\\begin{cases}1&\\text{ if }i=j \\\\ -1&\\text{ if }i=j+1\\\\ 0&\\text{ otherwise}.\\end{cases}$$\nInterpret\n$$\\int_{\\Omega^2}f(i,j)d(\\mu\\times \\mu) =\\sum_{i,j\\in\\Omega}f(i,j),$$\nand show that this is not absolutely summable because\n$$\\sum_{i,j\\in\\Omega}|f(i,j)|$$\ndiverges. Therefore Fubini's theorem does not apply, and the two iterated sums differ:\n$$\\sum_{i=1}^\\infty \\left(\\sum_{j=1}^\\infty f(i,j)\\right)=1,$$\nwhile\n$$\\sum_{j=1}^\\infty\\left(\\sum_{i=1}^\\infty f(i,j)\\right)=0.$$",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "counting measure as summation",
+    "failure of absolute convergence",
+    "comparison of row and column sums"
+  ],
+  "prerequisites": [
+    "counting measure",
+    "double series",
+    "Fubini theorem for sums"
+  ],
+  "callout_body": "$\\Omega=\\{\\ 1,2,3,.....\\}$，$\\mu$是counting measure，$\\mathcal{P}(\\Omega)$是幂集。这样可以建立一个可测空$(\\Omega,\\mathcal{P}(\\Omega),\\mu)$，然后在$\\mathcal{P}(\\Omega)\\otimes \\mathcal{P}(\\Omega)$上定义测度$\\mu\\times \\mu$，现在考虑在$\\Omega^2$上对函数的积分:\n$$f(i,j)=\\begin{cases}1&\\text{ if }i=j \\\\ -1&\\text{ if }i=j+1\\\\ 0&\\text{ otherwise}\\end{cases}$$我们可以把$\\Omega^2$看成是一个无限阶的矩阵，那么函数的取值写成矩阵就是:\n$$[f(i,j)]=\\begin{bmatrix}1&0&0&0&\\cdots\\\\ -1&1&0&0&\\cdots\\\\0&-1&1&0&\\cdots\\\\0&0&-1&1&\\cdots\\\\ \\vdots&\\vdots&0&-1&\\cdots\\\\ \\vdots&\\vdots&\\vdots&\\vdots&\\ddots \\\\0&0&0&0&\\cdots\\end{bmatrix}$$也就是说考虑积分:\n$$\\int_{\\Omega^2}f(i,j)d(\\mu\\times \\mu) =\\sum_{i,j\\in\\Omega}f(i,j)$$也就是说这实际上就是求和。\n\n这个积分实际上是不积的，因为$\\sum_{i,j\\in\\Omega}|f(i,j)|$实际上并不收敛。这意味着Fubini定理在此处是不适用的，如果一定要尝试，会发现累次积分不一致:\n\n1.  $\\int\\left(\\int f(x,y)\\,d\\mu(y)\\right)d\\mu(x)=\\sum_{i=1}^\\infty \\left(\\sum_{j=1}^\\infty f(i,j)\\right)=1$\n2.  $\\int\\left(\\int f(x,y)\\,d\\mu(x)\\right)d\\mu(y)=\\sum_{j=1}^\\infty\\left(\\sum_{i=1}^\\infty f(i,j)\\right)=0$"
+}

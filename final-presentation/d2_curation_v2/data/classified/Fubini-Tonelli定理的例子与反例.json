@@ -1,0 +1,259 @@
+{
+  "note_title": "Fubini-Tonelli定理的例子与反例",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#1",
+      "type": "note",
+      "title": "Fubini-Tonelli定理",
+      "body": "如果$f$定义在$X \\times Y$上是可积的或者函数$f$是非负可测的，那么有$$\\int_{X\\times\nY}f(x,y)\\,d(\\mu\\times\\nu) = \\int_{X}\\left(\\int_Y f(x,y) \\,\nd\\nu\\right) \\, d\\mu = \\int_Y\\left(\\int_X f(x,y) \\,\nd\\mu\\right) \\, d\\nu$$",
+      "position_char": 162,
+      "position_line": 7,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#1",
+        "classification": "problem",
+        "english_title": "Fubini-Tonelli Theorem",
+        "if_problem": {
+          "statement_en": "If $f$ is defined on $X \\times Y$ and is integrable, or if $f$ is a nonnegative measurable function, then\n$$\\int_{X\\times Y}f(x,y)\\,d(\\mu\\times\\nu) = \\int_{X}\\left(\\int_Y f(x,y) \\,d\\nu\\right) \\, d\\mu = \\int_Y\\left(\\int_X f(x,y) \\,d\\mu\\right) \\, d\\nu.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "product measure",
+            "iterated integration",
+            "measurability and integrability criteria"
+          ],
+          "prerequisites": [
+            "measurable functions",
+            "product measure spaces",
+            "Lebesgue integration"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#2",
+      "type": "note",
+      "title": "Fubini-Tonelli定理的一个使用策略",
+      "body": "注意到，Tonelli定理只需要要求非负函数是可测函数，并不要求可积。因此有这样的策略:\n\n1.  首先使用Tonelli定理计算$|f|$的积分，如果可测的话。如果一切顺利，那么积分是有限的，于是Fubini定理自然成立。\n2.  如果发现其中一个积分计算出来是无穷的情况，那么自然证明原来的函数$f$并不可积，于是Fubini定理失效。",
+      "position_char": 400,
+      "position_line": 13,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#2",
+        "classification": "strategy_template",
+        "english_title": "A Strategy for Using the Fubini-Tonelli Theorem",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Check absolute integrability via Tonelli first",
+          "summary_en": "First apply Tonelli's theorem to $|f|$ when it is measurable. If the resulting integral is finite, then $f$ is integrable and Fubini applies; if it is infinite, then $f$ is not integrable and Fubini fails.",
+          "applicability": "Use this when deciding whether an interchange of order of integration is justified for a possibly signed measurable function."
+        }
+      }
+    },
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#3",
+      "type": "tip",
+      "title": "想法1.1",
+      "body": "**无需依赖几何图像**，先把积分写成一个标准的$\\mathbb{R}^n$或者某个超立方体上的积分，积分区域用条件函数$1_{\\text{条件}}$来确定，将几何边界转换为不等式组。然后再根据积分的特性，选择合适的累次积分，从而实现对积分的化简。\n\n---\n\n1. 一种化简的思路是：被积函数$f(x,*)$本身并没有好的原函数，然而如果我们可以通过交换次序，把难积的变量$x$置于外层，想办法在内层的积分中，制造一个$g(x)$，满足$f(x,*)g(x)$有很好的原函数，那么这样外层积分就能变得容易写出简单形式。",
+      "position_char": 630,
+      "position_line": 22,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#3",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.1",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Rewrite as a standard multiple integral and choose the order strategically",
+          "summary_en": "Avoid relying on geometric pictures by rewriting the region as an integral over $\\mathbb{R}^n$ or a box with an indicator function. Then choose the order of integration to create an inner integral or multiplicative factor that simplifies the remaining outer integral.",
+          "applicability": "Use this for multiple integrals over complicated regions, especially when one order of integration has no convenient antiderivative but another order produces a tractable expression."
+        }
+      }
+    },
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#4",
+      "type": "example",
+      "title": "例子1.2",
+      "body": "函数$f$在闭区间$[0,b]$上可积，并定义函数$$g(x)=\\int_{x}^{b}\\frac{f(t)}{t}dt,\\text{\n} 0 <x\\leq b$$证明函数$g$在闭区间$(0,b]$上可积并且:\n$$\\int_{0}^{b}g(x)dx = \\int_{0}^{b}f(t)dt$$",
+      "position_char": 920,
+      "position_line": 30,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#4",
+        "classification": "problem",
+        "english_title": "Example 1.2",
+        "if_problem": {
+          "statement_en": "Let $f$ be integrable on the closed interval $[0,b]$, and define\n$$g(x)=\\int_{x}^{b}\\frac{f(t)}{t}dt,\\quad 0 <x\\leq b.$$ Prove that $g$ is integrable on $(0,b]$ and that\n$$\\int_{0}^{b}g(x)dx = \\int_{0}^{b}f(t)dt.$$",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Fubini-Tonelli theorem",
+            "changing order of integration",
+            "integral representation over a triangular region"
+          ],
+          "prerequisites": [
+            "Riemann or Lebesgue integrability on intervals",
+            "iterated integrals",
+            "basic properties of improper integrals"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#5",
+      "type": "example",
+      "title": "例子1.3",
+      "body": "计算积分$$I:=\\int_0^1 \\,dx \\int_x^1 \\,dy \\int_0^1 \\,e^{y^2}\\,dz$$这个累次积分，如果我们按照正常的次序进行下去，就会发现第二层$y$变量的积分，由于$e^{y^2}$的存在从而没有初等原函数。但倘若我们可以制造一个$ye^{y^2}$那么整个积分就会简单许多。\n\n我们先把$I$通过条件函数写成$[0,1]^3$上的积分$$I:=\\iiint_{[0,1]^3}e^{y^2}\\cdot 1_{x\\leq y\\leq 1}\\,dx\\,dy\\,dz$$然后我们把$y$置于最外层，整个积分按照从外到内为$y-x-z$的形式写成累次积分,于是$$I=\\int_0^1 e^{y^2}\\int_0^y\\,dx\\int_0^1 1\\,dz=\\int_0^1 ye^{y^2}\\,dy=\\frac{e-1}{2}$$",
+      "position_char": 1811,
+      "position_line": 51,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#5",
+        "classification": "problem",
+        "english_title": "Example 1.3",
+        "if_problem": {
+          "statement_en": "Compute the iterated integral\n$$I:=\\int_0^1 \\,dx \\int_x^1 \\,dy \\int_0^1 \\,e^{y^2}\\,dz.$$ The direct order leads to the non-elementary antiderivative of $e^{y^2}$, so the integral should be rewritten over $[0,1]^3$ using an indicator function and evaluated by changing the order of integration.",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "indicator function for the region",
+            "changing order of integration",
+            "creating the factor $y e^{y^2}$"
+          ],
+          "prerequisites": [
+            "iterated integrals",
+            "Fubini theorem",
+            "basic single-variable integration"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#6",
+      "type": "error",
+      "title": "反例2.1: 函数不可积导致Fubini定理失效",
+      "body": "\n$$f(x,y):=\\begin{cases}\\frac{x^2-y^2}{(x^2+y^2)^{2}}&(x,y)\\in[0,1]^2,(x,y)\\not = (0,0)\\\\0 &(x,y)=(0,0)\\end{cases}$$令$I = [0,1]$，首先函数$|f|$是可测的，因此由Tonelli定理直接交换顺序计算(如果发现不可积，可以稍微放缩):$$\\begin{aligned}\\int_{I^2}|f(x,y)|d(x,y)&=\\int_{I^2}\n\\frac{x^2-y^2}{(x^2+y^2)^{2}}1_{\\{1>x\\geq\ny>0\\}}d(x,y)+\\int_{I^2}\\frac{y^2-x^2}{(x^2+y^2)^{2}}1_{\\{0<x<y\\leq1\\}}d(x,y)\\\\\n&\\geq\\int_{0}^{1}\\int_{0}^{x}\\frac{x^2-y^2}{(x^2+y^2)^{2}}dydx\n= \\int_{0}^{1}\\frac{1}{2x}dx = +\\infty\n\\end{aligned}$$因此这个例子当中Fubini定理是不可用的。实际上使用Fubini定理会发现:\n\n1.  $\\int_0^1 \\left(\\int_0^1 \\frac{x^2-y^2}{(x^2+y^2)^2} dy\\right) dx = \\int_0^1 \\frac{1}{1+x^2} dx = \\frac{\\pi}{4}$\n2.  $\\int_0^1 \\left(\\int_0^1 \\frac{x^2-y^2}{(x^2+y^2)^2} dx\\right) dy = - \\frac{\\pi}{4}$",
+      "position_char": 2256,
+      "position_line": 60,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#6",
+        "classification": "problem",
+        "english_title": "Counterexample 2.1: Failure of Fubini Caused by Non-Integrability",
+        "if_problem": {
+          "statement_en": "Consider\n$$f(x,y):=\\begin{cases}\\frac{x^2-y^2}{(x^2+y^2)^{2}}&(x,y)\\in[0,1]^2,(x,y)\\not = (0,0)\\\\0 &(x,y)=(0,0).\\end{cases}$$\nLet $I = [0,1]$. Show that $|f|$ is measurable but\n$$\\int_{I^2}|f(x,y)|d(x,y)=+\\infty,$$\nso $f$ is not integrable and Fubini's theorem does not apply. Moreover, the two iterated integrals give different values:\n$$\\int_0^1 \\left(\\int_0^1 \\frac{x^2-y^2}{(x^2+y^2)^2} dy\\right) dx = \\frac{\\pi}{4},$$\nwhile\n$$\\int_0^1 \\left(\\int_0^1 \\frac{x^2-y^2}{(x^2+y^2)^2} dx\\right) dy = - \\frac{\\pi}{4}.$$",
+          "problem_type": "counterexample",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "Tonelli theorem on $|f|$",
+            "lower bound comparison to a divergent integral",
+            "comparison of two iterated integrals"
+          ],
+          "prerequisites": [
+            "absolute integrability",
+            "Tonelli and Fubini theorems",
+            "improper integral divergence tests"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#7",
+      "type": "error",
+      "title": "反例2.2: $\\sigma-\\text{finite}$条件缺失导致失效",
+      "body": "$I =[0,1]$然后令$\\mathcal{B}(I)$是Borel代数，令$\\mu$是Lebesgue测度，$\\nu$是counting measure,现在构建两个测度空间:$(I,\\mathcal{B}(I),\\mu)$以及$(I,\\mathcal{B}(I),\\nu)$.\n\n考虑$I^2$当中的一个闭集$D=\\{(x,y):x=y,(x,y)\\in I^2\\}$,那么自然$D\\in \\mathcal{B}(I^2) = \\mathcal{B}(I) \\otimes \\mathcal{B}(I) \\subset \\mathcal{B}(I) \\otimes \\mathcal{P}(I)$现在考虑计算积分\n$$\\int_{I^2}1_{D} d(\\mu \\times \\nu)$$\n\n1.  $\\int_{I}\\left(\\int_{I} 1_{D}(x,y) d\\mu(x)\\right)d\\nu(y)=\\int_{I}0d\\nu(y)=0$\n2.  $\\int_{I}\\left(\\int_{I} 1_{D}(x,y) d\\nu(y)\\right)d\\mu(x)=\\int_{I}1d\\mu(x)=1$\n\n这主要是因为$\\nu$是counting measure，所以$(I,\\mathcal{B}(I),\\nu)$并不是$\\sigma-\\text{finite}$的测度空间.",
+      "position_char": 3033,
+      "position_line": 73,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#7",
+        "classification": "problem",
+        "english_title": "Counterexample 2.2: Failure Caused by the Absence of the $\\sigma$-Finite Condition",
+        "if_problem": {
+          "statement_en": "Let $I =[0,1]$, let $\\mathcal{B}(I)$ be the Borel algebra, let $\\mu$ be Lebesgue measure, and let $\\nu$ be counting measure. Consider the measure spaces $(I,\\mathcal{B}(I),\\mu)$ and $(I,\\mathcal{B}(I),\\nu)$. For the diagonal set\n$$D=\\{(x,y):x=y,(x,y)\\in I^2\\},$$\ncompute\n$$\\int_{I^2}1_{D} \\, d(\\mu \\times \\nu).$$\nThen show that\n$$\\int_{I}\\left(\\int_{I} 1_{D}(x,y) \\, d\\mu(x)\\right)d\\nu(y)=0,$$\nwhereas\n$$\\int_{I}\\left(\\int_{I} 1_{D}(x,y) \\, d\\nu(y)\\right)d\\mu(x)=1,$$\nand explain that the failure comes from the fact that $(I,\\mathcal{B}(I),\\nu)$ is not $\\sigma$-finite.",
+          "problem_type": "counterexample",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "diagonal set in a product space",
+            "comparison of iterated integrals",
+            "$\\sigma$-finiteness obstruction"
+          ],
+          "prerequisites": [
+            "product measures",
+            "counting measure",
+            "$\\sigma$-finite measure spaces"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#8",
+      "type": "error",
+      "title": "反例2.3:不可积的例子2",
+      "body": "\n$$f(x,y):=\\begin{cases}\\frac{1}{y^2}&0<x<y<1\\\\\n-\\frac{1}{x^2}&0<y<x<1 \\\\ 0 &\\text{ otherwise}\\end{cases}$$\n先考虑Tonelli定理,$I=[0,1]$,$$\\begin{aligned}\\int_I\\int_I\n|f(x,y)|\\,dydx&=\\int_I\\int_I\n\\frac{1}{y^2}1_{\\{0<x<y<1\\}}\\,dydx + \\int_I\\int_I\n\\frac{1}{x^2}1_{\\{0<y<x<1\\}}\\,dydx\\\\&=\n\\int_{0}^{1}\\int_{x}^{1}\\frac{1}{y^2}\\,dydx+\n\\int_{0}^{1}\\int_{0}^{x} \\frac{1}{x^2}\\,dydx \\\\ &\\ge\n\\int_{0}^{1}\\int_{x}^{1}\\frac{1}{y^2}\\,dydx\n=\\int_{0}^{1}(-1+1/x)\\,dx =\n+\\infty\\end{aligned}$$因此显然，函数并不可积，所以Fubini定理是不适用的，因此可以很容易预期：\n$$\\int_I\\int_I f(x,y)dydx \\neq \\int_I\\int_I f(x,y)dxdy $$",
+      "position_char": 3701,
+      "position_line": 85,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#8",
+        "classification": "problem",
+        "english_title": "Counterexample 2.3: Another Non-Integrable Example",
+        "if_problem": {
+          "statement_en": "Consider\n$$f(x,y):=\\begin{cases}\\frac{1}{y^2}&0<x<y<1\\\\\n-\\frac{1}{x^2}&0<y<x<1 \\\\ 0 &\\text{ otherwise}.\\end{cases}$$\nLet $I=[0,1]$. Show first that\n$$\\int_I\\int_I |f(x,y)|\\,dydx=+\\infty,$$\nso $f$ is not integrable and Fubini's theorem does not apply. Conclude that one should expect\n$$\\int_I\\int_I f(x,y)dydx \\neq \\int_I\\int_I f(x,y)dxdy.$$",
+          "problem_type": "counterexample",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "Tonelli theorem on the absolute value",
+            "divergence of improper integrals",
+            "triangular region decomposition"
+          ],
+          "prerequisites": [
+            "absolute integrability",
+            "Tonelli and Fubini theorems",
+            "iterated integrals over regions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Fubini-Tonelli定理的例子与反例#9",
+      "type": "error",
+      "title": "反例2.4: 和的版本的反例",
+      "body": "$\\Omega=\\{\\ 1,2,3,.....\\}$，$\\mu$是counting measure，$\\mathcal{P}(\\Omega)$是幂集。这样可以建立一个可测空$(\\Omega,\\mathcal{P}(\\Omega),\\mu)$，然后在$\\mathcal{P}(\\Omega)\\otimes \\mathcal{P}(\\Omega)$上定义测度$\\mu\\times \\mu$，现在考虑在$\\Omega^2$上对函数的积分:\n$$f(i,j)=\\begin{cases}1&\\text{ if }i=j \\\\ -1&\\text{ if }i=j+1\\\\ 0&\\text{ otherwise}\\end{cases}$$我们可以把$\\Omega^2$看成是一个无限阶的矩阵，那么函数的取值写成矩阵就是:\n$$[f(i,j)]=\\begin{bmatrix}1&0&0&0&\\cdots\\\\ -1&1&0&0&\\cdots\\\\0&-1&1&0&\\cdots\\\\0&0&-1&1&\\cdots\\\\ \\vdots&\\vdots&0&-1&\\cdots\\\\ \\vdots&\\vdots&\\vdots&\\vdots&\\ddots \\\\0&0&0&0&\\cdots\\end{bmatrix}$$也就是说考虑积分:\n$$\\int_{\\Omega^2}f(i,j)d(\\mu\\times \\mu) =\\sum_{i,j\\in\\Omega}f(i,j)$$也就是说这实际上就是求和。\n\n这个积分实际上是不积的，因为$\\sum_{i,j\\in\\Omega}|f(i,j)|$实际上并不收敛。这意味着Fubini定理在此处是不适用的，如果一定要尝试，会发现累次积分不一致:\n\n1.  $\\int\\left(\\int f(x,y)\\,d\\mu(y)\\right)d\\mu(x)=\\sum_{i=1}^\\infty \\left(\\sum_{j=1}^\\infty f(i,j)\\right)=1$\n2.  $\\int\\left(\\int f(x,y)\\,d\\mu(x)\\right)d\\mu(y)=\\sum_{j=1}^\\infty\\left(\\sum_{i=1}^\\infty f(i,j)\\right)=0$",
+      "position_char": 4322,
+      "position_line": 101,
+      "classification_result": {
+        "id": "Fubini-Tonelli定理的例子与反例#9",
+        "classification": "problem",
+        "english_title": "Counterexample 2.4: Counterexample in the Summation Version",
+        "if_problem": {
+          "statement_en": "Let $\\Omega=\\{1,2,3,\\ldots\\}$, let $\\mu$ be counting measure, and let $\\mathcal{P}(\\Omega)$ be the power set. Define on $\\Omega^2$ the function\n$$f(i,j)=\\begin{cases}1&\\text{ if }i=j \\\\ -1&\\text{ if }i=j+1\\\\ 0&\\text{ otherwise}.\\end{cases}$$\nInterpret\n$$\\int_{\\Omega^2}f(i,j)d(\\mu\\times \\mu) =\\sum_{i,j\\in\\Omega}f(i,j),$$\nand show that this is not absolutely summable because\n$$\\sum_{i,j\\in\\Omega}|f(i,j)|$$\ndiverges. Therefore Fubini's theorem does not apply, and the two iterated sums differ:\n$$\\sum_{i=1}^\\infty \\left(\\sum_{j=1}^\\infty f(i,j)\\right)=1,$$\nwhile\n$$\\sum_{j=1}^\\infty\\left(\\sum_{i=1}^\\infty f(i,j)\\right)=0.$$",
+          "problem_type": "counterexample",
+          "difficulty": "easy",
+          "domain": "measure theory",
+          "key_techniques": [
+            "counting measure as summation",
+            "failure of absolute convergence",
+            "comparison of row and column sums"
+          ],
+          "prerequisites": [
+            "counting measure",
+            "double series",
+            "Fubini theorem for sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Fubini-Tonelli Theorem\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f$ is defined on $X \\\\times Y$ and is integrable, or if $f$ is a nonnegative measurable function, then\\n$$\\\\int_{X\\\\times Y}f(x,y)\\\\,d(\\\\mu\\\\times\\\\nu) = \\\\int_{X}\\\\left(\\\\int_Y f(x,y) \\\\,d\\\\nu\\\\right) \\\\, d\\\\mu = \\\\int_Y\\\\left(\\\\int_X f(x,y) \\\\,d\\\\mu\\\\right) \\\\, d\\\\nu.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"product measure\",\n        \"iterated integration\",\n        \"measurability and integrability criteria\"\n      ],\n      \"prerequisites\": [\n        \"measurable functions\",\n        \"product measure spaces\",\n        \"Lebesgue integration\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"A Strategy for Using the Fubini-Tonelli Theorem\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Check absolute integrability via Tonelli first\",\n      \"summary_en\": \"First apply Tonelli's theorem to $|f|$ when it is measurable. If the resulting integral is finite, then $f$ is integrable and Fubini applies; if it is infinite, then $f$ is not integrable and Fubini fails.\",\n      \"applicability\": \"Use this when deciding whether an interchange of order of integration is justified for a possibly signed measurable function.\"\n    }\n  },\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Rewrite as a standard multiple integral and choose the order strategically\",\n      \"summary_en\": \"Avoid relying on geometric pictures by rewriting the region as an integral over $\\\\mathbb{R}^n$ or a box with an indicator function. Then choose the order of integration to create an inner integral or multiplicative factor that simplifies the remaining outer integral.\",\n      \"applicability\": \"Use this for multiple integrals over complicated regions, especially when one order of integration has no convenient antiderivative but another order produces a tractable expression.\"\n    }\n  },\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f$ be integrable on the closed interval $[0,b]$, and define\\n$$g(x)=\\\\int_{x}^{b}\\\\frac{f(t)}{t}dt,\\\\quad 0 <x\\\\leq b.$$ Prove that $g$ is integrable on $(0,b]$ and that\\n$$\\\\int_{0}^{b}g(x)dx = \\\\int_{0}^{b}f(t)dt.$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Fubini-Tonelli theorem\",\n        \"changing order of integration\",\n        \"integral representation over a triangular region\"\n      ],\n      \"prerequisites\": [\n        \"Riemann or Lebesgue integrability on intervals\",\n        \"iterated integrals\",\n        \"basic properties of improper integrals\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.3\",\n    \"if_problem\": {\n      \"statement_en\": \"Compute the iterated integral\\n$$I:=\\\\int_0^1 \\\\,dx \\\\int_x^1 \\\\,dy \\\\int_0^1 \\\\,e^{y^2}\\\\,dz.$$ The direct order leads to the non-elementary antiderivative of $e^{y^2}$, so the integral should be rewritten over $[0,1]^3$ using an indicator function and evaluated by changing the order of integration.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"indicator function for the region\",\n        \"changing order of integration\",\n        \"creating the factor $y e^{y^2}$\"\n      ],\n      \"prerequisites\": [\n        \"iterated integrals\",\n        \"Fubini theorem\",\n        \"basic single-variable integration\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Counterexample 2.1: Failure of Fubini Caused by Non-Integrability\",\n    \"if_problem\": {\n      \"statement_en\": \"Consider\\n$$f(x,y):=\\\\begin{cases}\\\\frac{x^2-y^2}{(x^2+y^2)^{2}}&(x,y)\\\\in[0,1]^2,(x,y)\\\\not = (0,0)\\\\\\\\0 &(x,y)=(0,0).\\\\end{cases}$$\\nLet $I = [0,1]$. Show that $|f|$ is measurable but\\n$$\\\\int_{I^2}|f(x,y)|d(x,y)=+\\\\infty,$$\\nso $f$ is not integrable and Fubini's theorem does not apply. Moreover, the two iterated integrals give different values:\\n$$\\\\int_0^1 \\\\left(\\\\int_0^1 \\\\frac{x^2-y^2}{(x^2+y^2)^2} dy\\\\right) dx = \\\\frac{\\\\pi}{4},$$\\nwhile\\n$$\\\\int_0^1 \\\\left(\\\\int_0^1 \\\\frac{x^2-y^2}{(x^2+y^2)^2} dx\\\\right) dy = - \\\\frac{\\\\pi}{4}.$$\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"Tonelli theorem on $|f|$\",\n        \"lower bound comparison to a divergent integral\",\n        \"comparison of two iterated integrals\"\n      ],\n      \"prerequisites\": [\n        \"absolute integrability\",\n        \"Tonelli and Fubini theorems\",\n        \"improper integral divergence tests\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Counterexample 2.2: Failure Caused by the Absence of the $\\\\sigma$-Finite Condition\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $I =[0,1]$, let $\\\\mathcal{B}(I)$ be the Borel algebra, let $\\\\mu$ be Lebesgue measure, and let $\\\\nu$ be counting measure. Consider the measure spaces $(I,\\\\mathcal{B}(I),\\\\mu)$ and $(I,\\\\mathcal{B}(I),\\\\nu)$. For the diagonal set\\n$$D=\\\\{(x,y):x=y,(x,y)\\\\in I^2\\\\},$$\\ncompute\\n$$\\\\int_{I^2}1_{D} \\\\, d(\\\\mu \\\\times \\\\nu).$$\\nThen show that\\n$$\\\\int_{I}\\\\left(\\\\int_{I} 1_{D}(x,y) \\\\, d\\\\mu(x)\\\\right)d\\\\nu(y)=0,$$\\nwhereas\\n$$\\\\int_{I}\\\\left(\\\\int_{I} 1_{D}(x,y) \\\\, d\\\\nu(y)\\\\right)d\\\\mu(x)=1,$$\\nand explain that the failure comes from the fact that $(I,\\\\mathcal{B}(I),\\\\nu)$ is not $\\\\sigma$-finite.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"diagonal set in a product space\",\n        \"comparison of iterated integrals\",\n        \"$\\\\sigma$-finiteness obstruction\"\n      ],\n      \"prerequisites\": [\n        \"product measures\",\n        \"counting measure\",\n        \"$\\\\sigma$-finite measure spaces\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Counterexample 2.3: Another Non-Integrable Example\",\n    \"if_problem\": {\n      \"statement_en\": \"Consider\\n$$f(x,y):=\\\\begin{cases}\\\\frac{1}{y^2}&0<x<y<1\\\\\\\\\\n-\\\\frac{1}{x^2}&0<y<x<1 \\\\\\\\ 0 &\\\\text{ otherwise}.\\\\end{cases}$$\\nLet $I=[0,1]$. Show first that\\n$$\\\\int_I\\\\int_I |f(x,y)|\\\\,dydx=+\\\\infty,$$\\nso $f$ is not integrable and Fubini's theorem does not apply. Conclude that one should expect\\n$$\\\\int_I\\\\int_I f(x,y)dydx \\\\neq \\\\int_I\\\\int_I f(x,y)dxdy.$$\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"Tonelli theorem on the absolute value\",\n        \"divergence of improper integrals\",\n        \"triangular region decomposition\"\n      ],\n      \"prerequisites\": [\n        \"absolute integrability\",\n        \"Tonelli and Fubini theorems\",\n        \"iterated integrals over regions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Fubini-Tonelli定理的例子与反例#9\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Counterexample 2.4: Counterexample in the Summation Version\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $\\\\Omega=\\\\{1,2,3,\\\\ldots\\\\}$, let $\\\\mu$ be counting measure, and let $\\\\mathcal{P}(\\\\Omega)$ be the power set. Define on $\\\\Omega^2$ the function\\n$$f(i,j)=\\\\begin{cases}1&\\\\text{ if }i=j \\\\\\\\ -1&\\\\text{ if }i=j+1\\\\\\\\ 0&\\\\text{ otherwise}.\\\\end{cases}$$\\nInterpret\\n$$\\\\int_{\\\\Omega^2}f(i,j)d(\\\\mu\\\\times \\\\mu) =\\\\sum_{i,j\\\\in\\\\Omega}f(i,j),$$\\nand show that this is not absolutely summable because\\n$$\\\\sum_{i,j\\\\in\\\\Omega}|f(i,j)|$$\\ndiverges. Therefore Fubini's theorem does not apply, and the two iterated sums differ:\\n$$\\\\sum_{i=1}^\\\\infty \\\\left(\\\\sum_{j=1}^\\\\infty f(i,j)\\\\right)=1,$$\\nwhile\\n$$\\\\sum_{j=1}^\\\\infty\\\\left(\\\\sum_{i=1}^\\\\infty f(i,j)\\\\right)=0.$$\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"counting measure as summation\",\n        \"failure of absolute convergence\",\n        \"comparison of row and column sums\"\n      ],\n      \"prerequisites\": [\n        \"counting measure\",\n        \"double series\",\n        \"Fubini theorem for sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

@@ -1,0 +1,11 @@
+{
+  "problem_id": "lemma-32-hermite-identity",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "none",
+  "evidence": "Both final successful proofs use the same direct decomposition around m = floor (n*x), reducing each summand to integer division of m+k by n. Trace A packages the key floor step as floor_int_add_small_div, while Trace B proves the analogous step inline as step1.",
+  "wall_seconds": 9.46
+}

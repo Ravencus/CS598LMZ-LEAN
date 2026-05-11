@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-21",
+  "english_title": "Proposition 2.1",
+  "statement_en": "Let $a=\\liminf_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}$, $b=\\limsup_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}$, with $\\beta>0$, and let $r_{\\beta}:=\\frac{\\beta+1}{\\beta}$. Then $$\\sqrt{r_{\\beta}}\\leq a\\leq b\\leq \\sqrt{r_{\\beta}}.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def scaledSeq (aSeq : ℕ → ℝ) (β : ℝ) (n : ℕ) : ℝ :=\n  aSeq n / Real.rpow (n : ℝ) β\n\nnoncomputable def seqLiminf (u : ℕ → ℝ) : ℝ :=\n  sSup (Set.range fun N : ℕ => sInf (u '' {n : ℕ | N ≤ n}))\n\nnoncomputable def seqLimsup (u : ℕ → ℝ) : ℝ :=\n  sInf (Set.range fun N : ℕ => sSup (u '' {n : ℕ | N ≤ n}))\n\ntheorem liminf_limsup_scaled_sequence_bounds\n    (aSeq : ℕ → ℝ) (β a b : ℝ)\n    (hβ : 0 < β)\n    (ha : a = seqLiminf (scaledSeq aSeq β))\n    (hb : b = seqLimsup (scaledSeq aSeq β)) :\n    Real.sqrt ((β + 1) / β) ≤ a ∧ a ≤ b ∧ b ≤ Real.sqrt ((β + 1) / β) := by\n  sorry"
+}

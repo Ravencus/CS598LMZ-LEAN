@@ -1,0 +1,221 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: proposition-112
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=36.59s    mcp_calls=2
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+open scoped BigOperators
+
+example (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - 1 / (N : ℚ) := by
+  refine Nat.le_induction ?base ?step N hN
+  · norm_num [Finset.Icc_self]
+  · intro n hn ih
+    rw [Finset.sum_Icc_succ_top]
+    · rw [ih]
+      have hn_ne : (n : ℚ) ≠ 0 := by
+        norm_num at hn ⊢
+        omega
+      have hns_ne : ((n + 1 : ℕ) : ℚ) ≠ 0 := by
+        norm_num
+      simp [Nat.succ_sub_one]
+      field_simp [hn_ne, hns_ne]
+      ring
+    · omega
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  have hsum : Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - 1 / (N : ℚ) := by
+    refine Nat.le_induction ?base ?step N hN
+    · norm_num [Finset.Icc_self]
+    · intro n hn ih
+      rw [Finset.sum_Icc_succ_top]
+      · rw [ih]
+        have hn_ne : (n : ℚ) ≠ 0 := by
+          norm_num at hn ⊢
+          omega
+        have hns_ne : ((n + 1 : ℕ) : ℚ) ≠ 0 := by
+          norm_num
+        simp [Nat.succ_sub_one]
+        field_simp [hn_ne, hns_ne]
+        ring
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  have hsum : Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - 1 / (N : ℚ) := by
+    refine Nat.le_induction ?base ?step N hN
+    · norm_num [Finset.Icc_self]
+    · intro n hn ih
+      rw [Finset.sum_Icc_succ_top]
+      · rw [ih]
+        have hn_ne : (n : ℚ) ≠ 0 := by
+          have hn_pos : (0 : ℚ) < (n : ℚ) := by positivity
+          exact ne_of_gt hn_pos
+        have hns_ne : ((n + 1 : ℕ) : ℚ) ≠ 0 := by
+          have hns_pos : (0 : ℚ) < ((n + 1 : ℕ) : ℚ) := by positivity
+          exact ne_of_gt hns_pos
+        simp
+        field_simp [hn_ne, hns_ne]
+        ring
+      · omega
+  rw [hsum]
+  have hpos : (0 : ℚ) < 1 / (N : ℚ) := by
+    positivity
+  linarith
+
+--- final_text ---
+I’ll use a telescoping proof: first show the finite sum equals `1 - 1 / N`, then finish with positivity of `1 / N`. I’ll spend checker calls on complete candidate proofs rather than probing one lemma at a time.
+The telescoping structure is accepted; the first failure is only a nonzero side condition for `(n + 1 : ℚ)`, so I’m replacing that with a positivity proof.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  have hsum : Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - 1 / (N : ℚ) := by
+    refine Nat.le_induction ?base ?step N hN
+    · norm_num [Finset.Icc_self]
+    · intro n hn ih
+      rw [Finset.sum_Icc_succ_top]
+      · rw [ih]
+        have hn_ne : (n : ℚ) ≠ 0 := by
+          have hn_pos : (0 : ℚ) < (n : ℚ) := by positivity
+          exact ne_of_gt hn_pos
+        have hns_ne : ((n + 1 : ℕ) : ℚ) ≠ 0 := by
+          have hns_pos : (0 : ℚ) < ((n + 1 : ℕ) : ℚ) := by positivity
+          exact ne_of_gt hns_pos
+        simp
+        field_simp [hn_ne, hns_ne]
+        ring
+      · omega
+  rw [hsum]
+  have hpos : (0 : ℚ) < 1 / (N : ℚ) := by
+    positivity
+  linarith
+```
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: lean_proof    wall=24.26s    mcp_calls=2
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  induction N, hN using Nat.le_induction with
+  | base =>
+    simp [Finset.sum_Icc_succ_top]
+    norm_num
+  | succ N hN ih =>
+    rw [Finset.sum_Icc_succ_top (by omega : 2 ≤ N + 1)]
+    have hN1 : (1 : ℚ) ≤ N := by exact_mod_cast hN
+    have hNpos : (0 : ℚ) < N := by linarith
+    have hN1pos : (0 : ℚ) < (N : ℚ) + 1 := by linarith
+    have key : (1 : ℚ) / ((↑(N + 1) : ℚ) * ((↑(N + 1 - 1) : ℕ) : ℚ)) ≤ 1 - Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) := by
+      sorry
+    linarith
+
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  have key : ∀ M : ℕ, 2 ≤ M →
+      Finset.sum (Finset.Icc 2 M) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ)))
+        = 1 - 1 / (M : ℚ) := by
+    intro M hM
+    induction M, hM using Nat.le_induction with
+    | base =>
+      simp
+      norm_num
+    | succ M hM ih =>
+      rw [Finset.sum_Icc_succ_top (by omega : 2 ≤ M + 1), ih]
+      have hMpos : (0 : ℚ) < M := by exact_mod_cast (by omega : 0 < M)
+      have hM1pos : (0 : ℚ) < (M : ℚ) + 1 := by linarith
+      have hMne : (M : ℚ) ≠ 0 := ne_of_gt hMpos
+      have hM1ne : (M : ℚ) + 1 ≠ 0 := ne_of_gt hM1pos
+      have hcast : ((M + 1 - 1 : ℕ) : ℚ) = (M : ℚ) := by
+        push_cast
+        ring
+      rw [hcast]
+      push_cast
+      field_simp
+      ring
+  rw [key N hN]
+  have hNpos : (0 : ℚ) < N := by exact_mod_cast (by omega : 0 < N)
+  have : (0 : ℚ) < 1 / (N : ℚ) := by positivity
+  linarith
+
+--- final_text ---
+I'll work on this theorem. The key idea is the telescoping identity: $\frac{1}{n(n-1)} = \frac{1}{n-1} - \frac{1}{n}$, so the sum telescopes to $1 - \frac{1}{N} < 1$.
+
+Let me start by exploring the approach.
+Good, the base case works. Let me try a cleaner approach: prove the closed form $\sum = 1 - 1/N$ by induction, then conclude.
+It compiles on the second attempt.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  have key : ∀ M : ℕ, 2 ≤ M →
+      Finset.sum (Finset.Icc 2 M) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ)))
+        = 1 - 1 / (M : ℚ) := by
+    intro M hM
+    induction M, hM using Nat.le_induction with
+    | base =>
+      simp
+      norm_num
+    | succ M hM ih =>
+      rw [Finset.sum_Icc_succ_top (by omega : 2 ≤ M + 1), ih]
+      have hMpos : (0 : ℚ) < M := by exact_mod_cast (by omega : 0 < M)
+      have hM1pos : (0 : ℚ) < (M : ℚ) + 1 := by linarith
+      have hMne : (M : ℚ) ≠ 0 := ne_of_gt hMpos
+      have hM1ne : (M : ℚ) + 1 ≠ 0 := ne_of_gt hM1pos
+      have hcast : ((M + 1 - 1 : ℕ) : ℚ) = (M : ℚ) := by
+        push_cast
+        ring
+      rw [hcast]
+      push_cast
+      field_simp
+      ring
+  rw [key N hN]
+  have hNpos : (0 : ℚ) < N := by exact_mod_cast (by omega : 0 < N)
+  have : (0 : ℚ) < 1 / (N : ℚ) := by positivity
+  linarith
+```
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

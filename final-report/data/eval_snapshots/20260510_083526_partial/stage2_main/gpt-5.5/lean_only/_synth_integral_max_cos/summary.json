@@ -1,0 +1,58 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 68.2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 24.3,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 9,
+      "first_error": "Type mismatch\n  hu.left\nhas type\n  min 0 (Real.pi / 2) ≤ u\nbut is expected to have type\n  0 ≤ u"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 13.26,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "unsolved goals\n⊢ ∫ (u : ℝ) in Set.Ioc 0 (2 * Real.pi), max (Real.cos u) 0 ∂MeasureTheory.volume = 2\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 23.19,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 8,
+      "first_error": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (x : ℝ) in 0..3 * Real.pi / 2, ?m.322 x ∂?m.323\nin the target expression\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    "
+    }
+  ]
+}

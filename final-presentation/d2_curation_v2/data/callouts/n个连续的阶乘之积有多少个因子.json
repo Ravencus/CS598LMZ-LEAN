@@ -1,0 +1,65 @@
+{
+  "note_title": "n个连续的阶乘之积有多少个因子",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "n个连续的阶乘之积有多少个因子#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "函数$d(n)$表示整数$n$的因子的个数，定义$$D(n):=d(1!\\cdot 2!\\cdots n!)$$求极限$$\\lim_{n\\to \\infty}D(n)^{1/n}$$",
+      "position_char": 31,
+      "position_line": 6
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#2",
+      "type": "tip",
+      "title": "初步想法",
+      "body": "数论函数$d(x)$是具有不完全积性的函数，即如果有两个互素的整数$(m,n)=1$，那么$d(mn)=d(m)d(n)$。那么既然我们需要分析的大数有很明显的乘法结构，我们可以分析一下其素因分解，从而简化$d$这个函数的表达，方便做进一步的渐近分析。",
+      "position_char": 160,
+      "position_line": 11
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#3",
+      "type": "question",
+      "title": "问题2",
+      "body": "对$\\log(D(n))$做渐近，精度要求是$o(n)$。",
+      "position_char": 854,
+      "position_line": 22
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#4",
+      "type": "note",
+      "title": "素数定理,Poussin&Hadamard 1896",
+      "body": "$\\pi(x)$为素数计数函数，此函数定义为不超过$x$的素数的个数，即$$\\pi(x):=\\#\\{p\\in \\mathbb{P}:p\\leq x\\}$$那么关于此函数我们有渐近展开$$\\pi(x)=\\frac{x}{\\log(x)}+O\\left(\\frac{x}{\\log^2(x)}\\right)$$",
+      "position_char": 1824,
+      "position_line": 31
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#5",
+      "type": "question",
+      "title": "问题3",
+      "body": "给出$\\sum_{p\\leq n}\\log(p-1)$的精度在$o(n)$的渐近展开结果。",
+      "position_char": 2226,
+      "position_line": 38
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#6",
+      "type": "note",
+      "title": "引理1:Chebyshev的theta函数的一个粗糙的渐近",
+      "body": "$\\theta(x):=\\sum_{p\\leq x}\\log(p)$,那么$$\\theta(x)=x+o(x)$$",
+      "position_char": 2373,
+      "position_line": 43
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#7",
+      "type": "question",
+      "title": "问题4",
+      "body": "估计$f(x)-\\theta(x)$的精度要求为$o(x)$。",
+      "position_char": 2602,
+      "position_line": 50
+    }
+  ]
+}

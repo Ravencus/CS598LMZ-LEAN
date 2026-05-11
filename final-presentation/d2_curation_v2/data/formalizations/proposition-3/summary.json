@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-3",
+  "english_title": "Proposition 3",
+  "statement_en": "If $u_n=an^{b}$ with $a\\neq0$ and $b\\in(0,1)$, then this sequence is uniformly distributed modulo $1$.",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef UniformlyDistributedModOne (u : ℕ → ℝ) : Prop :=\n  ∀ x y : ℝ,\n    0 ≤ x →\n    x < y →\n    y ≤ 1 →\n      Filter.Tendsto\n        (fun N : ℕ =>\n          (((Finset.range N).filter fun n => x ≤ Int.fract (u n) ∧ Int.fract (u n) < y).card : ℝ) / N)\n        Filter.atTop\n        (nhds (y - x))\n\ntheorem power_sequence_uniformlyDistributedModOne\n    {a b : ℝ} (ha : a ≠ 0) (hb0 : 0 < b) (hb1 : b < 1) :\n    UniformlyDistributedModOne (fun n : ℕ => a * Real.rpow (n : ℝ) b) := by\n  sorry"
+}

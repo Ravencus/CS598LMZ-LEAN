@@ -1,0 +1,18 @@
+{
+  "problem_id": "exercise-19",
+  "english_title": "Exercise 1.9",
+  "statement_en": "Let $f:[0,+\\infty)\\to [0,+\\infty)$ be nondecreasing, and suppose $\\lim_{x\\to 0^{+}}\\frac{f(x)}{x}=1$. Then for any nonnegative real sequence $a_n$, the series $\\sum_n a_n$ and $\\sum_n f(a_n)$ converge or diverge simultaneously.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem summable_iff_summable_map_of_nondecreasing_pos\n    (f : ℝ → ℝ)\n    (hf_nonneg : ∀ ⦃x : ℝ⦄, 0 ≤ x → 0 ≤ f x)\n    (hf_mono : MonotoneOn f (Set.Ici 0))\n    (hlim : Filter.Tendsto (fun x : ℝ => f x / x) (nhdsWithin 0 (Set.Ioi 0)) (nhds 1)) :\n    ∀ (a : ℕ → ℝ), (∀ n, 0 ≤ a n) → (Summable a ↔ Summable (fun n => f (a n))) := by\n  sorry"
+}

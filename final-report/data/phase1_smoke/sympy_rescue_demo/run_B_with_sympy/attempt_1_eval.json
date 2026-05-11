@@ -1,0 +1,35 @@
+{
+  "outcome": "sympy_rescue",
+  "overall_success": true,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": true,
+  "sympy_emitted": true,
+  "sympy_verified": true,
+  "sympy_witnesses": [
+    {
+      "block": {
+        "kind": "integral",
+        "var": "u",
+        "lower": "0",
+        "upper": "2*pi",
+        "expression": "Max(cos(u), 0)",
+        "expected": "2"
+      },
+      "verifier": {
+        "correct": true,
+        "computed": "2",
+        "error": null
+      }
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P17_b0ef45955f.lean",
+      "line": 7,
+      "column": 0,
+      "severity": "error",
+      "message": "unexpected token '<'; expected command\n"
+    }
+  ],
+  "n_errors": 1
+}

@@ -1,0 +1,50 @@
+{
+  "note_title": "加强收敛性质的条件与手段",
+  "is_hub": false,
+  "in_subset_via": [
+    "分段估计",
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "加强收敛性质的条件与手段#1",
+      "type": "tip",
+      "title": "借助Borel Cantelli引理来加强收敛性的想法",
+      "body": "如果我们得到$f_n \\xrightarrow{\\mu} f$，亦或者依照某种范数收敛，然后我们想要根据一个额外的条件$\\text{Cond}$去把这个结果加强为几乎处处收敛。我们想到可以借助[[Borel-Cantelli lemma及其应用]]当中其中一个版本的引理(常用引理1)，得到关于$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}$的级数收敛的信息$$\\sum_{n\\geq1}\\mu(A_{n,\\varepsilon})<\\infty,\\forall \\varepsilon>0$$的结论，我们就可以导出$\\mu\\left(\\limsup_{n\\to\\infty}A_{n,\\varepsilon}\\right)=0$的结论从而得到几乎处处收敛。因此实现这一点的关键是对$\\mu(A_{n,\\varepsilon})$做估计。\n1. 如果cond涉及$f_n$的范数的大小信息(概率论中，方差期望，moment一类的也算是这种信息)，那么我们可以考虑从Chebyshev不等式入手去估计$\\mu(A_{n,\\varepsilon})$。\n2.",
+      "position_char": 80,
+      "position_line": 7,
+      "classification_result": {
+        "id": "加强收敛性质的条件与手段#1",
+        "classification": "strategy_template",
+        "english_title": "Using the Borel-Cantelli Lemma to Strengthen Convergence",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Using the Borel-Cantelli Lemma to strengthen convergence",
+          "summary_en": "When one has convergence in measure or convergence in a norm and wants to strengthen it to almost everywhere convergence under an additional condition, a standard approach is to study the sets $A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}$ and prove that $\\sum_{n\\geq 1}\\mu(A_{n,\\varepsilon})<\\infty$ for every $\\varepsilon>0$. Then the Borel-Cantelli lemma implies $\\mu(\\limsup_{n\\to\\infty}A_{n,\\varepsilon})=0$, yielding almost everywhere convergence.",
+          "applicability": "Applies when the goal is to upgrade convergence in measure or related weaker convergence to almost everywhere convergence, especially when an extra condition allows estimation of $\\mu(A_{n,\\varepsilon})$, for example via Chebyshev's inequality from norm, variance, expectation, or moment bounds."
+        }
+      }
+    },
+    {
+      "id": "加强收敛性质的条件与手段#2",
+      "type": "tip",
+      "title": "利用分段估计来加强收敛性的做法",
+      "body": "如果我们得到$f_n \\xrightarrow{\\lambda} f$，然后我们想要根据一个额外的条件$\\text{Cond}$去把这个结果加强为依某种范数的收敛，例如$L^p$或者一致收敛。我们想到可以按照[[分段估计]]，其中一段利用依测度收敛带来的“集中不等式”来对$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}$做出$$\\lambda(A_{n,\\varepsilon})\\leq g_n(\\varepsilon)$$的估计。然后另外一段则利用额外的条件$\\text{Cond}$来做出估计，从而证明某种依照范数的收敛。",
+      "position_char": 1580,
+      "position_line": 17,
+      "classification_result": {
+        "id": "加强收敛性质的条件与手段#2",
+        "classification": "strategy_template",
+        "english_title": "Using Piecewise Estimation to Strengthen Convergence",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Using piecewise estimation to strengthen convergence",
+          "summary_en": "When one has convergence in measure and wants to strengthen it to convergence in a norm such as $L^p$ or to uniform convergence, one can split the estimate into parts. One part uses the concentration-type estimate coming from convergence in measure on the sets $A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}$, while the other part uses the additional condition to control the remaining contribution.",
+          "applicability": "Applies when upgrading convergence in measure to stronger norm-based convergence, especially when the problem naturally decomposes into a large-value part controlled by measure estimates and another part controlled by extra assumptions."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"加强收敛性质的条件与手段#1\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Using the Borel-Cantelli Lemma to Strengthen Convergence\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Using the Borel-Cantelli Lemma to strengthen convergence\",\n      \"summary_en\": \"When one has convergence in measure or convergence in a norm and wants to strengthen it to almost everywhere convergence under an additional condition, a standard approach is to study the sets $A_{n,\\\\varepsilon}:=\\\\{x:|f_n(x)-f(x)|\\\\geq\\\\varepsilon\\\\}$ and prove that $\\\\sum_{n\\\\geq 1}\\\\mu(A_{n,\\\\varepsilon})<\\\\infty$ for every $\\\\varepsilon>0$. Then the Borel-Cantelli lemma implies $\\\\mu(\\\\limsup_{n\\\\to\\\\infty}A_{n,\\\\varepsilon})=0$, yielding almost everywhere convergence.\",\n      \"applicability\": \"Applies when the goal is to upgrade convergence in measure or related weaker convergence to almost everywhere convergence, especially when an extra condition allows estimation of $\\\\mu(A_{n,\\\\varepsilon})$, for example via Chebyshev's inequality from norm, variance, expectation, or moment bounds.\"\n    }\n  },\n  {\n    \"id\": \"加强收敛性质的条件与手段#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Using Piecewise Estimation to Strengthen Convergence\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Using piecewise estimation to strengthen convergence\",\n      \"summary_en\": \"When one has convergence in measure and wants to strengthen it to convergence in a norm such as $L^p$ or to uniform convergence, one can split the estimate into parts. One part uses the concentration-type estimate coming from convergence in measure on the sets $A_{n,\\\\varepsilon}:=\\\\{x:|f_n(x)-f(x)|\\\\geq\\\\varepsilon\\\\}$, while the other part uses the additional condition to control the remaining contribution.\",\n      \"applicability\": \"Applies when upgrading convergence in measure to stronger norm-based convergence, especially when the problem naturally decomposes into a large-value part controlled by measure estimates and another part controlled by extra assumptions.\"\n    }\n  }\n]",
+  "classified": true
+}

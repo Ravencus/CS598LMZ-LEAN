@@ -1,0 +1,11 @@
+{
+  "problem_id": "lemma-21",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "compile_fail",
+  "plan_relation": "different_plan",
+  "divergence": "n/a",
+  "evidence": "Trace A’s successful proof hinges on finding and applying `Real.norm_exp_I_mul_ofReal_sub_one_le`, then normalizing `|2 * Real.pi * x|`. Trace B abandons the direct lemma route and develops a manual trigonometric proof via `exp_mul_I`, norm-square identities, half-angle formulas, and `Real.abs_sin_l",
+  "wall_seconds": 7.62
+}

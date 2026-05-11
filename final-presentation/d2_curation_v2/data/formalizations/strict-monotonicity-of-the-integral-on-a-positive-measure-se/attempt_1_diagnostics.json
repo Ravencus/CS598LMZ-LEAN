@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_79c87fa0b937.lean",
+      "line": 4,
+      "column": 41,
+      "severity": "error",
+      "message": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_79c87fa0b937.lean",
+      "line": 5,
+      "column": 51,
+      "severity": "error",
+      "message": "Function expected at\n  IntegrableOn\nbut this term has type\n  ?m.2\n\nNote: Expected a function because this term is being applied to the argument\n  h\n\nHint: The identifier `IntegrableOn` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_79c87fa0b937.lean",
+      "line": 4,
+      "column": 41,
+      "severity": "error",
+      "message": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_79c87fa0b937.lean",
+      "line": 5,
+      "column": 51,
+      "severity": "error",
+      "message": "Function expected at\n  IntegrableOn\nbut this term has type\n  ?m.2\n\nNote: Expected a function because this term is being applied to the argument\n  h\n\nHint: The identifier `IntegrableOn` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ]
+}

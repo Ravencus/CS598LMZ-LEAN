@@ -1,0 +1,48 @@
+{
+  "problem_id": "lemma-21",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 183.58,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Unknown constant `Complex.norm_exp_ofReal_mul_I_sub_one`",
+  "total_cost_usd": 0.0,
+  "total_tokens": 403727,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_a162a6b7f0.lean",
+      "line": 8,
+      "column": 6,
+      "severity": "error",
+      "message": "Unknown constant `Complex.norm_exp_ofReal_mul_I_sub_one`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_a162a6b7f0.lean",
+      "line": 10,
+      "column": 16,
+      "severity": "error",
+      "message": "Unknown constant `Real.abs_sin_le`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_a162a6b7f0.lean",
+      "line": 16,
+      "column": 12,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  MulLeftMono ℝ\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ]
+}

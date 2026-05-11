@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 8,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 16,
+      "column": 47,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 18,
+      "column": 39,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 8,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 16,
+      "column": 47,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_27a2716a69e7.lean",
+      "line": 18,
+      "column": 39,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ]
+}

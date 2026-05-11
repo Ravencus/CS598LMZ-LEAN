@@ -1,0 +1,30 @@
+{
+  "problem_id": "property-4-continuity-from-above",
+  "english_title": "Property 4: Continuity from Above",
+  "statement_en": "Let $E_1,\\cdots,E_n,\\cdots \\in \\mathcal{F}$ be a decreasing sequence of sets, that is, $\\cdots \\subseteq E_n \\subseteq \\cdots \\subseteq E_2\\subseteq E_1$. Then the intersection is measurable. Moreover, if at least one set in the sequence has finite measure, then $$\\mu\\left(\\bigcap_{n\\geq 1}E_n\\right)=\\lim_{n\\to \\infty}\\mu(E_n)=\\inf_{n\\geq 1}\\mu(E_n).$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem measurable_iInter_and_measure_limit_of_antitone\n    {α : Type*} [MeasurableSpace α] (μ : Measure α) (E : ℕ → Set α)\n    (h_meas : ∀ n, MeasurableSet (E n))\n    (h_anti : Antitone E)\n    (h_fin : ∃ n, μ (E n) < ∞) :\n    MeasurableSet (⋂ n, E n) ∧\n      Filter.Tendsto (fun n => μ (E n)) Filter.atTop (𝓝 (μ (⋂ n, E n))) ∧\n      μ (⋂ n, E n) = ⨅ n, μ (E n) := by\n  sorry"
+}

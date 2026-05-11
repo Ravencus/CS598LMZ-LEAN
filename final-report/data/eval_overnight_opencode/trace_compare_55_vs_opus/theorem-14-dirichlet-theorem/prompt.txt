@@ -1,0 +1,267 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: theorem-14-dirichlet-theorem
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=139.75s    mcp_calls=6
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+#check Irrational
+#check Irrational.denseRange
+#check Irrational.denseRange_zsmul
+#check Irrational.denseRange_intCast_mul
+#check denseRange_intCast_mul
+#check Int.exists_nearest_le
+#check exists_int_abs_sub_lt
+#check exists_int_sub_abs_lt
+
+--- mcp call 2 (FAIL) ---
+import Mathlib
+
+#check Irrational
+#check DenseRange
+#check Set.Finite.exists_lt_ncard
+#check exists_rat_near
+#check Rat.denseRange_cast
+#check Int.fract
+#check Int.floor
+#check floor
+#check exists_floor
+
+--- mcp call 3 (FAIL) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  simpa [mul_comm] using hα.exists_nat_abs_mul_sub_int_lt hε
+
+--- mcp call 4 (FAIL) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  obtain ⟨n, hn_gt⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have hpos : (0 : ℝ) < (n : ℝ) := lt_trans (one_div_pos.mpr hε) hn_gt
+    exact Nat.cast_pos.mp hpos
+  have hden_pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+  have hbound : (1 : ℝ) / ((n : ℝ) + 1) < ε := by
+    have hlt : 1 / ε < (n : ℝ) + 1 := lt_trans hn_gt (lt_add_one _)
+    have hmul : (1 : ℝ) < ε * ((n : ℝ) + 1) := by
+      calc
+        (1 : ℝ) = ε * (1 / ε) := by field_simp [hε.ne']
+        _ < ε * ((n : ℝ) + 1) := mul_lt_mul_of_pos_left hlt hε
+    exact (div_lt_iff₀ hden_pos).mpr hmul
+  obtain ⟨j, k, hk0, hk_le, habs⟩ := Real.exists_int_int_abs_mul_sub_le α hn_pos
+  refine ⟨k.toNat, Int.toNat_pos.mpr hk0, ⟨j, ?_⟩⟩
+  have hk_nat_int : (k.toNat : ℤ) = k := Int.toNat_of_nonneg hk0.le
+  have hk_real : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by exact_mod_cast hk_nat_int
+  calc
+    |(k.toNat : ℝ) * α - j| = |(k : ℝ) * α - j| := by rw [hk_real]
+    _ ≤ (1 : ℝ) / ((n : ℝ) + 1) := habs
+    _ < ε := hbound
+
+--- mcp call 5 (PASS) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  obtain ⟨n, hn_gt⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have hpos : (0 : ℝ) < (n : ℝ) := lt_trans (one_div_pos.mpr hε) hn_gt
+    exact Nat.cast_pos.mp hpos
+  have hden_pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+  have hbound : (1 : ℝ) / ((n : ℝ) + 1) < ε := by
+    have hlt : 1 / ε < (n : ℝ) + 1 := lt_trans hn_gt (lt_add_one _)
+    have hmul : (1 : ℝ) < ε * ((n : ℝ) + 1) := by
+      calc
+        (1 : ℝ) = ε * (1 / ε) := by field_simp [hε.ne']
+        _ < ε * ((n : ℝ) + 1) := mul_lt_mul_of_pos_left hlt hε
+    exact (div_lt_iff₀ hden_pos).mpr hmul
+  obtain ⟨j, k, hk0, hk_le, habs⟩ := Real.exists_int_int_abs_mul_sub_le α hn_pos
+  have hk_nat_int : (k.toNat : ℤ) = k := Int.toNat_of_nonneg hk0.le
+  have hq_pos_int : (0 : ℤ) < (k.toNat : ℤ) := by simpa [hk_nat_int] using hk0
+  have hq_pos : 0 < k.toNat := by exact_mod_cast hq_pos_int
+  refine ⟨k.toNat, hq_pos, ⟨j, ?_⟩⟩
+  have hk_real : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by exact_mod_cast hk_nat_int
+  calc
+    |(k.toNat : ℝ) * α - j| = |(k : ℝ) *
+--- mcp call 6 (PASS) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  have _ : Irrational α := hα
+  obtain ⟨n, hn_gt⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have hpos : (0 : ℝ) < (n : ℝ) := lt_trans (one_div_pos.mpr hε) hn_gt
+    exact Nat.cast_pos.mp hpos
+  have hden_pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+  have hbound : (1 : ℝ) / ((n : ℝ) + 1) < ε := by
+    have hlt : 1 / ε < (n : ℝ) + 1 := lt_trans hn_gt (lt_add_one _)
+    have hmul : (1 : ℝ) < ε * ((n : ℝ) + 1) := by
+      calc
+        (1 : ℝ) = ε * (1 / ε) := by field_simp [hε.ne']
+        _ < ε * ((n : ℝ) + 1) := mul_lt_mul_of_pos_left hlt hε
+    exact (div_lt_iff₀ hden_pos).mpr hmul
+  obtain ⟨j, k, hk0, hk_le, habs⟩ := Real.exists_int_int_abs_mul_sub_le α hn_pos
+  have hk_nat_int : (k.toNat : ℤ) = k := Int.toNat_of_nonneg hk0.le
+  have hq_pos_int : (0 : ℤ) < (k.toNat : ℤ) := by simpa [hk_nat_int] using hk0
+  have hq_pos : 0 < k.toNat := by exact_mod_cast hq_pos_int
+  refine ⟨k.toNat, hq_pos, ⟨j, ?_⟩⟩
+  have hk_real : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by exact_mod_cast hk_nat_int
+  calc
+    |(k.to
+--- final_text ---
+I’ll use the Lean prover workflow and first look for existing Mathlib density/irrational-rotation lemmas, since this theorem is likely already covered by the topology/additive subgroup API.
+There is an existing Mathlib theorem with exactly this content up to multiplication order. I’ll verify the minimal proof directly.
+The one-line lemma from prior snapshots is not available in this Mathlib build, so I’m switching to the bundled Dirichlet theorem `Real.exists_int_int_abs_mul_sub_le` and converting its integer denominator to a positive natural.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  have _ : Irrational α := hα
+  obtain ⟨n, hn_gt⟩ := exists_nat_gt (1 / ε)
+  have hn_pos : 0 < n := by
+    have hpos : (0 : ℝ) < (n : ℝ) := lt_trans (one_div_pos.mpr hε) hn_gt
+    exact Nat.cast_pos.mp hpos
+  have hden_pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+  have hbound : (1 : ℝ) / ((n : ℝ) + 1) < ε := by
+    have hlt : 1 / ε < (n : ℝ) + 1 := lt_trans hn_gt (lt_add_one _)
+    have hmul : (1 : ℝ) < ε * ((n : ℝ) + 1) := by
+      calc
+        (1 : ℝ) = ε * (1 / ε) := by field_simp [hε.ne']
+        _ < ε * ((n : ℝ) + 1) := mul_lt_mul_of_pos_left hlt hε
+    exact (div_lt_iff₀ hden_pos).mpr hmul
+  obtain ⟨j, k, hk0, hk_le, habs⟩ := Real.exists_int_int_abs_mul_sub_le α hn_pos
+  have hk_nat_int : (k.toNat : ℤ) = k := Int.toNat_of_nonneg hk0.le
+
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: lean_proof    wall=68.68s    mcp_calls=4
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+example {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  -- Try to use Mathlib's density of integer multiples of irrational mod 1
+  have h := hα
+  exact?
+
+--- mcp call 2 (FAIL) ---
+import Mathlib
+
+-- Check what's available
+#check @Irrational.ne_int
+#check @Int.fract
+#check @AddCircle
+#check @Real.exists_rat_btwn
+
+-- Look for density of orbit
+example (α : ℝ) (hα : Irrational α) : DenseRange (fun n : ℤ => Int.fract (n * α)) := by
+  exact?
+
+--- mcp call 3 (FAIL) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  -- pick n such that 1/(n+1) < ε
+  obtain ⟨n, hn⟩ := exists_nat_gt (1 / ε)
+  have n_pos : 0 < n := by
+    have : (0 : ℝ) < n := lt_of_le_of_lt (by positivity) hn
+    exact_mod_cast this
+  obtain ⟨j, k, hk_pos, _, hk_bd⟩ := Real.exists_int_int_abs_mul_sub_le α n_pos
+  -- 1/(n+1) < ε
+  have hnp1 : (0 : ℝ) < n + 1 := by positivity
+  have hinv : 1 / ((n : ℝ) + 1) < ε := by
+    rw [div_lt_iff₀ hnp1]
+    have : 1 / ε < (n : ℝ) + 1 := lt_trans hn (by linarith)
+    have hε' : 0 < ε := hε
+    rw [div_lt_iff₀ hε'] at this
+    linarith
+  refine ⟨k.toNat, ?_, j, ?_⟩
+  · exact_mod_cast hk_pos
+  · have hk_nn : (k.toNat : ℝ) = (k : ℝ) := by
+      rw [Int.toNat_of_nonneg hk_pos.le]
+    rw [hk_nn]
+    exact lt_of_le_of_lt hk_bd hinv
+
+--- mcp call 4 (PASS) ---
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  obtain ⟨n, hn⟩ := exists_nat_gt (1 / ε)
+  have n_pos : 0 < n := by
+    have h1 : (0 : ℝ) < n := lt_of_le_of_lt (by positivity) hn
+    exact_mod_cast h1
+  obtain ⟨j, k, hk_pos, _, hk_bd⟩ := Real.exists_int_int_abs_mul_sub_le α n_pos
+  have hnp1 : (0 : ℝ) < n + 1 := by positivity
+  have hinv : 1 / ((n : ℝ) + 1) < ε := by
+    rw [div_lt_iff₀ hnp1]
+    rw [div_lt_iff₀ hε] at hn
+    linarith
+  refine ⟨k.toNat, ?_, j, ?_⟩
+  · -- 0 < k.toNat from 0 < k
+    have : k.toNat = k := Int.toNat_of_nonneg hk_pos.le
+    omega
+  · have hk_cast : ((k.toNat : ℤ) : ℝ) = (k : ℝ) := by
+      rw [Int.toNat_of_nonneg hk_pos.le]
+    have : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by
+      have h := Int.toNat_of_nonneg hk_pos.le
+      exact_mod_cast h
+    rw [this]
+    exact lt_of_le_of_lt hk_bd hinv
+
+--- final_text ---
+I'll work on this classic Dirichlet approximation theorem. Let me start by exploring the approach.
+Let me think about this. The theorem is Dirichlet's approximation theorem: for irrational α and ε > 0, there exist q > 0 and p such that |qα - p| < ε.
+
+The standard proof uses pigeonhole on the fractional parts of kα for k = 0, 1, ..., N where 1/N < ε. This is non-trivial to formalize from scratch.
+
+Let me search Mathlib for existing results. There's likely something like `Irrational.exists_nat_gt` or results about density of {qα} mod 1, or `Int.fract`. Key candidates:
+- `Irrational.fract_dense` or similar
+- `AddCircle.denseRange_zsmul` 
+- `Irrational.exists_int_gt`
+
+Actually, Mathlib has `Irrational.add_int_mul_self_lt` and friends. Let me think — there's `Real.exists_int_mul_self_sub_int_lt` or the more likely `Irrational.exists_pos_lt_natAbs_lt` style.
+
+Actually I recall Mathlib has `Irrational.lt_natAbs` stuff. Let me check a few candidates by trying a proof using `exact?` style approach. The most promising is likely: density results give us {qα mod 1} is dense in [0,1].
+
+Let me try a direct attempt with a known result and see what's available.
+Let me search for relevant Mathlib lemmas about Irrational and approximation.
+Let me search for specific named lemmas in Mathlib about approximation.
+Excellent! There's a `DiophantineApproximation` file. Let me check it.
+Let me look at the key theorems:
+I have `exists_int_int_abs_mul_sub_le`. The plan: pick n such that 1/(n+1) < ε, ap
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

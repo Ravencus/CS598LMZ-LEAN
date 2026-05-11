@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c4f0686d968f.lean",
+      "line": 15,
+      "column": 69,
+      "severity": "error",
+      "message": "expected token\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c4f0686d968f.lean",
+      "line": 15,
+      "column": 69,
+      "severity": "error",
+      "message": "expected token\n"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Tactic `rcases` failed: `hne : (nhds z0).1 {x | (fun x => x ∈ {z0}ᶜ → f x ≠ 0) x}` is not an inductive datatype\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_31d41a92bf.lean",
+      "line": 25,
+      "column": 20,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `hne : (nhds z0).1 {x | (fun x => x ∈ {z0}ᶜ → f x ≠ 0) x}` is not an inductive datatype\n"
+    }
+  ]
+}

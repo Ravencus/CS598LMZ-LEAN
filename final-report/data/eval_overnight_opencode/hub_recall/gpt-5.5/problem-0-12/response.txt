@@ -1,0 +1,5 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "using-known-asymptotics-to-derive-expansions-hub", "term-by-term-estimates-hub", "piecewise-estimates-hub"]
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: A proof naturally uses Diophantine approximation of \(1/(2\pi)\) by rationals \(p/q\) to find long ranges where \(e^{in^2}\) behaves like a quadratic Gauss sum.
+- using-known-asymptotics-to-derive-expansions-hub: The key analytic input is comparing the actual quadratic exponential sum with a nearby rational-phase quadratic sum whose Gauss-sum asymptotics are known.
+- term-by-term-estimates-hub: One must control the error between \(\sin(n^2)\) or \(e^{in^2}\) and its rational approximation term by term over a finite block.
+- piecewise-estimates-hub: The argument typically splits sums into blocks or ranges where the rational approximation is effective and estimates the remaining/error pieces separately.

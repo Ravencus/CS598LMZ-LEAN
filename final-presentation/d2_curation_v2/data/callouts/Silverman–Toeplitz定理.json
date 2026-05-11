@@ -1,0 +1,41 @@
+{
+  "note_title": "Silverman–Toeplitz定理",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "Silverman–Toeplitz定理#1",
+      "type": "note",
+      "title": "Silverman-Toepliz定理,1913",
+      "body": "$a_{n,k}$是一个非负的双重序列，并且满足:\n1. 关于$k$的和为1，即:$$\\sum_{k=1}^na_{n,k}=1$$\n2. 当$k$固定的时候，$$\\lim_{n\\to \\infty}a_{n,k}=0$$\n\n那么对于任意的有极限的序列$x_n$，都有$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}a_{n,k}x_k=\\lim_{n\\to \\infty}x_n$$",
+      "position_char": 39,
+      "position_line": 6
+    },
+    {
+      "id": "Silverman–Toeplitz定理#2",
+      "type": "note",
+      "title": "命题2.1:Silverman-Toepliz定理的推广",
+      "body": "$a_{n,k}$是一个双重序列，并且满足:\n1. 关于$k$的和**渐进**为1，即:$$\\lim_{n\\to \\infty}\\sum_{k=1}^na_{n,k}=1$$\n2. 当$k$固定的时候，$$\\lim_{n\\to \\infty}a_{n,k}=0$$\n3. $$\\sup_{n\\in \\mathbb{N}^{+}}\\sum_{k\\leq n}|a_{n,k}|<+\\infty$$\n\n那么对于任意的有极限的序列$x_n$，都有$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}a_{n,k}x_k=\\lim_{n\\to \\infty}x_n$$",
+      "position_char": 2147,
+      "position_line": 33
+    },
+    {
+      "id": "Silverman–Toeplitz定理#3",
+      "type": "example",
+      "title": "例子2.2",
+      "body": "$|\\lambda|<1$序列$x_n$的极限为$a$，那么$$\\sum_{k=0}^{n}\\lambda^{n-k}x_k\\to \\frac{a}{1-\\lambda}$$这是因为$\\sum_{k=0}^{n}\\lambda^{n-k}=\\frac{1-\\lambda^{n+1}}{1-\\lambda}$，所以Silverman-Toepliz定理的推广版本告诉我们$$\\sum_{k=0}^{n}\\lambda^{n-k}(1-\\lambda)x_k\\to a$$从而得到结果。",
+      "position_char": 3456,
+      "position_line": 53
+    },
+    {
+      "id": "Silverman–Toeplitz定理#4",
+      "type": "example",
+      "title": "例子2.3:去掉条件3之后的反例",
+      "body": "令$$a_{n,k}:=\\begin{cases}1&(n,k)=(1,1)\\\\n&(n,k)=(n,n)\\\\1-n&(n,k)=(n,n-1)\\\\0&\\text{otherwise}\\end{cases}$$这个序列可以看成一个无穷的矩阵$A$当中的元素：$$A:=\\begin{pmatrix}1&0&0&\\cdots\\\\-1&2&0&\\cdots\\\\ 0&-2&3&\\cdots \\\\\\vdots&\\vdots&\\vdots&\\ddots \\\\0&\\cdots&1-n&n\\\\\\vdots&\\vdots&\\vdots&\\ddots \\end{pmatrix}$$这样的双重序列并不满足“命题2.1”的第三个条件，因为此时$$\\sum_{k\\leq n}|a_{n,k}|=2\\sum_{k=1}^{n} k=n(n+1)$$令$x_k:=\\frac{(-1)^k}{k}$那么$$\\sum_{k\\leq n} a_{n,k}x_k = a_{n,n-1}x_{n-1}+a_{n,n}x_{n}=2(-1)^n$$这个和的极限不存在，更不会等于$x_k$的极限0。",
+      "position_char": 3768,
+      "position_line": 62
+    }
+  ]
+}

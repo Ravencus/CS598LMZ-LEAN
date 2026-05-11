@@ -1,0 +1,25 @@
+{
+  "note_title": "带根号的三项迭代序列极限的存在性问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "带根号的三项迭代序列极限的存在性问题#1",
+      "type": "question",
+      "title": "问题0（武汉大学数学分析题目）",
+      "body": "序列$\\{x_n\\}$满足$x_1,x_2>0$以及递归式$$x_{n+2}:=\\sqrt{x_{n+1}}+\\sqrt{x_n}$$证明序列的极限存在并且为$4$。",
+      "position_char": 50,
+      "position_line": 8
+    },
+    {
+      "id": "带根号的三项迭代序列极限的存在性问题#2",
+      "type": "question",
+      "title": "问题1",
+      "body": "序列$\\{x_n\\}$满足$x_1,x_2>0$以及递归式$$x_{n+2}:=\\frac{1}{x_{n}}+\\frac{2}{x_{n+1}}$$证明序列的极限存在并且为$\\sqrt{3}$。",
+      "position_char": 1189,
+      "position_line": 23
+    }
+  ]
+}

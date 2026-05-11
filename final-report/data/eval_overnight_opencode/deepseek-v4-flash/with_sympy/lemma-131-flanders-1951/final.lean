@@ -1,0 +1,66 @@
+import Mathlib
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  have mul_pow_comm (X Y : Matrix n n ℂ) (k : ℕ) : X * ((Y * X) ^ k) = ((X * Y) ^ k) * X := by
+    induction' k with k ih
+    · simp
+    · calc
+      X * ((Y * X) ^ (k + 1)) = X * (((Y * X) ^ k) * (Y * X)) := by rw [pow_succ]
+      _ = (X * ((Y * X) ^ k)) * (Y * X) := by simp [Matrix.mul_assoc]
+      _ = (((X * Y) ^ k) * X) * (Y * X) := by rw [ih]
+      _ = ((X * Y) ^ k) * (X * (Y * X)) := by simp [Matrix.mul_assoc]
+      _ = ((X * Y) ^ k) * ((X * Y) * X) := by simp [Matrix.mul_assoc]
+      _ = (((X * Y) ^ k) * (X * Y)) * X := by simp [Matrix.mul_assoc]
+      _ = ((X * Y) ^ (k + 1)) * X := by rw [pow_succ]
+
+  have mul_aeval_comm (X Y : Matrix n n ℂ) (p : Polynomial ℂ) : X * (aeval (Y * X) p) = (aeval (X * Y) p) * X := by
+    refine Polynomial.induction_on p ?_ ?_ ?_
+    · intro c
+      simp
+    · intro p q hp hq
+      simp [hp, hq, Matrix.mul_assoc, mul_add, add_mul]
+    · intro n a
+      calc
+        X * (aeval (Y * X) (monomial n a)) = X * (a • ((Y * X) ^ n)) := by simp
+        _ = a • (X * ((Y * X) ^ n)) := by simp [Matrix.mul_smul_comm]
+        _ = a • (((X * Y) ^ n) * X) := by rw [mul_pow_comm X Y n]
+        _ = (a • ((X * Y) ^ n)) * X := by simp [Matrix.smul_mul_assoc]
+        _ = (aeval (X * Y) (monomial n a)) * X := by simp
+
+  have hp0 : aeval (B * A) (minpoly ℂ (B * A)) = 0 := minpoly.aeval ℂ (B * A)
+  have hq0 : aeval (A * B) (minpoly ℂ (A * B)) = 0 := minpoly.aeval ℂ (A * B)
+
+  have h1 : aeval (A * B) (X * minpoly ℂ (B * A)) = 0 := by
+    calc
+      aeval (A * B) (X * minpoly ℂ (B * A)) = (aeval (A * B) X) * (aeval (A * B) (minpoly ℂ (B * A))) := by
+        rw [aeval_mul]
+      _ = (A * B) * (aeval (A * B) (minpoly ℂ (B * A))) := by simp
+      _ = A * (B * (aeval (A * B) (minpoly ℂ (B * A)))) := by simp [Matrix.mul_assoc]
+      _ = A * ((aeval (B * A) (minpoly ℂ (B * A))) * B) := by rw [mul_aeval_comm B A (minpoly ℂ (B * A))]
+      _ = A * (0 * B) := by rw [hp0]
+      _ = A * 0 := by simp
+      _ = 0 := by simp
+
+  have h2 : aeval (B * A) (X * minpoly ℂ (A * B)) = 0 := by
+    calc
+      aeval (B * A) (X * minpoly ℂ (A * B)) = (aeval (B * A) X) * (aeval (B * A) (minpoly ℂ (A * B))) := by
+        rw [aeval_mul]
+      _ = (B * A) * (aeval (B * A) (minpoly ℂ (A * B))) := by simp
+      _ = B * (A * (aeval (B * A) (minpoly ℂ (A * B)))) := by simp [Matrix.mul_assoc]
+      _ = B * ((aeval (A * B) (minpoly ℂ (A * B))) * A) := by rw [mul_aeval_comm A B (minpoly ℂ (A * B))]
+      _ = B * (0 * A) := by rw [hq0]
+      _ = B * 0 := by simp
+      _ = 0 := by simp
+
+  have hdiv1 : minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) :=
+    minpoly.dvd h1
+
+  have hdiv2 : minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) :=
+    minpoly.dvd h2
+
+  exact And.intro hdiv1 hdiv2

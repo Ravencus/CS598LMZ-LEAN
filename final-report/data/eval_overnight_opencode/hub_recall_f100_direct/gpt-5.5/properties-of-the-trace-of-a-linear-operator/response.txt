@@ -1,0 +1,3 @@
+["interchanging-sums-and-integrals-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- interchanging-sums-and-integrals-hub: The cyclic trace identity is proved by expanding matrix entries of `A.comp B` and `B.comp A` into finite sums and swapping/reindexing the order of summation.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof uses two representations of the same operator-level trace object, reducing the abstract `LinearMap.trace` statements to concrete coordinate/matrix formulas where cyclicity and linearity are immediate.

@@ -1,0 +1,30 @@
+{
+  "problem_id": "hoeffding-inequality",
+  "english_title": "Hoeffding Inequality",
+  "statement_en": "Assume that the random variables $X_n$ on a probability space $(\\Omega,\\mathcal{F},P)$ are independent and identically distributed, and that $X_n(\\omega)\\in [a,b]$ for every positive integer $n$. Let $\\overline{X}_n$ be the arithmetic mean of the first $n$ random variables, and let $\\mu$ be their common mean. Then for every $\\varepsilon>0$, $$P\\left(|\\overline{X}_n-\\mu|\\geq \\varepsilon \\right)\\leq 2\\exp\\left(-\\frac{2n\\varepsilon^2}{(b-a)^2}\\right).$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\nopen MeasureTheory\n\nnoncomputable section\n\ndef IndependentIdenticallyDistributed {Ω : Type*} (X : ℕ → Ω → ℝ) : Prop := True\n\ntheorem hoeffding_bound_for_iid_bounded_random_variables\n    {Ω : Type*} [MeasurableSpace Ω]\n    (P : Measure Ω) [IsProbabilityMeasure P]\n    (X : ℕ → Ω → ℝ) (a b μ : ℝ)\n    (h_iid : IndependentIdenticallyDistributed X)\n    (h_bdd : ∀ n : ℕ, ∀ ω : Ω, a ≤ X n ω ∧ X n ω ≤ b)\n    (h_mean : ∀ n : ℕ, ∫ ω, X n ω ∂P = μ) :\n    ∀ ⦃n : ℕ⦄, 0 < n → ∀ ⦃ε : ℝ⦄, 0 < ε →\n      P {ω | |((Finset.sum (Finset.range n) (fun i => X (i + 1) ω)) / (n : ℝ)) - μ| ≥ ε} ≤\n        ENNReal.ofReal (2 * Real.exp (-(2 * (n : ℝ) * ε ^ 2) / (b - a) ^ 2)) := by\n  sorry"
+}

@@ -1,0 +1,4 @@
+["cauchy-condensation-test-hub", "piecewise-estimates-hub", "term-by-term-estimates-hub"]
+- cauchy-condensation-test-hub: The monotone nonnegative hypotheses are exactly the setting for dyadic block/condensation arguments, reducing divergence of the original series to divergence of dyadic block sums.
+- piecewise-estimates-hub: The proof naturally splits indices into dyadic blocks and estimates each block using monotonicity, i.e. a base-times-height lower/upper bound.
+- term-by-term-estimates-hub: One must compare `min (α n) (β n)` against simpler blockwise or dyadic terms and transfer divergence through these inequalities.

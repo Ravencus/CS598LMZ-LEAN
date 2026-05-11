@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "theorem-14-dirichlet-theorem",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_search_diff",
+  "evidence": "Both traces began by searching Mathlib for an existing irrational approximation/density lemma. BIG found and used `Real.exists_int_int_abs_mul_sub_le` after several probes, while SMALL only checked unrelated/unsuccessful names like `Real.exists_int_near` and stopped after one failed lookup.",
+  "wall_seconds": 5.92
+}

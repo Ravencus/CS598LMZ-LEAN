@@ -1,0 +1,49 @@
+{
+  "note_title": "通过pi的无理测度证明级数收敛2",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "通过pi的无理测度证明级数收敛2#1",
+      "type": "note",
+      "title": "命题0",
+      "body": "级数$$\\sum_{n\\geq 1} \\frac{(\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n}{n}<\\infty$$",
+      "position_char": 40,
+      "position_line": 6
+    },
+    {
+      "id": "通过pi的无理测度证明级数收敛2#2",
+      "type": "tip",
+      "title": "想法1.1",
+      "body": "根据[[通过pi的无理测度证明级数收敛性]]当中的经验，我们现在要：\n1. 参考[[通过pi的无理测度证明级数收敛性#^57d4f2]],我们需要把$A_{\\varepsilon}^c$上的情况变成形如$\\sum_n \\frac{e^{-nx_n}}{n}$形式的级数。然后我们需要进行dyadic分解，并按照$x_n$的值的分布进行划分，得到类似于$$\\sum_{n\\in B_k}\\frac{e^{-nx_n}}{n}\\leq \\frac{1}{2^k}\\sum_{j\\geq 0} e^{-j}\\#\\left\\{n\\in B_k:x_n<\\frac{j+1}{2^k}\\right\\}$$的结果。其中$B_k=[2^k,2^{k+1})$。\n2. 然后我们剩下的步骤便是估计$\\#\\left\\{n\\in B_k:x_n<\\frac{j+1}{2^k}\\right\\}$。令$$E(I;\\rho):=\\left\\{n\\in I:\\delta_n\\leq \\rho\\right\\},\\quad \\rho<1$$实际上我们要估计的是$\\#E(I;\\rho)$。而这个估计主要是依靠[[通过pi的无理测度证明级数收敛性#^8f9f99]]，然后结合$\\pi$的无理测度得到。其中关键是要得到$\\delta_n$的一个下界估计，从而导出任意$n,m \\in E(I;\\rho)$的误差$|n-m|$的一个下界。",
+      "position_char": 1049,
+      "position_line": 21
+    },
+    {
+      "id": "通过pi的无理测度证明级数收敛2#3",
+      "type": "note",
+      "title": "命题2.1",
+      "body": "存在一个正实数$c>0$以及无穷多个正整数$n$使得$$\\frac{(\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n}{n}>\\frac{c}{n}$$",
+      "position_char": 5715,
+      "position_line": 46
+    },
+    {
+      "id": "通过pi的无理测度证明级数收敛2#4",
+      "type": "note",
+      "title": "命题2.2",
+      "body": "令$a_n := (\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n$那么$$\\limsup_{n\\to \\infty} a_n =1,\\quad \\liminf_{n\\to \\infty} a_n =0$$",
+      "position_char": 6309,
+      "position_line": 53
+    },
+    {
+      "id": "通过pi的无理测度证明级数收敛2#5",
+      "type": "question",
+      "title": "猜想3.3",
+      "body": "令$a_n := (\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n$那么序列在$[0,1]$当中稠密。",
+      "position_char": 7418,
+      "position_line": 69
+    }
+  ]
+}

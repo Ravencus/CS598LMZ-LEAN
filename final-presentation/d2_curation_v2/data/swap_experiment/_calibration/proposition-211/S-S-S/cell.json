@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-211",
+  "weak_model": "gpt-5.4-mini",
+  "cell": "S-S-S",
+  "models": {
+    "plan": "gpt-5.4",
+    "reason": "gpt-5.4",
+    "formalize": "gpt-5.4"
+  },
+  "success": false,
+  "n_errors": 0,
+  "first_error": "no code produced",
+  "stage_failures": [
+    "formalize"
+  ],
+  "stage_seconds": {
+    "plan": 12.1,
+    "reason": 28.9,
+    "formalize": 240.1,
+    "compile": 0.0
+  },
+  "plan_quality": {
+    "n_bullets": 5,
+    "is_numbered": true,
+    "is_nonempty": true,
+    "appears_to_restate_theorem": false
+  },
+  "splice_action": "skipped",
+  "signature_deviation": false
+}

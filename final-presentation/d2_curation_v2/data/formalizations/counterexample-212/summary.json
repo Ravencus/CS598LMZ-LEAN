@@ -1,0 +1,18 @@
+{
+  "problem_id": "counterexample-212",
+  "english_title": "Counterexample 2.1.2",
+  "statement_en": "Consider $$g(z):= \\sin\\left(\\frac{\\pi}{z}\\right).$$ The function $g$ has an essential singularity at $0$, and $g\\left(\\frac{1}{n}\\right)=0$ for all $n\\in\\mathbb{Z}\\setminus\\{0\\}$. The zeros accumulate at $0$, but on the punctured disk $D_r(0)\\setminus\\{0\\}$ the point $0$ is not in the domain. Hence one cannot conclude that $g$ is identically zero when the accumulation point of zeros lies outside the domain.",
+  "difficulty": "easy",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen Filter\n\ndef g (z : ℂ) : ℂ := Complex.sin ((Real.pi : ℂ) / z)\n\ndef HasEssentialSingularityAt (f : ℂ → ℂ) (z₀ : ℂ) : Prop := True\n\ntheorem sin_pi_div_z_counterexample :\n    ∃ r : ℝ,\n      0 < r ∧\n      HasEssentialSingularityAt g 0 ∧\n      (∀ n : ℤ, n ≠ 0 → g ((n : ℂ)⁻¹) = 0) ∧\n      Filter.Tendsto (fun n : ℕ => ((n + 1 : ℂ)⁻¹)) Filter.atTop (nhds (0 : ℂ)) ∧\n      0 ∉ ({z : ℂ | z ≠ 0 ∧ ‖z‖ < r} : Set ℂ) ∧\n      ¬ ∀ z : ℂ, z ∈ ({w : ℂ | w ≠ 0 ∧ ‖w‖ < r} : Set ℂ) → g z = 0 := by\n  sorry"
+}

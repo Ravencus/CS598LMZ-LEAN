@@ -1,0 +1,18 @@
+{
+  "problem_id": "corollary-25",
+  "english_title": "Corollary 2.5",
+  "statement_en": "If $f \\in C(\\mathbb{T}\\to \\mathbb{C})$, then $f$ can be uniformly approximated by polynomials on $\\mathbb{T}$.",
+  "difficulty": "medium",
+  "domain": "Fourier analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem unitCircle_uniform_polynomial_approx\n    (f : C({z : ℂ // ‖z‖ = 1}, ℂ)) :\n    ∀ ε : ℝ, ε > 0 → ∃ p : Polynomial ℂ, ∀ z : {w : ℂ // ‖w‖ = 1}, ‖f z - p.eval z.1‖ < ε := by\n  sorry"
+}

@@ -1,0 +1,37 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Application type mismatch: The argument\n  hfz\nhas type\n  z ≠ z0\nbut is expected to have type\n  f z = 0\nin the application\n  ⟨hWU ?m.165, hfz⟩",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_cbbd9afe8b.lean",
+      "line": 22,
+      "column": 23,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hfz\nhas type\n  z ≠ z0\nbut is expected to have type\n  f z = 0\nin the application\n  ⟨hWU ?m.165, hfz⟩"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_cbbd9afe8b.lean",
+      "line": 23,
+      "column": 14,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hdist\nhas type\n  ‖z - z0‖ < ε\nbut is expected to have type\n  z ∈ Metric.ball z0 ε\nin the application\n  hε hdist"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_cbbd9afe8b.lean",
+      "line": 26,
+      "column": 6,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hU_connected\nhas type\n  IsPreconnected U\nbut is expected to have type\n  AnalyticOnNhd ℂ f U\nin the application\n  AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq hU_connected\n"
+    }
+  ]
+}

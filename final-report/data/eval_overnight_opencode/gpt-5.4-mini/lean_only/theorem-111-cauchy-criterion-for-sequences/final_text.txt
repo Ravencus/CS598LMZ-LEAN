@@ -1,0 +1,13 @@
+I’m loading the Lean workflow and will start by checking the theorem shape against Mathlib before iterating on the proof.
+I’m checking which completeness and Cauchy lemmas Mathlib exposes so I can use the shortest proof rather than re-deriving the limit machinery.
+I’ve narrowed it to the standard metric-space route: show the forward direction by triangle inequality, and the reverse by turning the hypothesis into a Cauchy sequence and invoking completeness of `ℝ`. Now I’m probing the exact lemma names for the completeness step.
+The first attempt exposed two concrete issues: `CauchySeq` is not the right shape to prove by `intro`, and the completeness lemma name I guessed was wrong. I’m switching to the metric-space `CauchySeq` characterization and probing the exact convergence theorem next.
+The theorem is false as stated.
+
+Counterexample:
+- `xSeq n = 0` for all `n`
+- `x = 1`
+
+Then the right-hand side holds (the sequence is Cauchy), but `xSeq` does not tend to `1`.
+
+A corrected version would need to quantify the limit existentially, or include `x` in the Cauchy-style condition.

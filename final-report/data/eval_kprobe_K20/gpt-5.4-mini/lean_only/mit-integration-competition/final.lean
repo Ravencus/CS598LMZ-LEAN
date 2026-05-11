@@ -1,0 +1,5 @@
+import Mathlib
+#check intervalIntegral.integral_comp_mul_left
+#check intervalIntegral.integral_comp_mul_right
+#check intervalIntegral.integral_add_adjacent_intervals
+#check intervalIntegral.integral_comp_sub_right

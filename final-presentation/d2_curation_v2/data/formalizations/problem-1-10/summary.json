@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-1-10",
+  "english_title": "Problem 1",
+  "statement_en": "Prove that on a $\\sigma$-finite measure space $(\\Omega,\\mathcal{F},\\mu)$, if $f$ is a nonnegative measurable function and $\\int_E f\\,d\\mu=0$ for a measurable set $E$ with positive measure, then $f=0$ almost everywhere on $E$.",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "invalid binder annotation, type is not a class instance\n  ?m.4\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  Ω\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem ae_zero_of_nonneg_measurable_lintegral_zero\n    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}\n    {f : Ω → ℝ} {E : Set Ω}\n    (hf_meas : Measurable f)\n    (hf_nonneg : ∀ x, 0 ≤ f x)\n    (hE_meas : MeasurableSet E)\n    (hE_pos : 0 < μ E)\n    (h_int_zero : ∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0) :\n    ∀ᵐ x ∂μ.restrict E, f x = 0 := by\n  sorry"
+}

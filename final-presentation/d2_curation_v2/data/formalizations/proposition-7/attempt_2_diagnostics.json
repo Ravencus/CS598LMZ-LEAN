@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_57b99b58135e.lean",
+      "line": 7,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown identifier `Measure.restrict`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_57b99b58135e.lean",
+      "line": 7,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown identifier `Measure.restrict`\n"
+    }
+  ]
+}

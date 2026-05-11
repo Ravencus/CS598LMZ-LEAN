@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-3",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#1",
+  "english_title": "Problem 0",
+  "statement_en": "a. Prove that the sequence $$S_N:=\\sum_{n=0}^{N}\\frac{1}{n!}$$ has a limit.\nb. Assuming $S_N\\to e$, prove that $$e=3-\\sum_{n\\geq 0}\\frac{1}{(n+1)(n+2)(n+2)!}$$\nc. Use the above to give a more efficient way to approximate the limit $e$ of $S_N$ (including error analysis).",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "convergence of series via partial sums",
+    "series transformation",
+    "error estimation"
+  ],
+  "prerequisites": [
+    "sequences and limits",
+    "infinite series",
+    "factorials and telescoping manipulations"
+  ],
+  "callout_body": "a. 证明序列$$S_N:=\\sum_{n=0}^{N}\\frac{1}{n!}$$存在极限。\nb. 假设$S_N\\to e$，那么证明$$e=3-\\sum_{n\\geq 0}\\frac{1}{(n+1)(n+2)(n+2)!}$$\nc. 由上面给出近似计算$S_N$的极限$e$的更高效的方式(误差分析)。"
+}

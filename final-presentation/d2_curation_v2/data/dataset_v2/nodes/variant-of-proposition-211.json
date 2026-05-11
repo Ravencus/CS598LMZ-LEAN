@@ -1,0 +1,23 @@
+{
+  "id": "variant-of-proposition-211",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#13",
+  "english_title": "Variant of Proposition 2.1.1",
+  "statement_en": "Let $f:[1,+\\infty)$ be unbounded, and suppose its derivative satisfies $f'(x)>0$ and decreases to $0$. Then the sequence $f(n)$ is dense modulo $1$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "key_techniques": [
+    "fractional parts of function values",
+    "mean value estimate",
+    "monotone derivative tending to zero"
+  ],
+  "prerequisites": [
+    "differentiable functions",
+    "mean value theorem",
+    "density modulo 1"
+  ],
+  "callout_body": "函数$f:[1,+\\infty)$无界，其微分满足$f'(x)>0$并且$f'(x)$减少到0，那么序列$f(n)$模1稠密。"
+}

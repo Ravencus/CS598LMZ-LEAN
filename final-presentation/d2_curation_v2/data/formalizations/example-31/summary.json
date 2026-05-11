@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-31",
+  "english_title": "Example 3.1",
+  "statement_en": "Define the arithmetic function $$P_{\\alpha}(n)=\\sum_{d|n} \\sin(2\\pi d\\alpha),$$ where $\\alpha\\not\\in \\mathbb{Z}$. Find the limit $$\\lim_{N\\to \\infty} \\frac{1}{N}\\sum_{n\\leq N} P_{\\alpha}(n).$$",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.sin', which is 'noncomputable'"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ndef PAlpha (α : ℝ) (n : ℕ) : ℝ :=\n  Finset.sum n.divisors (fun d => Real.sin (2 * Real.pi * (d : ℝ) * α))\n\ntheorem arithmetic_average_PAlpha_tendsto_zero\n    (α : ℝ) (hα : ¬ ∃ z : ℤ, α = (z : ℝ)) :\n    Filter.Tendsto\n      (fun N : ℕ =>\n        ((1 : ℝ) / (N : ℝ)) * Finset.sum (Finset.Icc 1 N) (fun n => PAlpha α n))\n      Filter.atTop\n      (Filter.nhds 0) := by\n  sorry"
+}

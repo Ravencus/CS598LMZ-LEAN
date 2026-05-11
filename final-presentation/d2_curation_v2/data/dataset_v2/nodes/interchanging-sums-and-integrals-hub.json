@@ -1,0 +1,34 @@
+{
+  "id": "interchanging-sums-and-integrals-hub",
+  "type": "hub",
+  "source_note": "和与积分换序",
+  "english_source_note": "Interchanging Sums and Integrals",
+  "is_top3": true,
+  "note_degree": 18,
+  "strategies": [
+    {
+      "callout_id": "和与积分换序#1",
+      "english_title": "Core Idea 0",
+      "strategy_name_en": "Rewrite and interchange summation and integration",
+      "summary_en": "When a sum or integral is hard to evaluate directly, rewrite the integrand or summand itself as a new sum or integral. Then interchange the two operations and check whether the new expression is easier to compute or estimate.",
+      "applicability": "Applies when the target quantity can be expanded into a series or represented by another integral, and the exchanged order leads to simpler inner sums or integrals.",
+      "callout_body": "1. 如果我们有一个求和/积分问题，比如$\\sum X$这个和或$\\int X$这个积分是难以处理的，\n2. 此时我们又发现我们可以把$X$写成一个新的和或者积分，$X=\\sum Y$或者$X =\\int Y$那么此时我们得到了:\n$$\\sum \\sum Y \\text{ or }\\sum \\int Y\\text{ or } \\int \\sum Y \\text{ or }\\int \\int Y$$\n3. 交换二者的次序，试试看交换以后的结果会不会更好。简单来说就是给目标对象换一个表达方式，并且期望这个新的表达比原本的表达在当前状况下更好处理。"
+    },
+    {
+      "callout_id": "和与积分换序#3",
+      "english_title": "Idea 3.1.1",
+      "strategy_name_en": "Expand one factor and reduce to moments",
+      "summary_en": "For an integral of the form \\(\\int f(x)g(x)\\,dx\\), expand \\(g(x)=\\sum a_n x^n\\) and interchange summation and integration to obtain \\(\\sum a_n \\int f(x)x^n\\,dx\\). The method is useful when the moments of \\(f\\) are explicit or easy to estimate and the resulting series is manageable.",
+      "applicability": "Applies when one factor admits a power series expansion and the moment integrals \\(\\int f(x)x^n\\,dx\\) are known, computable, or well estimated.",
+      "callout_body": "此时我们展开无非就是得到：$$\\int f(x)g(x) = \\int f(x)\\sum a_n x^n = \\sum a_n\\int f(x)x^n$$无论是计算积分还是做积分估计，我们需要保证两点：\n1. $f$的n次矩，也就是$b_n:=\\int f(x)x^n$对我们而言是简单的（已知，好算，好估计）\n2. $\\sum a_n b_n$对我们来说是简单的（已知，好算，好估计）"
+    },
+    {
+      "callout_id": "和与积分换序#4",
+      "english_title": "Idea 3.1.2",
+      "strategy_name_en": "Expand after a change of variable or auxiliary substitution",
+      "summary_en": "Instead of expanding \\(g(x)\\) directly, rewrite it as \\(h(u(x))\\), expand \\(h\\) into a series, and then interchange summation and integration. This shifts attention from ordinary moments to generalized moments such as \\(\\int f(x)u(x)^n\\,dx\\).",
+      "applicability": "Applies when the original integrand is not naturally expandable in \\(x\\), but becomes suitable for series expansion after introducing a transformed variable or auxiliary function.",
+      "callout_body": "有时候，展开未必是直接对$g$进行展开，而是$$\\int f(x)g(x)=\\int f(x)h(u)$$其中$h(u)=g(x)$。然后我们是对$h(u)$进行展开，从而得到$$\\int f(x)h(u)=\\int f(x)\\sum a_n u^n = \\sum a_n \\int f(x)u^n(x)$$也就是说，我们也不能只是关注那些普通的$n$次矩好算的函数$f$，也要关注对于一些特殊的n次矩$\\int f(x)u^n(x)$优化的函数。"
+    }
+  ]
+}

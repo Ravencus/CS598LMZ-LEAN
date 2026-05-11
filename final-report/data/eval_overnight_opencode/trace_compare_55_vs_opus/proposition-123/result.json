@@ -1,0 +1,11 @@
+{
+  "problem_id": "proposition-123",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "none",
+  "evidence": "Both traces use induction from N ≥ 2, split the range sum with Finset.sum_range_succ, split the Icc sum at the top endpoint, and close the step with the same local rational factorial correction identity.",
+  "wall_seconds": 7.01
+}

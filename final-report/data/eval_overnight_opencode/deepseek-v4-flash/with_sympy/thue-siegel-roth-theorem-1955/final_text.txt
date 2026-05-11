@@ -1,0 +1,3 @@
+Let me check for any existing lemma on `IsAlgebraic` about irrationality measure.
+Let me look at some existing attempts for inspiration.
+Let me look at the LiouvilleWith and algebraic number theory results more carefully.

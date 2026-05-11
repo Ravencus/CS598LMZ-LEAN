@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_cd589ef6e1f0.lean",
+      "line": 5,
+      "column": 35,
+      "severity": "error",
+      "message": "expected ';' or line break\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_cd589ef6e1f0.lean",
+      "line": 5,
+      "column": 35,
+      "severity": "error",
+      "message": "expected ';' or line break\n"
+    }
+  ]
+}

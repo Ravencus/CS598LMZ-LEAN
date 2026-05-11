@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_8cbb5b5507f6.lean",
+      "line": 10,
+      "column": 44,
+      "severity": "error",
+      "message": "Function expected at\n  |α - ↑p' / ↑q'|\nbut this term has type\n  ℝ\n\nNote: Expected a function because this term is being applied to the argument\n  constant"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_8cbb5b5507f6.lean",
+      "line": 12,
+      "column": 39,
+      "severity": "error",
+      "message": "unexpected token ':'; expected command"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_8cbb5b5507f6.lean",
+      "line": 16,
+      "column": 30,
+      "severity": "error",
+      "message": "Function expected at\n  IsDenominatorOfSomeConvergent\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `IsDenominatorOfSomeConvergent` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_8cbb5b5507f6.lean",
+      "line": 10,
+      "column": 44,
+      "severity": "error",
+      "message": "Function expected at\n  |α - ↑p' / ↑q'|\nbut this term has type\n  ℝ\n\nNote: Expected a function because this term is being applied to the argument\n  constant"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_8cbb5b5507f6.lean",
+      "line": 12,
+      "column": 39,
+      "severity": "error",
+      "message": "unexpected token ':'; expected command"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_8cbb5b5507f6.lean",
+      "line": 16,
+      "column": 30,
+      "severity": "error",
+      "message": "Function expected at\n  IsDenominatorOfSomeConvergent\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `IsDenominatorOfSomeConvergent` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ]
+}

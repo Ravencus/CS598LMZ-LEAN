@@ -1,0 +1,23 @@
+{
+  "id": "translation-formula",
+  "type": "problem",
+  "source_note": "实分析的复办法",
+  "english_source_note": "Complex Methods in Real Analysis",
+  "callout_id": "实分析的复办法#7",
+  "english_title": "Translation Formula",
+  "statement_en": "If $f \\in \\mathscr{F}_a$, then for any complex number $\\omega \\in S_a$, the Fourier transform of the function $x\\mapsto f(x-\\omega)$ is $$\\xi\\mapsto e^{-2\\pi i \\xi \\omega }\\widehat{f}(\\xi).$$",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "translation property of the Fourier transform",
+    "complex shift in a strip",
+    "Fourier inversion"
+  ],
+  "prerequisites": [
+    "Fourier transform",
+    "holomorphic extension",
+    "translation invariance"
+  ],
+  "callout_body": "如果$f \\in \\mathscr{F}_a$那么对于任意的带状区域当中的复数$\\omega \\in S_a$函数$x\\mapsto f(x-\\omega)$的傅里叶变换为$$\\xi\\mapsto e^{-2\\pi i \\xi \\omega }\\widehat{f}(\\xi)$$"
+}

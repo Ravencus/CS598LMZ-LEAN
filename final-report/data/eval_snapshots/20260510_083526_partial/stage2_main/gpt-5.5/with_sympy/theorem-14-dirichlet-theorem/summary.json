@@ -1,0 +1,58 @@
+{
+  "problem_id": "theorem-14-dirichlet-theorem",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 54.7,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 16.82,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown identifier `exists_nat_pos_mul_sub_int_lt`"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 17.17,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `exists_nat_pos_mul_sub_int_lt`: The environment does not contain `Function.exists_nat_pos_mul_sub_int_lt`, so it is not possible to project the field `exists_nat_pos_mul_sub_int_lt` fro"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 13.76,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Irrational.exists_nat_pos_mul_sub_int_lt`\n"
+    }
+  ]
+}

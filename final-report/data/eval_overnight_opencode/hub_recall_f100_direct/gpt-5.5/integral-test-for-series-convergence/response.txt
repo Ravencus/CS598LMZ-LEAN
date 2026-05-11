@@ -1,0 +1,5 @@
+["integral-estimates-for-sums-hub", "term-by-term-estimates-hub", "piecewise-estimates-hub", "basic-methods-in-analysis-i-hub"]
+- integral-estimates-for-sums-hub: The proof is the classical integral test, comparing the discrete sum of a monotone function with integrals over adjacent unit intervals.
+- term-by-term-estimates-hub: Each summand `f n` is bounded above or below by the integral of `f` on a neighboring interval, then these inequalities are summed.
+- piecewise-estimates-hub: The improper integral is split into unit intervals, and monotonicity gives simple upper/lower bounds on each piece.
+- basic-methods-in-analysis-i-hub: The argument reduces convergence of the infinite objects to finite partial sums and finite interval integrals, then passes to the limit.

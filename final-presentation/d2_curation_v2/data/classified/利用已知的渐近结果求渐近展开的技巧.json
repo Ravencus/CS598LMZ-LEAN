@@ -1,0 +1,31 @@
+{
+  "note_title": "利用已知的渐近结果求渐近展开的技巧",
+  "is_hub": false,
+  "in_subset_via": [
+    "分析学基本方法目录1",
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "利用已知的渐近结果求渐近展开的技巧#1",
+      "type": "tip",
+      "title": "核心想法",
+      "body": "当我们需要在指定的误差$O(g(n))$下对和或者积分$A_n$做渐近展开的时候，如果我们已经知道$A_n'$的在指定误差$O(g(n))$下的渐近展开（或者$A_n'$的渐近展开非常容易得到），并且同时可以确认$$A_n-A_n'=O(g(n))$$那么$A_n$的渐近展开和$A_n'$的渐近展开是一致的，从而得到$A_n$的渐近展开。",
+      "position_char": 38,
+      "position_line": 6,
+      "classification_result": {
+        "id": "利用已知的渐近结果求渐近展开的技巧#1",
+        "classification": "strategy_template",
+        "english_title": "Core Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Deriving an Asymptotic Expansion from a Known Nearby Quantity",
+          "summary_en": "To obtain an asymptotic expansion of a sum or integral $A_n$ up to error $O(g(n))$, it suffices to find another quantity $A_n'$ whose asymptotic expansion to the same error is known or easy to compute, and then verify that $A_n - A_n' = O(g(n))$. In that case, $A_n$ and $A_n'$ have the same asymptotic expansion at that level of precision.",
+          "applicability": "Applies when the target quantity is hard to expand directly, but can be approximated by a related quantity with a known or easily derived asymptotic expansion, with the difference controlled by the desired error term."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"利用已知的渐近结果求渐近展开的技巧#1\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Core Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Deriving an Asymptotic Expansion from a Known Nearby Quantity\",\n      \"summary_en\": \"To obtain an asymptotic expansion of a sum or integral $A_n$ up to error $O(g(n))$, it suffices to find another quantity $A_n'$ whose asymptotic expansion to the same error is known or easy to compute, and then verify that $A_n - A_n' = O(g(n))$. In that case, $A_n$ and $A_n'$ have the same asymptotic expansion at that level of precision.\",\n      \"applicability\": \"Applies when the target quantity is hard to expand directly, but can be approximated by a related quantity with a known or easily derived asymptotic expansion, with the difference controlled by the desired error term.\"\n    }\n  }\n]",
+  "classified": true
+}

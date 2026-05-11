@@ -1,0 +1,23 @@
+{
+  "id": "lemma-32",
+  "type": "problem",
+  "source_note": "关于序列极限的公开问题",
+  "english_source_note": "Open Problems on Sequence Limits",
+  "callout_id": "关于序列极限的公开问题#8",
+  "english_title": "Lemma 3.2",
+  "statement_en": "Let $G(x):I\\to \\mathbb{R}$ be a differentiable convex function, and let $r_n\\in I$ be a sequence. Then $$\\Delta^2 G(r_n)\\geq G'(r_{n+1})\\Delta^2 r_n.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "convexity",
+    "finite difference inequalities",
+    "mean value type arguments"
+  ],
+  "prerequisites": [
+    "convex functions",
+    "differentiability",
+    "finite differences"
+  ],
+  "callout_body": "令$G(x):I\\to \\mathbb{R}$是凸函数,并且可微,序列$r_n\\in I$,则$$\\Delta^2 G(r_n)\\geq G'(r_{n+1})\\Delta^2 r_n$$"
+}

@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "problem-5-2",
+  "big_outcome": "lean_proof",
+  "small_outcome": "no_final_proof",
+  "label": "different_plan",
+  "evidence": "BIG tried Lean-side proof search/workarounds (`unsafeCast`, `apply?`, `aesop`, `exact?`) and ultimately submitted `apply?`. SMALL made no MCP calls and instead rejected the theorem as mathematically false.",
+  "wall_seconds": 6.96
+}

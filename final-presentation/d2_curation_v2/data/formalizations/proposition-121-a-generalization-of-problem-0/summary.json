@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-121-a-generalization-of-problem-0",
+  "english_title": "Proposition 1.2.1: A Generalization of Problem 0",
+  "statement_en": "Let $$P(n):=a_dn^d+a_{d-1}n^{d-1}+\\cdots+a_1 n +a_0\\in \\mathbb{R}[n],\\ d\\geq 2,$$ be a polynomial of degree at least $2$ such that at least one of the coefficients $a_d,\\ldots,a_2$ is irrational. Let $F:\\mathbb{T}\\to \\mathbb{C}$ have an absolutely convergent Fourier series and satisfy $$\\int_{\\mathbb{T}} F=0.$$ Then the sequence $$S_N(F):=\\sum_{n=1}^{N}F\\circ P(n)$$ is unbounded.",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Real.Angle.ofReal`"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to synthesize instance of type class\n  Semiring Real.Angle\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen scoped BigOperators\nopen MeasureTheory\n\ndef HasAbsolutelyConvergentFourierSeries (F : Real.Angle → ℂ) : Prop :=\n  ∃ c : ℤ → ℂ, Summable (fun n => ‖c n‖)\n\ndef polynomialOrbitSum (P : Polynomial ℝ) (F : Real.Angle → ℂ) (N : ℕ) : ℂ :=\n  Finset.sum (Finset.Icc 1 N) (fun n => F (P.eval (n : ℝ)))\n\ntheorem polynomial_orbit_sums_unbounded\n    [MeasurableSpace Real.Angle]\n    (P : Polynomial ℝ) (F : Real.Angle → ℂ) (μ : Measure Real.Angle)\n    (hdeg : 2 ≤ P.natDegree)\n    (hirr : ∃ k : ℕ, 2 ≤ k ∧ k ≤ P.natDegree ∧ Irrational (P.coeff k))\n    (hF : HasAbsolutelyConvergentFourierSeries F)\n    (h_int : ∫ x, F x ∂μ = 0) :\n    ∀ C : ℝ, ∃ N : ℕ, C < ‖polynomialOrbitSum P F N‖ := by\n  sorry"
+}

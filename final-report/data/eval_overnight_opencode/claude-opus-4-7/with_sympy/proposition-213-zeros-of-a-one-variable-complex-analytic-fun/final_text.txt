@@ -1,0 +1,71 @@
+I'll work on this theorem about isolated zeros of holomorphic functions. Let me start by exploring the relevant Mathlib lemmas.
+Let me think about this problem. The isolated zeros theorem for holomorphic functions is a classical result in complex analysis. In Mathlib, there should be lemmas like `AnalyticOn.eventually_eq_zero_or_eventually_ne_zero` or similar.
+
+Key Mathlib facts I expect to need:
+- `DifferentiableOn.analyticOnNhd` (or similar) to convert differentiable to analytic
+- `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero` — the key dichotomy
+- Or: `AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero` — identity theorem
+
+The strategy:
+1. f is analytic on U (since differentiable on open set in ℂ)
+2. Since f is not identically zero on connected U, the set of zeros has no accumulation point (by identity theorem / principle of isolated zeros)
+3. Therefore z0 is isolated as a zero
+
+Let me search for the right lemma names.
+All four lemmas exist. Now let me check their exact signatures.
+I need to see the actual signatures. Let me try a different approach - use `example` statements to probe them.
+Excellent! The dichotomy works. Now `h3 : (∀ᶠ z in nhds z0, f z = 0) ∨ (∀ᶠ z in nhds z0, f z ≠ 0)`.
+
+Strategy:
+- Get `AnalyticOnNhd ℂ f U` from `DifferentiableOn`
+- At z0, get the dichotomy
+- If `∀ᶠ z in nhds z0, f z = 0`, then by identity theorem f = 0 on U, contradicting `hf_nonzero`
+- Otherwise `∀ᶠ z in nhds z0, f z ≠ 0`, which gives us the open ball where z0 is the only zero
+
+Let me work out the proof. For the identity theorem direction, I'll need `AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero`. Let me also probe its signature.
+The dichotomy is: `(∀ᶠ z in nhds z0, f z = 0) ∨ (∀ᶠ z in nhdsWithin z0 {z0}ᶜ, f z ≠ 0)`. The "nonzero" filter is punctured nhds. Good — this is actually exactly what we need. Let me fix the proof.
+
+`nhdsWithin z0 {z0}ᶜ` is punctured nhds. Eventually means: ∃ a nhds V of z0 in U such that ∀ z ∈ V \ {z0}, f z ≠ 0.
+
+Let me use `Metric.eventually_nhdsWithin_iff` or unpack it directly.
+Empty diagnostics but failure? That's odd. Probably a hidden issue. Let me retry with more careful structure - maybe `Metric.eventually_nhdsWithin_iff` doesn't exist or has different form.
+Only a warning! Wait - exit_code 1 but only a warning? Let me check — maybe the `#check` lines are erroring but rest is fine. Actually the issue is probably that one of the `#check`s failed (e.g., `Metric.eventually_nhdsWithin_iff` doesn't exist) but the error isn't shown clearly. But the example with `eventually_nhdsWithin_iff` (without Metric prefix) worked since there's just one warning.
+
+Let me remove the `#check` lines that might be failing and test the actual proof.
+The proof compiles successfully with only unused variable warnings (which are expected and harmless).
+
+**Summary:**
+- **Strategy:** Use the analyticity of `f` on the open set `U` (via `DifferentiableOn.analyticOnNhd`), then apply the local dichotomy at `z0`: either `f` is eventually zero in a neighborhood (forcing `f ≡ 0` on connected `U` by the identity theorem, contradicting `hf_nonzero`), or `f` is eventually nonzero on the punctured neighborhood (which gives the required isolating disk).
+- **Key lemmas:** `DifferentiableOn.analyticOnNhd`, `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero`, `AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero`, `eventually_nhdsWithin_iff`, `Metric.eventually_nhds_iff`.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  have hAn : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hAt : AnalyticAt ℂ f z0 := hAn z0 hz0U
+  rcases hAt.eventually_eq_zero_or_eventually_ne_zero with hzero | hnz
+  · exfalso
+    apply hf_nonzero
+    exact hAn.eqOn_zero_of_preconnected_of_eventuallyEq_zero hU_connected hz0U hzero
+  · have hnz' : ∀ᶠ z in nhds z0, z ≠ z0 → f z ≠ 0 := by
+      rw [eventually_nhdsWithin_iff] at hnz
+      exact hnz
+    rw [Metric.eventually_nhds_iff] at hnz'
+    obtain ⟨r, hr_pos, hball⟩ := hnz'
+    refine ⟨r, hr_pos, ?_⟩
+    intro z _hzU hzdist hfz
+    by_contra hne
+    have hd : dist z z0 < r := by rw [dist_eq_norm]; exact hzdist
+    exact (hball hd hne) hfz
+```

@@ -1,0 +1,30 @@
+{
+  "problem_id": "weyl-criterion",
+  "english_title": "Weyl Criterion",
+  "statement_en": "If $s_n$ is equidistributed on the closed interval $[a,b]$, then\n$$\\frac{1}{N}\\sum_{n=1}^{N}f(s_n)\\to\n\\frac{1}{b-a}\\int_{a}^{b}f(x)dx$$\nfor every continuous function $f$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef EquidistributedOnClosedInterval (s : ℕ → ℝ) (a b : ℝ) : Prop :=\n  ∀ ⦃f : ℝ → ℝ⦄, Continuous f →\n    Filter.Tendsto\n      (fun N : ℕ => (1 / (N : ℝ)) * (∑ n ∈ Finset.Icc 1 N, f (s n)))\n      Filter.atTop\n      (Filter.nhds ((1 / (b - a)) * (∫ x in a..b, f x)))\n\ntheorem equidistributedOnClosedInterval_average_tendsto_integral\n    {s : ℕ → ℝ} {a b : ℝ}\n    (hs : EquidistributedOnClosedInterval s a b) :\n    ∀ ⦃f : ℝ → ℝ⦄, Continuous f →\n      Filter.Tendsto\n        (fun N : ℕ => (1 / (N : ℝ)) * (∑ n ∈ Finset.Icc 1 N, f (s n)))\n        Filter.atTop\n        (Filter.nhds ((1 / (b - a)) * (∫ x in a..b, f x))) := by\n  sorry"
+}

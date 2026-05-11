@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-21",
+  "english_title": "Example 2.1",
+  "statement_en": "Let $a_n:=(-1)^n$. Then its partial sums are $$S_n:=\\begin{cases}1&n\\text{ is even}\\\\0&n\\text{ is odd}\\end{cases}$$ so $S_n$ does not converge. However, this sequence is Cesaro summable, because $$\\sigma_N:=\\frac{S_0+\\cdots+S_{N-1}}{N}=\\frac{\\lfloor\\frac{N}{2}+1\\rfloor}{N}$$ and its limit is $\\frac{1}{2}$.",
+  "difficulty": "easy",
+  "domain": "Fourier analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    }
+  ],
+  "final_code": "import Mathlib\nopen scoped BigOperators\n\ndef a (n : ℕ) : ℝ := (-1 : ℝ) ^ n\n\ndef S (n : ℕ) : ℝ := Finset.sum (Finset.range (n + 1)) a\n\ndef sigma (N : ℕ) : ℝ :=\n  if h : N = 0 then\n    0\n  else\n    Finset.sum (Finset.range N) S / (N : ℝ)\n\ntheorem alternatingSequenceCesaroSummable :\n    (∀ n : ℕ, S n = if Even n then 1 else 0) ∧\n    (¬ ∃ l : ℝ, Filter.Tendsto S Filter.atTop (Filter.nhds l)) ∧\n    (∀ N : ℕ, N ≠ 0 → sigma N = ((Int.floor ((N : ℝ) / 2 + 1) : ℝ) / (N : ℝ))) ∧\n    Filter.Tendsto sigma Filter.atTop (Filter.nhds (1 / 2 : ℝ)) := by\n  sorry"
+}

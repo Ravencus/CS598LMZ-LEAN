@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 209.5,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 118.71,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Invalid field `isolatedZeros`: The environment does not contain `Function.isolatedZeros`, so it is not possible to project the field `isolatedZeros` from an expression\n  hanalytic\nof type\n  ∀ x ∈ U, A"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 42.52,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `AnalyticOn.isolatedZeros`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 41.24,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `isolatedZeros`: The environment does not contain `Function.isolatedZeros`, so it is not possible to project the field `isolatedZeros` from an expression\n  hU_connected\nof type\n  ∀ (u v "
+    }
+  ]
+}

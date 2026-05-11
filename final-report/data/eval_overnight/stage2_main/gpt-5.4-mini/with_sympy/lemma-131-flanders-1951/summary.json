@@ -1,0 +1,58 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 425.2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 156.67,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 12,
+      "first_error": "`simp` made no progress"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 123.51,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "Invalid alternative name `X`: Expected `monomial`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 136.97,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 6,
+      "first_error": "unsolved goals\ncase C.a\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA✝ B✝ A B : Matrix n n ℂ\nc : ℂ\ni j : n\n⊢ ∑ j_1, B i j_1 * (algebraMap ℂ (Matrix n n ℂ)) c j_1 j = ∑ x, B x j * (algebraMap"
+    }
+  ]
+}

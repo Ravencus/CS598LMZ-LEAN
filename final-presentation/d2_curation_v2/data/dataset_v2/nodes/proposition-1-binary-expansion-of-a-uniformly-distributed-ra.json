@@ -1,0 +1,23 @@
+{
+  "id": "proposition-1-binary-expansion-of-a-uniformly-distributed-ra",
+  "type": "problem",
+  "source_note": "对自变量进行二进制展开求积分",
+  "english_source_note": "Integrating via Binary Expansion of the Variable",
+  "callout_id": "对自变量进行二进制展开求积分#3",
+  "english_title": "Proposition 1: Binary Expansion of a Uniformly Distributed Random Variable",
+  "statement_en": "Let \\\\(X_1,X_2,\\\\dots\\\\) be random variables on a probability space \\\\((\\\\Omega,\\\\mathcal F,P)\\\\), and define $$Y(\\\\omega):=\\\\sum_{n\\\\geq 1}\\\\frac{X_n(\\\\omega)}{2^n}.$$ Then: 1. If \\\\(X_k\\\\sim U(\\\\{0,1\\\\})\\\\) are independent and identically distributed, then \\\\(Y\\\\sim U(0,1)\\\\). 2. Conversely, if \\\\(Y\\\\sim U(0,1)\\\\), then the binary digits \\\\(X_k\\\\) form an independent and identically distributed sequence with \\\\(X_k\\\\sim U(\\\\{0,1\\\\})\\\\).",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "binary digit expansion",
+    "distribution function argument",
+    "independence of Bernoulli digits"
+  ],
+  "prerequisites": [
+    "uniform distribution",
+    "independent random variables",
+    "binary expansions of real numbers"
+  ],
+  "callout_body": "令$X_1,...,X_n,...$是概率空间$(\\Omega,\\mathcal{F},P)$当中的一列随机变量，定义$$Y(\\omega):=\\sum_{n\\geq 1}\\frac{X_n(\\omega)}{2^n}$$那么\n1. 如果$X_k \\sim U(\\{0,1\\})$是一列独立同分布的随机变量,那么$Y\\sim U(0,1)$是一个均匀分布的随机变量。\n3. 如果$Y\\sim U(0,1)$那么$X_k\\sim$是一列独立同分布的且满足$X_k \\sim U(\\{0,1\\})$的随机变量。"
+}

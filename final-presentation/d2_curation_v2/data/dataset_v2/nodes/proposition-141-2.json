@@ -1,0 +1,22 @@
+{
+  "id": "proposition-141-2",
+  "type": "problem",
+  "source_note": "Riemann - Lebesgue lemma的证明",
+  "english_source_note": "Proof of the Riemann-Lebesgue Lemma",
+  "callout_id": "Riemann - Lebesgue lemma的证明#2",
+  "english_title": "Proposition 1.4.1",
+  "statement_en": "Let $f \\in L^1(\\mathbb{R}^n)$ and for any $a\\in \\mathbb{R}^n$ define $T_a(f):=f(x-a)$. Then $$\\|T_{a+h}(f)-T_a(f)\\|_{L^1} \\to 0$$ as $\\|h\\| \\to 0$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "continuity of translations in $L^1$",
+    "approximation of $L^1$ functions by continuous compactly supported functions"
+  ],
+  "prerequisites": [
+    "$L^1(\\mathbb{R}^n)$ spaces",
+    "translation operators",
+    "density arguments in $L^1$"
+  ],
+  "callout_body": "$f \\in L^1(\\mathbb{R}^n)$对任意$a\\in \\mathbb{R}^n$定义$T_a(f):=f(x-a)$，那么$$||T_{a+h}(f)-T_a(f)||_{L^1} \\to 0$$当$||h|| \\to 0$。"
+}

@@ -1,0 +1,51 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 5,
+  "first_error": "expected token",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_4d57a29edc.lean",
+      "line": 15,
+      "column": 76,
+      "severity": "error",
+      "message": "expected token"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_4d57a29edc.lean",
+      "line": 13,
+      "column": 17,
+      "severity": "error",
+      "message": "Unknown constant `MeasureTheory.lintegral_eq_zero_iff.mp`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_4d57a29edc.lean",
+      "line": 15,
+      "column": 73,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  LE Type\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_4d57a29edc.lean",
+      "line": 15,
+      "column": 75,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  OfNat Type 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Type\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_4d57a29edc.lean",
+      "line": 11,
+      "column": 35,
+      "severity": "error",
+      "message": "unsolved goals\ncase hto\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : MeasureTheory.Measure Ω\nf : Ω → ℝ\nE : Set Ω\nhf_meas : Measurable f\nhf_nonneg : ∀ (x : Ω), 0 ≤ f x\nhE_meas : MeasurableSet E\nhE_pos : 0 < μ E\nh_int_zero : ∫⁻ (x : Ω) in E, ENNReal.ofReal (f x) ∂μ = 0\nhzero : ∀ᵐ (x : Ω) ∂μ.restrict E, ENNReal.ofReal (f x) = 0\nx : Ω\nhx : ENNReal.ofReal (f x) = 0\n⊢ (ENNReal.ofReal (f x)).toReal = sorry.toReal\n\ncase h\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : MeasureTheory.Measure Ω\nf : Ω → ℝ\nE : Set Ω\nhf_meas : Measurable f\nhf_nonneg : ∀ (x : Ω), 0 ≤ f x\nhE_meas : MeasurableSet E\nhE_pos : 0 < μ E\nh_int_zero : ∫⁻ (x : Ω) in E, ENNReal.ofReal (f x) ∂μ = 0\nhzero : ∀ᵐ (x : Ω) ∂μ.restrict E, ENNReal.ofReal (f x) = 0\nx : Ω\nhx : ENNReal.ofReal (f x) = 0\nhto : (ENNReal.ofReal (f x)).toReal = sorry.toReal\n⊢ f x = 0\n"
+    }
+  ]
+}

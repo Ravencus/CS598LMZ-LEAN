@@ -1,0 +1,58 @@
+{
+  "problem_id": "theorem-14-dirichlet-theorem",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 139.1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 73.15,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `exists_nat_mul_sub_int_lt`: The environment does not contain `Function.exists_nat_mul_sub_int_lt`, so it is not possible to project the field `exists_nat_mul_sub_int_lt` from an express"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 43.39,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Real.exists_nat_mul_sub_int_lt`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 15.53,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `exists_nat_mul_sub_int_lt`: The environment does not contain `Function.exists_nat_mul_sub_int_lt`, so it is not possible to project the field `exists_nat_mul_sub_int_lt` from an express"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "problem_id": "lemma-21",
+  "model": "claude-opus-4-7",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 124.9,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Unknown constant `Complex.sq_abs`",
+  "total_cost_usd": 0.43813,
+  "total_tokens": 264588,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_966f240b38.lean",
+      "line": 15,
+      "column": 14,
+      "severity": "error",
+      "message": "Unknown constant `Complex.sq_abs`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_966f240b38.lean",
+      "line": 30,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown identifier `pow_le_pow_left`\n"
+    }
+  ]
+}

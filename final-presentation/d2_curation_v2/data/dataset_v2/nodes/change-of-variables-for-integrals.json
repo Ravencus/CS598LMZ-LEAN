@@ -1,0 +1,21 @@
+{
+  "id": "change-of-variables-for-integrals",
+  "type": "problem",
+  "source_note": "Weierstrass逼近定理的概率途径证明",
+  "english_source_note": "A Probabilistic Proof of the Weierstrass Approximation Theorem",
+  "callout_id": "Weierstrass逼近定理的概率途径证明#9",
+  "english_title": "Change of Variables for Integrals",
+  "statement_en": "Let $(X,\\mathcal{A},\\mu)$ be a measure space, let $T:X\\to Y$ be measurable, let $T_{*}\\mu$ be the pushforward measure, and let $g$ be an integrable function on $Y$. Then\n$$\\int_{Y}g\\,d(T_{*}\\mu)=\\int_X g\\circ T\\,d\\mu.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "pushforward measures",
+    "change of variables in measure theory"
+  ],
+  "prerequisites": [
+    "measurable functions",
+    "Lebesgue integration"
+  ],
+  "callout_body": "设$(X,\\mathcal{A},\\mu)$是一个测度空间,$T:X\\to Y$是一个从$X$到集合$Y$的可测函数，$T_{*}\\mu$为pushforward测度，函数$g$是$Y$上的一个可积函数，那么$$\\int_{Y}g\\,d(T_{*}\\mu)=\\int_X g\\circ T\\,d\\mu$$"
+}

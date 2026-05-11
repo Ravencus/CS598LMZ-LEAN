@@ -1,0 +1,95 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: monotonicity-of-the-integral-1
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=17.32s    mcp_calls=2
+--- mcp call 1 (PASS) ---
+import Mathlib
+
+open MeasureTheory
+
+#check integral_mono_ae
+#check integral_mono
+#check setIntegral_mono_ae
+
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+open MeasureTheory
+
+theorem integral_ge_of_ae_ge
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}
+    (hf : Integrable f μ) (hg : Integrable g μ)
+    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :
+    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by
+  exact integral_mono_ae hg hf hfg
+
+--- final_text ---
+I’ll verify the relevant Mathlib monotonicity lemma first, then use it directly if its hypotheses match the theorem.
+The likely lemma is available. I’m checking the direct proof term against the exact theorem signature.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory
+
+theorem integral_ge_of_ae_ge
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}
+    (hf : Integrable f μ) (hg : Integrable g μ)
+    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :
+    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by
+  exact integral_mono_ae hg hf hfg
+```
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: lean_proof    wall=10.74s    mcp_calls=1
+--- mcp call 1 (PASS) ---
+import Mathlib
+
+open MeasureTheory
+
+theorem integral_ge_of_ae_ge
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}
+    (hf : Integrable f μ) (hg : Integrable g μ)
+    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :
+    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by
+  exact integral_mono_ae hg hf hfg
+
+--- final_text ---
+I'll work on this theorem. The key is to use `MeasureTheory.integral_mono_ae` from Mathlib.
+Compiled on first try.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory
+
+theorem integral_ge_of_ae_ge
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}
+    (hf : Integrable f μ) (hg : Integrable g μ)
+    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :
+    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by
+  exact integral_mono_ae hg hf hfg
+```
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

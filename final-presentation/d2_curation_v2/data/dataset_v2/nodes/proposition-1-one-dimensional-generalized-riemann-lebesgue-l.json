@@ -1,0 +1,25 @@
+{
+  "id": "proposition-1-one-dimensional-generalized-riemann-lebesgue-l",
+  "type": "problem",
+  "source_note": "广义的Riemann - Lebesgue lemma",
+  "english_source_note": "Generalized Riemann-Lebesgue Lemma",
+  "callout_id": "广义的Riemann - Lebesgue lemma#1",
+  "english_title": "Proposition 1: One-Dimensional Generalized Riemann-Lebesgue Lemma",
+  "statement_en": "Let $f \\in L^{1}([a,b])$, and let $g$ be a measurable bounded periodic function with period $T$. Then\n$$\\lim_{n\\to +\\infty}\\int_{[a,b]} f(x)g(nx)\\, dx =\\left(\\frac{1}{T}\\int_{[0,T)}g(x)\\,dx\\right)\\left(\\int_{[a,b]}f(x)\\,dx\\right).$$\nThat is, the limit equals the average value of $g$ over one period multiplied by the integral of $f$ over the interval.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "periodic averaging",
+    "approximation of integrable functions",
+    "change of variables",
+    "properties of $L^1$ functions"
+  ],
+  "prerequisites": [
+    "$L^1$ integrability",
+    "measurable bounded periodic functions",
+    "Lebesgue integration",
+    "limit theorems for integrals"
+  ],
+  "callout_body": "$f \\in L^{1}([a,b])$并且$g$是周期为$T$的可测有界周期函数那么$$\\lim_{n\n\\to +\\infty}\\int_{[a,b]} f(x)g(nx) dx =\\left(\\frac{1}{T}\\int_{[0,T)}g(x)\\,dx\\right)\\left(\\int_{[a,b]}f(x)\\,dx\\right)$$ 即周期函数在一个周期内积分的平均值乘上可积函数在闭区间上的积分。"
+}

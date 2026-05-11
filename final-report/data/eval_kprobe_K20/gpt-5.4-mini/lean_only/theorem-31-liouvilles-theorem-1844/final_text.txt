@@ -1,0 +1,85 @@
+I’m checking the available Lean/Mathlib support first, then I’ll build the shortest proof that compiles.
+I found a nearby proof file on algebraic approximation; I’m using it as the template and checking whether this theorem can be reduced to an existing Mathlib result.
+I have a candidate proof skeleton already; now I’m checking the exact Liouville theorem signatures so I can avoid guessing and stay within budget.
+The first draft failed on two mechanical issues: the rational-case minpoly rewrite and an `X` import. I’m probing a cleaner irrationality lemma and the exact polynomial namespace instead of patching around the edge case.
+I’m switching the irrationality step to a divisibility argument, which is usually easier to make robust in Lean than proving a closed-form minpoly for rationals.
+I have the proof shape now: irrationality by minpoly divisibility, then Liouville’s root bound, then a final exponent comparison. I’m compiling the full theorem in one shot.
+I’ve got one checker call left, and only two mechanical fixes remain: the degree rewrite direction and the normalization coefficient witness. I’m applying both now.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+open Filter
+open Set
+open Real
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  have h_irr : Irrational α := by
+    intro hrat
+    rcases hrat with ⟨r, rfl⟩
+    let f : ℚ[X] := minpoly ℚ (r : ℝ)
+    let fZ : ℤ[X] := IsLocalization.integerNormalization (M := nonZeroDivisors ℤ) f
+    have hdiv : minpoly ℚ (r : ℝ) ∣ X - C (r : ℚ) := by
+      simpa using
+        (minpoly.dvd (A := ℚ) (B := ℝ) (p := X - C (r : ℚ)) (hp := by simp))
+    have hneq : X - C (r : ℚ) ≠ 0 := by
+      intro h
+      have h1 := congrArg (fun p : ℚ[X] => p.coeff 1) h
+      simp at h1
+    have hle : (minpoly ℚ (r : ℝ)).natDegree ≤ 1 := by
+      simpa using (Polynomial.natDegree_le_of_dvd hdiv hneq)
+    have hle' : d ≤ 1 := by
+      rw [h_deg] at hle
+      exact hle
+    omega
+
+  let p : ℚ[X] := minpoly ℚ α
+  let pZ : ℤ[X] := IsLocalization.integerNormalization (M := nonZeroDivisors ℤ) p
+  obtain ⟨b, hb, hmap⟩ := IsLocalization.integerNormalization_spec (M := nonZeroDivisors ℤ) (p := p)
+  have hb0 : b ≠ 0 := by simpa using hb
+  have hpZ_root : aeval α pZ = 0 := by
+    simpa [pZ, p] using
+      (IsLocalization.integerNormalization_aeval_eq_zero (M := nonZeroDivisors ℤ)
+        (p := p) (x := α) (R := ℤ) (S := ℚ) (R' := ℝ) (hx := minpoly.aeval ℚ α))
+  have hpZ_deg : pZ.natDegree = d := by
+    have h := congrArg Polynomial.natDegree hmap
+    simpa [pZ, p, h_deg, hb0] using h
+  have hpZ_ne : pZ ≠ 0 := by
+    intro h0
+    have hpos : 0 < pZ.natDegree := by
+      rw [hpZ_deg]
+      omega
+    simp [h0] at hpos
+  have hpZ_root' : eval α (Polynomial.map (algebraMap ℤ ℝ) pZ) = 0 := by
+    simpa using hpZ_root
+  obtain ⟨A, hApos, hA⟩ :=
+    Liouville.exists_pos_real_of_irrational_root h_irr hpZ_ne hpZ_root'
+  refine ⟨1 / (2 * A), ?_, ?_⟩
+  · positivity
+  · intro q hq p
+    have hq1 : (q - 1 + 1 : ℕ) = q := Nat.succ_pred_eq_of_pos hq
+    have hbase : (1 : ℝ) ≤ (q : ℝ) ^ d * (|α - (p : ℝ) / (q : ℝ)| * A) := by
+      simpa [hq1, hpZ_deg, mul_assoc, mul_left_comm, mul_comm] using hA p (q - 1)
+    have hmain : (1 : ℝ) / A ≤ (q : ℝ) ^ d * |α - (p : ℝ) / (q : ℝ)| := by
+      have hbase' : (1 : ℝ) ≤ ((q : ℝ) ^ d * |α - (p : ℝ) / (q : ℝ)|) * A := by
+        simpa [mul_assoc, mul_left_comm, mul_comm] using hbase
+      exact (div_le_iff₀ hApos).2 hbase'
+    have h2Apos : 0 < (2 : ℝ) * A := by nlinarith
+    have hlt : (1 : ℝ) / (2 * A) < (1 : ℝ) / A := by
+      exact (one_div_lt_one_div hApos h2Apos).2 (by nlinarith)
+    have hC : (1 : ℝ) / (2 * A) < (q : ℝ) ^ d * |α - (p : ℝ) / (q : ℝ)| := by
+      exact lt_of_lt_of_le hlt hmain
+    have hqpow_pos : 0 < (q : ℝ) ^ d := by positivity
+    have hC' : (1 : ℝ) / (2 * A) / ((q : ℝ) ^ d) < |α - (p : ℝ) / (q : ℝ)| := by
+      have hCmul : (1 : ℝ) / (2 * A) < |α - (p : ℝ) / (q : ℝ)| * (q : ℝ) ^ d := by
+        simpa [mul_comm, mul_left_comm, mul_assoc] using hC
+      exact (div_lt_iff₀ hqpow_pos).2 hCmul
+    simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc] using hC'
+```

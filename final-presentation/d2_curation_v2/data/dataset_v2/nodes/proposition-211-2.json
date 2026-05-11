@@ -1,0 +1,23 @@
+{
+  "id": "proposition-211-2",
+  "type": "problem",
+  "source_note": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+  "english_source_note": "Lp Decay Rates Ensuring Almost Everywhere Convergence to 0",
+  "callout_id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#4",
+  "english_title": "Proposition 2.1.1",
+  "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of Lebesgue measurable functions such that \\(\\|f_n\\|_{L^p(\\mathbb{R})}^p \\leq a_n\\), where \\(p \\geq 1\\), and let \\(\\{a_n\\}\\) be a nonnegative sequence with \\(\\sum_{n\\geq 1} a_n\\) convergent. Then \\(f_n(x) \\to 0\\) almost everywhere.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "reduction to the \\(L^1\\) case via \\(|f_n|^p\\)",
+    "summability of norms",
+    "almost everywhere convergence criterion"
+  ],
+  "prerequisites": [
+    "\\(L^p\\) spaces",
+    "Lebesgue measurable functions",
+    "almost everywhere convergence"
+  ],
+  "callout_body": "Lebesgue可测函数列$||f_n||_{L^p(\\mathbb{R})}^p\\leq a_n$其中$p\\geq 1$，并且非负序列$a_n$满足$\\sum_{n\\geq 1}a_n$收敛，那么$f_n(x)$几乎处处收敛到0。"
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "an-observation",
+  "english_title": "An Observation",
+  "statement_en": "If the difference between the residues of two numbers $x,y$ modulo $1$ is less than a sufficiently small $r>0$, then $||x-y||<r$.",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem close_residues_mod_one_imply_close\n    {x y r : ℝ}\n    (hx0 : 0 ≤ x) (hx1 : x < 1)\n    (hy0 : 0 ≤ y) (hy1 : y < 1)\n    (hr : 0 < r)\n    (hres : ‖Int.fract x - Int.fract y‖ < r) :\n    ‖x - y‖ < r := by\n  sorry"
+}

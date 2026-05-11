@@ -1,0 +1,11 @@
+import Mathlib
+#check Int.floor_le
+#check Int.toNat_of_nonneg
+#check Int.toNat_le
+#check Real.le_sqrt
+#check Real.sqrt_le
+#check Real.sq_sqrt
+#check tendsto_add_atTop_nat
+#check tendsto_inv_atTop_zero
+#check Real.tendsto_sqrt_atTop
+#check summable_one_div_nat_rpow

@@ -1,0 +1,21 @@
+{
+  "id": "example-of-a-non-uniformly-distributed-sequence",
+  "type": "problem",
+  "source_note": "模1均匀分布与Weyl判别",
+  "english_source_note": "Uniform Distribution mod 1 and Weyl's Criterion",
+  "callout_id": "模1均匀分布与Weyl判别#4",
+  "english_title": "Example of a Non-Uniformly Distributed Sequence",
+  "statement_en": "A simple example is $u_n=\\frac{1}{n}$. After reduction modulo $1$, $$\\varepsilon(u_1)=0,\\varepsilon(u_2)=-\\frac{1}{2},\\varepsilon(u_n)=\\frac{1}{n},n\\geq 3.$$ This sequence is not uniformly distributed modulo $1$; for instance, in the interval $[-1/2,0]$ there is only the element $-1/2$, so the limiting proportion of terms in this interval is $0$ rather than $1/2$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "uniform distribution theory",
+  "key_techniques": [
+    "analyze the image modulo 1 explicitly",
+    "test the definition on a specific interval"
+  ],
+  "prerequisites": [
+    "definition of uniform distribution modulo 1",
+    "fractional part or remainder modulo 1"
+  ],
+  "callout_body": "简单的例子$u_n=\\frac{1}{n}$,其模1以后，$$\\varepsilon(u_1)=0,\\varepsilon(u_1)=-\\frac{1}{2},\\varepsilon(u_n)=\\frac{1}{n},n\\geq 3$$首先这个序列组成的集合根本不在$[-1/2,1/2)$中稠密，比如考察$[-1/2,0]$这样一个区间当中，其中只包含$-1/2$这样一个元素，那么序列在此区间当中比例的极限为0，而不是$1/2$。"
+}

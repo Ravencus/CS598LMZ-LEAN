@@ -1,0 +1,15 @@
+I'll approach this step by step. Let me first plan the proof, then submit a first attempt.
+
+**Plan:**
+1. Holomorphic ⇒ analytic (`hf_holo.analyticOn`)
+2. Analytic at `z0` with `f(z0)=0` — either `f ≡ 0` near `z0` or `f ≠ 0` on a punctured neighborhood
+3. If `f ≡ 0` near `z0`, identity theorem + connectedness ⇒ `f ≡ 0` on `U`, contradicting `hf_nonzero`
+4. Otherwise, the punctured neighborhood gives the result
+
+Let me submit attempt #1:
+Key issues from the errors:
+1. `hf_holo.analyticOn` needs `hU_open` as argument
+2. `AnalyticOn` at a point gives `AnalyticWithinAt`, not `AnalyticAt`
+3. The "isolated zero" lemma name was guessed wrong
+
+Let me use call #2 to probe for the correct lemmas:

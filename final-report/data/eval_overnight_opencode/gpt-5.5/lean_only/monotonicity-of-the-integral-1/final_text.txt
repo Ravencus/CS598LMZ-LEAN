@@ -1,0 +1,15 @@
+I’ll verify the relevant Mathlib monotonicity lemma first, then use it directly if its hypotheses match the theorem.
+The likely lemma is available. I’m checking the direct proof term against the exact theorem signature.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory
+
+theorem integral_ge_of_ae_ge
+    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}
+    (hf : Integrable f μ) (hg : Integrable g μ)
+    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :
+    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by
+  exact integral_mono_ae hg hf hfg
+```

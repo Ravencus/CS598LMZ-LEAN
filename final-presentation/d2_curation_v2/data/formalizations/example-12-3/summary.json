@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-12-3",
+  "english_title": "Example 1.2",
+  "statement_en": "Determine the convergence or divergence of the series\n$$\\sum_{n\\geq 1} \\frac{(2n-1)!!}{(2n)!!}\\frac{1}{2n+1}.$$ Since\n$$\\frac{a_n}{a_{n+1}}=\\frac{2n+2}{2n+1}\\frac{2n+3}{2n+1}\\to 1,$$ d'Alembert's ratio test fails directly. But\n$$\\frac{a_n}{a_{n+1}}=1+\\frac{3}{2}\\frac{1}{n}+O(1/n^2),$$ so by Raabe's test, because the asymptotic coefficient of $\\frac{1}{n}$ is $\\frac{3}{2}>1$, the series converges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem doubleFactorialSeriesConverges :\n    Summable (fun n : ℕ =>\n      (((Nat.centralBinom (n + 1) : ℝ) / (4 : ℝ) ^ (n + 1)) / (2 * (n + 1) + 1 : ℝ))) := by\n  sorry"
+}

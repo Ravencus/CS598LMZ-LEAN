@@ -1,0 +1,30 @@
+{
+  "problem_id": "counterexample-21",
+  "english_title": "Counterexample 2.1",
+  "statement_en": "Let $X_n$ be independent random variables such that $$\\mathbb{P}(X_n=1)=\\frac{1}{n},\\qquad \\mathbb{P}(X_n=0)=1-\\frac{1}{n}.$$ Then for every sufficiently small $\\varepsilon>0$, $$\\mathbb{P}(|X_n|\\geq \\varepsilon)=\\frac{1}{n}\\to 0,$$ so $$X_n\\xrightarrow{\\mathbb{P}}0.$$ However, since $$\\sum_{n\\ge 1}\\mathbb{P}(X_n=1)=+\\infty,$$ the second Borel-Cantelli lemma implies that $X_n=1$ infinitely often almost surely. Hence convergence in measure (or in probability) does not imply almost everywhere conv",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter\n\ntheorem bernoulliOneOverN_convergenceInProbability_not_ae\n    {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω) [IsProbabilityMeasure μ]\n    (X : ℕ → Ω → ℝ)\n    (h_meas : ∀ n : ℕ, Measurable (X n))\n    (h_prob_one :\n      ∀ n : ℕ, μ {ω | X (n + 1) ω = 1} = ENNReal.ofReal (1 / (n + 1 : ℝ)))\n    (h_prob_zero :\n      ∀ n : ℕ, μ {ω | X (n + 1) ω = 0} = 1 - ENNReal.ofReal (1 / (n + 1 : ℝ))) :\n    (∀ ⦃ε : ℝ⦄, 0 < ε → ε < 1 →\n      Filter.Tendsto\n        (fun n : ℕ => μ {ω | ε ≤ |X (n + 1) ω|})\n        Filter.atTop\n        (nhds (0 : ℝ≥0∞))) ∧\n    (¬ Summable (fun n : ℕ => ENNReal.ofReal (1 / (n + 1 : ℝ)))) ∧\n    (Filter.Eventually\n      (fun ω => Set.Infinite {n : ℕ | X (n + 1) ω = 1})\n      μ.ae) ∧\n    ¬ Filter.Eventually\n      (fun ω => Filter.Tendsto (fun n : ℕ => X (n + 1) ω) Filter.atTop (nhds (0 : ℝ)))\n      μ.ae := by\n  sorry"
+}

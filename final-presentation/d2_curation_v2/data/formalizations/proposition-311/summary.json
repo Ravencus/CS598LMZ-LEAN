@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-311",
+  "english_title": "Proposition 3.1.1",
+  "statement_en": "Let $f$ be a continuous periodic function on $\\mathbb{R}$ with least positive period $T$. Consider the sequence $x_n:=f(n)$. If $x_n$ is not a constant sequence, then the limit of $x_n$ does not exist.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem periodic_nonconstant_natSeq_no_limit\n    {f : ℝ → ℝ} {T : ℝ}\n    (hf_cont : Continuous f)\n    (hf_periodic : Function.Periodic f T)\n    (hT_pos : 0 < T)\n    (hT_least : ∀ S : ℝ, 0 < S → Function.Periodic f S → T ≤ S)\n    (h_nonconst : ¬ ∃ c : ℝ, ∀ n : ℕ, f n = c) :\n    ¬ ∃ l : ℝ, Filter.Tendsto (fun n : ℕ => f n) Filter.atTop (nhds l) := by\n  sorry"
+}

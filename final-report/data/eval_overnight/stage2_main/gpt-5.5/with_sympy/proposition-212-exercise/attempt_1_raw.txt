@@ -1,0 +1,11 @@
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto hy hx (hxy.mono (by
+    intro n hn
+    exact hn))

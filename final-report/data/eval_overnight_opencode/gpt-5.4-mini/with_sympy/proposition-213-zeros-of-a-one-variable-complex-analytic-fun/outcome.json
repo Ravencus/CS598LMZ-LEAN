@@ -1,0 +1,48 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 267.12,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Unknown identifier `𝓝`",
+  "total_cost_usd": 0.0,
+  "total_tokens": 1379511,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_afdc17286b.lean",
+      "line": 15,
+      "column": 58,
+      "severity": "error",
+      "message": "Unknown identifier `𝓝`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_afdc17286b.lean",
+      "line": 17,
+      "column": 17,
+      "severity": "error",
+      "message": "Unknown identifier `EqOn`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_afdc17286b.lean",
+      "line": 28,
+      "column": 8,
+      "severity": "error",
+      "message": "Function expected at\n  hfz\nbut this term has type\n  f z = 0\n\nNote: Expected a function because this term is being applied to the argument\n  (hball ⟨hzball, hneq⟩)\n"
+    }
+  ]
+}

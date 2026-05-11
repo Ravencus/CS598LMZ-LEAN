@@ -1,0 +1,23 @@
+{
+  "id": "counterexample-214",
+  "type": "problem",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "callout_id": "identity theorem#7",
+  "english_title": "Counterexample 2.1.4",
+  "statement_en": "If the domain is not connected, for example $U=A\\cup B$ with $A,B$ disjoint open sets, define $$f(z):=\\begin{cases}0&z \\in A\\\\ 1&z \\in B\\end{cases}.$$ Then $f$ is holomorphic on $U$ and is not identically zero, but its zeros are not isolated.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "disconnected domain construction",
+    "piecewise constant holomorphic function",
+    "failure of isolated zeros without connectedness"
+  ],
+  "prerequisites": [
+    "holomorphic functions",
+    "connectedness",
+    "open sets in the complex plane"
+  ],
+  "callout_body": "假设不是连通的一个开集,比如$U=A\\cup B$,其中$A,B$是两个不相交的开集。\n$$f(z):=\\begin{cases}0&z \\in A\\\\ 1&z \\in B\\end{cases}$$\n此时函数在$U$上全纯，并且不恒等于0，但是零点也非孤立。"
+}

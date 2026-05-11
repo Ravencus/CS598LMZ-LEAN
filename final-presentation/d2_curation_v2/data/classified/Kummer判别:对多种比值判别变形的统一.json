@@ -1,0 +1,229 @@
+{
+  "note_title": "Kummer判别：对多种比值判别变形的统一",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "Kummer判别:对多种比值判别变形的统一#1",
+      "type": "note",
+      "title": "定理0:Kummer判别（19世纪）",
+      "body": "对于正项级数$\\sum_{n\\geq 1}a_n$，以及一个辅助序列$\\xi_n>0$定义$$\\rho_n:=\\xi_n\\frac{a_n}{a_{n+1}}-\\xi_{n+1}$$假设$\\rho_n$极限存在并且为$\\rho$那么：\n1. 如果$\\rho>0$那么级数收敛。\n2. 如果$\\rho<0$并且$\\sum_{n\\geq 1}\\frac{1}{\\xi_n}$发散，那么级数发散。",
+      "position_char": 50,
+      "position_line": 8,
+      "classification_result": {
+        "id": "Kummer判别:对多种比值判别变形的统一#1",
+        "classification": "problem",
+        "english_title": "Theorem 0: Kummer's Test (19th Century)",
+        "if_problem": {
+          "statement_en": "For a positive-term series $\\sum_{n\\geq 1} a_n$, and an auxiliary sequence $\\xi_n>0$, define\n$$\\rho_n := \\xi_n \\frac{a_n}{a_{n+1}} - \\xi_{n+1}.$$ Assume that $\\rho_n$ has a limit $\\rho$. Then:\n1. If $\\rho>0$, the series converges.\n2. If $\\rho<0$ and $\\sum_{n\\geq 1} \\frac{1}{\\xi_n}$ diverges, then the series diverges.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "positive series convergence tests",
+            "auxiliary sequence method",
+            "ratio-type asymptotic comparison"
+          ],
+          "prerequisites": [
+            "infinite series",
+            "limits of sequences",
+            "basic convergence and divergence tests"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Kummer判别:对多种比值判别变形的统一#2",
+      "type": "note",
+      "title": "定理1.1：Raabe's test",
+      "body": "对于正项级数$\\sum_n a_n$定义$$R_n:= n\\left(\\frac{a_n}{a_{n+1}}-1\\right)$$如果$R_n$极限存在并且为$L$，那么\n1. 如果$L>1$那么级数收敛。\n2. 如果$L<1$那么级数发散。",
+      "position_char": 808,
+      "position_line": 23,
+      "classification_result": {
+        "id": "Kummer判别:对多种比值判别变形的统一#2",
+        "classification": "problem",
+        "english_title": "Theorem 1.1: Raabe's Test",
+        "if_problem": {
+          "statement_en": "For a positive-term series $\\sum_n a_n$, define\n$$R_n := n\\left(\\frac{a_n}{a_{n+1}} - 1\\right).$$ If $R_n$ has a limit $L$, then:\n1. If $L>1$, the series converges.\n2. If $L<1$, the series diverges.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Raabe's test",
+            "ratio asymptotics",
+            "positive series convergence tests"
+          ],
+          "prerequisites": [
+            "infinite series",
+            "limits of sequences",
+            "ratio test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Kummer判别:对多种比值判别变形的统一#3",
+      "type": "example",
+      "title": "例子1.2",
+      "body": "如果我们要级数$\\sum_{n\\geq 1}\\frac{(2n-1)!!}{(2n)!!}\\frac{1}{2n+1}$的收敛与发散性。\n\n首先，因为$a_n$是具有明显的乘法结构的，因此自然会想要考虑比值判别法。然而直接尝试我们就会发现$$\\frac{a_n}{a_{n+1}}=\\frac{2n+2}{2n+1}\\frac{2n+3}{2n+1}\\to 1$$因此d'Alembert的判别失效了。不过由于$$\\frac{a_n}{a_{n+1}}=1+\\frac{3}{2}\\frac{1}{n}+O(1/n^2)$$于是Raabe判别法告诉我们由于$\\frac{1}{n}$这一项的渐近系数$\\frac{3}{2}>1$于是级数收敛。",
+      "position_char": 1413,
+      "position_line": 33,
+      "classification_result": {
+        "id": "Kummer判别:对多种比值判别变形的统一#3",
+        "classification": "problem",
+        "english_title": "Example 1.2",
+        "if_problem": {
+          "statement_en": "Determine the convergence or divergence of the series\n$$\\sum_{n\\geq 1} \\frac{(2n-1)!!}{(2n)!!}\\frac{1}{2n+1}.$$ Since\n$$\\frac{a_n}{a_{n+1}}=\\frac{2n+2}{2n+1}\\frac{2n+3}{2n+1}\\to 1,$$ d'Alembert's ratio test fails directly. But\n$$\\frac{a_n}{a_{n+1}}=1+\\frac{3}{2}\\frac{1}{n}+O(1/n^2),$$ so by Raabe's test, because the asymptotic coefficient of $\\frac{1}{n}$ is $\\frac{3}{2}>1$, the series converges.",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "ratio asymptotic expansion",
+            "Raabe's test",
+            "double factorial manipulation"
+          ],
+          "prerequisites": [
+            "infinite series",
+            "big-O notation",
+            "ratio test",
+            "Raabe's test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Kummer判别:对多种比值判别变形的统一#4",
+      "type": "note",
+      "title": "定理1.3：Gauss's test",
+      "body": "对于正项级数$\\sum_n a_n$，如果$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+O\\left(\\frac{1}{n^r}\\right),r>1$$那么级数发散。",
+      "position_char": 2061,
+      "position_line": 42,
+      "classification_result": {
+        "id": "Kummer判别:对多种比值判别变形的统一#4",
+        "classification": "problem",
+        "english_title": "Theorem 1.3: Gauss's Test",
+        "if_problem": {
+          "statement_en": "For a positive-term series $\\sum_n a_n$, if\n$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+O\\left(\\frac{1}{n^r}\\right), \\quad r>1,$$ then the series diverges.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Gauss's test",
+            "ratio asymptotics",
+            "borderline divergence criterion"
+          ],
+          "prerequisites": [
+            "infinite series",
+            "big-O notation",
+            "positive series convergence tests"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Kummer判别:对多种比值判别变形的统一#5",
+      "type": "example",
+      "title": "例子1.4",
+      "body": "级数$\\sum_{n\\geq 1}\\frac{n!e^n}{n^{n+p}}$在$p>\\frac{3}{2}$的时候是收敛的，$p\\leq \\frac{3}{2}$的时候是发散的。首先，因为级数的$a_n$具有明显的乘法结构，因此考虑比值判别法。经过上面的分析我们知道，比值判别的精髓在于给出$\\frac{a_n}{a_{n+1}}$的渐近展开，此处$$\\frac{a_n}{a_{n+1}}= 1+(p-1/2)\\frac{1}{n}+O(1/n^2)$$于是结合目前已知的比值判别法：\n1. $p>\\frac{3}{2}$的时候，由于$p-1/2>1$那么Raabe判别告诉我们，级数收敛。\n2. $p=\\frac{3}{2}$的时候因为$p-1/2=1$那么根据Guass判别，级数发散。\n3. $p<\\frac{3}{2}$的时候因为$p-1/2<1$那么Raabe判别告诉我们，级数发散。",
+      "position_char": 2192,
+      "position_line": 46,
+      "classification_result": {
+        "id": "Kummer判别:对多种比值判别变形的统一#5",
+        "classification": "problem",
+        "english_title": "Example 1.4",
+        "if_problem": {
+          "statement_en": "The series\n$$\\sum_{n\\geq 1} \\frac{n!e^n}{n^{n+p}}$$ converges when $p>\\frac{3}{2}$ and diverges when $p\\leq \\frac{3}{2}$. Indeed,\n$$\\frac{a_n}{a_{n+1}}=1+(p-1/2)\\frac{1}{n}+O(1/n^2).$$ Therefore:\n1. If $p>\\frac{3}{2}$, then $p-1/2>1$, so Raabe's test implies convergence.\n2. If $p=\\frac{3}{2}$, then $p-1/2=1$, so Gauss's test implies divergence.\n3. If $p<\\frac{3}{2}$, then $p-1/2<1$, so Raabe's test implies divergence.",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "ratio asymptotic expansion",
+            "Raabe's test",
+            "Gauss's test",
+            "factorial-exponential term analysis"
+          ],
+          "prerequisites": [
+            "infinite series",
+            "big-O notation",
+            "Raabe's test",
+            "Gauss's test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Kummer判别:对多种比值判别变形的统一#6",
+      "type": "note",
+      "title": "定理1.5:Bertrand-De Morgan's test",
+      "body": "对于正项级数$\\sum_n a_n$，并且$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+\\frac{L}{n\\log(n)}+o\\left(\\frac{1}{n\\log(n)}\\right)$$\n那么：\n1. 如果$L>1$那么级数收敛。\n2. 如果$L<1$那么级数发散。",
+      "position_char": 2768,
+      "position_line": 54,
+      "classification_result": {
+        "id": "Kummer判别:对多种比值判别变形的统一#6",
+        "classification": "problem",
+        "english_title": "Theorem 1.5: Bertrand-De Morgan's Test",
+        "if_problem": {
+          "statement_en": "For a positive-term series $\\sum_n a_n$, suppose that\n$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+\\frac{L}{n\\log(n)}+o\\left(\\frac{1}{n\\log(n)}\\right).$$ Then:\n1. If $L>1$, the series converges.\n2. If $L<1$, the series diverges.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Bertrand-De Morgan test",
+            "refined ratio asymptotics",
+            "positive series convergence tests"
+          ],
+          "prerequisites": [
+            "infinite series",
+            "little-o notation",
+            "logarithmic asymptotics",
+            "Raabe-type tests"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Kummer判别:对多种比值判别变形的统一#7",
+      "type": "example",
+      "title": "例子1.6：Bertran级数",
+      "body": "正项级数$$\\sum_{n\\geq 2}\\frac{1}{n^{\\alpha}\\log(n)^{\\beta}}$$称之为Bertrand级数。此级数的收敛&发散性与参数$\\alpha,\\beta$的关系如下：\n1. $\\alpha >1$的时候无论$\\beta$是多少，级数收敛。\n2. $\\alpha<1$的时候无论$\\beta$是多少，级数发散。\n3. $\\alpha=1$的时候，级数收敛当且仅当$\\beta>1$。\n\n此处我们只关注第三条，考虑证明级数$\\sum_{n\\geq 2} \\frac{1}{n\\log(n)^{\\beta}}$的收敛&发散性质。其中$\\beta\\leq 0$的时候级数显然发散，现在考虑$\\beta>0$，此时$$\\begin{aligned}\\frac{a_n}{a_{n+1}}&=\\frac{n+1}{n}\\left(\\frac{\\log(n+1)}{\\log(n)}\\right)^{\\beta}\\\\&=\\frac{n+1}{n}\\left(1+\\frac{1}{n\\log(n)}+O\\left(\\frac{1}{n^2\\log(n)}\\right)\\right)^{\\beta}\\\\&=\\frac{n+1}{n} \\left(1+\\frac{\\beta}{n\\log(n)}+O\\left(\\frac{1}{n^{2\\beta}\\log(n)^{\\beta}}\\right)\\right)\\\\&= 1+\\frac{1}{n}+\\frac{\\beta}{n\\log(n)}+O\\left(\\frac{1}{n^{2\\beta}\\log(n)^{\\beta}}\\right)\\end{aligned}$$那么Bertrand判别告诉我们当$\\beta>1$的时候级数是收敛的，$\\beta<1$的时候级数是发散的。至于$\\beta=1$的时候，级数$\\sum_{n\\geq 2} \\frac{1}{n\\log(n)}$的发散性，我们可以利用[[柯西凝聚判别法]]或者[[和的积分估计#1. 和的简单积分估计]]来进行判断。当然整个Bertrand级数我们都可以用以上两种基于和的估计的方法来解决，而不用考虑比值判别。",
+      "position_char": 2971,
+      "position_line": 61,
+      "classification_result": {
+        "id": "Kummer判别:对多种比值判别变形的统一#7",
+        "classification": "problem",
+        "english_title": "Example 1.6: Bertrand Series",
+        "if_problem": {
+          "statement_en": "The positive-term series\n$$\\sum_{n\\geq 2}\\frac{1}{n^{\\alpha}\\log(n)^{\\beta}}$$ is called a Bertrand series. Its convergence behavior is as follows:\n1. If $\\alpha>1$, it converges for every $\\beta$.\n2. If $\\alpha<1$, it diverges for every $\\beta$.\n3. If $\\alpha=1$, it converges if and only if $\\beta>1$.\n\nHere the focus is on the third case. Consider\n$$\\sum_{n\\geq 2} \\frac{1}{n\\log(n)^{\\beta}}.$$ For $\\beta\\leq 0$ it is clearly divergent. For $\\beta>0$,\n$$\\begin{aligned}\\frac{a_n}{a_{n+1}}&=\\frac{n+1}{n}\\left(\\frac{\\log(n+1)}{\\log(n)}\\right)^{\\beta}\\\\&=\\frac{n+1}{n}\\left(1+\\frac{1}{n\\log(n)}+O\\left(\\frac{1}{n^2\\log(n)}\\right)\\right)^{\\beta}\\\\&=\\frac{n+1}{n} \\left(1+\\frac{\\beta}{n\\log(n)}+O\\left(\\frac{1}{n^{2\\beta}\\log(n)^{\\beta}}\\right)\\right)\\\\&= 1+\\frac{1}{n}+\\frac{\\beta}{n\\log(n)}+O\\left(\\frac{1}{n^{2\\beta}\\log(n)^{\\beta}}\\right).\\end{aligned}$$ Thus Bertrand's test implies convergence when $\\beta>1$ and divergence when $\\beta<1$. For $\\beta=1$, the divergence of\n$$\\sum_{n\\geq 2} \\frac{1}{n\\log(n)}$$ can be shown using Cauchy's condensation test or an integral estimate.",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Bertrand-De Morgan test",
+            "ratio asymptotic expansion",
+            "logarithmic series analysis",
+            "Cauchy condensation test",
+            "integral comparison"
+          ],
+          "prerequisites": [
+            "infinite series",
+            "logarithmic functions",
+            "big-O notation",
+            "Bertrand-De Morgan test",
+            "integral test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Kummer判别:对多种比值判别变形的统一#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Theorem 0: Kummer's Test (19th Century)\",\n    \"if_problem\": {\n      \"statement_en\": \"For a positive-term series $\\\\sum_{n\\\\geq 1} a_n$, and an auxiliary sequence $\\\\xi_n>0$, define\\n$$\\\\rho_n := \\\\xi_n \\\\frac{a_n}{a_{n+1}} - \\\\xi_{n+1}.$$ Assume that $\\\\rho_n$ has a limit $\\\\rho$. Then:\\n1. If $\\\\rho>0$, the series converges.\\n2. If $\\\\rho<0$ and $\\\\sum_{n\\\\geq 1} \\\\frac{1}{\\\\xi_n}$ diverges, then the series diverges.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"positive series convergence tests\", \"auxiliary sequence method\", \"ratio-type asymptotic comparison\"],\n      \"prerequisites\": [\"infinite series\", \"limits of sequences\", \"basic convergence and divergence tests\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Kummer判别:对多种比值判别变形的统一#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Theorem 1.1: Raabe's Test\",\n    \"if_problem\": {\n      \"statement_en\": \"For a positive-term series $\\\\sum_n a_n$, define\\n$$R_n := n\\\\left(\\\\frac{a_n}{a_{n+1}} - 1\\\\right).$$ If $R_n$ has a limit $L$, then:\\n1. If $L>1$, the series converges.\\n2. If $L<1$, the series diverges.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"Raabe's test\", \"ratio asymptotics\", \"positive series convergence tests\"],\n      \"prerequisites\": [\"infinite series\", \"limits of sequences\", \"ratio test\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Kummer判别:对多种比值判别变形的统一#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.2\",\n    \"if_problem\": {\n      \"statement_en\": \"Determine the convergence or divergence of the series\\n$$\\\\sum_{n\\\\geq 1} \\\\frac{(2n-1)!!}{(2n)!!}\\\\frac{1}{2n+1}.$$ Since\\n$$\\\\frac{a_n}{a_{n+1}}=\\\\frac{2n+2}{2n+1}\\\\frac{2n+3}{2n+1}\\\\to 1,$$ d'Alembert's ratio test fails directly. But\\n$$\\\\frac{a_n}{a_{n+1}}=1+\\\\frac{3}{2}\\\\frac{1}{n}+O(1/n^2),$$ so by Raabe's test, because the asymptotic coefficient of $\\\\frac{1}{n}$ is $\\\\frac{3}{2}>1$, the series converges.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"ratio asymptotic expansion\", \"Raabe's test\", \"double factorial manipulation\"],\n      \"prerequisites\": [\"infinite series\", \"big-O notation\", \"ratio test\", \"Raabe's test\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Kummer判别:对多种比值判别变形的统一#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Theorem 1.3: Gauss's Test\",\n    \"if_problem\": {\n      \"statement_en\": \"For a positive-term series $\\\\sum_n a_n$, if\\n$$\\\\frac{a_n}{a_{n+1}}=1+\\\\frac{1}{n}+O\\\\left(\\\\frac{1}{n^r}\\\\right), \\\\quad r>1,$$ then the series diverges.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"Gauss's test\", \"ratio asymptotics\", \"borderline divergence criterion\"],\n      \"prerequisites\": [\"infinite series\", \"big-O notation\", \"positive series convergence tests\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Kummer判别:对多种比值判别变形的统一#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.4\",\n    \"if_problem\": {\n      \"statement_en\": \"The series\\n$$\\\\sum_{n\\\\geq 1} \\\\frac{n!e^n}{n^{n+p}}$$ converges when $p>\\\\frac{3}{2}$ and diverges when $p\\\\leq \\\\frac{3}{2}$. Indeed,\\n$$\\\\frac{a_n}{a_{n+1}}=1+(p-1/2)\\\\frac{1}{n}+O(1/n^2).$$ Therefore:\\n1. If $p>\\\\frac{3}{2}$, then $p-1/2>1$, so Raabe's test implies convergence.\\n2. If $p=\\\\frac{3}{2}$, then $p-1/2=1$, so Gauss's test implies divergence.\\n3. If $p<\\\\frac{3}{2}$, then $p-1/2<1$, so Raabe's test implies divergence.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"ratio asymptotic expansion\", \"Raabe's test\", \"Gauss's test\", \"factorial-exponential term analysis\"],\n      \"prerequisites\": [\"infinite series\", \"big-O notation\", \"Raabe's test\", \"Gauss's test\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Kummer判别:对多种比值判别变形的统一#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Theorem 1.5: Bertrand-De Morgan's Test\",\n    \"if_problem\": {\n      \"statement_en\": \"For a positive-term series $\\\\sum_n a_n$, suppose that\\n$$\\\\frac{a_n}{a_{n+1}}=1+\\\\frac{1}{n}+\\\\frac{L}{n\\\\log(n)}+o\\\\left(\\\\frac{1}{n\\\\log(n)}\\\\right).$$ Then:\\n1. If $L>1$, the series converges.\\n2. If $L<1$, the series diverges.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"Bertrand-De Morgan test\", \"refined ratio asymptotics\", \"positive series convergence tests\"],\n      \"prerequisites\": [\"infinite series\", \"little-o notation\", \"logarithmic asymptotics\", \"Raabe-type tests\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Kummer判别:对多种比值判别变形的统一#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.6: Bertrand Series\",\n    \"if_problem\": {\n      \"statement_en\": \"The positive-term series\\n$$\\\\sum_{n\\\\geq 2}\\\\frac{1}{n^{\\\\alpha}\\\\log(n)^{\\\\beta}}$$ is called a Bertrand series. Its convergence behavior is as follows:\\n1. If $\\\\alpha>1$, it converges for every $\\\\beta$.\\n2. If $\\\\alpha<1$, it diverges for every $\\\\beta$.\\n3. If $\\\\alpha=1$, it converges if and only if $\\\\beta>1$.\\n\\nHere the focus is on the third case. Consider\\n$$\\\\sum_{n\\\\geq 2} \\\\frac{1}{n\\\\log(n)^{\\\\beta}}.$$ For $\\\\beta\\\\leq 0$ it is clearly divergent. For $\\\\beta>0$,\\n$$\\\\begin{aligned}\\\\frac{a_n}{a_{n+1}}&=\\\\frac{n+1}{n}\\\\left(\\\\frac{\\\\log(n+1)}{\\\\log(n)}\\\\right)^{\\\\beta}\\\\\\\\&=\\\\frac{n+1}{n}\\\\left(1+\\\\frac{1}{n\\\\log(n)}+O\\\\left(\\\\frac{1}{n^2\\\\log(n)}\\\\right)\\\\right)^{\\\\beta}\\\\\\\\&=\\\\frac{n+1}{n} \\\\left(1+\\\\frac{\\\\beta}{n\\\\log(n)}+O\\\\left(\\\\frac{1}{n^{2\\\\beta}\\\\log(n)^{\\\\beta}}\\\\right)\\\\right)\\\\\\\\&= 1+\\\\frac{1}{n}+\\\\frac{\\\\beta}{n\\\\log(n)}+O\\\\left(\\\\frac{1}{n^{2\\\\beta}\\\\log(n)^{\\\\beta}}\\\\right).\\\\end{aligned}$$ Thus Bertrand's test implies convergence when $\\\\beta>1$ and divergence when $\\\\beta<1$. For $\\\\beta=1$, the divergence of\\n$$\\\\sum_{n\\\\geq 2} \\\\frac{1}{n\\\\log(n)}$$ can be shown using Cauchy's condensation test or an integral estimate.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"Bertrand-De Morgan test\", \"ratio asymptotic expansion\", \"logarithmic series analysis\", \"Cauchy condensation test\", \"integral comparison\"],\n      \"prerequisites\": [\"infinite series\", \"logarithmic functions\", \"big-O notation\", \"Bertrand-De Morgan test\", \"integral test\"]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

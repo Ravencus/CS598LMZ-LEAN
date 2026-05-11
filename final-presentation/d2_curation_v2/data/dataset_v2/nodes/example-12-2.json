@@ -1,0 +1,22 @@
+{
+  "id": "example-12-2",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#2",
+  "english_title": "Example 1.2",
+  "statement_en": "Let $x_n:=\\sin(n)$. Since the values of $x_n$ are dense in $(-1,1)$, the largest accumulation point is $1$ and the smallest accumulation point is $-1$. Hence $$\\limsup_{n\\to \\infty}x_n=1,\\qquad \\liminf_{n\\to \\infty}x_n=-1.$$",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "identify accumulation points",
+    "use density of a sequence in an interval"
+  ],
+  "prerequisites": [
+    "limit superior and limit inferior",
+    "dense subsets of intervals",
+    "subsequential limits"
+  ],
+  "callout_body": "在[[证明正弦函数在整数上取值的序列的极限是不存在的]]当中，我们证明了$x_n:=\\sin(n)$的极限并不存在。现在我们从上下极限的角度来看待这个序列。由于$x_n$在区间$(-1,1)$当中稠密，根据对\"命题1.1\"的理解，其上极限为所有聚点中值最大的一个，而下极限为所有聚点中值最小的一个，因此$$\\limsup_{n\\to \\infty}x_n=1,\\liminf_{n\\to \\infty}x_n=-1$$"
+}

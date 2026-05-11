@@ -1,0 +1,18 @@
+{
+  "problem_id": "counterexample-1",
+  "english_title": "Counterexample 1",
+  "statement_en": "Consider random variables $X_n \\sim \\mathcal{N}(\\frac{1}{\\sqrt{n}}, \\frac{1}{n^2})$. Then clearly the means converge to $C=0$, and the series of variances converges. However, in this case $E(X_n)^2 = \\frac{1}{n}$, and this series does not converge.",
+  "difficulty": "easy",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem gaussianMeansVariancesCounterexample :\n    Filter.Tendsto (fun n : ℕ => (1 : ℝ) / Real.sqrt (n + 1 : ℝ)) Filter.atTop (nhds 0) ∧\n    Summable (fun n : ℕ => (1 : ℝ) / ((n + 1 : ℝ) ^ 2)) ∧\n    (∀ n : ℕ, ((1 : ℝ) / Real.sqrt (n + 1 : ℝ)) ^ 2 = (1 : ℝ) / (n + 1 : ℝ)) ∧\n    ¬ Summable (fun n : ℕ => (1 : ℝ) / (n + 1 : ℝ)) := by\n  sorry"
+}

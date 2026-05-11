@@ -1,0 +1,23 @@
+{
+  "id": "example-213-the-harmonic-numbers-modulo-1-form-a-dense-seque",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#8",
+  "english_title": "Example 2.1.3: The Harmonic Numbers Modulo 1 Form a Dense Sequence",
+  "statement_en": "Let $H_n:=1+\\frac{1}{2}+\\cdots+\\frac{1}{n}$ be the harmonic numbers, and let $h_n:=\\{H_n\\}$ be their fractional parts. Then the sequence $(h_n)$ is dense in $[0,1)$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "number theory",
+  "key_techniques": [
+    "apply the divergent positive series criterion",
+    "harmonic series divergence",
+    "fractional parts"
+  ],
+  "prerequisites": [
+    "harmonic series",
+    "fractional part function",
+    "density modulo 1"
+  ],
+  "callout_body": "令$H_n:=1+\\frac{1}{2}+\\cdots+\\frac{1}{n}$是调和数序列，$h_n:=\\{H_n\\}$是该序列的小数部分，那么序列$h_n$在$[0,1)$上稠密。因为$H_n$完全符合上述命题的要求。"
+}

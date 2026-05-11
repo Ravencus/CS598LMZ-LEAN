@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-32-basic-properties-of-the-limit-superior-and-li",
+  "english_title": "Proposition 3.2: Basic Properties of the Limit Superior and Limit Inferior of a Function",
+  "statement_en": "Let $U:=\\limsup_{x\\to +\\infty}f(x)$ and $L:=\\liminf_{x\\to +\\infty}f(x)$. Then:\n1. There exist sequences $x_n,y_n\\to +\\infty$ such that $f(x_n)\\to U$ and $f(y_n)\\to L$.\n2. For every $r>U$, there exists $R_0$ such that for all $x\\geq R_0$, one has $f(x)<r$. For every $r<U$ and every $R$, there exists $x\\geq R$ such that $f(x)>r$.\n3. For every $r<L$, there exists $R_0$ such that for all $x\\geq R_0$, one has $f(x)>r$. For every $r>L$ and every $R$, there exists $x\\geq R$ such that $f(x)<r$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def limsupAtTop (f : ℝ → ℝ) : ℝ :=\n  sInf { a : ℝ | ∀ᶠ x in Filter.atTop, f x < a }\n\nnoncomputable def liminfAtTop (f : ℝ → ℝ) : ℝ :=\n  sSup { a : ℝ | ∀ᶠ x in Filter.atTop, a < f x }\n\ntheorem limsup_liminf_atTop_properties (f : ℝ → ℝ) :\n    let U := limsupAtTop f\n    let L := liminfAtTop f\n    (∃ x y : ℕ → ℝ,\n      Filter.Tendsto x Filter.atTop Filter.atTop ∧\n      Filter.Tendsto y Filter.atTop Filter.atTop ∧\n      Filter.Tendsto (fun n => f (x n)) Filter.atTop (nhds U) ∧\n      Filter.Tendsto (fun n => f (y n)) Filter.atTop (nhds L)) ∧\n    (∀ r : ℝ, U < r →\n      ∃ R0 : ℝ, ∀ x : ℝ, R0 ≤ x → f x < r) ∧\n    (∀ r : ℝ, r < U →\n      ∀ R : ℝ, ∃ x : ℝ, R ≤ x ∧ r < f x) ∧\n    (∀ r : ℝ, r < L →\n      ∃ R0 : ℝ, ∀ x : ℝ, R0 ≤ x → r < f x) ∧\n    (∀ r : ℝ, L < r →\n      ∀ R : ℝ, ∃ x : ℝ, R ≤ x ∧ f x < r) := by\n  sorry"
+}

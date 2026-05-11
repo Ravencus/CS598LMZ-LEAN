@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-241",
+  "english_title": "Proposition 2.4.1",
+  "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of random variables on a probability space \\((\\Omega, \\mathcal{F}, P)\\) such that \\(\\|f_n\\|_{L^2} \\to 0\\), and suppose the series of variances \\(\\sum_{n\\ge 1} \\mathrm{Var}(f_n)\\) converges. Then \\(f_n\\) converges to \\(0\\) almost surely.",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter Topology BigOperators\n\nnoncomputable section\n\ndef variance {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω) [IsProbabilityMeasure P]\n    (X : Ω → ℝ) : ℝ :=\n  ∫ ω, (X ω - ∫ t, X t ∂P) ^ (2 : ℕ) ∂P\n\ntheorem l2_tendsto_zero_and_summable_variances_implies_ae_tendsto_zero\n    {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω) [IsProbabilityMeasure P]\n    (f : ℕ → Ω → ℝ)\n    (h_int : ∀ n : ℕ, Integrable (f n) P)\n    (h_sq_int : ∀ n : ℕ, Integrable (fun ω => ‖f n ω‖ ^ (2 : ℕ)) P)\n    (h_l2 : Tendsto (fun n : ℕ => ∫ ω, ‖f n ω‖ ^ (2 : ℕ) ∂P) atTop (nhds 0))\n    (h_var : Summable (fun n : ℕ => variance P (f n))) :\n    ∀ᵐ ω ∂P, Tendsto (fun n : ℕ => f n ω) atTop (nhds 0) := by\n  sorry"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "proposition-1-2",
+  "type": "problem",
+  "source_note": "矩阵交换次序特征多项式不变",
+  "english_source_note": "Characteristic Polynomial Invariant Under Order Swap",
+  "callout_id": "矩阵交换次序特征多项式不变#1",
+  "english_title": "Proposition 1",
+  "statement_en": "Let $A,B \\in M_n(\\mathbb{C})$. Then $AB$ and $BA$ have the same spectrum.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "linear algebra",
+  "key_techniques": [
+    "characteristic polynomial invariance under order swap",
+    "similarity in the invertible case",
+    "density of invertible matrices"
+  ],
+  "prerequisites": [
+    "matrices over complex numbers",
+    "spectrum of a matrix",
+    "characteristic polynomial",
+    "similarity of matrices"
+  ],
+  "callout_body": "矩阵$A,B \\in M_n(\\mathbb{C})$那么$AB$与$BA$的谱一致。"
+}

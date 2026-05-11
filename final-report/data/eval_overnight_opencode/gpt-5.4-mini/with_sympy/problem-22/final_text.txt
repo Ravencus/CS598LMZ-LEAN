@@ -1,0 +1,7 @@
+I’m loading the Lean proving workflow and then I’ll test a minimal proof shape against the checker.
+I’m checking whether there’s an existing digest or nearby proof pattern for antitone divergent sequences before I commit to a proof strategy.
+I’ve reduced this to finding a usable monotone-series lemma or, failing that, a short contradiction argument. I’m probing Mathlib for any existing antitone/summable facts before writing a proof from scratch.
+I haven’t found a ready-made digest, so I’m checking whether the repo already contains a related `Summable`/`min` lemma I can reuse instead of rebuilding the analysis.
+I’m now probing for exact theorem names. If Mathlib already has an antitone-series lemma, that will save most of the proof.
+I’m trying one more angle: whether Mathlib already has a `not_summable_min`-style theorem that makes this a one-line contradiction proof.
+I found a promising existing theorem name, but the checker won’t print its type directly. I’m trying it as the entire proof now, which is the fastest way to see whether Mathlib already has exactly this result.

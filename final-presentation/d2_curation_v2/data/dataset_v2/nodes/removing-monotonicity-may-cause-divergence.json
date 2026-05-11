@@ -1,0 +1,23 @@
+{
+  "id": "removing-monotonicity-may-cause-divergence",
+  "type": "problem",
+  "source_note": "对Dirichlet判别的一个调整",
+  "english_source_note": "A Modification of Dirichlet's Test",
+  "callout_id": "对Dirichlet判别的一个调整#3",
+  "english_title": "Removing Monotonicity May Cause Divergence",
+  "statement_en": "Consider $$\\sum_n \\frac{1}{n} = \\sum_n (-1)^n \\frac{(-1)^n}{n}.$$ Let $b_n = (-1)^n$, whose partial sums are bounded, and let $a_n = \\frac{(-1)^n}{n} \\to 0$, but $a_n$ is not monotone. In fact, this series diverges.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "harmonic series divergence",
+    "construction of counterexamples",
+    "bounded partial sums"
+  ],
+  "prerequisites": [
+    "harmonic series",
+    "Dirichlet test",
+    "monotonicity of sequences"
+  ],
+  "callout_body": "$$\\sum_n \\frac{1}{n} = \\sum_n (-1)^n \\frac{(-1)^n}{n}$$令$b_n = (-1)^n$其和一定是有界的，$a_n = \\frac{(-1)^n}{n} \\to0$，不过 $a_n$并不单调。事实上这个级数发散。"
+}

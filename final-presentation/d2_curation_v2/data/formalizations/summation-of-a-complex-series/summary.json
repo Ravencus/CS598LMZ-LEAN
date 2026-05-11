@@ -1,0 +1,18 @@
+{
+  "problem_id": "summation-of-a-complex-series",
+  "english_title": "Summation of a Complex Series",
+  "statement_en": "For \\(|z|<1\\), evaluate\n$$\\\\sum_{n \\\\geq 1} \\\\frac{z^{n-1}}{(1-z^n)(1-z^{n+1})}.$$",
+  "difficulty": "medium",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem evaluate_series_complex (z : ℂ) (hz : ‖z‖ < 1) :\n    HasSum (fun n : ℕ => z^n / ((1 - z^(n + 1)) * (1 - z^(n + 2)))) (1 / (1 - z)^2) := by\n  sorry"
+}

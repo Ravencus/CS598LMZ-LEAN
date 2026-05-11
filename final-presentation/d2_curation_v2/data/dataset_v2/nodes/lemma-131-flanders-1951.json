@@ -1,0 +1,24 @@
+{
+  "id": "lemma-131-flanders-1951",
+  "type": "problem",
+  "source_note": "矩阵交换次序特征多项式不变",
+  "english_source_note": "Characteristic Polynomial Invariant Under Order Swap",
+  "callout_id": "矩阵交换次序特征多项式不变#6",
+  "english_title": "Lemma 1.3.1 (Flanders, 1951)",
+  "statement_en": "Let $A,B\\in M_{n}(\\mathbb{C})$. Then the minimal polynomials of $AB$ and $BA$ differ by at most a factor of $x$.",
+  "problem_type": "lemma",
+  "difficulty": "hard",
+  "domain": "linear algebra",
+  "key_techniques": [
+    "minimal polynomial comparison",
+    "analysis of zero eigenvalue",
+    "structure of products $AB$ and $BA$"
+  ],
+  "prerequisites": [
+    "minimal polynomial",
+    "eigenvalues",
+    "Jordan canonical form",
+    "matrix products"
+  ],
+  "callout_body": "$A,B\\in M_{n}(\\mathbb{C})$那么$AB,BA$二者的极小多项式至多相差一个因子$x$"
+}

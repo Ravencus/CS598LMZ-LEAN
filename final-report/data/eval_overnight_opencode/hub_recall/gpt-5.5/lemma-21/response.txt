@@ -1,0 +1,2 @@
+["piecewise-estimates-hub"]
+- piecewise-estimates-hub: The clean proof writes the difference along the unit-circle path as an integral and bounds the integrand uniformly by `1`, giving “arc length times height”: `‖exp(i t)-1‖ ≤ |t|` with `t = 2πx`.

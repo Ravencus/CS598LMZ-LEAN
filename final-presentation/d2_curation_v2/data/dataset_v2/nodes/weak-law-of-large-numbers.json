@@ -1,0 +1,23 @@
+{
+  "id": "weak-law-of-large-numbers",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+  "english_source_note": "A Strong Law via the Borel-Cantelli Lemma",
+  "callout_id": "Borel-Cantelli lemma证明某种版本下的强大数定律#1",
+  "english_title": "Weak Law of Large Numbers",
+  "statement_en": "Assume $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed random variables, and $E|X_1|<\\infty$. Let $S_n=X_1+\\cdots+X_n$ and $\\mu=E(X_1)$. Then $$\\frac{S_n}{n}\\xrightarrow{P}{\\mu}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "law of large numbers",
+    "truncation or expectation control",
+    "convergence in probability"
+  ],
+  "prerequisites": [
+    "independent and identically distributed random variables",
+    "expectation and integrability",
+    "convergence in probability"
+  ],
+  "callout_body": "假设$X_1,...,X_n,...$是独立同分布的随机变量，并且$E|X_1|<\\infty$那么令$S_n = X_1+...+X_n,\\mu=E(X_1)$,那么有$$\\frac{S_n}{n}\\xrightarrow{P}{\\mu}$$"
+}

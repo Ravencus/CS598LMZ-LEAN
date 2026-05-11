@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_24c2f9677af0.lean",
+      "line": 11,
+      "column": 51,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Decidable (z ∈ B)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_24c2f9677af0.lean",
+      "line": 11,
+      "column": 30,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Decidable (z ∈ A)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_24c2f9677af0.lean",
+      "line": 11,
+      "column": 51,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Decidable (z ∈ B)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_24c2f9677af0.lean",
+      "line": 11,
+      "column": 30,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Decidable (z ∈ A)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ]
+}

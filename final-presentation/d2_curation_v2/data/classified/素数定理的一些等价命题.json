@@ -1,0 +1,138 @@
+{
+  "note_title": "素数定理的一些等价命题",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "素数定理的一些等价命题#1",
+      "type": "note",
+      "title": "素数定理的一些等价命题(Landau 1909)",
+      "body": "\n1. $\\pi(x)\\sim \\frac{x}{\\log(x)}$\n2. $\\vartheta(x)\\sim x$\n3. $\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)-\\gamma+o(1)$\n4. $\\psi(x):=\\sum_{n\\leq x}\\Lambda(n)\\sim x$\n5. $\\sum_{n\\leq x}\\mu(n)=o(x)$\n6. $\\sum_{n\\geq 1}\\frac{\\mu(n)}{n}=0$",
+      "position_char": 30,
+      "position_line": 5,
+      "classification_result": {
+        "id": "素数定理的一些等价命题#1",
+        "classification": "problem",
+        "english_title": "Some Equivalent Statements of the Prime Number Theorem (Landau 1909)",
+        "if_problem": {
+          "statement_en": "The following statements are equivalent:\n1. $\\pi(x)\\sim \\frac{x}{\\log(x)}$\n2. $\\vartheta(x)\\sim x$\n3. $\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)-\\gamma+o(1)$\n4. $\\psi(x):=\\sum_{n\\leq x}\\Lambda(n)\\sim x$\n5. $\\sum_{n\\leq x}\\mu(n)=o(x)$\n6. $\\sum_{n\\geq 1}\\frac{\\mu(n)}{n}=0$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "equivalent formulations of the prime number theorem",
+            "Chebyshev functions",
+            "Möbius inversion",
+            "Dirichlet series"
+          ],
+          "prerequisites": [
+            "prime counting function and asymptotic notation",
+            "von Mangoldt function",
+            "Möbius function",
+            "basic analytic number theory"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "素数定理的一些等价命题#2",
+      "type": "note",
+      "title": "引理1.1.1:Wintner mean value theorem,20世纪初",
+      "body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$并且级数$\\sum_{n\\geq 1}\\frac{g(n)}{n}$绝对收敛，那么$f$的平均值$M(f)$就是该级数收敛到的值,即：$$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}$$",
+      "position_char": 884,
+      "position_line": 26,
+      "classification_result": {
+        "id": "素数定理的一些等价命题#2",
+        "classification": "problem",
+        "english_title": "Lemma 1.1.1: Wintner Mean Value Theorem, Early 20th Century",
+        "if_problem": {
+          "statement_en": "If an arithmetic function $f$ is the Dirichlet convolution sum of another arithmetic function $g$, namely $$f=1*g,$$ and if the series $\\sum_{n\\geq 1}\\frac{g(n)}{n}$ converges absolutely, then the mean value $M(f)$ of $f$ equals the sum of that series, that is, $$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "Dirichlet convolution",
+            "mean values of arithmetic functions",
+            "absolute convergence"
+          ],
+          "prerequisites": [
+            "arithmetic functions",
+            "Dirichlet convolution",
+            "mean value of an arithmetic function",
+            "series convergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "素数定理的一些等价命题#3",
+      "type": "note",
+      "title": "引理1.1.2:Ingham Tauberian定理(1945)",
+      "body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$令$F(x):=\\sum_{n\\leq x}f(n),G(x):=\\sum_{n\\leq x}g(n)$如果$$F(x)=Ax+o(x)$$那么$$\\sum_{n\\leq x}\\frac{g(n)}{n}=\\frac{G(x)}{x}+A+o(1)$$",
+      "position_char": 1618,
+      "position_line": 37,
+      "classification_result": {
+        "id": "素数定理的一些等价命题#3",
+        "classification": "problem",
+        "english_title": "Lemma 1.1.2: Ingham Tauberian Theorem (1945)",
+        "if_problem": {
+          "statement_en": "If an arithmetic function $f$ is the Dirichlet convolution sum of another arithmetic function $g$, namely $$f=1*g,$$ and let $F(x):=\\sum_{n\\leq x}f(n)$ and $G(x):=\\sum_{n\\leq x}g(n)$. If $$F(x)=Ax+o(x),$$ then $$\\sum_{n\\leq x}\\frac{g(n)}{n}=\\frac{G(x)}{x}+A+o(1).$$",
+          "problem_type": "lemma",
+          "difficulty": "hard",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "Tauberian arguments",
+            "Dirichlet convolution",
+            "partial summation",
+            "asymptotic analysis"
+          ],
+          "prerequisites": [
+            "arithmetic functions",
+            "Dirichlet convolution",
+            "summatory functions",
+            "little-o notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "素数定理的一些等价命题#4",
+      "type": "note",
+      "title": "引理1.3.1 Wiener-Ikehara theorem（简化版）",
+      "body": "设$b>0$,$f(n)$是一个非负的算术函数，记$F(s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}$是其对应的Dirichlet级数。\n\n假设级数在$\\text{Re}(s)> b$的范围内绝对收敛，并且可以解析延拓到$\\text{Re}(s)\\geq b$并定义亚纯函数$F(s)$,该函数在此范围内有且仅有$s=b$这一个简单极点。假设$F(s)$在$s=b$处的留数为$c$,那么$$\\sum_{n\\leq x} f(n)\\sim \\frac{c}{b}x^b$$",
+      "position_char": 5148,
+      "position_line": 71,
+      "classification_result": {
+        "id": "素数定理的一些等价命题#4",
+        "classification": "problem",
+        "english_title": "Lemma 1.3.1: Wiener-Ikehara Theorem (Simplified Version)",
+        "if_problem": {
+          "statement_en": "Let $b>0$, and let $f(n)$ be a nonnegative arithmetic function. Write $$F(s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}$$ for its associated Dirichlet series.\n\nAssume that the series converges absolutely in the region $\\mathrm{Re}(s)>b$, and that it admits analytic continuation to $\\mathrm{Re}(s)\\geq b$ as a meromorphic function $F(s)$. Suppose that in this region the function has exactly one simple pole, namely at $s=b$. If the residue of $F(s)$ at $s=b$ is $c$, then $$\\sum_{n\\leq x} f(n)\\sim \\frac{c}{b}x^b.$$",
+          "problem_type": "lemma",
+          "difficulty": "hard",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "Wiener-Ikehara theorem",
+            "Dirichlet series",
+            "meromorphic continuation",
+            "Tauberian theory"
+          ],
+          "prerequisites": [
+            "complex analysis",
+            "Dirichlet series",
+            "residues and poles",
+            "summatory functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"素数定理的一些等价命题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Some Equivalent Statements of the Prime Number Theorem (Landau 1909)\",\n    \"if_problem\": {\n      \"statement_en\": \"The following statements are equivalent:\\n1. $\\\\pi(x)\\\\sim \\\\frac{x}{\\\\log(x)}$\\n2. $\\\\vartheta(x)\\\\sim x$\\n3. $\\\\sum_{n\\\\leq x}\\\\frac{\\\\Lambda(n)}{n}=\\\\log(x)-\\\\gamma+o(1)$\\n4. $\\\\psi(x):=\\\\sum_{n\\\\leq x}\\\\Lambda(n)\\\\sim x$\\n5. $\\\\sum_{n\\\\leq x}\\\\mu(n)=o(x)$\\n6. $\\\\sum_{n\\\\geq 1}\\\\frac{\\\\mu(n)}{n}=0$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"equivalent formulations of the prime number theorem\",\n        \"Chebyshev functions\",\n        \"Möbius inversion\",\n        \"Dirichlet series\"\n      ],\n      \"prerequisites\": [\n        \"prime counting function and asymptotic notation\",\n        \"von Mangoldt function\",\n        \"Möbius function\",\n        \"basic analytic number theory\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"素数定理的一些等价命题#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.1.1: Wintner Mean Value Theorem, Early 20th Century\",\n    \"if_problem\": {\n      \"statement_en\": \"If an arithmetic function $f$ is the Dirichlet convolution sum of another arithmetic function $g$, namely $$f=1*g,$$ and if the series $\\\\sum_{n\\\\geq 1}\\\\frac{g(n)}{n}$ converges absolutely, then the mean value $M(f)$ of $f$ equals the sum of that series, that is, $$M(f)=\\\\sum_{n\\\\geq 1}\\\\frac{g(n)}{n}.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"Dirichlet convolution\",\n        \"mean values of arithmetic functions\",\n        \"absolute convergence\"\n      ],\n      \"prerequisites\": [\n        \"arithmetic functions\",\n        \"Dirichlet convolution\",\n        \"mean value of an arithmetic function\",\n        \"series convergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"素数定理的一些等价命题#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.1.2: Ingham Tauberian Theorem (1945)\",\n    \"if_problem\": {\n      \"statement_en\": \"If an arithmetic function $f$ is the Dirichlet convolution sum of another arithmetic function $g$, namely $$f=1*g,$$ and let $F(x):=\\\\sum_{n\\\\leq x}f(n)$ and $G(x):=\\\\sum_{n\\\\leq x}g(n)$. If $$F(x)=Ax+o(x),$$ then $$\\\\sum_{n\\\\leq x}\\\\frac{g(n)}{n}=\\\\frac{G(x)}{x}+A+o(1).$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"Tauberian arguments\",\n        \"Dirichlet convolution\",\n        \"partial summation\",\n        \"asymptotic analysis\"\n      ],\n      \"prerequisites\": [\n        \"arithmetic functions\",\n        \"Dirichlet convolution\",\n        \"summatory functions\",\n        \"little-o notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"素数定理的一些等价命题#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.3.1: Wiener-Ikehara Theorem (Simplified Version)\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $b>0$, and let $f(n)$ be a nonnegative arithmetic function. Write $$F(s):=\\\\sum_{n\\\\geq 1}\\\\frac{f(n)}{n^s}$$ for its associated Dirichlet series.\\n\\nAssume that the series converges absolutely in the region $\\\\mathrm{Re}(s)>b$, and that it admits analytic continuation to $\\\\mathrm{Re}(s)\\\\geq b$ as a meromorphic function $F(s)$. Suppose that in this region the function has exactly one simple pole, namely at $s=b$. If the residue of $F(s)$ at $s=b$ is $c$, then $$\\\\sum_{n\\\\leq x} f(n)\\\\sim \\\\frac{c}{b}x^b.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"Wiener-Ikehara theorem\",\n        \"Dirichlet series\",\n        \"meromorphic continuation\",\n        \"Tauberian theory\"\n      ],\n      \"prerequisites\": [\n        \"complex analysis\",\n        \"Dirichlet series\",\n        \"residues and poles\",\n        \"summatory functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

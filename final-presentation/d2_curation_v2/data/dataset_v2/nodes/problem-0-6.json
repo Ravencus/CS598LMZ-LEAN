@@ -1,0 +1,22 @@
+{
+  "id": "problem-0-6",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#1",
+  "english_title": "Problem 0",
+  "statement_en": "Let $a_n$ be a nonnegative nonincreasing real sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ diverges. Prove that the series $\\sum_{n\\geq 1} \\min\\{a_n,1/n\\}$ diverges.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Cauchy condensation test",
+    "monotone sequence comparison"
+  ],
+  "prerequisites": [
+    "series of nonnegative terms",
+    "monotone sequences",
+    "Cauchy condensation test"
+  ],
+  "callout_body": "$a_n$是一个非负不增的实数列，并且级数$\\sum_{n\\geq 1}a_n$发散。证明级数$\\sum_{n\\geq 1}\\min\\{a_n,1/n\\}$发散。"
+}

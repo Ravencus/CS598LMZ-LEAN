@@ -1,0 +1,22 @@
+{
+  "id": "lemma-25",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#8",
+  "english_title": "Lemma 2.5",
+  "statement_en": "Let $a_n$ be a nonnegative nonincreasing real sequence such that the series $\\sum_{n\\geq 1}a_n$ diverges. If $S\\subseteq \\mathbb{N}$ has positive natural density, that is,\n$$d(S)=\\lim_{N\\to \\infty} \\frac{|S\\cap \\{1,2,\\cdots,N\\}|}{N}=\\delta>0,$$\nthen the subseries $\\sum_{n\\in S}a_n$ also diverges.",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "positive density argument",
+    "comparison using monotonicity"
+  ],
+  "prerequisites": [
+    "natural density",
+    "subseries",
+    "monotone sequences"
+  ],
+  "callout_body": "设$a_n$是一个非负，单调不增的实数列，且级数$\\sum_{n\\geq 1}a_n$发散。如果$S\\subseteq \\mathbb{N}$是自然的一个子集，其自然密度为正，即$$d(S)=\\lim_{N\\to \\infty} \\frac{|S\\cap \\{1,2,\\cdots,N\\}|}{N}=\\delta>0$$那么子级数$\\sum_{n\\in S}a_n$也发散。"
+}

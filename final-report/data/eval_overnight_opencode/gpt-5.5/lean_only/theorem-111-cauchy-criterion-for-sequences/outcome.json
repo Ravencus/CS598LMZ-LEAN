@@ -1,0 +1,31 @@
+{
+  "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "outcome": "signature_mismatch",
+  "overall_success": false,
+  "wall_seconds": 36.44,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 1,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 0,
+  "first_error": null,
+  "total_cost_usd": 0.0,
+  "total_tokens": 38924,
+  "sympy_witnesses": [],
+  "errors_only": [],
+  "signature_ok": false,
+  "expected_theorem_name": "real_sequence_tendsto_iff_eventually_pairwise_close",
+  "audit": {
+    "reclassified_from": "lean_proof"
+  }
+}

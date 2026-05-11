@@ -1,0 +1,5 @@
+I’ll first look for existing Mathlib results around Cesàro averages and convolution so the proof can reuse library facts rather than formalizing epsilon estimates from scratch.
+A prior formalization indicates Mathlib already provides the exact convolution average theorem as `Filter.Tendsto.convolution_average`; I’ll verify the one-line proof against the required signature.
+The direct theorem call did not compile but returned no diagnostics, so I’m going to probe the relevant theorem names and types in one batch before deciding whether to use the longer decomposition proof.
+I found a complete epsilon proof in the repository history. I’ll check it as-is; if it fails, the diagnostics should identify only API drift or small tactic issues.
+The boundedness and shifted-Cesàro helper lemmas now compile. I’m using the observation that for `n ≥ 2N`, every convolution index has either `k ≥ N` or `n-k ≥ N`, so one factor is uniformly small while the other is bounded.

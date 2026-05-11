@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 15,
+      "column": 79,
+      "severity": "error",
+      "message": "Invalid argument name `n` for function `Finset.sum_Icc_succ_top`\n\nHint: Perhaps you meant one of the following parameter names:\n  • `M`: n̵M̲\n  • `a`: n̵a̲\n  • `b`: n̵b̲\n  • `hab`: n̵h̲a̲b̲\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 15,
+      "column": 79,
+      "severity": "error",
+      "message": "Invalid argument name `n` for function `Finset.sum_Icc_succ_top`\n\nHint: Perhaps you meant one of the following parameter names:\n  • `M`: n̵M̲\n  • `a`: n̵a̲\n  • `b`: n̵b̲\n  • `hab`: n̵h̲a̲b̲\n"
+    }
+  ]
+}

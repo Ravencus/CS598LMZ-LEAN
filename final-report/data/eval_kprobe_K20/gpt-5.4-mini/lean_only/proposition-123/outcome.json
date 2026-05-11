@@ -1,0 +1,36 @@
+{
+  "problem_id": "proposition-123",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 374.35,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 21,
+  "budget": 20,
+  "budget_hit_event": true,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "factorial_sum_identity",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "unsolved goals\nN : ℕ\nhN : 2 ≤ N\nlhs : ℕ → ℚ := fun n => ∑ k ∈ Finset.range (n + 1), 1 / ↑k.factorial + 1 / ↑(n * n.factorial)\nrhs : ℕ → ℚ := fun n => 3 - ∑ k ∈ Finset.Icc 1 (n - 1), 1 / ↑(k * (k + 1) ",
+  "total_cost_usd": 0.0,
+  "total_tokens": 714143,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_cc47aac276.lean",
+      "line": 36,
+      "column": 89,
+      "severity": "error",
+      "message": "unsolved goals\nN : ℕ\nhN : 2 ≤ N\nlhs : ℕ → ℚ := fun n => ∑ k ∈ Finset.range (n + 1), 1 / ↑k.factorial + 1 / ↑(n * n.factorial)\nrhs : ℕ → ℚ := fun n => 3 - ∑ k ∈ Finset.Icc 1 (n - 1), 1 / ↑(k * (k + 1) * (k + 1).factorial)\nt : ℕ → ℚ := fun n => 1 / ↑(n * (n + 1) * (n + 1).factorial)\nhN1 : 1 ≤ N\nn : ℕ\nih : ∀ m < n + 1 + 1, 1 ≤ m → lhs m = rhs m\nhn : 1 ≤ n + 1 + 1\nhprev : lhs n.succ = rhs n.succ\nhL : lhs n.succ.succ = lhs n.succ - t n.succ\n⊢ 3 -\n      (∑ x ∈ Finset.Icc 1 n, (↑(x + 1).factorial)⁻¹ * ((↑x + 1)⁻¹ * (↑x)⁻¹) +\n        (↑(n + 1 + 1).factorial)⁻¹ * ((↑n + 1 + 1)⁻¹ * (↑n + 1)⁻¹)) =\n    3 - ∑ x ∈ Finset.Icc 1 n, (↑(x + 1).factorial)⁻¹ * ((↑x + 1)⁻¹ * (↑x)⁻¹) -\n      (↑(n + 1 + 1).factorial)⁻¹ * ((↑n + 1 + 1)⁻¹ * (↑n + 1)⁻¹)\n"
+    }
+  ]
+}

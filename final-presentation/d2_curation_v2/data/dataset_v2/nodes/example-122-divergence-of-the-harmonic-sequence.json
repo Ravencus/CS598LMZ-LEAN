@@ -1,0 +1,23 @@
+{
+  "id": "example-122-divergence-of-the-harmonic-sequence",
+  "type": "problem",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "callout_id": "柯西收敛判别#6",
+  "english_title": "Example 1.2.2: Divergence of the Harmonic Sequence",
+  "statement_en": "Define the harmonic sequence $$H_n:=\\sum_{k\\leq n}\\frac{1}{k}.$$ Prove that this sequence diverges.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "pass to the subsequence $H_{2^n}$",
+    "termwise estimation",
+    "use the Cauchy criterion contrapositive"
+  ],
+  "prerequisites": [
+    "partial sums of a series",
+    "Cauchy criterion for sequences",
+    "basic inequalities"
+  ],
+  "callout_body": "定义调和数列$$H_n:=\\sum_{k\\leq n}\\frac{1}{k}$$现在我们来证明这个序列是发散的。我们现在忘记[[和的积分估计]]这个工具，单纯从\"想法1.2.1\"这个角度入手这个问题。所以我们现在的任务就是估计$|H_n-H_m|$的下界，但是我们发现这样的和增长很慢，下界不容易估计。于是我们本着，既然序列可能是发散的，那么不妨借助一个子列，从而让它发散地更快一些，更易于暴露其发散性质一些（这个想法参考[[用子列来提升收敛或发散性质#1.1 对于收敛序列，用子列来加速收敛或发散]]）。因此我们考虑子列$H_{2^n}$，结合[[逐项估计]]我们发现$$|H_{2^{n+1}}-H_{2^n}|=\\sum_{k=1}^{2^n}\\frac{1}{2^n+k}>\\frac{2^n}{2^n+2^n}=\\frac{1}{2}$$因此通过柯西判别，我们知道$H_{2^n}$这个子列是发散的。"
+}

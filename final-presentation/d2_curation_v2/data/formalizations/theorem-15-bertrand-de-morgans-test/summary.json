@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-15-bertrand-de-morgans-test",
+  "english_title": "Theorem 1.5: Bertrand-De Morgan's Test",
+  "statement_en": "For a positive-term series $\\sum_n a_n$, suppose that\n$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+\\frac{L}{n\\log(n)}+o\\left(\\frac{1}{n\\log(n)}\\right).$$ Then:\n1. If $L>1$, the series converges.\n2. If $L<1$, the series diverges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem positiveTermSeriesRatioTest\n    (a : ℕ → ℝ) (L : ℝ)\n    (ha_pos : ∀ n, 0 < a n)\n    (h_asymp :\n      Filter.Tendsto\n        (fun n : ℕ =>\n          let x : ℝ := (n : ℝ) + 2\n          (((a (n + 2)) / (a (n + 3))) - (1 + 1 / x + L / (x * Real.log x))) /\n            (1 / (x * Real.log x)))\n        Filter.atTop\n        (nhds 0)) :\n    ((1 < L → Summable a) ∧ (L < 1 → ¬ Summable a)) := by\n  sorry"
+}

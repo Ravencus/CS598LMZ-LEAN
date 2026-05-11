@@ -1,0 +1,1 @@
+Let me explore the codebase to understand the patterns and find relevant Mathlib theorems.

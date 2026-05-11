@@ -1,0 +1,22 @@
+{
+  "id": "lemma-33-condensation-test-for-integrals",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#12",
+  "english_title": "Lemma 3.3: Condensation Test for Integrals",
+  "statement_en": "Let $f:[1,+\\infty)\\to \\mathbb{R}$ satisfy:\n1. $f(x)$ is locally integrable on this interval, that is, it is Riemann integrable on every closed interval $[1,M]$.\n2. $f(x)$ is nonnegative and nonincreasing on this interval.\n\nThen the improper integral $\\int_{1}^{+\\infty}f(x)\\,dx$ converges if and only if the series $\\sum_{n=1}^{+\\infty}2^n f(2^n)$ converges.",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "dyadic decomposition",
+    "integral condensation test"
+  ],
+  "prerequisites": [
+    "improper integrals",
+    "monotone functions",
+    "series convergence"
+  ],
+  "callout_body": "设函数$f:[1,+\\infty)\\to \\mathbb{R}$满足下列的条件：\n1. $f(x)$在该区间上是局部可积的，即对任意闭区间$[1,M]$上都是黎曼可积的。\n2. $f(x)$在该区间上非负单调不增。\n\n那么广义积分$\\int_{1}^{+\\infty}f(x)\\,dx$收敛，当且仅当级数$\\sum_{n=1}^{+\\infty}2^n f(2^n)$收敛。"
+}

@@ -1,0 +1,58 @@
+{
+  "problem_id": "lemma-32-hermite-identity",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 51.9,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 15.06,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Int.sum_floor_add_div_natCast_eq_floor_mul`\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 14.14,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Int.sum_floor_add_div_nat_eq_floor_mul`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 15.76,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Int.floor_sum_range_add_div_nat_eq_floor_mul`\n"
+    }
+  ]
+}

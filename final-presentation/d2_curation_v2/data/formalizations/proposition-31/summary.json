@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-31",
+  "english_title": "Proposition 3.1",
+  "statement_en": "Let $a_1>0$, and suppose the sequence satisfies the difference equation $$\\Delta a_n= \\frac{f(n)}{S_n}$$ where $f(n)>0$ and $f(n)\\sim \\alpha n^{2\\beta}$. Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}} =\\sqrt{\\frac{\\alpha(\\beta+1)}{\\beta}}.$$",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem asymptotic_sequence_limit\n    {a f S : ℕ → ℝ} {α β : ℝ}\n    (ha1 : 0 < a 1)\n    (hβ : 0 < β)\n    (hα : 0 < α)\n    (hf_pos : ∀ n : ℕ, 0 < f n)\n    (hS_pos : ∀ n : ℕ, 0 < S n)\n    (hΔ : ∀ n : ℕ, a (n + 1) - a n = f n / S n)\n    (hf_asymp :\n      Filter.Tendsto\n        (fun n : ℕ => f n / Real.rpow (n : ℝ) (2 * β))\n        Filter.atTop\n        (nhds α)) :\n    Filter.Tendsto\n      (fun n : ℕ => a n / Real.rpow (n : ℝ) β)\n      Filter.atTop\n      (nhds (Real.sqrt (α * (β + 1) / β))) := by\n  sorry"
+}

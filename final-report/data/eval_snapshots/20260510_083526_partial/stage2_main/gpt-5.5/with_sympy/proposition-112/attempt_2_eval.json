@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "unsolved goals\nN : ℕ\nih : 2 ≤ N → ∑ n ∈ Finset.Icc 2 N, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑N\nhN : 2 ≤ N + 1\nhN2 : 2 ≤ N\nhsucc : 2 ≤ N + 1\nhNpos : ↑N ≠ 0\n⊢ ¬↑N + 1 = 0",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_d4cfb6d767.lean",
+      "line": 21,
+      "column": 49,
+      "severity": "error",
+      "message": "unsolved goals\nN : ℕ\nih : 2 ≤ N → ∑ n ∈ Finset.Icc 2 N, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑N\nhN : 2 ≤ N + 1\nhN2 : 2 ≤ N\nhsucc : 2 ≤ N + 1\nhNpos : ↑N ≠ 0\n⊢ ¬↑N + 1 = 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d4cfb6d767.lean",
+      "line": 15,
+      "column": 8,
+      "severity": "error",
+      "message": "unsolved goals\ncase pos\nN : ℕ\nih : 2 ≤ N → ∑ n ∈ Finset.Icc 2 N, 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑N\nhN : 2 ≤ N + 1\nhN2 : 2 ≤ N\nhsucc : 2 ≤ N + 1\nhNpos : ↑N ≠ 0\nhN1pos : ↑(N + 1) ≠ 0\nhpred : ↑(N + 1 - 1) = ↑N\n⊢ 1 + ↑N * ↑(1 + N) - ↑(1 + N) = -↑N + ↑N * ↑(1 + N)\n"
+    }
+  ]
+}

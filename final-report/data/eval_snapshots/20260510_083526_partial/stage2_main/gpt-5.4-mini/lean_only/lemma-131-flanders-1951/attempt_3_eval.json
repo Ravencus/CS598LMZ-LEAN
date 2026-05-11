@@ -1,0 +1,65 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 7,
+  "first_error": "unsolved goals\nidx : Type u_1\ninst✝¹ : Fintype idx\ninst✝ : DecidableEq idx\nA✝ B✝ A B : Matrix idx idx ℂ\nm : ℂ[X] := minpoly ℂ (B * A)\nhm : (aeval (B * A)) m = 0\nk : ℕ\nhk : A * (B * A) ^ k = (A * B) ^ ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 27,
+      "column": 47,
+      "severity": "error",
+      "message": "unsolved goals\nidx : Type u_1\ninst✝¹ : Fintype idx\ninst✝ : DecidableEq idx\nA✝ B✝ A B : Matrix idx idx ℂ\nm : ℂ[X] := minpoly ℂ (B * A)\nhm : (aeval (B * A)) m = 0\nk : ℕ\nhk : A * (B * A) ^ k = (A * B) ^ k * A\n⊢ (A * B) ^ k * (A * (B * A)) = (A * B) ^ k * (A * B) * A"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 32,
+      "column": 12,
+      "severity": "error",
+      "message": "unsolved goals\ncase C.a\nidx : Type u_1\ninst✝¹ : Fintype idx\ninst✝ : DecidableEq idx\nA✝ B✝ A B : Matrix idx idx ℂ\nm : ℂ[X] := minpoly ℂ (B * A)\nhm : (aeval (B * A)) m = 0\nhpow : ∀ (k : ℕ), A * (B * A) ^ k = (A * B) ^ k * A\nc : ℂ\ni j : idx\n⊢ ∑ j_1, A i j_1 * (algebraMap ℂ (Matrix idx idx ℂ)) c j_1 j = ∑ x, A x j * (algebraMap ℂ (Matrix idx idx ℂ)) c i x"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 45,
+      "column": 57,
+      "severity": "error",
+      "message": "unsolved goals\ncase a\nidx : Type u_1\ninst✝¹ : Fintype idx\ninst✝ : DecidableEq idx\nA✝ B✝ A B : Matrix idx idx ℂ\nm : ℂ[X] := minpoly ℂ (B * A)\nhm : (aeval (B * A)) m = 0\nhpow : ∀ (k : ℕ), A * (B * A) ^ k = (A * B) ^ k * A\nc : ℕ\nk : ℂ\na✝ : A * (aeval (B * A)) (C k * X ^ c) = (aeval (A * B)) (C k * X ^ c) * A\ni j : idx\n⊢ ∑ j_1, A i j_1 * ↑c j_1 j = ∑ x, A x j * ↑c i x"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 50,
+      "column": 59,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  HPow (Matrix idx idx ℂ) ℂ ?m.650\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 52,
+      "column": 60,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  HPow (Matrix idx idx ℂ) ℂ ?m.669\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 52,
+      "column": 12,
+      "severity": "error",
+      "message": "invalid 'calc' step, left-hand side is\n  true : Bool\nbut previous right-hand side is\n  Function.const Lean.Name ()\n    `Scratch.P2_0b30d6de89.49.12.50.71.12.71._sorry._@.Scratch.P2_0b30d6de89.2115730762._hygCtx._hyg.1060 : Unit"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0b30d6de89.lean",
+      "line": 50,
+      "column": 75,
+      "severity": "error",
+      "message": "unsolved goals\nidx : Type u_1\ninst✝¹ : Fintype idx\ninst✝ : DecidableEq idx\nA✝ B✝ A B : Matrix idx idx ℂ\nm : ℂ[X] := minpoly ℂ (B * A)\nhm : (aeval (B * A)) m = 0\nhpow : ∀ (k : ℕ), A * (B * A) ^ k = (A * B) ^ k * A\nc : ℕ\nk : ℂ\na✝ : A * (aeval (B * A)) (C k * X ^ c) = (aeval (A * B)) (C k * X ^ c) * A\nhc : A * (algebraMap ℂ (Matrix idx idx ℂ)) ↑c = (algebraMap ℂ (Matrix idx idx ℂ)) ↑c * A\n⊢ sorry ()"
+    }
+  ]
+}

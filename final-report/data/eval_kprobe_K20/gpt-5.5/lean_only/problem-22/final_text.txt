@@ -1,0 +1,18 @@
+I’ll first check whether the stated theorem is mathematically valid under these exact hypotheses, then mechanize the appropriate Lean proof or identify if the signature is unprovable.
+The statement appears false: monotonicity alone does not prevent two divergent decreasing series from taking turns being much smaller on long blocks, making the pointwise minimum summable. I’m going to verify the Lean environment and see if any hypothesis is stronger than the mathematical reading before deciding whether a proof can exist.
+No Lean proof exists for the stated theorem as written: the theorem is false.
+
+Counterexample idea: split `ℕ` into very long consecutive blocks of lengths `L k`, with `L (k+1) ≥ 2^k * L k`. On block `k`, set constant values
+
+```text
+α = 1 / L k,     β = 2^{-k} / L k      if k is even
+α = 2^{-k} / L k, β = 1 / L k          if k is odd
+```
+
+Choosing the block lengths to grow fast enough makes both `α` and `β` nonnegative and nonincreasing. Each series diverges because each gets contribution `1` on infinitely many blocks. But the minimum contributes only `2^{-k}` on block `k`, so
+
+```text
+∑ min(α n, β n) ≤ ∑ 2^{-k} < ∞.
+```
+
+So the requested Lean theorem cannot be proved in Mathlib without changing the statement or adding stronger hypotheses.

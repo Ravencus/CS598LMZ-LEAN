@@ -1,0 +1,63 @@
+{
+  "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+  "model": "claude-opus-4-7",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 98.29,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 6,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "real_sequence_tendsto_iff_eventually_pairwise_close",
+  "signature_ok": true,
+  "sympy_emitted": true,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "unexpected token '<'; expected '{' or tactic",
+  "total_cost_usd": 0.362243,
+  "total_tokens": 212533,
+  "sympy_witnesses": [
+    {
+      "block": {
+        "kind": "equality",
+        "expression": "y - x",
+        "expected": "0"
+      },
+      "verifier": {
+        "correct": false,
+        "computed": null,
+        "error": "import_failed: No module named 'sympy'"
+      }
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_710ee47c1e.lean",
+      "line": 45,
+      "column": 26,
+      "severity": "error",
+      "message": "unexpected token '<'; expected '{' or tactic"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_710ee47c1e.lean",
+      "line": 45,
+      "column": 24,
+      "severity": "error",
+      "message": "unsolved goals\nxSeq : ℕ → ℝ\nx : ℝ\nh : ∀ ε > 0, ∃ N, 0 < N ∧ ∀ (n m : ℕ), N < n → N < m → |xSeq n - xSeq m| < ε\nhC : CauchySeq xSeq\ny : ℝ\nhy : Filter.Tendsto xSeq Filter.atTop (nhds y)\n⊢ y = x"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_710ee47c1e.lean",
+      "line": 33,
+      "column": 2,
+      "severity": "error",
+      "message": "unsolved goals\ncase mpr\nxSeq : ℕ → ℝ\nx : ℝ\nh : ∀ ε > 0, ∃ N, 0 < N ∧ ∀ (n m : ℕ), N < n → N < m → |xSeq n - xSeq m| < ε\nhC : CauchySeq xSeq\ny : ℝ\nhy : Filter.Tendsto xSeq Filter.atTop (nhds y)\nhyx : y = x\n⊢ Filter.Tendsto xSeq Filter.atTop (nhds x)\n"
+    }
+  ]
+}

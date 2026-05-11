@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-112",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 231.2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 122.49,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 3,
+      "first_error": "unsolved goals\ncase zero\nk : ℕ\nhN : 2 ≤ 2 + k\n⊢ ∑ x ∈ LocallyFiniteOrder.finsetIcc 2 2, (↑(x - 1))⁻¹ * (↑x)⁻¹ = 1 - 2⁻¹\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 41.56,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 3,
+      "first_error": "unsolved goals\ncase zero\nk : ℕ\nhN : 2 ≤ 2 + k\n⊢ ∑ x ∈ LocallyFiniteOrder.finsetIcc 2 2, (↑(x - 1))⁻¹ * (↑x)⁻¹ = 1 / 2"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 58.95,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "unsolved goals\nk✝ : ℕ\nhN : 2 ≤ 2 + k✝\nk : ℕ\nih : ∑ n ∈ Finset.Icc 2 (k + 2), 1 / (↑n * ↑(n - 1)) = 1 - 1 / ↑(k + 2)\nhI : Finset.Icc 2 (k + 3) = insert (k + 3) (Finset.Icc 2 (k + 2))\nhnot : k + 3 ∉ Fin"
+    }
+  ]
+}

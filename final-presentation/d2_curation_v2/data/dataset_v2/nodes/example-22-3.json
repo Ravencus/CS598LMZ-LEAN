@@ -1,0 +1,21 @@
+{
+  "id": "example-22-3",
+  "type": "problem",
+  "source_note": "制造telescoping sum求和或求乘积",
+  "english_source_note": "Using Telescoping Sums for Sums and Products",
+  "callout_id": "制造telescoping sum求和或求乘积#6",
+  "english_title": "Example 2.2",
+  "statement_en": "Show that\n$$\\\\prod_{k=2}^{n}\\\\left(1-\\\\frac{1}{k^2}\\\right)=\\\\frac{n+1}{2n}.$$",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "algebra",
+  "key_techniques": [
+    "telescoping product",
+    "factorization \\(1-1/k^2=(k-1)(k+1)/k^2\\)"
+  ],
+  "prerequisites": [
+    "finite products",
+    "algebraic factorization"
+  ],
+  "callout_body": "$$\\prod_{k=2}^{n}\\left(1-\\frac{1}{k^2}\\right)=\\frac{n+1}{2n}$$"
+}

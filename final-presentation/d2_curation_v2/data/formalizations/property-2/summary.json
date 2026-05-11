@@ -1,0 +1,24 @@
+{
+  "problem_id": "property-2",
+  "english_title": "Property 2",
+  "statement_en": "The trace of a matrix is invariant under similarity transformations.",
+  "difficulty": "easy",
+  "domain": "linear algebra",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to synthesize instance of type class\n  HMul (Matrix n n R)ˣ (Matrix n n R) ?m.14\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance tr"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem matrix_trace_invariant_under_similarity\n    {n : Type*} [Fintype n] [DecidableEq n]\n    {R : Type*} [CommRing R]\n    (A : Matrix n n R) (P : (Matrix n n R)ˣ) :\n    Matrix.trace (((P : Matrix n n R) * A) * ((P⁻¹ : (Matrix n n R)ˣ) : Matrix n n R)) = Matrix.trace A := by\n  sorry"
+}

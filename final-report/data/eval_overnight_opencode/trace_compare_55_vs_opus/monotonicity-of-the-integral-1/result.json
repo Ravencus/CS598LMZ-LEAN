@@ -1,0 +1,11 @@
+{
+  "problem_id": "monotonicity-of-the-integral-1",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "none",
+  "evidence": "Both traces solve the theorem by directly invoking the same Mathlib monotonicity lemma, `integral_mono_ae`, with the same argument order `hg hf hfg`. Trace A first searched with `#check` for monotonicity lemmas, while Trace B went straight to the proof, but both passed with identical final Lean code",
+  "wall_seconds": 6.75
+}

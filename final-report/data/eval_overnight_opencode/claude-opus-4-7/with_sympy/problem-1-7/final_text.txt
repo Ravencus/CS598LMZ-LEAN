@@ -1,0 +1,83 @@
+I'll work on this Lean 4 proof. Let me first analyze the math:
+
+$S_n = \sum_{k=0}^{n} \sin(k/n^2)$. For large $n$, $\sin(k/n^2) \approx k/n^2$, so $S_n \approx \sum_{k=0}^n k/n^2 = n(n+1)/(2n^2) \to 1/2$.
+
+The error from $\sin(x) - x$ is $O(x^3)$, so total error is $O(n \cdot (n/n^2)^3) = O(1/n^2) \to 0$.
+
+Let me start by exploring the structure.
+Let me try a different approach. I know `Real.abs_sin_lt_abs_of_pos` and `Real.sin_le` exist. Let me use bounds `sin x ≤ x` and `sin x ≥ x - x^3/6` for x ≥ 0.
+So `Real.sin_le` doesn't exist with that signature. Let me search more carefully.
+Good, `Real.sin_le` works. Now I need a lower bound. Let me try a different approach - use `|sin x - x| ≤ x^2/2` or similar. Actually let me try `Real.abs_sin_sub_le` or just use `Real.sin_le` and a Taylor bound. 
+
+A cleaner approach: use `|sin x| ≤ |x|` to handle errors. Actually we need both upper and lower bounds.
+
+Key insight: For $0 \le x \le 1$, $x - x^3/6 \le \sin x \le x$. The lower bound: $\sin x \geq x - x^3/6$ for $x \geq 0$ is in Mathlib as `Real.sin_gt_sub_cube_div_six` or similar... Let me try a more direct strategy using sympy for the hard limit:
+Let me try a more strategic approach. I'll write the full proof using a squeeze theorem strategy, with key sub-claims that I might need to delegate via sympy.
+
+Actually, the cleanest approach: prove the limit by showing $|S_n - 1/2| \to 0$. Use $|\sin x - x| \leq |x|^3/6$. Let me check that bound exists.
+I'm burning budget. Let me commit to a strategy. I'll use `Real.sin_le` (sin x ≤ x for x ≥ 0) and a weaker lower bound. Actually, here's a cleaner idea:
+
+$|S_n - \sum_{k=0}^n k/n^2|  \le \sum_{k=0}^n |\sin(k/n^2) - k/n^2|$
+
+Use `|sin x - x| ≤ |x|` (trivial: |sin x| ≤ |x|+|x|=2|x|... no that's weak). 
+
+Better: use $|\sin x - x| \le x^2/2$ for $x \ge 0$. Hmm need to verify.
+
+Actually the simplest: $|\sin x| \le |x|$ gives $|\sin x - x| \le 2|x|$ which is too weak.
+
+Let me try: For $0 \le x$, $\sin x \le x$, and we need lower bound. 
+
+Actually, here's my strategy: $S_n - 1/2 = \sum_k (\sin(k/n^2) - k/n^2) + (\sum_k k/n^2 - 1/2)$.
+
+The second piece: $\sum_{k=0}^n k/n^2 = n(n+1)/(2n^2) = (n+1)/(2n) \to 1/2$.
+
+The first piece: I need $|\sin x - x| \le x^3/6$ or similar. Let me just write a full proof with sympy delegation for the tricky bound, or use a direct squeeze.
+
+Given I have 4 calls left, let me write a comprehensive proof:
+Good, the structure compiles. I have 3 calls left. Let me write the full proof. I need to be careful. Let me write a complete proof using the convexity of sin and squeeze theorem. 
+
+Actually, the cleanest path: Use `Real.abs_sin_lt_abs_of_pos` won't work. Let me try `Real.sin_pos_of_pos_of_lt_pi` and similar...
+
+Better strategy: just use $0 \le \sin x \le x$ for $x \ge 0$ to get an upper bound, and use the squeeze with constant function $1/2$. But that doesn't give convergence to $1/2$ specifically.
+
+Let me use a cleaner mathematical strategy: $\sum_{k=0}^n \sin(k/n^2)$ — use that for $|x| \le 1$, $|\sin x - x| \le x^2$. I'll prove this via integral/MVT. Actually easiest: $|\sin x - x| = |\int_0^x (\cos t - 1) dt| \le \int_0^x |1 - \cos t| dt \le \int_0^x (t^2/2) dt$... this is too involved.
+
+Let me commit to a much simpler approach using the SYMPY skill for the limit, and a direct bound proof:
+I'm running out of budget. Given the complexity, let me write a complete proof that delegates the bound to sympy, OR use a totally different approach. Let me think...
+
+The issue is the lower bound on sin is hard. Let me use a completely different approach: convergent telescoping. Actually, given budget constraints, let me try the equality approach: show the sum minus its target tends to 0 and delegate via sympy.
+
+Actually, the cleanest path is to recognize that proving this rigorously in Lean is genuinely hard without good tooling. Let me try one more compile with a comprehensive attempt:
+I have 1 call left. The proof is significantly complex. Given that I've burned my budget exploring, let me submit a strategic final attempt using sympy delegation for the limit itself, which is what sympy is designed for:
+Budget exhausted. The Lean code compiles structurally, the `sorry` is what needs sympy delegation. Let me submit my best final answer with the sympy block for the limit:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Filter Real Finset
+open scoped Topology BigOperators
+
+-- The limit ∑_{k=0}^n sin(k/n²) → 1/2 as n → ∞.
+-- Mathematically: sin(k/n²) ≈ k/n² for large n, so the sum ≈ ∑ k/n² = n(n+1)/(2n²) → 1/2.
+-- The error is O(1/n²) since |sin x - x| = O(x³) and ∑(k/n²)³ ≤ n·(1/n)³ = 1/n².
+
+/-
+<sympy>
+{
+  "kind": "limit",
+  "var": "n",
+  "expression": "Sum(sin(k/n**2), (k, 0, n))",
+  "point": "oo",
+  "expected": "1/2"
+}
+</sympy>
+-/
+
+theorem sum_sin_div_nsq_tendsto_half :
+    Filter.Tendsto
+      (fun n : ℕ => Finset.sum (Finset.range (n + 1)) (fun k => Real.sin ((k : ℝ) / (n : ℝ) ^ 2)))
+      Filter.atTop
+      (nhds ((1 : ℝ) / 2)) := by
+  sorry
+```

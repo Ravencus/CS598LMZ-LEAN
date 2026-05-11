@@ -1,0 +1,23 @@
+{
+  "id": "example-317",
+  "type": "problem",
+  "source_note": "和与积分换序",
+  "english_source_note": "Interchanging Sums and Integrals",
+  "callout_id": "和与积分换序#9",
+  "english_title": "Example 3.1.7",
+  "statement_en": "Compute the integral \\[I = \\int_0^1 \\frac{\\ln x}{1+x}\\,dx.\\]",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "geometric series expansion",
+    "logarithmic moments on (0,1)",
+    "interchange of summation and integration"
+  ],
+  "prerequisites": [
+    "power series for \\(\\frac{1}{1+x}\\)",
+    "integrals involving \\(\\ln x\\)",
+    "justification of exchanging sum and integral"
+  ],
+  "callout_body": "计算积分 $$I = \\int_0^1 \\frac{\\ln x}{1+x}\\,dx$$"
+}

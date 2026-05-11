@@ -1,0 +1,18 @@
+{
+  "problem_id": "if-the-supports-are-compact-then-the-support-of-the-convolut",
+  "english_title": "If the Supports Are Compact, Then the Support of the Convolution Is Also Compact",
+  "statement_en": "If $\\operatorname{supp}(f)$ and $\\operatorname{supp}(g)$ are both compact, then the support of $f*g$ is also compact.",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem compactSupport_mul_of_compactSupport\n    {α β : Type*} [TopologicalSpace α] [MulZeroOneClass β]\n    {f g : α → β}\n    (hf : HasCompactSupport f) (hg : HasCompactSupport g) :\n    HasCompactSupport (f * g) := by\n  sorry"
+}

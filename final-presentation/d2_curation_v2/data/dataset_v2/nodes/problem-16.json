@@ -1,0 +1,23 @@
+{
+  "id": "problem-16",
+  "type": "problem",
+  "source_note": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "english_source_note": "Deducing One Series Convergence from Another",
+  "callout_id": "由一个级数收敛证明另一个有关级数的收敛问题#6",
+  "english_title": "Problem 1.6",
+  "statement_en": "Let $a_n>0$ be a sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ converges. Prove that the series $\\sum_{n\\geq 3} a_n^{1-\\frac{1}{\\ln(n)}}$ also converges.",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "partition by decay speed",
+    "rewrite powers using exponentials and logarithms",
+    "comparison with a p-series"
+  ],
+  "prerequisites": [
+    "convergence tests for positive series",
+    "properties of logarithms and exponentials",
+    "p-series convergence"
+  ],
+  "callout_body": "序列$a_n>0$，级数$\\sum_{n\\geq 1}a_n$收敛，证明级数$\\sum_{n\\geq 3}a_n^{1-\\frac{1}{\\ln(n)}}$也收敛。"
+}

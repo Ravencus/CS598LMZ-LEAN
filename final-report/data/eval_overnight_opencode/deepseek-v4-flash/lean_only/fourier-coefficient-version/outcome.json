@@ -1,0 +1,31 @@
+{
+  "problem_id": "fourier-coefficient-version",
+  "model": "deepseek-v4-flash",
+  "condition": "lean_only",
+  "outcome": "signature_mismatch",
+  "overall_success": false,
+  "wall_seconds": 524.74,
+  "wall_exceeded": false,
+  "final_proof_source": "last_compiled_tool_call",
+  "mcp_calls": 11,
+  "budget": 10,
+  "budget_hit_event": true,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 0,
+  "first_error": null,
+  "total_cost_usd": 0.015949,
+  "total_tokens": 246057,
+  "sympy_witnesses": [],
+  "errors_only": [],
+  "signature_ok": false,
+  "expected_theorem_name": "riemannLebesgue_fourierCoefficients_tendsto_zero",
+  "audit": {
+    "reclassified_from": "lean_proof"
+  }
+}

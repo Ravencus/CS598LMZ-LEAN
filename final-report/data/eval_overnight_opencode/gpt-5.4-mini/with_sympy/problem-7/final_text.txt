@@ -1,0 +1,5 @@
+I’m checking the available Lean/mathlib lemmas around summability and block-alternating series, then I’ll build the proof around the smallest theorem that fits.
+I didn’t find a local precedent in the workspace, so I’m going straight to the theorem shape: a bounded block-sign series times a unit-modulus factor. I’m checking whether Mathlib already has a summability theorem I can reuse.
+I’m now checking a few likely mathlib summability lemmas by name. If there’s a ready-made Dirichlet or block-summation theorem, I want to use it instead of rebuilding convergence from scratch.
+I found an empty local `digests/` directory, so there’s no prior proof pattern to reuse. I’m searching the installed Mathlib sources directly for summability lemmas now.
+I couldn’t complete a verified Lean proof within the checker budget.

@@ -1,0 +1,23 @@
+{
+  "id": "undergraduate-mathematics-competition-problem",
+  "type": "problem",
+  "source_note": "一个竞赛中的和的渐近展开问题",
+  "english_source_note": "An Asymptotic Expansion Problem for a Sum",
+  "callout_id": "一个竞赛中的和的渐近展开问题#1",
+  "english_title": "Undergraduate Mathematics Competition Problem",
+  "statement_en": "Find the limit:\n$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}\\frac{n}{n^2+k^2+1}$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Riemann sum approximation",
+    "asymptotic estimation",
+    "comparison with an integral"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "basic asymptotics",
+    "definite integrals"
+  ],
+  "callout_body": "求极限:\n$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}\\frac{n}{n^2+k^2+1}$$"
+}

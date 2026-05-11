@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b20833a42990.lean",
+      "line": 6,
+      "column": 9,
+      "severity": "error",
+      "message": "Unknown identifier `volume.restrict`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b20833a42990.lean",
+      "line": 5,
+      "column": 53,
+      "severity": "error",
+      "message": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  x0\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b20833a42990.lean",
+      "line": 5,
+      "column": 60,
+      "severity": "error",
+      "message": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (0 : ℝ)\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b20833a42990.lean",
+      "line": 6,
+      "column": 9,
+      "severity": "error",
+      "message": "Unknown identifier `volume.restrict`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b20833a42990.lean",
+      "line": 5,
+      "column": 53,
+      "severity": "error",
+      "message": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  x0\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b20833a42990.lean",
+      "line": 5,
+      "column": 60,
+      "severity": "error",
+      "message": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (0 : ℝ)\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ]
+}

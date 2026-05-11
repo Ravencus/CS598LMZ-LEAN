@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-of-a-non-uniformly-distributed-sequence",
+  "english_title": "Example of a Non-Uniformly Distributed Sequence",
+  "statement_en": "A simple example is $u_n=\\frac{1}{n}$. After reduction modulo $1$, $$\\varepsilon(u_1)=0,\\varepsilon(u_2)=-\\frac{1}{2},\\varepsilon(u_n)=\\frac{1}{n},n\\geq 3.$$ This sequence is not uniformly distributed modulo $1$; for instance, in the interval $[-1/2,0]$ there is only the element $-1/2$, so the limiting proportion of terms in this interval is $0$ rather than $1/2$.",
+  "difficulty": "easy",
+  "domain": "uniform distribution theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Invalid pattern: Expected a constructor or constant marked with `[match_pattern]`"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (0 : ℚ)\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImp"
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef oneOverSeq : ℕ → ℚ\n  | 0 => 1\n  | n + 1 => 1 / ((n + 1 : ℕ) : ℚ)\n\ndef centeredReductionModOne (x : ℚ) : ℚ :=\n  if x = 1 then\n    0\n  else if x = (1 / 2 : ℚ) then\n    -(1 / 2 : ℚ)\n  else\n    x\n\ntheorem one_over_n_not_uniformly_distributed_mod_one :\n    centeredReductionModOne (oneOverSeq 0) = 0 ∧\n    centeredReductionModOne (oneOverSeq 1) = -(1 / 2 : ℚ) ∧\n    (∀ n : ℕ, 2 ≤ n → centeredReductionModOne (oneOverSeq n) = 1 / ((n : ℕ) : ℚ)) ∧\n    Filter.Tendsto\n      (fun N : ℕ =>\n        (((Finset.range N).filter\n            (fun k => centeredReductionModOne (oneOverSeq k) ∈ Set.Icc (-(1 / 2 : ℚ)) 0)).card : ℚ) /\n          (N : ℚ))\n      Filter.atTop\n      (𝓝 (0 : ℚ)) := by\n  sorry"
+}

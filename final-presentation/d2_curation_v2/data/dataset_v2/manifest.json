@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "pipeline": "d2_curation_v2",
+    "version": 2
+  },
+  "counts": {
+    "total_nodes": 461,
+    "problem_nodes": 439,
+    "hub_nodes": 22,
+    "total_edges": 7415
+  },
+  "distributions": {
+    "domain": {
+      "real analysis": 211,
+      "measure theory": 42,
+      "probability theory": 29,
+      "analytic number theory": 24,
+      "asymptotic analysis": 19,
+      "harmonic analysis": 16,
+      "Diophantine approximation": 16,
+      "number theory": 14,
+      "uniform distribution theory": 13,
+      "complex analysis": 12,
+      "linear algebra": 11,
+      "Fourier analysis": 6,
+      "special functions": 3,
+      "topology": 3,
+      "analysis": 3,
+      "discrete mathematics": 3,
+      "general topology": 2,
+      "metric Diophantine approximation": 2,
+      "summability theory": 2,
+      "several complex variables": 1,
+      "additive combinatorics": 1,
+      "numerical analysis": 1,
+      "combinatorics": 1,
+      "algebra": 1,
+      "real analysis and probability theory": 1,
+      "metric space theory": 1,
+      "functional analysis": 1
+    },
+    "difficulty": {
+      "easy": 110,
+      "medium": 252,
+      "hard": 77
+    },
+    "problem_type": {
+      "theorem": 220,
+      "exercise": 79,
+      "lemma": 53,
+      "example": 62,
+      "counterexample": 25
+    }
+  },
+  "validation": {
+    "node_ids_with_chinese": 0,
+    "presentation_field_violations": 0
+  },
+  "hub_node_ids": [
+    "borel-cantelli-lemma-and-applications-hub",
+    "interchanging-sums-and-integrals-hub",
+    "identity-theorem-hub",
+    "basic-methods-in-analysis-i-hub",
+    "an-epsilon-of-room-hub",
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+    "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+    "sequence-limits-via-piecewise-estimates-hub",
+    "expand-conditions-into-sums-or-integrals-and-swap-order-hub",
+    "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+    "reducing-set-problems-to-function-problems-hub",
+    "integral-estimates-for-sums-hub",
+    "piecewise-estimates-hub",
+    "integral-estimates-via-integration-by-parts-hub",
+    "term-by-term-estimates-hub",
+    "estimates-for-the-sum-of-prime-reciprocals-hub",
+    "using-known-asymptotics-to-derive-expansions-hub",
+    "sum-estimates-via-summation-by-parts-hub",
+    "cauchy-condensation-test-hub",
+    "an-epsilon-of-room-for-measure-zero-sets-hub",
+    "cauchy-convergence-criterion-hub",
+    "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+  ]
+}

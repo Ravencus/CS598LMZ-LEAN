@@ -1,0 +1,23 @@
+{
+  "id": "proposition-126-a-sufficient-condition-for-a-cauchy-sequence",
+  "type": "problem",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "callout_id": "柯西收敛判别#10",
+  "english_title": "Proposition 1.2.6: A Sufficient Condition for a Cauchy Sequence",
+  "statement_en": "If a real or complex sequence $(a_n)$ satisfies $|a_{n+1}-a_n|\\leq b_n$ and the series $\\sum_{n\\geq 1} b_n$ converges, then $(a_n)$ is a Cauchy sequence.",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "telescoping estimate",
+    "bound tail differences by tails of a convergent series",
+    "triangle inequality"
+  ],
+  "prerequisites": [
+    "definition of a Cauchy sequence",
+    "convergent series and tail estimates",
+    "triangle inequality"
+  ],
+  "callout_body": "如果实数(复数)列$(a_n)$满足条件$|a_{n+1}-a_n|\\leq b_n$并且$\\sum_{n\\geq 1}b_n$是一个收敛的级数，那么$a_n$是一个柯西列。"
+}

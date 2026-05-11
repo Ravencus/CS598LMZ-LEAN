@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-0-2",
+  "english_title": "Problem 0",
+  "statement_en": "a. Prove that the sequence $$S_N:=\\sum_{n=0}^{N}\\frac{1}{n!}$$ has a limit.\nb. Assuming $S_N\\to e$, prove that $$e=3-\\sum_{n\\geq 0}\\frac{1}{(n+1)(n+2)(n+2)!}$$\nc. Use the above to give a more efficient way to approximate the limit $e$ of $S_N$ (including error analysis).",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped Topology\n\nnoncomputable section\n\ndef S (N : ℕ) : ℝ :=\n  Finset.sum (Finset.range (N + 1)) (fun n => (1 : ℝ) / (Nat.factorial n : ℝ))\n\ndef remainderTerm (n : ℕ) : ℝ :=\n  (1 : ℝ) /\n    (((n + 1 : ℕ) : ℝ) * ((n + 2 : ℕ) : ℝ) * (Nat.factorial (n + 2) : ℝ))\n\ndef T (N : ℕ) : ℝ :=\n  3 - Finset.sum (Finset.range (N + 1)) remainderTerm\n\ntheorem exp_partial_sums_limit_series_identity_and_error_analysis :\n    (∃ l : ℝ, Filter.Tendsto S Filter.atTop (𝓝 l)) ∧\n      (∀ e : ℝ, Filter.Tendsto S Filter.atTop (𝓝 e) →\n        e = 3 - ∑' n : ℕ, remainderTerm n) ∧\n      (∀ e : ℝ, Filter.Tendsto S Filter.atTop (𝓝 e) →\n        ∃ R : ℕ → ℝ,\n          (∀ N : ℕ, e = T N + R N) ∧\n          (∀ N : ℕ, |R N| ≤ (1 : ℝ) / (Nat.factorial (N + 3) : ℝ))) := by\n  sorry"
+}

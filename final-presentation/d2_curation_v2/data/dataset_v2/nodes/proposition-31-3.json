@@ -1,0 +1,22 @@
+{
+  "id": "proposition-31-3",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#10",
+  "english_title": "Proposition 3.1",
+  "statement_en": "Let $f(x)$ be a nonnegative locally integrable nonincreasing function on $[1,+\\infty)$, and suppose\n$$\\int_1^{+\\infty}f(x)\\,dx=+\\infty.$$ Then\n$$\\int_{1}^{+\\infty}\\min\\{f(x),\\frac{1}{x}\\}\\,dx=+\\infty.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "integral condensation test",
+    "dyadic decomposition"
+  ],
+  "prerequisites": [
+    "improper integrals",
+    "monotone functions",
+    "integral test"
+  ],
+  "callout_body": "若非负函数$f(x)$在$[1,+\\infty)$上局部可积单调不增，且$\\int_1^{+\\infty}f(x)\\,dx=+\\infty$那么积分$$\\int_{1}^{+\\infty}\\min\\{f(x),\\frac{1}{x}\\}\\,dx=+\\infty$$"
+}

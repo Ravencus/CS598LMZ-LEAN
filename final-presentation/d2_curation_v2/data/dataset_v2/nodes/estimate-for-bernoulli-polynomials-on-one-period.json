@@ -1,0 +1,23 @@
+{
+  "id": "estimate-for-bernoulli-polynomials-on-one-period",
+  "type": "problem",
+  "source_note": "和的积分估计",
+  "english_source_note": "Integral Estimates for Sums",
+  "callout_id": "和的积分估计#7",
+  "english_title": "Estimate for Bernoulli Polynomials on One Period",
+  "statement_en": "One has the bound $$|B_p(\\{t\\})|\\leq \\frac{2p!}{(2\\pi)^p}\\zeta(p).$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "Bernoulli polynomial bounds",
+    "zeta-function estimate",
+    "periodic normalization"
+  ],
+  "prerequisites": [
+    "Bernoulli polynomials",
+    "Riemann zeta function",
+    "basic Fourier-analytic estimates"
+  ],
+  "callout_body": "$$|B_{p}(\\{t\\})|\\leq \\frac{2p!}{(2\\pi)^p}\\zeta(p)$$"
+}

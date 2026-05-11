@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "skipped": true,
+  "reason": "signature_deviation",
+  "splice_action": "deviation",
+  "deviation_detail": "model header differs from canonical (modulo whitespace).\nCanonical: theorem stirling_remainder_bounds (S R : ℕ → ℝ) {n : ℕ} (hn : 0 < n) (hrn : rSeq S n = 1 / (12 * (n : ℝ)) + R n) : 0 < rSeq S n ∧ rSeq S n < 1 / (12 * (n : ℝ)) := by\nModel:    theorem is not provable from the stated hypotheses. Counterexample: - take any `n > 0`, - define `S` so that `rSeq S n = 0`, - define `R n = - 1 / (12 * (n : ℝ))`. Then the hypothesis `rSeq S n = 1 / (12 * (n : ℝ)) + R n` holds, but the conclusion `0 < rSeq S n ∧ rSeq S n < 1 / (12 * (n : ℝ))` fails",
+  "errors_only": []
+}

@@ -1,0 +1,6 @@
+I’ll build the proof around the contrapositive: if the pointwise minimum is summable, use monotonicity and nonnegativity to force one of the original decreasing series to be summable, contradicting the hypotheses.
+The requested Lean theorem is false as stated, so there is no valid proof without adding an inconsistent axiom or using `sorry`.
+
+A counterexample exists: take decreasing step sequences whose values alternately drop by huge factors on very long blocks. On odd blocks, `α` contributes about `1` while `β` is tiny; on even blocks, `β` contributes about `1` while `α` is tiny. Both series diverge, but the block contributions of `min α β` can be made summable.
+
+I can’t honestly provide a compiling proof of the stated theorem in Lean.

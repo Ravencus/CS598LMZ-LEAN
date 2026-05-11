@@ -1,0 +1,23 @@
+{
+  "id": "lemma-215",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#10",
+  "english_title": "Lemma 2.1.5",
+  "statement_en": "$$\\limsup_{n\\to \\infty} T_n =1,\\quad \\liminf_{n\\to \\infty} T_n =0.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "key_techniques": [
+    "fractional parts of unbounded monotone sequences",
+    "limsup and liminf",
+    "modulo 1 behavior"
+  ],
+  "prerequisites": [
+    "fractional part function",
+    "limsup and liminf",
+    "monotone sequences"
+  ],
+  "callout_body": "$$\\limsup_{n\\to \\infty} T_n =1,\\liminf_{n\\to \\infty} T_n =0$$"
+}

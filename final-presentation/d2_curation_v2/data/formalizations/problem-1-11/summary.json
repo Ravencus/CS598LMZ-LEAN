@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-1-11",
+  "english_title": "Problem 1",
+  "statement_en": "The sequence $\\{x_n\\}_{n\\geq 1}$ has initial value $x_1=1$ and satisfies the recurrence relation $$x_{n+1}=x_{n}+3\\sqrt{x_n}+\\frac{n}{\\sqrt{x_n}}.$$ Find $$\\lim_{n\\to \\infty}\\frac{x_n}{n^2}.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sequence_limit_quadratic\n    (x : ℕ → ℝ)\n    (h1 : x 1 = 1)\n    (hrec : ∀ n : ℕ, 1 ≤ n → x (n + 1) = x n + 3 * Real.sqrt (x n) + (n : ℝ) / Real.sqrt (x n)) :\n    Filter.Tendsto (fun n : ℕ => x n / (n : ℝ) ^ 2) Filter.atTop (nhds (9 / 4 : ℝ)) := by\n  sorry"
+}

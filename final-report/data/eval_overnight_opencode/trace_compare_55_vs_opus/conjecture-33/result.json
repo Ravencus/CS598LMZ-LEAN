@@ -1,0 +1,11 @@
+{
+  "problem_id": "conjecture-33",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "instruction_violation",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "same_plan",
+  "divergence": "none",
+  "evidence": "Both traces identify the core missing ingredient as a density/equidistribution or Diophantine approximation fact for natural-number samples of sine, then leave the analytic approximation step unproved with `sorry`. Trace A searches `Real.denseRange_sin`, irrational dense-range lemmas, and ends at `M",
+  "wall_seconds": 13.1
+}

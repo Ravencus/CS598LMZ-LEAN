@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_851fc61649a4.lean",
+      "line": 7,
+      "column": 69,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_851fc61649a4.lean",
+      "line": 9,
+      "column": 37,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_851fc61649a4.lean",
+      "line": 13,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_851fc61649a4.lean",
+      "line": 7,
+      "column": 69,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_851fc61649a4.lean",
+      "line": 9,
+      "column": 37,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_851fc61649a4.lean",
+      "line": 13,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown constant `Filter.nhds`\n"
+    }
+  ]
+}

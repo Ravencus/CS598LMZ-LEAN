@@ -1,0 +1,2 @@
+I’ll first probe Mathlib for the exact asymptotic and trigonometric lemmas available, then use the remaining calls for one or two full proof attempts.
+The statement compiles as given. I’m now searching the local Mathlib sources for reusable limit lemmas rather than guessing names.

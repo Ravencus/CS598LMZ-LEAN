@@ -1,0 +1,58 @@
+{
+  "problem_id": "problem-22",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 91.4,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 45.75,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 3,
+      "first_error": "linarith failed to find a contradiction\ncase neg.h\nα β : ℕ → ℝ\nhα_nonneg : ∀ (n : ℕ), 0 ≤ α n\nhβ_nonneg : ∀ (n : ℕ), 0 ≤ β n\nhα_antitone : Antitone α\nhβ_antitone : Antitone β\nhα_div : ¬Summable fun n "
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 20.66,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "unsolved goals\nα✝ β✝ : ℕ → ℝ\nhα_nonneg : ∀ (n : ℕ), 0 ≤ α✝ n\nhβ_nonneg : ∀ (n : ℕ), 0 ≤ β✝ n\nhα_antitone : Antitone α✝\nhβ_antitone : Antitone β✝\nhα_div : ¬Summable fun n => α✝ (n + 1)\nhβ_div : ¬Summab"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 17.95,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": true,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

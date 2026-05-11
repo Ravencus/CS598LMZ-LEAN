@@ -1,0 +1,30 @@
+{
+  "problem_id": "common-lemma-2",
+  "english_title": "Common Lemma 2",
+  "statement_en": "Let $$A_{n}:=\\{x:|f_n(x)-f(x)|\\geq \\varepsilon_n\\},$$ where $\\varepsilon_n \\downarrow 0$, and suppose also that $$\\sum_{n\\geq 1}\\mu(A_n)<\\infty.$$ Then if $x \\not \\in \\limsup_{n\\to\\infty} A_{n}$, there exists $N_x$ such that for all $n >N_x$, $$|f_n(x)-f(x)|< \\varepsilon_n.$$ Hence $f_n(x)\\to f(x)$, and therefore $$f_n(x)\\to f(x)$$ almost everywhere.",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem ae_tendsto_of_summable_bad_sets\n    {α : Type*} [MeasurableSpace α]\n    (μ : MeasureTheory.Measure α)\n    (fSeq : ℕ → α → ℝ) (f : α → ℝ) (ε : ℕ → ℝ)\n    (hε_nonneg : ∀ n : ℕ, 0 ≤ ε n)\n    (hε_antitone : Antitone ε)\n    (hε_tendsto : Filter.Tendsto ε Filter.atTop (nhds 0))\n    (hsummable :\n      Summable (fun n : ℕ => (μ {x : α | |fSeq n x - f x| ≥ ε n}).toReal)) :\n    let A : ℕ → Set α := fun n => {x : α | |fSeq n x - f x| ≥ ε n}\n    ((∀ x : α,\n        (¬ ∀ N : ℕ, ∃ n : ℕ, N < n ∧ x ∈ A n) →\n          ∃ Nx : ℕ, ∀ n : ℕ, Nx < n → |fSeq n x - f x| < ε n) ∧\n      (∀ x : α,\n        (¬ ∀ N : ℕ, ∃ n : ℕ, N < n ∧ x ∈ A n) →\n          Filter.Tendsto (fun n : ℕ => fSeq n x) Filter.atTop (nhds (f x))) ∧\n      (∀ᵐ x ∂μ, Filter.Tendsto (fun n : ℕ => fSeq n x) Filter.atTop (nhds (f x)))) := by\n  sorry"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "three-basic-results-for-approximate-identities",
+  "type": "problem",
+  "source_note": "approximation to the identity",
+  "english_source_note": "Approximation to the Identity",
+  "callout_id": "approximation to the identity#4",
+  "english_title": "Three Basic Results for Approximate Identities",
+  "statement_en": "Let $\\{K_{\\lambda}\\}$ be an approximate identity.\n1. If $f \\in L^p(\\mathbb{R}^d)$ with $1\\leq p\\leq \\infty$, then $f * K_{\\lambda}\\in L^p(\\mathbb{R}^d)$ and\n$$||f * K_{\\lambda}-f||_{L^p}\\to 0,\\text{ as }\\lambda\\to \\infty.$$\n2. If $f$ is bounded and uniformly continuous on $\\mathbb{R}^d$, then $f*K_{\\lambda}$ is also bounded and uniformly continuous, and\n$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty.$$\n3. If $f$ is bounded on $\\mathbb{R}^d$ and continuous on an open set $\\Omega\\subset \\mathbb{R}^d$, then $f*K_{\\lambda}$ is bounded and uniformly continuous on $\\mathbb{R}^d$; moreover, for every compact set $D \\subset \\Omega$,\n$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "approximate identity decomposition",
+    "uniform continuity estimates",
+    "tail control of kernels",
+    "Young's inequality"
+  ],
+  "prerequisites": [
+    "approximate identities",
+    "Lp spaces",
+    "uniform continuity",
+    "convolution"
+  ],
+  "callout_body": "1. $f \\in L^p(\\mathbb{R}^d),1\\leq p\\leq \\infty$，那么$f * K_{\\lambda}\\in L^p(\\mathbb{R}^d)$并且$$||f * K_{\\lambda}-f||_{L^p}\\to 0,\\text{ as }\\lambda\\to \\infty$$\n2. 如果函数$f$在$\\mathbb{R}^d$上一致连续并且有界，那么$f*K_{\\lambda}$也是一致连续并且有界的，并且$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty$$\n3. 如果函数$f$在$\\mathbb{R}^d$上有界并且在开集$\\Omega\\subset \\mathbb{R}^d$上连续，那么$f*K_{\\lambda}$在$\\mathbb{R}^d$上有界且一致连续，此外对于任意的紧子集$D \\subset \\Omega$都有$$f * K_{\\lambda}\\rightrightarrows f \\text{ as }\\lambda \\to \\infty$$"
+}

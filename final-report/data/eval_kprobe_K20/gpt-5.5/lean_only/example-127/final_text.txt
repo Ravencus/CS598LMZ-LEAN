@@ -1,0 +1,16 @@
+I’ll verify a minimal direct proof: split the conjunction, prove strict monotonicity by unfolding `StrictMono` and using `omega`, then close the identity part by `rfl`/`simp`.
+The first attempt showed `omega` did not unfold the indexed function inside `StrictMono`. I’ll make that unfolding explicit before arithmetic.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem evenIndexedSubsequenceOfNaturalSequence :
+    StrictMono (fun k : ℕ => 2 * k) ∧
+      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by
+  constructor
+  · intro a b h
+    dsimp
+    omega
+  · intro k
+    rfl
+```

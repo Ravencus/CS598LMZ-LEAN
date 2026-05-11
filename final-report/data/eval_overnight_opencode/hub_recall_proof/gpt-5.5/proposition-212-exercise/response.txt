@@ -1,0 +1,2 @@
+["basic-methods-in-analysis-i-hub"]
+- basic-methods-in-analysis-i-hub: The proof uses `le_of_tendsto_of_tendsto hy hx hxy`, which transfers the eventual pointwise inequality between approximating sequence values to the inequality between their limits.

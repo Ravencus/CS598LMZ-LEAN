@@ -1,0 +1,18 @@
+{
+  "note_title": "广义的Riemann - Lebesgue lemma",
+  "is_hub": false,
+  "in_subset_via": [
+    "分段估计",
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "广义的Riemann - Lebesgue lemma#1",
+      "type": "note",
+      "title": "命题1：一维的广义的Riemann-Lebesgue引理",
+      "body": "$f \\in L^{1}([a,b])$并且$g$是周期为$T$的可测有界周期函数那么$$\\lim_{n\n\\to +\\infty}\\int_{[a,b]} f(x)g(nx) dx =\\left(\\frac{1}{T}\\int_{[0,T)}g(x)\\,dx\\right)\\left(\\int_{[a,b]}f(x)\\,dx\\right)$$ 即周期函数在一个周期内积分的平均值乘上可积函数在闭区间上的积分。",
+      "position_char": 32,
+      "position_line": 6
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "proposition-211",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#13",
+  "english_title": "Proposition 2.1.1",
+  "statement_en": "From the definition, we easily see that $$R_N=\\sum_{n>N}\\frac{1}{n!}.$$ We then claim that, for sufficiently large $N$, there exist constants $C_1,C_2$ such that $$C_1\\frac{1}{N!N}\\leq R_N\\leq C_2\\frac{1}{N!N},$$ denoted by $$R_N = \\Theta\\left(\\frac{1}{N!N}\\right).$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "tail estimation of series",
+    "comparison bounds",
+    "Theta notation"
+  ],
+  "prerequisites": [
+    "factorial growth",
+    "series remainder estimates",
+    "asymptotic notation"
+  ],
+  "callout_body": "从定义上不难发现$$R_N=\\sum_{n>N}\\frac{1}{n!}$$那么我们断言，当$N$足够大的时候，存在常数$C_1,C_2$使得$$C_1\\frac{1}{N!N}\\leq R_N\\leq C_2\\frac{1}{N!N}$$记作$$R_N = \\Theta\\left(\\frac{1}{N!N}\\right)$$"
+}

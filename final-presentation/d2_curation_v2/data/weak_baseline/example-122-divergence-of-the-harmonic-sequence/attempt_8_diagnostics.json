@@ -1,0 +1,29 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 18,
+      "column": 6,
+      "severity": "error",
+      "message": "unsolved goals\ncase h.succ\nl : ℝ\nhl : Tendsto harmonicSeq atTop (nhds l)\nn : ℕ\nih : harmonicSeq n = ∑ x ∈ Finset.range n, (↑x + 1)⁻¹\n⊢ ∑ x ∈ Finset.Icc 1 n, (↑x)⁻¹ = ∑ x ∈ Finset.range n, (↑x + 1)⁻¹"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 18,
+      "column": 14,
+      "severity": "warning",
+      "message": "This simp argument is unused:\n  ih\n\nHint: Omit it from the simp argument list.\n  simp [i̵h̵,̵ ̵Finset.sum_range_succ]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 18,
+      "column": 6,
+      "severity": "error",
+      "message": "unsolved goals\ncase h.succ\nl : ℝ\nhl : Tendsto harmonicSeq atTop (nhds l)\nn : ℕ\nih : harmonicSeq n = ∑ x ∈ Finset.range n, (↑x + 1)⁻¹\n⊢ ∑ x ∈ Finset.Icc 1 n, (↑x)⁻¹ = ∑ x ∈ Finset.range n, (↑x + 1)⁻¹"
+    }
+  ]
+}

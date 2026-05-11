@@ -1,0 +1,24 @@
+{
+  "problem_id": "corollary-23",
+  "english_title": "Corollary 2.3",
+  "statement_en": "If $f$ is an integrable function on the unit circle $\\mathbb{T}$ and its Fourier coefficients satisfy $$\\widehat{f}(n)=0,\\forall n\\in \\mathbb{Z},$$ then at every point where $f$ is continuous, its value is $0$.",
+  "difficulty": "medium",
+  "domain": "Fourier analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 4,
+      "first_error_msg": "Unknown constant `Complex.abs`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\nabbrev UnitCirclePoint := {z : ℂ // ‖z‖ = 1}\n\nnoncomputable def fourierCoeffOnUnitCircle\n    (μ : Measure UnitCirclePoint) (f : UnitCirclePoint → ℂ) (n : ℤ) : ℂ :=\n  ∫ z, f z * ((z : ℂ) ^ n) ∂μ\n\ntheorem continuous_point_value_eq_zero_of_all_fourierCoeff_vanish\n    (μ : Measure UnitCirclePoint) (f : UnitCirclePoint → ℂ)\n    (hf : Integrable f μ)\n    (hcoeff : ∀ n : ℤ, fourierCoeffOnUnitCircle μ f n = 0) :\n    ∀ z : UnitCirclePoint, ContinuousAt f z → f z = 0 := by\n  sorry"
+}

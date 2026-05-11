@@ -1,0 +1,16 @@
+I’m checking the proof shape in Lean first, then I’ll tighten it to a compiling term.
+The goal looks straightforward: `omega` should handle the monotonicity, and the identity clause should be `rfl`. I’m testing that combined proof now.
+`omega` needs the multiplication normalized away. I’m switching to the standard `two_mul` rewrite, then letting `omega` finish the additive inequality.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem evenIndexedSubsequenceOfNaturalSequence :
+    StrictMono (fun k : ℕ => 2 * k) ∧
+      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by
+  constructor
+  · intro a b h
+    simpa [two_mul] using (show a + a < b + b by omega)
+  · intro k
+    rfl
+```

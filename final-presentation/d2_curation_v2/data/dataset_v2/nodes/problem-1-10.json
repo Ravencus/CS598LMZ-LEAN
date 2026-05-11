@@ -1,0 +1,24 @@
+{
+  "id": "problem-1-10",
+  "type": "problem",
+  "source_note": "an epsilon of room证明集合为0测度的策略",
+  "english_source_note": "An Epsilon of Room for Measure Zero Sets",
+  "callout_id": "an epsilon of room证明集合为0测度的策略#5",
+  "english_title": "Problem 1",
+  "statement_en": "Prove that on a $\\sigma$-finite measure space $(\\Omega,\\mathcal{F},\\mu)$, if $f$ is a nonnegative measurable function and $\\int_E f\\,d\\mu=0$ for a measurable set $E$ with positive measure, then $f=0$ almost everywhere on $E$.",
+  "problem_type": "exercise",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "contradiction via level sets",
+    "distribution function or superlevel set argument",
+    "positivity of the integral of a nonnegative function"
+  ],
+  "prerequisites": [
+    "Lebesgue integration",
+    "almost everywhere equality",
+    "measurable level sets",
+    "nonnegative measurable functions"
+  ],
+  "callout_body": "证明在sigma-finite的测度空间$(\\Omega,\\mathcal{F},\\mu)$上，**对于非负可测函数$f$，在一个测度为正的集合$E$上的积分$\\int_{E}f\\,d\\mu =0$那么$f =0$在集合$E$上几乎处处成立。**"
+}

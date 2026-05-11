@@ -1,0 +1,49 @@
+{
+  "note_title": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#1",
+      "type": "note",
+      "title": "弱大数定律",
+      "body": "假设$X_1,...,X_n,...$是独立同分布的随机变量，并且$E|X_1|<\\infty$那么令$S_n = X_1+...+X_n,\\mu=E(X_1)$,那么有$$\\frac{S_n}{n}\\xrightarrow{P}{\\mu}$$",
+      "position_char": 318,
+      "position_line": 11
+    },
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#2",
+      "type": "note",
+      "title": "一种版本的强大数定律",
+      "body": "假设$X_1,...,X_n,...$是独立同分布的随机变量，并且$E|X_1|^4<\\infty$那么令$S_n = X_1+...+X_n,\\mu=E(X_1)$,那么有$$\\frac{S_n}{n}\\xrightarrow{\\text{ a.e. }}{\\mu}$$",
+      "position_char": 816,
+      "position_line": 19
+    },
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#3",
+      "type": "tip",
+      "title": "基本想法",
+      "body": "欲得到$A_n$收敛到$A$的结果，先得到一个弱一些的收敛(比如依测度收敛)，然后想办法把这个结果加强(比如加强到一致，$L^p$或者几乎处处)。",
+      "position_char": 1001,
+      "position_line": 25
+    },
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#4",
+      "type": "tip",
+      "title": "用Borel-Cantelli引理升级依测度收敛的想法",
+      "body": "想要把依测度收敛的结果升级到几乎处处收敛，在某些情况下是可行的。比如说这种测度的弱的估计足够好，好到可以满足Borel-Cantelli引理，那么便可以把依测度收敛升级为几乎处处收敛。",
+      "position_char": 1928,
+      "position_line": 38
+    },
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#5",
+      "type": "note",
+      "title": "期望存在性对强大数定律的存在性是必要的",
+      "body": "如果$X_1,...,X_n,...$是独立同分布的随机变量，并且$E|X_1|=\\infty$，假设$S_n = X_1+...+X_n$,那么$$P\\left(\\left\\{\\omega:\\lim_{n\\to \\infty}\\frac{S_n}{n} \\text{ exists}\\in(-\\infty,+\\infty)\\right\\}\n\\right)=0$$",
+      "position_char": 4150,
+      "position_line": 66
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-7",
+  "type": "problem",
+  "source_note": "不适用于逐项估计求和的极限的例子",
+  "english_source_note": "An Example Where Term-by-Term Sum Limits Fail",
+  "callout_id": "不适用于逐项估计求和的极限的例子#1",
+  "english_title": "Problem 0",
+  "statement_en": "Find the limit of the parameter-dependent sum $$\\sum_{k=1}^{n}\\frac{1}{n+f(k)}$$ where $$f(k):=\\frac{2k(k-1)}{2k-1}.$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "asymptotic analysis of sums",
+    "comparison with integrals or harmonic-type sums",
+    "algebraic simplification of the summand"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "finite sums",
+    "basic asymptotic estimates"
+  ],
+  "callout_body": "求含参数和的极限$$\\sum_{k=1}^{n}\\frac{1}{n+f(k)}$$其中$f(k):=\\frac{2k(k-1)}{2k-1}$。"
+}

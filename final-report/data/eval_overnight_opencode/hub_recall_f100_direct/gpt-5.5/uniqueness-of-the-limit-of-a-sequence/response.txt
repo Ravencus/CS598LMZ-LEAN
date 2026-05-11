@@ -1,0 +1,3 @@
+["basic-methods-in-analysis-i-hub", "identity-theorem-hub"]
+- basic-methods-in-analysis-i-hub: The proof uses the shared approximating sequence `u n` and its convergence to both candidates to transfer information from finite/tail behavior to the limiting points.
+- identity-theorem-hub: The key uniqueness principle is that in a Hausdorff space, sufficiently strong limiting information determines the endpoint uniquely, analogous to a determining-set uniqueness argument.

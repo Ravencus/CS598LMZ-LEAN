@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-33",
+  "english_title": "Proposition 3.3",
+  "statement_en": "Let $q$ be a positive integer. Let $a_1>0$, and suppose the sequence satisfies the difference equation $$\\Delta a_n= \\frac{f(n)}{S_n^q}$$ where $f(n)>0$, $f(n)\\sim \\alpha n^{2\\beta}$, and $\\beta>\\frac{q-1}{2}$. Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\gamma}} =\\left(\\frac{\\alpha(\\gamma+1)^q}{\\gamma}\\right)^{\\frac{1}{q+1}}$$ where $\\gamma=\\frac{2\\beta-q+1}{q+1}$.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem asymptotic_sequence_growth\n    (q : ℕ) (hq : 0 < q)\n    (a f : ℕ → ℝ) (α β : ℝ)\n    (ha1 : 0 < a 1)\n    (hfpos : ∀ n : ℕ, 0 < f n)\n    (hdiff : ∀ n : ℕ, a (n + 1) - a n = f n / ((∑ k ∈ Finset.Icc 1 n, a k) ^ q))\n    (hasymp : Filter.Tendsto\n      (fun n : ℕ => f n / (α * Real.rpow (n : ℝ) (2 * β)))\n      Filter.atTop\n      (nhds 1))\n    (hβ : ((q : ℝ) - 1) / 2 < β) :\n    let γ : ℝ := (2 * β - (q : ℝ) + 1) / ((q : ℝ) + 1)\n    Filter.Tendsto\n      (fun n : ℕ => a n / Real.rpow (n : ℝ) γ)\n      Filter.atTop\n      (nhds (Real.rpow (α * (γ + 1) ^ q / γ) (1 / ((q : ℝ) + 1)))) := by\n  sorry"
+}

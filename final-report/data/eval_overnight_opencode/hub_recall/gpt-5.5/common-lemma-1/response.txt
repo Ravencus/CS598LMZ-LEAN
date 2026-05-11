@@ -1,0 +1,4 @@
+["borel-cantelli-lemma-and-applications-hub", "an-epsilon-of-room-for-measure-zero-sets-hub", "reducing-set-problems-to-function-problems-hub"]
+- borel-cantelli-lemma-and-applications-hub: This is exactly the first Borel-Cantelli lemma: summability of the measures of exceptional sets implies the limsup exceptional set has measure zero.
+- an-epsilon-of-room-for-measure-zero-sets-hub: The proof uses fixed error thresholds `ε > 0` and shows the corresponding exceptional limsup sets are null, then converts those null estimates into almost-everywhere convergence.
+- reducing-set-problems-to-function-problems-hub: The argument naturally treats limsup membership as “infinitely many exceptional events,” often via indicators/counting or equivalent set-measure estimates over the sequence of sets.

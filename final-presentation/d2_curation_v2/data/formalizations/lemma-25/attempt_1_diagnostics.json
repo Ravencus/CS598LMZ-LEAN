@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_e9d2ec840127.lean",
+      "line": 17,
+      "column": 29,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Decidable (n + 1 ∈ S)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_e9d2ec840127.lean",
+      "line": 13,
+      "column": 12,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  DecidablePred fun n => n ∈ S\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_e9d2ec840127.lean",
+      "line": 17,
+      "column": 29,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Decidable (n + 1 ∈ S)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_e9d2ec840127.lean",
+      "line": 13,
+      "column": 12,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  DecidablePred fun n => n ∈ S\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ]
+}

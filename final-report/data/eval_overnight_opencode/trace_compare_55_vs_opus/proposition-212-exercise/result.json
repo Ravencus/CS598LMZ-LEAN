@@ -1,0 +1,11 @@
+{
+  "problem_id": "proposition-212-exercise",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "search",
+  "evidence": "Both traces converge on the same Mathlib-lemma plan: prove the limit inequality directly with `le_of_tendsto_of_tendsto hy hx hxy`. Trace A spent several failed probes trying related theorem names and checks before finding it, while Trace B reached the same final proof after one preliminary lemma at",
+  "wall_seconds": 6.03
+}

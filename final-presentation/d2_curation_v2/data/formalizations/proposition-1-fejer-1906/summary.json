@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-1-fejer-1906",
+  "english_title": "Proposition 1 (Fejer, 1906)",
+  "statement_en": "Let $(x_n)$ be a bounded sequence with $\\limsup_{n\\to\\infty} x_n = b$ and $\\liminf_{n\\to\\infty} x_n = a$, where $a,b\\in\\mathbb{R}$ and $a\\neq b$. If $\\lim_{n\\to\\infty}(x_{n+1}-x_n)=0$, then the sequence is dense in $(a,b)$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter Topology\n\ndef IsSeqLimsup (x : ℕ → ℝ) (b : ℝ) : Prop :=\n  ∃ φ : ℕ → ℕ, StrictMono φ ∧ Filter.Tendsto (fun n : ℕ => x (φ n)) Filter.atTop (nhds b)\n\ndef IsSeqLiminf (x : ℕ → ℝ) (a : ℝ) : Prop :=\n  ∃ φ : ℕ → ℕ, StrictMono φ ∧ Filter.Tendsto (fun n : ℕ => x (φ n)) Filter.atTop (nhds a)\n\ndef DenseInOpenInterval (x : ℕ → ℝ) (a b : ℝ) : Prop :=\n  ∀ y : ℝ, y ∈ Set.Ioo a b → ∀ ε : ℝ, ε > 0 → ∃ n : ℕ, |x n - y| < ε\n\ntheorem dense_in_open_interval_of_bounded_limsup_liminf_and_vanishing_steps\n    (x : ℕ → ℝ) (a b : ℝ)\n    (hbounded : ∃ M : ℝ, ∀ n : ℕ, |x n| ≤ M)\n    (hlimsup : IsSeqLimsup x b)\n    (hliminf : IsSeqLiminf x a)\n    (hne : a ≠ b)\n    (hstep : Filter.Tendsto (fun n : ℕ => x (n + 1) - x n) Filter.atTop (nhds (0 : ℝ))) :\n    DenseInOpenInterval x a b := by\n  sorry"
+}

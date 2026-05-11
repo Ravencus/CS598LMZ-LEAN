@@ -1,0 +1,22 @@
+{
+  "id": "chebyshev-inequality",
+  "type": "problem",
+  "source_note": "有限测度下各个收敛之间的关系",
+  "english_source_note": "Relations Among Convergences on Finite Measure Spaces",
+  "callout_id": "有限测度下各个收敛之间的关系#3",
+  "english_title": "Chebyshev Inequality",
+  "statement_en": "$$\\mu\\left(\\{x:|f_n(x)-f(x)|\\geq \\varepsilon\\}\\right)\\leq \\frac{1}{\\varepsilon^p}||f_n-f||^p_{L^p}$$",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Markov-Chebyshev inequality",
+    "indicator function estimate"
+  ],
+  "prerequisites": [
+    "measure theory",
+    "Lp spaces",
+    "integration of nonnegative functions"
+  ],
+  "callout_body": "$$\\begin{aligned}\\mu\\left(\\{x:|f_n(x)-f(x)|\\geq\n\\varepsilon\\}\\right)&=\\mu\\left(\\{x:|f_n(x)-f(x)|^p\\geq\n\\varepsilon^p\\}\\right) \\\\ &= \\int_{\\{x:|f_n(x)-f(x)|^p\\geq\n\\varepsilon^p\\}}1d\\mu \\\\&\\leq\n\\int_{\\{x:|f_n(x)-f(x)|^p\\geq\n\\varepsilon^p\\}}\\frac{|f_n(x)-f(x)|^p}{\\varepsilon^p}d\\mu\n\\\\&\\leq \\int \\frac{|f_n(x)-f(x)|^p}{\\varepsilon^p} d\\mu =\n\\frac{1}{\\varepsilon^p}||f_n-f||^p_{L^p}\\end{aligned}$$"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "problem-12",
+  "type": "problem",
+  "source_note": "对误差的分析从而改进分段估计",
+  "english_source_note": "Improving Piecewise Estimates via Error Analysis",
+  "callout_id": "对误差的分析从而改进分段估计#1",
+  "english_title": "Problem",
+  "statement_en": "Find the limit: $$\\lim_{n\\to\\infty}\\frac{n+n^{1/2}+\\cdots+n^{1/n}}{n}.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "sum splitting",
+    "asymptotic estimation",
+    "error analysis"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "Big-O notation",
+    "basic exponential and logarithmic estimates"
+  ],
+  "callout_body": "求极限:$$\\lim_{n\\to\\infty}\\frac{n+n^{1/2}+...+n^{1/n}}{n}$$"
+}

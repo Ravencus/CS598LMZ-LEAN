@@ -1,0 +1,4 @@
+["piecewise-estimates-hub", "term-by-term-estimates-hub", "sequence-limits-via-piecewise-estimates-hub"]
+- piecewise-estimates-hub: The proof splits the average into a fixed initial segment and a tail where `x k` is uniformly close to `A`.
+- term-by-term-estimates-hub: On the tail, each term `|x k - A|` is bounded by `ε`, so the whole tail average is bounded by summing those termwise estimates.
+- sequence-limits-via-piecewise-estimates-hub: The Cesaro mean is compared to the constant average of `A`, with the discrepancy controlled by a vanishing finite-prefix contribution plus a small tail.

@@ -1,0 +1,18 @@
+{
+  "problem_id": "lebesgue-differentiation-theorem",
+  "english_title": "Lebesgue Differentiation Theorem",
+  "statement_en": "If $f \\in L^1_{\\text{loc}}(\\mathbb{R}^m)$, then the following limit holds almost everywhere: $$\\lim_{\\begin{aligned}m(B)&\\to 0 \\\\x \\in B\\end{aligned}}\\frac{1}{m(B)}\\int_{B} f(y)dy = f(x)$$ That is, almost every point is a Lebesgue point.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen MeasureTheory Filter Topology\n\nabbrev E (m : ℕ) := EuclideanSpace ℝ (Fin m)\n\ndef LocallyIntegrableOnEuclidean {m : ℕ} (f : E m → ℝ) : Prop :=\n  ∀ K : Set (E m), IsCompact K → IntegrableOn f K volume\n\ndef IsLebesguePoint {m : ℕ} (f : E m → ℝ) (x : E m) : Prop :=\n  Filter.Tendsto\n    (fun r : ℝ =>\n      (∫ y in Metric.closedBall x r, f y ∂volume) /\n        (volume (Metric.closedBall x r)).toReal)\n    (𝓝[>] (0 : ℝ))\n    (𝓝 (f x))\n\ntheorem lebesgue_differentiation_theorem_ae\n    {m : ℕ} {f : E m → ℝ}\n    (hf : LocallyIntegrableOnEuclidean f) :\n    ∀ᵐ x ∂(volume : Measure (E m)), IsLebesguePoint f x := by\n  sorry"
+}

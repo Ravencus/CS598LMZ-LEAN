@@ -1,0 +1,91 @@
+I'll work on this factorial sum identity. Let me start by analyzing the structure.
+Let me analyze this problem carefully.
+
+**The identity:** $\sum_{k=0}^{N} \frac{1}{k!} + \frac{1}{N \cdot N!} = 3 - \sum_{k=1}^{N-1} \frac{1}{k(k+1)(k+1)!}$
+
+**Key insight:** This is a telescoping identity. The key observation is:
+$$\frac{1}{k(k+1)(k+1)!} = \frac{1}{k \cdot k!} - \frac{1}{(k+1) \cdot (k+1)!} - \frac{1}{(k+1)!}$$
+
+Wait, let me verify. We have $\frac{1}{k \cdot k!} - \frac{1}{(k+1)(k+1)!}$. Let me compute:
+$$\frac{(k+1)(k+1)! - k \cdot k!}{k \cdot k! \cdot (k+1)(k+1)!} = \frac{(k+1)! \cdot (k+1) - k \cdot k!}{k(k+1) \cdot k! \cdot (k+1)!}$$
+
+Hmm, this is getting complex. Let me try induction on $N$ instead. The base case is $N=2$, and the inductive step needs the relation between $N$ and $N+1$.
+
+**Base case $N=2$:** LHS = $1 + 1 + 1/2 + 1/(2\cdot 2) = 1+1+0.5+0.25 = 2.75$. RHS = $3 - 1/(1\cdot 2 \cdot 2) = 3 - 0.25 = 2.75$. ✓
+
+**Inductive step:** Going from $N$ to $N+1$:
+- LHS adds $\frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!} - \frac{1}{N \cdot N!}$
+- RHS adds $-\frac{1}{N(N+1)(N+1)!}$
+
+So we need: $\frac{1}{(N+1)!} + \frac{1}{(N+1)(N+1)!} - \frac{1}{N \cdot N!} = -\frac{1}{N(N+1)(N+1)!}$
+
+Let me verify with $N=2$: $\frac{1}{6} + \frac{1}{18} - \frac{1}{4} = \frac{3}{18} + \frac{1}{18} - \frac{4.5}{18}$... let me redo: $1/6 + 1/18 - 1/4 = 3/18 + 1/18 - 4.5/18$. Hmm, common denom 36: $6/36 + 2/36 - 9/36 = -1/36$. And $-1/(2 \cdot 3 \cdot 6) = -1/36$. ✓
+
+Great, so induction works. Let me try a Lean proof.
+Good, the base case is almost done. The Icc 1 1 contains just {1}, so I need to evaluate $\frac{1}{1\cdot 2 \cdot 2!} = \frac{1}{4}$. Then $3 - 1/4 = 11/4$. ✓
+
+Let me think about the inductive step. The key challenge is the boundary `N - 1` in `Finset.Icc 1 (N - 1)`. Going from `N` to `N+1`, the upper bound goes from `N-1` to `N`. So one new term is added: $\frac{1}{N(N+1)(N+1)!}$.
+
+Let me write the full proof. I'll try a different approach - separate the new terms using `Finset.sum_range_succ` and `Finset.sum_Icc_succ_top`.
+The base case worked, the key lemma worked, the split worked. Now `linarith` is struggling because the `{N}` sum needs to be reduced to a single term. Let me handle that.
+
+The remaining goal: prove
+`sum_range(N+1) + 1/(N+1)! + 1/((N+1)*(N+1)!) = 3 - (sum_Icc(1,N-1) + sum{N})`
+
+where `sum{N} = 1/(N*(N+1)*(N+1)!)`. So `Finset.sum_singleton` should give us that.
+
+Let me rewrite using `Finset.sum_singleton` and then use `linarith`:
+The issue is `linarith` can't combine. Let me make the algebra explicit. We have:
+- `ih`: `S1 + 1/(N*N!) = 3 - S2`
+- `key`: `1/(N+1)! + 1/((N+1)*(N+1)!) - 1/(N*N!) = -1/(N*(N+1)*(N+1)!)`
+- Goal: `S1 + 1/(N+1)! + 1/((N+1)*(N+1)!) = 3 - (S2 + 1/(N*(N+1)*(N+1)!))`
+
+Adding `ih` and `key`: `S1 + 1/(N*N!) + 1/(N+1)! + 1/((N+1)*(N+1)!) - 1/(N*N!) = 3 - S2 - 1/(N*(N+1)*(N+1)!)`
+
+Simplifying: `S1 + 1/(N+1)! + 1/((N+1)*(N+1)!) = 3 - S2 - 1/(N*(N+1)*(N+1)!) = 3 - (S2 + 1/(N*(N+1)*(N+1)!))`
+
+So this is just `linarith` math. But the issue might be that `linarith` doesn't handle the `3 - (...)` distribution well, or the variables are too complex. Let me try `linear_combination`:
+The proof compiles successfully.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem factorial_sum_identity (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.range (N + 1)) (fun k => (1 : ℚ) / (k.factorial : ℚ)) +
+        (1 : ℚ) / (((N * N.factorial : ℕ) : ℕ) : ℚ) =
+      (3 : ℚ) -
+        Finset.sum (Finset.Icc 1 (N - 1))
+          (fun k => (1 : ℚ) / (((k * (k + 1) * (k + 1).factorial : ℕ) : ℕ) : ℚ)) := by
+  induction N, hN using Nat.le_induction with
+  | base =>
+    rw [show (2 : ℕ) - 1 = 1 from rfl]
+    rw [show Finset.Icc 1 1 = {1} from rfl]
+    simp [Finset.sum_range_succ, Nat.factorial]
+    norm_num
+  | succ N hN ih =>
+    have hN1 : N + 1 - 1 = N := by omega
+    have hN_pos : 1 ≤ N := by omega
+    rw [Finset.sum_range_succ]
+    rw [show N + 1 - 1 = N from hN1]
+    have hsplit : Finset.Icc 1 N = Finset.Icc 1 (N-1) ∪ {N} := by
+      ext k
+      simp [Finset.mem_Icc]
+      omega
+    rw [hsplit]
+    rw [Finset.sum_union (by rw [Finset.disjoint_singleton_right]; simp [Finset.mem_Icc]; omega)]
+    rw [Finset.sum_singleton]
+    have key : (1 : ℚ) / ((N+1).factorial : ℚ) + 1 / (((N+1) * (N+1).factorial : ℕ) : ℚ)
+               - 1 / ((N * N.factorial : ℕ) : ℚ)
+               = - 1 / ((N * (N+1) * (N+1).factorial : ℕ) : ℚ) := by
+      have hN0 : (N : ℚ) ≠ 0 := by exact_mod_cast (by omega : N ≠ 0)
+      have hN1q : (N : ℚ) + 1 ≠ 0 := by positivity
+      have hfact : (N.factorial : ℚ) ≠ 0 := by
+        exact_mod_cast Nat.factorial_pos N |>.ne'
+      have hfact1 : ((N+1).factorial : ℚ) ≠ 0 := by
+        exact_mod_cast Nat.factorial_pos (N+1) |>.ne'
+      push_cast [Nat.factorial_succ]
+      field_simp
+      ring
+    linear_combination ih + key
+```

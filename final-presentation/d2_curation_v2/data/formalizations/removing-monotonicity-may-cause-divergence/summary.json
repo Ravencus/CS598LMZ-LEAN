@@ -1,0 +1,30 @@
+{
+  "problem_id": "removing-monotonicity-may-cause-divergence",
+  "english_title": "Removing Monotonicity May Cause Divergence",
+  "statement_en": "Consider $$\\sum_n \\frac{1}{n} = \\sum_n (-1)^n \\frac{(-1)^n}{n}.$$ Let $b_n = (-1)^n$, whose partial sums are bounded, and let $a_n = \\frac{(-1)^n}{n} \\to 0$, but $a_n$ is not monotone. In fact, this series diverges.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (0 : ℝ)\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImp"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem harmonic_as_dirichlet_counterexample :\n    (∀ n : ℕ, ((-1 : ℝ) ^ n) * (((-1 : ℝ) ^ n) / (n + 1)) = (1 : ℝ) / (n + 1)) ∧\n    (∃ C : ℝ, ∀ N : ℕ, ‖Finset.sum (Finset.range N) (fun n : ℕ => (-1 : ℝ) ^ n)‖ ≤ C) ∧\n    Filter.Tendsto (fun n : ℕ => ((-1 : ℝ) ^ n) / (n + 1)) Filter.atTop (𝓝 (0 : ℝ)) ∧\n    ¬ Monotone (fun n : ℕ => ((-1 : ℝ) ^ n) / (n + 1)) ∧\n    ¬ Summable (fun n : ℕ => (1 : ℝ) / (n + 1)) := by\n  sorry"
+}

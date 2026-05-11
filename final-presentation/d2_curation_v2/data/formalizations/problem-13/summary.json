@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-13",
+  "english_title": "Problem 1.3",
+  "statement_en": "For $x_n\\in (0,1)$, assume $\\sum_{n=1}^{\\infty} n x_n<\\infty$. Prove that $$\\sum_{n=1}^{\\infty} x_n\\log(1/x_n)<\\infty.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem xlog_summable_of_n_mul_summable\n    {x : ℕ → ℝ}\n    (hx : ∀ n : ℕ, 0 < x n ∧ x n < 1)\n    (hsum : Summable (fun n : ℕ => ((n + 1 : ℕ) : ℝ) * x (n + 1))) :\n    Summable (fun n : ℕ => x (n + 1) * Real.log (1 / x (n + 1))) := by\n  sorry"
+}

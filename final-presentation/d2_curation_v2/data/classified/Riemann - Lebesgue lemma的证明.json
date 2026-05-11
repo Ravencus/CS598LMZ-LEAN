@@ -1,0 +1,236 @@
+{
+  "note_title": "Riemann - Lebesgue lemma的证明",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "Riemann - Lebesgue lemma的证明#1",
+      "type": "note",
+      "title": "傅里叶变换版本的lemma",
+      "body": "如果$f \\in L^1(\\mathbb{R}^n)$,其傅里叶变换:\n$$\\hat{f}(\\xi) = \\int_{\\mathbb{R}^n}f(x)e^{-2\\pi i x \\cdot \\xi } dx$$那么$$|\\hat{f}(\\xi)|\\to 0 \\text{ as } |\\xi| \\to \\infty$$\n因为[[可积函数的傅里叶变换是连续的]]，那么这个命题实际上就是证明$$f \\in L^1(\\mathbb{R}^n) \\implies \\hat{f} \\in C_0(\\mathbb{R}^n)$$",
+      "position_char": 67,
+      "position_line": 8,
+      "classification_result": {
+        "id": "Riemann - Lebesgue lemma的证明#1",
+        "classification": "problem",
+        "english_title": "Lemma in the Fourier Transform Version",
+        "if_problem": {
+          "statement_en": "If $f \\in L^1(\\mathbb{R}^n)$, and its Fourier transform is defined by $$\\hat{f}(\\xi) = \\int_{\\mathbb{R}^n}f(x)e^{-2\\pi i x \\cdot \\xi } \\, dx,$$ then $$|\\hat{f}(\\xi)|\\to 0 \\text{ as } |\\xi| \\to \\infty.$$ Since the Fourier transform of an integrable function is continuous, this is essentially the statement that $$f \\in L^1(\\mathbb{R}^n) \\implies \\hat{f} \\in C_0(\\mathbb{R}^n).$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "approximation by translated functions",
+            "continuity of translations in $L^1$",
+            "Fourier transform estimates"
+          ],
+          "prerequisites": [
+            "$L^1(\\mathbb{R}^n)$ functions",
+            "Fourier transform",
+            "continuity of the Fourier transform of integrable functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#2",
+      "type": "note",
+      "title": "命题1.4.1",
+      "body": "$f \\in L^1(\\mathbb{R}^n)$对任意$a\\in \\mathbb{R}^n$定义$T_a(f):=f(x-a)$，那么$$||T_{a+h}(f)-T_a(f)||_{L^1} \\to 0$$当$||h|| \\to 0$。",
+      "position_char": 2989,
+      "position_line": 75,
+      "classification_result": {
+        "id": "Riemann - Lebesgue lemma的证明#2",
+        "classification": "problem",
+        "english_title": "Proposition 1.4.1",
+        "if_problem": {
+          "statement_en": "Let $f \\in L^1(\\mathbb{R}^n)$ and for any $a\\in \\mathbb{R}^n$ define $T_a(f):=f(x-a)$. Then $$\\|T_{a+h}(f)-T_a(f)\\|_{L^1} \\to 0$$ as $\\|h\\| \\to 0$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "continuity of translations in $L^1$",
+            "approximation of $L^1$ functions by continuous compactly supported functions"
+          ],
+          "prerequisites": [
+            "$L^1(\\mathbb{R}^n)$ spaces",
+            "translation operators",
+            "density arguments in $L^1$"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#3",
+      "type": "note",
+      "title": "傅里叶系数版本",
+      "body": "$f \\in L^1(\\mathbb{T})$那么$|\\hat{f}(n)|\\to 0$具体来说:\n$$\\hat{f}(n) =\n\\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} f(x)e^{-inx} dx \\to 0 \\text{\nas } |n| \\to \\infty$$",
+      "position_char": 6656,
+      "position_line": 114,
+      "classification_result": {
+        "id": "Riemann - Lebesgue lemma的证明#3",
+        "classification": "problem",
+        "english_title": "Fourier Coefficient Version",
+        "if_problem": {
+          "statement_en": "If $f \\in L^1(\\mathbb{T})$, then $|\\hat{f}(n)|\\to 0$. More precisely, $$\\hat{f}(n) = \\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} f(x)e^{-inx} \\, dx \\to 0 \\text{ as } |n| \\to \\infty.$$",
+          "problem_type": "lemma",
+          "difficulty": "easy",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "Riemann-Lebesgue lemma",
+            "Fourier coefficient estimates"
+          ],
+          "prerequisites": [
+            "$L^1(\\mathbb{T})$ functions",
+            "Fourier coefficients",
+            "integration on the torus"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#4",
+      "type": "note",
+      "title": "一般意义下的傅里叶变换",
+      "body": "函数$f\\in L^1(G)$的傅里叶变换$\\mathcal{F}(f)$可以被定义为,对任意$\\chi \\in \\hat{G}$，$$\\mathcal{F}(f)(\\chi):=\\int_{G} \\overline{\\chi(g)} f(g) \\,d\\mu(g)$$",
+      "position_char": 8523,
+      "position_line": 150,
+      "classification_result": {
+        "id": "Riemann - Lebesgue lemma的证明#4",
+        "classification": "definition",
+        "english_title": "Fourier Transform in the General Setting",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#5",
+      "type": "note",
+      "title": "Riemann-Lebesgue引理",
+      "body": "定义在$L^1(G)$上的傅里叶变换$\\mathcal{F}$是一个$$L^1(G)\\to C_0(\\hat{G})$$的线性泛函。",
+      "position_char": 8752,
+      "position_line": 155,
+      "classification_result": {
+        "id": "Riemann - Lebesgue lemma的证明#5",
+        "classification": "problem",
+        "english_title": "Riemann-Lebesgue Lemma",
+        "if_problem": {
+          "statement_en": "The Fourier transform $\\mathcal{F}$ defined on $L^1(G)$ is a linear map $$L^1(G) \\to C_0(\\hat{G}).$$",
+          "problem_type": "lemma",
+          "difficulty": "hard",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "Pontryagin duality framework",
+            "translation continuity on LCA groups",
+            "character separation at infinity"
+          ],
+          "prerequisites": [
+            "locally compact abelian groups",
+            "Haar measure",
+            "Fourier transform on LCA groups",
+            "$C_0(\\hat{G})$"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#6",
+      "type": "note",
+      "title": "命题2",
+      "body": "拓扑空间$X$与拓扑群$Y$同构，即存在一个同胚映射$h:Y \\to X$。现在假设$f\\in C_0(X\\to \\mathbb{C})$那么$g = f\\circ h \\in C_0(Y\\to \\mathbb{C})$.",
+      "position_char": 9806,
+      "position_line": 167,
+      "classification_result": {
+        "id": "Riemann - Lebesgue lemma的证明#6",
+        "classification": "problem",
+        "english_title": "Proposition 2",
+        "if_problem": {
+          "statement_en": "Let $X$ be a topological space and $Y$ a topological group, and suppose they are isomorphic as topological spaces, that is, there exists a homeomorphism $h:Y \\to X$. If $f\\in C_0(X\\to \\mathbb{C})$, then $g = f\\circ h \\in C_0(Y\\to \\mathbb{C})$.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "topology",
+          "key_techniques": [
+            "preservation of continuity under composition with a homeomorphism",
+            "preservation of vanishing at infinity under homeomorphism"
+          ],
+          "prerequisites": [
+            "homeomorphisms",
+            "continuous functions vanishing at infinity",
+            "basic topology"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#7",
+      "type": "note",
+      "title": "命题3：命题1在LCA群上的推广",
+      "body": "$G$是一个LCA群$f \\in L^1(G)$对任意$a\\in G$定义$T_a(f):=f(a^{-1}x)$。那么对于任意$\\varepsilon >0$存在单位元$1_G$的邻域$U_{\\varepsilon}$使得所有$h \\in U_{\\varepsilon}$都有$$||T_{ah}(f)-T_a(f)||_{L^1(G)}<\\varepsilon$$",
+      "position_char": 11162,
+      "position_line": 189,
+      "classification_result": {
+        "id": "Riemann - Lebesgue lemma的证明#7",
+        "classification": "problem",
+        "english_title": "Proposition 3: Generalization of Proposition 1 to LCA Groups",
+        "if_problem": {
+          "statement_en": "Let $G$ be an LCA group and let $f \\in L^1(G)$. For any $a\\in G$, define $T_a(f):=f(a^{-1}x)$. Then for every $\\varepsilon >0$ there exists a neighborhood $U_{\\varepsilon}$ of the identity element $1_G$ such that for all $h \\in U_{\\varepsilon}$, $$\\|T_{ah}(f)-T_a(f)\\|_{L^1(G)}<\\varepsilon.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "translation continuity in $L^1$ on LCA groups",
+            "approximation arguments with compact support",
+            "Haar measure invariance"
+          ],
+          "prerequisites": [
+            "locally compact abelian groups",
+            "Haar measure",
+            "$L^1(G)$ spaces",
+            "group translations"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#8",
+      "type": "note",
+      "title": "引理1",
+      "body": "对于LCA群$G$当中单位元$1_G$的任意邻域$U$存在$K \\subseteq \\hat{G}$使得如果$\\chi \\in \\hat{G} - K$那么存在$x \\in U$使得$\\text{Re}\\chi(x)\\leq 0$.",
+      "position_char": 12527,
+      "position_line": 210,
+      "classification_result": {
+        "id": "Riemann - Lebesgue lemma的证明#8",
+        "classification": "problem",
+        "english_title": "Lemma 1",
+        "if_problem": {
+          "statement_en": "For any neighborhood $U$ of the identity element $1_G$ in an LCA group $G$, there exists a set $K \\subseteq \\hat{G}$ such that if $\\chi \\in \\hat{G} \\setminus K$, then there exists $x \\in U$ with $$\\operatorname{Re}\\chi(x)\\leq 0.$$",
+          "problem_type": "lemma",
+          "difficulty": "hard",
+          "domain": "harmonic analysis",
+          "key_techniques": [
+            "properties of characters on LCA groups",
+            "compactness arguments in the dual group",
+            "separation of characters at infinity"
+          ],
+          "prerequisites": [
+            "locally compact abelian groups",
+            "dual groups",
+            "characters",
+            "basic topological group theory"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Riemann - Lebesgue lemma的证明#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma in the Fourier Transform Version\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f \\\\in L^1(\\\\mathbb{R}^n)$, and its Fourier transform is defined by $$\\\\hat{f}(\\\\xi) = \\\\int_{\\\\mathbb{R}^n}f(x)e^{-2\\\\pi i x \\\\cdot \\\\xi } \\\\, dx,$$ then $$|\\\\hat{f}(\\\\xi)|\\\\to 0 \\\\text{ as } |\\\\xi| \\\\to \\\\infty.$$ Since the Fourier transform of an integrable function is continuous, this is essentially the statement that $$f \\\\in L^1(\\\\mathbb{R}^n) \\\\implies \\\\hat{f} \\\\in C_0(\\\\mathbb{R}^n).$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"approximation by translated functions\",\n        \"continuity of translations in $L^1$\",\n        \"Fourier transform estimates\"\n      ],\n      \"prerequisites\": [\n        \"$L^1(\\\\mathbb{R}^n)$ functions\",\n        \"Fourier transform\",\n        \"continuity of the Fourier transform of integrable functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Riemann - Lebesgue lemma的证明#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1.4.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f \\\\in L^1(\\\\mathbb{R}^n)$ and for any $a\\\\in \\\\mathbb{R}^n$ define $T_a(f):=f(x-a)$. Then $$\\\\|T_{a+h}(f)-T_a(f)\\\\|_{L^1} \\\\to 0$$ as $\\\\|h\\\\| \\\\to 0$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"continuity of translations in $L^1$\",\n        \"approximation of $L^1$ functions by continuous compactly supported functions\"\n      ],\n      \"prerequisites\": [\n        \"$L^1(\\\\mathbb{R}^n)$ spaces\",\n        \"translation operators\",\n        \"density arguments in $L^1$\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Riemann - Lebesgue lemma的证明#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Fourier Coefficient Version\",\n    \"if_problem\": {\n      \"statement_en\": \"If $f \\\\in L^1(\\\\mathbb{T})$, then $|\\\\hat{f}(n)|\\\\to 0$. More precisely, $$\\\\hat{f}(n) = \\\\frac{1}{2\\\\pi}\\\\int_{-\\\\pi}^{\\\\pi} f(x)e^{-inx} \\\\, dx \\\\to 0 \\\\text{ as } |n| \\\\to \\\\infty.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"Riemann-Lebesgue lemma\",\n        \"Fourier coefficient estimates\"\n      ],\n      \"prerequisites\": [\n        \"$L^1(\\\\mathbb{T})$ functions\",\n        \"Fourier coefficients\",\n        \"integration on the torus\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Riemann - Lebesgue lemma的证明#4\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Fourier Transform in the General Setting\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Riemann - Lebesgue lemma的证明#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Riemann-Lebesgue Lemma\",\n    \"if_problem\": {\n      \"statement_en\": \"The Fourier transform $\\\\mathcal{F}$ defined on $L^1(G)$ is a linear map $$L^1(G) \\\\to C_0(\\\\hat{G}).$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"Pontryagin duality framework\",\n        \"translation continuity on LCA groups\",\n        \"character separation at infinity\"\n      ],\n      \"prerequisites\": [\n        \"locally compact abelian groups\",\n        \"Haar measure\",\n        \"Fourier transform on LCA groups\",\n        \"$C_0(\\\\hat{G})$\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Riemann - Lebesgue lemma的证明#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $X$ be a topological space and $Y$ a topological group, and suppose they are isomorphic as topological spaces, that is, there exists a homeomorphism $h:Y \\\\to X$. If $f\\\\in C_0(X\\\\to \\\\mathbb{C})$, then $g = f\\\\circ h \\\\in C_0(Y\\\\to \\\\mathbb{C})$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"topology\",\n      \"key_techniques\": [\n        \"preservation of continuity under composition with a homeomorphism\",\n        \"preservation of vanishing at infinity under homeomorphism\"\n      ],\n      \"prerequisites\": [\n        \"homeomorphisms\",\n        \"continuous functions vanishing at infinity\",\n        \"basic topology\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Riemann - Lebesgue lemma的证明#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 3: Generalization of Proposition 1 to LCA Groups\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $G$ be an LCA group and let $f \\\\in L^1(G)$. For any $a\\\\in G$, define $T_a(f):=f(a^{-1}x)$. Then for every $\\\\varepsilon >0$ there exists a neighborhood $U_{\\\\varepsilon}$ of the identity element $1_G$ such that for all $h \\\\in U_{\\\\varepsilon}$, $$\\\\|T_{ah}(f)-T_a(f)\\\\|_{L^1(G)}<\\\\varepsilon.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"translation continuity in $L^1$ on LCA groups\",\n        \"approximation arguments with compact support\",\n        \"Haar measure invariance\"\n      ],\n      \"prerequisites\": [\n        \"locally compact abelian groups\",\n        \"Haar measure\",\n        \"$L^1(G)$ spaces\",\n        \"group translations\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Riemann - Lebesgue lemma的证明#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1\",\n    \"if_problem\": {\n      \"statement_en\": \"For any neighborhood $U$ of the identity element $1_G$ in an LCA group $G$, there exists a set $K \\\\subseteq \\\\hat{G}$ such that if $\\\\chi \\\\in \\\\hat{G} \\\\setminus K$, then there exists $x \\\\in U$ with $$\\\\operatorname{Re}\\\\chi(x)\\\\leq 0.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"harmonic analysis\",\n      \"key_techniques\": [\n        \"properties of characters on LCA groups\",\n        \"compactness arguments in the dual group\",\n        \"separation of characters at infinity\"\n      ],\n      \"prerequisites\": [\n        \"locally compact abelian groups\",\n        \"dual groups\",\n        \"characters\",\n        \"basic topological group theory\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

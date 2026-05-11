@@ -1,0 +1,30 @@
+{
+  "problem_id": "cauchy-criterion-in-lp-spaces",
+  "english_title": "Cauchy Criterion in $L^p$ Spaces",
+  "statement_en": "Let $\\mu$ be a $\\sigma$-finite measure on $X$. For functions $$f_n(x)\\in L^p(X\\to \\mathbb{C},\\mu),\\quad 1\\leq p\\leq \\infty,$$ there exists an $f\\in L^p$ such that $\\|f_n-f\\|_{L^p}\\to 0$ if and only if for every $\\varepsilon>0$ there exists a positive integer $N_{\\varepsilon}$ such that for all $n,m>N_{\\varepsilon}$, $$\\|f_n-f_m\\|_{L^p}<\\varepsilon.$$",
+  "difficulty": "medium",
+  "domain": "functional analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  0\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter MeasureTheory\n\ntheorem lp_convergence_iff_cauchy\n    {X : Type*} [MeasurableSpace X]\n    (μ : Measure X) [SigmaFinite μ]\n    (p : ENNReal) [Fact (1 ≤ p)]\n    (f : ℕ → MeasureTheory.Lp ℂ p μ) :\n    (∃ g : MeasureTheory.Lp ℂ p μ,\n      Filter.Tendsto (fun n => ‖f n - g‖) Filter.atTop (𝓝 0)) ↔\n    (∀ ε : ℝ, 0 < ε →\n      ∃ N : ℕ, ∀ n m : ℕ, N < n → N < m → ‖f n - f m‖ < ε) := by\n  sorry"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "mit-integration-competition",
+  "type": "problem",
+  "source_note": "对自变量进行二进制展开求积分",
+  "english_source_note": "Integrating via Binary Expansion of the Variable",
+  "callout_id": "对自变量进行二进制展开求积分#1",
+  "english_title": "MIT Integration Competition",
+  "statement_en": "Compute the integral $$\\\\int_{0}^{1}\\\\left(\\\\sum_{n\\\\geq 1}\\\\frac{\\\\lfloor2^nx\\\rfloor}{3^n}\\\right)^2\\\\,dx.$$",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "binary expansion of a uniform variable",
+    "rewriting the integral as an expectation",
+    "digit-wise decomposition"
+  ],
+  "prerequisites": [
+    "Lebesgue integration",
+    "uniform distribution on (0,1)",
+    "binary expansions"
+  ],
+  "callout_body": "求积分的结果：$$\\int_{0}^{1}\\left(\\sum_{n\\geq 1}\\frac{\\lfloor2^nx\\rfloor}{3^n}\\right)^2\\,dx$$"
+}

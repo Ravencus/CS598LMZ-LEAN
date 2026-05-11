@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c47f31ec3d7c.lean",
+      "line": 9,
+      "column": 5,
+      "severity": "error",
+      "message": "Unknown identifier `ProbabilityTheory.IsProbabilityMeasure`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c47f31ec3d7c.lean",
+      "line": 9,
+      "column": 5,
+      "severity": "error",
+      "message": "Unknown identifier `ProbabilityTheory.IsProbabilityMeasure`\n"
+    }
+  ]
+}

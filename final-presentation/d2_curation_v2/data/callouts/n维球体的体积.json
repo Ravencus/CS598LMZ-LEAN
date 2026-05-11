@@ -1,0 +1,41 @@
+{
+  "note_title": "n维球体的体积",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "n维球体的体积#1",
+      "type": "note",
+      "title": "命题",
+      "body": "$\\mathbb{R}^n$当中的$n$维球体的体积公式为$$\\frac{\\pi^{d/2}}{\\Gamma(d/2+1)}r^d$$",
+      "position_char": 32,
+      "position_line": 6
+    },
+    {
+      "id": "n维球体的体积#2",
+      "type": "note",
+      "title": "切片的本质",
+      "body": "如果$E$是$\\mathbb{R}^{d_1}\\times \\mathbb{R}^{d_2}$当中的一个可测集合，那么对于几乎每个$y \\in \\mathbb{R}^{d_2}$都有切片,$$E^{y}=\\{x\\in\\mathbb{R}^{d_1}:(x,y)\\in E\\}$$\n这种切片都是可测的集合，并且$m(E^{y})$是关于$y$的可测函数，并且$$m(E)=\\int_{\\mathbb{R}^{d_2}}m(E^{y})\\,dy$$同样的也有对几乎每个$x \\in \\mathbb{R}^{d_1}$都有切片,$$E_{x}=\\{x\\in\\mathbb{R}^{d_1}:(x,y)\\in E\\}$$这种切片都是可测的集合，并且$m(E_{x})$是关于$x$的可测函数，并且$$m(E)=\\int_{\\mathbb{R}^{d_1}}m(E_{x})\\,dx$$",
+      "position_char": 294,
+      "position_line": 13
+    },
+    {
+      "id": "n维球体的体积#3",
+      "type": "note",
+      "title": "由函数围成的区域的Lebesgue测度",
+      "body": "$f(x)$是$\\mathbb{R}^k$上的一个非负的函数，集合$$A:=\\{(x,y) \\in \\mathbb{R}^{k}\\times \\mathbb{R}:0\\leq y \\leq f(x)\\}$$\n那么这个集合的\"面积\"可以用积分来计算，公式如下:\n$$\\int_{\\mathbb{R}^k} f(x)\\,dx = m(A)$$\n这里的$m$是集合的Lebesgue测度。",
+      "position_char": 790,
+      "position_line": 25
+    },
+    {
+      "id": "n维球体的体积#4",
+      "type": "note",
+      "title": "高斯积分公式的推广",
+      "body": "$$\\int_{\\mathbb{R}^d} e^{-\\pi|x|^2}\\,dx =1$$",
+      "position_char": 3299,
+      "position_line": 59
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "mit-integration-competition",
+  "big_outcome": "sympy_rescue",
+  "small_outcome": "wall_budget_exceeded",
+  "label": "different_plan",
+  "evidence": "BIG abandoned real formalization and used a Sympy rescue fallback with a `sorry`, after several fake-notation/shadowing attempts. SMALL pursued an actual analytic Lean proof via measurability, summability, interval-integral lemmas, and a self-similarity/moment recurrence.",
+  "wall_seconds": 7.35
+}

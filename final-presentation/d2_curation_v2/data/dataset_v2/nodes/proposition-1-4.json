@@ -1,0 +1,23 @@
+{
+  "id": "proposition-1-4",
+  "type": "problem",
+  "source_note": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+  "english_source_note": "Adding a Vanishing-Cesaro Sequence to a Uniformly Distributed One",
+  "callout_id": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列#1",
+  "english_title": "Proposition 1",
+  "statement_en": "If $x_n$ is a sequence uniformly distributed modulo $1$, and $y_n$ satisfies $\\sum_{n\\leq N} |y_n|=o(N)$, then $x_n+y_n$ is also uniformly distributed modulo $1$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "key_techniques": [
+    "Weyl's criterion",
+    "exponential sum estimation",
+    "perturbation by a sequence with vanishing average absolute value"
+  ],
+  "prerequisites": [
+    "uniform distribution modulo 1",
+    "little-o notation",
+    "basic properties of exponential functions"
+  ],
+  "callout_body": "如果$x_n$是模1均匀分布的序列，并且$y_n$满足$\\sum_{n\\leq N} |y_n|=o(N)$那么$x_n+y_n$也是模1均匀分布的序列。"
+}

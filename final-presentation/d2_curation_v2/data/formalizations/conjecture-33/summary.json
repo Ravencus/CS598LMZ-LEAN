@@ -1,0 +1,18 @@
+{
+  "problem_id": "conjecture-33",
+  "english_title": "Conjecture 3.3",
+  "statement_en": "Let $$a_n := (\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n$$. Then the sequence is dense in $$[0,1]$$.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sequence_dense_in_unit_interval :\n    Set.Icc (0 : ℝ) 1 ⊆\n      closure\n        (Set.range\n          (fun n : ℕ => ((((2 : ℝ) / 3) + (((1 : ℝ) / 3) * Real.sin n)) ^ n))) := by\n  sorry"
+}

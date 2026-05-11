@@ -1,0 +1,66 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_42209dfe684b.lean",
+      "line": 6,
+      "column": 43,
+      "severity": "warning",
+      "message": "unused variable `P`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_42209dfe684b.lean",
+      "line": 6,
+      "column": 59,
+      "severity": "warning",
+      "message": "unused variable `X`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_42209dfe684b.lean",
+      "line": 19,
+      "column": 100,
+      "severity": "error",
+      "message": "unexpected token 'import'; expected '{' or tactic"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_42209dfe684b.lean",
+      "line": 19,
+      "column": 98,
+      "severity": "error",
+      "message": "unsolved goals\nΩ : Type u_1\ninst✝¹ : MeasurableSpace Ω\nP : Measure Ω\ninst✝ : IsProbabilityMeasure P\nX : ℕ → Ω → ℝ\nμ : ℝ\nh_iid : IsIID P X\nh_int : Integrable (X 1) P\nh_mean : ∫ (ω : Ω), X 1 ω ∂P = μ\n⊢ ∀ᵐ (ω : Ω) ∂P, Tendsto (fun n => partialSums X (n + 1) ω / ↑(n + 1)) atTop (nhds μ)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_42209dfe684b.lean",
+      "line": 20,
+      "column": 2,
+      "severity": "error",
+      "message": "invalid 'import' command, it must be used in the beginning of the file\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_42209dfe684b.lean",
+      "line": 19,
+      "column": 100,
+      "severity": "error",
+      "message": "unexpected token 'import'; expected '{' or tactic"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_42209dfe684b.lean",
+      "line": 19,
+      "column": 98,
+      "severity": "error",
+      "message": "unsolved goals\nΩ : Type u_1\ninst✝¹ : MeasurableSpace Ω\nP : Measure Ω\ninst✝ : IsProbabilityMeasure P\nX : ℕ → Ω → ℝ\nμ : ℝ\nh_iid : IsIID P X\nh_int : Integrable (X 1) P\nh_mean : ∫ (ω : Ω), X 1 ω ∂P = μ\n⊢ ∀ᵐ (ω : Ω) ∂P, Tendsto (fun n => partialSums X (n + 1) ω / ↑(n + 1)) atTop (nhds μ)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_42209dfe684b.lean",
+      "line": 20,
+      "column": 2,
+      "severity": "error",
+      "message": "invalid 'import' command, it must be used in the beginning of the file\n"
+    }
+  ],
+  "splice_action": "wrap",
+  "signature_deviation": false
+}

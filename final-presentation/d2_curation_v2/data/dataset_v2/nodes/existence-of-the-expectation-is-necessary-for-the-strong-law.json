@@ -1,0 +1,24 @@
+{
+  "id": "existence-of-the-expectation-is-necessary-for-the-strong-law",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+  "english_source_note": "A Strong Law via the Borel-Cantelli Lemma",
+  "callout_id": "Borel-Cantelli lemma证明某种版本下的强大数定律#5",
+  "english_title": "Existence of the Expectation Is Necessary for the Strong Law of Large Numbers",
+  "statement_en": "If $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed random variables and $E|X_1|=\\infty$, and if $S_n=X_1+\\cdots+X_n$, then $$P\\left(\\left\\{\\omega:\\lim_{n\\to \\infty}\\frac{S_n}{n} \\text{ exists}\\in(-\\infty,+\\infty)\\right\\}\\right)=0.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "key_techniques": [
+    "necessity argument for the strong law",
+    "tail event analysis",
+    "Borel-Cantelli type reasoning"
+  ],
+  "prerequisites": [
+    "independent and identically distributed random variables",
+    "expectation and non-integrability",
+    "almost sure convergence",
+    "strong law of large numbers"
+  ],
+  "callout_body": "如果$X_1,...,X_n,...$是独立同分布的随机变量，并且$E|X_1|=\\infty$，假设$S_n = X_1+...+X_n$,那么$$P\\left(\\left\\{\\omega:\\lim_{n\\to \\infty}\\frac{S_n}{n} \\text{ exists}\\in(-\\infty,+\\infty)\\right\\}\n\\right)=0$$"
+}

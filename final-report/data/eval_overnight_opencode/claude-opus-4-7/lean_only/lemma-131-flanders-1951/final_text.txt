@@ -1,0 +1,88 @@
+I'll work on this theorem about minimal polynomials of AB and BA. Let me start by exploring what's available in Mathlib.
+Let me search for relevant lemmas about minimal polynomials of AB and BA.
+Found `Matrix.charpoly_mul_comm`. Let me look at the key fact: `charpoly_mul_comm'` says `X^something * (A*B).charpoly = X^something * (B*A).charpoly` for rectangular matrices. Let me look more carefully.
+For square matrices, `(A*B).charpoly = (B*A).charpoly`. So minpoly(AB) and minpoly(BA) both divide the same charpoly. But we need a stronger statement: `minpoly(AB) ∣ X * minpoly(BA)`.
+
+Actually, the classical result is: if `p` is the minimal polynomial of `AB`, then `X * p(BA) = ... ` so `X * minpoly(AB)` is annihilated by `BA`, hence `minpoly(BA) ∣ X * minpoly(AB)`.
+
+Let me think more carefully. For square matrices, this is actually trivially proved by symmetry because `(A*B).charpoly = (B*A).charpoly` and `minpoly ∣ charpoly`. But we need divisibility by `X * minpoly`, not by charpoly.
+
+Wait — for square matrices, `minpoly(AB) = minpoly(BA)` might not always hold, but they have the same characteristic polynomial. The "X factor" issue is for the rectangular case.
+
+For square matrices specifically: it's known that `minpoly(AB)` and `minpoly(BA)` differ by at most a factor of `X`. Let me search Mathlib for this specific result.
+Key lemma found: `minpoly.dvd_iff: minpoly A x ∣ p ↔ Polynomial.aeval x p = 0` (this requires `A` is a field).
+
+Strategy: I need to show `minpoly ℂ (AB) ∣ X * minpoly ℂ (BA)`. By `dvd_iff`, this is equivalent to `aeval (AB) (X * minpoly ℂ (BA)) = 0`, i.e., `AB * (minpoly ℂ (BA)).aeval(AB) = 0`.
+
+The mathematical key: if `p(X) = minpoly(BA)` then `p(BA) = 0`. Then `A * p(BA) = A * 0 = 0`. But also `A * p(BA) = p'(AB) * A` where `p'(X) = X * (something)`. Actually:
+
+For any polynomial `q`, `A * q(BA) = q(AB) * A` when we shift. Specifically: `A*(BA)^k = (AB)^k * A`. So if `q(BA) = 0`, then `A * q(BA) = 0 = q(AB) * A`. Hmm that gives `q(AB) * A = 0`, not `q(AB) = 0`.
+
+But: `(AB) * q(AB) * B = q(AB) * AB * B = q(AB) * A * (BA) ` ... Actually let me reconsider.
+
+The classical proof: Let `p(X) = minpoly(BA)`. Then `p(BA) = 0`. Now consider `X * p(X)`. We have `(X * p)(AB) = AB * p(AB)`. We want to show `AB * p(AB) = 0`.
+
+`AB * p(AB) = A * (BA) * p(AB)`. Hmm, we need to connect `p(AB)` to `p(BA)`.
+
+Note: `B * (AB)^k = (BA)^k * B`. So `B * p(AB) = p(BA) * B = 0 * B = 0`. Then `AB * p(AB) = A * (B * p(AB)) = A * 0 = 0`. 
+
+So: `AB * p(AB) = 0` where `p = minpoly(BA)`. This means `(X * p)(AB) = 0`, hence `minpoly(AB) ∣ X * minpoly(BA)`.
+
+Let me check how `aeval` on matrices works in Lean. The key facts I need:
+- `aeval (AB) (X * p) = (AB) * aeval(AB) p`
+- `B * aeval(AB) p = aeval(BA) p * B`  
+- `aeval(BA) (minpoly ℂ (BA)) = 0`
+
+The last is `minpoly.aeval`. Let me try writing this.
+Let me think about this differently. `aeval x p` for a polynomial `p` evaluates by substituting `x`. So `aeval (A*B) (X * p)` = `(A*B) * aeval (A*B) p`.
+
+The key identity `B * f(AB) = f(BA) * B` for polynomial f. Let me try the proof.
+Just naming issues. Let me fix.
+Close. The `aeval_monomial` produces `algebraMap c * X^k`. I need to manage commutation since `algebraMap c` commutes with everything (it's scalar). Let me fix.
+`Algebra.commutes` rewrote in the wrong place. Let me be more careful.
+The proof compiles successfully.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  have key : ∀ (X' Y' : Matrix n n ℂ) (p : ℂ[X]),
+      Y' * (aeval (X' * Y') p) = (aeval (Y' * X') p) * Y' := by
+    intro X' Y' p
+    induction p using Polynomial.induction_on' with
+    | add p q hp hq => simp [hp, hq, mul_add, add_mul]
+    | monomial k c =>
+      have hpow : Y' * (X' * Y') ^ k = (Y' * X') ^ k * Y' := by
+        induction k with
+        | zero => simp
+        | succ k ih =>
+          rw [pow_succ, pow_succ, ← mul_assoc, ih, mul_assoc, mul_assoc, mul_assoc]
+      simp only [aeval_monomial]
+      rw [← mul_assoc, ← Algebra.commutes, mul_assoc, hpow, mul_assoc]
+  refine ⟨?_, ?_⟩
+  · rw [minpoly.dvd_iff]
+    rw [map_mul, aeval_X]
+    have h1 : B * aeval (A * B) (minpoly ℂ (B * A)) =
+              aeval (B * A) (minpoly ℂ (B * A)) * B := key A B _
+    rw [minpoly.aeval, zero_mul] at h1
+    calc (A * B) * aeval (A * B) (minpoly ℂ (B * A))
+        = A * (B * aeval (A * B) (minpoly ℂ (B * A))) := by rw [mul_assoc]
+      _ = A * 0 := by rw [h1]
+      _ = 0 := mul_zero _
+  · rw [minpoly.dvd_iff]
+    rw [map_mul, aeval_X]
+    have h1 : A * aeval (B * A) (minpoly ℂ (A * B)) =
+              aeval (A * B) (minpoly ℂ (A * B)) * A := key B A _
+    rw [minpoly.aeval, zero_mul] at h1
+    calc (B * A) * aeval (B * A) (minpoly ℂ (A * B))
+        = B * (A * aeval (B * A) (minpoly ℂ (A * B))) := by rw [mul_assoc]
+      _ = B * 0 := by rw [h1]
+      _ = 0 := mul_zero _
+```

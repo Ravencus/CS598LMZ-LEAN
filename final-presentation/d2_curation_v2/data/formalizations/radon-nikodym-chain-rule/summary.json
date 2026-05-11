@@ -1,0 +1,30 @@
+{
+  "problem_id": "radon-nikodym-chain-rule",
+  "english_title": "Radon-Nikodym Chain Rule",
+  "statement_en": "Let $\\nu,\\mu$ be two measures on the measurable space $(\\Omega,\\mathcal{F})$, and let $g$ be a nonnegative Borel measurable function on $\\Omega$. If the density $\\frac{d\\nu}{d\\mu}$ of $\\nu$ with respect to $\\mu$ exists, then\n$$\\int_{\\Omega}g\\,d\\nu=\\int_{\\Omega}g\\frac{d\\nu}{d\\mu}\\,d\\mu.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem radonNikodymIntegralFormula\n    {Ω : Type*} [MeasurableSpace Ω]\n    (μ ν : Measure Ω) (f g : Ω → ℝ≥0∞)\n    (hf : Measurable f) (hg : Measurable g)\n    (hν : ν = μ.withDensity f) :\n    ∫⁻ x, g x ∂ν = ∫⁻ x, g x * f x ∂μ := by\n  sorry"
+}

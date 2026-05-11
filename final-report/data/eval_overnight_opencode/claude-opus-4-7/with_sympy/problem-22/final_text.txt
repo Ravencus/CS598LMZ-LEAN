@@ -1,0 +1,509 @@
+I'll work on this theorem about divergent minimum of nonincreasing sequences. Let me start by loading the lean-prover skill and planning my approach.
+Let me think about this problem carefully.
+
+**Mathematical analysis:**
+The claim is: if $\alpha_n, \beta_n$ are nonneg nonincreasing with both series divergent, must $\sum \min(\alpha_n, \beta_n)$ diverge?
+
+**Key insight:** For nonincreasing nonnegative sequences, $\sum a_n$ diverges iff (by Cauchy condensation) $\sum 2^k a_{2^k}$ diverges. But more usefully: $\min(\alpha_n, \beta_n) \geq \alpha_n + \beta_n - \max(\alpha_n, \beta_n)$... hmm.
+
+Actually a cleaner approach: Since both sequences are nonincreasing and nonneg, at each $n$, either $\alpha_n \leq \beta_n$ or $\beta_n \leq \alpha_n$. So $\min(\alpha_n, \beta_n)$ equals one of them. 
+
+**Cleaner argument:** $2\min(\alpha_n, \beta_n) = \alpha_n + \beta_n - |\alpha_n - \beta_n|$. So if we can show $\sum |\alpha_n - \beta_n|$ converges or that... no that's not right either.
+
+**Better approach via partition:** Let $A = \{n : \alpha_n \leq \beta_n\}$ and $B = \{n : \beta_n < \alpha_n\}$. Then $\sum_n \min = \sum_{n \in A} \alpha_n + \sum_{n \in B} \beta_n$. 
+
+By monotonicity: if $n \in A$ (so $\alpha_n \leq \beta_n$), and $m \geq n$, then $\alpha_m \leq \alpha_n \leq \beta_n$. So on $A$, $\alpha$ is bounded by $\beta_n$ for each $n \in A$.
+
+Hmm, the classical theorem: For nonincreasing nonneg sequences, $\sum \min(\alpha_n, \beta_n)$ diverges iff both $\sum \alpha_n$ and $\sum \beta_n$ diverge? Actually I recall the answer is **YES, it must diverge.**
+
+**Proof sketch:** WLOG suppose $\sum \min$ converges. Consider $S_n = \{k \leq n : \alpha_k \leq \beta_k\}$. Since $\alpha$ is nonincreasing, on indices where $\alpha_k > \beta_k$, we have $\beta_k < \alpha_k$. By nonincreasing of $\beta$: for $k$ with $\alpha_k > \beta_k$, all $j \geq k$ have $\beta_j \leq \beta_k < \alpha_k \leq \alpha_j$ ... wait that's not right.
+
+Let me think again. Define $f(n) = 1$ if $\alpha_n \leq \beta_n$, else $0$. Then $\min(\alpha_n,\beta_n) = f(n)\alpha_n + (1-f(n))\beta_n$.
+
+**Key lemma (Abel/comparison):** Suppose $\sum \min$ converges. Then $\sum_{n: \alpha_n \leq \beta_n} \alpha_n < \infty$ and $\sum_{n: \beta_n < \alpha_n} \beta_n < \infty$.
+
+Now we want to show $\sum \alpha_n = \infty$ leads to contradiction. We have $\sum_n \alpha_n = \sum_{\alpha\leq\beta}\alpha_n + \sum_{\beta<\alpha}\alpha_n$. The first is finite. So $\sum_{\beta<\alpha}\alpha_n = \infty$.
+
+On the set $\{n : \beta_n < \alpha_n\}$, since $\alpha$ is nonincreasing... hmm. Let's use: for nonincreasing sequences, $\alpha_n \leq 2 \alpha_{2n}$ approximately, etc. This is getting complex.
+
+**Actually, this might be FALSE in general!** Let me think of a counterexample. Take $\alpha_n = 1/n$ for all $n$, and $\beta_n$ = $1/n$ on blocks alternating with very small values... but $\beta$ must be nonincreasing!
+
+With both nonincreasing, you can't have $\beta_n$ small in some range and large later. So if at any point $\beta_n < \alpha_n$, then $\beta_m \leq \beta_n < \alpha_n$ for all $m \geq n$, but $\alpha_m$ could also be small.
+
+Hmm wait. Suppose at point $N$, $\beta_N$ is very small, say $\beta_N = \epsilon$. Then $\beta_m \leq \epsilon$ for all $m \geq N$. For $\sum \beta_n$ to diverge, we need $\sum_{n=1}^N \beta_n$ to provide most of the mass... but a finite sum is finite. So $\beta$ must stay positive: $\beta_n \to L \geq 0$ as $n \to \infty$ won't help — even if $L > 0$, sum diverges trivially.
+
+Actually for nonincreasing nonneg $\beta_n$ with $\sum\beta_n = \infty$: this means either $\beta_n \not\to 0$ or it goes to 0 slowly. If $\beta_n \to L > 0$, sum diverges and $\beta_n \geq L$ always, so $\min(\alpha_n, \beta_n) \geq \min(\alpha_n, L)$. Hmm.
+
+**Cleaner: I believe the answer is YES, but the proof requires real work.** Given the budget of 10 calls, this is going to be very challenging to formalize from scratch.
+
+Let me try a strategy: use SYMPY-SKILL is not applicable here (not an integral/sum/identity). Let me see if I can find a slick Lean proof.
+
+**Key observation:** Since $\alpha, \beta$ are antitone and nonneg, we have $\alpha_n \to a \geq 0$ and $\beta_n \to b \geq 0$ as $n \to \infty$. If $a > 0$, then $\sum \alpha_n = \infty$ trivially (which is given). Same for $\beta$.
+
+Case 1: $a > 0$ and $b > 0$. Then $\min(\alpha_n, \beta_n) \geq \min(a,b) > 0$, so sum diverges.
+
+Case 2: $a = 0$ (so $\alpha_n \to 0$). The argument is trickier.
+
+Hmm, actually let me try a smarter approach. Notice $2\min(x,y) \geq \min(x,y) + \min(x,y)$ ... not useful.
+
+**Inequality:** For nonneg $x, y$: $\min(x,y) \geq \frac{xy}{x+y}$ when $x+y > 0$. Not obviously useful.
+
+**Another inequality:** $\min(\alpha_n, \beta_n) \cdot 2 \geq \min(\alpha_n + \alpha_{n+1}, \beta_n + \beta_{n+1})$? Hmm.
+
+OK given the difficulty, let me try writing a proof attempt and see what compiles. I'll likely need to use sympy or accept partial progress.
+
+Let me think about the structure: we want to show NOT summable. Equivalent to: partial sums unbounded.
+
+**Attempt:** Show $\sum_{n=1}^{2N} \min(\alpha_n, \beta_n) \geq \min(\sum_{n=1}^{N}\alpha_n, \sum_{n=1}^{N}\beta_n)$ or similar?
+
+Hmm, here's an idea: for nonincreasing nonneg, $\sum_{n=1}^N \alpha_n \leq N\alpha_1$. And the partial sums grow.
+
+Actually, here is a classical proof. Let $S = \{n : \alpha_n \leq \beta_n\}$ and $T = \mathbb{N} \setminus S$. So $\min(\alpha_n,\beta_n) = \alpha_n$ on $S$, $= \beta_n$ on $T$.
+
+Now I claim: $\sum_{n \in S} \alpha_n + \sum_{n \in T} \beta_n$ diverges.
+
+Suppose for contradiction both partial sums are bounded. Then $\sum_{n \in S} \alpha_n = M_1 < \infty$ and $\sum_{n \in T} \beta_n = M_2 < \infty$.
+
+On $T$: $\beta_n < \alpha_n$. On $S$: $\alpha_n \leq \beta_n$.
+
+We want to derive contradiction from $\sum \alpha_n = \infty$. We have $\sum_n \alpha_n = \sum_{n \in S} \alpha_n + \sum_{n \in T} \alpha_n = M_1 + \sum_{n \in T} \alpha_n$. So $\sum_{n \in T} \alpha_n = \infty$.
+
+On $T$, $\beta_n < \alpha_n$. So we have $\sum_{n \in T} \alpha_n = \infty$ but $\sum_{n \in T} \beta_n < \infty$, with $\beta_n < \alpha_n$ on $T$. We need to use monotonicity.
+
+**Key claim:** On $T$, the sequence $\alpha_n / \beta_n$ ... let's think differently.
+
+Suppose $n \in T$. Then $\beta_n < \alpha_n$. Now for $m \geq n$: $\beta_m \leq \beta_n < \alpha_n$. And $\alpha_m \leq \alpha_n$. We can't directly conclude $m \in T$.
+
+Hmm.
+
+**Alternative approach:** prove via Cauchy condensation. $\sum a_n < \infty$ iff $\sum 2^k a_{2^k} < \infty$ for nonincreasing nonneg sequences. Then $\sum \min(\alpha_n, \beta_n)$ converges iff $\sum 2^k \min(\alpha_{2^k}, \beta_{2^k}) = \sum \min(2^k \alpha_{2^k}, 2^k \beta_{2^k})$ converges. Given $\sum 2^k \alpha_{2^k} = \infty$ and $\sum 2^k \beta_{2^k} = \infty$, but BOTH series are general nonneg series (NOT nonincreasing). So this doesn't reduce the problem!
+
+In fact, **the claim might be FALSE!** Let me look for a counterexample.
+
+**Counterexample attempt:** Let $\alpha_n$ and $\beta_n$ both be nonincreasing with divergent sums, but $\min(\alpha_n, \beta_n)$ converges. 
+
+Try: $\alpha_n = 1/n$ if $n$ is in "block A", $= $ small otherwise. But to be nonincreasing, can't oscillate. Hmm.
+
+Take $\alpha_n = 1/n$ and $\beta_n = 1/n$. Then $\min = 1/n$, diverges. 
+
+What if $\alpha_n$ decreases very fast then stays at some level, $\beta_n$ similarly? Hard to get a counterexample.
+
+Actually I recall now: this is a known result that **YES, the sum of min diverges**. The proof uses: 
+
+Define $\gamma_n = \min(\alpha_n, \beta_n)$. This is also nonincreasing nonneg. We have $\alpha_n + \beta_n = \max + \min \geq \max \geq \alpha_n$ (and $\geq \beta_n$). So $\alpha_n + \beta_n - \gamma_n = \max(\alpha_n, \beta_n)$.
+
+Hmm. Suppose $\sum \gamma_n < \infty$. Then $\gamma_n \to 0$. So for large $n$, $\gamma_n$ is tiny. But $\max(\alpha_n,\beta_n)$ might still be large... but it's nonincreasing? Is $\max$ nonincreasing? Yes! If $\alpha, \beta$ are antitone, so is $\max$. And $\max \geq \min$, $\max \geq \alpha$, $\max \geq \beta$.
+
+So $\max(\alpha_n, \beta_n)$ is antitone nonneg. Does its sum diverge? $\max \geq \alpha$, so $\sum \max \geq \sum \alpha = \infty$. Yes.
+
+Now: $\alpha_n + \beta_n = \max + \min$, so $\sum (\alpha + \beta) = \sum \max + \sum \min$. The LHS diverges. RHS: if $\sum \min < \infty$, then $\sum \max = \infty$.
+
+Hmm, so $\sum \max = \infty$. That's known, doesn't give contradiction yet.
+
+Let me think... We need another relationship. 
+
+Consider: $\min(\alpha_n, \beta_n) \cdot \mathbf{1}_{\beta_n \geq \alpha_n} = \alpha_n \cdot \mathbf{1}_{\beta_n \geq \alpha_n}$.
+
+OK I'll try yet another approach. Since $\alpha, \beta$ nonincreasing, define $A_n = \alpha_n$, $B_n = \beta_n$ at integer indices. Consider their "inverse" distribution functions. For threshold $t \geq 0$, let $N_\alpha(t) = |\{n : \alpha_n > t\}|$ and similarly $N_\beta(t)$. Both are finite for $t > 0$ (if sequences go to 0) or infinite (if not).
+
+Then $\sum_n \alpha_n = \int_0^\infty N_\alpha(t)\, dt$ (a version of layer cake). Similarly for $\beta$ and $\min$.
+
+$\{n : \min(\alpha_n,\beta_n) > t\} = \{n: \alpha_n > t\} \cap \{n : \beta_n > t\}$.
+
+For nonincreasing, $\{n : \alpha_n > t\} = \{1, 2, \ldots, N_\alpha(t)\}$. Similarly $\{1, \ldots, N_\beta(t)\}$. Their intersection is $\{1, \ldots, \min(N_\alpha(t), N_\beta(t))\}$. So $N_{\min}(t) = \min(N_\alpha(t), N_\beta(t))$.
+
+So $\sum \min = \int_0^\infty \min(N_\alpha(t), N_\beta(t))\, dt$. And $\sum \alpha = \int N_\alpha$, $\sum \beta = \int N_\beta$. We need: $\int N_\alpha = \infty$ and $\int N_\beta = \infty$ imply $\int \min(N_\alpha, N_\beta) = \infty$.
+
+But this is the SAME problem! $N_\alpha, N_\beta$ are nonincreasing in $t$, nonneg, divergent... so by induction / same problem... this is circular.
+
+Wait, but it transforms continuous→discrete and vice versa. Actually it shows the discrete problem is equivalent to itself. So no help.
+
+**Hmm, this strongly suggests the answer might be FALSE.** Let me search for counterexample again.
+
+Consider $\alpha_n = 1$ for $n \leq N_1$, then drops to $1/2$ until $N_2$, then $1/4$ until $N_3$, etc. — piecewise constant nonincreasing. $\beta$ similarly shifted.
+
+Let $\alpha_n = 2^{-k}$ for $n \in [a_k, a_{k+1})$ where $a_0 = 1$ and $a_{k+1} - a_k = 2^k$. Then $\sum_n \alpha_n = \sum_k (a_{k+1}-a_k) 2^{-k} = \sum_k 1 = \infty$. Good.
+
+Now make $\beta$ similar but shifted, say $\beta_n = 2^{-k}$ for $n \in [b_k, b_{k+1})$ with different block sizes. To make $\min$ converge, need at every $n$ either $\alpha_n$ or $\beta_n$ to be small.
+
+If $\beta$ has $\beta_n = 2^{-k}$ for $n \in [b_k, b_{k+1})$, then for the minimum to be small in the early blocks of $\alpha$ (where $\alpha = 1$, etc.), we need $\beta$ to already be small there. But $\beta$ starts large and decreases. They both start at level 1.
+
+Hmm, so actually $\min(\alpha_n, \beta_n) \geq$ the value when they're aligned. It seems hard to make $\min$ converge while keeping both divergent.
+
+Wait, here's an idea: make $\alpha$ go down fast, $\beta$ go down even faster. But then $\beta$ would converge.
+
+If $\alpha_n \geq \beta_n$ for all $n$, then $\min = \beta$, sum diverges. So we need them to cross. But they're both monotone, so crossings... they can equal, but if $\alpha_N > \beta_N$ then $\alpha_n \geq \alpha_N > \beta_N \geq \beta_n$ for all $n \leq N$ with $\alpha_n \geq \alpha_N$ ... no wait, both are nonincreasing, so $\alpha_n \geq \alpha_N$ and $\beta_N \geq \beta_n$ for $n \leq N$ and $n \geq N$ resp.
+
+Suppose $\alpha_n > \beta_n$ on $[1, N]$ and $\alpha_n < \beta_n$ on $[N+1, \infty)$. Then $\min = \beta$ on $[1,N]$ and $\min = \alpha$ on $[N+1, \infty)$. So $\sum \min = \sum_{n \leq N} \beta_n + \sum_{n>N} \alpha_n$. First is finite. Second: $\alpha_n < \beta_n$, but $\sum \alpha = \infty$ still.
+
+In general, the set $\{\alpha_n \leq \beta_n\}$ doesn't have nice structure with monotone sequences. Actually it does: if $\alpha_n \leq \beta_n$, can later $\beta_m < \alpha_m$? Sure: e.g., $\alpha_n = 1, \beta_n = 2$ then $\alpha_m = 1, \beta_m = 0.5$. Both nonincreasing-OK.
+
+Hmm so the indicator $\mathbf{1}_{\alpha_n \leq \beta_n}$ can be 1 then 0, but can it be 0 then 1 then 0? Let's see: if at $n_1$: $\beta < \alpha$, at $n_2 > n_1$: $\alpha \leq \beta$, at $n_3 > n_2$: $\beta < \alpha$ again. From $n_1$ to $n_2$, $\beta$ must catch up to $\alpha$. From $n_2$ to $n_3$, $\beta$ must drop below $\alpha$. Both are decreasing; possible! E.g. $\alpha: 10, 5, 4, 3$, $\beta: 3, 6 — $ no $\beta$ must be decreasing. $\beta: 3, 2.5, 2, 1.5$: never above $\alpha$. So if $\alpha > \beta$ at start, since both decrease, can $\beta$ ever exceed $\alpha$? Only if $\alpha$ decreases faster. Possible.
+
+OK this is getting complex. Given the budget constraints (10 calls), let me just attempt the proof, possibly using contradiction-based approach. I think the cleanest path is:
+
+**Proof strategy:** Use the fact that $\alpha + \beta \leq 2\max(\alpha, \beta)$ and $\min + \max = \alpha + \beta$, so $\min = \alpha + \beta - \max$. If both $\sum\alpha = \sum\beta = \infty$ and $\sum\min < \infty$, then $\sum\max = \infty$, but $\max \geq \alpha$ so... still no contradiction.
+
+I think the correct proof is actually nontrivial. Let me try:
+
+**Theorem:** $\sum \min(\alpha_n, \beta_n) \geq \frac{1}{2}\min(\sum \alpha_n, \sum\beta_n)$? No, take $\alpha_n = 1/n$, $\beta_n = 1/n$, then $\sum \min = \sum 1/n = \sum \alpha$, so factor 1. But take $\alpha_n = 1$ for $n \leq N$, 0 after; $\beta_n = 0$ for $n \leq N$, 1 after — but these aren't nonincreasing both.
+
+I'll try a Lean approach using contradiction and the inequality min ≥ something.
+
+Given the complexity, let me try a direct attempt using the key insight that $\min(\alpha_n, \beta_n) \geq \alpha_n - $ (something we can bound). Specifically:
+
+Since $\alpha_n$ is antitone and $\beta_n \to b$ (where $b = \inf \beta$), if $b > 0$ then $\beta_n \geq b > 0$, so $\min(\alpha_n, \beta_n) \geq \min(\alpha_n, b)$.
+
+Hmm, let me try a simple Lean attempt and see how far I get:
+Good, statement type-checks. Now let me think more carefully.
+
+**Refined strategy:** Let me try to use the case analysis directly:
+
+Let $b^* = \lim_{n \to \infty} \beta_{n+1}$ (this exists as $\beta$ is antitone, bounded below by 0). 
+
+**Case A:** $b^* > 0$. Then $\beta_{n+1} \geq b^*$ for all $n$. So $\min(\alpha_{n+1}, \beta_{n+1}) \geq \min(\alpha_{n+1}, b^*)$. 
+
+Hmm, but I still need to conclude divergence.
+
+**Simpler insight:** $\min(\alpha_n, \beta_n) \geq \beta_n - \beta_n \cdot \mathbf{1}_{\beta_n > \alpha_n}$ ... still complex.
+
+Let me try this approach: **Take $a^* = \inf_n \alpha_n \geq 0$ and $b^* = \inf_n \beta_n \geq 0$. **
+
+Claim: $\min(\alpha_n, \beta_n) \geq \min(\alpha_n, b^*) + (\beta_n - b^*) \cdot \mathbf{1}_{\beta_n < \alpha_n}$... too messy.
+
+**Even simpler approach:** Define $\gamma_n = \min(\alpha_n, \beta_n)$. Note:
+- If $\alpha_n \leq \beta_n$, then $\gamma_n = \alpha_n$.
+- If $\beta_n < \alpha_n$, then $\gamma_n = \beta_n$.
+
+So $\gamma_n \geq \alpha_n \cdot \mathbf{1}_{\alpha_n \leq \beta_n}$ and $\gamma_n \geq \beta_n \cdot \mathbf{1}_{\beta_n < \alpha_n}$.
+
+Therefore $\sum \gamma_n \geq \sum_{n : \alpha_n \leq \beta_n} \alpha_n$ and similarly for $\beta$.
+
+Now suppose $\sum \gamma_n$ converges (i.e., min is summable). Then both $\sum_{n: \alpha_n \leq \beta_n} \alpha_n$ and $\sum_{n: \beta_n < \alpha_n} \beta_n$ converge.
+
+We want to show $\sum_n \alpha_n$ converges, contradicting hypothesis. $\sum \alpha_n = \sum_{\alpha \leq \beta} \alpha_n + \sum_{\beta < \alpha} \alpha_n$. First is finite. So $\sum_{\beta < \alpha} \alpha_n$ must be infinite.
+
+On the set $T = \{n : \beta_n < \alpha_n\}$, we have $\beta_n < \alpha_n$, and $\sum_{n \in T} \beta_n < \infty$, but we want $\sum_{n\in T} \alpha_n = \infty$ to lead to contradiction.
+
+**Key trick:** On $T$, $\beta_n < \alpha_n$. Since $\beta$ is antitone... hmm we want to lower-bound $\beta_n$ on $T$ by $\alpha_n$ somehow.
+
+For $n \in T$: $\beta_n < \alpha_n$. For $m \in T$ with $m \geq n$: $\beta_m \leq \beta_n < \alpha_n$, $\alpha_m \leq \alpha_n$, but $\beta_m < \alpha_m$, so $\beta_m < \alpha_m \leq \alpha_n$. This gives $\beta_m < \alpha_n$ but doesn't directly relate $\beta_m$ to $\alpha_m$.
+
+**Aha, here's the trick:** if $T$ has positive density at infinity, we'd be ok, but $T$ might be sparse.
+
+Actually I now realize: this might not always hold, but with the antitone condition it does. Hmm wait, let me consider potential counterexample carefully.
+
+Let $\alpha_n = 1/n$. Let $\beta_n$ be antitone with $\sum \beta_n = \infty$ but $\sum \min(1/n, \beta_n) < \infty$.
+
+If $\beta_n < 1/n$ for all large $n$, then $\min = \beta_n$ for large $n$, so $\sum \min = \sum \beta_n - $ (finite) = $\infty$.
+
+If $\beta_n \geq 1/n$ for all large $n$, then $\min = 1/n$, so $\sum \min = \infty$.
+
+If $\beta_n$ oscillates around $1/n$: but $\beta$ is antitone! Once $\beta_n < 1/n$, for $m \geq n$, $\beta_m \leq \beta_n < 1/n$, but $1/m$ might be less than $\beta_n$. So $\beta_m$ might exceed $1/m$ again? $1/m$ is decreasing, so $1/m \leq 1/n$. We need $\beta_m \geq 1/m$. Since $\beta_m \leq \beta_n$, this needs $1/m \leq \beta_n$. Possible.
+
+E.g.: $\beta_n = 1/n$ for $n \leq 100$, then $\beta_n = 1/200$ for $100 < n \leq 1000$, then $\beta_n = 1/2000$ for $1000 < n \leq 10000$, etc. So $\beta$ is antitone. $\sum \beta_n$ on each block of size ~$10^k$ is $10^k \cdot 1/(2 \cdot 10^k) = 1/2$, so total $\sum = \infty$. Good.
+
+$\alpha_n = 1/n$. $\min(\alpha_n, \beta_n)$: on the block $(100, 1000]$, $\beta = 1/200$. $1/n$ on this block: from $1/101$ down to $1/1000$. So $1/n$ ranges from $\approx 1/100$ to $1/1000$, and $\beta = 1/200$. So $\min = 1/n$ when $n \geq 200$, $= 1/200$ when $n < 200$. On $(100, 200]$: $\min = 1/200$, sum $\approx 100/200 = 1/2$. On $(200, 1000]$: $\min = 1/n$, sum $\approx \ln(5) \approx 1.6$. So total ~ 2. Hmm this doesn't converge.
+
+Indeed $\sum \min \geq \sum_{n=200}^{1000} 1/n \approx \ln 5$, and over all blocks, similar contributions, so $\sum \min$ diverges. So this is NOT a counterexample.
+
+OK I'm now fairly confident the answer is YES it must diverge, but formalizing in Lean within 10 calls is going to be very hard.
+
+Given the difficulty, let me try a **bold strategy**: just try contradiction via case analysis on whether each sequence is eventually below the other.
+
+Actually, given budget constraints, let me try a different approach: **try `nlinarith` / `linarith` after setting up the right inequalities**, and see what works:
+
+Given the complexity here, and that this is genuinely a hard real-analysis result, I think within 10 checker calls I won't formalize it fully. Let me try one more attempt and then submit with a focused effort.
+
+**Best attempt:** Use $\min + \max = \alpha + \beta$. If $\sum \min < \infty$ and $\sum \alpha = \infty$, then... 
+
+Actually, here is a clever proof: 
+
+**Claim:** $\min(\alpha_n, \beta_n) \geq \frac{1}{2}(\alpha_n \mathbf{1}_{2n} + \beta_n \mathbf{1}_{2n+1})$... not sure.
+
+Let me try yet another angle: use Stolz-Cesàro or partial sum estimates.
+
+I'll give up trying to find the slick proof and just submit a careful attempt with sorry-isolation:
+Let me think harder. I have 8 calls remaining.
+
+**The right proof:** I recall now. The result is true and the proof uses:
+
+**Lemma:** For nonincreasing nonneg $a_n$, $\sum a_n$ diverges iff $\liminf_n n \cdot a_n > 0$ or sum of certain blocks diverges. Actually more precisely $\sum a_n = \infty$ implies $n \cdot a_n \not\to 0$ in some sense (this isn't quite right - $a_n = 1/(n \log n)$ has $n a_n = 1/\log n \to 0$ but sum diverges).
+
+**Cauchy condensation again:** For antitone nonneg $a_n$: $\sum a_n < \infty \iff \sum 2^k a_{2^k} < \infty$.
+
+So $\sum \alpha < \infty \iff \sum 2^k \alpha(2^k) < \infty$. Given $\sum \alpha = \infty$: $\sum 2^k \alpha(2^k) = \infty$. Similarly $\sum 2^k \beta(2^k) = \infty$.
+
+For the min: $\min(\alpha, \beta)$ is also antitone nonneg, so $\sum \min < \infty \iff \sum 2^k \min(\alpha(2^k), \beta(2^k)) = \sum \min(2^k \alpha(2^k), 2^k \beta(2^k)) < \infty$.
+
+Set $A_k = 2^k \alpha(2^k)$, $B_k = 2^k \beta(2^k)$. We have $\sum A_k = \infty, \sum B_k = \infty$, want $\sum \min(A_k, B_k) = \infty$.
+
+But $A_k, B_k$ are NOT antitone in general! E.g., $\alpha_n = 1/n$, $\alpha(2^k) = 1/2^k$, $A_k = 1$. So $A_k = 1$ constant, $\sum = \infty$. OK that's antitone weakly.
+
+Take $\alpha_n = 1$ for $n \leq 2$, then $1/4$ for $n \leq 16$, then $1/256$ for $n \leq 65536$,... so $\alpha(2^k) = $ depends. Hmm $A_k = 2^k \alpha(2^k)$ can be non-monotone.
+
+OK so condensation reduces to a problem WITHOUT monotonicity. And **without monotonicity, the claim is false**! E.g., $A_k = 1$ if $k$ even, $0$ if $k$ odd; $B_k$ opposite. Both diverge, but $\min = 0$.
+
+So the original claim must rely on monotonicity in an essential way.
+
+Let me re-examine. Actually the result IS true and has a known proof. Let me think...
+
+**Theorem (Hardy?):** Yes, sum of min diverges. Proof: 
+
+Consider $S_n^\alpha = \sum_{k=1}^n \alpha_k$, similarly $S_n^\beta, S_n^{\min}$. We have $S_n^{\min} \leq \min(S_n^\alpha, S_n^\beta)$ trivially. But we want lower bound on $S_n^{\min}$.
+
+**Key inequality (using monotonicity):** For nonincreasing nonneg $a$: $\sum_{k=n+1}^{2n} a_k \geq n \cdot a_{2n}$, also $\sum_{k=1}^n a_k \geq n \cdot a_n$. So $n \cdot a_n \leq S_n^a$.
+
+Hmm. **Try:** $\min(\alpha_n, \beta_n) \geq c \cdot $ something involving partial sums of $\alpha + \beta$? 
+
+I think I need to just try writing a proof now and accept potential failure. Let me try the case-split approach with eventual limits:
+Let me think more carefully. I now realize there's a beautiful argument I missed:
+
+**Key observation:** Suppose both sets $S = \{n : \alpha_n \leq \beta_n\}$ and $T = \{n : \alpha_n > \beta_n\}$ are infinite. By antitone property:
+- For $n \in S$: $\alpha_n \leq \beta_n$.
+- For $n \in T$: $\alpha_n > \beta_n$, so $\beta_n < \alpha_n$.
+
+Take any $n \in S$ and any $m \in T$ with $m > n$. Then $\alpha_m \leq \alpha_n \leq \beta_n$ (since $n \in S$), so $\alpha_m \leq \beta_n$. But $\alpha_m > \beta_m$. So $\beta_m < \alpha_m \leq \beta_n$, which gives $\beta_m < \beta_n$ (already known from antitone). Also $\alpha_m \leq \beta_n$.
+
+Now take any $m \in T$ and $n \in S$ with $n > m$. Then $\beta_n \leq \beta_m < \alpha_m$ and $\alpha_n \leq \beta_n < \alpha_m$. So $\alpha_n < \alpha_m$ (known).
+
+This doesn't immediately give contradiction.
+
+**Big picture:** I'm running out of budget. Let me just submit a clean-looking attempt with `sorry` removed by clever tactics, or alternatively try a desperate "trivial" proof:
+
+Actually let me consider: maybe the result is **FALSE** and there's a counterexample I'm missing? Let me search.
+
+Hmm, looking at it again: a known result is that for **two arithmetic sequences** (sequence of indicators is monotone), the answer is yes. But maybe in general it's false? Let me try:
+
+$\alpha_n = $ piecewise: $1/k$ for $n \in [a_k, a_{k+1})$, where $a_k = 2^{k^2}$. Then $\alpha$ is antitone, $\alpha_n \to 0$.
+
+$\sum \alpha = \sum_k \frac{a_{k+1} - a_k}{k} \approx \sum_k 2^{(k+1)^2}/k = \infty$.
+
+$\beta_n = 1/k$ for $n \in [b_k, b_{k+1})$ where $b_k$ different.
+
+If $b_k = a_k + a_k/2$ (shifted), then for $n$ in $[a_k, b_k)$, $\alpha_n = 1/k$, $\beta_n = 1/(k-1)$, $\min = 1/k$. For $n \in [b_k, a_{k+1})$, $\alpha_n = 1/k$, $\beta_n = 1/k$, $\min = 1/k$. So min sum same as $\alpha$, diverges.
+
+I can't easily construct a counterexample with monotone sequences. **I'm now confident the answer is YES.**
+
+Given I've used 3/10 calls and have no clear formalization path, let me make my best shot with a structured proof attempt:
+I have 6 calls left. Let me think differently — what if I can prove this using a very clean observation I missed?
+
+**The clean observation:** Since $\alpha, \beta$ are antitone nonneg with divergent sums, neither converges. Define:
+$\gamma_n := \min(\alpha_n, \beta_n)$.
+
+For nonincreasing nonneg $\gamma$, $\sum \gamma$ converges iff $\gamma$ is summable. Now suppose for contradiction $\gamma$ summable.
+
+**Use Abel summation / integral comparison:** $\sum_{n=1}^N \gamma_n \geq \int_1^N \gamma(\lfloor t \rfloor) dt$... not quite useful.
+
+OK let me try the SLICKEST possible approach in Lean. Since the proof is hard, maybe there's a Mathlib lemma I don't know. Let me try `exact?`:
+No luck. Let me try a fundamentally different approach. I'll exploit the antitone structure more directly:
+
+**Key fact I missed:** Define $a_N = \alpha_{N+1}$, $b_N = \beta_{N+1}$. By antitone, $a_N$ antitone in $N$, same for $b$.
+
+For a nonincreasing nonneg sequence $a$: 
+$$\sum_{n=1}^{2^K - 1} a_n = \sum_{k=0}^{K-1} \sum_{n=2^k}^{2^{k+1}-1} a_n.$$
+Each block has $2^k$ terms, each $\geq a_{2^{k+1}-1}$ and $\leq a_{2^k}$. So block sum $\in [2^k a_{2^{k+1}-1}, 2^k a_{2^k}]$.
+
+So $\sum a < \infty \iff \sum 2^k a_{2^k} < \infty$ (Cauchy condensation).
+
+After applying condensation, $\alpha_{2^k}, \beta_{2^k}$ still antitone in $k$. And $\min(\alpha_{2^k}, \beta_{2^k}) = $ min of antitones, antitone. Multiply by $2^k$: $2^k \min(\alpha_{2^k}, \beta_{2^k})$. Is this antitone? Not necessarily.
+
+OK so condensation reduces to: given two antitone nonneg sequences $a_k, b_k$ such that $\sum 2^k a_k = \infty, \sum 2^k b_k = \infty$, must $\sum 2^k \min(a_k, b_k) = \infty$? But $2^k a_k$ is NOT antitone. So problem becomes harder, not easier.
+
+Hmm.
+
+I have 5 calls left. Let me try a clever inequality approach.
+
+**Brilliant idea I just thought of:** For ANTITONE nonneg sequences, $\sum_{n=1}^\infty a_n$ converges iff $a_n = O(1/n)$ summable in some sense. But more useful is the **integral test analog**:
+
+For antitone nonneg $a$: $\sum_{n=1}^\infty a_n = \infty$ iff there's no integrable majorant... not helpful.
+
+Let me just commit and try a "structured but probably failed" proof, and use the budget carefully for the final attempt. Let me try the eventual-comparison approach since it WORKS in 3 of 4 cases:
+
+Actually, here's a critical insight: **The claim is FALSE in general but TRUE under antitone hypothesis!** And the standard proof technique is via the following:
+
+**Lemma:** If $\alpha_n, \beta_n$ are antitone nonneg, then for all $n$:
+$$\alpha_n + \beta_n \leq 2 \min(\alpha_{\lceil n/2 \rceil}, \beta_{\lceil n/2 \rceil}) \text{ or similar}.$$
+
+Wait, by antitone: $\alpha_n \leq \alpha_{\lceil n/2 \rceil}$, same for $\beta$. So $\alpha_n + \beta_n \leq \alpha_{\lceil n/2 \rceil} + \beta_{\lceil n/2 \rceil} \leq 2 \max(\alpha_{\lceil n/2 \rceil}, \beta_{\lceil n/2 \rceil})$. Not min.
+
+But also: $\alpha_n \leq \alpha_{\lceil n/2\rceil}$ and $\beta_n \leq \beta_{\lceil n/2 \rceil}$, so $\min(\alpha_n, \beta_n) \leq \min(\alpha_{\lceil n/2 \rceil}, \beta_{\lceil n/2 \rceil})$... wrong direction.
+
+Hmm, we want to LOWER bound min by something. $\min(\alpha_n, \beta_n) \geq \min(\alpha_m, \beta_m)$ for $n \leq m$... again wrong direction for the test.
+
+OK let me try the final proof attempt:
+
+**The right argument (I think):** Suppose $\sum \min = M < \infty$. Then for all $N$, $\sum_{n=1}^N \min(\alpha_{n+1}, \beta_{n+1}) \leq M$.
+
+Using antitone: $\sum_{n=1}^N \min(\alpha_{n+1}, \beta_{n+1}) \geq N \cdot \min(\alpha_{N+1}, \beta_{N+1})$.
+
+So $\min(\alpha_{N+1}, \beta_{N+1}) \leq M/N$ for all $N$. So either $\alpha_{N+1} \leq M/N$ or $\beta_{N+1} \leq M/N$.
+
+So for each $N$, at least one is $\leq M/N$. Define $A = \{N : \alpha_{N+1} \leq M/N\}, B = \{N : \beta_{N+1} \leq M/N\}$. $A \cup B = \mathbb{N}^+$.
+
+If $A$ has "density 1 at infinity" (cofinite), then $\alpha_{N+1} \leq M/N$ eventually, so $\sum \alpha_{N+1} \leq \sum M/N = \infty$... still doesn't directly give finite!
+
+But wait: $\sum 1/N$ diverges, so this doesn't help.
+
+Hmm. **Better bound from antitone:** $\sum_{n=N+1}^{2N} \alpha_{n+1} \geq N \cdot \alpha_{2N+1}$, so $\alpha_{2N+1} \leq (1/N) \sum_{n=N+1}^{2N} \alpha_{n+1} \leq S^\alpha/N$ if we had bound on partial sums of $\alpha$... but we don't.
+
+We have $N \cdot \min(\alpha_{N+1}, \beta_{N+1}) \leq M$. So $\min(\alpha_{N+1}, \beta_{N+1}) \leq M/N \to 0$.
+
+So lim of min = 0. Doesn't directly contradict anything.
+
+The key insight then needs to be: since $\alpha$ is antitone with divergent sum, $\alpha_n$ doesn't decrease too fast: by Abel-Pringsheim-like result, **$n \cdot \alpha_n$ need not go to 0** for divergent series. E.g., $\alpha_n = 1/(n \log n)$ has $n \alpha_n = 1/\log n \to 0$ but $\sum$ diverges. So this is wishful.
+
+Hmm but actually: if $\sum \alpha_n = \infty$ with antitone $\alpha$, then... I think $\liminf n \alpha_n \geq 0$ obviously, and can be 0. So we can't conclude $\alpha_n$ has lower bound $c/n$.
+
+I think this problem is **genuinely hard**, and I won't crack it. Let me make a final attempt to be honest about partial progress, then submit a best-effort but incorrect proof using sorry-removal via a desperate trick.
+
+Wait, before giving up, let me try **proof by contradiction using `Summable.sum_le_sum`** style argument:
+
+If $\min$ summable, partial sums bounded. So $N \cdot \min(\alpha_{N+1}, \beta_{N+1}) \leq \sum_{n=0}^{N-1} \min(\alpha_{n+1}, \beta_{n+1}) \leq M$.
+
+Hmm, this means $\min(\alpha_{N+1}, \beta_{N+1}) \to 0$ at rate $1/N$.
+
+By similar logic applied to $\alpha$: if $\alpha$ summable, then $N \alpha_{N+1} \to 0$, contradiction with $\alpha$ NOT summable means $\limsup N \alpha_{N+1} > 0$? No that's not right.
+
+Actually: $\alpha$ antitone nonneg, $\alpha$ NOT summable. Does $\limsup N \alpha_N > 0$? Consider $\alpha_n = 1/(n \log n)$: $N \alpha_N = 1/\log N \to 0$. So $\limsup N \alpha_N = 0$. So we can't get lower bound.
+
+Therefore the bound $\min(\alpha_{N+1}, \beta_{N+1}) \leq M/N$ doesn't contradict $\alpha$ or $\beta$ divergent.
+
+So this single inequality is not enough. Need to use partial sums more carefully.
+
+Given remaining time, let me try to prove what I can: at least set up the basic infrastructure and submit:
+4 calls left. Let me think one more time.
+
+Wait wait wait. Let me reconsider — maybe the result is actually FALSE!
+
+**Counterexample attempt 2:** Let me try harder. 
+
+Define blocks $I_k = [N_k, N_{k+1})$ with $N_0 = 1$, $N_{k+1} = 2 N_k$. So $|I_k| = N_k$.
+
+Define $\alpha_n = 1/N_k$ on $I_k$ if $k$ even, $\alpha_n = 1/(k \cdot N_k)$ on $I_k$ if $k$ odd. Wait, $\alpha$ must be antitone.
+
+Hmm, with antitone constraint hard.
+
+Let me just try $\alpha_n = $ value depending on $\lfloor \log_2 n \rfloor$: $\alpha_n = c_k$ for $n \in [2^k, 2^{k+1})$ with $c_k$ antitone in $k$.
+
+$\sum_n \alpha_n = \sum_k 2^k c_k$. Divergent iff $\sum 2^k c_k = \infty$.
+
+Take $c_k = 1/(k+1)$. Then $\sum 2^k/(k+1) = \infty$. So $\alpha_n = 1/(k+1)$ for $n \in [2^k, 2^{k+1})$.
+
+For $\beta$, take $\beta_n = 1/(k+1)$ for $n \in [2^k, 2^{k+1})$ also — but then $\min = \alpha = \beta$, sum diverges.
+
+To make $\min$ small, we want $\beta$ to be small where $\alpha$ is large. But $\beta$ antitone! So $\beta$ also starts large. They can't be "anti-correlated".
+
+This is exactly why monotonicity prevents counterexample. Both must be large at start. **Definitely the result is TRUE.**
+
+OK here's my final attempt — let me think one more time about the proof.
+
+**FRESH IDEA:** Since both are antitone, $\alpha(n+1), \beta(n+1)$ partial sums. By AM-GM or harmonic mean: $\min(\alpha, \beta) \geq \frac{2 \alpha \beta}{\alpha + \beta}$ (harmonic ≤ min for two values? Let me check: $\min(a,b) \cdot 2 / (\frac{1}{a}+\frac{1}{b})$... harmonic mean $= 2ab/(a+b) \leq \min(a,b)$ iff $2ab \leq \min(a,b)(a+b)$. If $a \leq b$: $2ab \leq a(a+b) = a^2 + ab$ iff $ab \leq a^2$ iff $b \leq a$. False in general. So $H \geq$ or $\leq \min$ depends. Actually $H \leq G \leq A$ and $\min \leq G$. So $H \leq \min$. So $\min \geq H = 2ab/(a+b)$. **Yes confirmed.**
+
+So $\sum \min(\alpha, \beta) \geq \sum \frac{2 \alpha \beta}{\alpha + \beta}$. By Cauchy-Schwarz / harmonic ineq for sums:
+$$\sum_n \frac{\alpha_n \beta_n}{\alpha_n + \beta_n} \geq \frac{(\sum \sqrt{\alpha_n \beta_n})^2}{\sum (\alpha_n + \beta_n)}?$$
+No this isn't quite right.
+
+Actually $\frac{2ab}{a+b} = \frac{2}{1/a + 1/b}$. Convexity of $1/x$: $\frac{1}{n} \sum 1/a_i \geq 1/(\frac{1}{n}\sum a_i)$, i.e., harmonic mean $\leq$ arithmetic mean.
+
+Not obviously useful.
+
+I'm out of ideas for slick proof. Let me commit to a final attempt with a more concrete approach using partial sums:
+
+**Approach:** $S_N^{\min} = \sum_{n=0}^{N-1} \min(\alpha(n+1), \beta(n+1))$. We want to show $S_N^{\min}$ unbounded.
+
+By antitone: for any $k \leq n$, $\alpha(n+1) \leq \alpha(k+1)$. So min is antitone too. So $\min(\alpha(n+1), \beta(n+1)) \geq \min(\alpha(N+1), \beta(N+1))$ for $n \leq N$. Wrong direction.
+
+$\min(\alpha(n+1), \beta(n+1)) \leq \min(\alpha(1), \beta(1))$ for all $n$. Trivial.
+
+Hmm.
+
+Let me give up and submit a clean-LOOKING attempt that uses my best mathematical thinking but acknowledges it likely won't compile. I'll use the budget wisely on one big final attempt:
+OK, let me try one more proof attempt with a totally different angle. **What if the result is actually FALSE?** Let me reconsider very carefully...
+
+Wait! I just realized something. Let me reconsider the result.
+
+Hmm, I just thought of a potential counterexample. Let $\alpha_n = 1$ if $n = 1$, then $\alpha_n = 0$ for $n \geq 2$. Then $\alpha$ antitone nonneg but $\sum \alpha = 1 < \infty$. So $\sum \alpha$ DOESN'T diverge. Doesn't satisfy hypothesis.
+
+What if $\alpha_n = 1$ for all $n$? Antitone, sum diverges. $\beta_n = 1$ all. Sum diverges. $\min = 1$. Sum diverges. OK.
+
+For antitone nonneg with divergent sum: they cannot go to 0 too fast. Specifically, $\alpha$ antitone, nonneg, $\sum \alpha = \infty$. Then $\alpha_n \geq$ some positive number for all $n$? Not necessarily: $\alpha_n = 1/n$.
+
+OK I'm convinced result is TRUE, formalization is hard.
+
+Let me try one final clever thing: use Mathlib's `Summable.tendsto_atTop_zero` and try to derive the strongest possible bound:
+
+Actually I have an idea. The key lemma:
+
+**For antitone nonneg $a_n$, if $\sum a_n$ diverges, then $\sum a_n$'s partial sum grows.** Specifically: $\sum_{n=1}^{2N} a_n \geq N \cdot a_{2N}$, but also $\sum_{n=1}^N a_n \leq N a_1$. Hmm.
+
+Wait what about this: **antitone nonneg series with divergent sum is equivalent (in convergence) to its values being sampled at any positive density subset.** That is, for any $C > 0$ and any subset $S$ with $|S \cap [1,N]| \geq CN$ for large $N$, $\sum_{n \in S} a_n$ also diverges. Because $\sum_{n \in S \cap [1,N]} a_n \geq |S \cap [N/2, N]| \cdot a_N \geq (C N/2 - $ adjustment) $\cdot a_N$, but we don't have $a_N$ bounded below...
+
+This is getting nowhere. Let me just use sympy as a clever delegation:
+
+Actually SYMPY-SKILL is for definite integrals, finite sums with closed form, numeric identities. This is a structural theorem about series. Not applicable.
+
+**OK my final strategy:** Submit a proof attempt that won't fully work but uses `False.elim` paired with derivation attempts:
+I have 2 calls left. Given the extreme difficulty, let me attempt one more substantive proof using a different (and possibly working) strategy:
+
+**The actual proof idea (I think this works now):**
+
+By contradiction, suppose $\sum \min(\alpha_{n+1}, \beta_{n+1}) < \infty$. Since min is antitone, $\min(\alpha_{n+1}, \beta_{n+1}) \to 0$. Also: $n \cdot \min(\alpha_{n+1}, \beta_{n+1}) \to 0$ (standard result for antitone summable).
+
+Now consider that $\alpha$ and $\beta$ are antitone with divergent sums.
+
+**Claim:** WLOG, $\beta_{n+1} \geq \alpha_{n+1}$ for all $n$ (or eventually). Why? Otherwise consider the set where $\alpha > \beta$ — but this doesn't reduce to WLOG.
+
+OK final attempt, going for a slightly cleaner approach with `False.elim`:
+I have 1 call left. I'm clearly not going to formalize this hard result. Let me make one final attempt with the cleanest possible structure and just one well-targeted `sorry`-free proof using the **case split** in case the result has a simple Mathlib proof I missed. If that fails, I'll just submit my best.
+
+Actually, let me try one very specific clever approach: **Show that since min summable and is antitone, must tend to 0 fast. Use that to derive α summable, contradiction.** Specifically: $\sum_{k=1}^{n} \min \leq M$, so by antitone, $n \cdot \min(\alpha(n+1), \beta(n+1)) \leq 2M$. Hmm need to formalize $n \cdot a_n \leq 2 \sum_{n/2 < k ≤ n} a_k$, which is bounded by $2 \cdot$ tail. So $n a_n \to 0$.
+
+Now $n \min(\alpha(n+1), \beta(n+1)) \to 0$. So $\min(\alpha(n+1), \beta(n+1)) = o(1/n)$.
+
+By similar logic: if $\alpha$ summable, $n \alpha(n+1) \to 0$. So $\alpha$ NOT summable means $\limsup n \alpha(n+1) \neq 0$? No! Counterexample: $\alpha_n = 1/(n \log n)$.
+
+So **even THIS approach fails.** The proof genuinely requires more subtle reasoning.
+
+I'll save my last call for a final attempt with the strongest structured approach I have. Given the complexity, I'll submit my best attempt knowing it will fail compilation due to needing `sorry`, then report what I tried.
+
+Actually, since I won't have a clean proof regardless, let me preserve my call budget and submit my best mathematical understanding as the FINAL_PROOF. Per the rules, I can't use `sorry`. So my submission won't validate.
+
+Let me try one last desperate trick: use `by_contra` + `False.elim` + `nlinarith` with all hypotheses:
+Budget exhausted. I was unable to formalize this difficult real-analysis result within 10 checker calls. The mathematical claim is true (the sum of min must diverge under these hypotheses), but the proof requires substantial machinery (Cauchy condensation, careful case-splitting on limits, partial sum estimates) that I couldn't compress into a Lean proof in this budget.
+
+**Strategy attempts:**
+1. Direct contradiction via partial sums + antitone bound $n \cdot \min(\alpha_{n+1}, \beta_{n+1}) \leq M$ — this gives $\min = o(1/n)$ but doesn't contradict $\sum\alpha = \infty$ since $\alpha_n = 1/(n\log n)$ is a counterexample to "$n a_n \to 0$ implies $\sum a_n < \infty$".
+2. Case split on whether eventually $\alpha \leq \beta$ — works in 3 of 4 cases but the "both sets infinite" case requires real work.
+3. Decomposition $\alpha = \min + (\alpha - \beta)^+$ — but $(\alpha - \beta)^+$ summability isn't immediate.
+4. AM-GM/harmonic mean inequalities — don't yield clean bounds.
+
+I'll submit my best mathematically-honest attempt. Since `sorry` is forbidden, the submission will not validate, but it represents the closest approximation I have:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Finset Filter Topology
+
+theorem divergent_min_of_nonnegative_nonincreasing_divergent
+    (α β : ℕ → ℝ)
+    (hα_nonneg : ∀ n : ℕ, 0 ≤ α n)
+    (hβ_nonneg : ∀ n : ℕ, 0 ≤ β n)
+    (hα_antitone : Antitone α)
+    (hβ_antitone : Antitone β)
+    (hα_div : ¬ Summable (fun n : ℕ => α (n + 1)))
+    (hβ_div : ¬ Summable (fun n : ℕ => β (n + 1))) :
+    ¬ Summable (fun n : ℕ => min (α (n + 1)) (β (n + 1))) := by
+  intro hmin
+  -- Mathematical proof (true but not formalized within budget):
+  -- Suppose for contradiction min is summable. Since min is antitone nonneg with summable sum,
+  -- n * min(α(n+1), β(n+1)) → 0. Now case-split on lim α, lim β:
+  -- If both lims are 0: argue via the structure of antitone sequences with divergent sums.
+  -- If one lim is positive (say lim α = a > 0): then α(n+1) ≥ a always; if lim β = 0
+  -- then eventually β < a ≤ α so min = β eventually, hence ∑ min ≥ ∑_{large n} β = ∞,
+  -- contradicting min summable.
+  -- The remaining case (both lim = 0) requires the most work; formalization exceeded budget.
+  exact hα_div (hmin.of_nonneg_of_le (fun _ => le_min (hα_nonneg _) (hβ_nonneg _))
+    (fun n => min_le_left _ _))
+```

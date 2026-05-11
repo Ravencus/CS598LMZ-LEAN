@@ -1,0 +1,23 @@
+{
+  "id": "lemma-1",
+  "type": "problem",
+  "source_note": "样本期望的渐近展开系数",
+  "english_source_note": "Asymptotic Expansion Coefficients of Sample Means",
+  "callout_id": "样本期望的渐近展开系数#5",
+  "english_title": "Lemma 1",
+  "statement_en": "$\\lim_{n\\to \\infty}nR_n=0$, that is, $$R_n=o\\left(\\frac{1}{n}\\right).$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "remainder estimation in asymptotic expansion",
+    "concentration bounds",
+    "control of higher-order error terms"
+  ],
+  "prerequisites": [
+    "little-o notation",
+    "Taylor's theorem with remainder",
+    "basic concentration inequalities"
+  ],
+  "callout_body": "$\\lim_{n\\to \\infty}nR_n=0$,即$$R_n=o\\left(\\frac{1}{n}\\right)$$"
+}

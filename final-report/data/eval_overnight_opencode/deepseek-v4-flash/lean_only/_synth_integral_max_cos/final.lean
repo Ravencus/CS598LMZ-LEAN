@@ -1,0 +1,80 @@
+import Mathlib
+
+open Set
+open IntervalIntegral
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have hpipos : 0 < Real.pi := by exact Real.pi_pos
+  have h0π2 : (0 : ℝ) ≤ Real.pi / 2 := by linarith
+  have hπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2 := by linarith
+  have h3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi := by linarith
+  have hπ22π : Real.pi / 2 ≤ 2 * Real.pi := by linarith
+  calc
+    ∫ u in (0 : ℝ)..(2 * Real.pi), max (Real.cos u) 0
+        = (∫ u in (0 : ℝ)..(Real.pi / 2), max (Real.cos u) 0) +
+          (∫ u in (Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0) := by
+      rw [intervalIntegral.integral_add_adjacent_intervals h0π2 hπ22π]
+    _ = (∫ u in (0 : ℝ)..(Real.pi / 2), max (Real.cos u) 0) +
+          ((∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0) +
+           (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0)) := by
+      rw [intervalIntegral.integral_add_adjacent_intervals hπ23π2 h3π22π]
+    _ = (∫ u in (0 : ℝ)..(Real.pi / 2), max (Real.cos u) 0) +
+          (∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0) +
+          (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0) := by
+      ring
+    _ = (∫ u in (0 : ℝ)..(Real.pi / 2), Real.cos u) +
+          (∫ u in (Real.pi / 2)..(3 * Real.pi / 2), (0 : ℝ)) +
+          (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), Real.cos u) := by
+      have h1 : (∫ u in (0 : ℝ)..(Real.pi / 2), max (Real.cos u) 0) =
+          (∫ u in (0 : ℝ)..(Real.pi / 2), Real.cos u) := by
+        refine intervalIntegral.integral_congr (fun u hu => ?_)
+        have hmem : u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+          rcases hu with ⟨hu1, hu2⟩
+          constructor <;> nlinarith
+        have hcos_nonneg : 0 ≤ Real.cos u := Real.cos_nonneg_of_mem_Icc hmem
+        simp [max_eq_left hcos_nonneg]
+      have h2 : (∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0) =
+          (∫ u in (Real.pi / 2)..(3 * Real.pi / 2), (0 : ℝ)) := by
+        refine intervalIntegral.integral_congr (fun u hu => ?_)
+        rcases hu with ⟨hu1, hu2⟩
+        have hmem : u - Real.pi ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+          constructor <;> nlinarith
+        have hcosθ_nonneg : 0 ≤ Real.cos (u - Real.pi) := Real.cos_nonneg_of_mem_Icc hmem
+        have hcos_u : Real.cos u = -Real.cos (u - Real.pi) := by
+          calc
+            Real.cos u = Real.cos (Real.pi + (u - Real.pi)) := by ring
+            _ = -Real.cos (u - Real.pi) := by rw [Real.cos_add_pi]
+        have hcos_nonpos : Real.cos u ≤ 0 := by
+          rw [hcos_u]
+          linarith
+        simp [max_eq_right hcos_nonpos]
+      have h3 : (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0) =
+          (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), Real.cos u) := by
+        refine intervalIntegral.integral_congr (fun u hu => ?_)
+        rcases hu with ⟨hu1, hu2⟩
+        have hmem : u - 2 * Real.pi ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+          constructor <;> nlinarith
+        have hcos_nonneg_shift : 0 ≤ Real.cos (u - 2 * Real.pi) :=
+          Real.cos_nonneg_of_mem_Icc hmem
+        have hcos_eq : Real.cos u = Real.cos (u - 2 * Real.pi) := by
+          calc
+            Real.cos u = Real.cos ((u - 2 * Real.pi) + 2 * Real.pi) := by ring
+            _ = Real.cos (u - 2 * Real.pi) := by rw [Real.cos_add_two_pi]
+        have hcos_nonneg_u : 0 ≤ Real.cos u := by rwa [hcos_eq]
+        simp [max_eq_left hcos_nonneg_u]
+      rw [h1, h2, h3]
+    _ = (Real.sin (Real.pi / 2) - Real.sin 0) + 0 +
+        (Real.sin (2 * Real.pi) - Real.sin (3 * Real.pi / 2)) := by
+      simp [intervalIntegral.integral_cos, intervalIntegral.integral_const]
+    _ = (1 - 0) + 0 + (0 - (-1)) := by
+      have hsin3π2 : Real.sin (3 * Real.pi / 2) = -1 := by
+        calc
+          Real.sin (3 * Real.pi / 2) = Real.sin (Real.pi + Real.pi / 2) := by ring
+          _ = Real.sin Real.pi * Real.cos (Real.pi / 2) + Real.cos Real.pi * Real.sin (Real.pi / 2) := by
+            rw [Real.sin_add]
+          _ = 0 * 0 + (-1) * 1 := by
+            norm_num [Real.sin_pi, Real.cos_pi_div_two, Real.cos_pi, Real.sin_pi_div_two]
+          _ = -1 := by ring
+      norm_num [Real.sin_pi_div_two, Real.sin_zero, Real.sin_two_pi, hsin3π2]
+    _ = 2 := by ring

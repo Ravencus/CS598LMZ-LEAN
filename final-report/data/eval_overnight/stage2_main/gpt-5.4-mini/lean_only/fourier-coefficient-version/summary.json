@@ -1,0 +1,58 @@
+{
+  "problem_id": "fourier-coefficient-version",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 148.8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 93.01,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown identifier `MeasureTheory.riemannLebesgue`"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 27.09,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown identifier `IntervalIntegral.riemannLebesgue`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 21.77,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Invalid field `riemannLebesgue`: The environment does not contain `And.riemannLebesgue`, so it is not possible to project the field `riemannLebesgue` from an expression\n  hf\nof type\n  IntegrableOn f ("
+    }
+  ]
+}

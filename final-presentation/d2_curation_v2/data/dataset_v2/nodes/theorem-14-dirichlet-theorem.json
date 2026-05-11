@@ -1,0 +1,23 @@
+{
+  "id": "theorem-14-dirichlet-theorem",
+  "type": "problem",
+  "source_note": "Kronecker定理，Dirichlet定理及其应用",
+  "english_source_note": "Kronecker's Theorem, Dirichlet's Theorem, and Applications",
+  "callout_id": "Kronecker定理,Dirichlet定理及其应用#4",
+  "english_title": "Theorem 1.4: Dirichlet Theorem",
+  "statement_en": "For an irrational number $\\alpha$ and any $\\varepsilon>0$, there exists a positive integer $q_{\\varepsilon}$ such that $$||q_{\\varepsilon}\\alpha||<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "approximation modulo 1",
+    "pigeonhole principle",
+    "nearest-integer distance"
+  ],
+  "prerequisites": [
+    "irrational numbers",
+    "nearest-integer distance $||x||$",
+    "basic pigeonhole principle"
+  ],
+  "callout_body": "对于无理数$\\alpha$以及任意的$\\varepsilon>0$存在正整数$q_{\\varepsilon}$使得$$||q_{\\varepsilon}\\alpha||<\\varepsilon$$"
+}

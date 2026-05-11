@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-0-2025-southwest-jiaotong-university-mathematical-an",
+  "english_title": "Problem 0 (2025 Southwest Jiaotong University Mathematical Analysis Problem)",
+  "statement_en": "Prove that the limit $$\\lim_{n \\rightarrow \\infty} \\sin(n)$$ does not exist.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  l\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sin_nat_limit_does_not_exist :\n    ¬ ∃ l : ℝ, Filter.Tendsto (fun n : ℕ => Real.sin (n : ℝ)) Filter.atTop (Filter.nhds l) := by\n  sorry"
+}

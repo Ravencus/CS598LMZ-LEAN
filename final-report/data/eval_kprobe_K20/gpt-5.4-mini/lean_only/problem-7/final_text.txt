@@ -1,0 +1,7 @@
+I’m going to inspect the Lean proof shape and test a minimal convergence argument with the checker.
+I’m looking for an existing summability theorem or a summation-by-parts lemma so I can avoid a bespoke convergence proof.
+The repository already has a near-identical proof sketch with Abel summation. I’m checking whether I can finish it using existing Mathlib lemmas instead of rebuilding everything.
+I’m searching the installed Mathlib source for a p-series lemma and a summation-by-parts lemma; those would make the proof manageable.
+I found the Mathlib project and am switching to a local scratch file so I can get real compiler diagnostics for theorem names and lemmas.
+I found an Abel-summation theorem in Mathlib that looks like the right reduction. I’m asking a subagent to turn that into a full Lean proof, including the block-bound estimate.
+I have a workable route: block decomposition gives `O(√n)` partial sums, then Abel summation finishes. I’m pushing the subagent to write the Lean code rather than keep reasoning abstractly.

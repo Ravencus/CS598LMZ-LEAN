@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-32",
+  "english_title": "Proposition 3.2",
+  "statement_en": "Let \\(F(s,x):\\\\mathbb{R}^2\\\to\\\\mathbb{R}\\) satisfy\n\\\\[\nF\\\\in C^p(U\\\to\\\\mathbb{R}),\\\\quad F(s^{*},x_k(0))=0,\\\\quad F_x(s^{*},x_k(0))\\\neq 0\n\\\\]\nin some neighborhood \\(U\\) of \\((s^{*},x_k(0))\\). Then there exist a unique neighborhood \\(V\\) of \\(s^{*}\\) and a neighborhood \\(W\\) of \\(x_k(0)\\) such that\n\\\\[\nF(s,x(s))=0\\\\quad \\\\forall s\\\\in V,\\\\qquad x(s)\\\\in C^p(V\\\to W),\n\\\\]\nand \\(x(s)\\) has the asymptotic expansion\n\\\\[\nx(s)=x(s^{*})+\\\\sum_{i=1}^p \\\\frac{x^{(i)}(s^{*})}{i!}(s-s^{*})^i+o(|s-s^{*}|^p).\n",
+  "difficulty": "medium",
+  "domain": "analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem implicit_function_local_solution_taylor_expansion\n    (p : ℕ) (F : ℝ × ℝ → ℝ) (sStar x0 : ℝ) (U : Set (ℝ × ℝ))\n    (hU_open : IsOpen U)\n    (hU_mem : (sStar, x0) ∈ U)\n    (hF_smooth : ContDiffOn ℝ p F U)\n    (hF_zero : F (sStar, x0) = 0)\n    (hFx_ne : deriv (fun x : ℝ => F (sStar, x)) x0 ≠ 0) :\n    ∃! V : Set ℝ,\n      IsOpen V ∧\n      sStar ∈ V ∧\n      ∃ W : Set ℝ,\n        IsOpen W ∧\n        x0 ∈ W ∧\n        ∃ x : ℝ → ℝ,\n          x sStar = x0 ∧\n          (∀ s, s ∈ V → F (s, x s) = 0) ∧\n          Set.MapsTo x V W ∧\n          ContDiffOn ℝ p x V ∧\n          Asymptotics.IsLittleO (nhds sStar)\n            (fun s : ℝ =>\n              x s - (x sStar +\n                Finset.sum (Finset.Icc 1 p) (fun i =>\n                  ((iteratedDeriv i x sStar) / (i.factorial : ℝ)) * (s - sStar) ^ i)))\n            (fun s : ℝ => |s - sStar| ^ p) := by\n  sorry"
+}

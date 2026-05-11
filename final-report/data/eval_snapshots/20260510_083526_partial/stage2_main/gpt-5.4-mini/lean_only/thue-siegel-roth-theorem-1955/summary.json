@@ -1,0 +1,58 @@
+{
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 140.8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 62.47,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `hasIrrationalityMeasure`: The environment does not contain `Exists.hasIrrationalityMeasure`, so it is not possible to project the field `hasIrrationalityMeasure` from an expression\n  hx"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 34.54,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `hasIrrationalityMeasure`: The environment does not contain `Function.hasIrrationalityMeasure`, so it is not possible to project the field `hasIrrationalityMeasure` from an expression\n  "
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 36.45,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `hasIrrationalityMeasure`: The environment does not contain `Exists.hasIrrationalityMeasure`, so it is not possible to project the field `hasIrrationalityMeasure` from an expression\n  hx"
+    }
+  ]
+}

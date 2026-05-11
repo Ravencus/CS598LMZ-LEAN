@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-315",
+  "english_title": "Example 3.1.5",
+  "statement_en": "Let \\(a>0\\), \\(b\\in \\mathbb{R}\\), and \\(a>|b|\\). Compute the parameter-dependent integral \\[I(a,b):=\\int_0^{\\infty}e^{-ax}J_0(bx)\\,dx,\\] where \\(J_0(z)\\) is the Bessel function of the first kind of order zero.",
+  "difficulty": "hard",
+  "domain": "special functions",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `volume`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def I (J0 : ℝ → ℝ) (a b : ℝ) : ℝ :=\n  ∫ x in Set.Ici (0 : ℝ), Real.exp (-a * x) * J0 (b * x) ∂MeasureTheory.volume\n\ntheorem besselJ0_parameter_dependent_integral\n    (J0 : ℝ → ℝ) (a b : ℝ) (ha : 0 < a) (hab : |b| < a) :\n    I J0 a b = 1 / Real.sqrt (a ^ 2 + b ^ 2) := by\n  sorry"
+}

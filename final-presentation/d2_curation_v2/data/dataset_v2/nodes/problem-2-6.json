@@ -1,0 +1,23 @@
+{
+  "id": "problem-2-6",
+  "type": "problem",
+  "source_note": "从几个极限问题去理解Landau符号",
+  "english_source_note": "Understanding Landau Notation Through Limit Problems",
+  "callout_id": "从几个极限问题去理解Landau符号#4",
+  "english_title": "Problem 2",
+  "statement_en": "Let $$A_N:=\\prod_{n\\leq N}\\frac{n}{n+a},$$ where $a$ is a fixed real number. Find $$\\lim_{n\\to \\infty }A_N.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "take logarithms",
+    "convert products into sums",
+    "asymptotic analysis of harmonic-type sums"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "properties of logarithms",
+    "Landau notation"
+  ],
+  "callout_body": "令$$A_N:=\\prod_{n\\leq N}\\frac{n}{n+a}$$其中$a$是一个固定的实数，求$$\\lim_{n\\to \\infty }A_N$$"
+}

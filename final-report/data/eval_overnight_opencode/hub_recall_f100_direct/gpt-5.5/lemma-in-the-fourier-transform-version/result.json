@@ -1,0 +1,21 @@
+{
+  "problem_id": "lemma-in-the-fourier-transform-version",
+  "model": "gpt-5.5",
+  "wall_seconds": 19.68,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "integral-estimates-via-integration-by-parts-hub",
+    "piecewise-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-hub"
+  ],
+  "tp": 1,
+  "fp": 2,
+  "fn": 0,
+  "precision": 0.3333,
+  "recall": 1.0,
+  "f1": 0.5
+}

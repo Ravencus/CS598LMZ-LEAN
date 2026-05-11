@@ -1,0 +1,23 @@
+{
+  "id": "dini-criterion-1880",
+  "type": "problem",
+  "source_note": "函数傅里叶展开的Dini判别及其应用",
+  "english_source_note": "Dini's Test for Fourier Series and Applications",
+  "callout_id": "函数傅里叶展开的Dini判别及其应用#1",
+  "english_title": "Dini Criterion (1880)",
+  "statement_en": "Let $f\\in L^{1}([0,T))$ be a real-valued periodic function of period $T$. Suppose that for $x_0 \\in [0,T)$ there exists a positive real number $\\delta>0$ such that\n$$\\int_{|t|\\leq \\delta} \\left |\\frac{f(x_0-t)-f(x_0)}{t}\\right | \\,dm(t) < +\\infty.$$ \nThen the Fourier series of $f$ converges to $f(x_0)$ at the point $x_0$.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Dini criterion for Fourier series",
+    "local integral regularity near a point",
+    "Dirichlet kernel analysis"
+  ],
+  "prerequisites": [
+    "Fourier series of periodic functions",
+    "Lebesgue integration",
+    "pointwise convergence criteria for Fourier series"
+  ],
+  "callout_body": "$f\\in L^{1}([0,T))$是实变量的周期为$T$的函数，并且对于$x_0 \\in [0,T)$存在正实数$\\delta>0$使得函数满足$$\\int_{|t|\\leq \\delta} \\left |\\frac{f(x_0-t)-f(x_0)}{t}\\right | \\,dm(t) < +\\infty$$那么此函数的傅里叶级数在此点收敛到函数本身。"
+}

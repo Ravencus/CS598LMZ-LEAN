@@ -1,0 +1,23 @@
+{
+  "id": "proposition-217-fejer",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#12",
+  "english_title": "Proposition 2.1.7 (Fejer)",
+  "statement_en": "Let $f:[1,+\\infty)\\to\\mathbb{R}$ be differentiable, with $f'(x)>0$ and $f'(x)$ monotonically decreasing. Assume also that\n$$\\lim_{x\\to \\infty} f'(x)=0,\\quad \\lim_{x\\to \\infty} x f'(x)=\\infty.$$ \nThen the sequence $f(n)$ is uniformly distributed modulo $1$.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "uniform distribution theory",
+  "key_techniques": [
+    "uniform distribution modulo 1",
+    "derivative growth conditions",
+    "monotone derivative estimates"
+  ],
+  "prerequisites": [
+    "differentiable functions",
+    "fractional parts",
+    "uniform distribution modulo 1"
+  ],
+  "callout_body": "设$f:[1,+\\infty)\\to \\mathbb{R}$可微，并且$f'(x)>0$并且$f'(x)$单调减少。此外$$\\lim_{x\\to \\infty}f'(x)=0,\\quad \\lim_{x\\to \\infty} xf'(x)=\\infty$$那么序列$f(n)$模1均匀分布。"
+}

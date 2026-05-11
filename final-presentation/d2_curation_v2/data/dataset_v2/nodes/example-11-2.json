@@ -1,0 +1,23 @@
+{
+  "id": "example-11-2",
+  "type": "problem",
+  "source_note": "把积分或求和对象视为一个计数函数并展开",
+  "english_source_note": "Treating Sums or Integrals as Counting Functions",
+  "callout_id": "把积分或求和对象视为一个计数函数并展开#2",
+  "english_title": "Example 1.1",
+  "statement_en": "Compute the Laplace transform of $\\lfloor x\\rfloor$, that is, evaluate the parameter-dependent integral $$I_s:= \\int_0^{\\infty} \\lfloor x\\rfloor e^{-sx}\\,dx.$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "rewrite $\\lfloor x\\rfloor$ as a counting function",
+    "interchange summation and integration",
+    "Laplace transform computation"
+  ],
+  "prerequisites": [
+    "floor function",
+    "Laplace transform",
+    "Tonelli or Fubini type interchange of sum and integral"
+  ],
+  "callout_body": "计算函数$\\lfloor x\\rfloor$的Laplace变换，即求含参数积分$$I_s:= \\int_0^{\\infty} \\lfloor x\\rfloor e^{-sx}\\,dx$$"
+}

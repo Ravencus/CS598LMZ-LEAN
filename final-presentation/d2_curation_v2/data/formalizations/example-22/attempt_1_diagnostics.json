@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_fd07ff39a119.lean",
+      "line": 4,
+      "column": 5,
+      "severity": "error",
+      "message": "unexpected token 'λ'; expected '_' or identifier\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_fd07ff39a119.lean",
+      "line": 4,
+      "column": 5,
+      "severity": "error",
+      "message": "unexpected token 'λ'; expected '_' or identifier\n"
+    }
+  ]
+}

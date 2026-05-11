@@ -1,0 +1,57 @@
+{
+  "problem_id": "theorem-31-liouvilles-theorem-1844",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 285.57,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 20,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "liouville_approximation_lower_bound",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "Type mismatch: After simplification, term\n  h\n has type\n  (Polynomial.map (Int.castRingHom ℚ)\n        (IsLocalization.integerNormalization (nonZeroDivisors ℤ) (minpoly ℚ α))).natDegree =\n    (b • minp",
+  "total_cost_usd": 0.0,
+  "total_tokens": 724864,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7afdde418a.lean",
+      "line": 44,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  h\n has type\n  (Polynomial.map (Int.castRingHom ℚ)\n        (IsLocalization.integerNormalization (nonZeroDivisors ℤ) (minpoly ℚ α))).natDegree =\n    (b • minpoly ℚ α).natDegree\nbut is expected to have type\n  (IsLocalization.integerNormalization (nonZeroDivisors ℤ) (minpoly ℚ α)).natDegree = d"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7afdde418a.lean",
+      "line": 52,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hpZ_root\n has type\n  (aeval α) pZ = 0\nbut is expected to have type\n  eval α (Polynomial.map (Int.castRingHom ℝ) pZ) = 0"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7afdde418a.lean",
+      "line": 60,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hA p (q - 1)\n has type\n  1 ≤ A * ((↑(q - 1) + 1) ^ d * |α - ↑p / (↑(q - 1) + 1)|)\nbut is expected to have type\n  1 ≤ A * (↑q ^ d * |α - ↑p / ↑q|)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7afdde418a.lean",
+      "line": 67,
+      "column": 52,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nα : ℝ\nd : ℕ\nh_alg : IsAlgebraic ℚ α\nh_deg : (minpoly ℚ α).natDegree = d\nhd : 2 ≤ d\nh_irr : Irrational α\np✝ : ℚ[X] := minpoly ℚ α\npZ : ℤ[X] := IsLocalization.integerNormalization (nonZeroDivisors ℤ) p✝\nb : ℤ\nhb : b ∈ nonZeroDivisors ℤ\nhmap : Polynomial.map (algebraMap ℤ ℚ) (IsLocalization.integerNormalization (nonZeroDivisors ℤ) p✝) = b • p✝\nhb0 : b ≠ 0\nhpZ_root : (aeval α) pZ = 0\nhpZ_deg : pZ.natDegree = d\nhpZ_ne : pZ ≠ 0\nhpZ_root' : eval α (Polynomial.map (algebraMap ℤ ℝ) pZ) = 0\nA : ℝ\nhApos : 0 < A\nhA : ∀ (a : ℤ) (b : ℕ), 1 ≤ (↑b + 1) ^ pZ.natDegree * (|α - ↑a / (↑b + 1)| * A)\nq : ℕ\nhq : 0 < q\np : ℤ\nhq1 : q - 1 + 1 = q\nhbase : 1 ≤ ↑q ^ d * (|α - ↑p / ↑q| * A)\nhmain : 1 / A ≤ ↑q ^ d * |α - ↑p / ↑q|\nh2Apos : 0 < 2 * A\na✝ : A ≤ 2 * A\n⊢ False\nfailed\n"
+    }
+  ]
+}

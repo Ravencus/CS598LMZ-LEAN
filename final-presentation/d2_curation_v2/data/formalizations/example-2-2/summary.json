@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-2-2",
+  "english_title": "Example 2",
+  "statement_en": "Consider the probability space $([0,1],\\mathcal{B}([0,1]),m)$, where $m$ is Lebesgue measure. Define the Bernoulli$(p)$ random variable\n$$Y_2(\\omega):=\\begin{cases}0& 1\\geq \\omega >p\\\\ 1& p\\geq \\omega \\geq 0 \\end{cases}$$\nThen its pushforward measure satisfies\n$$P_{Y_2}(\\{0\\})=m((p,1])=1-p,\\qquad P_{Y_2}(\\{1\\})=m([0,p])=p.$$",
+  "difficulty": "easy",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.decidableLE', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\nnoncomputable def Y2 (p : ℝ) (ω : ℝ) : ℕ :=\n  if ω ≤ p then 1 else 0\n\ntheorem bernoulli_pushforward_on_unitInterval\n    (p : ℝ) (hp : p ∈ Set.Icc (0 : ℝ) 1) :\n    let μ : Measure ℝ := volume.restrict (Set.Icc (0 : ℝ) 1)\n    (Measure.map (Y2 p) μ) ({0} : Set ℕ) = ENNReal.ofReal (1 - p) ∧\n      (Measure.map (Y2 p) μ) ({1} : Set ℕ) = ENNReal.ofReal p := by\n  sorry"
+}

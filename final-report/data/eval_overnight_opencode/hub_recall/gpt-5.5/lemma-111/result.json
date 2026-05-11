@@ -1,0 +1,20 @@
+{
+  "problem_id": "lemma-111",
+  "model": "gpt-5.5",
+  "wall_seconds": 13.17,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "estimates-for-the-sum-of-prime-reciprocals-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-hub",
+    "identity-theorem-hub"
+  ],
+  "tp": 0,
+  "fp": 1,
+  "fn": 2,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

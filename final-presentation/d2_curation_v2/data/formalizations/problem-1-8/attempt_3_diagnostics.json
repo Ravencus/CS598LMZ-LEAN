@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b20833a42990.lean",
+      "line": 6,
+      "column": 9,
+      "severity": "error",
+      "message": "Unknown identifier `volume.restrict`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b20833a42990.lean",
+      "line": 6,
+      "column": 9,
+      "severity": "error",
+      "message": "Unknown identifier `volume.restrict`\n"
+    }
+  ]
+}

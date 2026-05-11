@@ -1,0 +1,24 @@
+{
+  "problem_id": "first-terms-of-the-asymptotic-expansion-for-r-1",
+  "english_title": "First Terms of the Asymptotic Expansion for r > 1",
+  "statement_en": "If $r>1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).$$",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def zetaReal (r : ℝ) : ℝ :=\n  ∑' k : ℕ, Real.rpow ((k + 1 : ℕ) : ℝ) (-r)\n\ntheorem zeta_partial_sum_asymptotic\n    (r : ℝ) (hr : 1 < r) :\n    Asymptotics.IsBigO Filter.atTop\n      (fun n : ℕ =>\n        (∑ k ∈ Finset.Icc 1 n, Real.rpow (k : ℝ) (-r)) -\n          (zetaReal r\n            + (1 / (1 - r)) * Real.rpow (n : ℝ) (1 - r)\n            + (1 / 2 : ℝ) * Real.rpow (n : ℝ) (-r)\n            - (r / 12 : ℝ) * Real.rpow (n : ℝ) (-r - 1)))\n      (fun n : ℕ => Real.rpow (n : ℝ) (-r - 3)) := by\n  sorry"
+}

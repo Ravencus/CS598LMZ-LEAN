@@ -1,0 +1,150 @@
+{
+  "note_title": "通过pi的无理测度证明级数收敛2",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "通过pi的无理测度证明级数收敛2#1",
+      "type": "note",
+      "title": "命题0",
+      "body": "级数$$\\sum_{n\\geq 1} \\frac{(\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n}{n}<\\infty$$",
+      "position_char": 40,
+      "position_line": 6,
+      "classification_result": {
+        "id": "通过pi的无理测度证明级数收敛2#1",
+        "classification": "problem",
+        "english_title": "Proposition 0",
+        "if_problem": {
+          "statement_en": "The series $$\\sum_{n\\geq 1} \\frac{(\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n}{n}<\\infty.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "exponential decay estimates",
+            "distribution of values of \\sin(n)",
+            "irrationality measure of \\pi"
+          ],
+          "prerequisites": [
+            "series convergence tests",
+            "basic asymptotic estimates",
+            "equidistribution or Diophantine approximation ideas"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "通过pi的无理测度证明级数收敛2#2",
+      "type": "tip",
+      "title": "想法1.1",
+      "body": "根据[[通过pi的无理测度证明级数收敛性]]当中的经验，我们现在要：\n1. 参考[[通过pi的无理测度证明级数收敛性#^57d4f2]],我们需要把$A_{\\varepsilon}^c$上的情况变成形如$\\sum_n \\frac{e^{-nx_n}}{n}$形式的级数。然后我们需要进行dyadic分解，并按照$x_n$的值的分布进行划分，得到类似于$$\\sum_{n\\in B_k}\\frac{e^{-nx_n}}{n}\\leq \\frac{1}{2^k}\\sum_{j\\geq 0} e^{-j}\\#\\left\\{n\\in B_k:x_n<\\frac{j+1}{2^k}\\right\\}$$的结果。其中$B_k=[2^k,2^{k+1})$。\n2. 然后我们剩下的步骤便是估计$\\#\\left\\{n\\in B_k:x_n<\\frac{j+1}{2^k}\\right\\}$。令$$E(I;\\rho):=\\left\\{n\\in I:\\delta_n\\leq \\rho\\right\\},\\quad \\rho<1$$实际上我们要估计的是$\\#E(I;\\rho)$。而这个估计主要是依靠[[通过pi的无理测度证明级数收敛性#^8f9f99]]，然后结合$\\pi$的无理测度得到。其中关键是要得到$\\delta_n$的一个下界估计，从而导出任意$n,m \\in E(I;\\rho)$的误差$|n-m|$的一个下界。",
+      "position_char": 1049,
+      "position_line": 21,
+      "classification_result": {
+        "id": "通过pi的无理测度证明级数收敛2#2",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.1",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Convert to an exponential series and estimate by dyadic decomposition",
+          "summary_en": "Rewrite the contribution on the complementary set into a series of the form $$\\sum_n \\frac{e^{-n x_n}}{n}$$, then perform a dyadic decomposition by blocks $$B_k=[2^k,2^{k+1})$$ and further group terms according to the size of $$x_n$$. The remaining task is to bound counting functions such as $$\\#E(I;\\rho)$$ using lower bounds on approximation errors derived from the irrationality measure of $$\\pi$$.",
+          "applicability": "Applies when proving convergence of oscillatory or arithmetic series whose terms can be converted into exponential decay, and when the main difficulty reduces to estimating how often certain small-error events occur."
+        }
+      }
+    },
+    {
+      "id": "通过pi的无理测度证明级数收敛2#3",
+      "type": "note",
+      "title": "命题2.1",
+      "body": "存在一个正实数$c>0$以及无穷多个正整数$n$使得$$\\frac{(\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n}{n}>\\frac{c}{n}$$",
+      "position_char": 5715,
+      "position_line": 46,
+      "classification_result": {
+        "id": "通过pi的无理测度证明级数收敛2#3",
+        "classification": "problem",
+        "english_title": "Proposition 2.1",
+        "if_problem": {
+          "statement_en": "There exist a positive real number $$c>0$$ and infinitely many positive integers $$n$$ such that $$\\frac{(\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n}{n}>\\frac{c}{n}.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "limsup behavior of oscillatory sequences",
+            "Diophantine approximation",
+            "lower bounds along infinite subsequences"
+          ],
+          "prerequisites": [
+            "properties of sine",
+            "subsequence arguments",
+            "basic Diophantine approximation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "通过pi的无理测度证明级数收敛2#4",
+      "type": "note",
+      "title": "命题2.2",
+      "body": "令$a_n := (\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n$那么$$\\limsup_{n\\to \\infty} a_n =1,\\quad \\liminf_{n\\to \\infty} a_n =0$$",
+      "position_char": 6309,
+      "position_line": 53,
+      "classification_result": {
+        "id": "通过pi的无理测度证明级数收敛2#4",
+        "classification": "problem",
+        "english_title": "Proposition 2.2",
+        "if_problem": {
+          "statement_en": "Let $$a_n := (\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n$$. Then $$\\limsup_{n\\to \\infty} a_n =1,\\quad \\liminf_{n\\to \\infty} a_n =0.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "limsup and liminf analysis",
+            "subsequence construction",
+            "distribution of \\sin(n)"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "limsup and liminf",
+            "basic properties of exponential expressions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "通过pi的无理测度证明级数收敛2#5",
+      "type": "question",
+      "title": "猜想3.3",
+      "body": "令$a_n := (\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n$那么序列在$[0,1]$当中稠密。",
+      "position_char": 7418,
+      "position_line": 69,
+      "classification_result": {
+        "id": "通过pi的无理测度证明级数收敛2#5",
+        "classification": "problem",
+        "english_title": "Conjecture 3.3",
+        "if_problem": {
+          "statement_en": "Let $$a_n := (\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n$$. Then the sequence is dense in $$[0,1]$$.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "density of sequences",
+            "distribution of \\sin(n)",
+            "Diophantine approximation"
+          ],
+          "prerequisites": [
+            "topology of the real line",
+            "dense subsets of intervals",
+            "equidistribution or approximation principles"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"通过pi的无理测度证明级数收敛2#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 0\",\n    \"if_problem\": {\n      \"statement_en\": \"The series $$\\\\sum_{n\\\\geq 1} \\\\frac{(\\\\frac{2}{3}+\\\\frac{1}{3}\\\\sin(n))^n}{n}<\\\\infty.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"exponential decay estimates\",\n        \"distribution of values of \\\\sin(n)\",\n        \"irrationality measure of \\\\pi\"\n      ],\n      \"prerequisites\": [\n        \"series convergence tests\",\n        \"basic asymptotic estimates\",\n        \"equidistribution or Diophantine approximation ideas\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"通过pi的无理测度证明级数收敛2#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Convert to an exponential series and estimate by dyadic decomposition\",\n      \"summary_en\": \"Rewrite the contribution on the complementary set into a series of the form $$\\\\sum_n \\\\frac{e^{-n x_n}}{n}$$, then perform a dyadic decomposition by blocks $$B_k=[2^k,2^{k+1})$$ and further group terms according to the size of $$x_n$$. The remaining task is to bound counting functions such as $$\\\\#E(I;\\\\rho)$$ using lower bounds on approximation errors derived from the irrationality measure of $$\\\\pi$$.\",\n      \"applicability\": \"Applies when proving convergence of oscillatory or arithmetic series whose terms can be converted into exponential decay, and when the main difficulty reduces to estimating how often certain small-error events occur.\"\n    }\n  },\n  {\n    \"id\": \"通过pi的无理测度证明级数收敛2#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"There exist a positive real number $$c>0$$ and infinitely many positive integers $$n$$ such that $$\\\\frac{(\\\\frac{2}{3}+\\\\frac{1}{3}\\\\sin(n))^n}{n}>\\\\frac{c}{n}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"limsup behavior of oscillatory sequences\",\n        \"Diophantine approximation\",\n        \"lower bounds along infinite subsequences\"\n      ],\n      \"prerequisites\": [\n        \"properties of sine\",\n        \"subsequence arguments\",\n        \"basic Diophantine approximation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"通过pi的无理测度证明级数收敛2#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $$a_n := (\\\\frac{2}{3}+\\\\frac{1}{3}\\\\sin(n))^n$$. Then $$\\\\limsup_{n\\\\to \\\\infty} a_n =1,\\\\quad \\\\liminf_{n\\\\to \\\\infty} a_n =0.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"limsup and liminf analysis\",\n        \"subsequence construction\",\n        \"distribution of \\\\sin(n)\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"limsup and liminf\",\n        \"basic properties of exponential expressions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"通过pi的无理测度证明级数收敛2#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Conjecture 3.3\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $$a_n := (\\\\frac{2}{3}+\\\\frac{1}{3}\\\\sin(n))^n$$. Then the sequence is dense in $$[0,1]$$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"density of sequences\",\n        \"distribution of \\\\sin(n)\",\n        \"Diophantine approximation\"\n      ],\n      \"prerequisites\": [\n        \"topology of the real line\",\n        \"dense subsets of intervals\",\n        \"equidistribution or approximation principles\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

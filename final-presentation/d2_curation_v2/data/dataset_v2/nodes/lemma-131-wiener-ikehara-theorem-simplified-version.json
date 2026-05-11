@@ -1,0 +1,25 @@
+{
+  "id": "lemma-131-wiener-ikehara-theorem-simplified-version",
+  "type": "problem",
+  "source_note": "素数定理的一些等价命题",
+  "english_source_note": "Equivalent Statements of the Prime Number Theorem",
+  "callout_id": "素数定理的一些等价命题#4",
+  "english_title": "Lemma 1.3.1: Wiener-Ikehara Theorem (Simplified Version)",
+  "statement_en": "Let $b>0$, and let $f(n)$ be a nonnegative arithmetic function. Write $$F(s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}$$ for its associated Dirichlet series.\n\nAssume that the series converges absolutely in the region $\\mathrm{Re}(s)>b$, and that it admits analytic continuation to $\\mathrm{Re}(s)\\geq b$ as a meromorphic function $F(s)$. Suppose that in this region the function has exactly one simple pole, namely at $s=b$. If the residue of $F(s)$ at $s=b$ is $c$, then $$\\sum_{n\\leq x} f(n)\\sim \\frac{c}{b}x^b.$$",
+  "problem_type": "lemma",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "Wiener-Ikehara theorem",
+    "Dirichlet series",
+    "meromorphic continuation",
+    "Tauberian theory"
+  ],
+  "prerequisites": [
+    "complex analysis",
+    "Dirichlet series",
+    "residues and poles",
+    "summatory functions"
+  ],
+  "callout_body": "设$b>0$,$f(n)$是一个非负的算术函数，记$F(s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}$是其对应的Dirichlet级数。\n\n假设级数在$\\text{Re}(s)> b$的范围内绝对收敛，并且可以解析延拓到$\\text{Re}(s)\\geq b$并定义亚纯函数$F(s)$,该函数在此范围内有且仅有$s=b$这一个简单极点。假设$F(s)$在$s=b$处的留数为$c$,那么$$\\sum_{n\\leq x} f(n)\\sim \\frac{c}{b}x^b$$"
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-16",
+  "english_title": "Problem 1.6",
+  "statement_en": "Let $a_n>0$ be a sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ converges. Prove that the series $\\sum_{n\\geq 3} a_n^{1-\\frac{1}{\\ln(n)}}$ also converges.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem summable_of_summable_pos_rpow_one_sub_inv_log\n    (a : ℕ → ℝ)\n    (ha_pos : ∀ n : ℕ, 0 < a n)\n    (ha_summable : Summable (fun n : ℕ => a (n + 1))) :\n    Summable (fun n : ℕ => Real.rpow (a (n + 3)) (1 - 1 / Real.log (n + 3 : ℝ))) := by\n  sorry"
+}

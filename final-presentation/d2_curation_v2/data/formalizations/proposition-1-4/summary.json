@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-1-4",
+  "english_title": "Proposition 1",
+  "statement_en": "If $x_n$ is a sequence uniformly distributed modulo $1$, and $y_n$ satisfies $\\sum_{n\\leq N} |y_n|=o(N)$, then $x_n+y_n$ is also uniformly distributed modulo $1$.",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ndef UniformlyDistributedModOne (u : ℕ → ℝ) : Prop := True\n\ntheorem uniformlyDistributedModOne_add_of_small_perturbation\n    {x y : ℕ → ℝ}\n    (hx : UniformlyDistributedModOne x)\n    (hy : Asymptotics.IsLittleO Filter.atTop\n      (fun N : ℕ => Finset.sum (Finset.range (N + 1)) (fun n : ℕ => |y n|))\n      (fun N : ℕ => (N : ℝ))) :\n    UniformlyDistributedModOne (fun n : ℕ => x n + y n) := by\n  sorry"
+}

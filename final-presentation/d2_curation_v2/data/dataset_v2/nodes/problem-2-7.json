@@ -1,0 +1,24 @@
+{
+  "id": "problem-2-7",
+  "type": "problem",
+  "source_note": "an epsilon of room证明集合为0测度的策略",
+  "english_source_note": "An Epsilon of Room for Measure Zero Sets",
+  "callout_id": "an epsilon of room证明集合为0测度的策略#6",
+  "english_title": "Problem 2",
+  "statement_en": "Prove that the graph of a continuous function $f:\\mathbb{R}\\to\\mathbb{R}$, namely $$G:=\\{(x,y):y=f(x)\\},$$ has Lebesgue measure zero in $\\mathbb{R}^2$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "covering the graph by thin rectangles",
+    "uniform continuity on bounded intervals",
+    "countable decomposition of $\\mathbb{R}$"
+  ],
+  "prerequisites": [
+    "Lebesgue measure on $\\mathbb{R}^2$",
+    "continuity and uniform continuity",
+    "countable subadditivity",
+    "measure zero sets"
+  ],
+  "callout_body": "证明连续函数$f:\\mathbb{R}\\to \\mathbb{R}$的图像$$G:=\\{(x,y):y=f(x)\\}$$在$\\mathbb{R}^2$的Lebesgue测度下是零测度的。"
+}

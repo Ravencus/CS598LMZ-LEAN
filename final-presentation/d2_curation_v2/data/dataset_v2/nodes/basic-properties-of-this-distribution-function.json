@@ -1,0 +1,23 @@
+{
+  "id": "basic-properties-of-this-distribution-function",
+  "type": "problem",
+  "source_note": "分段估计",
+  "english_source_note": "Piecewise Estimates",
+  "callout_id": "分段估计#6",
+  "english_title": "Basic Properties of This Distribution Function",
+  "statement_en": "Let \\((X,\\mathcal{F},\\mu)\\) be a measure space and let \\(\\lambda_f(a):=\\mu(\\{x:|f(x)|>a\\})\\). Then: (1) \\(\\lambda_f\\) is decreasing and right-continuous; (2) if \\(|f|\\leq |g|\\), then \\(\\lambda_f\\leq \\lambda_g\\); (3) if \\(|f_n|\\uparrow |f|\\), then \\(\\lambda_{f_n}\\uparrow \\lambda_f\\); (4) if \\(f=g+h\\), then \\(\\lambda_f(a)\\leq \\lambda_g(a/2)+\\lambda_h(a/2)\\); (5) if \\(f=gh\\), then \\(\\lambda_f(a)\\leq \\lambda_g(\\sqrt{a/2})+\\lambda_h(\\sqrt{a/2})\\).",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "set inclusion arguments",
+    "monotone convergence of measurable sets",
+    "triangle inequality"
+  ],
+  "prerequisites": [
+    "measure spaces",
+    "measurable functions",
+    "basic properties of measures"
+  ],
+  "callout_body": "1. $\\lambda_f$是一个单调减少并且右连续的函数。\n2. 如果$|f|\\leq |g|$那么$\\lambda_f \\leq \\lambda_g$\n3. 如果$|f_n|\\uparrow |f|$那么$\\lambda_{f_n}\\uparrow \\lambda_f$\n4. 如果$f = g+h$那么$\\lambda_f(a)\\leq \\lambda_g(a/2)+\\lambda_h(a/2)$\n5. 如果$f = gh$那么$\\lambda_f(a)\\leq \\lambda_g(\\sqrt{a/2})+\\lambda_h(\\sqrt{a/2})$"
+}

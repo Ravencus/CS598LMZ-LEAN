@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Unknown constant `intervalIntegral.integral_mul_log`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 5,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_mul_log`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_7a1aeee915.lean",
+      "line": 4,
+      "column": 50,
+      "severity": "error",
+      "message": "unsolved goals\n⊢ ∫ (x : ℝ) in 0..1, x * Real.log x = -(1 / 4)\n"
+    }
+  ]
+}

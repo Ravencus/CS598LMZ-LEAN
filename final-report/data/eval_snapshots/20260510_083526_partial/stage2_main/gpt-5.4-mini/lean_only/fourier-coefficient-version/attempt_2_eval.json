@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Unknown identifier `IntervalIntegral.riemannLebesgue`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_0969cf1a21.lean",
+      "line": 16,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown identifier `IntervalIntegral.riemannLebesgue`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0969cf1a21.lean",
+      "line": 15,
+      "column": 18,
+      "severity": "error",
+      "message": "unsolved goals\nf : ℝ → ℂ\nhf : IntervalIntegrable f volume (-Real.pi) Real.pi\n⊢ Tendsto (fun n => ‖1 / (2 * ↑Real.pi) * ∫ (x : ℝ) in -Real.pi..Real.pi, f x * Complex.exp (-(↑n * ↑x * Complex.I))‖)\n    (comap Int.natAbs atTop) (𝓝 0)\n"
+    }
+  ]
+}

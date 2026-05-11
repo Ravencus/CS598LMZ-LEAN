@@ -1,0 +1,24 @@
+{
+  "problem_id": "theorem-211",
+  "english_title": "Theorem 2.1.1",
+  "statement_en": "If a holomorphic function $f$ on an open connected subset $U$ of the complex plane is equal to $0$ on some subset $S\\subset U$ having an accumulation point in $U$, then $f$ is identically zero on all of $U$.",
+  "difficulty": "medium",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  EqOn\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  f\n\nHint: The identifier `EqOn` is unknown, and Lean's `autoImp"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem identity_theorem_zero_of_accumulation_point\n    {U S : Set ℂ} {f : ℂ → ℂ}\n    (hU_open : IsOpen U)\n    (hU_connected : IsConnected U)\n    (hhol : DifferentiableOn ℂ f U)\n    (hSU : S ⊆ U)\n    (hacc : ∃ z0 ∈ U, z0 ∈ closure (S \\ ({z0} : Set ℂ)))\n    (hzero : ∀ z ∈ S, f z = 0) :\n    Set.EqOn f (fun _ => 0) U := by\n  sorry"
+}

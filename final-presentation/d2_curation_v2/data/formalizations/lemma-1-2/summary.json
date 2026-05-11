@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-1-2",
+  "english_title": "Lemma 1",
+  "statement_en": "If $T_n = \\sum_{i\\leq n}Y_i$, then $$\\frac{T_n}{n}-\\frac{S_n}{n}\\xrightarrow{a.e.}0.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem averaged_difference_tendsTo_ae_zero\n    {α : Type*} [MeasurableSpace α] (μ : Measure α)\n    (Y S T : ℕ → α → ℝ)\n    (hT : ∀ n x, T n x = Finset.sum (Finset.range (n + 1)) (fun i => Y i x)) :\n    ∀ᵐ x ∂μ, Filter.Tendsto\n      (fun n : ℕ => T n x / (n : ℝ) - S n x / (n : ℝ))\n      Filter.atTop\n      (nhds 0) := by\n  sorry"
+}

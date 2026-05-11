@@ -1,0 +1,71 @@
+I'll work on this integral problem. The integral of max(cos u, 0) from 0 to 2π equals 2 because cos is non-negative on [-π/2, π/2] (or equivalently [0, π/2] ∪ [3π/2, 2π] within [0, 2π]) and zero elsewhere on [0, 2π], and ∫ cos = sin which gives 1+1=2.
+
+Let me start by exploring the approach.
+Let me try a different approach - shift the interval to use `[-π/2, 3π/2]` so the positive region is contiguous, OR use periodicity. Actually, let me think more directly.
+
+A clean approach: change variables `v = u - π` so cos u = -cos v, and... actually let me use the periodicity to shift to `[-π, π]`. Then max(cos u, 0) on [-π, π] is cos u on [-π/2, π/2] and 0 elsewhere.
+
+Let me try using `intervalIntegral.integral_congr` to split, or try the substitution approach.
+Good progress. The issue is with my `show` approach. Let me restructure - the simpler issue: I should compute `∫ u in a..b, (0:ℝ) = 0` differently. And I'll use `Real.cos_nonneg_of_neg_pi_div_two_le_of_le` with a shift for the third interval, since cos is non-negative on `[3π/2, 2π]` because cos has period 2π and [3π/2, 2π] = [-π/2, 0] + 2π.
+
+Let me use `Real.cos_sub_two_pi` or similar. Actually, simpler: use `Real.cos_nonneg_of_mem_Icc` requires u ∈ [-π/2, π/2]. For u ∈ [3π/2, 2π], we have u - 2π ∈ [-π/2, 0], and `Real.cos_sub_two_pi : cos (x - 2π) = cos x`.
+The first two examples passed. The third has issues with `Set.Icc` membership extraction - `hu.1` and `hu.2` may not auto-unfold. Let me fix:
+Now let me put the full proof together. The integral on [0, π/2] of cos = sin(π/2) - sin(0) = 1, and on [3π/2, 2π] of cos = sin(2π) - sin(3π/2) = 0 - (-1) = 1. Total = 1 + 0 + 1 = 2.
+The proof compiles with no errors and no warnings.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Real intervalIntegral MeasureTheory
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have hpi : (0:ℝ) < Real.pi := Real.pi_pos
+  have h1 : (0:ℝ) ≤ Real.pi / 2 := by linarith
+  have h2 : Real.pi / 2 ≤ 3 * Real.pi / 2 := by linarith
+  have h3 : 3 * Real.pi / 2 ≤ 2 * Real.pi := by linarith
+  have hcont : Continuous (fun u : ℝ => max (Real.cos u) 0) :=
+    Real.continuous_cos.max continuous_const
+  have hint : ∀ a b : ℝ, IntervalIntegrable (fun u => max (Real.cos u) 0) MeasureTheory.volume a b :=
+    fun a b => hcont.intervalIntegrable a b
+  rw [← integral_add_adjacent_intervals (hint 0 (Real.pi/2)) (hint (Real.pi/2) (2*Real.pi))]
+  rw [← integral_add_adjacent_intervals (hint (Real.pi/2) (3*Real.pi/2)) (hint (3*Real.pi/2) (2*Real.pi))]
+  have eq1 : ∫ u in (0:ℝ)..(Real.pi/2), max (Real.cos u) 0 = 1 := by
+    have heq : ∀ u ∈ Set.uIcc (0:ℝ) (Real.pi/2), max (Real.cos u) 0 = Real.cos u := by
+      intro u hu
+      rw [Set.uIcc_of_le h1] at hu
+      obtain ⟨ha, hb⟩ := hu
+      have : 0 ≤ Real.cos u := Real.cos_nonneg_of_mem_Icc ⟨by linarith, by linarith⟩
+      exact max_eq_left this
+    rw [integral_congr heq, integral_cos]
+    simp [Real.sin_pi_div_two]
+  have eq2 : ∫ u in (Real.pi/2)..(3*Real.pi/2), max (Real.cos u) 0 = 0 := by
+    have heq : ∀ u ∈ Set.uIcc (Real.pi/2) (3*Real.pi/2), max (Real.cos u) 0 = 0 := by
+      intro u hu
+      rw [Set.uIcc_of_le h2] at hu
+      obtain ⟨ha, hb⟩ := hu
+      have hc : Real.cos u ≤ 0 := Real.cos_nonpos_of_pi_div_two_le_of_le ha (by linarith)
+      exact max_eq_right hc
+    rw [integral_congr heq]; simp
+  have eq3 : ∫ u in (3*Real.pi/2)..(2*Real.pi), max (Real.cos u) 0 = 1 := by
+    have heq : ∀ u ∈ Set.uIcc (3*Real.pi/2) (2*Real.pi), max (Real.cos u) 0 = Real.cos u := by
+      intro u hu
+      rw [Set.uIcc_of_le h3] at hu
+      obtain ⟨ha, hb⟩ := hu
+      have hshift : Real.cos u = Real.cos (u - 2 * Real.pi) := by
+        rw [Real.cos_sub_two_pi]
+      have hnn : 0 ≤ Real.cos u := by
+        rw [hshift]
+        apply Real.cos_nonneg_of_mem_Icc
+        refine ⟨by linarith, by linarith⟩
+      exact max_eq_left hnn
+    rw [integral_congr heq, integral_cos]
+    have hs1 : Real.sin (2 * Real.pi) = 0 := by
+      rw [show (2 * Real.pi : ℝ) = Real.pi + Real.pi by ring, Real.sin_add_pi, Real.sin_pi]
+      ring
+    have hs2 : Real.sin (3 * Real.pi / 2) = -1 := by
+      rw [show (3 * Real.pi / 2 : ℝ) = Real.pi / 2 + Real.pi by ring, Real.sin_add_pi, Real.sin_pi_div_two]
+    rw [hs1, hs2]; ring
+  rw [eq1, eq2, eq3]; ring
+```

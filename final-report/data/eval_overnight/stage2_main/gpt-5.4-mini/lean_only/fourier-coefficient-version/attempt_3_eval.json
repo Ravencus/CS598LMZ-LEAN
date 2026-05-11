@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Invalid field `riemannLebesgue`: The environment does not contain `And.riemannLebesgue`, so it is not possible to project the field `riemannLebesgue` from an expression\n  hf\nof type\n  IntegrableOn f (",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_0969cf1a21.lean",
+      "line": 16,
+      "column": 15,
+      "severity": "error",
+      "message": "Invalid field `riemannLebesgue`: The environment does not contain `And.riemannLebesgue`, so it is not possible to project the field `riemannLebesgue` from an expression\n  hf\nof type\n  IntegrableOn f (Set.Ioc (-Real.pi) Real.pi) volume ∧ IntegrableOn f (Set.Ioc Real.pi (-Real.pi)) volume"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_0969cf1a21.lean",
+      "line": 15,
+      "column": 18,
+      "severity": "error",
+      "message": "unsolved goals\nf : ℝ → ℂ\nhf : IntervalIntegrable f volume (-Real.pi) Real.pi\n⊢ Tendsto (fun n => ‖1 / (2 * ↑Real.pi) * ∫ (x : ℝ) in -Real.pi..Real.pi, f x * Complex.exp (-(↑n * ↑x * Complex.I))‖)\n    (comap Int.natAbs atTop) (𝓝 0)\n"
+    }
+  ]
+}

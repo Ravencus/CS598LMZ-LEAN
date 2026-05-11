@@ -1,0 +1,21 @@
+{
+  "id": "proposition-33-2",
+  "type": "problem",
+  "source_note": "对含参数方程根的估计",
+  "english_source_note": "Estimates for Roots of Parameterized Equations",
+  "callout_id": "对含参数方程根的估计#9",
+  "english_title": "Proposition 3.3",
+  "statement_en": "Let \\(F(s,x):\\\\mathbb{R}^2\\\to\\\\mathbb{R}\\) be real analytic in some neighborhood \\(U\\) of \\((s^{*},x_k(0))\\), and suppose\n\\\\[\nF(s^{*},x_k(0))=0,\\\\quad F_x(s^{*},x_k(0))\\\neq 0.\n\\\\]\nThen there exist a neighborhood \\(V\\) of \\(s^{*}\\) and a neighborhood \\(W\\) of \\(x_k(0)\\) such that on \\(V\\) the equation \\(F(s,x)=0\\) has exactly one solution branch\n\\\\[\nx(s):V\\\to W,\n\\\\]\nand \\(x(s)\\) is real analytic, namely\n\\\\[\nx(s)=\\\\sum_{i\\\\ge 0} a_i s^i,\\\\quad \\\\forall s\\\\in V.\n\\\\]",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "analysis",
+  "key_techniques": [
+    "analytic implicit function theorem",
+    "power series expansion"
+  ],
+  "prerequisites": [
+    "real analytic functions",
+    "implicit function theorem"
+  ],
+  "callout_body": "设$F(s,x):\\mathbb{R}^2\\to \\mathbb{R}$在$(s^{*},x_k(0))$的某个邻域$U$内满足$F$是一个实数解析函数并且$$F(s^{*},x_k(0))=0,F_x(s^{*},x_k(0))\\neq 0$$那么存在一个$s^{*}$的邻域$V$以及$x_k(0)$的邻域$W$使得在$V$上方程$F(s,x)=0$有且仅有一个解分支：$$x(s):V\\to W$$并且$x(s)$是一个实解析函数，即$$x(s)=\\sum_{i\\geq 0}a_i s^i,\\forall s\\in V$$"
+}

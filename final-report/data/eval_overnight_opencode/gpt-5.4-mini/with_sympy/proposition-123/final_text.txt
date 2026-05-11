@@ -1,0 +1,71 @@
+I’m loading the Lean proof workflow, then I’ll test a compact proof skeleton and iterate against the checker.
+I’ve reduced the proof to a telescoping identity plus a forward induction from `N = 1`. I’m checking which induction and finset lemmas Mathlib exposes so I can keep the final proof short.
+I’m probing one likely finset recurrence lemma next. If it’s available, the proof stays induction-based; if not, I’ll switch to a range-sum rewrite.
+I have the main structure: prove the stronger sum-equals-3 statement by induction, then convert back to the target with `linarith`. I’m checking the exact induction combinator syntax now.
+I found a cleaner route: induct on the proof that `N ≥ 1` instead of on `N` itself. That should line up with the recurrence directly. I’m checking the pattern-matching syntax on `≤` now.
+I’ve got a full proof attempt now. It uses one additive invariant `T n = 3`, a single telescoping step, and a rational identity for the increment.
+The remaining issues are mechanical: one induction branch needs the predecessor name recovered, and the denominator normalization needs cleaner parenthesization. I’m tightening those now.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem factorial_sum_identity (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.range (N + 1)) (fun k => (1 : ℚ) / (k.factorial : ℚ)) +
+        (1 : ℚ) / (((N * N.factorial : ℕ) : ℕ) : ℚ) =
+      (3 : ℚ) -
+        Finset.sum (Finset.Icc 1 (N - 1))
+          (fun k => (1 : ℚ) / (((k * (k + 1) * (k + 1).factorial : ℕ) : ℕ) : ℚ)) := by
+  have h1 : 1 ≤ N := by omega
+  rcases Nat.exists_eq_add_of_le hN with ⟨m, rfl⟩
+  let f : ℕ → ℚ := fun k => (1 : ℚ) / (k.factorial : ℚ)
+  let g : ℕ → ℚ := fun k =>
+    (1 : ℚ) / (((k * (k + 1) * (k + 1).factorial : ℕ) : ℕ) : ℚ)
+  let T : ℕ → ℚ := fun n =>
+    Finset.sum (Finset.range (n + 1)) f +
+      (1 : ℚ) / (((n * n.factorial : ℕ) : ℕ) : ℚ) +
+      Finset.sum (Finset.Icc 1 (n - 1)) g
+  have hT : T (2 + m) = (3 : ℚ) := by
+    induction m with
+    | zero =>
+        norm_num [T, f, g]
+    | succ m ih =>
+        let n : ℕ := 2 + m
+        have hn : 1 ≤ n := by omega
+        have hIcc :
+            Finset.sum (Finset.Icc 1 n) g =
+              Finset.sum (Finset.Icc 1 (n - 1)) g + g n := by
+          simpa using
+            (Finset.sum_Icc_succ_top (f := g) (a := 1) (b := n - 1) hn)
+        let u : ℚ :=
+          f (n + 1) +
+            (1 : ℚ) / (((n + 1) * (n + 1).factorial : ℕ) : ℚ) -
+            (1 : ℚ) / (((n * n.factorial : ℕ) : ℕ) : ℚ) +
+            g n
+        have hu : u = 0 := by
+          dsimp [u, f, g]
+          have hnpos : 0 < n := by omega
+          have hn0 : (n : ℚ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hnpos)
+          have hn1pos : 0 < n + 1 := by omega
+          have hn1 : ((n + 1 : ℕ) : ℚ) ≠ 0 := by
+            exact_mod_cast (Nat.ne_of_gt hn1pos)
+          have hnf : ((n.factorial : ℕ) : ℚ) ≠ 0 := by
+            exact_mod_cast (Nat.ne_of_gt (Nat.factorial_pos n))
+          have hnf1 : (((n + 1).factorial : ℕ) : ℚ) ≠ 0 := by
+            exact_mod_cast (Nat.ne_of_gt (Nat.factorial_pos (n + 1)))
+          have hprod1 : (((n * n.factorial : ℕ) : ℚ) ≠ 0) := by positivity
+          have hprod2 : (((n + 1) * (n + 1).factorial : ℕ) : ℚ) ≠ 0 := by positivity
+          have hprod3 : (((n * (n + 1) * (n + 1).factorial : ℕ) : ℚ) ≠ 0) := by
+            positivity
+          field_simp [hn0, hn1, hnf, hnf1, hprod1, hprod2, hprod3]
+          ring
+        have hrec : T (n + 1) = T n + u := by
+          dsimp [T, u, n, f, g]
+          rw [Finset.sum_range_succ]
+          rw [hIcc]
+          abel_nf
+        calc
+          T (n + 1) = T n + u := hrec
+          _ = (3 : ℚ) + u := by simpa [n] using ih
+          _ = 3 := by rw [hu]; simp
+  simpa [T, f, g, add_comm, add_left_comm, add_assoc] using hT
+```

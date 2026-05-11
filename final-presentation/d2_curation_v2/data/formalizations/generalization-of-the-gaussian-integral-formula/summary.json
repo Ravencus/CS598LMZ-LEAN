@@ -1,0 +1,18 @@
+{
+  "problem_id": "generalization-of-the-gaussian-integral-formula",
+  "english_title": "Generalization of the Gaussian Integral Formula",
+  "statement_en": "$$\\int_{\\mathbb{R}^d} e^{-\\pi|x|^2}\\,dx =1.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem gaussian_integral_real_euclideanSpace\n    (d : ℕ) :\n    (∫ x : EuclideanSpace ℝ (Fin d), Real.exp (-Real.pi * ‖x‖ ^ (2 : ℕ))) = 1 := by\n  sorry"
+}

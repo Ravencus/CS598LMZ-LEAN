@@ -1,0 +1,18 @@
+{
+  "problem_id": "eulers-theorem-on-the-sum-of-prime-reciprocals",
+  "english_title": "Euler's Theorem on the Sum of Prime Reciprocals",
+  "statement_en": "Let $\\mathbb{P}$ be the set of prime numbers. The series $$\\sum_{p\\in \\mathbb{P}} \\frac{1}{p}$$ diverges.",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem prime_reciprocals_not_summable :\n    ¬ Summable (fun n : ℕ => if Nat.Prime n then (1 : ℝ) / n else 0) := by\n  sorry"
+}

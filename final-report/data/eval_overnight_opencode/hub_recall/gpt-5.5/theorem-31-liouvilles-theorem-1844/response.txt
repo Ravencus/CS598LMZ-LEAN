@@ -1,0 +1,3 @@
+["piecewise-estimates-hub", "term-by-term-estimates-hub"]
+- piecewise-estimates-hub: The proof naturally splits rational approximants into a “far from α” case, where the lower bound is trivial after choosing C small, and a “near α” case controlled through the minpoly.
+- term-by-term-estimates-hub: In the near case, one bounds the polynomial difference `|P(p/q) - P(α)|` term by term, or via a finite Lipschitz-type bound, while the integer-denominator argument gives a termwise algebraic lower bound of order `q^{-d}`.

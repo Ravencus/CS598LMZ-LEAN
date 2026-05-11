@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-11-identity-theorem-for-continuous-functions",
+  "english_title": "Theorem 1.1: Identity Theorem for Continuous Functions",
+  "statement_en": "Let $f,g:X\\to Y$ be continuous maps from a topological space $X$ to a Hausdorff space $Y$. If $$f(x)=g(x),\\forall x\\in Z$$ for some dense subset $Z\\subset X$, then $$f(x)=g(x),\\forall x\\in X.$$",
+  "difficulty": "easy",
+  "domain": "general topology",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem continuous_eq_of_eq_on_dense\n    {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]\n    {f g : X → Y} (hf : Continuous f) (hg : Continuous g)\n    {Z : Set X} (hZ : Dense Z) (hfg : ∀ x ∈ Z, f x = g x) :\n    ∀ x : X, f x = g x := by\n  sorry"
+}

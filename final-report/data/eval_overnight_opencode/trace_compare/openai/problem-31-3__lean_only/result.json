@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "problem-31-3",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces converge on a Cauchy-condensation/logarithmic harmonic divergence argument rather than a substantively different mathematical decomposition. The SMALL trace repeatedly reports API/mechanical issues such as `log_pos` usage, monotonicity, rewrites around `k + 1 + 2`, and nonnegativity, whi",
+  "wall_seconds": 9.56
+}

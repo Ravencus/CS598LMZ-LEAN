@@ -1,0 +1,90 @@
+{
+  "note_title": "identity theorem",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room",
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "identity theorem#1",
+      "type": "note",
+      "title": "对identity theorem的抽象",
+      "body": "为了验证，在$U$上拥有某种好的正则性$P$的两个函数$f,g$恒等，我们只需要验证在子集$S\\subset U$上恒等。即正则性强的对象，局部信息包含了全局信息。",
+      "position_char": 38,
+      "position_line": 6
+    },
+    {
+      "id": "identity theorem#2",
+      "type": "note",
+      "title": "定理1.1：连续函数的identity theorem",
+      "body": "假设映射$f,g:X\\to Y$是从拓扑空间$X$到$Y$的两个连续映射，其中$Y$是Hausdroff的。如果两个函数$$f(x)=g(x),\\forall x\\in Z$$其中$Z\\subset X$是一个稠密子集。那么$$f(x)=g(x),\\forall x\\in X$$",
+      "position_char": 351,
+      "position_line": 15
+    },
+    {
+      "id": "identity theorem#3",
+      "type": "note",
+      "title": "定理1.2：连续函数的identity theorem的变体",
+      "body": "假设映射$f,g:X\\to Y$是从拓扑空间$X$到$Y$的两个连续映射，其中$Y$是Hausdroff的有序拓扑空间,并且其上的序关系\"$\\leq$\"与拓扑是相容的，即集合$\\{(y_1,y_2)\\in Y\\times Y:y_1\\leq y_2\\}$是一个闭集。\n\n那么如果两个函数$$f(x)\\leq g(x),\\forall x\\in Z$$其中$Z\\subset X$是一个稠密子集。那么$$f(x)\\leq g(x),\\forall x\\in X$$",
+      "position_char": 916,
+      "position_line": 21
+    },
+    {
+      "id": "identity theorem#4",
+      "type": "note",
+      "title": "定理2.1.1",
+      "body": "如果定义在复平面上的全纯函数$f$在连通开集子集$U$的某个含有聚点(极限点)的某个子集$S\\subset U$上等于0,并且聚点在$U$当中，那么函数在整个$U$上等于0.",
+      "position_char": 2297,
+      "position_line": 46
+    },
+    {
+      "id": "identity theorem#5",
+      "type": "error",
+      "title": "反例2.1.2",
+      "body": "$$g(z):= \\sin\\left(\\frac{\\pi}{z}\\right)$$\n函数$g$在0的位置是一个本性奇点,然后函数在$z = \\frac{1}{n},n\\in\\mathbb{Z}\\setminus \\{0\\}$上都是零点，其聚点是$0$.函数$g$在开连通区域$D_r(0)\\setminus\\{0\\}$上全纯,0虽然是聚点但是$0 \\not \\in D_r(0)\\setminus\\{0\\}$.在这种情况下，聚点不在开连通区域里面的时候，我们不能得到函数是0函数的结论。",
+      "position_char": 2588,
+      "position_line": 57
+    },
+    {
+      "id": "identity theorem#6",
+      "type": "note",
+      "title": "命题2.1.3:一元复解析函数在开连通区域上零点是孤立的",
+      "body": "$f:U\\to\\mathbb{C}$是定义在非空开连通子集$U$上的**非零**全纯函数，并且$z_0\\in U$是其一个零点，那么存在一个圆盘$D(z_0,r)$使得函数在圆盘里面，除了$z_0$以外没有任何其他零点。",
+      "position_char": 2896,
+      "position_line": 65
+    },
+    {
+      "id": "identity theorem#7",
+      "type": "error",
+      "title": "反例2.1.4",
+      "body": "假设不是连通的一个开集,比如$U=A\\cup B$,其中$A,B$是两个不相交的开集。\n$$f(z):=\\begin{cases}0&z \\in A\\\\ 1&z \\in B\\end{cases}$$\n此时函数在$U$上全纯，并且不恒等于0，但是零点也非孤立。",
+      "position_char": 3428,
+      "position_line": 76
+    },
+    {
+      "id": "identity theorem#8",
+      "type": "note",
+      "title": "命题2.1.5:一元实解析函数在开区间上零点是孤立的",
+      "body": "令$f:I\\to \\mathbb{R}$是一个定义在开区间$I$上的一元非零实解析函数，则$f$在$I$上的所有零点都是孤立的。",
+      "position_char": 4005,
+      "position_line": 87
+    },
+    {
+      "id": "identity theorem#9",
+      "type": "error",
+      "title": "反例2.1.6:一元非零实光滑函数在开区间上的零点稠密",
+      "body": "考虑函数$$f(x):=\\begin{cases}e^{-1/x}&x>0\\\\0&x\\leq0\\end{cases}$$这是一个光滑函数，因为函数$f$在$x=0$处任意阶可导，且导数为$0$但是显然函数在$\\mathbb{R}$这个开区间上，零点并不是孤立的。从这里也可以反推，此函数一定不是$\\mathbb{R}$上的实解析函数。",
+      "position_char": 4201,
+      "position_line": 95
+    },
+    {
+      "id": "identity theorem#10",
+      "type": "note",
+      "title": "定理2.2",
+      "body": "全纯函数$f$在连通开集$U\\subset \\mathbb{C}^n$上的某个连通开子集$S\\subset U$上恒等于0，那么函数在整个$U$上等于0.",
+      "position_char": 4739,
+      "position_line": 107
+    }
+  ]
+}

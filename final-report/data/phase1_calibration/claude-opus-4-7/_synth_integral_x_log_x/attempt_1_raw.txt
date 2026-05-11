@@ -1,0 +1,24 @@
+Looking at this problem, I need to prove that ∫₀¹ x·log(x) dx = -1/4.
+
+The standard approach is integration by parts: an antiderivative of x·log(x) is F(x) = x²·log(x)/2 - x²/4, giving F(1) - F(0) = -1/4 - 0 = -1/4. However, F isn't differentiable at 0 (since log isn't), so this requires careful handling of the boundary singularity in Mathlib.
+
+Given the complexity of the Mathlib formalization for this boundary case, I'll use the SYMPY-SKILL to verify the closed-form value of this definite integral.
+
+```lean
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  sorry
+```
+
+<sympy>
+{
+  "kind": "integral",
+  "var": "x",
+  "lower": "0",
+  "upper": "1",
+  "expression": "x*log(x)",
+  "expected": "-1/4"
+}
+</sympy>

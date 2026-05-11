@@ -1,0 +1,43 @@
+{
+  "problem_id": "common-lemma-1",
+  "model": "claude-opus-4-7",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 140.81,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "summable_measure_limsup_null_ae_tendsto",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Invalid field `tsum_lt_top`: The environment does not contain `Exists.tsum_lt_top`, so it is not possible to project the field `tsum_lt_top` from an expression\n  hsum\nof type\n  ∃ a, HasSum (fun n => μ",
+  "total_cost_usd": 0.558296,
+  "total_tokens": 336402,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7e2bd3a90d.lean",
+      "line": 16,
+      "column": 70,
+      "severity": "error",
+      "message": "Invalid field `tsum_lt_top`: The environment does not contain `Exists.tsum_lt_top`, so it is not possible to project the field `tsum_lt_top` from an expression\n  hsum\nof type\n  ∃ a, HasSum (fun n => μ {x | ε ≤ |fSeq (n + 1) x - f x|}) a"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_7e2bd3a90d.lean",
+      "line": 22,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown constant `Filter.mem_limsup`"
+    }
+  ]
+}

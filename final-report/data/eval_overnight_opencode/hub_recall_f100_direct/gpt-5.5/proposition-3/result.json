@@ -1,0 +1,25 @@
+{
+  "problem_id": "proposition-3",
+  "model": "gpt-5.5",
+  "wall_seconds": 17.3,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "integral-estimates-via-integration-by-parts-hub",
+    "reducing-set-problems-to-function-problems-hub",
+    "sum-estimates-via-summation-by-parts-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-hub",
+    "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+    "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+  ],
+  "tp": 1,
+  "fp": 3,
+  "fn": 3,
+  "precision": 0.25,
+  "recall": 0.25,
+  "f1": 0.25
+}

@@ -1,0 +1,6 @@
+The stated theorem is mathematically false as written: the right side is the Cauchy criterion and does not mention `x`, so it cannot characterize convergence to a specific `x`. I’ll verify the obstruction in Lean rather than attempting to fabricate a proof of a false statement.
+No valid Lean proof exists for the requested signature: the theorem is false.
+
+Counterexample: `xSeq n = 0` is pairwise Cauchy, so the RHS holds for every `x`, but it does not tend to `1`.
+
+I verified this contradiction in Lean using the checker. The signature needs to be changed, e.g. to “converges to some real number” or to use `|xSeq n - x| < ε` on the RHS.

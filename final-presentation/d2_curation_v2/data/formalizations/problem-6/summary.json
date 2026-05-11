@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-6",
+  "english_title": "Problem 6",
+  "statement_en": "Let \\(f\\) be entire, and let $$u(z)=\\\\operatorname{Re}(f(z))$$ be its real part. Suppose that on every circle \\(C_r(0)\\) one has the upper bound $$u(z)\\\\leq Cr^s,\\\\quad s\\\\geq 0.$$ Prove that \\(f\\) is a polynomial of degree at most \\(s\\).",
+  "difficulty": "hard",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem entire_real_part_growth_polynomial\n    (f : ℂ → ℂ) (C s : ℝ)\n    (hs : 0 ≤ s)\n    (hentire : Differentiable ℂ f)\n    (hbound : ∀ r : ℝ, 0 ≤ r → ∀ z : ℂ, ‖z‖ = r → Complex.re (f z) ≤ C * Real.rpow r s) :\n    ∃ p : Polynomial ℂ, (∀ z : ℂ, Polynomial.eval z p = f z) ∧ p.natDegree ≤ Nat.ceil s := by\n  sorry"
+}

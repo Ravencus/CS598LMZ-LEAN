@@ -1,0 +1,90 @@
+{
+  "note_title": "一个竞赛中的和的渐近展开问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "一个竞赛中的和的渐近展开问题#1",
+      "type": "question",
+      "title": "大学生数学竞赛题目",
+      "body": "求极限:\n$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}\\frac{n}{n^2+k^2+1}$$",
+      "position_char": 43,
+      "position_line": 7,
+      "classification_result": {
+        "id": "一个竞赛中的和的渐近展开问题#1",
+        "classification": "problem",
+        "english_title": "Undergraduate Mathematics Competition Problem",
+        "if_problem": {
+          "statement_en": "Find the limit:\n$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}\\frac{n}{n^2+k^2+1}$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Riemann sum approximation",
+            "asymptotic estimation",
+            "comparison with an integral"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "basic asymptotics",
+            "definite integrals"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一个竞赛中的和的渐近展开问题#2",
+      "type": "note",
+      "title": "命题1",
+      "body": "如果我们对$S_n$的渐近展开的精度要求为$O(g(n))$,而此时恰好有另一个已知渐近展开结果，且精度也为$O(g(n))$的和$S'_n$，同时$$S_n-S_n'=O(g(n))$$那么$S_n,S_n'$的渐近展开在$O(g(n))$的精度下是相同的。",
+      "position_char": 662,
+      "position_line": 21,
+      "classification_result": {
+        "id": "一个竞赛中的和的渐近展开问题#2",
+        "classification": "problem",
+        "english_title": "Proposition 1",
+        "if_problem": {
+          "statement_en": "If the required accuracy of the asymptotic expansion of $S_n$ is $O(g(n))$, and there is another known asymptotic expansion for a sum $S'_n$ with the same accuracy $O(g(n))$, and moreover\n$$S_n-S_n'=O(g(n)),$$\nthen the asymptotic expansions of $S_n$ and $S'_n$ are the same up to accuracy $O(g(n))$.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "big-O comparison",
+            "transfer of asymptotic expansions",
+            "error control"
+          ],
+          "prerequisites": [
+            "big-O notation",
+            "asymptotic expansions",
+            "basic proof techniques"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "一个竞赛中的和的渐近展开问题#3",
+      "type": "tip",
+      "title": "想法",
+      "body": "命题1告诉我们，如果你发现一个$S_n'$其形式比$S_n$更好得到渐近展开，比如说对$S_n$做某种放缩，只要放缩整体的误差是被$O(g(n))$控制起来的，那么最终的渐近展开是相同的。",
+      "position_char": 810,
+      "position_line": 24,
+      "classification_result": {
+        "id": "一个竞赛中的和的渐近展开问题#3",
+        "classification": "strategy_template",
+        "english_title": "Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Replace by a Simpler Comparable Sum",
+          "summary_en": "Use Proposition 1 to replace a difficult sum $S_n$ by a simpler sum $S'_n$ whose asymptotic expansion is easier to compute. If the total error of the comparison is controlled by $O(g(n))$, then both sums have the same asymptotic expansion at that level of accuracy.",
+          "applicability": "Apply this when a target sum is hard to expand directly, but can be bounded or approximated by a structurally simpler sum with a controllable error term of the required order."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"一个竞赛中的和的渐近展开问题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Undergraduate Mathematics Competition Problem\",\n    \"if_problem\": {\n      \"statement_en\": \"Find the limit:\\n$$\\\\lim_{n\\\\to \\\\infty}\\\\sum_{k=1}^{n}\\\\frac{n}{n^2+k^2+1}$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Riemann sum approximation\",\n        \"asymptotic estimation\",\n        \"comparison with an integral\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"basic asymptotics\",\n        \"definite integrals\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一个竞赛中的和的渐近展开问题#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1\",\n    \"if_problem\": {\n      \"statement_en\": \"If the required accuracy of the asymptotic expansion of $S_n$ is $O(g(n))$, and there is another known asymptotic expansion for a sum $S'_n$ with the same accuracy $O(g(n))$, and moreover\\n$$S_n-S_n'=O(g(n)),$$\\nthen the asymptotic expansions of $S_n$ and $S'_n$ are the same up to accuracy $O(g(n))$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"big-O comparison\",\n        \"transfer of asymptotic expansions\",\n        \"error control\"\n      ],\n      \"prerequisites\": [\n        \"big-O notation\",\n        \"asymptotic expansions\",\n        \"basic proof techniques\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"一个竞赛中的和的渐近展开问题#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Replace by a Simpler Comparable Sum\",\n      \"summary_en\": \"Use Proposition 1 to replace a difficult sum $S_n$ by a simpler sum $S'_n$ whose asymptotic expansion is easier to compute. If the total error of the comparison is controlled by $O(g(n))$, then both sums have the same asymptotic expansion at that level of accuracy.\",\n      \"applicability\": \"Apply this when a target sum is hard to expand directly, but can be bounded or approximated by a structurally simpler sum with a controllable error term of the required order.\"\n    }\n  }\n]",
+  "classified": true
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "conjecture-0",
+  "english_title": "Conjecture 0",
+  "statement_en": "Let $a_1=a>0$. Suppose the sequence $a_n$ satisfies the recursion $$a_{n+1}=a_n+\\frac{n^{2\\beta}}{a_1+\\cdots+a_n}.$$ Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}=\\sqrt{\\frac{\\beta+1}{\\beta}}.$$",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (Real.sqrt ((β + 1) / β))\n\nHint: The identifier `𝓝` is unknown, a"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem recursive_sequence_rpow_limit\n    {a β : ℝ} (u : ℕ → ℝ)\n    (ha : 0 < a) (hβ : 0 < β)\n    (h_init : u 1 = a)\n    (h_rec : ∀ n : ℕ, 1 ≤ n →\n      u (n + 1) = u n + Real.rpow (n : ℝ) (2 * β) / Finset.sum (Finset.Icc 1 n) u) :\n    Filter.Tendsto\n      (fun n : ℕ => u n / Real.rpow (n : ℝ) β)\n      Filter.atTop\n      (𝓝 (Real.sqrt ((β + 1) / β))) := by\n  sorry"
+}

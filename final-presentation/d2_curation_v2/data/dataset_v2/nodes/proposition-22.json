@@ -1,0 +1,24 @@
+{
+  "id": "proposition-22",
+  "type": "problem",
+  "source_note": "随机变量期望收敛导出几乎处处收敛的一个条件",
+  "english_source_note": "A Condition Turning Mean Convergence into Almost Sure Convergence",
+  "callout_id": "随机变量期望收敛导出几乎处处收敛的一个条件#4",
+  "english_title": "Proposition 2.2",
+  "statement_en": "Let $f_n$ be a sequence of measurable functions on a measure space $(X, \\mathcal{F}, \\mu)$. Write $E_{\\mu}(f_n)=\\int_X f_n\\,d\\mu$ and $V_{\\mu}(f_n)=\\int_X (f_n-E_{\\mu}f_n)^2\\,d\\mu$. If $$E_{\\mu}(f_n) \\to C$$ and $$\\sum_{n\\geq 1} V_{\\mu}(f_n) < \\infty,$$ then $f_n \\to C$ almost everywhere on $X$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "variance summability",
+    "almost everywhere convergence criterion",
+    "measure-theoretic reformulation of probabilistic arguments"
+  ],
+  "prerequisites": [
+    "measurable functions",
+    "integration on measure spaces",
+    "almost everywhere convergence",
+    "variance in $L^2$"
+  ],
+  "callout_body": "$f_n$是测度空间$(X,\\mathcal{F},\\mu)$上的一列可测函数列，记$E_{\\mu}(f_n)=\\int_X f_n\\,d\\mu$，$V_{\\mu}(f_n)=\\int_X (f_n-E_{\\mu}f_n)^2\\,d\\mu$那么如果$$E_{\\mu}(f_n)\\to C$$并且$$\\sum_{n\\geq 1}V_{\\mu}(f_n)<\\infty$$那么$f_n\\to C$在$X$上几乎处处成立。"
+}

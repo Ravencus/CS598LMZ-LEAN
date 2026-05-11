@@ -1,0 +1,23 @@
+{
+  "id": "problem-20",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#12",
+  "english_title": "Problem 2.0",
+  "statement_en": "1. Analyze the absolute error $$R_N:=|S_N-e|$$\n2. Analyze the absolute error $$R_N':=|3-T_N-e|$$\n3. Compare the two absolute errors $R_N,R_N'$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "error analysis",
+    "asymptotic estimation",
+    "comparison of convergence rates"
+  ],
+  "prerequisites": [
+    "sequence limits",
+    "series remainders",
+    "asymptotic notation"
+  ],
+  "callout_body": "1. 分析绝对误差$$R_N:=|S_N-e|$$\n2. 分析绝对误差$$R_N':=|3-T_N-e|$$\n3. 对比两个绝对误差$R_N,R_N'$。"
+}

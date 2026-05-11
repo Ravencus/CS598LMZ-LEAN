@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Unknown constant `IsAlgebraic.exists_pos_forall_le_rat_sub_of_irrational`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_2f0609a144.lean",
+      "line": 21,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `IsAlgebraic.exists_pos_forall_le_rat_sub_of_irrational`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_2f0609a144.lean",
+      "line": 24,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Irrational.frequently_exists_int_sub_div_lt`\n"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": true,
+  "why_success": "lean_proof",
+  "attempts_used": 2,
+  "any_timeout": false,
+  "wall_seconds": 41.9,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 18.53,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "unsolved goals\nΩ : Type u_1\ninst✝ : MeasurableSpace Ω\nμ : MeasureTheory.Measure Ω\nf : Ω → ℝ\nE : Set Ω\nhf_meas : Measurable f\nhf_nonneg : ∀ (x : Ω), 0 ≤ f x\nhE_meas : MeasurableSet E\nhE_pos : 0 < μ E\nh"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 18.71,
+      "outcome": "lean_proof",
+      "overall_success": true,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

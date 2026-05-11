@@ -1,0 +1,18 @@
+{
+  "problem_id": "fourier-inversion-formula-in-the-present-convention",
+  "english_title": "Fourier Inversion Formula in the Present Convention",
+  "statement_en": "If $f\\in \\mathscr{F}$, then $$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x).$$",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem fourier_inversion_for_function_class\n    (𝓕 : Set (ℝ → ℂ))\n    (fourier : (ℝ → ℂ) → ℝ → ℂ)\n    (h𝓕 :\n      ∀ ⦃f : ℝ → ℂ⦄, f ∈ 𝓕 →\n        ∀ x : ℝ, ∫ ξ : ℝ, fourier f ξ * Complex.exp ((((2 * Real.pi * x * ξ : ℝ) : ℂ) * Complex.I)) = f x) :\n    ∀ ⦃f : ℝ → ℂ⦄, f ∈ 𝓕 →\n      ∀ x : ℝ, ∫ ξ : ℝ, fourier f ξ * Complex.exp ((((2 * Real.pi * x * ξ : ℝ) : ℂ) * Complex.I)) = f x := by\n  sorry"
+}

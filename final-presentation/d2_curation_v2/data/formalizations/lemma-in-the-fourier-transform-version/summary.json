@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-in-the-fourier-transform-version",
+  "english_title": "Lemma in the Fourier Transform Version",
+  "statement_en": "If $f \\in L^1(\\mathbb{R}^n)$, and its Fourier transform is defined by $$\\hat{f}(\\xi) = \\int_{\\mathbb{R}^n}f(x)e^{-2\\pi i x \\cdot \\xi } \\, dx,$$ then $$|\\hat{f}(\\xi)|\\to 0 \\text{ as } |\\xi| \\to \\infty.$$ Since the Fourier transform of an integrable function is continuous, this is essentially the statement that $$f \\in L^1(\\mathbb{R}^n) \\implies \\hat{f} \\in C_0(\\mathbb{R}^n).$$",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token '∂'; expected ':=', 'where' or '|'\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Real Complex Topology Filter\n\ntheorem integrable_fourier_transform_vanishes_at_infinity\n    {n : ℕ} (f : EuclideanSpace ℝ (Fin n) → ℂ) (hf : Integrable f) :\n    ∃ fhat : EuclideanSpace ℝ (Fin n) → ℂ,\n      (∀ ξ, fhat ξ = ∫ x : EuclideanSpace ℝ (Fin n), f x * Complex.exp (-(2 * Real.pi * Complex.I) * ((∑ i : Fin n, x i * ξ i) : ℂ)) ∂volume) ∧\n      Continuous fhat ∧\n      ∀ u : ℕ → EuclideanSpace ℝ (Fin n),\n        Tendsto (fun m => ‖u m‖) atTop atTop →\n        Tendsto (fun m => ‖fhat (u m)‖) atTop (nhds 0) := by\n  sorry"
+}

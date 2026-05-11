@@ -1,0 +1,24 @@
+{
+  "id": "almost-everywhere-convergence-property",
+  "type": "problem",
+  "source_note": "approximation to the identity",
+  "english_source_note": "Approximation to the Identity",
+  "callout_id": "approximation to the identity#7",
+  "english_title": "Almost Everywhere Convergence Property",
+  "statement_en": "If $K_{\\lambda}$ is a good approximate identity in $L^1(\\mathbb{R}^d)$ and $f\\in L^p(\\mathbb{R}^d)$ with $1\\leq p\\leq \\infty$, then\n$$f*K_{\\lambda}(x)\\to f(x) \\text{ for a.e. }x.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "maximal function estimates",
+    "Lebesgue differentiation principle",
+    "approximate identities"
+  ],
+  "prerequisites": [
+    "Lp spaces",
+    "almost everywhere convergence",
+    "Hardy-Littlewood maximal function",
+    "good approximate identities"
+  ],
+  "callout_body": "如果$K_{\\lambda}$是$L^1(\\mathbb{R}^d)$当中的好的逼近单位元,$f\\in L^p(\\mathbb{R}^d),1\\leq p\\leq \\infty$那么$$f*K_{\\lambda}(x)\\to f(x) \\text{ for a.e. }x$$"
+}

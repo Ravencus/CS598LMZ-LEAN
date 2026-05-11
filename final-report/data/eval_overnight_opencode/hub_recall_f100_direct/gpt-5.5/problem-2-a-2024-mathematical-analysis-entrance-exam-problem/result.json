@@ -1,0 +1,20 @@
+{
+  "problem_id": "problem-2-a-2024-mathematical-analysis-entrance-exam-problem",
+  "model": "gpt-5.5",
+  "wall_seconds": 15.93,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "identity-theorem-hub",
+    "piecewise-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-for-measure-zero-sets-hub"
+  ],
+  "tp": 0,
+  "fp": 2,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

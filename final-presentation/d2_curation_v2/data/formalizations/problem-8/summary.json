@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-8",
+  "english_title": "Problem",
+  "statement_en": "Evaluate the integral: $$\\int_{0}^{1} \\log(1-x) \\log(x) \\, dx$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem integral_log_one_sub_mul_log :\n    (∫ x in (0 : ℝ)..1, Real.log (1 - x) * Real.log x) = 2 - (Real.pi ^ (2 : ℕ)) / 6 := by\n  sorry"
+}

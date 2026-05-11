@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "lemma-131-flanders-1951",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces use the same algebraic decomposition: prove power/aeval commutation for A with BA vs AB, then apply minpoly.dvd to X * minpoly of the reversed product. The SMALL trace reaches nearly the same hpow/hscalar/hcomm structure as BIG calls 2-4 but keeps failing on Lean rewriting details such a",
+  "wall_seconds": 6.45
+}

@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-beijing-normal-university-2025-summer-camp",
+  "type": "problem",
+  "source_note": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+  "english_source_note": "Lp Decay Rates Ensuring Almost Everywhere Convergence to 0",
+  "callout_id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#1",
+  "english_title": "Problem 0: Beijing Normal University 2025 Summer Camp",
+  "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of Lebesgue measurable functions such that \\(\\|f_n\\|_{L^1(\\mathbb{R})} \\leq \\frac{1}{4^n}\\). Prove that \\(f_n(x) \\to 0\\) almost everywhere.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "monotone convergence theorem",
+    "absolute convergence almost everywhere",
+    "summability of \\(L^1\\) norms"
+  ],
+  "prerequisites": [
+    "Lebesgue integration",
+    "almost everywhere convergence",
+    "monotone convergence theorem"
+  ],
+  "callout_body": "Lebesgue可测函数列$||f_n||_{L^1(\\mathbb{R})}\\leq \\frac{1}{4^n}$证明$f_n(x)$几乎处处收敛到0。"
+}

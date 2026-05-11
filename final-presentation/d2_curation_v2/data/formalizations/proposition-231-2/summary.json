@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-231-2",
+  "english_title": "Proposition 2.3.1",
+  "statement_en": "Let $x_n$ be a bounded sequence with limit superior $U$ and limit inferior $L$. Let $f:I\\to \\mathbb{R}$ be continuous, where $I$ is an open interval containing the closed interval $[L,U]$. Then:\n1. If $f$ is nondecreasing on $I$, then $$\\limsup_{n\\to \\infty} f(x_n)=f(U),\\qquad \\liminf_{n\\to \\infty} f(x_n)=f(L).$$\n2. If $f$ is nonincreasing on $I$, then $$\\limsup_{n\\to \\infty} f(x_n)=f(L),\\qquad \\liminf_{n\\to \\infty} f(x_n)=f(U).$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Set\n\ndef tailSet (x : ℕ → ℝ) (n : ℕ) : Set ℝ :=\n  {y | ∃ m : ℕ, n ≤ m ∧ x m = y}\n\nnoncomputable def seqLimsup (x : ℕ → ℝ) : ℝ :=\n  sInf (Set.range fun n : ℕ => sSup (tailSet x n))\n\nnoncomputable def seqLiminf (x : ℕ → ℝ) : ℝ :=\n  sSup (Set.range fun n : ℕ => sInf (tailSet x n))\n\ntheorem continuous_monotone_seq_limsup_liminf\n    (x : ℕ → ℝ) (f : ℝ → ℝ) (I : Set ℝ) (L U : ℝ)\n    (hx_bdd_above : BddAbove (Set.range x))\n    (hx_bdd_below : BddBelow (Set.range x))\n    (hL : seqLiminf x = L)\n    (hU : seqLimsup x = U)\n    (hLU : L ≤ U)\n    (hI_open : IsOpen I)\n    (hI_convex : Convex ℝ I)\n    (hI_contains : Set.Icc L U ⊆ I)\n    (hf_cont : ContinuousOn f I) :\n    ((MonotoneOn f I) →\n      seqLimsup (fun n => f (x n)) = f U ∧\n      seqLiminf (fun n => f (x n)) = f L) ∧\n    ((AntitoneOn f I) →\n      seqLimsup (fun n => f (x n)) = f L ∧\n      seqLiminf (fun n => f (x n)) = f U) := by\n  sorry"
+}

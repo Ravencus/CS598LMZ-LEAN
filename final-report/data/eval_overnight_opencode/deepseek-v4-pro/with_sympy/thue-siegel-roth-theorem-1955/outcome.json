@@ -1,0 +1,31 @@
+{
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "model": "deepseek-v4-pro",
+  "condition": "with_sympy",
+  "outcome": "signature_mismatch",
+  "overall_success": false,
+  "wall_seconds": 125.55,
+  "wall_exceeded": false,
+  "final_proof_source": "last_compiled_tool_call",
+  "mcp_calls": 5,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 0,
+  "first_error": null,
+  "total_cost_usd": 0.034917,
+  "total_tokens": 146442,
+  "sympy_witnesses": [],
+  "errors_only": [],
+  "signature_ok": false,
+  "expected_theorem_name": "algebraic_irrational_has_irrationality_measure_two",
+  "audit": {
+    "reclassified_from": "lean_proof"
+  }
+}

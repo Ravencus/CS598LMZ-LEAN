@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Unknown constant `Complex.sq_abs`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_a162a6b7f0.lean",
+      "line": 8,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `Complex.sq_abs`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_a162a6b7f0.lean",
+      "line": 29,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  Real.abs_sin_le_abs\n has type\n  |Real.sin ?m.386| ≤ |?m.386|\nbut is expected to have type\n  |Real.sin (Real.pi * x)| ≤ |Real.pi| * |x|\n"
+    }
+  ]
+}

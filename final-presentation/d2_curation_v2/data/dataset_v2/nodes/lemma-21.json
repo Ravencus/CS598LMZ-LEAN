@@ -1,0 +1,22 @@
+{
+  "id": "lemma-21",
+  "type": "problem",
+  "source_note": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+  "english_source_note": "Adding a Vanishing-Cesaro Sequence to a Uniformly Distributed One",
+  "callout_id": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列#2",
+  "english_title": "Lemma 2.1",
+  "statement_en": "$$|e(x)-1|\\leq 2\\pi |x|,\\forall x \\in \\mathbb{R}$$",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "mean value theorem",
+    "elementary exponential inequality"
+  ],
+  "prerequisites": [
+    "complex exponential function",
+    "mean value theorem",
+    "absolute value inequalities"
+  ],
+  "callout_body": "$$|e(x)-1|\\leq 2\\pi |x|,\\forall x \\in \\mathbb{R}$$"
+}

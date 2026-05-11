@@ -1,0 +1,24 @@
+{
+  "id": "convolution-of-dual-lebesgue-exponents-is-uniformly-continuo",
+  "type": "problem",
+  "source_note": "函数卷积的基本性质",
+  "english_source_note": "Basic Properties of Convolution",
+  "callout_id": "函数卷积的基本性质#7",
+  "english_title": "Convolution of Dual Lebesgue Exponents Is Uniformly Continuous, Bounded, and Vanishes at Infinity",
+  "statement_en": "If $f\\in L^p$ and $g\\in L^{q}$ with $1/p+1/q=1$ and $p\\in[1,+\\infty]$, then $f*g$ is uniformly continuous and bounded, and moreover belongs to $C_0$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "Holder's inequality",
+    "approximation by compactly supported continuous functions",
+    "translation continuity in $L^p$"
+  ],
+  "prerequisites": [
+    "Lebesgue spaces",
+    "convolution",
+    "uniform continuity",
+    "space $C_0$"
+  ],
+  "callout_body": "$f\\in L^p,g\\in L^{q}$其中$1/p+1/q=1,p\\in[1,+\\infty]$那么$f*g$一致连续且有界，并且属于$C_0$。"
+}

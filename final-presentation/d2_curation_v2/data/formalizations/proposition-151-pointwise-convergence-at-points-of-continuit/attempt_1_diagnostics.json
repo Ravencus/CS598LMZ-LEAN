@@ -1,0 +1,43 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f262972b7c15.lean",
+      "line": 5,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'integral', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f262972b7c15.lean",
+      "line": 8,
+      "column": 35,
+      "severity": "warning",
+      "message": "unused variable `K`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f262972b7c15.lean",
+      "line": 19,
+      "column": 25,
+      "severity": "error",
+      "message": "unexpected token ':'; expected '[', '{', '|', '⦃' or term\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f262972b7c15.lean",
+      "line": 5,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'integral', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f262972b7c15.lean",
+      "line": 19,
+      "column": 25,
+      "severity": "error",
+      "message": "unexpected token ':'; expected '[', '{', '|', '⦃' or term\n"
+    }
+  ]
+}

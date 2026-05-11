@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-13",
+  "english_title": "Lemma 1.3",
+  "statement_en": "There exists a positive real number $M$ such that\n$$|A_{n+1}(x)-A_n(x)|\\leq \\frac{2M}{n+1}$$\nalmost everywhere.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem ae_bound_successive_differences\n    {α : Type*} [MeasurableSpace α] (μ : Measure α) (A : ℕ → α → ℝ) :\n    ∃ M : ℝ, 0 < M ∧ ∀ n : ℕ, ∀ᵐ x ∂μ, |A (n + 1) x - A n x| ≤ (2 * M) / ((n : ℝ) + 1) := by\n  sorry"
+}

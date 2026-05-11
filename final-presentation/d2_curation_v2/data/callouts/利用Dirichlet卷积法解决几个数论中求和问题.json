@@ -1,0 +1,17 @@
+{
+  "note_title": "利用Dirichlet卷积法解决几个数论中求和问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "利用Dirichlet卷积法解决几个数论中求和问题#1",
+      "type": "question",
+      "title": "三个类似的求和问题",
+      "body": "1. 令$\\varphi(k)$为欧拉函数(Euler's totient function)，表示不超过k且与k互素的自然数的个数。求:$$\\sum_{k= 1}^{n}\\varphi(k)\\left \\lfloor\\frac{n}{k}\\right\\rfloor$$\n2. \n$$\\sum_{k= 1}^{n}\\mu(k)\\left \\lfloor\\frac{n}{k}\\right\\rfloor$$其中$\\mu$是莫比乌斯(Mobius function)函数\n3. \n$$\\sum_{k=1}^{n} (-1)^{\\Omega(k)} \\left \\lfloor\\frac{n}{k}\\right\\rfloor$$其中$\\Omega(k)$表示k含有多少个不同的素因子。",
+      "position_char": 31,
+      "position_line": 6
+    }
+  ]
+}

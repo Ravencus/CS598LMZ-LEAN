@@ -1,0 +1,44 @@
+I’m checking the available Mathlib lemmas first so I can keep the proof minimal and avoid guessing theorem names.
+I’ve confirmed there isn’t an obvious local proof template in the workspace, so I’m probing Mathlib for a ready-made isolated-zero lemma before I build anything by hand.
+I found the key lemma: `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero`. I’m now checking the exact bridge from `DifferentiableOn` to `AnalyticOnNhd` so the proof can be one short application plus a neighborhood argument.
+I have a candidate proof now: convert differentiability to analyticity, use the isolated-zero dichotomy at `z0`, rule out the “eventually zero” branch by the identity theorem and the nonzero hypothesis, then extract a radius from the punctured neighborhood filter basis.
+The first attempt only hit a notation/import issue, not a mathematical one. I’m fixing the filter notation and keeping the proof structure the same.
+I’m switching away from the punctured-neighborhood notation that the parser is choking on and checking the explicit `Filter.Eventually` / `Filter.Frequently` forms instead.
+I’ve narrowed it down to a filter-conversion step. I’m making that explicit so the checker sees ordinary `nhdsWithin` membership instead of the punctured-neighborhood notation.
+I haven’t found a Mathlib theorem that states this exact conclusion directly, so I’m staying with the analytic dichotomy proof and checking whether there is a more exact isolated-zero lemma I can reuse.
+I’m trying the direct coercion from the right-branch filter statement into `nhdsWithin`; if that’s definitionally equal, it removes the only nontrivial `simpa` step.
+I’m trying the most direct conversion now: use the right-branch eventuality as the `nhdsWithin` membership without any rewrite hint.
+I’m removing the global `open Filter` now. I want the proof to rely on fully qualified filter names only, which is usually more robust in Lean.
+I’m switching from `rcases` to `resolve_left` on the dichotomy. That often elaborates more cleanly than matching the `Or` directly.
+I’ve got one checker call left, so I’m spending it on the only shaky part: making the identity-theorem contradiction fully explicit at the pointwise level.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  have hA : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hfa : AnalyticAt ℂ f z0 := hA z0 hz0U
+  have hnot : ¬ Filter.Eventually (fun z : ℂ => f z = 0) (𝓝 z0) := by
+    intro hfreq
+    have hzero : EqOn f 0 U :=
+      hA.eqOn_zero_of_preconnected_of_eventuallyEq_zero hU_connected hz0U hfreq
+    exact hf_nonzero (fun z hz => hzero hz)
+  have hne : Filter.Eventually (fun z : ℂ => f z ≠ 0) (nhdsWithin z0 {z : ℂ | z ≠ z0}) :=
+    (hfa.eventually_eq_zero_or_eventually_ne_zero).resolve_left hnot
+  rcases Metric.mem_nhdsWithin_iff.mp (by simpa using hne) with ⟨r, hr, hball⟩
+  refine ⟨r, hr, ?_⟩
+  intro z hzU hzlt hfz
+  by_contra hneq
+  have hzball : z ∈ Metric.ball z0 r := by
+    simpa [Metric.mem_ball, dist_eq_norm] using hzlt
+  exact hfz (hball ⟨hzball, hneq⟩)
+```

@@ -1,0 +1,23 @@
+{
+  "problem_id": "proposition-214",
+  "model": "gpt-5.5",
+  "wall_seconds": 15.13,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "basic-methods-in-analysis-i-hub",
+    "estimates-for-the-sum-of-prime-reciprocals-hub"
+  ],
+  "truth": [
+    "basic-methods-in-analysis-i-hub",
+    "cauchy-convergence-criterion-hub",
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+    "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub"
+  ],
+  "tp": 1,
+  "fp": 1,
+  "fn": 3,
+  "precision": 0.5,
+  "recall": 0.25,
+  "f1": 0.3333
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-4",
+  "english_title": "Proposition 4",
+  "statement_en": "$$\\frac{\\sum_{n=1}^{N}|\\cos(n^2)|}{N}\\to\\frac{2}{\\pi}=\\frac{1}{2\\pi}\\int_{0}^{2\\pi}|\\cos(x)|\\,dx.$$",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (2 / Real.pi)\n\nHint: The identifier `𝓝` is unknown, and Lean's `a"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem cosine_square_average_tends_to_two_div_pi :\n    Filter.Tendsto\n      (fun N : ℕ =>\n        Finset.sum (Finset.Icc 1 N) (fun n => |Real.cos ((n : ℝ) ^ (2 : ℕ))|) / (N : ℝ))\n      Filter.atTop\n      (𝓝 (2 / Real.pi)) ∧\n    2 / Real.pi =\n      (1 / (2 * Real.pi)) * (∫ x in (0 : ℝ)..(2 * Real.pi), |Real.cos x|) := by\n  sorry"
+}

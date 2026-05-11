@@ -1,0 +1,33 @@
+{
+  "note_title": "Leibniz收敛判断",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "Leibniz收敛判断#1",
+      "type": "note",
+      "title": "Leibniz判别",
+      "body": "级数$\\sum_n (-1)^n a_n$其中$a_n>0$是收敛的，如果$a_n \\downarrow 0$。",
+      "position_char": 33,
+      "position_line": 7
+    },
+    {
+      "id": "Leibniz收敛判断#2",
+      "type": "example",
+      "title": "例子1",
+      "body": "$$\\sum_{n\\geq 1} \\frac{(-1)^n}{n}$$收敛",
+      "position_char": 202,
+      "position_line": 16
+    },
+    {
+      "id": "Leibniz收敛判断#3",
+      "type": "example",
+      "title": "例子2",
+      "body": "$$a_n:=\\begin{cases}0&n\\text{为奇数} \\\\ \\frac{1}{n}&\\text{otherwise}\\end{cases}$$\n此时级数$$\\sum_{n\\geq 1}(-1)^n a_n$$是发散的。",
+      "position_char": 1673,
+      "position_line": 42
+    }
+  ]
+}

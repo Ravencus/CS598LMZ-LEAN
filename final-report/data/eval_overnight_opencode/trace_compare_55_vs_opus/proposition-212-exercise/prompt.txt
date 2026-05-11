@@ -1,0 +1,154 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: proposition-212-exercise
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=63.93s    mcp_calls=6
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+#check le_of_tendsto_of_tendsto_of_eventually_le
+#check ge_of_tendsto_of_tendsto_of_eventually_ge
+#check tendsto_nhds_unique
+
+ theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  sorry
+
+--- mcp call 2 (FAIL) ---
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto_of_eventually_le hy hx hxy
+
+--- mcp call 3 (FAIL) ---
+import Mathlib
+
+example {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, y n ≤ x n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    b ≤ a := by
+  exact le_of_tendsto_of_tendsto_of_eventually_le hy hx hxy
+
+--- mcp call 4 (FAIL) ---
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact? 
+
+--- mcp call 5 (FAIL) ---
+import Mathlib
+
+#check Metric.tendsto_nhds
+#check Metric.tendsto_atTop
+#check tendsto_order
+#check OrderClosedTopology
+#check isClosed_le'
+#check isClosed_le
+#check tendsto_nhds_iff
+#check eventually_gt_nhds
+#check eventually_lt_nhds
+
+--- mcp call 6 (PASS) ---
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto hy hx hxy
+
+--- final_text ---
+I’ll use the checker sparingly to identify the existing Mathlib theorem for preserving eventual inequalities under limits, then submit the completed proof.
+The direct theorem name I expected is not closing the goal, so I’m switching to a robust epsilon/nhds proof and will only probe the specific neighborhood lemmas needed.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto hy hx hxy
+```
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: lean_proof    wall=16.99s    mcp_calls=2
+--- mcp call 1 (PASS) ---
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto' hy hx (fun n => by sorry)
+
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto hy hx hxy
+
+--- final_text ---
+I'll work on this theorem about limits preserving inequalities. Let me start by trying a direct approach using Mathlib's lemma for this.
+Good, that approach works but needs eventually version. Let me use `le_of_tendsto_of_tendsto`:
+The proof compiles cleanly.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem lim_ge_of_eventually_ge
+    {x y : ℕ → ℝ} {a b : ℝ}
+    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)
+    (hx : Filter.Tendsto x Filter.atTop (nhds a))
+    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :
+    a ≥ b := by
+  exact le_of_tendsto_of_tendsto hy hx hxy
+```
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

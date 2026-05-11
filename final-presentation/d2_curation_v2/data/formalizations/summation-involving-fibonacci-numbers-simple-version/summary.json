@@ -1,0 +1,18 @@
+{
+  "problem_id": "summation-involving-fibonacci-numbers-simple-version",
+  "english_title": "Summation Involving Fibonacci Numbers, Simple Version",
+  "statement_en": "Let \\(F_n\\) be the \\(n\\)-th Fibonacci number. Evaluate\n$$\\\\sum_{n \\\\geq 1} \\\\frac{1}{F_nF_{n+2}}.$$",
+  "difficulty": "medium",
+  "domain": "discrete mathematics",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem fibonacci_series_evaluation :\n    HasSum (fun n : ℕ => 1 / ((Nat.fib (n + 1) : ℝ) * (Nat.fib (n + 3) : ℝ))) 1 := by\n  sorry"
+}

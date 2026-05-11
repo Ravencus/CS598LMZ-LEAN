@@ -1,0 +1,2 @@
+["identity-theorem-hub"]
+- identity-theorem-hub: The proof consists only of `apply?`, so the only visible mathematical move is applying an existing uniqueness theorem to conclude `f = 0` from the regularity and zero-set hypotheses, matching the identity-theorem strategy of determining an entire function from a sufficiently strong set of zeros.

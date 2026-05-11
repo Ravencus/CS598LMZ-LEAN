@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-33",
+  "english_title": "Example 3.3",
+  "statement_en": "Let $a_n$ be a positive real sequence that is increasing, and suppose that the series $\\sum_{n\\geq 1} \\frac{1}{a_n}$ converges. Prove that $\\sum_{n\\geq 1} \\frac{n}{a_1+\\cdots+a_n}$ also converges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem summable_nat_div_partialSums_of_summable_inv\n    (a : ℕ → ℝ)\n    (ha_pos : ∀ n : ℕ, 0 < a n)\n    (ha_mono : Monotone a)\n    (hconv : Summable (fun n : ℕ => (1 : ℝ) / a (n + 1))) :\n    Summable (fun n : ℕ => ((n + 1 : ℕ) : ℝ) / Finset.sum (Finset.range (n + 1)) (fun i : ℕ => a (i + 1))) := by\n  sorry"
+}

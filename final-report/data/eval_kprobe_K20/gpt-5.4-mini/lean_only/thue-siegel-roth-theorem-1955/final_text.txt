@@ -1,0 +1,7 @@
+I’m loading the Lean proving workflow and checking whether this theorem is already available or needs a fresh proof skeleton.
+I’m looking for any existing lemma or digest that already proves this exact result, so I can reuse the shortest valid route.
+I found a matching Mathlib theorem, so I’m testing the shortest proof: reduce directly to that result with `simpa`.
+The direct `simpa` proof didn’t compile cleanly, so I’m checking the exact theorem name/signature exposed by Mathlib.
+I’m searching the installed Mathlib sources directly; if the theorem exists, I can quote its exact namespace instead of guessing.
+I need the installed Mathlib source path to search for the exact theorem; I’m checking where the lake packages live.
+I’m falling back to the installed Lean toolchain tree to search the actual Mathlib source for any theorem with this name.

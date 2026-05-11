@@ -1,0 +1,15 @@
+{
+  "outcome": "instruction_violation",
+  "overall_success": false,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": true,
+  "instruction_violation": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 0,
+  "first_error": null,
+  "sympy_witnesses": [],
+  "errors_only": []
+}

@@ -1,0 +1,11 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "none",
+  "evidence": "Both successful proofs use `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero`; in the locally-zero branch they invoke an analytic identity theorem on the preconnected open set, and in the other branch they extract a punctured neighborhood where `f ≠ 0`.",
+  "wall_seconds": 9.98
+}

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-05-10T07:58:51",
+  "processed_problems": 20,
+  "n_cells_so_far": 148,
+  "per_model_success": {
+    "gpt-5.5": 4,
+    "gpt-5.4-mini": 6,
+    "claude-opus-4-7": 5,
+    "deepseek-v4-pro": 4,
+    "deepseek-v4-flash": 7
+  },
+  "active_models": [
+    "gpt-5.5",
+    "gpt-5.4-mini",
+    "claude-opus-4-7",
+    "deepseek-v4-flash"
+  ],
+  "current_workers": 1
+}

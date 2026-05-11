@@ -1,0 +1,18 @@
+{
+  "problem_id": "second-example-of-a-sequence-not-uniformly-distributed-modul",
+  "english_title": "Second Example of a Sequence Not Uniformly Distributed Modulo 1",
+  "statement_en": "Let $r_n$ be an enumeration of the rational numbers in $[-\\frac{1}{2},\\frac{1}{2})$, and define $$\\xi_n:=\\begin{cases}r_n&100\\mid n\\\\0&\\text{otherwise.}\\end{cases}$$ Then $(\\xi_n)$ is not uniformly distributed modulo $1$. For example, for a fixed interval such as $[\\frac{1}{5},\\frac{1}{4}]$, among the first $N$ terms at most $N/100$ lie in this interval, so the limiting proportion is at most $1/100$, not the interval length $1/20$. Nevertheless, the set of values of the sequence is dense in $[-\\",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sparseRationalSequence_not_uniformlyDistributedModOne_but_dense\n    (r : ℕ → ℚ)\n    (hr : Set.SurjOn r Set.univ (Set.Ico (-(1 : ℚ) / 2) ((1 : ℚ) / 2))) :\n    let ξ : ℕ → ℚ := fun n => if 100 ∣ n then r n else 0\n    (∀ N : ℕ,\n        ((Finset.Icc 1 N).filter\n            (fun n => (1 : ℚ) / 5 ≤ ξ n ∧ ξ n ≤ (1 : ℚ) / 4)).card ≤ N / 100)\n      ∧\n        ¬ Filter.Tendsto\n          (fun N : ℕ =>\n            (((Finset.Icc 1 N).filter\n                (fun n => (1 : ℚ) / 5 ≤ ξ n ∧ ξ n ≤ (1 : ℚ) / 4)).card : ℝ) / N)\n          Filter.atTop\n          (nhds ((1 : ℝ) / 20))\n      ∧\n        Set.Ico (-(1 : ℝ) / 2) ((1 : ℝ) / 2) ⊆\n          closure (Set.range fun n : ℕ => (ξ n : ℝ)) := by\n  sorry"
+}

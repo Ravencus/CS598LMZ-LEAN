@@ -1,0 +1,380 @@
+{
+  "note_title": "判断序列在区间内稠密的几个命题",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "判断序列在区间内稠密的几个命题#1",
+      "type": "note",
+      "title": "命题1(Fejer,1906)",
+      "body": "有界序列$x_n$上极限为$b$,下极限为$a$（$a,b$皆为实数$a\\neq b$）。如果$\\lim_{n\\to \\infty} (x_{n+1}-x_n) =0$，那么序列在区间$(a,b)$内稠密。",
+      "position_char": 70,
+      "position_line": 8,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#1",
+        "classification": "problem",
+        "english_title": "Proposition 1 (Fejer, 1906)",
+        "if_problem": {
+          "statement_en": "Let $(x_n)$ be a bounded sequence with $\\limsup_{n\\to\\infty} x_n = b$ and $\\liminf_{n\\to\\infty} x_n = a$, where $a,b\\in\\mathbb{R}$ and $a\\neq b$. If $\\lim_{n\\to\\infty}(x_{n+1}-x_n)=0$, then the sequence is dense in $(a,b)$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "limsup and liminf",
+            "small successive differences",
+            "density via interval subdivision"
+          ],
+          "prerequisites": [
+            "limit of a sequence",
+            "limsup and liminf",
+            "dense subsets of intervals"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#2",
+      "type": "example",
+      "title": "例子1.1.1",
+      "body": "枚举$(0,1)$当中的有理数: \n$$\\frac{1}{2},\\frac{1}{3},\\frac{2}{3},\\frac{3}{4},\\frac{2}{4},\\frac{1}{4},\\frac{1}{5}...$$\n\n1. 上极限为1，下极限为0.\n2. 分母为奇数的那一组逐渐增加，相邻两项增加$\\frac{1}{2k+1}$.分母为偶数的那一组逐渐减少，相邻两项减少$\\frac{1}{2k}$.分母为奇数和偶数的两项的差为$\\frac{1}{2k+1} - \\frac{1}{2k}$或者$\\frac{2k+1}{2k+2} -\\frac{2k}{2k+1}$.因此相邻两项差的极限为0.\n3. 因此有$(0,1)$当中的有理数在$(0,1)$当中稠密。",
+      "position_char": 218,
+      "position_line": 13,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#2",
+        "classification": "problem",
+        "english_title": "Example 1.1.1",
+        "if_problem": {
+          "statement_en": "Enumerate the rational numbers in $(0,1)$ as a sequence such as\n$$\\frac{1}{2},\\frac{1}{3},\\frac{2}{3},\\frac{3}{4},\\frac{2}{4},\\frac{1}{4},\\frac{1}{5},\\dots$$\nThis sequence satisfies $\\limsup x_n=1$, $\\liminf x_n=0$, and $x_{n+1}-x_n\\to 0$; therefore the rational numbers in $(0,1)$ form a dense sequence in $(0,1)$.",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "explicit construction",
+            "checking limsup and liminf",
+            "estimating consecutive differences"
+          ],
+          "prerequisites": [
+            "rational numbers in intervals",
+            "limsup and liminf",
+            "density"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#3",
+      "type": "example",
+      "title": "例子1.1.2:模仿打字机函数列",
+      "body": "1. 模仿打字机函数列，我们可以创造这样一个序列,其基本的想法是**序列从0出发，每次以$\\frac{1}{2^k}$的步长前进，遇到1就转而向0出发，遇到0就转而向1出发，每次转向步长减半**。\n2. $a_0 = 0,a_1 = 1$ （转向，步长减半）$a_2 = 1/2,a_3 = 0$.（转向，步长减半）$a_4 = 1/4,a_5 = 2/4,a_6=3/4,a_7 = 1$ \n3. 当$n \\in [2^k,2^{k+1}-1]$的时候$|a_{n} -a_{n+1}| = 1/2^k$.当发生“转向”的时候即$2^{k+1}-1$以及$2^{k+1}$这两个序列他们的差的绝对值为$1/2^{k+1}$ ,总之这表明$a_{n+1} - a_n$ 是收敛的。",
+      "position_char": 584,
+      "position_line": 21,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#3",
+        "classification": "problem",
+        "english_title": "Example 1.1.2: Imitating the Typewriter Sequence of Functions",
+        "if_problem": {
+          "statement_en": "Construct a sequence $(a_n)$ by starting from $0$ and moving each time with step size $1/2^k$; whenever the sequence reaches $1$ it turns back toward $0$, and whenever it reaches $0$ it turns back toward $1$, with the step size halved at each turn. Then for $n\\in[2^k,2^{k+1}-1]$ one has $|a_{n+1}-a_n|=1/2^k$, and at turning points the jump size is $1/2^{k+1}$. Hence $a_{n+1}-a_n\\to 0$.",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "recursive construction",
+            "dyadic step sizes",
+            "analysis of jump sizes"
+          ],
+          "prerequisites": [
+            "sequences",
+            "limits",
+            "piecewise recursive definitions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#4",
+      "type": "tip",
+      "title": "想法1.2.1",
+      "body": "证明的灵感来自于Dirichlet关于丢番图逼近当中的定理，参考[[Kronecker定理，Dirichlet定理及其应用]]当中的Dirichlet定理。这里我们的基本想法是对任意的正整数$m$，我们可以把区间$(a,b)$等分为长度为$\\frac{b-a}{m}$的m个不相交的子区间。我们只需要证明，每个子区间当中都有序列的元素，而因为m是任意选取的，那么稠密性就能得到证明。\n\n而因为我们的序列其上极限为$b$,下极限为$a$，因此序列必须无限次接近区间$[a,b]$的两端。因此当n足够大的时候，序列会以很小的步长来回在区间$[a,b]$中穿梭，这样就不可能存在某个长为$\\frac{b-a}{m}$的子区间使得其中没有任何的$x_n$的元素。",
+      "position_char": 975,
+      "position_line": 28,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#4",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.2.1",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Subdivide the Interval and Rule Out Gaps",
+          "summary_en": "Divide $(a,b)$ into $m$ equal subintervals and show that each subinterval contains some term of the sequence. The assumptions on $\\limsup$, $\\liminf$, and vanishing consecutive differences force the sequence to move back and forth through the interval with arbitrarily small steps, so a gap of fixed length cannot persist.",
+          "applicability": "Use this when a sequence oscillates between two accumulation extremes and the successive increments tend to zero, and the goal is to prove density in an interval."
+        }
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#5",
+      "type": "note",
+      "title": "推论1.3.1",
+      "body": "序列$S_N:=\\sum_{n\\leq N}a_n$有界并且发散，其中$a_n$是实数，并且$a_n\\to 0$。那么其部分和序列$S_N:=\\sum_{n\\leq N}a_n$会在区间$(\\liminf_{N\\to \\infty}S_N,\\limsup_{N\\to \\infty}S_N)$中稠密。",
+      "position_char": 2114,
+      "position_line": 42,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#5",
+        "classification": "problem",
+        "english_title": "Corollary 1.3.1",
+        "if_problem": {
+          "statement_en": "Let $S_N:=\\sum_{n\\leq N} a_n$ be a bounded divergent sequence of partial sums, where $a_n\\in\\mathbb{R}$ and $a_n\\to 0$. Then the partial sums $S_N$ are dense in the interval $(\\liminf_{N\\to\\infty} S_N,\\limsup_{N\\to\\infty} S_N)$.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "apply Proposition 1 to partial sums",
+            "difference of consecutive partial sums",
+            "limsup and liminf of partial sums"
+          ],
+          "prerequisites": [
+            "series and partial sums",
+            "bounded divergent sequences",
+            "density criterion from small differences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#6",
+      "type": "note",
+      "title": "命题2.1.1 :差分无穷小，单调无界的序列稠密",
+      "body": "如果单调不减的正项序列$x_n$满足$x_n\\to +\\infty,x_{n+1}-x_n\\to 0$那么该序列的小数部分$T_n:=\\{x_n\\}$在区间$[0,1)$当中稠密。",
+      "position_char": 2419,
+      "position_line": 51,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#6",
+        "classification": "problem",
+        "english_title": "Proposition 2.1.1: A Monotone Unbounded Sequence with Infinitesimal Differences Is Dense Modulo 1",
+        "if_problem": {
+          "statement_en": "If $(x_n)$ is a nondecreasing positive sequence such that $x_n\\to +\\infty$ and $x_{n+1}-x_n\\to 0$, then the fractional parts $T_n:=\\{x_n\\}$ are dense in $[0,1)$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "number theory",
+          "key_techniques": [
+            "fractional parts modulo 1",
+            "monotonicity",
+            "small difference argument"
+          ],
+          "prerequisites": [
+            "fractional part function",
+            "monotone sequences",
+            "density in $[0,1)$"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#7",
+      "type": "note",
+      "title": "命题2.1.2 (P.Veress 1917)",
+      "body": "如果$a_k>0,a_k\\to 0$,并且级数$\\sum_{k\\geq 1}a_k$发散，那么其部分和序列$S_n:=\\sum_{k\\leq n}a_k$的小数部分$Q_n:=\\{S_n\\}$在区间$[0,1)$中稠密。",
+      "position_char": 2557,
+      "position_line": 56,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#7",
+        "classification": "problem",
+        "english_title": "Proposition 2.1.2 (P. Veress, 1917)",
+        "if_problem": {
+          "statement_en": "If $a_k>0$, $a_k\\to 0$, and the series $\\sum_{k\\ge 1} a_k$ diverges, then for the partial sums $S_n:=\\sum_{k\\le n} a_k$, the fractional parts $Q_n:=\\{S_n\\}$ are dense in $[0,1)$.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "number theory",
+          "key_techniques": [
+            "apply density modulo 1 to partial sums",
+            "monotone divergence",
+            "vanishing increments"
+          ],
+          "prerequisites": [
+            "series and partial sums",
+            "fractional parts",
+            "divergent positive series"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#8",
+      "type": "note",
+      "title": "例子2.1.3:调和数模1形成的序列稠密",
+      "body": "令$H_n:=1+\\frac{1}{2}+\\cdots+\\frac{1}{n}$是调和数序列，$h_n:=\\{H_n\\}$是该序列的小数部分，那么序列$h_n$在$[0,1)$上稠密。因为$H_n$完全符合上述命题的要求。",
+      "position_char": 2952,
+      "position_line": 63,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#8",
+        "classification": "problem",
+        "english_title": "Example 2.1.3: The Harmonic Numbers Modulo 1 Form a Dense Sequence",
+        "if_problem": {
+          "statement_en": "Let $H_n:=1+\\frac{1}{2}+\\cdots+\\frac{1}{n}$ be the harmonic numbers, and let $h_n:=\\{H_n\\}$ be their fractional parts. Then the sequence $(h_n)$ is dense in $[0,1)$.",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "number theory",
+          "key_techniques": [
+            "apply the divergent positive series criterion",
+            "harmonic series divergence",
+            "fractional parts"
+          ],
+          "prerequisites": [
+            "harmonic series",
+            "fractional part function",
+            "density modulo 1"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#9",
+      "type": "note",
+      "title": "例子2.1.4 对数序列模1是稠密的",
+      "body": "对数序列模1形成的序列$\\{\\log(n)\\}$在$[0,1)$当中稠密，因为$\\log(n)\\to +\\infty$并且$\\log(n+1)-\\log(n)=\\log(1+\\frac{1}{n})\\to 0$。",
+      "position_char": 3100,
+      "position_line": 67,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#9",
+        "classification": "problem",
+        "english_title": "Example 2.1.4: The Logarithmic Sequence Modulo 1 Is Dense",
+        "if_problem": {
+          "statement_en": "The sequence of fractional parts $\\{\\log n\\}$ is dense in $[0,1)$, because $\\log n\\to +\\infty$ and $\\log(n+1)-\\log n=\\log(1+\\frac{1}{n})\\to 0$.",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "number theory",
+          "key_techniques": [
+            "apply the monotone small-difference criterion",
+            "logarithmic increment estimate",
+            "fractional parts"
+          ],
+          "prerequisites": [
+            "properties of logarithms",
+            "fractional part function",
+            "density modulo 1"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#10",
+      "type": "note",
+      "title": "引理2.1.5",
+      "body": "$$\\limsup_{n\\to \\infty} T_n =1,\\liminf_{n\\to \\infty} T_n =0$$",
+      "position_char": 3369,
+      "position_line": 75,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#10",
+        "classification": "problem",
+        "english_title": "Lemma 2.1.5",
+        "if_problem": {
+          "statement_en": "$$\\limsup_{n\\to \\infty} T_n =1,\\quad \\liminf_{n\\to \\infty} T_n =0.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "number theory",
+          "key_techniques": [
+            "fractional parts of unbounded monotone sequences",
+            "limsup and liminf",
+            "modulo 1 behavior"
+          ],
+          "prerequisites": [
+            "fractional part function",
+            "limsup and liminf",
+            "monotone sequences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#11",
+      "type": "note",
+      "title": "想法2.1.6",
+      "body": "想法和第一节是类似的，其关键在于只要我们假设区间上出现了关于序列$T_n$的“真空地带”，那么就必然会与$T_n,T_{n+1}$之间的距离趋于0的缓慢变化的条件矛盾。\n\n因为假定了序列的单调性，于是$$x_{n+1}-x_n=T_{n+1}-T_n+\\lfloor x_{n+1}\\rfloor-\\lfloor x_{n}\\rfloor\\geq T_{n+1}-T_n$$所以只要$T_n$某一步跨越太大，就一定会和$x_{n+1}-x_n\\to 0$矛盾。\n\n因此这里的关键在于找到这样一个在反证法的假设下会出现“大跨步”的项。",
+      "position_char": 3453,
+      "position_line": 79,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#11",
+        "classification": "strategy_template",
+        "english_title": "Idea 2.1.6",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Contradict a Gap by Forcing a Large Jump Modulo 1",
+          "summary_en": "Assume there is a genuine gap in the distribution of the fractional parts $T_n$, then show that some step must cross that gap. Such a crossing creates a large change in $T_{n+1}-T_n$, contradicting the fact that $x_{n+1}-x_n\\to 0$ together with monotonicity.",
+          "applicability": "Use this when proving density of fractional parts of a monotone unbounded sequence whose successive differences go to zero."
+        }
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#12",
+      "type": "note",
+      "title": "命题2.1.7(Fejer)",
+      "body": "设$f:[1,+\\infty)\\to \\mathbb{R}$可微，并且$f'(x)>0$并且$f'(x)$单调减少。此外$$\\lim_{x\\to \\infty}f'(x)=0,\\quad \\lim_{x\\to \\infty} xf'(x)=\\infty$$那么序列$f(n)$模1均匀分布。",
+      "position_char": 5338,
+      "position_line": 111,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#12",
+        "classification": "problem",
+        "english_title": "Proposition 2.1.7 (Fejer)",
+        "if_problem": {
+          "statement_en": "Let $f:[1,+\\infty)\\to\\mathbb{R}$ be differentiable, with $f'(x)>0$ and $f'(x)$ monotonically decreasing. Assume also that\n$$\\lim_{x\\to \\infty} f'(x)=0,\\quad \\lim_{x\\to \\infty} x f'(x)=\\infty.$$ \nThen the sequence $f(n)$ is uniformly distributed modulo $1$.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "uniform distribution theory",
+          "key_techniques": [
+            "uniform distribution modulo 1",
+            "derivative growth conditions",
+            "monotone derivative estimates"
+          ],
+          "prerequisites": [
+            "differentiable functions",
+            "fractional parts",
+            "uniform distribution modulo 1"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "判断序列在区间内稠密的几个命题#13",
+      "type": "quote",
+      "title": "命题2.1.1的变体",
+      "body": "函数$f:[1,+\\infty)$无界，其微分满足$f'(x)>0$并且$f'(x)$减少到0，那么序列$f(n)$模1稠密。",
+      "position_char": 5581,
+      "position_line": 116,
+      "classification_result": {
+        "id": "判断序列在区间内稠密的几个命题#13",
+        "classification": "problem",
+        "english_title": "Variant of Proposition 2.1.1",
+        "if_problem": {
+          "statement_en": "Let $f:[1,+\\infty)$ be unbounded, and suppose its derivative satisfies $f'(x)>0$ and decreases to $0$. Then the sequence $f(n)$ is dense modulo $1$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "number theory",
+          "key_techniques": [
+            "fractional parts of function values",
+            "mean value estimate",
+            "monotone derivative tending to zero"
+          ],
+          "prerequisites": [
+            "differentiable functions",
+            "mean value theorem",
+            "density modulo 1"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1 (Fejer, 1906)\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $(x_n)$ be a bounded sequence with $\\\\limsup_{n\\\\to\\\\infty} x_n = b$ and $\\\\liminf_{n\\\\to\\\\infty} x_n = a$, where $a,b\\\\in\\\\mathbb{R}$ and $a\\\\neq b$. If $\\\\lim_{n\\\\to\\\\infty}(x_{n+1}-x_n)=0$, then the sequence is dense in $(a,b)$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"limsup and liminf\",\n        \"small successive differences\",\n        \"density via interval subdivision\"\n      ],\n      \"prerequisites\": [\n        \"limit of a sequence\",\n        \"limsup and liminf\",\n        \"dense subsets of intervals\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Enumerate the rational numbers in $(0,1)$ as a sequence such as\\n$$\\\\frac{1}{2},\\\\frac{1}{3},\\\\frac{2}{3},\\\\frac{3}{4},\\\\frac{2}{4},\\\\frac{1}{4},\\\\frac{1}{5},\\\\dots$$\\nThis sequence satisfies $\\\\limsup x_n=1$, $\\\\liminf x_n=0$, and $x_{n+1}-x_n\\\\to 0$; therefore the rational numbers in $(0,1)$ form a dense sequence in $(0,1)$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"explicit construction\",\n        \"checking limsup and liminf\",\n        \"estimating consecutive differences\"\n      ],\n      \"prerequisites\": [\n        \"rational numbers in intervals\",\n        \"limsup and liminf\",\n        \"density\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.1.2: Imitating the Typewriter Sequence of Functions\",\n    \"if_problem\": {\n      \"statement_en\": \"Construct a sequence $(a_n)$ by starting from $0$ and moving each time with step size $1/2^k$; whenever the sequence reaches $1$ it turns back toward $0$, and whenever it reaches $0$ it turns back toward $1$, with the step size halved at each turn. Then for $n\\\\in[2^k,2^{k+1}-1]$ one has $|a_{n+1}-a_n|=1/2^k$, and at turning points the jump size is $1/2^{k+1}$. Hence $a_{n+1}-a_n\\\\to 0$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"recursive construction\",\n        \"dyadic step sizes\",\n        \"analysis of jump sizes\"\n      ],\n      \"prerequisites\": [\n        \"sequences\",\n        \"limits\",\n        \"piecewise recursive definitions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#4\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.2.1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Subdivide the Interval and Rule Out Gaps\",\n      \"summary_en\": \"Divide $(a,b)$ into $m$ equal subintervals and show that each subinterval contains some term of the sequence. The assumptions on $\\\\limsup$, $\\\\liminf$, and vanishing consecutive differences force the sequence to move back and forth through the interval with arbitrarily small steps, so a gap of fixed length cannot persist.\",\n      \"applicability\": \"Use this when a sequence oscillates between two accumulation extremes and the successive increments tend to zero, and the goal is to prove density in an interval.\"\n    }\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Corollary 1.3.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $S_N:=\\\\sum_{n\\\\leq N} a_n$ be a bounded divergent sequence of partial sums, where $a_n\\\\in\\\\mathbb{R}$ and $a_n\\\\to 0$. Then the partial sums $S_N$ are dense in the interval $(\\\\liminf_{N\\\\to\\\\infty} S_N,\\\\limsup_{N\\\\to\\\\infty} S_N)$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"apply Proposition 1 to partial sums\",\n        \"difference of consecutive partial sums\",\n        \"limsup and liminf of partial sums\"\n      ],\n      \"prerequisites\": [\n        \"series and partial sums\",\n        \"bounded divergent sequences\",\n        \"density criterion from small differences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1.1: A Monotone Unbounded Sequence with Infinitesimal Differences Is Dense Modulo 1\",\n    \"if_problem\": {\n      \"statement_en\": \"If $(x_n)$ is a nondecreasing positive sequence such that $x_n\\\\to +\\\\infty$ and $x_{n+1}-x_n\\\\to 0$, then the fractional parts $T_n:=\\\\{x_n\\\\}$ are dense in $[0,1)$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"fractional parts modulo 1\",\n        \"monotonicity\",\n        \"small difference argument\"\n      ],\n      \"prerequisites\": [\n        \"fractional part function\",\n        \"monotone sequences\",\n        \"density in $[0,1)$\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1.2 (P. Veress, 1917)\",\n    \"if_problem\": {\n      \"statement_en\": \"If $a_k>0$, $a_k\\\\to 0$, and the series $\\\\sum_{k\\\\ge 1} a_k$ diverges, then for the partial sums $S_n:=\\\\sum_{k\\\\le n} a_k$, the fractional parts $Q_n:=\\\\{S_n\\\\}$ are dense in $[0,1)$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"apply density modulo 1 to partial sums\",\n        \"monotone divergence\",\n        \"vanishing increments\"\n      ],\n      \"prerequisites\": [\n        \"series and partial sums\",\n        \"fractional parts\",\n        \"divergent positive series\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2.1.3: The Harmonic Numbers Modulo 1 Form a Dense Sequence\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $H_n:=1+\\\\frac{1}{2}+\\\\cdots+\\\\frac{1}{n}$ be the harmonic numbers, and let $h_n:=\\\\{H_n\\\\}$ be their fractional parts. Then the sequence $(h_n)$ is dense in $[0,1)$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"apply the divergent positive series criterion\",\n        \"harmonic series divergence\",\n        \"fractional parts\"\n      ],\n      \"prerequisites\": [\n        \"harmonic series\",\n        \"fractional part function\",\n        \"density modulo 1\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#9\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2.1.4: The Logarithmic Sequence Modulo 1 Is Dense\",\n    \"if_problem\": {\n      \"statement_en\": \"The sequence of fractional parts $\\\\{\\\\log n\\\\}$ is dense in $[0,1)$, because $\\\\log n\\\\to +\\\\infty$ and $\\\\log(n+1)-\\\\log n=\\\\log(1+\\\\frac{1}{n})\\\\to 0$.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"apply the monotone small-difference criterion\",\n        \"logarithmic increment estimate\",\n        \"fractional parts\"\n      ],\n      \"prerequisites\": [\n        \"properties of logarithms\",\n        \"fractional part function\",\n        \"density modulo 1\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#10\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 2.1.5\",\n    \"if_problem\": {\n      \"statement_en\": \"$$\\\\limsup_{n\\\\to \\\\infty} T_n =1,\\\\quad \\\\liminf_{n\\\\to \\\\infty} T_n =0.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"fractional parts of unbounded monotone sequences\",\n        \"limsup and liminf\",\n        \"modulo 1 behavior\"\n      ],\n      \"prerequisites\": [\n        \"fractional part function\",\n        \"limsup and liminf\",\n        \"monotone sequences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#11\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 2.1.6\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Contradict a Gap by Forcing a Large Jump Modulo 1\",\n      \"summary_en\": \"Assume there is a genuine gap in the distribution of the fractional parts $T_n$, then show that some step must cross that gap. Such a crossing creates a large change in $T_{n+1}-T_n$, contradicting the fact that $x_{n+1}-x_n\\\\to 0$ together with monotonicity.\",\n      \"applicability\": \"Use this when proving density of fractional parts of a monotone unbounded sequence whose successive differences go to zero.\"\n    }\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#12\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1.7 (Fejer)\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:[1,+\\\\infty)\\\\to\\\\mathbb{R}$ be differentiable, with $f'(x)>0$ and $f'(x)$ monotonically decreasing. Assume also that\\n$$\\\\lim_{x\\\\to \\\\infty} f'(x)=0,\\\\quad \\\\lim_{x\\\\to \\\\infty} x f'(x)=\\\\infty.$$ \\nThen the sequence $f(n)$ is uniformly distributed modulo $1$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"uniform distribution theory\",\n      \"key_techniques\": [\n        \"uniform distribution modulo 1\",\n        \"derivative growth conditions\",\n        \"monotone derivative estimates\"\n      ],\n      \"prerequisites\": [\n        \"differentiable functions\",\n        \"fractional parts\",\n        \"uniform distribution modulo 1\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"判断序列在区间内稠密的几个命题#13\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Variant of Proposition 2.1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:[1,+\\\\infty)$ be unbounded, and suppose its derivative satisfies $f'(x)>0$ and decreases to $0$. Then the sequence $f(n)$ is dense modulo $1$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"fractional parts of function values\",\n        \"mean value estimate\",\n        \"monotone derivative tending to zero\"\n      ],\n      \"prerequisites\": [\n        \"differentiable functions\",\n        \"mean value theorem\",\n        \"density modulo 1\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

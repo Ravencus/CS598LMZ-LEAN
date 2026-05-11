@@ -1,6 +1,12 @@
 CLAUDE.md
 .claude/
 
+# Secrets and API keys
+.opus_api
+.deepseek_api
+.openai_api
+*.api_key
+
 # Python
 __pycache__/
 *.pyc
@@ -10,23 +16,70 @@ venv/
 
 # Docker
 .docker/
+docker/.lake/
 
-# Runtime generated data (keep hand-crafted traces)
+# Lean / Mathlib build artifacts
+**/.lake/
+*.olean
+*.ilean
+
+# Lean toolchain tarballs (host only, container builds them)
+*.tar.zst
+
+# Scratch / scratchpads (kept locally, never committed)
+/Scratch/
+docker/Scratch/*
+!docker/Scratch/Formalization1.lean
+!docker/Scratch/Formalization2.lean
+!docker/Scratch/Formalization3.lean
+!docker/Scratch/Formalization4.lean
+workspace/docker/
+workspace/workspace/
+workspace/final_proof.lean
+workspace/opencode.docker.json
+
+# OpenCode runtime state
+workspace/.opencode/node_modules/
+workspace/.opencode/bun.lock
+workspace/.opencode/package-lock.json
+workspace/.opencode/db/
+workspace/.opencode/snapshots/
+
+# Runtime generated traces and digests (hand-crafted ones are kept)
 workspace/traces/*
 !workspace/traces/complex_subset_sum_proving_trace.md
 !workspace/traces/complex_subset_sum_reasoning.md
 workspace/digests/
-workspace/.opencode/db/
 
 # Personal notes
 PROJECT_NOTES.md
+HANDOFF.md
 
-# Math notes
+# Math notes (source vault is private and large)
 math-notes-obsidian-pikachu345.zip
 math-notes/
 
 # Proposal
 CS598LMZ_project_proposal.pdf
+
+# Submitted report PDF and LaTeX sources (deliverable, submitted separately)
+final-report/report-artifacts/
+final-report/final-report-group-12.zip
+final-report/LAST_PLAN.md
+final-report/WRITING_PLAN.md
+final-report/PHASE_2_DESIGN.md
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+texput.log
 
 # OS
 .DS_Store
@@ -35,3 +88,9 @@ Thumbs.db
 # Devcontainer
 .devcontainer/
 .devcontainer.bak.*
+
+# External tool — separate git repo, not part of this project
+slides-cli/
+
+# Auxiliary tool docs (separate evaluation, not part of this repo)
+Mathematica MCP/

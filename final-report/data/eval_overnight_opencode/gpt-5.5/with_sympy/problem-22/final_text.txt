@@ -1,0 +1,6 @@
+The stated theorem appears mathematically false: two decreasing divergent nonnegative series can be arranged in alternating long blocks so that each sequence diverges on its own high blocks while the pointwise minimum is summable. I’ll still check whether the Lean statement has any exploitable assumption issue, but a sound proof should not exist for this signature.
+No valid Lean proof exists for this statement as written: the theorem is false.
+
+Counterexample sketch: take rapidly decreasing values `H k = 2^(-2^k)` and long blocks of length about `1 / (k * H k)`. On block `k`, set one sequence to `H k` and the other to `H (k+1)`, alternating which sequence is high. Both sequences are nonnegative and nonincreasing. Each diverges because it receives block contributions about `1/k` on alternating blocks, but the pointwise minimum has block contribution about `(H (k+1) / H k) / k`, which is summable.
+
+So the requested Lean theorem cannot be completed without `sorry` or an inconsistent axiom.

@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hl\n has type\n  Tendsto harmonicSeq atTop (nhds l)\nbut is expected to have type\n  Tendsto (fun n => ∑ x ∈ Finset.Icc 1 n, (↑x)⁻¹) atTop (nhds l)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 16,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  this\n has type\n  Tendsto (fun n => ∑ x ∈ Finset.range n, (↑x + 1)⁻¹) atTop atTop\nbut is expected to have type\n  Tendsto (fun n => ∑ x ∈ Finset.Icc 1 n, (↑x)⁻¹) atTop atTop"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 18,
+      "column": 45,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h1\nhas type\n  Tendsto (fun n => harmonicSeq n) atTop (nhds l)\nof sort `Prop` but is expected to have type\n  ℝ\nof sort `Type` in the application\n  not_tendsto_nhds_of_tendsto_atTop h2 h1\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hl\n has type\n  Tendsto harmonicSeq atTop (nhds l)\nbut is expected to have type\n  Tendsto (fun n => ∑ x ∈ Finset.Icc 1 n, (↑x)⁻¹) atTop (nhds l)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 16,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  this\n has type\n  Tendsto (fun n => ∑ x ∈ Finset.range n, (↑x + 1)⁻¹) atTop atTop\nbut is expected to have type\n  Tendsto (fun n => ∑ x ∈ Finset.Icc 1 n, (↑x)⁻¹) atTop atTop"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 18,
+      "column": 45,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h1\nhas type\n  Tendsto (fun n => harmonicSeq n) atTop (nhds l)\nof sort `Prop` but is expected to have type\n  ℝ\nof sort `Type` in the application\n  not_tendsto_nhds_of_tendsto_atTop h2 h1\n"
+    }
+  ]
+}

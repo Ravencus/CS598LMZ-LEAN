@@ -1,0 +1,22 @@
+{
+  "id": "example-111",
+  "type": "problem",
+  "source_note": "和的积分估计",
+  "english_source_note": "Integral Estimates for Sums",
+  "callout_id": "和的积分估计#2",
+  "english_title": "Example 1.1.1",
+  "statement_en": "For $f(t)=\\log t$, one has $$\\sum_{1\\leq n\\leq x}\\log(n)=x\\log(x)-x+O(\\log(x+2)).$$",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "integral estimate for sums",
+    "integration of logarithms"
+  ],
+  "prerequisites": [
+    "logarithmic integrals",
+    "Big-O notation",
+    "monotone functions"
+  ],
+  "callout_body": "$f(t)=\\log(t)$，那么:$$\\sum_{1\\leq n\\le x}\\log(n)=x\\log(x)-x+O(\\log(x+2))$$"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "proposition-126-exercise-125",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#8",
+  "english_title": "Proposition 1.2.6 (Exercise 1.2.5)",
+  "statement_en": "If a sequence has a limit, then every subsequence also has a limit, and that limit is equal to the limit of the original sequence.",
+  "problem_type": "exercise",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "epsilon definition of limit",
+    "subsequence argument"
+  ],
+  "prerequisites": [
+    "sequence limits",
+    "definition of subsequence"
+  ],
+  "callout_body": "序列如果极限存在的话，那么其子列的极限也存在并且和原来的序列的极限一致。"
+}

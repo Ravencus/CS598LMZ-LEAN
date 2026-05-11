@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-3-generalization-of-proposition-1-to-lca-groups",
+  "english_title": "Proposition 3: Generalization of Proposition 1 to LCA Groups",
+  "statement_en": "Let $G$ be an LCA group and let $f \\in L^1(G)$. For any $a\\in G$, define $T_a(f):=f(a^{-1}x)$. Then for every $\\varepsilon >0$ there exists a neighborhood $U_{\\varepsilon}$ of the identity element $1_G$ such that for all $h \\in U_{\\varepsilon}$, $$\\|T_{ah}(f)-T_a(f)\\|_{L^1(G)}<\\varepsilon.$$",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "invalid binder annotation, type is not a class instance\n  ?m.2\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "invalid binder annotation, type is not a class instance\n  ?m.2\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "invalid binder annotation, type is not a class instance\n  ?m.2\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Topology\n\ntheorem l1_translation_continuity_on_lca_group\n    {G : Type*}\n    [CommGroup G]\n    [TopologicalSpace G]\n    [TopologicalGroup G]\n    [LocallyCompactSpace G]\n    [T2Space G]\n    [MeasurableSpace G]\n    (μ : Measure G)\n    (f : G → ℂ)\n    (hf : Integrable f μ)\n    (a : G) :\n    ∀ ε > (0 : ℝ), ∃ U : Set G, U ∈ 𝓝 (1 : G) ∧\n      ∀ h ∈ U, ∫ x, ‖f ((a * h)⁻¹ * x) - f (a⁻¹ * x)‖ ∂μ < ε := by\n  sorry"
+}

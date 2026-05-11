@@ -1,0 +1,23 @@
+{
+  "id": "perron-formula",
+  "type": "problem",
+  "source_note": "实分析的复办法",
+  "english_source_note": "Complex Methods in Real Analysis",
+  "callout_id": "实分析的复办法#9",
+  "english_title": "Perron Formula",
+  "statement_en": "Let $f:\\mathbb{N}\\to \\mathbb{C}$ be a function of subpolynomial growth, meaning that $f(n)\\lesssim_{\\varepsilon,f} n^{\\varepsilon}$ for every natural number $n$ and every $\\varepsilon>0$. Let $F(s)$ denote the Dirichlet series on the half-plane $\\{\\operatorname{Re}(s)>1\\}$ given by $$F(s):=\\sum_{n\\geq 1} \\frac{f(n)}{n^s}.$$ Then for every positive non-integer real number $x$ and every $\\sigma>1$, one has $$\\sum_{n\\leq x}f(n)=\\frac{1}{2\\pi i }\\lim_{T\\to \\infty}\\int_{\\sigma-iT}^{\\sigma+iT}F(s)\\frac{x^s}{s}\\,ds.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "Dirichlet series",
+    "complex contour integration",
+    "inverse Mellin transform"
+  ],
+  "prerequisites": [
+    "complex analysis",
+    "Dirichlet series",
+    "vertical line integrals"
+  ],
+  "callout_body": "$f:\\mathbb{N}\\to \\mathbb{C}$是一个亚多项式增长的函数，也就是说满足$f(n)\\lesssim_{\\varepsilon,f} n^{\\varepsilon}$对任意自然数$n$以及$\\varepsilon>0$。令$F(s)$表示在右半平面$\\{\\text{Re}(s)>1\\}$上的Dirichlet级数$$F(s):=\\sum_{n\\geq 1} \\frac{f(s)}{n^s}$$那么对于任意非整数的正实数$x$，以及$\\sigma>1$成立公式$$\\sum_{n\\leq x}f(n)=\\frac{1}{2\\pi i }\\lim_{T\\to \\infty}\\int_{\\sigma-iT}^{\\sigma+iT}F(s)\\frac{x^s}{s}\\,ds$$"
+}

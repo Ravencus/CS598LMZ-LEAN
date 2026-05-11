@@ -1,0 +1,22 @@
+{
+  "id": "counterexample-1-2",
+  "type": "problem",
+  "source_note": "函数积分的单调性",
+  "english_source_note": "Monotonicity of Function Integrals",
+  "callout_id": "函数积分的单调性#3",
+  "english_title": "Counterexample 1",
+  "statement_en": "Consider functions such that $f>g$ holds on a null set $E$, and both functions are $0$ on $E^c$.",
+  "problem_type": "counterexample",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "construct functions differing only on a null set",
+    "use invariance of the integral under almost everywhere equality"
+  ],
+  "prerequisites": [
+    "null sets",
+    "almost everywhere equality",
+    "Lebesgue integral"
+  ],
+  "callout_body": "函数$f>g$在某个零测度的集合$E$上成立，两个函数在$E^c$上均为0."
+}

@@ -1,0 +1,33 @@
+I’m checking whether Mathlib already contains a theorem that matches this exact statement before attempting any proof.
+I found a matching proof shape in a scratch file and I’m verifying whether it compiles as-is.
+The target likely reduces to an existing Mathlib theorem; I’m testing the minimal `simpa` proof now.
+`simpa` didn’t close the goal, so I’m checking the exact theorem name and namespace that Mathlib provides.
+I don’t yet know whether the theorem is already in Mathlib or only in a local scratch attempt, so I’m searching the installed package sources.
+I’m checking the installed Lake packages directly in case the theorem is defined there but not mirrored in the workspace search.
+I found the Mathlib file that develops irrationality measures, so I’m reading the available theorem names there.
+I’ve confirmed Mathlib does not expose a ready-made theorem with this name, so I’m searching for any nearby algebraic-approximation result that could imply it.
+I want to confirm whether the checker is reporting success normally or just failing all files silently.
+I couldn’t complete this in the current Mathlib: the needed Roth-style theorem (`hx_alg.hasIrrationalityMeasure_two`) is not available in the imported sources, so the proof can’t be closed from `import Mathlib` alone.
+
+Closest candidate:
+```lean
+import Mathlib
+
+open Filter
+
+def HasIrrationalityMeasure (x μ : ℝ) : Prop :=
+  (∀ ε : ℝ, 0 < ε →
+    ∃ C : ℝ, 0 < C ∧
+      ∀ p : ℤ, ∀ q : ℕ, q ≠ 0 →
+        C / Real.rpow (q : ℝ) (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|) ∧
+  (∀ ε : ℝ, 0 < ε →
+    ∃ᶠ q : ℕ in Filter.atTop,
+      ∃ p : ℤ,
+        |x - (p : ℝ) / (q : ℝ)| < 1 / Real.rpow (q : ℝ) (μ - ε))
+
+theorem algebraic_irrational_has_irrationality_measure_two
+    {x : ℝ} (hx_alg : IsAlgebraic ℚ x) (hx_irr : Irrational x) :
+    HasIrrationalityMeasure x 2 := by
+  -- Mathlib does not currently provide the required Roth theorem here.
+  sorry
+```

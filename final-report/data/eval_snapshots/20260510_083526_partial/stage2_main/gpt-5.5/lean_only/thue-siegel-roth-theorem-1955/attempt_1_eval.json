@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Invalid field `exists_pos_forall_le_rat_sub_of_irrational`: The environment does not contain `Exists.exists_pos_forall_le_rat_sub_of_irrational`, so it is not possible to project the field `exists_pos",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_2f0609a144.lean",
+      "line": 20,
+      "column": 23,
+      "severity": "error",
+      "message": "Invalid field `exists_pos_forall_le_rat_sub_of_irrational`: The environment does not contain `Exists.exists_pos_forall_le_rat_sub_of_irrational`, so it is not possible to project the field `exists_pos_forall_le_rat_sub_of_irrational` from an expression\n  hx_alg\nof type\n  ∃ p, p ≠ 0 ∧ (Polynomial.aeval x) p = 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_2f0609a144.lean",
+      "line": 22,
+      "column": 23,
+      "severity": "error",
+      "message": "Invalid field `frequently_exists_int_sub_div_lt`: The environment does not contain `Function.frequently_exists_int_sub_div_lt`, so it is not possible to project the field `frequently_exists_int_sub_div_lt` from an expression\n  hx_irr\nof type `x ∈ Set.range Rat.cast → False`\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-3-tsinghua-university-leadership-program-april-2025",
+  "english_title": "Problem 3: Tsinghua University Leadership Program (April 2025)",
+  "statement_en": "Find the limit $$\\lim_{n\\to \\infty}\\left[\\tan\\left(\\frac{\\pi}{4}+\\frac{1}{n}\\right)\\right]^n.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem tan_pi_quarter_add_one_div_n_pow_n_tendsto :\n    Filter.Tendsto\n      (fun n : ℕ => (Real.tan (Real.pi / 4 + 1 / (n : ℝ))) ^ n)\n      Filter.atTop\n      (nhds (Real.exp 2)) := by\n  sorry"
+}

@@ -1,0 +1,4 @@
+["piecewise-estimates-hub", "term-by-term-estimates-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- piecewise-estimates-hub: The proof naturally splits the finite range of `k` according to whether the fractional part crosses the next integer.
+- term-by-term-estimates-hub: Each summand is evaluated exactly using floor bounds/decomposition, reducing the sum to simple per-term contributions.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The “different expressions of the same object” strategy fits the key move of rewriting `⌊nx⌋` via Euclidean division and matching it to the counted floor-sum expression.

@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-13-twin-prime-conjecture",
+  "english_title": "Example 1.3: Twin Prime Conjecture",
+  "statement_en": "Let $p_n$ be the $n$th prime. The twin prime conjecture is equivalent to $$\\liminf_{n\\to \\infty}(p_{n+1}-p_n)=2.$$",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef TwinPrimeConjecture : Prop :=\n  Set.Infinite {p : ℕ | Nat.Prime p ∧ Nat.Prime (p + 2)}\n\ndef LiminfEqTwo (a : ℕ → ℕ) : Prop :=\n  (∀ N : ℕ, ∃ n ≥ N, a n = 2) ∧ ∃ N : ℕ, ∀ n ≥ N, 2 ≤ a n\n\ntheorem twinPrimeConjecture_iff_liminf_primeGaps_eq_two\n    (p : ℕ → ℕ)\n    (hp_prime : ∀ n : ℕ, Nat.Prime (p n))\n    (hp_strictMono : StrictMono p)\n    (hp_enumerates : ∀ q : ℕ, Nat.Prime q ↔ ∃ n : ℕ, p n = q) :\n    TwinPrimeConjecture ↔ LiminfEqTwo (fun n : ℕ => p (n + 1) - p n) := by\n  sorry"
+}

@@ -1,0 +1,141 @@
+{
+  "note_title": "Borel-Cantelli lemma证明某种版本下的强大数定律",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#1",
+      "type": "note",
+      "title": "弱大数定律",
+      "body": "假设$X_1,...,X_n,...$是独立同分布的随机变量，并且$E|X_1|<\\infty$那么令$S_n = X_1+...+X_n,\\mu=E(X_1)$,那么有$$\\frac{S_n}{n}\\xrightarrow{P}{\\mu}$$",
+      "position_char": 318,
+      "position_line": 11,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#1",
+        "classification": "problem",
+        "english_title": "Weak Law of Large Numbers",
+        "if_problem": {
+          "statement_en": "Assume $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed random variables, and $E|X_1|<\\infty$. Let $S_n=X_1+\\cdots+X_n$ and $\\mu=E(X_1)$. Then $$\\frac{S_n}{n}\\xrightarrow{P}{\\mu}.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "law of large numbers",
+            "truncation or expectation control",
+            "convergence in probability"
+          ],
+          "prerequisites": [
+            "independent and identically distributed random variables",
+            "expectation and integrability",
+            "convergence in probability"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#2",
+      "type": "note",
+      "title": "一种版本的强大数定律",
+      "body": "假设$X_1,...,X_n,...$是独立同分布的随机变量，并且$E|X_1|^4<\\infty$那么令$S_n = X_1+...+X_n,\\mu=E(X_1)$,那么有$$\\frac{S_n}{n}\\xrightarrow{\\text{ a.e. }}{\\mu}$$",
+      "position_char": 816,
+      "position_line": 19,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#2",
+        "classification": "problem",
+        "english_title": "A Version of the Strong Law of Large Numbers",
+        "if_problem": {
+          "statement_en": "Assume $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed random variables, and $E|X_1|^4<\\infty$. Let $S_n=X_1+\\cdots+X_n$ and $\\mu=E(X_1)$. Then $$\\frac{S_n}{n}\\xrightarrow{\\text{ a.e. }}{\\mu}.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "Borel-Cantelli lemma",
+            "fourth moment estimate",
+            "upgrade from convergence in probability to almost sure convergence"
+          ],
+          "prerequisites": [
+            "independent and identically distributed random variables",
+            "moments of random variables",
+            "almost sure convergence",
+            "Borel-Cantelli lemma"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#3",
+      "type": "tip",
+      "title": "基本想法",
+      "body": "欲得到$A_n$收敛到$A$的结果，先得到一个弱一些的收敛(比如依测度收敛)，然后想办法把这个结果加强(比如加强到一致，$L^p$或者几乎处处)。",
+      "position_char": 1001,
+      "position_line": 25,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#3",
+        "classification": "strategy_template",
+        "english_title": "Basic Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "First prove weaker convergence, then strengthen it",
+          "summary_en": "To prove that $A_n$ converges to $A$, first establish a weaker mode of convergence, such as convergence in measure or in probability. Then use additional arguments to upgrade it to a stronger mode, such as uniform convergence, $L^p$ convergence, or almost everywhere convergence.",
+          "applicability": "Applies when the target conclusion is a strong form of convergence but a weaker form is easier to obtain first."
+        }
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#4",
+      "type": "tip",
+      "title": "用Borel-Cantelli引理升级依测度收敛的想法",
+      "body": "想要把依测度收敛的结果升级到几乎处处收敛，在某些情况下是可行的。比如说这种测度的弱的估计足够好，好到可以满足Borel-Cantelli引理，那么便可以把依测度收敛升级为几乎处处收敛。",
+      "position_char": 1928,
+      "position_line": 38,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#4",
+        "classification": "strategy_template",
+        "english_title": "Using the Borel-Cantelli Lemma to Upgrade Convergence in Measure",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Upgrade weak convergence via the Borel-Cantelli lemma",
+          "summary_en": "To strengthen convergence in measure or convergence in probability to almost sure convergence, derive probability estimates for the deviation events. If these estimates are summable, then the Borel-Cantelli lemma yields almost sure convergence.",
+          "applicability": "Applies when one has quantitative tail bounds on deviation events that are strong enough to make the relevant series converge."
+        }
+      }
+    },
+    {
+      "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#5",
+      "type": "note",
+      "title": "期望存在性对强大数定律的存在性是必要的",
+      "body": "如果$X_1,...,X_n,...$是独立同分布的随机变量，并且$E|X_1|=\\infty$，假设$S_n = X_1+...+X_n$,那么$$P\\left(\\left\\{\\omega:\\lim_{n\\to \\infty}\\frac{S_n}{n} \\text{ exists}\\in(-\\infty,+\\infty)\\right\\}\n\\right)=0$$",
+      "position_char": 4150,
+      "position_line": 66,
+      "classification_result": {
+        "id": "Borel-Cantelli lemma证明某种版本下的强大数定律#5",
+        "classification": "problem",
+        "english_title": "Existence of the Expectation Is Necessary for the Strong Law of Large Numbers",
+        "if_problem": {
+          "statement_en": "If $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed random variables and $E|X_1|=\\infty$, and if $S_n=X_1+\\cdots+X_n$, then $$P\\left(\\left\\{\\omega:\\lim_{n\\to \\infty}\\frac{S_n}{n} \\text{ exists}\\in(-\\infty,+\\infty)\\right\\}\\right)=0.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "probability theory",
+          "key_techniques": [
+            "necessity argument for the strong law",
+            "tail event analysis",
+            "Borel-Cantelli type reasoning"
+          ],
+          "prerequisites": [
+            "independent and identically distributed random variables",
+            "expectation and non-integrability",
+            "almost sure convergence",
+            "strong law of large numbers"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Borel-Cantelli lemma证明某种版本下的强大数定律#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Weak Law of Large Numbers\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume $X_1,\\\\ldots,X_n,\\\\ldots$ are independent and identically distributed random variables, and $E|X_1|<\\\\infty$. Let $S_n=X_1+\\\\cdots+X_n$ and $\\\\mu=E(X_1)$. Then $$\\\\frac{S_n}{n}\\\\xrightarrow{P}{\\\\mu}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"law of large numbers\",\n        \"truncation or expectation control\",\n        \"convergence in probability\"\n      ],\n      \"prerequisites\": [\n        \"independent and identically distributed random variables\",\n        \"expectation and integrability\",\n        \"convergence in probability\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma证明某种版本下的强大数定律#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"A Version of the Strong Law of Large Numbers\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume $X_1,\\\\ldots,X_n,\\\\ldots$ are independent and identically distributed random variables, and $E|X_1|^4<\\\\infty$. Let $S_n=X_1+\\\\cdots+X_n$ and $\\\\mu=E(X_1)$. Then $$\\\\frac{S_n}{n}\\\\xrightarrow{\\\\text{ a.e. }}{\\\\mu}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"Borel-Cantelli lemma\",\n        \"fourth moment estimate\",\n        \"upgrade from convergence in probability to almost sure convergence\"\n      ],\n      \"prerequisites\": [\n        \"independent and identically distributed random variables\",\n        \"moments of random variables\",\n        \"almost sure convergence\",\n        \"Borel-Cantelli lemma\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma证明某种版本下的强大数定律#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Basic Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"First prove weaker convergence, then strengthen it\",\n      \"summary_en\": \"To prove that $A_n$ converges to $A$, first establish a weaker mode of convergence, such as convergence in measure or in probability. Then use additional arguments to upgrade it to a stronger mode, such as uniform convergence, $L^p$ convergence, or almost everywhere convergence.\",\n      \"applicability\": \"Applies when the target conclusion is a strong form of convergence but a weaker form is easier to obtain first.\"\n    }\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma证明某种版本下的强大数定律#4\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Using the Borel-Cantelli Lemma to Upgrade Convergence in Measure\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Upgrade weak convergence via the Borel-Cantelli lemma\",\n      \"summary_en\": \"To strengthen convergence in measure or convergence in probability to almost sure convergence, derive probability estimates for the deviation events. If these estimates are summable, then the Borel-Cantelli lemma yields almost sure convergence.\",\n      \"applicability\": \"Applies when one has quantitative tail bounds on deviation events that are strong enough to make the relevant series converge.\"\n    }\n  },\n  {\n    \"id\": \"Borel-Cantelli lemma证明某种版本下的强大数定律#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Existence of the Expectation Is Necessary for the Strong Law of Large Numbers\",\n    \"if_problem\": {\n      \"statement_en\": \"If $X_1,\\\\ldots,X_n,\\\\ldots$ are independent and identically distributed random variables and $E|X_1|=\\\\infty$, and if $S_n=X_1+\\\\cdots+X_n$, then $$P\\\\left(\\\\left\\\\{\\\\omega:\\\\lim_{n\\\\to \\\\infty}\\\\frac{S_n}{n} \\\\text{ exists}\\\\in(-\\\\infty,+\\\\infty)\\\\right\\\\}\\\\right)=0.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"necessity argument for the strong law\",\n        \"tail event analysis\",\n        \"Borel-Cantelli type reasoning\"\n      ],\n      \"prerequisites\": [\n        \"independent and identically distributed random variables\",\n        \"expectation and non-integrability\",\n        \"almost sure convergence\",\n        \"strong law of large numbers\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

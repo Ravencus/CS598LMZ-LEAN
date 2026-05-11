@@ -1,0 +1,3 @@
+["interchanging-sums-and-integrals-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- interchanging-sums-and-integrals-hub: The proof expands both traces into finite double sums and swaps/reindexes the summation order.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The key identity comes from writing the same scalar sum in two equivalent forms, using commutativity of multiplication in `R`.

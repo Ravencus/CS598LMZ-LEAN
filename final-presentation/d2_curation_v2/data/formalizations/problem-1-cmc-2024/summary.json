@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-1-cmc-2024",
+  "english_title": "Problem 1, CMC 2024",
+  "statement_en": "Prove that $$\\sum_{n\\geq 1}\\sum_{k\\geq 1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n^2+k^2}$$ converges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token ':='; expected ')', ',' or ':'\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem doubleSeries_converges :\n    Summable (fun p : ℕ × ℕ =>\n      ((-1 : ℝ) ^ Nat.sqrt (p.1 + 1)) /\n        (((p.1 + 1 : ℝ) ^ (2 : ℕ)) + ((p.2 + 1 : ℝ) ^ (2 : ℕ)))) := by\n  sorry"
+}

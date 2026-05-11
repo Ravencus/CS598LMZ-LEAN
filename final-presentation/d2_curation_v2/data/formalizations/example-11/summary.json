@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-11",
+  "english_title": "Example 1.1",
+  "statement_en": "Find a closed-form expression for $\\sum_{k=1}^{n} k2^k$.",
+  "difficulty": "easy",
+  "domain": "discrete mathematics",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sum_k_two_pow_k_closed_form (n : ℕ) :\n    Finset.sum (Finset.Icc 1 n) (fun k => (k : ℤ) * (2 : ℤ) ^ k) =\n      ((n : ℤ) - 1) * (2 : ℤ) ^ (n + 1) + 2 := by\n  sorry"
+}

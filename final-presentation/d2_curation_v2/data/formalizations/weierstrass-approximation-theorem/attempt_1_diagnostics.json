@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_dd5afd0d7e5c.lean",
+      "line": 5,
+      "column": 65,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Semiring ↑(Set.Icc 0 1)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_dd5afd0d7e5c.lean",
+      "line": 5,
+      "column": 65,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  p\nhas type\n  Polynomial ℝ\nbut is expected to have type\n  Polynomial ↑(Set.Icc 0 1)\nin the application\n  Polynomial.eval x p\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_dd5afd0d7e5c.lean",
+      "line": 5,
+      "column": 65,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  Semiring ↑(Set.Icc 0 1)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_dd5afd0d7e5c.lean",
+      "line": 5,
+      "column": 65,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  p\nhas type\n  Polynomial ℝ\nbut is expected to have type\n  Polynomial ↑(Set.Icc 0 1)\nin the application\n  Polynomial.eval x p\n"
+    }
+  ]
+}

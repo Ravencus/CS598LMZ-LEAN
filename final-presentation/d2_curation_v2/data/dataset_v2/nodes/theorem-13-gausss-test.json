@@ -1,0 +1,23 @@
+{
+  "id": "theorem-13-gausss-test",
+  "type": "problem",
+  "source_note": "Kummer判别：对多种比值判别变形的统一",
+  "english_source_note": "Kummer's Test: A Unified View of Ratio-Type Tests",
+  "callout_id": "Kummer判别:对多种比值判别变形的统一#4",
+  "english_title": "Theorem 1.3: Gauss's Test",
+  "statement_en": "For a positive-term series $\\sum_n a_n$, if\n$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+O\\left(\\frac{1}{n^r}\\right), \\quad r>1,$$ then the series diverges.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Gauss's test",
+    "ratio asymptotics",
+    "borderline divergence criterion"
+  ],
+  "prerequisites": [
+    "infinite series",
+    "big-O notation",
+    "positive series convergence tests"
+  ],
+  "callout_body": "对于正项级数$\\sum_n a_n$，如果$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+O\\left(\\frac{1}{n^r}\\right),r>1$$那么级数发散。"
+}

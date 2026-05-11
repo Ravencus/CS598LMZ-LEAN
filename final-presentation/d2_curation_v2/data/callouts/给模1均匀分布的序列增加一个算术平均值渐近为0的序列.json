@@ -1,0 +1,26 @@
+{
+  "note_title": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列#1",
+      "type": "note",
+      "title": "命题1",
+      "body": "如果$x_n$是模1均匀分布的序列，并且$y_n$满足$\\sum_{n\\leq N} |y_n|=o(N)$那么$x_n+y_n$也是模1均匀分布的序列。",
+      "position_char": 30,
+      "position_line": 5
+    },
+    {
+      "id": "给模1均匀分布的序列增加一个算术平均值渐近为0的序列#2",
+      "type": "note",
+      "title": "引理2.1",
+      "body": "$$|e(x)-1|\\leq 2\\pi |x|,\\forall x \\in \\mathbb{R}$$",
+      "position_char": 793,
+      "position_line": 18
+    }
+  ]
+}

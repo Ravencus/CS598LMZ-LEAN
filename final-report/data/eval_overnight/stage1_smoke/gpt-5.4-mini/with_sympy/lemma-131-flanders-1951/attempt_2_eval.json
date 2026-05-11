@@ -1,0 +1,58 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 6,
+  "first_error": "Invalid alternative name `X`: Expected `monomial`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 16,
+      "column": 4,
+      "severity": "error",
+      "message": "Invalid alternative name `X`: Expected `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 26,
+      "column": 4,
+      "severity": "error",
+      "message": "Invalid alternative name `mul`: Expected `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 14,
+      "column": 10,
+      "severity": "error",
+      "message": "unsolved goals\ncase C\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B C D : Matrix n n ℂ\nc : ℂ\n⊢ D * (algebraMap ℂ (Matrix n n ℂ)) c = (algebraMap ℂ (Matrix n n ℂ)) c * D"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "Alternative `monomial` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 54,
+      "column": 22,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h0\nhas type\n  (aeval (A * B)) (X * minpoly ℂ (B * A)) = 0\nof sort `Prop` but is expected to have type\n  Type ?u.4063.90489\nof sort `Type (?u.4063.90489 + 1)` in the application\n  @minpoly.dvd h0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 65,
+      "column": 22,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h0\nhas type\n  (aeval (B * A)) (X * minpoly ℂ (A * B)) = 0\nof sort `Prop` but is expected to have type\n  Type ?u.4063.115749\nof sort `Type (?u.4063.115749 + 1)` in the application\n  @minpoly.dvd h0"
+    }
+  ]
+}

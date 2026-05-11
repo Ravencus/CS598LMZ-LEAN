@@ -1,0 +1,91 @@
+Let  
+\[
+S:=\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k),
+\qquad 0=x_0<x_1<\cdots<x_n<1.
+\]
+
+We estimate \(S\).
+
+For each \(k\),
+\[
+(x_k-x_{k-1})(1-x_k)
+= (x_k-x_{k-1})\bigl((1-x_k)\bigr).
+\]
+Since \(x_{k-1}<x_k\), we have
+\[
+1-x_k<1-x_{k-1}.
+\]
+Hence
+\[
+(x_k-x_{k-1})(1-x_k)
+<
+(x_k-x_{k-1})(1-x_{k-1}).
+\]
+Therefore
+\[
+2(x_k-x_{k-1})(1-x_k)
+<
+(x_k-x_{k-1})\bigl((1-x_k)+(1-x_{k-1})\bigr).
+\]
+Now note that
+\[
+(1-x_k)+(1-x_{k-1})=2-(x_k+x_{k-1}),
+\]
+so
+\[
+(x_k-x_{k-1})\bigl((1-x_k)+(1-x_{k-1})\bigr)
+=(x_k-x_{k-1})(2-x_k-x_{k-1}).
+\]
+But
+\[
+(x_k-x_{k-1})(2-x_k-x_{k-1})
+=(x_k-x_{k-1})\bigl((1-x_{k-1})+(1-x_k)\bigr)
+=(1-x_{k-1})^2-(1-x_k)^2.
+\]
+Thus
+\[
+2(x_k-x_{k-1})(1-x_k)
+<
+(1-x_{k-1})^2-(1-x_k)^2.
+\]
+
+Summing from \(k=1\) to \(n\),
+\[
+2S
+<
+\sum_{k=1}^n \Bigl((1-x_{k-1})^2-(1-x_k)^2\Bigr).
+\]
+The sum telescopes:
+\[
+\sum_{k=1}^n \Bigl((1-x_{k-1})^2-(1-x_k)^2\Bigr)
+=(1-x_0)^2-(1-x_n)^2.
+\]
+Since \(x_0=0\),
+\[
+2S<1-(1-x_n)^2.
+\]
+Hence
+\[
+S<\frac{1-(1-x_n)^2}{2}.
+\]
+
+Because \(0<x_n<1\), we have \((1-x_n)^2>0\), so
+\[
+\frac{1-(1-x_n)^2}{2}<\frac12.
+\]
+Therefore
+\[
+\boxed{\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k)<\frac12.}
+\]
+
+A slightly sharper bound is
+\[
+\boxed{\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k)<\frac{1-(1-x_n)^2}{2}
+= x_n-\frac{x_n^2}{2}.}
+\]
+
+**Final answer:**  
+\[
+\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k)
+<\frac{1-(1-x_n)^2}{2}<\frac12.
+\]

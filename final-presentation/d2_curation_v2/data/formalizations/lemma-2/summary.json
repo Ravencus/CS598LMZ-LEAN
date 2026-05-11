@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-2",
+  "english_title": "Lemma 2",
+  "statement_en": "$$\\sum_{k\\geq 1} V(Y_k)/k^2\\leq 4E(|X_1|)<\\infty.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem variance_series_bound\n    {α : Type*}\n    (Y : ℕ → α)\n    (V : α → ℝ≥0∞)\n    (X : ℕ → ℝ)\n    (E : ℝ → ℝ≥0∞) :\n    (∑' k : ℕ, V (Y (k + 1)) / (((k + 1 : ℕ) : ℝ≥0∞) ^ (2 : ℕ))) ≤\n      (4 : ℝ≥0∞) * E (|X 1|) ∧\n      (4 : ℝ≥0∞) * E (|X 1|) < ⊤ := by\n  sorry"
+}

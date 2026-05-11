@@ -1,0 +1,37 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "linarith failed to find a contradiction\ncase neg.h\nα β : ℕ → ℝ\nhα_nonneg : ∀ (n : ℕ), 0 ≤ α n\nhβ_nonneg : ∀ (n : ℕ), 0 ≤ β n\nhα_antitone : Antitone α\nhβ_antitone : Antitone β\nhα_div : ¬Summable fun n ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_13b500ea33.lean",
+      "line": 21,
+      "column": 6,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase neg.h\nα β : ℕ → ℝ\nhα_nonneg : ∀ (n : ℕ), 0 ≤ α n\nhβ_nonneg : ∀ (n : ℕ), 0 ≤ β n\nhα_antitone : Antitone α\nhβ_antitone : Antitone β\nhα_div : ¬Summable fun n => α (n + 1)\nhβ_div : ¬Summable fun n => β (n + 1)\nhmin : Summable fun n => min (α (n + 1)) (β (n + 1))\nn : ℕ\nh : ¬α (n + 1) ≤ β (n + 1)\nh' : β (n + 1) ≤ α (n + 1)\na✝ : β (n + 1) + β (n + 1) < α (n + 1)\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_13b500ea33.lean",
+      "line": 30,
+      "column": 6,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase neg.h\nα β : ℕ → ℝ\nhα_nonneg : ∀ (n : ℕ), 0 ≤ α n\nhβ_nonneg : ∀ (n : ℕ), 0 ≤ β n\nhα_antitone : Antitone α\nhβ_antitone : Antitone β\nhα_div : ¬Summable fun n => α (n + 1)\nhβ_div : ¬Summable fun n => β (n + 1)\nhmin : Summable fun n => min (α (n + 1)) (β (n + 1))\nhαβ : ∀ (n : ℕ), α (n + 1) ≤ β (n + 1) + min (α (n + 1)) (β (n + 1))\nn : ℕ\nh : ¬β (n + 1) ≤ α (n + 1)\nh' : α (n + 1) ≤ β (n + 1)\na✝ : α (n + 1) + α (n + 1) < β (n + 1)\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_13b500ea33.lean",
+      "line": 34,
+      "column": 17,
+      "severity": "error",
+      "message": "Unknown identifier `summable_of_nonneg_of_le`\n"
+    }
+  ]
+}

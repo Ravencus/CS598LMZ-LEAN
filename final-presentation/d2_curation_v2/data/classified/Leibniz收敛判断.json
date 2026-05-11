@@ -1,0 +1,99 @@
+{
+  "note_title": "Leibniz收敛判断",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "Leibniz收敛判断#1",
+      "type": "note",
+      "title": "Leibniz判别",
+      "body": "级数$\\sum_n (-1)^n a_n$其中$a_n>0$是收敛的，如果$a_n \\downarrow 0$。",
+      "position_char": 33,
+      "position_line": 7,
+      "classification_result": {
+        "id": "Leibniz收敛判断#1",
+        "classification": "problem",
+        "english_title": "Leibniz Test",
+        "if_problem": {
+          "statement_en": "The series $\\sum_n (-1)^n a_n$ with $a_n>0$ is convergent if $a_n \\downarrow 0$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "alternating series test",
+            "monotone convergence of the terms"
+          ],
+          "prerequisites": [
+            "sequences and limits",
+            "infinite series",
+            "monotone decreasing sequences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Leibniz收敛判断#2",
+      "type": "example",
+      "title": "例子1",
+      "body": "$$\\sum_{n\\geq 1} \\frac{(-1)^n}{n}$$收敛",
+      "position_char": 202,
+      "position_line": 16,
+      "classification_result": {
+        "id": "Leibniz收敛判断#2",
+        "classification": "problem",
+        "english_title": "Example 1",
+        "if_problem": {
+          "statement_en": "The series $$\\sum_{n\\geq 1} \\frac{(-1)^n}{n}$$ converges.",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "alternating series test",
+            "harmonic-type term analysis"
+          ],
+          "prerequisites": [
+            "sequences and limits",
+            "infinite series",
+            "Leibniz test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Leibniz收敛判断#3",
+      "type": "example",
+      "title": "例子2",
+      "body": "$$a_n:=\\begin{cases}0&n\\text{为奇数} \\\\ \\frac{1}{n}&\\text{otherwise}\\end{cases}$$\n此时级数$$\\sum_{n\\geq 1}(-1)^n a_n$$是发散的。",
+      "position_char": 1673,
+      "position_line": 42,
+      "classification_result": {
+        "id": "Leibniz收敛判断#3",
+        "classification": "problem",
+        "english_title": "Example 2",
+        "if_problem": {
+          "statement_en": "Let $$a_n:=\\begin{cases}0&n\\text{ is odd} \\\\ \\frac{1}{n}&\\text{otherwise}\\end{cases}.$$ Then the series $$\\sum_{n\\geq 1}(-1)^n a_n$$ diverges.",
+          "problem_type": "counterexample",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "testing necessity of hypotheses",
+            "comparison with a subseries",
+            "failure of monotonicity"
+          ],
+          "prerequisites": [
+            "sequences and limits",
+            "infinite series",
+            "alternating series test"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Leibniz收敛判断#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Leibniz Test\",\n    \"if_problem\": {\n      \"statement_en\": \"The series $\\\\sum_n (-1)^n a_n$ with $a_n>0$ is convergent if $a_n \\\\downarrow 0$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"alternating series test\",\n        \"monotone convergence of the terms\"\n      ],\n      \"prerequisites\": [\n        \"sequences and limits\",\n        \"infinite series\",\n        \"monotone decreasing sequences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Leibniz收敛判断#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1\",\n    \"if_problem\": {\n      \"statement_en\": \"The series $$\\\\sum_{n\\\\geq 1} \\\\frac{(-1)^n}{n}$$ converges.\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"alternating series test\",\n        \"harmonic-type term analysis\"\n      ],\n      \"prerequisites\": [\n        \"sequences and limits\",\n        \"infinite series\",\n        \"Leibniz test\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Leibniz收敛判断#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $$a_n:=\\\\begin{cases}0&n\\\\text{ is odd} \\\\\\\\ \\\\frac{1}{n}&\\\\text{otherwise}\\\\end{cases}.$$ Then the series $$\\\\sum_{n\\\\geq 1}(-1)^n a_n$$ diverges.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"testing necessity of hypotheses\",\n        \"comparison with a subseries\",\n        \"failure of monotonicity\"\n      ],\n      \"prerequisites\": [\n        \"sequences and limits\",\n        \"infinite series\",\n        \"alternating series test\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

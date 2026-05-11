@@ -1,0 +1,22 @@
+{
+  "id": "proposition-2",
+  "type": "problem",
+  "source_note": "模1均匀分布与Weyl判别",
+  "english_source_note": "Uniform Distribution mod 1 and Weyl's Criterion",
+  "callout_id": "模1均匀分布与Weyl判别#14",
+  "english_title": "Proposition 2",
+  "statement_en": "Let $u_n=n\\gamma$, where $\\gamma$ is any positive irrational number. Then the sequence is uniformly distributed modulo $1$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "key_techniques": [
+    "Weyl criterion",
+    "geometric series cancellation for irrational rotations"
+  ],
+  "prerequisites": [
+    "irrational numbers",
+    "uniform distribution modulo 1",
+    "complex exponentials"
+  ],
+  "callout_body": "$u_n=n\\gamma$,其中$\\gamma$是任意的一个正无理数，该序列是模1均匀分布的。"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "counterexample-23",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#6",
+  "english_title": "Counterexample 2.3",
+  "statement_en": "A concrete construction is given by\n$$F_k:=\\begin{cases}2^{-2^k}&k\\text{ is odd} \\\\ 2^{-2^{k+1}} &k\\text{ is even}\\end{cases},\\qquad G_k:=\\begin{cases}2^{-2^{k+1}}&k\\text{ is odd} \\\\ 2^{-2^{k}} &k\\text{ is even}\\end{cases},\\qquad L_k=2^{2^{k}}.$$ Then the block sequences $\\alpha_n,\\beta_n$ built from these data satisfy that both corresponding series diverge, while\n$$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}=\\sum_{k\\geq 1}L_k\\min\\{F_k,G_k\\}=\\sum_{k\\geq 1} \\frac{1}{2^{2^k}}<+\\infty.$$",
+  "problem_type": "counterexample",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "explicit block construction",
+    "alternating dominant blocks"
+  ],
+  "prerequisites": [
+    "series of nonnegative terms",
+    "monotone block sequences",
+    "counterexample construction"
+  ],
+  "callout_body": "关于以上分析，一个解决方案是令$$F_k:=\\begin{cases}2^{-2^k}&k是奇数 \\\\ 2^{-2^{k+1}} &k是偶数\\end{cases},G_k:=\\begin{cases}2^{-2^{k+1}}&k是奇数 \\\\ 2^{-2^{k}} &k是偶数\\end{cases},L_k=2^{2^{k}}$$如此一来:\n1. 当$k$是奇数的时候$L_kF_k=1$当$k$是偶数的时候$L_kF_k=\\frac{1}{2^{2^k}}$于是这足以保证$\\alpha_n$对应的级数的发散性。\n2. 当$k$是偶数的时候$L_kG_k=\\frac{1}{2^{2^k}}$，当$k$是奇数的时候$L_kG_k=1$这足以保证$\\beta_n$对应的级数的发散性。\n\n此时\n$$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}=\\sum_{k\\geq 1}L_k\\min\\{F_k,G_k\\}=\\sum_{k\\geq 1} \\frac{1}{2^{2^k}}<+\\infty$$"
+}

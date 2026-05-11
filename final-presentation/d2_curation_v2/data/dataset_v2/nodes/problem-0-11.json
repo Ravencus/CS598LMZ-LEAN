@@ -1,0 +1,22 @@
+{
+  "id": "problem-0-11",
+  "type": "problem",
+  "source_note": "自然数的r次幂的部分和估计",
+  "english_source_note": "Partial Sum Estimates for Powers of Integers",
+  "callout_id": "自然数的r次幂的部分和估计#1",
+  "english_title": "Problem 0",
+  "statement_en": "Compute the limit:\n$$\\lim_{N \\to \\infty} N\\sum_{n>N} \\frac{1}{n^2}.$$",
+  "problem_type": "exercise",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "comparison with improper integrals",
+    "asymptotics of tail sums"
+  ],
+  "prerequisites": [
+    "convergence of p-series",
+    "basic limit computation",
+    "integral test"
+  ],
+  "callout_body": "求极限:\n$$\\lim_{N \\to \\infty} N\\sum_{n>N} \\frac{1}{n^2}$$"
+}

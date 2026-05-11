@@ -1,0 +1,3 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "an-epsilon-of-room-hub"]
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: The proof relies on `Real.exists_int_int_abs_mul_sub_le α hn_pos`, a Dirichlet-type approximation lemma producing integers `j, k` with `|(k : ℝ) * α - j| ≤ 1 / (n + 1)`.
+- an-epsilon-of-room-hub: The proof first chooses a finite `n > 1 / ε` and proves `1 / (n + 1) < ε`, reducing the target `ε`-approximation to a stronger finite Dirichlet bound.

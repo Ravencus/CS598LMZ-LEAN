@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-313-nth-moments-of-exponentially-decaying-functi",
+  "english_title": "Proposition 3.1.3: nth Moments of Exponentially Decaying Functions on the Positive Half-Line",
+  "statement_en": "Compute the moments \\(b_n:=\\int_0^{\\infty} g(x)x^n\\,dx\\) for several common functions on \\([0,\\infty)\\), including \\(g(x)=e^{-ax}\\), \\(g(x)=e^{-ax^2}\\), \\(g(x)=\\frac{1}{e^x-1}\\), and \\(g(x)=\\frac{1}{e^x+1}\\), obtaining explicit formulas in terms of \\(\\Gamma\\) and \\(\\zeta\\) functions.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem commonMomentFormulas\n    (a : ℝ) (ha : 0 < a) (n : ℕ) (hn : 1 ≤ n) :\n    (∫ x in Set.Ioi (0 : ℝ), Real.exp (-a * x) * x ^ n ∂volume) =\n        Real.Gamma (n + 1) / a ^ (n + 1) ∧\n    (∫ x in Set.Ioi (0 : ℝ), Real.exp (-a * x ^ (2 : ℕ)) * x ^ n ∂volume) =\n        Real.Gamma (((n : ℝ) + 1) / 2) / (2 * Real.rpow a (((n : ℝ) + 1) / 2)) ∧\n    Complex.ofReal (∫ x in Set.Ioi (0 : ℝ), x ^ n / (Real.exp x - 1) ∂volume) =\n        Complex.Gamma (n + 1) * riemannZeta (n + 1) ∧\n    Complex.ofReal (∫ x in Set.Ioi (0 : ℝ), x ^ n / (Real.exp x + 1) ∂volume) =\n        (1 - (((2 : ℂ) ^ n)⁻¹)) * Complex.Gamma (n + 1) * riemannZeta (n + 1) := by\n  sorry"
+}

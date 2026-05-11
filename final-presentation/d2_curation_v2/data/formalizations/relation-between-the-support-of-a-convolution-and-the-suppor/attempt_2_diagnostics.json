@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c0cbf9ecd0d0.lean",
+      "line": 8,
+      "column": 17,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  HAdd (Set ℝ) (Set ℝ) ?m.32\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_c0cbf9ecd0d0.lean",
+      "line": 8,
+      "column": 17,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  HAdd (Set ℝ) (Set ℝ) ?m.32\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ]
+}

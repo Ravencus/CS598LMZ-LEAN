@@ -1,0 +1,24 @@
+{
+  "id": "example-34-a-less-trivial-example",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#16",
+  "english_title": "Example 3.4: A Less Trivial Example",
+  "statement_en": "Consider $f(x):=(1+1/x)\\sin(x^2)$ for $x\\ge 1$. Then $$\\limsup_{x\\to \\infty} f(x)=1,\\qquad \\liminf_{x\\to \\infty} f(x)=-1.$$ This example also illustrates the basic limsup/liminf properties for functions through explicit tail estimates and sequences with $x_n^2=\\frac{\\pi}{2}+2\\pi n$.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "tail bound via comparison with an envelope",
+    "construct sequences hitting oscillatory extrema",
+    "analyze oscillatory functions at infinity"
+  ],
+  "prerequisites": [
+    "limit superior and limit inferior of functions",
+    "trigonometric functions",
+    "sequences tending to infinity",
+    "basic inequalities"
+  ],
+  "callout_body": "$f(x):=(1+1/x)\\sin(x^2)$对任意$x\\geq 1$,函数图像如下：\n\n![[作为函数上下极限例子的函数.png]]\n\n* 函数上下极限以及性质1：\n\n由于$f(x)\\leq (1+1/x)$，因此对任意$x\\geq R\\geq 1$都有$$f(x)\\leq 1+\\frac{1}{x}\\leq 1+ \\frac{1}{R}$$那么尾部的上确界$B(R):=\\sup_{x\\geq R}f(x)$满足$B(R)\\leq 1+\\frac{1}{R}$从而根据上极限的定义$$\\limsup_{x\\to \\infty} f(x)=\\lim_{R\\to \\infty}B(R)\\leq 1$$同时取一个序列$x_n\\to \\infty$满足$x_n^2=\\frac{\\pi}{2}+2\\pi n$那么$f(x_n)=1+\\frac{1}{x_n}\\to 1$从而$1$作为所有$x_n\\to +\\infty$序列形成的$f(x_n)$序列上极限的上确界，因此$U=1$。同理可得$L=-1$。\n\n* 关于性质2：\n\n对任意$2>r>1$，虽然函数在整个$x\\geq 1$的范围内的上界为$2$，但是性质2.a告诉我们，会存在一个$R_0$，使得$x\\geq R_0$都有$f(x)<r$。这是因为，$f(x)\\leq 1+1/x$从而我们只需要令$1+1/x<r$即可，根据函数单调性，我们只需要令$1+1/R_0<r$即可，也即是$$R_0>\\frac{1}{r-1}$$只要满足这一条，那么自然对任意$x\\geq R_0$都有$$f(x)<r$$\n对任意$r<1$以及任意的$R$，由于上面的构造，我们知道$\\sin(x_n^2)=1$因此$f(x_n)=1+\\frac{1}{x_n}$。要实现$f(x_n)>r$实际上只需要满足$x_n>R$就一定有$$f(x_n)=1+\\frac{1}{x_n}>1>r$$这样的$x_n$都是我们想要的$x$。\n\n* 关于性质3:略"
+}

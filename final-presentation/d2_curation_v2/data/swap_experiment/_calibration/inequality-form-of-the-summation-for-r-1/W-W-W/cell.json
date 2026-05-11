@@ -1,0 +1,28 @@
+{
+  "problem_id": "inequality-form-of-the-summation-for-r-1",
+  "weak_model": "gpt-5.4-mini",
+  "cell": "W-W-W",
+  "models": {
+    "plan": "gpt-5.4-mini",
+    "reason": "gpt-5.4-mini",
+    "formalize": "gpt-5.4-mini"
+  },
+  "success": false,
+  "n_errors": 6,
+  "first_error": "unknown tactic",
+  "stage_failures": [],
+  "stage_seconds": {
+    "plan": 10.6,
+    "reason": 21.6,
+    "formalize": 30.8,
+    "compile": 2.3
+  },
+  "plan_quality": {
+    "n_bullets": 4,
+    "is_numbered": true,
+    "is_nonempty": true,
+    "appears_to_restate_theorem": false
+  },
+  "splice_action": "wrap",
+  "signature_deviation": false
+}

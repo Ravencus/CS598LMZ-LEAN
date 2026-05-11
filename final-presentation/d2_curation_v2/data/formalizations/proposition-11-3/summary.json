@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-11-3",
+  "english_title": "Proposition 1.1",
+  "statement_en": "The irrationality measure of every rational number is 1.",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instInfSet', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def irrationalityMeasure (x : ℝ) : ℝ :=\n  sInf {μ : ℝ |\n    ∀ ε > 0, ∃ C > 0, ∀ p : ℤ, ∀ q : ℕ, q > 0 →\n      C / (q : ℝ) ^ (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|}\n\ntheorem rational_irrationalityMeasure_eq_one (q : ℚ) :\n    irrationalityMeasure (q : ℝ) = 1 := by\n  sorry"
+}

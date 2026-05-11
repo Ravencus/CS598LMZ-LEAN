@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-212",
+  "english_title": "Example 2.1.2",
+  "statement_en": "Let $x_n:=-1$ and $y_n:=(-1)^n$. Then $x_ny_n=(-1)^{n+1}$, so $$\\limsup_{n\\to \\infty}x_ny_n=1,\\qquad \\liminf_{n\\to \\infty}x_ny_n=-1.$$ But at the same time $$\\limsup_{n\\to \\infty} x_n\\limsup_{n\\to \\infty} y_n=-1,\\qquad \\liminf_{n\\to \\infty}x_n\\liminf_{n\\to \\infty}y_n=1.$$ Therefore, after dropping the nonnegativity assumption, the inequalities in Proposition 2.1.1 fail.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'instConditionallyCompleteLinearOrder', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\ndef xSeq : ℕ → ℤ := fun _ => -1\n\ndef ySeq : ℕ → ℤ := fun n => (-1 : ℤ) ^ n\n\nnoncomputable def seqLimsup (u : ℕ → ℤ) : ℤ :=\n  sInf {a : ℤ | ∀ᶠ n in Filter.atTop, u n ≤ a}\n\nnoncomputable def seqLiminf (u : ℕ → ℤ) : ℤ :=\n  sSup {a : ℤ | ∀ᶠ n in Filter.atTop, a ≤ u n}\n\ntheorem proposition2111_nonnegativity_counterexample :\n    (∀ n : ℕ, xSeq n * ySeq n = (-1 : ℤ) ^ (n + 1)) ∧\n    seqLimsup (fun n => xSeq n * ySeq n) = 1 ∧\n    seqLiminf (fun n => xSeq n * ySeq n) = -1 ∧\n    seqLimsup xSeq * seqLimsup ySeq = -1 ∧\n    seqLiminf xSeq * seqLiminf ySeq = 1 ∧\n    ¬ (seqLimsup (fun n => xSeq n * ySeq n) ≤ seqLimsup xSeq * seqLimsup ySeq) ∧\n    ¬ (seqLiminf xSeq * seqLiminf ySeq ≤ seqLiminf (fun n => xSeq n * ySeq n)) := by\n  sorry"
+}

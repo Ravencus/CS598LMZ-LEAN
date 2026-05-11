@@ -1,0 +1,38 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_d932b49b2952.lean",
+      "line": 21,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown identifier `intervalIntegrable_iff_lowerIntervalIntegral_eq_upperIntervalIntegral`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_d932b49b2952.lean",
+      "line": 22,
+      "column": 4,
+      "severity": "error",
+      "message": "No goals to be solved\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_d932b49b2952.lean",
+      "line": 21,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown identifier `intervalIntegrable_iff_lowerIntervalIntegral_eq_upperIntervalIntegral`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_d932b49b2952.lean",
+      "line": 22,
+      "column": 4,
+      "severity": "error",
+      "message": "No goals to be solved\n"
+    }
+  ],
+  "splice_action": "passthrough",
+  "signature_deviation": false
+}

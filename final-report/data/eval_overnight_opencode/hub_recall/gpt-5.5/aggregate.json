@@ -1,0 +1,677 @@
+{
+  "aggregate": {
+    "n": 30,
+    "macro": {
+      "precision": 0.2667,
+      "recall": 0.251,
+      "f1": 0.2283
+    },
+    "micro": {
+      "precision": 0.3108,
+      "recall": 0.3026,
+      "f1": 0.3067,
+      "tp": 23,
+      "fp": 51,
+      "fn": 53
+    }
+  },
+  "results": [
+    {
+      "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+      "model": "gpt-5.5",
+      "wall_seconds": 11.36,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "identity-theorem-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "interchanging-sums-and-integrals-hub"
+      ],
+      "tp": 0,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "theorem-31-liouvilles-theorem-1844",
+      "model": "gpt-5.5",
+      "wall_seconds": 11.45,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub",
+        "an-epsilon-of-room-hub",
+        "borel-cantelli-lemma-and-applications-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+      ],
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "lemma-21",
+      "model": "gpt-5.5",
+      "wall_seconds": 12.75,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "piecewise-estimates-hub"
+      ],
+      "truth": [
+        "sum-estimates-via-summation-by-parts-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 0,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "monotonicity-of-the-integral-1",
+      "model": "gpt-5.5",
+      "wall_seconds": 14.92,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub"
+      ],
+      "tp": 0,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "mit-integration-competition",
+      "model": "gpt-5.5",
+      "wall_seconds": 15.89,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "interchanging-sums-and-integrals-hub",
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "interchanging-sums-and-integrals-hub"
+      ],
+      "tp": 1,
+      "fp": 3,
+      "fn": 0,
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4
+    },
+    {
+      "problem_id": "lemma-121",
+      "model": "gpt-5.5",
+      "wall_seconds": 17.97,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+        "interchanging-sums-and-integrals-hub",
+        "piecewise-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+        "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+      ],
+      "tp": 2,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    {
+      "problem_id": "conjecture-33",
+      "model": "gpt-5.5",
+      "wall_seconds": 17.99,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+        "term-by-term-estimates-hub",
+        "using-known-asymptotics-to-derive-expansions-hub"
+      ],
+      "truth": [
+        "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+      ],
+      "tp": 0,
+      "fp": 4,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "problem-22",
+      "model": "gpt-5.5",
+      "wall_seconds": 23.69,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "cauchy-condensation-test-hub",
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "cauchy-condensation-test-hub",
+        "estimates-for-the-sum-of-prime-reciprocals-hub",
+        "sum-estimates-via-summation-by-parts-hub"
+      ],
+      "tp": 1,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.3333,
+      "recall": 0.3333,
+      "f1": 0.3333
+    },
+    {
+      "problem_id": "proposition-126-exercise-125",
+      "model": "gpt-5.5",
+      "wall_seconds": 13.07,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 2,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714
+    },
+    {
+      "problem_id": "proposition-212-exercise",
+      "model": "gpt-5.5",
+      "wall_seconds": 10.22,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 2,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714
+    },
+    {
+      "problem_id": "problem-1-7",
+      "model": "gpt-5.5",
+      "wall_seconds": 15.37,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "sequence-limits-via-piecewise-estimates-hub",
+        "term-by-term-estimates-hub",
+        "using-known-asymptotics-to-derive-expansions-hub"
+      ],
+      "truth": [
+        "basic-methods-in-analysis-i-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 1,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.3333,
+      "recall": 0.5,
+      "f1": 0.4
+    },
+    {
+      "problem_id": "problem-31-3",
+      "model": "gpt-5.5",
+      "wall_seconds": 17.2,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "cauchy-condensation-test-hub",
+        "integral-estimates-for-sums-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 1,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.3333,
+      "recall": 0.5,
+      "f1": 0.4
+    },
+    {
+      "problem_id": "lemma-131-flanders-1951",
+      "model": "gpt-5.5",
+      "wall_seconds": 15.05,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "estimates-for-the-sum-of-prime-reciprocals-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "identity-theorem-hub"
+      ],
+      "tp": 0,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "problem-5-2",
+      "model": "gpt-5.5",
+      "wall_seconds": 16.51,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub",
+        "using-known-asymptotics-to-derive-expansions-hub"
+      ],
+      "truth": [
+        "interchanging-sums-and-integrals-hub"
+      ],
+      "tp": 0,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "problem-1-10",
+      "model": "gpt-5.5",
+      "wall_seconds": 9.59,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub",
+        "piecewise-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "borel-cantelli-lemma-and-applications-hub"
+      ],
+      "tp": 0,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "lemma-111",
+      "model": "gpt-5.5",
+      "wall_seconds": 13.17,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "estimates-for-the-sum-of-prime-reciprocals-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "identity-theorem-hub"
+      ],
+      "tp": 0,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "_synth_integral_max_cos",
+      "model": "gpt-5.5",
+      "wall_seconds": 20.41,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "piecewise-estimates-hub"
+      ],
+      "truth": [],
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "example-127",
+      "model": "gpt-5.5",
+      "wall_seconds": 8.96,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 0,
+      "fp": 0,
+      "fn": 5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "skipped": true
+    },
+    {
+      "problem_id": "_synth_integral_x_log_x",
+      "model": "gpt-5.5",
+      "wall_seconds": 8.46,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "integral-estimates-via-integration-by-parts-hub"
+      ],
+      "truth": [],
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "fourier-coefficient-version",
+      "model": "gpt-5.5",
+      "wall_seconds": 15.74,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub"
+      ],
+      "tp": 1,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "f1": 0.5
+    },
+    {
+      "problem_id": "thue-siegel-roth-theorem-1955",
+      "model": "gpt-5.5",
+      "wall_seconds": 19.03,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+        "piecewise-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub",
+        "an-epsilon-of-room-hub",
+        "borel-cantelli-lemma-and-applications-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+      ],
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714
+    },
+    {
+      "problem_id": "problem-0-12",
+      "model": "gpt-5.5",
+      "wall_seconds": 17.98,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub",
+        "using-known-asymptotics-to-derive-expansions-hub"
+      ],
+      "truth": [],
+      "tp": 0,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "proposition-112",
+      "model": "gpt-5.5",
+      "wall_seconds": 11.26,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "basic-methods-in-analysis-i-hub",
+        "estimates-for-the-sum-of-prime-reciprocals-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 2,
+      "fp": 1,
+      "fn": 3,
+      "precision": 0.6667,
+      "recall": 0.4,
+      "f1": 0.5
+    },
+    {
+      "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+      "model": "gpt-5.5",
+      "wall_seconds": 15.71,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "cauchy-convergence-criterion-hub"
+      ],
+      "truth": [
+        "integral-estimates-for-sums-hub",
+        "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 0,
+      "fp": 1,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "problem-2-4",
+      "model": "gpt-5.5",
+      "wall_seconds": 14.66,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub",
+        "using-known-asymptotics-to-derive-expansions-hub"
+      ],
+      "tp": 3,
+      "fp": 0,
+      "fn": 4,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "f1": 0.6
+    },
+    {
+      "problem_id": "proposition-123",
+      "model": "gpt-5.5",
+      "wall_seconds": 15.22,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "basic-methods-in-analysis-i-hub",
+        "estimates-for-the-sum-of-prime-reciprocals-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "tp": 2,
+      "fp": 1,
+      "fn": 3,
+      "precision": 0.6667,
+      "recall": 0.4,
+      "f1": 0.5
+    },
+    {
+      "problem_id": "problem-7",
+      "model": "gpt-5.5",
+      "wall_seconds": 16.44,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "cauchy-convergence-criterion-hub",
+        "piecewise-estimates-hub",
+        "sum-estimates-via-summation-by-parts-hub",
+        "term-by-term-estimates-hub"
+      ],
+      "truth": [
+        "basic-methods-in-analysis-i-hub",
+        "sum-estimates-via-summation-by-parts-hub"
+      ],
+      "tp": 1,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1": 0.3333
+    },
+    {
+      "problem_id": "theorem-14-dirichlet-theorem",
+      "model": "gpt-5.5",
+      "wall_seconds": 13.89,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+      ],
+      "truth": [
+        "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+      ],
+      "tp": 0,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "lemma-32-hermite-identity",
+      "model": "gpt-5.5",
+      "wall_seconds": 25.31,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "estimates-for-the-sum-of-prime-reciprocals-hub",
+        "expand-conditions-into-sums-or-integrals-and-swap-order-hub",
+        "piecewise-estimates-hub"
+      ],
+      "truth": [
+        "using-known-asymptotics-to-derive-expansions-hub"
+      ],
+      "tp": 0,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "problem_id": "common-lemma-1",
+      "model": "gpt-5.5",
+      "wall_seconds": 16.78,
+      "wall_exceeded": false,
+      "parsed_ok": true,
+      "predicted": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub",
+        "borel-cantelli-lemma-and-applications-hub",
+        "reducing-set-problems-to-function-problems-hub"
+      ],
+      "truth": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub",
+        "an-epsilon-of-room-hub",
+        "reducing-set-problems-to-function-problems-hub"
+      ],
+      "tp": 2,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "f1": 0.6667
+    }
+  ]
+}

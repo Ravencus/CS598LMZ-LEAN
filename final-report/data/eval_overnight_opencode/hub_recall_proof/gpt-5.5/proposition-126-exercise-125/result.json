@@ -1,0 +1,21 @@
+{
+  "problem_id": "proposition-126-exercise-125",
+  "model": "gpt-5.5",
+  "wall_seconds": 10.09,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [],
+  "truth": [
+    "an-epsilon-of-room-hub",
+    "basic-methods-in-analysis-i-hub",
+    "piecewise-estimates-hub",
+    "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "tp": 0,
+  "fp": 0,
+  "fn": 5,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

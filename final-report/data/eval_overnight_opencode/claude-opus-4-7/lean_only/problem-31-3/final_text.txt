@@ -1,0 +1,179 @@
+I'll work on proving that the series Σ 1/((n+2)·log(n+2)) diverges. Let me start by exploring what's available in Mathlib.
+Let me search for the relevant lemma name directly.
+That's a different Bertrand. Let me look for the integral test approach or harmonic series divergence.
+None of these directly cover Σ 1/(n log n). Let me look for the integral test for divergence:
+Let me try the Cauchy condensation approach. The condensation gives Σ 2^n / (2^n log 2^n) = Σ 1/(n log 2), which is a harmonic series (multiple of). Let me search for Cauchy condensation:
+`summable_condensed_iff_of_nonneg` is what I need. Let me look at it:
+Now I have a strategy. Use `summable_condensed_iff_of_nonneg` (or eventually version) to reduce to showing Σ 2^k / (2^k * log(2^k)) = Σ 1/(k log 2) is not summable. 
+
+Wait, the function is `f n = 1 / ((n+2) * log(n+2))`. With condensation, the condensed series is `Σ 2^k * f(2^k) = Σ 2^k / ((2^k + 2) * log(2^k + 2))`. As k → ∞, this is ≈ 1/(k log 2), not summable.
+
+Let me look for a more direct approach. Actually, the simplest approach: compare to the harmonic series. We have 1/((n+2) log(n+2)) ≥ 1/((n+2)(n+2)) for n where log(n+2) ≤ n+2, but that gives a smaller (summable) series. Wrong direction.
+
+For the divergent direction, we need: 1/((n+2) log(n+2)) ≥ ... where ... diverges. This requires the condensation test or integral test.
+
+Let me try the condensation test approach:
+Empty diagnostics means it timed out. Let me restructure to use direct comparison instead. Actually a simpler approach: use that 1/((n+2) * log(n+2)) ≥ 1/((n+2)^2) won't work — diverges wrong way.
+
+Let me try a different angle: show that log(n+2) ≤ n+2 for all n, so 1/((n+2) log(n+2)) ≥ 1/(n+2)^2. NO wait — that gives a summable lower bound, useless.
+
+Need: 1/((n+2) log(n+2)) ≥ something divergent. Try: for n+2 ≥ e^k, log(n+2) ≥ k, but we need an upper bound on log. 
+
+Try log(n+2) ≤ n+2 (always for n ≥ 0). So 1/((n+2)log(n+2)) ≥ 1/((n+2)^2). Wrong direction.
+
+The condensation approach really is needed. Let me think again about the condensed sum:
+Σ_k 2^k * f(2^k) where f(n) = 1/((n+2) log(n+2)).
+= Σ_k 2^k / ((2^k+2) log(2^k+2))
+
+For k ≥ 1: 2^k ≥ 2, so 2^k+2 ≤ 2·2^k, thus 2^k/(2^k+2) ≥ 1/2.
+And log(2^k+2) ≤ log(2^(k+1)) = (k+1) log 2 (for k ≥ 1, since 2^k+2 ≤ 2^(k+1) iff 2 ≤ 2^k).
+
+So 2^k * f(2^k) ≥ 1/(2(k+1) log 2). The sum of 1/(k+1) diverges.
+
+Let me write this more carefully:
+Good progress, most things compile. Issues:
+1. `Real.log_pow k 2` has signature `log (k^2) = 2 * log k`. Need `Real.log_pow : log (x^n) = n * log x`. Let me check.
+2. `div_le_div_iff` is unknown — must be renamed. Try `div_le_div_iff_of_pos` or `one_div_le_one_div_iff`.
+
+Let me also restructure the final part. Instead of trying to subset to a tail, I'll use `Summable.of_nonneg_of_le` directly. We have a function g k = 1/(2(k+1) log 2) ≤ 2^k * f(2^k) for k ≥ 1. We can adjust by 0 on k=0.
+Good, this compiles. So `exact?` found it. Let me check what the correct lemma name is. Actually wait, that example uses `exact?` which would search — but it returns success. Let me make a fully proper attempt without exact?:
+So `Real.log_pow x n : log (x^n) = n * log x` — the arguments are `(x : ℝ) (n : ℕ)`. I had them flipped. Let me also find `div_le_div_iff`:
+So it's `div_le_div_iff₀`. Now let me try with all corrections. I have 5 calls left. Let me write the full proof carefully:
+Good — most of the proof type-checks. Errors:
+1. The `show` at line 63 fails - I should just simplify directly
+2. `not_summable_one_div_natCast_add_one` doesn't exist — use `not_summable_one_div_natCast` instead 
+
+Actually, the harmonic series 1/(k+1) is summable iff 1/k is summable (just a shift). There should be a lemma. Let me also simplify: instead of building harmonic and contradiction, I can do this more directly.
+
+Strategy simplification: Show `Summable (fun k => 1/((k:ℝ)+1))` directly contradicts `not_summable_one_div_natCast` by shifting. Or use that `Summable.comp_injective` of `Nat.succ`.
+
+Actually, the simplest: if `1/((k:ℝ)+1)` is summable, then so is `fun k => 1/((↑(k+1)):ℝ)` (same thing by push_cast), which is the harmonic series shifted by one term, contradicting `not_summable_one_div_natCast`.
+
+Let me also fix the k=0 case differently: just show `0 ≤ ...` directly using nonneg from `h_nonneg`.
+
+I have 4 calls left. Let me write a cleaner version:
+I'm running out of calls. Let me take a cleaner approach using `Summable.comp_injective`. If `Summable (fun k => 1/((k:ℝ)+1))`, then composing with the injection `id : ℕ → ℕ` gives... no wait. We want to use the original `not_summable_one_div_natCast`. 
+
+The key insight: `(fun k : ℕ => 1 / ((k:ℝ) + 1))` equals `(fun n : ℕ => (1:ℝ) / n)` precomposed with `(· + 1)`. So if the former is summable, then the harmonic series shifted is summable. 
+
+Actually: `fun k => 1/((k:ℝ)+1) = fun k => 1/(((k+1):ℕ) : ℝ) = (fun n => 1/(n:ℝ)) ∘ (· + 1)`. By `Summable.comp_injective` going the other way, if `1/n` is not summable, then since `(· + 1) : ℕ → ℕ` is injective and its image is `{n | n ≥ 1}`, the summability of the composition implies summability of the original up to a finite difference.
+
+This is getting complex. Let me just do the whole thing in one go, using shift via tsum:
+
+Actually I realize there's an easier path: I can just compare `2^k * f(2^k)` directly to `(1/(4 log 2)) * (1/k)` for k ≥ 1, then use that not summable.
+
+The lemma `not_summable_one_div_natCast` says `¬Summable (fun n => 1/n : ℕ → ℝ)`. This sets `1/0 = 0`. If I have `Summable (fun k => 1/((k:ℝ)+1))`, summability via shift gives summability of `fun k => 1/(k:ℝ)` for k≥1. Adding a 0 at k=0 doesn't change summability.
+
+Key lemma: `Summable.comp_injective` and `Function.Embedding`. Let me just use the cleanest formulation.
+
+Actually `summable_nat_add_iff` (sum from n+1 onwards equals total sum, so summability is equivalent).
+
+Let me write the final attempt — I only have 3 calls left:
+Great, everything I have so far compiles (warnings only). Now I need to use h k = 1/(4(k+2) log 2) and finish. I have 2 calls left. Let me write the complete proof:
+Almost there! Just need to remove that bogus rw line. I have 1 call left.
+The proof compiles successfully with no errors or warnings.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Real Filter
+
+theorem harmonic_log_series_diverges :
+    ¬ Summable (fun n : ℕ => 1 / (((n : ℝ) + 2) * Real.log ((n : ℝ) + 2))) := by
+  intro hsum
+  set f : ℕ → ℝ := fun n => 1 / (((n : ℝ) + 2) * Real.log ((n : ℝ) + 2)) with hf_def
+  have h_nonneg : ∀ᶠ k in atTop, 0 ≤ f k := by
+    filter_upwards with k
+    simp only [hf_def]
+    have h1 : (0 : ℝ) < (k : ℝ) + 2 := by positivity
+    have h2 : (1 : ℝ) ≤ (k : ℝ) + 2 := by
+      have : (0 : ℝ) ≤ (k : ℝ) := Nat.cast_nonneg k
+      linarith
+    have h3 : 0 ≤ Real.log ((k : ℝ) + 2) := Real.log_nonneg h2
+    positivity
+  have h_mono : ∀ᶠ k in atTop, f (k + 1) ≤ f k := by
+    filter_upwards [eventually_ge_atTop 0] with k _
+    simp only [hf_def]
+    have h0 : (0 : ℝ) < (k : ℝ) + 2 := by positivity
+    have h0' : (0 : ℝ) < ((k : ℝ) + 1) + 2 := by positivity
+    have h2 : (1 : ℝ) < (k : ℝ) + 2 := by
+      have : (0 : ℝ) ≤ (k : ℝ) := Nat.cast_nonneg k
+      linarith
+    have hlog : (0 : ℝ) < Real.log ((k : ℝ) + 2) := Real.log_pos h2
+    have hlog' : (0 : ℝ) < Real.log (((k : ℝ) + 1) + 2) := Real.log_pos (by linarith)
+    have hp : (0 : ℝ) < ((k : ℝ) + 2) * Real.log ((k : ℝ) + 2) := mul_pos h0 hlog
+    have hp' : (0 : ℝ) < (((k : ℝ) + 1) + 2) * Real.log (((k : ℝ) + 1) + 2) := mul_pos h0' hlog'
+    have hcast : ((↑(k+1) : ℝ) + 2) = ((k : ℝ) + 1) + 2 := by push_cast; ring
+    rw [hcast, div_le_div_iff₀ hp' hp, one_mul, one_mul]
+    have hle1 : ((k : ℝ) + 2) ≤ ((k : ℝ) + 1) + 2 := by linarith
+    have hle2 : Real.log ((k : ℝ) + 2) ≤ Real.log (((k : ℝ) + 1) + 2) :=
+      Real.log_le_log h0 (by linarith)
+    exact mul_le_mul hle1 hle2 hlog.le h0'.le
+  have hcond : Summable (fun k : ℕ => (2 : ℝ) ^ k * f (2 ^ k)) :=
+    (summable_condensed_iff_of_eventually_nonneg h_nonneg h_mono).mpr hsum
+  set h : ℕ → ℝ := fun k => 1 / (4 * ((k:ℝ) + 2) * Real.log 2) with hh_def
+  have hlog2_pos : (0 : ℝ) < Real.log 2 := Real.log_pos (by norm_num)
+  have hh_nonneg : ∀ k, 0 ≤ h k := by
+    intro k
+    simp only [hh_def]
+    have : (0:ℝ) ≤ (k:ℝ) := Nat.cast_nonneg k
+    positivity
+  have hh_le : ∀ k, h k ≤ (2 : ℝ) ^ k * f (2 ^ k) := by
+    intro k
+    simp only [hh_def, hf_def]
+    have h2k_pos : (0 : ℝ) < (2 : ℝ) ^ k := by positivity
+    have h2k_ge1 : (1 : ℝ) ≤ (2 : ℝ) ^ k := one_le_pow₀ (by norm_num : (1:ℝ) ≤ 2)
+    have hN : ((((2:ℕ) ^ k : ℕ) : ℝ) + 2) = (2 : ℝ)^k + 2 := by push_cast; ring
+    rw [hN]
+    have hbase_pos : (0 : ℝ) < (2:ℝ)^k + 2 := by linarith
+    have hbase_ge1 : (1 : ℝ) < (2:ℝ)^k + 2 := by linarith
+    have hlog_pos : (0 : ℝ) < Real.log ((2:ℝ)^k + 2) := Real.log_pos hbase_ge1
+    have hdenom_pos : (0 : ℝ) < ((2:ℝ)^k + 2) * Real.log ((2:ℝ)^k + 2) := mul_pos hbase_pos hlog_pos
+    have hineq1 : (2:ℝ)^k + 2 ≤ 4 * (2:ℝ)^k := by nlinarith
+    have hineq2 : Real.log ((2:ℝ)^k + 2) ≤ ((k : ℝ) + 2) * Real.log 2 := by
+      have step1 : Real.log ((2:ℝ)^k + 2) ≤ Real.log (4 * (2:ℝ)^k) :=
+        Real.log_le_log hbase_pos hineq1
+      have step2 : Real.log (4 * (2:ℝ)^k) = Real.log 4 + Real.log ((2:ℝ)^k) :=
+        Real.log_mul (by norm_num) (by positivity)
+      have step3 : Real.log ((2:ℝ)^k) = (k : ℝ) * Real.log 2 := Real.log_pow 2 k
+      have step4 : Real.log 4 = 2 * Real.log 2 := by
+        have hh : (4:ℝ) = 2^2 := by norm_num
+        rw [hh, Real.log_pow]; push_cast; ring
+      calc Real.log ((2:ℝ)^k + 2)
+          ≤ Real.log (4 * (2:ℝ)^k) := step1
+        _ = Real.log 4 + (k:ℝ) * Real.log 2 := by rw [step2, step3]
+        _ = 2 * Real.log 2 + (k:ℝ) * Real.log 2 := by rw [step4]
+        _ = ((k : ℝ) + 2) * Real.log 2 := by ring
+    have key : (2:ℝ)^k * (1 / (((2:ℝ)^k + 2) * Real.log ((2:ℝ)^k + 2)))
+        = (2:ℝ)^k / (((2:ℝ)^k + 2) * Real.log ((2:ℝ)^k + 2)) := by rw [mul_one_div]
+    rw [key]
+    have lhs_denom_pos : (0:ℝ) < 4 * ((k:ℝ) + 2) * Real.log 2 := by
+      have : (0:ℝ) ≤ (k:ℝ) := Nat.cast_nonneg k
+      positivity
+    rw [div_le_div_iff₀ lhs_denom_pos hdenom_pos, one_mul]
+    have prod_le : ((2:ℝ)^k + 2) * Real.log ((2:ℝ)^k + 2)
+        ≤ (4 * (2:ℝ)^k) * (((k:ℝ) + 2) * Real.log 2) :=
+      mul_le_mul hineq1 hineq2 hlog_pos.le (by positivity)
+    calc ((2:ℝ)^k + 2) * Real.log ((2:ℝ)^k + 2)
+        ≤ (4 * (2:ℝ)^k) * (((k:ℝ) + 2) * Real.log 2) := prod_le
+      _ = (2:ℝ)^k * (4 * ((k:ℝ) + 2) * Real.log 2) := by ring
+  have hh_summable : Summable h := Summable.of_nonneg_of_le hh_nonneg hh_le hcond
+  have hsum_inv : Summable (fun k : ℕ => 1 / ((k:ℝ) + 2)) := by
+    have heq : ∀ k, (4 * Real.log 2) * h k = 1 / ((k:ℝ) + 2) := by
+      intro k
+      simp only [hh_def]
+      have : (0:ℝ) ≤ (k:ℝ) := Nat.cast_nonneg k
+      have hk2pos : (0:ℝ) < (k:ℝ) + 2 := by linarith
+      field_simp
+    have := hh_summable.mul_left (4 * Real.log 2)
+    exact this.congr heq
+  apply Real.not_summable_one_div_natCast
+  have hcast_eq : (fun k : ℕ => 1 / ((k:ℝ) + 2)) = (fun n : ℕ => 1 / (n:ℝ)) ∘ (· + 2) := by
+    funext k
+    simp only [Function.comp_apply]
+    push_cast
+    ring
+  rw [hcast_eq] at hsum_inv
+  exact (summable_nat_add_iff 2).mp hsum_inv
+```

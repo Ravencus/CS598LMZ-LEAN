@@ -1,0 +1,23 @@
+{
+  "id": "theorem-211",
+  "type": "problem",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "callout_id": "identity theorem#4",
+  "english_title": "Theorem 2.1.1",
+  "statement_en": "If a holomorphic function $f$ on an open connected subset $U$ of the complex plane is equal to $0$ on some subset $S\\subset U$ having an accumulation point in $U$, then $f$ is identically zero on all of $U$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "identity theorem for holomorphic functions",
+    "accumulation point argument",
+    "power series expansion"
+  ],
+  "prerequisites": [
+    "holomorphic functions",
+    "connected open sets",
+    "accumulation points"
+  ],
+  "callout_body": "如果定义在复平面上的全纯函数$f$在连通开集子集$U$的某个含有聚点(极限点)的某个子集$S\\subset U$上等于0,并且聚点在$U$当中，那么函数在整个$U$上等于0."
+}

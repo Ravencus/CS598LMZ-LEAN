@@ -1,0 +1,23 @@
+{
+  "id": "property-4-continuity-from-above",
+  "type": "problem",
+  "source_note": "测度论的基础概念",
+  "english_source_note": "Basic Concepts in Measure Theory",
+  "callout_id": "测度论的基础概念#14",
+  "english_title": "Property 4: Continuity from Above",
+  "statement_en": "Let $E_1,\\cdots,E_n,\\cdots \\in \\mathcal{F}$ be a decreasing sequence of sets, that is, $\\cdots \\subseteq E_n \\subseteq \\cdots \\subseteq E_2\\subseteq E_1$. Then the intersection is measurable. Moreover, if at least one set in the sequence has finite measure, then $$\\mu\\left(\\bigcap_{n\\geq 1}E_n\\right)=\\lim_{n\\to \\infty}\\mu(E_n)=\\inf_{n\\geq 1}\\mu(E_n).$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "complementation",
+    "continuity from below",
+    "finite measure reduction"
+  ],
+  "prerequisites": [
+    "measure",
+    "continuity from below",
+    "sigma-algebra"
+  ],
+  "callout_body": "$E_1,\\cdots,E_n,\\cdots \\in \\mathcal{F}$并且是这是一列单调下降的集合列，即$\\cdots \\subseteq E_n \\subseteq \\cdots  \\cdots \\subseteq E_2\\subseteq E_1$,那么这一列集合的交集是可测的。并且如果这一列集合列当中至少有一个集合是有限测度的，那么这列集合的交集的测度满足关系$$\\mu\\left(\\bigcap_{n\\geq 1}E_n\\right)=\\lim_{n\\to \\infty}\\mu(E_n)=\\inf_{n\\geq 1}\\mu(E_n)$$"
+}

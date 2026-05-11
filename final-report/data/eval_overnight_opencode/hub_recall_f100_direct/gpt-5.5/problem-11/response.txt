@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "basic-methods-in-analysis-i-hub"]
+- term-by-term-estimates-hub: The proof is driven by comparing each transformed term \(a_n^{n/(n+1)}\) to a simpler summable majorant derived from the original summability assumption.
+- basic-methods-in-analysis-i-hub: The key analytic move is a comparison-estimate argument for a difficult series, replacing the target summand by a tractable upper bound whose series convergence is known.

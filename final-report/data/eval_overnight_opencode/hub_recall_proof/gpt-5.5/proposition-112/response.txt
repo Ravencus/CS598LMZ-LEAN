@@ -1,0 +1,3 @@
+["basic-methods-in-analysis-i-hub", "term-by-term-estimates-hub"]
+- basic-methods-in-analysis-i-hub: The proof replaces the finite sum by the exact closed form `1 - 1 / (N : ℚ)` via a telescoping-style induction in `hsum`.
+- term-by-term-estimates-hub: To prove the upper bound, the proof first establishes a simple closed form for the whole sum, then reduces `< 1` to positivity of the final remainder `1 / N`.

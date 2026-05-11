@@ -1,0 +1,23 @@
+{
+  "id": "proposition-11-2",
+  "type": "problem",
+  "source_note": "测度论的基础概念",
+  "english_source_note": "Basic Concepts in Measure Theory",
+  "callout_id": "测度论的基础概念#3",
+  "english_title": "Proposition 1.1",
+  "statement_en": "Assume that the countable family $\\{E_i\\}_{i\\geq 1}$ consists of $\\mu^{*}$-measurable sets. Then their union is also $\\mu^{*}$-measurable.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Caratheodory measurability criterion",
+    "closure under finite unions",
+    "passage from finite to countable unions"
+  ],
+  "prerequisites": [
+    "outer measure",
+    "Caratheodory measurable sets",
+    "countable subadditivity"
+  ],
+  "callout_body": "假设有可数个$\\{E_i\\}_{i\\geq 1}$都是$\\mu^{*}-$可测的，那么这些集合的并集也是$\\mu^{*}-$可测的。"
+}

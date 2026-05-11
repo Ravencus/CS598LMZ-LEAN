@@ -1,0 +1,142 @@
+{
+  "note_title": "有限测度空间上依测度收敛的等价命题",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#1",
+      "type": "note",
+      "title": "有限测度空间上依照测度收敛的充要条件",
+      "body": "在***有限测度***空间上，函数列$X_n$是一列可测函数，那么$X_n \\xrightarrow{\\mu}{X}$等价于任意子列$X_{n(m)}$都存在一个子列的之列$X_{n(m_k)}$几乎处处收敛到$X$",
+      "position_char": 39,
+      "position_line": 6,
+      "classification_result": {
+        "id": "有限测度空间上依测度收敛的等价命题#1",
+        "classification": "problem",
+        "english_title": "Necessary and Sufficient Condition for Convergence in Measure on a Finite Measure Space",
+        "if_problem": {
+          "statement_en": "On a finite measure space, let $X_n$ be a sequence of measurable functions. Then $X_n \\xrightarrow{\\mu} X$ if and only if for every subsequence $X_{n(m)}$, there exists a further subsequence $X_{n(m_k)}$ that converges to $X$ almost everywhere.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "subsequence principle",
+            "almost everywhere convergence versus convergence in measure"
+          ],
+          "prerequisites": [
+            "convergence in measure",
+            "almost everywhere convergence",
+            "finite measure spaces"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#2",
+      "type": "note",
+      "title": "Urysohn subsequence principle",
+      "body": "如果$y_n$属于拓扑空间当中的集合，并且任意子列$y_{n(m)}$都存在一个收敛到拓扑空间当中元素$y$的子列$y_{n(m_k)}\\to y$，那么$y_n\\to y$.",
+      "position_char": 1435,
+      "position_line": 26,
+      "classification_result": {
+        "id": "有限测度空间上依测度收敛的等价命题#2",
+        "classification": "problem",
+        "english_title": "Urysohn Subsequence Principle",
+        "if_problem": {
+          "statement_en": "Let $y_n$ be a sequence in a topological space. If every subsequence $y_{n(m)}$ has a further subsequence $y_{n(m_k)}$ converging to an element $y$ of the space, then $y_n \\to y$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "topology",
+          "key_techniques": [
+            "subsequence criterion for convergence",
+            "contradiction using neighborhoods"
+          ],
+          "prerequisites": [
+            "topological convergence",
+            "subsequences",
+            "basic topology"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#3",
+      "type": "example",
+      "title": "反例1",
+      "body": "假设命题成立不需要测度空间是有限的，那么在实数的Lebesgue测度空间上考虑函数列$f_n(x):=(x+1/n)^2$。这个函数列处处收敛到$x^2$,因此它的子列以及子列的子列都是处处收敛到$x^2$的。但是这个序列并不依Lebesgue测度收敛到$x^2$，因为对充分小的$\\varepsilon$$$\\{x\\in \\mathbb{R}:(x+1/n)^2-x^2\\geq \\varepsilon\\}=[\\frac{n\\varepsilon}{2}-\\frac{n}{2},+\\infty)$$对任意的$n\\in \\mathbb{N}$而言这个集合的测度都是无穷的。因此该序列不会依测度收敛到$x^2$,这就与命题矛盾了。",
+      "position_char": 1807,
+      "position_line": 33,
+      "classification_result": {
+        "id": "有限测度空间上依测度收敛的等价命题#3",
+        "classification": "problem",
+        "english_title": "Counterexample 1",
+        "if_problem": {
+          "statement_en": "Assume the previous equivalence were true without requiring the measure space to be finite. On $(\\mathbb{R}, \\text{Lebesgue measure})$, consider $f_n(x) := (x+1/n)^2$. Then $f_n(x) \\to x^2$ for every $x$, so every subsequence and every further subsequence also converges pointwise to $x^2$. However, $f_n$ does not converge to $x^2$ in Lebesgue measure, because for sufficiently small $\\varepsilon$, $$\\{x \\in \\mathbb{R} : (x+1/n)^2 - x^2 \\geq \\varepsilon\\} = [\\tfrac{n\\varepsilon}{2} - \\tfrac{n}{2}, +\\infty),$$ and this set has infinite measure for every $n \\in \\mathbb{N}$. Hence the sequence does not converge to $x^2$ in measure, contradicting the claimed extension.",
+          "problem_type": "counterexample",
+          "difficulty": "medium",
+          "domain": "measure theory",
+          "key_techniques": [
+            "construction on an infinite measure space",
+            "direct measure computation"
+          ],
+          "prerequisites": [
+            "Lebesgue measure",
+            "convergence in measure",
+            "pointwise convergence"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#4",
+      "type": "question",
+      "title": "问题",
+      "body": "对于连续函数$f:\\mathbb{R}\\to \\mathbb{R}$的连续映射，$X_n$是概率空间当中的一列随机变量，那么$X_n$在什么条件下的收敛可以使得$f(X_n)$保持这种收敛性？",
+      "position_char": 2155,
+      "position_line": 38,
+      "classification_result": {
+        "id": "有限测度空间上依测度收敛的等价命题#4",
+        "classification": "remark",
+        "english_title": "Question",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "有限测度空间上依测度收敛的等价命题#5",
+      "type": "note",
+      "title": "依照概率收敛在连续映射下保持不变",
+      "body": "假设$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续映射，那么\n$$X_n(\\omega)\\xrightarrow {\\text{P}}X(\\omega) \\implies f(X_n) \\xrightarrow {P}{f(X)}$$",
+      "position_char": 2735,
+      "position_line": 54,
+      "classification_result": {
+        "id": "有限测度空间上依测度收敛的等价命题#5",
+        "classification": "problem",
+        "english_title": "Convergence in Probability Is Preserved Under Continuous Mappings",
+        "if_problem": {
+          "statement_en": "Assume $f:\\mathbb{R} \\to \\mathbb{R}$ is continuous. Then $$X_n \\xrightarrow{\\mathrm{P}} X \\implies f(X_n) \\xrightarrow{\\mathrm{P}} f(X).$$",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "probability theory",
+          "key_techniques": [
+            "continuous mapping theorem",
+            "control of inverse images under continuity"
+          ],
+          "prerequisites": [
+            "convergence in probability",
+            "continuity of real-valued functions",
+            "random variables"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"有限测度空间上依测度收敛的等价命题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Necessary and Sufficient Condition for Convergence in Measure on a Finite Measure Space\",\n    \"if_problem\": {\n      \"statement_en\": \"On a finite measure space, let $X_n$ be a sequence of measurable functions. Then $X_n \\\\xrightarrow{\\\\mu} X$ if and only if for every subsequence $X_{n(m)}$, there exists a further subsequence $X_{n(m_k)}$ that converges to $X$ almost everywhere.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"subsequence principle\",\n        \"almost everywhere convergence versus convergence in measure\"\n      ],\n      \"prerequisites\": [\n        \"convergence in measure\",\n        \"almost everywhere convergence\",\n        \"finite measure spaces\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"有限测度空间上依测度收敛的等价命题#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Urysohn Subsequence Principle\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $y_n$ be a sequence in a topological space. If every subsequence $y_{n(m)}$ has a further subsequence $y_{n(m_k)}$ converging to an element $y$ of the space, then $y_n \\\\to y$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"topology\",\n      \"key_techniques\": [\n        \"subsequence criterion for convergence\",\n        \"contradiction using neighborhoods\"\n      ],\n      \"prerequisites\": [\n        \"topological convergence\",\n        \"subsequences\",\n        \"basic topology\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"有限测度空间上依测度收敛的等价命题#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Counterexample 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume the previous equivalence were true without requiring the measure space to be finite. On $(\\\\mathbb{R}, \\\\text{Lebesgue measure})$, consider $f_n(x) := (x+1/n)^2$. Then $f_n(x) \\\\to x^2$ for every $x$, so every subsequence and every further subsequence also converges pointwise to $x^2$. However, $f_n$ does not converge to $x^2$ in Lebesgue measure, because for sufficiently small $\\\\varepsilon$, $$\\\\{x \\\\in \\\\mathbb{R} : (x+1/n)^2 - x^2 \\\\geq \\\\varepsilon\\\\} = [\\\\tfrac{n\\\\varepsilon}{2} - \\\\tfrac{n}{2}, +\\\\infty),$$ and this set has infinite measure for every $n \\\\in \\\\mathbb{N}$. Hence the sequence does not converge to $x^2$ in measure, contradicting the claimed extension.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"measure theory\",\n      \"key_techniques\": [\n        \"construction on an infinite measure space\",\n        \"direct measure computation\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue measure\",\n        \"convergence in measure\",\n        \"pointwise convergence\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"有限测度空间上依测度收敛的等价命题#4\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Question\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"有限测度空间上依测度收敛的等价命题#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Convergence in Probability Is Preserved Under Continuous Mappings\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume $f:\\\\mathbb{R} \\\\to \\\\mathbb{R}$ is continuous. Then $$X_n \\\\xrightarrow{\\\\mathrm{P}} X \\\\implies f(X_n) \\\\xrightarrow{\\\\mathrm{P}} f(X).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"continuous mapping theorem\",\n        \"control of inverse images under continuity\"\n      ],\n      \"prerequisites\": [\n        \"convergence in probability\",\n        \"continuity of real-valued functions\",\n        \"random variables\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

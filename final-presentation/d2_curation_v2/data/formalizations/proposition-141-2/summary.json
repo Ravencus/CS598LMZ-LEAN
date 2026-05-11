@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-141-2",
+  "english_title": "Proposition 1.4.1",
+  "statement_en": "Let $f \\in L^1(\\mathbb{R}^n)$ and for any $a\\in \\mathbb{R}^n$ define $T_a(f):=f(x-a)$. Then $$\\|T_{a+h}(f)-T_a(f)\\|_{L^1} \\to 0$$ as $\\|h\\| \\to 0$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "`translate` has already been declared"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Topology Filter\n\nnoncomputable section\n\ndef translateFn {n : ℕ} (a : EuclideanSpace ℝ (Fin n)) (f : EuclideanSpace ℝ (Fin n) → ℂ) :\n    EuclideanSpace ℝ (Fin n) → ℂ :=\n  fun x => f (x - a)\n\ntheorem l1_translation_continuous {n : ℕ} (f : EuclideanSpace ℝ (Fin n) → ℂ)\n    (hf : Integrable f) (a : EuclideanSpace ℝ (Fin n)) :\n    Filter.Tendsto\n      (fun h : EuclideanSpace ℝ (Fin n) =>\n        ∫ x, ‖translateFn (a + h) f x - translateFn a f x‖ ∂volume)\n      (nhds (0 : EuclideanSpace ℝ (Fin n)))\n      (nhds (0 : ℝ)) := by\n  sorry"
+}

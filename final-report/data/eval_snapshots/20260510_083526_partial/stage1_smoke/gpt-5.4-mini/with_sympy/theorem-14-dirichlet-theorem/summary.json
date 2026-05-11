@@ -1,0 +1,43 @@
+{
+  "problem_id": "theorem-14-dirichlet-theorem",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 2,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 2,
+  "any_timeout": false,
+  "wall_seconds": 116.7,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 57.82,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Irrational.irrational_approximation`\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 54.21,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `exists_nat_mul_sub_int_lt`: The environment does not contain `Function.exists_nat_mul_sub_int_lt`, so it is not possible to project the field `exists_nat_mul_sub_int_lt` from an express"
+    }
+  ]
+}

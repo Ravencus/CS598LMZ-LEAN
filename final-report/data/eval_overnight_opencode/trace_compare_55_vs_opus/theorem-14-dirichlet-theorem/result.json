@@ -1,0 +1,11 @@
+{
+  "problem_id": "theorem-14-dirichlet-theorem",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "none",
+  "evidence": "Both traces searched briefly for density/irrational-approximation lemmas, then converged on `Real.exists_int_int_abs_mul_sub_le` after choosing `n` with `1 / (n+1) < ε` and converting the resulting positive integer `k` to `k.toNat`. Both ultimately produced passing Lean proofs with the same proof sh",
+  "wall_seconds": 6.21
+}

@@ -1,0 +1,4 @@
+["an-epsilon-of-room-hub", "term-by-term-estimates-hub", "cauchy-convergence-criterion-hub"]
+- an-epsilon-of-room-hub: The proof fixes an arbitrary ε and uses the tail condition `a_k < ε` to create enough room for a discrete crossing argument modulo 1.
+- term-by-term-estimates-hub: The key estimate is local and termwise: when a partial sum first crosses a target level `m + x`, the overshoot is bounded by the single increment `a_n`.
+- cauchy-convergence-criterion-hub: The nonsummability of the positive series is used through the convergence/Cauchy criterion for partial sums, giving that the monotone partial sums are unbounded and hence cross arbitrarily high target levels.

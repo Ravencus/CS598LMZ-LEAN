@@ -1,0 +1,30 @@
+{
+  "problem_id": "property-3-continuity-from-below",
+  "english_title": "Property 3: Continuity from Below",
+  "statement_en": "Let $E_1,\\cdots,E_n,\\cdots \\in \\mathcal{F}$ be an increasing sequence of sets, that is, $E_1\\subseteq E_2 \\subseteq \\cdots \\subseteq E_n \\cdots$. Then the union is measurable and its measure satisfies $$\\mu\\left(\\bigcup_{n\\geq 1}E_n\\right)=\\lim_{n\\to \\infty}\\mu(E_n)=\\sup_{n\\geq 1}\\mu(E_n).$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (μ (⋃ n, E n))\n\nHint: The identifier `𝓝` is unknown, and Lean's `"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem measure_iUnion_eq_tendsto_iSup_of_monotone\n    {α : Type*} [MeasurableSpace α]\n    (μ : Measure α) (E : ℕ → Set α)\n    (h_meas : ∀ n, MeasurableSet (E n))\n    (h_mono : Monotone E) :\n    MeasurableSet (⋃ n, E n) ∧\n      (μ (⋃ n, E n) = ⨆ n, μ (E n)) ∧\n      Filter.Tendsto (fun n => μ (E n)) Filter.atTop (𝓝 (μ (⋃ n, E n))) := by\n  sorry"
+}

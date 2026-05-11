@@ -1,0 +1,4 @@
+["cauchy-condensation-test-hub", "integral-estimates-for-sums-hub", "term-by-term-estimates-hub"]
+- cauchy-condensation-test-hub: The summand is positive and eventually decreasing, and dyadic condensation reduces divergence to a harmonic-type series.
+- integral-estimates-for-sums-hub: The theorem is exactly the boundary case of the integral test, comparing the sum with `∫ dx / (x log x)`.
+- term-by-term-estimates-hub: Proving the comparison requires bounding individual summands or dyadic-block terms by simpler expressions whose summed lower bound diverges.

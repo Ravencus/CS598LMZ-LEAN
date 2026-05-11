@@ -1,0 +1,23 @@
+{
+  "id": "theorem-22",
+  "type": "problem",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "callout_id": "identity theorem#10",
+  "english_title": "Theorem 2.2",
+  "statement_en": "Let $f$ be holomorphic on a connected open set $U\\subset \\mathbb{C}^n$. If $f$ vanishes identically on some connected open subset $S\\subset U$, then $f$ vanishes identically on all of $U$.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "several complex variables",
+  "key_techniques": [
+    "analytic continuation",
+    "connectedness of the domain",
+    "uniqueness for holomorphic functions"
+  ],
+  "prerequisites": [
+    "holomorphic functions in several variables",
+    "connected open sets",
+    "basic uniqueness principles"
+  ],
+  "callout_body": "全纯函数$f$在连通开集$U\\subset \\mathbb{C}^n$上的某个连通开子集$S\\subset U$上恒等于0，那么函数在整个$U$上等于0."
+}

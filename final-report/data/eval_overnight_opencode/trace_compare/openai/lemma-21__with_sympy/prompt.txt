@@ -1,0 +1,254 @@
+You are analyzing two Lean theorem-proving traces from the same problem. The "BIG" model succeeded; the "SMALL" model failed. Classify the failure mode.
+
+Problem id: lemma-21    Condition: with_sympy
+
+=== BIG (passed) ===
+model: gpt-5.5    outcome: lean_proof    wall=73.92s    mcp_calls=8
+--- mcp call 1 (✗) ---
+import Mathlib
+
+#check Complex.norm_exp_sub_one_le
+#check Complex.dist_exp_le_dist
+#check Complex.norm_exp_sub_exp_le
+#check norm_exp_sub_one_le
+#check Complex.normSq
+#check Complex.normSq_apply
+
+--- mcp call 2 (✗) ---
+import Mathlib
+
+#check Complex.normSq
+#check Complex.normSq_eq_norm_sq
+#check Complex.normSq_apply
+#check Complex.normSq_mul
+#check Complex.normSq_sub
+#check Complex.exp_I_mul
+#check Complex.normSq_exp
+#check Complex.norm_exp
+
+--- mcp call 3 (✓) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  sorry
+
+--- mcp call 4 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h := Real.norm_exp_I_mul_ofReal_sub_one_le (x := 2 * Real.pi * x)
+  simpa [mul_comm, mul_left_comm, mul_assoc, Real.norm_eq_abs, abs_mul, Real.abs_of_nonneg Real.pi_pos.le] using h
+
+--- mcp call 5 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h := Real.norm_exp_I_mul_ofReal_sub_one_le (x := 2 * Real.pi * x)
+  have hnorm : ‖2 * Real.pi * x‖ = 2 * Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_mul, abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 2), Real.abs_of_pos Real.pi_pos]
+    ring
+  rw [hnorm] at h
+  convert h using 3
+  · ring
+
+--- mcp call 6 (✗) ---
+import Mathlib
+
+example (x : ℝ) : ‖2 * Real.pi * x‖ = 2 * Real.pi * |x| := by
+  rw [Real.norm_eq_abs, abs_mul, abs_mul, abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 2), Real.abs_of_pos Real.pi_pos]
+  ring
+
+--- mcp call 7 (✗) ---
+import Mathlib
+
+example (x : ℝ) : ‖2 * Real.pi * x‖ = 2 * Real.pi * |x| := by
+  rw [Real.norm_eq_abs, abs_mul, abs_mul, abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 2), abs_of_nonneg Real.pi_pos.le]
+  ring
+
+--- mcp call 8 (✓) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h := Real.norm_exp_I_mul_ofReal_sub_one_le (x := 2 * Real.pi * x)
+  have hnorm : ‖2 * Real.pi * x‖ = 2 * Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_mul, abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 2), abs_of_nonneg Real.pi_pos.le]
+  rw [hnorm] at h
+  convert h using 3
+  · ring
+
+--- final_text ---
+I’ll first probe Mathlib for the relevant complex exponential inequality or a general Lipschitz estimate, then use the remaining calls for a complete proof attempt.
+The statement itself compiles. I’m checking local Mathlib sources for existing lemma names rather than guessing them through the budget.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h := Real.norm_exp_I_mul_ofReal_sub_one_le (x := 2 * Real.pi * x)
+  have hnorm : ‖2 * Real.pi * x‖ = 2 * Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_mul, abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 2),
+      abs_of_nonneg Real.pi_pos.le]
+  rw [hnorm] at h
+  convert h using 3
+  · ring
+```
+
+=== SMALL (failed) ===
+model: gpt-5.4-mini    outcome: compile_fail    wall=183.58s    mcp_calls=10
+--- mcp call 1 (✗) ---
+import Mathlib
+#check Complex.exp_ofReal_mul_I
+#check Complex.exp_ofReal_mul_I_re
+#check Complex.exp_ofReal_mul_I_im
+#check Complex.norm_exp_ofReal_mul_I
+#check Real.abs_sin_le
+#check Complex.norm_sq
+#check Complex.normSq
+#check Complex.ext
+--- mcp call 2 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  simpa [mul_comm, mul_left_comm, mul_assoc, abs_mul, abs_of_nonneg Real.pi_nonneg] using
+    (Complex.norm_exp_sub_one_le (z := (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I)))
+--- mcp call 3 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have hx : ((((2 * Real.pi * x : ℝ) : ℂ) * Complex.I).re) = 0 := by
+    simp
+  have h := Complex.norm_exp_sub_one_le (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) hx
+  simpa [abs_mul, abs_of_nonneg Real.pi_nonneg, mul_comm, mul_left_comm, mul_assoc] using h
+--- mcp call 4 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h := Complex.norm_exp_ofReal_mul_I_sub_one (2 * Real.pi * x)
+  nlinarith [Real.abs_sin_le (Real.pi * x)]
+--- mcp call 5 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h : ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ =
+      2 * ‖Real.sin (Real.pi * x)‖ := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using
+      Complex.norm_exp_ofReal_mul_I_sub_one (2 * Real.pi * x)
+  rw [h]
+  nlinarith [Real.abs_sin_le (Real.pi * x)]
+--- mcp call 6 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h : ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ =
+      2 * ‖Real.sin (Real.pi * x)‖ := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using
+      Complex.norm_exp_ofReal_mul_I_sub_one (2 * Real.pi * x)
+  rw [h]
+  have hs : ‖Real.sin (Real.pi * x)‖ ≤ ‖Real.pi * x‖ := by
+    simpa using Real.abs_sin_le (Real.pi * x)
+  have hpi : ‖Real.pi * x‖ = Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_of_nonneg Real.pi_nonneg]
+  calc
+    2 * ‖Real.sin (Real.pi * x)‖ ≤ 2 * ‖Real.pi * x‖ := by nlinarith
+    _ = 2 * Real.pi * |x| := by rw [hpi]
+--- mcp call 7 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h : ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ =
+      2 * ‖Real.sin (Real.pi * x)‖ := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using
+      Complex.norm_exp_ofReal_mul_I_sub_one (2 * Real.pi * x)
+  rw [h]
+  have hs : ‖Real.sin (Real.pi * x)‖ ≤ ‖Real.pi * x‖ := by
+    simpa using Real.abs_sin_le (Real.pi * x)
+  have hpi : ‖Real.pi * x‖ = Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_of_nonneg Real.pi_nonneg]
+  calc
+    2 * ‖Real.sin (Real.pi * x)‖ ≤ 2 * ‖Real.pi * x‖ := by nlinarith
+    _ = 2 * Real.pi * |x| := by rw [hpi]; ring
+--- mcp call 8 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h : ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ =
+      2 * ‖Real.sin (Real.pi * x)‖ := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using
+      Complex.norm_exp_ofReal_mul_I_sub_one (2 * Real.pi * x)
+  rw [h]
+  have hs : ‖Real.sin (Real.pi * x)‖ ≤ ‖Real.pi * x‖ := by
+    simpa using Real.abs_sin_le (Real.pi * x)
+  have hpi : ‖Real.pi * x‖ = Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_of_nonneg Real.pi_nonneg]
+  calc
+    2 * ‖Real.sin (Real.pi * x)‖ ≤ 2 * ‖Real.pi * x‖ := by nlinarith
+    _ = 2 * Real.pi * |x| := by simpa [hpi, mul_assoc]
+--- mcp call 9 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h : ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ =
+      2 * ‖Real.sin (Real.pi * x)‖ := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using
+      Complex.norm_exp_ofReal_mul_I_sub_one (2 * Real.pi * x)
+  rw [h]
+  have hs : ‖Real.sin (Real.pi * x)‖ ≤ ‖Real.pi * x‖ := by
+    simpa using Real.abs_sin_le (Real.pi * x)
+  have hpi : ‖Real.pi * x‖ = Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_of_nonneg Real.pi_nonneg]
+  calc
+    2 * ‖Real.sin (Real.pi * x)‖ ≤ 2 * ‖Real.pi * x‖ := by nlinarith
+    _ = 2 * Real.pi * |x| := by
+      rw [hpi]
+      simp [mul_assoc]
+--- mcp call 10 (✗) ---
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h : ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ =
+      2 * ‖Real.sin (Real.pi * x)‖ := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using
+      Complex.norm_exp_ofReal_mul_I_sub_one (2 * Real.pi * x)
+  have hs : ‖Real.sin (Real.pi * x)‖ ≤ ‖Real.pi * x‖ := by
+    simpa using Real.abs_sin_le (Real.pi * x)
+  have hpi : ‖Real.pi * x‖ = Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_of_nonneg Real.pi_nonneg]
+  nlinarith
+--- final_text ---
+I’m checking the Lean workflow and then I’ll iterate on a minimal proof.
+I’m looking for an existing digest or nearby proof pattern, then I’ll try a direct Mathlib inequality.
+I’ve narrowed it to the standard `exp(i t)` identity; next I’m checking which Mathlib lemmas expose the norm formula directly.
+I don’t yet know whether Mathlib has a one-line inequality theorem, so I’m searching the local Mathlib sources for the exact lemma name before writing a longer trig proof.
+I’m trying the shortest possible route first: if Mathlib already has the pure-imaginary exponential bound, this should close immediately.
+I’ve decided to try the likely closed-form norm identity next; if that fails I’ll fall back to an explicit trig expansion.
+The closed-form norm lemma exists. I’m just tightening the last real-inequality step so `nlinarith` has explicit absolute-value facts to work with.
+I’ve got it down to a single associativity rewrite; I’m finishing with `ring` and expecting the proof to close.
+The only remaining issue is a linter warning, not a math error. I’m switching that last `simpa` to `simp` so the checker returns a clean success.
+I’m collapsing the last step into one `nlinarith` call ove
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"label": "different_plan" | "same_plan_lean_impl_diff" | "same_plan_search_diff" | "unclear",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+LABEL DEFINITIONS:
+  different_plan          : The two models pursued substantively different decompositions (e.g., one used induction, the other used a continuous estimate).
+  same_plan_lean_impl_diff: Both pursued the same plan; the small model's failure was at the Lean tactic / type-checking level (wrong tactic, type mismatch, syntax).
+  same_plan_search_diff   : Same plan; the small model couldn't find the correct Mathlib lemma name or applicability.
+  unclear                 : Cannot tell from the visible evidence.
+
+Output the JSON object first, then the justification.

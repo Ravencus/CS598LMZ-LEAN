@@ -1,0 +1,73 @@
+{
+  "note_title": "对自变量进行二进制展开求积分",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "对自变量进行二进制展开求积分#1",
+      "type": "question",
+      "title": "MIT积分竞赛",
+      "body": "求积分的结果：$$\\int_{0}^{1}\\left(\\sum_{n\\geq 1}\\frac{\\lfloor2^nx\\rfloor}{3^n}\\right)^2\\,dx$$",
+      "position_char": 48,
+      "position_line": 8
+    },
+    {
+      "id": "对自变量进行二进制展开求积分#2",
+      "type": "question",
+      "title": "转换为概率积分",
+      "body": "$$\\int_{\\Omega}\\left(\\sum_{n\\geq 1}\\frac{\\lfloor2^nX(\\omega)\\rfloor}{3^n}\\right)^2\\,dP(\\omega)$$或者说我们定义一个新的随机变量$Y(\\omega)=\\sum_{n\\geq 1}\\frac{\\lfloor2^nX(\\omega)\\rfloor}{3^n}$，其中$X\\sim U(0,1)$可以是**任意**一个均匀分布的随机变量。\n那么现在要求概率积分$$\\int_{\\Omega}Y^2(\\omega)\\,dP(\\omega)$$",
+      "position_char": 325,
+      "position_line": 15
+    },
+    {
+      "id": "对自变量进行二进制展开求积分#3",
+      "type": "note",
+      "title": "命题1：对均匀分布的随机变量的二进制展开",
+      "body": "令$X_1,...,X_n,...$是概率空间$(\\Omega,\\mathcal{F},P)$当中的一列随机变量，定义$$Y(\\omega):=\\sum_{n\\geq 1}\\frac{X_n(\\omega)}{2^n}$$那么\n1. 如果$X_k \\sim U(\\{0,1\\})$是一列独立同分布的随机变量,那么$Y\\sim U(0,1)$是一个均匀分布的随机变量。\n3. 如果$Y\\sim U(0,1)$那么$X_k\\sim$是一列独立同分布的且满足$X_k \\sim U(\\{0,1\\})$的随机变量。",
+      "position_char": 741,
+      "position_line": 22
+    },
+    {
+      "id": "对自变量进行二进制展开求积分#4",
+      "type": "note",
+      "title": "二进制表示",
+      "body": "此处我们讨论的二进制表示是无穷没有终止的二进制表示。这就好比，在十进制当中，我们就可以用$0.1$表示某个小数，但是我们选择用$0.09999...$来表示同一个实数。在二进制当中也是类似的做法，这样的好处是，每一个小数都对应一个无穷序列。",
+      "position_char": 2552,
+      "position_line": 44
+    },
+    {
+      "id": "对自变量进行二进制展开求积分#5",
+      "type": "tip",
+      "title": "基本想法",
+      "body": "直接算其累积分布函数$F_{Y}(y)$，如果我们可以得到$F_{Y}(y)=y$那么$Y$一定是$U(0,1)$的随机变量。",
+      "position_char": 2778,
+      "position_line": 49
+    },
+    {
+      "id": "对自变量进行二进制展开求积分#6",
+      "type": "note",
+      "title": "r进制的两个小数比大小",
+      "body": "假设两个实数$a,b\\in (0,1)$其$r$进制表示的前$k$位($k\\geq 1$)都相等，第$k+1$位上的数字$a_{k+1}>b_{k+1}$，那么$a>b$.",
+      "position_char": 2972,
+      "position_line": 54
+    },
+    {
+      "id": "对自变量进行二进制展开求积分#7",
+      "type": "note",
+      "title": "Cantor集合的Lebesgue测度",
+      "body": "定义Cantor集合$C$为闭区间$[0,1]$的一个子集，其元素由那些三进制表示中不包含数字1的$[0,1]$中的实数构成。$m$是实数上的Lebesgue测度，那么$$m(C)=0$$",
+      "position_char": 4443,
+      "position_line": 74
+    },
+    {
+      "id": "对自变量进行二进制展开求积分#8",
+      "type": "question",
+      "title": "问题3.1",
+      "body": "求积分的结果：$$\\int_{0}^{1}\\left(\\sum_{n\\geq 1}\\frac{a_n(x)}{3^n}\\right)^2\\,dx$$其中$a_n(x)$为$x$的十进制表示的第$n$位对应的整数。",
+      "position_char": 5488,
+      "position_line": 92
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "problem-5-2",
+  "type": "problem",
+  "source_note": "揭露全纯以及亚纯函数信息的Liouville原则",
+  "english_source_note": "Liouville Principles for Holomorphic and Meromorphic Functions",
+  "callout_id": "揭露全纯以及亚纯函数信息的Liouville原则#5",
+  "english_title": "Problem 5",
+  "statement_en": "Let \\(\\\rho>0\\). An entire function satisfies the growth estimate $$f(z)=O\\\\bigl(e^{|z|^{\\\rho}}\\\\bigr)$$ and for every \\(n>3\\) one has $$f(\\\\log n)=0.$$ Prove that \\(f\\\\equiv 0\\).",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "zero set rigidity for entire functions",
+    "construction of an auxiliary function with prescribed zeros",
+    "growth comparison and Liouville-type argument"
+  ],
+  "prerequisites": [
+    "entire functions",
+    "order and growth of entire functions",
+    "zeros of holomorphic functions",
+    "Liouville theorem"
+  ],
+  "callout_body": "$\\rho >0$整函数有上界估计$f(z) = O(e^{|z|^{\\rho}})$并且对于$n>3$都有$f(\\log(n))=0$。证明整函数是0."
+}

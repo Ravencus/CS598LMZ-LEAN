@@ -1,0 +1,3 @@
+["estimates-for-the-sum-of-prime-reciprocals-hub", "identity-theorem-hub"]
+- estimates-for-the-sum-of-prime-reciprocals-hub: The key algebraic move is to express the same determinant/characteristic-polynomial object in two equivalent ways, typically via Sylvester’s determinant identity `det(I - tAB) = det(I - tBA)`.
+- identity-theorem-hub: One common proof shows equality after evaluating the two characteristic polynomials at enough scalar values, then concludes the polynomials are identical.

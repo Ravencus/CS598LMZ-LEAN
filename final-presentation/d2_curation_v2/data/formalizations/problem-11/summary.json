@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-11",
+  "english_title": "Problem 1.1",
+  "statement_en": "Let $a_n>0$ be a sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ converges. Prove that the series $\\sum_{n\\geq 1} a_n^{\\frac{n}{n+1}}$ also converges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem summable_rpow_of_summable\n    {a : ℕ → ℝ}\n    (ha : ∀ n, 0 < a n)\n    (hs : Summable (fun n : ℕ => a (n + 1))) :\n    Summable (fun n : ℕ => Real.rpow (a (n + 1)) ((n + 1 : ℝ) / (n + 2 : ℝ))) := by\n  sorry"
+}

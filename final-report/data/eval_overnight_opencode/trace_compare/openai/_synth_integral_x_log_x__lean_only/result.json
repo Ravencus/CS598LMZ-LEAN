@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "_synth_integral_x_log_x",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces converged on the same antiderivative strategy using `x^2 / 2 * Real.log x - x^2 / 4` (BIG calls 2-9; SMALL calls 9-10). BIG made the Lean implementation work via `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto` plus derivative, integrability, and endpoint-limit obligations, wh",
+  "wall_seconds": 9.86
+}

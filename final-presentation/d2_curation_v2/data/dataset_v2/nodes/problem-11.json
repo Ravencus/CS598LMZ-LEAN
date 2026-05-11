@@ -1,0 +1,23 @@
+{
+  "id": "problem-11",
+  "type": "problem",
+  "source_note": "由一个级数收敛证明另一个有关级数的收敛问题",
+  "english_source_note": "Deducing One Series Convergence from Another",
+  "callout_id": "由一个级数收敛证明另一个有关级数的收敛问题#1",
+  "english_title": "Problem 1.1",
+  "statement_en": "Let $a_n>0$ be a sequence, and suppose the series $\\sum_{n\\geq 1} a_n$ converges. Prove that the series $\\sum_{n\\geq 1} a_n^{\\frac{n}{n+1}}$ also converges.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "split the index set into cases",
+    "comparison test",
+    "exponential-type threshold estimates"
+  ],
+  "prerequisites": [
+    "convergence tests for positive series",
+    "comparison test",
+    "basic exponent manipulation"
+  ],
+  "callout_body": "序列$a_n>0$，级数$\\sum_{n\\geq 1}a_n$收敛，证明级数$\\sum_{n\\geq 1}a_n^{\\frac{n}{n+1}}$也收敛。"
+}

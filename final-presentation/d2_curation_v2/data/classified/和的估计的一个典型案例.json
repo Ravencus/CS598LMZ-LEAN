@@ -1,0 +1,56 @@
+{
+  "note_title": "和的估计的一个典型案例",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "和的估计的一个典型案例#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "求极限$$\\lim_{n\\to \\infty} \\sum_{k=1}^n \\frac{1}{n^2}\\sqrt{(n+k)(n+k+1)}$$",
+      "position_char": 39,
+      "position_line": 7,
+      "classification_result": {
+        "id": "和的估计的一个典型案例#1",
+        "classification": "problem",
+        "english_title": "Problem 0",
+        "if_problem": {
+          "statement_en": "Find the limit $$\\lim_{n\\to \\infty} \\sum_{k=1}^n \\frac{1}{n^2}\\sqrt{(n+k)(n+k+1)}$$.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Riemann sum interpretation",
+            "asymptotic estimation",
+            "bounding and squeezing"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "definite integrals",
+            "Riemann sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "和的估计的一个典型案例#2",
+      "type": "quote",
+      "title": "",
+      "body": "先确认自己走在正确的道路上，然后再奔跑才明智。因为在错误的道路上狂奔，只会让自己越来越难以回头。",
+      "position_char": 2179,
+      "position_line": 38,
+      "classification_result": {
+        "id": "和的估计的一个典型案例#2",
+        "classification": "remark",
+        "english_title": "",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"和的估计的一个典型案例#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 0\",\n    \"if_problem\": {\n      \"statement_en\": \"Find the limit $$\\\\lim_{n\\\\to \\\\infty} \\\\sum_{k=1}^n \\\\frac{1}{n^2}\\\\sqrt{(n+k)(n+k+1)}$$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Riemann sum interpretation\",\n        \"asymptotic estimation\",\n        \"bounding and squeezing\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"definite integrals\",\n        \"Riemann sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"和的估计的一个典型案例#2\",\n    \"classification\": \"remark\",\n    \"english_title\": \"\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

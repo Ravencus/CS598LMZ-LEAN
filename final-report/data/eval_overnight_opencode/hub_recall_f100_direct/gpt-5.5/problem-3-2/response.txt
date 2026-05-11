@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "identity-theorem-hub"]
+- term-by-term-estimates-hub: Use Cauchy’s integral formula to bound each Taylor coefficient individually by the circle \(L^1\) estimate, then send \(r \to \infty\) for higher coefficients and \(r \to 0\) for the constant term.
+- identity-theorem-hub: Once all Taylor coefficients at \(0\) vanish, analyticity/entireness forces the entire function to vanish identically.

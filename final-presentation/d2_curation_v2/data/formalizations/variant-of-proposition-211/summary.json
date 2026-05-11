@@ -1,0 +1,18 @@
+{
+  "problem_id": "variant-of-proposition-211",
+  "english_title": "Variant of Proposition 2.1.1",
+  "statement_en": "Let $f:[1,+\\infty)$ be unbounded, and suppose its derivative satisfies $f'(x)>0$ and decreases to $0$. Then the sequence $f(n)$ is dense modulo $1$.",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem dense_mod_one_of_unbounded_pos_deriv_antitone_tendsto_zero\n    (f : ℝ → ℝ)\n    (hunbounded : ∀ M : ℝ, ∃ x ≥ (1 : ℝ), M < f x)\n    (hderiv_pos : ∀ x ≥ (1 : ℝ), 0 < deriv f x)\n    (hderiv_antitone : AntitoneOn (deriv f) (Set.Ici (1 : ℝ)))\n    (hderiv_tendsto : Filter.Tendsto (deriv f) Filter.atTop (nhds (0 : ℝ))) :\n    DenseRange\n      (fun n : ℕ =>\n        ((⟨Int.fract (f n), ⟨Int.fract_nonneg (f n), le_of_lt (Int.fract_lt_one (f n))⟩⟩ :\n          Set.Icc (0 : ℝ) 1))) := by\n  sorry"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "counterexample-02",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "callout_id": "Borel-Cantelli lemma及其应用#3",
+  "english_title": "Counterexample 0.2",
+  "statement_en": "In the Lebesgue measure space $([0,1],\\mathcal{L}([0,1]),m)$, consider the sequence of sets $E_n:=(0,\\frac{1}{n})$. Define $A_N:=\\cup_{n\\geq N}E_n$. Then $A_N=(0,\\frac{1}{N})$, so by continuity of measure from above, $$m(\\limsup_{n\\to \\infty}E_n)=\\lim_{N\\to \\infty}m(A_N)=0.$$ However, $m(E_n)=\\frac{1}{n}$ and the series formed by these measures diverges.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "explicit computation of a limsup set",
+    "continuity of measure from above"
+  ],
+  "prerequisites": [
+    "Lebesgue measure",
+    "set limsup",
+    "harmonic series divergence"
+  ],
+  "callout_body": "$([0,1],\\mathcal{L}([0,1]),m)$是集合$[0,1]$上的Lebesgue测度空间，其中$m$是Lebesgue测度。考虑此空间上的一列集合列$E_n:=(0,\\frac{1}{n})$。定义$A_N:=\\cup_{n\\geq N}E_n$，我们知道$A_N=(0,\\frac{1}{N})$，依据测度的“自上而下的连续性”，我们知道$$m(\\limsup_{n\\to \\infty}E_n)=\\lim_{N\\to \\infty}m(A_N)=0$$然而如果我们会发现$m(E_n)=\\frac{1}{n}$其组成的级数是不收敛的。"
+}

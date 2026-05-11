@@ -1,0 +1,12 @@
+{
+  "vendor": "deepseek",
+  "big": "deepseek-v4-pro",
+  "small": "deepseek-v4-flash",
+  "condition": "lean_only",
+  "problem_id": "lemma-111",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "different_plan",
+  "evidence": "BIG chose the witness directly as A or B and solved both branches by associativity. SMALL instead tried to use the inverse of A as the witness in the A-invertible branch and got stuck constructing/using inverse facts like h.inv_mul_self and ⅟A.",
+  "wall_seconds": 5.92
+}

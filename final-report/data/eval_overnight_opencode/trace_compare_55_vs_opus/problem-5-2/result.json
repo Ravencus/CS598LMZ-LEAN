@@ -1,0 +1,11 @@
+{
+  "problem_id": "problem-5-2",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "different_plan",
+  "divergence": "n/a",
+  "evidence": "Trace A primarily searched for existing Mathlib automation/lemmas and then attempted unsafe/kernel-bypass routes after `aesop` and `exact?` failed. Trace B reasoned mathematically via zero counting/Jensen/Hadamard/Carlson-style arguments and repeatedly used `sorry`, including a sketched `g(w)=f(log ",
+  "wall_seconds": 6.83
+}

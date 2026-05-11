@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_5b6d7b84acf8.lean",
+      "line": 8,
+      "column": 133,
+      "severity": "error",
+      "message": "unexpected token '∂'; expected ':=', 'where' or '|'\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_5b6d7b84acf8.lean",
+      "line": 8,
+      "column": 133,
+      "severity": "error",
+      "message": "unexpected token '∂'; expected ':=', 'where' or '|'\n"
+    }
+  ]
+}

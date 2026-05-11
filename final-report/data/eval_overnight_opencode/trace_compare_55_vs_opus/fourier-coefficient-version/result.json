@@ -1,0 +1,11 @@
+{
+  "problem_id": "fourier-coefficient-version",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "different_plan",
+  "divergence": "n/a",
+  "evidence": "Trace A ultimately builds a `Tendsto (fun n : ℤ => (n : ℝ)) ... (Filter.cocompact ℝ)` bridge and applies the interval-integrable Riemann-Lebesgue lemma family directly. Trace B instead tries to extend `f` by an indicator to a globally integrable `g` and apply `Real.tendsto_integral_exp_smul_cocompac",
+  "wall_seconds": 6.21
+}

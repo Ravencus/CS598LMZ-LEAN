@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∀ᶠ (y : ?m.164) in nhds ?m.166, ?m.167 y\nin the target expression\n  ∀ᶠ (z : ℂ) in nhdsWithin z0 {z0}ᶜ, f z ≠ 0\n\ncase inr\nU : Set ℂ\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_31d41a92bf.lean",
+      "line": 24,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∀ᶠ (y : ?m.164) in nhds ?m.166, ?m.167 y\nin the target expression\n  ∀ᶠ (z : ℂ) in nhdsWithin z0 {z0}ᶜ, f z ≠ 0\n\ncase inr\nU : Set ℂ\nf : ℂ → ℂ\nz0 : ℂ\nhU_open : IsOpen U\nhU_nonempty : U.Nonempty\nhU_connected : IsPreconnected U\nhf_holo : DifferentiableOn ℂ f U\nhf_nonzero : ¬∀ z ∈ U, f z = 0\nhz0U : z0 ∈ U\nhz0_zero : f z0 = 0\nhf_an : AnalyticAt ℂ f z0\nhne : ∀ᶠ (z : ℂ) in nhdsWithin z0 {z0}ᶜ, f z ≠ 0\n⊢ ∃ r > 0, ∀ z ∈ U, ‖z - z0‖ < r → f z = 0 → z = z0\n"
+    }
+  ]
+}

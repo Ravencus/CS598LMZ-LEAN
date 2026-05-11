@@ -1,0 +1,23 @@
+{
+  "id": "problem-1-6",
+  "type": "problem",
+  "source_note": "部分积的上界估计与Gautschi不等式",
+  "english_source_note": "Upper Bounds for Partial Products and Gautschi's Inequality",
+  "callout_id": "部分积的上界估计与Gautschi不等式#1",
+  "english_title": "Problem 1",
+  "statement_en": "Prove that $$\\prod_{n=1}^{N}\\left(1-\\frac{1}{2n}\\right)<\\frac{1}{\\sqrt{2N}}.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "logarithmic transformation of products",
+    "partial product estimation",
+    "comparison with harmonic-type bounds"
+  ],
+  "prerequisites": [
+    "properties of logarithms",
+    "basic inequalities",
+    "finite products and sums"
+  ],
+  "callout_body": "证明:$$\\prod_{n=1}^{N}\\left(1-\\frac{1}{2n}\\right)<\\frac{1}{\\sqrt{2N}}$$"
+}

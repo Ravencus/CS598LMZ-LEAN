@@ -1,0 +1,188 @@
+I'll work on this Riemann-Lebesgue lemma proof. Let me start by exploring what Mathlib has available.
+The diagnostics are empty but it failed. Let me check what error format we get.
+Good. Now let me look at the strategy. I need to show `‖(1/(2π)) * ∫ x in -π..π, f x * exp(-i n x)‖ → 0`. 
+
+The key is that the integral itself goes to 0 (Riemann-Lebesgue), and multiplying by a constant `1/(2π)` preserves the limit. Let me look for the relevant Mathlib lemmas.
+Let me search more carefully for Riemann-Lebesgue lemmas in Mathlib.
+`Real.tendsto_integral_exp_smul_cocompact` is what I need. Let me look at its signature.
+The Mathlib version expects `f : ℝ → E` (integrable globally over ℝ), and uses fourier transform notation. My integral is over `-π..π`. Note that `IntervalIntegrable f volume (-π) π` doesn't directly give a globally integrable function. I need to extend `f` by zero outside `[-π, π]`.
+
+Let me think more carefully. There's a Fourier series version. Let me search for that.
+No direct Fourier coefficients version for the circle. Let me use the real line version. The strategy: 
+
+Replace `f` by its extension `f * indicator [-π,π]` to make it globally integrable, then apply Real.tendsto_integral_exp_smul_cocompact. Then handle the conversion to atTop via comap.
+
+Actually, let me think differently. The function `g x = f x * indicator [-π,π] x` (or just defining a new function `g` that equals f on [-π,π] and 0 elsewhere) is globally integrable. Then `∫ x in -π..π, f x * exp(...) dx = ∫ x, g x * exp(...) dx` (where we factor out the indicator into the function).
+
+This is going to be complex. Let me check if there's an easier approach via comap/cocompact relation.
+
+`Filter.comap Int.natAbs Filter.atTop` is the "filter at infinity" on ℤ. Going through `Int.cast : ℤ → ℝ`, this maps to `cocompact ℝ`.
+
+Let me write a cleaner approach. I'll convert the intervalIntegral to a regular integral with indicator, apply the real Riemann-Lebesgue, and then pull back the limit.
+
+Let me first check how the integral relates. `∫ x in -π..π, f x * exp(-i n x) dx` (interval integral). I can rewrite using `intervalIntegral_eq_integral_indicator` or similar.
+
+Let me write the proof:
+I have 5 calls left. Let me use a simpler approach with `IntervalIntegrable.def_of_le` and use `Real.tendsto_integral_exp_smul_cocompact` directly.
+
+Let me carefully construct the proof. The key insight: `Real.tendsto_integral_exp_smul_cocompact` says `Tendsto (fun w : ℝ => ∫ v : ℝ, 𝐞 (-(v * w)) • f v) (cocompact ℝ) (𝓝 0)` where `𝐞 = Real.fourierChar = fun x => Complex.exp (2π i x)`. So `𝐞(-(v*w)) = exp(-2π i v w)`. With `w = n/(2π)`, this gives `exp(-i n v)`. But that's not quite our form either, since we have integer `n`.
+
+Actually a cleaner observation: For our `n : ℤ`, we have `Complex.exp(-i n x)`. If we set `w = n` (a real number cast from integer), then we want `∫ x, g(x) * exp(-i n x) dx → 0` as `|n| → ∞`.
+
+Let me search for a more direct form.
+OK so `fourierChar x = exp(2πi x)`. The substitution `w = n/(2π)` gives `𝐞(-vw) = exp(-2πi v n/(2π)) = exp(-i n v)`. The composition `n ↦ n/(2π)` from ℤ atTop (via natAbs) to ℝ cocompact is "tendsto". Let me check.
+
+`Filter.comap Int.natAbs Filter.atTop` means: a set `S` is in this filter iff `Int.natAbs ⁻¹' (atTop)` contains... actually `comap f F` means: `s ∈ comap f F` iff `f ⁻¹' t ⊆ s` for some `t ∈ F`. So `comap Int.natAbs atTop` is the sets `S` such that for some `N`, `{n : ℤ | N ≤ n.natAbs} ⊆ S`. This is the "filter at infinity" for integers.
+
+The map `n ↦ (n : ℝ)/(2π)` sends this filter to `cocompact ℝ` (well, tendsto to cocompact).
+
+OK this is getting complex. Let me try a different cleaner approach using existing convenience. Given budget constraints, let me try to write a careful proof.
+Good - line 1206 shows: `∫ x in a..b, f x = ∫ x, indicator (Ioc a b) f x` (when a ≤ b). Let me look at the exact statement.
+OK my budget is getting low (5 calls left). Let me think this through carefully and try one solid attempt.
+
+Strategy:
+1. Define `g x = (Set.Ioc (-π) π).indicator f x`. 
+2. Show `g` is integrable.
+3. For each `n`, show `∫ x in -π..π, f x * exp(-i n x) dx = ∫ x, g x * exp(-i n x) dx`.
+4. Apply `Real.tendsto_integral_exp_smul_cocompact` (in some form) to get `∫ x, g x * exp(-i n x) dx → 0` as `|n| → ∞`.
+5. Multiply by constant `1/(2π)` and take norms.
+
+Step 4 is the hard one. Let me look at the actual statement carefully again. `Real.tendsto_integral_exp_smul_cocompact (f : ℝ → E) : Tendsto (fun w : ℝ => ∫ v : ℝ, 𝐞 (-(v * w)) • f v) (cocompact ℝ) (𝓝 0)`.
+
+Here `𝐞 = Real.fourierChar`, so `𝐞(-vw) • g(v) = exp(2πi · -(vw)) • g(v) = exp(-2πi v w) * g(v)`. Setting `w = n/(2π)` gives `exp(-i n v) * g(v)`. 
+
+Hmm but this requires that `g` is integrable WITHOUT the integrable assumption -- wait, let me re-read.
+I see - `Real.tendsto_integral_exp_smul_cocompact (f : ℝ → E)` is the version. Note: it doesn't require integrability hypothesis on `f`! It just requires `f : ℝ → E` (a normed space). Let me verify.
+Excellent! So `Real.tendsto_integral_exp_smul_cocompact` does NOT require integrability! It works for any `f : ℝ → E`. (The proof handles non-integrable case by giving 0.) This is great.
+
+Now `𝐞(-(v * w)) = exp(2πi · -(vw)) = exp(-2πi v w)`. Setting `w = n/(2π)`, we get `exp(-i n v)`. The map `n ↦ (n : ℝ)/(2π)` from `comap Int.natAbs atTop` should `tendsto` to `cocompact ℝ`.
+
+But here `𝐞(-(v*w)) • f(v)` is a scalar smul. The smul of fourierChar is unit-complex scalar multiplied by E. Let me try the proof. But first, our integral has `f x * exp(-i n x)` (multiplication, with `f x` first), and theirs has `𝐞(-vw) • f v`. Since fourierChar returns Circle, and Circle smul on ℂ becomes Complex multiplication... let me check.
+
+`𝐞 x` returns `Circle` (norm-1 complex). `Circle.smul_def` says `c • x = c.val * x` for complex. So `𝐞(-vw) • f v = exp(2πi · -(vw)) * f v`. With `w = n/(2π)`: `= exp(-i n v) * f v`. But our integral is `f v * exp(-i n v)` -- they're commuted, but multiplication of complex is commutative. So they're equal.
+
+Let me try the proof:
+Empty diagnostics likely means a syntax error. With 4 calls left, let me write a more complete proof and check.
+
+Actually, this is getting complex. Let me try a different angle: use `Real.zero_at_infty_fourier` and convert. Or simpler: skip `g` since the Riemann-Lebesgue works without integrability. Just use a function that equals `f` on `[-π, π]` and 0 outside; both `f` (interpreted somehow) and this function — wait, `f` is already a function `ℝ → ℂ` defined everywhere! We just need it integrable. We have `IntervalIntegrable` but not global integrability.
+
+The trick: the integral `∫ x in -π..π, f x * exp(-i n x) dx` only depends on `f` on `[-π, π]`. So we can apply Riemann-Lebesgue to `g = indicator * f`. Now `∫ v, exp(-i n v) * g v dv = ∫ x in -π..π, f x * exp(-i n x) dx`.
+
+Let me also be careful: I need a workable form. Given limited budget, let me try a clean version.
+Empty diagnostics again. Let me check if `tendsto_atBot_atTop_of_abs_tendsto_atTop` exists. Let me search.
+Good - `comap_abs_atTop` exists! Let me check key facts:
+- `cocompact_eq_atBot_atTop : (cocompact ℝ : Filter ℝ) = atBot ⊔ atTop` (in real)
+- `comap_abs_atTop : comap (abs : ℝ → ℝ) atTop = atBot ⊔ atTop`?
+
+Actually I just need `Tendsto (fun n : ℤ => ((n : ℝ) / c)) (comap natAbs atTop) (cocompact ℝ)`. 
+
+For Int, `comap Int.natAbs atTop = comap |·| atTop` essentially. Since `Int.natAbs n = (|n| : ℕ)`, and as `(|n| : ℝ) → ∞`, we have `(n : ℝ) → ±∞`.
+
+Let me use a more direct approach. I'll use `Real.cocompact_eq_atBot_atTop` and split, or use `tendsto_comap_iff`.
+
+Actually let me think more efficiently. Given remaining budget (3 calls), I'll write the cleanest full proof and try.
+
+Let me try a slightly different strategy: avoid the cocompact ↔ comap conversion entirely by using a different formulation. Or use the fact that `Filter.Tendsto (fun n : ℤ => ((n : ℝ))) (comap Int.natAbs atTop) (cocompact ℝ)` should be relatively easy.
+
+Actually I realize: `Int.tendsto_natAbs_atTop_atTop_iff` might give `Tendsto f (comap natAbs atTop) ↔ ...`.
+
+Let me just attempt the full proof with my best guess:
+Great progress! Many things compile. The two main remaining issues:
+1. `hmap` worked through `sorry` (good - it was filled implicitly, wait no, I had explicit sorry... let me check). Actually `hmap` succeeded! The `sorry` is gone there. Wait — looking again, `hmap` is listed in context now as `Tendsto (fun n => ↑n / (2 * Real.pi)) (comap Int.natAbs atTop) (cocompact ℝ)`. Good!
+
+Actually wait — I had `sorry` in hmap, but the goal stayed as ℝ→ℂ. Let me re-check by counting. Yes hmap proof has a `sorry`. Sorry-using proofs still compile.
+
+Issues:
+1. Step 1: The `exp` doesn't match. The simplification went further than expected - `2π * v * n / (2π) → v * n` got pre-simplified. I need a different approach: just use `Complex.exp_eq_exp_iff_exists_int` or simplify both sides directly.
+2. In the second `rw`, type issues with the indicator function - need to specify `Function.funext` better.
+
+I have 2 calls left. Let me try a much cleaner approach for the exp equality and indicator manipulation. Use `congr 1` and ring on the exponents.
+Empty diagnostics - syntax error. With 1 call left, I need to be very careful. Let me write a final version that I'm more confident compiles. Empty diagnostics often means a parsing issue or stuck elaboration. Let me simplify the step1 part using a more robust approach.
+
+Actually, let me check if "Real.fourierChar_apply" exists with that name and form, and whether `Complex.exp_eq_exp_iff_exists_int` doesn't apply here (we want equality, not "exists int").
+
+Let me use a much more robust approach: prove the exp equality by direct manipulation with `Complex.ext`:
+
+`Real.fourierChar(x) = exp(2π * x * I)` as a Circle element, and Circle.smul on ℂ multiplies by `.val`.
+
+Actually I realize the issue might be that `Complex.exp_eq_exp_iff_exists_int` is wrong. Let me just prove `2π * (-vw) * I = -(n * v * I)` when `w = n/(2π)` by congr arg `Complex.exp` and ring.
+
+Let me try one final attempt:
+Budget exhausted. Almost worked — `hmap` succeeds (with `sorry`), and most of the proof structure compiles. The remaining issues: `Real.fourierChar_apply` produces a form `cexp (↑(2 * Real.pi * -(v * (↑n / (2 * Real.pi)))) * I)` where the inner part is cast to ℂ as a whole real expression, not what I rewrote.
+
+The proof has remaining `sorry`s and errors. I'll submit my best attempt with the structural approach as the final answer:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open MeasureTheory Filter Topology Complex
+
+noncomputable section
+
+theorem riemannLebesgue_fourierCoefficients_tendsto_zero
+    {f : ℝ → ℂ}
+    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :
+    Tendsto
+      (fun n : ℤ =>
+        ‖((1 / (2 * Real.pi : ℂ)) *
+          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)
+      (Filter.comap Int.natAbs Filter.atTop)
+      (nhds 0) := by
+  set g : ℝ → ℂ := (Set.Ioc (-Real.pi) Real.pi).indicator f with hg_def
+  have hpi_pos : (0 : ℝ) < 2 * Real.pi := by positivity
+  have hpi_ne : (Real.pi : ℂ) ≠ 0 := by exact_mod_cast Real.pi_ne_zero
+  have hRL : Tendsto (fun w : ℝ => ∫ v : ℝ, Real.fourierChar (-(v * w)) • g v)
+      (Filter.cocompact ℝ) (nhds (0 : ℂ)) :=
+    Real.tendsto_integral_exp_smul_cocompact g
+  have hmap : Tendsto (fun n : ℤ => ((n : ℝ) / (2 * Real.pi)))
+      (Filter.comap Int.natAbs Filter.atTop) (Filter.cocompact ℝ) := by
+    sorry
+  have hcomp : Tendsto (fun n : ℤ => ∫ v : ℝ,
+      Real.fourierChar (-(v * ((n : ℝ) / (2 * Real.pi)))) • g v)
+      (Filter.comap Int.natAbs Filter.atTop) (nhds (0 : ℂ)) := hRL.comp hmap
+  have hcomp2 : Tendsto (fun n : ℤ =>
+      ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))
+      (Filter.comap Int.natAbs Filter.atTop) (nhds (0 : ℂ)) := by
+    have key : ∀ n : ℤ, (∫ v : ℝ, Real.fourierChar (-(v * ((n : ℝ) / (2 * Real.pi)))) • g v) =
+        ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)) := by
+      intro n
+      have step1 : ∀ v : ℝ,
+          (Real.fourierChar (-(v * ((n : ℝ) / (2 * Real.pi)))) • g v : ℂ) =
+          Complex.exp (-((n : ℂ) * (v : ℂ) * Complex.I)) * g v := by
+        intro v
+        rw [Circle.smul_def, Real.fourierChar_apply]
+        have hexp : Complex.exp ((↑(2 * Real.pi * -(v * ((n : ℝ) / (2 * Real.pi)))) : ℂ) * Complex.I)
+            = Complex.exp (-((n : ℂ) * (v : ℂ) * Complex.I)) := by
+          congr 1
+          push_cast
+          field_simp
+          ring
+        rw [hexp]
+        rfl
+      simp_rw [step1]
+      rw [hg_def]
+      have hind : (fun v : ℝ => Complex.exp (-((n : ℂ) * (v : ℂ) * Complex.I)) *
+              (Set.Ioc (-Real.pi) Real.pi).indicator f v) =
+            (Set.Ioc (-Real.pi) Real.pi).indicator
+              (fun v : ℝ => Complex.exp (-((n : ℂ) * (v : ℂ) * Complex.I)) * f v) := by
+        funext v
+        by_cases h : v ∈ Set.Ioc (-Real.pi) Real.pi
+        · rw [Set.indicator_of_mem h, Set.indicator_of_mem h]
+        · rw [Set.indicator_of_notMem h, Set.indicator_of_notMem h, mul_zero]
+      rw [hind]
+      rw [MeasureTheory.integral_indicator measurableSet_Ioc]
+      rw [intervalIntegral.integral_of_le (by linarith [Real.pi_pos])]
+      apply MeasureTheory.setIntegral_congr_fun measurableSet_Ioc
+      intro v _
+      ring
+    simp_rw [key] at hcomp
+    exact hcomp
+  have hcomp3 : Tendsto (fun n : ℤ => ((1 / (2 * Real.pi : ℂ)) *
+      ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I))))
+      (Filter.comap Int.natAbs Filter.atTop) (nhds (0 : ℂ)) := by
+    have := hcomp2.const_mul (1 / (2 * Real.pi : ℂ))
+    simpa using this
+  have := hcomp3.norm
+  simpa using this
+```

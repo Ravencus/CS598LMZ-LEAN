@@ -1,0 +1,4 @@
+["an-epsilon-of-room-hub", "piecewise-estimates-hub", "basic-methods-in-analysis-i-hub"]
+- an-epsilon-of-room-hub: The proof replaces the non-separated decomposition around a closed/Borel set by positive-distance approximations such as points at distance at least `ε` from the set, where the hypothesis applies.
+- piecewise-estimates-hub: The central move is to split arbitrary sets into separated pieces, apply additivity on those pieces, and compare the resulting outer-measure estimates.
+- basic-methods-in-analysis-i-hub: The argument passes from controlled finite/ε-approximating set statements to the full Borel measurability conclusion, especially when proving closed sets are Carathéodory measurable and then generating the Borel σ-algebra.

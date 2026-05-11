@@ -1,0 +1,35 @@
+{
+  "problem_id": "example-127",
+  "model": "gpt-5.4-mini",
+  "K": 3,
+  "success": false,
+  "attempts_used": 3,
+  "wall_seconds": 46.26,
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "compile_success": false,
+      "n_errors": 1,
+      "first_error": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f ≥ 0\n  e ≥ 0\n  e - f ≥ 0\n  d ≥ 0\n  c ≥ 0\n  c - d ≥ 1\nwhere\n c := ↑b\n d := ↑a\n e := ↑((fun k => 2 * k) a)\n f := ",
+      "wall_seconds": 6.05
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "compile_success": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Nat.mul_lt_mul_right'`\n",
+      "wall_seconds": 6.04
+    },
+    {
+      "attempt": 3,
+      "ok": true,
+      "compile_success": false,
+      "n_errors": 1,
+      "first_error": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f ≥ 0\n  e ≥ 0\n  e - f ≥ 0\n  d ≥ 0\n  c ≥ 0\n  c - d ≥ 1\nwhere\n c := ↑b\n d := ↑a\n e := ↑((fun k => 2 * k) a)\n f := ",
+      "wall_seconds": 7.15
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem evenIndexedSubsequenceOfNaturalSequence :\n    StrictMono (fun k : ℕ => 2 * k) ∧\n      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by\n  constructor\n  · intro a b h\n    omega\n  · intro k\n    rfl"
+}

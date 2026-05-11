@@ -1,0 +1,24 @@
+{
+  "problem_id": "first-terms-of-the-asymptotic-expansion-for-0-r-1",
+  "english_title": "First Terms of the Asymptotic Expansion for 0 < r < 1",
+  "statement_en": "If $0<r<1$, then\n$$\\sum_{k=1}^n k^{-r}=\\frac{1}{1-r} n^{1-r}+\\zeta(r)+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n),$$\nwhere the remainder satisfies\n$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}.$$",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\naxiom zeta : ℝ → ℝ\n\ntheorem pSeriesPartialSumExpansion\n    {r : ℝ} (hr : 0 < r ∧ r < 1) :\n    ∃ E : ℕ → ℝ, ∀ n : ℕ, 1 ≤ n →\n      ((∑ k ∈ Finset.Icc 1 n, Real.rpow (k : ℝ) (-r)) =\n          (1 / (1 - r)) * Real.rpow (n : ℝ) (1 - r)\n            + zeta r\n            + (1 / 2 : ℝ) * Real.rpow (n : ℝ) (-r)\n            - (r / 12) * Real.rpow (n : ℝ) (-r - 1)\n            + E n) ∧\n        |E n| < (r * (r + 1) * (r + 2)) / (720 * Real.rpow (n : ℝ) (r + 3)) := by\n  sorry"
+}

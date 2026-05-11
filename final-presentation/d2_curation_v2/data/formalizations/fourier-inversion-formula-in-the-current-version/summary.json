@@ -1,0 +1,18 @@
+{
+  "problem_id": "fourier-inversion-formula-in-the-current-version",
+  "english_title": "Fourier Inversion Formula in the Current Version",
+  "statement_en": "If $f\\in \\mathscr{F}$, then $$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x).$$",
+  "difficulty": "medium",
+  "domain": "Fourier analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\nopen scoped Topology BigOperators\n\ntheorem fourier_inversion_statement\n    (𝓕 : Set (ℝ → ℂ))\n    (fhat : (ℝ → ℂ) → ℝ → ℂ)\n    (f : ℝ → ℂ)\n    (x : ℝ)\n    (hf : f ∈ 𝓕) :\n    (∫ ξ : ℝ, fhat f ξ * Complex.exp ((((2 : ℝ) * Real.pi * x * ξ : ℝ) : ℂ) * Complex.I) ∂volume) = f x := by\n  sorry"
+}

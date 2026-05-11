@@ -1,0 +1,2 @@
+["cauchy-convergence-criterion-hub"]
+- cauchy-convergence-criterion-hub: The proof is by contrapositive, using failure of convergence to construct a subsequence that stays outside some neighborhood of `y`, so no further subsequence can converge to `y`.

@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-05-10T03:37:57",
+  "checks": {
+    "pong": {
+      "gpt-5.5": {
+        "ok": true,
+        "wall": 6.3,
+        "response_excerpt": "PONG"
+      },
+      "gpt-5.4-mini": {
+        "ok": true,
+        "wall": 2.1,
+        "response_excerpt": "PONG"
+      },
+      "claude-opus-4-7": {
+        "ok": true,
+        "wall": 4.6,
+        "response_excerpt": "PONG"
+      },
+      "deepseek-v4-pro": {
+        "ok": true,
+        "wall": 4.1,
+        "response_excerpt": "PONG"
+      },
+      "deepseek-v4-flash": {
+        "ok": true,
+        "wall": 2.4,
+        "response_excerpt": "PONG"
+      }
+    },
+    "lake_compile": {
+      "ok": true,
+      "wall": 2.3,
+      "n_errors": 0
+    },
+    "deepseek_key": {
+      "ok": true,
+      "path": "/workspace/.deepseek_api"
+    },
+    "disk_free_mb": {
+      "ok": true,
+      "free_mb": 2645181
+    },
+    "manifest": {
+      "ok": true,
+      "n_problems": 30
+    }
+  },
+  "ok": true
+}

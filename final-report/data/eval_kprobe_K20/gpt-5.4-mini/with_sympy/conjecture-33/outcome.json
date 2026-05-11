@@ -1,0 +1,64 @@
+{
+  "problem_id": "conjecture-33",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 57.24,
+  "wall_exceeded": false,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 1,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "sequence_dense_in_unit_interval",
+  "signature_ok": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 5,
+  "first_error": "Unknown constant `Set.mem_closure_iff`\nMetric.mem_closure_iff.{u} {α : Type u} [PseudoMetricSpace α] {s : Set α} {a : α} :\n  a ∈ closure s ↔ ∀ ε > 0, ∃ b ∈ s, dist a b < ε",
+  "total_cost_usd": 0.0,
+  "total_tokens": 160119,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_d3523a94ab.lean",
+      "line": 5,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Set.mem_closure_iff`\nMetric.mem_closure_iff.{u} {α : Type u} [PseudoMetricSpace α] {s : Set α} {a : α} :\n  a ∈ closure s ↔ ∀ ε > 0, ∃ b ∈ s, dist a b < ε"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_d3523a94ab.lean",
+      "line": 7,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Real.denseRange_sin`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_d3523a94ab.lean",
+      "line": 8,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Real.denseRange_cos`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_d3523a94ab.lean",
+      "line": 9,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Real.denseRange_nat_sin`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_d3523a94ab.lean",
+      "line": 10,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown identifier `denseRange_natCast`\nSet.range.{u, u_1} {α : Type u} {ι : Sort u_1} (f : ι → α) : Set α\n"
+    }
+  ]
+}

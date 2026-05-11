@@ -1,0 +1,69 @@
+{
+  "problem_id": "lemma-21",
+  "model": "deepseek-v4-pro",
+  "condition": "with_sympy",
+  "outcome": "wall_budget_exceeded",
+  "overall_success": false,
+  "wall_seconds": 600.02,
+  "wall_exceeded": true,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 3,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 6,
+  "first_error": "Unknown identifier `add_neg_self`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commut",
+  "total_cost_usd": 0.077712,
+  "total_tokens": 136677,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_3a8bb651a2.lean",
+      "line": 11,
+      "column": 27,
+      "severity": "error",
+      "message": "Unknown identifier `add_neg_self`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_3a8bb651a2.lean",
+      "line": 22,
+      "column": 4,
+      "severity": "error",
+      "message": "unsolved goals\nx : ℝ\nφ : ℂ := ↑π * ↑x\nhφ : φ = ↑π * ↑x\nz : ℂ := φ * I\nhz : z = φ * I\nh_exp_mul_neg : ∀ (w : ℂ), cexp w * cexp (-w) = 1\nh_exp_double_sub_one : ∀ (w : ℂ), cexp (2 * w) - 1 = cexp w * (cexp w - cexp (-w))\nθ : ℂ\n⊢ cexp (θ * I) - cexp (-(θ * I)) = -(I ^ 2 * cexp (θ * I)) + I ^ 2 * cexp (-(θ * I))"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_3a8bb651a2.lean",
+      "line": 23,
+      "column": 4,
+      "severity": "error",
+      "message": "No goals to be solved\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_3a8bb651a2.lean",
+      "line": 35,
+      "column": 8,
+      "severity": "error",
+      "message": "No goals to be solved"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_3a8bb651a2.lean",
+      "line": 55,
+      "column": 40,
+      "severity": "error",
+      "message": "unsolved goals\nx : ℝ\nφ : ℂ := ↑π * ↑x\nhφ : φ = ↑π * ↑x\nz : ℂ := φ * I\nhz : z = φ * I\nh_exp_mul_neg : ∀ (w : ℂ), cexp w * cexp (-w) = 1\nh_exp_double_sub_one : ∀ (w : ℂ), cexp (2 * w) - 1 = cexp w * (cexp w - cexp (-w))\nh_sin_identity : ∀ (θ : ℂ), cexp (θ * I) - cexp (-(θ * I)) = 2 * I * Complex.sin θ\nh_main_identity : cexp (↑(2 * π * x) * I) - 1 = 2 * I * cexp z * Complex.sin φ\nh_norm_exp : ‖cexp z‖ = 1\nhsin : Complex.sin φ = ↑(Real.sin (π * x))\n⊢ 2 * ‖Real.sin (π * x)‖ = 2 * |Real.sin (π * x)|"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_3a8bb651a2.lean",
+      "line": 61,
+      "column": 6,
+      "severity": "error",
+      "message": "Tactic `apply` failed: could not unify the conclusion of `@abs_sin_le_abs`\n  |Real.sin ?x| ≤ |?x|\nwith the goal\n  0 ≤ Real.sin (π * x)\n\nNote: The full type of `@abs_sin_le_abs` is\n  ∀ {x : ℝ}, |Real.sin x| ≤ |x|\n\ncase hbc.ha\nx : ℝ\nφ : ℂ := ⋯\nhφ : φ = ↑π * ↑x\nz : ℂ := ⋯\nhz : z = φ * I\nh_exp_mul_neg : ∀ (w : ℂ), cexp w * cexp (-w) = 1\nh_exp_double_sub_one : ∀ (w : ℂ), cexp (2 * w) - 1 = cexp w * (cexp w - cexp (-w))\nh_sin_identity : ∀ (θ : ℂ), cexp (θ * I) - cexp (-(θ * I)) = 2 * I * Complex.sin θ\nh_main_identity : cexp (↑(2 * π * x) * I) - 1 = 2 * I * cexp z * Complex.sin φ\nh_norm_exp : ‖cexp z‖ = 1\n⊢ 0 ≤ Real.sin (π * x)\n"
+    }
+  ]
+}

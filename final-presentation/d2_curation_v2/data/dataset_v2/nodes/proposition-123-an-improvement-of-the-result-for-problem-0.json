@@ -1,0 +1,22 @@
+{
+  "id": "proposition-123-an-improvement-of-the-result-for-problem-0",
+  "type": "problem",
+  "source_note": "判断剧烈震荡的序列部分和的有界性问题",
+  "english_source_note": "Boundedness of Partial Sums of Highly Oscillatory Sequences",
+  "callout_id": "判断剧烈震荡的序列部分和的有界性问题#5",
+  "english_title": "Proposition 1.2.3: An Improvement of the Result for Problem 0",
+  "statement_en": "Let $$S_N:=\\sum_{n\\leq N}\\sin(n^2).$$ Then $$\\limsup_{N\\to \\infty}\\frac{|S_N|}{\\sqrt{N}}>0.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "second-moment or variance lower bounds",
+    "quadratic exponential sum estimates"
+  ],
+  "prerequisites": [
+    "trigonometric sums",
+    "limsup arguments",
+    "basic moment methods"
+  ],
+  "callout_body": "令$$S_N:=\\sum_{n\\leq N}\\sin(n^2)$$那么$$\\limsup_{N\\to \\infty}\\frac{|S_N|}{\\sqrt{N}}>0$$"
+}

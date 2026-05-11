@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-127",
+  "english_title": "Example 1.2.7",
+  "statement_en": "Consider the sequence $a_n=n$. Then $a_{2k}$ is a subsequence of the original sequence. This means selecting the even-indexed elements from $1,2,\\cdots,n,\\cdots$ and arranging them in the same order as in the original sequence $a_n$. Here $n_k:=2k$, which is a sequence of natural numbers that is strictly increasing.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem evenIndexedSubsequenceOfNaturalSequence :\n    StrictMono (fun k : ℕ => 2 * k) ∧\n      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by\n  sorry"
+}

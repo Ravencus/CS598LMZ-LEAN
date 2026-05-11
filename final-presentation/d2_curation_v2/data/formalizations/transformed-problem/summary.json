@@ -1,0 +1,30 @@
+{
+  "problem_id": "transformed-problem",
+  "english_title": "Transformed Problem",
+  "statement_en": "Find an asymptotic expansion of\n$$S(N):=\\zeta(2)-\\sum_{n\\leq N}\\frac{1}{n^2}$$\nwith the coefficient of $\\frac{1}{N}$ determined exactly.",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token ':='; expected ')', ',' or ':'\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem zetaTwoTail_asymptotic :\n    Filter.Tendsto\n      (fun N : ℕ =>\n        (N : ℝ) *\n          (tsum (fun n : ℕ => (1 : ℝ) / (((n + 1 : ℕ) : ℝ) ^ (2 : ℕ))) -\n            ∑ n in Finset.Icc 1 N, (1 : ℝ) / ((n : ℝ) ^ (2 : ℕ)))\n      Filter.atTop\n      (Filter.nhds (1 : ℝ)) := by\n  sorry"
+}

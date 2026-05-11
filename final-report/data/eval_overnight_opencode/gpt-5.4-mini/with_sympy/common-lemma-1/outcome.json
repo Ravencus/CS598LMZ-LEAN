@@ -1,0 +1,62 @@
+{
+  "problem_id": "common-lemma-1",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 268.36,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 5,
+  "first_error": "Invalid field `tsum_ne_top`: The environment does not contain `Exists.tsum_ne_top`, so it is not possible to project the field `tsum_ne_top` from an expression\n  hsum\nof type\n  ∃ a, HasSum (fun n => μ",
+  "total_cost_usd": 0.0,
+  "total_tokens": 1707869,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_e882522b75.lean",
+      "line": 17,
+      "column": 23,
+      "severity": "error",
+      "message": "Invalid field `tsum_ne_top`: The environment does not contain `Exists.tsum_ne_top`, so it is not possible to project the field `tsum_ne_top` from an expression\n  hsum\nof type\n  ∃ a, HasSum (fun n => μ {x | ε ≤ |fSeq (n + 1) x - f x|}) a"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_e882522b75.lean",
+      "line": 31,
+      "column": 25,
+      "severity": "error",
+      "message": "Invalid field `tsum_ne_top`: The environment does not contain `Exists.tsum_ne_top`, so it is not possible to project the field `tsum_ne_top` from an expression\n  hsum\nof type\n  ∃ a, HasSum (fun n_1 => μ {x | 1 / (↑n + 1) ≤ |fSeq (n_1 + 1) x - f x|}) a"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_e882522b75.lean",
+      "line": 44,
+      "column": 8,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hmul\n has type\n  ε * ε⁻¹ < ε * ↑n\nbut is expected to have type\n  1 < ε * ↑n"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_e882522b75.lean",
+      "line": 51,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown identifier `div_lt_iff`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_e882522b75.lean",
+      "line": 54,
+      "column": 42,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  htail\nhas type\n  ∀ᵐ (x : α) ∂μ, Tendsto (fun n => fSeq (n + 1) x) atTop (𝓝 (f x))\nbut is expected to have type\n  Tendsto (fun n => ?m.524 (n + 1)) atTop ?m.525\nin the application\n  (tendsto_add_atTop_iff_nat 1).mp htail\n"
+    }
+  ]
+}

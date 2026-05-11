@@ -1,0 +1,143 @@
+{
+  "note_title": "有限测度下各个收敛之间的关系",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "有限测度下各个收敛之间的关系#1",
+      "type": "note",
+      "title": "定义0：收敛的模式",
+      "body": "在有限测度空间$(X,\\mathcal{F},\\mu)$上定义的(值域为$\\mathbb{R}$或者$\\mathbb{C}$)可测函数列$\\{f_n(x)\\}_{n\\in \\mathbb{N}}$依照某种模式收敛到可测函数$f(x)$，其具体定义为：\n\n* ***几乎处处收敛***:$$f_n\\xrightarrow{a.e.}{f}$$其含义为，存在一个零测度集$N\\in \\mathcal{F},\\mu(N)=0$,使得$f_n(x)\\to f(x),\\forall x \\in N^c$。也就是说函数列在零测度集合$N$的补集上是逐点收敛的。\n* ***依测度收敛***：$$f_n\\xrightarrow{\\mu}{f}$$其含义为，对于任意的$\\varepsilon>0$，正实数序列$$\\mu(x\\in X:|f_n(x)-f(x)|\\geq \\varepsilon)\\to 0$$\n* ***依$L^p$范数收敛***：$$f_n\\xrightarrow{L^p}{f}$$其含义为，实数列$$||f_n-f||_{L^p}\\to 0$$其中$||\\cdot||_{L^p}$是$L^p$范数，也就是说这种收敛首先要保证$L^p$可积。\n* **一致收敛**：$$f_n\\xrightarrow{u}{f}$$其含义为,实数列$$||f_n-f||_u:=\\sup_{x\\in X}|f_n(x)-f(x)|\\to 0$$\n* ***弱收敛（依分布收敛）***：函数$f_n$通过$$F_n(A):=\\mu(\\{x:f_n(x)\\in A\\})$$的方式定义出一个分布测度$F_n$相应的，函数$f$对应的分布测度为$F$,那么如果对于所有的continuity set $A$(即Borel集合,且满足$\\mu(\\partial A)=0$)都有$F_n(A)\\to F(A)$,那么我们说$$f_n \\xrightarrow{d}{f}$$即函数列$f_n$依照分布收敛到$f$。",
+      "position_char": 61,
+      "position_line": 8,
+      "classification_result": {
+        "id": "有限测度下各个收敛之间的关系#1",
+        "classification": "definition",
+        "english_title": "Definition 0: Modes of Convergence",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "有限测度下各个收敛之间的关系#2",
+      "type": "note",
+      "title": "命题1：依照Lp范数收敛推出依测度收敛",
+      "body": "$$f_n\\xrightarrow{L^p}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$",
+      "position_char": 1779,
+      "position_line": 23,
+      "classification_result": {
+        "id": "有限测度下各个收敛之间的关系#2",
+        "classification": "problem",
+        "english_title": "Proposition 1: Convergence in the \\(L^p\\) Norm Implies Convergence in Measure",
+        "if_problem": {
+          "statement_en": "$$f_n\\xrightarrow{L^p}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Chebyshev inequality",
+            "Lp norm estimate"
+          ],
+          "prerequisites": [
+            "measurable functions",
+            "Lp spaces",
+            "convergence in measure"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "有限测度下各个收敛之间的关系#3",
+      "type": "note",
+      "title": "Chebyshev不等式",
+      "body": "$$\\begin{aligned}\\mu\\left(\\{x:|f_n(x)-f(x)|\\geq\n\\varepsilon\\}\\right)&=\\mu\\left(\\{x:|f_n(x)-f(x)|^p\\geq\n\\varepsilon^p\\}\\right) \\\\ &= \\int_{\\{x:|f_n(x)-f(x)|^p\\geq\n\\varepsilon^p\\}}1d\\mu \\\\&\\leq\n\\int_{\\{x:|f_n(x)-f(x)|^p\\geq\n\\varepsilon^p\\}}\\frac{|f_n(x)-f(x)|^p}{\\varepsilon^p}d\\mu\n\\\\&\\leq \\int \\frac{|f_n(x)-f(x)|^p}{\\varepsilon^p} d\\mu =\n\\frac{1}{\\varepsilon^p}||f_n-f||^p_{L^p}\\end{aligned}$$",
+      "position_char": 2507,
+      "position_line": 35,
+      "classification_result": {
+        "id": "有限测度下各个收敛之间的关系#3",
+        "classification": "problem",
+        "english_title": "Chebyshev Inequality",
+        "if_problem": {
+          "statement_en": "$$\\mu\\left(\\{x:|f_n(x)-f(x)|\\geq \\varepsilon\\}\\right)\\leq \\frac{1}{\\varepsilon^p}||f_n-f||^p_{L^p}$$",
+          "problem_type": "lemma",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Markov-Chebyshev inequality",
+            "indicator function estimate"
+          ],
+          "prerequisites": [
+            "measure theory",
+            "Lp spaces",
+            "integration of nonnegative functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "有限测度下各个收敛之间的关系#4",
+      "type": "note",
+      "title": "命题2.1.1：有限测度空间中几乎处处收敛推出依测度收敛",
+      "body": "如果$\\mu(X)<\\infty$,那么$$f_n\\xrightarrow{a.e.}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$",
+      "position_char": 3520,
+      "position_line": 66,
+      "classification_result": {
+        "id": "有限测度下各个收敛之间的关系#4",
+        "classification": "problem",
+        "english_title": "Proposition 2.1.1: In a Finite Measure Space, Almost Everywhere Convergence Implies Convergence in Measure",
+        "if_problem": {
+          "statement_en": "If $\\mu(X)<\\infty$, then $$f_n\\xrightarrow{a.e.}{f}\\implies f_n\\xrightarrow{\\mu}{f}$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Egorov-type finite measure argument",
+            "measure estimate on exceptional sets"
+          ],
+          "prerequisites": [
+            "measure theory",
+            "almost everywhere convergence",
+            "convergence in measure"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "有限测度下各个收敛之间的关系#5",
+      "type": "example",
+      "title": "反例2.1",
+      "body": "假设$X_n$是一列独立的随机变量，满足$$\\mathbb{P}(X_n=1)=\\frac{1}{n},\\mathbb{P}(X_n=0)=1-\\frac{1}{n}$$对于足够小的$\\varepsilon>0$,$\\mathbb{P}(|X_n|\\geq \\varepsilon)=\\frac{1}{n}$因此我们知道$$X_n \\xrightarrow{\\mathbb{P}}0$$但是，如果我们发现$\\sum_{n\\geq 1}\\mathbb{P}(X_n=1) =+\\infty$,由于随机变量的独立性，第二Borel-Cantelli引理(参考[[Borel-Cantelli lemma及其应用#2.1 第二Borel-Cantelli引理]])告诉我们$$\\mathbb{P}(\\{\\omega:X_n(\\omega)=1 \\text{ i.o.}\\})=1$$令$E_{n,\\varepsilon}:=\\{\\omega:|X_n(\\omega)-1|\\geq \\varepsilon\\}$那么上述结果相当于告诉我们$\\mathbb{P}(\\limsup_{n\\to \\infty}E_{n,\\varepsilon})=0$因此由[[Borel-Cantelli lemma及其应用#1. 此lemma在序列的几乎处处收敛上的应用]]当中的“常用引理1”$$X_n \\xrightarrow{\\text{a.e.}}1$$\n这个例子告诉我们，函数列依测度收敛到某个结果未必几乎处处收敛到相同的结果。",
+      "position_char": 3946,
+      "position_line": 74,
+      "classification_result": {
+        "id": "有限测度下各个收敛之间的关系#5",
+        "classification": "problem",
+        "english_title": "Counterexample 2.1",
+        "if_problem": {
+          "statement_en": "Let $X_n$ be independent random variables such that $$\\mathbb{P}(X_n=1)=\\frac{1}{n},\\qquad \\mathbb{P}(X_n=0)=1-\\frac{1}{n}.$$ Then for every sufficiently small $\\varepsilon>0$, $$\\mathbb{P}(|X_n|\\geq \\varepsilon)=\\frac{1}{n}\\to 0,$$ so $$X_n\\xrightarrow{\\mathbb{P}}0.$$ However, since $$\\sum_{n\\ge 1}\\mathbb{P}(X_n=1)=+\\infty,$$ the second Borel-Cantelli lemma implies that $X_n=1$ infinitely often almost surely. Hence convergence in measure (or in probability) does not imply almost everywhere convergence to the same limit.",
+          "problem_type": "counterexample",
+          "difficulty": "medium",
+          "domain": "probability theory",
+          "key_techniques": [
+            "second Borel-Cantelli lemma",
+            "independence",
+            "construction of a counterexample"
+          ],
+          "prerequisites": [
+            "convergence in probability",
+            "almost sure convergence",
+            "Borel-Cantelli lemmas"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"有限测度下各个收敛之间的关系#1\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Definition 0: Modes of Convergence\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"有限测度下各个收敛之间的关系#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1: Convergence in the \\\\(L^p\\\\) Norm Implies Convergence in Measure\",\n    \"if_problem\": {\n      \"statement_en\": \"$$f_n\\\\xrightarrow{L^p}{f}\\\\implies f_n\\\\xrightarrow{\\\\mu}{f}$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Chebyshev inequality\",\n        \"Lp norm estimate\"\n      ],\n      \"prerequisites\": [\n        \"measurable functions\",\n        \"Lp spaces\",\n        \"convergence in measure\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"有限测度下各个收敛之间的关系#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Chebyshev Inequality\",\n    \"if_problem\": {\n      \"statement_en\": \"$$\\\\mu\\\\left(\\\\{x:|f_n(x)-f(x)|\\\\geq \\\\varepsilon\\\\}\\\\right)\\\\leq \\\\frac{1}{\\\\varepsilon^p}||f_n-f||^p_{L^p}$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Markov-Chebyshev inequality\",\n        \"indicator function estimate\"\n      ],\n      \"prerequisites\": [\n        \"measure theory\",\n        \"Lp spaces\",\n        \"integration of nonnegative functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"有限测度下各个收敛之间的关系#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1.1: In a Finite Measure Space, Almost Everywhere Convergence Implies Convergence in Measure\",\n    \"if_problem\": {\n      \"statement_en\": \"If $\\\\mu(X)<\\\\infty$, then $$f_n\\\\xrightarrow{a.e.}{f}\\\\implies f_n\\\\xrightarrow{\\\\mu}{f}$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Egorov-type finite measure argument\",\n        \"measure estimate on exceptional sets\"\n      ],\n      \"prerequisites\": [\n        \"measure theory\",\n        \"almost everywhere convergence\",\n        \"convergence in measure\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"有限测度下各个收敛之间的关系#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Counterexample 2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $X_n$ be independent random variables such that $$\\\\mathbb{P}(X_n=1)=\\\\frac{1}{n},\\\\qquad \\\\mathbb{P}(X_n=0)=1-\\\\frac{1}{n}.$$ Then for every sufficiently small $\\\\varepsilon>0$, $$\\\\mathbb{P}(|X_n|\\\\geq \\\\varepsilon)=\\\\frac{1}{n}\\\\to 0,$$ so $$X_n\\\\xrightarrow{\\\\mathbb{P}}0.$$ However, since $$\\\\sum_{n\\\\ge 1}\\\\mathbb{P}(X_n=1)=+\\\\infty,$$ the second Borel-Cantelli lemma implies that $X_n=1$ infinitely often almost surely. Hence convergence in measure (or in probability) does not imply almost everywhere convergence to the same limit.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"probability theory\",\n      \"key_techniques\": [\n        \"second Borel-Cantelli lemma\",\n        \"independence\",\n        \"construction of a counterexample\"\n      ],\n      \"prerequisites\": [\n        \"convergence in probability\",\n        \"almost sure convergence\",\n        \"Borel-Cantelli lemmas\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

@@ -1,0 +1,4 @@
+["an-epsilon-of-room-hub", "piecewise-estimates-hub", "term-by-term-estimates-hub"]
+- an-epsilon-of-room-hub: The core proof reduces the rough \(L^1\) function to better-behaved approximants, typically simple or smooth functions, proves decay there, then passes back by \(L^1\)-approximation.
+- piecewise-estimates-hub: The transfer step splits the Fourier integral into the approximating part and the error \(f-g\), bounding the error by \(\int |f-g|\) since \(|e^{-inx}|=1\).
+- term-by-term-estimates-hub: For simple-function approximants, the integral becomes a finite sum over intervals, and each oscillatory interval integral is estimated explicitly and then summed.

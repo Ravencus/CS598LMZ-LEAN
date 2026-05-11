@@ -1,0 +1,2 @@
+Let me prove this telescoping sum. First, let me check the theorem compiles with `sorry`, then build the proof.
+Good, signature compiles. Now the induction proof — I'll prove the closed form `sum = 1 - 1/N` and then `1 - 1/N < 1`.

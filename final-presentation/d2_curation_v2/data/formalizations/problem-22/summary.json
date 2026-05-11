@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-22",
+  "english_title": "Problem 2.2",
+  "statement_en": "Let $\\alpha_n,\\beta_n$ be two nonnegative nonincreasing real sequences, and suppose both series $\\sum_{n\\geq 1}\\alpha_n$ and $\\sum_{n\\geq 1}\\beta_n$ diverge. Must the series $\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$ also diverge?",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem divergent_min_of_nonnegative_nonincreasing_divergent\n    (α β : ℕ → ℝ)\n    (hα_nonneg : ∀ n : ℕ, 0 ≤ α n)\n    (hβ_nonneg : ∀ n : ℕ, 0 ≤ β n)\n    (hα_antitone : Antitone α)\n    (hβ_antitone : Antitone β)\n    (hα_div : ¬ Summable (fun n : ℕ => α (n + 1)))\n    (hβ_div : ¬ Summable (fun n : ℕ => β (n + 1))) :\n    ¬ Summable (fun n : ℕ => min (α (n + 1)) (β (n + 1))) := by\n  sorry"
+}

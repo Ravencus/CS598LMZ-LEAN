@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_25dc88e8f6ce.lean",
+      "line": 7,
+      "column": 18,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  HMul (Matrix n n R)ˣ (Matrix n n R) ?m.14\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_25dc88e8f6ce.lean",
+      "line": 7,
+      "column": 18,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  HMul (Matrix n n R)ˣ (Matrix n n R) ?m.14\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ]
+}

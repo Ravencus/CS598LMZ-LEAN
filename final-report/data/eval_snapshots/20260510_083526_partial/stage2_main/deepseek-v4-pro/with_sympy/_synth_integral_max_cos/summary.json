@@ -1,0 +1,28 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "deepseek-v4-pro",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": true,
+  "why_success": "sympy_rescue",
+  "attempts_used": 1,
+  "any_timeout": false,
+  "wall_seconds": 26.8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 24.31,
+      "outcome": "sympy_rescue",
+      "overall_success": true,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": true,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": true,
+      "sympy_verified": true,
+      "n_errors": 2,
+      "first_error": "unexpected token '<'; expected command"
+    }
+  ]
+}

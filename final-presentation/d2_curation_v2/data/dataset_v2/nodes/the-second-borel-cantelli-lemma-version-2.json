@@ -1,0 +1,23 @@
+{
+  "id": "the-second-borel-cantelli-lemma-version-2",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "callout_id": "Borel-Cantelli lemma及其应用#7",
+  "english_title": "The Second Borel-Cantelli Lemma, Version 2",
+  "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ be mutually independent, and suppose that $\\mathbb{P}(E_n)<1$. Then $$\\mathbb{P}(\\cup_{n\\geq 1}E_n)=1\\implies \\mathbb{P}(E_n \\text{ i.o.})=1.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "independence",
+    "reformulation of the second Borel-Cantelli lemma",
+    "tail-event reasoning"
+  ],
+  "prerequisites": [
+    "probability spaces",
+    "independence of events",
+    "Borel-Cantelli lemma"
+  ],
+  "callout_body": "合列$E_1,..,E_n,..\\in\\mathcal{F}$互相之间是独立的，并且$\\mathbb{P}(E_n)<1$那么$$\\mathbb{P}(\\cup_{n\\geq 1}E_n)=1\\implies \\mathbb{P}(E_n \\text{ i.o.})=1$$"
+}

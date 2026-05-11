@@ -1,0 +1,391 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: proposition-213-zeros-of-a-one-variable-complex-analytic-fun
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=111.07s    mcp_calls=5
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  let S : Set ℂ := {z | f z = 0} \ {z0}
+  have hA : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hz0_not_closure : z0 ∉ closure S := by
+    intro hz0_closure
+    have hEq : EqOn f 0 U :=
+      hA.eqOn_zero_of_preconnected_of_mem_closure hU_connected hz0U hz0_closure
+    exact hf_nonzero (by
+      intro z hz
+      simpa using hEq hz)
+  have hnhds : Sᶜ ∈ 𝓝 z0 := by
+    exact isClosed_closure.mem_nhds_compl hz0_not_closure
+  rcases Metric.mem_nhds_iff.mp hnhds with ⟨r, hrpos, hrsub⟩
+  refine ⟨r, hrpos, ?_⟩
+  intro z hzU hzdist hz_zero
+  by_contra hne
+  have hzball : z ∈ Metric.ball z0 r := by
+    simpa [Metric.mem_ball, dist_eq_norm] using hzdist
+  have hznotS : z ∉ S := hrsub hzball
+  exact hznotS ⟨hz_zero, by simpa using hne⟩
+--- mcp call 2 (FAIL) ---
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  let S : Set ℂ := {z | f z = 0} \ {z0}
+  have hA : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hz0_not_closure : z0 ∉ closure S := by
+    intro hz0_closure
+    have hEq : EqOn f 0 U :=
+      hA.eqOn_zero_of_preconnected_of_mem_closure hU_connected hz0U hz0_closure
+    exact hf_nonzero (by
+      intro z hz
+      simpa using hEq hz)
+  have hnhds_closure : (closure S)ᶜ ∈ 𝓝 z0 := by
+    exact isClosed_closure.mem_nhds_compl hz0_not_closure
+  have hnhds : Sᶜ ∈ 𝓝 z0 := by
+    refine mem_of_superset hnhds_closure ?_
+    intro z hz
+    exact fun hzS => hz (subset_closure hzS)
+  rcases Metric.mem_nhds_iff.mp hnhds with ⟨r, hrpos, hrsub⟩
+  refine ⟨r, hrpos, ?_⟩
+  intro z hzU hzdist hz_zero
+  by_contra hne
+  have hzball : z ∈ Metric.ball z0 r := by
+    simpa [Metric.mem_ball, dist_eq_norm] using hzdist
+--- mcp call 3 (FAIL) ---
+import Mathlib
+#check IsClosed.mem_nhds_compl
+#check isClosed_closure
+#check Metric.mem_nhds_iff
+#check mem_of_superset
+#check subset_closure
+#check AnalyticOnNhd.eqOn_zero_of_preconnected_of_mem_closure
+#check DifferentiableOn.analyticOnNhd
+--- mcp call 4 (FAIL) ---
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  classical
+  have hf_an : AnalyticAt ℂ f z0 := hf_holo.analyticAt (hU_open.mem_nhds hz0U)
+  rcases hf_an.eventually_eq_zero_or_eventually_ne_zero with hzero | hne
+  · exfalso
+    have hzero_an : AnalyticOnNhd ℂ (fun _ : ℂ => (0 : ℂ)) U := analyticOnNhd_const
+    have hf_an_on : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+    have hEq : Set.EqOn f (fun _ : ℂ => (0 : ℂ)) U :=
+      hf_an_on.eqOn_of_preconnected_of_eventuallyEq hzero_an hU_connected hz0U hzero
+    exact hf_nonzero (by
+      intro z hz
+      simpa using hEq hz)
+  · rw [Metric.eventually_nhds_iff] at hne
+    rcases hne with ⟨r, hrpos, hr⟩
+    refine ⟨r, hrpos, ?_⟩
+    intro z hzU hzdist hzzero
+    by_contra hzne
+    have hzmem : z ∈ ({z0}ᶜ : Set ℂ) := by
+      simpa [Set.mem_compl_iff, Set.mem_singleton_iff] using hzne
+    have hdist : 
+--- mcp call 5 (PASS) ---
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  classical
+  have hf_an : AnalyticAt ℂ f z0 := hf_holo.analyticAt (hU_open.mem_nhds hz0U)
+  rcases hf_an.eventually_eq_zero_or_eventually_ne_zero with hzero | hne
+  · exfalso
+    have hzero_an : AnalyticOnNhd ℂ (fun _ : ℂ => (0 : ℂ)) U := analyticOnNhd_const
+    have hf_an_on : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+    have hEq : Set.EqOn f (fun _ : ℂ => (0 : ℂ)) U :=
+      hf_an_on.eqOn_of_preconnected_of_eventuallyEq hzero_an hU_connected hz0U hzero
+    exact hf_nonzero (by
+      intro z hz
+      simpa using hEq hz)
+  · rcases Metric.mem_nhdsWithin_iff.mp hne with ⟨r, hrpos, hr⟩
+    refine ⟨r, hrpos, ?_⟩
+    intro z hzU hzdist hzzero
+    by_contra hzne
+    have hzball : z ∈ Metric.ball z0 r := by
+      simpa [Metric.mem_ball, dist_eq_norm] using hzdist
+    have hzmem : z ∈ ({z0}ᶜ : Set ℂ) :
+--- final_text ---
+I’ll look for the relevant Mathlib isolated-zero API first, then test a compact proof against the checker within the 10-call limit.
+The useful API is `DifferentiableOn.analyticOnNhd` plus the analytic identity principle from `AnalyticOnNhd`. I’ll test a proof that shows non-isolation would put `z0` in the closure of the punctured zero set, forcing `f` to vanish on all of `U`.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  classical
+  have hf_an : AnalyticAt ℂ f z0 := hf_holo.analyticAt (hU_open.mem_nhds hz0U)
+  rcases hf_an.eventually_eq_zero_or_eventually_ne_zero with hzero | hne
+  · exfalso
+    have hzero_an : AnalyticOnNhd ℂ (fun _ : ℂ => (0 : ℂ)) U := analyticOnNhd_const
+    have hf_an_on : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+    have hEq : Set.EqOn f (fun _ : ℂ => (0 : ℂ)) U :=
+      hf_an_on.eqOn_of_preconnected_of_eventuallyEq hzero_an hU_connected hz0U hzero
+    exact hf_nonzero (by
+      intro z hz
+      simpa using hEq hz)
+  · rcases Metric.mem_nhdsWithin_iff.mp hne with ⟨r, hrpos, hr⟩
+    refine ⟨r, hrpos, ?_⟩
+    intro z hzU hzdist hzzero
+    by_contra hzne
+    have hzball : z ∈ Metric.ball z0 r :
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: lean_proof    wall=110.52s    mcp_calls=9
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+-- Probe lemma names
+example : True := by
+  trivial
+
+#check @AnalyticOnNhd
+#check @DifferentiableOn.analyticOnNhd
+#check @AnalyticAt.eventually_eq_zero_or_eventually_ne_zero
+#check @AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+#check @Metric.eventually_nhds_iff
+#check @Metric.eventually_nhdsWithin_iff
+
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+#check @AnalyticOnNhd
+#check @AnalyticAt.eventually_eq_zero_or_eventually_ne_zero
+
+--- mcp call 3 (PASS) ---
+import Mathlib
+
+#check @DifferentiableOn.analyticOnNhd
+#check @AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+
+--- mcp call 4 (PASS) ---
+import Mathlib
+
+example (U : Set ℂ) (f : ℂ → ℂ) (hU_open : IsOpen U)
+    (hf_holo : DifferentiableOn ℂ f U) : AnalyticOnNhd ℂ f U := by
+  exact hf_holo.analyticOnNhd hU_open
+
+-- check the dichotomy lemma signature
+example (f : ℂ → ℂ) (z0 : ℂ) (h : AnalyticAt ℂ f z0) :
+    (∀ᶠ z in nhds z0, f z = 0) ∨ (∀ᶠ z in nhdsWithin z0 {z0}ᶜ, f z ≠ 0) :=
+  h.eventually_eq_zero_or_eventually_ne_zero
+
+-- check identity theorem
+example (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hf : AnalyticOnNhd ℂ f U) (hU : IsPreconnected U)
+    (hz0U : z0 ∈ U) (h : ∀ᶠ z in nhds z0, f z = 0) :
+    ∀ z ∈ U, f z = 0 := by
+  have : Set.EqOn f 0 U :=
+    hf.eqOn_zero_of_preconnected_of_eventuallyEq_zero hU hz0U h
+  intro z hz
+  have := this hz
+  simpa using this
+
+--- mcp call 5 (FAIL) ---
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  have hAOn : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hAAt : AnalyticAt ℂ f z0 := hAOn z0 hz0U
+  rcases hAAt.eventually_eq_zero_or_eventually_ne_zero with hzero | hne
+  · -- f = 0 in a neighborhood of z0 ⇒ f ≡ 0 on U: contradiction
+    exfalso
+    apply hf_nonzero
+    intro z hz
+    have hEq : Set.EqOn f 0 U :=
+      hAOn.eqOn_zero_of_preconnected_of_eventuallyEq_zero hU_connected hz0U hzero
+    have := hEq hz
+    simpa using this
+  · -- there is a punctured neighborhood where f ≠ 0
+    rw [Metric.eventually_nhdsWithin_iff] at hne
+    rw [Metric.eventually_nhds_iff] at hne
+    obtain ⟨r, hr_pos, hr⟩ := hne
+    refine ⟨r, hr_pos, ?_⟩
+    intro z hzU hz_dist hz_fzero
+    by_contra hne_z
+    have hz_in : z ∈ {z0}ᶜ := by
+      intro hmem
+      apply hne_z
+      simpa using hmem
+    have : dis
+--- mcp call 6 (FAIL) ---
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  have hAOn : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hAAt : AnalyticAt ℂ f z0 := hAOn z0 hz0U
+  rcases hAAt.eventually_eq_zero_or_eventually_ne_zero with hzero | hne
+  · exfalso
+    apply hf_nonzero
+    intro z hz
+    have hEq : Set.EqOn f 0 U :=
+      hAOn.eqOn_zero_of_preconnected_of_eventuallyEq_zero hU_connected hz0U hzero
+    simpa using hEq hz
+  · rw [Metric.eventually_nhdsWithin_iff, Metric.eventually_nhds_iff] at hne
+    obtain ⟨r, hr_pos, hr⟩ := hne
+    refine ⟨r, hr_pos, ?_⟩
+    intro z hzU hz_dist hz_fzero
+    by_contra hne_z
+    have hz_in : z ∈ ({z0} : Set ℂ)ᶜ := fun hmem => hne_z (by simpa using hmem)
+    have hdist : dist z z0 < r := by rw [dist_eq_norm]; exact hz_dist
+    exact (hr hdist hz_in) hz_fzero
+
+--- mcp call 7 (FAIL) ---
+import Mathlib
+
+#check @Metric.eventually_nhdsWithin_iff
+#check @Metric.eventually_nhds_iff
+
+example (f : ℂ → ℂ) (z0 : ℂ) (h : ∀ᶠ z in nhdsWithin z0 ({z0}ᶜ : Set ℂ), f z ≠ 0) :
+    ∃ r > 0, ∀ z, dist z z0 < r → z ∈ ({z0} : Set ℂ)ᶜ → f z ≠ 0 := by
+  rw [Metric.eventually_nhdsWithin_iff] at h
+  rw [Metric.eventually_nhds_iff] at h
+  exact h
+
+--- mcp call 8 (FAIL) ---
+import Mathlib
+
+-- search for ball-based lemma
+example (f : ℂ → ℂ) (z0 : ℂ) (h : ∀ᶠ z in nhdsWithin z0 ({z0}ᶜ : Set ℂ), f z ≠ 0) :
+    ∃ r > 0, ∀ z, dist z z0 < r → z ≠ z0 → f z ≠ 0 := by
+  rw [Metric.eventually_nhdsWithin_iff] at h
+  rcases (Metric.eventually_nhds_iff).mp h with ⟨r, hr, H⟩
+  refine ⟨r, hr, ?_⟩
+  intro z hz hne
+  exact H hz (by simpa [Set.mem_compl_iff, Set.mem_singleton_iff] using hne)
+
+--- mcp call 9 (PASS) ---
+import Mathlib
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  have hAOn : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hAAt : AnalyticAt ℂ f z0 := hAOn z0 hz0U
+  rcases hAAt.eventually_eq_zero_or_eventually_ne_zero with hzero | hne
+  · exfalso
+    apply hf_nonzero
+    intro z hz
+    have hEq : Set.EqOn f 0 U :=
+      hAOn.eqOn_zero_of_preconnected_of_eventuallyEq_zero hU_connected hz0U hzero
+    simpa using hEq hz
+  · -- hne : ∀ᶠ z in nhdsWithin z0 {z0}ᶜ, f z ≠ 0
+    -- Use the metric basis for nhdsWithin
+    have h_basis := (Metric.nhdsWithin_basis_ball (x := z0) (s := ({z0} : Set ℂ)ᶜ))
+    rcases h_basis.eventually_iff.mp hne with ⟨r, hr_pos, hr⟩
+    refine ⟨r, hr_pos, ?_⟩
+    intro z hzU hz_dist hz_fzero
+    by_contra hne_z
+    have hz_mem : z ∈ Metric.ball z0 r ∩ ({z0} : Set ℂ)ᶜ := by
+      refine ⟨?_, ?_⟩
+      · simp [Metric.mem_ball, dist_eq_nor
+--- final_text ---
+I'll work on this theorem about isolated zeros of holomorphic functions. Let me load the lean-prover skill first.
+Let me explore digests for any related work first.
+No digests. Let me think through this problem.
+
+## Plan
+
+The theorem says: a nonzero holomorphic function on an open connected set has isolated zeros. In Mathlib this is essentially the principle of isolated zeros. The key lemma is `AnalyticOn.eventually_eq_zero_or_eventually_ne_zero` or more directly something like `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero`, or for the connected case: `AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero` (identity theorem).
+
+The most direct candidate: **`AnalyticOnNhd.eventually_eq_zero_or_eventually_ne_zero`** or **`AnalyticAt.eventually_eq_zero_or_eventually_ne_zero`**.
+
+Actually, the relevant result is: if `f` is analytic at `z0` and `f z0 = 0`, then either `f` is zero in a neighborhood of `z0` or `f` is nonzero in a punctured neighborhood. Combined with the identity theorem on a preconnected set, the first case implies `f ≡ 0`.
+
+Let me search for these. Key Mathlib lemmas I should check:
+- `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero` (might not exist with this exact name)
+- `AnalyticOnNhd.eqOn_zero_of_preconnected_of_locally_zero`
+- `DifferentiableOn` → `AnalyticOn` via `DifferentiableOn.analyticOn` on open sets
+
+Let me draft the proof. The conversion: `DifferentiableOn ℂ f U` + `IsOpen U` gives `AnalyticOnNhd ℂ f U` (via `DifferentiableOn.analyti
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

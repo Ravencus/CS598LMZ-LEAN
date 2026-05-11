@@ -1,0 +1,6 @@
+I’ll first verify the theorem statement and available topology/approximation facts against Lean, but the mathematical statement is suspect: polynomials in `z` alone are not uniformly dense in all continuous functions on the unit circle over `ℂ`.
+The requested Lean theorem is mathematically false, so there is no valid proof without adding an axiom/sorry.
+
+Counterexample: take `f z = conj z` on the unit circle. Uniform limits of polynomials in `z` alone on the circle lie in the disk algebra boundary class, but `conj z = z⁻¹` is not uniformly approximable by ordinary polynomials in `z`.
+
+I can’t provide a correct `FINAL_PROOF` block for this exact signature without violating the “no `sorry`, `admit`, or `axiom`” rule.

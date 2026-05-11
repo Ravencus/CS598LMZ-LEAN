@@ -1,0 +1,34 @@
+{
+  "problem_id": "problem-1-7",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 316.25,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "unsolved goals\ncase succ\nε : ℝ\nhε : ε > 0\nN : ℕ\nhN : max 1 (2 / ε) < ↑N\nhN1 : 1 < ↑N\nhN2 : 2 / ε < ↑N\nn : ℕ\nih : n ≥ N → 1 ≤ n → 1 ≤ ↑n → 0 < ↑n → ∑ k ∈ Finset.range (n + 1), ↑k = ↑n * (↑n + 1) / 2\nhn",
+  "total_cost_usd": 0.0,
+  "total_tokens": 931771,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c427e8aa31.lean",
+      "line": 29,
+      "column": 18,
+      "severity": "error",
+      "message": "unsolved goals\ncase succ\nε : ℝ\nhε : ε > 0\nN : ℕ\nhN : max 1 (2 / ε) < ↑N\nhN1 : 1 < ↑N\nhN2 : 2 / ε < ↑N\nn : ℕ\nih : n ≥ N → 1 ≤ n → 1 ≤ ↑n → 0 < ↑n → ∑ k ∈ Finset.range (n + 1), ↑k = ↑n * (↑n + 1) / 2\nhn : n + 1 ≥ N\nhn1nat : 1 ≤ n + 1\nhn1 : 1 ≤ ↑(n + 1)\nhpos : 0 < ↑(n + 1)\n⊢ ↑n * (1 / 2) + ↑n ^ 2 * (1 / 2) + ↑(1 + n) = ↑(1 + n) * (1 / 2) + ↑(1 + n) ^ 2 * (1 / 2)\n\ncase succ.hn\nε : ℝ\nhε : ε > 0\nN : ℕ\nhN : max 1 (2 / ε) < ↑N\nhN1 : 1 < ↑N\nhN2 : 2 / ε < ↑N\nn : ℕ\nih : n ≥ N → 1 ≤ n → 1 ≤ ↑n → 0 < ↑n → ∑ k ∈ Finset.range (n + 1), ↑k = ↑n * (↑n + 1) / 2\nhn : n + 1 ≥ N\nhn1nat : 1 ≤ n + 1\nhn1 : 1 ≤ ↑(n + 1)\nhpos : 0 < ↑(n + 1)\n⊢ n ≥ N\n\ncase succ.hn1nat\nε : ℝ\nhε : ε > 0\nN : ℕ\nhN : max 1 (2 / ε) < ↑N\nhN1 : 1 < ↑N\nhN2 : 2 / ε < ↑N\nn : ℕ\nih : n ≥ N → 1 ≤ n → 1 ≤ ↑n → 0 < ↑n → ∑ k ∈ Finset.range (n + 1), ↑k = ↑n * (↑n + 1) / 2\nhn : n + 1 ≥ N\nhn1nat : 1 ≤ n + 1\nhn1 : 1 ≤ ↑(n + 1)\nhpos : 0 < ↑(n + 1)\n⊢ 1 ≤ n\n\ncase succ.hn1\nε : ℝ\nhε : ε > 0\nN : ℕ\nhN : max 1 (2 / ε) < ↑N\nhN1 : 1 < ↑N\nhN2 : 2 / ε < ↑N\nn : ℕ\nih : n ≥ N → 1 ≤ n → 1 ≤ ↑n → 0 < ↑n → ∑ k ∈ Finset.range (n + 1), ↑k = ↑n * (↑n + 1) / 2\nhn : n + 1 ≥ N\nhn1nat : 1 ≤ n + 1\nhn1 : 1 ≤ ↑(n + 1)\nhpos : 0 < ↑(n + 1)\n⊢ 1 ≤ ↑n\n\ncase succ.hpos\nε : ℝ\nhε : ε > 0\nN : ℕ\nhN : max 1 (2 / ε) < ↑N\nhN1 : 1 < ↑N\nhN2 : 2 / ε < ↑N\nn : ℕ\nih : n ≥ N → 1 ≤ n → 1 ≤ ↑n → 0 < ↑n → ∑ k ∈ Finset.range (n + 1), ↑k = ↑n * (↑n + 1) / 2\nhn : n + 1 ≥ N\nhn1nat : 1 ≤ n + 1\nhn1 : 1 ≤ ↑(n + 1)\nhpos : 0 < ↑(n + 1)\n⊢ 0 < ↑n\n"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+{
+  "timestamp": "2026-05-10T01:31:38",
+  "seed": 42,
+  "models": [
+    "gpt-5.5",
+    "gpt-5.4-mini",
+    "claude-opus-4-7",
+    "deepseek-v4-pro",
+    "deepseek-v4-flash"
+  ],
+  "K": 3,
+  "fast_fail_on_attempt_1_timeout": true,
+  "conditions": [
+    "lean_only",
+    "with_sympy"
+  ],
+  "max_workers_initial": 4,
+  "checkpoint_every": 5,
+  "timeout_per_attempt": 240,
+  "n_problems": 30,
+  "problems": [
+    {
+      "problem_id": "example-127",
+      "statement_en": "Define a_n = n. Show that a_{2k} (i.e., the doubled-index subsequence) is a strictly monotone sub-indexing of the natural sequence: StrictMono (k -> 2*k) and id(2*k) = 2*k.",
+      "verified_signature": "import Mathlib\n\ntheorem evenIndexedSubsequenceOfNaturalSequence :\n    StrictMono (fun k : ℕ => 2 * k) ∧\n      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by\n  sorry",
+      "difficulty": null,
+      "problem_type": null,
+      "domain": null,
+      "pinned": true,
+      "kind": "pure",
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "lemma-21",
+      "statement_en": "For all real x: ‖exp(2π i x) - 1‖ ≤ 2π|x|. A standard inequality on the complex exponential.",
+      "verified_signature": "import Mathlib\n\ntheorem complex_exponential_sub_one_bound (x : ℝ) :\n    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "lemma",
+      "domain": "real analysis",
+      "pinned": true,
+      "kind": "pure",
+      "ground_truth_hubs": [
+        "sum-estimates-via-summation-by-parts-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "problem-31-3",
+      "statement_en": "The series Σ 1/((n+2)·log(n+2)) diverges (Bertrand-style series at the boundary of integral test).",
+      "verified_signature": "import Mathlib\n\ntheorem harmonic_log_series_diverges :\n    ¬ Summable (fun n : ℕ => 1 / (((n : ℝ) + 2) * Real.log ((n : ℝ) + 2))) := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "exercise",
+      "domain": "real analysis",
+      "pinned": true,
+      "kind": "pure",
+      "ground_truth_hubs": [
+        "piecewise-estimates-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "_synth_integral_max_cos",
+      "statement_en": "Prove that the integral from 0 to 2π of max(cos u, 0) equals 2.",
+      "verified_signature": "import Mathlib\n\nlemma integral_max_cos :\n    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by\n  sorry",
+      "difficulty": null,
+      "problem_type": null,
+      "domain": null,
+      "pinned": true,
+      "kind": "computational",
+      "ground_truth_hubs": []
+    },
+    {
+      "problem_id": "_synth_integral_x_log_x",
+      "statement_en": "Prove that the integral from 0 to 1 of x·log(x) equals -1/4.",
+      "verified_signature": "import Mathlib\n\nlemma integral_x_log_x :\n    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by\n  sorry",
+      "difficulty": null,
+      "problem_type": null,
+      "domain": null,
+      "pinned": true,
+      "kind": "computational",
+      "ground_truth_hubs": []
+    },
+    {
+      "problem_id": "proposition-112",
+      "statement_en": "$$S_N':=\\sum_{n=2}^{N}\\frac{1}{n(n-1)}<1$$",
+      "verified_signature": "import Mathlib\n\nopen scoped BigOperators\n\ntheorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :\n    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "theorem",
+      "domain": "real analysis",
+      "pinned": true,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "lemma-121",
+      "statement_en": "If $f\\in C(\\mathbb{T}\\to \\mathbb{C})$, then for every $\\varepsilon>0$ there exists a polynomial $P_{\\varepsilon}(z)$ such that $$\\|f-P_{\\varepsilon}\\|_{u}<\\varepsilon.$$",
+      "verified_signature": "import Mathlib\n\nabbrev Torus : Type := { z : ℂ // ‖z‖ = (1 : ℝ) }\n\ntheorem unitCircle_polynomial_uniform_approximation\n    (f : Torus → ℂ) (hf : Continuous f) :\n    ∀ ε : ℝ, ε > 0 → ∃ P : Polynomial ℂ, ∀ z : Torus, ‖f z - P.eval z.1‖ < ε := by\n  sorry",
+      "difficulty": "medium",
+      "problem_type": "lemma",
+      "domain": "analysis",
+      "pinned": true,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+        "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+      ]
+    },
+    {
+      "problem_id": "proposition-126-exercise-125",
+      "statement_en": "If a sequence has a limit, then every subsequence also has a limit, and that limit is equal to the limit of the original sequence.",
+      "verified_signature": "import Mathlib\n\ntheorem subsequence_has_same_limit\n    {α : Type*} [TopologicalSpace α] {u : ℕ → α} {l : α}\n    (hu : Filter.Tendsto u Filter.atTop (nhds l)) :\n    ∀ φ : ℕ → ℕ, StrictMono φ →\n      ∃ m : α, Filter.Tendsto (fun n => u (φ n)) Filter.atTop (nhds m) ∧ m = l := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "exercise",
+      "domain": "real analysis",
+      "pinned": true,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "problem-1-10",
+      "statement_en": "Prove that on a $\\sigma$-finite measure space $(\\Omega,\\mathcal{F},\\mu)$, if $f$ is a nonnegative measurable function and $\\int_E f\\,d\\mu=0$ for a measurable set $E$ with positive measure, then $f=0$ almost everywhere on $E$.",
+      "verified_signature": "import Mathlib\n\ntheorem ae_zero_of_nonneg_measurable_lintegral_zero\n    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}\n    {f : Ω → ℝ} {E : Set Ω}\n    (hf_meas : Measurable f)\n    (hf_nonneg : ∀ x, 0 ≤ f x)\n    (hE_meas : MeasurableSet E)\n    (hE_pos : 0 < μ E)\n    (h_int_zero : ∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0) :\n    ∀ᵐ x ∂μ.restrict E, f x = 0 := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "exercise",
+      "domain": "measure theory",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "borel-cantelli-lemma-and-applications-hub"
+      ]
+    },
+    {
+      "problem_id": "lemma-32-hermite-identity",
+      "statement_en": "Let $x\\in \\mathbb{R}$. Then $$\\sum_{k=0}^{n-1}\\left\\lfloor x+\\frac{k}{n}\\right\\rfloor=\\left\\lfloor nx\\right\\rfloor.$$",
+      "verified_signature": "import Mathlib\n\ntheorem hermite_floor_sum (x : ℝ) (n : ℕ) :\n    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "lemma",
+      "domain": "number theory",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "using-known-asymptotics-to-derive-expansions-hub"
+      ]
+    },
+    {
+      "problem_id": "theorem-14-dirichlet-theorem",
+      "statement_en": "For an irrational number $\\alpha$ and any $\\varepsilon>0$, there exists a positive integer $q_{\\varepsilon}$ such that $$||q_{\\varepsilon}\\alpha||<\\varepsilon.$$",
+      "verified_signature": "import Mathlib\n\ntheorem irrational_approximation_by_positive_integer\n    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :\n    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "theorem",
+      "domain": "Diophantine approximation",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+      ]
+    },
+    {
+      "problem_id": "problem-22",
+      "statement_en": "Let $\\alpha_n,\\beta_n$ be two nonnegative nonincreasing real sequences, and suppose both series $\\sum_{n\\geq 1}\\alpha_n$ and $\\sum_{n\\geq 1}\\beta_n$ diverge. Must the series $\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$ also diverge?",
+      "verified_signature": "import Mathlib\n\ntheorem divergent_min_of_nonnegative_nonincreasing_divergent\n    (α β : ℕ → ℝ)\n    (hα_nonneg : ∀ n : ℕ, 0 ≤ α n)\n    (hβ_nonneg : ∀ n : ℕ, 0 ≤ β n)\n    (hα_antitone : Antitone α)\n    (hβ_antitone : Antitone β)\n    (hα_div : ¬ Summable (fun n : ℕ => α (n + 1)))\n    (hβ_div : ¬ Summable (fun n : ℕ => β (n + 1))) :\n    ¬ Summable (fun n : ℕ => min (α (n + 1)) (β (n + 1))) := by\n  sorry",
+      "difficulty": "hard",
+      "problem_type": "exercise",
+      "domain": "real analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "cauchy-condensation-test-hub",
+        "estimates-for-the-sum-of-prime-reciprocals-hub",
+        "sum-estimates-via-summation-by-parts-hub"
+      ]
+    },
+    {
+      "problem_id": "lemma-131-flanders-1951",
+      "statement_en": "Let $A,B\\in M_{n}(\\mathbb{C})$. Then the minimal polynomials of $AB$ and $BA$ differ by at most a factor of $x$.",
+      "verified_signature": "import Mathlib\n\nopen Polynomial\n\ntheorem minpoly_matrix_mul_reverse_differ_by_at_most_X\n    {n : Type*} [Fintype n] [DecidableEq n]\n    (A B : Matrix n n ℂ) :\n    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧\n    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by\n  sorry",
+      "difficulty": "hard",
+      "problem_type": "lemma",
+      "domain": "linear algebra",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "identity-theorem-hub"
+      ]
+    },
+    {
+      "problem_id": "thue-siegel-roth-theorem-1955",
+      "statement_en": "Every algebraic irrational number has irrationality measure 2.",
+      "verified_signature": "import Mathlib\n\nopen Filter\n\ndef HasIrrationalityMeasure (x μ : ℝ) : Prop :=\n  (∀ ε : ℝ, 0 < ε →\n    ∃ C : ℝ, 0 < C ∧\n      ∀ p : ℤ, ∀ q : ℕ, q ≠ 0 →\n        C / Real.rpow (q : ℝ) (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|) ∧\n  (∀ ε : ℝ, 0 < ε →\n    ∃ᶠ q : ℕ in Filter.atTop,\n      ∃ p : ℤ,\n        |x - (p : ℝ) / (q : ℝ)| < 1 / Real.rpow (q : ℝ) (μ - ε))\n\ntheorem algebraic_irrational_has_irrationality_measure_two\n    {x : ℝ} (hx_alg : IsAlgebraic ℚ x) (hx_irr : Irrational x) :\n    HasIrrationalityMeasure x 2 := by\n  sorry",
+      "difficulty": "hard",
+      "problem_type": "theorem",
+      "domain": "Diophantine approximation",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub",
+        "an-epsilon-of-room-hub",
+        "borel-cantelli-lemma-and-applications-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+      ]
+    },
+    {
+      "problem_id": "problem-2-4",
+      "statement_en": "Assume $x_n \\to A$ and $y_n \\to B$. Prove that $$\\frac{x_1y_n+\\cdots +x_ny_1}{n}\\to AB.$$",
+      "verified_signature": "import Mathlib\n\ntheorem convolution_average_tendsto_mul\n    (x y : ℕ → ℝ) (A B : ℝ)\n    (hx : Filter.Tendsto x Filter.atTop (nhds A))\n    (hy : Filter.Tendsto y Filter.atTop (nhds B)) :\n    Filter.Tendsto\n      (fun n : ℕ =>\n        (Finset.sum (Finset.range (n + 1)) (fun k => x k * y (n - k))) / ((n + 1 : ℕ) : ℝ))\n      Filter.atTop\n      (nhds (A * B)) := by\n  sorry",
+      "difficulty": "medium",
+      "problem_type": "exercise",
+      "domain": "real analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub",
+        "using-known-asymptotics-to-derive-expansions-hub"
+      ]
+    },
+    {
+      "problem_id": "common-lemma-1",
+      "statement_en": "For each $\\varepsilon > 0$, define $$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}.$$ If for every $\\varepsilon > 0$ one has $$\\sum_{n\\geq1}\\mu(A_{n,\\varepsilon})<\\infty,$$ then $$\\mu\\left(\\limsup_{n\\to\\infty}A_{n,\\varepsilon}\\right)=0,\\quad \\forall \\varepsilon>0,$$ and hence $$f_n(x) \\to f(x) \\text{ a.e. }x.$$",
+      "verified_signature": "import Mathlib\n\nopen Filter MeasureTheory\nopen scoped Topology MeasureTheory\n\ntheorem summable_measure_limsup_null_ae_tendsto\n    {α : Type*} [MeasurableSpace α] (μ : Measure α)\n    (fSeq : ℕ → α → ℝ) (f : α → ℝ)\n    (h :\n      ∀ ε > 0, Summable (fun n : ℕ => μ {x | ε ≤ |fSeq (n + 1) x - f x|})) :\n    (∀ ε > 0, μ {x | ∃ᶠ n in Filter.atTop, ε ≤ |fSeq (n + 1) x - f x|} = 0) ∧\n      ∀ᵐ x ∂μ, Tendsto (fun n : ℕ => fSeq n x) Filter.atTop (nhds (f x)) := by\n  sorry",
+      "difficulty": "medium",
+      "problem_type": "lemma",
+      "domain": "measure theory",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub",
+        "an-epsilon-of-room-hub",
+        "reducing-set-problems-to-function-problems-hub"
+      ]
+    },
+    {
+      "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+      "statement_en": "Let $f:U\\to\\mathbb{C}$ be a nonzero holomorphic function on a nonempty open connected set $U$, and let $z_0\\in U$ be a zero of $f$. Then there exists a disk $D(z_0,r)$ such that $z_0$ is the only zero of $f$ in that disk.",
+      "verified_signature": "import Mathlib\n\ntheorem isolated_zero_of_nonzero_holomorphic\n    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)\n    (hU_open : IsOpen U)\n    (hU_nonempty : U.Nonempty)\n    (hU_connected : IsPreconnected U)\n    (hf_holo : DifferentiableOn ℂ f U)\n    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)\n    (hz0U : z0 ∈ U)\n    (hz0_zero : f z0 = 0) :\n    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by\n  sorry",
+      "difficulty": "medium",
+      "problem_type": "theorem",
+      "domain": "complex analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "interchanging-sums-and-integrals-hub"
+      ]
+    },
+    {
+      "problem_id": "proposition-212-exercise",
+      "statement_en": "For sufficiently large $n$, suppose two real sequences satisfy $$x_n\\geq y_n$$ and both limits exist. Then necessarily $$\\lim_{n\\to \\infty} x_n \\geq \\lim_{n\\to \\infty} y_n.$$",
+      "verified_signature": "import Mathlib\n\ntheorem lim_ge_of_eventually_ge\n    {x y : ℕ → ℝ} {a b : ℝ}\n    (hxy : ∀ᶠ n in Filter.atTop, x n ≥ y n)\n    (hx : Filter.Tendsto x Filter.atTop (nhds a))\n    (hy : Filter.Tendsto y Filter.atTop (nhds b)) :\n    a ≥ b := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "exercise",
+      "domain": "real analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "fourier-coefficient-version",
+      "statement_en": "If $f \\in L^1(\\mathbb{T})$, then $|\\hat{f}(n)|\\to 0$. More precisely, $$\\hat{f}(n) = \\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} f(x)e^{-inx} \\, dx \\to 0 \\text{ as } |n| \\to \\infty.$$",
+      "verified_signature": "import Mathlib\n\nopen MeasureTheory Filter Topology\n\nnoncomputable section\n\ntheorem riemannLebesgue_fourierCoefficients_tendsto_zero\n    {f : ℝ → ℂ}\n    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :\n    Tendsto\n      (fun n : ℤ =>\n        ‖((1 / (2 * Real.pi : ℂ)) *\n          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)\n      (Filter.comap Int.natAbs Filter.atTop)\n      (nhds 0) := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "lemma",
+      "domain": "harmonic analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub"
+      ]
+    },
+    {
+      "problem_id": "monotonicity-of-the-integral-1",
+      "statement_en": "If functions satisfy $f \\geq g$ almost everywhere on $\\Omega$, then their integrals satisfy $$\\int_{\\Omega} f\\,d\\mu \\geq \\int_{\\Omega} g\\,d\\mu.$$",
+      "verified_signature": "import Mathlib\n\nopen MeasureTheory\n\ntheorem integral_ge_of_ae_ge\n    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}\n    (hf : Integrable f μ) (hg : Integrable g μ)\n    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :\n    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "theorem",
+      "domain": "measure theory",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub"
+      ]
+    },
+    {
+      "problem_id": "mit-integration-competition",
+      "statement_en": "Compute the integral $$\\\\int_{0}^{1}\\\\left(\\\\sum_{n\\\\geq 1}\\\\frac{\\\\lfloor2^nx\\\rfloor}{3^n}\\\right)^2\\\\,dx.$$",
+      "verified_signature": "import Mathlib\n\nnoncomputable def cantorFloorSeries (x : ℝ) : ℝ :=\n  ∑' n : ℕ, (((⌊(2 : ℝ) ^ (n + 1) * x⌋ : ℤ) : ℝ) / (3 : ℝ) ^ (n + 1))\n\ntheorem integral_sq_cantorFloorSeries :\n    ∫ x in (0 : ℝ)..1, (cantorFloorSeries x) ^ 2 = (27 : ℝ) / 32 := by\n  sorry",
+      "difficulty": "hard",
+      "problem_type": "exercise",
+      "domain": "real analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "interchanging-sums-and-integrals-hub"
+      ]
+    },
+    {
+      "problem_id": "problem-5-2",
+      "statement_en": "Let \\(\\\rho>0\\). An entire function satisfies the growth estimate $$f(z)=O\\\\bigl(e^{|z|^{\\\rho}}\\\\bigr)$$ and for every \\(n>3\\) one has $$f(\\\\log n)=0.$$ Prove that \\(f\\\\equiv 0\\).",
+      "verified_signature": "import Mathlib\n\ntheorem entire_zero_of_growth_and_log_nat_zeros\n    {ρ : ℝ} (hρ : 0 < ρ) {f : ℂ → ℂ}\n    (hentire : Differentiable ℂ f)\n    (hgrowth : ∃ C : ℝ, 0 ≤ C ∧ ∀ z : ℂ, ‖f z‖ ≤ C * Real.exp (Real.rpow ‖z‖ ρ))\n    (hzero : ∀ n : ℕ, 3 < n → f (Complex.ofReal (Real.log (n : ℝ))) = 0) :\n    f = 0 := by\n  sorry",
+      "difficulty": "hard",
+      "problem_type": "theorem",
+      "domain": "complex analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "interchanging-sums-and-integrals-hub"
+      ]
+    },
+    {
+      "problem_id": "problem-0-12",
+      "statement_en": "Let $$S_N:=\\sum_{n\\leq N}\\sin(n^2).$$ Is this an unbounded sequence?",
+      "verified_signature": "import Mathlib\n\nnoncomputable section\n\nopen Finset\nopen scoped BigOperators\n\ndef S (N : ℕ) : ℝ :=\n  Finset.sum (Finset.range (N + 1)) (fun n => Real.sin ((n : ℝ) ^ 2))\n\ntheorem sinSquarePartialSums_unbounded : ¬ ∃ C : ℝ, ∀ N : ℕ, ‖S N‖ ≤ C := by\n  sorry",
+      "difficulty": "medium",
+      "problem_type": "exercise",
+      "domain": "analytic number theory",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": []
+    },
+    {
+      "problem_id": "proposition-123",
+      "statement_en": "For $N\\geq 2$, the following identity always holds: $$1+\\frac{1}{1!}+\\cdots+\\frac{1}{N!}+\\frac{1}{NN!}=3-\\frac{1}{1\\cdot 2\\cdot 2!}-\\cdots \\frac{1}{(N-1)NN!}$$",
+      "verified_signature": "import Mathlib\n\ntheorem factorial_sum_identity (N : ℕ) (hN : 2 ≤ N) :\n    Finset.sum (Finset.range (N + 1)) (fun k => (1 : ℚ) / (k.factorial : ℚ)) +\n        (1 : ℚ) / (((N * N.factorial : ℕ) : ℕ) : ℚ) =\n      (3 : ℚ) -\n        Finset.sum (Finset.Icc 1 (N - 1))\n          (fun k => (1 : ℚ) / (((k * (k + 1) * (k + 1).factorial : ℕ) : ℕ) : ℚ)) := by\n  sorry",
+      "difficulty": "medium",
+      "problem_type": "lemma",
+      "domain": "real analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "basic-methods-in-analysis-i-hub",
+        "piecewise-estimates-hub",
+        "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "theorem-31-liouvilles-theorem-1844",
+      "statement_en": "If $\\alpha$ is an algebraic number of degree $d$ ($d\\geq 2$), then there exists a constant $C(\\alpha)>0$ such that $$\\left|\\alpha-\\frac{p}{q}\\right|>\\frac{C(\\alpha)}{q^d}$$ for every positive integer $q$ and every integer $p$.",
+      "verified_signature": "import Mathlib\n\ntheorem liouville_approximation_lower_bound\n    {α : ℝ} {d : ℕ}\n    (h_alg : IsAlgebraic ℚ α)\n    (h_deg : (minpoly ℚ α).natDegree = d)\n    (hd : 2 ≤ d) :\n    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,\n      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by\n  sorry",
+      "difficulty": "medium",
+      "problem_type": "theorem",
+      "domain": "Diophantine approximation",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-for-measure-zero-sets-hub",
+        "an-epsilon-of-room-hub",
+        "borel-cantelli-lemma-and-applications-hub",
+        "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+      ]
+    },
+    {
+      "problem_id": "problem-1-7",
+      "statement_en": "Let $$S_n:=\\sum_{k\\leq n}\\sin(k/n^2).$$ Find $$\\lim_{n\\to \\infty }S_n.$$",
+      "verified_signature": "import Mathlib\n\ntheorem sum_sin_div_nsq_tendsto_half :\n    Filter.Tendsto\n      (fun n : ℕ => Finset.sum (Finset.range (n + 1)) (fun k => Real.sin ((k : ℝ) / (n : ℝ) ^ 2)))\n      Filter.atTop\n      (nhds ((1 : ℝ) / 2)) := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "exercise",
+      "domain": "real analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "basic-methods-in-analysis-i-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "lemma-111",
+      "statement_en": "If $A \\text{ or } B \\in GL_n(\\mathbb{C})$, then $AB$ and $BA$ are similar.",
+      "verified_signature": "import Mathlib\n\nopen Matrix\n\ndef MatricesAreSimilar {n : Type*} [Fintype n] [DecidableEq n]\n    (M N : Matrix n n ℂ) : Prop :=\n  ∃ P : Matrix n n ℂ, Nonempty (Invertible P) ∧ (P * M = N * P ∨ P * N = M * P)\n\ntheorem ab_ba_are_similar_if_left_or_right_invertible\n    {n : Type*} [Fintype n] [DecidableEq n]\n    (A B : Matrix n n ℂ)\n    (h : Nonempty (Invertible A) ∨ Nonempty (Invertible B)) :\n    MatricesAreSimilar (A * B) (B * A) := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "lemma",
+      "domain": "linear algebra",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "an-epsilon-of-room-hub",
+        "identity-theorem-hub"
+      ]
+    },
+    {
+      "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+      "statement_en": "A real sequence $x_n$ converges to a real number $x$ if and only if for every $\\varepsilon>0$ there exists a positive integer $N_{\\varepsilon}$ such that for all $n,m>N_{\\varepsilon}$, $$|x_n-x_m|<\\varepsilon.$$",
+      "verified_signature": "import Mathlib\n\ntheorem real_sequence_tendsto_iff_eventually_pairwise_close\n    (xSeq : ℕ → ℝ) (x : ℝ) :\n    Filter.Tendsto xSeq Filter.atTop (nhds x) ↔\n      ∀ ε > 0, ∃ N : ℕ, 0 < N ∧ ∀ n m : ℕ, N < n → N < m → |xSeq n - xSeq m| < ε := by\n  sorry",
+      "difficulty": "easy",
+      "problem_type": "theorem",
+      "domain": "real analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "integral-estimates-for-sums-hub",
+        "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+        "term-by-term-estimates-hub"
+      ]
+    },
+    {
+      "problem_id": "problem-7",
+      "statement_en": "Prove that $$\\sum_{n\\geq1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n}z^n$$ converges on the unit circle $S^1$.",
+      "verified_signature": "import Mathlib\n\ntheorem floorSqrtAlternatingHarmonic_powerSeries_converges_on_unitCircle :\n    ∀ z : ℂ,\n      ‖z‖ = 1 →\n        Summable\n          (fun n : ℕ =>\n            (((-1 : ℂ) ^ (Int.toNat ⌊Real.sqrt (((n + 1 : ℕ) : ℝ))⌋)) / (((n + 1 : ℕ) : ℂ))) *\n              z ^ (n + 1)) := by\n  sorry",
+      "difficulty": "hard",
+      "problem_type": "exercise",
+      "domain": "complex analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "basic-methods-in-analysis-i-hub",
+        "sum-estimates-via-summation-by-parts-hub"
+      ]
+    },
+    {
+      "problem_id": "conjecture-33",
+      "statement_en": "Let $$a_n := (\\frac{2}{3}+\\frac{1}{3}\\sin(n))^n$$. Then the sequence is dense in $$[0,1]$$.",
+      "verified_signature": "import Mathlib\n\ntheorem sequence_dense_in_unit_interval :\n    Set.Icc (0 : ℝ) 1 ⊆\n      closure\n        (Set.range\n          (fun n : ℕ => ((((2 : ℝ) / 3) + (((1 : ℝ) / 3) * Real.sin n)) ^ n))) := by\n  sorry",
+      "difficulty": "hard",
+      "problem_type": "theorem",
+      "domain": "real analysis",
+      "pinned": false,
+      "kind": null,
+      "ground_truth_hubs": [
+        "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+      ]
+    }
+  ]
+}

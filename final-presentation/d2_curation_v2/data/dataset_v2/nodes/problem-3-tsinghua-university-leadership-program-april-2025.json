@@ -1,0 +1,24 @@
+{
+  "id": "problem-3-tsinghua-university-leadership-program-april-2025",
+  "type": "problem",
+  "source_note": "从几个极限问题去理解Landau符号",
+  "english_source_note": "Understanding Landau Notation Through Limit Problems",
+  "callout_id": "从几个极限问题去理解Landau符号#7",
+  "english_title": "Problem 3: Tsinghua University Leadership Program (April 2025)",
+  "statement_en": "Find the limit $$\\lim_{n\\to \\infty}\\left[\\tan\\left(\\frac{\\pi}{4}+\\frac{1}{n}\\right)\\right]^n.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "logarithmic transformation",
+    "local expansion near \\(\\pi/4\\)",
+    "exponential limit"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "tangent addition behavior",
+    "Taylor expansion",
+    "Landau notation"
+  ],
+  "callout_body": "求极限$$\\lim_{n\\to \\infty}\\left[\\tan\\left(\\frac{\\pi}{4}+\\frac{1}{n}\\right)\\right]^n$$"
+}

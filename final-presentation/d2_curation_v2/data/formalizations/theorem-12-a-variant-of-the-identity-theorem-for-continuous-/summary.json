@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-12-a-variant-of-the-identity-theorem-for-continuous-",
+  "english_title": "Theorem 1.2: A Variant of the Identity Theorem for Continuous Functions",
+  "statement_en": "Let $f,g:X\\to Y$ be continuous maps from a topological space $X$ to a Hausdorff ordered topological space $Y$, and assume the order relation is compatible with the topology in the sense that $\\{(y_1,y_2)\\in Y\\times Y:y_1\\leq y_2\\}$ is closed. If $$f(x)\\leq g(x),\\forall x\\in Z$$ for some dense subset $Z\\subset X$, then $$f(x)\\leq g(x),\\forall x\\in X.$$",
+  "difficulty": "medium",
+  "domain": "general topology",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem continuous_le_of_dense_of_isClosed_le\n    {X Y : Type*} [TopologicalSpace X] [Preorder Y] [TopologicalSpace Y] [T2Space Y]\n    {f g : X → Y} (hf : Continuous f) (hg : Continuous g)\n    {Z : Set X} (hZ : Dense Z)\n    (hclosed : IsClosed {p : Y × Y | p.1 ≤ p.2})\n    (hfg : ∀ x ∈ Z, f x ≤ g x) :\n    ∀ x : X, f x ≤ g x := by\n  sorry"
+}

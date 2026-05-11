@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-7",
+  "english_title": "Problem",
+  "statement_en": "Prove that $$\\sum_{n\\geq1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n}z^n$$ converges on the unit circle $S^1$.",
+  "difficulty": "hard",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Complex.abs`\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem floorSqrtAlternatingHarmonic_powerSeries_converges_on_unitCircle :\n    ∀ z : ℂ,\n      ‖z‖ = 1 →\n        Summable\n          (fun n : ℕ =>\n            (((-1 : ℂ) ^ (Int.toNat ⌊Real.sqrt (((n + 1 : ℕ) : ℝ))⌋)) / (((n + 1 : ℕ) : ℂ))) *\n              z ^ (n + 1)) := by\n  sorry"
+}

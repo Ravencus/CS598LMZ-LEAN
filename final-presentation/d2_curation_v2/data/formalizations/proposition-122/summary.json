@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-122",
+  "english_title": "Proposition 1.2.2",
+  "statement_en": "$$\\lim_{N\\to \\infty }3-T_N=\\lim_{N\\to \\infty}S_N$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limit_three_sub_T_eq_limit_S\n    {T S : ℕ → ℝ} {a b : ℝ}\n    (hT : Filter.Tendsto (fun N => 3 - T N) Filter.atTop (nhds a))\n    (hS : Filter.Tendsto S Filter.atTop (nhds b)) :\n    a = b := by\n  sorry"
+}

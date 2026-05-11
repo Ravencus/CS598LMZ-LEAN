@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "fourier-coefficient-version",
+  "big_outcome": "lean_proof",
+  "small_outcome": "wall_budget_exceeded",
+  "label": "same_plan_search_diff",
+  "evidence": "Both traces are aimed at applying a Riemann-Lebesgue/Fourier coefficient tendsto lemma from Mathlib. BIG eventually checks and uses `IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_comp_natAbs_atTop`, while SMALL only probes guessed names like `tendsto_integral_mul_exp_mul_I_atTop` and never f",
+  "wall_seconds": 6.24
+}

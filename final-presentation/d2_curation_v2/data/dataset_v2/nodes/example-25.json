@@ -1,0 +1,23 @@
+{
+  "id": "example-25",
+  "type": "problem",
+  "source_note": "制造telescoping sum求和或求乘积",
+  "english_source_note": "Using Telescoping Sums for Sums and Products",
+  "callout_id": "制造telescoping sum求和或求乘积#9",
+  "english_title": "Example 2.5",
+  "statement_en": "Let \\(q\\\\geq 2\\) be a positive integer, and let the real number \\(a\\) satisfy \\(|a|<1\\). Show that\n$$\\\\prod_{n\\\\geq 0}(1+a^{q^n}+\\\\cdots+a^{(q-1)q^n})=\\\\frac{1}{1-a}.$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "telescoping product",
+    "finite geometric sum identity",
+    "infinite product via truncation"
+  ],
+  "prerequisites": [
+    "geometric series",
+    "infinite products",
+    "limits"
+  ],
+  "callout_body": "令$q\\geq 2$是一个正整数实数$a$满足$|a|<1$那么$$\\prod_{n\\geq 0}(1+a^{q^n}+\\cdots+a^{(q-1)q^n})=\\frac{1}{1-a}$$"
+}

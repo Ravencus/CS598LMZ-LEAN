@@ -1,0 +1,10 @@
+**Trigger:**  
+You need a guaranteed lower bound on the size of a sum formed by selecting some vectors/items that can cancel because they point in different directions or have mixed signs, while you only control the total mass/length.
+
+**Action:**  
+Choose a direction, keep only the items with nonnegative projection onto that direction, and compare the selected sum to the total positive projection in that direction. Then either:
+- use a coarse partition of directions/sign patterns plus pigeonhole to get a quick bound, or
+- average over all directions to show some direction captures a large positive projection.
+
+**Boundary:**  
+This works when the objective can be certified by a one-dimensional projection and the ambient geometry is low-dimensional enough that directional averaging or sign-splitting is informative. It weakens or becomes coordinate-dependent in higher dimensions or when no projection-based lower bound controls the target quantity well. In those cases, use a dimension-aware balancing/rearrangement tool or convex-geometric method instead of fixed directional splits.

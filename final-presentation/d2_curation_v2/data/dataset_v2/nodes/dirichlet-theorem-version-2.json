@@ -1,0 +1,23 @@
+{
+  "id": "dirichlet-theorem-version-2",
+  "type": "problem",
+  "source_note": "Kronecker定理，Dirichlet定理及其应用",
+  "english_source_note": "Kronecker's Theorem, Dirichlet's Theorem, and Applications",
+  "callout_id": "Kronecker定理,Dirichlet定理及其应用#7",
+  "english_title": "Dirichlet Theorem (Version 2)",
+  "statement_en": "Let $\\alpha$ be irrational. For every positive integer $n$, there exists a positive integer $q\\leq n$ such that $$0<||q\\alpha||<\\frac{1}{n}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "pigeonhole principle",
+    "fractional parts of multiples",
+    "nearest-integer distance"
+  ],
+  "prerequisites": [
+    "irrational numbers",
+    "fractional part",
+    "pigeonhole principle"
+  ],
+  "callout_body": "$\\alpha$是无理数，对于任意正整数$n$存在正整数$q\\leq n$使得$$0<||q\\alpha||<\\frac{1}{n}$$"
+}

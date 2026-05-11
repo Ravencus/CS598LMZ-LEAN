@@ -1,0 +1,23 @@
+{
+  "id": "quantitative-version-of-the-above-problem",
+  "type": "problem",
+  "source_note": "素数倒数和的估计",
+  "english_source_note": "Estimates for the Sum of Prime Reciprocals",
+  "callout_id": "素数倒数和的估计#2",
+  "english_title": "Quantitative Version of the Above Problem",
+  "statement_en": "Assume $p\\in \\mathbb{P}$. Estimate the function defined by the series $$S(x):=\\sum_{p\\leq x} \\frac{1}{p}.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "partial summation",
+    "Chebyshev-type estimates",
+    "Mertens-type estimates"
+  ],
+  "prerequisites": [
+    "prime numbers",
+    "asymptotic notation",
+    "summation over primes"
+  ],
+  "callout_body": "假设$p\\in \\mathbb{P}$,估计由级数定义出来的函数$$S(x):=\\sum_{p\\leq x} \\frac{1}{p}$$"
+}

@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-22-caratheodory-criterion-for-borel-measures-on-",
+  "english_title": "Proposition 2.2: Caratheodory Criterion for Borel Measures on Metric Spaces",
+  "statement_en": "Let $\\mu$ be an outer measure on a metric space $(X,d)$. If $\\mu$ satisfies that for any two sets $A,B$ with positive distance, $\\operatorname{dist}(A,B)>0$, one has $$\\mu(A\\cup B)=\\mu(A)+\\mu(B),$$ then this defines a Borel measure.",
+  "difficulty": "hard",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  OuterMeasure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  X\n\nHint: The identifier `OuterMeasure` is unknown, and"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem outerMeasure_of_separated_sets_additive_is_borel\n    {X : Type*} [MetricSpace X] (μ : MeasureTheory.OuterMeasure X)\n    (hμ : ∀ A B : Set X,\n      (∃ ε > (0 : ℝ), ∀ a ∈ A, ∀ b ∈ B, ε ≤ dist a b) →\n        μ (A ∪ B) = μ A + μ B) :\n    borel X ≤ μ.caratheodory := by\n  sorry"
+}

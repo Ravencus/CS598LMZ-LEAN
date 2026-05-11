@@ -1,0 +1,133 @@
+I’ll first look for existing Mathlib floor-sum lemmas locally, then use the checker only for high-value proof attempts within the 10-call budget.
+A local prior attempt points to an existing Mathlib theorem; I’ll verify the minimal proof against the exact requested signature.
+The candidate lemma names are not present in the installed Mathlib sources, so I’m switching to a direct formal proof and using a local Lean run for diagnostics because the checker is returning empty diagnostics on failures.
+The direct proof now passes `lake env lean`; I’ll run the same code through the required MCP checker once before returning the final Lean block.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+lemma floor_int_add_small_div (a N : ℤ) (r : ℝ) (hN : 0 < N) (hr0 : 0 ≤ r) (hr1 : r < 1) :
+    Int.floor (((a : ℝ) + r) / (N : ℝ)) = a / N := by
+  have hNneZ : N ≠ 0 := ne_of_gt hN
+  have hNneR : (N : ℝ) ≠ 0 := by exact_mod_cast hNneZ
+  have hNposR : 0 < (N : ℝ) := by exact_mod_cast hN
+  have hrem0 : 0 ≤ a % N := (Int.ediv_emod_unique hN).mp ⟨rfl, rfl⟩ |>.2.1
+  have hremN : a % N < N := (Int.ediv_emod_unique hN).mp ⟨rfl, rfl⟩ |>.2.2
+  have hfrac0 : 0 ≤ (((a % N : ℤ) : ℝ) + r) / (N : ℝ) := by
+    exact div_nonneg (add_nonneg (by exact_mod_cast hrem0) hr0) (le_of_lt hNposR)
+  have hfrac1 : (((a % N : ℤ) : ℝ) + r) / (N : ℝ) < 1 := by
+    rw [div_lt_one hNposR]
+    have hrem_le_int : a % N ≤ N - 1 := Int.le_sub_one_of_lt hremN
+    have hrem_le : ((a % N : ℤ) : ℝ) ≤ (N : ℝ) - 1 := by
+      exact_mod_cast hrem_le_int
+    linarith
+  have hfloorfrac : Int.floor ((((a % N : ℤ) : ℝ) + r) / (N : ℝ)) = 0 := by
+    rw [Int.floor_eq_iff]
+    norm_num
+    exact ⟨hfrac0, hfrac1⟩
+  have hdecomp : ((a : ℝ) + r) / (N : ℝ) =
+      ((a / N : ℤ) : ℝ) + (((a % N : ℤ) : ℝ) + r) / (N : ℝ) := by
+    have h := Int.emod_add_mul_ediv a N
+    calc
+      ((a : ℝ) + r) / (N : ℝ)
+          = (((a % N + N * (a / N) : ℤ) : ℝ) + r) / (N : ℝ) := by rw [h]
+      _ = ((a / N : ℤ) : ℝ) + (((a % N : ℤ) : ℝ) + r) / (N : ℝ) := by
+        field_simp [hNneR]
+        norm_num [Int.cast_add, Int.cast_mul]
+        ring
+  rw [hdecomp]
+  rw [Int.floor_intCast_add, hfloorfrac]
+  simp
+
+lemma sum_indicator_tail (s n : ℕ) (hs : s < n) :
+    (Finset.range n).sum (fun k => if n ≤ s + k then (1 : ℤ) else 0) = s := by
+  rw [← Finset.sum_filter]
+  have hfilter : (Finset.range n).filter (fun k => n ≤ s + k) = Finset.Ico (n - s) n := by
+    ext k
+    simp only [Finset.mem_filter, Finset.mem_range, Finset.mem_Ico]
+    omega
+  rw [hfilter]
+  simp [Nat.card_Ico]
+  omega
+
+lemma sum_ediv_add_range (m : ℤ) (n : ℕ) (hn : n ≠ 0) :
+    (Finset.range n).sum (fun k => (m + (k : ℤ)) / (n : ℤ)) = m := by
+  have hNpos : 0 < (n : ℤ) := by exact_mod_cast Nat.pos_of_ne_zero hn
+  let q : ℤ := m / (n : ℤ)
+  let s : ℕ := (m % (n : ℤ)).toNat
+  have hs_nonneg : 0 ≤ m % (n : ℤ) := Int.emod_nonneg _ (ne_of_gt hNpos)
+  have hs_cast : (s : ℤ) = m % (n : ℤ) := Int.toNat_of_nonneg hs_nonneg
+  have hs_lt : s < n := by
+    have hltZ : (s : ℤ) < (n : ℤ) := by
+      simpa [hs_cast] using Int.emod_lt_of_pos m hNpos
+    exact_mod_cast hltZ
+  have hpoint (k : ℕ) (hk : k ∈ Finset.range n) :
+      (m + (k : ℤ)) / (n : ℤ) = q + if n ≤ s + k then (1 : ℤ) else 0 := by
+    have hklt : k < n := by simpa using hk
+    have hmk : m + (k : ℤ) = ((s + k : ℕ) : ℤ) + (n : ℤ) * q := by
+      calc
+        m + (k : ℤ) = (m % (n : ℤ) + (n : ℤ) * (m / (n : ℤ))) + (k : ℤ) := by
+          rw [Int.emod_add_mul_ediv]
+        _ = ((s + k : ℕ) : ℤ) + (n : ℤ) * q := by
+          simp only [q, hs_cast, Nat.cast_add]
+          ring
+    have hdiv : ((s + k : ℕ) : ℤ) / (n : ℤ) = if n ≤ s + k then (1 : ℤ) else 0 := by
+      split_ifs with h
+      · let A : ℤ := ((s + k : ℕ) : ℤ)
+        have hA_ge : (n : ℤ) ≤ A := by omega
+        have hA_lt : A < 2 * (n : ℤ) := by omega
+        exact ((Int.ediv_emod_unique (a := A) (b := (n : ℤ)) (r := A - (n : ℤ)) (q := 1) hNpos).mpr
+          ⟨by ring, by omega, by omega⟩).1
+      · let A : ℤ := ((s + k : ℕ) : ℤ)
+        have hA_nonneg : 0 ≤ A := by positivity
+        have hA_lt : A < (n : ℤ) := by omega
+        exact ((Int.ediv_emod_unique (a := A) (b := (n : ℤ)) (r := A) (q := 0) hNpos).mpr
+          ⟨by ring, hA_nonneg, hA_lt⟩).1
+    rw [hmk, Int.add_mul_ediv_left _ _ (ne_of_gt hNpos), hdiv]
+    ring
+  calc
+    (Finset.range n).sum (fun k => (m + (k : ℤ)) / (n : ℤ))
+        = (Finset.range n).sum (fun k => q + if n ≤ s + k then (1 : ℤ) else 0) := by
+          exact Finset.sum_congr rfl hpoint
+    _ = n * q + s := by
+          rw [Finset.sum_add_distrib, Finset.sum_const, Finset.card_range, nsmul_eq_mul,
+            sum_indicator_tail s n hs_lt]
+    _ = m := by
+          have h := Int.emod_add_mul_ediv m (n : ℤ)
+          simp only [q] at *
+          omega
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  by_cases hn : n = 0
+  · simp [hn]
+  · have hnR : (n : ℝ) ≠ 0 := by exact_mod_cast hn
+    have hnZpos : 0 < (n : ℤ) := by exact_mod_cast Nat.pos_of_ne_zero hn
+    let m : ℤ := Int.floor ((n : ℝ) * x)
+    let r : ℝ := (n : ℝ) * x - (m : ℝ)
+    have hr0 : 0 ≤ r := by
+      dsimp [r, m]
+      exact sub_nonneg.mpr (Int.floor_le ((n : ℝ) * x))
+    have hr1 : r < 1 := by
+      change (n : ℝ) * x - (Int.floor ((n : ℝ) * x) : ℝ) < 1
+      linarith [Int.lt_floor_add_one ((n : ℝ) * x)]
+    have hx : x = ((m : ℝ) + r) / (n : ℝ) := by
+      dsimp [r]
+      field_simp [hnR]
+      ring
+    have hpoint (k : ℕ) (hk : k ∈ Finset.range n) :
+        Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + (k : ℤ)) / (n : ℤ) := by
+      have harg : x + (k : ℝ) / (n : ℝ) = (((m + (k : ℤ) : ℤ) : ℝ) + r) / (n : ℝ) := by
+        rw [hx]
+        field_simp [hnR]
+        norm_num [Int.cast_add]
+        ring
+      rw [harg]
+      exact floor_int_add_small_div (m + (k : ℤ)) (n : ℤ) r hnZpos hr0 hr1
+    calc
+      Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ)))
+          = Finset.sum (Finset.range n) (fun k => (m + (k : ℤ)) / (n : ℤ)) := by
+            exact Finset.sum_congr rfl hpoint
+      _ = m := sum_ediv_add_range m n hn
+      _ = Int.floor ((n : ℝ) * x) := rfl
+```

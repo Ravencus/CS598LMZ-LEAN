@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-14-badly-approximable-numbers",
+  "english_title": "Example 1.4: Badly Approximable Numbers",
+  "statement_en": "A real number $\\alpha$ is badly approximable if there exists a positive constant $C(\\alpha)$ such that for every rational number $\\frac{p}{q}$, $$\\left|\\alpha-\\frac{p}{q}\\right|\\geq \\frac{C(\\alpha)}{q^2}.$$ This is equivalent to $$\\alpha \\in \\mathbf{Bad} \\iff \\liminf_{q\\to \\infty }q\\|q\\alpha\\|>0,$$ where $\\|x\\|:=\\min\\{|x-n|:n\\in \\mathbb{Z}\\}$ denotes the distance from $x$ to the nearest integer.",
+  "difficulty": "hard",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instInfSet', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\nnoncomputable def nearestIntegerDist (x : ℝ) : ℝ :=\n  ⨅ n : ℤ, |x - (n : ℝ)|\n\ndef BadlyApproximable (α : ℝ) : Prop :=\n  ∃ C : ℝ,\n    0 < C ∧\n      ∀ p : ℤ, ∀ q : ℕ, 0 < q →\n        |α - (p : ℝ) / (q : ℝ)| ≥ C / (q : ℝ)^2\n\ndef Bad : Set ℝ :=\n  {α : ℝ | BadlyApproximable α}\n\ndef LiminfAtTopPositive (u : ℕ → ℝ) : Prop :=\n  ∃ ε : ℝ, 0 < ε ∧ ∀ᶠ q in Filter.atTop, ε ≤ u q\n\ntheorem badlyApproximable_iff_liminf_pos (α : ℝ) :\n    α ∈ Bad ↔\n      LiminfAtTopPositive (fun q : ℕ => (q : ℝ) * nearestIntegerDist ((q : ℝ) * α)) := by\n  sorry"
+}

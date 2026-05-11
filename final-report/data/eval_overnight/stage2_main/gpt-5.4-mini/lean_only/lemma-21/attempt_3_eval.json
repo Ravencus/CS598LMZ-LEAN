@@ -1,0 +1,51 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 5,
+  "first_error": "Unknown constant `Complex.sq_abs`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_eb15a3e068.lean",
+      "line": 14,
+      "column": 14,
+      "severity": "error",
+      "message": "Unknown constant `Complex.sq_abs`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eb15a3e068.lean",
+      "line": 27,
+      "column": 10,
+      "severity": "error",
+      "message": "`simp` made no progress"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eb15a3e068.lean",
+      "line": 34,
+      "column": 30,
+      "severity": "error",
+      "message": "Function expected at\n  Real.abs_sin_le_abs\nbut this term has type\n  |Real.sin ?m.591| ≤ |?m.591|\n\nNote: Expected a function because this term is being applied to the argument\n  ((2 * Real.pi * x) / 2)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eb15a3e068.lean",
+      "line": 34,
+      "column": 12,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  MulLeftMono ℝ\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eb15a3e068.lean",
+      "line": 35,
+      "column": 29,
+      "severity": "error",
+      "message": "unsolved goals\nx : ℝ\nhexp :\n  Complex.exp (↑(2 * Real.pi * x) * Complex.I) =\n    ↑(Real.cos (2 * Real.pi * x)) + ↑(Real.sin (2 * Real.pi * x)) * Complex.I\nhsq : ‖Complex.exp (↑(2 * Real.pi * x) * Complex.I) - 1‖ ^ 2 = (2 * Real.sin (2 * Real.pi * x / 2)) ^ 2\nhnorm : ‖Complex.exp (↑(2 * Real.pi * x) * Complex.I) - 1‖ = 2 * |Real.sin (2 * Real.pi * x / 2)|\nhpi : 0 ≤ 2 * Real.pi\n⊢ 2 * (|x| * (|Real.pi| * 2) / 2) = Real.pi * (|x| * 2)"
+    }
+  ]
+}

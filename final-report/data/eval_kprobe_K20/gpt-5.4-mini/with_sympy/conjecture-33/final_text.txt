@@ -1,0 +1,5 @@
+I’m checking whether the statement is already in Mathlib or whether I need a direct proof skeleton. If it’s not present, I’ll try to reduce it to known density facts; otherwise I’ll verify the exact API first.
+I didn’t find a ready-made theorem, so I’m looking at nearby proof patterns in the repository for dense/closure arguments and any useful lemmas about `Real.sin` or `Set.range`.
+The statement looks substantially harder than the nearby repository proofs, so I’m checking whether there’s an existing finished proof or a related lemma I can reuse instead of inventing a brand-new density argument.
+I’ve loaded the Lean workflow. Next I’m checking whether there are any local digests or prior traces that suggest a density argument pattern I can adapt before I spend checker budget.
+I haven’t found a reusable local proof, so I’m checking Mathlib API names for density/closure facts about `Real.sin` and `DenseRange` before I decide whether a direct formal proof is realistic here.

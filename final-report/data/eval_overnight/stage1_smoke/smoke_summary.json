@@ -1,0 +1,729 @@
+{
+  "timestamp": "2026-05-10T03:12:41",
+  "models": [
+    "gpt-5.5",
+    "gpt-5.4-mini",
+    "claude-opus-4-7",
+    "deepseek-v4-pro",
+    "deepseek-v4-flash"
+  ],
+  "n_problems": 5,
+  "K": 2,
+  "per_model": {
+    "gpt-5.5": {
+      "success": 1,
+      "total": 5
+    },
+    "gpt-5.4-mini": {
+      "success": 0,
+      "total": 5
+    },
+    "claude-opus-4-7": {
+      "success": 1,
+      "total": 5
+    },
+    "deepseek-v4-pro": {
+      "success": 0,
+      "total": 5
+    },
+    "deepseek-v4-flash": {
+      "success": 0,
+      "total": 5
+    }
+  },
+  "cells": [
+    {
+      "problem_id": "problem-1-10",
+      "model": "gpt-5.5",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": true,
+      "why_success": "lean_proof",
+      "attempts_used": 2,
+      "any_timeout": false,
+      "wall_seconds": 39.3,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 16.29,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression\n  MeasureTheory.lintegral_eq_zero_iff\nof type\n  Measurable ?m.55 "
+        },
+        {
+          "attempt": 2,
+          "wall_seconds": 18.34,
+          "outcome": "lean_proof",
+          "overall_success": true,
+          "lean_compiles_raw": true,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 0,
+          "first_error": null
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-1-10",
+      "model": "claude-opus-4-7",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": true,
+      "why_success": "lean_proof",
+      "attempts_used": 1,
+      "any_timeout": false,
+      "wall_seconds": 76.4,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 74.04,
+          "outcome": "lean_proof",
+          "overall_success": true,
+          "lean_compiles_raw": true,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 0,
+          "first_error": null
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-32-hermite-identity",
+      "model": "gpt-5.5",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": null,
+      "attempts_used": 2,
+      "any_timeout": false,
+      "wall_seconds": 32.9,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 13.73,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Unknown constant `Int.floor_sum_range_div_natCast`\n"
+        },
+        {
+          "attempt": 2,
+          "wall_seconds": 14.42,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Unknown constant `Int.floor_sum_range_div_nat`\n"
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-1-10",
+      "model": "gpt-5.4-mini",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": null,
+      "attempts_used": 2,
+      "any_timeout": false,
+      "wall_seconds": 127.0,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 41.52,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 5,
+          "first_error": "expected token"
+        },
+        {
+          "attempt": 2,
+          "wall_seconds": 80.68,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Unknown identifier `ae_eq_zero_of_lintegral_eq_zero`\n"
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-1-10",
+      "model": "deepseek-v4-pro",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.09,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-1-10",
+      "model": "deepseek-v4-flash",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-32-hermite-identity",
+      "model": "gpt-5.4-mini",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.1,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-32-hermite-identity",
+      "model": "claude-opus-4-7",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.08,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "theorem-14-dirichlet-theorem",
+      "model": "gpt-5.5",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": null,
+      "attempts_used": 2,
+      "any_timeout": false,
+      "wall_seconds": 97.8,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 78.72,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Invalid field `exists_nat_abs_mul_sub_lt`: The environment does not contain `Function.exists_nat_abs_mul_sub_lt`, so it is not possible to project the field `exists_nat_abs_mul_sub_lt` from an express"
+        },
+        {
+          "attempt": 2,
+          "wall_seconds": 14.35,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Unknown constant `Irrational.exists_nat_abs_mul_sub_lt`\n"
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-32-hermite-identity",
+      "model": "deepseek-v4-pro",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.1,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "theorem-14-dirichlet-theorem",
+      "model": "gpt-5.4-mini",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": null,
+      "attempts_used": 2,
+      "any_timeout": false,
+      "wall_seconds": 116.7,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 57.82,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Unknown constant `Irrational.irrational_approximation`\n"
+        },
+        {
+          "attempt": 2,
+          "wall_seconds": 54.21,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Invalid field `exists_nat_mul_sub_int_lt`: The environment does not contain `Function.exists_nat_mul_sub_int_lt`, so it is not possible to project the field `exists_nat_mul_sub_int_lt` from an express"
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-32-hermite-identity",
+      "model": "deepseek-v4-flash",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-22",
+      "model": "gpt-5.5",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": null,
+      "attempts_used": 2,
+      "any_timeout": false,
+      "wall_seconds": 67.6,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 44.15,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Tactic `contradiction` failed\n\nα β : ℕ → ℝ\nhα_nonneg : ∀ (n : ℕ), 0 ≤ α n\nhβ_nonneg : ∀ (n : ℕ), 0 ≤ β n\nhα_antitone : Antitone α\nhβ_antitone : Antitone β\nhα_div : ¬Summable fun n => α (n + 1)\nhβ_div "
+        },
+        {
+          "attempt": 2,
+          "wall_seconds": 18.68,
+          "outcome": "instruction_violation",
+          "overall_success": false,
+          "lean_compiles_raw": true,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": true,
+          "instruction_violation": true,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 0,
+          "first_error": null
+        }
+      ]
+    },
+    {
+      "problem_id": "theorem-14-dirichlet-theorem",
+      "model": "claude-opus-4-7",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "theorem-14-dirichlet-theorem",
+      "model": "deepseek-v4-pro",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "theorem-14-dirichlet-theorem",
+      "model": "deepseek-v4-flash",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.08,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-22",
+      "model": "gpt-5.4-mini",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.0,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.03,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-131-flanders-1951",
+      "model": "gpt-5.5",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": null,
+      "attempts_used": 2,
+      "any_timeout": false,
+      "wall_seconds": 62.6,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 24.24,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 10,
+          "first_error": "Invalid alternative name `h_add`: Expected `add` or `monomial`"
+        },
+        {
+          "attempt": 2,
+          "wall_seconds": 33.33,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 4,
+          "first_error": "unsolved goals\ncase monomial\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nm : ℕ\nc : ℂ\nhpow : B * (A * B) ^ m = (B * A) ^ m * B\n⊢ B * ((algebraMap ℂ (Matrix n n ℂ)) c * (A *"
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-22",
+      "model": "claude-opus-4-7",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-22",
+      "model": "deepseek-v4-pro",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "problem-22",
+      "model": "deepseek-v4-flash",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-131-flanders-1951",
+      "model": "gpt-5.4-mini",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": null,
+      "attempts_used": 2,
+      "any_timeout": false,
+      "wall_seconds": 208.6,
+      "attempts": [
+        {
+          "attempt": 1,
+          "wall_seconds": 158.38,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 1,
+          "first_error": "Application type mismatch: The argument\n  p\nhas type\n  Polynomial.{0} ℂ\nof sort `Type` but is expected to have type\n  Polynomial.{u_1} (Matrix n n ℂ)\nof sort `Type u_1` in the application\n  eval (D * "
+        },
+        {
+          "attempt": 2,
+          "wall_seconds": 45.12,
+          "outcome": "compile_fail",
+          "overall_success": false,
+          "lean_compiles_raw": false,
+          "has_bare_sorry": false,
+          "has_admit": false,
+          "has_axiom": false,
+          "instruction_violation": false,
+          "sympy_emitted": false,
+          "sympy_verified": false,
+          "n_errors": 6,
+          "first_error": "Invalid alternative name `X`: Expected `monomial`"
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-131-flanders-1951",
+      "model": "claude-opus-4-7",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-131-flanders-1951",
+      "model": "deepseek-v4-pro",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    },
+    {
+      "problem_id": "lemma-131-flanders-1951",
+      "model": "deepseek-v4-flash",
+      "condition": "with_sympy",
+      "K": 2,
+      "overall_success": false,
+      "why_success": "model_timeout",
+      "attempts_used": 1,
+      "any_timeout": true,
+      "wall_seconds": 240.1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "model_timeout": true,
+          "wall_seconds": 240.11,
+          "outcome": "model_timeout",
+          "overall_success": false
+        }
+      ]
+    }
+  ],
+  "abort": true
+}

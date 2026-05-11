@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-4",
+  "english_title": "Problem 4",
+  "statement_en": "Estimate $f(x)-\\theta(x)$ with error term required to be $o(x)$.",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter Asymptotics\n\ntheorem estimate_f_sub_theta_with_littleo {f θ : ℝ → ℝ} :\n    (fun x : ℝ => f x - θ x) =o[Filter.atTop] (fun x : ℝ => x) := by\n  sorry"
+}

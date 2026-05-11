@@ -1,0 +1,120 @@
+[
+  {
+    "label": "SumInt13",
+    "id": "sum-int-13",
+    "output_path": "/workspace/final-presentation/d4_atom_guided_repair/artifacts/screening_outputs/SumInt13.txt",
+    "output_chars": 1859,
+    "output_preview": "Let  \n\\[\nH_n=\\sum_{k=1}^n \\frac1k.\n\\]\nWe want to prove\n\\[\nH_n\\ge \\log n+\\frac{n+1}{2n}.\n\\]\n\nThe key point is to use the convexity of \\(f(x)=\\frac1x\\) on \\((0,\\infty)\\).\n\n**Step 1: A convexity estimate on each interval.**\n\nSince\n\\[\nf''(x)=\\frac{2}{x^3}>0 \\qquad (x>0),\n\\]\nthe function \\(f(x)=1/x\\) is ",
+    "verdict": "pass",
+    "matched_keywords": [
+      "convex",
+      "log"
+    ],
+    "score": 0.5,
+    "known_answer": "H_n >= (n+1)/(2n) + log(n)",
+    "elapsed_s": 21.5
+  },
+  {
+    "label": "Termwise3",
+    "id": "termwise-3",
+    "output_path": "/workspace/final-presentation/d4_atom_guided_repair/artifacts/screening_outputs/Termwise3.txt",
+    "output_chars": 1103,
+    "output_preview": "Let\n\\[\nS_N=1+\\frac1{2!}+\\frac1{3!}+\\cdots+\\frac1{N!},\n\\]\nwhere \\(N\\) is a positive integer. We will prove that\n\\[\nS_N<3\n\\]\nfor every positive integer \\(N\\).\n\nNote first that every term is positive, so \\(S_N\\) is well-defined.\n\nNow for each integer \\(k\\ge 2\\), we have\n\\[\nk!=1\\cdot 2\\cdot 3\\cdots k.\n\\",
+    "verdict": "pass",
+    "matched_keywords": [
+      "<3",
+      "e"
+    ],
+    "score": 0.5,
+    "known_answer": "1 + 1/2! + ... + 1/N! < 3 (in fact < e ≈ 2.718)",
+    "elapsed_s": 10.8
+  },
+  {
+    "label": "PowerMeanLim",
+    "id": "termwise-13",
+    "output_path": "/workspace/final-presentation/d4_atom_guided_repair/artifacts/screening_outputs/PowerMeanLim.txt",
+    "output_chars": 1705,
+    "output_preview": "Let\n\\[\nM_p(x_1,\\dots,x_n;w_1,\\dots,w_n)\n=\\left(\\sum_{i=1}^n w_i x_i^p\\right)^{1/p},\n\\]\nwhere \\(x_i\\ge 0\\), \\(w_i>0\\), and \\(\\sum_{i=1}^n w_i=1\\). We will prove that\n\\[\n\\lim_{p\\to+\\infty} M_p(x_1,\\dots,x_n;w_1,\\dots,w_n)=\\max\\{x_1,\\dots,x_n\\}.\n\\]\n\nSet\n\\[\nm:=\\max\\{x_1,\\dots,x_n\\}.\n\\]\n\nWe must show tha",
+    "verdict": "pass",
+    "matched_keywords": [
+      "max",
+      "squeeze",
+      "lim"
+    ],
+    "score": 1.0,
+    "known_answer": "lim_{p->infinity} M_p = max(x_1,...,x_n)",
+    "elapsed_s": 19.8
+  },
+  {
+    "label": "SumIntP",
+    "id": "sum-int-9",
+    "output_path": "/workspace/final-presentation/d4_atom_guided_repair/artifacts/screening_outputs/SumIntP.txt",
+    "output_chars": 1999,
+    "output_preview": "Let  \n\\[\nS_n=\\sum_{k=1}^n a_k,\\qquad a_n>0,\\qquad p>1,\n\\]\nand\n\\[\nT_N=\\sum_{n=1}^N \\frac{a_n}{S_n^p}.\n\\]\n\nSince \\(a_n>0\\), the sequence \\((S_n)\\) is strictly increasing and \\(S_n>0\\) for all \\(n\\).\n\nWe will show that \\(T_N\\) is increasing and uniformly bounded, hence convergent.\n\n---\n\n## Key estimate",
+    "verdict": "pass",
+    "matched_keywords": [
+      "bounded",
+      "integral",
+      "converg"
+    ],
+    "score": 0.75,
+    "known_answer": "T_N is bounded for p > 1; e.g., T_N <= 1 + 1/((p-1) a_1^{p-1})",
+    "elapsed_s": 48.7
+  },
+  {
+    "label": "SumInt7",
+    "id": "sum-int-7",
+    "output_path": "/workspace/final-presentation/d4_atom_guided_repair/artifacts/screening_outputs/SumInt7.txt",
+    "output_chars": 1333,
+    "output_preview": "Let  \n\\[\nS:=\\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k),\n\\qquad 0=x_0<x_1<\\cdots<x_n<1.\n\\]\n\nWe estimate \\(S\\).\n\nFor each \\(k\\),\n\\[\n(x_k-x_{k-1})(1-x_k)\n= (x_k-x_{k-1})\\bigl((1-x_k)\\bigr).\n\\]\nSince \\(x_{k-1}<x_k\\), we have\n\\[\n1-x_k<1-x_{k-1}.\n\\]\nHence\n\\[\n(x_k-x_{k-1})(1-x_k)\n<\n(x_k-x_{k-1})(1-x_{k-1}).\n\\]\nThe",
+    "verdict": "fail",
+    "matched_keywords": [],
+    "score": 0.0,
+    "known_answer": "sum (x_k - x_{k-1})(1 - x_k) < 1/2",
+    "elapsed_s": 18.0
+  },
+  {
+    "label": "LogKn2",
+    "id": "termwise-18",
+    "output_path": "/workspace/final-presentation/d4_atom_guided_repair/artifacts/screening_outputs/LogKn2.txt",
+    "output_chars": 2296,
+    "output_preview": "Let  \n\\[\nS_n=\\sum_{k=1}^{n}\\log\\!\\left(1+\\frac{k}{n^2}\\right).\n\\]\nWe compute \\(\\lim_{n\\to\\infty} S_n\\).\n\nSince \\(\\frac{k}{n^2}\\ge 0\\), we can use the standard inequality\n\\[\n0\\le \\log(1+x)\\le x \\qquad (x\\ge 0).\n\\]\nApplying this with \\(x=\\frac{k}{n^2}\\), we get\n\\[\n0\\le \\log\\!\\left(1+\\frac{k}{n^2}\\righ",
+    "verdict": "pass",
+    "matched_keywords": [
+      "1/2",
+      "taylor",
+      "log(1+x)"
+    ],
+    "score": 0.75,
+    "known_answer": "lim sum log(1 + k/n^2) = 1/2",
+    "elapsed_s": 23.0
+  },
+  {
+    "label": "JNLog",
+    "id": "termwise-27",
+    "output_path": "/workspace/final-presentation/d4_atom_guided_repair/artifacts/screening_outputs/JNLog.txt",
+    "output_chars": 1565,
+    "output_preview": "For\n\\[\nJ_n=\\int_0^1 \\frac{\\log(1+x/n)}{x}\\,dx,\n\\]\nwe want\n\\[\n\\lim_{n\\to\\infty} n\\,|nJ_n-1|.\n\\]\n\nSince \\(\\log(1+t)<t\\) for every \\(t>0\\), we have\n\\[\n\\frac{\\log(1+x/n)}{x}<\\frac1n \\qquad (0<x\\le 1),\n\\]\nhence\n\\[\nJ_n<\\frac1n.\n\\]\nSo \\(nJ_n-1<0\\), and therefore\n\\[\n|nJ_n-1|=1-nJ_n.\n\\]\nThus it suffices to c",
+    "verdict": "unclear",
+    "matched_keywords": [
+      "1/2"
+    ],
+    "score": 0.3333333333333333,
+    "known_answer": "lim n|n J_n - 1| = 1/2 (J_n ~ 1/n - 1/(2n^2) + ...)",
+    "elapsed_s": 26.6
+  },
+  {
+    "label": "SumInt10",
+    "id": "sum-int-10",
+    "output_path": "/workspace/final-presentation/d4_atom_guided_repair/artifacts/screening_outputs/SumInt10.txt",
+    "output_chars": 1889,
+    "output_preview": "Let\n\\[\nS_n=\\sum_{i=1}^n \\frac1{n+\\sqrt i}.\n\\]\n(If the sum starts at \\(i=0\\), the extra term is \\(1/n=O(n^{-1})\\), which does not affect the required precision.)\n\nWe prove\n\\[\nS_n=1-\\frac{2}{3}\\frac1{\\sqrt n}+o(n^{-1/2}).\n\\]\n\n**Step 1: Expand each summand uniformly.**\n\nWrite\n\\[\n\\frac1{n+\\sqrt i}=\\frac",
+    "verdict": "unclear",
+    "matched_keywords": [
+      "sqrt"
+    ],
+    "score": 0.25,
+    "known_answer": "S_n = 1 - (2/3)/sqrt(n) + o(1/sqrt(n))",
+    "elapsed_s": 28.4
+  }
+]

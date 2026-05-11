@@ -1,0 +1,27 @@
+{
+  "id": "proposition-313-nth-moments-of-exponentially-decaying-functi",
+  "type": "problem",
+  "source_note": "和与积分换序",
+  "english_source_note": "Interchanging Sums and Integrals",
+  "callout_id": "和与积分换序#5",
+  "english_title": "Proposition 3.1.3: nth Moments of Exponentially Decaying Functions on the Positive Half-Line",
+  "statement_en": "Compute the moments \\(b_n:=\\int_0^{\\infty} g(x)x^n\\,dx\\) for several common functions on \\([0,\\infty)\\), including \\(g(x)=e^{-ax}\\), \\(g(x)=e^{-ax^2}\\), \\(g(x)=\\frac{1}{e^x-1}\\), and \\(g(x)=\\frac{1}{e^x+1}\\), obtaining explicit formulas in terms of \\(\\Gamma\\) and \\(\\zeta\\) functions.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "change of variables",
+    "Gamma function evaluation",
+    "series expansion of kernels",
+    "interchange of summation and integration",
+    "zeta function identities"
+  ],
+  "prerequisites": [
+    "improper integrals",
+    "Gamma function",
+    "geometric series expansions",
+    "justification of exchanging sum and integral",
+    "Riemann zeta function"
+  ],
+  "callout_body": "区间$[0,+\\infty)$上常见的$n$次矩简单的函数$g(x)$以及它们的$n$次矩$b_n:=\\int_0^{\\infty}g(x)x^n\\,dx$：\n* 指数衰减型$e^{-ax}$，$$\\begin{aligned}b_n&=\\int_0^{\\infty}e^{-ax}x^n\\,dx \\xlongequal{t=ax}\\frac{1}{a^{n+1}}\\int_0^{\\infty}t^ne^{-t}\\,dt \\\\&= \\frac{\\Gamma(n+1)}{a^{n+1}}\\\\&=\\frac{n!}{a^{n+1}}\\end{aligned}$$\n* 高斯函数$e^{-ax^2}$,$$\\begin{aligned}b_n&=\\int_0^{\\infty}e^{-ax^2}x^n\\\\&\\xlongequal{t=ax^2}\\frac{1}{2a^{(n+1)/2}}\\int_0^{\\infty}t^{\\frac{n}{2}-\\frac{1}{2}}e^{-t}\\,dt \\\\&=\\frac{\\Gamma(\\frac{n+1}{2})}{2a^{(n+1)/2}}\\end{aligned}$$\n* 玻色-爱因斯坦分布（简化）$\\frac{1}{e^x-1}$。这个函数的$n$次矩的计算本身就体现了\"想法3.1.2\"的技巧，我们利用$$\\frac{1}{e^x-1}=\\frac{e^{-x}}{1-e^{-x}}=\\sum_{k\\geq 1} e^{-kx}$$从而交换次序，并结合上面已经推导出来的指数型的普通n次矩的结论，得到$$\\begin{aligned}b_n&=\\int_0^{\\infty}\\frac{x^n}{e^x-1}\\,dx \\\\&= \\int_0^{\\infty}x^n\\sum_{k\\geq 1} e^{-kx}\\\\&= \\sum_{k\\geq 1}\\int_0^{\\infty}x^ne^{-kx} \\,dx \\\\&= \\sum_{k\\geq 1}\\frac{n!}{k^{n+1}}\\\\&=n!\\zeta(n+1)\\end{aligned}$$\n* 费米-狄拉克分布（简化），方法与思路与上一个类似。利用$$\\frac{1}{e^x+1}=\\frac{e^{-x}}{1+e^{-x}}=\\sum_{k\\geq 1} (-1)^{k-1}e^{-kx}$$从而$$\\begin{aligned}b_n&=\\int_0^{\\infty}\\frac{x^n}{e^x+1}\\,dx \\\\&= \\int_0^{\\infty}x^n\\sum_{k\\geq 1} (-1)^{k-1}e^{-kx}\\\\&= \\sum_{k\\geq 1}(-1)^{k-1}\\int_0^{\\infty}x^ne^{-kx} \\,dx \\\\&= n!\\sum_{k\\geq 1}\\frac{(-1)^{k-1}}{k^{n+1}}\\\\&=n!(1-2^{-n})\\zeta(n+1)\\end{aligned}$$"
+}

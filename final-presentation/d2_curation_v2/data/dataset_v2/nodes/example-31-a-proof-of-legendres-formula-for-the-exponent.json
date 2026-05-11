@@ -1,0 +1,23 @@
+{
+  "id": "example-31-a-proof-of-legendres-formula-for-the-exponent",
+  "type": "problem",
+  "source_note": "把积分或求和对象视为一个计数函数并展开",
+  "english_source_note": "Treating Sums or Integrals as Counting Functions",
+  "callout_id": "把积分或求和对象视为一个计数函数并展开#4",
+  "english_title": "Example 3.1: A Proof of Legendre's Formula for the Exponent",
+  "statement_en": "Using the viewpoint of this note, prove Legendre's formula for the exponent of a prime $p$ in $n!$: $$\\nu_p(n!)=\\sum_{k\\geq 1}\\left\\lfloor\\frac{n}{p^k}\\right\\rfloor.$$ The argument starts from $$\\nu_p(n!)=\\sum_{m=1}^n \\nu_p(m)$$ and rewrites $$\\nu_p(m)=\\sum_{k\\geq 1}1_{p^k\\mid m}.$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "key_techniques": [
+    "rewrite valuation as a counting function",
+    "double-sum expansion",
+    "interchange the order of summation"
+  ],
+  "prerequisites": [
+    "$p$-adic valuation",
+    "divisibility",
+    "factorials"
+  ],
+  "callout_body": "在[[从二项式系数到Kummer定理#1. Legendre公式]]当中我们介绍了计算阶乘$n!$素因子$p$指数的办法$$\\nu_p(n!)=\\sum_{k\\geq 1}\\left\\lfloor\\frac{n}{p^k}\\right\\rfloor$$我们可以试着从本篇文章当中的观点中来证明这件事。我们利用$$\\nu_p(r_1r_2)=\\nu_p(r_1)+\\nu_p(r_2)$$的这种性质。那么$$\\nu_p(n!)=\\sum_{m=1}^n \\nu_p(m)$$其中我们把$\\nu_p(m)$视为一个计数函数，即$$\\nu_p(m)=\\sum_{k\\geq 1}1_{p^k|m}$$从而带入到$\\nu_p(n!)$的式子当中，并交换求和次序，从而得到$$\\nu_p(n!)=\\sum_{m=1}^n \\sum_{k\\geq 1}1_{p^k|m}= \\sum_{k\\geq 1}\\sum_{m=1}^n1_{p^k|m}=\\sum_{k\\geq 1}\\left\\lfloor \\frac{n}{p^k} \\right\\rfloor$$这便是Legendre公式。"
+}

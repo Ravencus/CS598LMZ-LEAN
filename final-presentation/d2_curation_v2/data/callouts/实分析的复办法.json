@@ -1,0 +1,81 @@
+{
+  "note_title": "实分析的复办法",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "实分析的复办法#1",
+      "type": "tip",
+      "title": "想法",
+      "body": "如果一个$\\mathbb{R}$上的实函数$f(x)$可以解析延拓，或者通过某种变换转换为复平面上某个包含实轴的区域$E$上的亚纯函数$F(z)$。于是我们可以考虑使用复分析的工具处理关于函数$F(z)$在$E$内全局的性质，最后再尝试把全局的结果还原到局部的$f(x)$上(实轴上)。",
+      "position_char": 38,
+      "position_line": 6
+    },
+    {
+      "id": "实分析的复办法#2",
+      "type": "tip",
+      "title": "基本的想法",
+      "body": "当我们遇到一个不好直接处理的实积分(特别是涉及无穷区间上的积分)时，我们发现被积分的实函数$f(x)$在复平面上与一个亚纯函数$F(z)$有着密切的关系。那么我们可以考虑函数在一个包含实数轴的区域上亚纯函数$F(z)$的性质，把涉及的实积分视为亚纯函数在区域边界上的积分的一部分，然后利用留数定理，建立起实积分与留数之间的关系。",
+      "position_char": 242,
+      "position_line": 14
+    },
+    {
+      "id": "实分析的复办法#3",
+      "type": "note",
+      "title": "可延拓为带状区域上满足衰减条件的全纯函数的实函数",
+      "body": "$f\\in \\mathscr{S}$,指的是存在某个正实数$a$使得$f \\in \\mathscr{S}_a$满足:\n1. 函数$f$可以解析延拓为在带状区域$S_a:=\\{z\\in \\mathbb{C}:|\\text{Im}(z)|<a\\}$上全纯的函数$f(z)$。\n2. $f(z)$满足衰减的条件:$$|f(x+iy)|\\lesssim_{b,f} \\frac{1}{1+|x|^{\\alpha}}$$其中$\\alpha>1$,$|y|\\leq b<a$",
+      "position_char": 469,
+      "position_line": 21
+    },
+    {
+      "id": "实分析的复办法#4",
+      "type": "note",
+      "title": "函数傅里叶变换呈现指数衰减",
+      "body": "如果函数$f \\in \\mathscr{F}_a$那么对于任意的$0<b<a$其傅里叶变换都满足$$\\widehat{f}(\\xi)\\lesssim_{b,f,\\alpha}e^{-2\\pi b|\\xi|}$$对任意$\\xi \\in \\mathbb{R}$成立。",
+      "position_char": 797,
+      "position_line": 30
+    },
+    {
+      "id": "实分析的复办法#5",
+      "type": "note",
+      "title": "基本原理:",
+      "body": "假设函数$f \\in L^1(\\mathbb{R})$，那么这个函数衰减地越快，其傅里叶变换$\\widehat{f}$就会越正规。",
+      "position_char": 2645,
+      "position_line": 48
+    },
+    {
+      "id": "实分析的复办法#6",
+      "type": "question",
+      "title": "问题2.1",
+      "body": "如果我有一个实函数$f\\in L^1(\\mathbb{R})$，其傅里叶变换$\\widehat{f}$满足和上面一样的快速衰减的条件$$\\widehat{f}(\\xi)\\lesssim_{b,f}e^{-2\\pi a|\\xi|}$$是不是说这个函数一定可以拓展为复平面上的带状区域$S_a$上的一个全纯函数了？",
+      "position_char": 3251,
+      "position_line": 60
+    },
+    {
+      "id": "实分析的复办法#7",
+      "type": "note",
+      "title": "平移公式",
+      "body": "如果$f \\in \\mathscr{F}_a$那么对于任意的带状区域当中的复数$\\omega \\in S_a$函数$x\\mapsto f(x-\\omega)$的傅里叶变换为$$\\xi\\mapsto e^{-2\\pi i \\xi \\omega }\\widehat{f}(\\xi)$$",
+      "position_char": 4553,
+      "position_line": 79
+    },
+    {
+      "id": "实分析的复办法#8",
+      "type": "note",
+      "title": "当前版本下的傅里叶逆变换公式",
+      "body": "$f\\in \\mathscr{F}$,那么$$\\int_{\\mathbb{R}} \\widehat{f}(\\xi)e^{2\\pi i x \\xi }\\,d\\xi=f(x)$$",
+      "position_char": 4862,
+      "position_line": 88
+    },
+    {
+      "id": "实分析的复办法#9",
+      "type": "note",
+      "title": "Perron公式",
+      "body": "$f:\\mathbb{N}\\to \\mathbb{C}$是一个亚多项式增长的函数，也就是说满足$f(n)\\lesssim_{\\varepsilon,f} n^{\\varepsilon}$对任意自然数$n$以及$\\varepsilon>0$。令$F(s)$表示在右半平面$\\{\\text{Re}(s)>1\\}$上的Dirichlet级数$$F(s):=\\sum_{n\\geq 1} \\frac{f(s)}{n^s}$$那么对于任意非整数的正实数$x$，以及$\\sigma>1$成立公式$$\\sum_{n\\leq x}f(n)=\\frac{1}{2\\pi i }\\lim_{T\\to \\infty}\\int_{\\sigma-iT}^{\\sigma+iT}F(s)\\frac{x^s}{s}\\,ds$$",
+      "position_char": 5613,
+      "position_line": 105
+    }
+  ]
+}

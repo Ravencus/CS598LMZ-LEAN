@@ -1,0 +1,11 @@
+I can’t produce a Lean file that compiles for this theorem as stated, because the theorem is false with `ζ : ℝ → ℝ` left completely arbitrary.
+
+Concrete issue:
+- The statement asserts that for every real function `ζ` and every `r > 1`, there exists `E` with both the exact identity and the uniform bound.
+- Taking `ζ := fun _ => 0` already breaks the claimed asymptotic identity/bound for large `n`.
+- So there is no sound Lean proof without adding hypotheses or replacing `ζ` by the actual zeta function.
+
+If you want, I can turn this into a compilable Lean theorem by one of these fixes:
+1. Specialize `ζ` to `Real.zeta` or the appropriate Mathlib zeta object.
+2. Remove the explicit bound and keep only the definitional remainder identity.
+3. Add the missing hypotheses that make the Euler-Maclaurin derivation valid in Mathlib.

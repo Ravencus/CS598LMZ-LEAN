@@ -1,0 +1,23 @@
+{
+  "id": "lebesgue-measure-of-a-region-bounded-by-a-function",
+  "type": "problem",
+  "source_note": "n维球体的体积",
+  "english_source_note": "Volume of the n-Dimensional Ball",
+  "callout_id": "n维球体的体积#3",
+  "english_title": "Lebesgue Measure of a Region Bounded by a Function",
+  "statement_en": "Let $f(x)$ be a nonnegative function on $\\mathbb{R}^k$, and define $$A:=\\{(x,y) \\in \\mathbb{R}^{k}\\times \\mathbb{R}:0\\leq y \\leq f(x)\\}.$$ Then the \"area\" of this set can be computed by integration, namely $$\\int_{\\mathbb{R}^k} f(x)\\,dx = m(A),$$ where $m$ denotes Lebesgue measure.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "slicing",
+    "Tonelli theorem",
+    "indicator functions"
+  ],
+  "prerequisites": [
+    "Lebesgue integral",
+    "measurable functions",
+    "product measure"
+  ],
+  "callout_body": "$f(x)$是$\\mathbb{R}^k$上的一个非负的函数，集合$$A:=\\{(x,y) \\in \\mathbb{R}^{k}\\times \\mathbb{R}:0\\leq y \\leq f(x)\\}$$\n那么这个集合的\"面积\"可以用积分来计算，公式如下:\n$$\\int_{\\mathbb{R}^k} f(x)\\,dx = m(A)$$\n这里的$m$是集合的Lebesgue测度。"
+}

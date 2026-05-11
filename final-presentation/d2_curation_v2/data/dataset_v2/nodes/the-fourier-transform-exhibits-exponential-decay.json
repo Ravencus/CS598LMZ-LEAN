@@ -1,0 +1,23 @@
+{
+  "id": "the-fourier-transform-exhibits-exponential-decay",
+  "type": "problem",
+  "source_note": "实分析的复办法",
+  "english_source_note": "Complex Methods in Real Analysis",
+  "callout_id": "实分析的复办法#4",
+  "english_title": "The Fourier Transform Exhibits Exponential Decay",
+  "statement_en": "If $f \\in \\mathscr{F}_a$, then for every $0<b<a$, its Fourier transform satisfies $$\\widehat{f}(\\xi)\\lesssim_{b,f,\\alpha}e^{-2\\pi b|\\xi|}$$ for all $\\xi \\in \\mathbb{R}$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "contour shifting",
+    "analytic continuation to a strip",
+    "Fourier transform estimates"
+  ],
+  "prerequisites": [
+    "Fourier transform",
+    "holomorphic functions on strips",
+    "decay estimates"
+  ],
+  "callout_body": "如果函数$f \\in \\mathscr{F}_a$那么对于任意的$0<b<a$其傅里叶变换都满足$$\\widehat{f}(\\xi)\\lesssim_{b,f,\\alpha}e^{-2\\pi b|\\xi|}$$对任意$\\xi \\in \\mathbb{R}$成立。"
+}

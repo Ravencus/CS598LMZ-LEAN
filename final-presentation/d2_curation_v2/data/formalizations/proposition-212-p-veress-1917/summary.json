@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-212-p-veress-1917",
+  "english_title": "Proposition 2.1.2 (P. Veress, 1917)",
+  "statement_en": "If $a_k>0$, $a_k\\to 0$, and the series $\\sum_{k\\ge 1} a_k$ diverges, then for the partial sums $S_n:=\\sum_{k\\le n} a_k$, the fractional parts $Q_n:=\\{S_n\\}$ are dense in $[0,1)$.",
+  "difficulty": "easy",
+  "domain": "number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem fractional_parts_partial_sums_dense\n    (a : ℕ → ℝ)\n    (ha_pos : ∀ k : ℕ, 1 ≤ k → 0 < a k)\n    (ha_tendsto : Filter.Tendsto a Filter.atTop (nhds 0))\n    (ha_nonsummable : ¬ Summable (fun k : ℕ => a (k + 1))) :\n    ∀ x ∈ Set.Ico (0 : ℝ) 1, ∀ ε > 0, ∃ n : ℕ,\n      |Int.fract (∑ k ∈ Finset.Icc 1 n, a k) - x| < ε := by\n  sorry"
+}

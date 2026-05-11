@@ -1,0 +1,269 @@
+{
+  "note_title": "从几个极限问题去理解Landau符号",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1"
+  ],
+  "callouts": [
+    {
+      "id": "从几个极限问题去理解Landau符号#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "令$$S_n:=\\sum_{k\\leq n}\\sin(k/n^2)$$求$$\\lim_{n\\to \\infty }S_n$$",
+      "position_char": 51,
+      "position_line": 8,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#1",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Let $$S_n:=\\sum_{k\\leq n}\\sin(k/n^2).$$ Find $$\\lim_{n\\to \\infty }S_n.$$",
+          "problem_type": "exercise",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Taylor expansion",
+            "termwise estimation",
+            "control of accumulated error"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "basic trigonometric expansion",
+            "Landau notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#2",
+      "type": "note",
+      "title": "关于o(1)",
+      "body": "$o(f(n))$表示得是一个序列的对象，我们可以记作$a_n$。它的含义是：“当n足够大的时候$|a_n|\\leq \\varepsilon f(n)$”，或者严格一点，对任意的$\\varepsilon>0$存在正整数$N_{\\varepsilon}$使得所有$n>N_{\\varepsilon}$都有$$|a_n|\\leq \\varepsilon f(n)$$我们可以理解为,虽然这个对象$a_n$的细节可能非常复杂，但是我知道，它在n很大的时候其增长速度远远小于一个简单的对象$f(n)$。当然我知道有的朋友喜欢用$|a_n|/f(n)\\to 0$来理解，不过相对而言其实用不等式的方式理解更为方便灵活。",
+      "position_char": 260,
+      "position_line": 13,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#2",
+        "classification": "definition",
+        "english_title": "About o(1)",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#3",
+      "type": "tip",
+      "title": "主要想法",
+      "body": "如果我们使用Taylor展开每一项，然后对每一项做估计，然后估计误差的累积可能就会达到我们的目的,只要误差的累积可以被$o(1)$控制起来。",
+      "position_char": 625,
+      "position_line": 18,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#3",
+        "classification": "strategy_template",
+        "english_title": "Main Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Termwise Taylor Expansion with Error Accumulation Control",
+          "summary_en": "Expand each term by Taylor's formula, estimate the terms individually, and then control the total accumulated error by an $o(1)$ bound. The method succeeds when the sum of all local remainder terms remains negligible.",
+          "applicability": "Applies to limits of sums whose summands admit uniform or summably controlled asymptotic expansions."
+        }
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#4",
+      "type": "question",
+      "title": "问题2",
+      "body": "令$$A_N:=\\prod_{n\\leq N}\\frac{n}{n+a}$$其中$a$是一个固定的实数，求$$\\lim_{n\\to \\infty }A_N$$",
+      "position_char": 2606,
+      "position_line": 35,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#4",
+        "classification": "problem",
+        "english_title": "Problem 2",
+        "if_problem": {
+          "statement_en": "Let $$A_N:=\\prod_{n\\leq N}\\frac{n}{n+a},$$ where $a$ is a fixed real number. Find $$\\lim_{n\\to \\infty }A_N.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "take logarithms",
+            "convert products into sums",
+            "asymptotic analysis of harmonic-type sums"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "properties of logarithms",
+            "Landau notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#5",
+      "type": "tip",
+      "title": "主要想法",
+      "body": "把乘积通过指数映射转换为和，然后对和做渐近分析。",
+      "position_char": 2707,
+      "position_line": 38,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#5",
+        "classification": "strategy_template",
+        "english_title": "Main Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Convert a Product into a Sum via Logarithms",
+          "summary_en": "Apply the logarithm to transform a multiplicative expression into an additive one, then perform asymptotic analysis on the resulting sum. After that, exponentiate back if needed.",
+          "applicability": "Applies to limits and asymptotics of products with positive factors that are close to 1 or otherwise easier to study after taking logarithms."
+        }
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#6",
+      "type": "tip",
+      "title": "一个道理",
+      "body": "我们用于思考的工具也同时改变着思考这件事本身。",
+      "position_char": 3650,
+      "position_line": 48,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#6",
+        "classification": "remark",
+        "english_title": "A General Principle",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#7",
+      "type": "question",
+      "title": "问题3：清华大学领军计划（2025年4月）",
+      "body": "求极限$$\\lim_{n\\to \\infty}\\left[\\tan\\left(\\frac{\\pi}{4}+\\frac{1}{n}\\right)\\right]^n$$",
+      "position_char": 3748,
+      "position_line": 55,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#7",
+        "classification": "problem",
+        "english_title": "Problem 3: Tsinghua University Leadership Program (April 2025)",
+        "if_problem": {
+          "statement_en": "Find the limit $$\\lim_{n\\to \\infty}\\left[\\tan\\left(\\frac{\\pi}{4}+\\frac{1}{n}\\right)\\right]^n.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "logarithmic transformation",
+            "local expansion near \\(\\pi/4\\)",
+            "exponential limit"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "tangent addition behavior",
+            "Taylor expansion",
+            "Landau notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#8",
+      "type": "note",
+      "title": "目标1",
+      "body": "我们要求$a_n$的精度为$o(1)$的一个估计。",
+      "position_char": 4146,
+      "position_line": 62,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#8",
+        "classification": "remark",
+        "english_title": "Goal 1",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#9",
+      "type": "note",
+      "title": "目标2",
+      "body": "我们要求$\\log(a_n)$的精度为$o(1)$的一个估计。\n\n因为假设$\\log(a_n)=B+o(1)$，那么$a_n=e^{B+o(1)}=e^B+o(1)$于是自然地，$$A=e^B$$",
+      "position_char": 4290,
+      "position_line": 67,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#9",
+        "classification": "strategy_template",
+        "english_title": "Goal 2",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Estimate the Logarithm First",
+          "summary_en": "Instead of estimating $a_n$ directly, estimate $\\log(a_n)$ up to an $o(1)$ error. If $\\log(a_n)=B+o(1)$, then exponentiation gives $a_n=e^B+o(1)$.",
+          "applicability": "Applies when the target sequence is positive and has an exponential or product-like form, so its logarithm is easier to analyze."
+        }
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#10",
+      "type": "note",
+      "title": "目标3",
+      "body": "得到$\\tan(\\frac{\\pi}{4}+\\frac{1}{n})$的精度为$o(1/n)$的估计。\n\n因为如果我们得到$\\tan(\\frac{\\pi}{4}+\\frac{1}{n})=1+C_n+o(1/n)$其中$C_n\\to 0$然后$nC_n$有界，那么$$n\\log[1+C_n+o(1/n)]=nC_n+o(1)$$于是最终我们只需要搞清楚$nC_n$的极限是多少，就能解决所有问题。",
+      "position_char": 4625,
+      "position_line": 75,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#10",
+        "classification": "strategy_template",
+        "english_title": "Goal 3",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Match Expansion Precision to the Final Exponential Scale",
+          "summary_en": "When a quantity is later raised to the power $n$ or inserted into $n\\log(\\cdot)$, it is enough to expand the base with error $o(1/n)$. This precision ensures the induced error after multiplying by $n$ is still only $o(1)$.",
+          "applicability": "Applies to limits of the form $(1+u_n)^n$ or $n\\log(1+u_n)$, where the needed local asymptotic precision is determined by the outer scaling factor $n$."
+        }
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#11",
+      "type": "note",
+      "title": "Landau符号的优点：",
+      "body": "对于分析问题，我们一开始可以通过分析知道每一步至多需要达到什么样的精度。而这是关键的，因为这样我们可以提前规划：\n1. 如果精度要求高，直接排除工具箱当中精度达不到的工具，提前评估问题的难度。\n2. 如果精度要求低，可以避免“杀鸡用牛刀”的情况。\n3. 隐藏对问题没有影响的余项中蕴含的细节，方便我们集中精力解决问题。",
+      "position_char": 5004,
+      "position_line": 86,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#11",
+        "classification": "remark",
+        "english_title": "Advantages of Landau Notation",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#12",
+      "type": "failure",
+      "title": "常见错误 4.1",
+      "body": "在对$S_n:=\\sum_{k\\leq n} f_n(k)$的估计当中余项$R_n(k)$与参数$k$有关的时候，一个常见的错误是,当我们发现对于任意固定的$k$都有$$|R_n(k)|\\leq C_kT_n$$的时候我们就直接写$$R_n(k)=O(T_n)$$这是不对的！因为这样做的一个前提条件是，我们必须要保证对任意的$1\\leq k\\leq n$的时候$C_k$是有界的。",
+      "position_char": 5305,
+      "position_line": 97,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#12",
+        "classification": "remark",
+        "english_title": "Common Mistake 4.1",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "从几个极限问题去理解Landau符号#13",
+      "type": "failure",
+      "title": "常见错误4.2",
+      "body": "假设我们需要估计$a_kc_k+b_kd_k$的和，然后我们还事先知道$c_k=O(r_k),d_k=O(r_k)$于是我们就认为$$a_kc_k+b_kd_k=\\cancel{a_kO(r_k)+b_kO(r_k)=O((a_k+b_k)r_k)}$$我们把上面的式子写成不等式就能发现其荒谬之处。首先我们知道$$c_k\\leq A r_k,d_k \\leq B r_k$$于是我们便认为$$a_kc_k+b_kd_k\\leq a_k(Ar_k)+b_k(Br_k)\\leq C(a_k+b_k)r_k$$在Landau符号当中，当然$A,B,r_k\\geq 0$但是当前语境下可没说过$a_k,b_k$总是为正的对吧。比如说此处如果是$a_k=k,b_k=-k+1,c_k=k,d_k=2k$那么当然有$c_k=O(k),d_k=O(k)$但是$$a_kc_k+b_kd_k= -k^2+2k \\neq O(k)$$而正确地运用Landau符号实际上是利用下面的不等式$$|a_kc_k+b_kd_k|\\leq |a_k|(Ar_k)+|b_k|(Br_k)\\leq C(|a_k|+|b_k|)r_k$$也就是说$$a_kc_k+b_kd_k=|a_k|O(r_k)+|b_k|O(r_k)=O((|a_k|+|b_k|)r_k)$$",
+      "position_char": 7278,
+      "position_line": 105,
+      "classification_result": {
+        "id": "从几个极限问题去理解Landau符号#13",
+        "classification": "remark",
+        "english_title": "Common Mistake 4.2",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $$S_n:=\\\\sum_{k\\\\leq n}\\\\sin(k/n^2).$$ Find $$\\\\lim_{n\\\\to \\\\infty }S_n.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"Taylor expansion\", \"termwise estimation\", \"control of accumulated error\"],\n      \"prerequisites\": [\"limits of sequences\", \"basic trigonometric expansion\", \"Landau notation\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#2\",\n    \"classification\": \"definition\",\n    \"english_title\": \"About o(1)\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Main Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Termwise Taylor Expansion with Error Accumulation Control\",\n      \"summary_en\": \"Expand each term by Taylor's formula, estimate the terms individually, and then control the total accumulated error by an $o(1)$ bound. The method succeeds when the sum of all local remainder terms remains negligible.\",\n      \"applicability\": \"Applies to limits of sums whose summands admit uniform or summably controlled asymptotic expansions.\"\n    }\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $$A_N:=\\\\prod_{n\\\\leq N}\\\\frac{n}{n+a},$$ where $a$ is a fixed real number. Find $$\\\\lim_{n\\\\to \\\\infty }A_N.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"take logarithms\", \"convert products into sums\", \"asymptotic analysis of harmonic-type sums\"],\n      \"prerequisites\": [\"limits of sequences\", \"properties of logarithms\", \"Landau notation\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#5\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Main Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Convert a Product into a Sum via Logarithms\",\n      \"summary_en\": \"Apply the logarithm to transform a multiplicative expression into an additive one, then perform asymptotic analysis on the resulting sum. After that, exponentiate back if needed.\",\n      \"applicability\": \"Applies to limits and asymptotics of products with positive factors that are close to 1 or otherwise easier to study after taking logarithms.\"\n    }\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#6\",\n    \"classification\": \"remark\",\n    \"english_title\": \"A General Principle\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 3: Tsinghua University Leadership Program (April 2025)\",\n    \"if_problem\": {\n      \"statement_en\": \"Find the limit $$\\\\lim_{n\\\\to \\\\infty}\\\\left[\\\\tan\\\\left(\\\\frac{\\\\pi}{4}+\\\\frac{1}{n}\\\\right)\\\\right]^n.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\"logarithmic transformation\", \"local expansion near \\\\(\\\\pi/4\\\\)\", \"exponential limit\"],\n      \"prerequisites\": [\"limits of sequences\", \"tangent addition behavior\", \"Taylor expansion\", \"Landau notation\"]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#8\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Goal 1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#9\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Goal 2\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Estimate the Logarithm First\",\n      \"summary_en\": \"Instead of estimating $a_n$ directly, estimate $\\\\log(a_n)$ up to an $o(1)$ error. If $\\\\log(a_n)=B+o(1)$, then exponentiation gives $a_n=e^B+o(1)$.\",\n      \"applicability\": \"Applies when the target sequence is positive and has an exponential or product-like form, so its logarithm is easier to analyze.\"\n    }\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#10\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Goal 3\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Match Expansion Precision to the Final Exponential Scale\",\n      \"summary_en\": \"When a quantity is later raised to the power $n$ or inserted into $n\\\\log(\\\\cdot)$, it is enough to expand the base with error $o(1/n)$. This precision ensures the induced error after multiplying by $n$ is still only $o(1)$.\",\n      \"applicability\": \"Applies to limits of the form $(1+u_n)^n$ or $n\\\\log(1+u_n)$, where the needed local asymptotic precision is determined by the outer scaling factor $n$.\"\n    }\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#11\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Advantages of Landau Notation\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#12\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Common Mistake 4.1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"从几个极限问题去理解Landau符号#13\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Common Mistake 4.2\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

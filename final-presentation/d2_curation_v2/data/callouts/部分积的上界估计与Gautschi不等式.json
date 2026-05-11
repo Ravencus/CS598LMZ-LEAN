@@ -1,0 +1,65 @@
+{
+  "note_title": "部分积的上界估计与Gautschi不等式",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "部分积的上界估计与Gautschi不等式#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "证明:$$\\prod_{n=1}^{N}\\left(1-\\frac{1}{2n}\\right)<\\frac{1}{\\sqrt{2N}}$$",
+      "position_char": 61,
+      "position_line": 9
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#2",
+      "type": "question",
+      "title": "问题2：问题1的等价命题",
+      "body": "$$\\sum_{n=1}^{N}\\log\\left(1-\\frac{1}{2n}\\right)<-\\frac{1}{2}\\log(2N)$$",
+      "position_char": 165,
+      "position_line": 14
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#3",
+      "type": "failure",
+      "title": "这样处理的一个问题",
+      "body": "这里既然最后依旧是对被积分对象$\\log(1-\\frac{1}{2t})$做放缩，那么这样与对和做逐项放缩有何区别呢？积分放缩的好处是，如果函数恰好积分的结果是简单的，那么我们就可以用一个简单的（我们熟悉的）函数作为和的上界。但是如果积分并不简单（熟悉），何必积分放缩？",
+      "position_char": 797,
+      "position_line": 20
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#4",
+      "type": "note",
+      "title": "引理2.1.1",
+      "body": "$H_N$表示第$N$个调和数，那么对任意正整数$N$都有\n$$H_N>\\log(N)+\\frac{1}{2}$$",
+      "position_char": 1278,
+      "position_line": 29
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#5",
+      "type": "error",
+      "title": "验证差分的失败",
+      "body": "首先尝试[[对部分和渐近展开的常数项做估计#3.从结果开始逐项放缩]]的做法中的直接验证差分的方法。也就是说我们为了验证$S_N:=\\sum_{n=1}^{N} a_n<U_N$，也就是“问题2”当中对应的那个问题，我们希望尝试一个更强的命题，即验证是否有$$S_{N+1}-S_N = a_{N+1}< \\Delta U_N$$是否对任意正整数$N$成立。对应具体的问题，也就是验证对任意正整数$N$是否成立$$\\log\\left(1-\\frac{1}{2(N+1)}\\right)<-\\frac{1}{2}\\left(\\log(2N+2)-\\log(2N)\\right)$$该不等式等价于$$\\log(2N+1)<\\frac{\\log(2N+2)+\\log(2N)}{2}$$但这是不对的，因为$\\log(x)$是一个concave的函数，成立不等式$$\\frac{\\log(x)+\\log(y)}{2}\\leq  \\log((x+y)/2)$$不等式号恰好是反的，因此这个想法注定失败。",
+      "position_char": 1534,
+      "position_line": 39
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#6",
+      "type": "tip",
+      "title": "想法2.3.1:利用concave性制造的telescoping sum",
+      "body": "详细参考[[逐项估计#^d27913]]，借助对数函数的concave性质，我们得到$$\\log(2n)-\\log(2n-1)\\geq \\frac{\\log(2n+1)-\\log(2n-1)}{2}$$而后者是一个telescoping sum，其和的精度正好符合“问题2”的要求。",
+      "position_char": 2039,
+      "position_line": 46
+    },
+    {
+      "id": "部分积的上界估计与Gautschi不等式#7",
+      "type": "note",
+      "title": "Gautschi不等式,1959",
+      "body": "当$s\\in(0,1),x>0$的时候:$$x^{1-s}<\\frac{\\Gamma(x+1)}{\\Gamma(x+s)}<(1+x)^{1-s}$$",
+      "position_char": 3141,
+      "position_line": 61
+    }
+  ]
+}

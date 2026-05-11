@@ -1,0 +1,23 @@
+{
+  "id": "proposition-21",
+  "type": "problem",
+  "source_note": "关于序列极限的公开问题",
+  "english_source_note": "Open Problems on Sequence Limits",
+  "callout_id": "关于序列极限的公开问题#6",
+  "english_title": "Proposition 2.1",
+  "statement_en": "Let $a=\\liminf_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}$, $b=\\limsup_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}$, with $\\beta>0$, and let $r_{\\beta}:=\\frac{\\beta+1}{\\beta}$. Then $$\\sqrt{r_{\\beta}}\\leq a\\leq b\\leq \\sqrt{r_{\\beta}}.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "liminf-limsup squeezing",
+    "asymptotic normalization",
+    "sequence inequality estimates"
+  ],
+  "prerequisites": [
+    "liminf and limsup",
+    "squeeze arguments",
+    "asymptotic notation"
+  ],
+  "callout_body": "令$a=\\liminf_{n\\to \\infty} \\frac{a_n}{n^{\\beta}},\\quad b=\\limsup_{n\\to \\infty} \\frac{a_n}{n^{\\beta}},\\quad \\beta>0,\\quad r_{\\beta}:=\\frac{\\beta+1}{\\beta}$于是$$\\sqrt{r_{\\beta}}\\leq a\\leq b\\leq \\sqrt{r_{\\beta}}$$"
+}

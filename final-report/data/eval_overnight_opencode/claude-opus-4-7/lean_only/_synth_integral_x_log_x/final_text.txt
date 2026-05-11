@@ -1,0 +1,94 @@
+I'll work on this integral problem. Let me start by exploring the approach.
+The `integral_mul_log_eq` lemma didn't exist. Let me search for the right lemma.
+Let me search Mathlib for known lemmas about x * log x integration.
+Good - I see `integral_log` and `hasDerivAt_mul_log`. Let me look at how `integral_log_from_zero_of_pos` is proved for the pattern.
+Perfect — I'll use the same approach. The antiderivative of `x * log x` is `x^2/2 * log x - x^2/4`. Let me check derivative of this.
+
+At x>0: d/dx [x²/2 · log x - x²/4] = x · log x + x²/2 · (1/x) - x/2 = x·log x + x/2 - x/2 = x·log x ✓
+
+At x→0⁺: x²/2 · log x → 0, x²/4 → 0, so f(0) = 0. At x=1: 1/2·0 - 1/4 = -1/4. ✓
+
+Let me try this approach:
+I see - the signature of `integral_eq_sub_of_hasDerivAt_of_tendsto` is different. Let me check it.
+Good, so the signature is: `(hab) (hderiv) (hint) (ha) (hb)`. The result is `fb - fa`. Now let me find the right lemma for `x^n * log x → 0`:
+So `tendsto_log_mul_rpow_nhdsGT_zero` gives `log x * x^r → 0` for `r > 0`. For `x^2 * log x = log x * x^2`, with `r = 2`:
+
+Now I need integrability of `x * log x` on [0,1]. Let me check what's available:
+Good. So `x * log x` is bounded on [0, 1] (since `x * log x → 0` as x → 0). It's continuous on (0,1] and bounded. Let me find an easier approach — use `IntervalIntegrable.mul_continuousOn` or use the fact that the function is bounded. Actually, since I already need this for the integration-by-parts, maybe simpler: use `intervalIntegrable_log'` and multiply by x... let me try:
+
+Since `Real.log` is integrable on [0,1] (via `intervalIntegrable_log'`), and `x` is bounded continuous on [0,1], their product is integrable. Let me write a cleaner version:
+Good progress! Just some small fixes:
+1. `2 * s / 4 = s / 2` — need ring tactic
+2. The Tendsto at 0 — `simpa using this` already gives the goal, no need for inner simpa
+3. `fun_prop` fails for ContinuousAt with log at 1 — need explicit
+4. `-4⁻¹` vs `-1/4` — need norm_num
+Almost there! It's a coercion issue (`↑2` instead of `2`). Let me fix:
+The proof compiles successfully with no errors and no warnings.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Real intervalIntegral Filter Topology Set
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  have hab : (0:ℝ) < 1 := by norm_num
+  rw [integral_eq_sub_of_hasDerivAt_of_tendsto (f := fun x => x^2/2 * Real.log x - x^2/4)
+      (fa := 0) (fb := -1/4) hab]
+  · ring
+  · -- HasDerivAt for x ∈ Ioo 0 1
+    intro s ⟨hs, _⟩
+    have hl : HasDerivAt Real.log s⁻¹ s := Real.hasDerivAt_log hs.ne'
+    have hsq : HasDerivAt (fun x : ℝ => x^2/2) s s := by
+      have := (hasDerivAt_pow 2 s).div_const 2
+      simpa [pow_one, mul_comm] using this
+    have hp : HasDerivAt (fun x : ℝ => x^2/2 * Real.log x) (s * Real.log s + s^2/2 * s⁻¹) s :=
+      hsq.mul hl
+    have hsq4 : HasDerivAt (fun x : ℝ => x^2/4) (s/2) s := by
+      have h0 := (hasDerivAt_pow 2 s).div_const 4
+      convert h0 using 1
+      push_cast
+      ring
+    have := hp.sub hsq4
+    convert this using 1
+    have hsne : s ≠ 0 := hs.ne'
+    field_simp
+    ring
+  · -- IntervalIntegrable: log integrable * continuous x
+    have hlog : IntervalIntegrable Real.log MeasureTheory.volume 0 1 := intervalIntegrable_log'
+    have hcont : ContinuousOn (fun x : ℝ => x) (uIcc 0 1) := continuous_id.continuousOn
+    exact hlog.continuousOn_mul hcont
+  · -- Tendsto at 0+
+    have h1 : Tendsto (fun x : ℝ => x^2/2 * Real.log x) (𝓝[>] (0:ℝ)) (𝓝 0) := by
+      have hbase : Tendsto (fun x : ℝ => Real.log x * x ^ (2:ℝ)) (𝓝[>] (0:ℝ)) (𝓝 0) :=
+        tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0:ℝ) < 2)
+      have heq : ∀ᶠ x in 𝓝[>] (0:ℝ), Real.log x * x ^ (2:ℝ) = x^2/2 * Real.log x * 2 := by
+        filter_upwards [self_mem_nhdsWithin] with x _
+        rw [Real.rpow_two]; ring
+      have hcong := hbase.congr' heq
+      have hh : Tendsto (fun x : ℝ => x^2/2 * Real.log x * 2 / 2) (𝓝[>] (0:ℝ)) (𝓝 (0/2)) :=
+        hcong.div_const 2
+      have heq2 : (fun x : ℝ => x^2/2 * Real.log x * 2 / 2) = (fun x => x^2/2 * Real.log x) := by
+        funext x; ring
+      rw [heq2] at hh
+      simpa using hh
+    have h2 : Tendsto (fun x : ℝ => x^2/4) (𝓝[>] (0:ℝ)) (𝓝 0) := by
+      have hcont : Continuous (fun x : ℝ => x^2/4) := by fun_prop
+      have h3 : Tendsto (fun x : ℝ => x^2/4) (𝓝 (0:ℝ)) (𝓝 (0^2/4)) := hcont.continuousAt.tendsto
+      simpa using tendsto_nhdsWithin_of_tendsto_nhds h3
+    have := h1.sub h2
+    simpa using this
+  · -- Tendsto at 1-
+    have hca : ContinuousAt (fun x : ℝ => x^2/2 * Real.log x - x^2/4) 1 := by
+      have h1 : ContinuousAt (fun x : ℝ => x^2/2) (1:ℝ) := by fun_prop
+      have h2 : ContinuousAt Real.log (1:ℝ) :=
+        Real.continuousAt_log (by norm_num : (1:ℝ) ≠ 0)
+      have h3 : ContinuousAt (fun x : ℝ => x^2/4) (1:ℝ) := by fun_prop
+      exact (h1.mul h2).sub h3
+    have h := hca.tendsto
+    have heq : (1:ℝ)^2/2 * Real.log 1 - 1^2/4 = -1/4 := by
+      rw [Real.log_one]; ring
+    rw [heq] at h
+    exact tendsto_nhdsWithin_of_tendsto_nhds h
+```

@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-215",
+  "english_title": "Lemma 2.1.5",
+  "statement_en": "$$\\limsup_{n\\to \\infty} T_n =1,\\quad \\liminf_{n\\to \\infty} T_n =0.$$",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem mainTheorem (T : ℕ → ℝ) :\n    Filter.limsup T Filter.atTop = 1 ∧ Filter.liminf T Filter.atTop = 0 := by\n  sorry"
+}

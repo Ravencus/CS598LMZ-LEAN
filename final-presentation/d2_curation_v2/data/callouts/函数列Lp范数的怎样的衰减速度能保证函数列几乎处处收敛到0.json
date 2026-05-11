@@ -1,0 +1,73 @@
+{
+  "note_title": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#1",
+      "type": "question",
+      "title": "问题0：（北师大2025夏令营）",
+      "body": "Lebesgue可测函数列$||f_n||_{L^1(\\mathbb{R})}\\leq \\frac{1}{4^n}$证明$f_n(x)$几乎处处收敛到0。",
+      "position_char": 32,
+      "position_line": 6
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#2",
+      "type": "tip",
+      "title": "想法1.2.l",
+      "body": "如果函数列$f_n(x)$构成的含参数级数$\\sum_{n\\geq 1}f_n(x)$是**几乎处处绝对收敛**的，那么由于绝对收敛的必要条件，$f_n(x)$就是几乎处处收敛到0。\n\n尝试证明$\\sum_{n\\geq 1}f_n(x)$几乎处处绝对收敛的途径，可以从证明$\\sum_{n\\geq 1}|f_n(x)|$可积来证明。因为$\\int_{\\mathbb{R}}\\sum_{n\\geq 1}|f_n(x)|\\,dx <\\infty$，可以导出$\\sum_{n\\geq 1}|f_n(x)|$几乎处处有限，也就是几乎处处绝对收敛。\n\n证明$\\sum_{n\\geq 1}|f_n(x)|$可积这件事，**单调收敛定理**则可以排上用场，单调收敛可以保证积分与级数可以交换次序，从而$$\\int_{\\mathbb{R}} \\sum_{n\\geq 1}|f_n(x)|\\,dx = \\sum_{n\\geq 1}\\int_{\\mathbb{R}}|f_n(x)|\\,dx = \\sum_{n\\geq 1}||f_n||_{L^1}$$由“问题0”的条件，右边的级数是收敛的，于是整个逻辑可以成立，从而函数列$f_n(x)$几乎处处收敛到0。",
+      "position_char": 751,
+      "position_line": 18
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#3",
+      "type": "note",
+      "title": "引理1.2.2：单调收敛定理(Beppo-Levi定理)",
+      "body": "$(\\Sigma,\\mathcal{F},\\mu)$是一个测度空间，序列$\\{f_n\\}_{n=1}^{\\infty}$是一个定义在$X\\in \\Sigma$上的逐点不减，非负$(\\Sigma,\\mathcal{B}_{\\overline{\\mathbb{R}}_{\\geq 0}})$的可测函数列。那么这个函数列逐点的上极限，即$$\\sup_{n\\geq 1}f_n:x\\mapsto \\sup_{n\\geq 1} f_n(x)$$也是一个$(\\Sigma,\\mathcal{B}_{\\overline{\\mathbb{R}}_{\\geq 0}})$可测函数，并且$$\\sup_{n\\geq 1}\\int_{X} f_n\\,d\\mu = \\int_{X}\\sup_{n\\geq 1} f_n\\,d\\mu$$",
+      "position_char": 1302,
+      "position_line": 26
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#4",
+      "type": "note",
+      "title": "命题2.1.1",
+      "body": "Lebesgue可测函数列$||f_n||_{L^p(\\mathbb{R})}^p\\leq a_n$其中$p\\geq 1$，并且非负序列$a_n$满足$\\sum_{n\\geq 1}a_n$收敛，那么$f_n(x)$几乎处处收敛到0。",
+      "position_char": 3102,
+      "position_line": 47
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#5",
+      "type": "example",
+      "title": "例子2.2.1",
+      "body": "参考[[打字机函数列（type writer sequence）]]，这就是一个$L^p$收敛但并非几乎处处收敛的可测函数列的例子，并且这个函数列不但不是几乎处处收敛，它在任何一个点都不收敛到0。",
+      "position_char": 4043,
+      "position_line": 60
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#6",
+      "type": "note",
+      "title": "命题2.3.1",
+      "body": "Lebesgue可测的函数列满足：\n1. $||f_n||_{L^p(\\mathbb{R})}\\to 0$\n2. $f_n$非负，且对于几乎所有$x$逐点单调递减\n\n那么函数列几乎处处收敛到0。",
+      "position_char": 4296,
+      "position_line": 67
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#7",
+      "type": "note",
+      "title": "命题2.4.1",
+      "body": "设$f_n$是概率空间$(\\Omega,\\mathcal{F},P)$上的一个随机变量$||f_n||_{L^2}\\to 0$，并且$f_n$的方差形成的级数收敛那么此随机变量几乎处处收敛到0。",
+      "position_char": 4755,
+      "position_line": 80
+    },
+    {
+      "id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#8",
+      "type": "example",
+      "title": "例子2.4.2：打字机函数列不满足命题2.4.1的条件",
+      "body": "我们已经知道对于打字机函数列而言$f_n$对任意的$L^p$范数都是收敛到0的。此处的关键在于计算这个函数列的方差。由于$$V(f_n)=E(f^2_n)-(E(f_n))^2=\\frac{1}{2^k}-\\frac{1}{4^k}$$对任意的$2^k\\leq n<2^{k+1}$成立。那么由于$$V(f_n)\\geq \\frac{1}{2^{k+1}}\\geq \\frac{1}{2n}$$因此$\\sum_{n\\geq 1}V(f_n)$不是一个收敛的级数，因此打字机数列并不满足“命题2.4.1”对方差的要求。",
+      "position_char": 5577,
+      "position_line": 92
+    }
+  ]
+}

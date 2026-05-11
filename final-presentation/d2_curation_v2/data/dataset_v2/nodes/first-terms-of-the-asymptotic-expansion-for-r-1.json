@@ -1,0 +1,22 @@
+{
+  "id": "first-terms-of-the-asymptotic-expansion-for-r-1",
+  "type": "problem",
+  "source_note": "自然数的r次幂的部分和估计",
+  "english_source_note": "Partial Sum Estimates for Powers of Integers",
+  "callout_id": "自然数的r次幂的部分和估计#4",
+  "english_title": "First Terms of the Asymptotic Expansion for r > 1",
+  "statement_en": "If $r>1$, then\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "Euler-Maclaurin summation",
+    "series remainder estimation"
+  ],
+  "prerequisites": [
+    "Riemann zeta function",
+    "asymptotic expansion",
+    "big-O notation"
+  ],
+  "callout_body": "如果$r>1$，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right)$$"
+}

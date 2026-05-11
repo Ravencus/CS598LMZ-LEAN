@@ -1,0 +1,49 @@
+{
+  "note_title": "函数积分的单调性",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "函数积分的单调性#1",
+      "type": "note",
+      "title": "积分单调性1",
+      "body": "如果函数在$\\Omega$上满足$f\\geq g$几乎处处成立，那么其积分有不等式$$\\int_{\\Omega}f\\,d\\mu \\geq \\int_{\\Omega}g\\,d\\mu $$",
+      "position_char": 142,
+      "position_line": 10
+    },
+    {
+      "id": "函数积分的单调性#2",
+      "type": "note",
+      "title": "非负函数积分非负",
+      "body": "$h:\\Omega \\to \\mathbb{R}$是几乎处处非负可测的，那么其积分也是非负的。",
+      "position_char": 314,
+      "position_line": 15
+    },
+    {
+      "id": "函数积分的单调性#3",
+      "type": "example",
+      "title": "反例1",
+      "body": "函数$f>g$在某个零测度的集合$E$上成立，两个函数在$E^c$上均为0.",
+      "position_char": 1274,
+      "position_line": 34
+    },
+    {
+      "id": "函数积分的单调性#4",
+      "type": "note",
+      "title": "正测度集合上积分单调性严格成立",
+      "body": "在测度为正的可测集合$E$上函数$h>0$几乎处处成立(E上不满足此不等式的集合的测度为0),那么$$\\int_E h \\,d\\mu > 0$$",
+      "position_char": 1518,
+      "position_line": 40
+    },
+    {
+      "id": "函数积分的单调性#5",
+      "type": "note",
+      "title": "非负函数积分为0，函数在此集上几乎处处为0",
+      "body": "在sigma-finite的测度空间$(\\Omega,\\mathcal{F},\\mu)$上，对于非负可测函数$f$，在一个测度为正的集合$E$上的积分$\\int_{E}f\\,d\\mu=0$那么$f =0$在集合$E$上几乎处处成立。",
+      "position_char": 1737,
+      "position_line": 45
+    }
+  ]
+}

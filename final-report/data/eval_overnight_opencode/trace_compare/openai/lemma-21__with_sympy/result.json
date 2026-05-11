@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "lemma-21",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "different_plan",
+  "evidence": "BIG’s successful proof uses the direct pure-imaginary exponential bound `Real.norm_exp_I_mul_ofReal_sub_one_le` and then rewrites `‖2 * Real.pi * x‖`. SMALL instead switches to a trig closed-form route via `Complex.norm_exp_ofReal_mul_I_sub_one` and `Real.abs_sin_le`, trying to prove the bound throu",
+  "wall_seconds": 13.39
+}

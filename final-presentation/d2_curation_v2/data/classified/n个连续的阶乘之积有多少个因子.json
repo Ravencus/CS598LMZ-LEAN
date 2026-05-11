@@ -1,0 +1,195 @@
+{
+  "note_title": "n个连续的阶乘之积有多少个因子",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "n个连续的阶乘之积有多少个因子#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "函数$d(n)$表示整数$n$的因子的个数，定义$$D(n):=d(1!\\cdot 2!\\cdots n!)$$求极限$$\\lim_{n\\to \\infty}D(n)^{1/n}$$",
+      "position_char": 31,
+      "position_line": 6,
+      "classification_result": {
+        "id": "n个连续的阶乘之积有多少个因子#1",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Let $d(n)$ denote the number of positive divisors of the integer $n$, and define $$D(n):=d(1!\\cdot 2!\\cdots n!).$$ Find the limit $$\\lim_{n\\to \\infty}D(n)^{1/n}.$$",
+          "problem_type": "exercise",
+          "difficulty": "hard",
+          "domain": "number theory",
+          "key_techniques": [
+            "prime factorization of factorial products",
+            "asymptotic analysis of divisor-counting functions",
+            "prime number theorem"
+          ],
+          "prerequisites": [
+            "divisor function",
+            "factorization of factorials via prime valuations",
+            "basic asymptotic notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#2",
+      "type": "tip",
+      "title": "初步想法",
+      "body": "数论函数$d(x)$是具有不完全积性的函数，即如果有两个互素的整数$(m,n)=1$，那么$d(mn)=d(m)d(n)$。那么既然我们需要分析的大数有很明显的乘法结构，我们可以分析一下其素因分解，从而简化$d$这个函数的表达，方便做进一步的渐近分析。",
+      "position_char": 160,
+      "position_line": 11,
+      "classification_result": {
+        "id": "n个连续的阶乘之积有多少个因子#2",
+        "classification": "strategy_template",
+        "english_title": "Preliminary Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Reduce divisor-function asymptotics via prime factorization",
+          "summary_en": "Use the multiplicative structure of the divisor function by first decomposing the target integer into its prime-power factorization. This converts the divisor-counting problem into estimating exponents of primes and then performing asymptotic analysis on the resulting expression.",
+          "applicability": "Applies when a large integer has a clear multiplicative structure, especially products such as factorials or related arithmetic constructions, and one needs asymptotics for the divisor function or similar arithmetic functions."
+        }
+      }
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#3",
+      "type": "question",
+      "title": "问题2",
+      "body": "对$\\log(D(n))$做渐近，精度要求是$o(n)$。",
+      "position_char": 854,
+      "position_line": 22,
+      "classification_result": {
+        "id": "n个连续的阶乘之积有多少个因子#3",
+        "classification": "problem",
+        "english_title": "Problem 2",
+        "if_problem": {
+          "statement_en": "Obtain an asymptotic expansion for $\\log(D(n))$ with error term $o(n)$.",
+          "problem_type": "exercise",
+          "difficulty": "hard",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "logarithmic transformation of multiplicative functions",
+            "prime-sum asymptotics",
+            "error control to order $o(n)$"
+          ],
+          "prerequisites": [
+            "definition of $D(n)$",
+            "asymptotic notation",
+            "prime factorization methods"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#4",
+      "type": "note",
+      "title": "素数定理,Poussin&Hadamard 1896",
+      "body": "$\\pi(x)$为素数计数函数，此函数定义为不超过$x$的素数的个数，即$$\\pi(x):=\\#\\{p\\in \\mathbb{P}:p\\leq x\\}$$那么关于此函数我们有渐近展开$$\\pi(x)=\\frac{x}{\\log(x)}+O\\left(\\frac{x}{\\log^2(x)}\\right)$$",
+      "position_char": 1824,
+      "position_line": 31,
+      "classification_result": {
+        "id": "n个连续的阶乘之积有多少个因子#4",
+        "classification": "definition",
+        "english_title": "Prime Number Theorem, de la Vallee Poussin and Hadamard 1896",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#5",
+      "type": "question",
+      "title": "问题3",
+      "body": "给出$\\sum_{p\\leq n}\\log(p-1)$的精度在$o(n)$的渐近展开结果。",
+      "position_char": 2226,
+      "position_line": 38,
+      "classification_result": {
+        "id": "n个连续的阶乘之积有多少个因子#5",
+        "classification": "problem",
+        "english_title": "Problem 3",
+        "if_problem": {
+          "statement_en": "Give an asymptotic expansion for $\\sum_{p\\leq n}\\log(p-1)$ with error term of precision $o(n)$.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "comparison with Chebyshev theta function",
+            "prime-sum asymptotics",
+            "use of the prime number theorem"
+          ],
+          "prerequisites": [
+            "prime number theorem",
+            "Chebyshev theta function",
+            "asymptotic notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#6",
+      "type": "note",
+      "title": "引理1:Chebyshev的theta函数的一个粗糙的渐近",
+      "body": "$\\theta(x):=\\sum_{p\\leq x}\\log(p)$,那么$$\\theta(x)=x+o(x)$$",
+      "position_char": 2373,
+      "position_line": 43,
+      "classification_result": {
+        "id": "n个连续的阶乘之积有多少个因子#6",
+        "classification": "problem",
+        "english_title": "Lemma 1: A Crude Asymptotic for Chebyshev's Theta Function",
+        "if_problem": {
+          "statement_en": "Define $\\theta(x):=\\sum_{p\\leq x}\\log(p)$. Then $$\\theta(x)=x+o(x).$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "prime number theorem",
+            "partial summation",
+            "asymptotics of prime-counting functions"
+          ],
+          "prerequisites": [
+            "Chebyshev theta function",
+            "prime-counting function",
+            "basic asymptotic notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "n个连续的阶乘之积有多少个因子#7",
+      "type": "question",
+      "title": "问题4",
+      "body": "估计$f(x)-\\theta(x)$的精度要求为$o(x)$。",
+      "position_char": 2602,
+      "position_line": 50,
+      "classification_result": {
+        "id": "n个连续的阶乘之积有多少个因子#7",
+        "classification": "problem",
+        "english_title": "Problem 4",
+        "if_problem": {
+          "statement_en": "Estimate $f(x)-\\theta(x)$ with error term required to be $o(x)$.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "comparison of related prime sums",
+            "asymptotic estimation",
+            "reduction to Chebyshev theta function"
+          ],
+          "prerequisites": [
+            "Chebyshev theta function",
+            "prime-sum asymptotics",
+            "asymptotic notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"n个连续的阶乘之积有多少个因子#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $d(n)$ denote the number of positive divisors of the integer $n$, and define $$D(n):=d(1!\\\\cdot 2!\\\\cdots n!).$$ Find the limit $$\\\\lim_{n\\\\to \\\\infty}D(n)^{1/n}.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"prime factorization of factorial products\",\n        \"asymptotic analysis of divisor-counting functions\",\n        \"prime number theorem\"\n      ],\n      \"prerequisites\": [\n        \"divisor function\",\n        \"factorization of factorials via prime valuations\",\n        \"basic asymptotic notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"n个连续的阶乘之积有多少个因子#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Preliminary Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Reduce divisor-function asymptotics via prime factorization\",\n      \"summary_en\": \"Use the multiplicative structure of the divisor function by first decomposing the target integer into its prime-power factorization. This converts the divisor-counting problem into estimating exponents of primes and then performing asymptotic analysis on the resulting expression.\",\n      \"applicability\": \"Applies when a large integer has a clear multiplicative structure, especially products such as factorials or related arithmetic constructions, and one needs asymptotics for the divisor function or similar arithmetic functions.\"\n    }\n  },\n  {\n    \"id\": \"n个连续的阶乘之积有多少个因子#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2\",\n    \"if_problem\": {\n      \"statement_en\": \"Obtain an asymptotic expansion for $\\\\log(D(n))$ with error term $o(n)$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"logarithmic transformation of multiplicative functions\",\n        \"prime-sum asymptotics\",\n        \"error control to order $o(n)$\"\n      ],\n      \"prerequisites\": [\n        \"definition of $D(n)$\",\n        \"asymptotic notation\",\n        \"prime factorization methods\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"n个连续的阶乘之积有多少个因子#4\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Prime Number Theorem, de la Vallee Poussin and Hadamard 1896\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"n个连续的阶乘之积有多少个因子#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 3\",\n    \"if_problem\": {\n      \"statement_en\": \"Give an asymptotic expansion for $\\\\sum_{p\\\\leq n}\\\\log(p-1)$ with error term of precision $o(n)$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"comparison with Chebyshev theta function\",\n        \"prime-sum asymptotics\",\n        \"use of the prime number theorem\"\n      ],\n      \"prerequisites\": [\n        \"prime number theorem\",\n        \"Chebyshev theta function\",\n        \"asymptotic notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"n个连续的阶乘之积有多少个因子#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1: A Crude Asymptotic for Chebyshev's Theta Function\",\n    \"if_problem\": {\n      \"statement_en\": \"Define $\\\\theta(x):=\\\\sum_{p\\\\leq x}\\\\log(p)$. Then $$\\\\theta(x)=x+o(x).$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"prime number theorem\",\n        \"partial summation\",\n        \"asymptotics of prime-counting functions\"\n      ],\n      \"prerequisites\": [\n        \"Chebyshev theta function\",\n        \"prime-counting function\",\n        \"basic asymptotic notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"n个连续的阶乘之积有多少个因子#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 4\",\n    \"if_problem\": {\n      \"statement_en\": \"Estimate $f(x)-\\\\theta(x)$ with error term required to be $o(x)$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"comparison of related prime sums\",\n        \"asymptotic estimation\",\n        \"reduction to Chebyshev theta function\"\n      ],\n      \"prerequisites\": [\n        \"Chebyshev theta function\",\n        \"prime-sum asymptotics\",\n        \"asymptotic notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

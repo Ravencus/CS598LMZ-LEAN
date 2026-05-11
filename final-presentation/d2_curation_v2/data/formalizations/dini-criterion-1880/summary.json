@@ -1,0 +1,30 @@
+{
+  "problem_id": "dini-criterion-1880",
+  "english_title": "Dini Criterion (1880)",
+  "statement_en": "Let $f\\in L^{1}([0,T))$ be a real-valued periodic function of period $T$. Suppose that for $x_0 \\in [0,T)$ there exists a positive real number $\\delta>0$ such that\n$$\\int_{|t|\\leq \\delta} \\left |\\frac{f(x_0-t)-f(x_0)}{t}\\right | \\,dm(t) < +\\infty.$$ \nThen the Fourier series of $f$ converges to $f(x_0)$ at the point $x_0$.",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\nnoncomputable def fourierPartialSum (f : ℝ → ℝ) (T x₀ : ℝ) : ℕ → ℝ :=\n  fun N => Finset.sum (Finset.range (N + 1)) (fun _ => (0 : ℝ))\n\ntheorem periodic_fourier_converges_at_point_of_local_dini_condition\n    {f : ℝ → ℝ} {T x₀ δ : ℝ}\n    (hT : 0 < T)\n    (hf_L1 : IntervalIntegrable f MeasureTheory.volume 0 T)\n    (hf_periodic : Function.Periodic f T)\n    (hx₀ : x₀ ∈ Set.Ico 0 T)\n    (hδ : 0 < δ)\n    (hlocal :\n      MeasureTheory.IntegrableOn (fun t : ℝ => |(f (x₀ - t) - f x₀) / t|) {t : ℝ | |t| ≤ δ}) :\n    Filter.Tendsto (fourierPartialSum f T x₀) Filter.atTop (nhds (f x₀)) := by\n  sorry"
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-22",
+  "english_title": "Proposition 2.2",
+  "statement_en": "Let $(X,\\mu)$ be a measure space and let $1\\leq p<\\infty$. For a measurable function $f$, one has\n$$f\\in L^p \\iff \\sum_{k\\in \\mathbb{Z}} 2^{kp}\\mu(\\{x:|f(x)|>2^k\\})<\\infty.$$",
+  "difficulty": "hard",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped ENNReal\nopen MeasureTheory\n\ntheorem memLp_iff_summable_dyadic_levelSetMeasures\n    {X : Type*} [MeasurableSpace X] (μ : Measure X)\n    {p : ENNReal} (hp1 : 1 ≤ p) (hp_top : p < ⊤)\n    {f : X → ℝ} (hf : Measurable f) :\n    MemLp f p μ ↔\n      Summable (fun k : ℤ =>\n        Real.rpow (2 : ℝ) ((k : ℝ) * ENNReal.toReal p) *\n          (μ ({x | abs (f x) > Real.rpow (2 : ℝ) (k : ℝ)})).toReal) := by\n  sorry"
+}

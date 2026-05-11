@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-1-13",
+  "english_title": "Problem 1",
+  "statement_en": "Let the sequence $\\{x_n\\}$ satisfy $x_1,x_2>0$ and the recurrence $$x_{n+2}:=\\frac{1}{x_{n}}+\\frac{2}{x_{n+1}}.$$ Prove that the limit of the sequence exists and equals $\\sqrt{3}$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sequence_limit_sqrt_three\n    (x : ℕ → ℝ)\n    (hx0 : 0 < x 0)\n    (hx1 : 0 < x 1)\n    (hrec : ∀ n : ℕ, x (n + 2) = 1 / x n + 2 / x (n + 1)) :\n    Filter.Tendsto x Filter.atTop (nhds (Real.sqrt 3)) := by\n  sorry"
+}

@@ -1,0 +1,44 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "Invalid alternative name `X`: Expected `monomial`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 17,
+      "column": 4,
+      "severity": "error",
+      "message": "Invalid alternative name `X`: Expected `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 27,
+      "column": 4,
+      "severity": "error",
+      "message": "Invalid alternative name `mul`: Expected `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 14,
+      "column": 10,
+      "severity": "error",
+      "message": "unsolved goals\ncase C.a\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA✝ B✝ A B : Matrix n n ℂ\nc : ℂ\ni j : n\n⊢ ∑ j_1, B i j_1 * ((aevalEquiv ℂ (Matrix n n ℂ)) (A * B)) (C c) j_1 j =\n    ∑ x, B x j * ((aevalEquiv ℂ (Matrix n n ℂ)) (B * A)) (C c) i x"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_6c80cfb82a.lean",
+      "line": 13,
+      "column": 4,
+      "severity": "error",
+      "message": "Alternative `monomial` has not been provided"
+    }
+  ]
+}

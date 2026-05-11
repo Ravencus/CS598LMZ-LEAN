@@ -1,0 +1,24 @@
+{
+  "id": "proposition-241",
+  "type": "problem",
+  "source_note": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+  "english_source_note": "Lp Decay Rates Ensuring Almost Everywhere Convergence to 0",
+  "callout_id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#7",
+  "english_title": "Proposition 2.4.1",
+  "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of random variables on a probability space \\((\\Omega, \\mathcal{F}, P)\\) such that \\(\\|f_n\\|_{L^2} \\to 0\\), and suppose the series of variances \\(\\sum_{n\\ge 1} \\mathrm{Var}(f_n)\\) converges. Then \\(f_n\\) converges to \\(0\\) almost surely.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "key_techniques": [
+    "variance summability",
+    "\\(L^2\\) control",
+    "almost sure convergence criteria"
+  ],
+  "prerequisites": [
+    "probability spaces",
+    "random variables",
+    "variance and expectation",
+    "almost sure convergence"
+  ],
+  "callout_body": "设$f_n$是概率空间$(\\Omega,\\mathcal{F},P)$上的一个随机变量$||f_n||_{L^2}\\to 0$，并且$f_n$的方差形成的级数收敛那么此随机变量几乎处处收敛到0。"
+}

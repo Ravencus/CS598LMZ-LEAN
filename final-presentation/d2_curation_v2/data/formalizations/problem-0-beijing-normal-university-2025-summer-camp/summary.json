@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-0-beijing-normal-university-2025-summer-camp",
+  "english_title": "Problem 0: Beijing Normal University 2025 Summer Camp",
+  "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of Lebesgue measurable functions such that \\(\\|f_n\\|_{L^1(\\mathbb{R})} \\leq \\frac{1}{4^n}\\). Prove that \\(f_n(x) \\to 0\\) almost everywhere.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter\n\ntheorem ae_tendsto_zero_of_L1_norm_geometric\n    (f : ℕ → ℝ → ℝ)\n    (h_meas : ∀ n : ℕ, Measurable (f n))\n    (h_L1 : ∀ n : ℕ, Integrable (f n) ∧ ∫ x, ‖f n x‖ ∂volume ≤ (1 / 4 : ℝ) ^ n) :\n    ∀ᵐ x ∂volume, Tendsto (fun n : ℕ => f n x) atTop (nhds 0) := by\n  sorry"
+}

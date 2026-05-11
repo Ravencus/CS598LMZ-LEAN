@@ -1,0 +1,5 @@
+["nonexistence-of-a-limit-for-sine-on-the-integers-hub", "kroneckers-theorem-dirichlets-theorem-and-applications-hub", "cauchy-convergence-criterion-hub", "identity-theorem-hub"]
+- nonexistence-of-a-limit-for-sine-on-the-integers-hub: This is the closest match, since the proof exploits periodicity of a nonconstant continuous function sampled at integer times to produce incompatible limiting behavior.
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: In the irrational-period case, one needs density/equidistribution-style approximation of integer samples modulo the period.
+- cauchy-convergence-criterion-hub: The contradiction can be framed by finding two subsequences of `f n` that stay separated or converge to different values, ruling out convergence.
+- identity-theorem-hub: If the integer orbit modulo `T` is dense and `f n` had a limit, continuity and periodicity would force `f` to agree with that limit on a dense set, hence everywhere.

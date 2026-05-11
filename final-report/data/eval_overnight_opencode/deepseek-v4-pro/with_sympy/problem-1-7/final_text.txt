@@ -1,0 +1,9 @@
+I'll work through this step by step. The limit is 1/2 because sin(x) ≈ x for small x, and ∑ₖ k/n² = (n+1)/(2n) → 1/2.
+
+Let me start with an initial skeleton and iterate.
+Good, the basic skeleton compiles. Now let me try to find the right lemmas and build the actual proof. I'll search for available sin inequality lemmas by trying them.
+The checker likely needs a complete file. Let me try looking up lemmas differently — by writing a theorem that uses them.
+Let me verify the MCP tool works with a minimal test.
+`sin` needs `Real.sin` prefix. Let me find the correct lemma name.
+Found `Real.sin_lt`. Now let me build the full proof. I have 4 calls left. Let me write a complete proof using the available lemma and elementary algebra bounds.
+I need to find the right lemmas. Let me test a few potential names for the cubic sin bound.

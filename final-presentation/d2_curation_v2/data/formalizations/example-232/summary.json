@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-232",
+  "english_title": "Example 2.3.2",
+  "statement_en": "Let $$x_n=\\begin{cases}1&n=2k\\\\-2&n=2k+1.\\end{cases}$$ Then $\\limsup_{n\\to \\infty} x_n=1$ and $\\limsup_{n\\to \\infty} x_n^2=4$, so $$(\\limsup_{n\\to \\infty} x_n)^2 \\neq \\limsup_{n\\to \\infty} x_n^2.$$ This does not contradict Proposition 2.3.1, because on $[L,U]=[-2,1]$ the function $f(x)=x^2$ is not monotone.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limsup_square_not_eq_for_alternating_sequence :\n    let x : ℕ → ℤ := fun n => if Even n then 1 else -2\n    let clusterSet : (ℕ → ℝ) → Set ℝ := fun u =>\n      {a | ∃ φ : ℕ → ℕ, StrictMono φ ∧ Filter.Tendsto (fun n => u (φ n)) Filter.atTop (nhds a)}\n    sSup (clusterSet (fun n => (x n : ℝ))) = 1 ∧\n      sSup (clusterSet (fun n => ((x n : ℝ) ^ 2))) = 4 ∧\n      (sSup (clusterSet (fun n => (x n : ℝ)))) ^ 2 ≠\n        sSup (clusterSet (fun n => ((x n : ℝ) ^ 2))) ∧\n      ¬Monotone (fun y : Set.Icc (-2 : ℝ) 1 => (y : ℝ) ^ 2) := by\n  sorry"
+}

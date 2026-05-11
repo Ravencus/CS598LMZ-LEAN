@@ -1,0 +1,50 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "deepseek-v4-flash",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": true,
+  "wall_seconds": 638.6,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 229.63,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "expected token"
+    },
+    {
+      "attempt": 2,
+      "model_timeout": true,
+      "wall_seconds": 240.11,
+      "outcome": "model_timeout",
+      "overall_success": false
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 164.01,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Application type mismatch: The argument\n  hg_aemeasurable\nhas type\n  AEMeasurable g (μ.restrict E)\nbut is expected to have type\n  Measurable ?m.119\nin the application\n  MeasureTheory.lintegral_eq_zero"
+    }
+  ]
+}

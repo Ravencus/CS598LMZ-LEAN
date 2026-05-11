@@ -1,0 +1,24 @@
+{
+  "problem_id": "theorem-223-riemann-criterion",
+  "english_title": "Theorem 2.2.3: Riemann Criterion",
+  "statement_en": "A bounded function $f$ is Riemann integrable on the closed interval $[a,b]$ if and only if for every $\\varepsilon>0$ there exists $\\delta_{\\varepsilon}>0$ such that for every partition with $\\lambda(P)<\\delta_{\\varepsilon}$, one has $$\\sum_{i=1}^n \\omega_f([x_{i-1},x_i])(x_i-x_{i-1})<\\varepsilon.$$",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instSupSet', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Set MeasureTheory\nopen scoped BigOperators\n\nstructure DarbouxPartition (a b : ℝ) where\n  n : ℕ\n  points : ℕ → ℝ\n  monotone_points : Monotone points\n  left_eq : points 0 = a\n  right_eq : points n = b\n  mesh : ℝ\n\nnoncomputable def intervalOscillation (f : ℝ → ℝ) (u v : ℝ) : ℝ :=\n  sSup (f '' Set.Icc u v) - sInf (f '' Set.Icc u v)\n\ntheorem intervalIntegrable_iff_forall_exists_mesh_partition_oscillation_sum_lt\n    (f : ℝ → ℝ) (a b : ℝ)\n    (hbounded : ∃ C > 0, ∀ x ∈ Set.Icc a b, |f x| ≤ C) :\n    IntervalIntegrable f volume a b ↔\n      ∀ ε > 0, ∃ δ : ℝ, δ > 0 ∧\n        ∀ P : DarbouxPartition a b, P.mesh < δ →\n          Finset.sum (Finset.Icc 1 P.n) (fun i =>\n            intervalOscillation f (P.points (i - 1)) (P.points i) *\n              (P.points i - P.points (i - 1))) < ε := by\n  sorry"
+}

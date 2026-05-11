@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-121",
+  "english_title": "Proposition 1.2.1",
+  "statement_en": "The series $$\\sum_{n\\geq 0}\\frac{1}{(n+1)(n+2)(n+2)!}$$ converges; that is, the limit of $T_N$ exists.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token '!'; expected ')', ',' or ':'\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem series_converges_exists_limit :\n    let a : ℕ → ℝ :=\n      fun n => 1 / ((((n : ℝ) + 1) * ((n : ℝ) + 2)) * (Nat.factorial (n + 2) : ℝ));\n    let T : ℕ → ℝ :=\n      fun N => ∑ n in Finset.range (N + 1), a n;\n    ∃ l : ℝ, Filter.Tendsto T Filter.atTop (𝓝 l) := by\n  sorry"
+}

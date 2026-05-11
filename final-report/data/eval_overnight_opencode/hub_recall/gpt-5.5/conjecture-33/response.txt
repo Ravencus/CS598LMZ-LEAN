@@ -1,0 +1,5 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "term-by-term-estimates-hub", "using-known-asymptotics-to-derive-expansions-hub", "an-epsilon-of-room-hub"]
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: The core proof needs Diophantine approximation of integer points modulo \(2\pi\), choosing \(n\) so that \(n\) lies very close to \(\pi/2 \pmod {2\pi}\).
+- term-by-term-estimates-hub: One must estimate \(\sin n\) near its maximum, typically via bounds like \(1-\sin(\pi/2+t)\asymp t^2\), then propagate those bounds through \((1-(1-\sin n)/3)^n\).
+- using-known-asymptotics-to-derive-expansions-hub: The key limiting calculation uses standard asymptotics such as \(\sin(\pi/2+t)=1-t^2/2+o(t^2)\) and \((1+c/n)^n\to e^c\).
+- an-epsilon-of-room-hub: Density is proved by fixing a target \(x\in[0,1]\), allowing small error tolerances, and constructing approximating subsequences whose limits hit or approximate that target.

@@ -1,0 +1,4 @@
+I’m checking the theorem statement and then I’ll iteratively test a Lean proof with the checker.
+I’m looking for an existing Mathlib theorem about irrational approximation, then I’ll wrap it into the requested statement.
+I don’t see a local proof to reuse, so I’m probing Mathlib for a ready-made irrationality/density lemma.
+I haven’t found a local proof artifact yet, so I’m locating the installed Mathlib source to search for the exact lemma name.

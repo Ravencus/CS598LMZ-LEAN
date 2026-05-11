@@ -1,0 +1,85 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 5,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'tsum', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 12,
+      "column": 49,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 12,
+      "column": 61,
+      "severity": "warning",
+      "message": "unused variable `b`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 15,
+      "column": 31,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 15,
+      "column": 43,
+      "severity": "warning",
+      "message": "unused variable `b`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 18,
+      "column": 21,
+      "severity": "warning",
+      "message": "unused variable `f`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 18,
+      "column": 33,
+      "severity": "warning",
+      "message": "unused variable `b`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 18,
+      "column": 35,
+      "severity": "warning",
+      "message": "unused variable `c`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 30,
+      "column": 24,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 5,
+      "column": 4,
+      "severity": "error",
+      "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'tsum', which is 'noncomputable'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_0d4f21cad7f9.lean",
+      "line": 30,
+      "column": 24,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','\n"
+    }
+  ]
+}

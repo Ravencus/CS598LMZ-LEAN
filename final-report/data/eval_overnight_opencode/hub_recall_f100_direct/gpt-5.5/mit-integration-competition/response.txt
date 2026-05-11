@@ -1,0 +1,5 @@
+["an-epsilon-of-room-hub", "interchanging-sums-and-integrals-hub", "reducing-set-problems-to-function-problems-hub", "term-by-term-estimates-hub"]
+- an-epsilon-of-room-hub: Prove the identity first for finite truncations of the infinite series, then pass to the limit using convergence in an integrable/L² sense.
+- interchanging-sums-and-integrals-hub: Expanding the square produces double sums whose terms must be interchanged with the integral.
+- reducing-set-problems-to-function-problems-hub: The floor terms can be rewritten as sums of indicator functions of dyadic intervals, turning their products into measures of interval intersections.
+- term-by-term-estimates-hub: Geometric termwise bounds such as `⌊2^n x⌋ / 3^n ≤ (2/3)^n` control convergence, tails, and justify summability.

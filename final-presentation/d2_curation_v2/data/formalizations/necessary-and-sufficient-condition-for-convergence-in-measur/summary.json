@@ -1,0 +1,30 @@
+{
+  "problem_id": "necessary-and-sufficient-condition-for-convergence-in-measur",
+  "english_title": "Necessary and Sufficient Condition for Convergence in Measure on a Finite Measure Space",
+  "statement_en": "On a finite measure space, let $X_n$ be a sequence of measurable functions. Then $X_n \\xrightarrow{\\mu} X$ if and only if for every subsequence $X_{n(m)}$, there exists a further subsequence $X_{n(m_k)}$ that converges to $X$ almost everywhere.",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter MeasureTheory\n\ndef ConvergesInMeasure\n    {α β : Type*} [MeasurableSpace α] [PseudoMetricSpace β]\n    (μ : Measure α) (f : ℕ → α → β) (g : α → β) : Prop :=\n  ∀ ε : ℝ, 0 < ε →\n    Filter.Tendsto\n      (fun n : ℕ => μ (Set.setOf fun x : α => ε ≤ dist (f n x) (g x)))\n      Filter.atTop\n      (Filter.nhds (0 : ℝ≥0∞))\n\ntheorem convergenceInMeasure_iff_every_subsequence_has_ae_convergent_subsubsequence\n    {α β : Type*}\n    [MeasurableSpace α]\n    [PseudoMetricSpace β]\n    [MeasurableSpace β]\n    [BorelSpace β]\n    (μ : Measure α)\n    (f : ℕ → α → β)\n    (g : α → β)\n    (hμ : μ Set.univ < (⊤ : ℝ≥0∞))\n    (hf : ∀ n, Measurable (f n))\n    (hg : Measurable g) :\n    ConvergesInMeasure μ f g ↔\n      ∀ n : ℕ → ℕ, StrictMono n →\n        ∃ m : ℕ → ℕ, StrictMono m ∧\n          Filter.Eventually\n            (fun x : α =>\n              Filter.Tendsto\n                (fun k : ℕ => f (n (m k)) x)\n                Filter.atTop\n                (Filter.nhds (g x)))\n            (Measure.ae μ) := by\n  sorry"
+}

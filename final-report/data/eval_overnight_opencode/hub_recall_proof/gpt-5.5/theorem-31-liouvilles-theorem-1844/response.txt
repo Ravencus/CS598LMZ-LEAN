@@ -1,0 +1,3 @@
+["an-epsilon-of-room-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- an-epsilon-of-room-hub: The proof chooses the smaller constant `C = 1 / (2 * A)` so that the non-strict Liouville bound from `hAineq` can be converted into the required strict inequality.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof repeatedly represents the same algebraic object in different forms, replacing the rational minpoly `P` by its integer normalization `Q` and transferring root and degree facts through `integerNormalization_spec`, `map`, and `natDegree_map_eq_of_injective`.

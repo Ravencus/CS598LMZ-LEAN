@@ -1,0 +1,23 @@
+{
+  "problem_id": "proposition-311",
+  "model": "gpt-5.5",
+  "wall_seconds": 20.07,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "cauchy-convergence-criterion-hub",
+    "identity-theorem-hub",
+    "kroneckers-theorem-dirichlets-theorem-and-applications-hub",
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub"
+  ],
+  "truth": [
+    "cauchy-convergence-criterion-hub",
+    "kroneckers-theorem-dirichlets-theorem-and-applications-hub"
+  ],
+  "tp": 2,
+  "fp": 2,
+  "fn": 0,
+  "precision": 0.5,
+  "recall": 1.0,
+  "f1": 0.6667
+}

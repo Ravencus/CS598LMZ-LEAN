@@ -1,0 +1,5 @@
+["piecewise-estimates-hub", "term-by-term-estimates-hub", "sequence-limits-via-piecewise-estimates-hub", "basic-methods-in-analysis-i-hub"]
+- piecewise-estimates-hub: The floor is naturally handled by splitting the lattice rectangle into regions where \(k \le (2i+j)/n < k+1\), so the summand is constant on each piece.
+- term-by-term-estimates-hub: One needs pointwise bounds or exact termwise simplifications for \(\lfloor(2i+j)/n\rfloor\) on those regions, with boundary errors shown negligible after scaling.
+- sequence-limits-via-piecewise-estimates-hub: The proof reduces the original double sum to simpler asymptotic counts/areas for the pieces and compares the discrepancy at the required precision.
+- basic-methods-in-analysis-i-hub: The sum is a finite-stage approximation to a limiting continuous-area computation, so the theorem is proved by analyzing concrete finite approximants and passing to the limit.

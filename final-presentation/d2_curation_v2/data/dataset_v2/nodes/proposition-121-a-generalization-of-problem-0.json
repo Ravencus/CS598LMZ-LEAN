@@ -1,0 +1,23 @@
+{
+  "id": "proposition-121-a-generalization-of-problem-0",
+  "type": "problem",
+  "source_note": "判断剧烈震荡的序列部分和的有界性问题",
+  "english_source_note": "Boundedness of Partial Sums of Highly Oscillatory Sequences",
+  "callout_id": "判断剧烈震荡的序列部分和的有界性问题#3",
+  "english_title": "Proposition 1.2.1: A Generalization of Problem 0",
+  "statement_en": "Let $$P(n):=a_dn^d+a_{d-1}n^{d-1}+\\cdots+a_1 n +a_0\\in \\mathbb{R}[n],\\ d\\geq 2,$$ be a polynomial of degree at least $2$ such that at least one of the coefficients $a_d,\\ldots,a_2$ is irrational. Let $F:\\mathbb{T}\\to \\mathbb{C}$ have an absolutely convergent Fourier series and satisfy $$\\int_{\\mathbb{T}} F=0.$$ Then the sequence $$S_N(F):=\\sum_{n=1}^{N}F\\circ P(n)$$ is unbounded.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "Fourier expansion on the torus",
+    "equidistribution of polynomial sequences modulo 1",
+    "variance method for block sums"
+  ],
+  "prerequisites": [
+    "Fourier series on the torus",
+    "Weyl equidistribution theorem",
+    "basic probability and variance"
+  ],
+  "callout_body": "设$$P(n):=a_dn^d+a_{d-1}n^{d-1}+\\cdots+a_1 n +a_0\\in \\mathbb{R}[n],d\\geq 2$$是次数至少为2的，系数$a_d,\\cdots,a_2$当中至少有一个系数为无理数的多项式。设函数$F:\\mathbb{T}\\to \\mathbb{C}$对应的傅里叶级数绝对收敛，并且积分为0。那么序列$$S_N(F):=\\sum_{n=1}^{N}F\\circ P(n)$$是一个无界序列。"
+}

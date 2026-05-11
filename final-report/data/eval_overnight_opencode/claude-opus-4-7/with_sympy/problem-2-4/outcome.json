@@ -1,0 +1,43 @@
+{
+  "problem_id": "problem-2-4",
+  "model": "claude-opus-4-7",
+  "condition": "with_sympy",
+  "outcome": "instruction_violation",
+  "overall_success": false,
+  "wall_seconds": 201.95,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": true,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": true,
+  "expected_theorem_name": "convolution_average_tendsto_mul",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Type mismatch\n  fun n => (∑ k ∈ range (n + 1), a k) / ↑(n + 1)\nhas type\n  ℕ → ℝ\nbut is expected to have type\n  (n : ℕ) → ℕ → ?m.300 n",
+  "total_cost_usd": 0.734321,
+  "total_tokens": 335034,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_1ee1b0bb63.lean",
+      "line": 35,
+      "column": 16,
+      "severity": "error",
+      "message": "Type mismatch\n  fun n => (∑ k ∈ range (n + 1), a k) / ↑(n + 1)\nhas type\n  ℕ → ℝ\nbut is expected to have type\n  (n : ℕ) → ℕ → ?m.300 n"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_1ee1b0bb63.lean",
+      "line": 79,
+      "column": 29,
+      "severity": "error",
+      "message": "No goals to be solved\n"
+    }
+  ]
+}

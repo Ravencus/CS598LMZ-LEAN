@@ -1,0 +1,190 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 14,
+      "column": 17,
+      "severity": "error",
+      "message": "Invalid field `eventually_within`: The environment does not contain `Function.eventually_within`, so it is not possible to project the field `eventually_within` from an expression\n  hconv\nof type\n  ∀ ⦃U : Set ℝ⦄, U ∈ nhds l → U ∈ map harmonicSeq atTop"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 14,
+      "column": 40,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `x✝ : ?m.36` is not an inductive datatype"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 43,
+      "column": 33,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hmn\nhas type\n  m < n\nbut is expected to have type\n  m ≤ n\nin the application\n  le_trans hk.right hmn"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 46,
+      "column": 15,
+      "severity": "error",
+      "message": "Unknown constant `Nat.exists_lt_of_lt`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 46,
+      "column": 44,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `x✝ : ?m.143` is not an inductive datatype"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 52,
+      "column": 6,
+      "severity": "error",
+      "message": "failed to prove strict positivity, but it would be possible to prove nonnegativity if desired"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 59,
+      "column": 8,
+      "severity": "error",
+      "message": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b ≥ 0\n  a ≥ 0\n  a - b ≥ 1\nwhere\n a := ↑n\n b := ↑m"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 60,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown constant `Finset.union_diff_cancel`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 61,
+      "column": 6,
+      "severity": "error",
+      "message": "No goals to be solved"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 62,
+      "column": 4,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nl : ℝ\nhl hconv : Tendsto harmonicSeq atTop (nhds l)\nM : ℝ\nhM : ∀ (n : ℕ), |harmonicSeq n| ≤ M\nm n : ℕ\nhmn : m < n\nhsub : Finset.Icc 1 m ⊆ Finset.Icc 1 n\nhpos : 0 < ∑ x ∈ Finset.Icc 1 n \\ Finset.Icc 1 m, 1 / ↑x\nhsum_eq : harmonicSeq n = harmonicSeq m + ∑ x ∈ Finset.Icc 1 n \\ Finset.Icc 1 m, 1 / ↑x\na✝ : ∑ k ∈ Finset.Icc 1 n, 1 / ↑k ≤ ∑ k ∈ Finset.Icc 1 m, 1 / ↑k\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 63,
+      "column": 16,
+      "severity": "error",
+      "message": "Unknown identifier `BoundedAbove`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 87,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown identifier `boundedAbove_iff_exists_ge`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 86,
+      "column": 14,
+      "severity": "error",
+      "message": "unsolved goals\nl : ℝ\nhl hconv : Tendsto harmonicSeq atTop (nhds l)\nM : ℝ\nhM : ∀ (n : ℕ), |harmonicSeq n| ≤ M\nhmono : StrictMono harmonicSeq\nhunc : ¬sorry\n⊢ sorry\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 14,
+      "column": 17,
+      "severity": "error",
+      "message": "Invalid field `eventually_within`: The environment does not contain `Function.eventually_within`, so it is not possible to project the field `eventually_within` from an expression\n  hconv\nof type\n  ∀ ⦃U : Set ℝ⦄, U ∈ nhds l → U ∈ map harmonicSeq atTop"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 14,
+      "column": 40,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `x✝ : ?m.36` is not an inductive datatype"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 43,
+      "column": 33,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hmn\nhas type\n  m < n\nbut is expected to have type\n  m ≤ n\nin the application\n  le_trans hk.right hmn"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 46,
+      "column": 15,
+      "severity": "error",
+      "message": "Unknown constant `Nat.exists_lt_of_lt`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 46,
+      "column": 44,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `x✝ : ?m.143` is not an inductive datatype"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 52,
+      "column": 6,
+      "severity": "error",
+      "message": "failed to prove strict positivity, but it would be possible to prove nonnegativity if desired"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 59,
+      "column": 8,
+      "severity": "error",
+      "message": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b ≥ 0\n  a ≥ 0\n  a - b ≥ 1\nwhere\n a := ↑n\n b := ↑m"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 60,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown constant `Finset.union_diff_cancel`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 61,
+      "column": 6,
+      "severity": "error",
+      "message": "No goals to be solved"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 62,
+      "column": 4,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nl : ℝ\nhl hconv : Tendsto harmonicSeq atTop (nhds l)\nM : ℝ\nhM : ∀ (n : ℕ), |harmonicSeq n| ≤ M\nm n : ℕ\nhmn : m < n\nhsub : Finset.Icc 1 m ⊆ Finset.Icc 1 n\nhpos : 0 < ∑ x ∈ Finset.Icc 1 n \\ Finset.Icc 1 m, 1 / ↑x\nhsum_eq : harmonicSeq n = harmonicSeq m + ∑ x ∈ Finset.Icc 1 n \\ Finset.Icc 1 m, 1 / ↑x\na✝ : ∑ k ∈ Finset.Icc 1 n, 1 / ↑k ≤ ∑ k ∈ Finset.Icc 1 m, 1 / ↑k\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 63,
+      "column": 16,
+      "severity": "error",
+      "message": "Unknown identifier `BoundedAbove`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 87,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown identifier `boundedAbove_iff_exists_ge`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/WeakHarmonicOR_2dc9f3f7.lean",
+      "line": 86,
+      "column": 14,
+      "severity": "error",
+      "message": "unsolved goals\nl : ℝ\nhl hconv : Tendsto harmonicSeq atTop (nhds l)\nM : ℝ\nhM : ∀ (n : ℕ), |harmonicSeq n| ≤ M\nhmono : StrictMono harmonicSeq\nhunc : ¬sorry\n⊢ sorry\n"
+    }
+  ]
+}

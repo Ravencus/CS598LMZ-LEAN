@@ -1,0 +1,2 @@
+[]
+No listed hub is genuinely relevant: the proof is a direct topological-algebraic construction by precomposing a `C₀` continuous map with a homeomorphism, not an estimate, limit, measure, summation, or approximation argument.

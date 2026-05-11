@@ -1,0 +1,23 @@
+{
+  "id": "proposition-02",
+  "type": "problem",
+  "source_note": "分析学基本方法目录1",
+  "english_source_note": "Basic Methods in Analysis I",
+  "callout_id": "分析学基本方法目录1#3",
+  "english_title": "Proposition 0.2",
+  "statement_en": "Prove the following implications: 1. $$\\\\forall \\\\varepsilon>0,\\\\ x<a+\\\\varepsilon\\\\implies x\\\\le a.$$ 2. $$b>0\\\text{ and }(\\\\forall \\\\varepsilon>0,\\\\ x<a+b\\\\varepsilon)\\\\implies x\\\\le a.$$ 3. $$\\\\forall \\\\varepsilon>0,\\\\ x>a-\\\\varepsilon\\\\implies x\\\\ge a.$$ 4. $$b>0\\\text{ and }(\\\\forall \\\\varepsilon>0,\\\\ x>a-b\\\\varepsilon)\\\\implies x\\\\ge a.$$ 5. $$\\\\forall \\\\varepsilon>0,\\\\ |x-a|<\\\\varepsilon\\\\implies x=a.$$ 6. $$b>0\\\text{ and }(\\\\forall \\\\varepsilon>0,\\\\ |x-a|<b\\\\varepsilon)\\\\implies x=a.$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "epsilon characterization of inequalities",
+    "contrapositive argument",
+    "absolute value characterization"
+  ],
+  "prerequisites": [
+    "order properties of real numbers",
+    "absolute value",
+    "logic and quantifiers"
+  ],
+  "callout_body": "1. $$\\forall \\varepsilon>0,x<a+\\varepsilon\\implies x\\leq a$$我们可以理解为，任何一个实数如果满足$x>a$那么必然对于某个$\\varepsilon_0>0$不满足左边的命题，从而使得$x\\geq a+\\varepsilon_0$。\n2. $$b>0\\text{ and }(\\forall \\varepsilon>0,x<a+b\\varepsilon)\\implies x\\leq a$$我们可以理解为，任何一个实数如果满足$x>a$那么必然对于某个$\\varepsilon_0>0$不满足左边的命题，从而使得$x\\geq a+b\\varepsilon_0$。\n3. $$\\forall \\varepsilon>0,x>a-\\varepsilon\\implies x\\geq a$$我们可以理解为，任何一个实数如果满足$x<a$那么必然对于某个$\\varepsilon_0>0$不满足左边的命题，从而使得$x\\leq a-\\varepsilon_0$。\n4. $$b>0\\text{ and }(\\forall \\varepsilon>0,x>a-b\\varepsilon)\\implies x\\geq a$$我们可以理解为，任何一个实数如果满足$x<a$那么必然对于某个$\\varepsilon_0>0$不满足左边的命题，从而使得$x\\leq a-b\\varepsilon_0$。\n5. $$\\forall \\varepsilon>0,|x-a|<\\varepsilon\\implies x= a$$我们可以理解为，任何一个实数如果满足$x\\neq a$那么必然对于某个$\\varepsilon_0>0$不满足左边的命题，从而使得$|x-a|\\geq \\varepsilon_0$。\n6. $$b>0\\text{ and }(\\forall \\varepsilon>0,|x-a|<b\\varepsilon)\\implies x= a$$我们可以理解为，任何一个实数如果满足$x\\neq a$那么必然对于某个$\\varepsilon_0>0$不满足左边的命题，从而使得$|x-a|\\geq b\\varepsilon_0$。"
+}

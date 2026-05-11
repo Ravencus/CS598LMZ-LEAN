@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-12-baby-rudin-chapter-6-exercise-16",
+  "english_title": "Example 1.2: Baby Rudin, Chapter 6, Exercise 16",
+  "statement_en": "For $\\operatorname{Re}(s)>1$, define $$ \\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}. $$ Prove that $$ \\zeta(s) = s \\int_{1}^{\\infty} \\frac{[x]}{x^{s+1}} \\, dx .$$",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "`riemannZeta` has already been declared"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen MeasureTheory\n\ntheorem riemannZeta_eq_floorIntegral_fixed {s : ℂ} (hs : 1 < s.re) :\n    riemannZeta s =\n      s * ∫ x in Set.Ici (1 : ℝ), ((Int.floor x : ℂ) / Complex.cpow (x : ℂ) (s + 1)) ∂volume := by\n  sorry"
+}

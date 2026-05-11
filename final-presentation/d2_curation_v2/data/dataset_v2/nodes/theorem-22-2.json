@@ -1,0 +1,23 @@
+{
+  "id": "theorem-22-2",
+  "type": "problem",
+  "source_note": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+  "english_source_note": "Dirichlet Kernels Fail, Fejer Kernels Approximate Identity",
+  "callout_id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#4",
+  "english_title": "Theorem 2.2",
+  "statement_en": "$$F_N(x):=\\frac{1}{N}\\frac{\\sin^2(Nx/2)}{\\sin^2(x/2)}$$ and this is an approximate identity in $L^1([-\\pi,\\pi])$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "Fourier analysis",
+  "key_techniques": [
+    "properties of Fejer kernels",
+    "nonnegativity and normalization",
+    "mass concentration near zero"
+  ],
+  "prerequisites": [
+    "definition of approximate identity",
+    "integration on the torus",
+    "basic Fourier series kernels"
+  ],
+  "callout_body": "$$F_N(x):=\\frac{1}{N}\\frac{\\sin^2(Nx/2)}{\\sin^2(x/2)}$$并且这是一个$L^1([-\\pi,\\pi])$上的逼近单位元。"
+}

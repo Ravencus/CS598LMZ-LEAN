@@ -1,0 +1,22 @@
+{
+  "id": "convergence-in-probability-is-preserved-under-continuous-map",
+  "type": "problem",
+  "source_note": "有限测度空间上依测度收敛的等价命题",
+  "english_source_note": "Equivalent Conditions for Convergence in Measure",
+  "callout_id": "有限测度空间上依测度收敛的等价命题#5",
+  "english_title": "Convergence in Probability Is Preserved Under Continuous Mappings",
+  "statement_en": "Assume $f:\\mathbb{R} \\to \\mathbb{R}$ is continuous. Then $$X_n \\xrightarrow{\\mathrm{P}} X \\implies f(X_n) \\xrightarrow{\\mathrm{P}} f(X).$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "probability theory",
+  "key_techniques": [
+    "continuous mapping theorem",
+    "control of inverse images under continuity"
+  ],
+  "prerequisites": [
+    "convergence in probability",
+    "continuity of real-valued functions",
+    "random variables"
+  ],
+  "callout_body": "假设$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续映射，那么\n$$X_n(\\omega)\\xrightarrow {\\text{P}}X(\\omega) \\implies f(X_n) \\xrightarrow {P}{f(X)}$$"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "proposition-24",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#7",
+  "english_title": "Proposition 2.4",
+  "statement_en": "Let $\\alpha_n,\\beta_n$ be nonnegative nonincreasing real sequences such that both series $\\sum_{n\\geq 1}\\alpha_n$ and $\\sum_{n\\geq 1}\\beta_n$ diverge. Assume moreover that there exists a positive real number $c$ such that for all sufficiently large $n$,\n$$2^n\\beta_{2^n}\\geq c >0.$$ Then the series $\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$ diverges.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Cauchy condensation test",
+    "dyadic lower bounds"
+  ],
+  "prerequisites": [
+    "monotone sequences",
+    "series divergence",
+    "Cauchy condensation test"
+  ],
+  "callout_body": "$\\alpha_n,\\beta_n$是一个非负不增的实数列，并且级数$\\sum_{n\\geq 1}\\alpha_n,\\sum_{n\\geq 1}\\beta_n$均发散，此外存在一个正实数$c$对于足够大的$n$都有$$2^n\\beta_{2^n}\\geq c >0$$那么级数$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$发散"
+}

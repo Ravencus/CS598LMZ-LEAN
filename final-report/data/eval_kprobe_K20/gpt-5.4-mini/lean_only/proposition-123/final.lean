@@ -1,0 +1,42 @@
+import Mathlib
+
+theorem factorial_sum_identity (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.range (N + 1)) (fun k => (1 : ℚ) / (k.factorial : ℚ)) +
+        (1 : ℚ) / (((N * N.factorial : ℕ) : ℕ) : ℚ) =
+      (3 : ℚ) -
+        Finset.sum (Finset.Icc 1 (N - 1))
+          (fun k => (1 : ℚ) / (((k * (k + 1) * (k + 1).factorial : ℕ) : ℕ) : ℚ)) := by
+  let lhs : ℕ → ℚ := fun n =>
+    Finset.sum (Finset.range (n + 1)) (fun k => (1 : ℚ) / (k.factorial : ℚ)) +
+      (1 : ℚ) / (((n * n.factorial : ℕ) : ℕ) : ℚ)
+  let rhs : ℕ → ℚ := fun n =>
+    (3 : ℚ) -
+      Finset.sum (Finset.Icc 1 (n - 1))
+        (fun k => (1 : ℚ) / (((k * (k + 1) * (k + 1).factorial : ℕ) : ℕ) : ℚ))
+  let t : ℕ → ℚ := fun n =>
+    (1 : ℚ) / (((n * (n + 1) * (n + 1).factorial : ℕ) : ℕ) : ℚ)
+  have hN1 : 1 ≤ N := by omega
+  have hmain : 1 ≤ N → lhs N = rhs N := by
+    refine Nat.strong_induction_on N ?_
+    intro n ih hn
+    cases n with
+    | zero =>
+        omega
+    | succ n =>
+        cases n with
+        | zero =>
+            norm_num [lhs, rhs, t, Finset.sum_range_succ]
+        | succ n =>
+            have hprev : lhs (Nat.succ n) = rhs (Nat.succ n) := by
+              exact ih (Nat.succ n) (by omega) (by omega)
+            have hL : lhs (Nat.succ (Nat.succ n)) = lhs (Nat.succ n) - t (Nat.succ n) := by
+              simp [lhs, t, Finset.sum_range_succ, Nat.factorial_succ]
+              field_simp [Nat.factorial_ne_zero]
+              ring
+            have hR : rhs (Nat.succ (Nat.succ n)) = rhs (Nat.succ n) - t (Nat.succ n) := by
+              simp [rhs, t, Finset.sum_Icc_succ_top]
+            calc
+              lhs (Nat.succ (Nat.succ n)) = lhs (Nat.succ n) - t (Nat.succ n) := hL
+              _ = rhs (Nat.succ n) - t (Nat.succ n) := by rw [hprev]
+              _ = rhs (Nat.succ (Nat.succ n)) := by rw [hR]
+  simpa [lhs, rhs, t] using hmain hN1

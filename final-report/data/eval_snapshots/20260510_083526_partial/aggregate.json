@@ -1,0 +1,243 @@
+{
+  "timestamp": "2026-05-10T08:35:45",
+  "manifest_timestamp": "2026-05-10T01:31:38",
+  "smoke": {
+    "gpt-5.5": {
+      "success": 1,
+      "total": 5
+    },
+    "gpt-5.4-mini": {
+      "success": 0,
+      "total": 5
+    },
+    "claude-opus-4-7": {
+      "success": 1,
+      "total": 5
+    },
+    "deepseek-v4-pro": {
+      "success": 0,
+      "total": 5
+    },
+    "deepseek-v4-flash": {
+      "success": 0,
+      "total": 5
+    }
+  },
+  "leaderboard": {
+    "deepseek-v4-flash|with_sympy": {
+      "model": "deepseek-v4-flash",
+      "condition": "with_sympy",
+      "n": 20,
+      "pass": 4,
+      "lean_proof": 4,
+      "sympy_rescue": 0,
+      "instruction_violation": 1,
+      "compile_fail": 0,
+      "model_timeout": 15,
+      "model_failed": 0,
+      "wall_seconds_total": 4704.6,
+      "pass_rate": 0.2
+    },
+    "deepseek-v4-flash|lean_only": {
+      "model": "deepseek-v4-flash",
+      "condition": "lean_only",
+      "n": 20,
+      "pass": 3,
+      "lean_proof": 3,
+      "sympy_rescue": 0,
+      "instruction_violation": 0,
+      "compile_fail": 1,
+      "model_timeout": 16,
+      "model_failed": 0,
+      "wall_seconds_total": 4767.6,
+      "pass_rate": 0.15
+    },
+    "claude-opus-4-7|with_sympy": {
+      "model": "claude-opus-4-7",
+      "condition": "with_sympy",
+      "n": 20,
+      "pass": 7,
+      "lean_proof": 5,
+      "sympy_rescue": 2,
+      "instruction_violation": 0,
+      "compile_fail": 0,
+      "model_timeout": 13,
+      "model_failed": 0,
+      "wall_seconds_total": 3524.899999999999,
+      "pass_rate": 0.35
+    },
+    "claude-opus-4-7|lean_only": {
+      "model": "claude-opus-4-7",
+      "condition": "lean_only",
+      "n": 20,
+      "pass": 5,
+      "lean_proof": 5,
+      "sympy_rescue": 0,
+      "instruction_violation": 2,
+      "compile_fail": 0,
+      "model_timeout": 13,
+      "model_failed": 0,
+      "wall_seconds_total": 4053.2,
+      "pass_rate": 0.25
+    },
+    "deepseek-v4-pro|with_sympy": {
+      "model": "deepseek-v4-pro",
+      "condition": "with_sympy",
+      "n": 15,
+      "pass": 2,
+      "lean_proof": 1,
+      "sympy_rescue": 1,
+      "instruction_violation": 0,
+      "compile_fail": 0,
+      "model_timeout": 13,
+      "model_failed": 0,
+      "wall_seconds_total": 3255.899999999999,
+      "pass_rate": 0.13333333333333333
+    },
+    "deepseek-v4-pro|lean_only": {
+      "model": "deepseek-v4-pro",
+      "condition": "lean_only",
+      "n": 15,
+      "pass": 2,
+      "lean_proof": 2,
+      "sympy_rescue": 0,
+      "instruction_violation": 0,
+      "compile_fail": 0,
+      "model_timeout": 13,
+      "model_failed": 0,
+      "wall_seconds_total": 3249.3999999999996,
+      "pass_rate": 0.13333333333333333
+    },
+    "gpt-5.4-mini|with_sympy": {
+      "model": "gpt-5.4-mini",
+      "condition": "with_sympy",
+      "n": 20,
+      "pass": 2,
+      "lean_proof": 2,
+      "sympy_rescue": 0,
+      "instruction_violation": 1,
+      "compile_fail": 12,
+      "model_timeout": 5,
+      "model_failed": 0,
+      "wall_seconds_total": 3813.4,
+      "pass_rate": 0.1
+    },
+    "gpt-5.4-mini|lean_only": {
+      "model": "gpt-5.4-mini",
+      "condition": "lean_only",
+      "n": 20,
+      "pass": 4,
+      "lean_proof": 4,
+      "sympy_rescue": 0,
+      "instruction_violation": 1,
+      "compile_fail": 11,
+      "model_timeout": 4,
+      "model_failed": 0,
+      "wall_seconds_total": 4302.6,
+      "pass_rate": 0.2
+    },
+    "gpt-5.5|with_sympy": {
+      "model": "gpt-5.5",
+      "condition": "with_sympy",
+      "n": 20,
+      "pass": 7,
+      "lean_proof": 5,
+      "sympy_rescue": 2,
+      "instruction_violation": 4,
+      "compile_fail": 9,
+      "model_timeout": 0,
+      "model_failed": 0,
+      "wall_seconds_total": 1305.0,
+      "pass_rate": 0.35
+    },
+    "gpt-5.5|lean_only": {
+      "model": "gpt-5.5",
+      "condition": "lean_only",
+      "n": 21,
+      "pass": 6,
+      "lean_proof": 6,
+      "sympy_rescue": 0,
+      "instruction_violation": 3,
+      "compile_fail": 12,
+      "model_timeout": 0,
+      "model_failed": 0,
+      "wall_seconds_total": 1525.6,
+      "pass_rate": 0.2857142857142857
+    }
+  },
+  "sympy_ablation": {
+    "claude-opus-4-7": {
+      "lean_only": 0.25,
+      "with_sympy": 0.35,
+      "delta": 0.09999999999999998
+    },
+    "deepseek-v4-flash": {
+      "lean_only": 0.15,
+      "with_sympy": 0.2,
+      "delta": 0.05000000000000002
+    },
+    "deepseek-v4-pro": {
+      "lean_only": 0.13333333333333333,
+      "with_sympy": 0.13333333333333333,
+      "delta": 0.0
+    },
+    "gpt-5.4-mini": {
+      "lean_only": 0.2,
+      "with_sympy": 0.1,
+      "delta": -0.1
+    },
+    "gpt-5.5": {
+      "lean_only": 0.2857142857142857,
+      "with_sympy": 0.35,
+      "delta": 0.06428571428571428
+    }
+  },
+  "hub_recall": {},
+  "anomalies": [],
+  "preflight": {
+    "pong": {
+      "gpt-5.5": {
+        "ok": true,
+        "wall": 6.3,
+        "response_excerpt": "PONG"
+      },
+      "gpt-5.4-mini": {
+        "ok": true,
+        "wall": 2.1,
+        "response_excerpt": "PONG"
+      },
+      "claude-opus-4-7": {
+        "ok": true,
+        "wall": 4.6,
+        "response_excerpt": "PONG"
+      },
+      "deepseek-v4-pro": {
+        "ok": true,
+        "wall": 4.1,
+        "response_excerpt": "PONG"
+      },
+      "deepseek-v4-flash": {
+        "ok": true,
+        "wall": 2.4,
+        "response_excerpt": "PONG"
+      }
+    },
+    "lake_compile": {
+      "ok": true,
+      "wall": 2.3,
+      "n_errors": 0
+    },
+    "deepseek_key": {
+      "ok": true,
+      "path": "/workspace/.deepseek_api"
+    },
+    "disk_free_mb": {
+      "ok": true,
+      "free_mb": 2645181
+    },
+    "manifest": {
+      "ok": true,
+      "n_problems": 30
+    }
+  }
+}

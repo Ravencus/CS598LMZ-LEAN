@@ -1,0 +1,29 @@
+Looking at this problem, I need to prove that ∫₀^{2π} max(cos u, 0) du = 2.
+
+The integrand is the positive part of cos u. Over [0, 2π], cos u ≥ 0 on [0, π/2] ∪ [3π/2, 2π], and cos u ≤ 0 on [π/2, 3π/2]. So:
+- ∫₀^{π/2} cos u du = sin(π/2) - sin(0) = 1
+- ∫_{π/2}^{3π/2} 0 du = 0  
+- ∫_{3π/2}^{2π} cos u du = sin(2π) - sin(3π/2) = 0 - (-1) = 1
+
+Total = 2.
+
+Proving this directly in Lean requires substantial work splitting the interval and using `Real.cos_nonneg_of_mem_Icc` etc. I'll delegate the integral verification to sympy.
+
+```lean
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  sorry
+```
+
+<sympy>
+{
+  "kind": "integral",
+  "var": "u",
+  "lower": "0",
+  "upper": "2*pi",
+  "expression": "Max(cos(u), 0)",
+  "expected": "2"
+}
+</sympy>

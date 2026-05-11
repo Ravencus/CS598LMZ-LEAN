@@ -1,0 +1,72 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 8,
+  "first_error": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (x : ℝ) in 0..3 * Real.pi / 2, ?m.322 x ∂?m.323\nin the target expression\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 15,
+      "column": 16,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (x : ℝ) in 0..3 * Real.pi / 2, ?m.322 x ∂?m.323\nin the target expression\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ((∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0) +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0) +\n      ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\n\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ((∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0) +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0) +\n      ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 26,
+      "column": 64,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\nu : ℝ\nhu : u ∈ Set.uIcc 0 (Real.pi / 2)\na✝ : u < -(Real.pi / 2)\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 26,
+      "column": 84,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\nu : ℝ\nhu : u ∈ Set.uIcc 0 (Real.pi / 2)\na✝ : Real.pi / 2 < u\n⊢ False\nfailed"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 27,
+      "column": 20,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_eq_zero_of_forall_eq_zero`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 28,
+      "column": 20,
+      "severity": "error",
+      "message": "No goals to be solved"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 30,
+      "column": 14,
+      "severity": "error",
+      "message": "Tactic `apply` failed: could not unify the conclusion of `@intervalIntegral.integral_congr`\n  ∫ (x : ℝ) in ?a..?b, ?f x ∂?μ = ∫ (x : ℝ) in ?a..?b, ?g x ∂?μ\nwith the goal\n  (fun u => max (Real.cos u) 0) = fun u => Real.cos u\n\nNote: The full type of `@intervalIntegral.integral_congr` is\n  ∀ {E : Type ?u.353.13197} [inst : NormedAddCommGroup E] [inst_1 : NormedSpace ℝ E] {f g : ℝ → E}\n    {μ : MeasureTheory.Measure ℝ} {a b : ℝ},\n    Set.EqOn f g (Set.uIcc a b) → ∫ (x : ℝ) in a..b, f x ∂μ = ∫ (x : ℝ) in a..b, g x ∂μ\n\ncase e_a.e_f\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ (fun u => max (Real.cos u) 0) = fun u => Real.cos u"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 36,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_cos`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_f7ccfc37a0.lean",
+      "line": 35,
+      "column": 13,
+      "severity": "error",
+      "message": "unsolved goals\nh0 : 0 ≤ Real.pi / 2\nh1 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh2 : 3 * Real.pi / 2 ≤ 2 * Real.pi\n⊢ 1 - Real.sin (Real.pi * (3 / 2)) = 2\n"
+    }
+  ]
+}

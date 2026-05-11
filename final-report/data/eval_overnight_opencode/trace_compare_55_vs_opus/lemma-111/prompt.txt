@@ -1,0 +1,146 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: lemma-111
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=18.56s    mcp_calls=1
+--- mcp call 1 (PASS) ---
+import Mathlib
+
+open Matrix
+
+def MatricesAreSimilar {n : Type*} [Fintype n] [DecidableEq n]
+    (M N : Matrix n n ℂ) : Prop :=
+  ∃ P : Matrix n n ℂ, Nonempty (Invertible P) ∧ (P * M = N * P ∨ P * N = M * P)
+
+theorem ab_ba_are_similar_if_left_or_right_invertible
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ)
+    (h : Nonempty (Invertible A) ∨ Nonempty (Invertible B)) :
+    MatricesAreSimilar (A * B) (B * A) := by
+  unfold MatricesAreSimilar
+  rcases h with hA | hB
+  · refine ⟨A, hA, Or.inr ?_⟩
+    simp [Matrix.mul_assoc]
+  · refine ⟨B, hB, Or.inl ?_⟩
+    simp [Matrix.mul_assoc]
+
+--- final_text ---
+I’ll verify the direct associativity proof: use `P = A` when `A` is invertible and the second similarity equation, and `P = B` when `B` is invertible and the first equation.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Matrix
+
+def MatricesAreSimilar {n : Type*} [Fintype n] [DecidableEq n]
+    (M N : Matrix n n ℂ) : Prop :=
+  ∃ P : Matrix n n ℂ, Nonempty (Invertible P) ∧ (P * M = N * P ∨ P * N = M * P)
+
+theorem ab_ba_are_similar_if_left_or_right_invertible
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ)
+    (h : Nonempty (Invertible A) ∨ Nonempty (Invertible B)) :
+    MatricesAreSimilar (A * B) (B * A) := by
+  unfold MatricesAreSimilar
+  rcases h with hA | hB
+  · refine ⟨A, hA, Or.inr ?_⟩
+    simp [Matrix.mul_assoc]
+  · refine ⟨B, hB, Or.inl ?_⟩
+    simp [Matrix.mul_assoc]
+```
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: lean_proof    wall=26.39s    mcp_calls=2
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+open Matrix
+
+def MatricesAreSimilar {n : Type*} [Fintype n] [DecidableEq n]
+    (M N : Matrix n n ℂ) : Prop :=
+  ∃ P : Matrix n n ℂ, Nonempty (Invertible P) ∧ (P * M = N * P ∨ P * N = M * P)
+
+theorem ab_ba_are_similar_if_left_or_right_invertible
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ)
+    (h : Nonempty (Invertible A) ∨ Nonempty (Invertible B)) :
+    MatricesAreSimilar (A * B) (B * A) := by
+  rcases h with hA | hB
+  · refine ⟨A, hA, Or.inr ?_⟩
+    rw [← Matrix.mul_assoc, ← Matrix.mul_assoc]
+  · refine ⟨B, hB, Or.inl ?_⟩
+    rw [← Matrix.mul_assoc, ← Matrix.mul_assoc]
+
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+open Matrix
+
+def MatricesAreSimilar {n : Type*} [Fintype n] [DecidableEq n]
+    (M N : Matrix n n ℂ) : Prop :=
+  ∃ P : Matrix n n ℂ, Nonempty (Invertible P) ∧ (P * M = N * P ∨ P * N = M * P)
+
+theorem ab_ba_are_similar_if_left_or_right_invertible
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ)
+    (h : Nonempty (Invertible A) ∨ Nonempty (Invertible B)) :
+    MatricesAreSimilar (A * B) (B * A) := by
+  rcases h with hA | hB
+  · exact ⟨A, hA, Or.inr (by rw [Matrix.mul_assoc])⟩
+  · exact ⟨B, hB, Or.inl (by rw [Matrix.mul_assoc])⟩
+
+--- final_text ---
+I'll analyze this theorem and work through it step by step.
+Let me think through this carefully before using the budget.
+
+**Mathematical analysis:**
+- If A is invertible: A⁻¹ · (AB) · A = BA, so AB and BA are similar via P = A⁻¹... wait, let me check the definition.
+- The definition says: `∃ P, Invertible P ∧ (P * M = N * P ∨ P * N = M * P)` where M = A*B, N = B*A.
+- So we need P with either P*(A*B) = (B*A)*P or P*(B*A) = (A*B)*P.
+- If A is invertible, choose P = A. Then P*(B*A) = A*(B*A) = (A*B)*A = (A*B)*P. ✓ (second disjunct)
+- If B is invertible, choose P = B. Then P*(A*B) = B*(A*B) = (B*A)*B = (B*A)*P. ✓ (first disjunct)
+
+Let me draft the proof:
+Both goals are already definitionally equal (both sides become `A*B*A` and `B*A*B` after left-associativity). So I just need `rfl` or remove the rewrites:
+Proof compiles successfully.
+
+**Summary:**
+- **Strategy**: If A is invertible, use P = A (since A·(BA) = (AB)·A); if B is invertible, use P = B (since B·(AB) = (BA)·B).
+- **Key**: just `Matrix.mul_assoc` to reassociate, since both sides become equal as flat products.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Matrix
+
+def MatricesAreSimilar {n : Type*} [Fintype n] [DecidableEq n]
+    (M N : Matrix n n ℂ) : Prop :=
+  ∃ P : Matrix n n ℂ, Nonempty (Invertible P) ∧ (P * M = N * P ∨ P * N = M * P)
+
+theorem ab_ba_are_similar_if_left_or_right_invertible
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ)
+    (h : Nonempty (Invertible A) ∨ Nonempty (Invertible B)) :
+   
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

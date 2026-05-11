@@ -1,0 +1,21 @@
+{
+  "id": "proposition-221",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#9",
+  "english_title": "Proposition 2.2.1",
+  "statement_en": "For arbitrary sequences $x_n,y_n$, the inequalities $$\\liminf_{n\\to \\infty} x_n + \\liminf_{n\\to \\infty} y_n\\leq \\liminf_{n\\to \\infty}(x_n+y_n)\\leq \\liminf_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n$$ and $$\\liminf_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n\\leq \\limsup_{n\\to \\infty}(x_n+y_n)\\leq \\limsup_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n$$ hold.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "tailwise addition estimates",
+    "order properties of limsup and liminf"
+  ],
+  "prerequisites": [
+    "limit superior and limit inferior",
+    "basic inequalities for sequences"
+  ],
+  "callout_body": "对任意序列$x_n,y_n$，成立不等式$$\\liminf_{n\\to \\infty} x_n + \\liminf_{n\\to \\infty} y_n\\leq \\liminf_{n\\to \\infty}(x_n+y_n)\\leq \\liminf_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n$$以及$$\\liminf_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n\\leq \\limsup_{n\\to \\infty}(x_n+y_n)\\leq \\limsup_{n\\to \\infty} x_n + \\limsup_{n\\to \\infty} y_n$$"
+}

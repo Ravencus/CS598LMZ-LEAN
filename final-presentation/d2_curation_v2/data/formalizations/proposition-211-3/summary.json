@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-211-3",
+  "english_title": "Proposition 2.1.1",
+  "statement_en": "For any $b$, the sequence $u_n=b\\log(n)$ is not uniformly distributed modulo $1$.",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\nopen scoped BigOperators\n\ndef UniformlyDistributedModOne (u : ℕ → ℝ) : Prop :=\n  ∀ a c : ℝ,\n    0 ≤ a →\n    a ≤ c →\n    c ≤ 1 →\n      Tendsto\n        (fun N : ℕ =>\n          ((Finset.sum (Finset.range N) fun n =>\n              if Int.fract (u n) ∈ Set.Ico a c then (1 : ℝ) else 0) : ℝ) / (N : ℝ))\n        atTop\n        (nhds (c - a))\n\ntheorem logSequence_not_uniformlyDistributed_modOne (b : ℝ) :\n    ¬ UniformlyDistributedModOne (fun n : ℕ => b * Real.log (n + 1)) := by\n  sorry"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "example-12",
+  "type": "problem",
+  "source_note": "Fubini-Tonelli定理的例子与反例",
+  "english_source_note": "Examples and Counterexamples for Fubini-Tonelli",
+  "callout_id": "Fubini-Tonelli定理的例子与反例#4",
+  "english_title": "Example 1.2",
+  "statement_en": "Let $f$ be integrable on the closed interval $[0,b]$, and define\n$$g(x)=\\int_{x}^{b}\\frac{f(t)}{t}dt,\\quad 0 <x\\leq b.$$ Prove that $g$ is integrable on $(0,b]$ and that\n$$\\int_{0}^{b}g(x)dx = \\int_{0}^{b}f(t)dt.$$",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Fubini-Tonelli theorem",
+    "changing order of integration",
+    "integral representation over a triangular region"
+  ],
+  "prerequisites": [
+    "Riemann or Lebesgue integrability on intervals",
+    "iterated integrals",
+    "basic properties of improper integrals"
+  ],
+  "callout_body": "函数$f$在闭区间$[0,b]$上可积，并定义函数$$g(x)=\\int_{x}^{b}\\frac{f(t)}{t}dt,\\text{\n} 0 <x\\leq b$$证明函数$g$在闭区间$(0,b]$上可积并且:\n$$\\int_{0}^{b}g(x)dx = \\int_{0}^{b}f(t)dt$$"
+}

@@ -1,0 +1,95 @@
+{
+  "note_title": "利用Stolz定理确定递归序列的渐近系数",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "利用Stolz定理确定递归序列的渐近系数#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "数列$\\{x_n\\}_{n\\geq 1}$的初值为$1$,并且满足递推关系$$x_{n+1}=x_{n}+3\\sqrt{x_n}+\\frac{n}{\\sqrt{x_n}}$$求$$\\lim_{n\\to \\infty}\\frac{x_n}{n^2}$$",
+      "position_char": 51,
+      "position_line": 8,
+      "classification_result": {
+        "id": "利用Stolz定理确定递归序列的渐近系数#1",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "The sequence $\\{x_n\\}_{n\\geq 1}$ has initial value $x_1=1$ and satisfies the recurrence relation $$x_{n+1}=x_{n}+3\\sqrt{x_n}+\\frac{n}{\\sqrt{x_n}}.$$ Find $$\\lim_{n\\to \\infty}\\frac{x_n}{n^2}.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Cesaro-Stolz theorem",
+            "asymptotic analysis of recursive sequences",
+            "inequality estimation"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "recursive sequences",
+            "square-root inequalities",
+            "Cesaro-Stolz theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "利用Stolz定理确定递归序列的渐近系数#2",
+      "type": "note",
+      "title": "为什么猜答案是很有用的?",
+      "body": "如果把解决问题比喻为在无穷的空间当中搜索一条正确的路径，那么猜出合理的结果以后，我们搜索的范围就极大地缩小了。",
+      "position_char": 210,
+      "position_line": 13,
+      "classification_result": {
+        "id": "利用Stolz定理确定递归序列的渐近系数#2",
+        "classification": "remark",
+        "english_title": "Why Is Guessing the Answer Useful?",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "利用Stolz定理确定递归序列的渐近系数#3",
+      "type": "tip",
+      "title": "主要想法",
+      "body": "既然我们猜到了结果，那么反过来验证结果的合理性就行了。毕竟这个序列的前500万的数据告诉我们，$\\frac{x_n}{n^2}$是单调增加到$\\frac{9}{4}$去的，那么为什么我们不直接使用归纳法去验证，$$x_n\\leq \\frac{9}{4}n^2$$",
+      "position_char": 1181,
+      "position_line": 43,
+      "classification_result": {
+        "id": "利用Stolz定理确定递归序列的渐近系数#3",
+        "classification": "strategy_template",
+        "english_title": "Main Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Guess the Limit and Verify by Induction",
+          "summary_en": "After conjecturing the asymptotic limit from data or heuristic reasoning, reduce the problem to proving a sharp inequality consistent with that guess. Then use induction to verify the bound and support the proposed asymptotic behavior.",
+          "applicability": "Applies when a recursive sequence suggests a plausible asymptotic constant and the recurrence allows inductive upper or lower bounds that match the conjectured growth rate."
+        }
+      }
+    },
+    {
+      "id": "利用Stolz定理确定递归序列的渐近系数#4",
+      "type": "tip",
+      "title": "主要想法",
+      "body": "我们主要的想法是利用[[Cesaro-Stolz定理#1.2 分母单调无界的一般情况]]提到的广义的定理提供的关于序列上下极限，以及差分版本的序列的上下极限，并结合递归关系得到的不等式，从而得到关于$a,b$的不等式。",
+      "position_char": 3731,
+      "position_line": 74,
+      "classification_result": {
+        "id": "利用Stolz定理确定递归序列的渐近系数#4",
+        "classification": "strategy_template",
+        "english_title": "Main Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Use the Generalized Cesaro-Stolz Theorem with Recurrence Inequalities",
+          "summary_en": "Apply the generalized Cesaro-Stolz theorem to relate the upper and lower limits of a sequence to those of its difference sequence. Then combine these relations with inequalities derived from the recurrence to obtain constraints on the asymptotic coefficients.",
+          "applicability": "Applies to recursively defined sequences when one wants asymptotic growth coefficients and can derive useful inequalities for successive differences."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"利用Stolz定理确定递归序列的渐近系数#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"The sequence $\\\\{x_n\\\\}_{n\\\\geq 1}$ has initial value $x_1=1$ and satisfies the recurrence relation $$x_{n+1}=x_{n}+3\\\\sqrt{x_n}+\\\\frac{n}{\\\\sqrt{x_n}}.$$ Find $$\\\\lim_{n\\\\to \\\\infty}\\\\frac{x_n}{n^2}.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Cesaro-Stolz theorem\",\n        \"asymptotic analysis of recursive sequences\",\n        \"inequality estimation\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"recursive sequences\",\n        \"square-root inequalities\",\n        \"Cesaro-Stolz theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"利用Stolz定理确定递归序列的渐近系数#2\",\n    \"classification\": \"remark\",\n    \"english_title\": \"Why Is Guessing the Answer Useful?\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"利用Stolz定理确定递归序列的渐近系数#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Main Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Guess the Limit and Verify by Induction\",\n      \"summary_en\": \"After conjecturing the asymptotic limit from data or heuristic reasoning, reduce the problem to proving a sharp inequality consistent with that guess. Then use induction to verify the bound and support the proposed asymptotic behavior.\",\n      \"applicability\": \"Applies when a recursive sequence suggests a plausible asymptotic constant and the recurrence allows inductive upper or lower bounds that match the conjectured growth rate.\"\n    }\n  },\n  {\n    \"id\": \"利用Stolz定理确定递归序列的渐近系数#4\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Main Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Use the Generalized Cesaro-Stolz Theorem with Recurrence Inequalities\",\n      \"summary_en\": \"Apply the generalized Cesaro-Stolz theorem to relate the upper and lower limits of a sequence to those of its difference sequence. Then combine these relations with inequalities derived from the recurrence to obtain constraints on the asymptotic coefficients.\",\n      \"applicability\": \"Applies to recursively defined sequences when one wants asymptotic growth coefficients and can derive useful inequalities for successive differences.\"\n    }\n  }\n]",
+  "classified": true
+}

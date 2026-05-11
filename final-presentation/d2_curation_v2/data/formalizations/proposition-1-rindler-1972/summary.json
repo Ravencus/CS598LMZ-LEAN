@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-1-rindler-1972",
+  "english_title": "Proposition 1, Rindler 1972",
+  "statement_en": "Assume that $x_n$ is a sequence uniformly distributed modulo $1$. Prove that $x_n + \\log(n)$ is also uniformly distributed modulo $1$.",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Real.floor`"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\ndef UniformDistributedModOne (x : ℕ → ℝ) : Prop :=\n  ∀ (a b : ℝ), 0 ≤ a → a ≤ b → b ≤ 1 →\n    Filter.Tendsto\n      (fun N : ℕ =>\n        (∑ n ∈ Finset.range N,\n          if (x n - (Int.floor (x n) : ℝ)) ∈ Set.Icc a b then (1 : ℝ) else 0) / (N : ℝ))\n      Filter.atTop\n      (nhds (b - a))\n\ntheorem uniformDistributedModOne_add_log\n    (x : ℕ → ℝ)\n    (hx : UniformDistributedModOne x) :\n    UniformDistributedModOne (fun n => x n + Real.log (n : ℝ)) := by\n  sorry"
+}

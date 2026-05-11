@@ -1,0 +1,12 @@
+I’m loading the Lean proving workflow and then I’ll test a compact proof shape in the checker.
+I’m checking the available metric convergence lemmas first so the proof can stay short and canonical.
+I found the metric convergence theorem exists; now I’m printing its exact shape so I can reuse it directly instead of rebuilding the argument.
+I found a complete matching proof pattern in the repository, so I’m trying that verbatim before making any edits.
+The theorem is false as stated.
+
+Counterexample: `xSeq := fun _ => (0 : ℝ)` and `x := 1`.  
+The RHS holds for every `ε > 0` with any `N`, since all differences are `0`, but the LHS `Tendsto xSeq atTop (nhds 1)` is false.
+
+If you want, I can formalize the corrected Cauchy criterion instead:
+- `Filter.Tendsto xSeq Filter.atTop (nhds x) ↔ ∀ ε > 0, ∃ N, ∀ n > N, |xSeq n - x| < ε`, or
+- `CauchySeq xSeq ↔ ∀ ε > 0, ∃ N, ∀ n m > N, |xSeq n - xSeq m| < ε`.

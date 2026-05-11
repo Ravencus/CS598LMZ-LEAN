@@ -1,0 +1,57 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 267.42,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 20,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "minpoly_matrix_mul_reverse_differ_by_at_most_X",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "unsolved goals\ncase monomial.zero\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nc : ℂ\na✝ : B * (aeval (A * B)) (C c * X ^ 0) = (aeval (B * A)) (C c * X ^ 0) * B\n⊢ c • (B * (",
+  "total_cost_usd": 0.0,
+  "total_tokens": 1070478,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 21,
+      "column": 17,
+      "severity": "error",
+      "message": "unsolved goals\ncase monomial.zero\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nc : ℂ\na✝ : B * (aeval (A * B)) (C c * X ^ 0) = (aeval (B * A)) (C c * X ^ 0) * B\n⊢ c • (B * (A * B)) = c • (B * A * B)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 23,
+      "column": 22,
+      "severity": "error",
+      "message": "unsolved goals\ncase monomial.succ\nn✝ : Type u_1\ninst✝¹ : Fintype n✝\ninst✝ : DecidableEq n✝\nA B : Matrix n✝ n✝ ℂ\nc : ℂ\nn : ℕ\nih :\n  B * (aeval (A * B)) (C c * X ^ n) = (aeval (B * A)) (C c * X ^ n) * B →\n    B * (aeval (A * B)) (C c * X ^ (n + 1)) = (aeval (B * A)) (C c * X ^ (n + 1)) * B\na✝ : B * (aeval (A * B)) (C c * X ^ (n + 1)) = (aeval (B * A)) (C c * X ^ (n + 1)) * B\n⊢ B * ((algebraMap ℂ (Matrix n✝ n✝ ℂ)) c * ((A * B) ^ n * (A * (B * (A * B))))) =\n    (algebraMap ℂ (Matrix n✝ n✝ ℂ)) c * ((B * A) ^ n * (B * (A * (B * (A * B)))))"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 44,
+      "column": 17,
+      "severity": "error",
+      "message": "unsolved goals\ncase monomial.zero\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nc : ℂ\na✝ : A * (aeval (B * A)) (C c * X ^ 0) = (aeval (A * B)) (C c * X ^ 0) * A\n⊢ c • (A * (B * A)) = c • (A * B * A)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 46,
+      "column": 22,
+      "severity": "error",
+      "message": "unsolved goals\ncase monomial.succ\nn✝ : Type u_1\ninst✝¹ : Fintype n✝\ninst✝ : DecidableEq n✝\nA B : Matrix n✝ n✝ ℂ\nc : ℂ\nn : ℕ\nih :\n  A * (aeval (B * A)) (C c * X ^ n) = (aeval (A * B)) (C c * X ^ n) * A →\n    A * (aeval (B * A)) (C c * X ^ (n + 1)) = (aeval (A * B)) (C c * X ^ (n + 1)) * A\na✝ : A * (aeval (B * A)) (C c * X ^ (n + 1)) = (aeval (A * B)) (C c * X ^ (n + 1)) * A\n⊢ A * ((algebraMap ℂ (Matrix n✝ n✝ ℂ)) c * ((B * A) ^ n * (B * (A * (B * A))))) =\n    (algebraMap ℂ (Matrix n✝ n✝ ℂ)) c * ((A * B) ^ n * (A * (B * (A * (B * A)))))"
+    }
+  ]
+}

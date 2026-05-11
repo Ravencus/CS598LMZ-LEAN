@@ -1,0 +1,28 @@
+{
+  "problem_id": "monotonicity-of-the-integral-1",
+  "model": "deepseek-v4-flash",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": true,
+  "why_success": "lean_proof",
+  "attempts_used": 1,
+  "any_timeout": false,
+  "wall_seconds": 89.1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 86.75,
+      "outcome": "lean_proof",
+      "overall_success": true,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+I’m checking whether the statement is actually provable in Mathlib or if it’s a false target, because that changes the right Lean strategy.
+The target statement looks false as written: on the unit circle, arbitrary continuous functions are not uniformly approximable by analytic polynomials alone. I’m confirming that in Lean before deciding whether a proof is even possible.
+The statement is false as written: on the unit circle, arbitrary continuous functions are not uniformly approximable by ordinary complex polynomials in `z` alone. A standard counterexample is `f z := Complex.conj z.1`, which is continuous on `Torus` but not a uniform limit of polynomials on `|z| = 1`.
+
+If you want, I can help restate it to a true version, for example using trigonometric/Laurent polynomials.

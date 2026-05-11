@@ -1,0 +1,30 @@
+{
+  "problem_id": "schur-decomposition-theorem",
+  "english_title": "Schur Decomposition Theorem",
+  "statement_en": "Every complex $n\\times n$ matrix $A$ is unitarily similar to an upper triangular matrix $T$, that is, there exists a unitary matrix $Q$ such that $$A=QTQ^{\\dagger},$$ and the diagonal entries of $T$ are the eigenvalues of $A$.",
+  "difficulty": "medium",
+  "domain": "linear algebra",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'ᴴ'; expected ':=', 'where' or '|'"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Matrix.IsUpperTriangular`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem schurTriangularization\n    (n : ℕ) (A : Matrix (Fin n) (Fin n) ℂ) :\n    ∃ Q T : Matrix (Fin n) (Fin n) ℂ,\n      Matrix.IsUpperTriangular T ∧\n      A = Q * T * Matrix.conjTranspose Q ∧\n      Q * Matrix.conjTranspose Q = 1 ∧\n      Matrix.conjTranspose Q * Q = 1 ∧\n      ∀ i : Fin n, Polynomial.IsRoot (Matrix.charpoly A) (T i i) := by\n  sorry"
+}

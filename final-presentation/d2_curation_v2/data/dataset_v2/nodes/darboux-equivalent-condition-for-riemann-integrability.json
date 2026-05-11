@@ -1,0 +1,23 @@
+{
+  "id": "darboux-equivalent-condition-for-riemann-integrability",
+  "type": "problem",
+  "source_note": "黎曼积分的定义以及黎曼可积的判别",
+  "english_source_note": "Riemann Integral and Criteria for Integrability",
+  "callout_id": "黎曼积分的定义以及黎曼可积的判别#9",
+  "english_title": "Darboux Equivalent Condition for Riemann Integrability",
+  "statement_en": "A function $f$ on the rectangle $I_{a,b}\\subset \\mathbb{R}^n$ is Riemann integrable if and only if for every $\\varepsilon>0$ there exists a partition $P_{\\varepsilon}$ such that $$\\sum_{k=1}^{n_{\\varepsilon}} (M_k-m_k)|I_k|<\\varepsilon,$$ where $\\{I_k\\}_{k=1}^{n_{\\varepsilon}}$ are the subrectangles induced by the partition $P_{\\varepsilon}$, and $M_k,m_k$ are respectively the supremum and infimum of $f$ on $I_k$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "upper and lower sums",
+    "Darboux criterion",
+    "supremum-infimum estimates"
+  ],
+  "prerequisites": [
+    "Riemann integrability in several variables",
+    "partitions of rectangles",
+    "supremum and infimum"
+  ],
+  "callout_body": "长方体$I_{a,b}\\subset \\mathbb{R}^n$上的函数$f$黎曼可积，等价于，对任意的$\\varepsilon>0$存在划分$P_{\\varepsilon}$从而使得$$\\sum_{k=1}^{n_{\\varepsilon}} (M_k-m_k)|I_k|$$其中$\\{I_k\\}_{k=1}^{n_{\\varepsilon}}$是划分$P_{\\varepsilon}$产生的子长方体（$\\mathbb{R}$上的时候称之为区间，有时候为了方便都统一称之为区间），$M_k,m_k$分别是$I_k$上函数$f$的上确界和下确界。"
+}

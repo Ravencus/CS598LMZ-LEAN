@@ -1,0 +1,23 @@
+{
+  "id": "mertens-estimates",
+  "type": "problem",
+  "source_note": "素数倒数和的估计",
+  "english_source_note": "Estimates for the Sum of Prime Reciprocals",
+  "callout_id": "素数倒数和的估计#5",
+  "english_title": "Mertens Estimates",
+  "statement_en": "1. $$\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)+O(1)$$\n2. $$\\sum_{p\\leq x}\\frac{\\log(p)}{p}=\\log(x)+O(1)$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "von Mangoldt function estimates",
+    "summation by parts",
+    "Chebyshev-type arguments"
+  ],
+  "prerequisites": [
+    "von Mangoldt function",
+    "asymptotic notation",
+    "prime number summation"
+  ],
+  "callout_body": "1. $$\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)+O(1)$$\n2. $$\\sum_{p\\leq x}\\frac{\\log(p)}{p}=\\log(x)+O(1)$$"
+}

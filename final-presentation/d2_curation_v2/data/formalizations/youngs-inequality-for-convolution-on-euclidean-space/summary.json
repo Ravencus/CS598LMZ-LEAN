@@ -1,0 +1,24 @@
+{
+  "problem_id": "youngs-inequality-for-convolution-on-euclidean-space",
+  "english_title": "Young's Inequality for Convolution on Euclidean Space",
+  "statement_en": "Let $1\\leq p,q,r \\leq \\infty$ satisfy $\\frac{1}{p}+\\frac{1}{q} = \\frac{1}{r} + 1$. Then\n$$||f*g||_{L^r}\\leq ||g||_{L^p}||f||_{L^q}.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem young_convolution_inequality\n    {α E : Type*}\n    (convolution : (α → E) → (α → E) → α → E)\n    (Lpnorm : ENNReal → (α → E) → ENNReal)\n    {p q r : ENNReal} {f g : α → E}\n    (hp : 1 ≤ p) (hq : 1 ≤ q) (hr : 1 ≤ r)\n    (hprq : 1 / p + 1 / q = 1 / r + 1) :\n    Lpnorm r (convolution f g) ≤ Lpnorm p g * Lpnorm q f := by\n  sorry"
+}

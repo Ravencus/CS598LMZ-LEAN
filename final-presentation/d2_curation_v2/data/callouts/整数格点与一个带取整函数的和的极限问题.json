@@ -1,0 +1,65 @@
+{
+  "note_title": "整数格点与一个带取整函数的和的极限问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "求极限$$\\lim_{n\\to +\\infty}\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor$$",
+      "position_char": 51,
+      "position_line": 8
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#2",
+      "type": "tip",
+      "title": "想法",
+      "body": "如果一个和，看起来像一个黎曼和，那么我们只要找到其对应的函数，并用黎曼积分去近似它就好了。\n\n这里之所以说看起来像，而不是说本身就是一个黎曼和，是因为有时候，虽然一个和并不能算作是某个函数的黎曼和，但是误差并不超过问题要求的精度，那么我们可以配合利用[[利用已知的渐近结果求渐近展开的技巧]]同样达到目的。",
+      "position_char": 842,
+      "position_line": 23
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#3",
+      "type": "question",
+      "title": "问题2",
+      "body": "$$S_n:=\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor$$这个和，在$o(1)$的精度范围内，是否可以看成是一个黎曼和?",
+      "position_char": 1028,
+      "position_line": 30
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#4",
+      "type": "tip",
+      "title": "想法",
+      "body": "我们只要能在误差为$o(n^2)$的范围内估算出$h$这个函数的每个取值的在集合$\\{1,\\cdots,n\\}\\times\\{1,\\cdots,2n\\}$当中的原像的元素的个数，那么我们就能得到$S_n$的极限。即我们需要搞清楚下面这个四边形图形内部及其边界上的整数格点的数目，误差范围在$o(n^2)$级别:$$\\{(x,y)\\in \\{1,...,n\\}\\times\\{1,...,2n\\}:kn\\leq  2x+y < (k+1)n\\}$$其中$k=0,1,2,3$",
+      "position_char": 1832,
+      "position_line": 43
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#5",
+      "type": "note",
+      "title": "命题3.1",
+      "body": "$$\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor = 6+\\frac{8}{n}$$",
+      "position_char": 4342,
+      "position_line": 86
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#6",
+      "type": "note",
+      "title": "引理3.2:Hermite恒等式",
+      "body": "令$x\\in \\mathbb{R}$那么$$\\sum_{k=0}^{n-1}\\left\\lfloor x+\\frac{k}{n}\\right\\rfloor=\\left\\lfloor nx\\right\\rfloor$$",
+      "position_char": 4498,
+      "position_line": 93
+    },
+    {
+      "id": "整数格点与一个带取整函数的和的极限问题#7",
+      "type": "question",
+      "title": "问题4.1",
+      "body": "求$$\\lim_{n\\to \\infty} \\frac{1}{n^3}\\sum_{i,j,k\\leq n} \\left\\lfloor \\frac{i+j+2k}{n}\\right\\rfloor$$",
+      "position_char": 5731,
+      "position_line": 104
+    }
+  ]
+}

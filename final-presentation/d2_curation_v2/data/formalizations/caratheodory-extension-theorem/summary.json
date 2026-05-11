@@ -1,0 +1,30 @@
+{
+  "problem_id": "caratheodory-extension-theorem",
+  "english_title": "Caratheodory Extension Theorem",
+  "statement_en": "Let $\\mu^{*}:\\mathcal{P}(X)\\to [0,\\infty]$ be an outer measure on $X$, and let $\\mathcal{F}$ be the family of all subsets of $X$ that are $\\mu^{*}$-measurable in the Caratheodory sense. Define $\\mu:\\mathcal{F}\\to [0,+\\infty]$ by restricting the outer measure, namely $\\mu(E)=\\mu^{*}(E)$ for all $E\\in\\mathcal{F}$. Then $\\mathcal{F}$ is a $\\sigma$-algebra, $\\mu$ is a measure on $\\mathcal{F}$, and $(X,\\mathcal{F},\\mu)$ is a measure space.",
+  "difficulty": "hard",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Function expected at\n  OuterMeasure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  X\n\nHint: The identifier `OuterMeasure` is unknown, and"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `MeasureTheory.MeasurableSet`\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem outerMeasure_caratheodory_restriction_forms_measure_space\n    {X : Type*} (μstar : MeasureTheory.OuterMeasure X) :\n    ∃ ν : @MeasureTheory.Measure X μstar.caratheodory,\n      ∀ E : Set X, @MeasurableSet X μstar.caratheodory E → ν E = μstar E := by\n  sorry"
+}

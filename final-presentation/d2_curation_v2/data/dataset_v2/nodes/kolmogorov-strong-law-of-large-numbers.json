@@ -1,0 +1,24 @@
+{
+  "id": "kolmogorov-strong-law-of-large-numbers",
+  "type": "problem",
+  "source_note": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题",
+  "english_source_note": "A.e. Convergence of Cesaro Means of Uniformly a.e. Bounded Functions",
+  "callout_id": "一致几乎处处有界函数列算术平均值几乎处处收敛的问题#2",
+  "english_title": "Kolmogorov Strong Law of Large Numbers",
+  "statement_en": "Let $X_n$ be a sequence of independent random variables on a probability space, not necessarily identically distributed, with mean $0$ and finite variance, and suppose additionally that\n$$\\sum_{n\\geq 1} \\frac{V(X_n)}{n^2}<+\\infty.$$ Then the random variables $\\frac{X_1+\\cdots+X_n}{n}$ converge almost surely to $0$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "variance summability",
+    "strong law of large numbers",
+    "independence"
+  ],
+  "prerequisites": [
+    "probability spaces",
+    "independent random variables",
+    "expectation and variance",
+    "almost sure convergence"
+  ],
+  "callout_body": "设$X_n$是概率空间上的一列独立的随机变量（不要求同分布），其期望为0，方差有限，并且额外满足$$\\sum_{n\\geq 1} \\frac{V(X_n)}{n^2}<+\\infty$$那么随机变量$\\frac{X_1+\\cdots+X_n}{n}$几乎处处收敛到0。"
+}

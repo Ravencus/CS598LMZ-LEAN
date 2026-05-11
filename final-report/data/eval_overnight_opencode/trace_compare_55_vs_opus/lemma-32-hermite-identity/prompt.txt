@@ -1,0 +1,359 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: lemma-32-hermite-identity
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=366.58s    mcp_calls=5
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  by_cases hn : n = 0
+  · simp [hn]
+  · simpa using Int.floor_sum_range_add_div_nat_eq_floor_mul x hn
+
+--- mcp call 2 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  simpa [add_comm, add_left_comm, add_assoc, mul_comm] using
+    Int.floor_sum_range_div_nat x n
+
+--- mcp call 3 (FAIL) ---
+import Mathlib
+#check Int.floor_sum_range_add_div_nat_eq_floor_mul
+#check Int.floor_sum_range_div_nat
+#check Int.floor_sum_range_add_div_nat
+#check Int.sum_floor_add_div_nat_eq_floor_mul
+
+--- mcp call 4 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  grind
+
+--- mcp call 5 (PASS) ---
+import Mathlib
+
+lemma floor_int_add_small_div (a N : ℤ) (r : ℝ) (hN : 0 < N) (hr0 : 0 ≤ r) (hr1 : r < 1) :
+    Int.floor (((a : ℝ) + r) / (N : ℝ)) = a / N := by
+  have hNneZ : N ≠ 0 := ne_of_gt hN
+  have hNneR : (N : ℝ) ≠ 0 := by exact_mod_cast hNneZ
+  have hNposR : 0 < (N : ℝ) := by exact_mod_cast hN
+  have hrem0 : 0 ≤ a % N := (Int.ediv_emod_unique hN).mp ⟨rfl, rfl⟩ |>.2.1
+  have hremN : a % N < N := (Int.ediv_emod_unique hN).mp ⟨rfl, rfl⟩ |>.2.2
+  have hfrac0 : 0 ≤ (((a % N : ℤ) : ℝ) + r) / (N : ℝ) := by
+    exact div_nonneg (add_nonneg (by exact_mod_cast hrem0) hr0) (le_of_lt hNposR)
+  have hfrac1 : (((a % N : ℤ) : ℝ) + r) / (N : ℝ) < 1 := by
+    rw [div_lt_one hNposR]
+    have hrem_le_int : a % N ≤ N - 1 := Int.le_sub_one_of_lt hremN
+    have hrem_le : ((a % N : ℤ) : ℝ) ≤ (N : ℝ) - 1 := by
+      exact_mod_cast hrem_le_int
+    linarith
+  have hfloorfrac : Int.floor ((((a % N : ℤ) : ℝ) + r) / (N : ℝ)) = 0 := by
+    rw [Int.floor_eq_iff]
+    norm_num
+    exact ⟨hfrac0, hfrac1⟩
+  have hdecomp : ((a : ℝ) + r) / (N : ℝ) =
+      ((a / N : ℤ) : ℝ) + (((a % N : ℤ) : ℝ) + r) / (N : ℝ) := by
+    have h := Int.emod_add_mul_ediv a N
+    calc
+      ((a : ℝ) + r) / (N : ℝ)
+          = (((a %
+--- final_text ---
+I’ll first look for existing Mathlib floor-sum lemmas locally, then use the checker only for high-value proof attempts within the 10-call budget.
+A local prior attempt points to an existing Mathlib theorem; I’ll verify the minimal proof against the exact requested signature.
+The candidate lemma names are not present in the installed Mathlib sources, so I’m switching to a direct formal proof and using a local Lean run for diagnostics because the checker is returning empty diagnostics on failures.
+The direct proof now passes `lake env lean`; I’ll run the same code through the required MCP checker once before returning the final Lean block.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+lemma floor_int_add_small_div (a N : ℤ) (r : ℝ) (hN : 0 < N) (hr0 : 0 ≤ r) (hr1 : r < 1) :
+    Int.floor (((a : ℝ) + r) / (N : ℝ)) = a / N := by
+  have hNneZ : N ≠ 0 := ne_of_gt hN
+  have hNneR : (N : ℝ) ≠ 0 := by exact_mod_cast hNneZ
+  have hNposR : 0 < (N : ℝ) := by exact_mod_cast hN
+  have hrem0 : 0 ≤ a % N := (Int.ediv_emod_unique hN).mp ⟨rfl, rfl⟩ |>.2.1
+  have hremN : a % N < N := (Int.ediv_emod_unique hN).mp ⟨rfl, rfl⟩ |>.2.2
+  have hfrac0 : 0 ≤ (((a % N : ℤ) : ℝ) + r) / (N : ℝ) := by
+    exact div_nonneg (add_nonneg (by exact_mod_cast hrem0) hr0) (le_of_lt hNposR)
+  have hfrac1 : (((a % N : ℤ) : ℝ) + r) / (N : ℝ) < 1 := by
+    rw [div_lt_one hNposR]
+    have hrem_le_int : a % N ≤ N - 1 := Int.le_sub_one_of_lt hremN
+    have hrem_le : ((a % N : ℤ) : ℝ) ≤ (N : ℝ) - 1 := by
+      exact_mod_cast hrem_l
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: lean_proof    wall=329.36s    mcp_calls=10
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+example : True := by
+  trivial
+
+-- Search for relevant lemmas
+example (x : ℝ) (n : ℕ) : Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  exact?
+
+--- mcp call 2 (PASS) ---
+import Mathlib
+
+-- Try several tactic approaches
+example (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  · sorry
+
+--- mcp call 3 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  · -- n ≥ 1. Let m = ⌊nx⌋. Write m = q*n + r with 0 ≤ r < n.
+    set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+    -- Key facts about m
+    have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+    have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+    -- x + k/n = (nx + k)/n
+    have key : ∀ k : ℕ, x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + k) / n := by
+      intro k; field_simp; ring
+    sorry
+
+--- mcp call 4 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+  -- Set m = ⌊nx⌋ and let y = nx - m, so y ∈ [0,1).
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have hy_lo : (m : ℝ) ≤ (n : ℝ) * x := Int.floor_le _
+  have hy_hi : (n : ℝ) * x < m + 1 := Int.lt_floor_add_one _
+  -- Step 1: Rewrite each summand as ⌊(m+k)/n⌋
+  have step1 : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = ((m + k) / (n : ℤ) : ℤ) := by
+    intro k hk
+    rw [Finset.mem_range] at hk
+    -- Show x + k/n = (nx + k)/n
+    have hxk : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by
+      field_simp
+    rw [hxk]
+    -- Floor of ((nx + k))/n. nx + k ∈ [m+k, m+k+1).
+    apply le_antisymm
+    · apply Int.floor_le_of_le
+      sorry
+    · sorry
+  sorry
+
+--- mcp call 5 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+  have hnZ : (0 : ℤ) < (n : ℤ) := by exact_mod_cast hn
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have hm_lo : (m : ℝ) ≤ (n : ℝ) * x := Int.floor_le _
+  have hm_hi : (n : ℝ) * x < m + 1 := Int.lt_floor_add_one _
+  -- Step 1: each floor equals (m+k)/n (integer division)
+  have step1 : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + k) / (n : ℤ) := by
+    intro k hk
+    rw [Finset.mem_range] at hk
+    have hxk : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by field_simp
+    rw [hxk, Int.floor_eq_iff]
+    refine ⟨?_, ?_⟩
+    · -- ((m+k)/n : ℝ) ≤ (nx + k)/n
+      rw [le_div_iff₀ hnpos]
+      have h1 : ((m + (k : ℤ)) / (n : ℤ) : ℝ) * n ≤ ((m : ℝ) + k) := by
+        have := Int.ediv_mul_le (m + (k : ℤ)) (ne_of_gt hnZ)
+        have hh : (((m + (k : ℤ)) / (n : ℤ)) * (n : ℤ) : ℝ) ≤ ((m + (k : ℤ)) : ℝ) := by
+          exact_m
+--- mcp call 6 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+  have hnZ : (0 : ℤ) < (n : ℤ) := by exact_mod_cast hn
+  have hnZne : (n : ℤ) ≠ 0 := ne_of_gt hnZ
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have hm_lo : (m : ℝ) ≤ (n : ℝ) * x := Int.floor_le _
+  have hm_hi : (n : ℝ) * x < m + 1 := Int.lt_floor_add_one _
+  -- Step 1: each floor equals (m+k)/n
+  have step1 : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + (k : ℤ)) / (n : ℤ) := by
+    intro k hk
+    rw [Finset.mem_range] at hk
+    have hxk : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by field_simp
+    rw [hxk, Int.floor_eq_iff]
+    -- Want: ((m+k)/n : ℝ) ≤ (nx+k)/n  AND  (nx+k)/n < (m+k)/n + 1
+    -- Equivalently:   ((m+k)/n) * n ≤ nx+k    AND   nx+k < ((m+k)/n + 1) * n
+    have hbase1 : (((m + (k : ℤ)) / (n : ℤ)) : ℝ) * n ≤ (m + k : ℤ) := by
+      have h := Int.ediv_mul_le (m + (k : ℤ)) hnZne
+      exact_mod_cast h
+--- mcp call 7 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+  have hnZ : (0 : ℤ) < (n : ℤ) := by exact_mod_cast hn
+  have hnZne : (n : ℤ) ≠ 0 := ne_of_gt hnZ
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have hm_lo : (m : ℝ) ≤ (n : ℝ) * x := Int.floor_le _
+  have hm_hi : (n : ℝ) * x < m + 1 := Int.lt_floor_add_one _
+  -- Step 1: each floor equals (m+k)/n
+  have step1 : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + (k : ℤ)) / (n : ℤ) := by
+    intro k hk
+    rw [Finset.mem_range] at hk
+    have hxk : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by field_simp
+    rw [hxk, Int.floor_eq_iff]
+    set d : ℤ := (m + (k : ℤ)) / (n : ℤ) with hd_def
+    have hd_lo : d * n ≤ m + k := Int.ediv_mul_le _ hnZne
+    have hd_hi : m + (k : ℤ) < (d + 1) * n := by
+      have := Int.lt_ediv_add_one_mul_self (m + (k : ℤ)) hnZ
+      linarith
+    have hd_loR : (d : ℝ) * n ≤ (m : ℝ) + k := by exact_m
+--- mcp call 8 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+  have hnZ : (0 : ℤ) < (n : ℤ) := by exact_mod_cast hn
+  have hnZne : (n : ℤ) ≠ 0 := ne_of_gt hnZ
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have hm_lo : (m : ℝ) ≤ (n : ℝ) * x := Int.floor_le _
+  have hm_hi : (n : ℝ) * x < m + 1 := Int.lt_floor_add_one _
+  -- Step 1: each floor equals (m+k)/n
+  have step1 : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + (k : ℤ)) / (n : ℤ) := by
+    intro k _
+    have hxk : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by field_simp
+    rw [hxk, Int.floor_eq_iff]
+    set d : ℤ := (m + (k : ℤ)) / (n : ℤ) with hd_def
+    have hd_lo : d * n ≤ m + k := Int.ediv_mul_le _ hnZne
+    have hd_hi_int : m + (k : ℤ) < (d + 1) * n := by
+      have := Int.lt_ediv_add_one_mul_self (m + (k : ℤ)) hnZ
+      linarith
+    -- need: ↑d ≤ (↑n*x + ↑k)/↑n  AND  (↑n*x + ↑k)/↑n < ↑d + 1
+    have hd_loR : (d : 
+--- mcp call 9 (FAIL) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+  have hnZ : (0 : ℤ) < (n : ℤ) := by exact_mod_cast hn
+  have hnZne : (n : ℤ) ≠ 0 := ne_of_gt hnZ
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have hm_lo : (m : ℝ) ≤ (n : ℝ) * x := Int.floor_le _
+  have hm_hi : (n : ℝ) * x < m + 1 := Int.lt_floor_add_one _
+  have step1 : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + (k : ℤ)) / (n : ℤ) := by
+    intro k _
+    have hxk : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by field_simp
+    rw [hxk, Int.floor_eq_iff]
+    set d : ℤ := (m + (k : ℤ)) / (n : ℤ) with hd_def
+    have hd_lo_int : d * n ≤ m + k := Int.ediv_mul_le _ hnZne
+    have hd_hi_int : m + (k : ℤ) < (d + 1) * n := by
+      have := Int.lt_ediv_add_one_mul_self (m + (k : ℤ)) hnZ; linarith
+    -- Make it ≤ via integer discreteness: m + k + 1 ≤ (d+1) * n
+    have hd_hi_int_le : m + (k : ℤ) + 1 ≤ (d + 1) * n := hd_h
+--- mcp call 10 (PASS) ---
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  have hnne : (n : ℝ) ≠ 0 := ne_of_gt hnpos
+  have hnZ : (0 : ℤ) < (n : ℤ) := by exact_mod_cast hn
+  have hnZne : (n : ℤ) ≠ 0 := ne_of_gt hnZ
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have hm_lo : (m : ℝ) ≤ (n : ℝ) * x := Int.floor_le _
+  have hm_hi : (n : ℝ) * x < m + 1 := Int.lt_floor_add_one _
+  have step1 : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + (k : ℤ)) / (n : ℤ) := by
+    intro k _
+    have hxk : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by field_simp
+    rw [hxk, Int.floor_eq_iff]
+    set d : ℤ := (m + (k : ℤ)) / (n : ℤ) with hd_def
+    have hd_lo_int : d * n ≤ m + k := Int.ediv_mul_le _ hnZne
+    have hd_hi_int : m + (k : ℤ) < (d + 1) * n := by
+      have := Int.lt_ediv_add_one_mul_self (m + (k : ℤ)) hnZ; linarith
+    have hd_hi_int_le : m + (k : ℤ) + 1 ≤ (d + 1) * n := hd_hi_int
+    have hd_loR : (d : ℝ) * (n : ℝ) ≤ (m : ℝ) + (k : ℝ) := 
+--- final_text ---
+I'll work on this Hermite identity proof. Let me start by exploring what Mathlib has.
+No direct Hermite lemma. Let me think about the proof strategy.
+
+The classic proof: Let $\alpha = \{nx\}/n$, so $\lfloor nx \rfloor = nx - n\alpha$ where $0 \le n\alpha < 1$ (actually fractional part of $nx$ divided by $n$... let me reconsider).
+
+Actually, the cleanest proof: write $nx = m + r$ where $m = \lfloor nx \rfloor$ and $0 \le r < 1$. Hmm, this is getting complex.
+
+Let me try a different approach — search for if Mathlib already has this identity:
+Not in Mathlib directly. Let me try the proof approach. The classic proof uses:
+- Let $f(x) = \sum_{k=0}^{n-1} \lfloor x + k/n \rfloor - \lfloor nx \rfloor$
+- Show $f(x + 1/n) = f(x)$ (periodicity)
+- Show $f(x) = 0$ on $[0, 1/n)$
+
+For $x \in [0, 1/n)$: $nx \in [0,1)$ so $\lfloor nx \rfloor = 0$. Each $x + k/n \in [k/n, (k+1)/n) \subset [0,1)$, so all floors are 0.
+
+This requires real analysis. Let me think of a more direct approach.
+
+**Alternative approach**: Use induction on $n$? Or use the result via `Int.floor` properties. 
+
+Actually, there's a neat trick: $\lfloor nx \rfloor = \sum_{k=0}^{n-1} \lfloor x + k/n \rfloor$ follows from the fact that as $k$ ranges over $0, ..., n-1$, the values $\lfloor x + k/n \rfloor$ jump by 1 at exactly the right places.
+
+Let me try a direct attack — handle $n = 0$ separately, then for $n \ge 1$:
+
+The key identity: Let $m = \lfloor nx \rfloor$, write $m = qn + r$ with $0 \le r < n$. Then $x \in [m/n, (m+1
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

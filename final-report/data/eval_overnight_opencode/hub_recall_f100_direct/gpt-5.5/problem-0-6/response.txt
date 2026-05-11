@@ -1,0 +1,4 @@
+["cauchy-condensation-test-hub", "piecewise-estimates-hub", "term-by-term-estimates-hub"]
+- cauchy-condensation-test-hub: The natural proof uses dyadic blocks for the nonnegative nonincreasing sequence, reducing divergence of `∑ a_n` to divergence of a condensed dyadic series like `∑ 2^k a_{2^k}`.
+- piecewise-estimates-hub: The `min` forces a case split between the regimes `a_n ≤ 1/n` and `a_n ≥ 1/n`, or equivalently between condensed terms being below or above `1`.
+- term-by-term-estimates-hub: After dyadic decomposition, one compares each block contribution of `min (a_n) (1/n)` with simpler lower bounds such as multiples of `min (2^k a_{2^k}, 1)` and sums those bounds.

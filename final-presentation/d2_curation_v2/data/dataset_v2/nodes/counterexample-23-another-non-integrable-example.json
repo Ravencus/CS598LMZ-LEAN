@@ -1,0 +1,23 @@
+{
+  "id": "counterexample-23-another-non-integrable-example",
+  "type": "problem",
+  "source_note": "Fubini-Tonelli定理的例子与反例",
+  "english_source_note": "Examples and Counterexamples for Fubini-Tonelli",
+  "callout_id": "Fubini-Tonelli定理的例子与反例#8",
+  "english_title": "Counterexample 2.3: Another Non-Integrable Example",
+  "statement_en": "Consider\n$$f(x,y):=\\begin{cases}\\frac{1}{y^2}&0<x<y<1\\\\\n-\\frac{1}{x^2}&0<y<x<1 \\\\ 0 &\\text{ otherwise}.\\end{cases}$$\nLet $I=[0,1]$. Show first that\n$$\\int_I\\int_I |f(x,y)|\\,dydx=+\\infty,$$\nso $f$ is not integrable and Fubini's theorem does not apply. Conclude that one should expect\n$$\\int_I\\int_I f(x,y)dydx \\neq \\int_I\\int_I f(x,y)dxdy.$$",
+  "problem_type": "counterexample",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Tonelli theorem on the absolute value",
+    "divergence of improper integrals",
+    "triangular region decomposition"
+  ],
+  "prerequisites": [
+    "absolute integrability",
+    "Tonelli and Fubini theorems",
+    "iterated integrals over regions"
+  ],
+  "callout_body": "\n$$f(x,y):=\\begin{cases}\\frac{1}{y^2}&0<x<y<1\\\\\n-\\frac{1}{x^2}&0<y<x<1 \\\\ 0 &\\text{ otherwise}\\end{cases}$$\n先考虑Tonelli定理,$I=[0,1]$,$$\\begin{aligned}\\int_I\\int_I\n|f(x,y)|\\,dydx&=\\int_I\\int_I\n\\frac{1}{y^2}1_{\\{0<x<y<1\\}}\\,dydx + \\int_I\\int_I\n\\frac{1}{x^2}1_{\\{0<y<x<1\\}}\\,dydx\\\\&=\n\\int_{0}^{1}\\int_{x}^{1}\\frac{1}{y^2}\\,dydx+\n\\int_{0}^{1}\\int_{0}^{x} \\frac{1}{x^2}\\,dydx \\\\ &\\ge\n\\int_{0}^{1}\\int_{x}^{1}\\frac{1}{y^2}\\,dydx\n=\\int_{0}^{1}(-1+1/x)\\,dx =\n+\\infty\\end{aligned}$$因此显然，函数并不可积，所以Fubini定理是不适用的，因此可以很容易预期：\n$$\\int_I\\int_I f(x,y)dydx \\neq \\int_I\\int_I f(x,y)dxdy $$"
+}

@@ -1,0 +1,83 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "deepseek-v4-flash",
+  "condition": "lean_only",
+  "outcome": "wall_budget_exceeded",
+  "overall_success": false,
+  "wall_seconds": 605.17,
+  "wall_exceeded": true,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 4,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 8,
+  "first_error": "unsolved goals\ncase succ\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nk : ℕ\nih : A * (B * A) ^ k = (A * B) ^ k * A\n⊢ (A * B) ^ k * (A * (B * A)) = (A * B) ^ (k + 1) * A",
+  "total_cost_usd": 0.01873,
+  "total_tokens": 174123,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_399dc8b369.lean",
+      "line": 9,
+      "column": 2,
+      "severity": "error",
+      "message": "unsolved goals\ncase succ\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nk : ℕ\nih : A * (B * A) ^ k = (A * B) ^ k * A\n⊢ (A * B) ^ k * (A * (B * A)) = (A * B) ^ (k + 1) * A"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_399dc8b369.lean",
+      "line": 20,
+      "column": 6,
+      "severity": "error",
+      "message": "invalid 'calc' step, left-hand side is\n  A * (aeval (B * A)) (C c * X ^ d) : Matrix n n ℂ\nbut is expected to be\n  A * (aeval (B * A)) (C c * X ^ (d + 1)) : Matrix n n ℂ"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_399dc8b369.lean",
+      "line": 29,
+      "column": 6,
+      "severity": "error",
+      "message": "invalid 'calc' step, right-hand side is\n  (aeval (A * B)) (C c * X ^ d) * A : Matrix n n ℂ\nbut is expected to be\n  (aeval (A * B)) (C c * X ^ (d + 1)) * A : Matrix n n ℂ"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_399dc8b369.lean",
+      "line": 21,
+      "column": 12,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (aeval (B * A)).toRingHom (?a * ?b)\nin the target expression\n  A * (aeval (B * A)) (C c * X ^ d) = A * ((aeval (B * A)) (C c) * (aeval (B * A)) (X ^ d))\n\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nd : ℕ\nc : ℂ\na✝ : A * (aeval (B * A)) (C c * X ^ d) = (aeval (A * B)) (C c * X ^ d) * A\n⊢ A * (aeval (B * A)) (C c * X ^ d) = A * ((aeval (B * A)) (C c) * (aeval (B * A)) (X ^ d))"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_399dc8b369.lean",
+      "line": 23,
+      "column": 37,
+      "severity": "error",
+      "message": "unsolved goals\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nd : ℕ\nc : ℂ\na✝ : A * (aeval (B * A)) (C c * X ^ d) = (aeval (A * B)) (C c * X ^ d) * A\n⊢ A * ((algebraMap ℂ (Matrix n n ℂ)) c * (B * A) ^ d) = c • (A * (B * A) ^ d)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_399dc8b369.lean",
+      "line": 27,
+      "column": 67,
+      "severity": "error",
+      "message": "unsolved goals\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nd : ℕ\nc : ℂ\na✝ : A * (aeval (B * A)) (C c * X ^ d) = (aeval (A * B)) (C c * X ^ d) * A\n⊢ c • ((A * B) ^ d * A) = (algebraMap ℂ (Matrix n n ℂ)) c * (A * B) ^ d * A"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_399dc8b369.lean",
+      "line": 29,
+      "column": 54,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (aeval (A * B)).toRingHom (?a * ?b)\nin the target expression\n  (aeval (A * B)) (C c) * (aeval (A * B)) (X ^ d) * A = (aeval (A * B)) (C c * X ^ d) * A\n\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nd : ℕ\nc : ℂ\na✝ : A * (aeval (B * A)) (C c * X ^ d) = (aeval (A * B)) (C c * X ^ d) * A\n⊢ (aeval (A * B)) (C c) * (aeval (A * B)) (X ^ d) * A = (aeval (A * B)) (C c * X ^ d) * A"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_399dc8b369.lean",
+      "line": 51,
+      "column": 60,
+      "severity": "error",
+      "message": "typeclass instance problem is stuck\n  Semiring ?m.400\n\nNote: Lean will not try to resolve this typeclass instance problem because the type argument to `Semiring` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.\n\nHint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck."
+    }
+  ]
+}

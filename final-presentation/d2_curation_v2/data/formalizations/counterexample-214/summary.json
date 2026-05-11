@@ -1,0 +1,24 @@
+{
+  "problem_id": "counterexample-214",
+  "english_title": "Counterexample 2.1.4",
+  "statement_en": "If the domain is not connected, for example $U=A\\cup B$ with $A,B$ disjoint open sets, define $$f(z):=\\begin{cases}0&z \\in A\\\\ 1&z \\in B\\end{cases}.$$ Then $f$ is holomorphic on $U$ and is not identically zero, but its zeros are not isolated.",
+  "difficulty": "easy",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to synthesize instance of type class\n  Decidable (z ∈ B)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem disconnected_domain_piecewise_constant_holomorphic\n    (A B : Set ℂ)\n    (hA_open : IsOpen A)\n    (hB_open : IsOpen B)\n    (hAB_disj : Disjoint A B)\n    (hA_nonempty : A.Nonempty)\n    (hB_nonempty : B.Nonempty) :\n    let U : Set ℂ := A ∪ B\n    let f : ℂ → ℂ := fun z => by\n      classical\n      exact if z ∈ A then 0 else if z ∈ B then 1 else 0\n    DifferentiableOn ℂ f U ∧\n      (∃ z ∈ U, f z ≠ 0) ∧\n      (∃ z0 ∈ U, f z0 = 0 ∧\n        ∀ ε : ℝ, 0 < ε → ∃ z ∈ U, z ≠ z0 ∧ ‖z - z0‖ < ε ∧ f z = 0) := by\n  sorry"
+}

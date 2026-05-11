@@ -1,0 +1,22 @@
+{
+  "problem_id": "mit-integration-competition",
+  "model": "gpt-5.5",
+  "wall_seconds": 15.89,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "interchanging-sums-and-integrals-hub",
+    "piecewise-estimates-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "interchanging-sums-and-integrals-hub"
+  ],
+  "tp": 1,
+  "fp": 3,
+  "fn": 0,
+  "precision": 0.25,
+  "recall": 1.0,
+  "f1": 0.4
+}

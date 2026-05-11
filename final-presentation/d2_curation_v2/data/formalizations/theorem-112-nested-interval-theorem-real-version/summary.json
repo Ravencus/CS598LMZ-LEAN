@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-112-nested-interval-theorem-real-version",
+  "english_title": "Theorem 1.1.2: Nested Interval Theorem, Real Version",
+  "statement_en": "The intersection of a decreasing sequence of closed intervals in $\\mathbb{R}$ is nonempty.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem decreasing_closed_intervals_nonempty\n    (a b : ℕ → ℝ)\n    (h_nonempty : ∀ n : ℕ, Set.Nonempty (Set.Icc (a n) (b n)))\n    (h_decreasing : ∀ n : ℕ, Set.Icc (a (n + 1)) (b (n + 1)) ⊆ Set.Icc (a n) (b n)) :\n    Set.Nonempty (⋂ n : ℕ, Set.Icc (a n) (b n)) := by\n  sorry"
+}

@@ -1,0 +1,57 @@
+{
+  "note_title": "揭露全纯以及亚纯函数信息的Liouville原则",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#1",
+      "type": "note",
+      "title": "Liouville原则",
+      "body": "1. 对亚纯/全纯函数的模的上界估计，可以经由Cauchy积分公式，以及其衍生出来的Cauchy不等式，导出对函数导数(高阶导数)的模的估计。\n2. 对亚纯函数/全纯函数的模在圆周上平均值的估计（也就是某种积分估计），可以经由Cauchy积分公式转换为对Laurent/Taylor级数的系数的估计。\n3. 亚纯函数/全纯函数其导数的模，Laurent/Taylor展开的系数反过来又能说明函数的一些性质。",
+      "position_char": 293,
+      "position_line": 10
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#2",
+      "type": "question",
+      "title": "问题2",
+      "body": "如果一个整函数的上界估计为,$$|f(z)|\\leq M(1+|z|)^A,z\\in\n\\mathbb{C}$$那么需要证明这个整函数就是一个最多$\\lfloor A \\rfloor$的多项式。",
+      "position_char": 1807,
+      "position_line": 26
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#3",
+      "type": "question",
+      "title": "问题3",
+      "body": "整函数$f(z)$满足不等式,$$\\int_{0}^{2\\pi}\n|f(re^{i \\theta})| d\\theta < r^{1/2},\\forall r >0$$ 证明函数为0.",
+      "position_char": 2263,
+      "position_line": 35
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#4",
+      "type": "question",
+      "title": "问题4",
+      "body": "$|f(z)| \\leq \\frac{1}{|\\text{Im}(z)|}$证明整函数为0",
+      "position_char": 2662,
+      "position_line": 47
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#5",
+      "type": "question",
+      "title": "问题5",
+      "body": "$\\rho >0$整函数有上界估计$f(z) = O(e^{|z|^{\\rho}})$并且对于$n>3$都有$f(\\log(n))=0$。证明整函数是0.",
+      "position_char": 3560,
+      "position_line": 58
+    },
+    {
+      "id": "揭露全纯以及亚纯函数信息的Liouville原则#6",
+      "type": "question",
+      "title": "问题6",
+      "body": "$f$是整函数$u(z) = \\text{Re}(f)$是其实部,并且对于任意圆周$C_r(0)$上都有上界估计$$u(z)\\leq Cr^s,s\\geq 0$$那么整函数$f$是一个至多不超过$s$次的多项式。",
+      "position_char": 4160,
+      "position_line": 67
+    }
+  ]
+}

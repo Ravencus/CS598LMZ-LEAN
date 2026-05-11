@@ -1,0 +1,20 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "claude-opus-4-7",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": "model_timeout",
+  "attempts_used": 1,
+  "any_timeout": true,
+  "wall_seconds": 240.1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "model_timeout": true,
+      "wall_seconds": 240.11,
+      "outcome": "model_timeout",
+      "overall_success": false
+    }
+  ]
+}

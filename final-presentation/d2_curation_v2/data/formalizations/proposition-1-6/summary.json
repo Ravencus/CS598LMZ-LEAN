@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-1-6",
+  "english_title": "Proposition 1",
+  "statement_en": "Let $(X,\\mathcal{F},\\mu)$ be a measure space. If a measurable function $f:X\\to \\mathbb{R}$ satisfies $$\\int_E f \\,d\\mu =0$$ for every $E \\in \\mathcal{F}$, then $f=0$ almost everywhere.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  X\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem ae_zero_of_forall_set_integral_eq_zero\n    {X : Type*} [MeasurableSpace X] {μ : MeasureTheory.Measure X} {f : X → ℝ}\n    (hf : Measurable f)\n    (hzero : ∀ E : Set X, MeasurableSet E → ∫ x in E, f x ∂μ = 0) :\n    f =ᵐ[μ] fun _ => 0 := by\n  sorry"
+}

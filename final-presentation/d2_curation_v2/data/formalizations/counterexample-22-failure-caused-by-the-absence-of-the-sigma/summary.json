@@ -1,0 +1,18 @@
+{
+  "problem_id": "counterexample-22-failure-caused-by-the-absence-of-the-sigma",
+  "english_title": "Counterexample 2.2: Failure Caused by the Absence of the $\\sigma$-Finite Condition",
+  "statement_en": "Let $I =[0,1]$, let $\\mathcal{B}(I)$ be the Borel algebra, let $\\mu$ be Lebesgue measure, and let $\\nu$ be counting measure. Consider the measure spaces $(I,\\mathcal{B}(I),\\mu)$ and $(I,\\mathcal{B}(I),\\nu)$. For the diagonal set\n$$D=\\{(x,y):x=y,(x,y)\\in I^2\\},$$\ncompute\n$$\\int_{I^2}1_{D} \\, d(\\mu \\times \\nu).$$\nThen show that\n$$\\int_{I}\\left(\\int_{I} 1_{D}(x,y) \\, d\\mu(x)\\right)d\\nu(y)=0,$$\nwhereas\n$$\\int_{I}\\left(\\int_{I} 1_{D}(x,y) \\, d\\nu(y)\\right)d\\mu(x)=1,$$\nand explain that the failure com",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen MeasureTheory\n\ndef I : Set ℝ := Set.Icc 0 1\n\ndef μ : Measure ℝ := volume.restrict I\n\ndef ν : Measure ℝ := Measure.count.restrict I\n\ndef D : Set (ℝ × ℝ) := {p | p.1 = p.2}\n\ntheorem diagonal_indicator_counting_measure_failure :\n    (∫ z, Set.indicator D (fun _ : ℝ × ℝ => (1 : ℝ)) z ∂(μ.prod ν)) = 0 ∧\n    (∫ y, ∫ x, Set.indicator D (fun _ : ℝ × ℝ => (1 : ℝ)) (x, y) ∂μ ∂ν) = 0 ∧\n    (∫ x, ∫ y, Set.indicator D (fun _ : ℝ × ℝ => (1 : ℝ)) (x, y) ∂ν ∂μ) = 1 ∧\n    ¬ SigmaFinite ν := by\n  sorry"
+}

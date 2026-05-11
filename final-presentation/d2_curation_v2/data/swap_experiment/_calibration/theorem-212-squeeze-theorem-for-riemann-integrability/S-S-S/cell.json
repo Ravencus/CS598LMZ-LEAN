@@ -1,0 +1,28 @@
+{
+  "problem_id": "theorem-212-squeeze-theorem-for-riemann-integrability",
+  "weak_model": "gpt-5.4-mini",
+  "cell": "S-S-S",
+  "models": {
+    "plan": "gpt-5.4",
+    "reason": "gpt-5.4",
+    "formalize": "gpt-5.4"
+  },
+  "success": false,
+  "n_errors": 0,
+  "first_error": "model header differs from canonical (modulo whitespace).\nCanonical: theorem riemannIntegrable_iff_exists_intervalIntegrable_bounds {a b : ℝ} {f : ℝ → ℝ} : IntervalIntegrable f volume a b ↔ ∀ ε > 0, ∃ α β : ℝ → ℝ, IntervalIntegrable α volume a b ∧ IntervalIntegrable β volume a b ∧ (∀ x ∈ Set.Icc a b, α x ≤ f x) ∧ (∀ x ∈ Set.Icc a b, f x ≤ β x) ∧ |∫ x in a..b, (α x - \nModel:    theorem is not provable with this exact signature. -- -- Counterexample: take `a = 1`, `b = 0`, and `f x = 1 / x`. -- Then the right-hand side is true for every `ε > 0` by choosing `α = β = 0`, -- because `Set.Icc 1 0 = ∅`, so the order hypotheses are vacuous and -- `|∫ x in 1..0, (0 - 0)| = 0 < ε`.",
+  "stage_failures": [],
+  "stage_seconds": {
+    "plan": 15.1,
+    "reason": 26.5,
+    "formalize": 42.0,
+    "compile": 0.0
+  },
+  "plan_quality": {
+    "n_bullets": 5,
+    "is_numbered": true,
+    "is_nonempty": true,
+    "appears_to_restate_theorem": false
+  },
+  "splice_action": "deviation",
+  "signature_deviation": true
+}

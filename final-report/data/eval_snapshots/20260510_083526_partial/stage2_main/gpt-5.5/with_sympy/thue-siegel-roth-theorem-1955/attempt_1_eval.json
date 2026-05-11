@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Invalid field `exists_pos_forall_int_nat_abs_sub_div_pow_le`: The environment does not contain `Exists.exists_pos_forall_int_nat_abs_sub_div_pow_le`, so it is not possible to project the field `exists",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_837ca54632.lean",
+      "line": 20,
+      "column": 23,
+      "severity": "error",
+      "message": "Invalid field `exists_pos_forall_int_nat_abs_sub_div_pow_le`: The environment does not contain `Exists.exists_pos_forall_int_nat_abs_sub_div_pow_le`, so it is not possible to project the field `exists_pos_forall_int_nat_abs_sub_div_pow_le` from an expression\n  hx_alg\nof type\n  ∃ p, p ≠ 0 ∧ (Polynomial.aeval x) p = 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_837ca54632.lean",
+      "line": 22,
+      "column": 23,
+      "severity": "error",
+      "message": "Invalid field `exists_frequently_int_nat_abs_sub_div_lt_inv_pow_sub`: The environment does not contain `Function.exists_frequently_int_nat_abs_sub_div_lt_inv_pow_sub`, so it is not possible to project the field `exists_frequently_int_nat_abs_sub_div_lt_inv_pow_sub` from an expression\n  hx_irr\nof type `x ∈ Set.range Rat.cast → False`\n"
+    }
+  ]
+}

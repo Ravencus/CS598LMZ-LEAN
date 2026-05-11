@@ -1,0 +1,73 @@
+{
+  "note_title": "Stirling渐近公式及不等式",
+  "is_hub": false,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1",
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "Stirling渐近公式及不等式#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "证明$$S_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n)$$",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "Stirling渐近公式及不等式#1",
+        "classification": "problem",
+        "english_title": "Problem 0",
+        "if_problem": {
+          "statement_en": "Prove that $$S_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n).$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Stirling's formula",
+            "Euler-Maclaurin summation",
+            "logarithmic sum asymptotics"
+          ],
+          "prerequisites": [
+            "properties of logarithms",
+            "Big-O notation",
+            "basic asymptotic expansions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Stirling渐近公式及不等式#2",
+      "type": "note",
+      "title": "命题4.1",
+      "body": "令$$r_n = S_n\n-(n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi}))=\\frac{1}{12n}+R(n)$$那么\n$$0<r_n <\\frac{1}{12n}$$",
+      "position_char": 2798,
+      "position_line": 69,
+      "classification_result": {
+        "id": "Stirling渐近公式及不等式#2",
+        "classification": "problem",
+        "english_title": "Proposition 4.1",
+        "if_problem": {
+          "statement_en": "Let $$r_n = S_n-(n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi}))=\\frac{1}{12n}+R(n).$$ Then $$0<r_n<\\frac{1}{12n}.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "error estimation in Stirling's formula",
+            "Euler-Maclaurin remainder bounds",
+            "inequalities for logarithmic sums"
+          ],
+          "prerequisites": [
+            "Stirling's formula",
+            "remainder estimation",
+            "basic real analysis"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Stirling渐近公式及不等式#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 0\",\n    \"if_problem\": {\n      \"statement_en\": \"Prove that $$S_n:=\\\\sum_{k\\\\leq n}\\\\log(k)=n\\\\log(n)-n+\\\\frac{1}{2}\\\\log(n)+\\\\log(\\\\sqrt{2\\\\pi})+O(1/n).$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Stirling's formula\",\n        \"Euler-Maclaurin summation\",\n        \"logarithmic sum asymptotics\"\n      ],\n      \"prerequisites\": [\n        \"properties of logarithms\",\n        \"Big-O notation\",\n        \"basic asymptotic expansions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Stirling渐近公式及不等式#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 4.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $$r_n = S_n-(n\\\\log(n)-n+\\\\frac{1}{2}\\\\log(n)+\\\\log(\\\\sqrt{2\\\\pi}))=\\\\frac{1}{12n}+R(n).$$ Then $$0<r_n<\\\\frac{1}{12n}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"error estimation in Stirling's formula\",\n        \"Euler-Maclaurin remainder bounds\",\n        \"inequalities for logarithmic sums\"\n      ],\n      \"prerequisites\": [\n        \"Stirling's formula\",\n        \"remainder estimation\",\n        \"basic real analysis\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

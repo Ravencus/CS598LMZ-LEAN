@@ -1,0 +1,10 @@
+{
+  "total_callouts_classified": 421,
+  "classification_distribution": {
+    "problem": 312,
+    "strategy_template": 63,
+    "definition": 34,
+    "remark": 12
+  },
+  "failed_notes": []
+}

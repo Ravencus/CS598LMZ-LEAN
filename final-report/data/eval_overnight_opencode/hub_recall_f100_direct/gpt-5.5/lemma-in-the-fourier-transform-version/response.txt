@@ -1,0 +1,4 @@
+["an-epsilon-of-room-hub", "integral-estimates-via-integration-by-parts-hub", "piecewise-estimates-hub"]
+- an-epsilon-of-room-hub: The core Riemann-Lebesgue proof first proves decay for nicer dense subclasses, such as compactly supported smooth or step functions, then transfers the result to arbitrary `L¹` functions using small `L¹` error.
+- integral-estimates-via-integration-by-parts-hub: For smooth compactly supported approximants, oscillatory decay of the Fourier integral is obtained by integrating by parts in a direction where the frequency is large.
+- piecewise-estimates-hub: The transfer step relies on splitting/control estimates such as bounding the Fourier transform error by the `L¹` norm and controlling tails or approximation errors separately.

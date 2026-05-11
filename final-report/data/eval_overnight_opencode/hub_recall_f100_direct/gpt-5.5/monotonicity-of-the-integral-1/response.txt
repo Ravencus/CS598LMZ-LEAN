@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "piecewise-estimates-hub"]
+- term-by-term-estimates-hub: The proof uses the integral analogue of termwise comparison: an almost-everywhere pointwise bound `g x ≤ f x` transfers to the aggregate inequality between integrals.
+- piecewise-estimates-hub: The almost-everywhere condition effectively splits the domain into the full-measure region where the inequality holds and a null exceptional region that does not affect the integral.

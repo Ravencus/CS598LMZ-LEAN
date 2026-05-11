@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-31-a-proof-of-legendres-formula-for-the-exponent",
+  "english_title": "Example 3.1: A Proof of Legendre's Formula for the Exponent",
+  "statement_en": "Using the viewpoint of this note, prove Legendre's formula for the exponent of a prime $p$ in $n!$: $$\\nu_p(n!)=\\sum_{k\\geq 1}\\left\\lfloor\\frac{n}{p^k}\\right\\rfloor.$$ The argument starts from $$\\nu_p(n!)=\\sum_{m=1}^n \\nu_p(m)$$ and rewrites $$\\nu_p(m)=\\sum_{k\\geq 1}1_{p^k\\mid m}.$$",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem legendre_formula_and_indicator_decomposition (p n : ℕ) (hp : p.Prime) :\n    (padicValNat p (Nat.factorial n) = Finset.sum (Finset.Icc 1 n) (fun m => padicValNat p m)) ∧\n    (∀ m ∈ Finset.Icc 1 n,\n      padicValNat p m = Finset.sum (Finset.Icc 1 m) (fun k => if p ^ k ∣ m then 1 else 0)) ∧\n    (padicValNat p (Nat.factorial n) = Finset.sum (Finset.Icc 1 n) (fun k => n / p ^ k)) := by\n  sorry"
+}

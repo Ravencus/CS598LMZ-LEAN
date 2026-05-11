@@ -1,0 +1,22 @@
+{
+  "id": "lemma-121",
+  "type": "problem",
+  "source_note": "模1均匀分布与Weyl判别",
+  "english_source_note": "Uniform Distribution mod 1 and Weyl's Criterion",
+  "callout_id": "模1均匀分布与Weyl判别#7",
+  "english_title": "Lemma 1.2.1",
+  "statement_en": "If $f\\in C(\\mathbb{T}\\to \\mathbb{C})$, then for every $\\varepsilon>0$ there exists a polynomial $P_{\\varepsilon}(z)$ such that $$\\|f-P_{\\varepsilon}\\|_{u}<\\varepsilon.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "analysis",
+  "key_techniques": [
+    "Stone-Weierstrass approximation",
+    "uniform approximation on compact spaces"
+  ],
+  "prerequisites": [
+    "continuous functions on the circle",
+    "uniform norm",
+    "Weierstrass or Stone-Weierstrass theorem"
+  ],
+  "callout_body": "$f\\in C(\\mathbb{T}\\to \\mathbb{C})$那么对任意的$\\varepsilon>0$存在一个多项式$P_{\\varepsilon}(z)$使得$$||f-P_{\\varepsilon}||_{u}<\\varepsilon$$"
+}

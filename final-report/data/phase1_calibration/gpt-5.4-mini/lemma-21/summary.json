@@ -1,0 +1,56 @@
+{
+  "problem_id": "lemma-21",
+  "model": "gpt-5.4-mini",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "wall_seconds": 168.1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 54.27,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Type mismatch\n  2 * Real.pi * x\nhas type\n  ℝ\nof sort `outParam Type` but is expected to have type\n  ‖?m.40‖ ≤ 1\nof sort `Prop`\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 52.24,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown constant `Complex.norm_exp_sub_one_le_ofReal`"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 47.31,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 2,
+      "first_error": "Unknown constant `Complex.norm_exp_mul_I_sub_one_le`"
+    }
+  ]
+}

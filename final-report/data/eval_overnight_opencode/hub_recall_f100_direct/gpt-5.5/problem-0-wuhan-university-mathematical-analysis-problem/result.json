@@ -1,0 +1,21 @@
+{
+  "problem_id": "problem-0-wuhan-university-mathematical-analysis-problem",
+  "model": "gpt-5.5",
+  "wall_seconds": 18.15,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "cauchy-convergence-criterion-hub",
+    "sequence-limits-via-piecewise-estimates-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "basic-methods-in-analysis-i-hub"
+  ],
+  "tp": 0,
+  "fp": 3,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

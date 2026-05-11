@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-13-kronecker-theorem-version-2",
+  "english_title": "Theorem 1.3: Kronecker Theorem (Version 2)",
+  "statement_en": "For a given irrational number $\\alpha$, for every $\\beta\\in\\mathbb{R}$ and every sufficiently small $\\varepsilon > 0$, there exists a positive integer $q_{\\varepsilon}$ such that $$||q_{\\varepsilon}\\alpha-\\beta||<\\varepsilon.$$",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem irrational_approximation_mod_one\n    (α : ℝ) (hα : Irrational α) :\n    ∀ β : ℝ, ∀ ε : ℝ, 0 < ε →\n      ∃ q : ℕ, 0 < q ∧ ∃ z : ℤ, |(q : ℝ) * α - β - (z : ℝ)| < ε := by\n  sorry"
+}

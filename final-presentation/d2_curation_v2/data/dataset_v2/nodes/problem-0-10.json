@@ -1,0 +1,22 @@
+{
+  "id": "problem-0-10",
+  "type": "problem",
+  "source_note": "对含参数方程根的估计",
+  "english_source_note": "Estimates for Roots of Parameterized Equations",
+  "callout_id": "对含参数方程根的估计#1",
+  "english_title": "Problem 0",
+  "statement_en": "Let the \\(N(s)\\) positive roots of \\(\\cos(x)=sx\\) be ordered as\n\\\\[\nx_1<x_2<\\\\cdots<x_{N(s)}.\n\\\\]\nProve that\n\\\\[\n\\\\lim_{s\\\to 0^{+}}\\\\sum_{k=1}^{N(s)-1}\\\\frac{1}{x_kx_{k+1}}=\\\\frac{2}{\\\\pi^2}.\n\\\\]",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "asymptotic estimation of roots of parameter-dependent equations",
+    "termwise summation and tail control"
+  ],
+  "prerequisites": [
+    "basic real analysis",
+    "trigonometric equations",
+    "asymptotic notation"
+  ],
+  "callout_body": "设$\\cos(x)=sx$的$N(s)$个正根按照顺序排列为$$x_1<x_2<\\cdots<x_{N(s)}$$证明$$\\lim_{s\\to 0^{+}}\\sum_{k=1}^{N(s)-1}\\frac{1}{x_kx_{k+1}}=\\frac{2}{\\pi^2}$$"
+}

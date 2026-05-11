@@ -1,0 +1,30 @@
+{
+  "problem_id": "silverman-toeplitz-theorem-1913",
+  "english_title": "Silverman-Toeplitz Theorem, 1913",
+  "statement_en": "Let $a_{n,k}$ be a nonnegative double sequence such that:\n1. the sum over $k$ is $1$, namely $$\\sum_{k=1}^n a_{n,k}=1,$$\n2. for each fixed $k$, $$\\lim_{n\\to\\infty} a_{n,k}=0.$$\nThen for every convergent sequence $x_n$, one has\n$$\\lim_{n\\to\\infty}\\sum_{k=1}^n a_{n,k}x_k=\\lim_{n\\to\\infty}x_n.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem toeplitz_schur_for_nonnegative_double_sequence\n    (a : ℕ → ℕ → ℝ)\n    (ha_nonneg : ∀ n k, 0 ≤ a n k)\n    (ha_sum : ∀ n, 1 ≤ n → Finset.sum (Finset.Icc 1 n) (fun k => a n k) = 1)\n    (ha_tendsto : ∀ k, Filter.Tendsto (fun n => a n k) Filter.atTop (Filter.nhds 0)) :\n    ∀ (x : ℕ → ℝ) (l : ℝ),\n      Filter.Tendsto x Filter.atTop (Filter.nhds l) →\n        Filter.Tendsto\n          (fun n => Finset.sum (Finset.Icc 1 n) (fun k => a n k * x k))\n          Filter.atTop\n          (Filter.nhds l) := by\n  sorry"
+}

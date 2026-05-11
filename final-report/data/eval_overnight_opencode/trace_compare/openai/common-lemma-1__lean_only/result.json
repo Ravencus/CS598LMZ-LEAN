@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "common-lemma-1",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_search_diff",
+  "evidence": "Both traces pursued the Borel-Cantelli/limsup-measure route plus eventual pointwise convergence. SMALL got stuck probing nonexistent or wrong lemma names like `measure_limsup_eq_zero_of_summable`, while BIG found the relevant `measure_setOf_frequently_eq_zero` direction and then discovered the ENNRe",
+  "wall_seconds": 10.07
+}

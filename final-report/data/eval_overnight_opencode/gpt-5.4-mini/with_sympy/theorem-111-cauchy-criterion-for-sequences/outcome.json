@@ -1,0 +1,48 @@
+{
+  "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 69.22,
+  "wall_exceeded": false,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 3,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Unknown identifier `Metric.tendsto_nhds_iff.mp`",
+  "total_cost_usd": 0.0,
+  "total_tokens": 113769,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_8e1b8eb3eb.lean",
+      "line": 10,
+      "column": 34,
+      "severity": "error",
+      "message": "Unknown identifier `Metric.tendsto_nhds_iff.mp`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_8e1b8eb3eb.lean",
+      "line": 20,
+      "column": 6,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase h\nxSeq : ℕ → ℝ\nx : ℝ\nh : Filter.Tendsto xSeq Filter.atTop (nhds x)\nε : ℝ\nhε : ε > 0\nh1 : ∀ᶠ (n : ℕ) in Filter.atTop, |xSeq n - x| < ε / 2\nN : ℕ\nhN : ∀ b ≥ N, |xSeq b - x| < ε / 2\nn m : ℕ\nhn : N + 1 < n\nhm : N + 1 < m\nhn' : N ≤ n\nhm' : N ≤ m\nhnx : |xSeq n - x| < ε / 2\nhmx : |xSeq m - x| < ε / 2\nthis : |xSeq n - xSeq m| ≤ |xSeq n - x| + |x - xSeq m|\na✝ : |xSeq n - x| + |xSeq m - x| < |xSeq n - xSeq m|\n⊢ False\nfailed"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_8e1b8eb3eb.lean",
+      "line": 23,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown identifier `Metric.tendsto_nhds_iff`\n"
+    }
+  ]
+}

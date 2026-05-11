@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-211-2",
+  "english_title": "Proposition 2.1.1",
+  "statement_en": "From the definition, we easily see that $$R_N=\\sum_{n>N}\\frac{1}{n!}.$$ We then claim that, for sufficiently large $N$, there exist constants $C_1,C_2$ such that $$C_1\\frac{1}{N!N}\\leq R_N\\leq C_2\\frac{1}{N!N},$$ denoted by $$R_N = \\Theta\\left(\\frac{1}{N!N}\\right).$$",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen scoped BigOperators\n\ndef R (N : ℕ) : ℝ :=\n  ∑' n : ℕ, if N < n then (1 : ℝ) / (n.factorial : ℝ) else 0\n\ntheorem remainder_theta_factorial_reciprocal :\n    ∃ (N0 : ℕ) (C1 C2 : ℝ),\n      0 < C1 ∧\n      0 < C2 ∧\n      ∀ ⦃N : ℕ⦄, N0 ≤ N →\n        C1 * ((1 : ℝ) / ((N.factorial : ℝ) * N)) ≤ R N ∧\n        R N ≤ C2 * ((1 : ℝ) / ((N.factorial : ℝ) * N)) := by\n  sorry"
+}

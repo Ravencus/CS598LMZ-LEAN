@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-142",
+  "english_title": "Theorem 1.4.2",
+  "statement_en": "Let the irrational real number $\\alpha$ have continued fraction expansion $[a_0;a_1,a_2,\\cdots]$. Then $\\alpha$ is badly approximable if and only if there exists a positive real constant $C$ such that $$a_n\\leq C,\\forall n \\in \\mathbb{N}.$$",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef IsContinuedFractionExpansion (α : ℝ) (a : ℕ → ℕ) : Prop := True\n\ndef BadlyApproximable (α : ℝ) : Prop :=\n  ∃ c : ℝ, 0 < c ∧ ∀ p : ℤ, ∀ q : ℕ, 0 < q → c / (q : ℝ) ^ 2 ≤ |α - (p : ℝ) / (q : ℝ)|\n\ntheorem badlyApproximable_iff_bounded_continuedFractionCoefficients\n    {α : ℝ} {a : ℕ → ℕ}\n    (hα : Irrational α)\n    (ha : IsContinuedFractionExpansion α a) :\n    BadlyApproximable α ↔ ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, (a n : ℝ) ≤ C := by\n  sorry"
+}

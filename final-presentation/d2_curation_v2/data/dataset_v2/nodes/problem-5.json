@@ -1,0 +1,23 @@
+{
+  "id": "problem-5",
+  "type": "problem",
+  "source_note": "从一个求极限问题引入Weyl判别",
+  "english_source_note": "Introducing Weyl's Criterion via a Limit Problem",
+  "callout_id": "从一个求极限问题引入Weyl判别#1",
+  "english_title": "Problem",
+  "statement_en": "Find the limit\n$$\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\to \\text{ ? }$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "equidistribution",
+    "Weyl criterion",
+    "averaging of sequences"
+  ],
+  "prerequisites": [
+    "uniform distribution mod 1",
+    "basic properties of continuous functions",
+    "integration of trigonometric functions"
+  ],
+  "callout_body": "求极限\n$$\\frac{1}{N}\\sum_{n=1}^{N}|\\cos(n^2)|\\to \\text{ ? }$$"
+}

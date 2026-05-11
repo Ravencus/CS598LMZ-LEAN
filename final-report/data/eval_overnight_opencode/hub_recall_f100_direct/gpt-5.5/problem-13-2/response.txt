@@ -1,0 +1,3 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "an-epsilon-of-room-hub"]
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: The core proof is the irrational-rotation density theorem, using that `1 / (2π)` is irrational so the residues of integers modulo `2π` are dense.
+- an-epsilon-of-room-hub: The closure/density goal is naturally reduced to showing that every point of `[0, 2π]` is hit within an arbitrary `ε > 0` by some residue `n % (2π)`.

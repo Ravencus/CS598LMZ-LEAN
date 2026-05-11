@@ -1,0 +1,23 @@
+{
+  "id": "example-2",
+  "type": "problem",
+  "source_note": "Leibniz收敛判断",
+  "english_source_note": "Leibniz Convergence Test",
+  "callout_id": "Leibniz收敛判断#3",
+  "english_title": "Example 2",
+  "statement_en": "Let $$a_n:=\\begin{cases}0&n\\text{ is odd} \\\\ \\frac{1}{n}&\\text{otherwise}\\end{cases}.$$ Then the series $$\\sum_{n\\geq 1}(-1)^n a_n$$ diverges.",
+  "problem_type": "counterexample",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "testing necessity of hypotheses",
+    "comparison with a subseries",
+    "failure of monotonicity"
+  ],
+  "prerequisites": [
+    "sequences and limits",
+    "infinite series",
+    "alternating series test"
+  ],
+  "callout_body": "$$a_n:=\\begin{cases}0&n\\text{为奇数} \\\\ \\frac{1}{n}&\\text{otherwise}\\end{cases}$$\n此时级数$$\\sum_{n\\geq 1}(-1)^n a_n$$是发散的。"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "example-214-the-logarithmic-sequence-modulo-1-is-dense",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#9",
+  "english_title": "Example 2.1.4: The Logarithmic Sequence Modulo 1 Is Dense",
+  "statement_en": "The sequence of fractional parts $\\{\\log n\\}$ is dense in $[0,1)$, because $\\log n\\to +\\infty$ and $\\log(n+1)-\\log n=\\log(1+\\frac{1}{n})\\to 0$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "number theory",
+  "key_techniques": [
+    "apply the monotone small-difference criterion",
+    "logarithmic increment estimate",
+    "fractional parts"
+  ],
+  "prerequisites": [
+    "properties of logarithms",
+    "fractional part function",
+    "density modulo 1"
+  ],
+  "callout_body": "对数序列模1形成的序列$\\{\\log(n)\\}$在$[0,1)$当中稠密，因为$\\log(n)\\to +\\infty$并且$\\log(n+1)-\\log(n)=\\log(1+\\frac{1}{n})\\to 0$。"
+}

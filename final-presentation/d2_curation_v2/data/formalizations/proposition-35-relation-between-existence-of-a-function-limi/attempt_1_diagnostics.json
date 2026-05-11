@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f298b7f30aaf.lean",
+      "line": 5,
+      "column": 21,
+      "severity": "error",
+      "message": "Type mismatch\n  Filter.liminf ?m.19\nhas type\n  Filter ?m.12 → ?m.11\nbut is expected to have type\n  EReal\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_f298b7f30aaf.lean",
+      "line": 5,
+      "column": 21,
+      "severity": "error",
+      "message": "Type mismatch\n  Filter.liminf ?m.19\nhas type\n  Filter ?m.12 → ?m.11\nbut is expected to have type\n  EReal\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "note_title": "关于log的一个积分",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "关于log的一个积分#1",
+      "type": "question",
+      "title": "问题",
+      "body": "求积分:$$\\int_{0}^{1} \\log(1-x) \\log(x) dx$$",
+      "position_char": 43,
+      "position_line": 7
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model": "deepseek-v4-flash",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 450.53,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 11,
+  "budget": 10,
+  "budget_hit_event": true,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "Application type mismatch: The argument\n  h\nhas type\n  ∃ z ∈ U, ‖z - z0‖ < r ∧ f z = 0 ∧ z ≠ z0\nbut is expected to have type\n  ¬∀ (x : ?m.129), ?m.130 x\nin the application\n  not_forall.mp h",
+  "total_cost_usd": 0.027928,
+  "total_tokens": 541784,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_cee6712101.lean",
+      "line": 22,
+      "column": 27,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h\nhas type\n  ∃ z ∈ U, ‖z - z0‖ < r ∧ f z = 0 ∧ z ≠ z0\nbut is expected to have type\n  ¬∀ (x : ?m.129), ?m.130 x\nin the application\n  not_forall.mp h"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_cee6712101.lean",
+      "line": 23,
+      "column": 13,
+      "severity": "error",
+      "message": "Ambiguous term\n  not_imp.mp\nPossible interpretations:\n  _root_.not_imp.mp hz : ?m.149 z ∧ ¬?m.150 z\n  \n  Classical.not_imp.mp hz : ?m.149 z ∧ ¬?m.150 z"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_cee6712101.lean",
+      "line": 23,
+      "column": 32,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `x✝ : ?m.151` is not an inductive datatype"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_cee6712101.lean",
+      "line": 31,
+      "column": 25,
+      "severity": "error",
+      "message": "Unknown identifier `𝓝`\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Type mismatch\n  Nat.mul_lt_mul_of_pos_right h hpos\nhas type\n  a * 2 < b * 2\nbut is expected to have type\n  (fun k => 2 * k) a < (fun k => 2 * k) b\n",
+  "sympy_witnesses": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "second-example-of-a-sequence-not-uniformly-distributed-modul",
+  "type": "problem",
+  "source_note": "模1均匀分布与Weyl判别",
+  "english_source_note": "Uniform Distribution mod 1 and Weyl's Criterion",
+  "callout_id": "模1均匀分布与Weyl判别#5",
+  "english_title": "Second Example of a Sequence Not Uniformly Distributed Modulo 1",
+  "statement_en": "Let $r_n$ be an enumeration of the rational numbers in $[-\\frac{1}{2},\\frac{1}{2})$, and define $$\\xi_n:=\\begin{cases}r_n&100\\mid n\\\\0&\\text{otherwise.}\\end{cases}$$ Then $(\\xi_n)$ is not uniformly distributed modulo $1$. For example, for a fixed interval such as $[\\frac{1}{5},\\frac{1}{4}]$, among the first $N$ terms at most $N/100$ lie in this interval, so the limiting proportion is at most $1/100$, not the interval length $1/20$. Nevertheless, the set of values of the sequence is dense in $[-\\frac{1}{2},\\frac{1}{2})$.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "key_techniques": [
+    "construct a sparse perturbation of a dense set",
+    "compare limiting frequency with interval length"
+  ],
+  "prerequisites": [
+    "definition of uniform distribution modulo 1",
+    "density of the rational numbers"
+  ],
+  "callout_body": "假设$r_n$是对$[-\\frac{1}{2},\\frac{1}{2})$之间的有理数的一种枚举方式。然后定义$$\\xi_n:=\\begin{cases}r_{n}&100|n\\\\0&\\text{otherwise}\\end{cases}$$比如考察区间$[\\frac{1}{4},\\frac{1}{5}]$，前$N$个序列$\\xi_n$的元素当中有不超过$N/100$个元素落在此区间里面。于是最后比例的极限肯定是小于等于区间长度$1/4-1/5 = 1/20$的。不过和之前的例子不同的是，此序列在$[-\\frac{1}{2},\\frac{1}{2})$当中是稠密的。\n\n这里我们虽然用$100|n$这个条件增加了$\\xi_n =0$的频率，减少了其落在$[-\\frac{1}{2},0),(0,\\frac{1}{2})$的频率，但是因为有理数的稠密性，序列$\\xi_n$对应的集合依旧是稠密的。"
+}

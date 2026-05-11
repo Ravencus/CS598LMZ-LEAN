@@ -1,0 +1,23 @@
+{
+  "id": "problem-1-12",
+  "type": "problem",
+  "source_note": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+  "english_source_note": "Summation by Parts and Extensions of Dirichlet-Abel Tests",
+  "callout_id": "分部求和的想法,Dirichlet-Abel收敛判别法的推广#2",
+  "english_title": "Problem 1",
+  "statement_en": "Assume that \\(\\sum_{j=1}^{n} a_j = o\\left(\\sqrt{n}\\right)\\). Prove that\n\\[\n\\sum_j \\frac{a_j}{j}\n\\]\nconverges.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "summation by parts",
+    "Dirichlet-Abel convergence test",
+    "estimating partial sums"
+  ],
+  "prerequisites": [
+    "series convergence tests",
+    "little-o notation",
+    "partial summation"
+  ],
+  "callout_body": "假设$\\sum_{j = 1}^{n} a_j = o\\left(\\sqrt{n}\\right)$,证明：\n$$\\sum_{j} \\frac{a_j}{j}$$ 收敛"
+}

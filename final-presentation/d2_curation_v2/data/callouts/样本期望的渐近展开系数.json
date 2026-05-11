@@ -1,0 +1,57 @@
+{
+  "note_title": "样本期望的渐近展开系数",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "样本期望的渐近展开系数#1",
+      "type": "question",
+      "title": "问题",
+      "body": "求下面含参数积分的极限:$$\\lim_{n\\to \\infty} \\int_{[0,1]^n}n\\left(\\frac{\\sum_{i\\leq n} x_i^2}{\\sum_{i\\leq n} x_i}-\\frac{2}{3}\\right)\\,dx_{1}\\cdots dx_n$$",
+      "position_char": 51,
+      "position_line": 8
+    },
+    {
+      "id": "样本期望的渐近展开系数#2",
+      "type": "question",
+      "title": "概率版本的等价问题",
+      "body": "在概率空间$(\\Omega,\\mathcal{F},P)$上有一列独立且符合$U(0,1)$的随机变量$X_1,...,X_n,...$,求期望的极限:\n$$E \\left [n\\left(\\frac{\\overline{Y_n}}{\\overline{X_n}}-\\frac{2}{3}\\right)\\right]$$其中$\\overline{Y_n} = \\frac{\\sum_{i\\leq n} X_i^2}{n}$，以及$\\overline{X_n} = \\frac{\\sum_{i\\leq n} X_i}{n}$",
+      "position_char": 558,
+      "position_line": 17
+    },
+    {
+      "id": "样本期望的渐近展开系数#3",
+      "type": "tip",
+      "title": "想法",
+      "body": "如果我们可以把函数$f(x,y)=\\frac{y}{x}$在取值靠近0的点$(1/2,1/3)$处展开的话，内部的期望会更容易算一些。",
+      "position_char": 1044,
+      "position_line": 24
+    },
+    {
+      "id": "样本期望的渐近展开系数#4",
+      "type": "note",
+      "title": "关于期望，方差，协方差的基本定义和运算",
+      "body": "如果$X_1,...,X_n$以及$Y_1,...,Y_n$是概率空间当中两列独立同分布的随机变量，并且定义$\\overline{Y_n} = \\frac{\\sum_{i\\leq n} Y_i}{n}$，以及$\\overline{X_n} = \\frac{\\sum_{i\\leq n} X_i}{n}$，那么: \n1. $$E(\\overline{X_n}-E(X_1))=0$$\n2. \n$$E\\left[\\left(\\overline{X_n}-E(X_1)\\right)^2\\right]=\\frac{V(X_1)}{n}$$\n3. \n$$\\begin{aligned}E\\left[\\left(\\overline{X_n}-E(X_1)\\right)\\left(\\overline{Y_n}-E(Y_1)\\right)\\right]&=\\text{Cov}(\\overline{X_n},\\overline{Y_n})\\\\&=E(\\overline{X_n}\\,\\overline{Y_n})-E(\\overline{X_n})E(\\overline{Y_n})\\end{aligned}$$",
+      "position_char": 1505,
+      "position_line": 34
+    },
+    {
+      "id": "样本期望的渐近展开系数#5",
+      "type": "note",
+      "title": "lemma1",
+      "body": "$\\lim_{n\\to \\infty}nR_n=0$,即$$R_n=o\\left(\\frac{1}{n}\\right)$$",
+      "position_char": 3614,
+      "position_line": 55
+    },
+    {
+      "id": "样本期望的渐近展开系数#6",
+      "type": "note",
+      "title": "Hoeffding不等式",
+      "body": "假设概率空间$(\\Omega,\\mathcal{F},P)$上的随机变量$X_n$是独立同分布的，并且$X_n(\\omega)\\in [a,b]$对任意正整数n成立，$\\overline{X}_n$是前n个随机变量的算术平均值，$\\mu$是这列随机变量的均值，那么对于任意$\\varepsilon>0$都有:$$P\\left(|\\overline{X}_n-\\mu|\\geq \\varepsilon \\right)\\leq 2\\exp\\left(-\\frac{2n\\varepsilon^2}{(b-a)^2}\\right)$$",
+      "position_char": 5296,
+      "position_line": 74
+    }
+  ]
+}

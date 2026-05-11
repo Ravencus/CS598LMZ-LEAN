@@ -1,0 +1,23 @@
+{
+  "id": "theorem-223-riemann-criterion",
+  "type": "problem",
+  "source_note": "黎曼积分的定义以及黎曼可积的判别",
+  "english_source_note": "Riemann Integral and Criteria for Integrability",
+  "callout_id": "黎曼积分的定义以及黎曼可积的判别#8",
+  "english_title": "Theorem 2.2.3: Riemann Criterion",
+  "statement_en": "A bounded function $f$ is Riemann integrable on the closed interval $[a,b]$ if and only if for every $\\varepsilon>0$ there exists $\\delta_{\\varepsilon}>0$ such that for every partition with $\\lambda(P)<\\delta_{\\varepsilon}$, one has $$\\sum_{i=1}^n \\omega_f([x_{i-1},x_i])(x_i-x_{i-1})<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "oscillation estimates",
+    "partition refinement",
+    "criterion via summed oscillation"
+  ],
+  "prerequisites": [
+    "bounded functions on intervals",
+    "oscillation of a function",
+    "Riemann sums and mesh"
+  ],
+  "callout_body": "一个有界函数$f$在闭区间$[a,b]$上黎曼可积，当且仅当对任意的$\\varepsilon>0$存在一个$\\delta_{\\varepsilon}>0$使得对任意的满足$\\lambda(P)<\\delta_{\\varepsilon}$都有$$\\sum_{i=1}^n \\omega_f([x_{i-1},x_i])(x_i-x_{i-1})<\\varepsilon$$"
+}

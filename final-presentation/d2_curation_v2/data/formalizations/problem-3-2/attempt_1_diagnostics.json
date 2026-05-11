@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4886cc380206.lean",
+      "line": 9,
+      "column": 72,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  r\nhas type\n  ℂ\nbut is expected to have type\n  ℝ\nin the application\n  √r"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4886cc380206.lean",
+      "line": 7,
+      "column": 6,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  LT ℂ\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4886cc380206.lean",
+      "line": 9,
+      "column": 72,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  r\nhas type\n  ℂ\nbut is expected to have type\n  ℝ\nin the application\n  √r"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4886cc380206.lean",
+      "line": 7,
+      "column": 6,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  LT ℂ\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    }
+  ]
+}

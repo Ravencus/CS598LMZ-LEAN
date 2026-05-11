@@ -1,0 +1,24 @@
+{
+  "id": "conjecture-0",
+  "type": "problem",
+  "source_note": "关于序列极限的公开问题",
+  "english_source_note": "Open Problems on Sequence Limits",
+  "callout_id": "关于序列极限的公开问题#1",
+  "english_title": "Conjecture 0",
+  "statement_en": "Let $a_1=a>0$. Suppose the sequence $a_n$ satisfies the recursion $$a_{n+1}=a_n+\\frac{n^{2\\beta}}{a_1+\\cdots+a_n}.$$ Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}=\\sqrt{\\frac{\\beta+1}{\\beta}}.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "asymptotic analysis of recursive sequences",
+    "Stolz-Cesaro theorem",
+    "estimates for partial sums"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "limsup and liminf",
+    "asymptotic notation",
+    "recursive sequences"
+  ],
+  "callout_body": "$a_1=a>0$，序列$a_n$满足递归关系$$a_{n+1}=a_n+\\frac{n^{2\\beta}}{a_1+\\cdots+a_n}$$那么$$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}=\\sqrt{\\frac{\\beta+1}{\\beta}}$$"
+}

@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-12",
+  "english_title": "Proposition 1.2",
+  "statement_en": "If $\\{E_i\\}_{i\\geq 1}$ are pairwise disjoint and each is $\\mu^{*}$-measurable, then not only is their union measurable, but also countable additivity holds: $$\\mu^{*}\\left(\\bigcup_{i\\geq 1}E_i\\right)=\\sum_{i\\geq 1}\\mu^{*}(E_i).$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  OuterMeasure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `OuterMeasure` is unknown, and"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem outerMeasure_iUnion_of_pairwise_disjoint_caratheodory\n    {α : Type*} (μ : MeasureTheory.OuterMeasure α) (E : ℕ → Set α)\n    (h_meas : ∀ i, MeasurableSet[μ.caratheodory] (E i))\n    (h_disj : Pairwise (fun i j => Disjoint (E i) (E j))) :\n    μ (⋃ i, E i) = tsum (fun i => μ (E i)) := by\n  sorry"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "proposition-125-a-necessary-condition-for-a-cauchy-sequence",
+  "type": "problem",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "callout_id": "柯西收敛判别#9",
+  "english_title": "Proposition 1.2.5: A Necessary Condition for a Cauchy Sequence",
+  "statement_en": "If $(a_n)$ is a Cauchy sequence, then for every fixed positive integer $p$, $$|a_{n+p}-a_n|\\to 0.$$",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "apply the Cauchy condition to shifted indices",
+    "fix $p$ and let $n\\to\\infty$"
+  ],
+  "prerequisites": [
+    "definition of a Cauchy sequence",
+    "limit of a sequence"
+  ],
+  "callout_body": "如果是序列$(a_n)$是柯西列，那么对于任意固定的正整数$p$都有$$|a_{n+p}-a_n|\\to 0$$"
+}

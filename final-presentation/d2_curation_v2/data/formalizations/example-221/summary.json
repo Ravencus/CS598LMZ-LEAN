@@ -1,0 +1,16 @@
+{
+  "problem_id": "example-221",
+  "english_title": "Example 2.2.1",
+  "statement_en": "The typewriter sequence provides an example of a sequence of measurable functions that converges in \\(L^p\\) but does not converge almost everywhere; in fact, it does not converge to \\(0\\) at any point.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "codex_failed": true
+    }
+  ],
+  "final_code": null
+}

@@ -1,0 +1,69 @@
+{
+  "problem_id": "lemma-21",
+  "model": "deepseek-v4-flash",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 456.33,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 6,
+  "first_error": "Type mismatch\n  Complex.exp_add_mul_I ↑θ\nhas type\n  ∀ (y : ℂ), Complex.exp (↑θ + y * Complex.I) = Complex.exp ↑θ * (Complex.cos y + Complex.sin y * Complex.I)\nbut is expected to have type\n  Complex.ex",
+  "total_cost_usd": 0.017906,
+  "total_tokens": 360484,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0de3a10268.lean",
+      "line": 8,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch\n  Complex.exp_add_mul_I ↑θ\nhas type\n  ∀ (y : ℂ), Complex.exp (↑θ + y * Complex.I) = Complex.exp ↑θ * (Complex.cos y + Complex.sin y * Complex.I)\nbut is expected to have type\n  Complex.exp (↑θ * Complex.I) = Complex.cos ↑θ + Complex.sin ↑θ * Complex.I"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0de3a10268.lean",
+      "line": 13,
+      "column": 26,
+      "severity": "error",
+      "message": "Unknown constant `Complex.normSq_eq_norm_mul_self`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0de3a10268.lean",
+      "line": 15,
+      "column": 53,
+      "severity": "error",
+      "message": "unsolved goals\nx : ℝ\nθ : ℝ := 2 * Real.pi * x\nhθ : θ = 2 * Real.pi * x\nh_nonneg : 0 ≤ 2 * Real.pi * |x|\nh_exp : Complex.exp (↑θ * Complex.I) = Complex.cos ↑θ + Complex.sin ↑θ * Complex.I\n⊢ ((Complex.cos ↑θ).re - 1) * ((Complex.cos ↑θ).re - 1) + (Complex.sin ↑θ).re * (Complex.sin ↑θ).re =\n    (Real.cos θ - 1) ^ 2 + Real.sin θ ^ 2"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0de3a10268.lean",
+      "line": 24,
+      "column": 65,
+      "severity": "error",
+      "message": "Function expected at\n  Real.abs_sin_le_abs\nbut this term has type\n  |Real.sin ?m.435| ≤ |?m.435|\n\nNote: Expected a function because this term is being applied to the argument\n  (Real.pi * x)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0de3a10268.lean",
+      "line": 26,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch\n  mul_self_le_mul_self ?m.490 h_abs_sin\nhas type\n  |Real.sin (Real.pi * x)| * |Real.sin (Real.pi * x)| ≤ |Real.pi * x| * |Real.pi * x|\nbut is expected to have type\n  |Real.sin (Real.pi * x)| ^ 2 ≤ |Real.pi * x| ^ 2"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_0de3a10268.lean",
+      "line": 27,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  h_sq_abs\n has type\n  Real.sin (Real.pi * x) * Real.sin (Real.pi * x) ≤ |Real.pi| * |x| * (|Real.pi| * |x|)\nbut is expected to have type\n  Real.sin (Real.pi * x) * Real.sin (Real.pi * x) ≤ Real.pi * x * (Real.pi * x)\n"
+    }
+  ]
+}

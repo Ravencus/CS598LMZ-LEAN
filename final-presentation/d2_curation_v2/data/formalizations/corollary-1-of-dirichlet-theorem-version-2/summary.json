@@ -1,0 +1,18 @@
+{
+  "problem_id": "corollary-1-of-dirichlet-theorem-version-2",
+  "english_title": "Corollary 1 of Dirichlet Theorem (Version 2)",
+  "statement_en": "For an irrational number $\\alpha$ and any $\\varepsilon>0$, there exist infinitely many positive integers $q$ such that $$||q\\alpha||<\\varepsilon.$$",
+  "difficulty": "easy",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem irrational_approximation_infinitely_many_multiples\n    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :\n    Set.Infinite {q : ℕ | 0 < q ∧ ∃ z : ℤ, |(q : ℝ) * α - (z : ℝ)| < ε} := by\n  sorry"
+}

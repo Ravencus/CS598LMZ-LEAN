@@ -1,0 +1,37 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Unknown constant `Complex.norm_exp_mul_I_sub_one`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_a162a6b7f0.lean",
+      "line": 9,
+      "column": 15,
+      "severity": "error",
+      "message": "Unknown constant `Complex.norm_exp_mul_I_sub_one`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_a162a6b7f0.lean",
+      "line": 12,
+      "column": 12,
+      "severity": "error",
+      "message": "Function expected at\n  Real.abs_sin_le_abs\nbut this term has type\n  |Real.sin ?m.138| ≤ |?m.138|\n\nNote: Expected a function because this term is being applied to the argument\n  (Real.pi * x)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_a162a6b7f0.lean",
+      "line": 10,
+      "column": 29,
+      "severity": "error",
+      "message": "unsolved goals\ncase hbc.hab\nx : ℝ\n⊢ Real.sin (Real.pi * x) ≤ Real.pi * x\n"
+    }
+  ]
+}

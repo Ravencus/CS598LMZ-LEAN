@@ -1,0 +1,15 @@
+I’m checking the exact Lean API shape for subsequences and the limit transfer lemma, then I’ll test a minimal proof.
+I found the likely short proof shape: use `StrictMono.tendsto_atTop` and compose the original convergence with it. I’m testing that exact Lean spelling now.
+The proof compiled on the first check. I’m closing out the todo and returning the final Lean file exactly as requested.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem subsequence_has_same_limit
+    {α : Type*} [TopologicalSpace α] {u : ℕ → α} {l : α}
+    (hu : Filter.Tendsto u Filter.atTop (nhds l)) :
+    ∀ φ : ℕ → ℕ, StrictMono φ →
+      ∃ m : α, Filter.Tendsto (fun n => u (φ n)) Filter.atTop (nhds m) ∧ m = l := by
+  intro φ hφ
+  refine ⟨l, hu.comp hφ.tendsto_atTop, rfl⟩
+```

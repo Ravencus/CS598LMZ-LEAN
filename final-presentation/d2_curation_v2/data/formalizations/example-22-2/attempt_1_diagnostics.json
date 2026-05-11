@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_df76a8264ba9.lean",
+      "line": 10,
+      "column": 24,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  volume.prod volume\nhas type\n  Measure (?m.38 × ?m.42)\nbut is expected to have type\n  MeasurableSpace (ℝ × ℝ)\nin the application\n  @MeasurableSet (ℝ × ℝ) (volume.prod volume)\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_df76a8264ba9.lean",
+      "line": 10,
+      "column": 24,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  volume.prod volume\nhas type\n  Measure (?m.38 × ?m.42)\nbut is expected to have type\n  MeasurableSpace (ℝ × ℝ)\nin the application\n  @MeasurableSet (ℝ × ℝ) (volume.prod volume)\n"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+["cauchy-condensation-test-hub", "integral-estimates-for-sums-hub", "term-by-term-estimates-hub"]
+- cauchy-condensation-test-hub: The standard proof applies condensation/dyadic blocks to the decreasing positive sequence `1 / (n log n)`, reducing divergence to the harmonic series.
+- integral-estimates-for-sums-hub: An integral-test proof compares partial sums with `∫ dx / (x log x) = log log x`, which diverges.
+- term-by-term-estimates-hub: The proof needs pointwise comparisons between the summand, dyadic block lower bounds, and simpler divergent benchmark terms like `1 / k`.

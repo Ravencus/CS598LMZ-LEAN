@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-8",
+  "type": "problem",
+  "source_note": "和的估计的一个典型案例",
+  "english_source_note": "A Typical Example of Sum Estimates",
+  "callout_id": "和的估计的一个典型案例#1",
+  "english_title": "Problem 0",
+  "statement_en": "Find the limit $$\\lim_{n\\to \\infty} \\sum_{k=1}^n \\frac{1}{n^2}\\sqrt{(n+k)(n+k+1)}$$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Riemann sum interpretation",
+    "asymptotic estimation",
+    "bounding and squeezing"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "definite integrals",
+    "Riemann sums"
+  ],
+  "callout_body": "求极限$$\\lim_{n\\to \\infty} \\sum_{k=1}^n \\frac{1}{n^2}\\sqrt{(n+k)(n+k+1)}$$"
+}

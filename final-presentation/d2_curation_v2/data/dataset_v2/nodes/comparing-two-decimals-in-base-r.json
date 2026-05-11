@@ -1,0 +1,21 @@
+{
+  "id": "comparing-two-decimals-in-base-r",
+  "type": "problem",
+  "source_note": "对自变量进行二进制展开求积分",
+  "english_source_note": "Integrating via Binary Expansion of the Variable",
+  "callout_id": "对自变量进行二进制展开求积分#6",
+  "english_title": "Comparing Two Decimals in Base r",
+  "statement_en": "Suppose two real numbers \\\\(a,b\\\\in(0,1)\\\\) have the same first \\\\(k\\\\) digits in their base-\\\\(r\\\\) expansions, with \\\\(k\\\\ge 1\\\\), and the \\\\((k+1)\\\\)-st digit satisfies \\\\(a_{k+1}>b_{k+1}\\\\). Then \\\\(a>b\\\\).",
+  "problem_type": "lemma",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "positional numeral system",
+    "lexicographic comparison of digit expansions"
+  ],
+  "prerequisites": [
+    "base-r expansions",
+    "ordering of real numbers"
+  ],
+  "callout_body": "假设两个实数$a,b\\in (0,1)$其$r$进制表示的前$k$位($k\\geq 1$)都相等，第$k+1$位上的数字$a_{k+1}>b_{k+1}$，那么$a>b$."
+}

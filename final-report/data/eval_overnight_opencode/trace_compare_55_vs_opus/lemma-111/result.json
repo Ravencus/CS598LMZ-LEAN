@@ -1,0 +1,11 @@
+{
+  "problem_id": "lemma-111",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "lean_impl",
+  "evidence": "Both traces use the same mathematical decomposition: split on whether A or B is invertible, choose P = A for the A-invertible case and P = B for the B-invertible case, then prove the selected disjunct by associativity. The only visible difference is Lean implementation: Trace B first tried `rw [← Ma",
+  "wall_seconds": 12.5
+}

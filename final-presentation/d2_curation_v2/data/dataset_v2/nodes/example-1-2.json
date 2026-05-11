@@ -1,0 +1,22 @@
+{
+  "id": "example-1-2",
+  "type": "problem",
+  "source_note": "Leibniz收敛判断",
+  "english_source_note": "Leibniz Convergence Test",
+  "callout_id": "Leibniz收敛判断#2",
+  "english_title": "Example 1",
+  "statement_en": "The series $$\\sum_{n\\geq 1} \\frac{(-1)^n}{n}$$ converges.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "alternating series test",
+    "harmonic-type term analysis"
+  ],
+  "prerequisites": [
+    "sequences and limits",
+    "infinite series",
+    "Leibniz test"
+  ],
+  "callout_body": "$$\\sum_{n\\geq 1} \\frac{(-1)^n}{n}$$收敛"
+}

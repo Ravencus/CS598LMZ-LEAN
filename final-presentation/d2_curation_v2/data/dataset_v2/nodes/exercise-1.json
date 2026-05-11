@@ -1,0 +1,24 @@
+{
+  "id": "exercise-1",
+  "type": "problem",
+  "source_note": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+  "english_source_note": "Zero Integral on Every Measurable Set Implies Vanishing a.e.",
+  "callout_id": "函数在任何可测集合上积分为0意味着函数几乎处处为0#2",
+  "english_title": "Exercise 1",
+  "statement_en": "Prove in the same way that for every $\\varepsilon$, the set $C_{\\varepsilon}:=\\{x\\in X:f^{-}>\\varepsilon\\}$ also has measure zero.",
+  "problem_type": "exercise",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "apply the previous argument symmetrically",
+    "use level sets of the negative part",
+    "contradiction via nonzero integral on a positive measure set"
+  ],
+  "prerequisites": [
+    "measure spaces and measurable sets",
+    "Lebesgue integration",
+    "positive and negative parts of a function",
+    "measure zero sets"
+  ],
+  "callout_body": "用同样的方式证明$C_{\\varepsilon}:=\\{x\\in X:f^{-}>\\varepsilon\\}$对任意$\\varepsilon$也是零测度的。"
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "counterexample-216-a-nonzero-smooth-real-function-whose-zero",
+  "english_title": "Counterexample 2.1.6: A Nonzero Smooth Real Function Whose Zeros Are Dense on an Open Interval",
+  "statement_en": "Consider $$f(x):=\\begin{cases}e^{-1/x}&x>0\\\\0&x\\leq0\\end{cases}.$$ This is a smooth function because all derivatives at $x=0$ exist and are equal to $0$. However, on $\\mathbb{R}$ its zeros are not isolated, so this shows that a nonzero smooth function need not have isolated zeros and therefore need not be real analytic.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\ndef flatSmoothExample (x : ℝ) : ℝ :=\n  if 0 < x then Real.exp (-(1 / x)) else 0\n\ndef HasIsolatedZeros (f : ℝ → ℝ) : Prop :=\n  ∀ x : ℝ, f x = 0 → ∃ ε : ℝ, 0 < ε ∧ ∀ y : ℝ, y ≠ x → |y - x| < ε → f y ≠ 0\n\ntheorem flatSmoothExample_properties :\n    ContDiff ℝ ⊤ flatSmoothExample ∧\n    (∀ n : ℕ, iteratedDeriv n flatSmoothExample 0 = 0) ∧\n    flatSmoothExample 1 ≠ 0 ∧\n    ¬ HasIsolatedZeros flatSmoothExample := by\n  sorry"
+}

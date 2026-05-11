@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition",
+  "english_title": "Proposition",
+  "statement_en": "The volume formula for the $d$-dimensional ball of radius $r$ in $\\mathbb{R}^n$ is $$\\frac{\\pi^{d/2}}{\\Gamma(d/2+1)}r^d.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (Metric.ball (0 : EuclideanSpace ℝ (Fin d)) r)\n\nHint: The id"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem volume_formula_d_dimensional_ball\n    (d : ℕ) (r : ℝ) :\n    MeasureTheory.volume (Metric.ball (0 : EuclideanSpace ℝ (Fin d)) r) =\n      ENNReal.ofReal\n        ((Real.pi.rpow ((d : ℝ) / 2) / Real.Gamma ((d : ℝ) / 2 + 1)) * r ^ d) := by\n  sorry"
+}

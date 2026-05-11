@@ -1,0 +1,23 @@
+{
+  "id": "example-11",
+  "type": "problem",
+  "source_note": "基于分部求和法的和的估计",
+  "english_source_note": "Sum Estimates via Summation by Parts",
+  "callout_id": "基于分部求和法的和的估计#2",
+  "english_title": "Example 1.1",
+  "statement_en": "Find a closed-form expression for $\\sum_{k=1}^{n} k2^k$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "discrete mathematics",
+  "key_techniques": [
+    "summation by parts",
+    "reordering double sums",
+    "geometric series"
+  ],
+  "prerequisites": [
+    "finite sums",
+    "geometric series formula",
+    "indicator-function or index-switching manipulations"
+  ],
+  "callout_body": "求$\\sum_{k=1}^{n}k2^k$的和的封闭表达式。\n\n这个问题当中一种观点是可以把$k$视为是一个求和，然后交换，基本思想参考[[和与积分换序]]。\n\n$$\\begin{aligned}\\sum_{k\\leq n}k2^k&=\\sum_{k\\leq n}2^k\\sum_{i\\leq k}1 \\\\ &=\\sum_{i\\leq n}\\sum_{k\\leq n}2^k\\chi_{i\\leq k} \\\\ &= \\sum_{i\\leq n}\\sum_{i\\leq k\\leq n}2^k \\\\ &= \\sum_{i\\leq n} \\left(2^{n+1}-2^{i}\\right) \\\\ &=n2^{n+1}-2^{n+1}+2 \\end{aligned}$$\n这根本上是分部求和法。我们不妨把上述过程给一般化，假设我们要求$A_n = \\sum_{k\\leq n} a_k b_k$,然后假设$b_n$的前n项和为$S_n$,然后假设$a_k = \\sum_{i\\leq k} c_i$,于是我们重复上述过程:\n$$\\begin{aligned}\\sum_{k\\leq n}a_kb_k&=\\sum_{k\\leq n}b_k\\sum_{i\\leq k}c_i \\\\ &=\\sum_{i\\leq n}\\sum_{k\\leq n}c_ib_k1_{i\\leq k} \\\\ &= \\sum_{i\\leq n}c_i\\sum_{i\\leq k\\leq n}b_k \\\\ &= \\sum_{i\\leq n}c_i \\left(S_n-S_{i-1}\\right) \\\\ &=a_nS_{n}-\\sum_{i\\leq n}c_iS_{i-1} \\\\ &= a_nS_{n}-\\sum_{i\\leq n-1}c_{i+1}S_{i}\\end{aligned}$$其中我们能看到$c_{i+1}$是$a_{i+1}-a_i$也就是差分，$S_i$是$b_i$的前n项和，因此这本质上就是分部求和法。"
+}

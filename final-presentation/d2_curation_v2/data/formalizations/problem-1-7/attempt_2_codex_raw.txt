@@ -1,0 +1,8 @@
+import Mathlib
+
+theorem sum_sin_div_nsq_tendsto_half :
+    Filter.Tendsto
+      (fun n : ℕ => Finset.sum (Finset.range (n + 1)) (fun k => Real.sin ((k : ℝ) / (n : ℝ) ^ 2)))
+      Filter.atTop
+      (Filter.nhds ((1 : ℝ) / 2)) := by
+  sorry

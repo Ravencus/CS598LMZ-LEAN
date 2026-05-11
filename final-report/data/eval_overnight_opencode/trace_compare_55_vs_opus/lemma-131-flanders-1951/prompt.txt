@@ -1,0 +1,337 @@
+You are analyzing two Lean theorem-proving traces from the same problem. Both ran under the same agentic harness (OpenCode + a `check_lean_proof` Lean checker tool, lean_only condition, no sympy escape). Classify the relationship between the two reasoning approaches.
+
+Problem id: lemma-131-flanders-1951
+
+=== TRACE A (gpt-5.5) ===
+model: gpt-5.5    outcome: lean_proof    wall=111.65s    mcp_calls=4
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  constructor
+  · apply minpoly.dvd
+    have hcomm : ∀ p : Polynomial ℂ, A * aeval (B * A) p = aeval (A * B) p * A := by
+      intro p
+      induction p using Polynomial.induction_on with
+      | C c =>
+          change A * (c • (1 : Matrix n n ℂ)) = (c • (1 : Matrix n n ℂ)) * A
+          simp [mul_smul, smul_mul_assoc]
+      | monomial m c =>
+          induction m with
+          | zero =>
+              change A * (c • (1 : Matrix n n ℂ)) = (c • (1 : Matrix n n ℂ)) * A
+              simp [mul_smul, smul_mul_assoc]
+          | succ m ih =>
+              simp [pow_succ, ih, Matrix.mul_assoc, mul_smul, smul_mul_assoc]
+      | add p q hp hq =>
+          simp [hp, hq, add_mul, mul_add, Matrix.mul_assoc]
+    calc
+      aeval (B * A) (X * minpoly ℂ (A * B))
+          = (B * A) * aeval (B * A) (minpoly ℂ (A * B)) := by simp
+      _ = B * (A * aeval (B * A) (minpoly ℂ (A * B))) := by simp [Matrix.mul_assoc]
+      _ = B * (aeval (A * B) 
+--- mcp call 2 (FAIL) ---
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  constructor
+  · have hpow : ∀ m : ℕ, A * (B * A) ^ m = (A * B) ^ m * A := by
+      intro m
+      induction m with
+      | zero => simp
+      | succ m ih =>
+          have hBAA : A * (B * A) = A * B * A := by rw [mul_assoc]
+          calc
+            A * (B * A) ^ m.succ = A * ((B * A) ^ m * (B * A)) := by rw [pow_succ]
+            _ = (A * (B * A) ^ m) * (B * A) := by rw [mul_assoc]
+            _ = ((A * B) ^ m * A) * (B * A) := by rw [ih]
+            _ = (A * B) ^ m * (A * (B * A)) := by rw [mul_assoc]
+            _ = (A * B) ^ m * (A * B * A) := by simpa [hBAA, mul_assoc]
+            _ = ((A * B) ^ m * (A * B)) * A := by rw [mul_assoc]
+            _ = (A * B) ^ m.succ * A := by rw [pow_succ]
+    have hscalar : ∀ (a : ℂ), ∀ M : Matrix n n ℂ,
+        M * (algebraMap ℂ (Matrix n n ℂ) a) = algebraMap ℂ (Matrix n n ℂ) a * M := by
+      intro a M
+      simpa using (Algebra.commutes (R := ℂ) (A := Matrix n n ℂ) a M).symm
+    have 
+--- mcp call 3 (FAIL) ---
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  constructor
+  · have hpow : ∀ m : ℕ, A * (B * A) ^ m = (A * B) ^ m * A := by
+      intro m
+      induction m with
+      | zero => simp
+      | succ m ih =>
+          have hBAA : A * (B * A) = (A * B) * A := by rw [mul_assoc]
+          calc
+            A * (B * A) ^ m.succ = A * ((B * A) ^ m * (B * A)) := by rw [pow_succ]
+            _ = (A * (B * A) ^ m) * (B * A) := by rw [mul_assoc]
+            _ = ((A * B) ^ m * A) * (B * A) := by rw [ih]
+            _ = (A * B) ^ m * (A * (B * A)) := by rw [mul_assoc]
+            _ = (A * B) ^ m * ((A * B) * A) := by rw [hBAA]
+            _ = ((A * B) ^ m * (A * B)) * A := by rw [mul_assoc]
+            _ = (A * B) ^ m.succ * A := by rw [pow_succ]
+    have hscalar : ∀ (a : ℂ), ∀ M : Matrix n n ℂ,
+        M * (algebraMap ℂ (Matrix n n ℂ) a) = algebraMap ℂ (Matrix n n ℂ) a * M := by
+      intro a M
+      simpa using (Algebra.commutes (R := ℂ) (A := Matrix n n ℂ) a M).symm
+    have hcomm : ∀ 
+--- mcp call 4 (PASS) ---
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  constructor
+  · have hpow : ∀ m : ℕ, A * (B * A) ^ m = (A * B) ^ m * A := by
+      intro m
+      induction m with
+      | zero => simp
+      | succ m ih =>
+          have hBAA : A * (B * A) = (A * B) * A := by rw [mul_assoc]
+          calc
+            A * (B * A) ^ m.succ = A * ((B * A) ^ m * (B * A)) := by rw [pow_succ]
+            _ = (A * (B * A) ^ m) * (B * A) := by rw [mul_assoc]
+            _ = ((A * B) ^ m * A) * (B * A) := by rw [ih]
+            _ = (A * B) ^ m * (A * (B * A)) := by rw [mul_assoc]
+            _ = (A * B) ^ m * ((A * B) * A) := by exact congrArg (fun M => (A * B) ^ m * M) hBAA
+            _ = ((A * B) ^ m * (A * B)) * A := by rw [← mul_assoc]
+            _ = (A * B) ^ m.succ * A := by rw [pow_succ]
+    have hscalar : ∀ (a : ℂ), ∀ M : Matrix n n ℂ,
+        M * (algebraMap ℂ (Matrix n n ℂ) a) = algebraMap ℂ (Matrix n n ℂ) a * M := by
+      intro a M
+      simpa using (Algebra.commutes (R := ℂ) (A := Matr
+--- final_text ---
+I’ll look for existing Mathlib results about minimal polynomials of reversed products before spending checker calls.
+I found a prior formalization of exactly this theorem in the repository; I’ll verify it against the checker before returning it.
+The first found proof targets an older API. I found a more explicit version using `minpoly.aeval` and will check it with the required signature.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  constructor
+  · have hpow : ∀ m : ℕ, A * (B * A) ^ m = (A * B) ^ m * A := by
+      intro m
+      induction m with
+      | zero => simp
+      | succ m ih =>
+          have hBAA : A * (B * A) = (A * B) * A := by rw [mul_assoc]
+          calc
+            A * (B * A) ^ m.succ = A * ((B * A) ^ m * (B * A)) := by rw [pow_succ]
+            _ = (A * (B * A) ^ m) * (B * A) := by rw [mul_assoc]
+            _ = ((A * B) ^ m * A) * (B * A) := by rw [ih]
+            _ = (A * B) ^ m * (A * (B * A)) := by rw [mul_assoc]
+            _ = (A * B) ^ m * ((A * B) * A) := by exact congrArg (fun M => (A * B) ^ m * M) hBAA
+            _ = ((A * B) ^ m * (A * B)) * A := by rw [← mul_assoc]
+            _ = (A * B) ^ m.succ * A := by rw [pow_succ]
+    have hscalar : ∀ (a : ℂ), ∀ M : Matrix n n ℂ,
+        M * (algebraMap ℂ (Matrix n n ℂ) a) =
+
+=== TRACE B (claude-opus-4-7) ===
+model: claude-opus-4-7    outcome: lean_proof    wall=113.05s    mcp_calls=5
+--- mcp call 1 (FAIL) ---
+import Mathlib
+
+open Polynomial
+
+example {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) := by
+  exact?
+
+--- mcp call 2 (FAIL) ---
+import Mathlib
+
+open Polynomial
+
+-- Helper: B * (AB)^k = (BA)^k * B
+example {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) (k : ℕ) :
+    B * (A * B) ^ k = (B * A) ^ k * B := by
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    rw [pow_succ, pow_succ, ← mul_assoc, ih, mul_assoc, mul_assoc, mul_assoc]
+
+-- Now try the full theorem
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  -- helper: for any polynomial p, B * aeval (AB) p = aeval (BA) p * B
+  have key : ∀ (X' Y' : Matrix n n ℂ) (p : ℂ[X]),
+      Y' * (aeval (X' * Y') p) = (aeval (Y' * X') p) * Y' := by
+    intro X' Y' p
+    induction p using Polynomial.induction_on' with
+    | h_add p q hp hq => simp [hp, hq, mul_add, add_mul]
+    | h_monomial k c =>
+      simp [aeval_monomial, Algebra.mul_smul_comm, Algebra.smul_mul_assoc]
+      -- need Y' * ((X'*Y')^k) = ((Y'*X')^k) * Y'
+      have : Y' * (X' * Y') ^ k = (Y' * X') ^ k * Y' := by
+        induction k with
+        | zero => simp
+        | succ k ih =>
+          rw [pow_succ, pow_
+--- mcp call 3 (FAIL) ---
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  have key : ∀ (X' Y' : Matrix n n ℂ) (p : ℂ[X]),
+      Y' * (aeval (X' * Y') p) = (aeval (Y' * X') p) * Y' := by
+    intro X' Y' p
+    induction p using Polynomial.induction_on' with
+    | add p q hp hq => simp [hp, hq, mul_add, add_mul]
+    | monomial k c =>
+      simp [aeval_monomial, Algebra.mul_smul_comm, Algebra.smul_mul_assoc]
+      have : Y' * (X' * Y') ^ k = (Y' * X') ^ k * Y' := by
+        induction k with
+        | zero => simp
+        | succ k ih =>
+          rw [pow_succ, pow_succ, ← mul_assoc, ih, mul_assoc, mul_assoc, mul_assoc]
+      rw [this]
+  refine ⟨?_, ?_⟩
+  · rw [minpoly.dvd_iff]
+    rw [map_mul, aeval_X]
+    have h1 : B * aeval (A * B) (minpoly ℂ (B * A)) =
+              aeval (B * A) (minpoly ℂ (B * A)) * B := key A B _
+    rw [minpoly.aeval, zero_mul] at h1
+    calc (A * B) * aeval (A * B) (minpoly ℂ (B * A))
+        = A * (B * aeval (A * B) (minpoly ℂ (B * A))) := by rw [mul_assoc]
+      _ = A * 0 := b
+--- mcp call 4 (FAIL) ---
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  have key : ∀ (X' Y' : Matrix n n ℂ) (p : ℂ[X]),
+      Y' * (aeval (X' * Y') p) = (aeval (Y' * X') p) * Y' := by
+    intro X' Y' p
+    induction p using Polynomial.induction_on' with
+    | add p q hp hq => simp [hp, hq, mul_add, add_mul]
+    | monomial k c =>
+      have hpow : Y' * (X' * Y') ^ k = (Y' * X') ^ k * Y' := by
+        induction k with
+        | zero => simp
+        | succ k ih =>
+          rw [pow_succ, pow_succ, ← mul_assoc, ih, mul_assoc, mul_assoc, mul_assoc]
+      simp only [aeval_monomial]
+      -- Goal: Y' * (algebraMap c * (X'*Y')^k) = algebraMap c * (Y'*X')^k * Y'
+      have hcomm : ∀ (M : Matrix n n ℂ), Y' * ((algebraMap ℂ (Matrix n n ℂ)) c * M) =
+          (algebraMap ℂ (Matrix n n ℂ)) c * (Y' * M) := by
+        intro M
+        rw [Algebra.commutes, mul_assoc, mul_assoc]
+      rw [hcomm, hpow, mul_assoc]
+  refine ⟨?_, ?_⟩
+  · rw [minpoly.dvd_iff]
+    rw [map_mul, aeval_X]
+    have h1 : B * aeval (A * B) (
+--- mcp call 5 (PASS) ---
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  have key : ∀ (X' Y' : Matrix n n ℂ) (p : ℂ[X]),
+      Y' * (aeval (X' * Y') p) = (aeval (Y' * X') p) * Y' := by
+    intro X' Y' p
+    induction p using Polynomial.induction_on' with
+    | add p q hp hq => simp [hp, hq, mul_add, add_mul]
+    | monomial k c =>
+      have hpow : Y' * (X' * Y') ^ k = (Y' * X') ^ k * Y' := by
+        induction k with
+        | zero => simp
+        | succ k ih =>
+          rw [pow_succ, pow_succ, ← mul_assoc, ih, mul_assoc, mul_assoc, mul_assoc]
+      simp only [aeval_monomial]
+      -- Goal: Y' * (algebraMap c * (X'*Y')^k) = algebraMap c * (Y'*X')^k * Y'
+      rw [← mul_assoc, ← Algebra.commutes, mul_assoc, hpow, mul_assoc]
+  refine ⟨?_, ?_⟩
+  · rw [minpoly.dvd_iff]
+    rw [map_mul, aeval_X]
+    have h1 : B * aeval (A * B) (minpoly ℂ (B * A)) =
+              aeval (B * A) (minpoly ℂ (B * A)) * B := key A B _
+    rw [minpoly.aeval, zero_mul] at h1
+    calc (A * B) * aeval (A * B) (minpoly ℂ (B * A)
+--- final_text ---
+I'll work on this theorem about minimal polynomials of AB and BA. Let me start by exploring what's available in Mathlib.
+Let me search for relevant lemmas about minimal polynomials of AB and BA.
+Found `Matrix.charpoly_mul_comm`. Let me look at the key fact: `charpoly_mul_comm'` says `X^something * (A*B).charpoly = X^something * (B*A).charpoly` for rectangular matrices. Let me look more carefully.
+For square matrices, `(A*B).charpoly = (B*A).charpoly`. So minpoly(AB) and minpoly(BA) both divide the same charpoly. But we need a stronger statement: `minpoly(AB) ∣ X * minpoly(BA)`.
+
+Actually, the classical result is: if `p` is the minimal polynomial of `AB`, then `X * p(BA) = ... ` so `X * minpoly(AB)` is annihilated by `BA`, hence `minpoly(BA) ∣ X * minpoly(AB)`.
+
+Let me think more carefully. For square matrices, this is actually trivially proved by symmetry because `(A*B).charpoly = (B*A).charpoly` and `minpoly ∣ charpoly`. But we need divisibility by `X * minpoly`, not by charpoly.
+
+Wait — for square matrices, `minpoly(AB) = minpoly(BA)` might not always hold, but they have the same characteristic polynomial. The "X factor" issue is for the rectangular case.
+
+For square matrices specifically: it's known that `minpoly(AB)` and `minpoly(BA)` differ by at most a factor of `X`. Let me search Mathlib for this specific result.
+Key lemma found: `minpoly.dvd_iff: minpoly A x ∣ p ↔ Polynomial.aeval x p = 0` (this requires `A` is a field).
+
+Strategy: I need to show `minpoly ℂ (AB) ∣ X *
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"plan_relation": "same_plan" | "different_plan" | "unclear",
+  "divergence": "lean_impl" | "search" | "instruction_following" | "none" | "n/a",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+Definitions:
+  plan_relation:
+    same_plan       : both pursued the same overall mathematical decomposition (e.g., both used induction, both reduced to a Mathlib identity, both invoked the same lemma family).
+    different_plan  : substantively different decompositions.
+    unclear         : cannot determine from visible evidence (e.g., one model gave up almost immediately).
+  divergence (semantically meaningful only when plan_relation == same_plan):
+    lean_impl              : divergent outcomes due to Lean tactic / type-checking errors on one side.
+    search                 : divergent due to inability to find the right Mathlib lemma name.
+    instruction_following  : one model followed the rules and produced a proof; the other gave up by emitting `sorry` despite an explicit rule against it.
+    none                   : same plan AND similar execution (e.g., both pass cleanly with the same proof shape).
+    n/a                    : not applicable (use when plan_relation != same_plan).
+
+Output the JSON object first, then the justification.

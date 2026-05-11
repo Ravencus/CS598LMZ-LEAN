@@ -1,0 +1,17 @@
+{
+  "problem_id": "proposition-2-3",
+  "model": "gpt-5.5",
+  "wall_seconds": 15.35,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [],
+  "truth": [
+    "an-epsilon-of-room-hub"
+  ],
+  "tp": 0,
+  "fp": 0,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

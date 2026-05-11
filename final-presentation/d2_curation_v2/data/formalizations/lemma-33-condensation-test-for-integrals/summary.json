@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-33-condensation-test-for-integrals",
+  "english_title": "Lemma 3.3: Condensation Test for Integrals",
+  "statement_en": "Let $f:[1,+\\infty)\\to \\mathbb{R}$ satisfy:\n1. $f(x)$ is locally integrable on this interval, that is, it is Riemann integrable on every closed interval $[1,M]$.\n2. $f(x)$ is nonnegative and nonincreasing on this interval.\n\nThen the improper integral $\\int_{1}^{+\\infty}f(x)\\,dx$ converges if and only if the series $\\sum_{n=1}^{+\\infty}2^n f(2^n)$ converges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem cauchy_condensation_integral_iff\n    (f : ℝ → ℝ)\n    (h_int : ∀ M : ℝ, 1 ≤ M → IntervalIntegrable f volume 1 M)\n    (h_nonneg : ∀ x : ℝ, 1 ≤ x → 0 ≤ f x)\n    (h_antitone : ∀ ⦃x y : ℝ⦄, 1 ≤ x → x ≤ y → f y ≤ f x) :\n    (∃ L : ℝ, Filter.Tendsto (fun b : ℝ => ∫ x in 1..b, f x) Filter.atTop (nhds L)) ↔\n      Summable (fun n : ℕ => (2 : ℝ) ^ (n + 1) * f ((2 : ℝ) ^ (n + 1))) := by\n  sorry"
+}

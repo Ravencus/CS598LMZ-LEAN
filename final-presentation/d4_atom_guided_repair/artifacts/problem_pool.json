@@ -1,0 +1,114 @@
+[
+  {
+    "label": "SumInt13",
+    "id": "sum-int-13",
+    "type": "example",
+    "difficulty": "easy",
+    "domain": "real analysis",
+    "source_note": "和的积分估计",
+    "statement_en": "Use convexity to improve the lower bound for the harmonic sum\n\\\\[\nH_n:=\\\\sum_{k=1}^n \\\\frac1k,\n\\\\]\nobtaining\n\\\\[\nH_n\\\\ge \\\\frac{n+1}{2n}+\\\\log n,\n\\\\]\nwhich improves the monotonicity-based bound \\(H_n\\\\ge \\\\frac1n+\\\\log n\\).",
+    "key_techniques": [
+      "convexity-based integral estimate",
+      "harmonic sum estimate"
+    ],
+    "n_neighbors": 32
+  },
+  {
+    "label": "Termwise3",
+    "id": "termwise-3",
+    "type": "example",
+    "difficulty": "easy",
+    "domain": "real analysis",
+    "source_note": "逐项估计",
+    "statement_en": "Prove that for every positive integer \\(N\\), \\(1+\\\\frac{1}{2!}+\\\\cdots+\\\\frac{1}{N!}<3\\).",
+    "key_techniques": [
+      "termwise upper bound",
+      "telescoping comparison"
+    ],
+    "n_neighbors": 20
+  },
+  {
+    "label": "PowerMeanLim",
+    "id": "termwise-13",
+    "type": "theorem",
+    "difficulty": "medium",
+    "domain": "real analysis",
+    "source_note": "逐项估计",
+    "statement_en": "Prove that the weighted power mean satisfies \\\\(\\\\lim_{p\\\to +\\\\infty} M_p(x_1,\\\\dots,x_n;w_1,\\\\dots,w_n)=\\\\max\\\\{x_1,\\\\dots,x_n\\\\}\\\\).",
+    "key_techniques": [
+      "weighted max-term comparison",
+      "squeeze theorem"
+    ],
+    "n_neighbors": 20
+  },
+  {
+    "label": "SumIntP",
+    "id": "sum-int-9",
+    "type": "example",
+    "difficulty": "medium",
+    "domain": "real analysis",
+    "source_note": "和的积分估计",
+    "statement_en": "Let \\(a_n>0\\), let \\(S_n\\) be the partial sums of \\(a_n\\), and let \\(p>1\\). Estimate\n\\\\[\nT_N=\\\\sum_{n\\\\le N}\\\\frac{a_n}{S_n^p}\n\\\\]\nand prove that \\(T_N\\) is bounded, hence the series converges.",
+    "key_techniques": [
+      "sum-to-integral comparison",
+      "partial sums substitution"
+    ],
+    "n_neighbors": 32
+  },
+  {
+    "label": "SumInt7",
+    "id": "sum-int-7",
+    "type": "example",
+    "difficulty": "easy",
+    "domain": "real analysis",
+    "source_note": "和的积分估计",
+    "statement_en": "Estimate the upper bound of\n\\\\[\n\\\\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k)\n\\\\]\nunder the assumption \\(0=x_0<x_1<\\\\cdots<x_n<1\\), and deduce\n\\\\[\n\\\\sum_{k=1}^{n}(x_k-x_{k-1})(1-x_k)<\\\\frac12.\n\\\\]",
+    "key_techniques": [
+      "simple integral estimate",
+      "monotonicity"
+    ],
+    "n_neighbors": 32
+  },
+  {
+    "label": "LogKn2",
+    "id": "termwise-18",
+    "type": "example",
+    "difficulty": "medium",
+    "domain": "asymptotic analysis",
+    "source_note": "逐项估计",
+    "statement_en": "Compute the limit \\\\(\\\\lim_{n\\\to\\\\infty}\\\\sum_{k=1}^{n}\\\\log(1+k/n^2)\\\\).",
+    "key_techniques": [
+      "Taylor expansion of \\\\(\\\\log(1+u)\\\\)",
+      "summing remainder estimates"
+    ],
+    "n_neighbors": 20
+  },
+  {
+    "label": "JNLog",
+    "id": "termwise-27",
+    "type": "exercise",
+    "difficulty": "medium",
+    "domain": "asymptotic analysis",
+    "source_note": "逐项估计",
+    "statement_en": "Let \\\\(J_n:=\\\\int_0^1 \\\\frac{\\\\log(1+x/n)}{x}\\\\,dx\\\\). Compute \\\\(\\\\lim_{n\\\to\\\\infty} n|nJ_n-1|\\\\).",
+    "key_techniques": [
+      "Taylor expansion under the integral sign",
+      "higher-order asymptotics"
+    ],
+    "n_neighbors": 20
+  },
+  {
+    "label": "SumInt10",
+    "id": "sum-int-10",
+    "type": "example",
+    "difficulty": "medium",
+    "domain": "asymptotic analysis",
+    "source_note": "和的积分估计",
+    "statement_en": "Estimate\n\\\\[\nS_n:=\\\\sum_{i\\\\le n}\\\\frac{1}{n+\\\\sqrt{i}}\n\\\\]\nwith precision \\(o(n^{-1/2})\\), obtaining\n\\\\[\nS_n=1-\\\\frac{2}{3}\\\\frac{1}{\\\\sqrt n}+o\\\\left(\\\\frac{1}{\\\\sqrt n}\\\right).\n\\\\]",
+    "key_techniques": [
+      "simple integral estimate",
+      "Taylor expansion"
+    ],
+    "n_neighbors": 32
+  }
+]

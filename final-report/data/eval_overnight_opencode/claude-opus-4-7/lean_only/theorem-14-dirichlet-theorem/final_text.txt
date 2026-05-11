@@ -1,0 +1,57 @@
+I'll work on this classic Dirichlet approximation theorem. Let me start by exploring the approach.
+Let me think about this. The theorem is Dirichlet's approximation theorem: for irrational α and ε > 0, there exist q > 0 and p such that |qα - p| < ε.
+
+The standard proof uses pigeonhole on the fractional parts of kα for k = 0, 1, ..., N where 1/N < ε. This is non-trivial to formalize from scratch.
+
+Let me search Mathlib for existing results. There's likely something like `Irrational.exists_nat_gt` or results about density of {qα} mod 1, or `Int.fract`. Key candidates:
+- `Irrational.fract_dense` or similar
+- `AddCircle.denseRange_zsmul` 
+- `Irrational.exists_int_gt`
+
+Actually, Mathlib has `Irrational.add_int_mul_self_lt` and friends. Let me think — there's `Real.exists_int_mul_self_sub_int_lt` or the more likely `Irrational.exists_pos_lt_natAbs_lt` style.
+
+Actually I recall Mathlib has `Irrational.lt_natAbs` stuff. Let me check a few candidates by trying a proof using `exact?` style approach. The most promising is likely: density results give us {qα mod 1} is dense in [0,1].
+
+Let me try a direct attempt with a known result and see what's available.
+Let me search for relevant Mathlib lemmas about Irrational and approximation.
+Let me search for specific named lemmas in Mathlib about approximation.
+Excellent! There's a `DiophantineApproximation` file. Let me check it.
+Let me look at the key theorems:
+I have `exists_int_int_abs_mul_sub_le`. The plan: pick n such that 1/(n+1) < ε, apply it, get j and k. Then k > 0 is an integer, convert to ℕ.
+
+The statement gives `∃ j k : ℤ, 0 < k ∧ k ≤ n ∧ |↑k * ξ - j| ≤ 1 / (n + 1)`. I need q : ℕ with 0 < q and p : ℤ with |q*α - p| < ε. So I can use `k.toNat` as q and j as p.
+
+Let me write the full proof:
+Good progress! `Real.exists_int_int_abs_mul_sub_le` exists. Let me fix the two issues:
+1. `0 < k.toNat` from `0 < k` (Int): use `Int.toNat_lt'` or `Int.toNat_of_nonneg` combined
+2. The cast: need to write `((k.toNat : ℤ) : ℝ) = (k : ℝ)` correctly. The goal showed `↑k.toNat = ↑k` — both already coerced to ℝ. Use `Int.toNat_of_nonneg` directly via push_cast.
+The proof compiles successfully. Only a warning about unused `hα` (which is fine — the theorem statement actually doesn't need irrationality for this finite ε version, only the infinite version needs it).
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem irrational_approximation_by_positive_integer
+    {α ε : ℝ} (hα : Irrational α) (hε : 0 < ε) :
+    ∃ q : ℕ, 0 < q ∧ ∃ p : ℤ, |(q : ℝ) * α - p| < ε := by
+  obtain ⟨n, hn⟩ := exists_nat_gt (1 / ε)
+  have n_pos : 0 < n := by
+    have h1 : (0 : ℝ) < n := lt_of_le_of_lt (by positivity) hn
+    exact_mod_cast h1
+  obtain ⟨j, k, hk_pos, _, hk_bd⟩ := Real.exists_int_int_abs_mul_sub_le α n_pos
+  have hnp1 : (0 : ℝ) < n + 1 := by positivity
+  have hinv : 1 / ((n : ℝ) + 1) < ε := by
+    rw [div_lt_iff₀ hnp1]
+    rw [div_lt_iff₀ hε] at hn
+    linarith
+  refine ⟨k.toNat, ?_, j, ?_⟩
+  · have : k.toNat = k := Int.toNat_of_nonneg hk_pos.le
+    omega
+  · have hk_cast : ((k.toNat : ℤ) : ℝ) = (k : ℝ) := by
+      rw [Int.toNat_of_nonneg hk_pos.le]
+    have : ((k.toNat : ℕ) : ℝ) = (k : ℝ) := by
+      have h := Int.toNat_of_nonneg hk_pos.le
+      exact_mod_cast h
+    rw [this]
+    exact lt_of_le_of_lt hk_bd hinv
+```

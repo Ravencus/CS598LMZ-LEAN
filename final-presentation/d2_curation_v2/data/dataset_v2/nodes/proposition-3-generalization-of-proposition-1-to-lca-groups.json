@@ -1,0 +1,24 @@
+{
+  "id": "proposition-3-generalization-of-proposition-1-to-lca-groups",
+  "type": "problem",
+  "source_note": "Riemann - Lebesgue lemma的证明",
+  "english_source_note": "Proof of the Riemann-Lebesgue Lemma",
+  "callout_id": "Riemann - Lebesgue lemma的证明#7",
+  "english_title": "Proposition 3: Generalization of Proposition 1 to LCA Groups",
+  "statement_en": "Let $G$ be an LCA group and let $f \\in L^1(G)$. For any $a\\in G$, define $T_a(f):=f(a^{-1}x)$. Then for every $\\varepsilon >0$ there exists a neighborhood $U_{\\varepsilon}$ of the identity element $1_G$ such that for all $h \\in U_{\\varepsilon}$, $$\\|T_{ah}(f)-T_a(f)\\|_{L^1(G)}<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "translation continuity in $L^1$ on LCA groups",
+    "approximation arguments with compact support",
+    "Haar measure invariance"
+  ],
+  "prerequisites": [
+    "locally compact abelian groups",
+    "Haar measure",
+    "$L^1(G)$ spaces",
+    "group translations"
+  ],
+  "callout_body": "$G$是一个LCA群$f \\in L^1(G)$对任意$a\\in G$定义$T_a(f):=f(a^{-1}x)$。那么对于任意$\\varepsilon >0$存在单位元$1_G$的邻域$U_{\\varepsilon}$使得所有$h \\in U_{\\varepsilon}$都有$$||T_{ah}(f)-T_a(f)||_{L^1(G)}<\\varepsilon$$"
+}

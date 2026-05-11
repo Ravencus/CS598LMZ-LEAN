@@ -1,0 +1,24 @@
+{
+  "problem_id": "integral-of-a-nonnegative-function-is-nonnegative",
+  "english_title": "Integral of a Nonnegative Function Is Nonnegative",
+  "statement_en": "If $h:\\Omega \\to \\mathbb{R}$ is measurable and nonnegative almost everywhere, then its integral is also nonnegative.",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  Ω\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem integral_nonneg_of_measurable_of_ae_nonneg\n    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω} {h : Ω → ℝ}\n    (hh_meas : Measurable h) (hh_nonneg : 0 ≤ᵐ[μ] h) :\n    0 ≤ ∫ x, h x ∂μ := by\n  sorry"
+}

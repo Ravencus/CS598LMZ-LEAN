@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-2-a-2024-mathematical-analysis-entrance-exam-problem",
+  "english_title": "Problem 2: A 2024 Mathematical Analysis Entrance Exam Problem",
+  "statement_en": "Let $f:[a,b]\\to \\mathbb{R}$ satisfy that for every $x_0 \\in [a,b]$, one has $\\lim_{x\\to x_0} f(x)=0$. Then $f$ is Riemann integrable on $[a,b]$ and its integral is $0$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limit_zero_on_interval_implies_intervalIntegral_eq_zero\n    {a b : ℝ} {f : ℝ → ℝ}\n    (hlim : ∀ x₀ ∈ Set.Icc a b, Filter.Tendsto f (nhdsWithin x₀ (Set.Icc a b)) (nhds 0)) :\n    IntervalIntegrable f volume a b ∧ ∫ x in a..b, f x = 0 := by\n  sorry"
+}

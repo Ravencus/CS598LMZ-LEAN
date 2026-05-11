@@ -1,0 +1,23 @@
+{
+  "id": "example-112-imitating-the-typewriter-sequence-of-functions",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#3",
+  "english_title": "Example 1.1.2: Imitating the Typewriter Sequence of Functions",
+  "statement_en": "Construct a sequence $(a_n)$ by starting from $0$ and moving each time with step size $1/2^k$; whenever the sequence reaches $1$ it turns back toward $0$, and whenever it reaches $0$ it turns back toward $1$, with the step size halved at each turn. Then for $n\\in[2^k,2^{k+1}-1]$ one has $|a_{n+1}-a_n|=1/2^k$, and at turning points the jump size is $1/2^{k+1}$. Hence $a_{n+1}-a_n\\to 0$.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "recursive construction",
+    "dyadic step sizes",
+    "analysis of jump sizes"
+  ],
+  "prerequisites": [
+    "sequences",
+    "limits",
+    "piecewise recursive definitions"
+  ],
+  "callout_body": "1. 模仿打字机函数列，我们可以创造这样一个序列,其基本的想法是**序列从0出发，每次以$\\frac{1}{2^k}$的步长前进，遇到1就转而向0出发，遇到0就转而向1出发，每次转向步长减半**。\n2. $a_0 = 0,a_1 = 1$ （转向，步长减半）$a_2 = 1/2,a_3 = 0$.（转向，步长减半）$a_4 = 1/4,a_5 = 2/4,a_6=3/4,a_7 = 1$ \n3. 当$n \\in [2^k,2^{k+1}-1]$的时候$|a_{n} -a_{n+1}| = 1/2^k$.当发生“转向”的时候即$2^{k+1}-1$以及$2^{k+1}$这两个序列他们的差的绝对值为$1/2^{k+1}$ ,总之这表明$a_{n+1} - a_n$ 是收敛的。"
+}

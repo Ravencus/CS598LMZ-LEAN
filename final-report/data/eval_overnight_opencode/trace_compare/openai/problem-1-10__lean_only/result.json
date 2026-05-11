@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "problem-1-10",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_search_diff",
+  "evidence": "Both traces searched for lintegral-zero-to-a.e.-zero lemmas and tried to derive `g =ᵐ[μ] 0` from `∫⁻ = 0`. BIG eventually found `MeasureTheory.lintegral_eq_zero_iff'` with an `AEMeasurable` argument in calls 8-9, while SMALL repeatedly tried `lintegral_eq_zero_iff.mp` and never found the applicable ",
+  "wall_seconds": 6.44
+}

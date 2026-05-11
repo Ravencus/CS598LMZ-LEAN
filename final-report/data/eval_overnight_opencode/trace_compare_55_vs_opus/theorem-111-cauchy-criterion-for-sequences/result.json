@@ -1,0 +1,11 @@
+{
+  "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "different_plan",
+  "divergence": "n/a",
+  "evidence": "Trace A uses a concrete counterexample in Lean: constant sequence 0, target limit 1, RHS proved true, then `tendsto_nhds_unique` derives `0 = 1`. Trace B starts proving the original biconditional by `constructor`, completes only the forward convergence-implies-Cauchy direction, and leaves the false ",
+  "wall_seconds": 12.47
+}

@@ -1,0 +1,23 @@
+{
+  "id": "theorem-13-kronecker-theorem-version-2",
+  "type": "problem",
+  "source_note": "Kronecker定理，Dirichlet定理及其应用",
+  "english_source_note": "Kronecker's Theorem, Dirichlet's Theorem, and Applications",
+  "callout_id": "Kronecker定理,Dirichlet定理及其应用#3",
+  "english_title": "Theorem 1.3: Kronecker Theorem (Version 2)",
+  "statement_en": "For a given irrational number $\\alpha$, for every $\\beta\\in\\mathbb{R}$ and every sufficiently small $\\varepsilon > 0$, there exists a positive integer $q_{\\varepsilon}$ such that $$||q_{\\varepsilon}\\alpha-\\beta||<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "distance to the nearest integer",
+    "modulo 1 reformulation",
+    "Kronecker approximation"
+  ],
+  "prerequisites": [
+    "irrational numbers",
+    "nearest-integer distance $||x||$",
+    "equivalence of modulo 1 formulations"
+  ],
+  "callout_body": "对于给定的无理数$\\alpha$，以及$\\forall \\beta\\in\\mathbb{R}$，对任意足够小的$\\varepsilon > 0$存在正整数$q_{\\varepsilon}$使得$$||q_{\\varepsilon}\\alpha-\\beta||<\\varepsilon$$"
+}

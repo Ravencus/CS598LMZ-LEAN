@@ -1,0 +1,22 @@
+{
+  "id": "conjecture-124",
+  "type": "problem",
+  "source_note": "判断剧烈震荡的序列部分和的有界性问题",
+  "english_source_note": "Boundedness of Partial Sums of Highly Oscillatory Sequences",
+  "callout_id": "判断剧烈震荡的序列部分和的有界性问题#6",
+  "english_title": "Conjecture 1.2.4",
+  "statement_en": "Let $$S_N:=\\sum_{n\\leq N}\\sin(n^2).$$ Prove or disprove that there exists a positive real number $C$ such that $$\\limsup_{N\\to \\infty}\\frac{|S_N|}{\\sqrt{N\\log\\log N}}=C.$$",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "law-of-the-iterated-logarithm heuristics",
+    "fine asymptotic analysis of oscillatory sums"
+  ],
+  "prerequisites": [
+    "trigonometric sums",
+    "limsup and asymptotic notation",
+    "probabilistic heuristics for deterministic sequences"
+  ],
+  "callout_body": "令$$S_N:=\\sum_{n\\leq N}\\sin(n^2)$$证明或证伪，存在正实数$C$使得$$\\limsup_{N\\to \\infty}\\frac{|S_N|}{\\sqrt{N\\log\\log N}}=C$$"
+}

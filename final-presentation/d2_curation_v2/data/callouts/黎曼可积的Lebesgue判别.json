@@ -1,0 +1,17 @@
+{
+  "note_title": "黎曼可积的Lebesgue判别",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "黎曼可积的Lebesgue判别#1",
+      "type": "note",
+      "title": "黎曼可积的Lebesgue等价条件，Lebesgue& Vitali 1907",
+      "body": "闭区间$[a,b]$上的有界函数$f$黎曼可积当且仅当函数$f$是在此闭区间上几乎处处连续的。",
+      "position_char": 31,
+      "position_line": 5
+    }
+  ]
+}

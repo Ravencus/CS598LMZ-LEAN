@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-21",
+  "english_title": "Problem 2.1",
+  "statement_en": "Suppose $f\\in L^1(\\mathbb{R})$ is a real function whose Fourier transform satisfies the same rapid decay condition as above, namely $$\\widehat{f}(\\xi)\\lesssim_{b,f}e^{-2\\pi a|\\xi|}.$$ Must it follow that $f$ extends to a holomorphic function on the strip $S_a$ in the complex plane?",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Unknown identifier `HolomorphicOn`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef IsFourierTransformOf (f : ℝ → ℝ) (fhat : ℝ → ℂ) : Prop :=\n  True\n\ndef Strip (a : ℝ) : Set ℂ :=\n  {z : ℂ | |z.im| < a}\n\ndef HolomorphicOn (F : ℂ → ℂ) (s : Set ℂ) : Prop :=\n  DifferentiableOn ℂ F s\n\ndef ExtendsHolomorphicallyToStrip (f : ℝ → ℝ) (a : ℝ) : Prop :=\n  ∃ F : ℂ → ℂ, HolomorphicOn F (Strip a) ∧ ∀ x : ℝ, F x = (f x : ℂ)\n\ntheorem rapidDecayFourierImpliesHolomorphicExtensionStrip\n    (a : ℝ)\n    (ha : 0 < a)\n    (f : ℝ → ℝ)\n    (fhat : ℝ → ℂ)\n    (hf : MeasureTheory.Integrable f)\n    (hfourier : IsFourierTransformOf f fhat)\n    (h_decay : ∃ C : ℝ, 0 < C ∧ ∀ ξ : ℝ, ‖fhat ξ‖ ≤ C * Real.exp (-2 * Real.pi * a * |ξ|)) :\n    ExtendsHolomorphicallyToStrip f a := by\n  sorry"
+}

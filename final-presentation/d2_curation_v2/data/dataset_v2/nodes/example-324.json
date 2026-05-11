@@ -1,0 +1,23 @@
+{
+  "id": "example-324",
+  "type": "problem",
+  "source_note": "逐项估计",
+  "english_source_note": "Term-by-Term Estimates",
+  "callout_id": "逐项估计#12",
+  "english_title": "Example 3.2.4",
+  "statement_en": "Let \\(p>0\\). Prove that\n$$\\int_0^1 \\frac{1}{1+x^p}>\\frac{p}{p+1}.$$",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "integral inequality",
+    "termwise estimation",
+    "comparison"
+  ],
+  "prerequisites": [
+    "basic integration",
+    "inequalities",
+    "functions of one real variable"
+  ],
+  "callout_body": "$p>0$证明\n$$\\int_0^1 \\frac{1}{1+x^p}>\\frac{p}{p+1}$$"
+}

@@ -1,0 +1,5 @@
+["piecewise-estimates-hub", "sum-estimates-via-summation-by-parts-hub", "term-by-term-estimates-hub", "cauchy-convergence-criterion-hub"]
+- piecewise-estimates-hub: The proof naturally splits the series into square-root blocks where `⌊√n⌋` is constant, and separately handles cases such as `z = 1` versus `z ≠ 1`.
+- sum-estimates-via-summation-by-parts-hub: Convergence on the unit circle is driven by Abel/Dirichlet summation, using decay of `1/n` together with bounds on oscillatory partial sums.
+- term-by-term-estimates-hub: The block contributions need elementary estimates like `∑_{n=k^2}^{(k+1)^2-1} 1/n ≈ 2/k`, especially for the `z = 1` alternating-block case.
+- cauchy-convergence-criterion-hub: In Lean, `Summable` is typically proved by showing tails form a Cauchy sequence, so the analytic estimates must be converted into Cauchy tail bounds.

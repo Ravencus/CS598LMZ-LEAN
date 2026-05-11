@@ -1,0 +1,25 @@
+{
+  "id": "problem-1-cmc-2024",
+  "type": "problem",
+  "source_note": "一个交错的双重级数的级数的收敛性判别",
+  "english_source_note": "A Convergence Test for an Alternating Double Series",
+  "callout_id": "一个交错的双重级数的级数的收敛性判别#1",
+  "english_title": "Problem 1, CMC 2024",
+  "statement_en": "Prove that $$\\sum_{n\\geq 1}\\sum_{k\\geq 1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n^2+k^2}$$ converges.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "comparison with convergent series",
+    "grouping terms by constant values of $\\lfloor\\sqrt{n}\\rfloor$",
+    "alternating cancellation",
+    "estimation of double series"
+  ],
+  "prerequisites": [
+    "convergence of series",
+    "double series",
+    "alternating series ideas",
+    "basic comparison tests"
+  ],
+  "callout_body": "证明$$\\sum_{n\\geq 1}\\sum_{k\\geq 1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n^2+k^2}$$是收敛的。"
+}

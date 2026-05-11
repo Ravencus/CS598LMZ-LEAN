@@ -1,0 +1,33 @@
+{
+  "note_title": "模1均匀分布序列对序列差分的要求",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "模1均匀分布序列对序列差分的要求#1",
+      "type": "note",
+      "title": "命题1：模1均匀分布的一个必要条件",
+      "body": "如果序列$x_n$是模1均匀分布的，那么序列的差分$\\Delta x_n$需要满足条件$$\\limsup_{n\\to \\infty} n|\\Delta x_n|=+\\infty$$",
+      "position_char": 31,
+      "position_line": 6
+    },
+    {
+      "id": "模1均匀分布序列对序列差分的要求#2",
+      "type": "note",
+      "title": "Littlewood_Tauber定理(1911)",
+      "body": "如果序列$y_n$是Abel可和的，且Abel和收敛到$a$，即$$\\lim_{x\\to 1^{-}}\\sum_{n\\geq 0}y_nx^n=a$$并且$y_n = O\\left(\\frac{1}{n}\\right)$那么该序列的和收敛到$a$:$$\\sum_{n\\geq 0}y_n = a$$",
+      "position_char": 541,
+      "position_line": 17
+    },
+    {
+      "id": "模1均匀分布序列对序列差分的要求#3",
+      "type": "note",
+      "title": "Littlewood_Tauber定理的推论",
+      "body": "如果一个序列$y_n$的算术平均值收敛到$a$,并且其差分具有估计$\\Delta y_n = O\\left(\\frac{1}{n}\\right)$那么$y_n$的极限存在且为$a$。",
+      "position_char": 868,
+      "position_line": 24
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown identifier `ae_eq_zero_of_lintegral_eq_zero`\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_2e3b020fc8.lean",
+      "line": 14,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown identifier `ae_eq_zero_of_lintegral_eq_zero`\n"
+    }
+  ]
+}

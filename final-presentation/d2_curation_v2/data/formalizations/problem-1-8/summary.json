@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-1-8",
+  "english_title": "Problem 1",
+  "statement_en": "Let $f:[0,1]\\to \\mathbb{R}$ satisfy that for every $x_0 \\in [0,1]$, one has $\\lim_{x\\to x_0} f(x)=0$. Then $f=0$ almost everywhere.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "Unknown identifier `volume.restrict`"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `Measure.restrict`\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `volume.restrict`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem zero_ae_of_limit_zero_on_unit_interval\n    (f : ℝ → ℝ)\n    (h : ∀ x0 ∈ Set.Icc (0 : ℝ) 1, Filter.Tendsto f (nhds x0) (nhds (0 : ℝ))) :\n    f =ᵐ[volume.restrict (Set.Icc (0 : ℝ) 1)] fun _ => (0 : ℝ) := by\n  sorry"
+}

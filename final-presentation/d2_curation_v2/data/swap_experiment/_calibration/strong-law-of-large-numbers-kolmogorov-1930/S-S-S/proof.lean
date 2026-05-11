@@ -1,0 +1,46 @@
+import Mathlib
+
+open scoped BigOperators
+open Filter MeasureTheory
+
+def IsIID {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω) (X : ℕ → Ω → ℝ) : Prop :=
+  True
+
+def partialSums {Ω : Type*} (X : ℕ → Ω → ℝ) (n : ℕ) (ω : Ω) : ℝ :=
+  Finset.sum (Finset.range n) (fun k => X (k + 1) ω)
+
+theorem strong_law_of_large_numbers_ae
+    {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) [IsProbabilityMeasure P]
+    (X : ℕ → Ω → ℝ) (μ : ℝ)
+    (h_iid : IsIID P X)
+    (h_int : Integrable (X 1) P)
+    (h_mean : ∫ ω, X 1 ω ∂P = μ) :
+    ∀ᵐ ω ∂P, Tendsto (fun n : ℕ => partialSums X (n + 1) ω / ((n + 1 : ℕ) : ℝ)) atTop (nhds μ) := by
+  import Mathlib
+
+  open scoped BigOperators
+  open Filter MeasureTheory
+
+  def IsIID {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω) (X : ℕ → Ω → ℝ) : Prop :=
+    True
+
+  def partialSums {Ω : Type*} (X : ℕ → Ω → ℝ) (n : ℕ) (ω : Ω) : ℝ :=
+    Finset.sum (Finset.range n) (fun k => X (k + 1) ω)
+
+  /-
+  The requested theorem is not derivable from the stated hypotheses.
+
+  Reason: `IsIID` is defined as `True`, so `h_iid` carries no information at all, and the
+  assumptions only constrain `X 1`. The conclusion, however, asserts almost-everywhere
+  convergence of Cesàro averages of the entire sequence.
+
+  Concrete counterexample:
+  - take `Ω := PUnit` with the trivial measurable space and probability measure `Measure.dirac ()`;
+  - define `X n _ := if Even n then 0 else 1`;
+  - then `Integrable (X 1) P` holds and `∫ ω, X 1 ω ∂P = 1`, so the hypotheses are satisfied
+    with `μ = 1`;
+  - but `partialSums X (n+1) () / (n+1)` tends to `1/2`, not `1`.
+
+  So no complete proof term exists for the theorem with this exact signature.
+  -/

@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "'change' tactic failed, pattern\n  A * B * (aeval (A * B)) (minpoly ℂ (B * A)) = 0\nis not definitionally equal to target\n  A * (B * (aeval (A * B)) (minpoly ℂ (B * A))) = 0",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 14,
+      "column": 4,
+      "severity": "error",
+      "message": "'change' tactic failed, pattern\n  A * B * (aeval (A * B)) (minpoly ℂ (B * A)) = 0\nis not definitionally equal to target\n  A * (B * (aeval (A * B)) (minpoly ℂ (B * A))) = 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 47,
+      "column": 4,
+      "severity": "error",
+      "message": "'change' tactic failed, pattern\n  B * A * (aeval (B * A)) (minpoly ℂ (A * B)) = 0\nis not definitionally equal to target\n  B * (A * (aeval (B * A)) (minpoly ℂ (A * B))) = 0\n"
+    }
+  ]
+}

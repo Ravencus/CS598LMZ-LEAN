@@ -1,0 +1,24 @@
+{
+  "id": "example-22-2",
+  "type": "problem",
+  "source_note": "测度论的基础概念",
+  "english_source_note": "Basic Concepts in Measure Theory",
+  "callout_id": "测度论的基础概念#21",
+  "english_title": "Example 2.2",
+  "statement_en": "In the product measure space $$(\\mathbb{R}^2,\\mathcal{L}\\otimes \\mathcal{L},m^2),$$ where $(\\mathbb{R},\\mathcal{L},m)$ is the Lebesgue measure space, the set $[0,1]\\times\\{0\\}$ has $m^2$-measure zero because $$m^2([0,1]\\times\\{0\\})=m([0,1])m(\\{0\\})=0.$$ However, since there exists a nonmeasurable subset of $[0,1]$, such as a Vitali set $V\\subset [0,1]$, one can form $V\\times \\{0\\}\\subset [0,1]\\times\\{0\\}$, and this set is not an element of $\\mathcal{L}\\otimes \\mathcal{L}$.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "product measure computation",
+    "use of a Vitali set",
+    "analyzing completeness failure"
+  ],
+  "prerequisites": [
+    "Lebesgue measure",
+    "product measure",
+    "nonmeasurable sets",
+    "complete measure space"
+  ],
+  "callout_body": "$(\\mathbb{R},\\mathcal{L},m)$是Lebesgue测度空间，其中$\\mathcal{L}$是实数的Lebesgue代数。现在考虑再次基础上建立的乘积测度空间$$(\\mathbb{R}^2,\\mathcal{L}\\otimes \\mathcal{L},m^2)$$那么集合$[0,1]\\times\\{0\\}$一定是$m^2$零测度的集合，因为$$m^2([0,1]\\times\\{0\\})=m([0,1])m(\\{0\\})=0$$不过我们知道，单位闭区间$[0,1]$当中是存在不可测集合的，比如一个Vitali集$V\\subset [0,1]$,可以构造子集$V\\times \\{0\\}\\subset [0,1]\\times\\{0\\}$，但是这并不是一个$\\mathcal{L}\\otimes \\mathcal{L}$中的元素。"
+}

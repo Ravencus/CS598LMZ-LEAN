@@ -1,0 +1,57 @@
+{
+  "note_title": "对Dirichlet判别的一个调整",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "对Dirichlet判别的一个调整#1",
+      "type": "note",
+      "title": "Dirichlet收敛判别",
+      "body": "$a_n:\\mathbb{N} \\to \\mathbb{R},b_n:\\mathbb{N} \\to\\mathbb{C}$,如果$a_n$单调收敛到0,并且存在正实数使得$\\left|\\sum_{n=1}^N b_n\\right|<M$对任意正整数$N$成立，那么级数$\\sum_{n\\geq 1}a_nb_n$收敛。",
+      "position_char": 40,
+      "position_line": 7
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#2",
+      "type": "note",
+      "title": "单调性修改为有界变差",
+      "body": "1.  $a_n \\to 0$(这里不需要单调的条件)\n2.  $\\sum_{n\\geq 1}|a_n-a_{n+1}|<\\infty$,即$a_n$是有界变差的。 (去掉了单调性的要求，这里用差分绝对值的和收敛替代,即$a_n$可以不单调，但是他们差分的误差累计起来要是有限的)\n3.  $\\left|\\sum_{n=1}^N b_n\\right|<\\infty$ 对任意的正整数$N$成立",
+      "position_char": 283,
+      "position_line": 12
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#3",
+      "type": "note",
+      "title": "去掉单调性可能会导致发散",
+      "body": "$$\\sum_n \\frac{1}{n} = \\sum_n (-1)^n \\frac{(-1)^n}{n}$$令$b_n = (-1)^n$其和一定是有界的，$a_n = \\frac{(-1)^n}{n} \\to0$，不过 $a_n$并不单调。事实上这个级数发散。",
+      "position_char": 1841,
+      "position_line": 50
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#4",
+      "type": "question",
+      "title": "问题",
+      "body": "证明:\n$$\\sum_{n\\geq1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n}z^n$$在单位圆周$S^1$上收敛。",
+      "position_char": 2019,
+      "position_line": 56
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#5",
+      "type": "question",
+      "title": "一致收敛的问题",
+      "body": "此时的问题变成了这样:\n\n$a_n(z):z\\in D\\to \\mathbb{R}$,$b_n(z):z\\in D\\to\\mathbb{C}$ 那么此时考虑级数:\n\n$$\\sum_{n} a_n(z)b_n(z)$$是否是一致收敛的。",
+      "position_char": 3506,
+      "position_line": 94
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#6",
+      "type": "note",
+      "title": "一致收敛版本的Dirichlet收敛",
+      "body": "1.  $\\sum_{n =1}^{N}b_n(z)$对任意正整数$N$一致有界\n2.  $a_n(z)\\forall z \\in D$单调收敛到0\n\n如果满足上述条件，那么$\\sum_{n} a_n(z)b_n(z)$在$D$上一致收敛。",
+      "position_char": 3932,
+      "position_line": 111
+    }
+  ]
+}

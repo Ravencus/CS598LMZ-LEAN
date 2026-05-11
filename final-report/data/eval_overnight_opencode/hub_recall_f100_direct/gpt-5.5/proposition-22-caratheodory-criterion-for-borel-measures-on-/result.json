@@ -1,0 +1,21 @@
+{
+  "problem_id": "proposition-22-caratheodory-criterion-for-borel-measures-on-",
+  "model": "gpt-5.5",
+  "wall_seconds": 18.02,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "basic-methods-in-analysis-i-hub",
+    "piecewise-estimates-hub"
+  ],
+  "truth": [
+    "borel-cantelli-lemma-and-applications-hub"
+  ],
+  "tp": 0,
+  "fp": 3,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

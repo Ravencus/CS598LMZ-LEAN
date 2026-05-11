@@ -1,0 +1,28 @@
+{
+  "problem_id": "strong-law-of-large-numbers-kolmogorov-1930",
+  "weak_model": "gpt-5.4-mini",
+  "cell": "W-W-W",
+  "models": {
+    "plan": "gpt-5.4-mini",
+    "reason": "gpt-5.4-mini",
+    "formalize": "gpt-5.4-mini"
+  },
+  "success": false,
+  "n_errors": 3,
+  "first_error": "unexpected token 'import'; expected '{' or tactic",
+  "stage_failures": [],
+  "stage_seconds": {
+    "plan": 8.2,
+    "reason": 7.3,
+    "formalize": 59.3,
+    "compile": 2.3
+  },
+  "plan_quality": {
+    "n_bullets": 4,
+    "is_numbered": true,
+    "is_nonempty": true,
+    "appears_to_restate_theorem": false
+  },
+  "splice_action": "wrap",
+  "signature_deviation": false
+}

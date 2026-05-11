@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-211-4",
+  "english_title": "Proposition 2.1.1",
+  "statement_en": "For nonnegative bounded sequences $x_n,y_n$, $$\\begin{aligned}\\limsup_{n\\to \\infty} x_n\\limsup_{n\\to \\infty} y_n&\\geq \\limsup_{n\\to \\infty} x_ny_n\\\\&\\geq \\liminf_{n\\to \\infty}x_ny_n\\\\ &\\geq \\liminf_{n\\to \\infty}x_n\\liminf_{n\\to \\infty}y_n.\\end{aligned}$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instInfSet', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Set\n\nnoncomputable def seqLimsup (u : ℕ → ℝ) : ℝ :=\n  sInf (Set.range fun n : ℕ => sSup (u '' Set.Ici n))\n\nnoncomputable def seqLiminf (u : ℕ → ℝ) : ℝ :=\n  sSup (Set.range fun n : ℕ => sInf (u '' Set.Ici n))\n\ntheorem nonnegative_bounded_sequences_limsup_liminf_mul\n    (x y : ℕ → ℝ)\n    (hx_nonneg : ∀ n, 0 ≤ x n)\n    (hy_nonneg : ∀ n, 0 ≤ y n)\n    (hx_bdd : ∃ M, ∀ n, x n ≤ M)\n    (hy_bdd : ∃ M, ∀ n, y n ≤ M) :\n    seqLimsup x * seqLimsup y ≥ seqLimsup (fun n => x n * y n) ∧\n      seqLimsup (fun n => x n * y n) ≥ seqLiminf (fun n => x n * y n) ∧\n      seqLiminf (fun n => x n * y n) ≥ seqLiminf x * seqLiminf y := by\n  sorry"
+}

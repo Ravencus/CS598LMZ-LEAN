@@ -1,0 +1,116 @@
+import Mathlib
+
+lemma integral_max_cos :
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 = 2 := by
+  have h01 : (0 : ℝ) ≤ Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h12 : Real.pi / 2 ≤ 3 * Real.pi / 2 := by
+    nlinarith [Real.pi_pos]
+  have h23 : 3 * Real.pi / 2 ≤ 2 * Real.pi := by
+    nlinarith [Real.pi_pos]
+
+  have h0 : ∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0 = ∫ u in 0..(Real.pi / 2), Real.cos u := by
+    refine intervalIntegral.integral_congr ?_
+    intro u hu
+    have huIcc : u ∈ Set.Icc (0 : ℝ) (Real.pi / 2) := by
+      simpa [Set.uIcc_of_le h01] using hu
+    have huIcc' : u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+      constructor
+      · nlinarith [huIcc.1, Real.pi_pos]
+      · exact huIcc.2
+    have hcos : 0 ≤ Real.cos u := Real.cos_nonneg_of_mem_Icc huIcc'
+    simp [max_eq_left hcos]
+
+  have hmid : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 = 0 := by
+    have hmid' : ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0 =
+        ∫ u in (Real.pi / 2)..(3 * Real.pi / 2), (0 : ℝ) := by
+      refine intervalIntegral.integral_congr ?_
+      intro u hu
+      have huIcc : u ∈ Set.Icc (Real.pi / 2) (3 * Real.pi / 2) := by
+        simpa [Set.uIcc_of_le h12] using hu
+      have hu_mem : u - Real.pi ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+        constructor
+        · nlinarith [huIcc.1, Real.pi_pos]
+        · nlinarith [huIcc.2, Real.pi_pos]
+      have hnonneg : 0 ≤ Real.cos (u - Real.pi) := Real.cos_nonneg_of_mem_Icc hu_mem
+      have hcos_eq : Real.cos u = - Real.cos (u - Real.pi) := by
+        have h := Real.cos_add_pi (u - Real.pi)
+        simpa [sub_eq_add_neg, add_comm, add_left_comm, add_assoc] using h
+      have hcos : Real.cos u ≤ 0 := by
+        nlinarith [hcos_eq, hnonneg]
+      simp [max_eq_right hcos]
+    simpa using hmid'
+
+  have h3 : ∫ u in (3 * Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0 =
+      ∫ u in (3 * Real.pi / 2)..(2 * Real.pi), Real.cos u := by
+    refine intervalIntegral.integral_congr ?_
+    intro u hu
+    have huIcc : u ∈ Set.Icc (3 * Real.pi / 2) (2 * Real.pi) := by
+      simpa [Set.uIcc_of_le h23] using hu
+    have hmem : 2 * Real.pi - u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) := by
+      constructor
+      · nlinarith [huIcc.2, Real.pi_pos]
+      · nlinarith [huIcc.1, Real.pi_pos]
+    have hcos' : 0 ≤ Real.cos (2 * Real.pi - u) := Real.cos_nonneg_of_mem_Icc hmem
+    have hcos_eq : Real.cos (2 * Real.pi - u) = Real.cos u := by
+      simp [sub_eq_add_neg, Real.cos_add, Real.cos_two_pi, Real.sin_two_pi, Real.cos_neg, Real.sin_neg]
+    have hcos : 0 ≤ Real.cos u := by
+      rw [← hcos_eq]
+      exact hcos'
+    simp [max_eq_left hcos]
+
+  have hcos0 : ∫ u in (0:ℝ)..(Real.pi / 2), Real.cos u = 1 := by
+    rw [integral_cos]
+    simp [Real.sin_pi_div_two]
+
+  have hcos2 : ∫ u in (3 * Real.pi / 2)..(2 * Real.pi), Real.cos u = 1 := by
+    rw [integral_cos]
+    have hsin3 : Real.sin (3 * Real.pi / 2) = -1 := by
+      have h := Real.sin_add_pi (Real.pi / 2)
+      rw [Real.sin_pi_div_two] at h
+      convert h using 2
+      ring
+    simp [Real.sin_two_pi, hsin3]
+
+  let f : ℝ → ℝ := fun u => max (Real.cos u) 0
+  have hcont : Continuous f := by
+    simpa [f] using (Real.continuous_cos.max continuous_const)
+  have hint01 : IntervalIntegrable f MeasureTheory.volume (0 : ℝ) (Real.pi / 2) := by
+    simpa [f] using hcont.intervalIntegrable (0 : ℝ) (Real.pi / 2)
+  have hint12 : IntervalIntegrable f MeasureTheory.volume (Real.pi / 2) (2 * Real.pi) := by
+    simpa [f] using hcont.intervalIntegrable (Real.pi / 2) (2 * Real.pi)
+  have hint23a : IntervalIntegrable f MeasureTheory.volume (Real.pi / 2) (3 * Real.pi / 2) := by
+    simpa [f] using hcont.intervalIntegrable (Real.pi / 2) (3 * Real.pi / 2)
+  have hint23b : IntervalIntegrable f MeasureTheory.volume (3 * Real.pi / 2) (2 * Real.pi) := by
+    simpa [f] using hcont.intervalIntegrable (3 * Real.pi / 2) (2 * Real.pi)
+
+  have hsplit1 :
+      ∫ u in (0:ℝ)..(2 * Real.pi), f u =
+        (∫ u in (0:ℝ)..(Real.pi / 2), f u) + (∫ u in (Real.pi / 2)..(2 * Real.pi), f u) := by
+    simpa [f, add_comm] using
+      (intervalIntegral.integral_add_adjacent_intervals (f := f) hint01 hint12).symm
+
+  have hsplit2 :
+      ∫ u in (Real.pi / 2)..(2 * Real.pi), f u =
+        (∫ u in (Real.pi / 2)..(3 * Real.pi / 2), f u) + (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), f u) := by
+    simpa [f, add_comm] using
+      (intervalIntegral.integral_add_adjacent_intervals (f := f) hint23a hint23b).symm
+
+  have hsplit2' :
+      ∫ u in (Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0 =
+        (∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0) +
+          (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0) := by
+    simpa [f] using hsplit2
+
+  calc
+    ∫ u in (0:ℝ)..(2 * Real.pi), max (Real.cos u) 0 =
+        (∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0) +
+          (∫ u in (Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0) := by
+      simpa [f] using hsplit1
+    _ = (∫ u in (0:ℝ)..(Real.pi / 2), max (Real.cos u) 0) +
+          ((∫ u in (Real.pi / 2)..(3 * Real.pi / 2), max (Real.cos u) 0) +
+            (∫ u in (3 * Real.pi / 2)..(2 * Real.pi), max (Real.cos u) 0)) := by
+      rw [hsplit2']
+    _ = 1 + (0 + 1) := by
+      rw [h0, hmid, h3, hcos0, hcos2]
+    _ = 2 := by norm_num

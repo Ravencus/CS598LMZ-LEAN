@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "skipped": true,
+  "reason": "signature_deviation",
+  "splice_action": "deviation",
+  "deviation_detail": "model header differs from canonical (modulo whitespace).\nCanonical: theorem primeReciprocalSum_estimate : ∃ C : ℝ, ∀ x : ℕ, 2 ≤ x → |primeReciprocalSum x - Real.log (Real.log (x : ℝ))| ≤ C := by\nModel:    theorem is not currently provable from `import Mathlib` alone. Reason: the requested bound is a Mertens-type estimate `∑_{p ≤ x} 1/p = log log x + O(1)`, which requires substantially more than the prime-reciprocal divergence results currently available in Mathlib. Mathlib does contain the divergence",
+  "errors_only": []
+}

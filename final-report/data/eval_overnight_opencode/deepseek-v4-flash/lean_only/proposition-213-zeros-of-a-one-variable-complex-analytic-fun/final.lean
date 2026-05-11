@@ -1,0 +1,39 @@
+import Mathlib
+open Complex
+open Set
+open Metric
+open scoped Topology
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  have hf_analytic : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+  have hf_analytic_at : AnalyticAt ℂ f z0 := hf_analytic z0 hz0U
+  rcases hf_analytic_at.eventually_eq_zero_or_eventually_ne_zero with (hzero | hnonzero)
+  · exfalso
+    exact hf_nonzero (hf_analytic.eqOn_zero_of_preconnected_of_frequently_eq_zero hU_connected hz0U
+      (hzero.filter_mono (nhdsWithin_le_nhds ({z0}ᶜ) z0)).frequently)
+  · have hnonzero' : ∀ᶠ z in 𝓝 z0, (z ≠ z0 → f z ≠ 0) := by
+      rw [eventually_nhdsWithin_iff] at hnonzero
+      exact hnonzero
+    rcases Metric.eventually_nhds_iff.mp hnonzero' with ⟨ε, hε_pos, hε⟩
+    obtain ⟨δ, hδ_pos, hδ⟩ := Metric.mem_nhds_iff.mp (hU_open.mem_nhds hz0U)
+    set r := min ε δ with hr_def
+    have hr_pos : r > 0 := lt_min_iff.mpr ⟨hε_pos, hδ_pos⟩
+    refine ⟨r, hr_pos, ?_⟩
+    intro z hzU hz_norm hz_f
+    by_contra hz_ne
+    have hz_dist : dist z z0 < ε := by
+      calc
+        dist z z0 = ‖z - z0‖ := by simpa [dist_eq]
+        _ < r := hz_norm
+        _ ≤ ε := min_le_left _ _
+    have hz_f_ne : f z ≠ 0 := hε z hz_dist hz_ne
+    exact hz_f_ne hz_f

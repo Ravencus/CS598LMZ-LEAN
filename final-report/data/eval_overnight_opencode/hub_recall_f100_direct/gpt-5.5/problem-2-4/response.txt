@@ -1,0 +1,4 @@
+["piecewise-estimates-hub", "term-by-term-estimates-hub", "an-epsilon-of-room-hub"]
+- piecewise-estimates-hub: The key convolution error is split into finitely many boundary indices and a long tail where both sequences are close to their limits.
+- term-by-term-estimates-hub: Each summand is bounded using estimates for `x k - A` and `y (n-k) - B`, then the bounds are summed and divided by `n+1`.
+- an-epsilon-of-room-hub: The proof reduces the asymptotic statement to a fixed finite cutoff `N`, controlling the finite part by `O(N/n)` and the tail by epsilon-small bounds.

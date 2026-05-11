@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-314",
+  "english_title": "Example 3.1.4",
+  "statement_en": "Compute the parameter-dependent integral \\[I(a):=\\int_{-\\infty}^{\\infty}e^{-x^2}\\cos(ax)\\,dx.\\]",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem gaussian_cos_integral (a : ℝ) :\n    (∫ x : ℝ, Real.exp (-(x ^ 2)) * Real.cos (a * x)) =\n      Real.sqrt Real.pi * Real.exp (-(a ^ 2) / 4) := by\n  sorry"
+}

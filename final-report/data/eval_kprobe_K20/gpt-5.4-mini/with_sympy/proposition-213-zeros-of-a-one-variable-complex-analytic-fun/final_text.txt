@@ -1,0 +1,47 @@
+I’m checking Mathlib for an existing isolated-zeros theorem and the right holomorphic/analytic API before attempting the proof.
+I found an existing proof file for this theorem; I’m reading it to see what was already tried and whether there’s a simpler path through `AnalyticOnNhd`.
+The current proof is already very close; I’m compiling it now to see whether the remaining issue is just a lemma name or a type mismatch.
+I’ve got the strategy; the main work now is pinning down the exact zero-set lemma and the clean way to negate “isolated.” I’m checking a few candidate lemma names.
+I’m rewriting the negation step and the closure argument to avoid the brittle `push_neg`/`not_imp` path. The rest can stay the same.
+The proof is patched. I’m compiling the updated version now to catch any remaining theorem-name or `Metric.mem_closure_iff` issues.
+The remaining issue is just the direction of the metric inequality in the closure step. I’m flipping it with `norm_sub_rev`.
+I’ve fixed the only failing subgoal, and I’m re-running the checker to confirm the proof closes cleanly.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Set
+
+theorem isolated_zero_of_nonzero_holomorphic
+    (U : Set ℂ) (f : ℂ → ℂ) (z0 : ℂ)
+    (hU_open : IsOpen U)
+    (hU_nonempty : U.Nonempty)
+    (hU_connected : IsPreconnected U)
+    (hf_holo : DifferentiableOn ℂ f U)
+    (hf_nonzero : ¬ ∀ z ∈ U, f z = 0)
+    (hz0U : z0 ∈ U)
+    (hz0_zero : f z0 = 0) :
+    ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+  by_cases h_isolated : ∃ r > 0, ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0
+  · exact h_isolated
+  · exfalso
+    have h_not_isolated : ∀ r > 0, ∃ z, z ∈ U ∧ ‖z - z0‖ < r ∧ f z = 0 ∧ z ≠ z0 := by
+      intro r hr
+      by_contra hcontra
+      have hpr : ∀ z, z ∈ U → ‖z - z0‖ < r → f z = 0 → z = z0 := by
+        intro z hzU hzdist hfz
+        by_contra hzne
+        exact hcontra ⟨z, hzU, hzdist, hfz, hzne⟩
+      exact h_isolated ⟨r, hr, hpr⟩
+    have hf_analytic : AnalyticOnNhd ℂ f U := hf_holo.analyticOnNhd hU_open
+    have h_mem_closure : z0 ∈ closure ({z | f z = 0} \ {z0}) := by
+      rw [Metric.mem_closure_iff]
+      intro ε hε
+      rcases h_not_isolated ε hε with ⟨z, hzU, hzdist, hfz, hzne⟩
+      refine ⟨z, ?_, ?_⟩
+      · exact ⟨hfz, hzne⟩
+      · simpa [dist_eq_norm, norm_sub_rev] using hzdist
+    have h_eqOn : EqOn f 0 U :=
+      hf_analytic.eqOn_zero_of_preconnected_of_mem_closure hU_connected hz0U h_mem_closure
+    exact hf_nonzero (fun z hz => h_eqOn hz)
+```

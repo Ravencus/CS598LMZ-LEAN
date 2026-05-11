@@ -1,0 +1,4 @@
+I’m going to load the Lean proving workflow and then iterate with the checker on a minimal proof strategy.
+I’ve settled on a squeeze/estimate proof: compare `sin x` to `x`, show the linear sum tends to `1/2`, and bound the error by `O(1/n)`. I’m checking the exact Mathlib lemma names now.
+I found an existing full proof draft in the workspace. I’m checking that exact code first so I can either use it or correct only the failing parts.
+The draft is close but has several tactic-shape issues. I’m looking for a cleaner route in the workspace, possibly via an existing theorem or a simpler bound chain.

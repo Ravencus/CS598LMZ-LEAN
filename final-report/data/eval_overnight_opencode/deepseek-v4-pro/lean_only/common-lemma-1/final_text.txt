@@ -1,0 +1,12 @@
+Let me load the skill and then work on the proof iteratively.
+Now let me plan the proof and start iterating. I have 10 `check_lean_proof` calls.
+
+**Strategy**: 
+1. Borel-Cantelli: Σ μ(A_n) < ∞ ⇒ μ(limsup A_n) = 0
+2. Relate `{x | ∃ᶠ n, ...}` to `limsup A_n`
+3. For ae convergence: the failure set is contained in a countable union of null limsup sets.
+
+Let me make the first attempt.
+The `set` can't use `ε` outside its scope. Let me restructure.
+`Set.mem_limsup` doesn't exist. Let me find the right lemma for limsup membership and test Borel-Cantelli.
+`measure_limsup_eq_zero` not found. Let me search for Borel-Cantelli related lemmas and limsup membership.

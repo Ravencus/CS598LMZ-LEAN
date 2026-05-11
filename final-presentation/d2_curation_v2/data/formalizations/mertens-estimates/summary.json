@@ -1,0 +1,24 @@
+{
+  "problem_id": "mertens-estimates",
+  "english_title": "Mertens Estimates",
+  "statement_en": "1. $$\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)+O(1)$$\n2. $$\\sum_{p\\leq x}\\frac{\\log(p)}{p}=\\log(x)+O(1)$$",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ntheorem mainTheorem :\n    ((fun x : ℕ =>\n        Finset.sum (Finset.Icc 1 x) (fun n => ArithmeticFunction.vonMangoldt n / (n : ℝ)) -\n          Real.log (x : ℝ)) =O[Filter.atTop]\n      (fun _ : ℕ => (1 : ℝ))) ∧\n    ((fun x : ℕ =>\n        Finset.sum ((Finset.Icc 1 x).filter Nat.Prime) (fun p => Real.log (p : ℝ) / (p : ℝ)) -\n          Real.log (x : ℝ)) =O[Filter.atTop]\n      (fun _ : ℕ => (1 : ℝ))) := by\n  sorry"
+}

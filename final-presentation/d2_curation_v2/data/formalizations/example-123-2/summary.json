@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-123-2",
+  "english_title": "Example 1.2.3",
+  "statement_en": "It is important to note that the condition is that for every symmetric interval $I_{\\varepsilon}(L)$ centered at some real number $L$, there are only finitely many terms outside the interval, rather than merely infinitely many terms inside it. This difference is illustrated by the sequence $$b_n=\\begin{cases}1&\\text{n is even}\\\\ -1&\\text{n is odd}\\end{cases}.$$ This sequence has no limit. If the center $x\\neq 1,-1$, then for sufficiently small $\\varepsilon$, the interval $I_{\\varepsilon}(x)$ con",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef alternatingParitySeq : ℕ → ℝ :=\n  fun n => if n % 2 = 0 then 1 else -1\n\ndef symmetricInterval (L ε : ℝ) : Set ℝ :=\n  Set.Ioo (L - ε) (L + ε)\n\ndef GeometricLimitPoint (u : ℕ → ℝ) (L : ℝ) : Prop :=\n  ∀ ε : ℝ, ε > 0 → ({n : ℕ | u n ∉ symmetricInterval L ε} : Set ℕ).Finite\n\ntheorem alternatingParitySeq_has_no_geometric_limit :\n    ¬ ∃ L : ℝ, GeometricLimitPoint alternatingParitySeq L := by\n  sorry"
+}

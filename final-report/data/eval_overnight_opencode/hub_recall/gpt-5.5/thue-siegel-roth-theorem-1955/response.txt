@@ -1,0 +1,4 @@
+["an-epsilon-of-room-hub", "kroneckers-theorem-dirichlets-theorem-and-applications-hub", "piecewise-estimates-hub"]
+- an-epsilon-of-room-hub: The definition is explicitly ε-slack around exponent 2, and Roth’s theorem gives the lower bound with exponent `2 + ε` rather than a sharp uniform `2`.
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: The “infinitely many good rational approximations” side is supplied by Dirichlet/Kronecker-style approximation for irrational real numbers.
+- piecewise-estimates-hub: The Roth lower-bound side is typically turned into a uniform constant by separating the finitely many exceptional rational approximations from the remaining denominators and handling each part separately.

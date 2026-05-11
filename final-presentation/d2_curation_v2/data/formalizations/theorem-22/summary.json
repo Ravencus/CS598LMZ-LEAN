@@ -1,0 +1,30 @@
+{
+  "problem_id": "theorem-22",
+  "english_title": "Theorem 2.2",
+  "statement_en": "$$F_N(x):=\\frac{1}{N}\\frac{\\sin^2(Nx/2)}{\\sin^2(x/2)}$$ and this is an approximate identity in $L^1([-\\pi,\\pi])$.",
+  "difficulty": "medium",
+  "domain": "Fourier analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `𝓝`"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `𝓝`"
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen MeasureTheory Filter\n\ndef fejerKernel (N : ℕ) (x : ℝ) : ℝ :=\n  (1 / (N : ℝ)) * (Real.sin (((N : ℝ) * x) / 2) ^ 2) / (Real.sin (x / 2) ^ 2)\n\ndef IsApproximateIdentityInL1OnPi (K : ℕ → ℝ → ℝ) : Prop :=\n  (∀ N x, 0 ≤ K (N + 1) x) ∧\n  (∀ N, ∫ x in (-Real.pi)..Real.pi, K (N + 1) x = 2 * Real.pi) ∧\n  ∀ ε > 0,\n    Tendsto\n      (fun N : ℕ =>\n        ∫ x in {x : ℝ | ε ≤ |x| ∧ |x| ≤ Real.pi}, |K (N + 1) x| ∂volume)\n      atTop\n      (𝓝 0)\n\ntheorem fejerKernel_isApproximateIdentityInL1OnPi :\n    IsApproximateIdentityInL1OnPi fejerKernel := by\n  sorry"
+}

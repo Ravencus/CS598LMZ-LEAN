@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-11-3",
+  "english_title": "Problem 1.1",
+  "statement_en": "Prove that the set formed by the sequence $\\eta_n = \\left\\{\\frac{n}{2\\pi}\\right\\}$ is dense in the interval $[0,1]$, where $\\{x\\}$ denotes the fractional part of the real number $x$.",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Set.closure`\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem fractional_parts_nat_div_two_pi_dense_in_unitInterval :\n    Set.Icc (0 : ℝ) 1 ⊆\n      closure (Set.range fun n : ℕ => Int.fract ((n : ℝ) / (2 * Real.pi))) := by\n  sorry"
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-0-9",
+  "english_title": "Problem 0",
+  "statement_en": "Let $a_n,r_n$ be two real sequences satisfying $\\sum_{n\\geq 1}|a_n|<\\infty$. Prove that the series $$\\sum_{n\\geq 1}\\frac{a_n}{\\sqrt{|x-r_n|}}$$ is absolutely convergent for almost every $x\\in \\mathbb{R}$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem ae_absolutelyConvergent_series_div_sqrt_abs_sub\n    (a r : ℕ → ℝ)\n    (ha : Summable (fun n => |a n|)) :\n    ∀ᵐ x : ℝ ∂volume, Summable (fun n => |a n / Real.sqrt (|x - r n|)|) := by\n  sorry"
+}

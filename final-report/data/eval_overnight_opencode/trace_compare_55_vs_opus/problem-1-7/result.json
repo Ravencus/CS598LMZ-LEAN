@@ -1,0 +1,11 @@
+{
+  "problem_id": "problem-1-7",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "compile_fail",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "lean_impl",
+  "evidence": "Both traces reduce the problem to comparing the sine sum with the linear sum ∑ k/n² and showing that linear sum tends to 1/2; Trace B does this via an explicit squeeze with a cubic error term, while Trace A describes `sin x = x + O(x^2)` and starts proving the same finite-sum reduction. The split oc",
+  "wall_seconds": 10.24
+}

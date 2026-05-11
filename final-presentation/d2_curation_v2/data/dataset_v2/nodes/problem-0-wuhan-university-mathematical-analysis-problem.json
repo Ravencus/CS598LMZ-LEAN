@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-wuhan-university-mathematical-analysis-problem",
+  "type": "problem",
+  "source_note": "带根号的三项迭代序列极限的存在性问题",
+  "english_source_note": "Existence of Limits for Three-Term Radical Iterations",
+  "callout_id": "带根号的三项迭代序列极限的存在性问题#1",
+  "english_title": "Problem 0 (Wuhan University Mathematical Analysis Problem)",
+  "statement_en": "Let the sequence $\\{x_n\\}$ satisfy $x_1,x_2>0$ and the recurrence $$x_{n+2}:=\\sqrt{x_{n+1}}+\\sqrt{x_n}.$$ Prove that the limit of the sequence exists and equals $4$.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "fixed-point analysis of the recurrence",
+    "boundedness and convergence of recursive sequences",
+    "monotonicity via auxiliary estimates"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "monotone convergence theorem for sequences",
+    "properties of square root functions"
+  ],
+  "callout_body": "序列$\\{x_n\\}$满足$x_1,x_2>0$以及递归式$$x_{n+2}:=\\sqrt{x_{n+1}}+\\sqrt{x_n}$$证明序列的极限存在并且为$4$。"
+}

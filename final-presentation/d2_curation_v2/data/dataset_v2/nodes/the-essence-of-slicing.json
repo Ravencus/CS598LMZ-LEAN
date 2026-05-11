@@ -1,0 +1,23 @@
+{
+  "id": "the-essence-of-slicing",
+  "type": "problem",
+  "source_note": "n维球体的体积",
+  "english_source_note": "Volume of the n-Dimensional Ball",
+  "callout_id": "n维球体的体积#2",
+  "english_title": "The Essence of Slicing",
+  "statement_en": "If $E$ is a measurable subset of $\\mathbb{R}^{d_1}\\times \\mathbb{R}^{d_2}$, then for almost every $y \\in \\mathbb{R}^{d_2}$ the slice $$E^{y}=\\{x\\in\\mathbb{R}^{d_1}:(x,y)\\in E\\}$$ is measurable, $m(E^{y})$ is a measurable function of $y$, and $$m(E)=\\int_{\\mathbb{R}^{d_2}}m(E^{y})\\,dy.$$ Similarly, for almost every $x \\in \\mathbb{R}^{d_1}$ the corresponding slices are measurable, the slice measure is measurable as a function of $x$, and $$m(E)=\\int_{\\mathbb{R}^{d_1}}m(E_{x})\\,dx.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Fubini theorem",
+    "Tonelli theorem",
+    "slicing argument"
+  ],
+  "prerequisites": [
+    "measurable sets",
+    "Lebesgue measure",
+    "product measure"
+  ],
+  "callout_body": "如果$E$是$\\mathbb{R}^{d_1}\\times \\mathbb{R}^{d_2}$当中的一个可测集合，那么对于几乎每个$y \\in \\mathbb{R}^{d_2}$都有切片,$$E^{y}=\\{x\\in\\mathbb{R}^{d_1}:(x,y)\\in E\\}$$\n这种切片都是可测的集合，并且$m(E^{y})$是关于$y$的可测函数，并且$$m(E)=\\int_{\\mathbb{R}^{d_2}}m(E^{y})\\,dy$$同样的也有对几乎每个$x \\in \\mathbb{R}^{d_1}$都有切片,$$E_{x}=\\{x\\in\\mathbb{R}^{d_1}:(x,y)\\in E\\}$$这种切片都是可测的集合，并且$m(E_{x})$是关于$x$的可测函数，并且$$m(E)=\\int_{\\mathbb{R}^{d_1}}m(E_{x})\\,dx$$"
+}

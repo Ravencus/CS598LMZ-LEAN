@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-126-a-sufficient-condition-for-a-cauchy-sequence",
+  "english_title": "Proposition 1.2.6: A Sufficient Condition for a Cauchy Sequence",
+  "statement_en": "If a real or complex sequence $(a_n)$ satisfies $|a_{n+1}-a_n|\\leq b_n$ and the series $\\sum_{n\\geq 1} b_n$ converges, then $(a_n)$ is a Cauchy sequence.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem cauchySeq_of_norm_sub_le_summable\n    {α : Type*} [NormedAddCommGroup α]\n    (a : ℕ → α) (b : ℕ → ℝ)\n    (hbound : ∀ n : ℕ, ‖a (n + 1) - a n‖ ≤ b n)\n    (hsummable : Summable b) :\n    CauchySeq a := by\n  sorry"
+}

@@ -1,0 +1,27 @@
+{
+  "note_title": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+  "is_hub": false,
+  "in_subset_via": [
+    "分段估计",
+    "基于分部求和法的和的估计",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "分部求和的想法,Dirichlet-Abel收敛判别法的推广#1",
+      "type": "note",
+      "title": "对Dirichlet判别的扩展",
+      "body": "1.  原本的判别当中，依旧保持$\\left|B_N\\right|<\\infty$对任意的正整数$N$成立,但是把$a_n$单调收敛到0替换为，$a_n$有界变差收敛到0。(参考[[对Dirichlet判别的一个调整]])\n2.  如果$$|a_n - a_{n+1}| = O\\left(\\frac{1}{n^{M+1}}\\right)$$这个时候其实不需要给到$\\left|B_N\\right|<\\infty$如此强的条件的，想要$\\sum_{n=1}^{N-1}B_n(a_n-a_{n+1})$绝对收敛实际上只需要$$B_n =O(n^{M-\\varepsilon_0})$$因此原来的级数一定是收敛的。\n3. 如果我们知道$a_n$是单调的，并且$$|a_n - a_{n+1}| \\gg \\frac{1}{n^{M+1}},B_n\\gg n^{M}$$同时假设$B_na_n$的极限是存在的，那么由于$$B_n|a_{n}-a_{n+1}|\\gg \\frac{1}{n}$$因此原来的级数一定是发散的。",
+      "position_char": 322,
+      "position_line": 13
+    },
+    {
+      "id": "分部求和的想法,Dirichlet-Abel收敛判别法的推广#2",
+      "type": "question",
+      "title": "问题1",
+      "body": "假设$\\sum_{j = 1}^{n} a_j = o\\left(\\sqrt{n}\\right)$,证明：\n$$\\sum_{j} \\frac{a_j}{j}$$ 收敛",
+      "position_char": 841,
+      "position_line": 21
+    }
+  ]
+}

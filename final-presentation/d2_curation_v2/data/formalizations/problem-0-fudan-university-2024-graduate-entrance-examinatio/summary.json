@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-0-fudan-university-2024-graduate-entrance-examinatio",
+  "english_title": "Problem 0: Fudan University 2024 Graduate Entrance Examination Problem",
+  "statement_en": "Let $a_1=2024$, and suppose that for every positive integer $n$ the sequence satisfies the recurrence relation $$a_{n+1}=a_n+\\frac{2}{a_n}.$$ Find $$\\lim_{n\\to\\infty}\\frac{a_n}{\\sqrt{n}}.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem recurrence_limit_over_sqrt :\n    ∀ a : ℕ → ℝ,\n      a 0 = 2024 →\n      (∀ n : ℕ, a (n + 1) = a n + 2 / a n) →\n      Filter.Tendsto (fun n : ℕ => a n / Real.sqrt n) Filter.atTop (nhds 2) := by\n  sorry"
+}

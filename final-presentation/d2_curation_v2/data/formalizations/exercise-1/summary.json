@@ -1,0 +1,24 @@
+{
+  "problem_id": "exercise-1",
+  "english_title": "Exercise 1",
+  "statement_en": "Prove in the same way that for every $\\varepsilon$, the set $C_{\\varepsilon}:=\\{x\\in X:f^{-}>\\varepsilon\\}$ also has measure zero.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  X\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem measure_zero_set_where_negPart_gt\n    {X : Type*} [MeasurableSpace X] (μ : MeasureTheory.Measure X) (f : X → ℝ) :\n    ∀ ε : ℝ, μ {x : X | ε < max (-f x) 0} = 0 := by\n  sorry"
+}

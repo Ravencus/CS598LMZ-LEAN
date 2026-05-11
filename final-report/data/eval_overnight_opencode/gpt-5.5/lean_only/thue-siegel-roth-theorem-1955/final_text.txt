@@ -1,0 +1,2 @@
+I’ll first inspect Mathlib-facing names already available in the workspace/repo for irrationality measure or Roth-style lemmas, then use the checker sparingly to validate the most promising route.
+There is prior scratch evidence for a Mathlib/API theorem shaped exactly like this: `hx_alg.hasIrrationalityMeasure_two hx_irr`. I’ll validate that directly against the required signature.

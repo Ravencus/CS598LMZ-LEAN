@@ -1,0 +1,3 @@
+I’m loading the Lean proving workflow, then I’ll test a minimal proof shape and iterate with the checker.
+I’m checking for an existing approximation lemma first; if Mathlib already has it, the proof will be short and robust.
+The first lookup didn’t surface usable names, so I’m probing the installed Mathlib source tree directly for irrational-approximation lemmas.

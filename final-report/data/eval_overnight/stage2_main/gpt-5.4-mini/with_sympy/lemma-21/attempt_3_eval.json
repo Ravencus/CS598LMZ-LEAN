@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  Real.cos (2 * ?x)\nin the target expression\n  Complex.normSq (Complex.cos (↑x * (↑Real.pi * 2)) + Complex.I * Complex.sin (↑x * (↑Re",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_a162a6b7f0.lean",
+      "line": 10,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  Real.cos (2 * ?x)\nin the target expression\n  Complex.normSq (Complex.cos (↑x * (↑Real.pi * 2)) + Complex.I * Complex.sin (↑x * (↑Real.pi * 2)) - 1) =\n    4 * (Real.sin (x * Real.pi) * Real.sin (x * Real.pi))\n\nx : ℝ\n⊢ Complex.normSq (Complex.cos (↑x * (↑Real.pi * 2)) + Complex.I * Complex.sin (↑x * (↑Real.pi * 2)) - 1) =\n    4 * (Real.sin (x * Real.pi) * Real.sin (x * Real.pi))"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_a162a6b7f0.lean",
+      "line": 29,
+      "column": 20,
+      "severity": "error",
+      "message": "Function expected at\n  Real.abs_sin_le_abs\nbut this term has type\n  |Real.sin ?m.391| ≤ |?m.391|\n\nNote: Expected a function because this term is being applied to the argument\n  (Real.pi * x)"
+    }
+  ]
+}

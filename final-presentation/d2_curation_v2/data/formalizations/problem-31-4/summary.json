@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-31-4",
+  "english_title": "Problem 3.1",
+  "statement_en": "Compute the integral $$\\\\int_{0}^{1}\\\\left(\\\\sum_{n\\\\geq 1}\\\\frac{a_n(x)}{3^n}\\\right)^2\\\\,dx,$$ where \\\\(a_n(x)\\\\) is the integer given by the \\\\(n\\\\)-th digit in the decimal expansion of \\\\(x\\\\).",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def decimalDigit (n : ℕ) (x : ℝ) : ℤ :=\n  Int.floor (((10 : ℝ) ^ n) * x) % 10\n\nnoncomputable def decimalDigitSeries (x : ℝ) : ℝ :=\n  ∑' n : ℕ, ((decimalDigit (n + 1) x : ℝ) / (3 : ℝ) ^ (n + 1))\n\ntheorem integral_square_decimalDigitSeries :\n    ∫ x in (0 : ℝ)..1, (decimalDigitSeries x) ^ 2 ∂volume = (195 : ℝ) / 32 := by\n  sorry"
+}

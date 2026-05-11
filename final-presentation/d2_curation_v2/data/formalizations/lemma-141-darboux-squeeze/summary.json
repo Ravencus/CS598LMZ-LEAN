@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-141-darboux-squeeze",
+  "english_title": "Lemma 1.4.1: Darboux Squeeze",
+  "statement_en": "If $f$ is a Riemann integrable function on the closed interval $[a,b]$, then for every $\\varepsilon>0$ there exist step functions $g_{\\varepsilon},h_{\\varepsilon}$ on $[a,b]$ such that for all $x\\in [a,b]$, $$g_{\\varepsilon}(x)\\leq f(x)\\leq h_{\\varepsilon}(x),$$ and $$\\int_a^b\\bigl(h_{\\varepsilon}(x)-g_{\\varepsilon}(x)\\bigr)\\,dx<\\varepsilon.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ndef IsStepFunctionOn (g : ℝ → ℝ) (a b : ℝ) : Prop :=\n  ∃ s : Finset ℝ, True\n\ntheorem exists_stepFunction_bounds_of_intervalIntegrable\n    {f : ℝ → ℝ} {a b : ℝ} (hf : IntervalIntegrable f volume a b) :\n    ∀ ε > 0, ∃ g h : ℝ → ℝ,\n      IsStepFunctionOn g a b ∧\n      IsStepFunctionOn h a b ∧\n      (∀ x ∈ Set.Icc a b, g x ≤ f x ∧ f x ≤ h x) ∧\n      (∫ x in a..b, (h x - g x)) < ε := by\n  sorry"
+}

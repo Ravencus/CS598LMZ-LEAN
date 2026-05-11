@@ -1,0 +1,30 @@
+{
+  "problem_id": "theorem-11-raabes-test",
+  "english_title": "Theorem 1.1: Raabe's Test",
+  "statement_en": "For a positive-term series $\\sum_n a_n$, define\n$$R_n := n\\left(\\frac{a_n}{a_{n+1}} - 1\\right).$$ If $R_n$ has a limit $L$, then:\n1. If $L>1$, the series converges.\n2. If $L<1$, the series diverges.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  L\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def RaabeTerm (a : ℕ → ℝ) (n : ℕ) : ℝ :=\n  (n : ℝ) * (a n / a (n + 1) - 1)\n\ntheorem raabe_test\n    {a : ℕ → ℝ} (ha : ∀ n : ℕ, 0 < a n) {L : ℝ}\n    (hlim : Filter.Tendsto (RaabeTerm a) Filter.atTop (Filter.nhds L)) :\n    (1 < L → Summable a) ∧ (L < 1 → ¬ Summable a) := by\n  sorry"
+}

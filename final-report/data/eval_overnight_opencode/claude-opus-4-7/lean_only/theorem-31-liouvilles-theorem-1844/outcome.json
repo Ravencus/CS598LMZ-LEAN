@@ -1,0 +1,34 @@
+{
+  "problem_id": "theorem-31-liouvilles-theorem-1844",
+  "model": "claude-opus-4-7",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 293.75,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  b • fQ\nin the target expression\n  (b • fQ).natDegree = fQ.natDegree\n\nα : ℝ\nd : ℕ\nh_alg : IsAlgebraic ℚ α\nhd : 2 ≤ d\nh_int : IsInteg",
+  "total_cost_usd": 1.766771,
+  "total_tokens": 1794003,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c53c9603ac.lean",
+      "line": 41,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  b • fQ\nin the target expression\n  (b • fQ).natDegree = fQ.natDegree\n\nα : ℝ\nd : ℕ\nh_alg : IsAlgebraic ℚ α\nhd : 2 ≤ d\nh_int : IsIntegral ℚ α\nhα_irr : Irrational α\nfQ : ℚ[X] := minpoly ℚ α\nh_deg : fQ.natDegree = d\nhfQ_def : fQ = minpoly ℚ α\nhfQ_ne : fQ ≠ 0\nf : ℤ[X] := IsLocalization.integerNormalization (nonZeroDivisors ℤ) fQ\nhf_def : f = IsLocalization.integerNormalization (nonZeroDivisors ℤ) fQ\nhf_aeval : (aeval α) f = 0\nhf_eval : eval α (map (algebraMap ℤ ℝ) f) = 0\nhf_ne : f ≠ 0\nb : ℤ\nhb_mem : b ∈ nonZeroDivisors ℤ\nhb_eq : map (algebraMap ℤ ℚ) (IsLocalization.integerNormalization (nonZeroDivisors ℤ) fQ) = b • fQ\nhb_ne : b ≠ 0\nhbQ_ne : ↑b ≠ 0\nhsmul : b • fQ = C ↑b * fQ\n⊢ (b • fQ).natDegree = fQ.natDegree\n"
+    }
+  ]
+}

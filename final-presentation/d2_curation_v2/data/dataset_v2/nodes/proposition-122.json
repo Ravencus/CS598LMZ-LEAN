@@ -1,0 +1,22 @@
+{
+  "id": "proposition-122",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#6",
+  "english_title": "Proposition 1.2.2",
+  "statement_en": "$$\\lim_{N\\to \\infty }3-T_N=\\lim_{N\\to \\infty}S_N$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "limit manipulation",
+    "identification of equivalent series expressions"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "algebra of limits",
+    "partial sums"
+  ],
+  "callout_body": "$$\\lim_{N\\to \\infty }3-T_N=\\lim_{N\\to \\infty}S_N$$"
+}

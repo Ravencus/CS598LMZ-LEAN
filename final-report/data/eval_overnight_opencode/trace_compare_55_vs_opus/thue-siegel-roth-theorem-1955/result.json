@@ -1,0 +1,11 @@
+{
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "different_plan",
+  "divergence": "n/a",
+  "evidence": "Trace A tried to solve the theorem by locating and directly invoking an existing Mathlib-style theorem, specifically `hx_alg.hasIrrationalityMeasure_two hx_irr`. Trace B instead decomposed the custom definition into Roth lower-bound and Dirichlet upper-bound components, repeatedly leaving the Roth p",
+  "wall_seconds": 5.7
+}

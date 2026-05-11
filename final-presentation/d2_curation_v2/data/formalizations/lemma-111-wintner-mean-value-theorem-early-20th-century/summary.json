@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-111-wintner-mean-value-theorem-early-20th-century",
+  "english_title": "Lemma 1.1.1: Wintner Mean Value Theorem, Early 20th Century",
+  "statement_en": "If an arithmetic function $f$ is the Dirichlet convolution sum of another arithmetic function $g$, namely $$f=1*g,$$ and if the series $\\sum_{n\\geq 1}\\frac{g(n)}{n}$ converges absolutely, then the mean value $M(f)$ of $f$ equals the sum of that series, that is, $$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}.$$",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `𝓝`"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef DirichletConvolutionWithOne (g : ℕ → ℝ) : ℕ → ℝ :=\n  fun n => Finset.sum n.divisors g\n\ndef HasMeanValue (f : ℕ → ℝ) (M : ℝ) : Prop :=\n  Filter.Tendsto\n    (fun N : ℕ =>\n      ((Finset.sum (Finset.range (N + 1)) fun n => f (n + 1)) : ℝ) / (N + 1 : ℝ))\n    Filter.atTop\n    (Filter.nhds M)\n\ntheorem meanValue_of_dirichletConvolutionWithOne\n    (f g : ℕ → ℝ)\n    (hconv : ∀ n : ℕ, f n = DirichletConvolutionWithOne g n)\n    (habs : Summable (fun n : ℕ => |g (n + 1)| / (n + 1 : ℝ))) :\n    HasMeanValue f (tsum (fun n : ℕ => g (n + 1) / (n + 1 : ℝ))) := by\n  sorry"
+}

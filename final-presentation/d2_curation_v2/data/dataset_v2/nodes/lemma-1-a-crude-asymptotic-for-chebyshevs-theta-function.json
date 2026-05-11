@@ -1,0 +1,23 @@
+{
+  "id": "lemma-1-a-crude-asymptotic-for-chebyshevs-theta-function",
+  "type": "problem",
+  "source_note": "n个连续的阶乘之积有多少个因子",
+  "english_source_note": "How Many Divisors in a Product of n Consecutive Factorials",
+  "callout_id": "n个连续的阶乘之积有多少个因子#6",
+  "english_title": "Lemma 1: A Crude Asymptotic for Chebyshev's Theta Function",
+  "statement_en": "Define $\\theta(x):=\\sum_{p\\leq x}\\log(p)$. Then $$\\theta(x)=x+o(x).$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "prime number theorem",
+    "partial summation",
+    "asymptotics of prime-counting functions"
+  ],
+  "prerequisites": [
+    "Chebyshev theta function",
+    "prime-counting function",
+    "basic asymptotic notation"
+  ],
+  "callout_body": "$\\theta(x):=\\sum_{p\\leq x}\\log(p)$,那么$$\\theta(x)=x+o(x)$$"
+}

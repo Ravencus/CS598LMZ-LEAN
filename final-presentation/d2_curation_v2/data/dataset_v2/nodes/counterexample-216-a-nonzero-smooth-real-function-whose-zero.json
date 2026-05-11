@@ -1,0 +1,23 @@
+{
+  "id": "counterexample-216-a-nonzero-smooth-real-function-whose-zero",
+  "type": "problem",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "callout_id": "identity theorem#9",
+  "english_title": "Counterexample 2.1.6: A Nonzero Smooth Real Function Whose Zeros Are Dense on an Open Interval",
+  "statement_en": "Consider $$f(x):=\\begin{cases}e^{-1/x}&x>0\\\\0&x\\leq0\\end{cases}.$$ This is a smooth function because all derivatives at $x=0$ exist and are equal to $0$. However, on $\\mathbb{R}$ its zeros are not isolated, so this shows that a nonzero smooth function need not have isolated zeros and therefore need not be real analytic.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "flat smooth function at a point",
+    "distinguishing smooth from analytic",
+    "non-isolated zeros"
+  ],
+  "prerequisites": [
+    "smooth functions",
+    "real analytic functions",
+    "derivatives and Taylor expansions"
+  ],
+  "callout_body": "考虑函数$$f(x):=\\begin{cases}e^{-1/x}&x>0\\\\0&x\\leq0\\end{cases}$$这是一个光滑函数，因为函数$f$在$x=0$处任意阶可导，且导数为$0$但是显然函数在$\\mathbb{R}$这个开区间上，零点并不是孤立的。从这里也可以反推，此函数一定不是$\\mathbb{R}$上的实解析函数。"
+}

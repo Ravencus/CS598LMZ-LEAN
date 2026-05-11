@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "_synth_integral_max_cos",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces use the same decomposition: split the integral at π/2 and 3π/2, rewrite max cos 0 to cos/0 on each interval, then evaluate cosine integrals. The SMALL trace found key lemmas like intervalIntegral.integral_congr, integral_cos, and cos_add_pi/cos_sub_pi, but failed in full proof attempts a",
+  "wall_seconds": 5.46
+}

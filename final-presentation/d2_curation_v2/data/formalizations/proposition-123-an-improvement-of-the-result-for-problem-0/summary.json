@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-123-an-improvement-of-the-result-for-problem-0",
+  "english_title": "Proposition 1.2.3: An Improvement of the Result for Problem 0",
+  "statement_en": "Let $$S_N:=\\sum_{n\\leq N}\\sin(n^2).$$ Then $$\\limsup_{N\\to \\infty}\\frac{|S_N|}{\\sqrt{N}}>0.$$",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limsup_sin_square_partial_sums_div_sqrt_pos :\n    (let S : ℕ → ℝ := fun N => ∑ n in Finset.Icc 0 N, Real.sin ((n : ℝ) ^ 2)\n     ; ∃ c : ℝ, 0 < c ∧ ∃ᶠ N in (Filter.atTop : Filter ℕ), c < |S N| / Real.sqrt (N : ℝ)) := by\n  sorry"
+}

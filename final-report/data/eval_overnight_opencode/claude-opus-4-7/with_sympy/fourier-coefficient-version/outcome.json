@@ -1,0 +1,43 @@
+{
+  "problem_id": "fourier-coefficient-version",
+  "model": "claude-opus-4-7",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 152.11,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "riemannLebesgue_fourierCoefficients_tendsto_zero",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Invalid field `tendsto_integral_mul_exp_atTop_nhds_zero`: The environment does not contain `And.tendsto_integral_mul_exp_atTop_nhds_zero`, so it is not possible to project the field `tendsto_integral_",
+  "total_cost_usd": 0.512814,
+  "total_tokens": 321147,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_dd4db415e1.lean",
+      "line": 57,
+      "column": 11,
+      "severity": "error",
+      "message": "Invalid field `tendsto_integral_mul_exp_atTop_nhds_zero`: The environment does not contain `And.tendsto_integral_mul_exp_atTop_nhds_zero`, so it is not possible to project the field `tendsto_integral_mul_exp_atTop_nhds_zero` from an expression\n  hg_int\nof type\n  AEStronglyMeasurable g volume ∧ HasFiniteIntegral g volume"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_dd4db415e1.lean",
+      "line": 61,
+      "column": 25,
+      "severity": "error",
+      "message": "Unknown constant `Filter.cofinite_eq_atBot_atTop.le`\n"
+    }
+  ]
+}

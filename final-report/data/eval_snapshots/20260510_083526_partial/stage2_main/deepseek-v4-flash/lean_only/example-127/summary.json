@@ -1,0 +1,43 @@
+{
+  "problem_id": "example-127",
+  "model": "deepseek-v4-flash",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": true,
+  "why_success": "lean_proof",
+  "attempts_used": 2,
+  "any_timeout": false,
+  "wall_seconds": 57.3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 16.44,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f ≥ 0\n  e ≥ 0\n  e - f ≥ 0\n  d ≥ 0\n  c ≥ 0\n  c - d ≥ 1\nwhere\n c := ↑b\n d := ↑a\n e := ↑((fun k => 2 * k) a)\n f := "
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 36.15,
+      "outcome": "lean_proof",
+      "overall_success": true,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

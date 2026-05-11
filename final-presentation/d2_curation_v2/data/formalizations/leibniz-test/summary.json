@@ -1,0 +1,18 @@
+{
+  "problem_id": "leibniz-test",
+  "english_title": "Leibniz Test",
+  "statement_en": "The series $\\sum_n (-1)^n a_n$ with $a_n>0$ is convergent if $a_n \\downarrow 0$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem alternating_series_convergent_of_antitone_tendsto_zero\n    {a : ℕ → ℝ}\n    (ha_pos : ∀ n, 0 < a n)\n    (ha_antitone : Antitone a)\n    (ha_lim : Filter.Tendsto a Filter.atTop (nhds 0)) :\n    Summable (fun n => (-1 : ℝ) ^ n * a n) := by\n  sorry"
+}

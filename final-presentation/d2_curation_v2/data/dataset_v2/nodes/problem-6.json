@@ -1,0 +1,25 @@
+{
+  "id": "problem-6",
+  "type": "problem",
+  "source_note": "揭露全纯以及亚纯函数信息的Liouville原则",
+  "english_source_note": "Liouville Principles for Holomorphic and Meromorphic Functions",
+  "callout_id": "揭露全纯以及亚纯函数信息的Liouville原则#6",
+  "english_title": "Problem 6",
+  "statement_en": "Let \\(f\\) be entire, and let $$u(z)=\\\\operatorname{Re}(f(z))$$ be its real part. Suppose that on every circle \\(C_r(0)\\) one has the upper bound $$u(z)\\\\leq Cr^s,\\\\quad s\\\\geq 0.$$ Prove that \\(f\\) is a polynomial of degree at most \\(s\\).",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "harmonic estimates for the real part",
+    "Cauchy estimates via bounds on real part",
+    "polynomial growth criterion for entire functions"
+  ],
+  "prerequisites": [
+    "entire functions",
+    "harmonic functions",
+    "Cauchy integral formula",
+    "Liouville theorem",
+    "Taylor expansion"
+  ],
+  "callout_body": "$f$是整函数$u(z) = \\text{Re}(f)$是其实部,并且对于任意圆周$C_r(0)$上都有上界估计$$u(z)\\leq Cr^s,s\\geq 0$$那么整函数$f$是一个至多不超过$s$次的多项式。"
+}

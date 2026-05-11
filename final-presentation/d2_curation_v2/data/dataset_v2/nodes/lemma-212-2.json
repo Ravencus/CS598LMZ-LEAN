@@ -1,0 +1,24 @@
+{
+  "id": "lemma-212-2",
+  "type": "problem",
+  "source_note": "Wintner mean value theorem",
+  "english_source_note": "Wintner Mean Value Theorem",
+  "callout_id": "Wintner mean value theorem#6",
+  "english_title": "Lemma 2.1.2",
+  "statement_en": "If the series $$\\sum_{n\\geq 1}\\frac{a_n}{n}$$ formed from a complex sequence $a_n$ converges, then its partial sums satisfy $$\\sum_{n\\leq N} a_n=o(N).$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Kronecker's lemma",
+    "summation by parts",
+    "asymptotic control of partial sums"
+  ],
+  "prerequisites": [
+    "complex sequences and series",
+    "partial sums",
+    "little-o notation",
+    "summation by parts"
+  ],
+  "callout_body": "复数列$a_n$构成的级数$\\sum_{n\\geq 1}\\frac{a_n}{n}$收敛，那么其部分和$\\sum_{n\\leq N}a_n =o(N)$。"
+}

@@ -1,0 +1,92 @@
+For
+\[
+J_n=\int_0^1 \frac{\log(1+x/n)}{x}\,dx,
+\]
+we want
+\[
+\lim_{n\to\infty} n\,|nJ_n-1|.
+\]
+
+Since \(\log(1+t)<t\) for every \(t>0\), we have
+\[
+\frac{\log(1+x/n)}{x}<\frac1n \qquad (0<x\le 1),
+\]
+hence
+\[
+J_n<\frac1n.
+\]
+So \(nJ_n-1<0\), and therefore
+\[
+|nJ_n-1|=1-nJ_n.
+\]
+Thus it suffices to compute
+\[
+\lim_{n\to\infty} n(1-nJ_n).
+\]
+
+**Step 1: Expand \(J_n\) into a series.**
+
+For \(n\ge 2\) and \(x\in[0,1]\), we have \(|x/n|\le 1/2\), so the power series
+\[
+\log(1+u)=\sum_{k=1}^\infty \frac{(-1)^{k+1}}{k}u^k
+\]
+converges uniformly for \(u=x/n\). Hence we may integrate termwise:
+\[
+\frac{\log(1+x/n)}{x}
+=
+\sum_{k=1}^\infty \frac{(-1)^{k+1}}{k}\frac{x^{k-1}}{n^k}.
+\]
+Therefore
+\[
+J_n
+=
+\sum_{k=1}^\infty \frac{(-1)^{k+1}}{k n^k}\int_0^1 x^{k-1}\,dx
+=
+\sum_{k=1}^\infty \frac{(-1)^{k+1}}{k^2 n^k}.
+\]
+So
+\[
+nJ_n
+=
+\sum_{k=1}^\infty \frac{(-1)^{k+1}}{k^2 n^{k-1}}
+=
+1-\frac{1}{4n}+\frac{1}{9n^2}-\frac{1}{16n^3}+\cdots.
+\]
+
+Hence
+\[
+1-nJ_n
+=
+\frac{1}{4n}-\frac{1}{9n^2}+\frac{1}{16n^3}-\cdots,
+\]
+and multiplying by \(n\),
+\[
+n(1-nJ_n)
+=
+\frac14-\frac{1}{9n}+\frac{1}{16n^2}-\cdots.
+\]
+
+This already suggests the limit is \(1/4\). To make it rigorous:
+
+\[
+n(1-nJ_n)-\frac14
+=
+\sum_{k=2}^\infty \frac{(-1)^k}{k^2 n^{k-2}}.
+\]
+Hence
+\[
+\left|n(1-nJ_n)-\frac14\right|
+\le
+\sum_{k=3}^\infty \frac{1}{k^2 n^{k-2}}
+\le
+\frac1n\sum_{k=3}^\infty \frac1{k^2}.
+\]
+The right-hand side tends to \(0\) as \(n\to\infty\). Therefore
+\[
+\lim_{n\to\infty} n(1-nJ_n)=\frac14.
+\]
+
+Since \(|nJ_n-1|=1-nJ_n\), we conclude
+\[
+\boxed{\lim_{n\to\infty} n\,|nJ_n-1|=\frac14.}
+\]

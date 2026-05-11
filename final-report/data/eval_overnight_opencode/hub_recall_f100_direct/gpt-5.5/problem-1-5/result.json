@@ -1,0 +1,27 @@
+{
+  "problem_id": "problem-1-5",
+  "model": "gpt-5.5",
+  "wall_seconds": 13.48,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "piecewise-estimates-hub",
+    "sequence-limits-via-piecewise-estimates-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-hub",
+    "basic-methods-in-analysis-i-hub",
+    "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+    "piecewise-estimates-hub",
+    "re0-calculus-1-arithmetic-square-roots-by-newton-iteration-hub",
+    "term-by-term-estimates-hub",
+    "using-known-asymptotics-to-derive-expansions-hub"
+  ],
+  "tp": 2,
+  "fp": 1,
+  "fn": 5,
+  "precision": 0.6667,
+  "recall": 0.2857,
+  "f1": 0.4
+}

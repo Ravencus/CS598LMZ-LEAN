@@ -1,0 +1,30 @@
+{
+  "problem_id": "mertens-second-theorem-1874",
+  "english_title": "Mertens' Second Theorem, 1874",
+  "statement_en": "There exists a constant $B$ (now called the Mertens constant) such that $$\\sum_{p\\le x}\\frac{1}{p}=\\log\\log(x)+B+O\\left(\\frac{1}{\\log(x)}\\right).$$",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators Asymptotics\n\ndef primeReciprocalSum (x : ℕ) : ℝ :=\n  Finset.sum ((Finset.Icc 2 x).filter Nat.Prime) (fun p => (1 : ℝ) / (p : ℝ))\n\ntheorem mertens_constant_exists :\n    ∃ B : ℝ,\n      (fun x : ℕ =>\n        primeReciprocalSum x - (Real.log (Real.log (x : ℝ)) + B))\n        =O[Filter.atTop] (fun x : ℕ => (1 : ℝ) / Real.log (x : ℝ)) := by\n  sorry"
+}

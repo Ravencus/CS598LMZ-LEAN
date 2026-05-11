@@ -1,0 +1,22 @@
+{
+  "id": "integral-of-a-nonnegative-function-is-nonnegative",
+  "type": "problem",
+  "source_note": "函数积分的单调性",
+  "english_source_note": "Monotonicity of Function Integrals",
+  "callout_id": "函数积分的单调性#2",
+  "english_title": "Integral of a Nonnegative Function Is Nonnegative",
+  "statement_en": "If $h:\\Omega \\to \\mathbb{R}$ is measurable and nonnegative almost everywhere, then its integral is also nonnegative.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "definition of the Lebesgue integral for nonnegative functions",
+    "approximation by simple functions"
+  ],
+  "prerequisites": [
+    "measurable functions",
+    "almost everywhere properties",
+    "Lebesgue integral"
+  ],
+  "callout_body": "$h:\\Omega \\to \\mathbb{R}$是几乎处处非负可测的，那么其积分也是非负的。"
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "example-1",
+  "english_title": "Example 1",
+  "statement_en": "Let $P =\\begin{pmatrix}0,1\\\\0,0\\end{pmatrix}$ and $Q =\\begin{pmatrix}0,0\\\\0,1\\end{pmatrix}$. Then $$PQ=\\begin{pmatrix}0,1\\\\0,0\\end{pmatrix},\\quad QP=\\begin{pmatrix}0,0\\\\0,0\\end{pmatrix}.$$ The characteristic polynomials of $PQ$ and $QP$ are both $x^2$. However, one minimal polynomial is $x^2$ and the other is $x$.",
+  "difficulty": "easy",
+  "domain": "linear algebra",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Matrix Polynomial\n\ntheorem matrix_products_charpoly_minpoly_example :\n    let P : Matrix (Fin 2) (Fin 2) ℚ := !![0, 1; 0, 0]\n    let Q : Matrix (Fin 2) (Fin 2) ℚ := !![0, 0; 0, 1]\n    P ⬝ Q = !![0, 1; 0, 0] ∧\n      Q ⬝ P = !![0, 0; 0, 0] ∧\n      Matrix.charpoly (P ⬝ Q) = (X : Polynomial ℚ) ^ 2 ∧\n      Matrix.charpoly (Q ⬝ P) = (X : Polynomial ℚ) ^ 2 ∧\n      minpoly ℚ (P ⬝ Q) = (X : Polynomial ℚ) ^ 2 ∧\n      minpoly ℚ (Q ⬝ P) = (X : Polynomial ℚ) := by\n  sorry"
+}

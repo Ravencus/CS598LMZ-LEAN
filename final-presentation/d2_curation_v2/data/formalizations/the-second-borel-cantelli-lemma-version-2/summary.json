@@ -1,0 +1,30 @@
+{
+  "problem_id": "the-second-borel-cantelli-lemma-version-2",
+  "english_title": "The Second Borel-Cantelli Lemma, Version 2",
+  "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ be mutually independent, and suppose that $\\mathbb{P}(E_n)<1$. Then $$\\mathbb{P}(\\cup_{n\\geq 1}E_n)=1\\implies \\mathbb{P}(E_n \\text{ i.o.})=1.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\nopen scoped BigOperators\n\ndef InfinitelyOften {Ω : Type*} (E : ℕ → Set Ω) : Set Ω :=\n  {ω | Set.Infinite {n : ℕ | ω ∈ E n}}\n\ndef MutuallyIndependentEvents {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω)\n    (E : ℕ → Set Ω) : Prop :=\n  (∀ n : ℕ, MeasurableSet (E n)) ∧\n    ∀ s : Finset ℕ, μ (⋂ n, if n ∈ s then E n else Set.univ) = ∏ n in s, μ (E n)\n\ntheorem probability_iUnion_eq_one_implies_infinitely_often\n    {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω) [IsProbabilityMeasure μ]\n    (E : ℕ → Set Ω)\n    (h_indep : MutuallyIndependentEvents μ E)\n    (h_lt_one : ∀ n : ℕ, μ (E n) < (1 : ℝ≥0∞))\n    (h_union : μ (⋃ n : ℕ, E (n + 1)) = (1 : ℝ≥0∞)) :\n    μ (InfinitelyOften E) = (1 : ℝ≥0∞) := by\n  sorry"
+}

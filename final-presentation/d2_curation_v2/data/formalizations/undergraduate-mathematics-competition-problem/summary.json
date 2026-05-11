@@ -1,0 +1,30 @@
+{
+  "problem_id": "undergraduate-mathematics-competition-problem",
+  "english_title": "Undergraduate Mathematics Competition Problem",
+  "statement_en": "Find the limit:\n$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}\\frac{n}{n^2+k^2+1}$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (Real.pi / 4)\n\nHint: The identifier `𝓝` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limit_sum_n_over_nsq_ksq_add_one :\n    Filter.Tendsto\n      (fun n : ℕ =>\n        Finset.sum (Finset.Icc 1 n) (fun k =>\n          (n : ℝ) / ((n : ℝ) ^ 2 + (k : ℝ) ^ 2 + 1))\n      )\n      Filter.atTop\n      (Filter.nhds (Real.pi / 4)) := by\n  sorry"
+}

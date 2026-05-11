@@ -1,0 +1,5 @@
+["piecewise-estimates-hub", "term-by-term-estimates-hub", "an-epsilon-of-room-hub"]
+
+- piecewise-estimates-hub: The key estimate splits the convolution sum into finitely many edge terms and a bulk region where both sequences are close to their limits.
+- term-by-term-estimates-hub: Each summand is bounded using convergence-to-zero errors and uniform boundedness, then the bounds are summed and divided by `n + 1`.
+- an-epsilon-of-room-hub: The proof uses an `ε` argument with a finite cutoff `N`, reducing the asymptotic statement to control of a finite initial/tail portion plus a uniformly small remainder.

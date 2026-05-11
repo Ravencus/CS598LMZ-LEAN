@@ -1,0 +1,3 @@
+["cauchy-condensation-test-hub", "term-by-term-estimates-hub"]
+- cauchy-condensation-test-hub: The proof establishes eventual nonnegativity and monotonicity, then applies `summable_condensed_iff_of_eventually_nonneg` to replace the original series by its dyadic condensed series.
+- term-by-term-estimates-hub: The proof uses termwise monotonicity estimates via `one_div_le_one_div_of_le` and termwise algebraic simplification of the condensed summand into `(1 / Real.log 2) * (1 / k)`, reducing to the known divergent harmonic series.

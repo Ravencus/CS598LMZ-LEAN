@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-1-2",
+  "english_title": "Proposition 1",
+  "statement_en": "Let $A,B \\in M_n(\\mathbb{C})$. Then $AB$ and $BA$ have the same spectrum.",
+  "difficulty": "medium",
+  "domain": "linear algebra",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem matrix_mul_spectrum_eq_matrix_mul_swap\n    (n : Type*) [Fintype n] [DecidableEq n] (A B : Matrix n n ℂ) :\n    spectrum ℂ (A * B) = spectrum ℂ (B * A) := by\n  sorry"
+}

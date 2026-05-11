@@ -1,0 +1,65 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 7,
+  "first_error": "Unknown constant `Set.limsup`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_eff8cc8fcd.lean",
+      "line": 17,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown constant `Set.limsup`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eff8cc8fcd.lean",
+      "line": 19,
+      "column": 9,
+      "severity": "error",
+      "message": "Unknown identifier `measure_limsup_eq_zero_of_summable`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eff8cc8fcd.lean",
+      "line": 22,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown constant `Set.limsup`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eff8cc8fcd.lean",
+      "line": 36,
+      "column": 6,
+      "severity": "error",
+      "message": "'calc' expression has type\n  μ (⋃ n, bad n) ≤ 0\nbut is expected to have type\n  μ (⋃ n, bad n) = 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eff8cc8fcd.lean",
+      "line": 46,
+      "column": 13,
+      "severity": "error",
+      "message": "Unknown constant `Real.exists_nat_one_div_lt`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eff8cc8fcd.lean",
+      "line": 46,
+      "column": 48,
+      "severity": "error",
+      "message": "Tactic `rcases` failed: `x✝ : ?m.319` is not an inductive datatype"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eff8cc8fcd.lean",
+      "line": 79,
+      "column": 38,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hunion\nhas type\n  μ (⋃ n, bad n) = 0\nbut is expected to have type\n  μ (⋃ n, bad n) ≤ 0\nin the application\n  le_trans hle hunion\n"
+    }
+  ]
+}

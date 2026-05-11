@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-33-2",
+  "english_title": "Proposition 3.3",
+  "statement_en": "Let \\(F(s,x):\\\\mathbb{R}^2\\\to\\\\mathbb{R}\\) be real analytic in some neighborhood \\(U\\) of \\((s^{*},x_k(0))\\), and suppose\n\\\\[\nF(s^{*},x_k(0))=0,\\\\quad F_x(s^{*},x_k(0))\\\neq 0.\n\\\\]\nThen there exist a neighborhood \\(V\\) of \\(s^{*}\\) and a neighborhood \\(W\\) of \\(x_k(0)\\) such that on \\(V\\) the equation \\(F(s,x)=0\\) has exactly one solution branch\n\\\\[\nx(s):V\\\to W,\n\\\\]\nand \\(x(s)\\) is real analytic, namely\n\\\\[\nx(s)=\\\\sum_{i\\\\ge 0} a_i s^i,\\\\quad \\\\forall s\\\\in V.\n\\\\]",
+  "difficulty": "medium",
+  "domain": "analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem analytic_implicit_function_solution_branch\n    {F : ℝ → ℝ → ℝ} {sStar x0 : ℝ}\n    (h_analytic : AnalyticAt ℝ (fun p : ℝ × ℝ => F p.1 p.2) (sStar, x0))\n    (h_zero : F sStar x0 = 0)\n    (h_deriv : deriv (fun x => F sStar x) x0 ≠ 0) :\n    ∃ V W : Set ℝ,\n      IsOpen V ∧ IsOpen W ∧ sStar ∈ V ∧ x0 ∈ W ∧\n      ∃ x : ℝ → ℝ,\n        (∀ s ∈ V, x s ∈ W) ∧\n        (∀ s ∈ V, F s (x s) = 0) ∧\n        (∀ s ∈ V, ∀ y ∈ W, F s y = 0 → y = x s) ∧\n        (∀ s ∈ V, AnalyticAt ℝ x s) ∧\n        ∃ a : ℕ → ℝ, ∀ s ∈ V, HasSum (fun i : ℕ => a i * s ^ i) (x s) := by\n  sorry"
+}

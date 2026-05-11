@@ -1,0 +1,22 @@
+{
+  "id": "problem-22",
+  "type": "problem",
+  "source_note": "两个非负不增序列互相竞争从而使得级数发散",
+  "english_source_note": "Competing Decreasing Sequences and Series Divergence",
+  "callout_id": "两个非负不增序列互相竞争从而使得级数发散#4",
+  "english_title": "Problem 2.2",
+  "statement_en": "Let $\\alpha_n,\\beta_n$ be two nonnegative nonincreasing real sequences, and suppose both series $\\sum_{n\\geq 1}\\alpha_n$ and $\\sum_{n\\geq 1}\\beta_n$ diverge. Must the series $\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$ also diverge?",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "counterexample construction",
+    "block sequence construction"
+  ],
+  "prerequisites": [
+    "series of nonnegative terms",
+    "monotone sequences",
+    "counterexamples in analysis"
+  ],
+  "callout_body": "$\\alpha_n,\\beta_n$是两个非负不增的实数列，并且级数$\\sum_{n\\geq 1}\\alpha_n,\\sum_{n\\geq 1}\\beta_n$发散。那么级数$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}$是否一定发散？"
+}

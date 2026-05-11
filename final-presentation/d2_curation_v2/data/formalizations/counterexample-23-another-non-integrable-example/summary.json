@@ -1,0 +1,18 @@
+{
+  "problem_id": "counterexample-23-another-non-integrable-example",
+  "english_title": "Counterexample 2.3: Another Non-Integrable Example",
+  "statement_en": "Consider\n$$f(x,y):=\\begin{cases}\\frac{1}{y^2}&0<x<y<1\\\\\n-\\frac{1}{x^2}&0<y<x<1 \\\\ 0 &\\text{ otherwise}.\\end{cases}$$\nLet $I=[0,1]$. Show first that\n$$\\int_I\\int_I |f(x,y)|\\,dydx=+\\infty,$$\nso $f$ is not integrable and Fubini's theorem does not apply. Conclude that one should expect\n$$\\int_I\\int_I f(x,y)dydx \\neq \\int_I\\int_I f(x,y)dxdy.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\nopen scoped ENNReal\n\nnoncomputable section\n\ndef f (x y : ℝ) : ℝ :=\n  if 0 < x ∧ x < y ∧ y < 1 then\n    1 / y ^ 2\n  else if 0 < y ∧ y < x ∧ x < 1 then\n    -(1 / x ^ 2)\n  else\n    0\n\ndef I : Set ℝ := Set.Icc 0 1\n\ntheorem mainTheorem :\n    (∫⁻ x in I, ∫⁻ y in I, ENNReal.ofReal (|f x y|) ∂volume ∂volume) = ∞ ∧\n    ¬ Integrable (fun p : ℝ × ℝ => f p.1 p.2) ∧\n    (∫ x in I, ∫ y in I, f x y ∂volume ∂volume) ≠\n      (∫ y in I, ∫ x in I, f x y ∂volume ∂volume) := by\n  sorry"
+}

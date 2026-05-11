@@ -1,0 +1,73 @@
+{
+  "note_title": "Riemann - Lebesgue lemma的证明",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "Riemann - Lebesgue lemma的证明#1",
+      "type": "note",
+      "title": "傅里叶变换版本的lemma",
+      "body": "如果$f \\in L^1(\\mathbb{R}^n)$,其傅里叶变换:\n$$\\hat{f}(\\xi) = \\int_{\\mathbb{R}^n}f(x)e^{-2\\pi i x \\cdot \\xi } dx$$那么$$|\\hat{f}(\\xi)|\\to 0 \\text{ as } |\\xi| \\to \\infty$$\n因为[[可积函数的傅里叶变换是连续的]]，那么这个命题实际上就是证明$$f \\in L^1(\\mathbb{R}^n) \\implies \\hat{f} \\in C_0(\\mathbb{R}^n)$$",
+      "position_char": 67,
+      "position_line": 8
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#2",
+      "type": "note",
+      "title": "命题1.4.1",
+      "body": "$f \\in L^1(\\mathbb{R}^n)$对任意$a\\in \\mathbb{R}^n$定义$T_a(f):=f(x-a)$，那么$$||T_{a+h}(f)-T_a(f)||_{L^1} \\to 0$$当$||h|| \\to 0$。",
+      "position_char": 2989,
+      "position_line": 75
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#3",
+      "type": "note",
+      "title": "傅里叶系数版本",
+      "body": "$f \\in L^1(\\mathbb{T})$那么$|\\hat{f}(n)|\\to 0$具体来说:\n$$\\hat{f}(n) =\n\\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} f(x)e^{-inx} dx \\to 0 \\text{\nas } |n| \\to \\infty$$",
+      "position_char": 6656,
+      "position_line": 114
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#4",
+      "type": "note",
+      "title": "一般意义下的傅里叶变换",
+      "body": "函数$f\\in L^1(G)$的傅里叶变换$\\mathcal{F}(f)$可以被定义为,对任意$\\chi \\in \\hat{G}$，$$\\mathcal{F}(f)(\\chi):=\\int_{G} \\overline{\\chi(g)} f(g) \\,d\\mu(g)$$",
+      "position_char": 8523,
+      "position_line": 150
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#5",
+      "type": "note",
+      "title": "Riemann-Lebesgue引理",
+      "body": "定义在$L^1(G)$上的傅里叶变换$\\mathcal{F}$是一个$$L^1(G)\\to C_0(\\hat{G})$$的线性泛函。",
+      "position_char": 8752,
+      "position_line": 155
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#6",
+      "type": "note",
+      "title": "命题2",
+      "body": "拓扑空间$X$与拓扑群$Y$同构，即存在一个同胚映射$h:Y \\to X$。现在假设$f\\in C_0(X\\to \\mathbb{C})$那么$g = f\\circ h \\in C_0(Y\\to \\mathbb{C})$.",
+      "position_char": 9806,
+      "position_line": 167
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#7",
+      "type": "note",
+      "title": "命题3：命题1在LCA群上的推广",
+      "body": "$G$是一个LCA群$f \\in L^1(G)$对任意$a\\in G$定义$T_a(f):=f(a^{-1}x)$。那么对于任意$\\varepsilon >0$存在单位元$1_G$的邻域$U_{\\varepsilon}$使得所有$h \\in U_{\\varepsilon}$都有$$||T_{ah}(f)-T_a(f)||_{L^1(G)}<\\varepsilon$$",
+      "position_char": 11162,
+      "position_line": 189
+    },
+    {
+      "id": "Riemann - Lebesgue lemma的证明#8",
+      "type": "note",
+      "title": "引理1",
+      "body": "对于LCA群$G$当中单位元$1_G$的任意邻域$U$存在$K \\subseteq \\hat{G}$使得如果$\\chi \\in \\hat{G} - K$那么存在$x \\in U$使得$\\text{Re}\\chi(x)\\leq 0$.",
+      "position_char": 12527,
+      "position_line": 210
+    }
+  ]
+}

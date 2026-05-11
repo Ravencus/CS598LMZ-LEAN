@@ -1,0 +1,15 @@
+I’ll first check available local proof digests and probe Mathlib for convergence lemmas that can carry most of the analytic burden, since the direct theorem is a nontrivial Dirichlet/block-summation argument.
+Mathlib has Dirichlet/alternating-series tests, but this series is not a direct alternating sequence in `n`; its sign changes on square-root blocks. I found only prior `sorry` attempts for this exact statement locally, so I’m going to spend the remaining checks on whether a compact block/Dirichlet skeleton can be made to compile or at least isolate the missing formal lemma.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem floorSqrtAlternatingHarmonic_powerSeries_converges_on_unitCircle :
+    ∀ z : ℂ,
+      ‖z‖ = 1 →
+        Summable
+          (fun n : ℕ =>
+            (((-1 : ℂ) ^ (Int.toNat ⌊Real.sqrt (((n + 1 : ℕ) : ℝ))⌋)) / (((n + 1 : ℕ) : ℂ))) *
+              z ^ (n + 1)) := by
+  sorry
+```

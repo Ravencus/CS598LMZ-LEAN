@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "problem_id": "problem-5-2",
+  "big_outcome": "lean_proof",
+  "small_outcome": "no_final_proof",
+  "label": "different_plan",
+  "evidence": "BIG explored Mathlib/tactic routes (`#check`, `exact?`, `apply?`) and ended with `apply?` as the accepted Lean proof. SMALL made no Lean calls and instead rejected the statement as mathematically false.",
+  "wall_seconds": 6.49
+}

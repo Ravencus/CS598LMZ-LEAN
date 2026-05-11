@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-321",
+  "english_title": "Proposition 3.2.1",
+  "statement_en": "The following sequences do not have limits: \n$$x_n:=\\sin(\\sqrt{n}),z_n:=\\sin(\\log(n)).$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sin_sqrt_and_sin_log_have_no_limits :\n    (¬ ∃ l : ℝ, Filter.Tendsto (fun n : ℕ => Real.sin (Real.sqrt (n : ℝ))) Filter.atTop (nhds l)) ∧\n    (¬ ∃ l : ℝ, Filter.Tendsto (fun n : ℕ => Real.sin (Real.log (n : ℝ))) Filter.atTop (nhds l)) := by\n  sorry"
+}

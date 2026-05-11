@@ -1,0 +1,16 @@
+I’ll first load the Lean proving workflow and then test a minimal proof shape in the checker.
+I’m checking the exact metric convergence lemmas first so the proof stays close to Mathlib rather than guessing names.
+I have a clean metric-space proof shape; I’m trying it directly and will only adjust the lemma names if the checker complains.
+The first draft isolated two issues: one bad triangle estimate and one wrong metric lemma name. I’m searching the installed Mathlib source for the exact convergence theorem now.
+The statement is false as written, so there is no valid Lean proof.
+
+Counterexample:
+- Take `xSeq n = 0` for all `n`
+- Take `x = 1`
+
+Then the right-hand side is true: for any `ε > 0`, choose `N = 1`.
+But the left-hand side is false: the constant zero sequence does not converge to `1`.
+
+If you want, I can formalize the corrected theorem, e.g.
+- `Filter.Tendsto xSeq Filter.atTop (nhds x) ↔ ∀ ε > 0, ∃ N, ...` with the RHS involving `|xSeq n - x| < ε`, or
+- `∃ x, Filter.Tendsto xSeq Filter.atTop (nhds x) ↔ ∀ ε > 0, ∃ N, ...` for the Cauchy criterion.

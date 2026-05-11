@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-34-a-less-trivial-example",
+  "english_title": "Example 3.4: A Less Trivial Example",
+  "statement_en": "Consider $f(x):=(1+1/x)\\sin(x^2)$ for $x\\ge 1$. Then $$\\limsup_{x\\to \\infty} f(x)=1,\\qquad \\liminf_{x\\to \\infty} f(x)=-1.$$ This example also illustrates the basic limsup/liminf properties for functions through explicit tail estimates and sequences with $x_n^2=\\frac{\\pi}{2}+2\\pi n$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef LimsupAtTop (f : ℝ → ℝ) (L : ℝ) : Prop :=\n  (∀ ε : ℝ, 0 < ε → ∀ᶠ x in Filter.atTop, f x < L + ε) ∧\n    ∀ ε : ℝ, 0 < ε → ∀ R : ℝ, ∃ x : ℝ, R ≤ x ∧ L - ε < f x\n\ndef LiminfAtTop (f : ℝ → ℝ) (L : ℝ) : Prop :=\n  (∀ ε : ℝ, 0 < ε → ∀ᶠ x in Filter.atTop, L - ε < f x) ∧\n    ∀ ε : ℝ, 0 < ε → ∀ R : ℝ, ∃ x : ℝ, R ≤ x ∧ f x < L + ε\n\ntheorem sinQuadratic_limsup_liminf :\n    let f : ℝ → ℝ := fun x => (1 + 1 / x) * Real.sin (x ^ 2)\n    LimsupAtTop f 1 ∧\n      LiminfAtTop f (-1) ∧\n      (∃ xseq : ℕ → ℝ,\n        Filter.Tendsto xseq Filter.atTop Filter.atTop ∧\n          (∀ n : ℕ,\n            1 ≤ xseq n ∧\n              (xseq n) ^ 2 = Real.pi / 2 + 2 * Real.pi * (n : ℝ)) ∧\n          Filter.Tendsto (fun n => f (xseq n)) Filter.atTop (nhds 1)) ∧\n      (∃ yseq : ℕ → ℝ,\n        Filter.Tendsto yseq Filter.atTop Filter.atTop ∧\n          (∀ n : ℕ,\n            1 ≤ yseq n ∧\n              (yseq n) ^ 2 = 3 * Real.pi / 2 + 2 * Real.pi * (n : ℝ)) ∧\n          Filter.Tendsto (fun n => f (yseq n)) Filter.atTop (nhds (-1)))\n  := by\n    sorry"
+}

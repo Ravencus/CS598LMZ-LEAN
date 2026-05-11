@@ -1,0 +1,20 @@
+{
+  "problem_id": "strict-monotonicity-of-the-integral-on-a-positive-measure-se",
+  "model": "gpt-5.5",
+  "wall_seconds": 16.1,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-hub",
+    "piecewise-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-for-measure-zero-sets-hub"
+  ],
+  "tp": 0,
+  "fp": 2,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

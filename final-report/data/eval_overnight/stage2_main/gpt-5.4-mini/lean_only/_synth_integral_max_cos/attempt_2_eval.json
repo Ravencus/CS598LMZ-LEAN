@@ -1,0 +1,51 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 5,
+  "first_error": "Application type mismatch: The argument\n  huIcc\nhas type\n  u ∈ Set.Icc 0 (Real.pi / 2)\nbut is expected to have type\n  u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2)\nin the application\n  Real.cos_nonneg_of",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 19,
+      "column": 61,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  huIcc\nhas type\n  u ∈ Set.Icc 0 (Real.pi / 2)\nbut is expected to have type\n  u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2)\nin the application\n  Real.cos_nonneg_of_mem_Icc huIcc"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 61,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_cos`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 68,
+      "column": 8,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_cos`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 79,
+      "column": 37,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  0\nhas type\n  ℝ\nbut is expected to have type\n  MeasureTheory.Measure ℝ\nin the application\n  IntervalIntegrable f 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_90b7d1416f.lean",
+      "line": 79,
+      "column": 62,
+      "severity": "error",
+      "message": "Case tag `body` not found.\n\nNote: There are no cases to select.\n"
+    }
+  ]
+}

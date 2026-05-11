@@ -1,0 +1,23 @@
+{
+  "id": "borel-cantelli-lemma",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "callout_id": "Borel-Cantelli lemma及其应用#1",
+  "english_title": "Borel-Cantelli Lemma",
+  "statement_en": "Let $(X,\\mathcal{F},\\mu)$ be a measure space, and let $E_1,E_2,E_3,\\dots \\in \\mathcal{F}$ satisfy $$\\sum_{n\\geq 1}\\mu(E_n)<\\infty.$$ Then $$\\mu\\left(\\bigcup_{n\\geq N}E_n\\right)\\to0,$$ equivalently, almost every $x\\in X$ belongs to at most finitely many of the sets $E_n$, that is, $$\\mu(\\limsup_{n\\to\\infty}E_n)=0.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "subadditivity of measure",
+    "continuity of measure from above",
+    "limsup of sets"
+  ],
+  "prerequisites": [
+    "measure spaces",
+    "countable subadditivity",
+    "set limsup"
+  ],
+  "callout_body": "$(X,\\mathcal{F},\\mu)$是一个测度空间，$E_1,E_2,E_3,...\\in \\mathcal{F}$并且满足测度的和收敛，$$\\sum_{n\\geq 1}\\mu(E_n)<\\infty$$\n那么$$\\mu\\left(\\bigcup_{n\\geq N}E_n\\right)\\to0$$或者说几乎所有$x\\in X$都包含在至多有限个$E_n$当中，即$$\\mu(\\limsup_{n\\to\\infty}E_n)=0$$"
+}

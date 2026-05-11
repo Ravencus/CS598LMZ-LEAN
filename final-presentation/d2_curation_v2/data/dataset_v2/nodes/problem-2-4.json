@@ -1,0 +1,25 @@
+{
+  "id": "problem-2-4",
+  "type": "problem",
+  "source_note": "用分段估计解决几个序列的极限问题",
+  "english_source_note": "Sequence Limits via Piecewise Estimates",
+  "callout_id": "用分段估计解决几个序列的极限问题#2",
+  "english_title": "Problem 2",
+  "statement_en": "Assume $x_n \\to A$ and $y_n \\to B$. Prove that $$\\frac{x_1y_n+\\cdots +x_ny_1}{n}\\to AB.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "convolution-type average",
+    "splitting into main term and error terms",
+    "sequence limit estimation",
+    "Cesaro-type averaging"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "algebra of limits",
+    "boundedness of convergent sequences",
+    "sum estimation"
+  ],
+  "callout_body": "假设$x_n\\to A,y_n \\to B$证明$$\\frac{x_1y_n+\\cdots +x_ny_1}{n}\\to AB$$"
+}

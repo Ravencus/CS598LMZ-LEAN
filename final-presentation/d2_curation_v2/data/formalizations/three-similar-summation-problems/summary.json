@@ -1,0 +1,24 @@
+{
+  "problem_id": "three-similar-summation-problems",
+  "english_title": "Three Similar Summation Problems",
+  "statement_en": "1. Let $\\varphi(k)$ be Euler's totient function, the number of natural numbers not exceeding $k$ that are relatively prime to $k$. Compute $$\\sum_{k=1}^{n}\\varphi(k)\\left\\lfloor\\frac{n}{k}\\right\\rfloor.$$ 2. Compute $$\\sum_{k=1}^{n}\\mu(k)\\left\\lfloor\\frac{n}{k}\\right\\rfloor,$$ where $\\mu$ is the Mobius function. 3. Compute $$\\sum_{k=1}^{n}(-1)^{\\Omega(k)}\\left\\lfloor\\frac{n}{k}\\right\\rfloor,$$ where $\\Omega(k)$ denotes the number of distinct prime factors of $k$.",
+  "difficulty": "medium",
+  "domain": "number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ntheorem totient_sum_mul_natDiv_eq_triangular (n : ℕ) :\n    Finset.sum (Finset.Icc 1 n) (fun k => Nat.totient k * (n / k)) = n * (n + 1) / 2 := by\n  sorry\n\ntheorem moebius_sum_mul_natDiv_eq_one {n : ℕ} (hn : 1 ≤ n) :\n    Finset.sum (Finset.Icc 1 n) (fun k => ArithmeticFunction.moebius k * ((n / k : ℕ) : ℤ)) = 1 := by\n  sorry\n\ntheorem distinctPrimeFactorParity_sum_mul_natDiv_eq_factorizationProduct (n : ℕ) :\n    Finset.sum (Finset.Icc 1 n)\n        (fun k =>\n          ((-1 : ℤ) ^ (ArithmeticFunction.cardDistinctFactors k)) * ((n / k : ℕ) : ℤ)) =\n      Finset.sum (Finset.Icc 1 n)\n        (fun m => Finset.prod m.primeFactors (fun p => (1 - (m.factorization p : ℤ)))) := by\n  sorry"
+}

@@ -1,0 +1,24 @@
+{
+  "problem_id": "counterexample-1-2",
+  "english_title": "Counterexample 1",
+  "statement_en": "Consider functions such that $f>g$ holds on a null set $E$, and both functions are $0$ on $E^c$.",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem functions_gt_on_nullset_and_zero_off_compl\n    {α : Type*} [MeasurableSpace α]\n    (μ : MeasureTheory.Measure α) (E : Set α) (f g : α → ℝ)\n    (hE : μ E = 0)\n    (hfg : ∀ x ∈ E, g x < f x)\n    (hzero : ∀ x ∈ Eᶜ, f x = 0 ∧ g x = 0) :\n    μ E = 0 ∧ (∀ x ∈ E, g x < f x) ∧ (∀ x ∈ Eᶜ, f x = 0 ∧ g x = 0) := by\n  sorry"
+}

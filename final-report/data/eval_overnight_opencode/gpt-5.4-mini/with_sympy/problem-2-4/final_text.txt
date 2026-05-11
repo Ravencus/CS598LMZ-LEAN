@@ -1,0 +1,11 @@
+I’m loading the Lean proof workflow and then I’ll test a small proof skeleton against the checker before filling the hard step.
+I’m checking the Mathlib names for Cesàro-style averaging and finite-sum reindexing so I can keep the proof minimal instead of guessing.
+The direct `#check` probe wasn’t giving useful diagnostics, so I’m switching to source search for the relevant Cesàro and reindexing lemmas in the local Mathlib installation.
+I’ve got the right high-level decomposition. I’m now checking for the easiest boundedness lemma for convergent real sequences so the epsilon estimate stays short.
+I’ve narrowed the proof shape to a standard epsilon split with global bounds. I’m checking the exact eventual-inequality lemma names now so the final Lean script doesn’t get stuck on plumbing.
+I have a full proof strategy now: normalize around `u_n = x_n - A`, `v_n = y_n - B`, prove the three averaged error terms go to `0`, and estimate the cross term by splitting the finite sum into edge and middle blocks. I’m submitting the first full Lean draft to see which lemmas need adjustment.
+The first draft exposed a few namespace mismatches and one bad reindexing step. I’m fixing the theorem names, simplifying the convergence-to-zero setup, and adjusting the tail split so the reflected sum matches the intended indices.
+I’ve simplified the hard estimate: the cross term only needs one split at `N`, not a three-way reflection argument. I’m resubmitting with that smaller bound and cleaner arithmetic.
+I’ve got the proof down to a few mechanical issues: one Cesàro rewrite, one `omega` antecedent, and one inequality cleanup. I’m making those last adjustments now.
+The remaining trouble is just the Cesàro rewrite into `n + 1`. I’m checking for a direct Mathlib lemma for `sum_range ... / (n+1)` so I can avoid fighting the simplifier.
+I’ve reduced this to a small set of proof-plumbing fixes. One more checker run should tell me whether the remaining gaps are just rewrites or if I need to pivot again.

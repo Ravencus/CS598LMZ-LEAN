@@ -1,0 +1,3 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "an-epsilon-of-room-hub"]
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: The proof is the standard Dirichlet approximation argument: take many fractional parts of multiples of `α`, use pigeonhole, and subtract two close multiples to get `q` with `|(q : ℝ) * α - p| < ε`.
+- an-epsilon-of-room-hub: The arbitrary `ε > 0` is handled by choosing a finite scale `N` with `1 / N < ε`, reducing the approximation problem to a finite pigeonhole partition of `[0,1]`.

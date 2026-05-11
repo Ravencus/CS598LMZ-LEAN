@@ -1,0 +1,97 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 164.35,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 9,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 10,
+  "first_error": "'change' tactic failed, pattern\n  A * c • 1 = c • 1 * A\nis not definitionally equal to target\n  A * (aeval (B * A)) (C c) = (aeval (A * B)) (C c) * A",
+  "total_cost_usd": 0.0,
+  "total_tokens": 252649,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 16,
+      "column": 10,
+      "severity": "error",
+      "message": "'change' tactic failed, pattern\n  A * c • 1 = c • 1 * A\nis not definitionally equal to target\n  A * (aeval (B * A)) (C c) = (aeval (A * B)) (C c) * A"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 21,
+      "column": 14,
+      "severity": "error",
+      "message": "'change' tactic failed, pattern\n  A * c • 1 = c • 1 * A\nis not definitionally equal to target\n  A * (aeval (B * A)) (C c * X ^ (0 + 1)) = (aeval (A * B)) (C c * X ^ (0 + 1)) * A"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 23,
+      "column": 22,
+      "severity": "error",
+      "message": "unsolved goals\ncase monomial.succ\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nc : ℂ\nm : ℕ\nih :\n  A * (aeval (B * A)) (C c * X ^ m) = (aeval (A * B)) (C c * X ^ m) * A →\n    A * (aeval (B * A)) (C c * X ^ (m + 1)) = (aeval (A * B)) (C c * X ^ (m + 1)) * A\na✝ : A * (aeval (B * A)) (C c * X ^ (m + 1)) = (aeval (A * B)) (C c * X ^ (m + 1)) * A\n⊢ A * ((algebraMap ℂ (Matrix n n ℂ)) c * ((B * A) ^ m * (B * (A * (B * A))))) =\n    (algebraMap ℂ (Matrix n n ℂ)) c * ((A * B) ^ m * (A * (B * (A * (B * A)))))"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 28,
+      "column": 6,
+      "severity": "error",
+      "message": "invalid 'calc' step, left-hand side is\n  (aeval (B * A)) (X * minpoly ℂ (A * B)) : Matrix n n ℂ\nbut is expected to be\n  (aeval (A * B)) (X * minpoly ℂ (B * A)) : Matrix n n ℂ"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 32,
+      "column": 24,
+      "severity": "error",
+      "message": "Unknown identifier `aeval_minpoly`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 38,
+      "column": 10,
+      "severity": "error",
+      "message": "'change' tactic failed, pattern\n  B * c • 1 = c • 1 * B\nis not definitionally equal to target\n  B * (aeval (A * B)) (C c) = (aeval (B * A)) (C c) * B"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 43,
+      "column": 14,
+      "severity": "error",
+      "message": "'change' tactic failed, pattern\n  B * c • 1 = c • 1 * B\nis not definitionally equal to target\n  B * (aeval (A * B)) (C c * X ^ (0 + 1)) = (aeval (B * A)) (C c * X ^ (0 + 1)) * B"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 45,
+      "column": 22,
+      "severity": "error",
+      "message": "unsolved goals\ncase monomial.succ\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nc : ℂ\nm : ℕ\nih :\n  B * (aeval (A * B)) (C c * X ^ m) = (aeval (B * A)) (C c * X ^ m) * B →\n    B * (aeval (A * B)) (C c * X ^ (m + 1)) = (aeval (B * A)) (C c * X ^ (m + 1)) * B\na✝ : B * (aeval (A * B)) (C c * X ^ (m + 1)) = (aeval (B * A)) (C c * X ^ (m + 1)) * B\n⊢ B * ((algebraMap ℂ (Matrix n n ℂ)) c * ((A * B) ^ m * (A * (B * (A * B))))) =\n    (algebraMap ℂ (Matrix n n ℂ)) c * ((B * A) ^ m * (B * (A * (B * (A * B)))))"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 50,
+      "column": 6,
+      "severity": "error",
+      "message": "invalid 'calc' step, left-hand side is\n  (aeval (A * B)) (X * minpoly ℂ (B * A)) : Matrix n n ℂ\nbut is expected to be\n  (aeval (B * A)) (X * minpoly ℂ (A * B)) : Matrix n n ℂ"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_6c80cfb82a.lean",
+      "line": 54,
+      "column": 24,
+      "severity": "error",
+      "message": "Unknown identifier `aeval_minpoly`"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-111",
+  "english_title": "Lemma 1.1.1",
+  "statement_en": "If $A \\text{ or } B \\in GL_n(\\mathbb{C})$, then $AB$ and $BA$ are similar.",
+  "difficulty": "easy",
+  "domain": "linear algebra",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Application type mismatch: The argument\n  Invertible P\nhas type\n  Type u_1\nof sort `Type (u_1 + 1)` but is expected to have type\n  Prop\nof sort `Type` in the application\n  And (Invertible P)"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Matrix\n\ndef MatricesAreSimilar {n : Type*} [Fintype n] [DecidableEq n]\n    (M N : Matrix n n ℂ) : Prop :=\n  ∃ P : Matrix n n ℂ, Nonempty (Invertible P) ∧ (P * M = N * P ∨ P * N = M * P)\n\ntheorem ab_ba_are_similar_if_left_or_right_invertible\n    {n : Type*} [Fintype n] [DecidableEq n]\n    (A B : Matrix n n ℂ)\n    (h : Nonempty (Invertible A) ∨ Nonempty (Invertible B)) :\n    MatricesAreSimilar (A * B) (B * A) := by\n  sorry"
+}

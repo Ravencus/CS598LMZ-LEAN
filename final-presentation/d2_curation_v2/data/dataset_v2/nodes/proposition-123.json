@@ -1,0 +1,23 @@
+{
+  "id": "proposition-123",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#7",
+  "english_title": "Proposition 1.2.3",
+  "statement_en": "For $N\\geq 2$, the following identity always holds: $$1+\\frac{1}{1!}+\\cdots+\\frac{1}{N!}+\\frac{1}{NN!}=3-\\frac{1}{1\\cdot 2\\cdot 2!}-\\cdots \\frac{1}{(N-1)NN!}$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "finite series identity",
+    "telescoping transformation",
+    "induction or direct algebraic verification"
+  ],
+  "prerequisites": [
+    "factorials",
+    "finite sums",
+    "algebraic manipulation"
+  ],
+  "callout_body": "下面的等式对于$N\\geq 2$恒成立：$$1+\\frac{1}{1!}+\\cdots+\\frac{1}{N!}+\\frac{1}{NN!}=3-\\frac{1}{1\\cdot 2\\cdot 2!}-\\cdots \\frac{1}{(N-1)NN!}$$"
+}

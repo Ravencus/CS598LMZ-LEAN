@@ -1,0 +1,24 @@
+The stated biconditional is mathematically false: the right side is the Cauchy criterion and does not depend on the specified `x`. I’ll verify a concrete counterexample in Lean so the obstruction is precise.
+No valid `FINAL_PROOF` exists for the requested signature: the theorem is false.
+
+Lean-checked counterexample: the constant zero sequence is pairwise Cauchy-close, but it does not tend to `1`.
+
+```lean
+import Mathlib
+
+example : ¬ (∀ (xSeq : ℕ → ℝ) (x : ℝ),
+    Filter.Tendsto xSeq Filter.atTop (nhds x) ↔
+      ∀ ε > 0, ∃ N : ℕ, 0 < N ∧ ∀ n m : ℕ, N < n → N < m → |xSeq n - xSeq m| < ε) := by
+  intro h
+  let z : ℕ → ℝ := fun _ => 0
+  have hpair : ∀ ε > 0, ∃ N : ℕ, 0 < N ∧ ∀ n m : ℕ, N < n → N < m → |z n - z m| < ε := by
+    intro ε hε
+    refine ⟨1, by norm_num, ?_⟩
+    intro n m hn hm
+    simp [z, hε]
+  have hz : Filter.Tendsto z Filter.atTop (nhds (1 : ℝ)) := (h z 1).2 hpair
+  have hzero : Filter.Tendsto z Filter.atTop (nhds (0 : ℝ)) := by
+    simp [z]
+  have hlim : (1 : ℝ) = 0 := tendsto_nhds_unique hz hzero
+  norm_num at hlim
+```

@@ -1,0 +1,2 @@
+["estimates-for-the-sum-of-prime-reciprocals-hub"]
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof repeatedly represents the same algebraic object in two equivalent forms, especially through the intertwining identity `A * (B * A)^m = (A * B)^m * A` and its polynomial version `A * aeval (B * A) q = aeval (A * B) q * A`, then compares these formulas to transfer annihilation by the minimal polynomial.

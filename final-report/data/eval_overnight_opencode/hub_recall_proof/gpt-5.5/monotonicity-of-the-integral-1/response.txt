@@ -1,0 +1,2 @@
+["term-by-term-estimates-hub"]
+- term-by-term-estimates-hub: The proof invokes `integral_mono_ae`, transferring the almost-everywhere pointwise bound `g x ≤ f x` directly to the aggregate inequality between the integrals.

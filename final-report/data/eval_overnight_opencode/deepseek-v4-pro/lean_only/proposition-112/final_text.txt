@@ -1,0 +1,44 @@
+Two errors to fix: `norm_num` can't handle variable `m` for nonzero proof, and the `rw` + `simp` interaction in `hdisj`. Let me fix both.
+The proof compiles with 0 diagnostics.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  have hposN : 0 < N := by omega
+  have hsum_eq : Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - (1 : ℚ) / (N : ℚ) := by
+    refine Nat.le_induction ?base ?step N hN
+    · norm_num
+    · intro m hm IH
+      have hmpos : 0 < m := by omega
+      have hsplit : Finset.Icc 2 (m + 1) = (Finset.Icc 2 m) ∪ {m + 1} := by
+        ext x; simp [Finset.mem_Icc]; omega
+      have hdisj : Disjoint (Finset.Icc 2 m) {m + 1} :=
+        Finset.disjoint_singleton_right.mpr (by
+          intro h
+          rcases Finset.mem_Icc.mp h with ⟨_, hle⟩
+          omega)
+      rw [hsplit, Finset.sum_union hdisj, Finset.sum_singleton, IH]
+      have hsub : ((m + 1 : ℕ) - 1 : ℕ) = m := by omega
+      have hterm : (1 : ℚ) / (((m + 1 : ℕ) : ℚ) * (((m + 1 : ℕ) - 1 : ℕ) : ℚ)) =
+          (1 : ℚ) / (m : ℚ) - (1 : ℚ) / ((m + 1 : ℕ) : ℚ) := by
+        simp [hsub]
+        have hm0 : (m : ℚ) ≠ 0 := by exact_mod_cast hmpos.ne.symm
+        have hmp10 : ((m + 1 : ℕ) : ℚ) ≠ 0 := by
+          have : 0 < (m + 1 : ℕ) := by omega
+          exact_mod_cast this.ne.symm
+        field_simp [hm0, hmp10]
+        ring
+      rw [hterm]
+      ring
+  have hdivpos : 0 < (1 : ℚ) / (N : ℚ) := by
+    have hNpos' : (0 : ℚ) < N := by exact_mod_cast hposN
+    positivity
+  calc
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - (1 : ℚ) / (N : ℚ) := hsum_eq
+    _ < 1 := by linarith
+```

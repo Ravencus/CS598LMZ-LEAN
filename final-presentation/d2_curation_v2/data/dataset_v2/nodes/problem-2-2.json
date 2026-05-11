@@ -1,0 +1,23 @@
+{
+  "id": "problem-2-2",
+  "type": "problem",
+  "source_note": "n个连续的阶乘之积有多少个因子",
+  "english_source_note": "How Many Divisors in a Product of n Consecutive Factorials",
+  "callout_id": "n个连续的阶乘之积有多少个因子#3",
+  "english_title": "Problem 2",
+  "statement_en": "Obtain an asymptotic expansion for $\\log(D(n))$ with error term $o(n)$.",
+  "problem_type": "exercise",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "logarithmic transformation of multiplicative functions",
+    "prime-sum asymptotics",
+    "error control to order $o(n)$"
+  ],
+  "prerequisites": [
+    "definition of $D(n)$",
+    "asymptotic notation",
+    "prime factorization methods"
+  ],
+  "callout_body": "对$\\log(D(n))$做渐近，精度要求是$o(n)$。"
+}

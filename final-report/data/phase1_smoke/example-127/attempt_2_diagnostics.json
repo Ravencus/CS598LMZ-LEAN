@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/P1Smoke_72c9132600.lean",
+      "line": 8,
+      "column": 15,
+      "severity": "error",
+      "message": "Unknown constant `Nat.mul_lt_mul_right'`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P1Smoke_72c9132600.lean",
+      "line": 8,
+      "column": 15,
+      "severity": "error",
+      "message": "Unknown constant `Nat.mul_lt_mul_right'`\n"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "note_title": "素数倒数和的估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计",
+    "基于分部求和法的和的估计",
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "素数倒数和的估计#1",
+      "type": "note",
+      "title": "欧拉关于素数导数和的定理",
+      "body": "$\\mathbb{P}$是素数的集合，级数$$\\sum_{p\\in  \\mathbb{P}} \\frac{1}{p}$$发散。",
+      "position_char": 31,
+      "position_line": 6
+    },
+    {
+      "id": "素数倒数和的估计#2",
+      "type": "question",
+      "title": "以上问题的定量版本问题",
+      "body": "假设$p\\in \\mathbb{P}$,估计由级数定义出来的函数$$S(x):=\\sum_{p\\leq x} \\frac{1}{p}$$",
+      "position_char": 257,
+      "position_line": 13
+    },
+    {
+      "id": "素数倒数和的估计#3",
+      "type": "note",
+      "title": "Mertens第二定理,1874",
+      "body": "存在一个常数$B$(现在称之为Mertens常数)使得$$\\sum_{p\\le x}\\frac{1}{p}=\\log\\log(x)+B+O\\left(\\frac{1}{\\log(x)}\\right)$$",
+      "position_char": 384,
+      "position_line": 18
+    },
+    {
+      "id": "素数倒数和的估计#4",
+      "type": "note",
+      "title": "Euler发现的现象",
+      "body": "序列$nQ+1,n\\in \\mathbb{Z}^{+}$的素因子里的素因子不属于集合$\\{p_1,...,p_N\\}$",
+      "position_char": 994,
+      "position_line": 35
+    },
+    {
+      "id": "素数倒数和的估计#5",
+      "type": "note",
+      "title": "Mertens估计",
+      "body": "1. $$\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)+O(1)$$\n2. $$\\sum_{p\\leq x}\\frac{\\log(p)}{p}=\\log(x)+O(1)$$",
+      "position_char": 1825,
+      "position_line": 51
+    },
+    {
+      "id": "素数倒数和的估计#6",
+      "type": "tip",
+      "title": "同物异表",
+      "body": "用两种不同的途径表示同一个对象，从而导出新的关系。",
+      "position_char": 3705,
+      "position_line": 77
+    }
+  ]
+}

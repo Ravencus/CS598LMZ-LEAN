@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_9f975121d9b9.lean",
+      "line": 7,
+      "column": 19,
+      "severity": "error",
+      "message": "unexpected token 'ᴴ'; expected ':=', 'where' or '|'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_9f975121d9b9.lean",
+      "line": 6,
+      "column": 6,
+      "severity": "error",
+      "message": "Unknown constant `Matrix.UpperTriangular`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_9f975121d9b9.lean",
+      "line": 7,
+      "column": 19,
+      "severity": "error",
+      "message": "unexpected token 'ᴴ'; expected ':=', 'where' or '|'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_9f975121d9b9.lean",
+      "line": 6,
+      "column": 6,
+      "severity": "error",
+      "message": "Unknown constant `Matrix.UpperTriangular`\n"
+    }
+  ]
+}

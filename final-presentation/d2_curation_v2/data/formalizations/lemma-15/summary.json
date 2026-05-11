@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-15",
+  "english_title": "Lemma 1.5",
+  "statement_en": "Under the assumptions of Proposition 0, $G_k(x)$ converges to $0$ almost everywhere.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter MeasureTheory\n\ndef Proposition0Assumptions {α : Type*} [MeasurableSpace α]\n    (μ : Measure α) (G : ℕ → α → ℝ) : Prop :=\n  ∀ᵐ x ∂μ, Tendsto (fun k : ℕ => G k x) atTop (nhds 0)\n\ntheorem mainTheorem {α : Type*} [MeasurableSpace α]\n    (μ : Measure α) (G : ℕ → α → ℝ)\n    (h : Proposition0Assumptions μ G) :\n    ∀ᵐ x ∂μ, Tendsto (fun k : ℕ => G k x) atTop (nhds 0) := by\n  sorry"
+}

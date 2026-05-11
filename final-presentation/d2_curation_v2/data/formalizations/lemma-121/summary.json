@@ -1,0 +1,24 @@
+{
+  "problem_id": "lemma-121",
+  "english_title": "Lemma 1.2.1",
+  "statement_en": "If $f\\in C(\\mathbb{T}\\to \\mathbb{C})$, then for every $\\varepsilon>0$ there exists a polynomial $P_{\\varepsilon}(z)$ such that $$\\|f-P_{\\varepsilon}\\|_{u}<\\varepsilon.$$",
+  "difficulty": "medium",
+  "domain": "analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to synthesize instance of type class\n  TopologicalSpace Torus\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nabbrev Torus : Type := { z : ℂ // ‖z‖ = (1 : ℝ) }\n\ntheorem unitCircle_polynomial_uniform_approximation\n    (f : Torus → ℂ) (hf : Continuous f) :\n    ∀ ε : ℝ, ε > 0 → ∃ P : Polynomial ℂ, ∀ z : Torus, ‖f z - P.eval z.1‖ < ε := by\n  sorry"
+}

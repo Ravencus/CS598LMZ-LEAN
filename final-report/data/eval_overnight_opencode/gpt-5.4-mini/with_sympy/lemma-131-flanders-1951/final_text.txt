@@ -1,0 +1,64 @@
+I’m loading the Lean proof workflow and checking the exact statement shape before iterating.
+I’m looking for existing Mathlib lemmas about `minpoly` on products and matrix multiplication so I can avoid inventing API names.
+I didn’t find local examples, so I’m checking whether the repo already contains a theorem statement or digest for this exact result.
+I have a proof idea: show `X * minpoly` annihilates the reversed product via `A * (BA)^k = (AB)^k * A`, then apply minimal-polynomial divisibility. I’m checking the exact lemma names now.
+I’m probing the minimal-polynomial divisibility API directly so I can use the right theorem instead of guessing.
+I have the divisibility lemma. I’m now validating the polynomial-induction shape for the intertwining identity that converts `AB`-annihilation into `BA`-annihilation.
+I have one key subgoal left: commuting a scalar matrix past an arbitrary matrix. I’m checking the exact centrality lemma name so the final proof stays minimal.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  constructor
+  · apply minpoly.dvd
+    have hcomm : ∀ p : Polynomial ℂ, A * aeval (B * A) p = aeval (A * B) p * A := by
+      intro p
+      induction p using Polynomial.induction_on with
+      | C c =>
+          change A * (c • (1 : Matrix n n ℂ)) = (c • (1 : Matrix n n ℂ)) * A
+          simp [mul_smul, smul_mul_assoc]
+      | monomial m c =>
+          induction m with
+          | zero =>
+              change A * (c • (1 : Matrix n n ℂ)) = (c • (1 : Matrix n n ℂ)) * A
+              simp [mul_smul, smul_mul_assoc]
+          | succ m ih =>
+              simp [pow_succ, ih, Matrix.mul_assoc, mul_smul, smul_mul_assoc]
+      | add p q hp hq =>
+          simp [hp, hq, add_mul, mul_add, Matrix.mul_assoc]
+    calc
+      aeval (B * A) (X * minpoly ℂ (A * B))
+          = (B * A) * aeval (B * A) (minpoly ℂ (A * B)) := by simp
+      _ = B * (A * aeval (B * A) (minpoly ℂ (A * B))) := by simp [Matrix.mul_assoc]
+      _ = B * (aeval (A * B) (minpoly ℂ (A * B)) * A) := by rw [hcomm]
+      _ = 0 := by simp [aeval_minpoly, Matrix.mul_assoc]
+  · apply minpoly.dvd
+    have hcomm : ∀ p : Polynomial ℂ, B * aeval (A * B) p = aeval (B * A) p * B := by
+      intro p
+      induction p using Polynomial.induction_on with
+      | C c =>
+          change B * (c • (1 : Matrix n n ℂ)) = (c • (1 : Matrix n n ℂ)) * B
+          simp [mul_smul, smul_mul_assoc]
+      | monomial m c =>
+          induction m with
+          | zero =>
+              change B * (c • (1 : Matrix n n ℂ)) = (c • (1 : Matrix n n ℂ)) * B
+              simp [mul_smul, smul_mul_assoc]
+          | succ m ih =>
+              simp [pow_succ, ih, Matrix.mul_assoc, mul_smul, smul_mul_assoc]
+      | add p q hp hq =>
+          simp [hp, hq, add_mul, mul_add, Matrix.mul_assoc]
+    calc
+      aeval (A * B) (X * minpoly ℂ (B * A))
+          = (A * B) * aeval (A * B) (minpoly ℂ (B * A)) := by simp
+      _ = A * (B * aeval (A * B) (minpoly ℂ (B * A))) := by simp [Matrix.mul_assoc]
+      _ = A * (aeval (B * A) (minpoly ℂ (B * A)) * B) := by rw [hcomm]
+      _ = 0 := by simp [aeval_minpoly, Matrix.mul_assoc]
+```

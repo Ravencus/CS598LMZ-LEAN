@@ -1,0 +1,21 @@
+{
+  "id": "radon-nikodym-chain-rule",
+  "type": "problem",
+  "source_note": "Weierstrass逼近定理的概率途径证明",
+  "english_source_note": "A Probabilistic Proof of the Weierstrass Approximation Theorem",
+  "callout_id": "Weierstrass逼近定理的概率途径证明#15",
+  "english_title": "Radon-Nikodym Chain Rule",
+  "statement_en": "Let $\\nu,\\mu$ be two measures on the measurable space $(\\Omega,\\mathcal{F})$, and let $g$ be a nonnegative Borel measurable function on $\\Omega$. If the density $\\frac{d\\nu}{d\\mu}$ of $\\nu$ with respect to $\\mu$ exists, then\n$$\\int_{\\Omega}g\\,d\\nu=\\int_{\\Omega}g\\frac{d\\nu}{d\\mu}\\,d\\mu.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Radon-Nikodym derivative",
+    "integration with respect to absolutely continuous measures"
+  ],
+  "prerequisites": [
+    "absolute continuity of measures",
+    "Lebesgue integration"
+  ],
+  "callout_body": "$\\nu,\\mu$是测度空间$(\\Omega,\\mathcal{F})$上的两个测度，$g$是定义在$\\Omega$上的非负Borel可测函数。如果存在$\\nu$关于$\\mu$的密度$\\frac{d\\nu}{d\\mu}$,那么$$\\int_{\\Omega}g\\,d\\nu=\\int_{\\Omega}g\\frac{d\\nu}{d\\mu}\\,d\\mu$$"
+}

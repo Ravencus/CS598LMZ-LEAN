@@ -1,0 +1,44 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "Unknown constant `Set.limsup_eq`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_ea0aab5ba6.lean",
+      "line": 17,
+      "column": 11,
+      "severity": "error",
+      "message": "Unknown constant `Set.limsup_eq`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ea0aab5ba6.lean",
+      "line": 18,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown identifier `MeasureTheory.measure_limsup_eq_zero`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ea0aab5ba6.lean",
+      "line": 29,
+      "column": 25,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  hz\n has type\n  μ {x | ∃ᶠ (n : ℕ) in atTop, (↑k + 1)⁻¹ ≤ |fSeq (n + 1) x - f x|} = 0\nbut is expected to have type\n  μ {a | ∀ (x : ℕ), ∃ x_1, x ≤ x_1 ∧ (↑k + 1)⁻¹ ≤ |fSeq (x_1 + 1) a - f a|} = 0"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ea0aab5ba6.lean",
+      "line": 48,
+      "column": 2,
+      "severity": "error",
+      "message": "Type mismatch\n  Tendsto.eventually hshift htail\nhas type\n  ∀ᶠ (x_1 : ℕ) in atTop, dist (fSeq (x_1 + 1 + 1) x) (f x) < ε\nbut is expected to have type\n  ∀ᶠ (x_1 : ℕ) in atTop, dist (fSeq x_1 x) (f x) < ε\n"
+    }
+  ]
+}

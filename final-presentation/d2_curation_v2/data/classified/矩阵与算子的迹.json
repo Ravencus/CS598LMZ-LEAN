@@ -1,0 +1,187 @@
+{
+  "note_title": "矩阵与算子的迹",
+  "is_hub": false,
+  "in_subset_via": [
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "矩阵与算子的迹#1",
+      "type": "note",
+      "title": "线性算子的迹的定义",
+      "body": "假设$V$是定义在复数域上的线性空间，$\\mathscr{A}\\in \\mathcal{L}(V)$是$V$上的线性算子，假设其全体特征值为$\\lambda_1,...,\\lambda_n$,那么其迹被定义为其所有特征值的和，每个特征按照代数重数重复计算,即$$\\text{trace}(\\mathscr{A}):=\\sum_{i\\leq n}\\lambda_i$$特别的如果$V$是定义在实数域上的线性空间，那么算子$\\mathscr{A}$的迹定义为其在复数域上的所有特征值的和。",
+      "position_char": 70,
+      "position_line": 7,
+      "classification_result": {
+        "id": "矩阵与算子的迹#1",
+        "classification": "definition",
+        "english_title": "Definition of the Trace of a Linear Operator",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "矩阵与算子的迹#2",
+      "type": "note",
+      "title": "方阵的迹的定义",
+      "body": "矩阵$M=(a_{i,j})$是定义在实数或者复数域上的n阶矩阵，那么矩阵的迹定义为其对角线元素之和，即$$\\text{trace}(M):=\\sum_{i\\leq n}a_{ii}$$",
+      "position_char": 336,
+      "position_line": 10,
+      "classification_result": {
+        "id": "矩阵与算子的迹#2",
+        "classification": "definition",
+        "english_title": "Definition of the Trace of a Square Matrix",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "矩阵与算子的迹#3",
+      "type": "note",
+      "title": "性质1",
+      "body": "矩阵的迹是可交换的。",
+      "position_char": 482,
+      "position_line": 19,
+      "classification_result": {
+        "id": "矩阵与算子的迹#3",
+        "classification": "problem",
+        "english_title": "Property 1",
+        "if_problem": {
+          "statement_en": "The trace of matrices is commutative, i.e. for square matrices of compatible size, $\\text{trace}(AB)=\\text{trace}(BA)$.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "linear algebra",
+          "key_techniques": [
+            "expanding the trace as a sum of diagonal entries",
+            "reindexing finite sums"
+          ],
+          "prerequisites": [
+            "matrix multiplication",
+            "definition of trace",
+            "finite summation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "矩阵与算子的迹#4",
+      "type": "note",
+      "title": "性质2",
+      "body": "矩阵的迹在相似变换下是不变的。",
+      "position_char": 553,
+      "position_line": 24,
+      "classification_result": {
+        "id": "矩阵与算子的迹#4",
+        "classification": "problem",
+        "english_title": "Property 2",
+        "if_problem": {
+          "statement_en": "The trace of a matrix is invariant under similarity transformations.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "linear algebra",
+          "key_techniques": [
+            "cyclic property of trace",
+            "similarity transformation"
+          ],
+          "prerequisites": [
+            "invertible matrices",
+            "definition of similarity",
+            "trace of a matrix"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "矩阵与算子的迹#5",
+      "type": "note",
+      "title": "性质3",
+      "body": "矩阵的迹是线性的。即如果有两个n阶方程$A,B$那么成立等式$$\\text{trace}(aA+bB)=a\\,\\text{trace}(A)+b\\,\\text{trace}(B)$$其中$a,b$是两个常数。",
+      "position_char": 774,
+      "position_line": 29,
+      "classification_result": {
+        "id": "矩阵与算子的迹#5",
+        "classification": "problem",
+        "english_title": "Property 3",
+        "if_problem": {
+          "statement_en": "The trace of a matrix is linear. That is, for two $n\\times n$ matrices $A,B$, one has $$\\text{trace}(aA+bB)=a\\,\\text{trace}(A)+b\\,\\text{trace}(B),$$ where $a,b$ are constants.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "linear algebra",
+          "key_techniques": [
+            "entrywise expansion on the diagonal",
+            "linearity of finite sums"
+          ],
+          "prerequisites": [
+            "definition of trace",
+            "matrix addition and scalar multiplication"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "矩阵与算子的迹#6",
+      "type": "note",
+      "title": "Schur分解定理",
+      "body": "n阶复矩阵$A$酉相似(unitary similarity)于一个上三角矩阵$T$,即存在一个酉矩阵(unitary matrix)$Q$使得$$A=QTQ^{\\dagger}$$并且上三角矩阵$T$的对角线为矩阵$A$的特征值。",
+      "position_char": 896,
+      "position_line": 32,
+      "classification_result": {
+        "id": "矩阵与算子的迹#6",
+        "classification": "problem",
+        "english_title": "Schur Decomposition Theorem",
+        "if_problem": {
+          "statement_en": "Every complex $n\\times n$ matrix $A$ is unitarily similar to an upper triangular matrix $T$, that is, there exists a unitary matrix $Q$ such that $$A=QTQ^{\\dagger},$$ and the diagonal entries of $T$ are the eigenvalues of $A$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "linear algebra",
+          "key_techniques": [
+            "induction on dimension",
+            "orthonormal basis extension",
+            "unitary similarity"
+          ],
+          "prerequisites": [
+            "eigenvalues and eigenvectors",
+            "unitary matrices",
+            "inner product spaces"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "矩阵与算子的迹#7",
+      "type": "note",
+      "title": "线性算子的迹的性质",
+      "body": "1. 算子交换迹不变：$$\\text{trace}(\\mathscr{A}\\circ \\mathscr{B})=\\text{trace}(\\mathscr{B}\\circ \\mathscr{A})$$\n2. 算子的迹矩阵是线性的:$$\\text{trace}(a\\mathscr{A}+b\\mathscr{B})=a \\,\\text{trace}(\\mathscr{A})+b \\,\\text{trace}(\\mathscr{A})$$其中$a,b$是两个常数。",
+      "position_char": 1555,
+      "position_line": 41,
+      "classification_result": {
+        "id": "矩阵与算子的迹#7",
+        "classification": "problem",
+        "english_title": "Properties of the Trace of a Linear Operator",
+        "if_problem": {
+          "statement_en": "For linear operators $\\mathscr{A},\\mathscr{B}$, the trace satisfies: 1. $$\\text{trace}(\\mathscr{A}\\circ \\mathscr{B})=\\text{trace}(\\mathscr{B}\\circ \\mathscr{A}).$$ 2. $$\\text{trace}(a\\mathscr{A}+b\\mathscr{B})=a\\,\\text{trace}(\\mathscr{A})+b\\,\\text{trace}(\\mathscr{B}),$$ where $a,b$ are constants.",
+          "problem_type": "theorem",
+          "difficulty": "easy",
+          "domain": "linear algebra",
+          "key_techniques": [
+            "passing to matrix representations",
+            "cyclic property of trace",
+            "linearity of trace"
+          ],
+          "prerequisites": [
+            "linear operators",
+            "matrix representation of linear maps",
+            "trace of a matrix"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"矩阵与算子的迹#1\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Definition of the Trace of a Linear Operator\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"矩阵与算子的迹#2\",\n    \"classification\": \"definition\",\n    \"english_title\": \"Definition of the Trace of a Square Matrix\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"矩阵与算子的迹#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Property 1\",\n    \"if_problem\": {\n      \"statement_en\": \"The trace of matrices is commutative, i.e. for square matrices of compatible size, $\\\\text{trace}(AB)=\\\\text{trace}(BA)$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"linear algebra\",\n      \"key_techniques\": [\n        \"expanding the trace as a sum of diagonal entries\",\n        \"reindexing finite sums\"\n      ],\n      \"prerequisites\": [\n        \"matrix multiplication\",\n        \"definition of trace\",\n        \"finite summation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"矩阵与算子的迹#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Property 2\",\n    \"if_problem\": {\n      \"statement_en\": \"The trace of a matrix is invariant under similarity transformations.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"linear algebra\",\n      \"key_techniques\": [\n        \"cyclic property of trace\",\n        \"similarity transformation\"\n      ],\n      \"prerequisites\": [\n        \"invertible matrices\",\n        \"definition of similarity\",\n        \"trace of a matrix\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"矩阵与算子的迹#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Property 3\",\n    \"if_problem\": {\n      \"statement_en\": \"The trace of a matrix is linear. That is, for two $n\\\\times n$ matrices $A,B$, one has $$\\\\text{trace}(aA+bB)=a\\\\,\\\\text{trace}(A)+b\\\\,\\\\text{trace}(B),$$ where $a,b$ are constants.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"linear algebra\",\n      \"key_techniques\": [\n        \"entrywise expansion on the diagonal\",\n        \"linearity of finite sums\"\n      ],\n      \"prerequisites\": [\n        \"definition of trace\",\n        \"matrix addition and scalar multiplication\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"矩阵与算子的迹#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Schur Decomposition Theorem\",\n    \"if_problem\": {\n      \"statement_en\": \"Every complex $n\\\\times n$ matrix $A$ is unitarily similar to an upper triangular matrix $T$, that is, there exists a unitary matrix $Q$ such that $$A=QTQ^{\\\\dagger},$$ and the diagonal entries of $T$ are the eigenvalues of $A$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"linear algebra\",\n      \"key_techniques\": [\n        \"induction on dimension\",\n        \"orthonormal basis extension\",\n        \"unitary similarity\"\n      ],\n      \"prerequisites\": [\n        \"eigenvalues and eigenvectors\",\n        \"unitary matrices\",\n        \"inner product spaces\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"矩阵与算子的迹#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Properties of the Trace of a Linear Operator\",\n    \"if_problem\": {\n      \"statement_en\": \"For linear operators $\\\\mathscr{A},\\\\mathscr{B}$, the trace satisfies: 1. $$\\\\text{trace}(\\\\mathscr{A}\\\\circ \\\\mathscr{B})=\\\\text{trace}(\\\\mathscr{B}\\\\circ \\\\mathscr{A}).$$ 2. $$\\\\text{trace}(a\\\\mathscr{A}+b\\\\mathscr{B})=a\\\\,\\\\text{trace}(\\\\mathscr{A})+b\\\\,\\\\text{trace}(\\\\mathscr{B}),$$ where $a,b$ are constants.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"linear algebra\",\n      \"key_techniques\": [\n        \"passing to matrix representations\",\n        \"cyclic property of trace\",\n        \"linearity of trace\"\n      ],\n      \"prerequisites\": [\n        \"linear operators\",\n        \"matrix representation of linear maps\",\n        \"trace of a matrix\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

@@ -1,0 +1,23 @@
+{
+  "id": "common-lemma-2",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "callout_id": "Borel-Cantelli lemma及其应用#5",
+  "english_title": "Common Lemma 2",
+  "statement_en": "Let $$A_{n}:=\\{x:|f_n(x)-f(x)|\\geq \\varepsilon_n\\},$$ where $\\varepsilon_n \\downarrow 0$, and suppose also that $$\\sum_{n\\geq 1}\\mu(A_n)<\\infty.$$ Then if $x \\not \\in \\limsup_{n\\to\\infty} A_{n}$, there exists $N_x$ such that for all $n >N_x$, $$|f_n(x)-f(x)|< \\varepsilon_n.$$ Hence $f_n(x)\\to f(x)$, and therefore $$f_n(x)\\to f(x)$$ almost everywhere.",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Borel-Cantelli lemma",
+    "shrinking error thresholds",
+    "almost everywhere convergence criterion"
+  ],
+  "prerequisites": [
+    "measure spaces",
+    "almost everywhere convergence",
+    "Borel-Cantelli lemma"
+  ],
+  "callout_body": "$$A_{n}:=\\{x:|f_n(x)-f(x)|\\geq \\varepsilon_n\\}$$其中$\\varepsilon_n \\downarrow 0$，并且同时$$\\sum_{n\\geq 1}\\mu(A_n)<\\infty$$\n于是按照上面同样的做法，如果$x \\not \\in \\limsup_{n\\to\\infty} A_{n}$那么存在一个$N_x$使得$\\forall n >N_x$都有$$|f_n(x)-f(x)|< \\varepsilon_n$$同样能表示$f_n(x)\\to f(x)$，那么能得到结论，$$f_n(x)\\to f(x)$$几乎处处成立。"
+}

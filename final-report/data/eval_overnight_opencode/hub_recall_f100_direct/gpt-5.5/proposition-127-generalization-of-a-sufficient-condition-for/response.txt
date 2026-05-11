@@ -1,0 +1,4 @@
+["term-by-term-estimates-hub", "cauchy-convergence-criterion-hub", "an-epsilon-of-room-hub"]
+- term-by-term-estimates-hub: The proof bounds each increment `dist (a (n+1)) (a n)` by `b n` and sums these termwise bounds over a finite interval.
+- cauchy-convergence-criterion-hub: The target is exactly a Cauchy statement, proved by showing that for sufficiently large indices the metric distance is smaller than any prescribed epsilon.
+- an-epsilon-of-room-hub: The infinite Cauchy condition is reduced to finite tail estimates, using convergence of `∑ b n` to make sufficiently far tails arbitrarily small.

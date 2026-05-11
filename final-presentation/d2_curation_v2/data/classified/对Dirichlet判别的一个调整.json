@@ -1,0 +1,165 @@
+{
+  "note_title": "对Dirichlet判别的一个调整",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "对Dirichlet判别的一个调整#1",
+      "type": "note",
+      "title": "Dirichlet收敛判别",
+      "body": "$a_n:\\mathbb{N} \\to \\mathbb{R},b_n:\\mathbb{N} \\to\\mathbb{C}$,如果$a_n$单调收敛到0,并且存在正实数使得$\\left|\\sum_{n=1}^N b_n\\right|<M$对任意正整数$N$成立，那么级数$\\sum_{n\\geq 1}a_nb_n$收敛。",
+      "position_char": 40,
+      "position_line": 7,
+      "classification_result": {
+        "id": "对Dirichlet判别的一个调整#1",
+        "classification": "problem",
+        "english_title": "Dirichlet Convergence Test",
+        "if_problem": {
+          "statement_en": "Let $a_n:\\mathbb{N} \\to \\mathbb{R}$ and $b_n:\\mathbb{N} \\to \\mathbb{C}$. If $a_n$ decreases monotonically to $0$, and there exists a positive real number $M$ such that $\\left|\\sum_{n=1}^N b_n\\right|<M$ for every positive integer $N$, then the series $\\sum_{n\\geq 1} a_n b_n$ converges.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "summation by parts",
+            "bounded partial sums",
+            "monotone convergence to zero"
+          ],
+          "prerequisites": [
+            "series convergence",
+            "partial sums",
+            "Abel summation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#2",
+      "type": "note",
+      "title": "单调性修改为有界变差",
+      "body": "1.  $a_n \\to 0$(这里不需要单调的条件)\n2.  $\\sum_{n\\geq 1}|a_n-a_{n+1}|<\\infty$,即$a_n$是有界变差的。 (去掉了单调性的要求，这里用差分绝对值的和收敛替代,即$a_n$可以不单调，但是他们差分的误差累计起来要是有限的)\n3.  $\\left|\\sum_{n=1}^N b_n\\right|<\\infty$ 对任意的正整数$N$成立",
+      "position_char": 283,
+      "position_line": 12,
+      "classification_result": {
+        "id": "对Dirichlet判别的一个调整#2",
+        "classification": "strategy_template",
+        "english_title": "Replace Monotonicity by Bounded Variation",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Bounded variation replacement in Dirichlet-type tests",
+          "summary_en": "Instead of requiring $a_n$ to be monotone, it is enough in many Dirichlet-type arguments to assume $a_n \\to 0$ and $\\sum_{n\\geq 1}|a_n-a_{n+1}|<\\infty$. This controls the total oscillation of $a_n$ and allows summation-by-parts arguments to still work.",
+          "applicability": "Applies when proving convergence of series $\\sum a_n b_n$ where the partial sums of $b_n$ are uniformly bounded but the sequence $a_n$ is not monotone."
+        }
+      }
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#3",
+      "type": "note",
+      "title": "去掉单调性可能会导致发散",
+      "body": "$$\\sum_n \\frac{1}{n} = \\sum_n (-1)^n \\frac{(-1)^n}{n}$$令$b_n = (-1)^n$其和一定是有界的，$a_n = \\frac{(-1)^n}{n} \\to0$，不过 $a_n$并不单调。事实上这个级数发散。",
+      "position_char": 1841,
+      "position_line": 50,
+      "classification_result": {
+        "id": "对Dirichlet判别的一个调整#3",
+        "classification": "problem",
+        "english_title": "Removing Monotonicity May Cause Divergence",
+        "if_problem": {
+          "statement_en": "Consider $$\\sum_n \\frac{1}{n} = \\sum_n (-1)^n \\frac{(-1)^n}{n}.$$ Let $b_n = (-1)^n$, whose partial sums are bounded, and let $a_n = \\frac{(-1)^n}{n} \\to 0$, but $a_n$ is not monotone. In fact, this series diverges.",
+          "problem_type": "counterexample",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "harmonic series divergence",
+            "construction of counterexamples",
+            "bounded partial sums"
+          ],
+          "prerequisites": [
+            "harmonic series",
+            "Dirichlet test",
+            "monotonicity of sequences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#4",
+      "type": "question",
+      "title": "问题",
+      "body": "证明:\n$$\\sum_{n\\geq1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n}z^n$$在单位圆周$S^1$上收敛。",
+      "position_char": 2019,
+      "position_line": 56,
+      "classification_result": {
+        "id": "对Dirichlet判别的一个调整#4",
+        "classification": "problem",
+        "english_title": "Problem",
+        "if_problem": {
+          "statement_en": "Prove that $$\\sum_{n\\geq1}\\frac{(-1)^{\\lfloor\\sqrt{n}\\rfloor}}{n}z^n$$ converges on the unit circle $S^1$.",
+          "problem_type": "exercise",
+          "difficulty": "hard",
+          "domain": "complex analysis",
+          "key_techniques": [
+            "Dirichlet-type test",
+            "bounded variation estimate",
+            "analysis of block-constant signs"
+          ],
+          "prerequisites": [
+            "power series on the unit circle",
+            "Dirichlet test",
+            "floor function and block decomposition"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#5",
+      "type": "question",
+      "title": "一致收敛的问题",
+      "body": "此时的问题变成了这样:\n\n$a_n(z):z\\in D\\to \\mathbb{R}$,$b_n(z):z\\in D\\to\\mathbb{C}$ 那么此时考虑级数:\n\n$$\\sum_{n} a_n(z)b_n(z)$$是否是一致收敛的。",
+      "position_char": 3506,
+      "position_line": 94,
+      "classification_result": {
+        "id": "对Dirichlet判别的一个调整#5",
+        "classification": "remark",
+        "english_title": "The Question of Uniform Convergence",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "对Dirichlet判别的一个调整#6",
+      "type": "note",
+      "title": "一致收敛版本的Dirichlet收敛",
+      "body": "1.  $\\sum_{n =1}^{N}b_n(z)$对任意正整数$N$一致有界\n2.  $a_n(z)\\forall z \\in D$单调收敛到0\n\n如果满足上述条件，那么$\\sum_{n} a_n(z)b_n(z)$在$D$上一致收敛。",
+      "position_char": 3932,
+      "position_line": 111,
+      "classification_result": {
+        "id": "对Dirichlet判别的一个调整#6",
+        "classification": "problem",
+        "english_title": "Uniform Convergence Version of Dirichlet Convergence",
+        "if_problem": {
+          "statement_en": "Assume that: 1. the partial sums $\\sum_{n=1}^{N} b_n(z)$ are uniformly bounded for every positive integer $N$; 2. for every $z \\in D$, the sequence $a_n(z)$ decreases monotonically to $0$. Then the series $\\sum_n a_n(z)b_n(z)$ converges uniformly on $D$.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "uniform Dirichlet test",
+            "summation by parts",
+            "uniform boundedness of partial sums"
+          ],
+          "prerequisites": [
+            "uniform convergence",
+            "Dirichlet test",
+            "series of functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"对Dirichlet判别的一个调整#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Dirichlet Convergence Test\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_n:\\\\mathbb{N} \\\\to \\\\mathbb{R}$ and $b_n:\\\\mathbb{N} \\\\to \\\\mathbb{C}$. If $a_n$ decreases monotonically to $0$, and there exists a positive real number $M$ such that $\\\\left|\\\\sum_{n=1}^N b_n\\\\right|<M$ for every positive integer $N$, then the series $\\\\sum_{n\\\\geq 1} a_n b_n$ converges.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"summation by parts\",\n        \"bounded partial sums\",\n        \"monotone convergence to zero\"\n      ],\n      \"prerequisites\": [\n        \"series convergence\",\n        \"partial sums\",\n        \"Abel summation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"对Dirichlet判别的一个调整#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Replace Monotonicity by Bounded Variation\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Bounded variation replacement in Dirichlet-type tests\",\n      \"summary_en\": \"Instead of requiring $a_n$ to be monotone, it is enough in many Dirichlet-type arguments to assume $a_n \\\\to 0$ and $\\\\sum_{n\\\\geq 1}|a_n-a_{n+1}|<\\\\infty$. This controls the total oscillation of $a_n$ and allows summation-by-parts arguments to still work.\",\n      \"applicability\": \"Applies when proving convergence of series $\\\\sum a_n b_n$ where the partial sums of $b_n$ are uniformly bounded but the sequence $a_n$ is not monotone.\"\n    }\n  },\n  {\n    \"id\": \"对Dirichlet判别的一个调整#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Removing Monotonicity May Cause Divergence\",\n    \"if_problem\": {\n      \"statement_en\": \"Consider $$\\\\sum_n \\\\frac{1}{n} = \\\\sum_n (-1)^n \\\\frac{(-1)^n}{n}.$$ Let $b_n = (-1)^n$, whose partial sums are bounded, and let $a_n = \\\\frac{(-1)^n}{n} \\\\to 0$, but $a_n$ is not monotone. In fact, this series diverges.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"harmonic series divergence\",\n        \"construction of counterexamples\",\n        \"bounded partial sums\"\n      ],\n      \"prerequisites\": [\n        \"harmonic series\",\n        \"Dirichlet test\",\n        \"monotonicity of sequences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"对Dirichlet判别的一个调整#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem\",\n    \"if_problem\": {\n      \"statement_en\": \"Prove that $$\\\\sum_{n\\\\geq1}\\\\frac{(-1)^{\\\\lfloor\\\\sqrt{n}\\\\rfloor}}{n}z^n$$ converges on the unit circle $S^1$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"complex analysis\",\n      \"key_techniques\": [\n        \"Dirichlet-type test\",\n        \"bounded variation estimate\",\n        \"analysis of block-constant signs\"\n      ],\n      \"prerequisites\": [\n        \"power series on the unit circle\",\n        \"Dirichlet test\",\n        \"floor function and block decomposition\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"对Dirichlet判别的一个调整#5\",\n    \"classification\": \"remark\",\n    \"english_title\": \"The Question of Uniform Convergence\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"对Dirichlet判别的一个调整#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Uniform Convergence Version of Dirichlet Convergence\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume that: 1. the partial sums $\\\\sum_{n=1}^{N} b_n(z)$ are uniformly bounded for every positive integer $N$; 2. for every $z \\\\in D$, the sequence $a_n(z)$ decreases monotonically to $0$. Then the series $\\\\sum_n a_n(z)b_n(z)$ converges uniformly on $D$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"uniform Dirichlet test\",\n        \"summation by parts\",\n        \"uniform boundedness of partial sums\"\n      ],\n      \"prerequisites\": [\n        \"uniform convergence\",\n        \"Dirichlet test\",\n        \"series of functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

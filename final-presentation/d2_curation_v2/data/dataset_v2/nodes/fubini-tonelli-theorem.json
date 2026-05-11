@@ -1,0 +1,23 @@
+{
+  "id": "fubini-tonelli-theorem",
+  "type": "problem",
+  "source_note": "Fubini-Tonelli定理的例子与反例",
+  "english_source_note": "Examples and Counterexamples for Fubini-Tonelli",
+  "callout_id": "Fubini-Tonelli定理的例子与反例#1",
+  "english_title": "Fubini-Tonelli Theorem",
+  "statement_en": "If $f$ is defined on $X \\times Y$ and is integrable, or if $f$ is a nonnegative measurable function, then\n$$\\int_{X\\times Y}f(x,y)\\,d(\\mu\\times\\nu) = \\int_{X}\\left(\\int_Y f(x,y) \\,d\\nu\\right) \\, d\\mu = \\int_Y\\left(\\int_X f(x,y) \\,d\\mu\\right) \\, d\\nu.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "product measure",
+    "iterated integration",
+    "measurability and integrability criteria"
+  ],
+  "prerequisites": [
+    "measurable functions",
+    "product measure spaces",
+    "Lebesgue integration"
+  ],
+  "callout_body": "如果$f$定义在$X \\times Y$上是可积的或者函数$f$是非负可测的，那么有$$\\int_{X\\times\nY}f(x,y)\\,d(\\mu\\times\\nu) = \\int_{X}\\left(\\int_Y f(x,y) \\,\nd\\nu\\right) \\, d\\mu = \\int_Y\\left(\\int_X f(x,y) \\,\nd\\mu\\right) \\, d\\nu$$"
+}

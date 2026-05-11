@@ -1,0 +1,23 @@
+{
+  "id": "problem-11-2",
+  "type": "problem",
+  "source_note": "证明正弦函数在整数上取值的序列的极限是不存在的",
+  "english_source_note": "Nonexistence of a Limit for Sine on the Integers",
+  "callout_id": "证明正弦函数在整数上取值的序列的极限是不存在的#2",
+  "english_title": "Problem 1.1",
+  "statement_en": "Prove the stronger statement that $\\sin(n)$ is dense: namely, prove that the set formed by the sequence $x_n=\\sin(n)$ is dense in the subspace $[-1,1]$.",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "key_techniques": [
+    "density modulo $2\\pi$",
+    "continuous image of a dense set",
+    "periodicity of sine"
+  ],
+  "prerequisites": [
+    "topological density",
+    "continuity",
+    "properties of the sine function"
+  ],
+  "callout_body": "证明$\\sin(n)$是稠密的加强问题，证明$x_n=\\sin(n)$这个序列形成的集合在子空间$[-1,1]$当中是稠密的。"
+}

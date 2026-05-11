@@ -1,0 +1,24 @@
+{
+  "id": "lemma-13-kroneckers-lemma",
+  "type": "problem",
+  "source_note": "Wintner mean value theorem",
+  "english_source_note": "Wintner Mean Value Theorem",
+  "callout_id": "Wintner mean value theorem#3",
+  "english_title": "Lemma 1.3: Kronecker's Lemma",
+  "statement_en": "For an arithmetic function $f$, if there exists $s$ with $\\operatorname{Re}(s)>0$ such that $$\\sum_{n\\ge 1} \\frac{f(n)}{n^s}<\\infty,$$ then $$\\frac{1}{x^s}\\sum_{n\\le x} f(n)\\to 0.$$",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "Kronecker's lemma",
+    "partial summation",
+    "summability arguments"
+  ],
+  "prerequisites": [
+    "complex series convergence",
+    "arithmetic functions",
+    "partial sums",
+    "basic asymptotic notation"
+  ],
+  "callout_body": "对于算术函数$f$，如果存在一个$s,\\text{Re}(s)>0$使得$$\\sum_{n\\ge 1} \\frac{f(n)}{n^s}<\\infty$$那么$$\\frac{1}{x^s}\\sum_{n\\leq x} f(n)\\to 0$$"
+}

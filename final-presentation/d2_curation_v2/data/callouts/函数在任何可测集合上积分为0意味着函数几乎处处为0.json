@@ -1,0 +1,25 @@
+{
+  "note_title": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "函数在任何可测集合上积分为0意味着函数几乎处处为0#1",
+      "type": "note",
+      "title": "命题1",
+      "body": "$(X,\\mathcal{F},\\mu)$是一个测度空间如果可测函数$f:X\\to \\mathbb{R}$满足$$\\int_E f \\,d\\mu =0 $$对任意$E \\in \\mathcal{F}$成立,那么$f =0$几乎处处成立。",
+      "position_char": 32,
+      "position_line": 6
+    },
+    {
+      "id": "函数在任何可测集合上积分为0意味着函数几乎处处为0#2",
+      "type": "note",
+      "title": "练习1",
+      "body": "用同样的方式证明$C_{\\varepsilon}:=\\{x\\in X:f^{-}>\\varepsilon\\}$对任意$\\varepsilon$也是零测度的。",
+      "position_char": 963,
+      "position_line": 18
+    }
+  ]
+}

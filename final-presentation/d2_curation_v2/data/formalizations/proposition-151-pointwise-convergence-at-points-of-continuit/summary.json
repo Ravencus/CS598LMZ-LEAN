@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-151-pointwise-convergence-at-points-of-continuit",
+  "english_title": "Proposition 1.5.1: Pointwise Convergence at Points of Continuity",
+  "statement_en": "Let $f\\in L^{\\infty}(\\mathbb{R}^n\\to \\mathbb{R})$, and let $\\{K_{\\lambda}\\}$ be an approximate identity. If $x_0\\in \\mathbb{R}^n$ is a point of continuity of $f$, that is, $\\lim_{x\\to x_0}f(x)=f(x_0)$, then\n$$\\lim_{\\lambda\\to \\infty}f*K_{\\lambda}(x_0)=f(x_0).$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'integral', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\nnoncomputable def convolutionAt {n : ℕ} (f g : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=\n  ∫ y, f (x - y) * g y ∂ MeasureTheory.volume\n\ndef IsApproximateIdentity {n : ℕ} (K : ℕ → (Fin n → ℝ) → ℝ) : Prop :=\n  True\n\ntheorem convolution_approximateIdentity_tendsto_at_continuity_point\n    {n : ℕ}\n    (f : (Fin n → ℝ) → ℝ)\n    (K : ℕ → (Fin n → ℝ) → ℝ)\n    (x₀ : Fin n → ℝ)\n    (hf : MemLp f ⊤ MeasureTheory.volume)\n    (hK : IsApproximateIdentity K)\n    (hx₀ : ContinuousAt f x₀) :\n    Filter.Tendsto (fun l : ℕ => convolutionAt f (K l) x₀) Filter.atTop (nhds (f x₀)) := by\n  sorry"
+}

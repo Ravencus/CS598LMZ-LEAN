@@ -1,0 +1,22 @@
+{
+  "problem_id": "problem-5-2",
+  "model": "gpt-5.5",
+  "wall_seconds": 19.38,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "identity-theorem-hub",
+    "integral-estimates-for-sums-hub",
+    "term-by-term-estimates-hub",
+    "using-known-asymptotics-to-derive-expansions-hub"
+  ],
+  "truth": [
+    "interchanging-sums-and-integrals-hub"
+  ],
+  "tp": 0,
+  "fp": 4,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

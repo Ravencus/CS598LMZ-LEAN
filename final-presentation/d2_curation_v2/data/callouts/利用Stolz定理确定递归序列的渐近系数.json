@@ -1,0 +1,41 @@
+{
+  "note_title": "利用Stolz定理确定递归序列的渐近系数",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "利用Stolz定理确定递归序列的渐近系数#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "数列$\\{x_n\\}_{n\\geq 1}$的初值为$1$,并且满足递推关系$$x_{n+1}=x_{n}+3\\sqrt{x_n}+\\frac{n}{\\sqrt{x_n}}$$求$$\\lim_{n\\to \\infty}\\frac{x_n}{n^2}$$",
+      "position_char": 51,
+      "position_line": 8
+    },
+    {
+      "id": "利用Stolz定理确定递归序列的渐近系数#2",
+      "type": "note",
+      "title": "为什么猜答案是很有用的?",
+      "body": "如果把解决问题比喻为在无穷的空间当中搜索一条正确的路径，那么猜出合理的结果以后，我们搜索的范围就极大地缩小了。",
+      "position_char": 210,
+      "position_line": 13
+    },
+    {
+      "id": "利用Stolz定理确定递归序列的渐近系数#3",
+      "type": "tip",
+      "title": "主要想法",
+      "body": "既然我们猜到了结果，那么反过来验证结果的合理性就行了。毕竟这个序列的前500万的数据告诉我们，$\\frac{x_n}{n^2}$是单调增加到$\\frac{9}{4}$去的，那么为什么我们不直接使用归纳法去验证，$$x_n\\leq \\frac{9}{4}n^2$$",
+      "position_char": 1181,
+      "position_line": 43
+    },
+    {
+      "id": "利用Stolz定理确定递归序列的渐近系数#4",
+      "type": "tip",
+      "title": "主要想法",
+      "body": "我们主要的想法是利用[[Cesaro-Stolz定理#1.2 分母单调无界的一般情况]]提到的广义的定理提供的关于序列上下极限，以及差分版本的序列的上下极限，并结合递归关系得到的不等式，从而得到关于$a,b$的不等式。",
+      "position_char": 3731,
+      "position_line": 74
+    }
+  ]
+}

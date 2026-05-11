@@ -1,0 +1,23 @@
+{
+  "id": "counterexample-22-failure-caused-by-the-absence-of-the-sigma",
+  "type": "problem",
+  "source_note": "Fubini-Tonelli定理的例子与反例",
+  "english_source_note": "Examples and Counterexamples for Fubini-Tonelli",
+  "callout_id": "Fubini-Tonelli定理的例子与反例#7",
+  "english_title": "Counterexample 2.2: Failure Caused by the Absence of the $\\sigma$-Finite Condition",
+  "statement_en": "Let $I =[0,1]$, let $\\mathcal{B}(I)$ be the Borel algebra, let $\\mu$ be Lebesgue measure, and let $\\nu$ be counting measure. Consider the measure spaces $(I,\\mathcal{B}(I),\\mu)$ and $(I,\\mathcal{B}(I),\\nu)$. For the diagonal set\n$$D=\\{(x,y):x=y,(x,y)\\in I^2\\},$$\ncompute\n$$\\int_{I^2}1_{D} \\, d(\\mu \\times \\nu).$$\nThen show that\n$$\\int_{I}\\left(\\int_{I} 1_{D}(x,y) \\, d\\mu(x)\\right)d\\nu(y)=0,$$\nwhereas\n$$\\int_{I}\\left(\\int_{I} 1_{D}(x,y) \\, d\\nu(y)\\right)d\\mu(x)=1,$$\nand explain that the failure comes from the fact that $(I,\\mathcal{B}(I),\\nu)$ is not $\\sigma$-finite.",
+  "problem_type": "counterexample",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "diagonal set in a product space",
+    "comparison of iterated integrals",
+    "$\\sigma$-finiteness obstruction"
+  ],
+  "prerequisites": [
+    "product measures",
+    "counting measure",
+    "$\\sigma$-finite measure spaces"
+  ],
+  "callout_body": "$I =[0,1]$然后令$\\mathcal{B}(I)$是Borel代数，令$\\mu$是Lebesgue测度，$\\nu$是counting measure,现在构建两个测度空间:$(I,\\mathcal{B}(I),\\mu)$以及$(I,\\mathcal{B}(I),\\nu)$.\n\n考虑$I^2$当中的一个闭集$D=\\{(x,y):x=y,(x,y)\\in I^2\\}$,那么自然$D\\in \\mathcal{B}(I^2) = \\mathcal{B}(I) \\otimes \\mathcal{B}(I) \\subset \\mathcal{B}(I) \\otimes \\mathcal{P}(I)$现在考虑计算积分\n$$\\int_{I^2}1_{D} d(\\mu \\times \\nu)$$\n\n1.  $\\int_{I}\\left(\\int_{I} 1_{D}(x,y) d\\mu(x)\\right)d\\nu(y)=\\int_{I}0d\\nu(y)=0$\n2.  $\\int_{I}\\left(\\int_{I} 1_{D}(x,y) d\\nu(y)\\right)d\\mu(x)=\\int_{I}1d\\mu(x)=1$\n\n这主要是因为$\\nu$是counting measure，所以$(I,\\mathcal{B}(I),\\nu)$并不是$\\sigma-\\text{finite}$的测度空间."
+}

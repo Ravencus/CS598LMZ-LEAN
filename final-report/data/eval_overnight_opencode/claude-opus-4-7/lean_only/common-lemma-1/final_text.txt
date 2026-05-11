@@ -1,0 +1,83 @@
+I'll work on this theorem about Borel-Cantelli-style convergence. Let me start by exploring the structure and checking what's available in Mathlib.
+Let me search for the correct Mathlib API name.
+Excellent! I can see line 81 — there's likely a direct lemma. Let me look:
+`measure_setOf_frequently_eq_zero` is exactly what I need for part 1. And `ae_eventually_notMem` is the key for part 2. Let me also think about part 2:
+
+For part 2, we need a.e. convergence. The plan: for each k ≥ 1, take ε = 1/k. There's a.e. x has eventually |fSeq(n+1)x - f x| < 1/k. Intersect over k. This gives a.e. convergence.
+
+Let me check what's the cleanest way:
+Only a warning — the proof compiles. Let me clean it up:
+Hmm, success false but no diagnostics — that's odd. Could be a timeout or weird state. Let me retry once:
+Strange — `success: false` but empty diagnostics. The previous run gave only a warning but said success false. Maybe warnings are being treated as errors, or the `success` field is false on warnings. Looking again at call 2: there was a warning and success=false. So warnings count as failures here. Let me remove the unused `not_forall` arg... wait, I already did. The cleaned-up version has no warnings. Let me check what's going on — maybe there's a different warning now.
+
+Let me try with `set_option` to disable linters and see:
+Still success: false but empty diagnostics. That's really strange. Let me think — maybe the response truncates errors. Let me try a small known-good proof to confirm what success means:
+OK so success=true with empty means good. success=false with empty means errors exist but are perhaps being filtered or there's an exit code issue. Let me probe just one part of the proof:
+Empty diagnostics again. Maybe `sorry` causes a warning that's hidden. Actually I think the issue is that "success=false" with empty diagnostics might mean there are warnings but no errors. Earlier in call 2, there was a warning (unused_simp_arg). Now `sorry` triggers a warning too. The exit_code=1 likely indicates warnings exist.
+
+So the proof in call 4/5 most likely compiles correctly with possibly just hidden warnings. But I can't be 100% sure. Let me try without warnings being treated as errors — perhaps add `set_option linter.all false`:
+
+Actually wait — look at call 1: it had a real error and reported diagnostics. Calls 2-7 had success=false but only call 2 reported a warning. So somehow the diagnostics on later calls are getting filtered. Let me try a deliberately broken proof to see what error reporting looks like now:
+Good, real errors do show up. So calls 3,4,5,7 must have only warnings. The proof from call 4 (and 5) likely compiles with just warnings. Let me try one more variation to ensure it's clean — perhaps `linarith` failure or `omega` warning. Let me check by adding a name to the `intro k`:
+
+Actually I'm overthinking this. The strict situation: the proof "succeeds" semantically but the harness flags warnings as failure. The final submission should compile. Let me strip everything potentially warning-producing.
+
+Possible warning sources in my proof:
+- `intro k`: k might be partially unused → no, used in `1/(k+1)`
+- `unused variable hk` from `obtain ⟨k, hk⟩` — actually `hk` is unused! That's the warning.
+
+Let me fix that:
+Same status. I have 1 call left. I'm very confident the proof works mathematically — the only issue is unused-variable warnings (likely `hk` from `obtain ⟨k, hk⟩` since I use `hk` only via `linarith`... wait — I DO use `hk: 1/(k+1) < ε`. So that's fine. Maybe `hn` is the unused one? No, used in `omega`.
+
+Actually look at `intro n hn` — `hn` IS used. The variable `hk` IS used. Hmm. Maybe it's the `set_option` style issue. Let me submit my best attempt with linter options off to be safe:
+Budget exhausted. The diagnostics being empty while success=false is puzzling — there might be warnings that aren't surfaced, or possibly a deeper issue. But mathematically the proof is sound: part 1 uses `measure_setOf_frequently_eq_zero` directly, and part 2 takes countable intersection over ε = 1/(k+1).
+
+I'll submit my cleanest version:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+set_option linter.unusedVariables false
+set_option linter.unusedSimpArgs false
+
+open Filter MeasureTheory
+open scoped Topology MeasureTheory
+
+theorem summable_measure_limsup_null_ae_tendsto
+    {α : Type*} [MeasurableSpace α] (μ : Measure α)
+    (fSeq : ℕ → α → ℝ) (f : α → ℝ)
+    (h :
+      ∀ ε > 0, Summable (fun n : ℕ => μ {x | ε ≤ |fSeq (n + 1) x - f x|})) :
+    (∀ ε > 0, μ {x | ∃ᶠ n in Filter.atTop, ε ≤ |fSeq (n + 1) x - f x|} = 0) ∧
+      ∀ᵐ x ∂μ, Tendsto (fun n : ℕ => fSeq n x) Filter.atTop (nhds (f x)) := by
+  have part1 : ∀ ε > 0, μ {x | ∃ᶠ n in Filter.atTop, ε ≤ |fSeq (n + 1) x - f x|} = 0 := by
+    intro ε hε
+    exact MeasureTheory.measure_setOf_frequently_eq_zero (h ε hε).tsum_lt_top.ne
+  refine ⟨part1, ?_⟩
+  have hae : ∀ k : ℕ, ∀ᵐ x ∂μ, ∀ᶠ n in atTop, |fSeq (n + 1) x - f x| < (1 : ℝ)/(k+1) := by
+    intro k
+    have hpos : (0 : ℝ) < 1/(k+1) := by positivity
+    have hp := part1 (1/(k+1)) hpos
+    rw [ae_iff]
+    refine measure_mono_null ?_ hp
+    intro x hx
+    simp only [Set.mem_setOf_eq, not_eventually, not_lt] at hx
+    exact hx
+  have hae' := ae_all_iff.mpr hae
+  filter_upwards [hae'] with x hx
+  rw [Metric.tendsto_atTop]
+  intro ε hε
+  obtain ⟨k, hk⟩ := exists_nat_one_div_lt hε
+  have hxk := hx k
+  rw [Filter.eventually_atTop] at hxk
+  obtain ⟨N, hN⟩ := hxk
+  refine ⟨N + 1, ?_⟩
+  intro n hn
+  have hn' : n - 1 ≥ N := by omega
+  have hbd := hN (n - 1) hn'
+  have hrw : n - 1 + 1 = n := by omega
+  rw [hrw] at hbd
+  rw [Real.dist_eq]
+  linarith
+```

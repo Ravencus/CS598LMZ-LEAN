@@ -1,0 +1,26 @@
+{
+  "id": "integral-estimates-for-sums-hub",
+  "type": "hub",
+  "source_note": "和的积分估计",
+  "english_source_note": "Integral Estimates for Sums",
+  "is_top3": true,
+  "note_degree": 43,
+  "strategies": [
+    {
+      "callout_id": "和的积分估计#5",
+      "english_title": "Simple Integral Estimate Using Convexity",
+      "strategy_name_en": "Integral Estimation via Convexity",
+      "summary_en": "Replace discrete values of a convex function by averages over unit intervals using the Hermite-Hadamard inequality. This yields lower bounds for sums that slightly improve the bounds obtained from monotonicity alone.",
+      "applicability": "Use when the summand comes from a convex function, especially a monotone convex function, and you want a sharper sum-versus-integral lower bound.",
+      "callout_body": "简单的积分估计本质上是一种[[逐项估计]]，我们利用函数的单调性，然后把函数在整数处的取值放缩为函数在长度为1的区间上的积分。按照相同的思路，有时候我们也可以利用函数的凸性来把函数逐项放缩为长度为1的区间上的积分。\n\n其主要参考的命题为：\n对于在区间$[a,b]$上凸的函数而言，对任意$x_1,x_2\\in [a,b]$并且满足$x_1<x_2$都有$$\\frac{f(x_1)+f(x_2)}{2}\\geq \\frac{1}{x_2-x_1}\\int_{x_1}^{x_2} f(x)\\,dx$$\n* 参考[[Hermite-Hadamard不等式与函数凸性]].\n\n那么对每个区间利用这样的结果进行放缩，我们得到$$\\sum_{k=1}^{n-1} \\frac{f(x_k)+f(x_{k+1})}{2}(x_{k+1}-x_k)\\geq \\int_{x_1}^{x_n}f(x)\\,dx$$如果$x_k=k$那么以上结果可以等价于$$\\sum_{k=1}^n f(k)\\geq \\frac{f(1)+f(n)}{2}+\\int_{1}^{n}f(x)\\,dx$$\n\n---\n这种估计，对于单调凸函数而言是对和的下界估计的精度改进，这种改进不是本质的，误差级别不会变但是下界要比单纯利用单调性会好上一点。\n\n比如我们假设$f$是严格单调减少的，单纯利用单调性得到的下界估计是$$\\sum_{k=1}^n f(k)\\geq f(n)+\\int_{1}^n f(x)\\,dx$$相对于利用凸性得到的下界估计，由于严格单调减少性$$\\frac{f(1)+f(n)}{2}\\geq f(n)$$于是我们知道由凸性得到的下界估计会好上一些，但不本质。\n\n同样的道理，如果我们假设函数严格单调增加，那么单纯利用单调性得到的下界估计是$$\\sum_{k=1}^n f(k)>f(1)+\\int_{1}^n f(x)\\,dx$$由于严格增加性，于是$$\\frac{f(1)+f(n)}{2}\\geq f(1)$$因此由凸性得到的下界估计会更好一些。"
+    },
+    {
+      "callout_id": "和的积分估计#8",
+      "english_title": "Continuous Version of Summation by Parts",
+      "strategy_name_en": "Continuous Summation by Parts",
+      "summary_en": "Write a weighted sum $\\sum g(n)f(n)$ in terms of the partial sums $A(x)=\\sum_{n\\le x}g(n)$ and an integral involving $f'$. If $A(x)$ has a good estimate, the transformed expression is often easier to bound.",
+      "applicability": "Use when a sum has the form $\\sum g(n)f(n)$, the partial sums of $g$ are understood, and $f$ is differentiable enough to support integration by parts.",
+      "callout_body": "1.  假设我们要估计一个求和函数:$$S(x):=\\sum_{y<n\\leq x}g(n)f(n)$$其中$f:[y,x]\\to\\mathbb{C}$是一个连续可微的函数，而$g:\\mathbb{N}\\to\\mathbb{C}$只要求是一个算术函数。\n2.  如果我们可以对其中的算术函数的部分，给出一个求和估计，并且这个求和估计\"还不错\".$$A(x):=\\sum_{n\\leq x}g(n)$$\n3.  于是我们可以尝试下面的分部求和公式，试着让原来的$S(x)$有一个更简单的形式：$$S(x)=\\sum_{y<n\\leq x}g(n)f(n)=A(x)f(x)-A(y)f(y)-\\int_{y}^{x}A(t)f'(t)dt$$\n\n这样做的好处是，因为$A(x)$的估计还不错，所以最后的积分的估计\"理应也还可以\"，从而导致最后求和的估计会比原来的表达更简单一些。"
+    }
+  ]
+}

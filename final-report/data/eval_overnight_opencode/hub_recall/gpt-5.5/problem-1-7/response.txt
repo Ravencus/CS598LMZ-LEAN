@@ -1,0 +1,4 @@
+["term-by-term-estimates-hub", "sequence-limits-via-piecewise-estimates-hub", "using-known-asymptotics-to-derive-expansions-hub"]
+- term-by-term-estimates-hub: Bound each term by replacing `sin(k/n^2)` with `k/n^2` and controlling the termwise error, e.g. via `|sin x - x| ≤ C x^2`.
+- sequence-limits-via-piecewise-estimates-hub: Compare the original sum to the simpler modified sum `∑ k/n^2`, showing the total discrepancy tends to `0`.
+- using-known-asymptotics-to-derive-expansions-hub: Use the exact/asymptotic evaluation `∑_{k=0}^n k / n^2 = n(n+1)/(2n^2) → 1/2` after proving the sine sum has the same limit.

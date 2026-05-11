@@ -1,0 +1,3 @@
+["identity-theorem-hub", "piecewise-estimates-hub"]
+- identity-theorem-hub: The key move is that the local limit condition at each point of `[a,b]` forces `f x = 0` on the whole interval, reducing the theorem to equality with the zero function on the relevant domain.
+- piecewise-estimates-hub: Once `f` is identified as zero on the interval, integrability and zero integral follow from the trivial uniform bound/base-times-height intuition for the zero integrand.

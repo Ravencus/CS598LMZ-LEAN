@@ -1,0 +1,30 @@
+{
+  "problem_id": "a-version-of-the-strong-law-of-large-numbers",
+  "english_title": "A Version of the Strong Law of Large Numbers",
+  "statement_en": "Assume $X_1,\\ldots,X_n,\\ldots$ are independent and identically distributed random variables, and $E|X_1|^4<\\infty$. Let $S_n=X_1+\\cdots+X_n$ and $\\mu=E(X_1)$. Then $$\\frac{S_n}{n}\\xrightarrow{\\text{ a.e. }}{\\mu}.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (∫ ω, X 0 ω ∂P)\n\nHint: The identifier `𝓝` is unknown, and Lean's "
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\nopen Filter MeasureTheory\n\ntheorem strong_law_of_large_numbers_ae\n    {Ω : Type*} [MeasurableSpace Ω]\n    (P : Measure Ω) [IsProbabilityMeasure P]\n    (X : ℕ → Ω → ℝ)\n    (h_indep : Pairwise (fun i j => ProbabilityTheory.IndepFun (X i) (X j) P))\n    (h_ident : ∀ n : ℕ, ProbabilityTheory.IdentDistrib (X n) (X 0) P P)\n    (h_fourth_moment : Integrable (fun ω => |X 0 ω| ^ (4 : ℕ)) P) :\n    ∀ᵐ ω ∂P,\n      Tendsto\n        (fun n : ℕ => (Finset.sum (Finset.range n) fun i => X i ω) / (n : ℝ))\n        atTop\n        (Filter.nhds (∫ ω, X 0 ω ∂P)) := by\n  sorry"
+}

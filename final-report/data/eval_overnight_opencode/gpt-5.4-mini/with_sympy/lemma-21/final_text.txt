@@ -1,0 +1,32 @@
+I’m checking the Lean workflow and then I’ll iterate on a minimal proof.
+I’m looking for an existing digest or nearby proof pattern, then I’ll try a direct Mathlib inequality.
+I’ve narrowed it to the standard `exp(i t)` identity; next I’m checking which Mathlib lemmas expose the norm formula directly.
+I don’t yet know whether Mathlib has a one-line inequality theorem, so I’m searching the local Mathlib sources for the exact lemma name before writing a longer trig proof.
+I’m trying the shortest possible route first: if Mathlib already has the pure-imaginary exponential bound, this should close immediately.
+I’ve decided to try the likely closed-form norm identity next; if that fails I’ll fall back to an explicit trig expansion.
+The closed-form norm lemma exists. I’m just tightening the last real-inequality step so `nlinarith` has explicit absolute-value facts to work with.
+I’ve got it down to a single associativity rewrite; I’m finishing with `ring` and expecting the proof to close.
+The only remaining issue is a linter warning, not a math error. I’m switching that last `simpa` to `simp` so the checker returns a clean success.
+I’m collapsing the last step into one `nlinarith` call over the norm identity and the sine bound; that should avoid the fragile `calc` rewrite.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem complex_exponential_sub_one_bound (x : ℝ) :
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ ≤ 2 * Real.pi * |x| := by
+  have h : ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ =
+      2 * ‖Real.sin (Real.pi * x)‖ := by
+    simpa [mul_comm, mul_left_comm, mul_assoc] using
+      Complex.norm_exp_ofReal_mul_I_sub_one (2 * Real.pi * x)
+  have hs : ‖Real.sin (Real.pi * x)‖ ≤ ‖Real.pi * x‖ := by
+    simpa using Real.abs_sin_le (Real.pi * x)
+  have hpi : ‖Real.pi * x‖ = Real.pi * |x| := by
+    rw [Real.norm_eq_abs, abs_mul, abs_of_nonneg Real.pi_nonneg]
+  calc
+    ‖Complex.exp (((2 * Real.pi * x : ℝ) : ℂ) * Complex.I) - 1‖ = 2 * ‖Real.sin (Real.pi * x)‖ := h
+    _ ≤ 2 * ‖Real.pi * x‖ := by
+      exact mul_le_mul_left' hs 2
+    _ = 2 * Real.pi * |x| := by
+      rw [hpi]
+      simp [mul_assoc]
+```

@@ -1,0 +1,18 @@
+{
+  "problem_id": "the-essence-of-slicing",
+  "english_title": "The Essence of Slicing",
+  "statement_en": "If $E$ is a measurable subset of $\\mathbb{R}^{d_1}\\times \\mathbb{R}^{d_2}$, then for almost every $y \\in \\mathbb{R}^{d_2}$ the slice $$E^{y}=\\{x\\in\\mathbb{R}^{d_1}:(x,y)\\in E\\}$$ is measurable, $m(E^{y})$ is a measurable function of $y$, and $$m(E)=\\int_{\\mathbb{R}^{d_2}}m(E^{y})\\,dy.$$ Similarly, for almost every $x \\in \\mathbb{R}^{d_1}$ the corresponding slices are measurable, the slice measure is measurable as a function of $x$, and $$m(E)=\\int_{\\mathbb{R}^{d_1}}m(E_{x})\\,dx.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem fubini_measurable_slices\n    {d₁ d₂ : ℕ}\n    {E : Set (EuclideanSpace ℝ (Fin d₁) × EuclideanSpace ℝ (Fin d₂))}\n    (hE : MeasurableSet E) :\n    (∀ᵐ y ∂(volume : Measure (EuclideanSpace ℝ (Fin d₂))),\n        MeasurableSet {x : EuclideanSpace ℝ (Fin d₁) | (x, y) ∈ E}) ∧\n    Measurable (fun y : EuclideanSpace ℝ (Fin d₂) =>\n      (volume : Measure (EuclideanSpace ℝ (Fin d₁)))\n        {x : EuclideanSpace ℝ (Fin d₁) | (x, y) ∈ E}) ∧\n    (volume : Measure (EuclideanSpace ℝ (Fin d₁) × EuclideanSpace ℝ (Fin d₂))) E =\n      ∫⁻ y : EuclideanSpace ℝ (Fin d₂),\n        (volume : Measure (EuclideanSpace ℝ (Fin d₁)))\n          {x : EuclideanSpace ℝ (Fin d₁) | (x, y) ∈ E}\n          ∂(volume : Measure (EuclideanSpace ℝ (Fin d₂))) ∧\n    (∀ᵐ x ∂(volume : Measure (EuclideanSpace ℝ (Fin d₁))),\n        MeasurableSet {y : EuclideanSpace ℝ (Fin d₂) | (x, y) ∈ E}) ∧\n    Measurable (fun x : EuclideanSpace ℝ (Fin d₁) =>\n      (volume : Measure (EuclideanSpace ℝ (Fin d₂)))\n        {y : EuclideanSpace ℝ (Fin d₂) | (x, y) ∈ E}) ∧\n    (volume : Measure (EuclideanSpace ℝ (Fin d₁) × EuclideanSpace ℝ (Fin d₂))) E =\n      ∫⁻ x : EuclideanSpace ℝ (Fin d₁),\n        (volume : Measure (EuclideanSpace ℝ (Fin d₂)))\n          {y : EuclideanSpace ℝ (Fin d₂) | (x, y) ∈ E}\n          ∂(volume : Measure (EuclideanSpace ℝ (Fin d₁))) := by\n  sorry"
+}

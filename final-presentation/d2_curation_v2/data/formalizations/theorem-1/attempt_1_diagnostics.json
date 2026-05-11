@@ -1,0 +1,43 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b1de0adcdffb.lean",
+      "line": 9,
+      "column": 15,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b1de0adcdffb.lean",
+      "line": 16,
+      "column": 43,
+      "severity": "warning",
+      "message": "unused variable `μ`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b1de0adcdffb.lean",
+      "line": 16,
+      "column": 59,
+      "severity": "warning",
+      "message": "unused variable `X`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b1de0adcdffb.lean",
+      "line": 26,
+      "column": 8,
+      "severity": "warning",
+      "message": "declaration uses `sorry`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_b1de0adcdffb.lean",
+      "line": 9,
+      "column": 15,
+      "severity": "error",
+      "message": "unexpected token 'in'; expected ','"
+    }
+  ]
+}

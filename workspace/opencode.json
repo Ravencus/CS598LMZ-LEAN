@@ -1,11 +1,33 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/gpt-5-nano",
-  "small_model": "opencode/gpt-5-nano",
   "mcp": {
     "lean-checker": {
       "type": "local",
-      "command": ["/home/lean/venv/bin/python", "/home/lean/mcp_server/lean_checker_server.py"]
+      "command": [
+        "/home/raven/miniconda3/envs/lmz/bin/python",
+        "/home/raven/Desktop/lean/mcp_server/lean_checker_server.py"
+      ],
+      "environment": {
+        "LAKE_PROJECT": "/home/raven/Desktop/lean/docker",
+        "LEAN_TIMEOUT_S": "180",
+        "LEAN_CHECK_BUDGET": "{env:LEAN_CHECK_BUDGET}",
+        "LEAN_SCRATCH_FILE": "{env:LEAN_SCRATCH_FILE}"
+      },
+      "timeout": 240000
+    }
+  },
+  "provider": {
+    "deepseek": {
+      "options": {
+        "apiKey": "{env:DEEPSEEK_API_KEY}",
+        "timeout": 600000
+      }
+    },
+    "anthropic": {
+      "options": {
+        "apiKey": "{env:ANTHROPIC_API_KEY}",
+        "timeout": 600000
+      }
     }
   }
 }

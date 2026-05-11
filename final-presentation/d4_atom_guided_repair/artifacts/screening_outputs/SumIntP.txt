@@ -1,0 +1,110 @@
+Let  
+\[
+S_n=\sum_{k=1}^n a_k,\qquad a_n>0,\qquad p>1,
+\]
+and
+\[
+T_N=\sum_{n=1}^N \frac{a_n}{S_n^p}.
+\]
+
+Since \(a_n>0\), the sequence \((S_n)\) is strictly increasing and \(S_n>0\) for all \(n\).
+
+We will show that \(T_N\) is increasing and uniformly bounded, hence convergent.
+
+---
+
+## Key estimate
+
+Consider the function
+\[
+f(x)=x^{-p}\qquad (x>0).
+\]
+Since \(p>1\), \(f\) is positive and decreasing.
+
+For each \(n\ge 2\), on the interval \([S_{n-1},S_n]\) we have
+\[
+f(S_n)\le f(x)\le f(S_{n-1}),
+\]
+so multiplying by the interval length \(S_n-S_{n-1}=a_n\),
+\[
+a_n\,S_n^{-p}\le \int_{S_{n-1}}^{S_n} x^{-p}\,dx \le a_n\,S_{n-1}^{-p}.
+\]
+Hence
+\[
+\frac{a_n}{S_n^p}\le \int_{S_{n-1}}^{S_n} x^{-p}\,dx.
+\]
+Now compute the integral:
+\[
+\int_{S_{n-1}}^{S_n} x^{-p}\,dx
+=
+\left[\frac{x^{1-p}}{1-p}\right]_{S_{n-1}}^{S_n}
+=
+\frac{S_{n-1}^{\,1-p}-S_n^{\,1-p}}{p-1}.
+\]
+Therefore, for every \(n\ge 2\),
+\[
+\frac{a_n}{S_n^p}
+\le
+\frac{S_{n-1}^{\,1-p}-S_n^{\,1-p}}{p-1}.
+\]
+
+---
+
+## Sum the inequalities
+
+Summing from \(n=2\) to \(N\),
+\[
+\sum_{n=2}^N \frac{a_n}{S_n^p}
+\le
+\frac{1}{p-1}\sum_{n=2}^N\left(S_{n-1}^{\,1-p}-S_n^{\,1-p}\right).
+\]
+The sum telescopes:
+\[
+\sum_{n=2}^N \frac{a_n}{S_n^p}
+\le
+\frac{S_1^{\,1-p}-S_N^{\,1-p}}{p-1}.
+\]
+Adding the first term,
+\[
+T_N
+=
+\frac{a_1}{S_1^p}+\sum_{n=2}^N \frac{a_n}{S_n^p}.
+\]
+But \(S_1=a_1\), so
+\[
+\frac{a_1}{S_1^p}=\frac{1}{S_1^{p-1}}=S_1^{\,1-p}.
+\]
+Thus
+\[
+T_N
+\le
+S_1^{\,1-p}+\frac{S_1^{\,1-p}-S_N^{\,1-p}}{p-1}
+=
+\frac{p\,S_1^{\,1-p}-S_N^{\,1-p}}{p-1}.
+\]
+In particular,
+\[
+0<T_N\le \frac{p}{p-1}\,S_1^{\,1-p}.
+\]
+
+Since each term is positive, \(T_N\) is increasing in \(N\). Since it is also bounded above, \((T_N)\) converges.
+
+---
+
+## Final answer
+
+For every \(N\ge 1\),
+\[
+0<T_N=\sum_{n=1}^N \frac{a_n}{S_n^p}
+\le
+S_1^{\,1-p}+\frac{S_1^{\,1-p}-S_N^{\,1-p}}{p-1}
+=
+\frac{p\,S_1^{\,1-p}-S_N^{\,1-p}}{p-1}
+\le
+\frac{p}{p-1}S_1^{\,1-p}.
+\]
+Hence \((T_N)\) is increasing and bounded, so the series
+\[
+\sum_{n=1}^\infty \frac{a_n}{S_n^p}
+\]
+converges.

@@ -1,0 +1,67 @@
+{
+  "note_title": "Etemadi关于强大数定律的证明",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计",
+    "Borel-Cantelli lemma及其应用",
+    "和与积分换序"
+  ],
+  "callouts": [
+    {
+      "id": "Etemadi关于强大数定律的证明#1",
+      "type": "note",
+      "title": "强大数定律,Kolmogrov,1930",
+      "body": "$X_1,...,X_n,...$是一列独立同分布的随机变量，并且期望存在，即$E(|X_i|)<\\infty$。那么如果假设$E(X_1)=\\mu,S_n=\\sum_{k=1}^{n}X_i$那么$$\\frac{S_n}{n}\\xrightarrow{a.e.}\\mu$$",
+      "position_char": 32,
+      "position_line": 6
+    },
+    {
+      "id": "Etemadi关于强大数定律的证明#2",
+      "type": "note",
+      "title": "引理1",
+      "body": "如果定义$T_n = \\sum_{i\\leq n}Y_i$那么，$$\\frac{T_n}{n}-\\frac{S_n}{n}\\xrightarrow{a.e.}{0}$$",
+      "position_char": 721,
+      "position_line": 20
+    },
+    {
+      "id": "Etemadi关于强大数定律的证明#3",
+      "type": "note",
+      "title": "命题1:强大数定律的等价命题",
+      "body": "证明$$\\frac{T_n}{n}=\\frac{\\sum_{i\\leq n}Y_i}{n}$$是几乎处处收敛到$E(X_1)=\\mu$的，其中$X_1,...,X_n,...$是独立同分布的非负随机变量,$Y_i = X_i\\mathbf{1}_{|X_i|\\leq i}$.",
+      "position_char": 2081,
+      "position_line": 34
+    },
+    {
+      "id": "Etemadi关于强大数定律的证明#4",
+      "type": "note",
+      "title": "整个证明的结构",
+      "body": "1. 首先我们对$X_n$序列的版本的强大数定律做了两个简化，那么我们的目标是证明“命题1”。我们首先已经知道依测度收敛的情况，这实际上就是弱大数定律。\n2. 接下来，我们遵照[[加强收敛性质的条件与手段#1. 利用Borel-Cantelli引理来把依测度收敛加强到几乎处处收敛]]的想法,不过原本的序列依旧是困难的，于是一开始的简化会在此发挥作用，但还不足以直接证明收敛性。于是我们尝试选择合适的子列来提升收敛性质。\n3. 我们通过一个特殊的子列，我们可以证明“命题1”可以转换为：任取一个满足$a>1$的实数$a$,令$n_k = \\lfloor a^k\\rfloor$，$$\\frac{T_{n_k}}{n_k}\\xrightarrow{a.e.}{\\mu}$$而因为子列足够好，以至于我们可以把子列的这种收敛性过渡到原本序列的收敛上。",
+      "position_char": 2249,
+      "position_line": 38
+    },
+    {
+      "id": "Etemadi关于强大数定律的证明#5",
+      "type": "note",
+      "title": "等价命题2",
+      "body": "证明$$\\frac{T_{n_k}}{n_k}\\xrightarrow{a.e.}{\\mu}$$",
+      "position_char": 2825,
+      "position_line": 50
+    },
+    {
+      "id": "Etemadi关于强大数定律的证明#6",
+      "type": "tip",
+      "title": "想法",
+      "body": "整个证明采取的是[[加强收敛性质的条件与手段]]当中提到的做法，即**先验证依测度收敛，然后加强集中不等式的精度，以至于可以借助Borel-Cantelli引理把收敛性提升至几乎处处收敛。**",
+      "position_char": 3607,
+      "position_line": 69
+    },
+    {
+      "id": "Etemadi关于强大数定律的证明#7",
+      "type": "note",
+      "title": "引理2",
+      "body": "$$\\sum_{k\\geq 1} V(Y_k)/k^2\\leq 4E(|X_1|)<\\infty$$",
+      "position_char": 3824,
+      "position_line": 76
+    }
+  ]
+}

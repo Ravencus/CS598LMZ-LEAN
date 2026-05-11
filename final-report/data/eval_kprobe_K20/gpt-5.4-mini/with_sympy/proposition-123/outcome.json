@@ -1,0 +1,50 @@
+{
+  "problem_id": "proposition-123",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 76.08,
+  "wall_exceeded": false,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 1,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "factorial_sum_identity",
+  "signature_ok": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Unknown constant `Finset.sum_Icc_succ_bot`",
+  "total_cost_usd": 0.0,
+  "total_tokens": 98713,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_63c97e4d38.lean",
+      "line": 4,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Finset.sum_Icc_succ_bot`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_63c97e4d38.lean",
+      "line": 5,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Finset.sum_Icc_eq_sum_range`\nFinset.sum_Ico_eq_sum_range.{u_3} {M : Type u_3} [AddCommMonoid M] (f : ℕ → M) (m n : ℕ) :\n  ∑ k ∈ Finset.Ico m n, f k = ∑ k ∈ Finset.range (n - m), f (m + k)\nFinset.sum_Ico_succ_top.{u_3} {M : Type u_3} [AddCommMonoid M] {a b : ℕ} (hab : a ≤ b) (f : ℕ → M) :\n  ∑ k ∈ Finset.Ico a (b + 1), f k = ∑ k ∈ Finset.Ico a b, f k + f b"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_63c97e4d38.lean",
+      "line": 8,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `Finset.sum_Ico_succ_bot`\nFinset.sum_range_add.{u_4} {M : Type u_4} [AddCommMonoid M] (f : ℕ → M) (n m : ℕ) :\n  ∑ x ∈ Finset.range (n + m), f x = ∑ x ∈ Finset.range n, f x + ∑ x ∈ Finset.range m, f (n + x)\nFinset.sum_range_succ'.{u_4} {M : Type u_4} [AddCommMonoid M] (f : ℕ → M) (n : ℕ) :\n  ∑ k ∈ Finset.range (n + 1), f k = ∑ k ∈ Finset.range n, f (k + 1) + f 0\n"
+    }
+  ]
+}

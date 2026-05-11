@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "using-known-asymptotics-to-derive-expansions-hub"]
+- term-by-term-estimates-hub: The proof hinges on bounding each term `sin(k / n^2)` by its linear approximation `k / n^2` with a summable error.
+- using-known-asymptotics-to-derive-expansions-hub: After replacing the sine sum by the simpler arithmetic sum `∑ k / n^2`, its known closed form tends to `1 / 2`, and the controlled error tends to `0`.

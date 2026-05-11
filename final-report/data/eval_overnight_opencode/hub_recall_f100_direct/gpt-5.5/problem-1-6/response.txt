@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "basic-methods-in-analysis-i-hub"]
+- term-by-term-estimates-hub: The proof uses a per-factor bound, e.g. comparing \(\left(\frac{2n-1}{2n}\right)^2\) with a simpler factor that telescopes.
+- basic-methods-in-analysis-i-hub: The product is not evaluated directly; it is bounded by a simpler recognizable telescoping product, then compared with \(1/\sqrt{2N}\).

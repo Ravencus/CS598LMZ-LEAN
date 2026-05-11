@@ -1,0 +1,66 @@
+{
+  "note_title": "自然数的r次幂的部分和估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计",
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "自然数的r次幂的部分和估计#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "求极限:\n$$\\lim_{N \\to \\infty} N\\sum_{n>N} \\frac{1}{n^2}$$",
+      "position_char": 32,
+      "position_line": 6
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#2",
+      "type": "question",
+      "title": "转换以后的问题",
+      "body": "求$$S(N):=\\zeta(2)-\\sum_{n\\leq N}\\frac{1}{n^2}$$的精确到$\\frac{1}{N}$系数的渐近展开。",
+      "position_char": 404,
+      "position_line": 17
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#3",
+      "type": "note",
+      "title": "关于广义调和数一般的渐近结果",
+      "body": "如果$r>0,r \\neq 1$的时候，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right)$$\n如果$r=1$的时候,$$\\sum_{k=1}^n k^{-1}=\\gamma+\\log(n) + \\frac{1}{2} n^{-1}-\\frac{1}{12} n^{-2}+O\\left(n^{-4}\\right)$$",
+      "position_char": 543,
+      "position_line": 22
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#4",
+      "type": "note",
+      "title": "r>1时候渐近展开前几项",
+      "body": "如果$r>1$，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right)$$",
+      "position_char": 860,
+      "position_line": 30
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#5",
+      "type": "note",
+      "title": "r>1时候求和的不等式形式",
+      "body": "如果$r>1$，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n)$$\n其中余项$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}$$",
+      "position_char": 2348,
+      "position_line": 51
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#6",
+      "type": "note",
+      "title": "0<r<1时候渐近展开前几项",
+      "body": "如果$0<r<1$，\n$$\\sum_{k=1}^n k^{-r}=\\frac{1}{1-r} n^{1-r}+\\zeta(r)+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+E_r(n)$$\n其中余项$$|E_r(n)|<\\frac{r(r+1)(r+2)}{720n^{r+3}}$$",
+      "position_char": 2670,
+      "position_line": 61
+    },
+    {
+      "id": "自然数的r次幂的部分和估计#7",
+      "type": "question",
+      "title": "问题2",
+      "body": "求$$\\sum_{k\\leq n}\\sqrt{k}$$的渐近展开，特别是需要得到其常数项的渐近系数。",
+      "position_char": 3412,
+      "position_line": 73
+    }
+  ]
+}

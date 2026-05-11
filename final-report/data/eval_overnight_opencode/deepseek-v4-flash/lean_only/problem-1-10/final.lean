@@ -1,0 +1,22 @@
+import Mathlib
+open MeasureTheory
+
+theorem ae_zero_of_nonneg_measurable_lintegral_zero
+    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}
+    {f : Ω → ℝ} {E : Set Ω}
+    (hf_meas : Measurable f)
+    (hf_nonneg : ∀ x, 0 ≤ f x)
+    (hE_meas : MeasurableSet E)
+    (hE_pos : 0 < μ E)
+    (h_int_zero : ∫⁻ x in E, ENNReal.ofReal (f x) ∂μ = 0) :
+    ∀ᵐ x ∂μ.restrict E, f x = 0 := by
+  have hg_meas : Measurable (λ x : Ω ↦ ENNReal.ofReal (f x)) :=
+    ENNReal.measurable_ofReal.comp hf_meas
+  have h_linteg_restrict_zero : (∫⁻ x, ENNReal.ofReal (f x) ∂(μ.restrict E)) = 0 := h_int_zero
+  rcases lintegral_eq_zero_iff hg_meas |>.mp h_linteg_restrict_zero with h
+  have h_ae : ∀ᵐ x ∂(μ.restrict E), ENNReal.ofReal (f x) = 0 := h
+  apply h_ae.mono
+  intro x hx
+  have hx' : f x ≤ 0 := (ENNReal.ofReal_eq_zero.mp hx)
+  have hx0 : f x = 0 := le_antisymm hx' (hf_nonneg x)
+  exact hx0

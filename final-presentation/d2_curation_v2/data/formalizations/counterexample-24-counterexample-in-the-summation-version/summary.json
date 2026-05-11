@@ -1,0 +1,18 @@
+{
+  "problem_id": "counterexample-24-counterexample-in-the-summation-version",
+  "english_title": "Counterexample 2.4: Counterexample in the Summation Version",
+  "statement_en": "Let $\\Omega=\\{1,2,3,\\ldots\\}$, let $\\mu$ be counting measure, and let $\\mathcal{P}(\\Omega)$ be the power set. Define on $\\Omega^2$ the function\n$$f(i,j)=\\begin{cases}1&\\text{ if }i=j \\\\ -1&\\text{ if }i=j+1\\\\ 0&\\text{ otherwise}.\\end{cases}$$\nInterpret\n$$\\int_{\\Omega^2}f(i,j)d(\\mu\\times \\mu) =\\sum_{i,j\\in\\Omega}f(i,j),$$\nand show that this is not absolutely summable because\n$$\\sum_{i,j\\in\\Omega}|f(i,j)|$$\ndiverges. Therefore Fubini's theorem does not apply, and the two iterated sums differ:\n$$\\su",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nabbrev Omega := {n : ℕ // 1 ≤ n}\n\ndef f (i j : Omega) : ℝ :=\n  if i.1 = j.1 then 1 else if i.1 = j.1 + 1 then -1 else 0\n\ntheorem countingMeasureFubiniCounterexample :\n    ¬ Summable (fun p : Omega × Omega => |f p.1 p.2|) ∧\n      (∑' i : Omega, ∑' j : Omega, f i j) = 1 ∧\n      (∑' j : Omega, ∑' i : Omega, f i j) = 0 := by\n  sorry"
+}

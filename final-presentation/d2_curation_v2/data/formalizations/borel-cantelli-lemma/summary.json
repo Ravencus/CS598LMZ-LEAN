@@ -1,0 +1,30 @@
+{
+  "problem_id": "borel-cantelli-lemma",
+  "english_title": "Borel-Cantelli Lemma",
+  "statement_en": "Let $(X,\\mathcal{F},\\mu)$ be a measure space, and let $E_1,E_2,E_3,\\dots \\in \\mathcal{F}$ satisfy $$\\sum_{n\\geq 1}\\mu(E_n)<\\infty.$$ Then $$\\mu\\left(\\bigcup_{n\\geq N}E_n\\right)\\to0,$$ equivalently, almost every $x\\in X$ belongs to at most finitely many of the sets $E_n$, that is, $$\\mu(\\limsup_{n\\to\\infty}E_n)=0.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  X\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  0\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem measure_limsup_zero_of_summable\n    {X : Type*} [MeasurableSpace X] (μ : MeasureTheory.Measure X) (E : ℕ → Set X)\n    (hE : ∀ n, MeasurableSet (E n))\n    (hsum : Summable (fun n : ℕ => μ (E n))) :\n    Filter.Tendsto (fun N : ℕ => μ (⋃ n : ℕ, E (n + N))) Filter.atTop (nhds 0) ∧\n      μ {x : X | Set.Infinite {n : ℕ | x ∈ E n}} = 0 := by\n  sorry"
+}

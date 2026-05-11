@@ -1,0 +1,18 @@
+{
+  "problem_id": "monotonicity-of-the-integral-1",
+  "english_title": "Monotonicity of the Integral 1",
+  "statement_en": "If functions satisfy $f \\geq g$ almost everywhere on $\\Omega$, then their integrals satisfy $$\\int_{\\Omega} f\\,d\\mu \\geq \\int_{\\Omega} g\\,d\\mu.$$",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\ntheorem integral_ge_of_ae_ge\n    {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} {f g : Ω → ℝ}\n    (hf : Integrable f μ) (hg : Integrable g μ)\n    (hfg : ∀ᵐ x ∂μ, g x ≤ f x) :\n    ∫ x, f x ∂μ ≥ ∫ x, g x ∂μ := by\n  sorry"
+}

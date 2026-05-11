@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown constant `IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_comp_intCast`\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_9bc35a98a2.lean",
+      "line": 24,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown constant `IntervalIntegrable.tendsto_integral_mul_exp_neg_mul_I_comp_intCast`\n"
+    }
+  ]
+}

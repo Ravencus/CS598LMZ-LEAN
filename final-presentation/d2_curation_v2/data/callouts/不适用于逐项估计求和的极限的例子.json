@@ -1,0 +1,17 @@
+{
+  "note_title": "不适用于逐项估计求和的极限的例子",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "不适用于逐项估计求和的极限的例子#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "求含参数和的极限$$\\sum_{k=1}^{n}\\frac{1}{n+f(k)}$$其中$f(k):=\\frac{2k(k-1)}{2k-1}$。",
+      "position_char": 32,
+      "position_line": 6
+    }
+  ]
+}

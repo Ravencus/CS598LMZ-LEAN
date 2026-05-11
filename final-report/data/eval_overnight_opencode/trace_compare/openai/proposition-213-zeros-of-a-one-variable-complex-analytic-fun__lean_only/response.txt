@@ -1,0 +1,3 @@
+{"label":"same_plan_lean_impl_diff","evidence":"Both traces use `AnalyticAt.eventually_eq_zero_or_eventually_ne_zero`, rule out the locally-zero branch via an `AnalyticOnNhd` identity principle and `hf_nonzero`, then try to extract a punctured ball from `𝓝[≠] z0`. The SMALL trace already found the relevant lemma names in mcp call 2, but repeatedly failed on filter/ball typing and application details such as `Metric.mem_nhdsWithin_iff`, `Filter.Eventually`, and passing `hball`."}
+
+The failure is not a different mathematical approach or lack of lemma discovery. It is mainly Lean implementation friction around converting the eventual punctured-neighborhood statement into the exact ball membership form needed for the final contradiction.

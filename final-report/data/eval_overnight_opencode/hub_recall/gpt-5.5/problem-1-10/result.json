@@ -1,0 +1,21 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "gpt-5.5",
+  "wall_seconds": 9.59,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "an-epsilon-of-room-for-measure-zero-sets-hub",
+    "piecewise-estimates-hub"
+  ],
+  "truth": [
+    "an-epsilon-of-room-hub",
+    "borel-cantelli-lemma-and-applications-hub"
+  ],
+  "tp": 0,
+  "fp": 2,
+  "fn": 2,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

@@ -1,0 +1,23 @@
+{
+  "id": "proposition-231",
+  "type": "problem",
+  "source_note": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+  "english_source_note": "Lp Decay Rates Ensuring Almost Everywhere Convergence to 0",
+  "callout_id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#6",
+  "english_title": "Proposition 2.3.1",
+  "statement_en": "Let \\(\\{f_n\\}\\) be a sequence of Lebesgue measurable functions such that:\n1. \\(\\|f_n\\|_{L^p(\\mathbb{R})} \\to 0\\);\n2. \\(f_n\\) is nonnegative and pointwise monotone decreasing for almost every \\(x\\).\nThen \\(f_n(x) \\to 0\\) almost everywhere.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "pointwise monotonicity",
+    "identification of the pointwise limit",
+    "contradiction using \\(L^p\\) norm convergence"
+  ],
+  "prerequisites": [
+    "\\(L^p\\) spaces",
+    "almost everywhere convergence",
+    "monotone sequences of functions"
+  ],
+  "callout_body": "Lebesgue可测的函数列满足：\n1. $||f_n||_{L^p(\\mathbb{R})}\\to 0$\n2. $f_n$非负，且对于几乎所有$x$逐点单调递减\n\n那么函数列几乎处处收敛到0。"
+}

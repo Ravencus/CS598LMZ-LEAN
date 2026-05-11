@@ -1,0 +1,18 @@
+{
+  "problem_id": "common-lemma-1",
+  "english_title": "Common Lemma 1",
+  "statement_en": "For each $\\varepsilon > 0$, define $$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}.$$ If for every $\\varepsilon > 0$ one has $$\\sum_{n\\geq1}\\mu(A_{n,\\varepsilon})<\\infty,$$ then $$\\mu\\left(\\limsup_{n\\to\\infty}A_{n,\\varepsilon}\\right)=0,\\quad \\forall \\varepsilon>0,$$ and hence $$f_n(x) \\to f(x) \\text{ a.e. }x.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter MeasureTheory\nopen scoped Topology MeasureTheory\n\ntheorem summable_measure_limsup_null_ae_tendsto\n    {α : Type*} [MeasurableSpace α] (μ : Measure α)\n    (fSeq : ℕ → α → ℝ) (f : α → ℝ)\n    (h :\n      ∀ ε > 0, Summable (fun n : ℕ => μ {x | ε ≤ |fSeq (n + 1) x - f x|})) :\n    (∀ ε > 0, μ {x | ∃ᶠ n in Filter.atTop, ε ≤ |fSeq (n + 1) x - f x|} = 0) ∧\n      ∀ᵐ x ∂μ, Tendsto (fun n : ℕ => fSeq n x) Filter.atTop (nhds (f x)) := by\n  sorry"
+}

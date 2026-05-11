@@ -1,0 +1,83 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "deepseek-v4-flash",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 334.91,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 8,
+  "first_error": "unsolved goals\ncase refine_1\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nmul_pow_comm : ∀ (X Y : Matrix n n ℂ) (k : ℕ), X * (Y * X) ^ k = (X * Y) ^ k * X\nX Y : Matrix n n ",
+  "total_cost_usd": 0.010372,
+  "total_tokens": 162791,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_de121bea9e.lean",
+      "line": 23,
+      "column": 4,
+      "severity": "error",
+      "message": "unsolved goals\ncase refine_1\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nmul_pow_comm : ∀ (X Y : Matrix n n ℂ) (k : ℕ), X * (Y * X) ^ k = (X * Y) ^ k * X\nX Y : Matrix n n ℂ\np : ℂ[X]\nc : ℂ\n⊢ X * (algebraMap ℂ (Matrix n n ℂ)) c = (algebraMap ℂ (Matrix n n ℂ)) c * X"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_de121bea9e.lean",
+      "line": 28,
+      "column": 6,
+      "severity": "error",
+      "message": "'calc' expression has type\n  X * (aeval (Y * X)) ((monomial n) a) = (aeval (X * Y)) ((monomial n) a) * X\nbut is expected to have type\n  X * (aeval (Y * X)) (C a * Polynomial.X ^ n) = (aeval (X * Y)) (C a * Polynomial.X ^ n) * X →\n    X * (aeval (Y * X)) (C a * Polynomial.X ^ (n + 1)) = (aeval (X * Y)) (C a * Polynomial.X ^ (n + 1)) * X"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_de121bea9e.lean",
+      "line": 29,
+      "column": 72,
+      "severity": "error",
+      "message": "unsolved goals\nn✝ : Type u_1\ninst✝¹ : Fintype n✝\ninst✝ : DecidableEq n✝\nA B : Matrix n✝ n✝ ℂ\nmul_pow_comm : ∀ (X Y : Matrix n✝ n✝ ℂ) (k : ℕ), X * (Y * X) ^ k = (X * Y) ^ k * X\nX Y : Matrix n✝ n✝ ℂ\np : ℂ[X]\nn : ℕ\na : ℂ\n⊢ X * ((algebraMap ℂ (Matrix n✝ n✝ ℂ)) a * (Y * X) ^ n) = a • (X * (Y * X) ^ n)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_de121bea9e.lean",
+      "line": 30,
+      "column": 48,
+      "severity": "error",
+      "message": "Unknown constant `Matrix.mul_smul_comm`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_de121bea9e.lean",
+      "line": 32,
+      "column": 48,
+      "severity": "error",
+      "message": "Unknown constant `Matrix.smul_mul_assoc`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_de121bea9e.lean",
+      "line": 33,
+      "column": 50,
+      "severity": "error",
+      "message": "unsolved goals\nn✝ : Type u_1\ninst✝¹ : Fintype n✝\ninst✝ : DecidableEq n✝\nA B : Matrix n✝ n✝ ℂ\nmul_pow_comm : ∀ (X Y : Matrix n✝ n✝ ℂ) (k : ℕ), X * (Y * X) ^ k = (X * Y) ^ k * X\nX Y : Matrix n✝ n✝ ℂ\np : ℂ[X]\nn : ℕ\na : ℂ\n⊢ a • ((X * Y) ^ n * X) = (algebraMap ℂ (Matrix n✝ n✝ ℂ)) a * (X * Y) ^ n * X"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_de121bea9e.lean",
+      "line": 61,
+      "column": 16,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h1\nhas type\n  (aeval (A * B)) (X * minpoly ℂ (B * A)) = 0\nof sort `Prop` but is expected to have type\n  Type ?u.4063.99220\nof sort `Type (?u.4063.99220 + 1)` in the application\n  @minpoly.dvd h1"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_de121bea9e.lean",
+      "line": 64,
+      "column": 16,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h2\nhas type\n  (aeval (B * A)) (X * minpoly ℂ (A * B)) = 0\nof sort `Prop` but is expected to have type\n  Type ?u.4063.101895\nof sort `Type (?u.4063.101895 + 1)` in the application\n  @minpoly.dvd h2"
+    }
+  ]
+}

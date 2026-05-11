@@ -1,0 +1,82 @@
+{
+  "note_title": "Borel-Cantelli lemma及其应用",
+  "is_hub": true,
+  "in_subset_via": [
+    "an epsilon of room",
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "Borel-Cantelli lemma及其应用#1",
+      "type": "note",
+      "title": "Borel-Cantelli lemma",
+      "body": "$(X,\\mathcal{F},\\mu)$是一个测度空间，$E_1,E_2,E_3,...\\in \\mathcal{F}$并且满足测度的和收敛，$$\\sum_{n\\geq 1}\\mu(E_n)<\\infty$$\n那么$$\\mu\\left(\\bigcup_{n\\geq N}E_n\\right)\\to0$$或者说几乎所有$x\\in X$都包含在至多有限个$E_n$当中，即$$\\mu(\\limsup_{n\\to\\infty}E_n)=0$$",
+      "position_char": 73,
+      "position_line": 10
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#2",
+      "type": "example",
+      "title": "例子0.1",
+      "body": "$([0,1],\\mathcal{B}([0,1]),m)$是一个测度空间，$m$是Lebesgue测度。假设集合$I_n = [0,\\frac{1}{n^2}]$,那么因为$$\\sum_{n\\geq 1} m(I_n)=\\sum_{n\\geq 1} \\frac{1}{n^2}<\\infty$$因此$m(x\\in I_n \\text{ i.o. })=0$。也就是说，$[0,1]$上几乎所有点都只属于有限多个形如$I_n = [0,\\frac{1}{n^2}]$的区间，这很显然。其实这里唯一一个属于无穷多个此类区间的点就只有$x=0$这一个点罢了。",
+      "position_char": 1751,
+      "position_line": 29
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#3",
+      "type": "example",
+      "title": "反例0.2",
+      "body": "$([0,1],\\mathcal{L}([0,1]),m)$是集合$[0,1]$上的Lebesgue测度空间，其中$m$是Lebesgue测度。考虑此空间上的一列集合列$E_n:=(0,\\frac{1}{n})$。定义$A_N:=\\cup_{n\\geq N}E_n$，我们知道$A_N=(0,\\frac{1}{N})$，依据测度的“自上而下的连续性”，我们知道$$m(\\limsup_{n\\to \\infty}E_n)=\\lim_{N\\to \\infty}m(A_N)=0$$然而如果我们会发现$m(E_n)=\\frac{1}{n}$其组成的级数是不收敛的。",
+      "position_char": 2196,
+      "position_line": 36
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#4",
+      "type": "note",
+      "title": "常用引理1",
+      "body": "如果$\\forall \\varepsilon > 0$,定义集合$A_{n,\\varepsilon}:=\\{x:|f_n(x)-f(x)|\\geq\\varepsilon\\}$都有\n$$\\sum_{n\\geq1}\\mu(A_{n,\\varepsilon})<\\infty$$那么可以得到结论\n$$\\mu\\left(\\limsup_{n\\to\\infty}A_{n,\\varepsilon}\\right)=0,\\forall \\varepsilon>0$$于是\n$$f_n(x) \\to f(x) \\text{ a.e. }x$$",
+      "position_char": 2577,
+      "position_line": 43
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#5",
+      "type": "note",
+      "title": "常用引理2",
+      "body": "$$A_{n}:=\\{x:|f_n(x)-f(x)|\\geq \\varepsilon_n\\}$$其中$\\varepsilon_n \\downarrow 0$，并且同时$$\\sum_{n\\geq 1}\\mu(A_n)<\\infty$$\n于是按照上面同样的做法，如果$x \\not \\in \\limsup_{n\\to\\infty} A_{n}$那么存在一个$N_x$使得$\\forall n >N_x$都有$$|f_n(x)-f(x)|< \\varepsilon_n$$同样能表示$f_n(x)\\to f(x)$，那么能得到结论，$$f_n(x)\\to f(x)$$几乎处处成立。",
+      "position_char": 3810,
+      "position_line": 57
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#6",
+      "type": "note",
+      "title": "The second Borel-Cantelli lemma",
+      "body": "集合列$E_1,..,E_n,..\\in\\mathcal{F}$互相之间是独立的，并且其测度形成的集合不收敛$$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty$$\n那么$$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)=\\mathbb{P}(E_n \\text{ i.o.})=1$$",
+      "position_char": 4906,
+      "position_line": 71
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#7",
+      "type": "note",
+      "title": "The second Borel-Cantelli lemma,版本2",
+      "body": "合列$E_1,..,E_n,..\\in\\mathcal{F}$互相之间是独立的，并且$\\mathbb{P}(E_n)<1$那么$$\\mathbb{P}(\\cup_{n\\geq 1}E_n)=1\\implies \\mathbb{P}(E_n \\text{ i.o.})=1$$",
+      "position_char": 5651,
+      "position_line": 84
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#8",
+      "type": "note",
+      "title": "定量版本的第二Borel-Cantelli引理",
+      "body": "集合列$E_1,..,E_n,..\\in\\mathcal{F}$满足存在一个正实数$C$使得$$\\sum_{i,j\\leq N}\\mathbb{P}(E_i \\cap E_j)\\leq C \\left(\\sum_{i\\leq N}\\mathbb{P}(E_i)\\right)^2$$对无穷多个正整数$N$成立，并且其测度形成的集合不收敛$$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty$$\n那么$$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)\\geq \\frac{1}{C}$$",
+      "position_char": 6162,
+      "position_line": 93
+    },
+    {
+      "id": "Borel-Cantelli lemma及其应用#9",
+      "type": "note",
+      "title": "大致的思路",
+      "body": "通过集合的特征函数把集合的问题转换为函数的问题，使用处理函数的工具来分析问题。",
+      "position_char": 7296,
+      "position_line": 107
+    }
+  ]
+}

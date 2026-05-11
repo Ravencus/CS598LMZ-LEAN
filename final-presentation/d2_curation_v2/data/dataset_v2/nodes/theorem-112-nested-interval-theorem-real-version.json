@@ -1,0 +1,23 @@
+{
+  "id": "theorem-112-nested-interval-theorem-real-version",
+  "type": "problem",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "callout_id": "柯西收敛判别#2",
+  "english_title": "Theorem 1.1.2: Nested Interval Theorem, Real Version",
+  "statement_en": "The intersection of a decreasing sequence of closed intervals in $\\mathbb{R}$ is nonempty.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "completeness of the real numbers",
+    "supremum and infimum",
+    "nested interval argument"
+  ],
+  "prerequisites": [
+    "closed intervals",
+    "order completeness of $\\mathbb{R}$",
+    "supremum and infimum"
+  ],
+  "callout_body": "实数$\\mathbb{R}$当中的一列下降的闭区间套的交集非空。"
+}

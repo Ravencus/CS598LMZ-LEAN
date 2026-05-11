@@ -1,0 +1,18 @@
+{
+  "problem_id": "cauchy-condensation-test",
+  "english_title": "Cauchy Condensation Test",
+  "statement_en": "Let $a_n$ be a nonincreasing, nonnegative sequence. Then the series $\\sum_{n\\geq 1} a_n$ converges if and only if the series $\\sum_k 2^k a_{2^k}$ converges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem cauchyCondensation\n    (a : ℕ → ℝ)\n    (hmono : ∀ n : ℕ, a (n + 1) ≤ a n)\n    (hnonneg : ∀ n : ℕ, 0 ≤ a n) :\n    Summable (fun n : ℕ => a (n + 1)) ↔\n      Summable (fun k : ℕ => (2 : ℝ) ^ k * a (2 ^ k)) := by\n  sorry"
+}

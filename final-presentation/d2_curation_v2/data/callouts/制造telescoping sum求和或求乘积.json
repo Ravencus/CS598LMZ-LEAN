@@ -1,0 +1,81 @@
+{
+  "note_title": "制造telescoping sum求和或求乘积",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "制造telescoping sum求和或求乘积#1",
+      "type": "note",
+      "title": "telescoping sum",
+      "body": "但凡我们制造出$f(k+1)-f(k)=g(k)$的形式，我们是有办法直接表示出来$f(k)$的和的。也就是说，我们可以通过函数在整数点处的所有差分的信息还原出函数本身。从这个角度上来说，telescoping sum比较**类似于离散类型的，微积分基本定理**。",
+      "position_char": 51,
+      "position_line": 7
+    },
+    {
+      "id": "制造telescoping sum求和或求乘积#2",
+      "type": "note",
+      "title": "复级数求和",
+      "body": "$|z|<1$，求和\n$$\\sum_{n \\geq 1} \\frac{z^{n-1}}{(1-z^n)(1-z^{n+1})}$$",
+      "position_char": 231,
+      "position_line": 12
+    },
+    {
+      "id": "制造telescoping sum求和或求乘积#3",
+      "type": "note",
+      "title": "关于Fibonacci数的求和",
+      "body": "其中$F_n$是第n个Fibonacci数，$$\\sum_{n \\geq 1} \\frac{1}{F_nF_{n+4}}$$",
+      "position_char": 591,
+      "position_line": 22
+    },
+    {
+      "id": "制造telescoping sum求和或求乘积#4",
+      "type": "note",
+      "title": "关于Fibonacci数的求和，简单版本",
+      "body": "其中$F_n$是第n个Fibonacci数，$$\\sum_{n \\geq 1} \\frac{1}{F_nF_{n+2}}$$",
+      "position_char": 972,
+      "position_line": 31
+    },
+    {
+      "id": "制造telescoping sum求和或求乘积#5",
+      "type": "tip",
+      "title": "想法2.1",
+      "body": "如果我们想要求$\\prod _{k=1}^n c_k$，而我们又发现$c_k=a_k\\cdot \\frac{b_k}{b_{k+1}}$那么其中$\\prod_k a_k$是简单的或者已知的，那么$$\\prod _{k=1}^n c_k=\\left(\\prod_{k=1}^n a_k \\right) \\prod_{k=1}^n \\frac{b_k}{b_{k+1}}=\\left(\\prod_{k=1}^n a_k \\right)\\frac{b_1}{b_{n+1}}$$",
+      "position_char": 2274,
+      "position_line": 45
+    },
+    {
+      "id": "制造telescoping sum求和或求乘积#6",
+      "type": "example",
+      "title": "例子2.2",
+      "body": "$$\\prod_{k=2}^{n}\\left(1-\\frac{1}{k^2}\\right)=\\frac{n+1}{2n}$$",
+      "position_char": 2536,
+      "position_line": 50
+    },
+    {
+      "id": "制造telescoping sum求和或求乘积#7",
+      "type": "example",
+      "title": "例子2.3",
+      "body": "$$\\prod_{n\\geq 0} (1+a^{2^n})=\\frac{1}{1-a},\\quad \\forall |a|<1$$",
+      "position_char": 2864,
+      "position_line": 56
+    },
+    {
+      "id": "制造telescoping sum求和或求乘积#8",
+      "type": "example",
+      "title": "例子2.4",
+      "body": "\n$$\\prod_{n\\geq 0} \\cos\\left(\\frac{x}{2^{n+1}}\\right)=\\frac{\\sin(x)}{x}$$\n\n* 考虑到正弦函数的二倍角公式$$\\sin(x)=2\\sin(x/2)\\cos(x/2)$$这个式子在当前情境下可以写成$$\\cos\\left(\\frac{x}{2^{n+1}}\\right)=\\frac{\\sin\\left(\\frac{x}{2^{n}}\\right)}{2\\sin\\left(\\frac{x}{2^{n+1}}\\right)}$$于是$$\\prod_{n= 0}^{N} \\cos\\left(\\frac{x}{2^{n+1}}\\right)=\\frac{1}{2^{N+1}}\\prod_{n=0}^{N}\\frac{\\sin\\left(\\frac{x}{2^{n}}\\right)}{\\sin\\left(\\frac{x}{2^{n+1}}\\right)}=\\frac{1}{2^{N+1}}\\frac{\\sin(x)}{\\sin\\left(\\frac{x}{2^{N+1}}\\right)}\\to \\frac{\\sin(x)}{x}$$",
+      "position_char": 3235,
+      "position_line": 64
+    },
+    {
+      "id": "制造telescoping sum求和或求乘积#9",
+      "type": "example",
+      "title": "例子2.5",
+      "body": "令$q\\geq 2$是一个正整数实数$a$满足$|a|<1$那么$$\\prod_{n\\geq 0}(1+a^{q^n}+\\cdots+a^{(q-1)q^n})=\\frac{1}{1-a}$$",
+      "position_char": 3794,
+      "position_line": 74
+    }
+  ]
+}

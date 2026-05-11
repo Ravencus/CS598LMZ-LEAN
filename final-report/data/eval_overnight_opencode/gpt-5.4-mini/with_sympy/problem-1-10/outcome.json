@@ -1,0 +1,34 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 124.98,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown identifier `MeasureTheory.ae_eq_zero_of_lintegral_eq_zero`\n",
+  "total_cost_usd": 0.0,
+  "total_tokens": 265041,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_4d57a29edc.lean",
+      "line": 14,
+      "column": 7,
+      "severity": "error",
+      "message": "Unknown identifier `MeasureTheory.ae_eq_zero_of_lintegral_eq_zero`\n"
+    }
+  ]
+}

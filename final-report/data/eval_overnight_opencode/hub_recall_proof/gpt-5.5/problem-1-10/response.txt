@@ -1,0 +1,2 @@
+["piecewise-estimates-hub"]
+- piecewise-estimates-hub: The proof relies on `lintegral_eq_zero_iff'`, whose underlying strategy is that a nonnegative measurable function with zero integral cannot be positive on any positive-measure region; the final `le_antisymm` step then uses pointwise nonnegativity to turn `ENNReal.ofReal (f x) = 0` into `f x = 0`.

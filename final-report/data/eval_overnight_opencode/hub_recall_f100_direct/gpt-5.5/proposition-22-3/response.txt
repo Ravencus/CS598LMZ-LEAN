@@ -1,0 +1,5 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "term-by-term-estimates-hub", "piecewise-estimates-hub"]
+
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: Needed to get integer subsequences with `n` close modulo `2π` to points where `sin` is near `1` and `-1`, especially close enough to force the `limsup` subsequence toward `1`.
+- term-by-term-estimates-hub: Needed to bound each term using `-1 ≤ sin n ≤ 1`, giving `0 ≤ a_n ≤ 1`, and to estimate powers like `(1 - ε_n)^n` or `(c)^n`.
+- piecewise-estimates-hub: Relevant for splitting the proof into separate regimes/subsequences: near maxima of `sin`, near minima or negative values of `sin`, and the global bounding argument for the cluster set.

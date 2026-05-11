@@ -1,0 +1,21 @@
+{
+  "id": "example-128",
+  "type": "problem",
+  "source_note": "Re0微积分2：自然底数e及其快速计算",
+  "english_source_note": "Re0 Calculus 2: The Number e and Fast Computation",
+  "callout_id": "Re0微积分2:自然底数e及其快速计算#11",
+  "english_title": "Example 1.2.8",
+  "statement_en": "In this section, the sequence $T_N:=\\sum_{n=0}^{N}\\frac{1}{(n+1)(n+2)(n+2)!}$ appears, and $T_{N-2}$ is clearly a subsequence of it. In terms of the definition of a subsequence, we may introduce the variable $N_k:=k-2$, thereby obtaining the subsequence $T_{N_k}$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "constructing a subsequence",
+    "reindexing"
+  ],
+  "prerequisites": [
+    "definition of subsequence",
+    "sequence indexing"
+  ],
+  "callout_body": "在本节的问题当中出现了序列$T_N:=\\sum_{n=0}^{N}\\frac{1}{(n+1)(n+2)(n+2)!}$,而$T_{N-2}$显然是其一个子列。按照子列的定义来表述，我们可以引入变量$N_k:=k-2$,从而得到子列$T_{N_k}$。"
+}

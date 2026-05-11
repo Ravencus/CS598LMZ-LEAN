@@ -1,0 +1,41 @@
+{
+  "note_title": "收敛的连乘积的上界估计与糖水不等式",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "收敛的连乘积的上界估计与糖水不等式#1",
+      "type": "question",
+      "title": "问题",
+      "body": "$$a_n=\\frac{4+3^n}{2+3^n}$$证明$$\\prod_{n\\leq N}a_n<2$$对任意正整数$N$成立.",
+      "position_char": 39,
+      "position_line": 7
+    },
+    {
+      "id": "收敛的连乘积的上界估计与糖水不等式#2",
+      "type": "note",
+      "title": "分子分母同增一个值发生的变化",
+      "body": "这主要取决于$\\frac{b}{a}$与$1$的关系：\n\n如果$0<\\frac{b}{a}\\leq 1$,并且$x>0$那么$$\\frac{b+x}{a+x}\\geq \\frac{b}{a} $$否则不等式相反。此外，如果我们可以保证$0\\leq x<\\min\\{a,b\\}$,那么还有不等式$$\\frac{b}{a}\\geq \\frac{b-x}{a-x}$$",
+      "position_char": 150,
+      "position_line": 14
+    },
+    {
+      "id": "收敛的连乘积的上界估计与糖水不等式#3",
+      "type": "question",
+      "title": "问题1的等价问题",
+      "body": "证明级数$$\\sum_{n\\geq1}\\log\\left(1+\\frac{2}{2+3^n}\\right)<\\log(2)$$",
+      "position_char": 768,
+      "position_line": 25
+    },
+    {
+      "id": "收敛的连乘积的上界估计与糖水不等式#4",
+      "type": "note",
+      "title": "猜想1",
+      "body": "$$f(x)<x,\\forall x>0$$",
+      "position_char": 1151,
+      "position_line": 34
+    }
+  ]
+}

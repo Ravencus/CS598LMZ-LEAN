@@ -1,0 +1,23 @@
+{
+  "id": "problem-1-8",
+  "type": "problem",
+  "source_note": "满足这种函数极限性质的函数是几乎处处为0的",
+  "english_source_note": "Such a Limit Property Forces a Function to Vanish a.e.",
+  "callout_id": "满足这种函数极限性质的函数是几乎处处为0的#1",
+  "english_title": "Problem 1",
+  "statement_en": "Let $f:[0,1]\\to \\mathbb{R}$ satisfy that for every $x_0 \\in [0,1]$, one has $\\lim_{x\\to x_0} f(x)=0$. Then $f=0$ almost everywhere.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "pointwise limit analysis",
+    "measure-zero exceptional set argument",
+    "contradiction via the definition of limit"
+  ],
+  "prerequisites": [
+    "definition of limit of a function",
+    "almost everywhere",
+    "basic real analysis on intervals"
+  ],
+  "callout_body": "函数$f:[0,1]\\to \\mathbb{R}$满足对任意$\\forall x_0 \\in [0,1]$都有$\\lim_{x\\to x_0}f(x)=0$那么函数几乎处处为0."
+}

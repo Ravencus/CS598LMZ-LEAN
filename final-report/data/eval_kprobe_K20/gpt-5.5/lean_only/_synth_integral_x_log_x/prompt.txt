@@ -1,0 +1,36 @@
+You are formalizing a real proof in Lean 4 + Mathlib. You have access to a `check_lean_proof` MCP tool that compiles Lean code and returns diagnostics. Use it to iterate on your proof.
+
+THEOREM (English):
+Prove that the integral from 0 to 1 of x·log(x) equals -1/4.
+
+LEAN 4 SIGNATURE (use VERBATIM — do NOT change name, hypotheses, or conclusion):
+import Mathlib
+
+lemma integral_x_log_x :
+    ∫ x in (0:ℝ)..1, x * Real.log x = -1/4 := by
+  sorry
+
+You have a HARD BUDGET of 10 `check_lean_proof` calls. Each call response includes `calls_used` and `calls_budget` so you can track usage. When the budget is exhausted, no further checker calls work — submit your best final attempt and stop.
+
+Notation: `ℕ`/`ℤ`/`ℚ`/`ℝ`/`ℂ`, `Finset.sum`, `Filter.Tendsto`, `Filter.atTop`,
+`nhds`, `Real.pi`, `Summable`, etc. Sum syntax: `∑ k ∈ Finset.range n, ...`
+(NOT `∑ k in ...`).
+
+Tactics: `intro`, `rcases`, `obtain`, `have`, `calc`, `simp`, `ring`,
+`linarith`, `nlinarith`, `gcongr`, `positivity`, `field_simp`, `omega`,
+`norm_num`, `funext`, `rw`, `exact`, `induction`, `push_cast`.
+
+Rules:
+  - Do NOT use `sorry`, `admit`, or `axiom` in the FINAL proof (unless using SYMPY-SKILL below).
+  - Do NOT invent Mathlib lemma names. Prefer tactics over guessed names.
+  - First line must be `import Mathlib`. The signature must match byte-for-byte.
+
+
+
+When you have a proof that compiles (or you've used the budget), output your FINAL answer as one fenced lean block, prefixed with the literal token `FINAL_PROOF:`. Output it exactly once, after your proof compiles or you've stopped iterating:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+... your final code ...
+```

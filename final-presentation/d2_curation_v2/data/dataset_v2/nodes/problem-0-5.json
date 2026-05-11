@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-5",
+  "type": "problem",
+  "source_note": "Stirling渐近公式及不等式",
+  "english_source_note": "Stirling Asymptotics and Inequalities",
+  "callout_id": "Stirling渐近公式及不等式#1",
+  "english_title": "Problem 0",
+  "statement_en": "Prove that $$S_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n).$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "Stirling's formula",
+    "Euler-Maclaurin summation",
+    "logarithmic sum asymptotics"
+  ],
+  "prerequisites": [
+    "properties of logarithms",
+    "Big-O notation",
+    "basic asymptotic expansions"
+  ],
+  "callout_body": "证明$$S_n:=\\sum_{k\\leq n}\\log(k)=n\\log(n)-n+\\frac{1}{2}\\log(n)+\\log(\\sqrt{2\\pi})+O(1/n)$$"
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "counterexample-23",
+  "english_title": "Counterexample 2.3",
+  "statement_en": "A concrete construction is given by\n$$F_k:=\\begin{cases}2^{-2^k}&k\\text{ is odd} \\\\ 2^{-2^{k+1}} &k\\text{ is even}\\end{cases},\\qquad G_k:=\\begin{cases}2^{-2^{k+1}}&k\\text{ is odd} \\\\ 2^{-2^{k}} &k\\text{ is even}\\end{cases},\\qquad L_k=2^{2^{k}}.$$ Then the block sequences $\\alpha_n,\\beta_n$ built from these data satisfy that both corresponding series diverge, while\n$$\\sum_{n\\geq 1}\\min\\{\\alpha_n,\\beta_n\\}=\\sum_{k\\geq 1}L_k\\min\\{F_k,G_k\\}=\\sum_{k\\geq 1} \\frac{1}{2^{2^k}}<+\\infty.$$",
+  "difficulty": "hard",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen scoped BigOperators\n\ndef F (k : ℕ) : ℝ :=\n  if k % 2 = 1 then\n    (2 : ℝ) ^ (-(((2 : ℕ) ^ k : ℤ)))\n  else\n    (2 : ℝ) ^ (-(((2 : ℕ) ^ (k + 1) : ℤ)))\n\ndef G (k : ℕ) : ℝ :=\n  if k % 2 = 1 then\n    (2 : ℝ) ^ (-(((2 : ℕ) ^ (k + 1) : ℤ)))\n  else\n    (2 : ℝ) ^ (-(((2 : ℕ) ^ k : ℤ)))\n\ndef L (k : ℕ) : ℝ :=\n  (2 : ℝ) ^ ((2 : ℕ) ^ k)\n\ntheorem concrete_block_sequence_construction :\n    ∃ α β : ℕ → ℝ,\n      (¬ Summable α) ∧\n      (¬ Summable β) ∧\n      Summable (fun n : ℕ => min (α (n + 1)) (β (n + 1))) ∧\n      (∑' n : ℕ, min (α (n + 1)) (β (n + 1))) =\n        ∑' k : ℕ, L (k + 1) * min (F (k + 1)) (G (k + 1)) ∧\n      (∑' k : ℕ, L (k + 1) * min (F (k + 1)) (G (k + 1))) =\n        ∑' k : ℕ, (1 : ℝ) / (2 : ℝ) ^ ((2 : ℕ) ^ (k + 1)) ∧\n      Summable (fun k : ℕ => (1 : ℝ) / (2 : ℝ) ^ ((2 : ℕ) ^ (k + 1))) := by\n  sorry"
+}

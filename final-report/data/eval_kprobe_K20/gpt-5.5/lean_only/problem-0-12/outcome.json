@@ -1,0 +1,36 @@
+{
+  "problem_id": "problem-0-12",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 133.48,
+  "wall_exceeded": false,
+  "final_proof_source": "last_submitted_tool_call",
+  "mcp_calls": 6,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "sinSquarePartialSums_unbounded",
+  "signature_ok": true,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "(kernel) invalid declaration, it uses unsafe declaration 'unsafeCast'\n",
+  "total_cost_usd": 0.0,
+  "total_tokens": 262465,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_a59815f903.lean",
+      "line": 11,
+      "column": 8,
+      "severity": "error",
+      "message": "(kernel) invalid declaration, it uses unsafe declaration 'unsafeCast'\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-0-wuhan-university-mathematical-analysis-problem",
+  "english_title": "Problem 0 (Wuhan University Mathematical Analysis Problem)",
+  "statement_en": "Let the sequence $\\{x_n\\}$ satisfy $x_1,x_2>0$ and the recurrence $$x_{n+2}:=\\sqrt{x_{n+1}}+\\sqrt{x_n}.$$ Prove that the limit of the sequence exists and equals $4$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sqrt_recurrence_limit_four\n    (x : ℕ → ℝ)\n    (hx1 : 0 < x 1)\n    (hx2 : 0 < x 2)\n    (hrec : ∀ n : ℕ, x (n + 3) = Real.sqrt (x (n + 2)) + Real.sqrt (x (n + 1))) :\n    Filter.Tendsto (fun n : ℕ => x (n + 1)) Filter.atTop (nhds 4) := by\n  sorry"
+}

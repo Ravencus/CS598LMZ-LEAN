@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Unknown constant `Complex.exists_polynomial_uniformApproximation`\n",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_5e09a213eb.lean",
+      "line": 9,
+      "column": 15,
+      "severity": "error",
+      "message": "Unknown constant `Complex.exists_polynomial_uniformApproximation`\n"
+    }
+  ]
+}

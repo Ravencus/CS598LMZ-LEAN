@@ -1,0 +1,23 @@
+{
+  "id": "problem-31-4",
+  "type": "problem",
+  "source_note": "对自变量进行二进制展开求积分",
+  "english_source_note": "Integrating via Binary Expansion of the Variable",
+  "callout_id": "对自变量进行二进制展开求积分#8",
+  "english_title": "Problem 3.1",
+  "statement_en": "Compute the integral $$\\\\int_{0}^{1}\\\\left(\\\\sum_{n\\\\geq 1}\\\\frac{a_n(x)}{3^n}\\\right)^2\\\\,dx,$$ where \\\\(a_n(x)\\\\) is the integer given by the \\\\(n\\\\)-th digit in the decimal expansion of \\\\(x\\\\).",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "decimal digit expansion",
+    "rewriting as an expectation",
+    "independence of digits of a uniform variable"
+  ],
+  "prerequisites": [
+    "uniform distribution on (0,1)",
+    "decimal expansions",
+    "expectation and variance"
+  ],
+  "callout_body": "求积分的结果：$$\\int_{0}^{1}\\left(\\sum_{n\\geq 1}\\frac{a_n(x)}{3^n}\\right)^2\\,dx$$其中$a_n(x)$为$x$的十进制表示的第$n$位对应的整数。"
+}

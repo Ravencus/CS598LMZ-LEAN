@@ -1,0 +1,24 @@
+{
+  "id": "conjecture-121",
+  "type": "problem",
+  "source_note": "关于序列极限的公开问题",
+  "english_source_note": "Open Problems on Sequence Limits",
+  "callout_id": "关于序列极限的公开问题#2",
+  "english_title": "Conjecture 1.2.1",
+  "statement_en": "For sufficiently large $n$, let $b_n:=\\frac{a_n}{\\sqrt{n}}$. Then:\n1. $b_n$ is increasing.\n2. $b_n$ is bounded above.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "monotonicity analysis",
+    "upper bound estimates",
+    "recursive sequence comparison"
+  ],
+  "prerequisites": [
+    "monotone sequences",
+    "bounded sequences",
+    "recursive sequences",
+    "basic asymptotic estimates"
+  ],
+  "callout_body": "当$n$足够大的时候序列$b_n:=\\frac{a_n}{\\sqrt{n}}$:\n1. $b_n$单调增加\n2. $b_n$有上界"
+}

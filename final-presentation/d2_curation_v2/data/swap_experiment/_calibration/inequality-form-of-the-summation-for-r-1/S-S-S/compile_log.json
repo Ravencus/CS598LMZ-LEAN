@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "skipped": true,
+  "reason": "signature_deviation",
+  "splice_action": "deviation",
+  "deviation_detail": "model header differs from canonical (modulo whitespace).\nCanonical: theorem zeta_partial_sum_euler_maclaurin (ζ : ℝ → ℝ) (r : ℝ) (hr : 1 < r) : ∃ E : ℕ → ℝ, ∀ n : ℕ, 1 ≤ n → (Finset.sum (Finset.Icc 1 n) (fun k => Real.rpow (k : ℝ) (-r)) = ζ r + (1 / (1 - r)) * Real.rpow (n : ℝ) (1 - r) + (1 / 2 : ℝ) * Real.rpow (n : ℝ) (-r) - (r / 12 : ℝ) * Real.rpow (n : ℝ) (-r - 1\nModel:    theorem is not provable as stated. -- Reason: `ζ : ℝ → ℝ` is completely arbitrary, but the conclusion asserts a -- specific asymptotic formula with a uniformly small error term for that -- arbitrary function. -- -- For example, if one takes `ζ := fun _ => 10^100`, the stated bound on `E n` -- cannot",
+  "errors_only": []
+}

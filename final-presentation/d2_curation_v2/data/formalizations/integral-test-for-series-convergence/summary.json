@@ -1,0 +1,18 @@
+{
+  "problem_id": "integral-test-for-series-convergence",
+  "english_title": "Integral Test for Series Convergence",
+  "statement_en": "Suppose $f:[M,+\\infty)\\to\\mathbb{R}$ is integrable as an improper integral, is monotone decreasing to $0$, and $$\\int_M^{\\infty} f(t)\\,dt$$ converges. Then the series $$\\sum_{n\\geq M} f(n)$$ also converges, and conversely.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem improperIntegralSeriesTest\n    (M : ℕ) (f : ℝ → ℝ)\n    (hmono : AntitoneOn f (Set.Ici (M : ℝ)))\n    (hlim : Filter.Tendsto f Filter.atTop (nhds 0)) :\n    (∃ l : ℝ, Filter.Tendsto (fun b : ℝ => ∫ t in Set.Icc (M : ℝ) b, f t) Filter.atTop (nhds l)) ↔\n      Summable (fun n : ℕ => f (n + M)) := by\n  sorry"
+}

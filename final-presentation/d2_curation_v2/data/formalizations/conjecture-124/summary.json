@@ -1,0 +1,24 @@
+{
+  "problem_id": "conjecture-124",
+  "english_title": "Conjecture 1.2.4",
+  "statement_en": "Let $$S_N:=\\sum_{n\\leq N}\\sin(n^2).$$ Prove or disprove that there exists a positive real number $C$ such that $$\\limsup_{N\\to \\infty}\\frac{|S_N|}{\\sqrt{N\\log\\log N}}=C.$$",
+  "difficulty": "hard",
+  "domain": "analytic number theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable section\n\nopen scoped Topology BigOperators\nopen Filter\n\ndef quadraticSinePartialSum (N : ℕ) : ℝ :=\n  Finset.sum (Finset.range (N + 1)) (fun n => Real.sin ((n : ℝ) ^ (2 : ℕ)))\n\ndef quadraticSineNormalized (N : ℕ) : ℝ :=\n  |quadraticSinePartialSum N| / Real.sqrt ((N : ℝ) * Real.log (Real.log (N : ℝ)))\n\ndef subsequentialLimits (u : ℕ → ℝ) : Set ℝ :=\n  {x : ℝ | ∃ φ : ℕ → ℕ, StrictMono φ ∧ Tendsto (fun n => u (φ n)) atTop (nhds x)}\n\ntheorem quadratic_sine_limsup_exists_positive_constant :\n    ∃ C : ℝ,\n      0 < C ∧ sSup (subsequentialLimits quadraticSineNormalized) = C := by\n  sorry"
+}

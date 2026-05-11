@@ -1,0 +1,24 @@
+{
+  "id": "proposition-7",
+  "type": "problem",
+  "source_note": "单调有界函数几乎处处连续",
+  "english_source_note": "Monotone Bounded Functions Are Continuous Almost Everywhere",
+  "callout_id": "单调有界函数几乎处处连续#1",
+  "english_title": "Proposition",
+  "statement_en": "Let $f:[a,b]\\to \\mathbb{R}$ be a bounded monotone function. Then $f$ is continuous almost everywhere.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "countability of discontinuities of monotone functions",
+    "one-sided limits",
+    "measure zero sets"
+  ],
+  "prerequisites": [
+    "monotone functions",
+    "continuity and discontinuity",
+    "almost everywhere",
+    "basic measure theory"
+  ],
+  "callout_body": "$f:[a,b]\\to \\mathbb{R}$是单调有界函数，那么函数是几乎处处连续的函数。"
+}

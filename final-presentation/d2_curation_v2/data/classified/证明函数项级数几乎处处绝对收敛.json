@@ -1,0 +1,80 @@
+{
+  "note_title": "证明函数项级数几乎处处绝对收敛",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "证明函数项级数几乎处处绝对收敛#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "考虑两个实数列$a_n,r_n$满足$\\sum_{n\\geq 1}|a_n|<\\infty$，证明级数$$\\sum_{n\\geq 1}\\frac{a_n}{\\sqrt{|x-r_n|}}$$对$x\\in \\mathbb{R}$是几乎处处绝对收敛的。",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "证明函数项级数几乎处处绝对收敛#1",
+        "classification": "problem",
+        "english_title": "Problem 0",
+        "if_problem": {
+          "statement_en": "Let $a_n,r_n$ be two real sequences satisfying $\\sum_{n\\geq 1}|a_n|<\\infty$. Prove that the series $$\\sum_{n\\geq 1}\\frac{a_n}{\\sqrt{|x-r_n|}}$$ is absolutely convergent for almost every $x\\in \\mathbb{R}$.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Fubini-Tonelli theorem",
+            "local integrability estimate",
+            "absolute convergence via integrability"
+          ],
+          "prerequisites": [
+            "Lebesgue integration",
+            "almost everywhere statements",
+            "summable series of real numbers",
+            "Fubini-Tonelli theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "证明函数项级数几乎处处绝对收敛#2",
+      "type": "tip",
+      "title": "想法1",
+      "body": "如果可以证明一个加强命题：此函数是可积的。如果可以做到这一点，那么我们就能通过可积得到几乎处处有限的结论。而证明可积，我们可以从Fubini-Tonelli定理的角度出发，因为$f(x)$交换以后在实数上的积分是容易计算的，如果交换以后的结果是有限的，那么一定是可积的。（详细参考[[Fubini-Tonelli定理的例子与反例]]其中有关于Fubini-Tonelli定理的一个使用技巧）",
+      "position_char": 265,
+      "position_line": 11,
+      "classification_result": {
+        "id": "证明函数项级数几乎处处绝对收敛#2",
+        "classification": "strategy_template",
+        "english_title": "Idea 1",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Strengthen to integrability and apply Fubini-Tonelli",
+          "summary_en": "Instead of proving almost everywhere absolute convergence directly, prove the stronger statement that the resulting function is integrable. Then conclude it is finite almost everywhere, and use Fubini-Tonelli by swapping summation and integration when the exchanged integral is easy to estimate.",
+          "applicability": "Use this when a pointwise almost everywhere finiteness claim can be upgraded to an integrability statement, especially for nonnegative series or absolute values where Tonelli's theorem allows exchanging summation and integration."
+        }
+      }
+    },
+    {
+      "id": "证明函数项级数几乎处处绝对收敛#3",
+      "type": "tip",
+      "title": "想法2：把命题减弱一点",
+      "body": "我们实际上只需要证明在实数的任意一个开区间上的积分是可积的，从而函数在该区间上几乎处处有限。而可数个零测度的集合的并依旧是零测度的，于是因为实数可以表示为可数个这样的开区间的并，因此函数在整个实数上几乎处处有限。",
+      "position_char": 648,
+      "position_line": 18,
+      "classification_result": {
+        "id": "证明函数项级数几乎处处绝对收敛#3",
+        "classification": "strategy_template",
+        "english_title": "Idea 2: Weaken the Statement Slightly",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Localize to bounded intervals and patch by countable union",
+          "summary_en": "It is enough to prove integrability, or almost everywhere finiteness, on each open interval separately. Since the real line is a countable union of such intervals and a countable union of null sets is still null, the global almost everywhere conclusion follows.",
+          "applicability": "Use this when a global statement on $\\mathbb{R}$ is hard to prove directly but can be established on every bounded or open interval, and the target property is stable under countable unions up to null sets."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"证明函数项级数几乎处处绝对收敛#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 0\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_n,r_n$ be two real sequences satisfying $\\\\sum_{n\\\\geq 1}|a_n|<\\\\infty$. Prove that the series $$\\\\sum_{n\\\\geq 1}\\\\frac{a_n}{\\\\sqrt{|x-r_n|}}$$ is absolutely convergent for almost every $x\\\\in \\\\mathbb{R}$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Fubini-Tonelli theorem\",\n        \"local integrability estimate\",\n        \"absolute convergence via integrability\"\n      ],\n      \"prerequisites\": [\n        \"Lebesgue integration\",\n        \"almost everywhere statements\",\n        \"summable series of real numbers\",\n        \"Fubini-Tonelli theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"证明函数项级数几乎处处绝对收敛#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Strengthen to integrability and apply Fubini-Tonelli\",\n      \"summary_en\": \"Instead of proving almost everywhere absolute convergence directly, prove the stronger statement that the resulting function is integrable. Then conclude it is finite almost everywhere, and use Fubini-Tonelli by swapping summation and integration when the exchanged integral is easy to estimate.\",\n      \"applicability\": \"Use this when a pointwise almost everywhere finiteness claim can be upgraded to an integrability statement, especially for nonnegative series or absolute values where Tonelli's theorem allows exchanging summation and integration.\"\n    }\n  },\n  {\n    \"id\": \"证明函数项级数几乎处处绝对收敛#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 2: Weaken the Statement Slightly\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Localize to bounded intervals and patch by countable union\",\n      \"summary_en\": \"It is enough to prove integrability, or almost everywhere finiteness, on each open interval separately. Since the real line is a countable union of such intervals and a countable union of null sets is still null, the global almost everywhere conclusion follows.\",\n      \"applicability\": \"Use this when a global statement on $\\\\mathbb{R}$ is hard to prove directly but can be established on every bounded or open interval, and the target property is stable under countable unions up to null sets.\"\n    }\n  }\n]",
+  "classified": true
+}

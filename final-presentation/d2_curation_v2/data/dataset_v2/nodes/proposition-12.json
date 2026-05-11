@@ -1,0 +1,23 @@
+{
+  "id": "proposition-12",
+  "type": "problem",
+  "source_note": "测度论的基础概念",
+  "english_source_note": "Basic Concepts in Measure Theory",
+  "callout_id": "测度论的基础概念#6",
+  "english_title": "Proposition 1.2",
+  "statement_en": "If $\\{E_i\\}_{i\\geq 1}$ are pairwise disjoint and each is $\\mu^{*}$-measurable, then not only is their union measurable, but also countable additivity holds: $$\\mu^{*}\\left(\\bigcup_{i\\geq 1}E_i\\right)=\\sum_{i\\geq 1}\\mu^{*}(E_i).$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "Caratheodory measurability",
+    "disjoint union decomposition",
+    "countable subadditivity and reverse inequality"
+  ],
+  "prerequisites": [
+    "outer measure",
+    "measurable sets",
+    "closure under countable unions"
+  ],
+  "callout_body": "如果$\\{E_i\\}_{i\\geq 1}$两两不相交，并且都是$\\mu^{*}-$可测的集合，那么不仅它们的并是可测的，此外还成立可数可加性:$$\\mu^{*}\\left(\\bigcup_{i\\geq 1}E_i\\right)=\\sum_{i\\geq 1}\\mu^{*}(E_i)$$"
+}

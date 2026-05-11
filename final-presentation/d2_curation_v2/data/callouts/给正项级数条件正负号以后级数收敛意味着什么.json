@@ -1,0 +1,35 @@
+{
+  "note_title": "给正项级数条件正负号以后级数收敛意味着什么",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计",
+    "函数与序列的上下极限",
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "给正项级数条件正负号以后级数收敛意味着什么#1",
+      "type": "note",
+      "title": "命题1.1",
+      "body": "假设$p_n$是单调不增的正实数列,令$\\varepsilon_k\\in \\{-1,1\\}$是使得级数$\\sum_{n\\geq 1}\\varepsilon_n p_n$收敛的序列，那么：\n1. 如果$\\sum_{n\\geq 1} p_n$是发散的级数那么$\\varepsilon_n$的算术平均值的上极限大于等于0，下极限小于等于0，即$$\\liminf_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}\\leq 0\\leq \\limsup_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}$$\n2. $$(\\varepsilon_1+\\cdots+\\varepsilon_n)p_n\\to 0$$",
+      "position_char": 55,
+      "position_line": 8
+    },
+    {
+      "id": "给正项级数条件正负号以后级数收敛意味着什么#2",
+      "type": "example",
+      "title": "例子1.2",
+      "body": "第一个结果我们可以看成是$$1-\\frac{1}{2}+\\frac{1}{3}+\\cdots+\\frac{(-1)^{n-1}}{n}+\\cdots=\\log(2)$$这个结果的一种抽象推广。因为此处我们可以令$p_n:=\\frac{1}{n},\\varepsilon_n:=(-1)^{n-1}$。此时我们发现$\\sum_{n\\geq 1}p_n$是调和级数，这是发散的。同时$\\varepsilon_n$的部分和最大可以取到1，因此算术平均值是收敛的，所以$$\\liminf_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}= \\limsup_{n\\to \\infty}\\frac{\\varepsilon_1+\\cdots+\\varepsilon_n}{n}=0$$",
+      "position_char": 445,
+      "position_line": 14
+    },
+    {
+      "id": "给正项级数条件正负号以后级数收敛意味着什么#3",
+      "type": "example",
+      "title": "例子1.3",
+      "body": "第二个结果告诉我们$\\sum_{n\\geq 1}\\varepsilon_n p_n$收敛的一个必要条件。如果我们违背这个条件，级数是不收敛的。定义$$\\varepsilon_n:=\\begin{cases}1&n\\equiv 1\\text{ mod 3}\\\\-1 & \\text{ otherwise}\\end{cases}$$然后令$p_n:=\\frac{1}{n}$，此时的级数$$\\sum_{n\\geq 1}\\varepsilon_n p_n=1-\\frac{1}{2}-\\frac{1}{3}+\\frac{1}{4}-\\frac{1}{5}+\\cdots$$令$A_n:=(\\varepsilon_1+\\cdots+\\varepsilon_n)p_n$此时因为$\\varepsilon_n$表现出明显的周期为3的特点，因此我们考虑$A_n$的一个子列$A_{3k}$,此时$$\\varepsilon_1+\\cdots+\\varepsilon_{3k}=\\sum_{i=1}^k-1=-k$$因此$A_{3k}=-\\frac{1}{3}$。既然存在一个子列收敛到$-\\frac{1}{3}$,那么自然序列$A_n$不会收敛到0，那么“命题0”就告诉我们$\\sum_{n\\geq 1}\\varepsilon_n p_n$是发散的序列。\n\n这也的确是一个发散级数，我们可以直接验证它。参考[[用子列来提升收敛或发散性质]]的想法，由于$\\varepsilon_n$表现出明显的周期为3的特点，我们不妨考虑级数$\\sum_{n\\geq 1}\\varepsilon_n p_n$的部分和序列$S_N$的一个特殊的子列$S_{3N}$，只要这个子列是发散的，那么级数自然发散。而$$S_{3N}=-H_{3N}+2\\sum_{k=0}^{N-1}\\frac{1}{3k+1}$$直接利用[[和的积分估计#1. 和的简单积分估计]]获取上式当中和的上界和下界估计，于是$$\\begin{aligned}S_{3N}&<2\\left(1+\\frac{1}{3}\\log(3N-2)\\right)-\\log(3N+1)\\end{aligned}$$因为后者对应的函数当$N$足够大的时候，是一个单调减少到负无穷的函数，于是$S_{3N}$并不收敛，因此原本的级数也并不收敛。",
+      "position_char": 836,
+      "position_line": 17
+    }
+  ]
+}

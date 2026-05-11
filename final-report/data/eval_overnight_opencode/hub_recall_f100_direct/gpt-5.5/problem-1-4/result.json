@@ -1,0 +1,23 @@
+{
+  "problem_id": "problem-1-4",
+  "model": "gpt-5.5",
+  "wall_seconds": 10.34,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "integral-estimates-for-sums-hub",
+    "integral-estimates-via-integration-by-parts-hub",
+    "sum-estimates-via-summation-by-parts-hub"
+  ],
+  "truth": [
+    "integral-estimates-for-sums-hub",
+    "nonexistence-of-a-limit-for-sine-on-the-integers-hub",
+    "sum-estimates-via-summation-by-parts-hub"
+  ],
+  "tp": 2,
+  "fp": 1,
+  "fn": 1,
+  "precision": 0.6667,
+  "recall": 0.6667,
+  "f1": 0.6667
+}

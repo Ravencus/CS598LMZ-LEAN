@@ -1,0 +1,2 @@
+["estimates-for-the-sum-of-prime-reciprocals-hub"]
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof uses the “different expressions of the same object” idea: choose the invertible matrix as the similarity witness and use associativity to identify `A * (B * A)` with `(A * B) * A`, or similarly for `B`.

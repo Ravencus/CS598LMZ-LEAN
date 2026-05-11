@@ -1,0 +1,58 @@
+{
+  "problem_id": "problem-1-10",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 111.4,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 41.57,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown identifier `ae_eq_zero_of_lintegral_eq_zero`\n"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 35.67,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown identifier `MeasureTheory.ae_eq_zero_of_lintegral_eq_zero`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 27.09,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `ennreal`: The environment does not contain `Function.ennreal`, so it is not possible to project the field `ennreal` from an expression\n  hf_meas\nof type\n  ∀ ⦃t : Set ℝ⦄, MeasurableSet t"
+    }
+  ]
+}

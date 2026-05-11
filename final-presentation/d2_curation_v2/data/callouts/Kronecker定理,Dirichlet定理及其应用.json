@@ -1,0 +1,97 @@
+{
+  "note_title": "Kronecker定理，Dirichlet定理及其应用",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#1",
+      "type": "question",
+      "title": "问题1.1",
+      "body": "证明，序列$\\eta_n = \\left\\{\\frac{n}{2\\pi}\\right\\}$形成的集合作为$[0,1]$区间当中的稠密子集。其中$\\{x\\}$表示实数$x$的小数部分。",
+      "position_char": 73,
+      "position_line": 8
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#2",
+      "type": "note",
+      "title": "定理1.2:kronecker定理",
+      "body": "对于给定的无理数$\\alpha$，以及$\\forall \\beta\\in\\mathbb{R}$，$\\forall \\varepsilon > 0$都存在正整数$q$以及整数$p$使得$$|q\\alpha-\\beta-p|<\\varepsilon$$",
+      "position_char": 300,
+      "position_line": 15
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#3",
+      "type": "note",
+      "title": "定理1.3：kronecker定理(版本2)",
+      "body": "对于给定的无理数$\\alpha$，以及$\\forall \\beta\\in\\mathbb{R}$，对任意足够小的$\\varepsilon > 0$存在正整数$q_{\\varepsilon}$使得$$||q_{\\varepsilon}\\alpha-\\beta||<\\varepsilon$$",
+      "position_char": 895,
+      "position_line": 27
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#4",
+      "type": "note",
+      "title": "定理1.4:Dirichlet定理",
+      "body": "对于无理数$\\alpha$以及任意的$\\varepsilon>0$存在正整数$q_{\\varepsilon}$使得$$||q_{\\varepsilon}\\alpha||<\\varepsilon$$",
+      "position_char": 1109,
+      "position_line": 32
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#5",
+      "type": "question",
+      "title": "与一开始的问题的关系",
+      "body": "回到“问题1”，我们发现，如果我们可以证明Kronecker定理成立，那么我们可以令$\\alpha=\\frac{1}{2\\pi}$,于是由于这是一个无理数，所以对于$\\forall \\beta\\in(0,1)$以及任意足够小的$\\varepsilon$，那么一定存在一个正整数$p_{\\varepsilon}>0$以及整数$p_{\\varepsilon}$使得$$|q_{\\varepsilon}\\alpha-\\beta-p_{\\varepsilon}|<\\varepsilon\\iff \\beta-\\varepsilon<q_{\\varepsilon}\\alpha-p_{\\varepsilon}<\\beta+\\varepsilon$$此处我们取$0<\\varepsilon<\\min\\{\\beta,1-\\beta\\}$,从而可以保证$\\beta-\\varepsilon>0,\\beta+\\varepsilon<1$于是$q_{\\varepsilon}\\alpha-p_{\\varepsilon}=\\{q_{\\varepsilon}\\alpha\\}$。这便意味着$\\eta_n = \\left\\{\\frac{n}{2\\pi}\\right\\}$形成的集合在$(0,1)$当中稠密。",
+      "position_char": 1240,
+      "position_line": 36
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#6",
+      "type": "note",
+      "title": "定理1.5：Kronecker定理（版本3）",
+      "body": "若实数$\\frac{\\beta}{\\alpha} \\not \\in \\mathbb{Q}$，那么集合$\\alpha \\mathbb{Z}+\\beta \\mathbb{Z}$在实数中稠密（欧氏拓扑）。",
+      "position_char": 1810,
+      "position_line": 40
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#7",
+      "type": "note",
+      "title": "Dirichlet定理(版本2)",
+      "body": "$\\alpha$是无理数，对于任意正整数$n$存在正整数$q\\leq n$使得$$0<||q\\alpha||<\\frac{1}{n}$$",
+      "position_char": 3900,
+      "position_line": 69
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#8",
+      "type": "note",
+      "title": "Dirichlet定理(版本2)的推论1",
+      "body": "对于无理数$\\alpha$以及任意的$\\varepsilon>0$存在无限多个正整数$q$使得$$||q\\alpha||<\\varepsilon$$",
+      "position_char": 4074,
+      "position_line": 76
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#9",
+      "type": "note",
+      "title": "Dirichlet定理(版本2)，推论2",
+      "body": "对于无理数$\\alpha$存在无数多个正整数$q$使得$$q||q\\alpha||<1$$",
+      "position_char": 4845,
+      "position_line": 85
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#10",
+      "type": "note",
+      "title": "一个观察",
+      "body": "如果两个数$x,y$模$1$的余数的差小于一个足够小的$r>0$，那么$||x-y||<r$。因为$$|\\varepsilon(x)-\\varepsilon(y)|<r\\iff |x-y-(E(x)-E(y))|<r$$此时如果$r<\\frac{1}{2}$，这便意味着$x-y$这个实数与$E(x)-E(y)$这个整数的距离小于$r<\\frac{1}{2}$,这意味着$E(x)-E(y)$就是距离$x-y$最近的整数，从而$$||x-y||<r$$",
+      "position_char": 5141,
+      "position_line": 93
+    },
+    {
+      "id": "Kronecker定理,Dirichlet定理及其应用#11",
+      "type": "tip",
+      "title": "证明的主要想法",
+      "body": "那么根据这个观察，我们如果能在正整数的某个子集$A_n$里面，找到两个$q_1,q_2$使得$q_1\\alpha,q_2\\alpha$他们彼此之间模1的余数的距离小于$\\frac{1}{n}$，并且保证$1\\leq q_2-q_1\\leq n$那么我们也就完成了对Dirichlet定理的证明。",
+      "position_char": 5386,
+      "position_line": 96
+    }
+  ]
+}

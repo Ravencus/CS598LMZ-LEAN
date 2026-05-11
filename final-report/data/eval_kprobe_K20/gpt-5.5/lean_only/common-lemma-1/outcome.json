@@ -1,0 +1,36 @@
+{
+  "problem_id": "common-lemma-1",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 196.86,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 8,
+  "budget": 20,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "expected_theorem_name": "summable_measure_limsup_null_ae_tendsto",
+  "signature_ok": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "unexpected identifier; expected command\n",
+  "total_cost_usd": 0.0,
+  "total_tokens": 782038,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_eeda40dbfe.lean",
+      "line": 3,
+      "column": 0,
+      "severity": "error",
+      "message": "unexpected identifier; expected command\n"
+    }
+  ]
+}

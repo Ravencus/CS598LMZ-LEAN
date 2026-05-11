@@ -1,0 +1,22 @@
+{
+  "id": "transformed-problem",
+  "type": "problem",
+  "source_note": "自然数的r次幂的部分和估计",
+  "english_source_note": "Partial Sum Estimates for Powers of Integers",
+  "callout_id": "自然数的r次幂的部分和估计#2",
+  "english_title": "Transformed Problem",
+  "statement_en": "Find an asymptotic expansion of\n$$S(N):=\\zeta(2)-\\sum_{n\\leq N}\\frac{1}{n^2}$$\nwith the coefficient of $\\frac{1}{N}$ determined exactly.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "Euler-Maclaurin summation",
+    "tail expansion of zeta-type series"
+  ],
+  "prerequisites": [
+    "Riemann zeta function",
+    "asymptotic expansion",
+    "summation formulas"
+  ],
+  "callout_body": "求$$S(N):=\\zeta(2)-\\sum_{n\\leq N}\\frac{1}{n^2}$$的精确到$\\frac{1}{N}$系数的渐近展开。"
+}

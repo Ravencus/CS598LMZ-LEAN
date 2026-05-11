@@ -1,0 +1,23 @@
+{
+  "id": "problem-2-3",
+  "type": "problem",
+  "source_note": "整数格点与一个带取整函数的和的极限问题",
+  "english_source_note": "A Limit Problem for Lattice Points and Floor Sums",
+  "callout_id": "整数格点与一个带取整函数的和的极限问题#3",
+  "english_title": "Problem 2",
+  "statement_en": "For $$S_n:=\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor,$$ can this sum, up to an error of order $o(1)$, be regarded as a Riemann sum?",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Riemann sum identification",
+    "asymptotic error analysis",
+    "floor function approximation"
+  ],
+  "prerequisites": [
+    "little-o notation",
+    "Riemann sums",
+    "properties of the floor function"
+  ],
+  "callout_body": "$$S_n:=\\sum_{i\\leq n}\\sum_{j\\leq 2n}\\frac{2}{n^2}\\left\\lfloor\\frac{2i+j}{n}\\right\\rfloor$$这个和，在$o(1)$的精度范围内，是否可以看成是一个黎曼和?"
+}

@@ -1,0 +1,22 @@
+{
+  "problem_id": "problem-3-tsinghua-university-leadership-program-april-2025",
+  "model": "gpt-5.5",
+  "wall_seconds": 17.2,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "basic-methods-in-analysis-i-hub",
+    "sequence-limits-via-piecewise-estimates-hub",
+    "using-known-asymptotics-to-derive-expansions-hub"
+  ],
+  "truth": [
+    "basic-methods-in-analysis-i-hub",
+    "term-by-term-estimates-hub"
+  ],
+  "tp": 1,
+  "fp": 2,
+  "fn": 1,
+  "precision": 0.3333,
+  "recall": 0.5,
+  "f1": 0.4
+}

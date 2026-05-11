@@ -1,0 +1,2 @@
+["identity-theorem-hub"]
+- identity-theorem-hub: The proof argues that if zeros of the holomorphic function accumulated at `z0`, the identity theorem would force `f` to vanish on the connected open set `U`, contradicting `hf_nonzero`.

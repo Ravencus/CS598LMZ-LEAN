@@ -1,0 +1,5 @@
+["an-epsilon-of-room-hub", "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub", "piecewise-estimates-hub"]
+
+- an-epsilon-of-room-hub: The proof reduces from general `L¹` functions to simpler step/indicator functions, proves the limit there, then passes back using `L¹` approximation and boundedness of `g`.
+- dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub: The core periodic argument rescales `g (n x)` and splits the resulting interval into complete periods plus a small remainder, extracting the average over one period.
+- piecewise-estimates-hub: One needs crude uniform bounds for the incomplete-period remainder and for the approximation error, using boundedness of `g` and small `L¹` error of `f`.

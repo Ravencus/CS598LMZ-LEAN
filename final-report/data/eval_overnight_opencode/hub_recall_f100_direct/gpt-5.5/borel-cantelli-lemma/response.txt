@@ -1,0 +1,4 @@
+["borel-cantelli-lemma-and-applications-hub", "an-epsilon-of-room-for-measure-zero-sets-hub", "term-by-term-estimates-hub"]
+- borel-cantelli-lemma-and-applications-hub: The theorem is exactly the first Borel-Cantelli lemma, controlling the limsup of measurable sets from summability of their measures.
+- an-epsilon-of-room-for-measure-zero-sets-hub: The limsup set is covered by every tail union, whose measure can be made arbitrarily small, yielding measure zero.
+- term-by-term-estimates-hub: The key estimate is countable subadditivity, bounding each tail union by the corresponding tail sum `μ (⋃ n, E (n+N)) ≤ ∑ n, μ (E (n+N))`.

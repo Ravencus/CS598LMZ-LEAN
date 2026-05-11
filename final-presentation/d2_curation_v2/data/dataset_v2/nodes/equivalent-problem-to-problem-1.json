@@ -1,0 +1,21 @@
+{
+  "id": "equivalent-problem-to-problem-1",
+  "type": "problem",
+  "source_note": "收敛的连乘积的上界估计与糖水不等式",
+  "english_source_note": "Upper Bounds for Convergent Products and the Sugar-Water Inequality",
+  "callout_id": "收敛的连乘积的上界估计与糖水不等式#3",
+  "english_title": "Equivalent Problem to Problem 1",
+  "statement_en": "Prove that the series $$\\sum_{n\\geq1}\\log\\left(1+\\frac{2}{2+3^n}\\right)<\\log(2).$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "logarithmic transformation of products into sums",
+    "series estimation"
+  ],
+  "prerequisites": [
+    "properties of logarithms",
+    "basic convergence and comparison for series"
+  ],
+  "callout_body": "证明级数$$\\sum_{n\\geq1}\\log\\left(1+\\frac{2}{2+3^n}\\right)<\\log(2)$$"
+}

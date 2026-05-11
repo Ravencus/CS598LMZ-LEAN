@@ -1,0 +1,42 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "outcome": "sympy_rescue",
+  "overall_success": true,
+  "wall_seconds": 150.66,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 9,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": true,
+  "has_bare_sorry": true,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": true,
+  "sympy_verified": true,
+  "n_errors": 0,
+  "first_error": null,
+  "total_cost_usd": 0.0,
+  "total_tokens": 290105,
+  "sympy_witnesses": [
+    {
+      "block": {
+        "kind": "integral",
+        "var": "u",
+        "lower": "0",
+        "upper": "2*pi",
+        "expression": "Max(cos(u), 0)",
+        "expected": "2"
+      },
+      "verifier": {
+        "correct": true,
+        "computed": "2",
+        "error": null
+      }
+    }
+  ],
+  "errors_only": []
+}

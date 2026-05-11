@@ -1,0 +1,18 @@
+{
+  "id": "borel-cantelli-lemma-and-applications-hub",
+  "type": "hub",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "is_top3": true,
+  "note_degree": 18,
+  "strategies": [
+    {
+      "callout_id": "Borel-Cantelli lemma及其应用#9",
+      "english_title": "Rough Idea",
+      "strategy_name_en": "Convert set problems into function problems via indicator functions",
+      "summary_en": "Represent events or sets by their indicator functions, and then analyze the resulting functions using tools from function spaces and integration. This turns questions about set occurrence into questions about convergence or bounds for functions.",
+      "applicability": "Use this strategy when a measure-theoretic or probabilistic question about sets can be reformulated in terms of indicator functions, especially for applying analytic tools to limsup events, averages, or convergence.",
+      "callout_body": "通过集合的特征函数把集合的问题转换为函数的问题，使用处理函数的工具来分析问题。"
+    }
+  ]
+}

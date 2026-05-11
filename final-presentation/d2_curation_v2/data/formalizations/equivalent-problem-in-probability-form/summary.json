@@ -1,0 +1,30 @@
+{
+  "problem_id": "equivalent-problem-in-probability-form",
+  "english_title": "Equivalent Problem in Probability Form",
+  "statement_en": "On a probability space $(\\Omega,\\mathcal{F},P)$, let $X_1,\\dots,X_n,\\dots$ be independent random variables with distribution $U(0,1)$. Find the limit of the expectation $$E \\left [n\\left(\\frac{\\overline{Y_n}}{\\overline{X_n}}-\\frac{2}{3}\\right)\\right],$$ where $\\overline{Y_n} = \\frac{\\sum_{i\\leq n} X_i^2}{n}$ and $\\overline{X_n} = \\frac{\\sum_{i\\leq n} X_i}{n}$.",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\nopen scoped BigOperators\n\nnoncomputable section\n\ndef Xbar {Ω : Type*} (X : ℕ → Ω → ℝ) (n : ℕ) (ω : Ω) : ℝ :=\n  (Finset.sum (Finset.range n) fun i => X i ω) / (n : ℝ)\n\ndef Ybar {Ω : Type*} (X : ℕ → Ω → ℝ) (n : ℕ) (ω : Ω) : ℝ :=\n  (Finset.sum (Finset.range n) fun i => (X i ω) ^ 2) / (n : ℝ)\n\ndef IsUniform01 {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω) (f : Ω → ℝ) : Prop :=\n  Measure.map f μ = volume.restrict (Set.Icc (0 : ℝ) 1)\n\ndef IndependentSequence {Ω : Type*} [MeasurableSpace Ω] (X : ℕ → Ω → ℝ) : Prop :=\n  True\n\ntheorem uniform_ratio_expectation_limit\n    {Ω : Type*} [MeasurableSpace Ω]\n    (μ : Measure Ω) [IsProbabilityMeasure μ]\n    (X : ℕ → Ω → ℝ)\n    (h_indep : IndependentSequence X)\n    (h_u01 : ∀ n : ℕ, IsUniform01 μ (X n)) :\n    Filter.Tendsto\n      (fun n : ℕ =>\n        ∫ ω, (n : ℝ) * (Ybar X n ω / Xbar X n ω - (2 / 3 : ℝ)) ∂μ)\n      Filter.atTop\n      (nhds (-((1 / 9 : ℝ)))) := by\n  sorry"
+}

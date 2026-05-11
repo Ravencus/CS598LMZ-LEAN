@@ -1,0 +1,44 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "failed to synthesize instance of type class\n  AddCommGroup ENNReal\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_eeda40dbfe.lean",
+      "line": 21,
+      "column": 9,
+      "severity": "error",
+      "message": "failed to synthesize instance of type class\n  AddCommGroup ENNReal\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command."
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eeda40dbfe.lean",
+      "line": 21,
+      "column": 69,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hs\nhas type\n  Summable fun n => μ (A ε n)\nbut is expected to have type\n  ?m.164 ∈ 𝓝 0\nin the application\n  tendsto_tsum_compl_atTop_zero (fun n => μ (A ε n)) hs"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eeda40dbfe.lean",
+      "line": 31,
+      "column": 18,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∃ᶠ (x : ?m.250) in atTop, ?m.253 x\nin the target expression\n  x ∈ {x | ∃ᶠ (n : ℕ) in atTop, x ∈ A ε n}\n\nα : Type u_1\ninst✝ : MeasurableSpace α\nμ : Measure α\nfSeq : ℕ → α → ℝ\nf : α → ℝ\nh : ∀ ε > 0, Summable fun n => μ {x | ε ≤ |fSeq (n + 1) x - f x|}\nA : ℝ → ℕ → Set α := fun ε n => {x | ε ≤ |fSeq (n + 1) x - f x|}\nε : ℝ\nhε : ε > 0\nhs : Summable fun n => μ (A ε n)\nhtail : Tendsto (fun N => ∑' (k : ℕ), μ (A ε (k + N))) atTop (𝓝 0)\nN : ℕ\nx : α\nhx : x ∈ {x | ∃ᶠ (n : ℕ) in atTop, x ∈ A ε n}\n⊢ ∃ i, x ∈ A ε (i + N)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_eeda40dbfe.lean",
+      "line": 45,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown identifier `ae_not_iff`\n"
+    }
+  ]
+}

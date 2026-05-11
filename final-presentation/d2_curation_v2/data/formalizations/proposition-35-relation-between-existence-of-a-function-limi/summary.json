@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-35-relation-between-existence-of-a-function-limi",
+  "english_title": "Proposition 3.5: Relation Between Existence of a Function Limit and Limit Superior/Inferior",
+  "statement_en": "Let $U:=\\limsup_{x\\to +\\infty}f(x)$ and $L:=\\liminf_{x\\to +\\infty}f(x)$. Then:\n1. If the limit $\\lim_{x\\to +\\infty}f(x)$ exists in $\\overline{\\mathbb{R}}$ and equals $\\ell$, then $$U=L=\\ell.$$\n2. Conversely, if $U=L=\\ell$, then the limit $\\lim_{x\\to +\\infty}f(x)$ exists in $\\overline{\\mathbb{R}}$ and equals $\\ell$.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Type mismatch\n  Filter.liminf ?m.19\nhas type\n  Filter ?m.12 → ?m.11\nbut is expected to have type\n  EReal\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limsup_liminf_atTop_ereal {f : ℝ → EReal} {ℓ : EReal} :\n    let U : EReal := Filter.limsup f Filter.atTop\n    let L : EReal := Filter.liminf f Filter.atTop\n    (Filter.Tendsto f Filter.atTop (nhds ℓ) → U = ℓ ∧ L = ℓ) ∧\n      (U = ℓ ∧ L = ℓ → Filter.Tendsto f Filter.atTop (nhds ℓ)) := by\n  sorry"
+}

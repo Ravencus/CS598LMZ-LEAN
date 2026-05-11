@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-1-4",
+  "english_title": "Problem 1",
+  "statement_en": "Does the series $$\\sum_{n\\geq }\\frac{\\sin(\\sqrt{n})}{n}$$ converge?",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem sin_sqrt_over_n_series_converges :\n    Summable (fun n : ℕ => Real.sin (Real.sqrt (((n + 1 : ℕ) : ℝ))) / (((n + 1 : ℕ) : ℝ))) := by\n  sorry"
+}

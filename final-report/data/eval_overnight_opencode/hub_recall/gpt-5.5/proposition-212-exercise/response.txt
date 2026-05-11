@@ -1,0 +1,3 @@
+["an-epsilon-of-room-hub", "basic-methods-in-analysis-i-hub"]
+- an-epsilon-of-room-hub: The proof uses a positive gap/epsilon margin between hypothetical limits `a < b`, then passes to sufficiently large indices where `x n` and `y n` are close to their limits to contradict `x n ≥ y n`.
+- basic-methods-in-analysis-i-hub: The key move is transferring an eventual finite-stage property of the approximating sequences, `x n ≥ y n`, to the limiting objects `a` and `b`.

@@ -1,0 +1,22 @@
+{
+  "id": "proposition-1-rindler-1972",
+  "type": "problem",
+  "source_note": "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+  "english_source_note": "Adding log(n) Preserves Uniform Distribution mod 1",
+  "callout_id": "已知序列模1均匀分布,那么加上log(n)对分布影响不大#1",
+  "english_title": "Proposition 1, Rindler 1972",
+  "statement_en": "Assume that $x_n$ is a sequence uniformly distributed modulo $1$. Prove that $x_n + \\log(n)$ is also uniformly distributed modulo $1$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "uniform distribution theory",
+  "key_techniques": [
+    "Weyl criterion",
+    "exponential sum estimates"
+  ],
+  "prerequisites": [
+    "uniform distribution modulo 1",
+    "basic properties of logarithms",
+    "Fourier/exponential sum criterion"
+  ],
+  "callout_body": "假设$x_n$是模1均匀分布的序列，证明$x_n+\\log(n)$也是模1均匀分布的。"
+}

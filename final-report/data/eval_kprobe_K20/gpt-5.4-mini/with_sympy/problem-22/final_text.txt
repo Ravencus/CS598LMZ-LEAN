@@ -1,0 +1,9 @@
+I’m loading the Lean proving workflow and then I’ll test the cleanest contradiction-based proof first.
+I’m checking Mathlib for any existing summability lemmas that can collapse this to a one-line argument.
+I found a lot of prior Lean artifacts in the repo, so I’m looking for a reusable proof shape rather than inventing one from scratch.
+I found a finalized artifact for the same theorem in the repo. I’m reading that proof directly and adapting it to the current environment.
+The theorem is false as stated, so there is no valid Lean proof for this exact signature.
+
+A counterexample exists with two nonnegative decreasing sequences whose individual series diverge but whose pointwise minimum is summable.
+
+If you want, I can formalize the counterexample instead, or help you restate the theorem with an extra hypothesis that makes it true.

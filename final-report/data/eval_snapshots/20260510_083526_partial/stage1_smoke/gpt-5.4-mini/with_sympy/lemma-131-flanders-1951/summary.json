@@ -1,0 +1,43 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "K": 2,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 2,
+  "any_timeout": false,
+  "wall_seconds": 208.6,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 158.38,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Application type mismatch: The argument\n  p\nhas type\n  Polynomial.{0} ℂ\nof sort `Type` but is expected to have type\n  Polynomial.{u_1} (Matrix n n ℂ)\nof sort `Type u_1` in the application\n  eval (D * "
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 45.12,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 6,
+      "first_error": "Invalid alternative name `X`: Expected `monomial`"
+    }
+  ]
+}

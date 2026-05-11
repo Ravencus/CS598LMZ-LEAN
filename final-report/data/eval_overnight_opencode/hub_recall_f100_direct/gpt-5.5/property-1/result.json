@@ -1,0 +1,20 @@
+{
+  "problem_id": "property-1",
+  "model": "gpt-5.5",
+  "wall_seconds": 8.06,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "estimates-for-the-sum-of-prime-reciprocals-hub",
+    "interchanging-sums-and-integrals-hub"
+  ],
+  "truth": [
+    "interchanging-sums-and-integrals-hub"
+  ],
+  "tp": 1,
+  "fp": 1,
+  "fn": 0,
+  "precision": 0.5,
+  "recall": 1.0,
+  "f1": 0.6667
+}

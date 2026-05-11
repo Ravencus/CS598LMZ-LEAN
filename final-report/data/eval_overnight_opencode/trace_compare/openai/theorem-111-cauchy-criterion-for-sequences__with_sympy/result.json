@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "theorem-111-cauchy-criterion-for-sequences",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "different_plan",
+  "evidence": "BIG refuted the universal statement by constructing the constant-zero counterexample and deriving `1 = 0`; SMALL tried to prove the stated biconditional directly via metric/Cauchy estimates before finally noting informally that the statement is false.",
+  "wall_seconds": 5.32
+}

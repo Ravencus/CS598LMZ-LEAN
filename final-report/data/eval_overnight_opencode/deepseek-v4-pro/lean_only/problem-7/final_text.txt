@@ -1,0 +1,3 @@
+Let me start by verifying the theorem statement compiles, then explore available lemmas.
+Good, statement compiles (call 1/10). Now let me search for relevant lemmas.
+Let me try more targeted checks.

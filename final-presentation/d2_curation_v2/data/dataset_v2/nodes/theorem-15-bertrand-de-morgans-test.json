@@ -1,0 +1,24 @@
+{
+  "id": "theorem-15-bertrand-de-morgans-test",
+  "type": "problem",
+  "source_note": "Kummer判别：对多种比值判别变形的统一",
+  "english_source_note": "Kummer's Test: A Unified View of Ratio-Type Tests",
+  "callout_id": "Kummer判别:对多种比值判别变形的统一#6",
+  "english_title": "Theorem 1.5: Bertrand-De Morgan's Test",
+  "statement_en": "For a positive-term series $\\sum_n a_n$, suppose that\n$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+\\frac{L}{n\\log(n)}+o\\left(\\frac{1}{n\\log(n)}\\right).$$ Then:\n1. If $L>1$, the series converges.\n2. If $L<1$, the series diverges.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Bertrand-De Morgan test",
+    "refined ratio asymptotics",
+    "positive series convergence tests"
+  ],
+  "prerequisites": [
+    "infinite series",
+    "little-o notation",
+    "logarithmic asymptotics",
+    "Raabe-type tests"
+  ],
+  "callout_body": "对于正项级数$\\sum_n a_n$，并且$$\\frac{a_n}{a_{n+1}}=1+\\frac{1}{n}+\\frac{L}{n\\log(n)}+o\\left(\\frac{1}{n\\log(n)}\\right)$$\n那么：\n1. 如果$L>1$那么级数收敛。\n2. 如果$L<1$那么级数发散。"
+}

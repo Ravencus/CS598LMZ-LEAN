@@ -1,0 +1,23 @@
+{
+  "id": "proposition-215-zeros-of-a-one-variable-real-analytic-functi",
+  "type": "problem",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "callout_id": "identity theorem#8",
+  "english_title": "Proposition 2.1.5: Zeros of a One-Variable Real Analytic Function Are Isolated on an Open Interval",
+  "statement_en": "Let $f:I\\to \\mathbb{R}$ be a nonzero real analytic function on an open interval $I$. Then all zeros of $f$ in $I$ are isolated.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "power series expansion",
+    "order of vanishing",
+    "analytic continuation principle"
+  ],
+  "prerequisites": [
+    "real analytic functions",
+    "open intervals",
+    "Taylor series"
+  ],
+  "callout_body": "令$f:I\\to \\mathbb{R}$是一个定义在开区间$I$上的一元非零实解析函数，则$f$在$I$上的所有零点都是孤立的。"
+}

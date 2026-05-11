@@ -1,0 +1,18 @@
+{
+  "problem_id": "corollary-2-of-dirichlet-theorem-version-2",
+  "english_title": "Corollary 2 of Dirichlet Theorem (Version 2)",
+  "statement_en": "For an irrational number $\\alpha$, there exist infinitely many positive integers $q$ such that $$q||q\\alpha||<1.$$",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem irrational_exists_infinitely_many_good_denominators\n    (α : ℝ) (hα : Irrational α) :\n    Set.Infinite {q : ℕ | 0 < q ∧ ∃ p : ℤ, (q : ℝ) * |(q : ℝ) * α - (p : ℝ)| < 1} := by\n  sorry"
+}

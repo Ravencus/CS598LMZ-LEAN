@@ -1,0 +1,3 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "an-epsilon-of-room-hub"]
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: The proof needs Dirichlet-style rational approximations to an irrational `x`, giving infinitely good `p/q` approximations at order about `1/q^2`.
+- an-epsilon-of-room-hub: To rule out any candidate `μ < 2`, one chooses a small positive `ε` with `μ + ε < 2`, using the gap below `2` to contradict the required lower bound.

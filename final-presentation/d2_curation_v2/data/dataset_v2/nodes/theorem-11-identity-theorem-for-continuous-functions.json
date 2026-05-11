@@ -1,0 +1,23 @@
+{
+  "id": "theorem-11-identity-theorem-for-continuous-functions",
+  "type": "problem",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "callout_id": "identity theorem#2",
+  "english_title": "Theorem 1.1: Identity Theorem for Continuous Functions",
+  "statement_en": "Let $f,g:X\\to Y$ be continuous maps from a topological space $X$ to a Hausdorff space $Y$. If $$f(x)=g(x),\\forall x\\in Z$$ for some dense subset $Z\\subset X$, then $$f(x)=g(x),\\forall x\\in X.$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "general topology",
+  "key_techniques": [
+    "density of a subset",
+    "continuity",
+    "closedness of the diagonal in a Hausdorff space"
+  ],
+  "prerequisites": [
+    "continuous maps between topological spaces",
+    "dense subsets",
+    "Hausdorff spaces"
+  ],
+  "callout_body": "假设映射$f,g:X\\to Y$是从拓扑空间$X$到$Y$的两个连续映射，其中$Y$是Hausdroff的。如果两个函数$$f(x)=g(x),\\forall x\\in Z$$其中$Z\\subset X$是一个稠密子集。那么$$f(x)=g(x),\\forall x\\in X$$"
+}

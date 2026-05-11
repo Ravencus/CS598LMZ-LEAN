@@ -1,0 +1,23 @@
+{
+  "id": "proposition-127-generalization-of-a-sufficient-condition-for",
+  "type": "problem",
+  "source_note": "柯西收敛判别",
+  "english_source_note": "Cauchy Convergence Criterion",
+  "callout_id": "柯西收敛判别#11",
+  "english_title": "Proposition 1.2.7: Generalization of a Sufficient Condition for a Cauchy Sequence",
+  "statement_en": "If a sequence $(a_n)$ in a metric space $(X,d)$ satisfies $d(a_{n+1},a_n)\\leq b_n$ and the series $\\sum_{n\\geq 1} b_n$ converges, then $(a_n)$ is a Cauchy sequence in that metric space.",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "metric space theory",
+  "key_techniques": [
+    "telescoping estimate in a metric space",
+    "triangle inequality for the metric",
+    "tail control by a convergent series"
+  ],
+  "prerequisites": [
+    "metric spaces",
+    "definition of a Cauchy sequence",
+    "convergent series"
+  ],
+  "callout_body": "如果度量空间$(X,d)$当中的序列$(a_n)$满足条件$d(a_{n+1},a_n)\\leq b_n$并且$\\sum_{n\\geq 1}b_n$是一个收敛的级数，那么$a_n$是该度量空间当中的柯西列。"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "proposition-1-6",
+  "type": "problem",
+  "source_note": "函数在任何可测集合上积分为0意味着函数几乎处处为0",
+  "english_source_note": "Zero Integral on Every Measurable Set Implies Vanishing a.e.",
+  "callout_id": "函数在任何可测集合上积分为0意味着函数几乎处处为0#1",
+  "english_title": "Proposition 1",
+  "statement_en": "Let $(X,\\mathcal{F},\\mu)$ be a measure space. If a measurable function $f:X\\to \\mathbb{R}$ satisfies $$\\int_E f \\,d\\mu =0$$ for every $E \\in \\mathcal{F}$, then $f=0$ almost everywhere.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "decomposition into positive and negative parts",
+    "testing the integral on level sets",
+    "contradiction via positive measure subsets"
+  ],
+  "prerequisites": [
+    "measure spaces and measurable sets",
+    "Lebesgue integration",
+    "almost everywhere equality",
+    "positive and negative parts of a function"
+  ],
+  "callout_body": "$(X,\\mathcal{F},\\mu)$是一个测度空间如果可测函数$f:X\\to \\mathbb{R}$满足$$\\int_E f \\,d\\mu =0 $$对任意$E \\in \\mathcal{F}$成立,那么$f =0$几乎处处成立。"
+}

@@ -1,0 +1,3 @@
+I'll tackle this in stages, starting by validating the statement compiles, then progressively building the proof.
+Statement compiles. Now let me probe what Mathlib lemmas are available for density arguments.
+Some probes failed — let me try more targeted API exploration.

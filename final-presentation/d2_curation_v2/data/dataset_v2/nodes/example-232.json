@@ -1,0 +1,22 @@
+{
+  "id": "example-232",
+  "type": "problem",
+  "source_note": "函数与序列的上下极限",
+  "english_source_note": "Limsup and Liminf of Functions and Sequences",
+  "callout_id": "函数与序列的上下极限#11",
+  "english_title": "Example 2.3.2",
+  "statement_en": "Let $$x_n=\\begin{cases}1&n=2k\\\\-2&n=2k+1.\\end{cases}$$ Then $\\limsup_{n\\to \\infty} x_n=1$ and $\\limsup_{n\\to \\infty} x_n^2=4$, so $$(\\limsup_{n\\to \\infty} x_n)^2 \\neq \\limsup_{n\\to \\infty} x_n^2.$$ This does not contradict Proposition 2.3.1, because on $[L,U]=[-2,1]$ the function $f(x)=x^2$ is not monotone.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "counterexample using a nonmonotone transform",
+    "direct computation of limsup after squaring"
+  ],
+  "prerequisites": [
+    "limit superior",
+    "monotonicity",
+    "continuous functions"
+  ],
+  "callout_body": "$$x_n=\\begin{cases}1&n=2k\\\\-2&n=2k+1\\end{cases}$$此时$\\limsup_{n\\to \\infty} x_n=1,\\limsup_{n\\to \\infty} x_n^2=4$,从而$$(\\limsup_{n\\to \\infty} x_n)^2 \\neq \\limsup_{n\\to \\infty} x_n^2$$这当然不是说“命题2.3.1”是错误的，因为此处$[L,U]=[-2,1]$但是函数$f(x):=x^2$在这个区间里面并不具备任何一种单调性。"
+}

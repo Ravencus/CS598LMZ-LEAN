@@ -1,0 +1,17 @@
+{
+  "note_title": "已知序列模1均匀分布，那么加上log(n)对分布影响不大",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "已知序列模1均匀分布,那么加上log(n)对分布影响不大#1",
+      "type": "note",
+      "title": "命题1，Rindler 1972",
+      "body": "假设$x_n$是模1均匀分布的序列，证明$x_n+\\log(n)$也是模1均匀分布的。",
+      "position_char": 41,
+      "position_line": 7
+    }
+  ]
+}

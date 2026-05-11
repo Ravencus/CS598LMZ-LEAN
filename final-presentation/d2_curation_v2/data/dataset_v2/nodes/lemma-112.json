@@ -1,0 +1,24 @@
+{
+  "id": "lemma-112",
+  "type": "problem",
+  "source_note": "矩阵交换次序特征多项式不变",
+  "english_source_note": "Characteristic Polynomial Invariant Under Order Swap",
+  "callout_id": "矩阵交换次序特征多项式不变#3",
+  "english_title": "Lemma 1.1.2",
+  "statement_en": "Under any matrix norm, $GL_n(\\mathbb{C})$ is a dense subspace of $M_n(\\mathbb{C})$.",
+  "problem_type": "lemma",
+  "difficulty": "medium",
+  "domain": "linear algebra",
+  "key_techniques": [
+    "density of invertible matrices",
+    "perturbation argument",
+    "continuity of determinant"
+  ],
+  "prerequisites": [
+    "matrix norms",
+    "topology of finite-dimensional spaces",
+    "determinant",
+    "invertible matrices"
+  ],
+  "callout_body": "在任意矩阵范数下，$GL_n(\\mathbb{C})$是$M_n(\\mathbb{C})$的稠密子空间。"
+}

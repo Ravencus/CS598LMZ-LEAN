@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Unknown constant `Complex.norm_ofReal`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_072e99d599.lean",
+      "line": 5,
+      "column": 19,
+      "severity": "error",
+      "message": "Unknown constant `Complex.norm_ofReal`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_072e99d599.lean",
+      "line": 7,
+      "column": 4,
+      "severity": "error",
+      "message": "Unknown constant `Complex.norm_exp_mul_I_sub_one_le`\n"
+    }
+  ]
+}

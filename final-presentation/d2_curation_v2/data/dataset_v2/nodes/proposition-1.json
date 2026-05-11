@@ -1,0 +1,23 @@
+{
+  "id": "proposition-1",
+  "type": "problem",
+  "source_note": "利用连续函数的identity theorem证明函数方程",
+  "english_source_note": "Functional Equations via the Identity Theorem",
+  "callout_id": "利用连续函数的identity theorem证明函数方程#1",
+  "english_title": "Proposition 1",
+  "statement_en": "Assume $f,g$ are both continuous maps from $\\mathbb{R}$ to some Hausdorff topological space $Y$. If $$f(r)=g(r),\\forall r \\in \\mathbb{Q}$$ then $$f(x)=g(x),\\forall x \\in \\mathbb{R}.$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "density of the rational numbers in $\\mathbb{R}$",
+    "continuity and uniqueness from a dense subset",
+    "Hausdorff separation to identify limits"
+  ],
+  "prerequisites": [
+    "continuity in topological spaces",
+    "density of $\\mathbb{Q}$ in $\\mathbb{R}$",
+    "Hausdorff topological spaces"
+  ],
+  "callout_body": "假设$f,g$都是由$\\mathbb{R}$到某个Hausdroff的拓扑空间$Y$的连续映射，如果$$f(r)=g(r),\\forall r \\in \\mathbb{Q}$$那么$$f(x)=g(x),\\forall x \\in \\mathbb{R}$$"
+}

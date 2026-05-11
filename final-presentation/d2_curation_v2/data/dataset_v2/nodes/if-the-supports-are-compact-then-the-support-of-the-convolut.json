@@ -1,0 +1,23 @@
+{
+  "id": "if-the-supports-are-compact-then-the-support-of-the-convolut",
+  "type": "problem",
+  "source_note": "函数卷积的基本性质",
+  "english_source_note": "Basic Properties of Convolution",
+  "callout_id": "函数卷积的基本性质#4",
+  "english_title": "If the Supports Are Compact, Then the Support of the Convolution Is Also Compact",
+  "statement_en": "If $\\operatorname{supp}(f)$ and $\\operatorname{supp}(g)$ are both compact, then the support of $f*g$ is also compact.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "key_techniques": [
+    "support inclusion for convolutions",
+    "compactness of sums of compact sets",
+    "closed subset of a compact set"
+  ],
+  "prerequisites": [
+    "support of a convolution",
+    "compactness in topological groups",
+    "basic topology"
+  ],
+  "callout_body": "如果分别的支集$\\text{supp}(f),\\text{supp}(g)$都是紧的，那么$A$紧，那么作为闭子集，$\\text{supp}(f*g)$也是紧的。"
+}

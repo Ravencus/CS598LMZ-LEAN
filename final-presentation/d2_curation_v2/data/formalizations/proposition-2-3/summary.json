@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-2-3",
+  "english_title": "Proposition 2",
+  "statement_en": "Let $X$ be a topological space and $Y$ a topological group, and suppose they are isomorphic as topological spaces, that is, there exists a homeomorphism $h:Y \\to X$. If $f\\in C_0(X\\to \\mathbb{C})$, then $g = f\\circ h \\in C_0(Y\\to \\mathbb{C})$.",
+  "difficulty": "easy",
+  "domain": "topology",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token '('; expected ')'\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem homeomorph_precompose_memC0\n    {X Y : Type*}\n    [TopologicalSpace X] [TopologicalSpace Y]\n    (h : Homeomorph Y X) (f : ZeroAtInftyContinuousMap X ℂ) :\n    ∃ g : ZeroAtInftyContinuousMap Y ℂ, ∀ y : Y, g y = f (h y) := by\n  sorry"
+}

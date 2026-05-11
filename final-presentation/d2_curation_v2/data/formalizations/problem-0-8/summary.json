@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-0-8",
+  "english_title": "Problem 0",
+  "statement_en": "Find the limit $$\\lim_{n\\to \\infty} \\sum_{k=1}^n \\frac{1}{n^2}\\sqrt{(n+k)(n+k+1)}$$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limit_of_sqrt_sum :\n    Filter.Tendsto\n      (fun n : ℕ =>\n        Finset.sum (Finset.Icc 1 n) (fun k =>\n          (1 / (n : ℝ) ^ 2) *\n            Real.sqrt\n              (((n : ℝ) + (k : ℝ)) * (((n : ℝ) + (k : ℝ)) + 1))))\n      Filter.atTop\n      (nhds ((3 : ℝ) / 2)) := by\n  sorry"
+}

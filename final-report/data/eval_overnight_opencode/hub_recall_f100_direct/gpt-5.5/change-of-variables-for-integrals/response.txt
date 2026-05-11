@@ -1,0 +1,4 @@
+["reducing-set-problems-to-function-problems-hub", "basic-methods-in-analysis-i-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- reducing-set-problems-to-function-problems-hub: The core measure-map identity is first understood on indicator functions, where integrating `1_A` against `Measure.map T μ` becomes measuring `T ⁻¹' A`.
+- basic-methods-in-analysis-i-hub: A conceptual proof extends from indicators/simple functions to general integrable functions by approximation and limit passage.
+- estimates-for-the-sum-of-prime-reciprocals-hub: The theorem is fundamentally about identifying the same integral through two equivalent representations: integration against the pushforward measure versus integration of the pullback function.

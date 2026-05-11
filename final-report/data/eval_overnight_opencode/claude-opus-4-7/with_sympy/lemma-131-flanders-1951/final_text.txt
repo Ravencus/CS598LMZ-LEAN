@@ -1,0 +1,149 @@
+I'll work on this theorem about minimal polynomials of AB and BA. Let me start by exploring the relevant Mathlib lemmas.
+Let me think about this. The minimal polynomials of AB and BA differ by at most a factor of x. This is a classical fact about square matrices.
+
+Let me first explore what Mathlib has. The key fact: for square matrices A, B of the same size, AB and BA have the same characteristic polynomial (`Matrix.charpoly_mul_comm` or similar), and the minimal polynomial divides the characteristic polynomial.
+
+But actually, for the minimal polynomial, the result is that `minpoly(AB)` and `minpoly(BA)` differ by at most a factor of X. In Mathlib there might be `Matrix.minpoly_mul_comm` or similar, but I'm not sure.
+
+Let me check what's available.
+`exact?` couldn't find it. Let me think about this more carefully. The classical proof: For any A, B square, x·minpoly_{BA}(x) is annihilated by AB. That is, if p(x) = minpoly(BA), then AB · p(AB) ... actually wait.
+
+The key identity: if p(BA) = 0, then A·p(BA) = p(AB)·A = 0 (using AB·A = A·BA, so A·(BA)^k = (AB)^k·A, hence A·p(BA) = p(AB)·A). So p(AB)·A = 0, meaning p(AB)·AB = 0, so X·p(X) is annihilated by AB. Thus minpoly(AB) ∣ X·minpoly(BA).
+
+This is exactly the statement. Let me search for this lemma name.
+Good — `Matrix.charpoly_mul_comm` exists. So AB and BA have the same characteristic polynomial. By Cayley-Hamilton, the minimal polynomial divides the characteristic polynomial. But that gives only `minpoly(AB) ∣ charpoly(AB) = charpoly(BA)`, not directly `minpoly(BA) | X·minpoly(AB)`.
+
+Let me think more carefully. The standard proof: 
+
+Let p(x) = minpoly(BA). Then p(BA) = 0. Now consider A·p(BA)·B. We have:
+- For any k ≥ 0: A·(BA)^k·B = (AB)^{k+1}
+- So A·p(BA)·B = (AB)·q(AB) where q(x) = ... hmm.
+
+Actually the cleaner identity: A·(BA)^k = (AB)^k·A. So A·p(BA) = p(AB)·A. Since p(BA) = 0, we get p(AB)·A = 0. Similarly p(AB)·AB = p(AB)·A·B = 0. So if p(x) = ∑ a_k x^k, then x·p(x) annihilates AB: (AB)·p(AB) = 0... wait that's just saying AB·p(AB) = 0, which means X·p(X) is in the annihilator ideal of AB, hence minpoly(AB) ∣ X·p(X) = X·minpoly(BA). 
+
+This is the right approach. Let me write the proof using `minpoly.dvd` which requires showing aeval is 0.
+Good. `minpoly.dvd : Polynomial.aeval x p = 0 → minpoly A x ∣ p`. Note: `minpoly.dvd` likely requires `IsIntegral` in some contexts; let me check.
+Great. So `minpoly.dvd : Polynomial.aeval x p = 0 → minpoly A x ∣ p` works in a field setting. Now my plan:
+
+To prove `minpoly ℂ (A*B) ∣ X * minpoly ℂ (B*A)`, by `minpoly.dvd` I need `aeval (A*B) (X * minpoly ℂ (B*A)) = 0`.
+
+`aeval (AB) (X * minpoly(BA)) = aeval(AB)(X) * aeval(AB)(minpoly(BA)) = AB * (minpoly(BA) evaluated at AB)`.
+
+We need to show `AB * p(AB) = 0` where `p = minpoly(BA)`.
+
+Key identity: `A * p(BA) = p(AB) * A`. Since `p(BA) = 0`, we get `p(AB) * A = 0`. Then `p(AB) * AB = p(AB) * A * B = 0 * B = 0`. So `AB * p(AB) = ?`. Wait, we need `(AB) · p(AB)`, but we have `p(AB) · AB = 0`. Since polynomials commute, `AB · p(AB) = p(AB) · AB = 0`. 
+
+The identity `A * (BA)^k = (AB)^k * A` needs to be proved by induction. And `A * p(BA) = p(AB) * A` follows by linearity.
+
+Let me write this. The key lemma: `aeval (B*A) p` evaluated should relate to `aeval (A*B) p` somehow.
+
+Actually, let's use a cleaner approach. Define `Φ : R → R` mapping by left multiplication by A... actually no. Let me think.
+
+The clean statement: For any polynomial `p`, `A * (aeval (B*A) p) = (aeval (A*B) p) * A`.
+
+Proof by induction on p (or via aeval_def). Then setting `p = minpoly ℂ (B*A)`, we get `A * 0 = (aeval (A*B) (minpoly ℂ (B*A))) * A`, i.e., `(aeval (A*B) (minpoly ℂ (B*A))) * A = 0`.
+
+Then we need `AB * (aeval (A*B) (minpoly ℂ (B*A))) = 0`. We have `AB · q(AB) = A·B·q(AB)`. We have `q(AB)·A = 0`, so `q(AB)·A·B = 0`. By commutativity of polynomial in AB with AB: `AB · q(AB) = q(AB) · AB = q(AB) · A · B = 0`. 
+
+Let me write this proof. The lemma I need: `A * p(BA) = p(AB) * A`. This holds because for each monomial `X^k`: `A * (BA)^k = (AB)^k * A`, which is a simple matrix identity proved by induction.
+
+This is getting complex. Let me look for if there's already such a lemma.
+Let me write a careful, full proof. I'll structure it as follows:
+
+1. Key Lemma: `∀ k : ℕ, A * (B*A)^k = (A*B)^k * A` (by induction on k).
+2. Generalize: `A * Polynomial.aeval (B*A) p = Polynomial.aeval (A*B) p * A` (by Polynomial induction).
+3. Apply to `p = minpoly ℂ (B*A)`: `A * 0 = aeval(A*B) (minpoly ℂ (B*A)) * A`, so `aeval(A*B) (minpoly ℂ (B*A)) * A = 0`.
+4. Then `aeval(A*B) (X * minpoly ℂ (B*A)) = (A*B) * aeval(A*B) (minpoly ℂ (B*A)) = A * B * aeval(A*B)(...) `. Hmm, but this is `(A*B) * q` where `q = aeval (A*B) p`. We have `q * A = 0`. Then `(A*B)*q = A*B*q`. We want this 0. We have `q * A = 0` so `q * A * B = 0`. By commutativity in algebra: q commutes with A*B (since q is polynomial in A*B). So `(A*B)*q = q*(A*B) = q*A*B = 0`. 
+
+Let me write this all out. The polynomial induction can use `Polynomial.induction_on'` (additivity) and `Polynomial.aeval_monomial`. Actually, an easier approach: use the fact that the map `p ↦ A * aeval (BA) p - aeval (AB) p * A` is a polynomial map; it's zero on monomials, hence zero. But this would be hard syntactically.
+
+Let me try a cleaner approach: use `Polynomial.induction_on` (with C, +, X^k handled).
+
+Actually, the simplest approach is to use `Polynomial.aeval_apply` style. Let me just write it.
+Multiple issues to fix:
+
+1. In `aux_aeval`, `aeval_monomial` gives `algebraMap c * (B*A)^k`, not smul. Need different handling.
+2. The `Commute` proof is broken due to underscore issue.
+3. Final step `mul_assoc` doesn't apply because we need `q * A * B = (q * A) * B`.
+
+Let me rewrite cleanly:
+Good progress! Let me fix:
+
+1. `Algebra.commutes c M : algebraMap c * M = M * algebraMap c` — so it's the other direction.
+2. After `rw [hcomm.eq]` the goal becomes `q * (A*B) = 0` — but I need `q * A * B`. Use `← mul_assoc`.
+3. The commute proof is overly complex. Let me simplify: use `Polynomial.aeval_X` and observe that AB = aeval(AB)(X), and the aeval is a ring hom, so it commutes with anything in its image.
+
+Actually, simpler: `Commute (A*B) q` follows from `Commute.all_pow` style, or just observe q is in the image of aeval (a commutative algebra hom), and `aeval` makes a `CommSemiring`... no it's not commutative.
+
+Wait — but `aeval` is `R[X] →ₐ A`, so its image is a subalgebra generated by `A*B`, which is commutative. So everything in its image commutes with `A*B`. Specifically: `(aeval x p) * x = aeval x (p * X) = aeval x (X * p) = x * aeval x p`.
+
+Let me just write: `(A*B) * q = aeval(A*B)(X) * aeval(A*B)(minpoly ℂ (B*A)) = aeval(A*B)(X * minpoly ℂ (B*A)) = aeval(A*B)(minpoly ℂ (B*A) * X) = q * (A*B)`.
+Two fixes needed:
+1. `Algebra.commutes c A` gives `algebraMap c * A = A * algebraMap c`, so I should use `.symm` or flip direction.
+2. Final goal `q * (A*B) = 0` — I need `← mul_assoc` to get `q * A * B`, then `hqA`.
+The proof compiles successfully.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open Polynomial
+
+-- Helper: A * (B*A)^k = (A*B)^k * A
+private lemma aux_pow {n : Type*} [Fintype n] [DecidableEq n] (A B : Matrix n n ℂ) :
+    ∀ k : ℕ, A * (B * A)^k = (A * B)^k * A := by
+  intro k
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    rw [pow_succ, pow_succ, ← mul_assoc, ih, mul_assoc, mul_assoc, mul_assoc]
+
+-- Helper: A * aeval (B*A) p = aeval (A*B) p * A
+private lemma aux_aeval {n : Type*} [Fintype n] [DecidableEq n] (A B : Matrix n n ℂ) (p : ℂ[X]) :
+    A * (Polynomial.aeval (B * A) p) = (Polynomial.aeval (A * B) p) * A := by
+  induction p using Polynomial.induction_on' with
+  | add p q hp hq =>
+    simp only [map_add]
+    rw [mul_add, add_mul, hp, hq]
+  | monomial k c =>
+    simp only [aeval_monomial]
+    have h := aux_pow A B k
+    have hcomm1 : A * (algebraMap ℂ (Matrix n n ℂ)) c = (algebraMap ℂ (Matrix n n ℂ)) c * A :=
+      (Algebra.commutes c A).symm
+    rw [← mul_assoc, hcomm1, mul_assoc, h, mul_assoc]
+
+theorem minpoly_matrix_mul_reverse_differ_by_at_most_X
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A B : Matrix n n ℂ) :
+    minpoly ℂ (A * B) ∣ X * minpoly ℂ (B * A) ∧
+    minpoly ℂ (B * A) ∣ X * minpoly ℂ (A * B) := by
+  refine ⟨?_, ?_⟩
+  · apply minpoly.dvd
+    rw [map_mul, aeval_X]
+    set q := Polynomial.aeval (A * B) (minpoly ℂ (B * A)) with hq_def
+    have hqA : q * A = 0 := by
+      have h := aux_aeval A B (minpoly ℂ (B * A))
+      rw [minpoly.aeval] at h
+      simpa [q] using h.symm
+    have hcomm : (A * B) * q = q * (A * B) := by
+      have e1 : (A * B) * q = Polynomial.aeval (A*B) (X * minpoly ℂ (B*A)) := by
+        rw [map_mul, aeval_X]
+      have e2 : q * (A * B) = Polynomial.aeval (A*B) (minpoly ℂ (B*A) * X) := by
+        rw [map_mul, aeval_X]
+      rw [e1, e2, mul_comm]
+    rw [hcomm, ← mul_assoc, hqA, zero_mul]
+  · apply minpoly.dvd
+    rw [map_mul, aeval_X]
+    set q := Polynomial.aeval (B * A) (minpoly ℂ (A * B)) with hq_def
+    have hqB : q * B = 0 := by
+      have h := aux_aeval B A (minpoly ℂ (A * B))
+      rw [minpoly.aeval] at h
+      simpa [q] using h.symm
+    have hcomm : (B * A) * q = q * (B * A) := by
+      have e1 : (B * A) * q = Polynomial.aeval (B*A) (X * minpoly ℂ (A*B)) := by
+        rw [map_mul, aeval_X]
+      have e2 : q * (B * A) = Polynomial.aeval (B*A) (minpoly ℂ (A*B) * X) := by
+        rw [map_mul, aeval_X]
+      rw [e1, e2, mul_comm]
+    rw [hcomm, ← mul_assoc, hqB, zero_mul]
+```

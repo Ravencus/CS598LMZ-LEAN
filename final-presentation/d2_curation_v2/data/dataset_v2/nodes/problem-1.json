@@ -1,0 +1,23 @@
+{
+  "id": "problem-1",
+  "type": "problem",
+  "source_note": "利用连续函数的identity theorem证明函数方程",
+  "english_source_note": "Functional Equations via the Identity Theorem",
+  "callout_id": "利用连续函数的identity theorem证明函数方程#2",
+  "english_title": "Problem 1",
+  "statement_en": "Let $f:\\mathbb{R}\\to \\mathbb{R}$ be a continuous function such that for every positive integer $n$ and every real number $x$, $$f(x)=f\\left(x+\\frac{1}{n}\\right).$$ Prove that $f(x)$ is a constant function.",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "translation invariance",
+    "using invariance on rational shifts",
+    "continuity plus density of rational numbers"
+  ],
+  "prerequisites": [
+    "continuous functions on $\\mathbb{R}$",
+    "density of $\\mathbb{Q}$ in $\\mathbb{R}$",
+    "basic functional equations"
+  ],
+  "callout_body": "函数$f:\\mathbb{R}\\to \\mathbb{R}$是一个连续函数，并且满足对任意的正整数$n$,以及任意的实数$x$都有$$f(x)=f(x+\\frac{1}{n})$$证明函数$f(x)$是一个常函数。"
+}

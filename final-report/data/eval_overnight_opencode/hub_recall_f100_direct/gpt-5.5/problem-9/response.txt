@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "basic-methods-in-analysis-i-hub"]
+- term-by-term-estimates-hub: The proof naturally bounds each product factor by a simpler telescoping factor, then multiplies those termwise inequalities to get the global bound.
+- basic-methods-in-analysis-i-hub: The key move is replacing a hard finite product by a tractable comparison product with a recognizable telescoping form, exactly matching the “simpler upper bound for a product” strategy.

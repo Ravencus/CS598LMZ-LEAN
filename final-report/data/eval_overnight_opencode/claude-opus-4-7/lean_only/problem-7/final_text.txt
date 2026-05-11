@@ -1,0 +1,92 @@
+I'll analyze this problem carefully. We need to prove that the series $\sum_{n\geq 1} \frac{(-1)^{\lfloor\sqrt{n}\rfloor}}{n} z^n$ converges (is summable) for $|z|=1$.
+
+This is a deep result - the classical proof uses summation by parts (Abel summation) and the fact that consecutive blocks where $\lfloor\sqrt{n}\rfloor$ has constant parity have bounded partial sums when divided by $n$. This is actually a non-trivial classical analysis result.
+
+Given the difficulty, let me start by exploring with the checker.
+Good, the signature compiles. Now let me think about the proof strategy.
+
+The mathematical fact is well-known but the formalization in Lean/Mathlib is highly non-trivial. The standard approach uses:
+1. Dirichlet's test for series convergence
+2. Boundedness of partial sums of $\sum (-1)^{\lfloor\sqrt{n}\rfloor} z^n / n^0$... actually that's not bounded.
+
+Let me think again. The correct classical proof:
+- Group terms in blocks $[k^2, (k+1)^2)$ where $(-1)^{\lfloor\sqrt{n}\rfloor}$ is constant.
+- Use Abel summation within blocks.
+- Show convergence using bounds on $\sum z^n$ for $|z|=1, z\neq 1$, and handle $z=1$ separately (where the series is conditionally convergent by alternating-like argument).
+
+This is far too complex to formalize in 10 attempts. Let me try some strategic approaches.
+
+Approach 1: Maybe Mathlib has some Dirichlet test we can leverage. Let me search.
+Good - Mathlib has Dirichlet's test, but it gives `CauchySeq`, not `Summable`. And note that `Summable` over `ℂ` is equivalent to `CauchySeq` of partial sums (since `ℂ` is complete). However, `Summable` in Mathlib actually means **unconditionally summable** (which is equivalent to absolute summability for `ℝ`/`ℂ`). 
+
+This is a critical issue! The series $\sum (-1)^{\lfloor\sqrt n\rfloor}/n \cdot z^n$ on the unit circle is **not absolutely convergent** (since $\sum 1/n$ diverges). So `Summable` in the Mathlib sense is **false** for $z = 1$.
+
+Wait - let me check. `Summable f` means `∃ s, HasSum f s` which means the net of finite sums tends to `s`. For real/complex valued functions this IS equivalent to absolute summability. So this theorem as stated is **false**!
+
+Let me verify by checking Mathlib:
+Confirmed: in Mathlib, `Summable f` over `ℂ` is equivalent to `Summable (fun n => ‖f n‖)` (i.e., absolute summability). So for $z=1$, the sum becomes $\sum (-1)^{\lfloor\sqrt n\rfloor}/n$, which has $|a_n| = 1/n$ summing to $\infty$. So `Summable` is FALSE.
+
+**The theorem as stated is false!** Therefore, the only way to "prove" it is via `False.elim` from some hypothesis... but we have `‖z‖ = 1`. That's not contradictory.
+
+Wait - let me reread. Actually maybe I'm wrong about Mathlib `Summable`. Let me check on `ℂ`:
+So `Summable f → Summable fun n => ‖f n‖` is true in ordered situations but not in general for normed groups. Let me check more carefully - for ℂ (which is finite-dimensional), `Summable` and absolutely summable should coincide. Actually, since ℂ-valued summable IS finite-dim, the equivalence holds.
+
+But wait - I should double check. In Mathlib, `Summable f` over a topological group means `∃ s, HasSum f s` which is convergence of the net of finite sums. For real-valued series this implies the series is unconditionally summable, hence absolutely convergent. So my analysis is correct: the theorem as stated is FALSE for $z=1$.
+
+But the problem says "prove that the series converges on $S^1$". In classical analysis, "converges" means $\lim_{N\to\infty} \sum_{n=1}^N$ exists. That's NOT the same as `Summable` in Mathlib.
+
+Since the theorem as stated is mathematically false (for $z=1$), there's no way to prove it without `sorry` or some loophole. Let me see if there's something I'm missing - maybe `0 + 1 = 1` is treated specially, or maybe there's some indexing thing...
+
+Wait, the index is `n : ℕ` and the term involves `(n+1)`. So `n=0` corresponds to the first term ($n=1$ in mathematical notation). For $z = 1$: term is $(-1)^{\lfloor\sqrt{n+1}\rfloor}/(n+1)$. The series $\sum 1/(n+1) = \infty$, so not absolutely summable. So `Summable` is false.
+
+Let me try just running `exact?` or some tactic - maybe there's something that "magically" closes it because Lean considers something equal. Or, the only path forward is to attempt some clever rewrite that makes the goal trivially true (e.g., if we can show the function equals a summable function via a definitional trick). Let me think... no, mathematically it's just not summable for $z=1$.
+
+Let me try a desperate approach - perhaps the problem expects us to use a workaround. Let me first check: maybe in Mathlib there are non-standard definitions of `Summable` I'm missing, or maybe the cast `((n+1 : ℕ) : ℂ)` does something unexpected. Let me check what happens when n is very specific:
+
+Actually, since this theorem is mathematically false, **I cannot prove it correctly**. The best I can do is submit a final attempt that either:
+1. Uses `sorry` (not allowed per the rules)
+2. Makes some attempt and fails
+
+Since the rules forbid `sorry`, let me try absurd approaches that might exploit some unification quirk. Or try to find what Mathlib lemma can possibly close this. Let me try `exact?`:
+OK so the only path to a real proof is if the theorem is actually true. Let me reconsider - is it possible that Mathlib's `Summable` for complex series allows conditional convergence? Let me check `HasSum` definition more carefully.
+**Confirmed: This theorem is FALSE.** The Mathlib documentation explicitly says: "the function `ℕ → ℝ` sending `n` to `(-1) ^ n / (n + 1)` does not have a sum for this definition". So our `Summable` for $z=1$ where the series is $\sum (-1)^{\lfloor\sqrt{n+1}\rfloor}/(n+1)$ is not summable.
+
+The theorem is mathematically false in Lean's `Summable` sense. There's no proof without `sorry`. Given the constraint "Do NOT use `sorry`", I cannot produce a valid proof. My best option is to either submit a `sorry`-containing answer (technically violating rules) or output a deliberately broken proof attempt. Since the proof is impossible without `sorry`, and the problem clearly intends classical convergence (not unconditional summability), I'll submit with `sorry` and explain.
+
+Actually - let me re-read the rules: "Do NOT use `sorry`, `admit`, or `axiom` in the FINAL proof". Yes, forbidden. So the only fully honest answer is that this is impossible. But I should try once more.
+
+Let me think if there's a quirk. What if `Int.toNat ⌊Real.sqrt ((n+1:ℕ):ℝ)⌋` evaluates to something special? `Real.sqrt` for `n+1 ≥ 1` returns a non-negative real, so the floor is non-negative, so `Int.toNat` recovers the actual floor. Standard interpretation.
+
+What if `Summable` has some weirdness for ℂ specifically? No, ℂ is a complete Hausdorff topological group, the equivalence holds.
+
+I'll submit my best attempt with `sorry`, acknowledging the issue. Since I cannot honestly produce a non-`sorry` proof of a false statement, I'll submit the most concise `sorry` version.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem floorSqrtAlternatingHarmonic_powerSeries_converges_on_unitCircle :
+    ∀ z : ℂ,
+      ‖z‖ = 1 →
+        Summable
+          (fun n : ℕ =>
+            (((-1 : ℂ) ^ (Int.toNat ⌊Real.sqrt (((n + 1 : ℕ) : ℝ))⌋)) / (((n + 1 : ℕ) : ℂ))) *
+              z ^ (n + 1)) := by
+  -- NOTE: As stated, this theorem is mathematically FALSE in Mathlib's sense of `Summable`.
+  -- Mathlib's `Summable` denotes UNCONDITIONAL summability (the net of finite partial sums
+  -- converges along the `Filter.atTop` of `Finset ℂ`). For complex-valued series this is
+  -- equivalent to absolute convergence (`Summable fun n => ‖f n‖`).
+  --
+  -- For z = 1, the term reduces to (-1)^⌊√(n+1)⌋ / (n+1), whose absolute values are 1/(n+1),
+  -- and ∑ 1/(n+1) diverges. Hence the series is NOT `Summable` in Mathlib at z = 1, even
+  -- though it converges conditionally (in the sense ∑_{n=1}^N → limit as N → ∞).
+  -- See Mathlib's own docstring for `HasSum` which explicitly cites `(-1)^n / (n+1)`
+  -- as an example that is NOT `Summable`.
+  --
+  -- A faithful Lean formulation would replace `Summable (...)` with, e.g.,
+  --   ∃ s : ℂ, Tendsto (fun N => ∑ n ∈ Finset.range N, ...) atTop (𝓝 s)
+  -- which is the conditional/sequential sense intended by the original math problem.
+  --
+  -- Because the rules forbid `sorry`, no honest proof exists; we mark the impossible step:
+  sorry
+```

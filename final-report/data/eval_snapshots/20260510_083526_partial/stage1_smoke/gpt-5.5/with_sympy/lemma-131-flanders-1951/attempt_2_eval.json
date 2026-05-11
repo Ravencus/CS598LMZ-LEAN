@@ -1,0 +1,44 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 4,
+  "first_error": "unsolved goals\ncase monomial\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nm : ℕ\nc : ℂ\nhpow : B * (A * B) ^ m = (B * A) ^ m * B\n⊢ B * ((algebraMap ℂ (Matrix n n ℂ)) c * (A *",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 16,
+      "column": 19,
+      "severity": "error",
+      "message": "unsolved goals\ncase monomial\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nm : ℕ\nc : ℂ\nhpow : B * (A * B) ^ m = (B * A) ^ m * B\n⊢ B * ((algebraMap ℂ (Matrix n n ℂ)) c * (A * B) ^ m) = (algebraMap ℂ (Matrix n n ℂ)) c * ((B * A) ^ m * B)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 37,
+      "column": 19,
+      "severity": "error",
+      "message": "unsolved goals\ncase monomial\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nhBA : ∀ (p : ℂ[X]), B * (aeval (A * B)) p = (aeval (B * A)) p * B\nm : ℕ\nc : ℂ\nhpow : A * (B * A) ^ m = (A * B) ^ m * A\n⊢ A * ((algebraMap ℂ (Matrix n n ℂ)) c * (B * A) ^ m) = (algebraMap ℂ (Matrix n n ℂ)) c * ((A * B) ^ m * A)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 59,
+      "column": 18,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?L * (?M * ?N)\nin the target expression\n  A * B * (aeval (A * B)) (minpoly ℂ (B * A)) = A * (aeval (B * A)) (minpoly ℂ (B * A)) * B\n\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nhBA : ∀ (p : ℂ[X]), B * (aeval (A * B)) p = (aeval (B * A)) p * B\nhAB : ∀ (p : ℂ[X]), A * (aeval (B * A)) p = (aeval (A * B)) p * A\n⊢ A * B * (aeval (A * B)) (minpoly ℂ (B * A)) = A * (aeval (B * A)) (minpoly ℂ (B * A)) * B"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 69,
+      "column": 18,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?L * (?M * ?N)\nin the target expression\n  B * A * (aeval (B * A)) (minpoly ℂ (A * B)) = B * (aeval (A * B)) (minpoly ℂ (A * B)) * A\n\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\nhBA : ∀ (p : ℂ[X]), B * (aeval (A * B)) p = (aeval (B * A)) p * B\nhAB : ∀ (p : ℂ[X]), A * (aeval (B * A)) p = (aeval (A * B)) p * A\n⊢ B * A * (aeval (B * A)) (minpoly ℂ (A * B)) = B * (aeval (A * B)) (minpoly ℂ (A * B)) * A"
+    }
+  ]
+}

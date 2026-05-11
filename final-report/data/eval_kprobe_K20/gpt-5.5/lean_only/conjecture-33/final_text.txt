@@ -1,0 +1,17 @@
+I’ll use the Lean proving workflow and first check what high-level density/equidistribution lemmas Mathlib exposes, then try to assemble the proof around existing APIs rather than guessing names.
+The repository already contains prior attempts for this exact theorem, and they stop at the same analytic gap: formalizing the shrinking-target/equidistribution argument. I’m going to spend checker calls carefully on available APIs to see whether Mathlib has enough existing theorems to close that gap directly.
+Mathlib has the irrational-rotation density theorem on `AddCircle`, but it does not provide the stronger shrinking-target/equidistribution result needed here. With the remaining budget, the only honest result is a partial formalization that leaves the analytic core as the missing lemma.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem sequence_dense_in_unit_interval :
+    Set.Icc (0 : ℝ) 1 ⊆
+      closure
+        (Set.range
+          (fun n : ℕ => ((((2 : ℝ) / 3) + (((1 : ℝ) / 3) * Real.sin n)) ^ n))) := by
+  intro x hx
+  rw [Metric.mem_closure_range_iff]
+  intro ε hε
+  sorry
+```

@@ -1,0 +1,18 @@
+{
+  "id": "estimates-for-the-sum-of-prime-reciprocals-hub",
+  "type": "hub",
+  "source_note": "素数倒数和的估计",
+  "english_source_note": "Estimates for the Sum of Prime Reciprocals",
+  "is_top3": false,
+  "note_degree": 10,
+  "strategies": [
+    {
+      "callout_id": "素数倒数和的估计#6",
+      "english_title": "Different Expressions of the Same Object",
+      "strategy_name_en": "Different Expressions of the Same Object",
+      "summary_en": "Represent the same mathematical object in two different ways and compare the resulting formulas. This often reveals a new identity, inequality, or structural relation.",
+      "applicability": "Use this when an object admits multiple natural descriptions, such as algebraic, analytic, or combinatorial representations.",
+      "callout_body": "用两种不同的途径表示同一个对象，从而导出新的关系。"
+    }
+  ]
+}

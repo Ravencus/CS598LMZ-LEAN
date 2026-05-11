@@ -1,0 +1,86 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 10,
+  "first_error": "Invalid alternative name `h_add`: Expected `add` or `monomial`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 22,
+      "column": 14,
+      "severity": "error",
+      "message": "Invalid alternative name `h_add`: Expected `add` or `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 24,
+      "column": 14,
+      "severity": "error",
+      "message": "Invalid alternative name `h_monomial`: Expected `add` or `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 21,
+      "column": 14,
+      "severity": "error",
+      "message": "Alternative `add` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 21,
+      "column": 14,
+      "severity": "error",
+      "message": "Alternative `monomial` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 16,
+      "column": 55,
+      "severity": "error",
+      "message": "unsolved goals\ncase e_a\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\n⊢ B * (aeval (A * B)) (minpoly ℂ (B * A)) = B"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 45,
+      "column": 14,
+      "severity": "error",
+      "message": "Invalid alternative name `h_add`: Expected `add` or `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 47,
+      "column": 14,
+      "severity": "error",
+      "message": "Invalid alternative name `h_monomial`: Expected `add` or `monomial`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 44,
+      "column": 14,
+      "severity": "error",
+      "message": "Alternative `add` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 44,
+      "column": 14,
+      "severity": "error",
+      "message": "Alternative `monomial` has not been provided"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_455c88ad91.lean",
+      "line": 39,
+      "column": 55,
+      "severity": "error",
+      "message": "unsolved goals\ncase e_a\nn : Type u_1\ninst✝¹ : Fintype n\ninst✝ : DecidableEq n\nA B : Matrix n n ℂ\n⊢ A * (aeval (B * A)) (minpoly ℂ (A * B)) = A\n"
+    }
+  ]
+}

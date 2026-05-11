@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "piecewise-estimates-hub"]
+- term-by-term-estimates-hub: The proof is the integral analogue of bounding each summand/integrand pointwise, using `g x ≤ f x` almost everywhere to compare the aggregate integrals.
+- piecewise-estimates-hub: The almost-everywhere hypothesis means the domain is effectively split into a full-measure region where the inequality holds and a null exceptional region that does not affect the integral.

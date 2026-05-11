@@ -1,0 +1,58 @@
+{
+  "note_title": "an epsilon of room证明集合为0测度的策略",
+  "is_hub": true,
+  "in_subset_via": [
+    "an epsilon of room",
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#1",
+      "type": "note",
+      "title": "基本的思路",
+      "body": "1. 在测度空间当中，我们要证明一个集合$A$为零测度，即$\\mu(A) =0$，但是这件事通常并不好直接展开。\n2. 于是转而把命题修改为，证明$A_{\\varepsilon}$这个集合对于$\\forall \\varepsilon >0$都有$\\mu(A_{\\varepsilon})=0$.\n3. 证明的思路无非就是，用一些更大的集合去覆盖$A_{\\varepsilon}$，然后证明这种覆盖其测度的上界可以任意小，即$$\\mu(A_{\\varepsilon})<r,\\forall r>0$$也就是说用一个与参数$r$有关的一族集合去覆盖$A_{\\varepsilon}$,并通过调整$r$使得这一族集合的测度可以任意小。或者可以利用一些现成的对集合的控制，比如一些weak-type的不等式。总之无非就是估计把问题转换为估计$A_{\\varepsilon}$。",
+      "position_char": 77,
+      "position_line": 9
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#2",
+      "type": "question",
+      "title": "本问题意义下的分布函数的定义",
+      "body": "$(X,\\mathcal{F},\\mu)$是一个测度空间$f:X\\to \\mathbb{C}$是一个$(\\mathcal{F},\\mathcal{B}(\\mathbb{C}))$的可测函数,也就是$\\mathcal{B}(\\mathbb{C})$当中元素关于映射$f$的原像是$\\mathcal{F}$当中的元素。定义$$\\lambda_f(a):=\\mu(\\{x:|f(x)| >a\\})$$",
+      "position_char": 610,
+      "position_line": 18
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#3",
+      "type": "note",
+      "title": "这种分布函数的基本性质",
+      "body": "1. $\\lambda_f$是一个单调减少并且右连续的函数。\n2. 如果$|f|\\leq |g|$那么$\\lambda_f \\leq \\lambda_g$\n3. 如果$|f_n|\\uparrow |f|$那么$\\lambda_{f_n}\\uparrow \\lambda_f$\n4. 如果$f = g+h$那么$\\lambda_f(a)\\leq \\lambda_g(a/2)+\\lambda_h(a/2)$\n5. 如果$f = gh$那么$\\lambda_f(a)\\leq \\lambda_g(\\sqrt{a/2})+\\lambda_h(\\sqrt{a/2})$",
+      "position_char": 1145,
+      "position_line": 25
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#4",
+      "type": "note",
+      "title": "启示",
+      "body": "如果我们要估计$\\lambda_f(\\alpha)$,那么可以尝试放大$|f|$,或者放大以后再把函数分解为更简单，更熟悉，分布函数更好估计的函数,比如$$|f| \\leq |g|+|h|$$此时$$\\lambda_f(\\alpha)\\leq \\lambda_g(\\alpha/2)+\\lambda_h(\\alpha/2)$$这样我们可以利用一些已有的弱估计的结论。",
+      "position_char": 1474,
+      "position_line": 34
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#5",
+      "type": "question",
+      "title": "问题1",
+      "body": "证明在sigma-finite的测度空间$(\\Omega,\\mathcal{F},\\mu)$上，**对于非负可测函数$f$，在一个测度为正的集合$E$上的积分$\\int_{E}f\\,d\\mu =0$那么$f =0$在集合$E$上几乎处处成立。**",
+      "position_char": 3083,
+      "position_line": 53
+    },
+    {
+      "id": "an epsilon of room证明集合为0测度的策略#6",
+      "type": "question",
+      "title": "问题2",
+      "body": "证明连续函数$f:\\mathbb{R}\\to \\mathbb{R}$的图像$$G:=\\{(x,y):y=f(x)\\}$$在$\\mathbb{R}^2$的Lebesgue测度下是零测度的。",
+      "position_char": 3908,
+      "position_line": 66
+    }
+  ]
+}

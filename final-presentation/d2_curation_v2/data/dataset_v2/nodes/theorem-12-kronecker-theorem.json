@@ -1,0 +1,23 @@
+{
+  "id": "theorem-12-kronecker-theorem",
+  "type": "problem",
+  "source_note": "Kronecker定理，Dirichlet定理及其应用",
+  "english_source_note": "Kronecker's Theorem, Dirichlet's Theorem, and Applications",
+  "callout_id": "Kronecker定理,Dirichlet定理及其应用#2",
+  "english_title": "Theorem 1.2: Kronecker Theorem",
+  "statement_en": "For a given irrational number $\\alpha$, for every $\\beta\\in\\mathbb{R}$ and every $\\varepsilon > 0$, there exist a positive integer $q$ and an integer $p$ such that $$|q\\alpha-\\beta-p|<\\varepsilon.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "Diophantine approximation",
+  "key_techniques": [
+    "approximation modulo 1",
+    "density of irrational rotations",
+    "Dirichlet-type approximation"
+  ],
+  "prerequisites": [
+    "irrational numbers",
+    "fractional part",
+    "basic topology of $\\mathbb{R}$"
+  ],
+  "callout_body": "对于给定的无理数$\\alpha$，以及$\\forall \\beta\\in\\mathbb{R}$，$\\forall \\varepsilon > 0$都存在正整数$q$以及整数$p$使得$$|q\\alpha-\\beta-p|<\\varepsilon$$"
+}

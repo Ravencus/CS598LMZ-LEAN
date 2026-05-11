@@ -1,0 +1,18 @@
+{
+  "problem_id": "fourier-coefficient-version",
+  "english_title": "Fourier Coefficient Version",
+  "statement_en": "If $f \\in L^1(\\mathbb{T})$, then $|\\hat{f}(n)|\\to 0$. More precisely, $$\\hat{f}(n) = \\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} f(x)e^{-inx} \\, dx \\to 0 \\text{ as } |n| \\to \\infty.$$",
+  "difficulty": "easy",
+  "domain": "harmonic analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter Topology\n\nnoncomputable section\n\ntheorem riemannLebesgue_fourierCoefficients_tendsto_zero\n    {f : ℝ → ℂ}\n    (hf : IntervalIntegrable f volume (-Real.pi) Real.pi) :\n    Tendsto\n      (fun n : ℤ =>\n        ‖((1 / (2 * Real.pi : ℂ)) *\n          ∫ x in -Real.pi..Real.pi, f x * Complex.exp (-((n : ℂ) * (x : ℂ) * Complex.I)))‖)\n      (Filter.comap Int.natAbs Filter.atTop)\n      (nhds 0) := by\n  sorry"
+}

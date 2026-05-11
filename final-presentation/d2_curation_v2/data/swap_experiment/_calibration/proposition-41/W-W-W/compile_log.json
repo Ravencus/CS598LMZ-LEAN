@@ -1,0 +1,66 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0d1a3265f07a.lean",
+      "line": 11,
+      "column": 3,
+      "severity": "error",
+      "message": "unknown tactic"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0d1a3265f07a.lean",
+      "line": 10,
+      "column": 52,
+      "severity": "error",
+      "message": "unsolved goals\nS R : ℕ → ℝ\nn : ℕ\nhn : 0 < n\nhrn : rSeq S n = 1 / (12 * ↑n) + R n\n⊢ 0 < rSeq S n ∧ rSeq S n < 1 / (12 * ↑n)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0d1a3265f07a.lean",
+      "line": 11,
+      "column": 39,
+      "severity": "error",
+      "message": "unexpected token '.'; expected ':'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0d1a3265f07a.lean",
+      "line": 20,
+      "column": 96,
+      "severity": "error",
+      "message": "unexpected token; expected ':'\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0d1a3265f07a.lean",
+      "line": 11,
+      "column": 3,
+      "severity": "error",
+      "message": "unknown tactic"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0d1a3265f07a.lean",
+      "line": 10,
+      "column": 52,
+      "severity": "error",
+      "message": "unsolved goals\nS R : ℕ → ℝ\nn : ℕ\nhn : 0 < n\nhrn : rSeq S n = 1 / (12 * ↑n) + R n\n⊢ 0 < rSeq S n ∧ rSeq S n < 1 / (12 * ↑n)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0d1a3265f07a.lean",
+      "line": 11,
+      "column": 39,
+      "severity": "error",
+      "message": "unexpected token '.'; expected ':'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Stage8_0d1a3265f07a.lean",
+      "line": 20,
+      "column": 96,
+      "severity": "error",
+      "message": "unexpected token; expected ':'\n"
+    }
+  ],
+  "splice_action": "wrap",
+  "signature_deviation": false
+}

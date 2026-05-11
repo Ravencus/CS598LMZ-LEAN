@@ -1,0 +1,24 @@
+{
+  "problem_id": "lebesgue-measure-of-the-cantor-set",
+  "english_title": "Lebesgue Measure of the Cantor Set",
+  "statement_en": "Define the Cantor set \\\\(C\\\\) as the subset of \\\\([0,1]\\\\) consisting of those real numbers whose ternary expansions do not contain the digit 1. If \\\\(m\\\\) denotes Lebesgue measure on \\\\(\\\\mathbb R\\\\), then $$m(C)=0.$$",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "`cantorSet` has already been declared"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem cantorSet_measure_zero : MeasureTheory.volume cantorSet = 0 := by\n  sorry"
+}

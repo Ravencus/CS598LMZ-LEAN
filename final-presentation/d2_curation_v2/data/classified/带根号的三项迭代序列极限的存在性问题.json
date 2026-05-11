@@ -1,0 +1,71 @@
+{
+  "note_title": "带根号的三项迭代序列极限的存在性问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "带根号的三项迭代序列极限的存在性问题#1",
+      "type": "question",
+      "title": "问题0（武汉大学数学分析题目）",
+      "body": "序列$\\{x_n\\}$满足$x_1,x_2>0$以及递归式$$x_{n+2}:=\\sqrt{x_{n+1}}+\\sqrt{x_n}$$证明序列的极限存在并且为$4$。",
+      "position_char": 50,
+      "position_line": 8,
+      "classification_result": {
+        "id": "带根号的三项迭代序列极限的存在性问题#1",
+        "classification": "problem",
+        "english_title": "Problem 0 (Wuhan University Mathematical Analysis Problem)",
+        "if_problem": {
+          "statement_en": "Let the sequence $\\{x_n\\}$ satisfy $x_1,x_2>0$ and the recurrence $$x_{n+2}:=\\sqrt{x_{n+1}}+\\sqrt{x_n}.$$ Prove that the limit of the sequence exists and equals $4$.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "fixed-point analysis of the recurrence",
+            "boundedness and convergence of recursive sequences",
+            "monotonicity via auxiliary estimates"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "monotone convergence theorem for sequences",
+            "properties of square root functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "带根号的三项迭代序列极限的存在性问题#2",
+      "type": "question",
+      "title": "问题1",
+      "body": "序列$\\{x_n\\}$满足$x_1,x_2>0$以及递归式$$x_{n+2}:=\\frac{1}{x_{n}}+\\frac{2}{x_{n+1}}$$证明序列的极限存在并且为$\\sqrt{3}$。",
+      "position_char": 1189,
+      "position_line": 23,
+      "classification_result": {
+        "id": "带根号的三项迭代序列极限的存在性问题#2",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Let the sequence $\\{x_n\\}$ satisfy $x_1,x_2>0$ and the recurrence $$x_{n+2}:=\\frac{1}{x_{n}}+\\frac{2}{x_{n+1}}.$$ Prove that the limit of the sequence exists and equals $\\sqrt{3}$.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "fixed-point analysis of the recurrence",
+            "boundedness and positivity of recursive sequences",
+            "convergence via comparison or monotonicity arguments"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "monotone convergence theorem for sequences",
+            "algebraic manipulation of recurrences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"带根号的三项迭代序列极限的存在性问题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 0 (Wuhan University Mathematical Analysis Problem)\",\n    \"if_problem\": {\n      \"statement_en\": \"Let the sequence $\\\\{x_n\\\\}$ satisfy $x_1,x_2>0$ and the recurrence $$x_{n+2}:=\\\\sqrt{x_{n+1}}+\\\\sqrt{x_n}.$$ Prove that the limit of the sequence exists and equals $4$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"fixed-point analysis of the recurrence\",\n        \"boundedness and convergence of recursive sequences\",\n        \"monotonicity via auxiliary estimates\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"monotone convergence theorem for sequences\",\n        \"properties of square root functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"带根号的三项迭代序列极限的存在性问题#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let the sequence $\\\\{x_n\\\\}$ satisfy $x_1,x_2>0$ and the recurrence $$x_{n+2}:=\\\\frac{1}{x_{n}}+\\\\frac{2}{x_{n+1}}.$$ Prove that the limit of the sequence exists and equals $\\\\sqrt{3}$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"fixed-point analysis of the recurrence\",\n        \"boundedness and positivity of recursive sequences\",\n        \"convergence via comparison or monotonicity arguments\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"monotone convergence theorem for sequences\",\n        \"algebraic manipulation of recurrences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

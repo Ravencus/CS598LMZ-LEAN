@@ -1,0 +1,23 @@
+{
+  "id": "euler-maclaurin-summation-estimate",
+  "type": "problem",
+  "source_note": "和的积分估计",
+  "english_source_note": "Integral Estimates for Sums",
+  "callout_id": "和的积分估计#6",
+  "english_title": "Euler-Maclaurin Summation Estimate",
+  "statement_en": "The Euler-Maclaurin summation formula gives expansions such as $$\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt,$$ and more generally $$\\sum_{y<k\\leq x}f(k)=\\int_{y}^{x}f(t)dt+\\sum_{k=1}^{p}\\frac{(-1)^k}{k}\\left(B_k(\\{x\\})f^{(k-1)}(x)-B_k(\\{y\\})f^{(k-1)}(y)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{y}^{x}B_{p}(\\{t\\})f^{(p)}(t)dt.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "Euler-Maclaurin summation",
+    "Bernoulli polynomials",
+    "derivative-based remainder estimates"
+  ],
+  "prerequisites": [
+    "repeated differentiation",
+    "Bernoulli numbers and polynomials",
+    "definite integrals"
+  ],
+  "callout_body": "1.  整数的情况:(这里面主要是奇数的Bernoulli数是0，所以可以消去)$$\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt$$\n2.  更一般的情况：$$\\sum_{y<k\\leq x}f(k)=\\int_{y}^{x}f(t)dt+\\sum_{k=1}^{p}\\frac{(-1)^k}{k}\\left(B_k(\\{x\\})f^{(k-1)}(x)-B_k(\\{y\\})f^{(k-1)}(y)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{y}^{x}B_{p}(\\{t\\})f^{(p)}(t)dt$$\n3. 最简单的情形:$$\\begin{aligned}\\sum_{y<k\\leq x}f(k)&=\\int_{y}^{x}f(t)dt-\\left(B_1(\\{x\\})f(x)-B_1(\\{y\\})f(y)\\right)+\\int_{y}^{x}B_1(\\{t\\})f'(t)dt\\\\&=\\int_{y}^{x}f(t)dt-\\{x\\}f(x)+\\{y\\}f(y)+\\int_{y}^{x}\\{t\\}f'(t)dt\\end{aligned}$$"
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "if-the-integral-of-a-nonnegative-function-is-zero-then-the-f",
+  "english_title": "If the Integral of a Nonnegative Function Is Zero, Then the Function Is Zero Almost Everywhere on the Set",
+  "statement_en": "On a sigma-finite measure space $(\\Omega,\\mathcal{F},\\mu)$, let $f$ be a nonnegative measurable function. If on a measurable set $E$ of positive measure one has $\\int_E f\\,d\\mu=0$, then $f=0$ almost everywhere on $E$.",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "invalid binder annotation, type is not a class instance\n  ?m.4\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  Ω\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem integral_zero_on_set_ae_zero\n    {Ω : Type*} [MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω}\n    {f : Ω → ℝ} {E : Set Ω}\n    (hf_nonneg : ∀ x, 0 ≤ f x)\n    (hf_meas : Measurable f)\n    (hE : MeasurableSet E)\n    (hE_pos : 0 < μ E)\n    (h_int : ∫ x in E, f x ∂μ = 0) :\n    f =ᵐ[μ.restrict E] (fun _ => 0) := by\n  sorry"
+}

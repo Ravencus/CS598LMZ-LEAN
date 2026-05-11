@@ -1,0 +1,33 @@
+{
+  "note_title": "满足特定条件的两个集合尺寸的比例",
+  "is_hub": false,
+  "in_subset_via": [
+    "Borel-Cantelli lemma及其应用"
+  ],
+  "callouts": [
+    {
+      "id": "满足特定条件的两个集合尺寸的比例#1",
+      "type": "note",
+      "title": "APMO 2013,P4",
+      "body": "$A,B$是整数集的两个不相交的有限子集，$a,b$是两个正整数，此外$$A\\cup B \\subset (A-a)\\cup (B+b)$$其中$A-a:=\\{x-a:x \\in A\\},B+b:=\\{x+b:x \\in B\\}$证明$$a|A|=b|B|$$",
+      "position_char": 52,
+      "position_line": 8
+    },
+    {
+      "id": "满足特定条件的两个集合尺寸的比例#2",
+      "type": "tip",
+      "title": "大致的想法",
+      "body": "把集合满足的性质转换为特征函数满足的性质，然后通过处理函数的手段研究特征函数，最后把分析的结果对应到集合的性质上去。",
+      "position_char": 227,
+      "position_line": 14
+    },
+    {
+      "id": "满足特定条件的两个集合尺寸的比例#3",
+      "type": "note",
+      "title": "定义整数加法群上的傅里叶变换",
+      "body": "根据[[Riemann - Lebesgue lemma的证明]]当中3的讨论，注意到$\\mathbb{Z}$的庞特里亚金对偶群是$\\widehat{\\mathbb{Z}}:=\\{e^{2\\pi i n \\xi}:\\xi \\in [0,1)]\\}$,于是这种意义下的$f \\in L^1(\\mathbb{Z})$的函数其傅里叶变换定义为$$\\widehat{f}(\\xi ):=\\sum_{n\\in \\mathbb{Z}}f(n)e^{-2\\pi i n \\xi}$$其傅里叶逆变换(如果成立的话)为$$f(n)=\\int_{0}^{1}\\widehat{f}(\\xi)e^{2\\pi i n \\xi}\\,d\\xi$$",
+      "position_char": 1262,
+      "position_line": 30
+    }
+  ]
+}

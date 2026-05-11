@@ -1,0 +1,15 @@
+{
+  "problem_id": "problem-31-3",
+  "model": "deepseek-v4-flash",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 1,
+  "wall_seconds": 240.0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "model_failed": true
+    }
+  ]
+}

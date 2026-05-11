@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-20",
+  "english_title": "Problem 2.0",
+  "statement_en": "1. Analyze the absolute error $$R_N:=|S_N-e|$$\n2. Analyze the absolute error $$R_N':=|3-T_N-e|$$\n3. Compare the two absolute errors $R_N,R_N'$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem absoluteErrorComparison\n    (S T : ℕ → ℝ) :\n    ∀ N : ℕ,\n      let R_N : ℝ := |S N - Real.exp 1|\n      let R_N' : ℝ := |(3 : ℝ) - T N - Real.exp 1|\n      R_N ≤ R_N' ∨ R_N' ≤ R_N := by\n  sorry"
+}

@@ -1,0 +1,229 @@
+{
+  "note_title": "和的积分估计",
+  "is_hub": true,
+  "in_subset_via": [
+    "逐项估计",
+    "分析学基本方法目录1"
+  ],
+  "callouts": [
+    {
+      "id": "和的积分估计#1",
+      "type": "note",
+      "title": "和的简单积分估计",
+      "body": "如果函数$f:[x,y]\\to\\mathbb{R}$是单调函数那么求和可以被积分估计(量化版本的):$$\\sum_{n\\in{\\mathbb{Z}}:y\\leq n\\leq x}f(n)=\\int_{y}^{x}f(t)\\,dt+O(|f(x)|+|f(y)|)$$",
+      "position_char": 2958,
+      "position_line": 30,
+      "classification_result": {
+        "id": "和的积分估计#1",
+        "classification": "problem",
+        "english_title": "Simple Integral Estimate for Sums",
+        "if_problem": {
+          "statement_en": "If a function $f:[x,y]\\to\\mathbb{R}$ is monotone, then its sum over integers can be estimated by an integral in the quantitative form $$\\sum_{n\\in\\mathbb{Z}:y\\leq n\\leq x} f(n)=\\int_y^x f(t)\\,dt+O(|f(x)|+|f(y)|).$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "monotonicity",
+            "comparison between sums and integrals",
+            "endpoint error control"
+          ],
+          "prerequisites": [
+            "definite integrals",
+            "monotone functions",
+            "Big-O notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "和的积分估计#2",
+      "type": "example",
+      "title": "例子1.1.1",
+      "body": "$f(t)=\\log(t)$，那么:$$\\sum_{1\\leq n\\le x}\\log(n)=x\\log(x)-x+O(\\log(x+2))$$",
+      "position_char": 3800,
+      "position_line": 37,
+      "classification_result": {
+        "id": "和的积分估计#2",
+        "classification": "problem",
+        "english_title": "Example 1.1.1",
+        "if_problem": {
+          "statement_en": "For $f(t)=\\log t$, one has $$\\sum_{1\\leq n\\leq x}\\log(n)=x\\log(x)-x+O(\\log(x+2)).$$",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "integral estimate for sums",
+            "integration of logarithms"
+          ],
+          "prerequisites": [
+            "logarithmic integrals",
+            "Big-O notation",
+            "monotone functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "和的积分估计#3",
+      "type": "example",
+      "title": "例子1.1.2",
+      "body": "$f(t):=|\\cos(2\\pi t)|$，那么和$$\\sum_{y\\leq n\\le x}\\cos(2\\pi n)=O(x-y)$$可是如果无视\"简单积分估计\"对单调性的要求，直接根据上面的结果去强行做估计就会得出$O(1)$这样的错误的估计。",
+      "position_char": 3932,
+      "position_line": 42,
+      "classification_result": {
+        "id": "和的积分估计#3",
+        "classification": "problem",
+        "english_title": "Example 1.1.2",
+        "if_problem": {
+          "statement_en": "Let $f(t):=|\\cos(2\\pi t)|$. Then $$\\sum_{y\\leq n\\leq x}\\cos(2\\pi n)=O(x-y).$$ However, if one ignores the monotonicity requirement in the simple integral estimate and applies it blindly, one would incorrectly obtain an $O(1)$ estimate.",
+          "problem_type": "counterexample",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "checking hypotheses carefully",
+            "periodic function example",
+            "counterexample construction"
+          ],
+          "prerequisites": [
+            "trigonometric functions",
+            "Big-O notation",
+            "integral estimates for sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "和的积分估计#4",
+      "type": "note",
+      "title": "级数收敛的积分判别法",
+      "body": "如果说被求和函数$f:[M,+\\infty)\\to\\mathbb{R}$可积(或者说广义黎曼积分存在)，并且函数单调减少到0,并且函数的积分$$\\int_{M}^{\\infty}f(t)\\,dt $$是收敛的积分。那么级数$$\\sum_{n\\geq M}f(n)$$也是收敛的，反之亦然。",
+      "position_char": 4486,
+      "position_line": 48,
+      "classification_result": {
+        "id": "和的积分估计#4",
+        "classification": "problem",
+        "english_title": "Integral Test for Series Convergence",
+        "if_problem": {
+          "statement_en": "Suppose $f:[M,+\\infty)\\to\\mathbb{R}$ is integrable as an improper integral, is monotone decreasing to $0$, and $$\\int_M^{\\infty} f(t)\\,dt$$ converges. Then the series $$\\sum_{n\\geq M} f(n)$$ also converges, and conversely.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "integral test",
+            "monotonicity",
+            "comparison between sums and integrals"
+          ],
+          "prerequisites": [
+            "improper integrals",
+            "series convergence",
+            "monotone functions"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "和的积分估计#5",
+      "type": "note",
+      "title": "利用函数凸性的简单积分估计",
+      "body": "简单的积分估计本质上是一种[[逐项估计]]，我们利用函数的单调性，然后把函数在整数处的取值放缩为函数在长度为1的区间上的积分。按照相同的思路，有时候我们也可以利用函数的凸性来把函数逐项放缩为长度为1的区间上的积分。\n\n其主要参考的命题为：\n对于在区间$[a,b]$上凸的函数而言，对任意$x_1,x_2\\in [a,b]$并且满足$x_1<x_2$都有$$\\frac{f(x_1)+f(x_2)}{2}\\geq \\frac{1}{x_2-x_1}\\int_{x_1}^{x_2} f(x)\\,dx$$\n* 参考[[Hermite-Hadamard不等式与函数凸性]].\n\n那么对每个区间利用这样的结果进行放缩，我们得到$$\\sum_{k=1}^{n-1} \\frac{f(x_k)+f(x_{k+1})}{2}(x_{k+1}-x_k)\\geq \\int_{x_1}^{x_n}f(x)\\,dx$$如果$x_k=k$那么以上结果可以等价于$$\\sum_{k=1}^n f(k)\\geq \\frac{f(1)+f(n)}{2}+\\int_{1}^{n}f(x)\\,dx$$\n\n---\n这种估计，对于单调凸函数而言是对和的下界估计的精度改进，这种改进不是本质的，误差级别不会变但是下界要比单纯利用单调性会好上一点。\n\n比如我们假设$f$是严格单调减少的，单纯利用单调性得到的下界估计是$$\\sum_{k=1}^n f(k)\\geq f(n)+\\int_{1}^n f(x)\\,dx$$相对于利用凸性得到的下界估计，由于严格单调减少性$$\\frac{f(1)+f(n)}{2}\\geq f(n)$$于是我们知道由凸性得到的下界估计会好上一些，但不本质。\n\n同样的道理，如果我们假设函数严格单调增加，那么单纯利用单调性得到的下界估计是$$\\sum_{k=1}^n f(k)>f(1)+\\int_{1}^n f(x)\\,dx$$由于严格增加性，于是$$\\frac{f(1)+f(n)}{2}\\geq f(1)$$因此由凸性得到的下界估计会更好一些。",
+      "position_char": 4948,
+      "position_line": 55,
+      "classification_result": {
+        "id": "和的积分估计#5",
+        "classification": "strategy_template",
+        "english_title": "Simple Integral Estimate Using Convexity",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Integral Estimation via Convexity",
+          "summary_en": "Replace discrete values of a convex function by averages over unit intervals using the Hermite-Hadamard inequality. This yields lower bounds for sums that slightly improve the bounds obtained from monotonicity alone.",
+          "applicability": "Use when the summand comes from a convex function, especially a monotone convex function, and you want a sharper sum-versus-integral lower bound."
+        }
+      }
+    },
+    {
+      "id": "和的积分估计#6",
+      "type": "note",
+      "title": "Euler-Maclaurin求和估计",
+      "body": "1.  整数的情况:(这里面主要是奇数的Bernoulli数是0，所以可以消去)$$\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt$$\n2.  更一般的情况：$$\\sum_{y<k\\leq x}f(k)=\\int_{y}^{x}f(t)dt+\\sum_{k=1}^{p}\\frac{(-1)^k}{k}\\left(B_k(\\{x\\})f^{(k-1)}(x)-B_k(\\{y\\})f^{(k-1)}(y)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{y}^{x}B_{p}(\\{t\\})f^{(p)}(t)dt$$\n3. 最简单的情形:$$\\begin{aligned}\\sum_{y<k\\leq x}f(k)&=\\int_{y}^{x}f(t)dt-\\left(B_1(\\{x\\})f(x)-B_1(\\{y\\})f(y)\\right)+\\int_{y}^{x}B_1(\\{t\\})f'(t)dt\\\\&=\\int_{y}^{x}f(t)dt-\\{x\\}f(x)+\\{y\\}f(y)+\\int_{y}^{x}\\{t\\}f'(t)dt\\end{aligned}$$",
+      "position_char": 8070,
+      "position_line": 105,
+      "classification_result": {
+        "id": "和的积分估计#6",
+        "classification": "problem",
+        "english_title": "Euler-Maclaurin Summation Estimate",
+        "if_problem": {
+          "statement_en": "The Euler-Maclaurin summation formula gives expansions such as $$\\sum_{k=m}^{n}f(k)=\\int_{m}^{n}f(t)dt+\\frac{f(m)+f(n)}{2}+\\sum_{r=1}^{\\lfloor p/2\\rfloor}\\frac{B_{2r}}{(2r)!}\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{m}^{n}B_{p}(\\{t\\})f^{(p)}(t)dt,$$ and more generally $$\\sum_{y<k\\leq x}f(k)=\\int_{y}^{x}f(t)dt+\\sum_{k=1}^{p}\\frac{(-1)^k}{k}\\left(B_k(\\{x\\})f^{(k-1)}(x)-B_k(\\{y\\})f^{(k-1)}(y)\\right)+\\frac{(-1)^{p+1}}{p!}\\int_{y}^{x}B_{p}(\\{t\\})f^{(p)}(t)dt.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Euler-Maclaurin summation",
+            "Bernoulli polynomials",
+            "derivative-based remainder estimates"
+          ],
+          "prerequisites": [
+            "repeated differentiation",
+            "Bernoulli numbers and polynomials",
+            "definite integrals"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "和的积分估计#7",
+      "type": "note",
+      "title": "一个周期内Bernoulli多项式的估计",
+      "body": "$$|B_{p}(\\{t\\})|\\leq \\frac{2p!}{(2\\pi)^p}\\zeta(p)$$",
+      "position_char": 8818,
+      "position_line": 113,
+      "classification_result": {
+        "id": "和的积分估计#7",
+        "classification": "problem",
+        "english_title": "Estimate for Bernoulli Polynomials on One Period",
+        "if_problem": {
+          "statement_en": "One has the bound $$|B_p(\\{t\\})|\\leq \\frac{2p!}{(2\\pi)^p}\\zeta(p).$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "Bernoulli polynomial bounds",
+            "zeta-function estimate",
+            "periodic normalization"
+          ],
+          "prerequisites": [
+            "Bernoulli polynomials",
+            "Riemann zeta function",
+            "basic Fourier-analytic estimates"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "和的积分估计#8",
+      "type": "note",
+      "title": "连续版本的分部求和",
+      "body": "1.  假设我们要估计一个求和函数:$$S(x):=\\sum_{y<n\\leq x}g(n)f(n)$$其中$f:[y,x]\\to\\mathbb{C}$是一个连续可微的函数，而$g:\\mathbb{N}\\to\\mathbb{C}$只要求是一个算术函数。\n2.  如果我们可以对其中的算术函数的部分，给出一个求和估计，并且这个求和估计\"还不错\".$$A(x):=\\sum_{n\\leq x}g(n)$$\n3.  于是我们可以尝试下面的分部求和公式，试着让原来的$S(x)$有一个更简单的形式：$$S(x)=\\sum_{y<n\\leq x}g(n)f(n)=A(x)f(x)-A(y)f(y)-\\int_{y}^{x}A(t)f'(t)dt$$\n\n这样做的好处是，因为$A(x)$的估计还不错，所以最后的积分的估计\"理应也还可以\"，从而导致最后求和的估计会比原来的表达更简单一些。",
+      "position_char": 10607,
+      "position_line": 133,
+      "classification_result": {
+        "id": "和的积分估计#8",
+        "classification": "strategy_template",
+        "english_title": "Continuous Version of Summation by Parts",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Continuous Summation by Parts",
+          "summary_en": "Write a weighted sum $\\sum g(n)f(n)$ in terms of the partial sums $A(x)=\\sum_{n\\le x}g(n)$ and an integral involving $f'$. If $A(x)$ has a good estimate, the transformed expression is often easier to bound.",
+          "applicability": "Use when a sum has the form $\\sum g(n)f(n)$, the partial sums of $g$ are understood, and $f$ is differentiable enough to support integration by parts."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"和的积分估计#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Simple Integral Estimate for Sums\",\n    \"if_problem\": {\n      \"statement_en\": \"If a function $f:[x,y]\\\\to\\\\mathbb{R}$ is monotone, then its sum over integers can be estimated by an integral in the quantitative form $$\\\\sum_{n\\\\in\\\\mathbb{Z}:y\\\\leq n\\\\leq x} f(n)=\\\\int_y^x f(t)\\\\,dt+O(|f(x)|+|f(y)|).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"monotonicity\",\n        \"comparison between sums and integrals\",\n        \"endpoint error control\"\n      ],\n      \"prerequisites\": [\n        \"definite integrals\",\n        \"monotone functions\",\n        \"Big-O notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"和的积分估计#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"For $f(t)=\\\\log t$, one has $$\\\\sum_{1\\\\leq n\\\\leq x}\\\\log(n)=x\\\\log(x)-x+O(\\\\log(x+2)).$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"integral estimate for sums\",\n        \"integration of logarithms\"\n      ],\n      \"prerequisites\": [\n        \"logarithmic integrals\",\n        \"Big-O notation\",\n        \"monotone functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"和的积分估计#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.1.2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f(t):=|\\\\cos(2\\\\pi t)|$. Then $$\\\\sum_{y\\\\leq n\\\\leq x}\\\\cos(2\\\\pi n)=O(x-y).$$ However, if one ignores the monotonicity requirement in the simple integral estimate and applies it blindly, one would incorrectly obtain an $O(1)$ estimate.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"checking hypotheses carefully\",\n        \"periodic function example\",\n        \"counterexample construction\"\n      ],\n      \"prerequisites\": [\n        \"trigonometric functions\",\n        \"Big-O notation\",\n        \"integral estimates for sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"和的积分估计#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Integral Test for Series Convergence\",\n    \"if_problem\": {\n      \"statement_en\": \"Suppose $f:[M,+\\\\infty)\\\\to\\\\mathbb{R}$ is integrable as an improper integral, is monotone decreasing to $0$, and $$\\\\int_M^{\\\\infty} f(t)\\\\,dt$$ converges. Then the series $$\\\\sum_{n\\\\geq M} f(n)$$ also converges, and conversely.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"integral test\",\n        \"monotonicity\",\n        \"comparison between sums and integrals\"\n      ],\n      \"prerequisites\": [\n        \"improper integrals\",\n        \"series convergence\",\n        \"monotone functions\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"和的积分估计#5\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Simple Integral Estimate Using Convexity\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Integral Estimation via Convexity\",\n      \"summary_en\": \"Replace discrete values of a convex function by averages over unit intervals using the Hermite-Hadamard inequality. This yields lower bounds for sums that slightly improve the bounds obtained from monotonicity alone.\",\n      \"applicability\": \"Use when the summand comes from a convex function, especially a monotone convex function, and you want a sharper sum-versus-integral lower bound.\"\n    }\n  },\n  {\n    \"id\": \"和的积分估计#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Euler-Maclaurin Summation Estimate\",\n    \"if_problem\": {\n      \"statement_en\": \"The Euler-Maclaurin summation formula gives expansions such as $$\\\\sum_{k=m}^{n}f(k)=\\\\int_{m}^{n}f(t)dt+\\\\frac{f(m)+f(n)}{2}+\\\\sum_{r=1}^{\\\\lfloor p/2\\\\rfloor}\\\\frac{B_{2r}}{(2r)!}\\\\left(f^{(2r-1)}(n)-f^{(2r-1)}(m)\\\\right)+\\\\frac{(-1)^{p+1}}{p!}\\\\int_{m}^{n}B_{p}(\\\\{t\\\\})f^{(p)}(t)dt,$$ and more generally $$\\\\sum_{y<k\\\\leq x}f(k)=\\\\int_{y}^{x}f(t)dt+\\\\sum_{k=1}^{p}\\\\frac{(-1)^k}{k}\\\\left(B_k(\\\\{x\\\\})f^{(k-1)}(x)-B_k(\\\\{y\\\\})f^{(k-1)}(y)\\\\right)+\\\\frac{(-1)^{p+1}}{p!}\\\\int_{y}^{x}B_{p}(\\\\{t\\\\})f^{(p)}(t)dt.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Euler-Maclaurin summation\",\n        \"Bernoulli polynomials\",\n        \"derivative-based remainder estimates\"\n      ],\n      \"prerequisites\": [\n        \"repeated differentiation\",\n        \"Bernoulli numbers and polynomials\",\n        \"definite integrals\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"和的积分估计#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Estimate for Bernoulli Polynomials on One Period\",\n    \"if_problem\": {\n      \"statement_en\": \"One has the bound $$|B_p(\\\\{t\\\\})|\\\\leq \\\\frac{2p!}{(2\\\\pi)^p}\\\\zeta(p).$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"Bernoulli polynomial bounds\",\n        \"zeta-function estimate\",\n        \"periodic normalization\"\n      ],\n      \"prerequisites\": [\n        \"Bernoulli polynomials\",\n        \"Riemann zeta function\",\n        \"basic Fourier-analytic estimates\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"和的积分估计#8\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Continuous Version of Summation by Parts\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Continuous Summation by Parts\",\n      \"summary_en\": \"Write a weighted sum $\\\\sum g(n)f(n)$ in terms of the partial sums $A(x)=\\\\sum_{n\\\\le x}g(n)$ and an integral involving $f'$. If $A(x)$ has a good estimate, the transformed expression is often easier to bound.\",\n      \"applicability\": \"Use when a sum has the form $\\\\sum g(n)f(n)$, the partial sums of $g$ are understood, and $f$ is differentiable enough to support integration by parts.\"\n    }\n  }\n]",
+  "classified": true
+}

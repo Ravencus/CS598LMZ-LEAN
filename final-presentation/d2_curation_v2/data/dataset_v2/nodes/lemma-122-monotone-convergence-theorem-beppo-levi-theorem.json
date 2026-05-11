@@ -1,0 +1,22 @@
+{
+  "id": "lemma-122-monotone-convergence-theorem-beppo-levi-theorem",
+  "type": "problem",
+  "source_note": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0",
+  "english_source_note": "Lp Decay Rates Ensuring Almost Everywhere Convergence to 0",
+  "callout_id": "函数列Lp范数的怎样的衰减速度能保证函数列几乎处处收敛到0#3",
+  "english_title": "Lemma 1.2.2: Monotone Convergence Theorem (Beppo-Levi Theorem)",
+  "statement_en": "Let \\((\\Sigma, \\mathcal{F}, \\mu)\\) be a measure space, and let \\(\\{f_n\\}_{n=1}^{\\infty}\\) be a sequence of nonnegative measurable functions on \\(X \\in \\Sigma\\) that is pointwise nondecreasing. Then the pointwise supremum\n\\[\n\\sup_{n\\geq 1} f_n : x \\mapsto \\sup_{n\\geq 1} f_n(x)\n\\]\nis measurable, and\n\\[\n\\sup_{n\\geq 1} \\int_X f_n\\, d\\mu = \\int_X \\sup_{n\\geq 1} f_n\\, d\\mu.\n\\]",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "monotone convergence",
+    "measurability of pointwise supremum"
+  ],
+  "prerequisites": [
+    "measure spaces",
+    "measurable functions",
+    "Lebesgue integration"
+  ],
+  "callout_body": "$(\\Sigma,\\mathcal{F},\\mu)$是一个测度空间，序列$\\{f_n\\}_{n=1}^{\\infty}$是一个定义在$X\\in \\Sigma$上的逐点不减，非负$(\\Sigma,\\mathcal{B}_{\\overline{\\mathbb{R}}_{\\geq 0}})$的可测函数列。那么这个函数列逐点的上极限，即$$\\sup_{n\\geq 1}f_n:x\\mapsto \\sup_{n\\geq 1} f_n(x)$$也是一个$(\\Sigma,\\mathcal{B}_{\\overline{\\mathbb{R}}_{\\geq 0}})$可测函数，并且$$\\sup_{n\\geq 1}\\int_{X} f_n\\,d\\mu = \\int_{X}\\sup_{n\\geq 1} f_n\\,d\\mu$$"
+}

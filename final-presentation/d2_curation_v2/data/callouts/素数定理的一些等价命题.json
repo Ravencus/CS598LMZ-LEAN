@@ -1,0 +1,41 @@
+{
+  "note_title": "素数定理的一些等价命题",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "素数定理的一些等价命题#1",
+      "type": "note",
+      "title": "素数定理的一些等价命题(Landau 1909)",
+      "body": "\n1. $\\pi(x)\\sim \\frac{x}{\\log(x)}$\n2. $\\vartheta(x)\\sim x$\n3. $\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)-\\gamma+o(1)$\n4. $\\psi(x):=\\sum_{n\\leq x}\\Lambda(n)\\sim x$\n5. $\\sum_{n\\leq x}\\mu(n)=o(x)$\n6. $\\sum_{n\\geq 1}\\frac{\\mu(n)}{n}=0$",
+      "position_char": 30,
+      "position_line": 5
+    },
+    {
+      "id": "素数定理的一些等价命题#2",
+      "type": "note",
+      "title": "引理1.1.1:Wintner mean value theorem,20世纪初",
+      "body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$并且级数$\\sum_{n\\geq 1}\\frac{g(n)}{n}$绝对收敛，那么$f$的平均值$M(f)$就是该级数收敛到的值,即：$$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}$$",
+      "position_char": 884,
+      "position_line": 26
+    },
+    {
+      "id": "素数定理的一些等价命题#3",
+      "type": "note",
+      "title": "引理1.1.2:Ingham Tauberian定理(1945)",
+      "body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$令$F(x):=\\sum_{n\\leq x}f(n),G(x):=\\sum_{n\\leq x}g(n)$如果$$F(x)=Ax+o(x)$$那么$$\\sum_{n\\leq x}\\frac{g(n)}{n}=\\frac{G(x)}{x}+A+o(1)$$",
+      "position_char": 1618,
+      "position_line": 37
+    },
+    {
+      "id": "素数定理的一些等价命题#4",
+      "type": "note",
+      "title": "引理1.3.1 Wiener-Ikehara theorem（简化版）",
+      "body": "设$b>0$,$f(n)$是一个非负的算术函数，记$F(s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}$是其对应的Dirichlet级数。\n\n假设级数在$\\text{Re}(s)> b$的范围内绝对收敛，并且可以解析延拓到$\\text{Re}(s)\\geq b$并定义亚纯函数$F(s)$,该函数在此范围内有且仅有$s=b$这一个简单极点。假设$F(s)$在$s=b$处的留数为$c$,那么$$\\sum_{n\\leq x} f(n)\\sim \\frac{c}{b}x^b$$",
+      "position_char": 5148,
+      "position_line": 71
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 13,
+  "first_error": "Unknown identifier `volume`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 8,
+      "column": 66,
+      "severity": "error",
+      "message": "Unknown identifier `volume`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 10,
+      "column": 66,
+      "severity": "error",
+      "message": "Unknown identifier `volume`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 12,
+      "column": 66,
+      "severity": "error",
+      "message": "Unknown identifier `volume`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 14,
+      "column": 66,
+      "severity": "error",
+      "message": "Unknown identifier `volume`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 27,
+      "column": 43,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hu\nhas type\n  u ∈ Set.uIcc 0 (Real.pi / 2)\nbut is expected to have type\n  u ∈ Set.Icc 0 (Real.pi / 2)\nin the application\n  hnonneg u hu"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 34,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown constant `Real.cos_nonpos_of_mem_Icc`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 40,
+      "column": 44,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hu\nhas type\n  u ∈ Set.uIcc (Real.pi / 2) (3 * Real.pi / 2)\nbut is expected to have type\n  u ∈ Set.Icc (Real.pi / 2) (3 * Real.pi / 2)\nin the application\n  hnonpos u hu"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 49,
+      "column": 35,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hshift\nhas type\n  u - 2 * Real.pi ∈ Set.Icc (-Real.pi / 2) (Real.pi / 2)\nbut is expected to have type\n  u - 2 * Real.pi ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2)\nin the application\n  Real.cos_nonneg_of_mem_Icc hshift"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 60,
+      "column": 43,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hu\nhas type\n  u ∈ Set.uIcc (3 * Real.pi / 2) (2 * Real.pi)\nbut is expected to have type\n  u ∈ Set.Icc (3 * Real.pi / 2) (2 * Real.pi)\nin the application\n  hnonneg u hu"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 62,
+      "column": 23,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_cos`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 68,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_add_adjacent`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 74,
+      "column": 10,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_add_adjacent`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ceb2d4bff5.lean",
+      "line": 83,
+      "column": 10,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0\nin the target expression\n  ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    1 + 0 + 1\n\nhcont : Continuous fun u => max (Real.cos u) 0\nhI1 : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry 0 (Real.pi / 2)\nhI2 : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (Real.pi / 2) (3 * Real.pi / 2)\nhI3 : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (3 * Real.pi / 2) (2 * Real.pi)\nhI4 : IntervalIntegrable (fun u => max (Real.cos u) 0) sorry (Real.pi / 2) (2 * Real.pi)\nh1 : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = 1\nh2 : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = 0\nh3 : ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 = 1\nhsplit1 :\n  ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 + ∫ (u : ℝ) in Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\nhsplit2 :\n  ∫ (u : ℝ) in Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n      max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0\n⊢ ∫ (u : ℝ) in 0..Real.pi / 2,\n      max (Real.cos u) 0 +\n        ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2,\n          max (Real.cos u) 0 + ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    1 + 0 + 1\n"
+    }
+  ]
+}

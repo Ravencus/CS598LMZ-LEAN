@@ -1,0 +1,23 @@
+{
+  "id": "quantitative-version-of-the-second-borel-cantelli-lemma",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "callout_id": "Borel-Cantelli lemma及其应用#8",
+  "english_title": "Quantitative Version of the Second Borel-Cantelli Lemma",
+  "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ satisfy the condition that there exists a positive real number $C$ such that $$\\sum_{i,j\\leq N}\\mathbb{P}(E_i \\cap E_j)\\leq C \\left(\\sum_{i\\leq N}\\mathbb{P}(E_i)\\right)^2$$ for infinitely many positive integers $N$, and suppose also that $$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty.$$ Then $$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)\\geq \\frac{1}{C}.$$",
+  "problem_type": "lemma",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "key_techniques": [
+    "second-moment method",
+    "pairwise intersection estimates",
+    "quantitative Borel-Cantelli bound"
+  ],
+  "prerequisites": [
+    "probability spaces",
+    "expectation and variance methods",
+    "Borel-Cantelli lemmas"
+  ],
+  "callout_body": "集合列$E_1,..,E_n,..\\in\\mathcal{F}$满足存在一个正实数$C$使得$$\\sum_{i,j\\leq N}\\mathbb{P}(E_i \\cap E_j)\\leq C \\left(\\sum_{i\\leq N}\\mathbb{P}(E_i)\\right)^2$$对无穷多个正整数$N$成立，并且其测度形成的集合不收敛$$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty$$\n那么$$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)\\geq \\frac{1}{C}$$"
+}

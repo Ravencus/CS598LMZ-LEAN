@@ -1,0 +1,18 @@
+{
+  "problem_id": "lemma-32",
+  "english_title": "Lemma 3.2",
+  "statement_en": "Let $G(x):I\\to \\mathbb{R}$ be a differentiable convex function, and let $r_n\\in I$ be a sequence. Then $$\\Delta^2 G(r_n)\\geq G'(r_{n+1})\\Delta^2 r_n.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem convex_second_difference_ge_deriv_mul_second_difference\n    (I : Set ℝ) (G : ℝ → ℝ) (r : ℕ → ℝ)\n    (hconv : ConvexOn ℝ I G) (hdiff : Differentiable ℝ G)\n    (hr : ∀ n : ℕ, r n ∈ I) :\n    ∀ n : ℕ,\n      G (r (n + 2)) - 2 * G (r (n + 1)) + G (r n) ≥\n        deriv G (r (n + 1)) * (r (n + 2) - 2 * r (n + 1) + r n) := by\n  sorry"
+}

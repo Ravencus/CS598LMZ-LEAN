@@ -1,0 +1,19 @@
+{
+  "problem_id": "urysohn-subsequence-principle",
+  "model": "gpt-5.5",
+  "wall_seconds": 12.2,
+  "wall_exceeded": false,
+  "parsed_ok": true,
+  "predicted": [
+    "cauchy-convergence-criterion-hub"
+  ],
+  "truth": [
+    "borel-cantelli-lemma-and-applications-hub"
+  ],
+  "tp": 0,
+  "fp": 1,
+  "fn": 1,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

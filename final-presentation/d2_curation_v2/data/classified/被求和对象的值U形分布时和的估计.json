@@ -1,0 +1,71 @@
+{
+  "note_title": "被求和对象的值U形分布时和的估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "被求和对象的值U形分布时和的估计#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "$$S_n:=\\sum_{k=2}^{n-1}\\frac{1}{(n-k)\\log(k)}$$求$$\\lim_{n\\to \\infty}S_n$$",
+      "position_char": 43,
+      "position_line": 7,
+      "classification_result": {
+        "id": "被求和对象的值U形分布时和的估计#1",
+        "classification": "problem",
+        "english_title": "Problem 0",
+        "if_problem": {
+          "statement_en": "Let $$S_n:=\\sum_{k=2}^{n-1}\\frac{1}{(n-k)\\log(k)}.$$ Find $$\\lim_{n\\to \\infty}S_n.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "splitting the sum into ranges",
+            "comparison with harmonic sums",
+            "logarithmic asymptotics"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "properties of logarithms",
+            "basic asymptotic estimation of sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "被求和对象的值U形分布时和的估计#2",
+      "type": "question",
+      "title": "问题2.1",
+      "body": "求极限$$\\lim_{n\\to \\infty} \\frac{\\log^2(n)}{n}\\sum_{k=2}^{n-2}\\frac{1}{\\log(k)\\log(n-k)}$$",
+      "position_char": 1745,
+      "position_line": 34,
+      "classification_result": {
+        "id": "被求和对象的值U形分布时和的估计#2",
+        "classification": "problem",
+        "english_title": "Problem 2.1",
+        "if_problem": {
+          "statement_en": "Find the limit $$\\lim_{n\\to \\infty} \\frac{\\log^2(n)}{n}\\sum_{k=2}^{n-2}\\frac{1}{\\log(k)\\log(n-k)}.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "asymptotic analysis",
+          "key_techniques": [
+            "normalization of sums",
+            "uniform approximation of logarithmic factors",
+            "splitting central and boundary ranges"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "properties of logarithms",
+            "basic asymptotic estimation of finite sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"被求和对象的值U形分布时和的估计#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 0\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $$S_n:=\\\\sum_{k=2}^{n-1}\\\\frac{1}{(n-k)\\\\log(k)}.$$ Find $$\\\\lim_{n\\\\to \\\\infty}S_n.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"splitting the sum into ranges\",\n        \"comparison with harmonic sums\",\n        \"logarithmic asymptotics\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"properties of logarithms\",\n        \"basic asymptotic estimation of sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"被求和对象的值U形分布时和的估计#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Find the limit $$\\\\lim_{n\\\\to \\\\infty} \\\\frac{\\\\log^2(n)}{n}\\\\sum_{k=2}^{n-2}\\\\frac{1}{\\\\log(k)\\\\log(n-k)}.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"asymptotic analysis\",\n      \"key_techniques\": [\n        \"normalization of sums\",\n        \"uniform approximation of logarithmic factors\",\n        \"splitting central and boundary ranges\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"properties of logarithms\",\n        \"basic asymptotic estimation of finite sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

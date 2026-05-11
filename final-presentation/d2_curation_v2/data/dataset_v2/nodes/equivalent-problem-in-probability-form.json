@@ -1,0 +1,23 @@
+{
+  "id": "equivalent-problem-in-probability-form",
+  "type": "problem",
+  "source_note": "样本期望的渐近展开系数",
+  "english_source_note": "Asymptotic Expansion Coefficients of Sample Means",
+  "callout_id": "样本期望的渐近展开系数#2",
+  "english_title": "Equivalent Problem in Probability Form",
+  "statement_en": "On a probability space $(\\Omega,\\mathcal{F},P)$, let $X_1,\\dots,X_n,\\dots$ be independent random variables with distribution $U(0,1)$. Find the limit of the expectation $$E \\left [n\\left(\\frac{\\overline{Y_n}}{\\overline{X_n}}-\\frac{2}{3}\\right)\\right],$$ where $\\overline{Y_n} = \\frac{\\sum_{i\\leq n} X_i^2}{n}$ and $\\overline{X_n} = \\frac{\\sum_{i\\leq n} X_i}{n}$.",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "key_techniques": [
+    "analyze the ratio of sample means",
+    "compute moments and covariance",
+    "use asymptotic expansion near the mean"
+  ],
+  "prerequisites": [
+    "uniform distribution on $[0,1]$",
+    "expectation, variance, and covariance",
+    "sample mean asymptotics"
+  ],
+  "callout_body": "在概率空间$(\\Omega,\\mathcal{F},P)$上有一列独立且符合$U(0,1)$的随机变量$X_1,...,X_n,...$,求期望的极限:\n$$E \\left [n\\left(\\frac{\\overline{Y_n}}{\\overline{X_n}}-\\frac{2}{3}\\right)\\right]$$其中$\\overline{Y_n} = \\frac{\\sum_{i\\leq n} X_i^2}{n}$，以及$\\overline{X_n} = \\frac{\\sum_{i\\leq n} X_i}{n}$"
+}

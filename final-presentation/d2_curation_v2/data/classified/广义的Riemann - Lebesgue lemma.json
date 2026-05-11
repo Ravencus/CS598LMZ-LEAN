@@ -1,0 +1,44 @@
+{
+  "note_title": "广义的Riemann - Lebesgue lemma",
+  "is_hub": false,
+  "in_subset_via": [
+    "分段估计",
+    "an epsilon of room"
+  ],
+  "callouts": [
+    {
+      "id": "广义的Riemann - Lebesgue lemma#1",
+      "type": "note",
+      "title": "命题1：一维的广义的Riemann-Lebesgue引理",
+      "body": "$f \\in L^{1}([a,b])$并且$g$是周期为$T$的可测有界周期函数那么$$\\lim_{n\n\\to +\\infty}\\int_{[a,b]} f(x)g(nx) dx =\\left(\\frac{1}{T}\\int_{[0,T)}g(x)\\,dx\\right)\\left(\\int_{[a,b]}f(x)\\,dx\\right)$$ 即周期函数在一个周期内积分的平均值乘上可积函数在闭区间上的积分。",
+      "position_char": 32,
+      "position_line": 6,
+      "classification_result": {
+        "id": "广义的Riemann - Lebesgue lemma#1",
+        "classification": "problem",
+        "english_title": "Proposition 1: One-Dimensional Generalized Riemann-Lebesgue Lemma",
+        "if_problem": {
+          "statement_en": "Let $f \\in L^{1}([a,b])$, and let $g$ be a measurable bounded periodic function with period $T$. Then\n$$\\lim_{n\\to +\\infty}\\int_{[a,b]} f(x)g(nx)\\, dx =\\left(\\frac{1}{T}\\int_{[0,T)}g(x)\\,dx\\right)\\left(\\int_{[a,b]}f(x)\\,dx\\right).$$\nThat is, the limit equals the average value of $g$ over one period multiplied by the integral of $f$ over the interval.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "periodic averaging",
+            "approximation of integrable functions",
+            "change of variables",
+            "properties of $L^1$ functions"
+          ],
+          "prerequisites": [
+            "$L^1$ integrability",
+            "measurable bounded periodic functions",
+            "Lebesgue integration",
+            "limit theorems for integrals"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"广义的Riemann - Lebesgue lemma#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 1: One-Dimensional Generalized Riemann-Lebesgue Lemma\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f \\\\in L^{1}([a,b])$, and let $g$ be a measurable bounded periodic function with period $T$. Then\\n$$\\\\lim_{n\\\\to +\\\\infty}\\\\int_{[a,b]} f(x)g(nx)\\\\, dx =\\\\left(\\\\frac{1}{T}\\\\int_{[0,T)}g(x)\\\\,dx\\\\right)\\\\left(\\\\int_{[a,b]}f(x)\\\\,dx\\\\right).$$\\nThat is, the limit equals the average value of $g$ over one period multiplied by the integral of $f$ over the interval.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"periodic averaging\",\n        \"approximation of integrable functions\",\n        \"change of variables\",\n        \"properties of $L^1$ functions\"\n      ],\n      \"prerequisites\": [\n        \"$L^1$ integrability\",\n        \"measurable bounded periodic functions\",\n        \"Lebesgue integration\",\n        \"limit theorems for integrals\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

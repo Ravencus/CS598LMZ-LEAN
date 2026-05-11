@@ -1,0 +1,36 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_426f475d8f74.lean",
+      "line": 3,
+      "column": 4,
+      "severity": "error",
+      "message": "`cantorSet` has already been declared"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_426f475d8f74.lean",
+      "line": 11,
+      "column": 33,
+      "severity": "error",
+      "message": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  cantorSet\n\nHint: The identifier `volume` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_426f475d8f74.lean",
+      "line": 3,
+      "column": 4,
+      "severity": "error",
+      "message": "`cantorSet` has already been declared"
+    },
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_426f475d8f74.lean",
+      "line": 11,
+      "column": 33,
+      "severity": "error",
+      "message": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  cantorSet\n\nHint: The identifier `volume` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ]
+}

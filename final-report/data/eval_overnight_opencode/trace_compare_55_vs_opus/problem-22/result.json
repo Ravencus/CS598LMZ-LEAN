@@ -1,0 +1,11 @@
+{
+  "problem_id": "problem-22",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "unclear",
+  "divergence": "n/a",
+  "evidence": "Trace A mostly performs lemma-name probing and then rejects the theorem as false, with no visible formal development of the advertised contrapositive. Trace B repeatedly tries to prove the stated theorem, mainly via partitioning indices by which sequence is smaller, and ultimately emits `sorry`.",
+  "wall_seconds": 7.88
+}

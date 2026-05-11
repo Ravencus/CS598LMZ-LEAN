@@ -1,0 +1,24 @@
+{
+  "problem_id": "problem-3",
+  "english_title": "Problem",
+  "statement_en": "Let $$a_n=\\frac{4+3^n}{2+3^n}.$$ Prove that $$\\prod_{n\\leq N} a_n<2$$ for every positive integer $N$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem prod_an_lt_two (N : ℕ) (hN : 0 < N) :\n    (∏ n ∈ Finset.Icc 1 N, (((4 : ℚ) + (3 : ℚ) ^ n) / ((2 : ℚ) + (3 : ℚ) ^ n))) < 2 := by\n  sorry"
+}

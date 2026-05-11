@@ -1,0 +1,1 @@
+I'll submit my final attempt. The proof uses the squeeze theorem with `|sin x - x| ≤ x^2` for `x ∈ [0,1]`, a sympy-verified inequality.

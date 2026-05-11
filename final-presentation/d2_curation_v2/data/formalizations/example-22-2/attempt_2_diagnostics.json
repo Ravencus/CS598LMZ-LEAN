@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_df76a8264ba9.lean",
+      "line": 9,
+      "column": 24,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  volume\nhas type\n  Measure ?m.32\nbut is expected to have type\n  MeasurableSpace ℝ\nin the application\n  @MeasurableSet ℝ volume\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_df76a8264ba9.lean",
+      "line": 9,
+      "column": 24,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  volume\nhas type\n  Measure ?m.32\nbut is expected to have type\n  MeasurableSpace ℝ\nin the application\n  @MeasurableSet ℝ volume\n"
+    }
+  ]
+}

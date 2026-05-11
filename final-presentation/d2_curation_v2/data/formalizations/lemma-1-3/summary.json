@@ -1,0 +1,30 @@
+{
+  "problem_id": "lemma-1-3",
+  "english_title": "Lemma 1",
+  "statement_en": "For any neighborhood $U$ of the identity element $1_G$ in an LCA group $G$, there exists a set $K \\subseteq \\hat{G}$ such that if $\\chi \\in \\hat{G} \\setminus K$, then there exists $x \\in U$ with $$\\operatorname{Re}\\chi(x)\\leq 0.$$",
+  "difficulty": "hard",
+  "domain": "harmonic analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "invalid binder annotation, type is not a class instance\n  ?m.2\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "invalid binder annotation, type is not a class instance\n  ?m.2\n\nNote: Use the command `set_option checkBinderAnnotations false` to disable the check"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (1 : G)\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImp"
+    }
+  ],
+  "final_code": "import Mathlib\n\nabbrev MyDualCharacter (G : Type*) [CommGroup G] [TopologicalSpace G] :=\n  { χ : ContinuousMonoidHom G ℂ // ∀ x : G, ‖χ x‖ = 1 }\n\ntheorem exists_bad_real_part_outside_set\n    {G : Type*} [CommGroup G] [TopologicalSpace G]\n    [LocallyCompactSpace G] [T2Space G]\n    {U : Set G} (hU : U ∈ 𝓝 (1 : G)) :\n    ∃ K : Set (MyDualCharacter G),\n      ∀ χ : MyDualCharacter G,\n        χ ∉ K →\n        ∃ x ∈ U, Complex.re (χ.1 x) ≤ 0 := by\n  sorry"
+}

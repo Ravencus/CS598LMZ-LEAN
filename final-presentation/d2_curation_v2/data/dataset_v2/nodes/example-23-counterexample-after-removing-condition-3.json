@@ -1,0 +1,23 @@
+{
+  "id": "example-23-counterexample-after-removing-condition-3",
+  "type": "problem",
+  "source_note": "Silverman–Toeplitz定理",
+  "english_source_note": "Silverman-Toeplitz Theorem",
+  "callout_id": "Silverman–Toeplitz定理#4",
+  "english_title": "Example 2.3: Counterexample After Removing Condition 3",
+  "statement_en": "Define\n$$a_{n,k}:=\\begin{cases}1&(n,k)=(1,1)\\\\n&(n,k)=(n,n)\\\\1-n&(n,k)=(n,n-1)\\\\0&\\text{otherwise.}\\end{cases}$$\nThis double sequence does not satisfy condition 3 of Proposition 2.1. Let $$x_k:=\\frac{(-1)^k}{k}.$$ Then\n$$\\sum_{k\\le n} a_{n,k}x_k = a_{n,n-1}x_{n-1}+a_{n,n}x_n = 2(-1)^n,$$\nso the limit of the sum does not exist, and therefore it cannot equal the limit $0$ of $x_k$.",
+  "problem_type": "counterexample",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "construct a matrix counterexample",
+    "test necessity of hypotheses",
+    "direct evaluation of the transformed sequence"
+  ],
+  "prerequisites": [
+    "convergent sequences",
+    "counterexamples in analysis",
+    "Silverman-Toeplitz theorem"
+  ],
+  "callout_body": "令$$a_{n,k}:=\\begin{cases}1&(n,k)=(1,1)\\\\n&(n,k)=(n,n)\\\\1-n&(n,k)=(n,n-1)\\\\0&\\text{otherwise}\\end{cases}$$这个序列可以看成一个无穷的矩阵$A$当中的元素：$$A:=\\begin{pmatrix}1&0&0&\\cdots\\\\-1&2&0&\\cdots\\\\ 0&-2&3&\\cdots \\\\\\vdots&\\vdots&\\vdots&\\ddots \\\\0&\\cdots&1-n&n\\\\\\vdots&\\vdots&\\vdots&\\ddots \\end{pmatrix}$$这样的双重序列并不满足“命题2.1”的第三个条件，因为此时$$\\sum_{k\\leq n}|a_{n,k}|=2\\sum_{k=1}^{n} k=n(n+1)$$令$x_k:=\\frac{(-1)^k}{k}$那么$$\\sum_{k\\leq n} a_{n,k}x_k = a_{n,n-1}x_{n-1}+a_{n,n}x_{n}=2(-1)^n$$这个和的极限不存在，更不会等于$x_k$的极限0。"
+}

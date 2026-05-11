@@ -1,0 +1,118 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "deepseek-v4-flash",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 480.14,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 11,
+  "budget": 10,
+  "budget_hit_event": true,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 13,
+  "first_error": "unknown namespace `IntervalIntegral`",
+  "total_cost_usd": 0.019191,
+  "total_tokens": 373637,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 4,
+      "column": 5,
+      "severity": "error",
+      "message": "unknown namespace `IntervalIntegral`"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 17,
+      "column": 59,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  h0π2\nhas type\n  0 ≤ Real.pi / 2\nbut is expected to have type\n  IntervalIntegrable ?m.624 ?m.625 ?m.621 ?m.622\nin the application\n  intervalIntegral.integral_add_adjacent_intervals h0π2"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 16,
+      "column": 71,
+      "severity": "error",
+      "message": "unsolved goals\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\n⊢ ∫ (u : ℝ) in 0..2 * Real.pi, max (Real.cos u) 0 =\n    (∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0) + ∫ (u : ℝ) in Real.pi / 2..2 * Real.pi, max (Real.cos u) 0"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 21,
+      "column": 59,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  hπ23π2\nhas type\n  Real.pi / 2 ≤ 3 * Real.pi / 2\nbut is expected to have type\n  IntervalIntegrable ?m.632 ?m.633 ?m.629 ?m.630\nin the application\n  intervalIntegral.integral_add_adjacent_intervals hπ23π2"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 20,
+      "column": 77,
+      "severity": "error",
+      "message": "unsolved goals\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\n⊢ (∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0) + ∫ (u : ℝ) in Real.pi / 2..2 * Real.pi, max (Real.cos u) 0 =\n    (∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0) +\n      ((∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0) +\n        ∫ (u : ℝ) in 3 * Real.pi / 2..2 * Real.pi, max (Real.cos u) 0)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 34,
+      "column": 26,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase left.h\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\nu : ℝ\nhu1 : min 0 (Real.pi / 2) ≤ u\nhu2 : u ≤ max 0 (Real.pi / 2)\na✝ : u < -(Real.pi / 2)\n⊢ False\nfailed"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 34,
+      "column": 26,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase right.h\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\nu : ℝ\nhu1 : min 0 (Real.pi / 2) ≤ u\nhu2 : u ≤ max 0 (Real.pi / 2)\na✝ : Real.pi / 2 < u\n⊢ False\nfailed"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 42,
+      "column": 26,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase left.h\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\nh1 : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nu : ℝ\nhu1 : min (Real.pi / 2) (3 * Real.pi / 2) ≤ u\nhu2 : u ≤ max (Real.pi / 2) (3 * Real.pi / 2)\na✝ : u - Real.pi < -(Real.pi / 2)\n⊢ False\nfailed"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 42,
+      "column": 26,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase right.h\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\nh1 : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nu : ℝ\nhu1 : min (Real.pi / 2) (3 * Real.pi / 2) ≤ u\nhu2 : u ≤ max (Real.pi / 2) (3 * Real.pi / 2)\na✝ : Real.pi / 2 < u - Real.pi\n⊢ False\nfailed\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 47,
+      "column": 50,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  Real.cos (?x + Real.pi)\nin the target expression\n  Real.cos (Real.pi + (u - Real.pi)) = -Real.cos (u - Real.pi)\n\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\nh1 : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nu : ℝ\nhu1 : min (Real.pi / 2) (3 * Real.pi / 2) ≤ u\nhu2 : u ≤ max (Real.pi / 2) (3 * Real.pi / 2)\nhmem : u - Real.pi ∈ Icc (-(Real.pi / 2)) (Real.pi / 2)\nhcosθ_nonneg : 0 ≤ Real.cos (u - Real.pi)\n⊢ Real.cos (Real.pi + (u - Real.pi)) = -Real.cos (u - Real.pi)"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 57,
+      "column": 26,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase left.h\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\nh1 : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nh2 : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0\nu : ℝ\nhu1 : min (3 * Real.pi / 2) (2 * Real.pi) ≤ u\nhu2 : u ≤ max (3 * Real.pi / 2) (2 * Real.pi)\na✝ : u - 2 * Real.pi < -(Real.pi / 2)\n⊢ False\nfailed"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 57,
+      "column": 26,
+      "severity": "error",
+      "message": "linarith failed to find a contradiction\ncase right.h\nhpipos : 0 < Real.pi\nh0π2 : 0 ≤ Real.pi / 2\nhπ23π2 : Real.pi / 2 ≤ 3 * Real.pi / 2\nh3π22π : 3 * Real.pi / 2 ≤ 2 * Real.pi\nhπ22π : Real.pi / 2 ≤ 2 * Real.pi\nh1 : ∫ (u : ℝ) in 0..Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in 0..Real.pi / 2, Real.cos u\nh2 : ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, max (Real.cos u) 0 = ∫ (u : ℝ) in Real.pi / 2..3 * Real.pi / 2, 0\nu : ℝ\nhu1 : min (3 * Real.pi / 2) (2 * Real.pi) ≤ u\nhu2 : u ≤ max (3 * Real.pi / 2) (2 * Real.pi)\na✝ : Real.pi / 2 < u - 2 * Real.pi\n⊢ False\nfailed\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_c2b8ac04a2.lean",
+      "line": 69,
+      "column": 12,
+      "severity": "error",
+      "message": "Unknown constant `intervalIntegral.integral_cos`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    }
+  ]
+}

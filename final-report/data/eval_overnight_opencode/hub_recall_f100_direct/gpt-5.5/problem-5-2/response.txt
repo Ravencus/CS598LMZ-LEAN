@@ -1,0 +1,5 @@
+["identity-theorem-hub", "term-by-term-estimates-hub", "integral-estimates-for-sums-hub", "using-known-asymptotics-to-derive-expansions-hub"]
+- identity-theorem-hub: The theorem is an analytic uniqueness result: zeros on a sufficiently large determining set, combined with entire-function regularity and growth control, force global vanishing.
+- term-by-term-estimates-hub: A Jensen-formula proof estimates the zero contribution by summing individual terms from the zeros at `log n`.
+- integral-estimates-for-sums-hub: The lower bound on the zero-counting/Jensen sum naturally compares sums over `n ≤ exp R` with integrals.
+- using-known-asymptotics-to-derive-expansions-hub: One needs the asymptotic contrast between exponentially many zeros up to radius `R` and the allowed finite-order growth `exp(R^ρ)`.

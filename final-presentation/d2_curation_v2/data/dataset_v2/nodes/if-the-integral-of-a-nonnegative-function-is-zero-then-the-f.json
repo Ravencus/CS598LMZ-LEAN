@@ -1,0 +1,23 @@
+{
+  "id": "if-the-integral-of-a-nonnegative-function-is-zero-then-the-f",
+  "type": "problem",
+  "source_note": "函数积分的单调性",
+  "english_source_note": "Monotonicity of Function Integrals",
+  "callout_id": "函数积分的单调性#5",
+  "english_title": "If the Integral of a Nonnegative Function Is Zero, Then the Function Is Zero Almost Everywhere on the Set",
+  "statement_en": "On a sigma-finite measure space $(\\Omega,\\mathcal{F},\\mu)$, let $f$ be a nonnegative measurable function. If on a measurable set $E$ of positive measure one has $\\int_E f\\,d\\mu=0$, then $f=0$ almost everywhere on $E$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "contrapositive using strict positivity of the integral",
+    "analyze the set where $f>0$"
+  ],
+  "prerequisites": [
+    "sigma-finite measure spaces",
+    "nonnegative measurable functions",
+    "almost everywhere statements",
+    "strict positivity of the integral"
+  ],
+  "callout_body": "在sigma-finite的测度空间$(\\Omega,\\mathcal{F},\\mu)$上，对于非负可测函数$f$，在一个测度为正的集合$E$上的积分$\\int_{E}f\\,d\\mu=0$那么$f =0$在集合$E$上几乎处处成立。"
+}

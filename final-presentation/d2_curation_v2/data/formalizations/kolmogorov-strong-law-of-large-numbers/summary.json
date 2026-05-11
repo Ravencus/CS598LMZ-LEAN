@@ -1,0 +1,30 @@
+{
+  "problem_id": "kolmogorov-strong-law-of-large-numbers",
+  "english_title": "Kolmogorov Strong Law of Large Numbers",
+  "statement_en": "Let $X_n$ be a sequence of independent random variables on a probability space, not necessarily identically distributed, with mean $0$ and finite variance, and suppose additionally that\n$$\\sum_{n\\geq 1} \\frac{V(X_n)}{n^2}<+\\infty.$$ Then the random variables $\\frac{X_1+\\cdots+X_n}{n}$ converge almost surely to $0$.",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  0\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImplicit`"
+    },
+    {
+      "attempt": 3,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory ProbabilityTheory Filter\n\ntheorem strong_law_average_of_independent_mean_zero\n    {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω) [IsProbabilityMeasure μ]\n    (X : ℕ → Ω → ℝ)\n    (hindep : iIndepFun X μ)\n    (h_int : ∀ n, Integrable (X n) μ)\n    (h_mean_zero : ∀ n, ∫ ω, X n ω ∂ μ = 0)\n    (h_finite_variance : ∀ n, Integrable (fun ω => (X n ω) ^ (2 : ℕ)) μ)\n    (h_var_summable :\n      Summable (fun n : ℕ => (∫ ω, (X n ω) ^ (2 : ℕ) ∂ μ) / (((n : ℝ) + 1) ^ (2 : ℕ)))) :\n    ∀ᵐ ω ∂ μ,\n      Tendsto\n        (fun n : ℕ => ((Finset.range (n + 1)).sum fun i => X i ω) / ((n : ℝ) + 1))\n        atTop\n        (nhds 0) := by\n  sorry"
+}

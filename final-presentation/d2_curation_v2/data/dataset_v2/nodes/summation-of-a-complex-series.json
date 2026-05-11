@@ -1,0 +1,23 @@
+{
+  "id": "summation-of-a-complex-series",
+  "type": "problem",
+  "source_note": "制造telescoping sum求和或求乘积",
+  "english_source_note": "Using Telescoping Sums for Sums and Products",
+  "callout_id": "制造telescoping sum求和或求乘积#2",
+  "english_title": "Summation of a Complex Series",
+  "statement_en": "For \\(|z|<1\\), evaluate\n$$\\\\sum_{n \\\\geq 1} \\\\frac{z^{n-1}}{(1-z^n)(1-z^{n+1})}.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "telescoping sum",
+    "partial fraction decomposition",
+    "manipulation of geometric-type factors"
+  ],
+  "prerequisites": [
+    "geometric series",
+    "complex numbers",
+    "algebraic manipulation of rational expressions"
+  ],
+  "callout_body": "$|z|<1$，求和\n$$\\sum_{n \\geq 1} \\frac{z^{n-1}}{(1-z^n)(1-z^{n+1})}$$"
+}

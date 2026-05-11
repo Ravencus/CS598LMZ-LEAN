@@ -1,0 +1,24 @@
+{
+  "problem_id": "darboux-equivalent-condition-for-riemann-integrability",
+  "english_title": "Darboux Equivalent Condition for Riemann Integrability",
+  "statement_en": "A function $f$ on the rectangle $I_{a,b}\\subset \\mathbb{R}^n$ is Riemann integrable if and only if for every $\\varepsilon>0$ there exists a partition $P_{\\varepsilon}$ such that $$\\sum_{k=1}^{n_{\\varepsilon}} (M_k-m_k)|I_k|<\\varepsilon,$$ where $\\{I_k\\}_{k=1}^{n_{\\varepsilon}}$ are the subrectangles induced by the partition $P_{\\varepsilon}$, and $M_k,m_k$ are respectively the supremum and infimum of $f$ on $I_k$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Unknown identifier `IntegrableOn`"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ndef closedRectangle {n : ℕ} (a b : Fin n → ℝ) : Set (Fin n → ℝ) :=\n  Set.Icc a b\n\ndef RiemannIntegrableOnRectangle {n : ℕ} (f : (Fin n → ℝ) → ℝ) (a b : Fin n → ℝ) : Prop :=\n  MeasureTheory.IntegrableOn f (closedRectangle a b) MeasureTheory.volume\n\nstructure RectanglePartition (n : ℕ) (a b : Fin n → ℝ) where\n  pieces : Finset ℕ\n  subrectangle : ℕ → Set (Fin n → ℝ)\n  volume : ℕ → ℝ\n\ntheorem riemannIntegrableOnRectangle_iff_forall_exists_partition\n    {n : ℕ} (f : (Fin n → ℝ) → ℝ) (a b : Fin n → ℝ) :\n    RiemannIntegrableOnRectangle f a b ↔\n      ∀ ε : ℝ, ε > 0 →\n        ∃ P : RectanglePartition n a b,\n          let M : ℕ → ℝ := fun k => sSup (f '' P.subrectangle k)\n          let m : ℕ → ℝ := fun k => sInf (f '' P.subrectangle k)\n          Finset.sum P.pieces (fun k => (M k - m k) * P.volume k) < ε := by\n  sorry"
+}

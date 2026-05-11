@@ -1,0 +1,120 @@
+{
+  "note_title": "把积分或求和对象视为一个计数函数并展开",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "把积分或求和对象视为一个计数函数并展开#1",
+      "type": "tip",
+      "title": "想法0",
+      "body": "当我们要估计或计算一个积分$\\int XY$或和$\\sum XY$遇到困难时，并且：\n1. $Y$难以做常规的积分或求和处理。\n2. $Y$可以被看成是某种计数函数，即存在一个条件$\\text{cond}$，使得$$Y=\\sum 1_{\\text{cond}}$$\n那么值得尝试把$Y$当计数函做和的展开，然后交换次序变成$$\\sum \\int X\\cdot1_{\\text{cond}}\\quad \\text{or}\\quad \\sum \\sum X\\cdot1_{\\text{cond}}$$\n\n如果$\\int X\\cdot1_{\\text{cond}}$或$\\sum X\\cdot1_{\\text{cond}}$是容易直接估计或计算的对象，或者借助[[把条件函数展开为新的和或积分然后换序]]的思路从而变得好处理的多项，那么这个思路就算是一定程度上简化了原有的积分或和的计算（或估计）问题。",
+      "position_char": 38,
+      "position_line": 6,
+      "classification_result": {
+        "id": "把积分或求和对象视为一个计数函数并展开#1",
+        "classification": "strategy_template",
+        "english_title": "Idea 0",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Treat the Integrand or Summand as a Counting Function and Expand",
+          "summary_en": "When an integral like $\\int XY$ or a sum like $\\sum XY$ is hard to handle because $Y$ is awkward, try expressing $Y$ as a counting function of the form $Y=\\sum 1_{\\text{cond}}$. Then expand and interchange the order to reduce the problem to simpler integrals or sums involving indicator functions.",
+          "applicability": "Applies when one factor in an integral or sum can be rewritten as a count of how many conditions are satisfied, and the resulting terms after exchanging order are easier to estimate or compute."
+        }
+      }
+    },
+    {
+      "id": "把积分或求和对象视为一个计数函数并展开#2",
+      "type": "example",
+      "title": "例子1.1",
+      "body": "计算函数$\\lfloor x\\rfloor$的Laplace变换，即求含参数积分$$I_s:= \\int_0^{\\infty} \\lfloor x\\rfloor e^{-sx}\\,dx$$",
+      "position_char": 827,
+      "position_line": 19,
+      "classification_result": {
+        "id": "把积分或求和对象视为一个计数函数并展开#2",
+        "classification": "problem",
+        "english_title": "Example 1.1",
+        "if_problem": {
+          "statement_en": "Compute the Laplace transform of $\\lfloor x\\rfloor$, that is, evaluate the parameter-dependent integral $$I_s:= \\int_0^{\\infty} \\lfloor x\\rfloor e^{-sx}\\,dx.$$",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "rewrite $\\lfloor x\\rfloor$ as a counting function",
+            "interchange summation and integration",
+            "Laplace transform computation"
+          ],
+          "prerequisites": [
+            "floor function",
+            "Laplace transform",
+            "Tonelli or Fubini type interchange of sum and integral"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "把积分或求和对象视为一个计数函数并展开#3",
+      "type": "example",
+      "title": "例子1.2:Baby rudin ,第六章，习题16",
+      "body": "对于$\\text{Re}(s)>1$，定义\n$$ \\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}$$\n证明：$$ \\zeta(s) = s \\int_{1}^{\\infty} \\frac{[x]}{x^{s+1}} \\, dx $$",
+      "position_char": 1326,
+      "position_line": 26,
+      "classification_result": {
+        "id": "把积分或求和对象视为一个计数函数并展开#3",
+        "classification": "problem",
+        "english_title": "Example 1.2: Baby Rudin, Chapter 6, Exercise 16",
+        "if_problem": {
+          "statement_en": "For $\\operatorname{Re}(s)>1$, define $$ \\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}. $$ Prove that $$ \\zeta(s) = s \\int_{1}^{\\infty} \\frac{[x]}{x^{s+1}} \\, dx .$$",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "rewrite the floor function as a counting function",
+            "interchange summation and integration",
+            "integral representation of the zeta function"
+          ],
+          "prerequisites": [
+            "Riemann zeta function",
+            "improper integrals",
+            "Tonelli or Fubini theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "把积分或求和对象视为一个计数函数并展开#4",
+      "type": "example",
+      "title": "例子3.1:指数的Legendre公式的证明",
+      "body": "在[[从二项式系数到Kummer定理#1. Legendre公式]]当中我们介绍了计算阶乘$n!$素因子$p$指数的办法$$\\nu_p(n!)=\\sum_{k\\geq 1}\\left\\lfloor\\frac{n}{p^k}\\right\\rfloor$$我们可以试着从本篇文章当中的观点中来证明这件事。我们利用$$\\nu_p(r_1r_2)=\\nu_p(r_1)+\\nu_p(r_2)$$的这种性质。那么$$\\nu_p(n!)=\\sum_{m=1}^n \\nu_p(m)$$其中我们把$\\nu_p(m)$视为一个计数函数，即$$\\nu_p(m)=\\sum_{k\\geq 1}1_{p^k|m}$$从而带入到$\\nu_p(n!)$的式子当中，并交换求和次序，从而得到$$\\nu_p(n!)=\\sum_{m=1}^n \\sum_{k\\geq 1}1_{p^k|m}= \\sum_{k\\geq 1}\\sum_{m=1}^n1_{p^k|m}=\\sum_{k\\geq 1}\\left\\lfloor \\frac{n}{p^k} \\right\\rfloor$$这便是Legendre公式。",
+      "position_char": 3786,
+      "position_line": 65,
+      "classification_result": {
+        "id": "把积分或求和对象视为一个计数函数并展开#4",
+        "classification": "problem",
+        "english_title": "Example 3.1: A Proof of Legendre's Formula for the Exponent",
+        "if_problem": {
+          "statement_en": "Using the viewpoint of this note, prove Legendre's formula for the exponent of a prime $p$ in $n!$: $$\\nu_p(n!)=\\sum_{k\\geq 1}\\left\\lfloor\\frac{n}{p^k}\\right\\rfloor.$$ The argument starts from $$\\nu_p(n!)=\\sum_{m=1}^n \\nu_p(m)$$ and rewrites $$\\nu_p(m)=\\sum_{k\\geq 1}1_{p^k\\mid m}.$$",
+          "problem_type": "example",
+          "difficulty": "medium",
+          "domain": "number theory",
+          "key_techniques": [
+            "rewrite valuation as a counting function",
+            "double-sum expansion",
+            "interchange the order of summation"
+          ],
+          "prerequisites": [
+            "$p$-adic valuation",
+            "divisibility",
+            "factorials"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"把积分或求和对象视为一个计数函数并展开#1\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 0\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Treat the Integrand or Summand as a Counting Function and Expand\",\n      \"summary_en\": \"When an integral like $\\\\int XY$ or a sum like $\\\\sum XY$ is hard to handle because $Y$ is awkward, try expressing $Y$ as a counting function of the form $Y=\\\\sum 1_{\\\\text{cond}}$. Then expand and interchange the order to reduce the problem to simpler integrals or sums involving indicator functions.\",\n      \"applicability\": \"Applies when one factor in an integral or sum can be rewritten as a count of how many conditions are satisfied, and the resulting terms after exchanging order are easier to estimate or compute.\"\n    }\n  },\n  {\n    \"id\": \"把积分或求和对象视为一个计数函数并展开#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Compute the Laplace transform of $\\\\lfloor x\\\\rfloor$, that is, evaluate the parameter-dependent integral $$I_s:= \\\\int_0^{\\\\infty} \\\\lfloor x\\\\rfloor e^{-sx}\\\\,dx.$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"rewrite $\\\\lfloor x\\\\rfloor$ as a counting function\",\n        \"interchange summation and integration\",\n        \"Laplace transform computation\"\n      ],\n      \"prerequisites\": [\n        \"floor function\",\n        \"Laplace transform\",\n        \"Tonelli or Fubini type interchange of sum and integral\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"把积分或求和对象视为一个计数函数并展开#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 1.2: Baby Rudin, Chapter 6, Exercise 16\",\n    \"if_problem\": {\n      \"statement_en\": \"For $\\\\operatorname{Re}(s)>1$, define $$ \\\\zeta(s) = \\\\sum_{n=1}^{\\\\infty} \\\\frac{1}{n^s}. $$ Prove that $$ \\\\zeta(s) = s \\\\int_{1}^{\\\\infty} \\\\frac{[x]}{x^{s+1}} \\\\, dx .$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"rewrite the floor function as a counting function\",\n        \"interchange summation and integration\",\n        \"integral representation of the zeta function\"\n      ],\n      \"prerequisites\": [\n        \"Riemann zeta function\",\n        \"improper integrals\",\n        \"Tonelli or Fubini theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"把积分或求和对象视为一个计数函数并展开#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 3.1: A Proof of Legendre's Formula for the Exponent\",\n    \"if_problem\": {\n      \"statement_en\": \"Using the viewpoint of this note, prove Legendre's formula for the exponent of a prime $p$ in $n!$: $$\\\\nu_p(n!)=\\\\sum_{k\\\\geq 1}\\\\left\\\\lfloor\\\\frac{n}{p^k}\\\\right\\\\rfloor.$$ The argument starts from $$\\\\nu_p(n!)=\\\\sum_{m=1}^n \\\\nu_p(m)$$ and rewrites $$\\\\nu_p(m)=\\\\sum_{k\\\\geq 1}1_{p^k\\\\mid m}.$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"rewrite valuation as a counting function\",\n        \"double-sum expansion\",\n        \"interchange the order of summation\"\n      ],\n      \"prerequisites\": [\n        \"$p$-adic valuation\",\n        \"divisibility\",\n        \"factorials\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

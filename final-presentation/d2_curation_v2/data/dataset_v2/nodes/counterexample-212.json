@@ -1,0 +1,23 @@
+{
+  "id": "counterexample-212",
+  "type": "problem",
+  "source_note": "identity theorem",
+  "english_source_note": "Identity Theorem",
+  "callout_id": "identity theorem#5",
+  "english_title": "Counterexample 2.1.2",
+  "statement_en": "Consider $$g(z):= \\sin\\left(\\frac{\\pi}{z}\\right).$$ The function $g$ has an essential singularity at $0$, and $g\\left(\\frac{1}{n}\\right)=0$ for all $n\\in\\mathbb{Z}\\setminus\\{0\\}$. The zeros accumulate at $0$, but on the punctured disk $D_r(0)\\setminus\\{0\\}$ the point $0$ is not in the domain. Hence one cannot conclude that $g$ is identically zero when the accumulation point of zeros lies outside the domain.",
+  "problem_type": "counterexample",
+  "difficulty": "easy",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "punctured domain example",
+    "accumulation point outside the domain",
+    "essential singularity"
+  ],
+  "prerequisites": [
+    "holomorphic functions",
+    "identity theorem for holomorphic functions",
+    "isolated singularities"
+  ],
+  "callout_body": "$$g(z):= \\sin\\left(\\frac{\\pi}{z}\\right)$$\n函数$g$在0的位置是一个本性奇点,然后函数在$z = \\frac{1}{n},n\\in\\mathbb{Z}\\setminus \\{0\\}$上都是零点，其聚点是$0$.函数$g$在开连通区域$D_r(0)\\setminus\\{0\\}$上全纯,0虽然是聚点但是$0 \\not \\in D_r(0)\\setminus\\{0\\}$.在这种情况下，聚点不在开连通区域里面的时候，我们不能得到函数是0函数的结论。"
+}

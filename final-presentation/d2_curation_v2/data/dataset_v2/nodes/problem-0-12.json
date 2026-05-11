@@ -1,0 +1,21 @@
+{
+  "id": "problem-0-12",
+  "type": "problem",
+  "source_note": "判断剧烈震荡的序列部分和的有界性问题",
+  "english_source_note": "Boundedness of Partial Sums of Highly Oscillatory Sequences",
+  "callout_id": "判断剧烈震荡的序列部分和的有界性问题#1",
+  "english_title": "Problem 0",
+  "statement_en": "Let $$S_N:=\\sum_{n\\leq N}\\sin(n^2).$$ Is this an unbounded sequence?",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "analytic number theory",
+  "key_techniques": [
+    "equidistribution of polynomial sequences modulo 1",
+    "oscillatory partial sums"
+  ],
+  "prerequisites": [
+    "basic properties of trigonometric sums",
+    "equidistribution modulo 1"
+  ],
+  "callout_body": "令$$S_N:=\\sum_{n\\leq N}\\sin(n^2)$$这是否为一个无界序列？"
+}

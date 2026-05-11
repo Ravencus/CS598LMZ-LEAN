@@ -1,0 +1,23 @@
+{
+  "id": "apmo-2013-p4",
+  "type": "problem",
+  "source_note": "满足特定条件的两个集合尺寸的比例",
+  "english_source_note": "Size Ratios of Two Sets Under Given Conditions",
+  "callout_id": "满足特定条件的两个集合尺寸的比例#1",
+  "english_title": "APMO 2013, P4",
+  "statement_en": "Let $A,B$ be two disjoint finite subsets of the integers, and let $a,b$ be two positive integers. Suppose moreover that $$A\\cup B \\subset (A-a)\\cup (B+b)$$ where $A-a:=\\{x-a:x \\in A\\}$ and $B+b:=\\{x+b:x \\in B\\}$. Prove that $$a|A|=b|B|.$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "additive combinatorics",
+  "key_techniques": [
+    "indicator functions",
+    "Fourier analysis on integers",
+    "translational invariance"
+  ],
+  "prerequisites": [
+    "finite sets of integers",
+    "set translations",
+    "basic Fourier transform on $\\mathbb{Z}$"
+  ],
+  "callout_body": "$A,B$是整数集的两个不相交的有限子集，$a,b$是两个正整数，此外$$A\\cup B \\subset (A-a)\\cup (B+b)$$其中$A-a:=\\{x-a:x \\in A\\},B+b:=\\{x+b:x \\in B\\}$证明$$a|A|=b|B|$$"
+}

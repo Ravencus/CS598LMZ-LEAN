@@ -1,0 +1,25 @@
+{
+  "note_title": "复三角多项式在Lp空间中的稠密性",
+  "is_hub": false,
+  "in_subset_via": [
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "复三角多项式在Lp空间中的稠密性#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "全体复三角多项式组成的集合在$L^p([a,b]\\to \\mathbb{C}),1\\leq p<\\infty$当中稠密。",
+      "position_char": 40,
+      "position_line": 6
+    },
+    {
+      "id": "复三角多项式在Lp空间中的稠密性#2",
+      "type": "tip",
+      "title": "主要想法",
+      "body": "主要的思路是：\n1.  复三角多项式在$C(\\mathbb{T}\\to \\mathbb{C})$当中稠密的。（在一致范数意义下）\n2.  $C(\\mathbb{T}\\to \\mathbb{C})$在$C([a,b]\\to \\mathbb{C})$当中是稠密的。(在$L^p$度量的意义下)\n3.  $C([a,b]\\to \\mathbb{C})$在$L^p([a,b]\\to \\mathbb{C})$当中是稠密的。(这部分是已知的，我们甚至可以做到光滑逼近,参考[[紧支光滑函数在Lp空间当中稠密]])\n\n如果以上三点都正确，那么对于某个固定的$f \\in L^p([a,b]\\to \\mathbb{C})$：\n\n1. 对任意的$\\varepsilon>0$存在一个$g_{\\varepsilon}\\in C([a,b]\\to \\mathbb{C})$使得$$||f-g_{\\varepsilon}||_{L^p}<\\varepsilon$$\n2. 那么也存在一个$h_{\\varepsilon}\\in C(\\mathbb{T}\\to \\mathbb{C})$使得$$||g_{\\varepsilon}-h_{\\varepsilon}||_{L^P}<\\varepsilon$$\n3. 也存在一个复三角多项式$T_{\\varepsilon}$使得$$||T_{\\varepsilon}-h_{\\varepsilon}||_u<\\varepsilon\\implies ||T_{\\varepsilon}-h_{\\varepsilon}||_{L^p}<(b-a)\\varepsilon$$\n于是我们便可以得到:$$\\begin{aligned}||f-T_{\\varepsilon}||_{L^p}&\\leq ||f-g_{\\varepsilon}||_{L^p}+||g_{\\varepsilon}-h_{\\varepsilon}||_{L^P}+||T_{\\varepsilon}-h_{\\varepsilon}||_{L^p}\\\\&<2\\varepsilon+(b-a)\\varepsilon \\\\&=(b-a+2)\\varepsilon\\end{aligned}$$\n这对任意的$\\varepsilon>0$成立，因此稠密性可以得到证明。",
+      "position_char": 123,
+      "position_line": 10
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "theorem-34-lagrange-inversion-lagrange-burmann-formula",
+  "type": "problem",
+  "source_note": "对含参数方程根的估计",
+  "english_source_note": "Estimates for Roots of Parameterized Equations",
+  "callout_id": "对含参数方程根的估计#10",
+  "english_title": "Theorem 3.4 (Lagrange Inversion / Lagrange-Burmann Formula)",
+  "statement_en": "Assume \\(\\\\phi(x)\\) is analytic in a neighborhood of \\(x=r\\), and \\(\\\\phi(r)\\\neq 0\\). Consider the equation\n\\\\[\nx=r+s\\\\phi(x).\n\\\\]\nThen in a neighborhood of \\(s=0\\), the equation has a unique analytic solution\n\\\\[\nx(s)=r+\\\\sum_{i\\\\ge 1} c_i s^i,\n\\\\]\nwhere the coefficients are given by\n\\\\[\nc_i=\\\\frac{1}{i!}\\\\lim_{x\\\to r}\\\\frac{d^{\\,i-1}}{dx^{\\,i-1}}\\\\big[(x-r)^i\\\\phi(x)^i\\\\big].\n\\\\]",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "complex analysis",
+  "key_techniques": [
+    "Lagrange inversion",
+    "analytic expansion of implicit solutions"
+  ],
+  "prerequisites": [
+    "analytic functions",
+    "power series"
+  ],
+  "callout_body": "$\\phi(x)$在$x=r$的邻域中解析，且$\\phi(r)\\neq 0$。考虑方程$$x=r+s\\phi(x)$$则在$s=0$的邻域中，方程存在唯一解析解$$x(s)=r+\\sum_{i\\geq 1}a_i s^i $$其中系数$$c_i = \\frac{1}{i!}\\lim_{x\\to r } \\frac{d^{i-1}}{d x^{i-1}}[(x-r)^i\\phi(x)^i]$$"
+}

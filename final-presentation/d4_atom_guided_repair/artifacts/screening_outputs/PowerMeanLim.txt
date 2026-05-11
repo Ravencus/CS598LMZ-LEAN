@@ -1,0 +1,91 @@
+Let
+\[
+M_p(x_1,\dots,x_n;w_1,\dots,w_n)
+=\left(\sum_{i=1}^n w_i x_i^p\right)^{1/p},
+\]
+where \(x_i\ge 0\), \(w_i>0\), and \(\sum_{i=1}^n w_i=1\). We will prove that
+\[
+\lim_{p\to+\infty} M_p(x_1,\dots,x_n;w_1,\dots,w_n)=\max\{x_1,\dots,x_n\}.
+\]
+
+Set
+\[
+m:=\max\{x_1,\dots,x_n\}.
+\]
+
+We must show that \(M_p\to m\) as \(p\to\infty\).
+
+## Step 1: Upper bound
+
+Since each \(x_i\le m\), we have
+\[
+x_i^p\le m^p \qquad (i=1,\dots,n).
+\]
+Multiplying by \(w_i\) and summing gives
+\[
+\sum_{i=1}^n w_i x_i^p \le \sum_{i=1}^n w_i m^p = m^p\sum_{i=1}^n w_i = m^p.
+\]
+Therefore
+\[
+M_p=\left(\sum_{i=1}^n w_i x_i^p\right)^{1/p}\le (m^p)^{1/p}=m.
+\]
+
+So for every \(p>0\),
+\[
+M_p\le m.
+\]
+
+## Step 2: Lower bound
+
+Because \(m=\max_i x_i\), there exists at least one index \(j\) such that \(x_j=m\). Then
+\[
+\sum_{i=1}^n w_i x_i^p \ge w_j x_j^p = w_j m^p.
+\]
+Taking the \(p\)-th root,
+\[
+M_p \ge (w_j m^p)^{1/p} = w_j^{1/p} m.
+\]
+
+Thus
+\[
+w_j^{1/p}m \le M_p \le m.
+\]
+
+## Step 3: Pass to the limit
+
+Since \(w_j>0\), we know
+\[
+w_j^{1/p}\to 1 \qquad \text{as } p\to\infty.
+\]
+Hence
+\[
+w_j^{1/p}m \to m.
+\]
+Together with
+\[
+w_j^{1/p}m \le M_p \le m,
+\]
+the squeeze theorem yields
+\[
+\lim_{p\to\infty} M_p = m.
+\]
+
+That is,
+\[
+\boxed{\lim_{p\to +\infty} M_p(x_1,\dots,x_n;w_1,\dots,w_n)=\max\{x_1,\dots,x_n\}.}
+\]
+
+## Remark on the case \(m=0\)
+
+If \(m=0\), then all \(x_i=0\), so \(M_p=0\) for all \(p\), and the conclusion is immediate.
+
+## Final answer
+
+\[
+\boxed{\lim_{p\to +\infty}\left(\sum_{i=1}^n w_i x_i^p\right)^{1/p}=\max\{x_1,\dots,x_n\}.}
+\]
+The proof follows from the bounds
+\[
+w_j^{1/p}\max_i x_i \le M_p \le \max_i x_i,
+\]
+where \(j\) is any index such that \(x_j=\max_i x_i\), and from \(w_j^{1/p}\to 1\).

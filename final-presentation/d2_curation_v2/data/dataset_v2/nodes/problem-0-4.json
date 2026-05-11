@@ -1,0 +1,23 @@
+{
+  "id": "problem-0-4",
+  "type": "problem",
+  "source_note": "黎曼积分与黎曼和的误差",
+  "english_source_note": "Errors in Riemann Integrals and Riemann Sums",
+  "callout_id": "黎曼积分与黎曼和的误差#1",
+  "english_title": "Problem 0",
+  "statement_en": "Let $f\\in C^2([0,1])$, and define\n$$R_n:=\\int_0^1 f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1} f(k/n).$$\nFind\n$$\\lim_{n\\to\\infty} nR_n.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "Riemann sum error estimation",
+    "Taylor expansion",
+    "comparison between integral and left-endpoint Riemann sum"
+  ],
+  "prerequisites": [
+    "Riemann integral",
+    "properties of $C^2$ functions",
+    "Taylor's theorem"
+  ],
+  "callout_body": "$f\\in C^2([0,1])$，令$$R_n:=\\int_0^1f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1}f(k/n)$$求$$\\lim_{n\\to \\infty}nR_n$$"
+}

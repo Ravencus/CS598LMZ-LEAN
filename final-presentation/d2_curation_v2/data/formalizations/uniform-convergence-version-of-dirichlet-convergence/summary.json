@@ -1,0 +1,30 @@
+{
+  "problem_id": "uniform-convergence-version-of-dirichlet-convergence",
+  "english_title": "Uniform Convergence Version of Dirichlet Convergence",
+  "statement_en": "Assume that: 1. the partial sums $\\sum_{n=1}^{N} b_n(z)$ are uniformly bounded for every positive integer $N$; 2. for every $z \\in D$, the sequence $a_n(z)$ decreases monotonically to $0$. Then the series $\\sum_n a_n(z)b_n(z)$ converges uniformly on $D$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem uniform_dirichlet_test\n    {α : Type*}\n    (D : Set α)\n    (a b : ℕ → α → ℝ)\n    (hbounded :\n      ∃ M : ℝ, 0 ≤ M ∧\n        ∀ N z, z ∈ D →\n          ‖Finset.sum (Finset.range (N + 1)) (fun n => b n z)‖ ≤ M)\n    (hmono : ∀ z ∈ D, Antitone (fun n => a n z))\n    (hlim : ∀ z ∈ D, Filter.Tendsto (fun n => a n z) Filter.atTop (Filter.nhds 0)) :\n    ∃ f : α → ℝ,\n      TendstoUniformlyOn\n        (fun N z => Finset.sum (Finset.range (N + 1)) (fun n => a n z * b n z))\n        f\n        Filter.atTop\n        D := by\n  sorry"
+}

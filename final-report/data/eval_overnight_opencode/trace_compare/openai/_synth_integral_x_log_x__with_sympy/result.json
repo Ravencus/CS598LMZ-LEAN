@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "_synth_integral_x_log_x",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_lean_impl_diff",
+  "evidence": "Both traces eventually use the same FTC/antiderivative strategy for ∫ x * log x, deriving an antiderivative and trying to close the interval integral. BIG succeeds by choosing a Lean-friendly continuous primitive using `log (x * x)` and `h2.log`, while SMALL gets stuck in derivative/type/syntax norm",
+  "wall_seconds": 6.15
+}

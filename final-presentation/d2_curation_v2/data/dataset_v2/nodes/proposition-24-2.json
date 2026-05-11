@@ -1,0 +1,23 @@
+{
+  "id": "proposition-24-2",
+  "type": "problem",
+  "source_note": "柯西凝聚判别法",
+  "english_source_note": "Cauchy Condensation Test",
+  "callout_id": "柯西凝聚判别法#6",
+  "english_title": "Proposition 2.4",
+  "statement_en": "Let $f:[0,1]\\to \\mathbb{R}$ be nonnegative and nondecreasing, and suppose that\n$$\\int_0^1 \\frac{f(t)}{t}\\,dt<\\infty.$$Then necessarily $f(t)\\to 0$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "contradiction",
+    "integral comparison",
+    "monotonicity"
+  ],
+  "prerequisites": [
+    "improper integrals",
+    "monotone functions",
+    "limit of functions"
+  ],
+  "callout_body": "函数$f:[0,1]\\to \\mathbb{R}$单调不减，且非负，并且满足$$\\int_0^1 \\frac{f(t)}{t}\\,dt<\\infty$$那么一定有$f(t)\\to 0$。"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "proposition-11",
+  "type": "problem",
+  "source_note": "Euler-Maclaurin求和公式在和的估计当中的应用",
+  "english_source_note": "Using Euler-Maclaurin for Sum Estimates",
+  "callout_id": "Euler-Maclaurin求和公式在和的估计当中的应用#2",
+  "english_title": "Proposition 1.1",
+  "statement_en": "The set $$\\{\\sin(\\sqrt{n}):n\\in \\mathbb{N}\\}$$ is dense in $$(-1,1)$$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "density arguments",
+    "distribution of sequences modulo 1",
+    "continuity of the sine function"
+  ],
+  "prerequisites": [
+    "dense subsets of the real line",
+    "basic sequence theory",
+    "trigonometric functions"
+  ],
+  "callout_body": "集合$\\{\\sin(\\sqrt{n}):n\\in \\mathbb{N}\\}$其在$(-1,1)$当中稠密。"
+}

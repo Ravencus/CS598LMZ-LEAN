@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-31-3",
+  "english_title": "Proposition 3.1",
+  "statement_en": "Let $f(x)$ be a nonnegative locally integrable nonincreasing function on $[1,+\\infty)$, and suppose\n$$\\int_1^{+\\infty}f(x)\\,dx=+\\infty.$$ Then\n$$\\int_{1}^{+\\infty}\\min\\{f(x),\\frac{1}{x}\\}\\,dx=+\\infty.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem min_truncation_integral_diverges\n    (f : ℝ → ℝ)\n    (hf_meas : AEMeasurable f volume)\n    (hf_nonneg : ∀ ⦃x : ℝ⦄, 1 ≤ x → 0 ≤ f x)\n    (hf_nonincreasing : ∀ ⦃x y : ℝ⦄, 1 ≤ x → x ≤ y → f y ≤ f x)\n    (hf_locInt : ∀ ⦃a : ℝ⦄, 1 ≤ a → IntervalIntegrable f volume 1 a)\n    (hdiv :\n      (∫⁻ x, ENNReal.ofReal (f x) ∂(volume.restrict (Set.Ioi (1 : ℝ)))) = ∞) :\n    (∫⁻ x, ENNReal.ofReal (min (f x) (1 / x)) ∂(volume.restrict (Set.Ioi (1 : ℝ)))) = ∞ := by\n  sorry"
+}

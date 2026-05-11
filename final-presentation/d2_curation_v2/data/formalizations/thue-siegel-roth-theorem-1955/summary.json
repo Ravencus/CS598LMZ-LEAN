@@ -1,0 +1,18 @@
+{
+  "problem_id": "thue-siegel-roth-theorem-1955",
+  "english_title": "Thue-Siegel-Roth Theorem (1955)",
+  "statement_en": "Every algebraic irrational number has irrationality measure 2.",
+  "difficulty": "hard",
+  "domain": "Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\ndef HasIrrationalityMeasure (x μ : ℝ) : Prop :=\n  (∀ ε : ℝ, 0 < ε →\n    ∃ C : ℝ, 0 < C ∧\n      ∀ p : ℤ, ∀ q : ℕ, q ≠ 0 →\n        C / Real.rpow (q : ℝ) (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|) ∧\n  (∀ ε : ℝ, 0 < ε →\n    ∃ᶠ q : ℕ in Filter.atTop,\n      ∃ p : ℤ,\n        |x - (p : ℝ) / (q : ℝ)| < 1 / Real.rpow (q : ℝ) (μ - ε))\n\ntheorem algebraic_irrational_has_irrationality_measure_two\n    {x : ℝ} (hx_alg : IsAlgebraic ℚ x) (hx_irr : Irrational x) :\n    HasIrrationalityMeasure x 2 := by\n  sorry"
+}

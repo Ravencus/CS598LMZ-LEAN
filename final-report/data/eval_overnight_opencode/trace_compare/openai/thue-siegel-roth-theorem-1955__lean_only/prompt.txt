@@ -1,0 +1,77 @@
+You are analyzing two Lean theorem-proving traces from the same problem. The "BIG" model succeeded; the "SMALL" model failed. Classify the failure mode.
+
+Problem id: thue-siegel-roth-theorem-1955    Condition: lean_only
+
+=== BIG (passed) ===
+model: gpt-5.5    outcome: lean_proof    wall=50.98s    mcp_calls=4
+--- mcp call 1 (✗) ---
+import Mathlib
+
+open Filter
+
+def HasIrrationalityMeasure (x μ : ℝ) : Prop :=
+  (∀ ε : ℝ, 0 < ε →
+    ∃ C : ℝ, 0 < C ∧
+      ∀ p : ℤ, ∀ q : ℕ, q ≠ 0 →
+        C / Real.rpow (q : ℝ) (μ + ε) ≤ |x - (p : ℝ) / (q : ℝ)|) ∧
+  (∀ ε : ℝ, 0 < ε →
+    ∃ᶠ q : ℕ in Filter.atTop,
+      ∃ p : ℤ,
+        |x - (p : ℝ) / (q : ℝ)| < 1 / Real.rpow (q : ℝ) (μ - ε))
+
+theorem algebraic_irrational_has_irrationality_measure_two
+    {x : ℝ} (hx_alg : IsAlgebraic ℚ x) (hx_irr : Irrational x) :
+    HasIrrationalityMeasure x 2 := by
+  simpa [HasIrrationalityMeasure] using hx_alg.hasIrrationalityMeasure_two hx_irr
+
+--- mcp call 2 (✗) ---
+import Mathlib
+
+#check IsAlgebraic.hasIrrationalityMeasure_two
+#check Irrational.hasIrrationalityMeasure_two
+#check hasIrrationalityMeasure_two
+#check irrationalityMeasure
+
+--- mcp call 3 (✓) ---
+import Mathlib
+
+example : 1 + 1 = 2 := by norm_num
+
+--- mcp call 4 (✓) ---
+import Mathlib
+
+#check IsAlgebraic
+#check Liouville.exists_pos_real_of_irrational_root
+
+--- final_text ---
+I’ll first inspect Mathlib-facing names already available in the workspace/repo for irrationality measure or Roth-style lemmas, then use the checker sparingly to validate the most promising route.
+There is prior scratch evidence for a Mathlib/API theorem shaped exactly like this: `hx_alg.hasIrrationalityMeasure_two hx_irr`. I’ll validate that directly against the required signature.
+
+=== SMALL (failed) ===
+model: gpt-5.4-mini    outcome: wall_budget_exceeded    wall=600.16s    mcp_calls=0
+--- mcp call 1 (✗) ---
+import Mathlib
+#check Real.irrationality_measure_two
+#check Real.irrationalityMeasure
+#check Real.irrationality_measure
+#check HasIrrationalityMeasure
+#check Real.infinite_rat_abs_sub_lt_one_div_den_sq_of_irrational
+#check IsAlgebraic
+#check Irrational
+#check minpoly
+
+--- final_text ---
+
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"label": "different_plan" | "same_plan_lean_impl_diff" | "same_plan_search_diff" | "unclear",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+LABEL DEFINITIONS:
+  different_plan          : The two models pursued substantively different decompositions (e.g., one used induction, the other used a continuous estimate).
+  same_plan_lean_impl_diff: Both pursued the same plan; the small model's failure was at the Lean tactic / type-checking level (wrong tactic, type mismatch, syntax).
+  same_plan_search_diff   : Same plan; the small model couldn't find the correct Mathlib lemma name or applicability.
+  unclear                 : Cannot tell from the visible evidence.
+
+Output the JSON object first, then the justification.

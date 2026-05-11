@@ -1,0 +1,97 @@
+{
+  "note_title": "对含参数方程根的估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "分段估计"
+  ],
+  "callouts": [
+    {
+      "id": "对含参数方程根的估计#1",
+      "type": "question",
+      "title": "问题0",
+      "body": "设$\\cos(x)=sx$的$N(s)$个正根按照顺序排列为$$x_1<x_2<\\cdots<x_{N(s)}$$证明$$\\lim_{s\\to 0^{+}}\\sum_{k=1}^{N(s)-1}\\frac{1}{x_kx_{k+1}}=\\frac{2}{\\pi^2}$$",
+      "position_char": 40,
+      "position_line": 7
+    },
+    {
+      "id": "对含参数方程根的估计#2",
+      "type": "tip",
+      "title": "想法1.1.1",
+      "body": "对于这种和的估计，我们最直接的想法是做“逐项估计”。如果我们可以得到$\\frac{1}{x_kx_{k+1}}$的一个足够精确又足够好的渐近展开，那么我们只需要求和就可以得到想要的结果。具体来说，如果我们可以得到$$\\frac{1}{x_kx_{k+1}}=a_k(s) +r_k(s)$$然后满足:\n1. $\\sum_k a_k(s)$的和是已知的，容易的。\n2. $\\sum_k r_k(s)=o(1)$,此处$o(1)$表示一个关于$s$的无穷小量。\n\n如果以上两个条件都可以被满足，那么问题就解决了。",
+      "position_char": 581,
+      "position_line": 31
+    },
+    {
+      "id": "对含参数方程根的估计#3",
+      "type": "note",
+      "title": "lemma 1.2.1",
+      "body": "设$\\cos(x)=sx$的$N(s)$个正根按照顺序排列为$$x_1(s)<x_2(s)<\\cdots<x_{N(s)}(s)$$那么:\n1. $N(s)\\sim \\frac{1}{\\pi s}$\n2. 对于$1\\leq k\\leq N(s)$都有$$k\\pi<x_k(s)<(k+1)\\pi$$",
+      "position_char": 2581,
+      "position_line": 60
+    },
+    {
+      "id": "对含参数方程根的估计#4",
+      "type": "tip",
+      "title": "想法1.3.1",
+      "body": "我们是否可以寻找一个$q(s)$，其满足：\n1. 当$1\\leq k< q(s)$的时候$|\\sin(x_k(t))|>c>0$。\n2. 而后半段的和$\\sum_{N(s)-1\\geq k\\geq q(s)}\\frac{1}{x_k(s)x_{k+1}(s)}$只要用\"引理1.2.1\"当中的估计就可以得到$o(1)$的估计？",
+      "position_char": 5168,
+      "position_line": 110
+    },
+    {
+      "id": "对含参数方程根的估计#5",
+      "type": "note",
+      "title": "定理2.1:一般的控制收敛定理",
+      "body": "$(\\Omega,\\mathcal{F},\\mu)$是一个测度空间，$\\{f_{\\alpha}\\}_{\\alpha \\in A}$是一个可测函数族，并且存在一个可积函数$g\\geq 0$使得$$|f_{\\alpha}|\\leq g ,\\forall \\alpha \\in A$$那么如果$f_{\\alpha}$几乎处处收敛到$f$，那么$$\\int_{\\Omega}f_{\\alpha}\\,d\\mu\\to \\int_{\\Omega}f\\,d\\mu$$",
+      "position_char": 7382,
+      "position_line": 145
+    },
+    {
+      "id": "对含参数方程根的估计#6",
+      "type": "note",
+      "title": "定理2.2：Tannery定理",
+      "body": "$\\{a_{s,k}\\}_{s\\in S}$是一族序列，满足：\n1. 对任意正整数$k\\geq 1$都有$a_{s,k}\\to a_k$。\n2. 存在一个与$s$无关的非负序列$M_k$使得对任意的$k$都有$|a_{s,k}|\\leq M_k$并且$\\sum_{k\\geq 1}M_k<\\infty$\n\n那么$$\\sum_{k\\geq 1} a_{s,k}\\to \\sum_{k\\geq 1}a_k$$",
+      "position_char": 7929,
+      "position_line": 152
+    },
+    {
+      "id": "对含参数方程根的估计#7",
+      "type": "question",
+      "title": "问题3.1",
+      "body": "设$\\cos(x)=sx$的$N(s)$个正根按照顺序排列为$$x_1<x_2<\\cdots<x_{N(s)}$$证明$$\\lim_{s\\to 0^{+}}s^2\\sum_{k=1}^{N(s)}\\frac{1}{(x_k-(k-1/2)\\pi)^2}=\\frac{1}{2}$$",
+      "position_char": 8981,
+      "position_line": 169
+    },
+    {
+      "id": "对含参数方程根的估计#8",
+      "type": "note",
+      "title": "命题3.2",
+      "body": "设$F(s,x):\\mathbb{R}^2\\to \\mathbb{R}$在$(s^{*},x_k(0))$的某个邻域$U$内满足$$F\\in C^p(U\\to \\mathbb{R}),F(s^{*},x_k(0))=0,F_x(s^{*},x_k(0))\\neq 0$$那么存在且唯一一个$s^{*}$的邻域$V$以及$x_k(0)$的邻域$W$使得$$F(s,x(s))=0\\forall s\\in V,x(s)\\in C^p(V\\to W)$$并且有渐近展开$$x(s)=x(s^{*})+\\sum_{i=1}^p \\frac{x^{(p)}(s)}{i!}(s-s^{*})^i+o(|s-s^{*}|^p)$$",
+      "position_char": 9741,
+      "position_line": 187
+    },
+    {
+      "id": "对含参数方程根的估计#9",
+      "type": "note",
+      "title": "命题3.3",
+      "body": "设$F(s,x):\\mathbb{R}^2\\to \\mathbb{R}$在$(s^{*},x_k(0))$的某个邻域$U$内满足$F$是一个实数解析函数并且$$F(s^{*},x_k(0))=0,F_x(s^{*},x_k(0))\\neq 0$$那么存在一个$s^{*}$的邻域$V$以及$x_k(0)$的邻域$W$使得在$V$上方程$F(s,x)=0$有且仅有一个解分支：$$x(s):V\\to W$$并且$x(s)$是一个实解析函数，即$$x(s)=\\sum_{i\\geq 0}a_i s^i,\\forall s\\in V$$",
+      "position_char": 10225,
+      "position_line": 196
+    },
+    {
+      "id": "对含参数方程根的估计#10",
+      "type": "note",
+      "title": "定理3.4(Lagrange inversion/Lagrange-Burmann formula)",
+      "body": "$\\phi(x)$在$x=r$的邻域中解析，且$\\phi(r)\\neq 0$。考虑方程$$x=r+s\\phi(x)$$则在$s=0$的邻域中，方程存在唯一解析解$$x(s)=r+\\sum_{i\\geq 1}a_i s^i $$其中系数$$c_i = \\frac{1}{i!}\\lim_{x\\to r } \\frac{d^{i-1}}{d x^{i-1}}[(x-r)^i\\phi(x)^i]$$",
+      "position_char": 10621,
+      "position_line": 203
+    },
+    {
+      "id": "对含参数方程根的估计#11",
+      "type": "tip",
+      "title": "想法3.5",
+      "body": "我们可以重新定义$$b_{s,k}:=\\begin{cases}\\frac{s^2}{(x_k(s)-x_k(0))^2}&1\\leq k \\leq N(s)^{2/3}\\\\ 0 &k>N(s)^{2/3}\\end{cases}$$于是对于此时的$b_{s,k}$，它满足:\n1. 对任意固定的$k$，由于$N(s)^{2/3}\\to \\infty$，所以$b_{s,k}\\to \\frac{1}{\\pi^2}\\frac{1}{(k-1/2)^2}$\n2. 对任意的$k\\leq N(s)^{2/3}$，$$b_{s,k}\\leq \\frac{1}{x_k'(\\xi_{k,s})^2}\\lesssim \\frac{1}{(k+1)^2}$$后者可以组成一个非负的收敛级数。\n\n于是Tannery定理告诉我们\n\n$$\\sum_{k\\leq N(s)^{2/3}}\\frac{1}{(x_k(s)-x_k(0))^2}=\\sum_{k\\geq 1}b_{s,k}\\to \\sum_{k\\geq 1}\\frac{1}{x_k'(0)^2}=\\frac{1}{2}$$\n\n然后从分段估计的角度入手，对于后半段，由于$$\\frac{s^2}{(x_k(s)-x_k(0))^2}\\leq \\frac{s^2}{\\pi^2}\\frac{1}{(k-(-1)^k(k-1/2))^2}$$\n当$k$是偶数的时候后者为$O(s^2)$，当$k$是奇数的时候后者为$O(s^2/k^2)$,于是无论$k$为奇数或者偶数，我们都可以用$O(s^2)$来控制$\\frac{s^2}{\\pi^2}\\frac{1}{(k-(-1)^k(k-1/2))^2}$于是$$\\sum_{N(s)\\geq k>N(s)^{2/3}}\\frac{s^2}{(x_k(s)-x_k(0))^2}=\\sum_{N(s)\\geq k>N(s)^{2/3}} O(s^2)=O(s)$$\n所以分段估计是可以解决此处的困难的。",
+      "position_char": 11784,
+      "position_line": 221
+    }
+  ]
+}

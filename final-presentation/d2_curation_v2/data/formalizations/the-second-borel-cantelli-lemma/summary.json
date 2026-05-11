@@ -1,0 +1,30 @@
+{
+  "problem_id": "the-second-borel-cantelli-lemma",
+  "english_title": "The Second Borel-Cantelli Lemma",
+  "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ be mutually independent, and suppose that $$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty.$$ Then $$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)=\\mathbb{P}(E_n \\text{ i.o.})=1.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory ProbabilityTheory Set\n\ndef eventsInfinitelyOften {Ω : Type*} (E : ℕ → Set Ω) : Set Ω :=\n  ⋂ m : ℕ, ⋃ n ≥ m, E n\n\ntheorem borelCantelli_limsup_one\n    {Ω : Type*} [MeasurableSpace Ω]\n    (μ : Measure Ω) [IsProbabilityMeasure μ]\n    (E : ℕ → Set Ω)\n    (h_indep : ProbabilityTheory.iIndepSet E μ)\n    (h_sum : (∑' n : ℕ, μ (E n)) = (⊤ : ℝ≥0∞)) :\n    μ (eventsInfinitelyOften E) = 1 := by\n  sorry"
+}

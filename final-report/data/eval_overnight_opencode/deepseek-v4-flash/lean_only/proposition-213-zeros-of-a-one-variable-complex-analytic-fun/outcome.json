@@ -1,0 +1,48 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model": "deepseek-v4-flash",
+  "condition": "lean_only",
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "wall_seconds": 310.09,
+  "wall_exceeded": false,
+  "final_proof_source": "explicit_block",
+  "mcp_calls": 10,
+  "budget": 10,
+  "budget_hit_event": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "Function expected at\n  nhdsWithin_le_nhds ?m.120\nbut this term has type\n  ?m.116 ∈ 𝓝[?m.115] ?m.114\n\nNote: Expected a function because this term is being applied to the argument\n  z0",
+  "total_cost_usd": 0.025081,
+  "total_tokens": 664815,
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_54751eecdf.lean",
+      "line": 22,
+      "column": 26,
+      "severity": "error",
+      "message": "Function expected at\n  nhdsWithin_le_nhds ?m.120\nbut this term has type\n  ?m.116 ∈ 𝓝[?m.115] ?m.114\n\nNote: Expected a function because this term is being applied to the argument\n  z0"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_54751eecdf.lean",
+      "line": 22,
+      "column": 45,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  {z0}ᶜ\nhas type\n  ?m.128\nof sort `Type ?u.1467.1449` but is expected to have type\n  ?m.116 ∈ 𝓝 ?m.114\nof sort `Prop` in the application\n  nhdsWithin_le_nhds {z0}ᶜ"
+    },
+    {
+      "file": "/home/raven/Desktop/lean/docker/Scratch/P2OC_54751eecdf.lean",
+      "line": 38,
+      "column": 33,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  z\nhas type\n  ℂ\nof sort `Type` but is expected to have type\n  dist ?m.280 z0 < ε\nof sort `Prop` in the application\n  hε z\n"
+    }
+  ]
+}

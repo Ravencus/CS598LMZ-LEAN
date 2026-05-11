@@ -1,0 +1,180 @@
+I'll work on formalizing Hermite's identity. Let me start by exploring what's available in Mathlib.
+Let me search for Hermite's identity in Mathlib directly.
+Let me search the Mathlib lemma database for Hermite's identity:
+Good. So `Int.floor_div_natCast` exists: `⌊a / n⌋ = ⌊a⌋ / n`. Hermite's identity is:
+$$\lfloor n x \rfloor = \sum_{k=0}^{n-1} \lfloor x + k/n \rfloor$$
+
+A classic equivalent form is: `⌊a⌋ / n = ⌊a / n⌋` for ℤ. But we need the floor decomposition. Actually a more useful form: `⌊nx⌋ = nq + r` where `0 ≤ r < n`, and then write `x = q + r/n + δ/n` with `0 ≤ δ < 1`. Let me think.
+
+Alternative: the identity `⌊nx⌋ = ⌊x⌋ + ⌊x + 1/n⌋ + ⋯ + ⌊x + (n-1)/n⌋` is Hermite's identity. Let me search for it more specifically.
+No direct Hermite identity in Mathlib. Let me think about the proof strategy.
+
+**Proof sketch:** Let $f(x) = \sum_{k=0}^{n-1} \lfloor x + k/n \rfloor - \lfloor nx \rfloor$. 
+
+For $n = 0$: sum is empty (= 0), and $\lfloor 0 \cdot x \rfloor = 0$. ✓
+
+For $n \geq 1$: Write $\lfloor nx \rfloor = nm + r$ where $0 \leq r < n$ (using Euclidean division). Then $nx = nm + r + \{nx\}$ where $\{nx\} \in [0,1)$. So $x = m + (r + \{nx\})/n$.
+
+Then $x + k/n = m + (r + k + \{nx\})/n$.
+
+$\lfloor x + k/n \rfloor = m + \lfloor (r + k + \{nx\})/n \rfloor$.
+
+Since $0 \leq r + k + \{nx\} < n + n = 2n$ (when $0 \leq k \leq n-1$, $0 \leq r \leq n-1$, $\{nx\} \in [0,1)$, so $r+k+\{nx\} < 2n-1$):
+- If $r + k < n$ (i.e., $k < n - r$): $r + k + \{nx\} < n$, so floor is 0.
+- If $r + k \geq n$ (i.e., $k \geq n - r$): $r + k + \{nx\} \geq n$ and $< 2n$, so floor is 1.
+
+Number of $k \in [0, n-1]$ with $k \geq n - r$ is exactly $r$.
+
+So sum = $nm + r = \lfloor nx \rfloor$. ✓
+
+This is rather involved. Let me try a clever induction approach or simpler tactic-based proof. Let me first try `decide` for small cases or look for tactics. Actually, the cleanest approach in Lean might be a direct argument using `Int.floor_eq_iff`.
+
+Let me try to set this up carefully. I'll use the key fact: `Int.floor_div_natCast: ⌊a / n⌋ = ⌊a⌋ / n` and the identity `⌊nx⌋ / n = ⌊x + (n-1)/(2n)⌋`... hmm, that's not quite right.
+
+Actually, here's an elegant approach. Define $g(x) = \sum_{k=0}^{n-1} \lfloor x + k/n \rfloor$ and $h(x) = \lfloor nx \rfloor$. 
+
+Claim: both $g(x+1/n) - g(x) = 1$ and $h(x+1/n) - h(x) = 1$... no wait, that requires $n \geq 1$.
+
+Let me try a direct proof using `Int.floor_eq_iff`. We need to show:
+- `↑(sum) ≤ nx < sum + 1`... no wait, the sum is the floor of nx, so we need
+  $\text{sum} \leq nx$ and $nx < \text{sum} + 1$.
+
+Actually it's easier the other way: show `sum = ⌊nx⌋` by showing `↑sum ≤ nx` and `nx < ↑sum + 1`, i.e., applying `Int.floor_eq_iff` on the RHS.
+
+Let me try this approach with the case split. But this will be quite a lot of code. Let me try a different angle: split into cases on n = 0 vs n ≥ 1, and for n ≥ 1 use the Euclidean division on `⌊nx⌋`.
+
+Given the limited budget (8 calls left), let me write a careful proof attempt:
+Good progress! Many parts compile. I need to fix:
+1. `Int.add_mul_ediv_left` doesn't match (it expects `?m + ?n * ?k / ?k`, I have `q*n + ...`)
+2. The split_ifs case: my logic flipped - `r + k < n` iff `k < n - r` iff NOT `k ≥ n - r`
+3. The filter type issue
+
+Let me restructure. The issue at line 47: `Int.add_mul_ediv_left a b hc : (a + b * c) / c = a / c + b` requires `c ≠ 0`. Pattern is `?m + ?n * ?k / ?k` but with `?n * ?k`, so I need `r + k + q*n`, not `q*n + (r+k)`. Let me use `Int.add_mul_ediv_right` correctly: `(a + b * c) / c = a / c + b` where `c ≠ 0`.
+
+Let me also fix the if-condition direction. And rewrite more carefully:
+Excellent progress! Three issues to fix:
+1. Line 43: trivial `0 + 1 = 1` - just need `ring` or `simp`
+2. Line 77: cast issue with `↑(n - r.toNat)` - need different cast handling
+3. Lines 89-92: `Finset.sum_ite` produced filter expecting `Finset ℤ` — likely because `(if r + ↑k < ↑n then 0 else 1)` has ℤ in the predicate, but the filter type should still be `Finset ℕ`. Let me check — actually the issue is `r + k < ↑n` where `k` becomes the filter argument. When this is filtered, the filter probably treats k as ℤ. Need to refactor.
+
+Let me rewrite this more cleanly. The fundamental issue with `Finset.sum_ite` is the predicate has the form `r + ↑k < ↑n` where `k : ℕ` is the variable. After sum_ite, the filter is over `Finset ℕ` but the predicate mentions `↑k`. Actually the error says it gets confused. Let me just directly prove the count equals `r.toNat` differently, by replacing the predicate with one purely on ℕ.
+Very close! Three remaining issues:
+1. Line 66: `0 + 1 = 1` — `ring` handles this fine but I had `simp` which didn't help here. Wait the message says "unsolved goals 0 + 1 = 1" at line 66. Let me re-check my proof flow. After `rw [h1]`, goal is `q + 0 + 1 = q + (if false then 0 else 1)`. Actually after `if_neg hrk` and `rw [h1]`, goal becomes `q + 1 = q + 1`. Hmm, wait. Let me look. The original goal after `Int.add_mul_ediv_right`: `(r + k) / n + q = q + (if k < n - rN then 0 else 1)`. After `if_neg`: `(r + k)/n + q = q + 1`. After `rw [h1]`: `0 + 1 + q ... wait`. Actually wait. The rw of h1 gives `1 + q = q + 1`. Hmm, let me not analyze, just fix.
+
+Actually looking at the error: after the `rw [h1]`, goal was `0 + 1 = 1` (the 0 comes from leftover I guess, but actually I think the error message shows `0 + 1 = 1` is the goal — this likely is solvable with `ring`. Let me change `simp` to `ring`. Wait, I had `simp` in the previous error. But now in this new version I had `rw [h1]; simp`. Hmm, line 66 was actually `rw [h0]; ring`. Let me look closer. The error is at "line 66, column 47". Line 66 is `rw [h0]; ring` — but that's the `if_pos` branch. Oh wait, hsub means it's the `if_neg` branch. Hmm let me read the proof again.
+
+Actually the error context shows `hrk` and `hsub`, which are in the `if_neg` branch. So this is at the end of `if_neg` branch — which was `rw [h1]; simp`. So `simp` at line 71 failed too. Both spots need replacement. After `rw [h1]`, goal becomes something where I need `0 + 1 = 1` or similar. Let me just use `ring` or `linarith` consistently. Actually wait, looking at the error: column 47 of line 66 — line 66 in my code is `rw [h0]; ring`. Hmm but the error context shows `hrk : ¬k < n - rN`, which is the else branch. So it might be that the error reporting line is off by some amount, and actually it's the `if_neg` else branch ending at line ~71 (`rw [h1]; simp`).
+
+Let me just change those to be safer with `linarith` or `omega`:
+
+Also issue 2 at line 75: `rN • 1 = ↑rN`. Need `simp` or `Nat.cast_id`-style cleanup. Let me use `push_cast; ring` or similar.
+Now there's just ONE remaining error: `0 + 1 = 1`. This is in the `if_neg` branch after `rw [h1]`. So in `linarith [show ... by rw [h1]; ring]`, the `ring` step inside produced unsolved goal `0 + 1 = 1`. Wait, that's strange — `ring` should handle that. Actually, `linarith` doesn't take an expression as a term — it takes hypotheses. Hmm but the format `linarith [...]` is valid (it adds those terms to hypotheses).
+
+Oh! Looking more carefully: the issue is that `rw [h1]; ring` succeeded for `0 + 1 = 1`? Wait the error says "unsolved goals: 0 + 1 = 1". This is occurring at line 64. Hmm let me re-examine. The error says line 64 column 47. In my code, line 64 is `linarith [show (r + (k : ℤ)) / (n : ℤ) + q = q + 0 by rw [h0]; ring]`. But that's the `if_pos` branch (line 64). The state shown is `if_neg` branch. So I'm getting confused on line numbers. 
+
+Wait actually the goal `0 + 1 = 1` showing up makes me think after `rw [h1]; ring` we're left with this goal. The issue is `rw [h1]` rewrote `(r + k) / n` to `1`, but the goal `0 + 1 = 1` arises... Actually I bet the issue is that the original goal was `0 + 1 = 1` came from a separate location. Let me look at the context: `hsub : r + ↑k - ↑n < ↑n`, `hsub_nn : 0 ≤ ...`, `heq : r + ↑k = r + ↑k - ↑n + 1 * ↑n`. The presence of `heq` means we're inside the proof of `h1`. So `h1`'s proof is broken!
+
+```
+have heq : r + (k : ℤ) = (r + (k : ℤ) - (n : ℤ)) + 1 * (n : ℤ) := by ring
+rw [heq, Int.add_mul_ediv_right _ _ hnne, Int.ediv_eq_zero_of_lt hsub_nn hsub]
+```
+
+After `rw [heq]`: goal is `((r + k - n) + 1 * n) / n = 1`
+After `rw [Int.add_mul_ediv_right]`: `(r + k - n)/n + 1 = 1`
+After `rw [Int.ediv_eq_zero_of_lt ...]`: rewrites `(r + k - n)/n` to `0`, gives `0 + 1 = 1`. Goal needs `ring` or similar to close.
+
+Let me add a closing tactic:
+Proof compiles successfully! Only warnings remain.
+
+FINAL_PROOF:
+```lean
+import Mathlib
+
+theorem hermite_floor_sum (x : ℝ) (n : ℕ) :
+    Finset.sum (Finset.range n) (fun k => Int.floor (x + (k : ℝ) / (n : ℝ))) = Int.floor ((n : ℝ) * x) := by
+  rcases Nat.eq_zero_or_pos n with hn | hn
+  · subst hn; simp
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  set m : ℤ := Int.floor ((n : ℝ) * x) with hm_def
+  have key : ∀ k ∈ Finset.range n,
+      Int.floor (x + (k : ℝ) / (n : ℝ)) = (m + (k : ℤ)) / (n : ℤ) := by
+    intro k _
+    have hk1 : x + (k : ℝ) / (n : ℝ) = ((n : ℝ) * x + (k : ℝ)) / (n : ℝ) := by field_simp
+    rw [hk1, Int.floor_div_natCast]
+    congr 1
+    rw [Int.floor_add_natCast]
+  rw [Finset.sum_congr rfl key]
+  set q : ℤ := m / (n : ℤ) with hq_def
+  set r : ℤ := m % (n : ℤ) with hr_def
+  have hnZpos : (0 : ℤ) < (n : ℤ) := by exact_mod_cast hn
+  have hnne : (n : ℤ) ≠ 0 := hnZpos.ne'
+  have hr_nn : 0 ≤ r := Int.emod_nonneg m hnne
+  have hr_lt : r < (n : ℤ) := Int.emod_lt_of_pos m hnZpos
+  have hm_eq : m = (n : ℤ) * q + r := by
+    rw [hq_def, hr_def]; exact (Int.ediv_add_emod m _).symm
+  set rN : ℕ := r.toNat with hrN_def
+  have hrN_cast : (rN : ℤ) = r := Int.toNat_of_nonneg hr_nn
+  have hrN_lt : rN < n := by
+    have : (rN : ℤ) < (n : ℤ) := by rw [hrN_cast]; exact hr_lt
+    exact_mod_cast this
+  have hrN_le : rN ≤ n := le_of_lt hrN_lt
+  have step : ∀ k ∈ Finset.range n,
+      (m + (k : ℤ)) / (n : ℤ) = q + (if k < n - rN then 0 else 1) := by
+    intro k hk
+    rw [Finset.mem_range] at hk
+    have hk' : (k : ℤ) < (n : ℤ) := by exact_mod_cast hk
+    have hk0 : (0 : ℤ) ≤ (k : ℤ) := Int.natCast_nonneg k
+    have hrw : m + (k : ℤ) = (r + (k : ℤ)) + q * (n : ℤ) := by rw [hm_eq]; ring
+    rw [hrw, Int.add_mul_ediv_right _ _ hnne]
+    have hequiv : (r + (k : ℤ) < (n : ℤ)) ↔ (k < n - rN) := by
+      constructor
+      · intro h
+        have hh : (k : ℤ) < (n : ℤ) - r := by linarith
+        have h2 : (k : ℤ) < (n : ℤ) - (rN : ℤ) := by rw [hrN_cast]; exact hh
+        have h3 : ((n - rN : ℕ) : ℤ) = (n : ℤ) - (rN : ℤ) := by
+          rw [Nat.cast_sub hrN_le]
+        rw [← h3] at h2
+        exact_mod_cast h2
+      · intro h
+        have h1 : (k : ℤ) < ((n - rN : ℕ) : ℤ) := by exact_mod_cast h
+        rw [Nat.cast_sub hrN_le] at h1
+        push_cast at h1
+        rw [← hrN_cast]
+        linarith
+    by_cases hrk : k < n - rN
+    · rw [if_pos hrk]
+      have hrk' : r + (k : ℤ) < (n : ℤ) := hequiv.mpr hrk
+      have h0 : (r + (k : ℤ)) / (n : ℤ) = 0 := Int.ediv_eq_zero_of_lt (by linarith) hrk'
+      rw [h0]; ring
+    · rw [if_neg hrk]
+      have hrk' : ¬ (r + (k : ℤ) < (n : ℤ)) := fun h => hrk (hequiv.mp h)
+      push_neg at hrk'
+      have hsub : r + (k : ℤ) - (n : ℤ) < (n : ℤ) := by linarith
+      have hsub_nn : 0 ≤ r + (k : ℤ) - (n : ℤ) := by linarith
+      have h1 : (r + (k : ℤ)) / (n : ℤ) = 1 := by
+        have heq : r + (k : ℤ) = (r + (k : ℤ) - (n : ℤ)) + 1 * (n : ℤ) := by ring
+        calc (r + (k : ℤ)) / (n : ℤ)
+            = ((r + (k : ℤ) - (n : ℤ)) + 1 * (n : ℤ)) / (n : ℤ) := by rw [← heq]
+          _ = (r + (k : ℤ) - (n : ℤ)) / (n : ℤ) + 1 := Int.add_mul_ediv_right _ _ hnne
+          _ = 0 + 1 := by rw [Int.ediv_eq_zero_of_lt hsub_nn hsub]
+          _ = 1 := by ring
+      rw [h1]; ring
+  rw [Finset.sum_congr rfl step]
+  rw [Finset.sum_add_distrib, Finset.sum_const, Finset.card_range]
+  have count_eq : ∑ k ∈ Finset.range n, (if k < n - rN then (0 : ℤ) else 1) = (rN : ℤ) := by
+    rw [Finset.sum_ite]
+    simp only [Finset.sum_const, smul_zero, zero_add]
+    have card_filter : ((Finset.range n).filter (fun k => ¬ k < n - rN)).card = rN := by
+      have heq_filter : (Finset.range n).filter (fun k => ¬ k < n - rN)
+                      = (Finset.range n).filter (fun k => n - rN ≤ k) := by
+        apply Finset.filter_congr; intro k _; omega
+      rw [heq_filter]
+      rw [show (Finset.range n).filter (fun k => n - rN ≤ k) = Finset.Ico (n - rN) n from ?_]
+      · rw [Nat.card_Ico]; omega
+      · ext k
+        simp [Finset.mem_filter, Finset.mem_range, Finset.mem_Ico, and_comm]
+    rw [card_filter]; simp
+  rw [count_eq, hm_eq, ← hrN_cast]
+  push_cast
+  ring
+```

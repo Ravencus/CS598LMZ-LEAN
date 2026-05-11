@@ -1,0 +1,24 @@
+{
+  "problem_id": "strong-law-of-large-numbers-kolmogorov-1930",
+  "english_title": "Strong Law of Large Numbers, Kolmogorov, 1930",
+  "statement_en": "Let $X_1,\\ldots,X_n,\\ldots$ be a sequence of independent and identically distributed random variables, and assume $E(|X_i|)<\\infty$. If $E(X_1)=\\mu$ and $S_n=\\sum_{k=1}^{n}X_i$, then $$\\frac{S_n}{n}\\xrightarrow{a.e.}\\mu.$$",
+  "difficulty": "medium",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\nopen Filter MeasureTheory\n\ndef IsIID {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω) (X : ℕ → Ω → ℝ) : Prop :=\n  True\n\ndef partialSums {Ω : Type*} (X : ℕ → Ω → ℝ) (n : ℕ) (ω : Ω) : ℝ :=\n  Finset.sum (Finset.range n) (fun k => X (k + 1) ω)\n\ntheorem strong_law_of_large_numbers_ae\n    {Ω : Type*} [MeasurableSpace Ω]\n    (P : Measure Ω) [IsProbabilityMeasure P]\n    (X : ℕ → Ω → ℝ) (μ : ℝ)\n    (h_iid : IsIID P X)\n    (h_int : Integrable (X 1) P)\n    (h_mean : ∫ ω, X 1 ω ∂P = μ) :\n    ∀ᵐ ω ∂P, Tendsto (fun n : ℕ => partialSums X (n + 1) ω / ((n + 1 : ℕ) : ℝ)) atTop (nhds μ) := by\n  sorry"
+}

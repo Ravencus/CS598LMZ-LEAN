@@ -1,0 +1,23 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 1,
+  "first_error": "Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression\n  MeasureTheory.lintegral_eq_zero_iff\nof type\n  Measurable ?m.55 ",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_9a48d94175.lean",
+      "line": 14,
+      "column": 48,
+      "severity": "error",
+      "message": "Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression\n  MeasureTheory.lintegral_eq_zero_iff\nof type\n  Measurable ?m.55 → (∫⁻ (a : ?m.52), ?m.55 a ∂?m.54 = 0 ↔ ?m.55 =ᵐ[?m.54] 0)\n"
+    }
+  ]
+}

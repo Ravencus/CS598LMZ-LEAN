@@ -1,0 +1,58 @@
+{
+  "problem_id": "proposition-213-zeros-of-a-one-variable-complex-analytic-fun",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 70.9,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 21.65,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 4,
+      "first_error": "Unknown identifier `frequently_iff`"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 20.63,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 3,
+      "first_error": "Application type mismatch: The argument\n  hfz\nhas type\n  z ≠ z0\nbut is expected to have type\n  f z = 0\nin the application\n  ⟨hWU ?m.165, hfz⟩"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 21.57,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Application type mismatch: The argument\n  hfreq\nhas type\n  ∃ᶠ (z : ℂ) in nhdsWithin z0 U, f z = 0\nbut is expected to have type\n  ∃ᶠ (z : ℂ) in nhdsWithin z0 {z0}ᶜ, f z = 0\nin the application\n  Analyti"
+    }
+  ]
+}

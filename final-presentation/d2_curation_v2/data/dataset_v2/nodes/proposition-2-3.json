@@ -1,0 +1,22 @@
+{
+  "id": "proposition-2-3",
+  "type": "problem",
+  "source_note": "Riemann - Lebesgue lemma的证明",
+  "english_source_note": "Proof of the Riemann-Lebesgue Lemma",
+  "callout_id": "Riemann - Lebesgue lemma的证明#6",
+  "english_title": "Proposition 2",
+  "statement_en": "Let $X$ be a topological space and $Y$ a topological group, and suppose they are isomorphic as topological spaces, that is, there exists a homeomorphism $h:Y \\to X$. If $f\\in C_0(X\\to \\mathbb{C})$, then $g = f\\circ h \\in C_0(Y\\to \\mathbb{C})$.",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "topology",
+  "key_techniques": [
+    "preservation of continuity under composition with a homeomorphism",
+    "preservation of vanishing at infinity under homeomorphism"
+  ],
+  "prerequisites": [
+    "homeomorphisms",
+    "continuous functions vanishing at infinity",
+    "basic topology"
+  ],
+  "callout_body": "拓扑空间$X$与拓扑群$Y$同构，即存在一个同胚映射$h:Y \\to X$。现在假设$f\\in C_0(X\\to \\mathbb{C})$那么$g = f\\circ h \\in C_0(Y\\to \\mathbb{C})$."
+}

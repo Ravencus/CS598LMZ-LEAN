@@ -1,0 +1,164 @@
+{
+  "note_title": "素数倒数和的估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "和的积分估计"
+  ],
+  "callouts": [
+    {
+      "id": "素数倒数和的估计#1",
+      "type": "note",
+      "title": "欧拉关于素数导数和的定理",
+      "body": "$\\mathbb{P}$是素数的集合，级数$$\\sum_{p\\in  \\mathbb{P}} \\frac{1}{p}$$发散。",
+      "position_char": 31,
+      "position_line": 6,
+      "classification_result": {
+        "id": "素数倒数和的估计#1",
+        "classification": "problem",
+        "english_title": "Euler's Theorem on the Sum of Prime Reciprocals",
+        "if_problem": {
+          "statement_en": "Let $\\mathbb{P}$ be the set of prime numbers. The series $$\\sum_{p\\in \\mathbb{P}} \\frac{1}{p}$$ diverges.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "number theory",
+          "key_techniques": [
+            "Euler product",
+            "comparison with the harmonic series"
+          ],
+          "prerequisites": [
+            "prime numbers",
+            "infinite series",
+            "Euler product for the zeta function"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "素数倒数和的估计#2",
+      "type": "question",
+      "title": "以上问题的定量版本问题",
+      "body": "假设$p\\in \\mathbb{P}$,估计由级数定义出来的函数$$S(x):=\\sum_{p\\leq x} \\frac{1}{p}$$",
+      "position_char": 257,
+      "position_line": 13,
+      "classification_result": {
+        "id": "素数倒数和的估计#2",
+        "classification": "problem",
+        "english_title": "Quantitative Version of the Above Problem",
+        "if_problem": {
+          "statement_en": "Assume $p\\in \\mathbb{P}$. Estimate the function defined by the series $$S(x):=\\sum_{p\\leq x} \\frac{1}{p}.$$",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "partial summation",
+            "Chebyshev-type estimates",
+            "Mertens-type estimates"
+          ],
+          "prerequisites": [
+            "prime numbers",
+            "asymptotic notation",
+            "summation over primes"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "素数倒数和的估计#3",
+      "type": "note",
+      "title": "Mertens第二定理,1874",
+      "body": "存在一个常数$B$(现在称之为Mertens常数)使得$$\\sum_{p\\le x}\\frac{1}{p}=\\log\\log(x)+B+O\\left(\\frac{1}{\\log(x)}\\right)$$",
+      "position_char": 384,
+      "position_line": 18,
+      "classification_result": {
+        "id": "素数倒数和的估计#3",
+        "classification": "problem",
+        "english_title": "Mertens' Second Theorem, 1874",
+        "if_problem": {
+          "statement_en": "There exists a constant $B$ (now called the Mertens constant) such that $$\\sum_{p\\le x}\\frac{1}{p}=\\log\\log(x)+B+O\\left(\\frac{1}{\\log(x)}\\right).$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "partial summation",
+            "prime counting estimates",
+            "Mertens estimates"
+          ],
+          "prerequisites": [
+            "asymptotic notation",
+            "prime number estimates",
+            "logarithmic summation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "素数倒数和的估计#4",
+      "type": "note",
+      "title": "Euler发现的现象",
+      "body": "序列$nQ+1,n\\in \\mathbb{Z}^{+}$的素因子里的素因子不属于集合$\\{p_1,...,p_N\\}$",
+      "position_char": 994,
+      "position_line": 35,
+      "classification_result": {
+        "id": "素数倒数和的估计#4",
+        "classification": "remark",
+        "english_title": "A Phenomenon Discovered by Euler",
+        "if_problem": null,
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "素数倒数和的估计#5",
+      "type": "note",
+      "title": "Mertens估计",
+      "body": "1. $$\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)+O(1)$$\n2. $$\\sum_{p\\leq x}\\frac{\\log(p)}{p}=\\log(x)+O(1)$$",
+      "position_char": 1825,
+      "position_line": 51,
+      "classification_result": {
+        "id": "素数倒数和的估计#5",
+        "classification": "problem",
+        "english_title": "Mertens Estimates",
+        "if_problem": {
+          "statement_en": "1. $$\\sum_{n\\leq x}\\frac{\\Lambda(n)}{n}=\\log(x)+O(1)$$\n2. $$\\sum_{p\\leq x}\\frac{\\log(p)}{p}=\\log(x)+O(1)$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "analytic number theory",
+          "key_techniques": [
+            "von Mangoldt function estimates",
+            "summation by parts",
+            "Chebyshev-type arguments"
+          ],
+          "prerequisites": [
+            "von Mangoldt function",
+            "asymptotic notation",
+            "prime number summation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "素数倒数和的估计#6",
+      "type": "tip",
+      "title": "同物异表",
+      "body": "用两种不同的途径表示同一个对象，从而导出新的关系。",
+      "position_char": 3705,
+      "position_line": 77,
+      "classification_result": {
+        "id": "素数倒数和的估计#6",
+        "classification": "strategy_template",
+        "english_title": "Different Expressions of the Same Object",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Different Expressions of the Same Object",
+          "summary_en": "Represent the same mathematical object in two different ways and compare the resulting formulas. This often reveals a new identity, inequality, or structural relation.",
+          "applicability": "Use this when an object admits multiple natural descriptions, such as algebraic, analytic, or combinatorial representations."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"素数倒数和的估计#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Euler's Theorem on the Sum of Prime Reciprocals\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $\\\\mathbb{P}$ be the set of prime numbers. The series $$\\\\sum_{p\\\\in \\\\mathbb{P}} \\\\frac{1}{p}$$ diverges.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"number theory\",\n      \"key_techniques\": [\n        \"Euler product\",\n        \"comparison with the harmonic series\"\n      ],\n      \"prerequisites\": [\n        \"prime numbers\",\n        \"infinite series\",\n        \"Euler product for the zeta function\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"素数倒数和的估计#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Quantitative Version of the Above Problem\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume $p\\\\in \\\\mathbb{P}$. Estimate the function defined by the series $$S(x):=\\\\sum_{p\\\\leq x} \\\\frac{1}{p}.$$\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"partial summation\",\n        \"Chebyshev-type estimates\",\n        \"Mertens-type estimates\"\n      ],\n      \"prerequisites\": [\n        \"prime numbers\",\n        \"asymptotic notation\",\n        \"summation over primes\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"素数倒数和的估计#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Mertens' Second Theorem, 1874\",\n    \"if_problem\": {\n      \"statement_en\": \"There exists a constant $B$ (now called the Mertens constant) such that $$\\\\sum_{p\\\\le x}\\\\frac{1}{p}=\\\\log\\\\log(x)+B+O\\\\left(\\\\frac{1}{\\\\log(x)}\\\\right).$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"partial summation\",\n        \"prime counting estimates\",\n        \"Mertens estimates\"\n      ],\n      \"prerequisites\": [\n        \"asymptotic notation\",\n        \"prime number estimates\",\n        \"logarithmic summation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"素数倒数和的估计#4\",\n    \"classification\": \"remark\",\n    \"english_title\": \"A Phenomenon Discovered by Euler\",\n    \"if_problem\": null,\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"素数倒数和的估计#5\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Mertens Estimates\",\n    \"if_problem\": {\n      \"statement_en\": \"1. $$\\\\sum_{n\\\\leq x}\\\\frac{\\\\Lambda(n)}{n}=\\\\log(x)+O(1)$$\\n2. $$\\\\sum_{p\\\\leq x}\\\\frac{\\\\log(p)}{p}=\\\\log(x)+O(1)$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"analytic number theory\",\n      \"key_techniques\": [\n        \"von Mangoldt function estimates\",\n        \"summation by parts\",\n        \"Chebyshev-type arguments\"\n      ],\n      \"prerequisites\": [\n        \"von Mangoldt function\",\n        \"asymptotic notation\",\n        \"prime number summation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"素数倒数和的估计#6\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Different Expressions of the Same Object\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Different Expressions of the Same Object\",\n      \"summary_en\": \"Represent the same mathematical object in two different ways and compare the resulting formulas. This often reveals a new identity, inequality, or structural relation.\",\n      \"applicability\": \"Use this when an object admits multiple natural descriptions, such as algebraic, analytic, or combinatorial representations.\"\n    }\n  }\n]",
+  "classified": true
+}

@@ -1,0 +1,3 @@
+["sequence-limits-via-piecewise-estimates-hub", "using-known-asymptotics-to-derive-expansions-hub"]
+- sequence-limits-via-piecewise-estimates-hub: This is exactly the transfer principle: if `S` and `S'` differ by only `O(g)`, then they share the same expansion at accuracy `O(g)`.
+- using-known-asymptotics-to-derive-expansions-hub: The theorem formalizes using a known expansion for a nearby quantity `S'` to control the expansion of `S` once their difference is within the target error.

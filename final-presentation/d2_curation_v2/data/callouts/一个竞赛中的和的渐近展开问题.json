@@ -1,0 +1,33 @@
+{
+  "note_title": "一个竞赛中的和的渐近展开问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "一个竞赛中的和的渐近展开问题#1",
+      "type": "question",
+      "title": "大学生数学竞赛题目",
+      "body": "求极限:\n$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}\\frac{n}{n^2+k^2+1}$$",
+      "position_char": 43,
+      "position_line": 7
+    },
+    {
+      "id": "一个竞赛中的和的渐近展开问题#2",
+      "type": "note",
+      "title": "命题1",
+      "body": "如果我们对$S_n$的渐近展开的精度要求为$O(g(n))$,而此时恰好有另一个已知渐近展开结果，且精度也为$O(g(n))$的和$S'_n$，同时$$S_n-S_n'=O(g(n))$$那么$S_n,S_n'$的渐近展开在$O(g(n))$的精度下是相同的。",
+      "position_char": 662,
+      "position_line": 21
+    },
+    {
+      "id": "一个竞赛中的和的渐近展开问题#3",
+      "type": "tip",
+      "title": "想法",
+      "body": "命题1告诉我们，如果你发现一个$S_n'$其形式比$S_n$更好得到渐近展开，比如说对$S_n$做某种放缩，只要放缩整体的误差是被$O(g(n))$控制起来的，那么最终的渐近展开是相同的。",
+      "position_char": 810,
+      "position_line": 24
+    }
+  ]
+}

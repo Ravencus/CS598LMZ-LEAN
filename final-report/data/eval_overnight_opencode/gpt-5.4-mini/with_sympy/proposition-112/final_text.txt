@@ -1,0 +1,46 @@
+I’m checking the proof shape first, then I’ll iterate with the Lean checker to keep it within budget.
+I’ve got the expected telescoping identity in mind; next I’m checking whether there’s a digest or a simple library route that avoids fighting interval-sum lemmas.
+I’m probing the exact interval-sum lemmas I need, because the key risk here is not math but the Finset API name.
+I’m searching the installed Mathlib source directly now; if the interval-sum lemma exists, that’s the fastest route to a clean proof.
+I have a candidate proof shape now: rewrite `N` as `k + 2`, prove the exact telescoping formula by induction, then derive `< 1` immediately. I’m testing the Lean API names in one shot.
+The last run was useful: the interval-sum lemma exists and the remaining work is just normalization. I’m tightening the base case and clearing the unnecessary hypothesis so the induction hypothesis is clean.
+I’ve isolated the two remaining issues: singleton simplification at the base, and making the inductive algebra readable enough for `field_simp`. I’m patching both in one go.
+The proof is close; I’m swapping in `norm_num` where the previous run showed the arithmetic simplifier was enough, and I’m normalizing the final rewrite so the `rw` actually hits.
+One last normalization tweak: I’m keeping the closed form in `k + 2` and only rewriting the outer sum to the exact target shape. That should avoid the remaining `2 + k` vs `k + 2` mismatch.
+FINAL_PROOF:
+```lean
+import Mathlib
+
+open scoped BigOperators
+
+theorem sum_reciprocal_n_mul_pred_lt_one (N : ℕ) (hN : 2 ≤ N) :
+    Finset.sum (Finset.Icc 2 N) (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) < 1 := by
+  obtain ⟨k, rfl⟩ := Nat.exists_eq_add_of_le hN
+  clear hN
+  have hEq :
+      Finset.sum (Finset.Icc 2 (k + 2))
+        (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - 1 / (k + 2) := by
+    induction k with
+    | zero =>
+        have hIcc : Finset.Icc 2 2 = ({2} : Finset ℕ) := by
+          ext n
+          simp
+        rw [hIcc]
+        norm_num
+    | succ k ih =>
+        rw [Finset.sum_Icc_succ_top]
+        · rw [ih]
+          norm_num
+          have hk2 : (0 : ℚ) ≠ (k + 2 : ℚ) := by positivity
+          have hk3 : (0 : ℚ) ≠ (k + 3 : ℚ) := by positivity
+          field_simp [hk2, hk3]
+          ring
+        · omega
+  have hEq' :
+      Finset.sum (Finset.Icc 2 (2 + k))
+        (fun n => (1 : ℚ) / ((n : ℚ) * ((n - 1 : ℕ) : ℚ))) = 1 - 1 / (k + 2) := by
+    simpa [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc] using hEq
+  rw [hEq']
+  have hpos : 0 < (1 / (k + 2) : ℚ) := by positivity
+  linarith
+```

@@ -1,0 +1,18 @@
+{
+  "problem_id": "theorem-22-tannerys-theorem",
+  "english_title": "Theorem 2.2: Tannery's Theorem",
+  "statement_en": "Let \\\\(\\\\{a_{s,k}\\\\}_{s\\\\in S}\\\\) be a family of sequences such that:\n1. For every positive integer \\(k\\\\ge 1\\), \\(a_{s,k}\\\to a_k\\).\n2. There exists a nonnegative sequence \\(M_k\\), independent of \\(s\\), such that for every \\(k\\), \\( |a_{s,k}|\\\\le M_k \\), and\n\\\\[\n\\\\sum_{k\\\\ge 1} M_k<\\\\infty.\n\\\\]\nThen\n\\\\[\n\\\\sum_{k\\\\ge 1} a_{s,k}\\\to \\\\sum_{k\\\\ge 1} a_k.\n\\\\]",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem dominated_convergence_for_series\n    {S : Type*} {l : Filter S}\n    {a : S → ℕ+ → ℂ} {b : ℕ+ → ℂ} {M : ℕ+ → ℝ}\n    (hlim : ∀ k : ℕ+, Filter.Tendsto (fun s => a s k) l (nhds (b k)))\n    (hM_nonneg : ∀ k : ℕ+, 0 ≤ M k)\n    (hbound : ∀ s : S, ∀ k : ℕ+, ‖a s k‖ ≤ M k)\n    (hMsummable : Summable M) :\n    Filter.Tendsto (fun s => ∑' k : ℕ+, a s k) l (nhds (∑' k : ℕ+, b k)) := by\n  sorry"
+}

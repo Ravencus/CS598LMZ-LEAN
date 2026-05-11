@@ -1,0 +1,56 @@
+You are formalizing a real proof in Lean 4 + Mathlib. You have access to a `check_lean_proof` MCP tool that compiles Lean code and returns diagnostics. Use it to iterate on your proof.
+
+THEOREM (English):
+Let $$a_n := (\frac{2}{3}+\frac{1}{3}\sin(n))^n$$. Then the sequence is dense in $$[0,1]$$.
+
+LEAN 4 SIGNATURE (use VERBATIM — do NOT change name, hypotheses, or conclusion):
+import Mathlib
+
+theorem sequence_dense_in_unit_interval :
+    Set.Icc (0 : ℝ) 1 ⊆
+      closure
+        (Set.range
+          (fun n : ℕ => ((((2 : ℝ) / 3) + (((1 : ℝ) / 3) * Real.sin n)) ^ n))) := by
+  sorry
+
+You have a HARD BUDGET of 20 `check_lean_proof` calls. Each call response includes `calls_used` and `calls_budget` so you can track usage. When the budget is exhausted, no further checker calls work — submit your best final attempt and stop.
+
+Notation: `ℕ`/`ℤ`/`ℚ`/`ℝ`/`ℂ`, `Finset.sum`, `Filter.Tendsto`, `Filter.atTop`,
+`nhds`, `Real.pi`, `Summable`, etc. Sum syntax: `∑ k ∈ Finset.range n, ...`
+(NOT `∑ k in ...`).
+
+Tactics: `intro`, `rcases`, `obtain`, `have`, `calc`, `simp`, `ring`,
+`linarith`, `nlinarith`, `gcongr`, `positivity`, `field_simp`, `omega`,
+`norm_num`, `funext`, `rw`, `exact`, `induction`, `push_cast`.
+
+Rules:
+  - Do NOT use `sorry`, `admit`, or `axiom` in the FINAL proof (unless using SYMPY-SKILL below).
+  - Do NOT invent Mathlib lemma names. Prefer tactics over guessed names.
+  - First line must be `import Mathlib`. The signature must match byte-for-byte.
+
+SYMPY-SKILL: If a sub-claim within the proof is a definite integral, finite
+sum with a known closed form, or a numeric identity that you cannot easily
+prove in Lean, you may delegate the verification by emitting a single block
+of the form:
+  <sympy>
+  {
+    "kind": "integral",
+    "var": "u",
+    "lower": "0",
+    "upper": "2*pi",
+    "expression": "Max(cos(u), 0)",
+    "expected": "2"
+  }
+  </sympy>
+"kind" is one of: "integral", "sum", "equality", "limit".
+External verification will accept the corresponding sorry if sympy confirms
+the claim. Emit at most one block per attempt. Use sympy syntax (Max(...),
+not \max), not LaTeX.
+
+When you have a proof that compiles (or you've used the budget), output your FINAL answer as one fenced lean block, prefixed with the literal token `FINAL_PROOF:`. Output it exactly once, after your proof compiles or you've stopped iterating:
+
+FINAL_PROOF:
+```lean
+import Mathlib
+... your final code ...
+```

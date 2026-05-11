@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-22-2",
+  "english_title": "Proposition 2.2",
+  "statement_en": "Let $(X,\\mu)$ be a measure space and let $1\\leq p<\\infty$. For a measurable function $f$, one has\n$$f\\in L^p \\iff \\sum_{k\\in \\mathbb{Z}} 2^{kp}\\mu(\\{x:|f(x)|>2^k\\})<\\infty.$$",
+  "difficulty": "hard",
+  "domain": "measure theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "Function expected at\n  Measure\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  α\n\nHint: The identifier `Measure` is unknown, and Lean's `a"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem measurable_memLp_iff_summable_dyadic_level_sets\n    {α : Type*} [MeasurableSpace α] (μ : MeasureTheory.Measure α) (p : ℕ) (hp : 1 ≤ p)\n    (f : α → ℝ) (hf : Measurable f) :\n    MeasureTheory.MemLp f (p : ℝ≥0∞) μ ↔\n      Summable (fun k : ℕ =>\n        ((2 : ℝ) ^ (k * p)) * (μ {x | |f x| > (2 : ℝ) ^ k}).toReal) := by\n  sorry"
+}

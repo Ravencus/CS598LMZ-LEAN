@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-2",
+  "english_title": "Example 2",
+  "statement_en": "Let $$a_n:=\\begin{cases}0&n\\text{ is odd} \\\\ \\frac{1}{n}&\\text{otherwise}\\end{cases}.$$ Then the series $$\\sum_{n\\geq 1}(-1)^n a_n$$ diverges.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nnoncomputable def aSeq (n : ℕ) : ℝ :=\n  if Odd n then 0 else 1 / (n : ℝ)\n\ntheorem alternating_aSeq_diverges :\n    ¬ Summable (fun n : ℕ => (-1 : ℝ) ^ (n + 1) * aSeq (n + 1)) := by\n  sorry"
+}

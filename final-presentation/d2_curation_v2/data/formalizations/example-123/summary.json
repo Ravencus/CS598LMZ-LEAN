@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-123",
+  "english_title": "Example 1.2.3",
+  "statement_en": "The sequence $x_n:=(-1)^n$ diverges, because it has two subsequences $x_{2k}=1$ and $x_{2k+1}=-1$ converging to different limits.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem alternatingSequenceDiverges :\n    let x : ℕ → ℝ := fun n => (-1 : ℝ) ^ n\n    (¬ ∃ l : ℝ, Filter.Tendsto x Filter.atTop (nhds l)) ∧\n      Filter.Tendsto (fun k : ℕ => x (2 * k)) Filter.atTop (nhds 1) ∧\n      Filter.Tendsto (fun k : ℕ => x (2 * k + 1)) Filter.atTop (nhds (-1)) := by\n  sorry"
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "quantitative-version-of-the-second-borel-cantelli-lemma",
+  "english_title": "Quantitative Version of the Second Borel-Cantelli Lemma",
+  "statement_en": "Let $E_1,E_2,\\dots \\in\\mathcal{F}$ satisfy the condition that there exists a positive real number $C$ such that $$\\sum_{i,j\\leq N}\\mathbb{P}(E_i \\cap E_j)\\leq C \\left(\\sum_{i\\leq N}\\mathbb{P}(E_i)\\right)^2$$ for infinitely many positive integers $N$, and suppose also that $$\\sum_{n\\geq 1}\\mathbb{P}(E_n)=\\infty.$$ Then $$\\mathbb{P}(\\limsup_{n\\to\\infty}E_n)\\geq \\frac{1}{C}.$$",
+  "difficulty": "hard",
+  "domain": "probability theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "expected token\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\nopen MeasureTheory\n\ndef limsupEvent {Ω : Type*} (E : ℕ → Set Ω) : Set Ω :=\n  {ω | Set.Infinite {n : ℕ | ω ∈ E (n + 1)}}\n\ntheorem probability_limsup_ge_inv_of_second_moment_bound\n    {Ω : Type*} [MeasurableSpace Ω]\n    (μ : Measure Ω) [IsProbabilityMeasure μ]\n    (E : ℕ → Set Ω)\n    (hE : ∀ n : ℕ, MeasurableSet (E n))\n    (C : ENNReal)\n    (hC : 0 < C)\n    (hbound :\n      Set.Infinite\n        {N : ℕ |\n          0 < N ∧\n            (∑ i in Finset.Icc 1 N, ∑ j in Finset.Icc 1 N, μ (E i ∩ E j)) ≤\n              C * (∑ i in Finset.Icc 1 N, μ (E i)) ^ 2})\n    (hdiv : (∑' n : ℕ, μ (E (n + 1))) = ⊤) :\n    (1 : ENNReal) / C ≤ μ (limsupEvent E) := by\n  sorry"
+}

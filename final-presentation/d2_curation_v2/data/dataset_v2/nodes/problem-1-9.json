@@ -1,0 +1,24 @@
+{
+  "id": "problem-1-9",
+  "type": "problem",
+  "source_note": "复三角多项式在Lp空间中的稠密性",
+  "english_source_note": "Density of Complex Trigonometric Polynomials in Lp",
+  "callout_id": "复三角多项式在Lp空间中的稠密性#1",
+  "english_title": "Problem 1",
+  "statement_en": "The set of all complex trigonometric polynomials is dense in $L^p([a,b]\\to \\mathbb{C})$ for $1\\leq p<\\infty$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "density of trigonometric polynomials in continuous periodic functions",
+    "approximation by continuous functions in $L^p$",
+    "triangle inequality"
+  ],
+  "prerequisites": [
+    "$L^p$ spaces",
+    "continuous functions on compact intervals",
+    "uniform norm and $L^p$ norm comparison on bounded intervals",
+    "density arguments"
+  ],
+  "callout_body": "全体复三角多项式组成的集合在$L^p([a,b]\\to \\mathbb{C}),1\\leq p<\\infty$当中稠密。"
+}

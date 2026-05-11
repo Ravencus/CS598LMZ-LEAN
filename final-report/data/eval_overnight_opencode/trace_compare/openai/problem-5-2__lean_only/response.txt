@@ -1,0 +1,2 @@
+{"label":"different_plan","evidence":"BIG explored Mathlib/tactic routes (`#check`, `exact?`, `apply?`) and ended with `apply?` as the accepted Lean proof. SMALL made no Lean calls and instead rejected the statement as mathematically false."}
+The failure was not a shared proof plan with a Lean implementation issue. SMALL abandoned proof search entirely based on a semantic assessment, while BIG pursued and found a Lean-level route.

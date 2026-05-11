@@ -1,0 +1,12 @@
+{
+  "vendor": "openai",
+  "big": "gpt-5.5",
+  "small": "gpt-5.4-mini",
+  "condition": "with_sympy",
+  "problem_id": "problem-1-7",
+  "big_outcome": "lean_proof",
+  "small_outcome": "compile_fail",
+  "label": "same_plan_search_diff",
+  "evidence": "Both traces start by probing Mathlib for sine asymptotic/inequality lemmas such as `Real.tendsto_sin_div`, `Real.sin_le`, and `Real.le_sin`. The BIG model continued searching and found usable supporting limit/sum facts, while the SMALL model stopped after one failed lemma-name probe and never reache",
+  "wall_seconds": 10.07
+}

@@ -1,0 +1,22 @@
+{
+  "id": "lebesgue-measure-of-the-cantor-set",
+  "type": "problem",
+  "source_note": "对自变量进行二进制展开求积分",
+  "english_source_note": "Integrating via Binary Expansion of the Variable",
+  "callout_id": "对自变量进行二进制展开求积分#7",
+  "english_title": "Lebesgue Measure of the Cantor Set",
+  "statement_en": "Define the Cantor set \\\\(C\\\\) as the subset of \\\\([0,1]\\\\) consisting of those real numbers whose ternary expansions do not contain the digit 1. If \\\\(m\\\\) denotes Lebesgue measure on \\\\(\\\\mathbb R\\\\), then $$m(C)=0.$$",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "ternary expansion characterization",
+    "measure estimate by interval removal"
+  ],
+  "prerequisites": [
+    "Cantor set",
+    "Lebesgue measure",
+    "ternary expansions"
+  ],
+  "callout_body": "定义Cantor集合$C$为闭区间$[0,1]$的一个子集，其元素由那些三进制表示中不包含数字1的$[0,1]$中的实数构成。$m$是实数上的Lebesgue测度，那么$$m(C)=0$$"
+}

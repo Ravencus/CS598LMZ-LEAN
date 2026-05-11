@@ -1,0 +1,93 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 11,
+  "first_error": "Type mismatch: After simplification, term\n  Metric.tendsto_nhds.mp hx0 1\n    (Mathlib.Meta.NormNum.isNat_lt_true (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero)\n      (Mathlib.Meta.NormNum.isNat_of",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 19,
+      "column": 6,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  Metric.tendsto_nhds.mp hx0 1\n    (Mathlib.Meta.NormNum.isNat_lt_true (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero)\n      (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one) (Eq.refl false))\n has type\n  ∃ a, ∀ (b : ℕ), a ≤ b → |x b + -A| < 1\nbut is expected to have type\n  ∃ a, ∀ (b : ℕ), a ≤ b → |x b + -A| ≤ 1"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 22,
+      "column": 91,
+      "severity": "error",
+      "message": "unsolved goals\nx y : ℕ → ℝ\nA B : ℝ\nhx : Filter.Tendsto x Filter.atTop (nhds A)\nhy : Filter.Tendsto y Filter.atTop (nhds B)\nhx0 : Filter.Tendsto (fun n => x n - A) Filter.atTop (nhds 0)\nhy0 : Filter.Tendsto (fun n => y n - B) Filter.atTop (nhds 0)\nh_event : ∀ᶠ (n : ℕ) in Filter.atTop, |x n - A| ≤ 1\nN : ℕ\nhN : ∀ b ≥ N, |x b - A| ≤ 1\nhN0 : N = 0\n⊢ (Finset.range N).Nonempty"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 27,
+      "column": 41,
+      "severity": "error",
+      "message": "Application type mismatch: The argument\n  n\nhas type\n  ℕ\nof sort `Type` but is expected to have type\n  ?m.260 ∈ ?m.258\nof sort `Prop` in the application\n  Finset.le_sup' ?m.259 n"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 34,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  Filter.Tendsto.cesaro hx0\n has type\n  Filter.Tendsto (fun n => (↑n)⁻¹ * (∑ x_1 ∈ Finset.range n, x x_1 - ↑n * A)) Filter.atTop (nhds 0)\nbut is expected to have type\n  Filter.Tendsto (fun n => (∑ x_1 ∈ Finset.range (n + 1), x x_1 - (↑n + 1) * A) / (↑n + 1)) Filter.atTop (nhds 0)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 39,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  Filter.Tendsto.cesaro hy0\n has type\n  Filter.Tendsto (fun n => (↑n)⁻¹ * (∑ x ∈ Finset.range n, y x - ↑n * B)) Filter.atTop (nhds 0)\nbut is expected to have type\n  Filter.Tendsto (fun n => (∑ x ∈ Finset.range (n + 1), y x - (↑n + 1) * B) / (↑n + 1)) Filter.atTop (nhds 0)"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 51,
+      "column": 6,
+      "severity": "error",
+      "message": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  e ≥ 0\n  d ≥ 0\n  d - e ≥ 1\n  c ≥ 0\nwhere\n c := ↑((fun k x => n - k) b ha₂✝)\n d := ↑b\n e := ↑a"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 78,
+      "column": 23,
+      "severity": "error",
+      "message": "Unknown identifier `abs_sum_le_sum_abs`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 99,
+      "column": 35,
+      "severity": "error",
+      "message": "unsolved goals\nx y : ℕ → ℝ\nA B : ℝ\nhx : Filter.Tendsto x Filter.atTop (nhds A)\nhy : Filter.Tendsto y Filter.atTop (nhds B)\nhx0 : Filter.Tendsto (fun n => x n - A) Filter.atTop (nhds 0)\nhy0 : Filter.Tendsto (fun n => y n - B) Filter.atTop (nhds 0)\nC : ℝ\nhC0 : 0 ≤ C\nhC : ∀ (n : ℕ), |x n - A| ≤ C\nh_cesaro_x : Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (x k - A)) / ↑(n + 1)) Filter.atTop (nhds 0)\nh_cesaro_y : Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (y k - B)) / ↑(n + 1)) Filter.atTop (nhds 0)\nh_cesaro_y_rev :\n  Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (y (n - k) - B)) / ↑(n + 1)) Filter.atTop (nhds 0)\neps : ℝ\nheps : eps > 0\nhCeps : 0 < eps / (C + 1)\nh_event : ∀ᶠ (n : ℕ) in Filter.atTop, |y n - B| < eps / (C + 1)\nN : ℕ\nhN : ∀ b ≥ N, |y b - B| < eps / (C + 1)\nn : ℕ\nhn : n ≥ N\nhden : 0 < ↑(n + 1)\nh_abs_sum : |∑ k ∈ Finset.range (n + 1), (x k - A) * (y (n - k) - B)| ≤ ∑ k ∈ Finset.range (n + 1), C * (eps / (C + 1))\n⊢ (↑n + 1) * (C * (eps / (C + 1))) / (↑n + 1) = C * (eps / (C + 1))"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 104,
+      "column": 4,
+      "severity": "error",
+      "message": "Type mismatch: After simplification, term\n  lt_of_le_of_lt hmain hlt\n has type\n  |(∑ k ∈ Finset.range (n + 1), (x k - A) * (y (n - k) - B)) / (↑n + 1)| < eps\nbut is expected to have type\n  |∑ k ∈ Finset.range (n + 1), (x k - A) * (y (n - k) - B)| / |↑n + 1| < eps"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 121,
+      "column": 8,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ∑ x ∈ ?m.1379, ?m.1381 x + ∑ x ∈ ?m.1379, ?m.1382 x\nin the target expression\n  ∑ x_1 ∈ Finset.range (n + 1), x x_1 * y (n - x_1) =\n    ∑ x_1 ∈ Finset.range (n + 1), (x x_1 - A) * (y (n - x_1) - B) + A * ∑ k ∈ Finset.range (n + 1), (y (n - k) - B) +\n      B * ∑ k ∈ Finset.range (n + 1), (x k - A)\n\ncase h.e'_3.h\nx y : ℕ → ℝ\nA B : ℝ\nhx : Filter.Tendsto x Filter.atTop (nhds A)\nhy : Filter.Tendsto y Filter.atTop (nhds B)\nhx0 : Filter.Tendsto (fun n => x n - A) Filter.atTop (nhds 0)\nhy0 : Filter.Tendsto (fun n => y n - B) Filter.atTop (nhds 0)\nC : ℝ\nhC0 : 0 ≤ C\nhC : ∀ (n : ℕ), |x n - A| ≤ C\nh_cesaro_x : Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (x k - A)) / ↑(n + 1)) Filter.atTop (nhds 0)\nh_cesaro_y : Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (y k - B)) / ↑(n + 1)) Filter.atTop (nhds 0)\nh_cesaro_y_rev :\n  Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (y (n - k) - B)) / ↑(n + 1)) Filter.atTop (nhds 0)\nh_prod0 :\n  Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (x k - A) * (y (n - k) - B)) / ↑(n + 1)) Filter.atTop (nhds 0)\nhsum :\n  Filter.Tendsto\n    (fun n =>\n      (∑ k ∈ Finset.range (n + 1), (x k - A) * (y (n - k) - B)) / ↑(n + 1) +\n          A * ((∑ k ∈ Finset.range (n + 1), (y (n - k) - B)) / ↑(n + 1)) +\n        B * ((∑ k ∈ Finset.range (n + 1), (x k - A)) / ↑(n + 1)))\n    Filter.atTop (nhds (0 + A * 0 + B * 0))\nn : ℕ\n⊢ ∑ x_1 ∈ Finset.range (n + 1), x x_1 * y (n - x_1) =\n    ∑ x_1 ∈ Finset.range (n + 1), (x x_1 - A) * (y (n - x_1) - B) + A * ∑ k ∈ Finset.range (n + 1), (y (n - k) - B) +\n      B * ∑ k ∈ Finset.range (n + 1), (x k - A)\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_d19c4ee613.lean",
+      "line": 125,
+      "column": 2,
+      "severity": "error",
+      "message": "unsolved goals\ncase h.e'_5\nx y : ℕ → ℝ\nA B : ℝ\nhx : Filter.Tendsto x Filter.atTop (nhds A)\nhy : Filter.Tendsto y Filter.atTop (nhds B)\nhx0 : Filter.Tendsto (fun n => x n - A) Filter.atTop (nhds 0)\nhy0 : Filter.Tendsto (fun n => y n - B) Filter.atTop (nhds 0)\nC : ℝ\nhC0 : 0 ≤ C\nhC : ∀ (n : ℕ), |x n - A| ≤ C\nh_cesaro_x : Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (x k - A)) / ↑(n + 1)) Filter.atTop (nhds 0)\nh_cesaro_y : Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (y k - B)) / ↑(n + 1)) Filter.atTop (nhds 0)\nh_cesaro_y_rev :\n  Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (y (n - k) - B)) / ↑(n + 1)) Filter.atTop (nhds 0)\nh_prod0 :\n  Filter.Tendsto (fun n => (∑ k ∈ Finset.range (n + 1), (x k - A) * (y (n - k) - B)) / ↑(n + 1)) Filter.atTop (nhds 0)\nhsum :\n  Filter.Tendsto\n    (fun n =>\n      (∑ k ∈ Finset.range (n + 1), (x k - A) * (y (n - k) - B)) / ↑(n + 1) +\n          A * ((∑ k ∈ Finset.range (n + 1), (y (n - k) - B)) / ↑(n + 1)) +\n        B * ((∑ k ∈ Finset.range (n + 1), (x k - A)) / ↑(n + 1)))\n    Filter.atTop (nhds (0 + A * 0 + B * 0))\n⊢ nhds (A * B) = nhds 0"
+    }
+  ]
+}

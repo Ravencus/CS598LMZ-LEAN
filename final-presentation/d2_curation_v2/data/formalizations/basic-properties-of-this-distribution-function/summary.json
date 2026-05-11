@@ -1,0 +1,24 @@
+{
+  "problem_id": "basic-properties-of-this-distribution-function",
+  "english_title": "Basic Properties of This Distribution Function",
+  "statement_en": "Let \\((X,\\mathcal{F},\\mu)\\) be a measure space and let \\(\\lambda_f(a):=\\mu(\\{x:|f(x)|>a\\})\\). Then: (1) \\(\\lambda_f\\) is decreasing and right-continuous; (2) if \\(|f|\\leq |g|\\), then \\(\\lambda_f\\leq \\lambda_g\\); (3) if \\(|f_n|\\uparrow |f|\\), then \\(\\lambda_{f_n}\\uparrow \\lambda_f\\); (4) if \\(f=g+h\\), then \\(\\lambda_f(a)\\leq \\lambda_g(a/2)+\\lambda_h(a/2)\\); (5) if \\(f=gh\\), then \\(\\lambda_f(a)\\leq \\lambda_g(\\sqrt{a/2})+\\lambda_h(\\sqrt{a/2})\\).",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 3,
+      "first_error_msg": "expected token"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory Filter Set\nopen scoped Topology\n\ndef distributionFunction {α : Type*} [MeasurableSpace α] (μ : Measure α) (f : α → ℝ) :\n    ℝ → ENNReal :=\n  fun a => μ {x | |f x| > a}\n\ntheorem distributionFunction_properties\n    {α : Type*} [MeasurableSpace α] (μ : Measure α) :\n    (∀ f : α → ℝ,\n      Antitone (distributionFunction μ f) ∧\n      ∀ a : ℝ, ContinuousWithinAt (distributionFunction μ f) (Set.Ici a) a) ∧\n    (∀ f g : α → ℝ, (∀ x, |f x| ≤ |g x|) →\n      distributionFunction μ f ≤ distributionFunction μ g) ∧\n    (∀ (F : ℕ → α → ℝ) (f : α → ℝ),\n      (∀ x, Monotone (fun n => |F n x|)) →\n      (∀ x, Filter.Tendsto (fun n => |F n x|) Filter.atTop (nhds (|f x|))) →\n      (∀ a : ℝ, Monotone (fun n => distributionFunction μ (F n) a)) ∧\n      ∀ a : ℝ,\n        Filter.Tendsto (fun n => distributionFunction μ (F n) a) Filter.atTop\n          (nhds (distributionFunction μ f a))) ∧\n    (∀ f g h : α → ℝ, f = g + h →\n      ∀ a : ℝ,\n        distributionFunction μ f a ≤\n          distributionFunction μ g (a / 2) + distributionFunction μ h (a / 2)) ∧\n    (∀ f g h : α → ℝ, f = g * h →\n      ∀ a : ℝ,\n        distributionFunction μ f a ≤\n          distributionFunction μ g (Real.sqrt (a / 2)) +\n            distributionFunction μ h (Real.sqrt (a / 2))) := by\n  sorry"
+}

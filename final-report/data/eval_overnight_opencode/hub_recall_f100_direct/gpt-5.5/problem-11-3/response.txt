@@ -1,0 +1,3 @@
+["kroneckers-theorem-dirichlets-theorem-and-applications-hub", "an-epsilon-of-room-hub"]
+- kroneckers-theorem-dirichlets-theorem-and-applications-hub: The core proof is the standard irrational-rotation density argument for fractional parts `{nα}`, here with `α = 1 / (2π)`, using Dirichlet/Kronecker approximation modulo `1`.
+- an-epsilon-of-room-hub: The closure/density goal is naturally proved by taking an arbitrary point of `[0,1]` and an arbitrary `ε > 0`, then finding some fractional part within that ε-neighborhood.

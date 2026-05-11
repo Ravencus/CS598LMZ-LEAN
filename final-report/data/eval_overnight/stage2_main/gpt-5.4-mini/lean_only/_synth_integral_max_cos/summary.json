@@ -1,0 +1,58 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model": "gpt-5.4-mini",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 416.5,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 220.25,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 8,
+      "first_error": "Type mismatch: After simplification, term\n  hu\n has type\n  u ∈ Set.uIcc 0 (Real.pi / 2)\nbut is expected to have type\n  0 ≤ u ∧ u ≤ Real.pi / 2"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 117.33,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 5,
+      "first_error": "Application type mismatch: The argument\n  huIcc\nhas type\n  u ∈ Set.Icc 0 (Real.pi / 2)\nbut is expected to have type\n  u ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2)\nin the application\n  Real.cos_nonneg_of"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 68.45,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 7,
+      "first_error": "Unknown constant `Real.integral_cos`"
+    }
+  ]
+}

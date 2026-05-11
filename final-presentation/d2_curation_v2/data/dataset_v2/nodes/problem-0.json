@@ -1,0 +1,23 @@
+{
+  "id": "problem-0",
+  "type": "problem",
+  "source_note": "被求和对象的值U形分布时和的估计",
+  "english_source_note": "Estimating Sums with U-Shaped Summands",
+  "callout_id": "被求和对象的值U形分布时和的估计#1",
+  "english_title": "Problem 0",
+  "statement_en": "Let $$S_n:=\\sum_{k=2}^{n-1}\\frac{1}{(n-k)\\log(k)}.$$ Find $$\\lim_{n\\to \\infty}S_n.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "splitting the sum into ranges",
+    "comparison with harmonic sums",
+    "logarithmic asymptotics"
+  ],
+  "prerequisites": [
+    "limits of sequences",
+    "properties of logarithms",
+    "basic asymptotic estimation of sums"
+  ],
+  "callout_body": "$$S_n:=\\sum_{k=2}^{n-1}\\frac{1}{(n-k)\\log(k)}$$求$$\\lim_{n\\to \\infty}S_n$$"
+}

@@ -1,0 +1,18 @@
+{
+  "problem_id": "proposition-141",
+  "english_title": "Proposition 1.4.1",
+  "statement_en": "The set of all badly approximable real numbers has Lebesgue measure zero, that is, $$m(\\mathbf{Bad})=0.$$",
+  "difficulty": "medium",
+  "domain": "metric Diophantine approximation",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Set MeasureTheory\n\ndef Bad : Set ℝ :=\n  { x : ℝ |\n      ∃ c : ℝ,\n        0 < c ∧\n          ∀ p : ℤ, ∀ q : ℕ, q ≠ 0 →\n            c / (q : ℝ) ^ (2 : ℕ) ≤ |x - (p : ℝ) / (q : ℝ)| }\n\ntheorem badlyApproximable_volume_eq_zero : volume Bad = 0 := by\n  sorry"
+}

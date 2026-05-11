@@ -1,0 +1,71 @@
+{
+  "note_title": "满足这种函数极限性质的函数是几乎处处为0的",
+  "is_hub": false,
+  "in_subset_via": [
+    "an epsilon of room证明集合为0测度的策略"
+  ],
+  "callouts": [
+    {
+      "id": "满足这种函数极限性质的函数是几乎处处为0的#1",
+      "type": "question",
+      "title": "问题1",
+      "body": "函数$f:[0,1]\\to \\mathbb{R}$满足对任意$\\forall x_0 \\in [0,1]$都有$\\lim_{x\\to x_0}f(x)=0$那么函数几乎处处为0.",
+      "position_char": 39,
+      "position_line": 7,
+      "classification_result": {
+        "id": "满足这种函数极限性质的函数是几乎处处为0的#1",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Let $f:[0,1]\\to \\mathbb{R}$ satisfy that for every $x_0 \\in [0,1]$, one has $\\lim_{x\\to x_0} f(x)=0$. Then $f=0$ almost everywhere.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "pointwise limit analysis",
+            "measure-zero exceptional set argument",
+            "contradiction via the definition of limit"
+          ],
+          "prerequisites": [
+            "definition of limit of a function",
+            "almost everywhere",
+            "basic real analysis on intervals"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "满足这种函数极限性质的函数是几乎处处为0的#2",
+      "type": "question",
+      "title": "问题2：2024年的一个数学分析考研题目",
+      "body": "函数$f:[a,b]\\to \\mathbb{R}$满足对任意$\\forall x_0 \\in [a,b]$都有$\\lim_{x\\to x_0}f(x)=0$，那么函数在区间$[a,b]$上Riemann可积并且积分为0。",
+      "position_char": 1689,
+      "position_line": 33,
+      "classification_result": {
+        "id": "满足这种函数极限性质的函数是几乎处处为0的#2",
+        "classification": "problem",
+        "english_title": "Problem 2: A 2024 Mathematical Analysis Entrance Exam Problem",
+        "if_problem": {
+          "statement_en": "Let $f:[a,b]\\to \\mathbb{R}$ satisfy that for every $x_0 \\in [a,b]$, one has $\\lim_{x\\to x_0} f(x)=0$. Then $f$ is Riemann integrable on $[a,b]$ and its integral is $0$.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "deducing almost everywhere vanishing from local limit behavior",
+            "Riemann integrability criterion",
+            "comparison of upper and lower sums"
+          ],
+          "prerequisites": [
+            "definition of limit of a function",
+            "Riemann integrability",
+            "almost everywhere"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"满足这种函数极限性质的函数是几乎处处为0的#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:[0,1]\\\\to \\\\mathbb{R}$ satisfy that for every $x_0 \\\\in [0,1]$, one has $\\\\lim_{x\\\\to x_0} f(x)=0$. Then $f=0$ almost everywhere.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"pointwise limit analysis\",\n        \"measure-zero exceptional set argument\",\n        \"contradiction via the definition of limit\"\n      ],\n      \"prerequisites\": [\n        \"definition of limit of a function\",\n        \"almost everywhere\",\n        \"basic real analysis on intervals\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"满足这种函数极限性质的函数是几乎处处为0的#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 2: A 2024 Mathematical Analysis Entrance Exam Problem\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $f:[a,b]\\\\to \\\\mathbb{R}$ satisfy that for every $x_0 \\\\in [a,b]$, one has $\\\\lim_{x\\\\to x_0} f(x)=0$. Then $f$ is Riemann integrable on $[a,b]$ and its integral is $0$.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"deducing almost everywhere vanishing from local limit behavior\",\n        \"Riemann integrability criterion\",\n        \"comparison of upper and lower sums\"\n      ],\n      \"prerequisites\": [\n        \"definition of limit of a function\",\n        \"Riemann integrability\",\n        \"almost everywhere\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

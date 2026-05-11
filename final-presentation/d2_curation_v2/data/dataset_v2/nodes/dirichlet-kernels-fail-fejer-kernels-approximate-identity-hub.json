@@ -1,0 +1,18 @@
+{
+  "id": "dirichlet-kernels-fail-fejer-kernels-approximate-identity-hub",
+  "type": "hub",
+  "source_note": "Dirichlet核不是逼近单位，Fejer核是逼近单位元",
+  "english_source_note": "Dirichlet Kernels Fail, Fejer Kernels Approximate Identity",
+  "is_top3": false,
+  "note_degree": 11,
+  "strategies": [
+    {
+      "callout_id": "Dirichlet核不是逼近单位,Fejer核是逼近单位元#2",
+      "english_title": "Basic Idea of the Estimate",
+      "strategy_name_en": "Periodic numerator change-of-variables and decomposition",
+      "summary_en": "When the numerator of the integrand is periodic, use a change of variables so the integral runs over many periods, then split the interval into complete periods plus one incomplete remainder. Reduce the asymptotic estimate to bounding the incomplete period and analyzing the contribution of one full period.",
+      "applicability": "Applies to asymptotic estimates of oscillatory or periodic integrals where periodic structure can be exploited by rescaling and interval decomposition.",
+      "callout_body": "因为被积对象的分子具有周期性，在$[0,\\pi]$内的积分会走过很多个周期，于是考虑通过换元得到在$[0,(N+\\frac{1}{2})\\pi]$上的积分，然分拆积分。(思路可以参考[[分段估计#2. 可数分段]])最后把不完整的周期分离出去，整个渐进问题就是估计一个不完整的周期，以及在一个周期里面做渐进。"
+    }
+  ]
+}

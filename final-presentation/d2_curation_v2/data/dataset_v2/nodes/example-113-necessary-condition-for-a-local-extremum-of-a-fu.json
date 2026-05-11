@@ -1,0 +1,23 @@
+{
+  "id": "example-113-necessary-condition-for-a-local-extremum-of-a-fu",
+  "type": "problem",
+  "source_note": "分析学基本方法目录1",
+  "english_source_note": "Basic Methods in Analysis I",
+  "callout_id": "分析学基本方法目录1#6",
+  "english_title": "Example 1.1.3: Necessary Condition for a Local Extremum of a Function",
+  "statement_en": "If \\(x_0\\) is a local maximum point of a differentiable function \\(f(x)\\), prove that $$f'(x_0)=0.$$",
+  "problem_type": "theorem",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "difference quotient",
+    "one-sided sign analysis",
+    "passing to the limit"
+  ],
+  "prerequisites": [
+    "derivative definition",
+    "local maximum",
+    "limit laws"
+  ],
+  "callout_body": "如果$x_0$是函数$f(x)$的一个局部极大值点，也就是说在$x_0$的邻域$I_{x_0}$（一个包含$x_0$的区间）当中$y\\in I_{x_0}$都有$f(y)\\leq f(x_0)$。我们从逼近的角度上来说，如果$h>0,x_0+h\\in I_{x_0}$，如果$x_0$是局部极大值点，那么$$\\frac{f(x_0+h)-f(x_0)}{h}=f'(x_0)+o(1)\\leq 0$$那么两边取极限以后（此处回忆“命题0.2”会更容易理解）得到$$f'(x_0)\\leq 0$$如果$h<0,x_0+h\\in I_{x_0}$,如果$x_0$是局部极大值点，那么$$\\frac{f(x_0+h)-f(x_0)}{h}=f'(x_0)+o(1)\\geq 0$$那么两边取极限以后（此处回忆“命题0.2”会更容易理解）得到$$f'(x_0)\\geq 0$$于是得到$$f'(x_0)=0$$这件事告诉我们，逼近函数$f(x)$的线性函数的“斜率”为0的点（一元函数图像上的切线与x轴平行的时候），**有可能**（只是必要条件，并非充要条件）是函数的局部极值点。"
+}

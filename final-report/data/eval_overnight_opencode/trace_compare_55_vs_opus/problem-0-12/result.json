@@ -1,0 +1,11 @@
+{
+  "problem_id": "problem-0-12",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "instruction_violation",
+  "outcome_b": "instruction_violation",
+  "plan_relation": "unclear",
+  "divergence": "n/a",
+  "evidence": "Trace A mostly performed Mathlib/API probing, tried bogus contradiction paths, tested unsafe shortcuts, and ended with a partial `C < 0` split plus `sorry`. Trace B gave up almost immediately after checking the signature and sketching informal Weyl/equidistribution ideas, also ending with `sorry`.",
+  "wall_seconds": 10.41
+}

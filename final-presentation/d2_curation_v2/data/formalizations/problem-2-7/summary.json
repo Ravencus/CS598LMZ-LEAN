@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-2-7",
+  "english_title": "Problem 2",
+  "statement_en": "Prove that the graph of a continuous function $f:\\mathbb{R}\\to\\mathbb{R}$, namely $$G:=\\{(x,y):y=f(x)\\},$$ has Lebesgue measure zero in $\\mathbb{R}^2$.",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem continuous_graph_has_volume_zero\n    (f : ℝ → ℝ) (hf : Continuous f) :\n    MeasureTheory.volume ({p : ℝ × ℝ | p.2 = f p.1} : Set (ℝ × ℝ)) = 0 := by\n  sorry"
+}

@@ -1,0 +1,2 @@
+{"label":"different_plan","evidence":"BIG chose the witness directly as A or B and solved both branches by associativity. SMALL instead tried to use the inverse of A as the witness in the A-invertible branch and got stuck constructing/using inverse facts like h.inv_mul_self and ⅟A."}
+The successful proof avoids matrix inverse manipulation entirely: for invertible `A`, it uses `P = A` and the `Or.inr` side. The failed trace shows a substantively different decomposition in the first branch, centered on proving similarity via `A⁻¹`, which led to Lean implementation failures.

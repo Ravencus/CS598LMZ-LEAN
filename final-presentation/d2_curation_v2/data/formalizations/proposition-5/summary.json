@@ -1,0 +1,30 @@
+{
+  "problem_id": "proposition-5",
+  "english_title": "Proposition 5",
+  "statement_en": "The sequence $n^2$ modulo $2\\pi$ is uniformly distributed on $[0,2\\pi]$.",
+  "difficulty": "hard",
+  "domain": "uniform distribution theory",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 2,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instField', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown identifier `𝓝`"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`"
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter\n\nnoncomputable def modTwoPi (x : ℝ) : ℝ :=\n  x % (2 * Real.pi)\n\ndef UniformlyDistributedModTwoPi (u : ℕ → ℝ) : Prop :=\n  ∀ a b : ℝ, 0 ≤ a → a ≤ b → b ≤ 2 * Real.pi →\n    Filter.Tendsto\n      (fun N : ℕ =>\n        (∑ n ∈ Finset.range (N + 1),\n          if modTwoPi (u n) ∈ Set.Icc a b then (1 : ℝ) else 0) / (((N + 1 : ℕ) : ℝ)))\n      Filter.atTop\n      (Filter.nhds ((b - a) / (2 * Real.pi)))\n\ntheorem squares_mod_two_pi_uniformly_distributed :\n    UniformlyDistributedModTwoPi (fun n : ℕ => (n : ℝ) ^ 2) := by\n  sorry"
+}

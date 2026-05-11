@@ -1,0 +1,58 @@
+{
+  "problem_id": "problem-2-4",
+  "model": "gpt-5.5",
+  "condition": "with_sympy",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 54.2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 16.59,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `convolution_average`: The environment does not contain `Function.convolution_average`, so it is not possible to project the field `convolution_average` from an expression\n  hx\nof type\n "
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 15.21,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Unknown constant `Filter.Tendsto.convolution_average`\n"
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 15.31,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 1,
+      "first_error": "Invalid field `convolution_average`: The environment does not contain `Function.convolution_average`, so it is not possible to project the field `convolution_average` from an expression\n  hx\nof type\n "
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "diagnostics": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4631d71668ca.lean",
+      "line": 4,
+      "column": 4,
+      "severity": "error",
+      "message": "Unknown constant `Complex.abs`\n"
+    }
+  ],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/Fmlz_4631d71668ca.lean",
+      "line": 4,
+      "column": 4,
+      "severity": "error",
+      "message": "Unknown constant `Complex.abs`\n"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "example-111-2",
+  "type": "problem",
+  "source_note": "判断序列在区间内稠密的几个命题",
+  "english_source_note": "Criteria for Density of Sequences in an Interval",
+  "callout_id": "判断序列在区间内稠密的几个命题#2",
+  "english_title": "Example 1.1.1",
+  "statement_en": "Enumerate the rational numbers in $(0,1)$ as a sequence such as\n$$\\frac{1}{2},\\frac{1}{3},\\frac{2}{3},\\frac{3}{4},\\frac{2}{4},\\frac{1}{4},\\frac{1}{5},\\dots$$\nThis sequence satisfies $\\limsup x_n=1$, $\\liminf x_n=0$, and $x_{n+1}-x_n\\to 0$; therefore the rational numbers in $(0,1)$ form a dense sequence in $(0,1)$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "key_techniques": [
+    "explicit construction",
+    "checking limsup and liminf",
+    "estimating consecutive differences"
+  ],
+  "prerequisites": [
+    "rational numbers in intervals",
+    "limsup and liminf",
+    "density"
+  ],
+  "callout_body": "枚举$(0,1)$当中的有理数: \n$$\\frac{1}{2},\\frac{1}{3},\\frac{2}{3},\\frac{3}{4},\\frac{2}{4},\\frac{1}{4},\\frac{1}{5}...$$\n\n1. 上极限为1，下极限为0.\n2. 分母为奇数的那一组逐渐增加，相邻两项增加$\\frac{1}{2k+1}$.分母为偶数的那一组逐渐减少，相邻两项减少$\\frac{1}{2k}$.分母为奇数和偶数的两项的差为$\\frac{1}{2k+1} - \\frac{1}{2k}$或者$\\frac{2k+1}{2k+2} -\\frac{2k}{2k+1}$.因此相邻两项差的极限为0.\n3. 因此有$(0,1)$当中的有理数在$(0,1)$当中稠密。"
+}

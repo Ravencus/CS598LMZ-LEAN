@@ -1,0 +1,23 @@
+{
+  "id": "example-314",
+  "type": "problem",
+  "source_note": "和与积分换序",
+  "english_source_note": "Interchanging Sums and Integrals",
+  "callout_id": "和与积分换序#6",
+  "english_title": "Example 3.1.4",
+  "statement_en": "Compute the parameter-dependent integral \\[I(a):=\\int_{-\\infty}^{\\infty}e^{-x^2}\\cos(ax)\\,dx.\\]",
+  "problem_type": "example",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "power series expansion of cosine",
+    "Gaussian moments",
+    "interchange of summation and integration"
+  ],
+  "prerequisites": [
+    "Gaussian integral",
+    "Taylor series for cosine",
+    "Gamma function or Gaussian moment formulas"
+  ],
+  "callout_body": "计算含参数积分$$I(a):=\\int_{-\\infty}^{\\infty}e^{-x^2}\\cos(ax)\\,dx$$"
+}

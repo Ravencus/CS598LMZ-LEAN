@@ -1,0 +1,5 @@
+["interchanging-sums-and-integrals-hub", "an-epsilon-of-room-hub", "piecewise-estimates-hub", "term-by-term-estimates-hub"]
+- interchanging-sums-and-integrals-hub: The square of the infinite floor series is naturally expanded into a double series, then the integral is evaluated by interchanging integration with summation.
+- an-epsilon-of-room-hub: A Lean proof will likely pass through finite partial sums of the series and then take limits using dominated convergence or summability.
+- piecewise-estimates-hub: The integrals of products of floor functions are computed by splitting `[0,1]` into dyadic intervals where the floors are constant.
+- term-by-term-estimates-hub: Bounds like `⌊2^n x⌋ / 3^n ≤ (2/3)^n` are needed to prove convergence, domination, and absolute summability of the resulting series.

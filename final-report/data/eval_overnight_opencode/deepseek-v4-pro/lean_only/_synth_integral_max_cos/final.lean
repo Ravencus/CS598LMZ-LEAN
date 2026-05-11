@@ -1,0 +1,3 @@
+import Mathlib
+
+#check intervalIntegral.integral_add_adjacent_intervals

@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-3",
+  "english_title": "Example 3",
+  "statement_en": "Based on Example 2, define\n$$Y_3(\\omega):=\\begin{cases}0& \\omega \\in [p,1]-\\{\\frac{1+p}{2}\\}\\\\ 1& \\omega \\in [0,p) \\cup \\{\\frac{1+p}{2}\\}\\end{cases}$$\nThen the pushforward measure is unchanged:\n$$P_{Y_3}(\\{0\\})=m\\left([p,1]-\\left\\{\\frac{1+p}{2}\\right\\}\\right)=1-p,\\qquad P_{Y_3}(\\{1\\})=m\\left([0,p) \\cup \\left\\{\\frac{1+p}{2}\\right\\}\\right)=p.$$",
+  "difficulty": "easy",
+  "domain": "probability theory",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.decidableLE', which is 'noncomputable'"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen MeasureTheory\n\nnoncomputable def Y3 (p : ℝ) (ω : ℝ) : ℝ :=\n  if ω ∈ (Set.Icc p 1 \\ ({((1 + p) / 2)} : Set ℝ)) then 0\n  else if ω ∈ (Set.Ico 0 p ∪ ({((1 + p) / 2)} : Set ℝ)) then 1\n  else 0\n\ntheorem y3_pushforward_unchanged\n    (p : ℝ) (hp0 : 0 ≤ p) (hp1 : p ≤ 1) :\n    (Measure.map (Y3 p) (volume.restrict (Set.Icc 0 1))) ({0} : Set ℝ) =\n        volume (Set.Icc p 1 \\ ({((1 + p) / 2)} : Set ℝ)) ∧\n      volume (Set.Icc p 1 \\ ({((1 + p) / 2)} : Set ℝ)) = ENNReal.ofReal (1 - p) ∧\n      (Measure.map (Y3 p) (volume.restrict (Set.Icc 0 1))) ({1} : Set ℝ) =\n        volume (Set.Ico 0 p ∪ ({((1 + p) / 2)} : Set ℝ)) ∧\n      volume (Set.Ico 0 p ∪ ({((1 + p) / 2)} : Set ℝ)) = ENNReal.ofReal p := by\n  sorry"
+}

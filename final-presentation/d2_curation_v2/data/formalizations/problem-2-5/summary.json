@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-2-5",
+  "english_title": "Problem 2",
+  "statement_en": "If an entire function satisfies $$|f(z)|\\\\leq M(1+|z|)^A,\\\\quad z\\\\in \\\\mathbb{C},$$ prove that \\(f\\) is a polynomial of degree at most $$\\\\lfloor A \\\rfloor.$$",
+  "difficulty": "medium",
+  "domain": "complex analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem entire_bounded_by_power_is_polynomial\n    {f : ℂ → ℂ} {M A : ℝ}\n    (hentire : Differentiable ℂ f)\n    (hM : 0 ≤ M)\n    (hbound : ∀ z : ℂ, ‖f z‖ ≤ M * Real.rpow (1 + ‖z‖) A) :\n    ∃ p : Polynomial ℂ, (∀ z : ℂ, f z = p.eval z) ∧ p.natDegree ≤ Int.toNat ⌊A⌋ := by\n  sorry"
+}

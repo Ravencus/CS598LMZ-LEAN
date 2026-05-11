@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-21-generalization-of-the-silverman-toeplitz-theo",
+  "english_title": "Proposition 2.1: Generalization of the Silverman-Toeplitz Theorem",
+  "statement_en": "Let $a_{n,k}$ be a double sequence such that:\n1. the sum over $k$ tends asymptotically to $1$, namely $$\\lim_{n\\to\\infty}\\sum_{k=1}^n a_{n,k}=1,$$\n2. for each fixed $k$, $$\\lim_{n\\to\\infty} a_{n,k}=0,$$\n3. $$\\sup_{n\\in\\mathbb{N}^{+}}\\sum_{k\\le n}|a_{n,k}|<+\\infty.$$\nThen for every convergent sequence $x_n$, one has\n$$\\lim_{n\\to\\infty}\\sum_{k=1}^n a_{n,k}x_k=\\lim_{n\\to\\infty}x_n.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen Filter Topology BigOperators\n\ntheorem silvermanToeplitz_real\n    (a : ℕ → ℕ → ℝ) (x : ℕ → ℝ) (l : ℝ)\n    (h_sum_one : Filter.Tendsto (fun n => Finset.sum (Finset.Icc 1 n) (fun k => a n k)) Filter.atTop (nhds 1))\n    (h_pointwise : ∀ k : ℕ, Filter.Tendsto (fun n => a n k) Filter.atTop (nhds 0))\n    (h_bdd : ∃ C : ℝ, ∀ n : ℕ, Finset.sum (Finset.Icc 1 n) (fun k => |a n k|) ≤ C)\n    (h_conv : Filter.Tendsto x Filter.atTop (nhds l)) :\n    Filter.Tendsto (fun n => Finset.sum (Finset.Icc 1 n) (fun k => a n k * x k)) Filter.atTop (nhds l) := by\n  sorry"
+}

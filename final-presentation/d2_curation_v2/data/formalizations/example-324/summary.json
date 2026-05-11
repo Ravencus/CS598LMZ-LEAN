@@ -1,0 +1,18 @@
+{
+  "problem_id": "example-324",
+  "english_title": "Example 3.2.4",
+  "statement_en": "Let \\(p>0\\). Prove that\n$$\\int_0^1 \\frac{1}{1+x^p}>\\frac{p}{p+1}.$$",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem integral_one_div_one_add_rpow_gt :\n    ∀ p : ℝ, 0 < p →\n      (∫ x in (0 : ℝ)..1, 1 / (1 + Real.rpow x p)) > p / (p + 1) := by\n  sorry"
+}

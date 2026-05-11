@@ -1,0 +1,58 @@
+{
+  "problem_id": "lemma-121",
+  "model": "gpt-5.5",
+  "condition": "lean_only",
+  "K": 3,
+  "overall_success": false,
+  "why_success": null,
+  "attempts_used": 3,
+  "any_timeout": false,
+  "wall_seconds": 60.4,
+  "attempts": [
+    {
+      "attempt": 1,
+      "wall_seconds": 20.67,
+      "outcome": "compile_fail",
+      "overall_success": false,
+      "lean_compiles_raw": false,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": false,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 3,
+      "first_error": "Application type mismatch: The argument\n  continuousAt_subtype_val\nhas type\n  ContinuousAt Subtype.val ?m.79\nbut is expected to have type\n  ContinuousAt (fun z => ⟨↑z, ⋯⟩) z\nin the application\n  Conti"
+    },
+    {
+      "attempt": 2,
+      "wall_seconds": 16.54,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": true,
+      "has_admit": false,
+      "has_axiom": false,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    },
+    {
+      "attempt": 3,
+      "wall_seconds": 16.04,
+      "outcome": "instruction_violation",
+      "overall_success": false,
+      "lean_compiles_raw": true,
+      "has_bare_sorry": false,
+      "has_admit": false,
+      "has_axiom": true,
+      "instruction_violation": true,
+      "sympy_emitted": false,
+      "sympy_verified": false,
+      "n_errors": 0,
+      "first_error": null
+    }
+  ]
+}

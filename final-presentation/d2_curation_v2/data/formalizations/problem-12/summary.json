@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-12",
+  "english_title": "Problem",
+  "statement_en": "Find the limit: $$\\lim_{n\\to\\infty}\\frac{n+n^{1/2}+\\cdots+n^{1/n}}{n}.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  𝓝\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (1 : ℝ)\n\nHint: The identifier `𝓝` is unknown, and Lean's `autoImp"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Unknown constant `Filter.nhds`\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem limit_n_plus_sqrt_to_nth_root_over_n :\n    Filter.Tendsto\n      (fun n : ℕ =>\n        Finset.sum (Finset.Icc 1 (n + 1))\n          (fun k => Real.rpow ((n + 1 : ℝ)) (1 / (k : ℝ))) / ((n + 1 : ℝ)))\n      Filter.atTop\n      (Filter.nhds (1 : ℝ)) := by\n  sorry"
+}

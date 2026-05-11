@@ -1,0 +1,23 @@
+{
+  "id": "summation-involving-fibonacci-numbers-simple-version",
+  "type": "problem",
+  "source_note": "制造telescoping sum求和或求乘积",
+  "english_source_note": "Using Telescoping Sums for Sums and Products",
+  "callout_id": "制造telescoping sum求和或求乘积#4",
+  "english_title": "Summation Involving Fibonacci Numbers, Simple Version",
+  "statement_en": "Let \\(F_n\\) be the \\(n\\)-th Fibonacci number. Evaluate\n$$\\\\sum_{n \\\\geq 1} \\\\frac{1}{F_nF_{n+2}}.$$",
+  "problem_type": "exercise",
+  "difficulty": "medium",
+  "domain": "discrete mathematics",
+  "key_techniques": [
+    "telescoping sum",
+    "Fibonacci identities",
+    "rewriting reciprocal products"
+  ],
+  "prerequisites": [
+    "definition and basic properties of Fibonacci numbers",
+    "algebraic manipulation",
+    "summation techniques"
+  ],
+  "callout_body": "其中$F_n$是第n个Fibonacci数，$$\\sum_{n \\geq 1} \\frac{1}{F_nF_{n+2}}$$"
+}

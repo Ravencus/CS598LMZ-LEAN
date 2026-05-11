@@ -1,0 +1,37 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 3,
+  "first_error": "unexpected identifier; expected command",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_ffa4cfd6d0.lean",
+      "line": 3,
+      "column": 0,
+      "severity": "error",
+      "message": "unexpected identifier; expected command"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ffa4cfd6d0.lean",
+      "line": 3,
+      "column": 50,
+      "severity": "error",
+      "message": "unexpected token ','; expected ':=', 'where' or '|'"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_ffa4cfd6d0.lean",
+      "line": 3,
+      "column": 32,
+      "severity": "error",
+      "message": "Function expected at\n  on\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  the\n\nHint: The identifier `on` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"
+    }
+  ]
+}

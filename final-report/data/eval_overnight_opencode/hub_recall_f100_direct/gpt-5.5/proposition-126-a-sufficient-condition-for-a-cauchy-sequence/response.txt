@@ -1,0 +1,3 @@
+["term-by-term-estimates-hub", "cauchy-convergence-criterion-hub"]
+- term-by-term-estimates-hub: The core proof estimates each telescoping increment `‖a (k+1) - a k‖` by `b k` and sums those bounds over a finite interval.
+- cauchy-convergence-criterion-hub: The goal is exactly to prove `CauchySeq a`, using convergence of `∑ b n` to make all sufficiently far apart tails `‖a m - a n‖` small.

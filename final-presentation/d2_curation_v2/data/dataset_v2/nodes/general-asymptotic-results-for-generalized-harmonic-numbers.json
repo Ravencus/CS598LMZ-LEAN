@@ -1,0 +1,23 @@
+{
+  "id": "general-asymptotic-results-for-generalized-harmonic-numbers",
+  "type": "problem",
+  "source_note": "自然数的r次幂的部分和估计",
+  "english_source_note": "Partial Sum Estimates for Powers of Integers",
+  "callout_id": "自然数的r次幂的部分和估计#3",
+  "english_title": "General Asymptotic Results for Generalized Harmonic Numbers",
+  "statement_en": "For $r>0$ with $r \\neq 1$,\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right).$$\nFor $r=1$,\n$$\\sum_{k=1}^n k^{-1}=\\gamma+\\log(n) + \\frac{1}{2} n^{-1}-\\frac{1}{12} n^{-2}+O\\left(n^{-4}\\right).$$",
+  "problem_type": "theorem",
+  "difficulty": "hard",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "Euler-Maclaurin summation",
+    "Bernoulli number correction terms"
+  ],
+  "prerequisites": [
+    "generalized harmonic numbers",
+    "Riemann zeta function",
+    "Euler-Maclaurin formula",
+    "big-O notation"
+  ],
+  "callout_body": "如果$r>0,r \\neq 1$的时候，\n$$\\sum_{k=1}^n k^{-r}=\\zeta(r)+\\frac{1}{1-r} n^{1-r}+\\frac{1}{2} n^{-r}-\\frac{r}{12} n^{-r-1}+O\\left(n^{-r-3}\\right)$$\n如果$r=1$的时候,$$\\sum_{k=1}^n k^{-1}=\\gamma+\\log(n) + \\frac{1}{2} n^{-1}-\\frac{1}{12} n^{-2}+O\\left(n^{-4}\\right)$$"
+}

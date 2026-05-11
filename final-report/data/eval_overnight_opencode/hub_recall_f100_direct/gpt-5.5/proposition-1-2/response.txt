@@ -1,0 +1,3 @@
+["estimates-for-the-sum-of-prime-reciprocals-hub", "identity-theorem-hub"]
+- estimates-for-the-sum-of-prime-reciprocals-hub: The proof hinges on representing the spectrum through an equivalent algebraic object, typically the characteristic polynomial or determinant, and using the identity `det(λI - AB) = det(λI - BA)`.
+- identity-theorem-hub: If proving the determinant identity first for `λ ≠ 0`, one extends it to all `λ` by polynomial/function equality, matching the strategy of proving equality on a determining subset.

@@ -1,0 +1,65 @@
+{
+  "note_title": "Wintner mean value theorem",
+  "is_hub": false,
+  "in_subset_via": [
+    "基于分部求和法的和的估计"
+  ],
+  "callouts": [
+    {
+      "id": "Wintner mean value theorem#1",
+      "type": "note",
+      "title": "定理1.1:Wintner mean value theorem,20世纪初",
+      "body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$并且级数$\\sum_{n\\geq 1}\\frac{g(n)}{n}$绝对收敛，那么$f$的平均值$M(f)$就是该级数收敛到的值,即：$$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}$$",
+      "position_char": 142,
+      "position_line": 10
+    },
+    {
+      "id": "Wintner mean value theorem#2",
+      "type": "tip",
+      "title": "想法1.2",
+      "body": "我们无非就是要估计和$S(x):=\\frac{1}{x}\\sum_{n\\leq x}f(n)$精度要求至少是$o(1)$。因为$f=1*g$因此我们可以利用[[把条件函数展开为新的和或积分然后换序#1.1 卷积法的基本形式]]的\"Dirichlet卷积法特殊形式1\"，这样的话主项当中是关于$\\sum_{n\\leq x} \\frac{g(n)}{n}$的，余项中主要是$\\sum_{n\\leq x}g(n)$。而我们知道$\\frac{g(n)}{n}$的级数的收敛性，那么可以用[[Kronecker's lemma]]来得到余项的估计。",
+      "position_char": 348,
+      "position_line": 13
+    },
+    {
+      "id": "Wintner mean value theorem#3",
+      "type": "note",
+      "title": "引理1.3:Kronecker's lemma",
+      "body": "对于算术函数$f$，如果存在一个$s,\\text{Re}(s)>0$使得$$\\sum_{n\\ge 1} \\frac{f(n)}{n^s}<\\infty$$那么$$\\frac{1}{x^s}\\sum_{n\\leq x} f(n)\\to 0$$",
+      "position_char": 1317,
+      "position_line": 21
+    },
+    {
+      "id": "Wintner mean value theorem#4",
+      "type": "note",
+      "title": "命题1.4:从Dirichlet生成函数理解",
+      "body": "因为如果$f=g*1$，那么这个关系体现在Dirichlet生成函数上就是$$L(f,s):=\\sum_{n\\geq 1}\\frac{f(n)}{n^s}=\\zeta(s)\\sum_{n\\geq 1}\\frac{g(n)}{n^s},\\text{Re}(s)>1$$然后$g$满足级数$\\sum_{n\\geq 1}\\frac{g(n)}{n}$绝对收敛那么$M(f)$存在且等于$\\sum_{n\\geq 1}\\frac{g(n)}{n}$",
+      "position_char": 1593,
+      "position_line": 28
+    },
+    {
+      "id": "Wintner mean value theorem#5",
+      "type": "note",
+      "title": "定理2.1.1:Axer 1910",
+      "body": "如果算术函数$f$是另外一个算术函数$g$的Dirichlet卷积意义下的和，即$$f=1*g$$如果：\n1. $\\sum_{n\\geq 1}\\frac{g(n)}{n}$条件收敛\n2. $\\sum_{n\\leq x}|g(n)|=O(x)$\n\n那么$f$的平均值$M(f)$就是该级数收敛到的值,即：$$M(f)=\\sum_{n\\geq 1}\\frac{g(n)}{n}$$",
+      "position_char": 1993,
+      "position_line": 38
+    },
+    {
+      "id": "Wintner mean value theorem#6",
+      "type": "note",
+      "title": "引理2.1.2",
+      "body": "复数列$a_n$构成的级数$\\sum_{n\\geq 1}\\frac{a_n}{n}$收敛，那么其部分和$\\sum_{n\\leq N}a_n =o(N)$。",
+      "position_char": 3076,
+      "position_line": 53
+    },
+    {
+      "id": "Wintner mean value theorem#7",
+      "type": "example",
+      "title": "例子3.1",
+      "body": "定义算术函数$$P_{\\alpha}(n)=\\sum_{d|n} \\sin(2\\pi d\\alpha)$$其中$\\alpha\\not \\in \\mathbb{Z}$。求极限$$\\lim_{N\\to \\infty} \\frac{1}{N}\\sum_{n\\leq N} P_{\\alpha}(n)$$",
+      "position_char": 7547,
+      "position_line": 94
+    }
+  ]
+}

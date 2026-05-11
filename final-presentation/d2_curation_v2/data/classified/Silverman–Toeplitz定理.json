@@ -1,0 +1,131 @@
+{
+  "note_title": "Silverman–Toeplitz定理",
+  "is_hub": false,
+  "in_subset_via": [
+    "利用已知的渐近结果求渐近展开的技巧"
+  ],
+  "callouts": [
+    {
+      "id": "Silverman–Toeplitz定理#1",
+      "type": "note",
+      "title": "Silverman-Toepliz定理,1913",
+      "body": "$a_{n,k}$是一个非负的双重序列，并且满足:\n1. 关于$k$的和为1，即:$$\\sum_{k=1}^na_{n,k}=1$$\n2. 当$k$固定的时候，$$\\lim_{n\\to \\infty}a_{n,k}=0$$\n\n那么对于任意的有极限的序列$x_n$，都有$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}a_{n,k}x_k=\\lim_{n\\to \\infty}x_n$$",
+      "position_char": 39,
+      "position_line": 6,
+      "classification_result": {
+        "id": "Silverman–Toeplitz定理#1",
+        "classification": "problem",
+        "english_title": "Silverman-Toeplitz Theorem, 1913",
+        "if_problem": {
+          "statement_en": "Let $a_{n,k}$ be a nonnegative double sequence such that:\n1. the sum over $k$ is $1$, namely $$\\sum_{k=1}^n a_{n,k}=1,$$\n2. for each fixed $k$, $$\\lim_{n\\to\\infty} a_{n,k}=0.$$\nThen for every convergent sequence $x_n$, one has\n$$\\lim_{n\\to\\infty}\\sum_{k=1}^n a_{n,k}x_k=\\lim_{n\\to\\infty}x_n.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "matrix summability methods",
+            "splitting a convergent sequence into limit plus error",
+            "uniform boundedness of row sums"
+          ],
+          "prerequisites": [
+            "convergent sequences",
+            "limits",
+            "series and finite sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Silverman–Toeplitz定理#2",
+      "type": "note",
+      "title": "命题2.1:Silverman-Toepliz定理的推广",
+      "body": "$a_{n,k}$是一个双重序列，并且满足:\n1. 关于$k$的和**渐进**为1，即:$$\\lim_{n\\to \\infty}\\sum_{k=1}^na_{n,k}=1$$\n2. 当$k$固定的时候，$$\\lim_{n\\to \\infty}a_{n,k}=0$$\n3. $$\\sup_{n\\in \\mathbb{N}^{+}}\\sum_{k\\leq n}|a_{n,k}|<+\\infty$$\n\n那么对于任意的有极限的序列$x_n$，都有$$\\lim_{n\\to \\infty}\\sum_{k=1}^{n}a_{n,k}x_k=\\lim_{n\\to \\infty}x_n$$",
+      "position_char": 2147,
+      "position_line": 33,
+      "classification_result": {
+        "id": "Silverman–Toeplitz定理#2",
+        "classification": "problem",
+        "english_title": "Proposition 2.1: Generalization of the Silverman-Toeplitz Theorem",
+        "if_problem": {
+          "statement_en": "Let $a_{n,k}$ be a double sequence such that:\n1. the sum over $k$ tends asymptotically to $1$, namely $$\\lim_{n\\to\\infty}\\sum_{k=1}^n a_{n,k}=1,$$\n2. for each fixed $k$, $$\\lim_{n\\to\\infty} a_{n,k}=0,$$\n3. $$\\sup_{n\\in\\mathbb{N}^{+}}\\sum_{k\\le n}|a_{n,k}|<+\\infty.$$\nThen for every convergent sequence $x_n$, one has\n$$\\lim_{n\\to\\infty}\\sum_{k=1}^n a_{n,k}x_k=\\lim_{n\\to\\infty}x_n.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "Toeplitz-type summability criteria",
+            "absolute row-sum bound",
+            "limit decomposition"
+          ],
+          "prerequisites": [
+            "convergent sequences",
+            "absolute values and estimates",
+            "basic summability theory"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Silverman–Toeplitz定理#3",
+      "type": "example",
+      "title": "例子2.2",
+      "body": "$|\\lambda|<1$序列$x_n$的极限为$a$，那么$$\\sum_{k=0}^{n}\\lambda^{n-k}x_k\\to \\frac{a}{1-\\lambda}$$这是因为$\\sum_{k=0}^{n}\\lambda^{n-k}=\\frac{1-\\lambda^{n+1}}{1-\\lambda}$，所以Silverman-Toepliz定理的推广版本告诉我们$$\\sum_{k=0}^{n}\\lambda^{n-k}(1-\\lambda)x_k\\to a$$从而得到结果。",
+      "position_char": 3456,
+      "position_line": 53,
+      "classification_result": {
+        "id": "Silverman–Toeplitz定理#3",
+        "classification": "problem",
+        "english_title": "Example 2.2",
+        "if_problem": {
+          "statement_en": "If $|\\lambda|<1$ and the sequence $x_n$ converges to $a$, then\n$$\\sum_{k=0}^{n}\\lambda^{n-k}x_k\\to \\frac{a}{1-\\lambda}.$$",
+          "problem_type": "example",
+          "difficulty": "easy",
+          "domain": "real analysis",
+          "key_techniques": [
+            "apply the generalized Silverman-Toeplitz theorem",
+            "geometric series normalization",
+            "weighted averages"
+          ],
+          "prerequisites": [
+            "geometric series",
+            "convergent sequences",
+            "Silverman-Toeplitz theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "Silverman–Toeplitz定理#4",
+      "type": "example",
+      "title": "例子2.3:去掉条件3之后的反例",
+      "body": "令$$a_{n,k}:=\\begin{cases}1&(n,k)=(1,1)\\\\n&(n,k)=(n,n)\\\\1-n&(n,k)=(n,n-1)\\\\0&\\text{otherwise}\\end{cases}$$这个序列可以看成一个无穷的矩阵$A$当中的元素：$$A:=\\begin{pmatrix}1&0&0&\\cdots\\\\-1&2&0&\\cdots\\\\ 0&-2&3&\\cdots \\\\\\vdots&\\vdots&\\vdots&\\ddots \\\\0&\\cdots&1-n&n\\\\\\vdots&\\vdots&\\vdots&\\ddots \\end{pmatrix}$$这样的双重序列并不满足“命题2.1”的第三个条件，因为此时$$\\sum_{k\\leq n}|a_{n,k}|=2\\sum_{k=1}^{n} k=n(n+1)$$令$x_k:=\\frac{(-1)^k}{k}$那么$$\\sum_{k\\leq n} a_{n,k}x_k = a_{n,n-1}x_{n-1}+a_{n,n}x_{n}=2(-1)^n$$这个和的极限不存在，更不会等于$x_k$的极限0。",
+      "position_char": 3768,
+      "position_line": 62,
+      "classification_result": {
+        "id": "Silverman–Toeplitz定理#4",
+        "classification": "problem",
+        "english_title": "Example 2.3: Counterexample After Removing Condition 3",
+        "if_problem": {
+          "statement_en": "Define\n$$a_{n,k}:=\\begin{cases}1&(n,k)=(1,1)\\\\n&(n,k)=(n,n)\\\\1-n&(n,k)=(n,n-1)\\\\0&\\text{otherwise.}\\end{cases}$$\nThis double sequence does not satisfy condition 3 of Proposition 2.1. Let $$x_k:=\\frac{(-1)^k}{k}.$$ Then\n$$\\sum_{k\\le n} a_{n,k}x_k = a_{n,n-1}x_{n-1}+a_{n,n}x_n = 2(-1)^n,$$\nso the limit of the sum does not exist, and therefore it cannot equal the limit $0$ of $x_k$.",
+          "problem_type": "counterexample",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "construct a matrix counterexample",
+            "test necessity of hypotheses",
+            "direct evaluation of the transformed sequence"
+          ],
+          "prerequisites": [
+            "convergent sequences",
+            "counterexamples in analysis",
+            "Silverman-Toeplitz theorem"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"Silverman–Toeplitz定理#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Silverman-Toeplitz Theorem, 1913\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_{n,k}$ be a nonnegative double sequence such that:\\n1. the sum over $k$ is $1$, namely $$\\\\sum_{k=1}^n a_{n,k}=1,$$\\n2. for each fixed $k$, $$\\\\lim_{n\\\\to\\\\infty} a_{n,k}=0.$$\\nThen for every convergent sequence $x_n$, one has\\n$$\\\\lim_{n\\\\to\\\\infty}\\\\sum_{k=1}^n a_{n,k}x_k=\\\\lim_{n\\\\to\\\\infty}x_n.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"matrix summability methods\",\n        \"splitting a convergent sequence into limit plus error\",\n        \"uniform boundedness of row sums\"\n      ],\n      \"prerequisites\": [\n        \"convergent sequences\",\n        \"limits\",\n        \"series and finite sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Silverman–Toeplitz定理#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1: Generalization of the Silverman-Toeplitz Theorem\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_{n,k}$ be a double sequence such that:\\n1. the sum over $k$ tends asymptotically to $1$, namely $$\\\\lim_{n\\\\to\\\\infty}\\\\sum_{k=1}^n a_{n,k}=1,$$\\n2. for each fixed $k$, $$\\\\lim_{n\\\\to\\\\infty} a_{n,k}=0,$$\\n3. $$\\\\sup_{n\\\\in\\\\mathbb{N}^{+}}\\\\sum_{k\\\\le n}|a_{n,k}|<+\\\\infty.$$\\nThen for every convergent sequence $x_n$, one has\\n$$\\\\lim_{n\\\\to\\\\infty}\\\\sum_{k=1}^n a_{n,k}x_k=\\\\lim_{n\\\\to\\\\infty}x_n.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"Toeplitz-type summability criteria\",\n        \"absolute row-sum bound\",\n        \"limit decomposition\"\n      ],\n      \"prerequisites\": [\n        \"convergent sequences\",\n        \"absolute values and estimates\",\n        \"basic summability theory\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Silverman–Toeplitz定理#3\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2.2\",\n    \"if_problem\": {\n      \"statement_en\": \"If $|\\\\lambda|<1$ and the sequence $x_n$ converges to $a$, then\\n$$\\\\sum_{k=0}^{n}\\\\lambda^{n-k}x_k\\\\to \\\\frac{a}{1-\\\\lambda}.$$\",\n      \"problem_type\": \"example\",\n      \"difficulty\": \"easy\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"apply the generalized Silverman-Toeplitz theorem\",\n        \"geometric series normalization\",\n        \"weighted averages\"\n      ],\n      \"prerequisites\": [\n        \"geometric series\",\n        \"convergent sequences\",\n        \"Silverman-Toeplitz theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"Silverman–Toeplitz定理#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Example 2.3: Counterexample After Removing Condition 3\",\n    \"if_problem\": {\n      \"statement_en\": \"Define\\n$$a_{n,k}:=\\\\begin{cases}1&(n,k)=(1,1)\\\\\\\\n&(n,k)=(n,n)\\\\\\\\1-n&(n,k)=(n,n-1)\\\\\\\\0&\\\\text{otherwise.}\\\\end{cases}$$\\nThis double sequence does not satisfy condition 3 of Proposition 2.1. Let $$x_k:=\\\\frac{(-1)^k}{k}.$$ Then\\n$$\\\\sum_{k\\\\le n} a_{n,k}x_k = a_{n,n-1}x_{n-1}+a_{n,n}x_n = 2(-1)^n,$$\\nso the limit of the sum does not exist, and therefore it cannot equal the limit $0$ of $x_k$.\",\n      \"problem_type\": \"counterexample\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"construct a matrix counterexample\",\n        \"test necessity of hypotheses\",\n        \"direct evaluation of the transformed sequence\"\n      ],\n      \"prerequisites\": [\n        \"convergent sequences\",\n        \"counterexamples in analysis\",\n        \"Silverman-Toeplitz theorem\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

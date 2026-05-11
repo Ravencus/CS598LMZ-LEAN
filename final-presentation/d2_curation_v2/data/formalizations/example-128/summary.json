@@ -1,0 +1,24 @@
+{
+  "problem_id": "example-128",
+  "english_title": "Example 1.2.8",
+  "statement_en": "In this section, the sequence $T_N:=\\sum_{n=0}^{N}\\frac{1}{(n+1)(n+2)(n+2)!}$ appears, and $T_{N-2}$ is clearly a subsequence of it. In terms of the definition of a subsequence, we may introduce the variable $N_k:=k-2$, thereby obtaining the subsequence $T_{N_k}$.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','"
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\nopen scoped BigOperators\n\ndef T (N : ℕ) : ℚ :=\n  Finset.sum (Finset.range (N + 1)) fun n =>\n    1 / (((n + 1 : ℚ) * (n + 2 : ℚ)) * (Nat.factorial (n + 2) : ℚ))\n\ndef Nk (k : {m : ℕ // 2 ≤ m}) : ℕ :=\n  k.1 - 2\n\ndef IsSubsequenceFromTwo {α : Type*} (u : ℕ → α) (v : {m : ℕ // 2 ≤ m} → α) : Prop :=\n  ∃ φ : {m : ℕ // 2 ≤ m} → ℕ, StrictMono φ ∧ ∀ k, v k = u (φ k)\n\ntheorem shifted_partial_sums_form_subsequence :\n    StrictMono Nk ∧ IsSubsequenceFromTwo T (fun k => T (Nk k)) := by\n  sorry"
+}

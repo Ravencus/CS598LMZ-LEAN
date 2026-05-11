@@ -1,0 +1,49 @@
+{
+  "note_title": "基于分部积分法的积分的估计",
+  "is_hub": false,
+  "in_subset_via": [
+    "分析学基本方法目录1"
+  ],
+  "callouts": [
+    {
+      "id": "基于分部积分法的积分的估计#1",
+      "type": "tip",
+      "title": "基本想法",
+      "body": "参照[[基于分部求和法的和的估计]]，在积分的估计中我们也可以有类似的思考方式，即当我们要估计形如$\\int fg$的积分的时候，如果我们发现：\n1. $f$的部分积分$F$的估计是已知的，或者相对容易的。\n2. $g$的微分$g'$是已知的，或者相对容易估计的。\n那么通过分部积分$$\\int fg = A+\\int Fg'$$那么我们可以得到新的估计$$\\left|\\int fg\\right|\\leq |A|+\\left|\\int Fg'\\right|$$\n\n有的时候，为了使得积分估计的精度更高从而使用分部积分法，目的是在每次分部积分的时候从积分当中抛出一部分函数，从而使得剩下的新的积分其估计精度更高。",
+      "position_char": 38,
+      "position_line": 6,
+      "classification_result": {
+        "id": "基于分部积分法的积分的估计#1",
+        "classification": "strategy_template",
+        "english_title": "Basic Idea",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Estimate Integrals by Integration by Parts",
+          "summary_en": "To estimate an integral of the form $\\int fg$, use integration by parts when an antiderivative $F$ of $f$ is known or easy to estimate and the derivative $g'$ is known or easy to control. This can replace the original integral by a boundary term plus a new integral $\\int Fg'$, which may admit a sharper estimate.",
+          "applicability": "Applies when estimating integrals whose integrand can be split into two factors so that one side becomes easier after antidifferentiation and the other after differentiation, especially when repeated integration by parts improves decay or precision."
+        }
+      }
+    },
+    {
+      "id": "基于分部积分法的积分的估计#2",
+      "type": "tip",
+      "title": "想法1.1",
+      "body": "根据一维的分部积分$$\\int_{a}^b u\\,dv = [uv]_a^b - \\int_a^b v\\,du$$如果被积函数当中$u,v$当中有一个在边界上消失，亦或是其他什么条件导致$[uv]_a^b=0$，那么我们就能得到关系$$\\int_{a}^b u\\,dv=-\\int_a^b v\\,du$$\n1. 有些情况下，后者往往能提供一些关于前者如何衰减的信息。估计后者往往比估计前者，更容达到目标估计精度。",
+      "position_char": 1175,
+      "position_line": 22,
+      "classification_result": {
+        "id": "基于分部积分法的积分的估计#2",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.1",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Use Vanishing Boundary Terms in Integration by Parts",
+          "summary_en": "When applying $\\int_a^b u\\,dv = [uv]_a^b - \\int_a^b v\\,du$, if the boundary term $[uv]_a^b$ vanishes, then the original integral is transformed exactly into $-\\int_a^b v\\,du$. The transformed integral often reveals decay or is easier to estimate sharply.",
+          "applicability": "Applies when one factor vanishes at the boundary, or other conditions force the boundary contribution to be zero, making the integration-by-parts identity especially effective for estimation."
+        }
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"基于分部积分法的积分的估计#1\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Basic Idea\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Estimate Integrals by Integration by Parts\",\n      \"summary_en\": \"To estimate an integral of the form $\\\\int fg$, use integration by parts when an antiderivative $F$ of $f$ is known or easy to estimate and the derivative $g'$ is known or easy to control. This can replace the original integral by a boundary term plus a new integral $\\\\int Fg'$, which may admit a sharper estimate.\",\n      \"applicability\": \"Applies when estimating integrals whose integrand can be split into two factors so that one side becomes easier after antidifferentiation and the other after differentiation, especially when repeated integration by parts improves decay or precision.\"\n    }\n  },\n  {\n    \"id\": \"基于分部积分法的积分的估计#2\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Use Vanishing Boundary Terms in Integration by Parts\",\n      \"summary_en\": \"When applying $\\\\int_a^b u\\\\,dv = [uv]_a^b - \\\\int_a^b v\\\\,du$, if the boundary term $[uv]_a^b$ vanishes, then the original integral is transformed exactly into $-\\\\int_a^b v\\\\,du$. The transformed integral often reveals decay or is easier to estimate sharply.\",\n      \"applicability\": \"Applies when one factor vanishes at the boundary, or other conditions force the boundary contribution to be zero, making the integration-by-parts identity especially effective for estimation.\"\n    }\n  }\n]",
+  "classified": true
+}

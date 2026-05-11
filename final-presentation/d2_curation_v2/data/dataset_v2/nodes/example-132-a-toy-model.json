@@ -1,0 +1,23 @@
+{
+  "id": "example-132-a-toy-model",
+  "type": "problem",
+  "source_note": "分段估计",
+  "english_source_note": "Piecewise Estimates",
+  "callout_id": "分段估计#8",
+  "english_title": "Example 1.3.2: A Toy Model",
+  "statement_en": "Estimate \\(S_N:=\\sum_{N<n\\leq N^2}\\frac{1}{n^2+1}\\) using termwise bounds and piecewise splitting. A direct bound gives \\(S_N=O(1)\\), while splitting at \\(N^{3/2}\\) yields \\[\\begin{aligned}S_N&=\\sum_{N<n\\leq N^{3/2}}\\frac{1}{n^2+1}+\\sum_{N^{3/2}<n\\leq N^{2}}\\frac{1}{n^2+1}\\\\&<\\frac{1}{N^2}(N^{3/2}-N)+\\frac{1}{N^3}(N^2-N^{3/2})\\\\&=\\frac{1}{\\sqrt{N}}-\\frac{1}{N^{3/2}}=O\\left(\\frac{1}{\\sqrt{N}}\\right).\\end{aligned}\\]",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "asymptotic analysis",
+  "key_techniques": [
+    "termwise estimation",
+    "piecewise splitting of the summation range",
+    "choice of cutoff point"
+  ],
+  "prerequisites": [
+    "Big-O notation",
+    "finite sums",
+    "basic comparison estimates"
+  ],
+  "callout_body": "假设我们现在要估计和$S_N:=\\sum_{N<n\\leq N^2}\\frac{1}{n^2+1}$。当然和的积分估计可以告诉我们$S_N \\asymp \\frac{1}{N}$。但这里我们假装不知道这个做法，我就就是要用逐项估计来解决问题。于是我们想到当$N<n\\leq N^2$的时候有$$\\frac{1}{n^2+1}<\\frac{1}{N^2}$$于是直接逐项估计我们得到$$S_N<\\frac{1}{N^2}\\times (N^2-N)=1-\\frac{1}{N}=O(1)$$我们带着答案去审视这个估计就会发现，这个估计距离真正理想的结果差太远了，它甚至不是一个无穷小量。于是我们引入分段估计来着手改造它，我们可以引入一个$(N,N^2] \\cap \\mathbb{N}$的分段点，比如$N^{3/2}$好了。那么此时我们结合分段估计，再来做一次逐项估计就会得到$$\\begin{aligned}S_N&:=\\sum_{N<n\\leq N^2}\\frac{1}{n^2+1}\\\\&= \\sum_{N<n\\leq N^{3/2}}\\frac{1}{n^2+1}+\\sum_{N^{3/2}<n\\leq N^{2}}\\frac{1}{n^2+1}\\\\&<\\frac{1}{N^2}\\times (N^{3/2}-N)+\\frac{1}{N^3}\\times \\left(N^2-N^{3/2}\\right)\\\\&= \\frac{1}{\\sqrt{N}}-\\frac{1}{N^{3/2}}=O\\left(\\frac{1}{\\sqrt{N}}\\right)\\end{aligned}$$虽然如果对比“标准答案”这个精度还是有很大差距，但是的确比直接进行逐项估计改善了很多精度。**在很多真正的问题（并非玩具模型）当中，我们可能没有一个类似于“和的积分估计”相对于该例子这样的如此理想的工具，但是我们依旧可以通过选择合适的断点来一定程度上优化估计精度。**"
+}

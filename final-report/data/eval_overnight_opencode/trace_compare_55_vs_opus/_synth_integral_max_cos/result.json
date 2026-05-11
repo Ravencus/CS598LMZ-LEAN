@@ -1,0 +1,11 @@
+{
+  "problem_id": "_synth_integral_max_cos",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "lean_impl",
+  "evidence": "Both traces split [0, 2π] into [0, π/2], [π/2, 3π/2], and [3π/2, 2π], prove max(cos u,0) is cos/0/cos on those intervals, then compute the two cosine integrals as 1+1. The main difference is Lean execution: Trace A spends several failed calls adapting interval-integral congruence, adjacency, and tri",
+  "wall_seconds": 16.25
+}

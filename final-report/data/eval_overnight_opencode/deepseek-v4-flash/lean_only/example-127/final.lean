@@ -1,0 +1,11 @@
+import Mathlib
+
+theorem evenIndexedSubsequenceOfNaturalSequence :
+    StrictMono (fun k : ℕ => 2 * k) ∧
+      ∀ k : ℕ, (fun n : ℕ => n) ((fun k : ℕ => 2 * k) k) = 2 * k := by
+  refine ⟨?_, ?_⟩
+  · intro a b h
+    have hpos : 0 < 2 := by norm_num
+    simpa [mul_comm] using Nat.mul_lt_mul_of_pos_right h hpos
+  · intro k
+    simp

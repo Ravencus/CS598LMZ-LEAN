@@ -1,0 +1,18 @@
+{
+  "problem_id": "problem-31-3",
+  "english_title": "Problem 3.1",
+  "statement_en": "Prove that the series $\\sum_n \\frac{1}{n\\log(n)}$ diverges.",
+  "difficulty": "easy",
+  "domain": "real analysis",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem harmonic_log_series_diverges :\n    ¬ Summable (fun n : ℕ => 1 / (((n : ℝ) + 2) * Real.log ((n : ℝ) + 2))) := by\n  sorry"
+}

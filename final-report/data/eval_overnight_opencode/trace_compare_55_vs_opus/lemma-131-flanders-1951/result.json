@@ -1,0 +1,11 @@
+{
+  "problem_id": "lemma-131-flanders-1951",
+  "model_a": "gpt-5.5",
+  "model_b": "claude-opus-4-7",
+  "outcome_a": "lean_proof",
+  "outcome_b": "lean_proof",
+  "plan_relation": "same_plan",
+  "divergence": "none",
+  "evidence": "Both traces prove the same core intertwining identity between powers/evaluations of AB and BA, then use `minpoly.dvd_iff`/`minpoly.aeval` to show divisibility after multiplying by `X`. Trace A builds `hpow` for `A * (B*A)^m = (A*B)^m * A`; Trace B builds the symmetric generalized `key` lemma via mon",
+  "wall_seconds": 6.42
+}

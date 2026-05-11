@@ -1,0 +1,258 @@
+You are analyzing two Lean theorem-proving traces from the same problem. The "BIG" model succeeded; the "SMALL" model failed. Classify the failure mode.
+
+Problem id: theorem-31-liouvilles-theorem-1844    Condition: with_sympy
+
+=== BIG (passed) ===
+model: gpt-5.5    outcome: lean_proof    wall=35.37s    mcp_calls=1
+--- mcp call 1 (✓) ---
+import Mathlib
+open scoped Polynomial
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  have h_irr : Irrational α := by
+    rintro ⟨q, hq⟩
+    have h1 : (minpoly ℚ α).natDegree = 1 := by
+      exact (minpoly.natDegree_eq_one_iff (A := ℚ) (x := α)).2 ⟨q, hq⟩
+    have hd1 : d = 1 := by
+      simpa [h_deg] using h1
+    omega
+  let P : ℚ[X] := minpoly ℚ α
+  have hP0 : P ≠ 0 := by
+    simpa [P] using (minpoly.ne_zero h_alg.isIntegral)
+  let M : Submonoid ℤ := nonZeroDivisors ℤ
+  let Q : ℤ[X] := IsLocalization.integerNormalization M P
+  have hQ0 : Q ≠ 0 := by
+    intro hzero
+    apply hP0
+    exact (IsLocalization.integerNormalization_eq_zero_iff (M := M) (hM := le_rfl) P).mp hzero
+  have hQrootAeval : Polynomial.aeval α Q = 0 := by
+    change Polynomial.aeval α (IsLocalization.integerNormalization M P) = 0
+    exact IsLocalization.integerNormalization_aeval_eq_zero (M := M) P
+      (by
+        change Polynomial.aeval α (minpoly ℚ α) = 0
+        exact minpoly.aeval (A := ℚ) (x := 
+--- final_text ---
+I’ll first check whether Mathlib already exposes a Liouville-style approximation theorem or nearby API for algebraic numbers/minpolys, then use the checker sparingly for the final proof shape.
+A prior checked solution exists in the repository data for this exact theorem. I’ll inspect it and verify it against the current checker/signature before returning it.
+FINAL_PROOF:
+```lean
+import Mathlib
+open scoped Polynomial
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  have h_irr : Irrational α := by
+    rintro ⟨q, hq⟩
+    have h1 : (minpoly ℚ α).natDegree = 1 := by
+      exact (minpoly.natDegree_eq_one_iff (A := ℚ) (x := α)).2 ⟨q, hq⟩
+    have hd1 : d = 1 := by
+      simpa [h_deg] using h1
+    omega
+  let P : ℚ[X] := minpoly ℚ α
+  have hP0 : P ≠ 0 := by
+    simpa [P] using (minpoly.ne_zero h_alg.isIntegral)
+  let M : Submonoid ℤ := nonZeroDivisors ℤ
+  let Q : ℤ[X] := IsLocalization.integerNormalization M P
+  have hQ0 : Q ≠ 0 := by
+    intro hzero
+    apply hP0
+    exact (IsLoca
+
+=== SMALL (failed) ===
+model: gpt-5.4-mini    outcome: compile_fail    wall=383.39s    mcp_calls=10
+--- mcp call 1 (✗) ---
+import Mathlib
+#check IsAlgebraic
+#check minpoly
+#check IsAlgebraic.exists_rat_approximation
+#check IsAlgebraic.exists_lt_abs_sub_pow
+#check HasIrrationalityMeasure
+#check Real.irrationalityMeasure
+#check Real.exists_int_int_abs_mul_sub_le
+#check Real.ratCast
+#check Int.natAbs
+--- mcp call 2 (✗) ---
+import Mathlib
+set_option pp.all true
+#check IsAlgebraic
+#check IsAlgebraic.algClosed
+#check IsAlgebraic.exists_natDegree_minpoly
+#check IsAlgebraic.minpoly
+#check IsAlgebraic.coe_natDegree_minpoly
+#check Algebraic.exists_rat_lt
+#check Algebraic.exists_rat_le
+#check Algebraic.irrationalityMeasure
+#check Real.hasIrrationalityMeasure
+#check HasIrrationalityMeasure
+--- mcp call 3 (✗) ---
+import Mathlib
+#check FooBarBaz
+--- mcp call 4 (✗) ---
+import Mathlib
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  have h_irr : Irrational α := by
+    rintro ⟨q, rfl⟩
+    have h1 : (minpoly ℚ α).natDegree = 1 := by
+      exact (minpoly.natDegree_eq_one_iff (A := ℚ) (x := α)).2 ⟨q, rfl⟩
+    have hd1 : d = 1 := by
+      simpa [h_deg] using h1
+    omega
+  let P : ℚ[X] := minpoly ℚ α
+  have hP0 : P ≠ 0 := by
+    simpa [P] using (minpoly.ne_zero (A := ℚ) (x := α) h_alg.isIntegral)
+  let M : Submonoid ℤ := nonZeroDivisors ℤ
+  have hQ0 : (IsLocalization.integerNormalization M P) ≠ 0 := by
+    simpa [M, P] using (IsLocalization.integerNormalization_eq_zero_iff (M := M)
+      (hM := le_rfl) P).2 hP0
+  have hQroot : aeval α (IsLocalization.integerNormalization M P) = 0 := by
+    simpa [M, P] using (IsLocalization.integerNormalization_aeval_eq_zero (M := M)
+      (g := algebraMap ℚ ℝ) P (x := α) (by simpa [P] using (minpoly.aeval (A := ℚ) (x := α))))
+  obtain ⟨b, hb, hmap⟩ := IsLocalization.integerNormalization_spec (M := M) P
+  have 
+--- mcp call 5 (✗) ---
+import Mathlib
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  have h_irr : Irrational α := by
+    rintro ⟨q, rfl⟩
+    have h1 : (minpoly ℚ α).natDegree = 1 := by
+      exact (minpoly.natDegree_eq_one_iff (A := ℚ) (x := α)).2 ⟨q, rfl⟩
+    have hd1 : d = 1 := by
+      simpa [h_deg] using h1
+    omega
+  let P : ℚ[X] := minpoly ℚ α
+  have hP0 : P ≠ 0 := by
+    simpa [P] using (minpoly.ne_zero h_alg.isIntegral)
+  let M : Submonoid ℤ := nonZeroDivisors ℤ
+  have hQ0 : (IsLocalization.integerNormalization M P) ≠ 0 := by
+    simpa [M, P] using (IsLocalization.integerNormalization_eq_zero_iff (M := M)
+      (hM := le_rfl) P).2 hP0
+  have hQroot : aeval α (IsLocalization.integerNormalization M P) = 0 := by
+    simpa [M, P] using (IsLocalization.integerNormalization_aeval_eq_zero (M := M)
+      (g := algebraMap ℚ ℝ) P (x := α) (by simpa [P] using (minpoly.aeval (A := ℚ) (x := α))))
+  obtain ⟨b, hb, hmap⟩ := IsLocalization.integerNormalization_spec (M := M) P
+  have hb0 : (b : ℚ) ≠ 0 
+--- mcp call 6 (✓) ---
+import Mathlib
+example {α : ℝ} (h : IsAlgebraic ℚ α) : minpoly ℚ α ≠ 0 := by
+  simpa using (minpoly.ne_zero h.isIntegral)
+--- mcp call 7 (✗) ---
+import Mathlib
+example {α : ℝ} (h : IsAlgebraic ℚ α) : by
+  let P : ℚ[X] := minpoly ℚ α
+  have hP0 : P ≠ 0 := by
+    simpa [P] using (minpoly.ne_zero h.isIntegral)
+  exact True := by
+  trivial
+--- mcp call 8 (✗) ---
+import Mathlib
+example {α : ℝ} (h : IsAlgebraic ℚ α) : ∃ P : ℚ[X], P ≠ 0 := by
+  let P : ℚ[X] := minpoly ℚ α
+  refine ⟨P, ?_⟩
+  simpa [P] using (minpoly.ne_zero h.isIntegral)
+--- mcp call 9 (✗) ---
+import Mathlib
+open scoped Polynomial
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  have h_irr : Irrational α := by
+    rintro ⟨q, rfl⟩
+    have h1 : (minpoly ℚ α).natDegree = 1 := by
+      exact (minpoly.natDegree_eq_one_iff (A := ℚ) (x := α)).2 ⟨q, rfl⟩
+    have hd1 : d = 1 := by
+      simpa [h_deg] using h1
+    omega
+  let P : ℚ[X] := minpoly ℚ α
+  have hP0 : P ≠ 0 := by
+    simpa [P] using (minpoly.ne_zero h_alg.isIntegral)
+  let M : Submonoid ℤ := nonZeroDivisors ℤ
+  have hQ0 : (IsLocalization.integerNormalization M P) ≠ 0 := by
+    simpa [M, P] using (IsLocalization.integerNormalization_eq_zero_iff (M := M)
+      (hM := le_rfl) P).2 hP0
+  have hQroot : aeval α (IsLocalization.integerNormalization M P) = 0 := by
+    simpa [M, P] using (IsLocalization.integerNormalization_aeval_eq_zero (M := M)
+      (g := algebraMap ℚ ℝ) P (x := α) (by simpa [P] using (minpoly.aeval (A := ℚ) (x := α))))
+  obtain ⟨b, hb, hmap⟩ := IsLocalization.integerNormalization_spec (M := M) P
+  
+--- mcp call 10 (✗) ---
+import Mathlib
+open scoped Polynomial
+
+theorem liouville_approximation_lower_bound
+    {α : ℝ} {d : ℕ}
+    (h_alg : IsAlgebraic ℚ α)
+    (h_deg : (minpoly ℚ α).natDegree = d)
+    (hd : 2 ≤ d) :
+    ∃ C : ℝ, 0 < C ∧ ∀ q : ℕ, 0 < q → ∀ p : ℤ,
+      |α - (p : ℝ) / (q : ℝ)| > C / ((q : ℝ) ^ d) := by
+  have h_irr : Irrational α := by
+    rintro ⟨q, rfl⟩
+    have h1 : (minpoly ℚ α).natDegree = 1 := by
+      exact (minpoly.natDegree_eq_one_iff (A := ℚ) (x := α)).2 ⟨q, rfl⟩
+    have hd1 : d = 1 := by
+      simpa [h_deg] using h1
+    omega
+  let P : ℚ[X] := minpoly ℚ α
+  have hP0 : P ≠ 0 := by
+    simpa [P] using (minpoly.ne_zero h_alg.isIntegral)
+  let M : Submonoid ℤ := nonZeroDivisors ℤ
+  have hQ0 : (IsLocalization.integerNormalization M P) ≠ 0 := by
+    intro hzero
+    apply hP0
+    exact (IsLocalization.integerNormalization_eq_zero_iff (M := M) (hM := le_rfl) P).mp hzero
+  have hQroot : Polynomial.aeval α (IsLocalization.integerNormalization M P) = 0 := by
+    simpa [M, P] using
+      (IsLocalization.integerNormalization_aeval_eq_zero (M := M) (algebraMap ℚ ℝ) P (x := α)
+        (by simpa [P] using (minpoly.aeval (A := ℚ) (x := α))))
+  obtain ⟨b, hb, hmap⟩ := IsLocalization.integerNorm
+--- final_text ---
+I’m checking the available Mathlib facts first, then I’ll build the shortest proof that compiles.
+I found a nearby proof file for algebraic irrationals. I’m reading that first because it may already contain the exact Liouville-style structure we need.
+The nearby files show a route through `Real.exists_int_int_abs_mul_sub_le`, but this theorem needs a uniform lower bound in terms of algebraic degree. I’m searching for a direct Mathlib theorem on `minpoly` or Liouville bounds before writing a custom argument.
+I haven’t found a local proof template yet, so I’m probing Mathlib for a direct theorem that already packages Liouville’s bound. If that exists, the proof will be short; otherwise I’ll need a more elaborate algebraic-number argument.
+I need the actual Mathlib source tree to search for the theorem names. I’m checking the repo layout outside the workspace now.
+I found Mathlib’s Liouville-theory files. I’m reading those because the exact result may already be there, which would turn this into a one-line reduction.
+I found a theorem in Mathlib that already proves the key approximation bound for any irrational root of a nonzero integer polynomial. The remaining work is to extract an 
+
+Output STRICTLY a JSON object on a single line, then 2-3 sentences of justification:
+
+{"label": "different_plan" | "same_plan_lean_impl_diff" | "same_plan_search_diff" | "unclear",
+  "evidence": "1-2 sentences pointing to specific parts of the traces"}
+
+LABEL DEFINITIONS:
+  different_plan          : The two models pursued substantively different decompositions (e.g., one used induction, the other used a continuous estimate).
+  same_plan_lean_impl_diff: Both pursued the same plan; the small model's failure was at the Lean tactic / type-checking level (wrong tactic, type mismatch, syntax).
+  same_plan_search_diff   : Same plan; the small model couldn't find the correct Mathlib lemma name or applicability.
+  unclear                 : Cannot tell from the visible evidence.
+
+Output the JSON object first, then the justification.

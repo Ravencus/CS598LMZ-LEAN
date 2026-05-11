@@ -1,0 +1,3 @@
+["an-epsilon-of-room-hub", "cauchy-convergence-criterion-hub"]
+- an-epsilon-of-room-hub: The proof uses an ε-margin around the supremum or infimum, choosing a sequence term within ε of the bound and then using monotonicity to trap all later terms.
+- cauchy-convergence-criterion-hub: A standard route is to show the bounded monotone sequence is Cauchy from those tail estimates, then use completeness of `ℝ` to obtain convergence.

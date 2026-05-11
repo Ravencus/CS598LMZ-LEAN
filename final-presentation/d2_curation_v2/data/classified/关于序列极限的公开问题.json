@@ -1,0 +1,263 @@
+{
+  "note_title": "关于序列极限的公开问题",
+  "is_hub": false,
+  "in_subset_via": [
+    "函数与序列的上下极限"
+  ],
+  "callouts": [
+    {
+      "id": "关于序列极限的公开问题#1",
+      "type": "question",
+      "title": "猜想0",
+      "body": "$a_1=a>0$，序列$a_n$满足递归关系$$a_{n+1}=a_n+\\frac{n^{2\\beta}}{a_1+\\cdots+a_n}$$那么$$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}=\\sqrt{\\frac{\\beta+1}{\\beta}}$$",
+      "position_char": 50,
+      "position_line": 7,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#1",
+        "classification": "problem",
+        "english_title": "Conjecture 0",
+        "if_problem": {
+          "statement_en": "Let $a_1=a>0$. Suppose the sequence $a_n$ satisfies the recursion $$a_{n+1}=a_n+\\frac{n^{2\\beta}}{a_1+\\cdots+a_n}.$$ Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}=\\sqrt{\\frac{\\beta+1}{\\beta}}.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "asymptotic analysis of recursive sequences",
+            "Stolz-Cesaro theorem",
+            "estimates for partial sums"
+          ],
+          "prerequisites": [
+            "limits of sequences",
+            "limsup and liminf",
+            "asymptotic notation",
+            "recursive sequences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "关于序列极限的公开问题#2",
+      "type": "question",
+      "title": "猜想1.2.1",
+      "body": "当$n$足够大的时候序列$b_n:=\\frac{a_n}{\\sqrt{n}}$:\n1. $b_n$单调增加\n2. $b_n$有上界",
+      "position_char": 1342,
+      "position_line": 42,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#2",
+        "classification": "problem",
+        "english_title": "Conjecture 1.2.1",
+        "if_problem": {
+          "statement_en": "For sufficiently large $n$, let $b_n:=\\frac{a_n}{\\sqrt{n}}$. Then:\n1. $b_n$ is increasing.\n2. $b_n$ is bounded above.",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "monotonicity analysis",
+            "upper bound estimates",
+            "recursive sequence comparison"
+          ],
+          "prerequisites": [
+            "monotone sequences",
+            "bounded sequences",
+            "recursive sequences",
+            "basic asymptotic estimates"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "关于序列极限的公开问题#3",
+      "type": "tip",
+      "title": "想法1.3.1",
+      "body": "因为序列的递归定义，我们想到可以用通过制造差分，再利用广义的[[Cesaro-Stolz定理]]得到关于$a,b$的不等式，这样或许能得到我们最终目标的不等式。",
+      "position_char": 1967,
+      "position_line": 57,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#3",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.3.1",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Create difference expressions and apply the generalized Stolz-Cesaro theorem",
+          "summary_en": "Use the recursive definition to manufacture suitable difference quotients, then apply the generalized Stolz-Cesaro theorem to derive inequalities involving the limiting quantities. This can reduce the target limit problem to manageable inequalities.",
+          "applicability": "Applies when a sequence is given recursively and one wants asymptotic information or inequalities for normalized terms or related partial sums."
+        }
+      }
+    },
+    {
+      "id": "关于序列极限的公开问题#4",
+      "type": "note",
+      "title": "引理1.3.2",
+      "body": "令$a = \\liminf_{n\\to \\infty}\\frac{a_n}{\\sqrt{n}},b=\\limsup_{n\\to \\infty}\\frac{a_n}{\\sqrt{n}}$那么$$0<a\\leq b<+\\infty$$",
+      "position_char": 2249,
+      "position_line": 64,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#4",
+        "classification": "problem",
+        "english_title": "Lemma 1.3.2",
+        "if_problem": {
+          "statement_en": "Let $a = \\liminf_{n\\to \\infty}\\frac{a_n}{\\sqrt{n}}$ and $b=\\limsup_{n\\to \\infty}\\frac{a_n}{\\sqrt{n}}$. Then $$0<a\\leq b<+\\infty.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "liminf and limsup estimates",
+            "growth bounds for sequences",
+            "normalization by powers of n"
+          ],
+          "prerequisites": [
+            "liminf and limsup",
+            "sequence bounds",
+            "recursive sequences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "关于序列极限的公开问题#5",
+      "type": "tip",
+      "title": "想法1.3.3",
+      "body": "根据定义中序列的递归定义，令$u_n:=S_n^2$，我们可以得到等价的方程$$u_{n+1}-2u_n+u_{n-1}=2n+a_{n+1}^2+a_n^2$$这个式子可以简写为(约定$\\Delta u_n =u_n-u_{n-1}$)$$\\Delta u_{n+1}-\\Delta u_{n}=2n+a_{n+1}^2+a_n^2\\geq 2n,\\quad n\\geq2\\tag{0}$$根据[[序列差分的估计蕴含着序列本身的估计]]当中的想法，我们可以对两边进行求和，从而得到$\\Delta u_n$的下界估计，然后再求和得到$u_n$的下界估计，如此一来由于$$\\frac{a_{n+1}-a_n}{\\sqrt{n+1}-\\sqrt{n}}=\\frac{n(\\sqrt{n+1}+\\sqrt{n})}{S_n}\\sim \\frac{2n^{3/2}}{S_n}\\quad\\quad\\quad (1)$$根据这个结果结合广义Stolz-Cesaro定理$$2\\liminf \\frac{n^{3/2}}{S_n}\\leq a\\leq b\\leq 2\\limsup \\frac{n^{3/2}}{S_n}\\tag{2}$$我们便可以得到$b$的上界估计。然后对$(1)$当中右边的结果继续使用广义Stolz-Cesaro定理$$\\frac{(n+1)^{3/2}-n^{3/2}}{S_{n+1}-S_n}=\\frac{(n+1)^{3/2}-n^{3/2}}{a_{n+1}}\\sim \\frac{3}{2}\\frac{\\sqrt{n}}{a_{n+1}}$$于是以上计算告诉我们$$ \\frac{3}{2} \\liminf \\frac{\\sqrt{n}}{a_n}\\leq \\liminf \\frac{n^{3/2}}{S_n}\\leq \\limsup \\frac{n^{3/2}}{S_n}\\leq \\frac{3}{2} \\limsup \\frac{\\sqrt{n}}{a_n}\\tag{3}$$此处我们要找到$a,b$之间的关系，我们想到借用[[函数与序列的上下极限#^755361]]当中的结果得到$$\\limsup \\frac{\\sqrt{n}}{a_n}=\\frac{1}{\\liminf \\frac{a_n}{\\sqrt{n}}}=\\frac{1}{a},\\quad \\liminf \\frac{\\sqrt{n}}{a_n}=\\frac{1}{\\limsup \\frac{a_n}{\\sqrt{n}}}=\\frac{1}{b}$$",
+      "position_char": 2386,
+      "position_line": 67,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#5",
+        "classification": "strategy_template",
+        "english_title": "Idea 1.3.3",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Pass to squared partial sums and use second-difference estimates",
+          "summary_en": "Introduce $u_n:=S_n^2$ to convert the original recursion into a second-difference inequality, then sum twice to obtain lower bounds for $u_n$ and hence estimates for $S_n$. Combine these with generalized Stolz-Cesaro arguments and reciprocal liminf-limsup relations to connect $a$ and $b$.",
+          "applicability": "Applies when the recursion involves partial sums in the denominator and direct estimates on the original sequence are difficult, but transformed quantities such as squared partial sums satisfy tractable difference inequalities."
+        }
+      }
+    },
+    {
+      "id": "关于序列极限的公开问题#6",
+      "type": "note",
+      "title": "命题2.1",
+      "body": "令$a=\\liminf_{n\\to \\infty} \\frac{a_n}{n^{\\beta}},\\quad b=\\limsup_{n\\to \\infty} \\frac{a_n}{n^{\\beta}},\\quad \\beta>0,\\quad r_{\\beta}:=\\frac{\\beta+1}{\\beta}$于是$$\\sqrt{r_{\\beta}}\\leq a\\leq b\\leq \\sqrt{r_{\\beta}}$$",
+      "position_char": 4934,
+      "position_line": 86,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#6",
+        "classification": "problem",
+        "english_title": "Proposition 2.1",
+        "if_problem": {
+          "statement_en": "Let $a=\\liminf_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}$, $b=\\limsup_{n\\to \\infty} \\frac{a_n}{n^{\\beta}}$, with $\\beta>0$, and let $r_{\\beta}:=\\frac{\\beta+1}{\\beta}$. Then $$\\sqrt{r_{\\beta}}\\leq a\\leq b\\leq \\sqrt{r_{\\beta}}.$$",
+          "problem_type": "theorem",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "liminf-limsup squeezing",
+            "asymptotic normalization",
+            "sequence inequality estimates"
+          ],
+          "prerequisites": [
+            "liminf and limsup",
+            "squeeze arguments",
+            "asymptotic notation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "关于序列极限的公开问题#7",
+      "type": "note",
+      "title": "命题3.1",
+      "body": "$a_1>0$，并且满足差分方程$$\\Delta a_n= \\frac{f(n)}{S_n}$$其中$f(n)>0$并且满足$f(n)\\sim \\alpha n^{2\\beta}$那么$$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}} =\\sqrt{\\frac{\\alpha(\\beta+1)}{\\beta}}$$",
+      "position_char": 7127,
+      "position_line": 96,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#7",
+        "classification": "problem",
+        "english_title": "Proposition 3.1",
+        "if_problem": {
+          "statement_en": "Let $a_1>0$, and suppose the sequence satisfies the difference equation $$\\Delta a_n= \\frac{f(n)}{S_n}$$ where $f(n)>0$ and $f(n)\\sim \\alpha n^{2\\beta}$. Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\beta}} =\\sqrt{\\frac{\\alpha(\\beta+1)}{\\beta}}.$$",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "asymptotic analysis of nonlinear difference equations",
+            "partial sum estimates",
+            "Stolz-Cesaro theorem"
+          ],
+          "prerequisites": [
+            "difference equations",
+            "asymptotic notation",
+            "limits of sequences",
+            "partial sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "关于序列极限的公开问题#8",
+      "type": "note",
+      "title": "引理3.2",
+      "body": "令$G(x):I\\to \\mathbb{R}$是凸函数,并且可微,序列$r_n\\in I$,则$$\\Delta^2 G(r_n)\\geq G'(r_{n+1})\\Delta^2 r_n$$",
+      "position_char": 7387,
+      "position_line": 101,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#8",
+        "classification": "problem",
+        "english_title": "Lemma 3.2",
+        "if_problem": {
+          "statement_en": "Let $G(x):I\\to \\mathbb{R}$ be a differentiable convex function, and let $r_n\\in I$ be a sequence. Then $$\\Delta^2 G(r_n)\\geq G'(r_{n+1})\\Delta^2 r_n.$$",
+          "problem_type": "lemma",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "convexity",
+            "finite difference inequalities",
+            "mean value type arguments"
+          ],
+          "prerequisites": [
+            "convex functions",
+            "differentiability",
+            "finite differences"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    },
+    {
+      "id": "关于序列极限的公开问题#9",
+      "type": "note",
+      "title": "命题3.3",
+      "body": "令$q$是正整数，序列$a_1>0$，并且满足差分方程$$\\Delta a_n= \\frac{f(n)}{S_n^q}$$其中$f(n)>0$并且满足$f(n)\\sim \\alpha n^{2\\beta}$并且$\\beta>\\frac{q-1}{2}$那么$$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\gamma}} =\\left(\\frac{\\alpha(\\gamma+1)^q}{\\gamma}\\right)^{\\frac{1}{q+1}}$$其中$\\gamma=\\frac{2\\beta-q+1}{q+1}$。",
+      "position_char": 10007,
+      "position_line": 117,
+      "classification_result": {
+        "id": "关于序列极限的公开问题#9",
+        "classification": "problem",
+        "english_title": "Proposition 3.3",
+        "if_problem": {
+          "statement_en": "Let $q$ be a positive integer. Let $a_1>0$, and suppose the sequence satisfies the difference equation $$\\Delta a_n= \\frac{f(n)}{S_n^q}$$ where $f(n)>0$, $f(n)\\sim \\alpha n^{2\\beta}$, and $\\beta>\\frac{q-1}{2}$. Then $$\\lim_{n\\to \\infty} \\frac{a_n}{n^{\\gamma}} =\\left(\\frac{\\alpha(\\gamma+1)^q}{\\gamma}\\right)^{\\frac{1}{q+1}}$$ where $\\gamma=\\frac{2\\beta-q+1}{q+1}$.",
+          "problem_type": "theorem",
+          "difficulty": "hard",
+          "domain": "real analysis",
+          "key_techniques": [
+            "asymptotic analysis of nonlinear difference equations",
+            "scaling arguments",
+            "partial sum growth estimates"
+          ],
+          "prerequisites": [
+            "difference equations",
+            "asymptotic notation",
+            "limits of sequences",
+            "partial sums"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"关于序列极限的公开问题#1\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Conjecture 0\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_1=a>0$. Suppose the sequence $a_n$ satisfies the recursion $$a_{n+1}=a_n+\\\\frac{n^{2\\\\beta}}{a_1+\\\\cdots+a_n}.$$ Then $$\\\\lim_{n\\\\to \\\\infty} \\\\frac{a_n}{n^{\\\\beta}}=\\\\sqrt{\\\\frac{\\\\beta+1}{\\\\beta}}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"asymptotic analysis of recursive sequences\",\n        \"Stolz-Cesaro theorem\",\n        \"estimates for partial sums\"\n      ],\n      \"prerequisites\": [\n        \"limits of sequences\",\n        \"limsup and liminf\",\n        \"asymptotic notation\",\n        \"recursive sequences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"关于序列极限的公开问题#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Conjecture 1.2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"For sufficiently large $n$, let $b_n:=\\\\frac{a_n}{\\\\sqrt{n}}$. Then:\\n1. $b_n$ is increasing.\\n2. $b_n$ is bounded above.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"monotonicity analysis\",\n        \"upper bound estimates\",\n        \"recursive sequence comparison\"\n      ],\n      \"prerequisites\": [\n        \"monotone sequences\",\n        \"bounded sequences\",\n        \"recursive sequences\",\n        \"basic asymptotic estimates\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"关于序列极限的公开问题#3\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.3.1\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Create difference expressions and apply the generalized Stolz-Cesaro theorem\",\n      \"summary_en\": \"Use the recursive definition to manufacture suitable difference quotients, then apply the generalized Stolz-Cesaro theorem to derive inequalities involving the limiting quantities. This can reduce the target limit problem to manageable inequalities.\",\n      \"applicability\": \"Applies when a sequence is given recursively and one wants asymptotic information or inequalities for normalized terms or related partial sums.\"\n    }\n  },\n  {\n    \"id\": \"关于序列极限的公开问题#4\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 1.3.2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a = \\\\liminf_{n\\\\to \\\\infty}\\\\frac{a_n}{\\\\sqrt{n}}$ and $b=\\\\limsup_{n\\\\to \\\\infty}\\\\frac{a_n}{\\\\sqrt{n}}$. Then $$0<a\\\\leq b<+\\\\infty.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"liminf and limsup estimates\",\n        \"growth bounds for sequences\",\n        \"normalization by powers of n\"\n      ],\n      \"prerequisites\": [\n        \"liminf and limsup\",\n        \"sequence bounds\",\n        \"recursive sequences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"关于序列极限的公开问题#5\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Idea 1.3.3\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Pass to squared partial sums and use second-difference estimates\",\n      \"summary_en\": \"Introduce $u_n:=S_n^2$ to convert the original recursion into a second-difference inequality, then sum twice to obtain lower bounds for $u_n$ and hence estimates for $S_n$. Combine these with generalized Stolz-Cesaro arguments and reciprocal liminf-limsup relations to connect $a$ and $b$.\",\n      \"applicability\": \"Applies when the recursion involves partial sums in the denominator and direct estimates on the original sequence are difficult, but transformed quantities such as squared partial sums satisfy tractable difference inequalities.\"\n    }\n  },\n  {\n    \"id\": \"关于序列极限的公开问题#6\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 2.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a=\\\\liminf_{n\\\\to \\\\infty} \\\\frac{a_n}{n^{\\\\beta}}$, $b=\\\\limsup_{n\\\\to \\\\infty} \\\\frac{a_n}{n^{\\\\beta}}$, with $\\\\beta>0$, and let $r_{\\\\beta}:=\\\\frac{\\\\beta+1}{\\\\beta}$. Then $$\\\\sqrt{r_{\\\\beta}}\\\\leq a\\\\leq b\\\\leq \\\\sqrt{r_{\\\\beta}}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"liminf-limsup squeezing\",\n        \"asymptotic normalization\",\n        \"sequence inequality estimates\"\n      ],\n      \"prerequisites\": [\n        \"liminf and limsup\",\n        \"squeeze arguments\",\n        \"asymptotic notation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"关于序列极限的公开问题#7\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 3.1\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $a_1>0$, and suppose the sequence satisfies the difference equation $$\\\\Delta a_n= \\\\frac{f(n)}{S_n}$$ where $f(n)>0$ and $f(n)\\\\sim \\\\alpha n^{2\\\\beta}$. Then $$\\\\lim_{n\\\\to \\\\infty} \\\\frac{a_n}{n^{\\\\beta}} =\\\\sqrt{\\\\frac{\\\\alpha(\\\\beta+1)}{\\\\beta}}.$$\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"asymptotic analysis of nonlinear difference equations\",\n        \"partial sum estimates\",\n        \"Stolz-Cesaro theorem\"\n      ],\n      \"prerequisites\": [\n        \"difference equations\",\n        \"asymptotic notation\",\n        \"limits of sequences\",\n        \"partial sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"关于序列极限的公开问题#8\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Lemma 3.2\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $G(x):I\\\\to \\\\mathbb{R}$ be a differentiable convex function, and let $r_n\\\\in I$ be a sequence. Then $$\\\\Delta^2 G(r_n)\\\\geq G'(r_{n+1})\\\\Delta^2 r_n.$$\",\n      \"problem_type\": \"lemma\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"convexity\",\n        \"finite difference inequalities\",\n        \"mean value type arguments\"\n      ],\n      \"prerequisites\": [\n        \"convex functions\",\n        \"differentiability\",\n        \"finite differences\"\n      ]\n    },\n    \"if_strategy_template\": null\n  },\n  {\n    \"id\": \"关于序列极限的公开问题#9\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Proposition 3.3\",\n    \"if_problem\": {\n      \"statement_en\": \"Let $q$ be a positive integer. Let $a_1>0$, and suppose the sequence satisfies the difference equation $$\\\\Delta a_n= \\\\frac{f(n)}{S_n^q}$$ where $f(n)>0$, $f(n)\\\\sim \\\\alpha n^{2\\\\beta}$, and $\\\\beta>\\\\frac{q-1}{2}$. Then $$\\\\lim_{n\\\\to \\\\infty} \\\\frac{a_n}{n^{\\\\gamma}} =\\\\left(\\\\frac{\\\\alpha(\\\\gamma+1)^q}{\\\\gamma}\\\\right)^{\\\\frac{1}{q+1}}$$ where $\\\\gamma=\\\\frac{2\\\\beta-q+1}{q+1}$.\",\n      \"problem_type\": \"theorem\",\n      \"difficulty\": \"hard\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"asymptotic analysis of nonlinear difference equations\",\n        \"scaling arguments\",\n        \"partial sum growth estimates\"\n      ],\n      \"prerequisites\": [\n        \"difference equations\",\n        \"asymptotic notation\",\n        \"limits of sequences\",\n        \"partial sums\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

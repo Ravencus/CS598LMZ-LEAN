@@ -1,0 +1,18 @@
+{
+  "problem_id": "apmo-2013-p4",
+  "english_title": "APMO 2013, P4",
+  "statement_en": "Let $A,B$ be two disjoint finite subsets of the integers, and let $a,b$ be two positive integers. Suppose moreover that $$A\\cup B \\subset (A-a)\\cup (B+b)$$ where $A-a:=\\{x-a:x \\in A\\}$ and $B+b:=\\{x+b:x \\in B\\}$. Prove that $$a|A|=b|B|.$$",
+  "difficulty": "hard",
+  "domain": "additive combinatorics",
+  "success": true,
+  "attempts_used": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem disjoint_finite_integer_sets_cardinality_relation\n    (A B : Finset ℤ) (a b : ℕ)\n    (ha : 0 < a) (hb : 0 < b)\n    (hdisj : Disjoint A B)\n    (hsubset :\n      ((A : Set ℤ) ∪ (B : Set ℤ)) ⊆\n        ({x : ℤ | ∃ y : ℤ, y ∈ A ∧ x = y - (a : ℤ)} ∪\n         {x : ℤ | ∃ y : ℤ, y ∈ B ∧ x = y + (b : ℤ)})) :\n    a * A.card = b * B.card := by\n  sorry"
+}

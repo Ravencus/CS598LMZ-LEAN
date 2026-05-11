@@ -1,0 +1,30 @@
+{
+  "outcome": "compile_fail",
+  "overall_success": false,
+  "lean_compiles_raw": false,
+  "has_bare_sorry": false,
+  "has_admit": false,
+  "has_axiom": false,
+  "instruction_violation": false,
+  "sympy_emitted": false,
+  "sympy_verified": false,
+  "n_errors": 2,
+  "first_error": "Unknown constant `Complex.norm_exp_mul_I_sub_one_le`",
+  "sympy_witnesses": [],
+  "errors_only": [
+    {
+      "file": "/workspace/docker/Scratch/P2_54b578dc95.lean",
+      "line": 8,
+      "column": 16,
+      "severity": "error",
+      "message": "Unknown constant `Complex.norm_exp_mul_I_sub_one_le`"
+    },
+    {
+      "file": "/workspace/docker/Scratch/P2_54b578dc95.lean",
+      "line": 12,
+      "column": 28,
+      "severity": "error",
+      "message": "Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  |2 * Real.pi|\nin the target expression\n  |2| * |Real.pi| * |x| = 2 * Real.pi * |x|\n\nx : ℝ\nh : ‖Complex.exp (↑(2 * Real.pi * x) * Complex.I) - 1‖ ≤ |2 * Real.pi * x|\n⊢ |2| * |Real.pi| * |x| = 2 * Real.pi * |x|\n"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+[]
+No listed hub applies: the proof only uses `hu.comp hφ.tendsto_atTop`, i.e. composition of a convergent sequence with a strictly increasing index map tending to `atTop`, which is not one of the catalogue strategies.

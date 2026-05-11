@@ -1,0 +1,21 @@
+I’ll target this through Mathlib’s Borel-Cantelli lemma for the limsup-null statement, then convert pointwise non-eventual threshold avoidance for rational epsilons into `Tendsto` in the metric topology.
+I found prior generated attempts in the workspace for this exact theorem. I’m using them as a starting point but still verifying and tightening the proof against the current checker.
+The current proof shape has only local mechanization issues left; the checker is returning empty diagnostics on the larger submission, so I’m switching to a local Lean run with a temporary file to get fuller compiler feedback without spending more theorem-checker calls.
+The requested Lean theorem is not provable with this signature.
+
+Reason: `μ {x | ...}` has type `ℝ≥0∞`, and in Mathlib `Summable` for `ℝ≥0∞` is trivial:
+
+```lean
+#check ENNReal.summable
+-- ENNReal.summable : Summable f
+```
+
+So the hypothesis does not mean `∑ μ(A n) < ∞`; it is automatically true. A counterexample is a one-point space with `μ = Measure.dirac ()`, `fSeq n x = 1`, and `f x = 0`. The bad sets have measure `1` forever, so the limsup has measure `1`, not `0`.
+
+The signature needs a finite tsum hypothesis, e.g.
+
+```lean
+∀ ε > 0, (∑' n : ℕ, μ {x | ε ≤ |fSeq (n + 1) x - f x|}) ≠ ∞
+```
+
+rather than `Summable ...`.

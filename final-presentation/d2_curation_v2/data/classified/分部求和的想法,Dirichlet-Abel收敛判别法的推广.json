@@ -1,0 +1,62 @@
+{
+  "note_title": "分部求和的想法，Dirichlet-Abel收敛判别法的推广",
+  "is_hub": false,
+  "in_subset_via": [
+    "分段估计",
+    "基于分部求和法的和的估计",
+    "模1均匀分布与Weyl判别"
+  ],
+  "callouts": [
+    {
+      "id": "分部求和的想法,Dirichlet-Abel收敛判别法的推广#1",
+      "type": "note",
+      "title": "对Dirichlet判别的扩展",
+      "body": "1.  原本的判别当中，依旧保持$\\left|B_N\\right|<\\infty$对任意的正整数$N$成立,但是把$a_n$单调收敛到0替换为，$a_n$有界变差收敛到0。(参考[[对Dirichlet判别的一个调整]])\n2.  如果$$|a_n - a_{n+1}| = O\\left(\\frac{1}{n^{M+1}}\\right)$$这个时候其实不需要给到$\\left|B_N\\right|<\\infty$如此强的条件的，想要$\\sum_{n=1}^{N-1}B_n(a_n-a_{n+1})$绝对收敛实际上只需要$$B_n =O(n^{M-\\varepsilon_0})$$因此原来的级数一定是收敛的。\n3. 如果我们知道$a_n$是单调的，并且$$|a_n - a_{n+1}| \\gg \\frac{1}{n^{M+1}},B_n\\gg n^{M}$$同时假设$B_na_n$的极限是存在的，那么由于$$B_n|a_{n}-a_{n+1}|\\gg \\frac{1}{n}$$因此原来的级数一定是发散的。",
+      "position_char": 322,
+      "position_line": 13,
+      "classification_result": {
+        "id": "分部求和的想法,Dirichlet-Abel收敛判别法的推广#1",
+        "classification": "strategy_template",
+        "english_title": "Extensions of the Dirichlet Test",
+        "if_problem": null,
+        "if_strategy_template": {
+          "strategy_name_en": "Summation by parts extensions of the Dirichlet test",
+          "summary_en": "Use summation by parts to replace the classical monotone-to-zero assumption in the Dirichlet test by weaker hypotheses such as bounded variation, or to trade decay of differences \\(|a_n-a_{n+1}|\\) against growth bounds on partial sums \\(B_n\\). The same framework can also give divergence criteria when the summation-by-parts remainder is too large.",
+          "applicability": "Applies to series of the form \\(\\sum a_n b_n\\) when one has information on the partial sums \\(B_n=\\sum_{k=1}^n b_k\\) and on the variation or discrete derivative of \\(a_n\\)."
+        }
+      }
+    },
+    {
+      "id": "分部求和的想法,Dirichlet-Abel收敛判别法的推广#2",
+      "type": "question",
+      "title": "问题1",
+      "body": "假设$\\sum_{j = 1}^{n} a_j = o\\left(\\sqrt{n}\\right)$,证明：\n$$\\sum_{j} \\frac{a_j}{j}$$ 收敛",
+      "position_char": 841,
+      "position_line": 21,
+      "classification_result": {
+        "id": "分部求和的想法,Dirichlet-Abel收敛判别法的推广#2",
+        "classification": "problem",
+        "english_title": "Problem 1",
+        "if_problem": {
+          "statement_en": "Assume that \\(\\sum_{j=1}^{n} a_j = o\\left(\\sqrt{n}\\right)\\). Prove that\n\\[\n\\sum_j \\frac{a_j}{j}\n\\]\nconverges.",
+          "problem_type": "exercise",
+          "difficulty": "medium",
+          "domain": "real analysis",
+          "key_techniques": [
+            "summation by parts",
+            "Dirichlet-Abel convergence test",
+            "estimating partial sums"
+          ],
+          "prerequisites": [
+            "series convergence tests",
+            "little-o notation",
+            "partial summation"
+          ]
+        },
+        "if_strategy_template": null
+      }
+    }
+  ],
+  "raw_codex_response": "[\n  {\n    \"id\": \"分部求和的想法,Dirichlet-Abel收敛判别法的推广#1\",\n    \"classification\": \"strategy_template\",\n    \"english_title\": \"Extensions of the Dirichlet Test\",\n    \"if_problem\": null,\n    \"if_strategy_template\": {\n      \"strategy_name_en\": \"Summation by parts extensions of the Dirichlet test\",\n      \"summary_en\": \"Use summation by parts to replace the classical monotone-to-zero assumption in the Dirichlet test by weaker hypotheses such as bounded variation, or to trade decay of differences \\\\(|a_n-a_{n+1}|\\\\) against growth bounds on partial sums \\\\(B_n\\\\). The same framework can also give divergence criteria when the summation-by-parts remainder is too large.\",\n      \"applicability\": \"Applies to series of the form \\\\(\\\\sum a_n b_n\\\\) when one has information on the partial sums \\\\(B_n=\\\\sum_{k=1}^n b_k\\\\) and on the variation or discrete derivative of \\\\(a_n\\\\).\"\n    }\n  },\n  {\n    \"id\": \"分部求和的想法,Dirichlet-Abel收敛判别法的推广#2\",\n    \"classification\": \"problem\",\n    \"english_title\": \"Problem 1\",\n    \"if_problem\": {\n      \"statement_en\": \"Assume that \\\\(\\\\sum_{j=1}^{n} a_j = o\\\\left(\\\\sqrt{n}\\\\right)\\\\). Prove that\\n\\\\[\\n\\\\sum_j \\\\frac{a_j}{j}\\n\\\\]\\nconverges.\",\n      \"problem_type\": \"exercise\",\n      \"difficulty\": \"medium\",\n      \"domain\": \"real analysis\",\n      \"key_techniques\": [\n        \"summation by parts\",\n        \"Dirichlet-Abel convergence test\",\n        \"estimating partial sums\"\n      ],\n      \"prerequisites\": [\n        \"series convergence tests\",\n        \"little-o notation\",\n        \"partial summation\"\n      ]\n    },\n    \"if_strategy_template\": null\n  }\n]",
+  "classified": true
+}

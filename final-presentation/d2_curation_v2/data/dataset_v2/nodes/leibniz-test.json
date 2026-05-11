@@ -1,0 +1,22 @@
+{
+  "id": "leibniz-test",
+  "type": "problem",
+  "source_note": "Leibniz收敛判断",
+  "english_source_note": "Leibniz Convergence Test",
+  "callout_id": "Leibniz收敛判断#1",
+  "english_title": "Leibniz Test",
+  "statement_en": "The series $\\sum_n (-1)^n a_n$ with $a_n>0$ is convergent if $a_n \\downarrow 0$.",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "key_techniques": [
+    "alternating series test",
+    "monotone convergence of the terms"
+  ],
+  "prerequisites": [
+    "sequences and limits",
+    "infinite series",
+    "monotone decreasing sequences"
+  ],
+  "callout_body": "级数$\\sum_n (-1)^n a_n$其中$a_n>0$是收敛的，如果$a_n \\downarrow 0$。"
+}

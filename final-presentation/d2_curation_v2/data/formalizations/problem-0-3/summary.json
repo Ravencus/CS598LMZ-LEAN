@@ -1,0 +1,30 @@
+{
+  "problem_id": "problem-0-3",
+  "english_title": "Problem 0",
+  "statement_en": "Let $f\\in C^2([0,1])$, and define\n$$R_n:=\\int_0^1 f(t)\\,\\mathrm{d}t-\\frac1n\\sum_{k=0}^{n-1} f(k/n).$$\nFind\n$$\\lim_{n\\to\\infty} nR_n.$$",
+  "difficulty": "medium",
+  "domain": "real analysis",
+  "success": false,
+  "attempts_used": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 2,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    },
+    {
+      "attempt": 3,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "unexpected token 'in'; expected ','\n"
+    }
+  ],
+  "final_code": "import Mathlib\n\ntheorem riemann_sum_error_limit\n    (f : ℝ → ℝ) (hf : ContDiff ℝ 2 f) :\n    Filter.Tendsto\n      (fun n : ℕ =>\n        (n : ℝ) *\n          ((∫ t in (0 : ℝ)..(1 : ℝ), f t) -\n            (1 / (n : ℝ)) * ∑ k in Finset.range n, f ((k : ℝ) / (n : ℝ))))\n      Filter.atTop\n      (nhds ((f 1 - f 0) / 2)) := by\n  sorry"
+}

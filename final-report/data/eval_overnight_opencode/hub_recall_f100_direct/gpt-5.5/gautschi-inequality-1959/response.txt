@@ -1,0 +1,3 @@
+["basic-methods-in-analysis-i-hub", "estimates-for-the-sum-of-prime-reciprocals-hub"]
+- basic-methods-in-analysis-i-hub: The proof is naturally driven by convexity, specifically log-convexity of the Gamma function or equivalent integral convexity arguments.
+- estimates-for-the-sum-of-prime-reciprocals-hub: One uses different representations of the same Gamma-related quantities, such as the functional equation and integral/log-convex formulations, to compare the ratio with powers of `x` and `x+1`.

@@ -1,0 +1,21 @@
+{
+  "id": "theorem-21-general-dominated-convergence-theorem",
+  "type": "problem",
+  "source_note": "对含参数方程根的估计",
+  "english_source_note": "Estimates for Roots of Parameterized Equations",
+  "callout_id": "对含参数方程根的估计#5",
+  "english_title": "Theorem 2.1: General Dominated Convergence Theorem",
+  "statement_en": "Let \\((\\\\Omega,\\\\mathcal{F},\\\\mu)\\) be a measure space, and let \\\\(\\\\{f_{\\\\alpha}\\\\}_{\\\\alpha\\\\in A}\\\\) be a family of measurable functions. Suppose there exists an integrable function \\(g\\\\ge 0\\) such that\n\\\\[\n|f_{\\\\alpha}|\\\\le g,\\\\quad \\\\forall \\\\alpha\\\\in A.\n\\\\]\nIf \\(f_{\\\\alpha}\\\to f\\) almost everywhere, then\n\\\\[\n\\\\int_{\\\\Omega} f_{\\\\alpha}\\\\,d\\\\mu \\\to \\\\int_{\\\\Omega} f\\\\,d\\\\mu.\n\\\\]",
+  "problem_type": "theorem",
+  "difficulty": "medium",
+  "domain": "measure theory",
+  "key_techniques": [
+    "domination by an integrable function",
+    "almost everywhere convergence"
+  ],
+  "prerequisites": [
+    "measure spaces and measurable functions",
+    "Lebesgue integration"
+  ],
+  "callout_body": "$(\\Omega,\\mathcal{F},\\mu)$是一个测度空间，$\\{f_{\\alpha}\\}_{\\alpha \\in A}$是一个可测函数族，并且存在一个可积函数$g\\geq 0$使得$$|f_{\\alpha}|\\leq g ,\\forall \\alpha \\in A$$那么如果$f_{\\alpha}$几乎处处收敛到$f$，那么$$\\int_{\\Omega}f_{\\alpha}\\,d\\mu\\to \\int_{\\Omega}f\\,d\\mu$$"
+}

@@ -1,0 +1,24 @@
+{
+  "problem_id": "proposition-131",
+  "english_title": "Proposition 1.3.1",
+  "statement_en": "The set of real numbers whose irrationality measure is strictly greater than 2 has Lebesgue measure zero.",
+  "difficulty": "hard",
+  "domain": "metric Diophantine approximation",
+  "success": true,
+  "attempts_used": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "success": false,
+      "n_errors": 1,
+      "first_error_msg": "Function expected at\n  volume\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  IrrationalityMeasureGreaterThanTwoSet\n\nHint: The identifier "
+    },
+    {
+      "attempt": 2,
+      "success": true,
+      "n_errors": 0,
+      "first_error_msg": null
+    }
+  ],
+  "final_code": "import Mathlib\n\ndef IrrationalityMeasureGreaterThanTwoSet : Set ℝ :=\n  { x : ℝ |\n      ∃ μ : ℝ,\n        2 < μ ∧\n          ∀ N : ℕ,\n            ∃ q : ℕ,\n              N ≤ q ∧\n                0 < q ∧\n                  ∃ p : ℤ,\n                    |x - (p : ℝ) / (q : ℝ)| < 1 / Real.rpow (q : ℝ) μ }\n\ntheorem irrationalityMeasureGreaterThanTwoSet_volume_zero :\n    MeasureTheory.volume IrrationalityMeasureGreaterThanTwoSet = 0 := by\n  sorry"
+}

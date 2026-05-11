@@ -1,0 +1,22 @@
+{
+  "id": "example-01",
+  "type": "problem",
+  "source_note": "Borel-Cantelli lemma及其应用",
+  "english_source_note": "Borel-Cantelli Lemma and Applications",
+  "callout_id": "Borel-Cantelli lemma及其应用#2",
+  "english_title": "Example 0.1",
+  "statement_en": "In the measure space $([0,1],\\mathcal{B}([0,1]),m)$, where $m$ is Lebesgue measure, let $I_n = [0,\\frac{1}{n^2}]$. Since $$\\sum_{n\\geq 1} m(I_n)=\\sum_{n\\geq 1} \\frac{1}{n^2}<\\infty,$$ it follows that $m(x\\in I_n \\text{ i.o. })=0$. In other words, almost every point of $[0,1]$ belongs to only finitely many intervals of the form $I_n = [0,\\frac{1}{n^2}]$. In fact, the only point belonging to infinitely many such intervals is $x=0$.",
+  "problem_type": "example",
+  "difficulty": "easy",
+  "domain": "measure theory",
+  "key_techniques": [
+    "application of the Borel-Cantelli lemma",
+    "computation of Lebesgue measures of intervals"
+  ],
+  "prerequisites": [
+    "Lebesgue measure",
+    "Borel-Cantelli lemma",
+    "convergence of the p-series"
+  ],
+  "callout_body": "$([0,1],\\mathcal{B}([0,1]),m)$是一个测度空间，$m$是Lebesgue测度。假设集合$I_n = [0,\\frac{1}{n^2}]$,那么因为$$\\sum_{n\\geq 1} m(I_n)=\\sum_{n\\geq 1} \\frac{1}{n^2}<\\infty$$因此$m(x\\in I_n \\text{ i.o. })=0$。也就是说，$[0,1]$上几乎所有点都只属于有限多个形如$I_n = [0,\\frac{1}{n^2}]$的区间，这很显然。其实这里唯一一个属于无穷多个此类区间的点就只有$x=0$这一个点罢了。"
+}
