@@ -96,3 +96,4 @@ slides-cli/
 # Auxiliary tool docs (separate evaluation, not part of this repo)
 Mathematica MCP/
 .temp/
+workspace/opencode.json.host.bak

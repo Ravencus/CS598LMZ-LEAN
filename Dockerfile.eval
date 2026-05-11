@@ -48,6 +48,15 @@ RUN /home/lean/venv/bin/pip install --no-cache-dir \
         pandas \
         requests
 
+# --- OpenCode 1.14.46 (must match the version used to generate the shipped traces;
+#     opencode_runner.py hard-codes OPENCODE_BIN=~/.opencode/bin/opencode and
+#     the JSON stream format is version-sensitive)
+USER lean
+RUN curl -fsSL https://opencode.ai/install \
+    | bash -s -- --version 1.14.46 --no-modify-path \
+    && /home/lean/.opencode/bin/opencode --version
+USER root
+
 # --- Entrypoint wrapper (light / full / bash) ---
 COPY scripts/reproduce.sh /usr/local/bin/reproduce
 RUN chmod +x /usr/local/bin/reproduce

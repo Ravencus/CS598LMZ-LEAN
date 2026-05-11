@@ -33,28 +33,42 @@ The image supports four sub-commands:
 | `login` | Run `codex login` and `claude /login` inside the container (device-code OAuth) | n/a | ~1 min | $0 |
 | `bash` | Drop to a shell inside the container | | | |
 
-For `smoke` and `full` you need authenticated `codex` and `claude` CLIs. The simplest path is to run `login` once inside the container with auth state persisted via a volume:
+For `smoke` and `full`, three pieces of auth need to be present inside the container:
+
+| Provider | Auth mechanism | Container path |
+|----------|---------------|----------------|
+| OpenAI (`gpt-5.5`, `gpt-5.4-mini`) | OpenCode OAuth (sign up at https://opencode.ai) | `/home/lean/.local/share/opencode/auth.json` |
+| Anthropic (`claude-opus-4-7`) | Claude Code OAuth (free sign-up) | `/home/lean/.claude/` |
+| DeepSeek (`deepseek-v4-pro`, `deepseek-v4-flash`) | API key | `/workspace/.deepseek_api` |
+| Codex CLI (for trace-compare judge calls) | OpenAI OAuth | `/home/lean/.codex/` |
+
+The simplest path is to authenticate once inside the container and persist the auth via volume mounts:
 
 ```bash
-# One-time: authenticate codex (OpenAI) and claude (Anthropic). Each opens a device-code URL.
+# One-time: run the device-code OAuth flows for OpenCode, Claude, and Codex.
+mkdir -p "${HOME}/.docker-eval-auth"/{opencode,claude,codex}
 docker run --rm -it \
   -v "$(pwd):/workspace" \
-  -v "${HOME}/.codex-docker:/home/lean/.codex" \
-  -v "${HOME}/.claude-docker:/home/lean/.claude" \
+  -v "${HOME}/.docker-eval-auth/opencode:/home/lean/.local/share/opencode" \
+  -v "${HOME}/.docker-eval-auth/claude:/home/lean/.claude" \
+  -v "${HOME}/.docker-eval-auth/codex:/home/lean/.codex" \
   ghcr.io/ravencus/cs598lmz-lean:eval-latest login
 
 # DeepSeek uses an API key file (not OAuth)
 echo "$DEEPSEEK_KEY" > .deepseek_api
 
-# Now run the full eval (or smoke first)
-docker run --rm -it \
+# Now run smoke (1 cell, ~$0.10, ~2 min) — make sure the same volume mounts are present
+docker run --rm \
   -v "$(pwd):/workspace" \
-  -v "${HOME}/.codex-docker:/home/lean/.codex" \
-  -v "${HOME}/.claude-docker:/home/lean/.claude" \
+  -v "${HOME}/.docker-eval-auth/opencode:/home/lean/.local/share/opencode" \
+  -v "${HOME}/.docker-eval-auth/claude:/home/lean/.claude" \
+  -v "${HOME}/.docker-eval-auth/codex:/home/lean/.codex" \
   ghcr.io/ravencus/cs598lmz-lean:eval-latest smoke
 ```
 
-If you prefer to use your existing host-side codex/claude logins, swap `${HOME}/.codex-docker` → `${HOME}/.codex` and `${HOME}/.claude-docker` → `${HOME}/.claude` in the volume mounts.
+If you already have OpenCode / Claude / Codex authenticated on the host, swap `${HOME}/.docker-eval-auth/opencode` → `${HOME}/.local/share/opencode`, `${HOME}/.docker-eval-auth/claude` → `${HOME}/.claude`, and `${HOME}/.docker-eval-auth/codex` → `${HOME}/.codex` in the mounts.
+
+Note: `smoke` and `full` rewrite `workspace/opencode.json` inside the bind-mounted repo to use container-correct paths, saving the original to `workspace/opencode.json.host.bak`. This is a real file change on your host filesystem; the original is recoverable from git or from the backup.
 
 Building the image from source (instead of pulling) is `docker build -f Dockerfile.eval -t ghcr.io/ravencus/cs598lmz-lean:eval-latest .` and takes ~3 minutes on top of the ~10 GB base image.
 
