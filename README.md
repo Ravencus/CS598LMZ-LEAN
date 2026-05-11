@@ -6,6 +6,62 @@ The report PDF is the separately submitted deliverable; this repository contains
 
 ---
 
+## 0. Quickstart with Docker (recommended)
+
+The fastest path to reproduce the report. One pull, one run, no host-side setup of Lean, codex, claude, or Python deps.
+
+```bash
+git clone https://github.com/Ravencus/CS598LMZ-LEAN.git
+cd CS598LMZ-LEAN
+docker pull ghcr.io/ravencus/cs598lmz-lean:eval-latest
+
+# Re-aggregate the shipped 300-cell run logs and regenerate all figures + tables
+# (~2 minutes, no API calls, no money)
+docker run --rm -v "$(pwd):/workspace" \
+  ghcr.io/ravencus/cs598lmz-lean:eval-latest light
+```
+
+Outputs land in `final-report/report-artifacts/figures/` and `tables/` on the host (the bind-mounted repo).
+
+The image supports four sub-commands:
+
+| Command | What it does | API calls | Wall-time | Cost |
+|---------|--------------|-----------|-----------|------|
+| `light` (default) | Re-aggregate shipped logs and regenerate every figure and table | none | ~2 min | $0 |
+| `smoke` | Run 1 problem on `gpt-5.5` + `lean_only` to confirm the eval pipeline wires up | yes | ~2 min | ~$0.10 |
+| `full` | Rerun the entire 5-model × 2-condition × 30-problem eval, both trace-compare passes, both hub-recall conditions | yes | ~8 hr | ~$80-150 |
+| `login` | Run `codex login` and `claude /login` inside the container (device-code OAuth) | n/a | ~1 min | $0 |
+| `bash` | Drop to a shell inside the container | | | |
+
+For `smoke` and `full` you need authenticated `codex` and `claude` CLIs. The simplest path is to run `login` once inside the container with auth state persisted via a volume:
+
+```bash
+# One-time: authenticate codex (OpenAI) and claude (Anthropic). Each opens a device-code URL.
+docker run --rm -it \
+  -v "$(pwd):/workspace" \
+  -v "${HOME}/.codex-docker:/home/lean/.codex" \
+  -v "${HOME}/.claude-docker:/home/lean/.claude" \
+  ghcr.io/ravencus/cs598lmz-lean:eval-latest login
+
+# DeepSeek uses an API key file (not OAuth)
+echo "$DEEPSEEK_KEY" > .deepseek_api
+
+# Now run the full eval (or smoke first)
+docker run --rm -it \
+  -v "$(pwd):/workspace" \
+  -v "${HOME}/.codex-docker:/home/lean/.codex" \
+  -v "${HOME}/.claude-docker:/home/lean/.claude" \
+  ghcr.io/ravencus/cs598lmz-lean:eval-latest smoke
+```
+
+If you prefer to use your existing host-side codex/claude logins, swap `${HOME}/.codex-docker` → `${HOME}/.codex` and `${HOME}/.claude-docker` → `${HOME}/.claude` in the volume mounts.
+
+Building the image from source (instead of pulling) is `docker build -f Dockerfile.eval -t ghcr.io/ravencus/cs598lmz-lean:eval-latest .` and takes ~3 minutes on top of the ~10 GB base image.
+
+The rest of this README documents manual host setup for users who want to run the scripts directly without Docker. If the quickstart above works for you, the rest is optional reading.
+
+---
+
 ## 1. Repository layout
 
 ```
@@ -35,9 +91,9 @@ The report PDF is the separately submitted deliverable; this repository contains
 
 ---
 
-## 2. Prerequisites
+## 2. Prerequisites (manual host setup, alternative to §0)
 
-The eval scripts shell out to local CLI tools and the local Lean toolchain. Everything runs on the host (or inside the devcontainer at `.devcontainer/`, which bind-mounts the repo to `/workspace`); the `ghcr.io/ravencus/cs598lmz-lean:latest` Docker image is used only for interactive proving sessions (§5), not for the headline eval.
+These are the host requirements if you choose to skip the Docker image in §0 and run the scripts directly. The eval scripts shell out to local CLI tools and the local Lean toolchain. Everything runs on the host (or inside the devcontainer at `.devcontainer/`, which bind-mounts the repo to `/workspace`); the `ghcr.io/ravencus/cs598lmz-lean:latest` Docker image is used only for interactive proving sessions (§5), not for the headline eval.
 
 **Host requirements:**
 
